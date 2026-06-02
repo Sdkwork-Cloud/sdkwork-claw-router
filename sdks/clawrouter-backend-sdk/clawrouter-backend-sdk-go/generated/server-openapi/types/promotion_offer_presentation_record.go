@@ -9,6 +9,7 @@ type PromotionOfferPresentationRecord struct {
 	CustomerActionJson map[string]JsonValue `json:"customer_action_json"`
 	DisplayName string `json:"display_name"`
 	FieldSchemaJson map[string]JsonValue `json:"field_schema_json"`
+	Id string `json:"id"`
 	Locale string `json:"locale"`
 	LogoAssetId string `json:"logo_asset_id"`
 	MerchantDisplayName string `json:"merchant_display_name"`

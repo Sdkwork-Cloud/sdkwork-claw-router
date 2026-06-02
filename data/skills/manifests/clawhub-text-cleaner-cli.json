@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-cleaner-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-cleaner-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-cleaner-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:80696b7262c7b989093d3e010a67a3efb369bc49c14d2de5e9c28130e2f85cfe",

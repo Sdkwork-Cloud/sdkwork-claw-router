@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/douyin-skill@0.7.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-douyin-skill-0.7.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-douyin-skill-0.7.0.json"
+      },
       "version": "0.7.0",
       "runtime": "metadata",
       "checksumHash": "sha256:970d7bdcf7f49137df56e3b98b17141be1e7c0d852dd19c32e0569b8b6dd2975",

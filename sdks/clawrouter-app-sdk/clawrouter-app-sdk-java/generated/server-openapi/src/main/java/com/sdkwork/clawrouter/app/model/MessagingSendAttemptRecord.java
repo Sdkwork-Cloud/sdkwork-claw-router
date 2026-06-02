@@ -3,6 +3,8 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.Map;
 
 public class MessagingSendAttemptRecord {
+    private Integer attemptNo;
+    private String attemptedAt;
     private String createdAt;
     private String failureCode;
     private String failureMessageMasked;
@@ -13,17 +15,36 @@ public class MessagingSendAttemptRecord {
     private Map<String, String> metadata;
     private String organizationId;
     private String payloadHash;
+    private String providerAccountId;
+    private String providerCode;
     private String providerMessageId;
     private String providerRequestId;
     private String providerStatus;
     private String requestId;
     private String retentionUntil;
     private String retryAfterAt;
+    private String sendRequestId;
     private String status;
     private String tenantId;
     private String traceId;
     private String userId;
     private String uuid;
+
+    public Integer getAttemptNo() {
+        return this.attemptNo;
+    }
+
+    public void setAttemptNo(Integer attemptNo) {
+        this.attemptNo = attemptNo;
+    }
+
+    public String getAttemptedAt() {
+        return this.attemptedAt;
+    }
+
+    public void setAttemptedAt(String attemptedAt) {
+        this.attemptedAt = attemptedAt;
+    }
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -105,6 +126,22 @@ public class MessagingSendAttemptRecord {
         this.payloadHash = payloadHash;
     }
 
+    public String getProviderAccountId() {
+        return this.providerAccountId;
+    }
+
+    public void setProviderAccountId(String providerAccountId) {
+        this.providerAccountId = providerAccountId;
+    }
+
+    public String getProviderCode() {
+        return this.providerCode;
+    }
+
+    public void setProviderCode(String providerCode) {
+        this.providerCode = providerCode;
+    }
+
     public String getProviderMessageId() {
         return this.providerMessageId;
     }
@@ -151,6 +188,14 @@ public class MessagingSendAttemptRecord {
 
     public void setRetryAfterAt(String retryAfterAt) {
         this.retryAfterAt = retryAfterAt;
+    }
+
+    public String getSendRequestId() {
+        return this.sendRequestId;
+    }
+
+    public void setSendRequestId(String sendRequestId) {
+        this.sendRequestId = sendRequestId;
     }
 
     public String getStatus() {

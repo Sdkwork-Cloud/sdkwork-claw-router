@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cubox@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cubox-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cubox-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d4c5cdf9718173fafb7c45f3bca29a4334a270aff731258af13f5508f737dd27",

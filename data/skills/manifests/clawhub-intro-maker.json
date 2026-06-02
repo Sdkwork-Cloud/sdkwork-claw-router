@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/intro-maker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-intro-maker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-intro-maker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:434f6b7f2d6a05357287535651ba63be3039f2669de90fdcce4f3a78115dd218",

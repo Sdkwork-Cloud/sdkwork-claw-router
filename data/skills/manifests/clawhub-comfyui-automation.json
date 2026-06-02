@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comfyui-automation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-automation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comfyui-automation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:24ed9a7b590043ce573adef0975f3b8f46ac00de2a9e3f037544510732761b8b",

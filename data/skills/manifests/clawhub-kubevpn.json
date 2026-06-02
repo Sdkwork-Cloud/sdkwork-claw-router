@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kubevpn@2.9.14",
-      "artifactUrl": "data/skills/artifacts/clawhub-kubevpn-2.9.14.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kubevpn-2.9.14.json"
+      },
       "version": "2.9.14",
       "runtime": "metadata",
       "checksumHash": "sha256:849e81e9873ad65e7e89168757809fbcbbeba7246e481c129e79ad143bf3c9aa",

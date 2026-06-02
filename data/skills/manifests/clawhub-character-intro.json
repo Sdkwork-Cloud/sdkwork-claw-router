@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/character-intro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-character-intro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-character-intro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09fee9cbdcb64d394996d5a3aa16e15dc355a48ef737c3048882dae3bd7ca339",

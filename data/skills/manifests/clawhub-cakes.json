@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cakes@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cakes-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cakes-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:750bb60b4d23d7acb8ffa65f6edbc8115127ac738fb0cd22497aa4acd586f620",

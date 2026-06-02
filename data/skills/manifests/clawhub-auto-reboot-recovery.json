@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-reboot-recovery@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-reboot-recovery-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-reboot-recovery-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8fbf360b1e53f661cc24316171f06ec4cb4d25f5d35b3ecc75a5fc54556b81af",

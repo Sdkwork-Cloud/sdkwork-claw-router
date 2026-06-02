@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-ggsql@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-ggsql-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-ggsql-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a9a1a244dae86449963aadee23ffd7bb77b7cba184d46584ac31702552af71e",

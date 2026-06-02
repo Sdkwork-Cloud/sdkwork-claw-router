@@ -2,12 +2,12 @@
 export interface CommerceProductSpuRecord {
   /** Brand field on commerce product spu record. */
   brand?: string;
-  /** Category id field on commerce product spu record. */
-  category_id?: string;
   /** Created at field on commerce product spu record. */
   created_at: string;
   /** Description field on commerce product spu record. */
   description?: string;
+  /** Id field on commerce product spu record. */
+  id?: string;
   /** Organization id field on commerce product spu record. */
   organization_id?: string;
   /** Product type field on commerce product spu record. */

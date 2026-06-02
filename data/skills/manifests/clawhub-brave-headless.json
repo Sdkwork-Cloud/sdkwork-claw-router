@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/brave-headless@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-brave-headless-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-brave-headless-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:69e3110e72077cca3712960023d85b4d7a2592455243d41c395366492793343d",

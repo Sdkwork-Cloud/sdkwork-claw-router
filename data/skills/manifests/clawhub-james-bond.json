@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/james-bond@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-james-bond-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-james-bond-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:27fdb5cf15f5574916f1c3414072ee6b08a5507fbbb89003e36d75e14cf82f7c",

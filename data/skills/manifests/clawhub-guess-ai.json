@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/guess-ai@2.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-guess-ai-2.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-guess-ai-2.1.4.json"
+      },
       "version": "2.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d664a2102de9ef9c40febb9904baba149fb5428f0e7cb83e96537defac97d841",

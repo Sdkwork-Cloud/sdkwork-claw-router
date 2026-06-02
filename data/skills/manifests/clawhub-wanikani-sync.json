@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wanikani-sync@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wanikani-sync-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wanikani-sync-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0226e57ddd5e9058887c99ac50124b2e71ab610a8f6498a9a7506ff4dcd64e77",

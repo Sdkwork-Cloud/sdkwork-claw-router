@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oil-price-reminder-china@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-oil-price-reminder-china-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oil-price-reminder-china-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dfe8f706fa98b189698a38a2bff793590d2469b264e82e117deb8ac6a0185014",

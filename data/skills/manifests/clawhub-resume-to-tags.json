@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-to-tags@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-to-tags-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-to-tags-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57443cfd1bc881bb66a0b815cb8539bccf9b1c822e167e89200b9e59cdd3e23a",

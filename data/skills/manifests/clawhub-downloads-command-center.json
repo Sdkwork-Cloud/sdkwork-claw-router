@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/downloads-command-center@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-downloads-command-center-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-downloads-command-center-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:973b8a6d48c1a9537efb1eee67fe42319fd7ba19b6c711228575d40579383151",

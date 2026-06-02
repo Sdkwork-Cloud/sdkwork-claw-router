@@ -136,7 +136,7 @@ async fn app_forum_public_content_creation_uses_public_community_subject_without
                 .uri("/app/v3/api/content/feeds")
                 .header("content-type", "application/json")
                 .body(Body::from(
-                    r#"{"title":"Public launch discussion","content":"Community posts must not fail with a trusted subject error.","categoryId":1000,"tags":["community"]}"#,
+                    r#"{"title":"Public launch discussion","content":"Community posts must not fail with a trusted subject error.","categoryId":1000,"images":[{"kind":"image","source":"external_url","url":"https://cdn.example.test/forum/public-launch.png","publicUrl":"https://cdn.example.test/forum/public-launch.png"}],"tags":["community"]}"#,
                 ))
                 .unwrap(),
         )
@@ -153,6 +153,16 @@ async fn app_forum_public_content_creation_uses_public_community_subject_without
     assert_eq!(
         "Public launch discussion",
         create_feed_payload["data"]["title"]
+    );
+    assert!(create_feed_payload["data"].get("coverImage").is_none());
+    assert_eq!("image", create_feed_payload["data"]["cover"]["kind"]);
+    assert_eq!(
+        "external_url",
+        create_feed_payload["data"]["cover"]["source"]
+    );
+    assert_eq!(
+        "https://cdn.example.test/forum/public-launch.png",
+        create_feed_payload["data"]["cover"]["publicUrl"]
     );
     assert_eq!(0, create_feed_payload["data"]["author"]["id"]);
     assert_eq!(
@@ -281,7 +291,11 @@ fn app_forum_community_link_config_keeps_only_public_deployment_links() {
             "id": " wechat ",
             "label": " SDKWork   Community ",
             "url": "https://community.example.com/wechat",
-            "qrCodeUrl": "https://cdn.example.com/qrs/wechat.png",
+            "qrCode": {
+              "kind": "image",
+              "source": "external_url",
+              "publicUrl": "https://cdn.example.com/qrs/wechat.png"
+            },
             "tone": "green"
           },
           {
@@ -342,7 +356,11 @@ fn app_forum_community_link_config_keeps_only_public_deployment_links() {
             "id": "badqr",
             "label": "Bad QR",
             "url": "https://community.example.com/badqr",
-            "qrCodeUrl": "http://localhost/q.png",
+            "qrCode": {
+              "kind": "image",
+              "source": "external_url",
+              "publicUrl": "http://localhost/q.png"
+            },
             "tone": "teal"
           }
         ]
@@ -355,13 +373,17 @@ fn app_forum_community_link_config_keeps_only_public_deployment_links() {
     assert_eq!("https://community.example.com/wechat", links[0].url);
     assert_eq!(
         Some("https://cdn.example.com/qrs/wechat.png"),
-        links[0].qr_code_url.as_deref()
+        links[0]
+            .qr_code
+            .as_ref()
+            .and_then(|value| value.get("publicUrl"))
+            .and_then(serde_json::Value::as_str)
     );
     assert_eq!("green", links[0].tone);
     assert_eq!("fallback", links[1].id);
     assert_eq!("blue", links[1].tone);
     assert_eq!("badqr", links[2].id);
-    assert!(links[2].qr_code_url.is_none());
+    assert!(links[2].qr_code.is_none());
 }
 
 #[test]
@@ -410,7 +432,11 @@ async fn app_forum_overview_route_uses_startup_community_link_config() {
             "id": "forum",
             "label": "Forum Community",
             "url": "https://community.example.com/forum",
-            "qrCodeUrl": "https://cdn.example.com/qrs/forum.png",
+            "qrCode": {
+              "kind": "image",
+              "source": "external_url",
+              "publicUrl": "https://cdn.example.com/qrs/forum.png"
+            },
             "tone": "teal"
           }
         ]
@@ -441,7 +467,11 @@ async fn app_forum_overview_route_uses_startup_community_link_config() {
     );
     assert_eq!(
         "https://cdn.example.com/qrs/forum.png",
-        community_links[0]["qrCodeUrl"]
+        community_links[0]["qrCode"]["publicUrl"]
+    );
+    assert!(
+        community_links[0].get("qrCodeUrl").is_none(),
+        "forum community links must not expose the legacy qrCodeUrl alias"
     );
     assert_eq!("teal", community_links[0]["tone"]);
 }

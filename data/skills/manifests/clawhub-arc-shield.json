@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arc-shield@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arc-shield-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arc-shield-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:006b61e21c89b0677710e04ca6e1e6b7024e98c65706499e48e19c10b3312856",

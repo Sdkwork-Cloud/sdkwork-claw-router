@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-codex-gpt54-enable@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-codex-gpt54-enable-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-codex-gpt54-enable-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb42b284c98dd9cfc7bb078e35acde1bf3d5c471383dcbd9926fb0abb9b13732",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/soulcraft@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-soulcraft-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-soulcraft-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:30a497aa23a4c1b073afb49996f85b9a5856f9b86301ecd6a22f02757c10ccb2",

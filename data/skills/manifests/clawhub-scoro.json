@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scoro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scoro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scoro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ee24188b1cad964dbaf306afbfc6b0cf07931350e25150e80a6ae2d0bb380a0",

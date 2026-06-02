@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tx-decoder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tx-decoder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tx-decoder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7eb6975e91536ee51f6ac65ee299cf0b580f564437d991378c39892ff7f471f3",

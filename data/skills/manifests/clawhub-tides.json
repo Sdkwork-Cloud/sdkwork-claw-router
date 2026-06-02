@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tides@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tides-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tides-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:593eec71a2ceb5c3bef93263c94395a68568ca5e940e676364cda3edeac769db",

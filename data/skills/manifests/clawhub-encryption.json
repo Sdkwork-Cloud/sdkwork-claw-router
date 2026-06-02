@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/encryption@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-encryption-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-encryption-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:503bdc56b63f519deed0121afd4a7b48cd5fd219329054a292cf9b2a48bb764a",

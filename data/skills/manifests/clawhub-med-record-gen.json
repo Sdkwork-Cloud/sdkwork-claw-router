@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/med-record-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-med-record-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-med-record-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2fa9df2761e79056f7770298266cbfd1ca37559ce313f59401501fd3e9617c98",

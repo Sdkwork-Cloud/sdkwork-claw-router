@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/time-convert@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-time-convert-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-time-convert-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2f5b4c894d50a7862fe7fd75aff8ec743c4451011a279f0b894bb830839778d",

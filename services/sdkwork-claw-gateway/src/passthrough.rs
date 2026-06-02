@@ -2154,8 +2154,8 @@ mod tests {
     use super::*;
     use sdkwork_claw_product::domain::ModelVendor;
     use sdkwork_claw_product::domain::{
-        AiModel, ApiKeyGroup, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition,
-        Money, PriceSide, PricingPlan,
+        AiModel, ChannelGroup, GatewayApiKey, ModelPrice, ModelProviderRoute,
+        ModelVendorDefinition, Money, PriceSide, PricingPlan,
     };
     use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 
@@ -2291,7 +2291,7 @@ mod tests {
             DecimalValue::parse("1.000000").unwrap(),
             Money::usd("0.000000").unwrap(),
         ));
-        catalog.add_api_key_group(ApiKeyGroup::new(
+        catalog.add_channel_group(ChannelGroup::new(
             10,
             "standard-group",
             "standard",

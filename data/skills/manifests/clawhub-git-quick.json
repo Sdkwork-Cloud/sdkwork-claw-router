@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-quick@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-quick-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-quick-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8e249e142ae3c8bdd212bd02c4358d6c5df6473cd7354d1d5139da0f9ea896ad",

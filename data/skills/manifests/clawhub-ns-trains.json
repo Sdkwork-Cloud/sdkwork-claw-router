@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ns-trains@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ns-trains-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ns-trains-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:91fd0b1af40e5fc65b64d452c72f41842a285c21fbba0efd553613ef0f8831aa",

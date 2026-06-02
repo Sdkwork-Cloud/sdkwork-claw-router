@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/random-thought@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-random-thought-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-random-thought-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:38eb7d86026d7abaffcaad0cdaeb1df8972e7c5da083204e95755b66d31e6253",

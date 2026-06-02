@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glm-grounding@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-glm-grounding-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glm-grounding-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cbfe3f74c4f7c2bb188cfbc3b536a4f65a45ef99fd3b6b4da3d37566905b419b",

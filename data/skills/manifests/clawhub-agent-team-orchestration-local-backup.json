@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-team-orchestration-local-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-team-orchestration-local-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-team-orchestration-local-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c88721927d1928915c15d085788579b2f97523c63ea25676de2c9f5e0d7d23d0",

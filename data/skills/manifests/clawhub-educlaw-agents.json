@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/educlaw-agents@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-educlaw-agents-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-educlaw-agents-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:84683dbc32a9572c8b8afa62a3323962744605477bff7dd957871912d30f3637",

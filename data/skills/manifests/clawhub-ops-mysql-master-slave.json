@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ops-mysql-master-slave@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ops-mysql-master-slave-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ops-mysql-master-slave-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:325a6d54a42410706b4c1f0677b9e8fe75ef481a64f371df7fb5bfa5f64e4763",

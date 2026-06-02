@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-doppelganger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-doppelganger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-doppelganger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f54a25fa1656f67cf54bbef72758b7941ec1629045cda95cee94e2a37ef17a7c",

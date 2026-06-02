@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-art-lessons@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-art-lessons-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-art-lessons-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:12b1094d46bdf907c3c098ca12e8543b97179c0f6b11811276514b2032935be5",

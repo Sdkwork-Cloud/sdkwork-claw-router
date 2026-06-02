@@ -6,6 +6,8 @@ export interface CommerceProductAttributeRecord {
   created_at: string;
   /** Filterable field on commerce product attribute record. */
   filterable: boolean;
+  /** Id field on commerce product attribute record. */
+  id?: string;
   /** Name field on commerce product attribute record. */
   name: string;
   /** Organization id field on commerce product attribute record. */

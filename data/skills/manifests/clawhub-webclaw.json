@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/webclaw@2.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-webclaw-2.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-webclaw-2.1.3.json"
+      },
       "version": "2.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:8d3cbb81ddb8b91494a4acd3adc442faeff9147278258ad2ab5f523d9f260b0a",

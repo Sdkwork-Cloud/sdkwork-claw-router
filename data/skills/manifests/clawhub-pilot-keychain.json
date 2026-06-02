@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-keychain@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-keychain-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-keychain-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:937bcfe327c0dbdc515f501954a437aa423e144c2989fd39c311b8e4b46b2bec",

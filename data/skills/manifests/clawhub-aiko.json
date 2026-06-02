@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aiko@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-aiko-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aiko-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1e14006c90f4329fca34fcab6ebe3db274cbc557e6bccdb889aa50e11b27772d",

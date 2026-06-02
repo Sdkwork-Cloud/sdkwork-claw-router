@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maker-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-maker-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maker-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:17016ea1cec40af10ac221b514a8f1629cb08aa4d0ee8a679fc299460f8c2139",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-summarize@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-summarize-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-summarize-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1256931231975f5cd4ac6ee56dcbf62ff50345008b4d727c40773f69e3e9574e",

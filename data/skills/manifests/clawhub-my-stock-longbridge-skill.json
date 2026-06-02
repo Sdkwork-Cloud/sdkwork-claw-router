@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-stock-longbridge-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-stock-longbridge-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-stock-longbridge-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:28326a800276be366e298c9151fbabd64cc2ca34f7824245c28099f621a4eb3f",

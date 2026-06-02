@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/traceable@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-traceable-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-traceable-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:61033925d59e43e9c35988548eeb2c834fef94a4f2d4c6666ee9c9ba9957be9a",

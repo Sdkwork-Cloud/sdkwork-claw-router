@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/valuescan-skill@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-valuescan-skill-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-valuescan-skill-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:268a17995d568474bf94e3a1fe8493164d7c8927e00279c8bf35bf2da2e45ec8",

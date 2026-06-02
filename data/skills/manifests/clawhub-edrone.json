@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edrone@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-edrone-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edrone-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ddaeb2c76d4f04a6811177a73223f173e08d3972e04538753a172cea916cff7c",

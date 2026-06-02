@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rolls-royce-brand@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rolls-royce-brand-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rolls-royce-brand-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:034b8e44d704af043abf5f11b271c38ddc596770205ef7b5a2815d5b7c30a997",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-onchain-watch@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-onchain-watch-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-onchain-watch-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:953baf457030ca19b4972a81bfa5f60cf2fb294a3d5a031db7e44ceb813c647a",

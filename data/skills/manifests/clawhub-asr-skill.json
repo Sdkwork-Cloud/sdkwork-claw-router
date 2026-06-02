@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/asr-skill@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-asr-skill-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-asr-skill-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e9f61e00b78f8e1cf00404f540d3d6ef386b0f67608f0e652fba2bf680dbad44",

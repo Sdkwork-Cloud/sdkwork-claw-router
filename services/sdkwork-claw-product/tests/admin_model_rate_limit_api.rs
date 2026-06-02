@@ -26,11 +26,11 @@ async fn admin_model_rate_limit_route_creates_and_lists_model_limits() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/rate_limits/models")
+                .uri("/backend/v3/api/system/rate_limits/models")
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"model":"openai/gpt-4o-mini","group":"standard-group","rpm":600,"tpm":120000}"#,
+                    r#"{"model":"openai/gpt-4o-mini","channelGroup":"standard-group","rpm":600,"tpm":120000}"#,
                 ))
                 .unwrap(),
         )
@@ -44,7 +44,15 @@ async fn admin_model_rate_limit_route_creates_and_lists_model_limits() {
         "openai/gpt-4o-mini",
         create_payload["data"]["item"]["model"]
     );
-    assert_eq!("standard-group", create_payload["data"]["item"]["group"]);
+    assert_eq!(
+        "standard-group",
+        create_payload["data"]["item"]["channelGroup"]
+    );
+    assert_eq!("10", create_payload["data"]["item"]["channelGroupId"]);
+    assert_eq!(
+        "Standard group",
+        create_payload["data"]["item"]["channelGroupName"]
+    );
     assert_eq!(600, create_payload["data"]["item"]["rpm"]);
     assert_eq!(120000, create_payload["data"]["item"]["tpm"]);
     assert_eq!("active", create_payload["data"]["item"]["status"]);
@@ -53,7 +61,7 @@ async fn admin_model_rate_limit_route_creates_and_lists_model_limits() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/rate_limits/models")
+                .uri("/backend/v3/api/system/rate_limits/models")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::empty())
                 .unwrap(),
@@ -83,11 +91,11 @@ async fn admin_model_rate_limit_route_rejects_invalid_model_without_calling_stor
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/rate_limits/models")
+                .uri("/backend/v3/api/system/rate_limits/models")
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"model":"gpt 4o","group":"standard-group","rpm":600,"tpm":120000}"#,
+                    r#"{"model":"gpt 4o","channelGroup":"standard-group","rpm":600,"tpm":120000}"#,
                 ))
                 .unwrap(),
         )
@@ -113,11 +121,11 @@ async fn admin_model_rate_limit_route_rejects_invalid_limit_without_calling_stor
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/rate_limits/models")
+                .uri("/backend/v3/api/system/rate_limits/models")
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"model":"gpt-4o-mini","group":"standard-group","rpm":0,"tpm":120000}"#,
+                    r#"{"model":"gpt-4o-mini","channelGroup":"standard-group","rpm":0,"tpm":120000}"#,
                 ))
                 .unwrap(),
         )
@@ -142,7 +150,7 @@ async fn admin_model_rate_limit_route_rejects_missing_trusted_subject() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/rate_limits/models")
+                .uri("/backend/v3/api/system/rate_limits/models")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -152,6 +160,28 @@ async fn admin_model_rate_limit_route_rejects_missing_trusted_subject() {
     assert_eq!(StatusCode::UNAUTHORIZED, response.status());
     let payload = json_payload(response).await;
     assert_eq!("4010", payload["code"]);
+}
+
+#[tokio::test]
+async fn admin_model_rate_limit_route_does_not_expose_legacy_public_path() {
+    let router = sdkwork_claw_product::api::admin_model_rate_limit_router_with_store(
+        Arc::new(TestModelRateLimitStore::default()),
+        Arc::new(TestUuidGenerator),
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("GET")
+                .uri("/backend/v3/api/router/rate_limits/models")
+                .internal_trusted_subject(10, 20, 30)
+                .body(Body::empty())
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::NOT_FOUND, response.status());
 }
 
 async fn json_payload(response: axum::response::Response) -> Value {
@@ -200,8 +230,9 @@ impl AdminModelRateLimitStore for TestModelRateLimitStore {
                 tenant_id: command.subject.tenant_id,
                 organization_id: command.subject.organization_id,
                 model: command.model,
-                group: command.group,
-                group_id: 10,
+                channel_group: command.channel_group,
+                channel_group_id: 10,
+                channel_group_name: "Standard group".to_owned(),
                 rpm: command.rpm,
                 tpm: command.tpm,
                 status: "active".to_owned(),

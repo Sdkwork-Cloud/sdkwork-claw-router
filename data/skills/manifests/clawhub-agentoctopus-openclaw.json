@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentoctopus-openclaw@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentoctopus-openclaw-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentoctopus-openclaw-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:449fa18f523a3f5944dc05602d9896db6e9fb6315575199b953f3c14c19c0ad5",

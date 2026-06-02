@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-levels@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-levels-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-levels-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c594d33a1d7c041bbb097db3da2cef7ed031736e2f6445a16c970436d2cfed71",

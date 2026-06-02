@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-audit-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-audit-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-audit-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:68e84ea51f392ab11d8b7175a078c00aa9c551f35f5f70320091292903928cc8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sync-discord-identity@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sync-discord-identity-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sync-discord-identity-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bc23abb9af49c9533b469f33ab4d81192216961c2f27d56eea75972b19a0c604",

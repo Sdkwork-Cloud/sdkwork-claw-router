@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/miniorange@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-miniorange-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-miniorange-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:696c6fc08b951b578f08de9d95e494f753a7bea494775650a048e73a1e04ca4f",

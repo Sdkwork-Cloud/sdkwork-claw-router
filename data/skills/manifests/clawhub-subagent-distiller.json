@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subagent-distiller@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-subagent-distiller-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subagent-distiller-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:840bba5ceb43214d5b85376b677161c97adcd1d93f152afcb10aceb6538bbe93",

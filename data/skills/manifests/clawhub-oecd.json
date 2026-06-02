@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oecd@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-oecd-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oecd-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d0b5534286b5180eb41e7f49ea511db6a280ae7b64d91e54567dd555ee05953",

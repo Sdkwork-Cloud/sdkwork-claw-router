@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/neovim-daily-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-neovim-daily-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-neovim-daily-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca45d3b7e6482688da2cba37eafba7f45850d355e68ff9e9fe637acd50f3ba31",

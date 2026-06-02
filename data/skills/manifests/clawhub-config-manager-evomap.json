@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/config-manager-evomap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-config-manager-evomap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-config-manager-evomap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:962d12247e230aadd76d633bff82011d4f95bc79f6cfbd693c06c90a566e22ef",

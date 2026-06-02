@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chibi-gen-skill@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-chibi-gen-skill-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chibi-gen-skill-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:66d37d846b328f6eea4711a3f921df2ca911731b864d16c19ce2ba47e01f32a3",

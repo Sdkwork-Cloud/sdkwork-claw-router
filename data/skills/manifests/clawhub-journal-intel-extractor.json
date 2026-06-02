@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/journal-intel-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-journal-intel-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-journal-intel-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e9f7c89f59efd983775f5dfc89a37e5afc76dd547aa2c04d4c763b20aa546ac0",

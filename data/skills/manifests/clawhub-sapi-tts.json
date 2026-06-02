@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sapi-tts@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sapi-tts-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sapi-tts-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f96ddec55482cf5d03dbfd45c62897a6116af64219feee0be340c5772682bfe5",

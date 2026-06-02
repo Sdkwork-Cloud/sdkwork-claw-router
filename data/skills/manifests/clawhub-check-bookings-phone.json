@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/check-bookings-phone@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-check-bookings-phone-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-check-bookings-phone-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b700fbaa5e94c68a51c13a0e29fb924615fc6b0dcecc1f6f138cb2865c8d1c65",

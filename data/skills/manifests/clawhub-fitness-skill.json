@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fitness-skill@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-fitness-skill-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fitness-skill-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f802291f81508c4b8ff5f32cc4dfb994326d8467342062653aa6856c19844929",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nvidia-model-config@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-nvidia-model-config-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nvidia-model-config-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:b1bd55e2a5df4ef198714bb64c56faed5c9e195222afc4f611e1437fd5151d42",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linux-system-controller@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linux-system-controller-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linux-system-controller-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ebce19e40dc65fc131ad32cd130682e196b21d6ca034ea631f7aca2eeac39b33",

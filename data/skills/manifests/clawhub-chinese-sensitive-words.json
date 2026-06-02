@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-sensitive-words@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-sensitive-words-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-sensitive-words-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:afb78157c01e53a2542ac7f627c3469539c8f4798f93dd14d3f5ac595bb99264",

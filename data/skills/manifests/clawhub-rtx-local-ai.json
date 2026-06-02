@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rtx-local-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rtx-local-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rtx-local-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eff664ed812f29df4caa6349b61bf0cd2f9b1c5514791dae6c3567bce38a007d",

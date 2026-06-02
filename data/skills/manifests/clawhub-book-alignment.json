@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-alignment@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-alignment-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-alignment-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f6f05b4a0fd69d77f53e5f0203347238dc96d8e42dca0c78aa26c15d82ad24e1",

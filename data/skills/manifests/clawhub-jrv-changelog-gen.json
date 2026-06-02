@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jrv-changelog-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jrv-changelog-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jrv-changelog-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f4f3befee8abdc7d4462b83c6dcad803811fab822e90f1448c1150d12fab54cd",

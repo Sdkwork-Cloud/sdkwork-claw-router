@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/streak@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-streak-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-streak-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:486894f54add4e8a2084b737814bd62ff0eba8f112edfd12c0b16dcc9afab58e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cert-decode@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cert-decode-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cert-decode-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:353feb1cc8c764cdbac4cdbaa924450c28e0daa6b7dbfe250b8ee612ad96e3b5",

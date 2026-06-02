@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/british-museum@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-british-museum-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-british-museum-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c4f94a73e48ff640b8feb078cd4ee7ce7dbd477919b929ccd637baef4899c54e",

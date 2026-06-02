@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/super-websearch-realtime@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-super-websearch-realtime-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-super-websearch-realtime-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:44fa32b39f93f91c043260d7827654386527a46115713ecbda8b58c4c920076b",

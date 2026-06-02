@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shopflow-read-only-packet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shopflow-read-only-packet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shopflow-read-only-packet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1fa9b49ff53a2afab277046fee76806204959adf3e820cb1b6a263cd85bd566a",

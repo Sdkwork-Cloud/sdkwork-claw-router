@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/romance@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-romance-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-romance-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:451273b5630657689e4c8a8ea9c6a5d13324b7beca3bf225c777b6c580640c24",

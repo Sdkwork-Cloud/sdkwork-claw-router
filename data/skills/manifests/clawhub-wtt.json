@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wtt@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wtt-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wtt-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10d13b7c353d0e8ae73e1c083450fe346a12982a7721fe2825dd4f80c32ee2f7",

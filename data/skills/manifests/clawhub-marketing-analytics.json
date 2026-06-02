@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marketing-analytics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marketing-analytics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marketing-analytics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0d66c316cfb564ed320a1101f2790ccaeffd11922f79e80c71a341b7c502130",

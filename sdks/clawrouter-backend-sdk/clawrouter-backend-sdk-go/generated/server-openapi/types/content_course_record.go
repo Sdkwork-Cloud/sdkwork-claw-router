@@ -27,7 +27,7 @@ type ContentCourseRecord struct {
 	StudentsCount string `json:"students_count"`
 	Tags map[string]JsonValue `json:"tags"`
 	TenantId string `json:"tenant_id"`
-	ThumbnailUrl string `json:"thumbnail_url"`
+	Thumbnail MediaResource `json:"thumbnail"`
 	Title string `json:"title"`
 	UpdatedAt string `json:"updated_at"`
 	Uuid string `json:"uuid"`

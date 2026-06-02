@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/release-readiness-checker@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-release-readiness-checker-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-release-readiness-checker-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:521be6e268f875f83b4675549175a8c0d0368782efe8ea58e85553b7a1203042",

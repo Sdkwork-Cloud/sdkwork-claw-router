@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-brand-shield@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-brand-shield-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-brand-shield-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:b70dbff77a73187f61b6d62c31e79654028d8a04bbe78e07f718783ac4961b9c",

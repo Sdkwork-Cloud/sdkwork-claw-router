@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spotify-news-digest@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-spotify-news-digest-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spotify-news-digest-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9170072bbe1d3efcc7c206e455c79af49bcb28a494539490a792dfee3b404b9d",

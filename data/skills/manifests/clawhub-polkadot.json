@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/polkadot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-polkadot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-polkadot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1a1587679d478e508cd2e58346dda579d546fcccba2956bb3647ec8f65fb5715",

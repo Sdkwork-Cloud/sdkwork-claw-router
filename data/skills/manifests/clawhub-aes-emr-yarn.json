@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aes-emr-yarn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aes-emr-yarn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aes-emr-yarn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70285a9539f4450b3b91668dbbdbfa2eeb2071dd5014b3be60f3b001087c90b3",

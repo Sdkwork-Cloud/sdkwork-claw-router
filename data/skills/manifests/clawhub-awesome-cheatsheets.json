@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/awesome-cheatsheets@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-awesome-cheatsheets-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-awesome-cheatsheets-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e18fa566283fbf6739b965139f167d059c90e57cfb36eef15c311c8c8270e402",

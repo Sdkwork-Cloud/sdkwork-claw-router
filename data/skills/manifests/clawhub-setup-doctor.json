@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/setup-doctor@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-setup-doctor-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-setup-doctor-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:24fb48d3dc8f6d3c2c59ee68e78b57e95c7bb067a710e8f7209d86637bd91b3a",

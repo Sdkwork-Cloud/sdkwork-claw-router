@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-axiomata-deploy@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-axiomata-deploy-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-axiomata-deploy-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df21514c003a02d523badd83e1029d8311663812d82865b3665016100de8101a",

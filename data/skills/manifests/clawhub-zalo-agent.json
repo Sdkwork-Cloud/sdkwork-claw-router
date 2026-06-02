@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zalo-agent@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zalo-agent-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zalo-agent-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aaa3d18eb8c680befd24a15deaa90a12e385c895a6b2b4c3cf198a5d00f83225",

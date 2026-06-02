@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-ops-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-ops-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-ops-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6856a1ed9441e4b7b361137f5e8db54bd914ab3445694d113ab6a7c3819f4cb7",

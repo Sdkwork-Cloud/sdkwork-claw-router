@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scf-deep-analysis@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-scf-deep-analysis-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scf-deep-analysis-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8c6049b0cdfcc4839555edf25667c15c2871af697fc5be371dd528bd9eb21d08",

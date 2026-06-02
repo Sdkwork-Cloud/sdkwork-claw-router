@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ampere@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ampere-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ampere-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1783a1c105df9ecca54dcabfca6f24dbbf7ae8b866f7d29a941fcbd066e33f2c",

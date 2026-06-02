@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mail-invoice-archiver-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mail-invoice-archiver-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mail-invoice-archiver-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc0cd6ce70127a89b1d5fe0d57f0203c7ba3e88583b53ad1b2cb85dab4d52df6",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meetlark@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meetlark-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meetlark-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70bbe02fb4ee855a64cf653ba9253d37972ca049aa3e2b5849982c8375125faf",

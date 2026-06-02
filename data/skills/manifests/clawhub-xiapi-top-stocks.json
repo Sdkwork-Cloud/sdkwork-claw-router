@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiapi-top-stocks@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiapi-top-stocks-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiapi-top-stocks-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a8ff4767f5e1cb480c68a9b8ddb7aa94bb5a2afd65b4c566ce5461b34457410e",

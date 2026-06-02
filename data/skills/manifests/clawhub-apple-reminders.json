@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-reminders@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-reminders-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-reminders-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4772c98321cf7b879e26c949ab8b9418f069c1289a06960c4ad82de8d88b122e",

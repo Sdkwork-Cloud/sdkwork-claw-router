@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/leiga@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-leiga-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-leiga-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2fa8ebeea4252d3759241cb6c1efa0b49e02d45ff5c36d3ff293a53930684181",

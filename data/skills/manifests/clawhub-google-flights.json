@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-flights@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-flights-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-flights-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7bf6a691ac06c0a13110a7242bbb2d057c7bba2834946613f7780607bdf40da",

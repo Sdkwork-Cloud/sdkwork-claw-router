@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gate-mcp-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gate-mcp-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gate-mcp-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67bbca22a6b08636a0d08a114bf535669d06100f0a477f02c4e2782993e877d3",

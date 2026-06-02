@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/steamedclaw@3.9.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-steamedclaw-3.9.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-steamedclaw-3.9.0.json"
+      },
       "version": "3.9.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a0b24ff78b7b2af24eb1fab757458fccc487e52fe4c1b6ffb2b9d23d2b1a46ab",

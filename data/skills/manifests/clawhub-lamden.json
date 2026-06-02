@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lamden@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-lamden-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lamden-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4a39cf074e6204eb3a0ca2c751f43e3b926e872ce7509339326c834d4ee80512",

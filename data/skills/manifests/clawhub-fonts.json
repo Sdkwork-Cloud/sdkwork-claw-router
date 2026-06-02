@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fonts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fonts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fonts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ba798f350bcc9317a93435656d70a52020e7ffec4b3534d66edf23f6c69dda8d",

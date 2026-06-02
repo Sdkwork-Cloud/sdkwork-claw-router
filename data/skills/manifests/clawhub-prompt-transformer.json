@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-transformer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-transformer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-transformer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ba021e92420c9fbeb516540a2c5b330af7971385ce846497c4f03150660b1406",

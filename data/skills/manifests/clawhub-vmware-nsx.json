@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vmware-nsx@1.5.22",
-      "artifactUrl": "data/skills/artifacts/clawhub-vmware-nsx-1.5.22.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vmware-nsx-1.5.22.json"
+      },
       "version": "1.5.22",
       "runtime": "metadata",
       "checksumHash": "sha256:108b8768a2cc9fc6bef5e6b2f34c3589fc8d33e6549eee24be54b1d50db977af",

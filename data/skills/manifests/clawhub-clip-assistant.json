@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clip-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clip-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clip-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6120be57f40fe0cdec975b66eb1d91e3dac0f2f7c3c1520476585515bca381d7",

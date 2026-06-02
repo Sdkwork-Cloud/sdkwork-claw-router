@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawreverse-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawreverse-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawreverse-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96b2e7ab93c7a1e684ecc70ba134b51556adac6acb46dfd8a39dc9fb71910699",

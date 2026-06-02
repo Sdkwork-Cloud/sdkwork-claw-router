@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-to-text@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-to-text-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-to-text-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3927ea6e33d011bf77d365d3315be2f99ac438a0453ed8e8a51e87eadc3d1c8c",

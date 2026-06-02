@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aigc-bak@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aigc-bak-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aigc-bak-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc51337564ee6164313c160f0b6d28ac0a8eee8e8a9499601ad7bd57fa821cda",

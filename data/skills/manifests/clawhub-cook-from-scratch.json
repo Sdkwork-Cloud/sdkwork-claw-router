@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cook-from-scratch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cook-from-scratch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cook-from-scratch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f250c2cd206bdcbd078b4e8455d4d184f683151ab031b96c04b53099146b600f",

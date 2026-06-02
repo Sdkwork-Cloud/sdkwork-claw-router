@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baseline-rag@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-baseline-rag-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baseline-rag-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6c97623bb11b7725e1bd41112e28b1c7a38213cc6e2ed078b8bb0670b6528873",

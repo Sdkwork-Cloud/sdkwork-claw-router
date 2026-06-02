@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modesty-stt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-modesty-stt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modesty-stt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd948c0318073a7b0e4ca3ae5c22b224875fb1c5b5b052215ebe8ed7210e5298",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bookify@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bookify-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bookify-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:512a9214fdd4d7ad4790543a8e86e0c42b79758e14fbd58d5ff25a3e59235bab",

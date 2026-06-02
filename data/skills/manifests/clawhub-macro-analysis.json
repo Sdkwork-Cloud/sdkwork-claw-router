@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/macro-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-macro-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-macro-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:506cb70b108353a132520290e6c79aaab73c2095176e3b70b45d89e926df1057",

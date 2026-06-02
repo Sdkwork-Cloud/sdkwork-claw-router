@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nix-memory@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nix-memory-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nix-memory-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6fe07c4a5b9f6cbf9d8d86f8aa2656f70990bcb29b3678ca368fa7ac73178ad6",

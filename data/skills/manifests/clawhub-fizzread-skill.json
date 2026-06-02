@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fizzread-skill@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-fizzread-skill-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fizzread-skill-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:a3a9f3b429381b2b8b5ae32a514c0bb916c28c16595468c688f52184d5cd5ee8",

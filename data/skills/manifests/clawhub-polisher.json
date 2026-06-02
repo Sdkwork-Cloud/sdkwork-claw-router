@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/polisher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-polisher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-polisher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bafe630514ceae42cb1b68f781766de0ef09731c7db047f5157912c534b80981",

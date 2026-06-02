@@ -7,6 +7,7 @@ data class CommerceOrderEventRecord(
     val eventNo: String? = null,
     val eventType: String? = null,
     val fromStatus: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val message: String? = null,
     val orderId: String? = null,

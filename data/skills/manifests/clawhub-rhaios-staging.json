@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rhaios-staging@0.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-rhaios-staging-0.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rhaios-staging-0.1.4.json"
+      },
       "version": "0.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a9099dc283c1bb37244c8aa289dccc50c5952b8334e40a6d2d11c192a340481f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/check-chinese-holiday@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-check-chinese-holiday-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-check-chinese-holiday-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3d2e97701acbb3dc360d029d8228bf988ca8c77efd9b6e4804f3d335c522534d",

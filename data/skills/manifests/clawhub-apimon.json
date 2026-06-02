@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apimon@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-apimon-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apimon-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ff874d728298dd3b80bd4970735c0791bcd1834c3380e2a7d36d702a35e2b676",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aldi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aldi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aldi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cef4d6347c22869acab1cfcd77f98f1eb3ca707326afb1ce20b60ee0c5080fa4",

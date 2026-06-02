@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/caltech@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-caltech-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-caltech-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:eeb0a9d665110510585a5714e14f5e460c02dda5d2710998842f287c4366cff1",

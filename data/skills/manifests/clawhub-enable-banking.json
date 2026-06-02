@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/enable-banking@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-enable-banking-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-enable-banking-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1154c96bdec2617b5503cc363d7ed6cdcc30b568bc3ddef8c1388f20d16819af",

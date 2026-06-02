@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-generative-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-generative-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-generative-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:abc3efb317578961047fff6d49551398bddaf1c67e801b4c0f7f30c9ab3b3cf2",

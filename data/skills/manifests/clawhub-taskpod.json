@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taskpod@1.16.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-taskpod-1.16.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taskpod-1.16.0.json"
+      },
       "version": "1.16.0",
       "runtime": "metadata",
       "checksumHash": "sha256:22979a5bee6b8b9a7752e6bcce2cc3364a715cb0c742cdd6ab3d9b9c6fab9924",

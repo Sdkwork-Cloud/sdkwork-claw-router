@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rsa-ctf-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rsa-ctf-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rsa-ctf-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:feacf975a998967ba6f5140c9b8b9770330a999c520788d0efae30fb281c8c2d",

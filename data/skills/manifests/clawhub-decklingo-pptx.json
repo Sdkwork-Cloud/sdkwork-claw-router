@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/decklingo-pptx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-decklingo-pptx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-decklingo-pptx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:38009873ac82fe230c7636a2deae31071de07a65895d956096cc49eb443db112",

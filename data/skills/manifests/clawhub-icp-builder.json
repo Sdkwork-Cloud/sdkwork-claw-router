@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icp-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icp-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icp-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f4406a2fc98a475ad323c7b834f350cf083781a7793ed97ee9319a2a03bbed4",

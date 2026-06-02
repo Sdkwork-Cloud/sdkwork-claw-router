@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-tts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-tts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-tts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d6c0543f0c49f5293263dd4c639331f17dbdb9669a663fde5ebaa062e173df3f",

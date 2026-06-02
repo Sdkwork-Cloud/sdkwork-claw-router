@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/table-ocr@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-table-ocr-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-table-ocr-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b86e9af80a3d9b45984da683d511a5243955fa82c90ed28fe276e50eeb06c2cd",

@@ -64,6 +64,7 @@ pub struct CreateAdminPaymentProviderAccountCommand {
     pub subject: AdminTransactionCenterSubject,
     pub account_no: String,
     pub provider_code: String,
+    pub account_role: Option<String>,
     pub merchant_id: String,
     pub environment: String,
     pub country_code: String,
@@ -76,6 +77,48 @@ pub struct CreateAdminPaymentProviderAccountCommand {
     pub note: Option<String>,
     pub status: String,
     pub idempotency_key: String,
+    pub request_id: Option<String>,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct UpdateAdminPaymentProviderAccountCommand {
+    pub subject: AdminTransactionCenterSubject,
+    pub provider_account_id: String,
+    pub provider_code: String,
+    pub account_role: Option<String>,
+    pub merchant_id: String,
+    pub environment: String,
+    pub country_code: String,
+    pub settlement_currency: String,
+    pub secret_ref: String,
+    pub webhook_secret_ref: Option<String>,
+    pub certificate_ref: Option<String>,
+    pub rotated_at: Option<String>,
+    pub client_request_no: Option<String>,
+    pub note: Option<String>,
+    pub status: String,
+    pub idempotency_key: String,
+    pub request_id: Option<String>,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct UpdateAdminPaymentProviderAccountStatusCommand {
+    pub subject: AdminTransactionCenterSubject,
+    pub provider_account_id: String,
+    pub status: String,
+    pub client_request_no: Option<String>,
+    pub note: Option<String>,
+    pub idempotency_key: String,
+    pub request_id: Option<String>,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct DeleteAdminPaymentProviderAccountCommand {
+    pub subject: AdminTransactionCenterSubject,
+    pub provider_account_id: String,
     pub request_id: Option<String>,
     pub requested_at: String,
 }
@@ -135,6 +178,21 @@ pub trait AdminTransactionCenterStore {
         &'a self,
         command: CreateAdminPaymentProviderAccountCommand,
     ) -> AdminTransactionCenterFuture<'a, AdminTransactionJsonRecord>;
+
+    fn update_payment_provider_account<'a>(
+        &'a self,
+        command: UpdateAdminPaymentProviderAccountCommand,
+    ) -> AdminTransactionCenterFuture<'a, AdminTransactionJsonRecord>;
+
+    fn update_payment_provider_account_status<'a>(
+        &'a self,
+        command: UpdateAdminPaymentProviderAccountStatusCommand,
+    ) -> AdminTransactionCenterFuture<'a, AdminTransactionJsonRecord>;
+
+    fn delete_payment_provider_account<'a>(
+        &'a self,
+        command: DeleteAdminPaymentProviderAccountCommand,
+    ) -> AdminTransactionCenterFuture<'a, bool>;
 
     fn list_payment_methods<'a>(
         &'a self,

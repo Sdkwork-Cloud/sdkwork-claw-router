@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/system-info-windows-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-system-info-windows-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-system-info-windows-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:2e0877a50969d02a1751774e2014d48ee84b659925f93ec36716871879a1cecb",

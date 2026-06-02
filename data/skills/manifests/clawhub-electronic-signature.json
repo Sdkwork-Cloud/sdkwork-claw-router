@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/electronic-signature@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-electronic-signature-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-electronic-signature-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c77aea1f90f0c1e5439e1c21545fb2dc429150913815cd65f0879b41e582607a",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-my-business@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-my-business-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-my-business-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d0ad4e13ef933e02a0e68026e962205478c9d6c61356669e5747c1d4f51a52f6",

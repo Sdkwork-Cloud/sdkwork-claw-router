@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/twitch-platform@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-twitch-platform-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-twitch-platform-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd57eb415ddd0200da4056b7176a7c56673a609b5c3ba7e6b880c03f5cc459d3",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bearing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bearing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bearing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d8b6abb6cb6e9fa74b1d1d2df62c92dce8829c628fdc1fcc35f6d3e5f2f9ca77",

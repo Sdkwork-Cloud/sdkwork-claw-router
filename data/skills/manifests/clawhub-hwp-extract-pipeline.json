@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hwp-extract-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hwp-extract-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hwp-extract-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee6506d0fe05813ace7276dc69b707f4ae0fdaef22b692cc1344b978bcee5cbf",

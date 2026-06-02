@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/visa@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-visa-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-visa-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d10adafea412e1e8ab62f176af4733a4e57adbd77fc783884ee344ac871ef510",

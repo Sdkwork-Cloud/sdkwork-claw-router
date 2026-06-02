@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class AdminSkillUpdateRequest:
@@ -10,7 +13,7 @@ class AdminSkillUpdateRequest:
     capabilities: Optional[List[str]] = None
     category_id: Optional[str] = None
     config_schema: Optional[Dict[str, str]] = None
-    cover_image: Optional[str] = None
+    cover: Optional[MediaResource] = None
     currency: Optional[str] = None
     default_config: Optional[Dict[str, str]] = None
     description: Optional[str] = None
@@ -18,7 +21,7 @@ class AdminSkillUpdateRequest:
     entrypoint: Optional[str] = None
     featured: Optional[bool] = None
     homepage_url: Optional[str] = None
-    icon: Optional[str] = None
+    icon: Optional[MediaResource] = None
     is_builtin: Optional[bool] = None
     license_name: Optional[str] = None
     manifest_url: Optional[str] = None

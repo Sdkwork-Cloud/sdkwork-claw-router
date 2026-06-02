@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/add-to-awesome-list@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-add-to-awesome-list-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-add-to-awesome-list-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac4fbe79f7d4ed078b9cdf0493dc511edac47c58439505f4c2abbd7bd965888f",

@@ -3,6 +3,14 @@ use serde::{Deserialize, Serialize};
 /// Ai mcp server revision record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AiMcpServerRevisionRecord {
+    /// Args json field on ai mcp server revision record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub args_json: Option<std::collections::HashMap<String, String>>,
+
+    /// Auth type field on ai mcp server revision record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub auth_type: Option<String>,
+
     /// Command field on ai mcp server revision record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub command: Option<String>,
@@ -39,6 +47,10 @@ pub struct AiMcpServerRevisionRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub endpoint_url: Option<String>,
 
+    /// Env schema field on ai mcp server revision record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub env_schema: Option<std::collections::HashMap<String, String>>,
+
     /// Id field on ai mcp server revision record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -59,6 +71,10 @@ pub struct AiMcpServerRevisionRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub published_at: Option<String>,
 
+    /// Retry policy field on ai mcp server revision record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub retry_policy: Option<std::collections::HashMap<String, String>>,
+
     /// Revision no field on ai mcp server revision record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub revision_no: Option<String>,
@@ -78,6 +94,10 @@ pub struct AiMcpServerRevisionRecord {
     /// Tenant id field on ai mcp server revision record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub tenant_id: Option<String>,
+
+    /// Timeout ms field on ai mcp server revision record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub timeout_ms: Option<i64>,
 
     /// Transport field on ai mcp server revision record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

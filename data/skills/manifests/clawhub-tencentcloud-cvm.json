@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentcloud-cvm@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-cvm-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentcloud-cvm-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c22ca8bbe49027e9e706f903bff48890effd954f12f5d95d73b5fb3623d323f2",

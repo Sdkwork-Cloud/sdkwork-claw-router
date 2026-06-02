@@ -4,10 +4,14 @@ import type { JsonValue } from './json-value';
 export interface PromotionOfferAudienceRuleRecord {
   /** Created at field on promotion offer audience rule record. */
   created_at: string;
+  /** Id field on promotion offer audience rule record. */
+  id?: string;
   /** Offer version id field on promotion offer audience rule record. */
   offer_version_id: string;
   /** Organization id field on promotion offer audience rule record. */
   organization_id?: string;
+  /** Priority field on promotion offer audience rule record. */
+  priority: number;
   /** Rule operator field on promotion offer audience rule record. */
   rule_operator: string;
   /** Rule type field on promotion offer audience rule record. */

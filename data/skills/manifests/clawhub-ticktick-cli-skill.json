@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ticktick-cli-skill@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-ticktick-cli-skill-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ticktick-cli-skill-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:afd5b96fa4d0ac056a11d39d2e4b4cbfb711e2a6d132790ea02072b0ed36a4e6",

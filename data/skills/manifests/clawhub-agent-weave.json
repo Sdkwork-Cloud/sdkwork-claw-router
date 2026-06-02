@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-weave@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-weave-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-weave-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b507732453f1c56fb297151b913c5c0a7f87e071b013178617b9ecabac479cd2",

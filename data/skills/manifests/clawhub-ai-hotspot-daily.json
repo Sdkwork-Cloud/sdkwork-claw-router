@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-hotspot-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-hotspot-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-hotspot-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10d5f6607f42f61d97c804fc6e90593b8988feadd58412852761b0538ecfbda9",

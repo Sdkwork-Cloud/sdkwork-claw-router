@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/intent-translator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-intent-translator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-intent-translator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:845758c6fc094add8ac82d27ce5ceb2339ee9d53bb6f824501efb6eaa8e5b8d6",

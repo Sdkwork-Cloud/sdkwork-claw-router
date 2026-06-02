@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-knowledge-qa@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-knowledge-qa-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-knowledge-qa-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3658ea378fddad1896fbb9d9bf5a4e73124c16276ca3878df42519403598e036",

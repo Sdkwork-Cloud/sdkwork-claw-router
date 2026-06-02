@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/douyin-transcribe-skill@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-douyin-transcribe-skill-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-douyin-transcribe-skill-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d3776dbe129a881b98dbc46ab8f2ec6665dfa8d5c5dd3380af5098bc766dd19d",

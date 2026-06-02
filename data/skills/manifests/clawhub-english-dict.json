@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/english-dict@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-english-dict-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-english-dict-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1a7baecbde52f821cb6c6daa4fbb40cc6f0cb3f41c9ddabc22690a5c06951c53",

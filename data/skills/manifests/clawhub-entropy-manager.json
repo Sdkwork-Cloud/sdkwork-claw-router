@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/entropy-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-entropy-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-entropy-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52f1dd81c576c88a7ce711895577b5f46dc33d106602b7aa67c4f60c4bfaa5d5",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/porter@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-porter-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-porter-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d72e351e515b622837619dbf796ac3bc766bdcd2f0a4cdb4ab5d93fdc01dd15c",

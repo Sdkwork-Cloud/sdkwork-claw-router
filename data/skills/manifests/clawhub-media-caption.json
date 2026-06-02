@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/media-caption@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-media-caption-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-media-caption-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1dc3748cfd1847153e90af8fb012d76d943063725a320bf23f18a5fb0aba62a4",

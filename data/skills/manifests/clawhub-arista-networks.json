@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arista-networks@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arista-networks-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arista-networks-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f23f0f5779682abdb676ba7f62cc97e31504ced7f7907001a48573f521082961",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/senticlaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-senticlaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-senticlaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:643c1eb56f6988b85ea3aad2ba07a680391eebdb524d2ccaf3ffb01d47145e8f",

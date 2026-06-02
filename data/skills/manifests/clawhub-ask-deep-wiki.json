@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ask-deep-wiki@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ask-deep-wiki-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ask-deep-wiki-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f53e69a0164b95a0d648f8ec72b3086948077a7b593b78393ce237fc14bca9ac",

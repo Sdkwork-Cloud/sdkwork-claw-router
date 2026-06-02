@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mindmap@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mindmap-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mindmap-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:76b9da5e6e0e96caec52504487d075c680c8812068960f2f09566b2598d116e7",

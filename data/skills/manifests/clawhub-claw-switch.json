@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-switch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-switch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-switch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d78219716850c11c02015c41e087285b4fb93f015946b25df700e9137a7d8b30",

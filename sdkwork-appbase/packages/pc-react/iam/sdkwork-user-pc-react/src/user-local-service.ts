@@ -14,7 +14,7 @@ import {
 
 const SDKWORK_LOCAL_USER_SERVICE_DEFAULT_CAPABILITIES: SdkworkUserServiceCapabilities = {
   profile: {
-    avatarUrlEditable: false,
+    avatarEditable: false,
     emailEditable: false,
   },
   security: {

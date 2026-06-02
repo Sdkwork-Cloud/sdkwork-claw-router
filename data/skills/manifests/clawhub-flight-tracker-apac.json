@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flight-tracker-apac@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-flight-tracker-apac-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flight-tracker-apac-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:71a933cd25d3e646ca7da4a5765f9831930116668cac1a9928d67e39701a0e38",

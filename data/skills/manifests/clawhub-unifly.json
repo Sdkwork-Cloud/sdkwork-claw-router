@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unifly@0.8.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-unifly-0.8.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unifly-0.8.2.json"
+      },
       "version": "0.8.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a8e2ae981deeb92ca2a70a12fe97c0c4871a906a44e5d00fad9ea9b4edef42a9",

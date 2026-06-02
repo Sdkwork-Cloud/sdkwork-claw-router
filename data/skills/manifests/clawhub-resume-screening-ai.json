@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-screening-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-screening-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-screening-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2ca895c443bb4b1033f4e3ffb14cf8f3b412ec63a1177a904541987d15160445",

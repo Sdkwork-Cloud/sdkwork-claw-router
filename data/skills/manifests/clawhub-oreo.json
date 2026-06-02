@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oreo@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-oreo-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oreo-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:13438a462dc2ae55c7b2a821a1ceda6a0122002193176b87778e0bb826afc7d2",

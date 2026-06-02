@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/relay@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-relay-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-relay-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a56a65331b3a8a148d4112d2c0e7827dd3bf31c88e2fdb7b58f9f0e5d5766d4c",

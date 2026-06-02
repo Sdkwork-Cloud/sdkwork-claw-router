@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/automox@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-automox-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-automox-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:91f12ab83c571919c33c50f073de32c3c0b19355852e532a685c46df4641cd5a",

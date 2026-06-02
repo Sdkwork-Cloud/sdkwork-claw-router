@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/presence-recall@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-presence-recall-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-presence-recall-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:27dd6b790f4fc5af07027e67b004ef52601163b38106973fc13cb951e9f08b8f",

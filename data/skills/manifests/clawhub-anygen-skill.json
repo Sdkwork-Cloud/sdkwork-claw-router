@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anygen-skill@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-anygen-skill-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anygen-skill-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:718b5b56b9d706ef9591e68962eeb9981020ac2aa04bae3fa69ae5cf4ca01233",

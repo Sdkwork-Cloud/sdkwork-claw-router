@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arc-security@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-arc-security-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arc-security-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dbe4460edde7d0ded73cccb963146cedb3b30667117b367901638c694a8d80fb",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/juicy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-juicy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-juicy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4496d2b75ea425593766f0b4e1a8b22f011c5cb6de6a29e2c6dbaa9fb7946ab7",

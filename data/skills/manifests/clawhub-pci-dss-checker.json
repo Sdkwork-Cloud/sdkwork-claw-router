@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pci-dss-checker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pci-dss-checker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pci-dss-checker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac12215c46bc426d199d29c6b4c5ef1209db3975f6fd32f1a4da78eab8787ae4",

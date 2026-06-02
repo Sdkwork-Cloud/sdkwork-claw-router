@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quantum-messenger@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-quantum-messenger-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quantum-messenger-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:560f7a8568e9550cae328a908adf1fb63c12124abd82cf732a86415be8fc065d",

@@ -136,12 +136,12 @@ export async function requestCommercePayment(
 async function requestWechatJsapiPayment(
   payload: Record<string, unknown>,
 ): Promise<CommerceRequestPaymentResult> {
-  const bridge = windowRef()?.WeixinJSBridge;
-  if (!bridge || typeof bridge.invoke !== "function") {
+  const invoke = windowRef()?.WeixinJSBridge?.invoke;
+  if (typeof invoke !== "function") {
     throw new Error("WeixinJSBridge is unavailable");
   }
   return new Promise<CommerceRequestPaymentResult>((resolve) => {
-    bridge.invoke("getBrandWCPayRequest", payload, (result: unknown) => {
+    invoke("getBrandWCPayRequest", payload, (result: unknown) => {
       resolve({
         rawResult: result,
         status: mapWechatBridgeStatus(result),
@@ -153,12 +153,12 @@ async function requestWechatJsapiPayment(
 async function requestAlipayWapPayment(
   payload: Record<string, unknown>,
 ): Promise<CommerceRequestPaymentResult> {
-  const bridge = windowRef()?.AlipayJSBridge;
-  if (!bridge || typeof bridge.call !== "function") {
+  const call = windowRef()?.AlipayJSBridge?.call;
+  if (typeof call !== "function") {
     throw new Error("AlipayJSBridge is unavailable");
   }
   return new Promise<CommerceRequestPaymentResult>((resolve) => {
-    bridge.call("tradePay", payload, (result: unknown) => {
+    call("tradePay", payload, (result: unknown) => {
       resolve({
         rawResult: result,
         status: mapAlipayBridgeStatus(result),

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bash-themes@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bash-themes-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bash-themes-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a278a0ed2e9aaabce4b6c97aa2373c679565e3f5c5802efd3091192210a610f3",

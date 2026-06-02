@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
     from .commerce_product_sku_attribute_item import CommerceProductSkuAttributeItem
+    from .media_resource import MediaResource
 
 
 @dataclass
@@ -15,7 +16,9 @@ class CommerceProductSkuMutationRequest:
     status: str
     title: str
     attributes: Optional[List[CommerceProductSkuAttributeItem]] = None
+    barcode: Optional[str] = None
     default_currency_code: Optional[str] = None
     default_price_amount: Optional[str] = None
+    image: Optional[MediaResource] = None
     sales_unit: Optional[str] = None
     tax_category: Optional[str] = None

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jnj-health@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jnj-health-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jnj-health-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86e1e6f8eb626eb94ac763af1683aa773787b0a5a1f05d082204a1d2a7765291",

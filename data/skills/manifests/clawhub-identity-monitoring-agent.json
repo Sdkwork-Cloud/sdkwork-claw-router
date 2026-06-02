@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/identity-monitoring-agent@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-identity-monitoring-agent-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-identity-monitoring-agent-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:eb479ee52295f034d59d32f2bb14e8760ed1f01b9f740401f3ebf91f6fc914d5",

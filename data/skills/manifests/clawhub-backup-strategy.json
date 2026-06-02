@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/backup-strategy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-backup-strategy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-backup-strategy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:141f2c22ef1a4b09b75a4ee398f68346df36f841c2058bdca6e918725ace92fc",

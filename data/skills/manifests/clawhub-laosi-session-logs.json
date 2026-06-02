@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/laosi-session-logs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-laosi-session-logs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-laosi-session-logs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:85aba9b662bd8db0f9ed137faf4dd47687d062ce4080dc623a859743bb4fd82b",

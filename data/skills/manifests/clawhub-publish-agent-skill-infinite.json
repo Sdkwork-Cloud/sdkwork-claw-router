@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/publish-agent-skill-infinite@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-publish-agent-skill-infinite-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-publish-agent-skill-infinite-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f7429e39067e81cc7ea3af01bed9040ec1ee7aeb90eefeb0812aabb6e4762584",

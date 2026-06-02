@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-assemble@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-assemble-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-assemble-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9abc5e22f9de9266ed7a7dfeec22f797c06bb2ce3e5de64ce4a8e0c7fea39deb",

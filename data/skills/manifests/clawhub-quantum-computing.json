@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quantum-computing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quantum-computing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quantum-computing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f274950b63595311ff9bea85402a928b50753496ce5f46d09ebfa14c4b51a1a6",

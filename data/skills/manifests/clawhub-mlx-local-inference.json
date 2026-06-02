@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mlx-local-inference@2.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mlx-local-inference-2.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mlx-local-inference-2.2.1.json"
+      },
       "version": "2.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b7fa3390a2720b5fdeabc1663e708c2011226a4654575159e1c5983feea49460",

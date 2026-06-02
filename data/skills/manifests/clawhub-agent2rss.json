@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent2rss@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent2rss-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent2rss-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9760316a1cde7f1d5569a4b14eb8d64bf06f4f3ae68d35d80e11b586431c2567",

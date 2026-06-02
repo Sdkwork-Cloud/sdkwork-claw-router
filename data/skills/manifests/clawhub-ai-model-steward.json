@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-model-steward@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-model-steward-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-model-steward-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8d7a3ef45183add5f506b3c3f7ac00f0a10cf272f053aea88bd9b9a8eb5c6bd9",

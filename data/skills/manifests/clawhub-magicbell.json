@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/magicbell@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-magicbell-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-magicbell-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:80f4e53614a85293a621605e955479e585649df979f0be75751c5cad70ff3958",

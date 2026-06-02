@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-stock-decide-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-stock-decide-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-stock-decide-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a34389dae85c4a5f6917da6f9325b85bfa57c08ad10a1ee655c95a2e0d7db084",

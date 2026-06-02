@@ -16,6 +16,8 @@ export interface PromotionCodeRecord {
   claim_code_hash?: string;
   /** Claim code suffix field on promotion code record. */
   claim_code_suffix?: string;
+  /** Claimed quantity field on promotion code record. */
+  claimed_quantity: string;
   /** Code no field on promotion code record. */
   code_no: string;
   /** Code type field on promotion code record. */
@@ -28,6 +30,10 @@ export interface PromotionCodeRecord {
   currency_code: string;
   /** Expires at field on promotion code record. */
   expires_at?: string;
+  /** Id field on promotion code record. */
+  id?: string;
+  /** Max claims field on promotion code record. */
+  max_claims: string;
   /** Offer id field on promotion code record. */
   offer_id: string;
   /** Offer version id field on promotion code record. */

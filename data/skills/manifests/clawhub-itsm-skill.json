@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/itsm-skill@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-itsm-skill-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-itsm-skill-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c1d046b5b9d981e161eb63707854b2a0386a796e335acf116fa05471cadedb2",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aigc-images@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aigc-images-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aigc-images-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93cf0e8bfe6b89dc4afd7973701a1bcd9c0eb5e767e3973f1c05c9cdb6cc511b",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/notarize@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-notarize-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-notarize-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:57842b98636bcda47f5eaddb4dd2e7b3b09341aa7a880af365e9c587a2de1cec",

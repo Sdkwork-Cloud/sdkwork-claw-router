@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golang-troubleshooting@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-golang-troubleshooting-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golang-troubleshooting-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d81d26a6530cbc10f187f77d267f9666130443dc450563fa2456b86d010dd96f",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/productai-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-productai-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-productai-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f62d298923fafa9ea9b370083f2c1bdbdd17d5b07e6300d78656e7b602e7d435",

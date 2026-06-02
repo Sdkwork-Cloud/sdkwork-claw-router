@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-pc-security@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-pc-security-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-pc-security-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:23c236e06c265a64a83a7f14dfd007db5ce45843d1d725bc82a86c2499cce384",

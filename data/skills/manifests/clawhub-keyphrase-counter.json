@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/keyphrase-counter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-keyphrase-counter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-keyphrase-counter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b7d16f8e4a990567386207cef0d1edd3a8e3d04f9b98fda25a31d6829622f9b",

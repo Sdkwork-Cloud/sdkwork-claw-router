@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apache-echarts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apache-echarts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apache-echarts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ffab1aff48f7803d4d62ab6dc996ae62d997d581113f74b17e6ededa28d63305",

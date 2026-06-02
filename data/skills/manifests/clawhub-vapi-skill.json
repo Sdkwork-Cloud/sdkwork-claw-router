@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vapi-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vapi-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vapi-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2a10e97a7aa2a8e58543067519c1fce4ea8fb47650d3406d6de6efee8bf63fb",

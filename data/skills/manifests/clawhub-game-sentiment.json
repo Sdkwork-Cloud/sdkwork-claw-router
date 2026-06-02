@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/game-sentiment@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-game-sentiment-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-game-sentiment-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c3883a7e3222c0a42c8420947c1377f01642db0a5dfa38478f5b9865b6a958e",

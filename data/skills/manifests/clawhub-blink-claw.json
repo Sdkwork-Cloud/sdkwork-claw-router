@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blink-claw@1.7.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-blink-claw-1.7.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blink-claw-1.7.1.json"
+      },
       "version": "1.7.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4863736f8226a3e48f778a245624a429bef03668a5800a9b1b27a826fd05d664",

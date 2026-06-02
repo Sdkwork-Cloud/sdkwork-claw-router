@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-friendly-cli@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-friendly-cli-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-friendly-cli-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cafa489201906cc2c6388007156ae170b7ae40c4f955fbc287ac7f31d1f146b5",

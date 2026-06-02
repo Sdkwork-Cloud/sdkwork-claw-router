@@ -9,11 +9,11 @@ public class AppDetailResponse {
     private String downloads;
     private List<String> features;
     private String id;
-    private String image;
+    private MediaResource image;
     private String name;
     private Double rating;
     private List<AppReleaseItem> releases;
-    private List<String> screenshots;
+    private List<MediaResource> screenshots;
 
     public String getCategory() {
         return this.category;
@@ -63,11 +63,11 @@ public class AppDetailResponse {
         this.id = id;
     }
 
-    public String getImage() {
+    public MediaResource getImage() {
         return this.image;
     }
 
-    public void setImage(String image) {
+    public void setImage(MediaResource image) {
         this.image = image;
     }
 
@@ -95,11 +95,11 @@ public class AppDetailResponse {
         this.releases = releases;
     }
 
-    public List<String> getScreenshots() {
+    public List<MediaResource> getScreenshots() {
         return this.screenshots;
     }
 
-    public void setScreenshots(List<String> screenshots) {
+    public void setScreenshots(List<MediaResource> screenshots) {
         this.screenshots = screenshots;
     }
 }

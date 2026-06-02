@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beads@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-beads-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beads-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:25454d8dab88f02715faebdd6d54b3476e183100e275fb2fe3434ef93c964428",

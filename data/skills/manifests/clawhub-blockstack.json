@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blockstack@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-blockstack-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blockstack-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:aa5279c61ecfdf60d2680c4ad7c639424b5101660cf092db98e50b05b7b14e5a",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-download-faas@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-download-faas-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-download-faas-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:390a3c4b181a153447092391e49e47166c4c247e60cd62a65d89d07e29cb14cc",

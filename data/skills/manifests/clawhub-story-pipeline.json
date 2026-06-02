@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/story-pipeline@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-story-pipeline-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-story-pipeline-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8cc4617105a640d2682e782dbd6611ebbf45443d9b4c7a9064e8dc1abb258068",

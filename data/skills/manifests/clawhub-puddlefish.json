@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/puddlefish@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-puddlefish-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-puddlefish-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e0bc5c5c71de18896b63558b0d18f8d0a4a4051c9050d63b3e1436449aee49d",

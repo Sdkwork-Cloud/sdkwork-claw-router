@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-copilot@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-copilot-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-copilot-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:8da0b33db1816cd67f90ab5e7093646ec767620be3969f474236346381a2fab0",

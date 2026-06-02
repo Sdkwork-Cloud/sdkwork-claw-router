@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-chain@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-chain-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-chain-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:236c8ba44b1ed5cb6fd93a4848e8e6076d555bc321c3d0aae1fea1b6cb75ded7",

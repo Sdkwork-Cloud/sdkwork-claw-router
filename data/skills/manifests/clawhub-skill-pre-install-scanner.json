@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-pre-install-scanner@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-pre-install-scanner-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-pre-install-scanner-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fb57abc53dcad347ef4ccb204b88d041a66beec9456105dd543c268db37b6883",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/karmabank-usdc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-karmabank-usdc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-karmabank-usdc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8b8a059ea1f077e3ce0c3ab6287d4eb39865b2fa34b999ba22c99305ec6eac9b",

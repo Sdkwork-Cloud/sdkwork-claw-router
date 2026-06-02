@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-tts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-tts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-tts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c6a0bc2ee1739eda6a97522a93aade8b73b9079f65d191ca5c5c54765de1f42d",

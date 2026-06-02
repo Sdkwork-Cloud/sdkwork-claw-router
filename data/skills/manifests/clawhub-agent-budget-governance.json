@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-budget-governance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-budget-governance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-budget-governance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5c520070488281373dbd218730c0eca54ed54f52dbca3ebadbaeeb081ea97d84",

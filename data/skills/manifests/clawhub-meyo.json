@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meyo@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-meyo-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meyo-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:98c7323aaeddecbf8c8d7746ef858323383b4d34c1d10992f7a9580a88f708e2",

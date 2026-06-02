@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wireguard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wireguard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wireguard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a45cbc3e47bc8fee3489c09ea0b442251c1dc8f850c3e5cbe95d82e98d8926d7",

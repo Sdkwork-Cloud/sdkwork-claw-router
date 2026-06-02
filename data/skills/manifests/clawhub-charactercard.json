@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/charactercard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-charactercard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-charactercard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10db8ec3d4d38a382050fbe399df3272895ab4ab8d51906db78216a56d3798e1",

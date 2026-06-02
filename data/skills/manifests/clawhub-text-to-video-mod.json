@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-video-mod@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-video-mod-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-video-mod-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b4d899353fc689ab2dbfbfed0eaaa6529c0eb094808fb21946e1e0f615128336",

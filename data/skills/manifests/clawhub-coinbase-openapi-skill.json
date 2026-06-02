@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coinbase-openapi-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coinbase-openapi-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coinbase-openapi-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eef1fdd5197832d92852287c7fba50b84dbac2233090ea4ae179a5a932bbc602",

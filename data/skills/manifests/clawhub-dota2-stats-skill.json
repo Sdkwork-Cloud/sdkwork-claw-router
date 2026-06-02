@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dota2-stats-skill@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-dota2-stats-skill-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dota2-stats-skill-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:4f8ffb93505c95340dc2a39722f5cb594ebed4834196d4b91894e57014283c72",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qrcode-remote-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qrcode-remote-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qrcode-remote-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:51f746c3bdef993b77358ad629a316c03a9870e0e378f13a7af9a6edfd83f336",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ocr-scanner-image@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ocr-scanner-image-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ocr-scanner-image-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1b0f0b392a309a8383a1a09b464669bea6403d679b24422e33cc4e876b4d71ad",

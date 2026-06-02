@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pollen-forecast@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pollen-forecast-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pollen-forecast-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d4dd63c5ec6af53d52c3bb9b5a432e8ffd83047b5c94dc6400e4835c08530fac",

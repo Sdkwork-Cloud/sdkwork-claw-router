@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taxes@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-taxes-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taxes-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:699a3e46b05615c321731bac0c68ab7e5fa86f7fb45765e16044a966ec43480a",

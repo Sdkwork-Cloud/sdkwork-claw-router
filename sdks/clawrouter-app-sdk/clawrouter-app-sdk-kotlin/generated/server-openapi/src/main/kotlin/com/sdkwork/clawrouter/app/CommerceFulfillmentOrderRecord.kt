@@ -6,6 +6,7 @@ data class CommerceFulfillmentOrderRecord(
     val createdAt: String? = null,
     val fulfillmentNo: String? = null,
     val fulfillmentType: String? = null,
+    val id: String? = null,
     val orderId: String? = null,
     val organizationId: String? = null,
     val providerCode: String? = null,

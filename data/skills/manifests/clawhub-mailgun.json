@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mailgun@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-mailgun-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mailgun-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:ef9ec5a76085cc47caabde812ab4e2d7d0827c0923575670302ae20c817307fc",

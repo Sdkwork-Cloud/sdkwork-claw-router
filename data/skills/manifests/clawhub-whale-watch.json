@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whale-watch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whale-watch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whale-watch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0e199d4fbce0d97f7b6dc8ae9b79880b8c3325614b2719b67227c15116fff45",

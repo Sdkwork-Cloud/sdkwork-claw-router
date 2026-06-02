@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/httpstat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-httpstat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-httpstat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:428d4cb8563b5b45e67704cce6576f1c3b3544e2b4907c063dcc27fbd3b7cf29",

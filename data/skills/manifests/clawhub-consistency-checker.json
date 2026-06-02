@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/consistency-checker@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-consistency-checker-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-consistency-checker-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3957cc4cf35fa56478621ef7c7024f3f141f2ed615d04bcd1fe6b544cbe00dd7",

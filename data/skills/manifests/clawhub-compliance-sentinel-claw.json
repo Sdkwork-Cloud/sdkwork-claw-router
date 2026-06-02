@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/compliance-sentinel-claw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-compliance-sentinel-claw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-compliance-sentinel-claw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9608052bc40de2bd74acd075179c1f809996542ba8f0af58e009354785856aa2",

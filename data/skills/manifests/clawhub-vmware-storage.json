@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vmware-storage@1.5.22",
-      "artifactUrl": "data/skills/artifacts/clawhub-vmware-storage-1.5.22.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vmware-storage-1.5.22.json"
+      },
       "version": "1.5.22",
       "runtime": "metadata",
       "checksumHash": "sha256:a3518b168b46eb78508768a92c2df412755c1c92da42bd68b6ced8d1710b8d5d",

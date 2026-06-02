@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tcb-harness@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-tcb-harness-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tcb-harness-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:5efa3411e7c4927ef15f23efca2692755a246a47b94c454b816c3cfeca354255",

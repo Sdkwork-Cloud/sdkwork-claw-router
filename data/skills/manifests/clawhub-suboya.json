@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/suboya@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-suboya-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-suboya-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77f058e7344ff317a4c461fc16db4c896a94b9613a037321b88656b026341c69",

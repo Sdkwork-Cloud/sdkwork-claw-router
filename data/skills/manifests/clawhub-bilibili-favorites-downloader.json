@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bilibili-favorites-downloader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-favorites-downloader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bilibili-favorites-downloader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:38ca98fb6e67455d05769266c2d388f816592edb33f2a995cd6e40f5b731865c",

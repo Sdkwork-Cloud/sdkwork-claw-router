@@ -113,8 +113,8 @@ println(result)
 ### ai
 
 ```kotlin
-// List traces
-val result = client.ai.gatewayTracesList()
+// List groups
+val result = client.ai.channelGroupsList()
 println(result)
 ```
 
@@ -157,8 +157,8 @@ println(result)
 ### iam
 
 ```kotlin
-// List groups
-val result = client.iam.apiKeyGroupsList()
+// List keys
+val result = client.iam.apiKeysList()
 println(result)
 ```
 

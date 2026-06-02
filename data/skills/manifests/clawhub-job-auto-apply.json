@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/job-auto-apply@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-job-auto-apply-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-job-auto-apply-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7cc42d03fc417a91d4866150b11728d6c805202f79ba288438b5347ed873e0a2",

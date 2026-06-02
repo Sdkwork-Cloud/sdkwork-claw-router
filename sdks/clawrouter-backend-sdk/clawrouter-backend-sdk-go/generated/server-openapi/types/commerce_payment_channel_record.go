@@ -6,8 +6,10 @@ type CommercePaymentChannelRecord struct {
 	CountryCode string `json:"country_code"`
 	CreatedAt string `json:"created_at"`
 	CurrencyCode string `json:"currency_code"`
+	Id string `json:"id"`
 	MethodId string `json:"method_id"`
 	OrganizationId string `json:"organization_id"`
+	Priority string `json:"priority"`
 	ProviderAccountId string `json:"provider_account_id"`
 	SceneCode string `json:"scene_code"`
 	Status string `json:"status"`

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bluebubbles-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bluebubbles-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bluebubbles-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:749005e98a358a7d900dad0e68d12d1bbd935ad2541e637c36af94c0c2329109",

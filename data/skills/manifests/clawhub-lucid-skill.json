@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lucid-skill@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lucid-skill-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lucid-skill-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ba6ee5ff65bad461d1665463606b718e12953dcd436d7d0cbbf5551de2afcb54",

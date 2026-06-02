@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-continuity@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-continuity-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-continuity-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b34d6991ff25b2feb0070722954966d003559bfeb49693673a8204d324a0ac38",

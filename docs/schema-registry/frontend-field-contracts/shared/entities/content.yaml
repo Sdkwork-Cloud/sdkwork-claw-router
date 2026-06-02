@@ -18,8 +18,7 @@ x_response_entities:
         minLength: 1
         maxLength: 128
       avatar:
-        type: string
-        maxLength: 2048
+        $ref: '#/components/schemas/MediaResource'
       bio:
         type: string
         maxLength: 512
@@ -34,7 +33,7 @@ x_response_entities:
     - title
     - content
     - summary
-    - coverImage
+    - cover
     - contentType
     - categoryId
     - tags
@@ -65,9 +64,8 @@ x_response_entities:
       summary:
         type: string
         maxLength: 1024
-      coverImage:
-        type: string
-        maxLength: 2048
+      cover:
+        $ref: '#/components/schemas/MediaResource'
       contentType:
         type: string
         enum:
@@ -358,9 +356,8 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 2048
-      qrCodeUrl:
-        type: string
-        maxLength: 2048
+      qrCode:
+        $ref: '#/components/schemas/MediaResource'
       tone:
         type: string
         enum:
@@ -435,8 +432,7 @@ x_response_entities:
         type: array
         maxItems: 20
         items:
-          type: string
-          maxLength: 2048
+          $ref: '#/components/schemas/MediaResource'
       tags:
         type: array
         maxItems: 20
@@ -510,8 +506,7 @@ x_response_entities:
         minLength: 1
         maxLength: 128
       avatar:
-        type: string
-        maxLength: 2048
+        $ref: '#/components/schemas/MediaResource'
       title:
         type: string
         maxLength: 128
@@ -564,7 +559,7 @@ x_response_entities:
     - label
     - name
     - description
-    - icon
+    - iconKey
     - sortWeight
     - courseCount
     properties:
@@ -587,7 +582,7 @@ x_response_entities:
       description:
         type: string
         maxLength: 1024
-      icon:
+      iconKey:
         type: string
         maxLength: 128
       sortWeight:
@@ -632,9 +627,8 @@ x_response_entities:
       externalBvid:
         type: string
         maxLength: 64
-      videoUrl:
-        type: string
-        maxLength: 1024
+      video:
+        $ref: '#/components/schemas/MediaResource'
       contactName:
         type: string
         maxLength: 128
@@ -663,17 +657,15 @@ x_response_entities:
     type: object
     additionalProperties: false
     required:
-    - videoUrl
+    - video
     - fileName
     - contentType
     - sizeBytes
     - sha256
     - uploadedAt
     properties:
-      videoUrl:
-        type: string
-        minLength: 1
-        maxLength: 1024
+      video:
+        $ref: '#/components/schemas/MediaResource'
       fileName:
         type: string
         minLength: 1
@@ -737,9 +729,8 @@ x_response_entities:
       externalBvid:
         type: string
         maxLength: 64
-      videoUrl:
-        type: string
-        maxLength: 1024
+      video:
+        $ref: '#/components/schemas/MediaResource'
       contactName:
         type: string
         maxLength: 128
@@ -765,7 +756,7 @@ x_response_entities:
     - number
     - title
     - description
-    - videoUrl
+    - video
     - externalBvid
     - sourceProvider
     - durationSeconds
@@ -797,9 +788,8 @@ x_response_entities:
       description:
         type: string
         maxLength: 1024
-      videoUrl:
-        type: string
-        maxLength: 2048
+      video:
+        $ref: '#/components/schemas/MediaResource'
       externalBvid:
         type: string
         maxLength: 128
@@ -880,7 +870,7 @@ x_response_entities:
     - courseCode
     - title
     - description
-    - thumbnailUrl
+    - thumbnail
     - instructor
     - durationText
     - lessonsCount
@@ -918,9 +908,8 @@ x_response_entities:
       description:
         type: string
         maxLength: 2048
-      thumbnailUrl:
-        type: string
-        maxLength: 2048
+      thumbnail:
+        $ref: '#/components/schemas/MediaResource'
       instructor: *id009
       durationText:
         type: string
@@ -1053,7 +1042,7 @@ x_response_entities:
     - courseCode
     - title
     - description
-    - thumbnailUrl
+    - thumbnail
     - instructor
     - durationText
     - lessonsCount
@@ -1094,9 +1083,8 @@ x_response_entities:
       description:
         type: string
         maxLength: 2048
-      thumbnailUrl:
-        type: string
-        maxLength: 2048
+      thumbnail:
+        $ref: '#/components/schemas/MediaResource'
       instructor: *id009
       durationText:
         type: string

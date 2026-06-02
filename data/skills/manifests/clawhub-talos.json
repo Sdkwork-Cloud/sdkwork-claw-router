@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/talos@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-talos-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-talos-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:28b8d68f351c0cee51fc751529431f262ccc76d510f2216a46e63784d007c944",

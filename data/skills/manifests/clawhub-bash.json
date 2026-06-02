@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bash@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-bash-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bash-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ac56bf1472d0c88f4f1aa63292d94381029b619392f0780350eee6c231b42e3a",

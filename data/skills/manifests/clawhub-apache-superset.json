@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apache-superset@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-apache-superset-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apache-superset-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:bbe696aefd8142f7839502cbac1b6ec1ec10d37c8b710bad4a7789434a149053",

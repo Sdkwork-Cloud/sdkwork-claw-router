@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inference-optimizer@0.3.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-inference-optimizer-0.3.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inference-optimizer-0.3.4.json"
+      },
       "version": "0.3.4",
       "runtime": "metadata",
       "checksumHash": "sha256:88fa290f05c09853532940545e5ebb420fb0fc6c0c4acd0d165e025abde304a7",

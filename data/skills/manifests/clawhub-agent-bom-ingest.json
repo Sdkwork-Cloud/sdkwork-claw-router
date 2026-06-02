@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bom-ingest@0.86.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-ingest-0.86.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bom-ingest-0.86.2.json"
+      },
       "version": "0.86.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f210d0366f56ce4330782fc70b14becafc86993a2c15b24f7e752f2a449a25f4",

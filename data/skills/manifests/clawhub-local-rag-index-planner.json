@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-rag-index-planner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-rag-index-planner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-rag-index-planner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b2baa46b28dc27bd8fb1227135095d7d811831e2e3c056ec5c6617a366a9005c",

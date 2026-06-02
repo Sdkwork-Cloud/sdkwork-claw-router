@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AccessGroupsChannelBindingsListResult, AccessGroupsChannelBindingsUpdateResult, AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupChannelBindingsReplaceRequest, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult } from '../types';
+import type { AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult } from '../types';
 
 
 export class IamUsersApi {
@@ -62,65 +62,13 @@ export class IamApiKeysApi {
   }
 }
 
-export class IamAccessGroupsChannelBindingsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List group channel bindings */
-  async list(groupId: string): Promise<AccessGroupsChannelBindingsListResult> {
-    return this.client.get<AccessGroupsChannelBindingsListResult>(backendApiPath(`/iam/access_groups/${serializePathParameter(groupId, { name: 'groupId', style: 'simple', explode: false })}/channel_bindings`));
-  }
-
-/** Replace group channel bindings */
-  async update(groupId: string, body: AdminAccessGroupChannelBindingsReplaceRequest): Promise<AccessGroupsChannelBindingsUpdateResult> {
-    return this.client.put<AccessGroupsChannelBindingsUpdateResult>(backendApiPath(`/iam/access_groups/${serializePathParameter(groupId, { name: 'groupId', style: 'simple', explode: false })}/channel_bindings`), body, undefined, undefined, 'application/json');
-  }
-}
-
-export class IamAccessGroupsApi {
-  private client: HttpClient;
-  public readonly channelBindings: IamAccessGroupsChannelBindingsApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.channelBindings = new IamAccessGroupsChannelBindingsApi(client);
-  }
-
-
-/** List groups */
-  async list(): Promise<AccessGroupsListResult> {
-    return this.client.get<AccessGroupsListResult>(backendApiPath(`/iam/access_groups`));
-  }
-
-/** Create group */
-  async create(body: AdminAccessGroupCreateRequest): Promise<AccessGroupsCreateResult> {
-    return this.client.post<AccessGroupsCreateResult>(backendApiPath(`/iam/access_groups`), body, undefined, undefined, 'application/json');
-  }
-
-/** Delete group */
-  async delete(groupId: string): Promise<AccessGroupsDeleteResult> {
-    return this.client.delete<AccessGroupsDeleteResult>(backendApiPath(`/iam/access_groups/${serializePathParameter(groupId, { name: 'groupId', style: 'simple', explode: false })}`));
-  }
-
-/** Update group */
-  async update(groupId: string, body: AdminAccessGroupUpdateRequest): Promise<AccessGroupsUpdateResult> {
-    return this.client.patch<AccessGroupsUpdateResult>(backendApiPath(`/iam/access_groups/${serializePathParameter(groupId, { name: 'groupId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
-  }
-}
-
 export class IamApi {
   private client: HttpClient;
-  public readonly accessGroups: IamAccessGroupsApi;
   public readonly apiKeys: IamApiKeysApi;
   public readonly users: IamUsersApi;
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.accessGroups = new IamAccessGroupsApi(client);
     this.apiKeys = new IamApiKeysApi(client);
     this.users = new IamUsersApi(client);
   }

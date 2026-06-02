@@ -7,16 +7,16 @@ pub struct CommerceProductSpuRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub brand: Option<String>,
 
-    /// Category id field on commerce product spu record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub category_id: Option<String>,
-
     /// Created at field on commerce product spu record.
     pub created_at: String,
 
     /// Description field on commerce product spu record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
+
+    /// Id field on commerce product spu record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
 
     /// Organization id field on commerce product spu record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

@@ -431,8 +431,14 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
                 """
+                interface MediaResource {
+                  kind: string;
+                  source: string;
+                  uri?: string;
+                }
+
                 export interface CourseApplicationVideoUploadResult {
-                  videoUrl: string;
+                  video: MediaResource;
                   fileName: string;
                 }
                 """,
@@ -444,7 +450,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                   - route: /demo
                     source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
                     interface: CourseApplicationVideoUploadResult
-                    fields: [videoUrl, fileName]
+                    fields: [video, video.kind, video.source, video.uri, fileName]
                     data_sources: []
                     file_targets: [course_application_video_uploads]
                 routes:
@@ -466,8 +472,14 @@ class FrontendFieldAuditTest(unittest.TestCase):
                 root,
                 "apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts",
                 """
+                interface MediaResource {
+                  kind: string;
+                  source: string;
+                  uri?: string;
+                }
+
                 export interface CourseApplicationVideoUploadResult {
-                  videoUrl: string;
+                  video: MediaResource;
                 }
                 """,
             )
@@ -478,7 +490,7 @@ class FrontendFieldAuditTest(unittest.TestCase):
                   - route: /demo
                     source: apps/sdkwork-claw-router-portal/packages/demo/src/demoService.ts
                     interface: CourseApplicationVideoUploadResult
-                    fields: [videoUrl]
+                    fields: [video, video.kind, video.source, video.uri]
                     data_sources: []
                 routes:
                   - route: /demo

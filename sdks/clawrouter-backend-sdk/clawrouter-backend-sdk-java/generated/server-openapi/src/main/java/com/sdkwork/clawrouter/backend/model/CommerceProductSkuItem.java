@@ -4,11 +4,13 @@ import java.util.List;
 
 public class CommerceProductSkuItem {
     private List<CommerceProductSkuAttributeItem> attributes;
+    private String barcode;
     private String createdAt;
     private String defaultCurrencyCode;
     private String defaultPriceAmount;
     private String fulfillmentType;
     private String id;
+    private MediaResource image;
     private String productId;
     private String publishedAt;
     private String salesUnit;
@@ -24,6 +26,14 @@ public class CommerceProductSkuItem {
 
     public void setAttributes(List<CommerceProductSkuAttributeItem> attributes) {
         this.attributes = attributes;
+    }
+
+    public String getBarcode() {
+        return this.barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
     }
 
     public String getCreatedAt() {
@@ -64,6 +74,14 @@ public class CommerceProductSkuItem {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public MediaResource getImage() {
+        return this.image;
+    }
+
+    public void setImage(MediaResource image) {
+        this.image = image;
     }
 
     public String getProductId() {

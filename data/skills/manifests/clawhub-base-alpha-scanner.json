@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/base-alpha-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-base-alpha-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-base-alpha-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc173986ebc797432fefda7ab35ae238cc899ee04b5338773f045b5a74c5c3a0",

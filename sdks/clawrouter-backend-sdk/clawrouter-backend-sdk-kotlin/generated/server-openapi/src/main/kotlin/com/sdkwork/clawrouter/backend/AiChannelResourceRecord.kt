@@ -9,9 +9,11 @@ data class AiChannelResourceRecord(
     val deletedBy: String? = null,
     val effectiveFrom: String? = null,
     val effectiveTo: String? = null,
+    val grantType: String? = null,
     val id: String? = null,
     val metadata: Map<String, String>? = null,
     val organizationId: String? = null,
+    val priority: Int? = null,
     val providerCode: String? = null,
     val resourceCode: String? = null,
     val resourceGroupCode: String? = null,
@@ -21,5 +23,6 @@ data class AiChannelResourceRecord(
     val tenantId: String? = null,
     val updatedAt: String? = null,
     val uuid: String? = null,
-    val version: String? = null
+    val version: String? = null,
+    val weight: Int? = null
 )

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-budget-controller@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-budget-controller-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-budget-controller-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e734949a5e6dbe1733e084b945d434ee327e7d023b43730fad9ce775f7da8f1",

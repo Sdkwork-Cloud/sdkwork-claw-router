@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zulip@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-zulip-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zulip-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:9d5e902fe30c8debd3c90776f40dcfcc06fcfb7e2cb6695d557bf13e37eb7d6c",

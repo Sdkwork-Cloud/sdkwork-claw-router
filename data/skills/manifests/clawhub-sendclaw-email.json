@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sendclaw-email@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sendclaw-email-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sendclaw-email-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:575ec57fbefcd6989bd043a6ade77dbe9f0920f919a4ec446d64b1b30df3ba3c",

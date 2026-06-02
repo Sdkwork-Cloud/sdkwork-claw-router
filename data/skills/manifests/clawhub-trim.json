@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trim@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trim-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trim-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0a95c8af020f06a7fa2fc4bb15de8524a17995e4c426d34c7a2361f6f9147c28",

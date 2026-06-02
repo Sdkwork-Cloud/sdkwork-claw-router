@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-image-server@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-image-server-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-image-server-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:73334be6b32d42b8d8bced8b189d5ff9cc7b9ce3d35561f4f90ebf7d3dc41d94",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mushroom@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mushroom-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mushroom-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:98e7e1bbb2416b2de4d77aee2ba0a739128b778a4e5964ecca0ba5247d8386cc",

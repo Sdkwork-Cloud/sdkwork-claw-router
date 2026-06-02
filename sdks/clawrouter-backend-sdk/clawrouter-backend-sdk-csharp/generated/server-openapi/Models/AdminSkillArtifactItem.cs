@@ -6,10 +6,10 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminSkillArtifactItem
     {
+        public MediaResource? Artifact { get; set; }
         public string? ArtifactRef { get; set; }
         public int? ArtifactSizeBytes { get; set; }
         public int? ArtifactType { get; set; }
-        public string? ArtifactUrl { get; set; }
         public string? ChecksumHash { get; set; }
         public string? CreatedAt { get; set; }
         public string? DeprecatedAt { get; set; }

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inbox-reply-triage@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-inbox-reply-triage-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inbox-reply-triage-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7c603fd8e6500f03b83da52309a4af4387a0d034173bdb9f25501f62e4930fe4",

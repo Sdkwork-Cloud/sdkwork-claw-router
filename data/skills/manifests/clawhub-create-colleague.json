@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-colleague@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-colleague-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-colleague-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c5d20e138b9219d77f68090b764b4bae1ac1754db0ac9474075ad4f5edbc4379",

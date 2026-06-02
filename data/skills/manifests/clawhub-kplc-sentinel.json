@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kplc-sentinel@1.7.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-kplc-sentinel-1.7.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kplc-sentinel-1.7.3.json"
+      },
       "version": "1.7.3",
       "runtime": "metadata",
       "checksumHash": "sha256:f8c81048d16b33078d62bcb7ebcbb5b97d2d9080998d152076d755152efade79",

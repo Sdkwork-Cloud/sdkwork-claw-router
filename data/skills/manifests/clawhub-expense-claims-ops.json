@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/expense-claims-ops@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-expense-claims-ops-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-expense-claims-ops-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:148773d713475c5e5a7be8541d8b3c6eac41f63122c31a3a4516083afa394441",

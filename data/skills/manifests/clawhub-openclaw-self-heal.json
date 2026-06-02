@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-self-heal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-self-heal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-self-heal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14300866775cd81b63ea7b52acae98e9fd270878f5196df9e730683f64c3d0b8",

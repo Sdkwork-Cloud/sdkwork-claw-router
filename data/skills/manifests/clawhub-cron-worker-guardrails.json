@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cron-worker-guardrails@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-cron-worker-guardrails-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cron-worker-guardrails-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:190381c947700db0faf0575ba9ed211a77c594bb2d28393ba564c4de2e3497a7",

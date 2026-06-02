@@ -37,6 +37,9 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
                 self.assertIn(item["categoryId"], category_ids)
                 self.assertTrue(item["enabled"])
                 self.assertRegex(item["packageKey"], r"^[a-z0-9][a-z0-9-]*[a-z0-9]$")
+                assert_media_resource(self, item.get("icon"), "image")
+                assert_media_resource(self, item.get("cover"), "image")
+                self.assertNotIn("coverImage", item)
 
         artifacts_by_skill_id: dict[int, list[dict]] = {}
         for artifact in artifacts:
@@ -59,8 +62,10 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
                 self.assertRegex(artifact["checksumHash"], r"^sha256:[0-9a-f]{64}$")
                 self.assertIsInstance(artifact["frameworks"], list)
                 self.assertGreater(len(artifact["frameworks"]), 0)
-                artifact_path = local_seed_path(artifact["artifactUrl"])
-                self.assertTrue(artifact_path.exists(), f"artifactUrl must exist: {artifact['artifactUrl']}")
+                assert_media_resource(self, artifact.get("artifact"), "document")
+                self.assertNotIn("artifactUrl", artifact)
+                artifact_path = local_seed_path(media_resource_url(artifact["artifact"]))
+                self.assertTrue(artifact_path.exists(), f"artifact media resource must exist: {artifact['artifact']}")
                 self.assertEqual(artifact["artifactSizeBytes"], artifact_path.stat().st_size)
                 payload = read_json(artifact_path)
                 self.assertEqual(artifact["checksumHash"], artifact_payload_checksum(payload))
@@ -82,7 +87,12 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
                 self.assertIn(asset["targetId"], skill_ids)
                 self.assertGreater(asset["width"], 0)
                 self.assertGreater(asset["height"], 0)
-                self.assertTrue(asset["assetUrl"].startswith("https://"))
+                assert_media_resource(self, asset.get("asset"), "image")
+                self.assertTrue(media_resource_url(asset["asset"]).startswith("https://"))
+                if asset.get("thumbnail") is not None:
+                    assert_media_resource(self, asset["thumbnail"], "image")
+                self.assertNotIn("assetUrl", asset)
+                self.assertNotIn("thumbnailUrl", asset)
                 assets_by_skill_id.setdefault(asset["targetId"], []).append(asset)
 
         for skill in skills:
@@ -102,6 +112,9 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
                 else:
                     self.fail(f"unsupported bundled skill sourceType: {skill.get('sourceType')}")
                 self.assertTrue(skill["enabled"])
+                assert_media_resource(self, skill.get("icon"), "image")
+                assert_media_resource(self, skill.get("cover"), "image")
+                self.assertNotIn("coverImage", skill)
                 self.assertEqual("PUBLISHED", skill["marketStatus"])
                 self.assertEqual("PUBLIC", skill["visibility"])
                 self.assertEqual("APPROVED", skill["reviewStatus"])
@@ -123,7 +136,7 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
                 expected_artifacts = [
                     {
                         "artifactRef": item["artifactRef"],
-                        "artifactUrl": item["artifactUrl"],
+                        "artifact": item["artifact"],
                         "version": item["version"],
                         "runtime": item["runtime"],
                         "checksumHash": item["checksumHash"],
@@ -134,7 +147,7 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
                 actual_artifacts = [
                     {
                         "artifactRef": item["artifactRef"],
-                        "artifactUrl": item["artifactUrl"],
+                        "artifact": item["artifact"],
                         "version": item["version"],
                         "runtime": item["runtime"],
                         "checksumHash": item["checksumHash"],
@@ -266,9 +279,13 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
         self.assertIn("clawhub://skills/", script)
         self.assertIn("builtin: false", script)
         self.assertIn("isBuiltin: false", script)
+        self.assertIn("mediaResource(", script)
         self.assertIn("mirrorFileName", script)
         self.assertIn("checkpoint.json", script)
         self.assertIn("raw/errors", script)
+        for legacy_media_field in ("coverImage", "assetUrl", "thumbnailUrl", "artifactUrl"):
+            with self.subTest(legacy_media_field=legacy_media_field):
+                self.assertNotIn(legacy_media_field, script)
         self.assertNotIn("/api/v1/search", script)
         self.assertNotIn("clawhub-mcp", script)
 
@@ -287,8 +304,8 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
             encoding="utf-8"
         )
         for function_name in (
-            "sqlite_artifact_seed_standard_count",
-            "postgres_artifact_seed_standard_count",
+            "sqlite_core_artifact_seed_standard_count",
+            "postgres_core_artifact_seed_standard_count",
         ):
             with self.subTest(function=function_name):
                 start = source.index(f"async fn {function_name}")
@@ -296,13 +313,14 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
                 function_source = source[start:end]
                 for token in (
                     "artifact_ref",
-                    "artifact_url",
+                    "artifact_resource_snapshot",
                     "artifact_size_bytes",
                     "checksum_hash",
                     "status",
                     "deleted_at IS NULL",
                 ):
                     self.assertIn(token, function_source)
+                self.assertNotIn("artifact_url", function_source)
 
     def test_sqlite_installer_regression_reads_skill_seed_assets_artifacts_and_installations(self) -> None:
         source_path = (
@@ -318,7 +336,7 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
         )
         source = source_path.read_text(encoding="utf-8")
         for token in [
-            "DatabaseInstaller::for_sqlite",
+            "repair_sqlite_pool",
             "SqliteAppSkillsReadStore",
             "prompt-optimizer",
             "https://cdn.sdkwork.example/skills/prompt-optimizer/screenshot-1.png",
@@ -333,6 +351,22 @@ class SkillSeedBundleStandardTest(unittest.TestCase):
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def assert_media_resource(testcase: unittest.TestCase, value, kind: str) -> None:
+    testcase.assertIsInstance(value, dict)
+    testcase.assertEqual(kind, value.get("kind"))
+    testcase.assertIsInstance(value.get("source"), str)
+    testcase.assertTrue(value["source"].strip())
+    testcase.assertTrue(media_resource_url(value))
+
+
+def media_resource_url(value: dict) -> str:
+    for key in ("publicUrl", "url", "uri", "objectKey", "objectBlobId", "id"):
+        raw = value.get(key)
+        if isinstance(raw, str) and raw.strip():
+            return raw.strip()
+    return ""
 
 
 def raw_mirror_detail_slugs(raw_index: dict) -> set[str]:

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/persistent-memory@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-persistent-memory-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-persistent-memory-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ebcb5caab08278caa9490e9beb108fa3f17e6f3d42f29026597b7a2d09362c7a",

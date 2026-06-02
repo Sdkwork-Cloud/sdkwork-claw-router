@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/context-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-context-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-context-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2cc43b00932d4075787b035467e93ffb2de456529602b569014791b018c1342c",

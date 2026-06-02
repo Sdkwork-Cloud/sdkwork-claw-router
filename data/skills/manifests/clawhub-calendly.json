@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/calendly@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-calendly-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-calendly-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70cf75b955a61987c8bae05b276ce98c72f810255fe46c14256a780969ef27f5",

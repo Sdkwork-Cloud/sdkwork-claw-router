@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gpio@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-gpio-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gpio-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e45a80c643bc2ebcb94f3276d7680e0e2f2fc952e79799a3cc5977c8fa02abec",

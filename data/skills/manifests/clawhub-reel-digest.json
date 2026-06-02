@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reel-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reel-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reel-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:890382eb82dc5bfd3514893819d46f9dcd3a981575868a507fdd829ec7d46261",

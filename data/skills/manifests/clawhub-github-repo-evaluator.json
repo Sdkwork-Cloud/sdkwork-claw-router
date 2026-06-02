@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-repo-evaluator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-repo-evaluator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-repo-evaluator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ceb8bb4b3c17e457b14ed151758bc8d5b050af84f270383a1d10621eca085f33",

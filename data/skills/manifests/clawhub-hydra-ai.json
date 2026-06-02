@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hydra-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hydra-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hydra-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0e0d82ff906f84829c2d6560e35d5073963bd51cf1a81f4d299ca1b9f576c1a",

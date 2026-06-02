@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moskit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moskit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moskit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:87bf585b5edba7312f21554eec59b41a2800f4379601b7346faf8ac413fd0353",

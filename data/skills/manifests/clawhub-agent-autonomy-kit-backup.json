@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-autonomy-kit-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-autonomy-kit-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-autonomy-kit-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ddaee2c8c5e7c34e9b86483c9e6e93f1ac787826961f2abd63e9b2064a564cf",

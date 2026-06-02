@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/batch-search-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-batch-search-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-batch-search-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d36b1c346690d60ed3600d49f44722656e507264c4c98476006046d2afc72d72",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/enterprise-legal-guardrails@1.0.20",
-      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-legal-guardrails-1.0.20.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-enterprise-legal-guardrails-1.0.20.json"
+      },
       "version": "1.0.20",
       "runtime": "metadata",
       "checksumHash": "sha256:21778772a14be014bd5c7a64279184afe598b389056f87238bb83898e4e65267",

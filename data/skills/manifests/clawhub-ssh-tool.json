@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ssh-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ssh-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ssh-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4d48a828347dd01df8b2318836e09eeb5378c95aa0987572143edd669c87e90d",

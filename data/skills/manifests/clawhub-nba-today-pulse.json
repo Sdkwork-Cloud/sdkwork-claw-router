@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nba-today-pulse@1.0.15",
-      "artifactUrl": "data/skills/artifacts/clawhub-nba-today-pulse-1.0.15.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nba-today-pulse-1.0.15.json"
+      },
       "version": "1.0.15",
       "runtime": "metadata",
       "checksumHash": "sha256:51a3fb2c60f8985dfa43dee9f51ebf8128f1920abb8e0a324437843db1b37490",

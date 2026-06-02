@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/merck@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-merck-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-merck-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8e2ef59a71e82cc04b3321d3e0906a6207cee7f714459b0ddb22eb33223e4198",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flinks@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-flinks-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flinks-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:b289971d8030b56be55639cdc9fc5f7961dbefc523a700ac293e0913f0d22d8c",

@@ -4,6 +4,7 @@ use sdkwork_claw_product::ports::{
     CreateCourseApplicationCommand,
 };
 use sdkwork_claw_product_test_support::{repair_sqlite_pool, schema_sqlite_pool};
+use serde_json::json;
 
 #[tokio::test]
 async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_tables() {
@@ -32,7 +33,10 @@ async fn sqlite_course_store_reads_seeded_course_catalog_from_java_compatible_ta
         .unwrap();
     assert!(first.content_id > 0);
     assert!(!first.title.trim().is_empty());
-    assert!(!first.thumbnail_url.trim().is_empty());
+    assert_eq!("image", first.thumbnail["kind"]);
+    assert!(first.thumbnail["publicUrl"]
+        .as_str()
+        .is_some_and(|value| !value.trim().is_empty()));
     assert!(first.lessons_count > 0);
     assert!(first.engagement.students_count > 0);
     assert_eq!(
@@ -116,7 +120,12 @@ async fn sqlite_course_store_persists_course_application_upload_requests() {
             description: "提交一门即梦图片制作课程供平台审核发布。".to_owned(),
             source_provider: "local".to_owned(),
             external_bvid: None,
-            video_url: Some("/uploads/courses/applications/jimeng-image-course.mp4".to_owned()),
+            video: Some(json!({
+                "kind": "video",
+                "source": "external_url",
+                "url": "/uploads/courses/applications/jimeng-image-course.mp4",
+                "publicUrl": "/uploads/courses/applications/jimeng-image-course.mp4"
+            })),
             contact_name: Some("Ada".to_owned()),
             contact_email: Some("ada@example.com".to_owned()),
             notes: Some("本地上传视频教程".to_owned()),
@@ -132,7 +141,10 @@ async fn sqlite_course_store_persists_course_application_upload_requests() {
     assert_eq!("local", item.source_provider);
     assert_eq!(
         "/uploads/courses/applications/jimeng-image-course.mp4",
-        item.video_url
+        item.video
+            .as_ref()
+            .and_then(|video| video["publicUrl"].as_str())
+            .unwrap()
     );
     assert_eq!("pending", item.status);
 }

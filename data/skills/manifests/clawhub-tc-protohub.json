@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tc-protohub@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tc-protohub-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tc-protohub-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a046ded01d156f6af521f5ef89598fcb806d6037bec4ae99f0f27d92fbf190ec",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meshops-control-plane@0.1.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-meshops-control-plane-0.1.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meshops-control-plane-0.1.7.json"
+      },
       "version": "0.1.7",
       "runtime": "metadata",
       "checksumHash": "sha256:8e434b716ff4e0b91ce32324cc4dcc203d1a09f03406ea06577d043074af6162",

@@ -10,6 +10,7 @@ import type {
   SdkworkCanonicalAuthSendVerifyCodeRequest,
   SdkworkCanonicalAuthSessionExchangeRequest,
 } from "./auth-authority.ts";
+import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";
 
 export interface SdkworkCanonicalRuntimeSessionLike<TAuthenticatedUser> {
   sessionId?: string;
@@ -17,7 +18,7 @@ export interface SdkworkCanonicalRuntimeSessionLike<TAuthenticatedUser> {
 }
 
 export interface SdkworkCanonicalRuntimeProfileLike {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   displayName?: string;
   email?: string;
   userId?: string;
@@ -211,7 +212,7 @@ function normalizeSessionExchangeRequest(
   request: SdkworkCanonicalAuthSessionExchangeRequest,
 ): SdkworkCanonicalAuthSessionExchangeRequest {
   return {
-    avatarUrl: normalizeOptionalText(request.avatarUrl),
+    avatar: request.avatar,
     email: request.email.trim(),
     name: normalizeOptionalText(request.name),
     providerKey: normalizeOptionalText(request.providerKey),

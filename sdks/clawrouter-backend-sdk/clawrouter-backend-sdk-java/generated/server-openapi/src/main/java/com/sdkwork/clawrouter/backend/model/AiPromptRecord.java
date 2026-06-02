@@ -22,6 +22,7 @@ public class AiPromptRecord {
     private String publishedAt;
     private String publishedVersionId;
     private String status;
+    private Map<String, String> tags;
     private String tenantId;
     private String updatedAt;
     private String uuid;
@@ -178,6 +179,14 @@ public class AiPromptRecord {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Map<String, String> getTags() {
+        return this.tags;
+    }
+
+    public void setTags(Map<String, String> tags) {
+        this.tags = tags;
     }
 
     public String getTenantId() {

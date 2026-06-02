@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/caption-generator-davinci@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-caption-generator-davinci-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-caption-generator-davinci-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:666f9932ac07bd82ce863ab9a1d228d53e60095630d88b855b928bd19e5ce26b",

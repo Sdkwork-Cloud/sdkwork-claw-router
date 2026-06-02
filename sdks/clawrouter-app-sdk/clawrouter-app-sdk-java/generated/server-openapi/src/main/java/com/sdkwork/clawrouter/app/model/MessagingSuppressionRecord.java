@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.Map;
 
 public class MessagingSuppressionRecord {
+    private String channel;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
@@ -12,12 +13,26 @@ public class MessagingSuppressionRecord {
     private Map<String, String> metadata;
     private String note;
     private String organizationId;
+    private String reasonCode;
+    private String scopeId;
+    private String scopeType;
+    private String source;
+    private String startsAt;
     private String status;
+    private String targetHash;
     private String targetMasked;
     private String tenantId;
     private String updatedAt;
     private String uuid;
     private String version;
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -91,12 +106,60 @@ public class MessagingSuppressionRecord {
         this.organizationId = organizationId;
     }
 
+    public String getReasonCode() {
+        return this.reasonCode;
+    }
+
+    public void setReasonCode(String reasonCode) {
+        this.reasonCode = reasonCode;
+    }
+
+    public String getScopeId() {
+        return this.scopeId;
+    }
+
+    public void setScopeId(String scopeId) {
+        this.scopeId = scopeId;
+    }
+
+    public String getScopeType() {
+        return this.scopeType;
+    }
+
+    public void setScopeType(String scopeType) {
+        this.scopeType = scopeType;
+    }
+
+    public String getSource() {
+        return this.source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getStartsAt() {
+        return this.startsAt;
+    }
+
+    public void setStartsAt(String startsAt) {
+        this.startsAt = startsAt;
+    }
+
     public String getStatus() {
         return this.status;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getTargetHash() {
+        return this.targetHash;
+    }
+
+    public void setTargetHash(String targetHash) {
+        this.targetHash = targetHash;
     }
 
     public String getTargetMasked() {

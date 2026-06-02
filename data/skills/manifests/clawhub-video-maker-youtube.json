@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-maker-youtube@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-maker-youtube-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-maker-youtube-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5526bcdf22b0528d960eef6dd4d21d61d5e6a7bbf58898c04999628c0f9d40bc",

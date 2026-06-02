@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hap-mongodb-slowlog-analysis@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-hap-mongodb-slowlog-analysis-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hap-mongodb-slowlog-analysis-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e8fb6cc61aa8f51a1100baa7efe362673ccb96a864aa41906603d41c457ea783",

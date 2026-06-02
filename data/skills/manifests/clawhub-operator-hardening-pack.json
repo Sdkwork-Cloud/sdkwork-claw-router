@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/operator-hardening-pack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-operator-hardening-pack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-operator-hardening-pack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aa9ffe4d5b28ec3e0a27dfb6a12f8e59c83d9e111fc56ca2d0aa601ddc664291",

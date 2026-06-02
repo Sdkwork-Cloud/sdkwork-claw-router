@@ -11,6 +11,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? CountryCode { get; set; }
         public string? CreatedAt { get; set; }
         public string? Environment { get; set; }
+        public string? Id { get; set; }
         public string? MerchantId { get; set; }
         public string? OrganizationId { get; set; }
         public string? ProviderCode { get; set; }

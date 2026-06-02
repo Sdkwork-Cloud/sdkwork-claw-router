@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/face-reading-cn@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-face-reading-cn-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-face-reading-cn-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b9076737576ef315fd757ee23fd8fd79df139499efa10b4e3ee26dc00ab8f6e",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-threat-intelligence-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-threat-intelligence-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-threat-intelligence-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e0f0becd52830808ed048421d843fd048ce0512e3fe2680405c99f1c05697bd3",

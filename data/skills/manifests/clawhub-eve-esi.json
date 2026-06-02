@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eve-esi@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-eve-esi-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eve-esi-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e7f65df55fe5cd911f610f7c8df4e13d245c1fb746d46e28bb1c8fb01a29e3d8",

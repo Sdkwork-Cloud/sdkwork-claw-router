@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-apple-notes-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-apple-notes-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-apple-notes-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3330bbaefdab9a8e486e4e0a997b4dda4f844f74f0f263cd77ac1dc7da1c00af",

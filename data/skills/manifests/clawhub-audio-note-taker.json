@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-note-taker@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-note-taker-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-note-taker-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:757523fb35fb5b1b84df11fe2e127397daee6f249e00501cadc33ac8a13142b5",

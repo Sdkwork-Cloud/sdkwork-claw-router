@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/godiva@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-godiva-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-godiva-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8781881afcb76a000c041fdda4797bd3f744d4f48b57211d9442b927520c42b",

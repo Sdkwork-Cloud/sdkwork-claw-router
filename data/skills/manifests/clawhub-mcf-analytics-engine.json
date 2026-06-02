@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcf-analytics-engine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcf-analytics-engine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcf-analytics-engine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f19a3dd5bb7d64a79169c4605c932db0e9c41888162558b38d4c01af572e8fd",

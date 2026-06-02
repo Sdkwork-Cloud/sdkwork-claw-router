@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/focus@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-focus-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-focus-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd89b7f06c509e5e2033c9ca276043f7a65bb8f700d89ca31864f5909c249140",

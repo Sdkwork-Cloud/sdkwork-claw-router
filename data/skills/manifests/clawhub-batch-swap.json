@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/batch-swap@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-batch-swap-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-batch-swap-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7594106fdb0474cc15ae2272a32997d6c6fe2cb68f1f6b209f991151cb209f90",

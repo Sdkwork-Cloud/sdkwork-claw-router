@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/speech@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-speech-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-speech-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:565723546f638014e7b1fa3af58fd46619782621543d409d95ad695eaf9f09f6",

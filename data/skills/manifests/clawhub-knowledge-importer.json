@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-importer@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-importer-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-importer-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:54d42639af1384f5c45536bfd257dc07a20725f83367de8d5c422577bb91d391",

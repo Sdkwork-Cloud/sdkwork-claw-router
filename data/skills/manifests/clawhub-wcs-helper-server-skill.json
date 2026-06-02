@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wcs-helper-server-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wcs-helper-server-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wcs-helper-server-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d0c574e0c942e3224d4bd1a17b475cf8eb771bbe1f472352286ccb9353f5ad2",

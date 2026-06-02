@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/braided-rag-rug-making-basics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-braided-rag-rug-making-basics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-braided-rag-rug-making-basics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1da6a96cc94f5fae63491a1e6c826cdc5e153a676884bf3101abb5b887dad32",

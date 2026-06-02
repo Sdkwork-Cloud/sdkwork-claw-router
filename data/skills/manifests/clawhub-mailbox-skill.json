@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mailbox-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mailbox-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mailbox-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:896ec1360be7b15a8a0859aab471dcbf426f8e107ebd7b4e340274e0d8f3f148",

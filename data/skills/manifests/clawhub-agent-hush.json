@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-hush@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-hush-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-hush-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:18387acada4d5a72e17b32f94a2dbba0a7c980e4deae47b7dde4bd3afc87485c",

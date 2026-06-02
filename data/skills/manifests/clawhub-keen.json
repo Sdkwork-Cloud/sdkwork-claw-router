@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/keen@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-keen-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-keen-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:843bba37ba970b68f74c2877f886ed09c1a8a8b629739628206b4fe6d0fa026d",

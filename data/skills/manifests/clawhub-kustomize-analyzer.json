@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kustomize-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kustomize-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kustomize-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f9a18281288fcde2637213b1fece7396c74cdc1ec8b8bcb997894cc72efe155",

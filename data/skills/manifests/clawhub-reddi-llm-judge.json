@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reddi-llm-judge@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-reddi-llm-judge-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reddi-llm-judge-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5c40e81f89b8a6eb577767a313c4968185544c879f2baee9632e2b086ef47ba6",

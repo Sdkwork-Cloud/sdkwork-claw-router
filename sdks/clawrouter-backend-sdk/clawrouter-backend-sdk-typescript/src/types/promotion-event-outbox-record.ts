@@ -14,6 +14,8 @@ export interface PromotionEventOutboxRecord {
   event_type: string;
   /** Event version field on promotion event outbox record. */
   event_version: number;
+  /** Id field on promotion event outbox record. */
+  id?: string;
   /** Next retry at field on promotion event outbox record. */
   next_retry_at?: string;
   /** Occurred at field on promotion event outbox record. */
@@ -24,6 +26,8 @@ export interface PromotionEventOutboxRecord {
   payload_hash?: string;
   /** Payload json field on promotion event outbox record. */
   payload_json: Record<string, JsonValue>;
+  /** Publish attempts field on promotion event outbox record. */
+  publish_attempts: number;
   /** Published at field on promotion event outbox record. */
   published_at?: string;
   /** Status field on promotion event outbox record. */

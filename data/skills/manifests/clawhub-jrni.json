@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jrni@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-jrni-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jrni-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:60f3f9be1710b25fca41f244d22cae81bcc56cceb757a37209d624767b05be10",

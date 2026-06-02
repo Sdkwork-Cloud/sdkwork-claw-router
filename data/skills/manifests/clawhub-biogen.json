@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/biogen@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-biogen-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-biogen-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:de62b7900263ac89b1b08177c224899fd734783307ef5621b1c337b9e3e2fecf",

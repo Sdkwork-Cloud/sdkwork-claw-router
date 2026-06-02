@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jobscore@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-jobscore-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jobscore-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a17287b288a406caf473699e093fbee6a84bbce818005643b73ab5b51a809564",

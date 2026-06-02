@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-docker-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-docker-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-docker-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:957500abb16937417fe868a646f4d616611c1778c4cb7a7cc930249658f82f0a",

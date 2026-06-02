@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-florist@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-florist-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-florist-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1ff99cbff612430fa08d38867c7018c0f1d85cd56d1842d8c24221def8ac870b",

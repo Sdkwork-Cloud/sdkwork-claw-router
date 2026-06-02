@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltguard@6.8.16",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltguard-6.8.16.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltguard-6.8.16.json"
+      },
       "version": "6.8.16",
       "runtime": "metadata",
       "checksumHash": "sha256:2245eb3abe33ddc2f064ca9c7eef9678e11b50e49e8180fcdc829981e27ddece",

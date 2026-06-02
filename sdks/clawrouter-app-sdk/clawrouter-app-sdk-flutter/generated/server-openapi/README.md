@@ -99,8 +99,8 @@ print(result);
 
 ### ai
 ```dart
-// List traces
-final result = await client.ai.gatewayTracesList();
+// List groups
+final result = await client.ai.channelGroupsList();
 print(result);
 ```
 
@@ -138,8 +138,8 @@ print(result);
 
 ### iam
 ```dart
-// List groups
-final result = await client.iam.apiKeyGroupsList();
+// List keys
+final result = await client.iam.apiKeysList();
 print(result);
 ```
 

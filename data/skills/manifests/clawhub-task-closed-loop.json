@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-closed-loop@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-closed-loop-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-closed-loop-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:46f422d308dd54cb2423bdce591161f48eb14d38375748b738dcb80538021d17",

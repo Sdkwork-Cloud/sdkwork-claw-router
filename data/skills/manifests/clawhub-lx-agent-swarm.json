@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lx-agent-swarm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lx-agent-swarm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lx-agent-swarm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ff064370569ccd1e3be4e3ce43efc52e153fa73a23f3fa85554cacf3a59e460",

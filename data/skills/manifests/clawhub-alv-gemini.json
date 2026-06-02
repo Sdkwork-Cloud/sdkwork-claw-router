@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alv-gemini@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alv-gemini-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alv-gemini-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13d2b269e324e3b00999f8a7301cfdad8b00dd732c5a7e2ed98e443deaca16f6",

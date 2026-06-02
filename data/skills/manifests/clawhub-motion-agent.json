@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/motion-agent@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-motion-agent-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-motion-agent-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:4ed964450a7e103a5954eafd66bbfdae9f2e30f521011b1ed3265e5db4e63b06",

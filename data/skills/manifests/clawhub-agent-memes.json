@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memes@2.11.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memes-2.11.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memes-2.11.0.json"
+      },
       "version": "2.11.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdba86cf2e2efc79d7716e0866713a2320a1ed932b12a5ce6eced6e76115b699",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/doppler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-doppler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-doppler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93978b10ae9620f83ea8c2914a85f2c64380ef5ef1ec55d0a38575e6762992fc",

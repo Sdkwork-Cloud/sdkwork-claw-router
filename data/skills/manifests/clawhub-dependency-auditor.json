@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dependency-auditor@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-dependency-auditor-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dependency-auditor-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:850dc710e9a07bd82674f9bc80b7aedaf3676bf0bf61df30afdae8c307f6d3ba",

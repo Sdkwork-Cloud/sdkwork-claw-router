@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sunshine-agent-task-tracker@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sunshine-agent-task-tracker-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sunshine-agent-task-tracker-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:49fbd2893f878e635e22c751d4cbb7d790e32267724e9b28e5b85e65700def35",

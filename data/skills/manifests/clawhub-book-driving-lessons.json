@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-driving-lessons@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-driving-lessons-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-driving-lessons-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:564f5c9391cbcd52b5bd8f7a4716e356523d9e576fae46c6e5159cd30bef7ad3",

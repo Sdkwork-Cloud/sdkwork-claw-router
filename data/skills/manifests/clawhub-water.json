@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/water@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-water-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-water-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4620397eb4851cd4156270229796b3beac47d6aee3783497a98c3d0313d8d4fe",

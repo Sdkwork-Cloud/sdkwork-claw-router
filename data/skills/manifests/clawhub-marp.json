@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fbb4e7a01e651c57342dff1ac46f988e6af803ebac11e672eb9cc6644a384645",

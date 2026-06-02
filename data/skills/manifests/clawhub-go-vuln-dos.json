@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/go-vuln-dos@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-go-vuln-dos-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-go-vuln-dos-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b71c69e90eb822d8a0a9db766c87547e72ca045ecda7db73443b2bbe9b0a5657",

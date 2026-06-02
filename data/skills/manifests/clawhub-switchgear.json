@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/switchgear@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-switchgear-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-switchgear-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc18f2b5b9f479817718f706eb23f30f4f08cfc3b38cf487fe68607ba49405ba",

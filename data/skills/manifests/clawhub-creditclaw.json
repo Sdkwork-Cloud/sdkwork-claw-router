@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/creditclaw@2.9.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-creditclaw-2.9.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-creditclaw-2.9.9.json"
+      },
       "version": "2.9.9",
       "runtime": "metadata",
       "checksumHash": "sha256:853ff6b8bfbd614d9e52ec49110707680fa8276403682d00f00066541186a3c8",

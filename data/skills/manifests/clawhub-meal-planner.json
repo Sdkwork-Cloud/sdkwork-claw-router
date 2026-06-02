@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meal-planner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meal-planner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meal-planner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a99745021333af742da78f70f6123beb2cc6b796ab729efc77b8310286a1e298",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/specter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-specter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-specter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e538f047a8dc75295497bf5d1d5d289c816bd6befe4f8cc34c39beb1bf44f6a7",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solvera@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-solvera-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solvera-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5b6ad7d7697df3960cfa9ffafa06eb78ebc619b5eacb333cc16795be3009d3ef",

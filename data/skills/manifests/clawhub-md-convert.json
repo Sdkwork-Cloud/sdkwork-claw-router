@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/md-convert@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-md-convert-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-md-convert-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:5db5b161bc09bfc3145f67c8f5230d5a7501277a09e6c307c65e2adca29a061d",

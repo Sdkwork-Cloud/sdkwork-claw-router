@@ -44,7 +44,7 @@ pub struct AppAgentItem {
     pub description: String,
     pub visibility: String,
     pub status: String,
-    pub avatar_url: Option<String>,
+    pub avatar: Option<Value>,
     pub template_source: Option<String>,
     pub created_at: String,
     pub updated_at: String,

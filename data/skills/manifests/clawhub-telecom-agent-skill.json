@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telecom-agent-skill@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-telecom-agent-skill-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telecom-agent-skill-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:cfcf07f55ff9dedbed59577054391d43157bd8536c37c65d07addef8a3d5547d",

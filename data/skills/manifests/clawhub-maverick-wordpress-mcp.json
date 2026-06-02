@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maverick-wordpress-mcp@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-maverick-wordpress-mcp-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maverick-wordpress-mcp-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:096a5f6d14e7ae931f5b24c5f886aa11c89bd506abb63a99c6ece0dfb808d6f2",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gal-test@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gal-test-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gal-test-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8a3ad6326e064b8a1d7b5eb24f0f4034de175c31e57717108493f10e7954b928",

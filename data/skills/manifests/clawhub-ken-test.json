@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ken-test@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ken-test-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ken-test-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:46a7a19b882394be71ee55aa1f14f072a06fef27de0dffd08096c41c54aa952c",

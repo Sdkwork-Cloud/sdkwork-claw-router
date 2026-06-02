@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toutiao-agent-skill@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toutiao-agent-skill-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toutiao-agent-skill-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57199239377bd8909f50c95905a544d6add2438d27336bdf828c9fb39c1f903c",

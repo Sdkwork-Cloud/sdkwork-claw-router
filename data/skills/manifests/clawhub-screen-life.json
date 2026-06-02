@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/screen-life@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-screen-life-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-screen-life-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:974b4cf044a990a31109f4023414d83714e7a466d669da76e1433bc9252b9e49",

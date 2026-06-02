@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-image-hosting@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-image-hosting-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-image-hosting-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:aa28a66512ca7f407026114e49d0f180a47f6f5e8d341df245142636bdaebdb2",

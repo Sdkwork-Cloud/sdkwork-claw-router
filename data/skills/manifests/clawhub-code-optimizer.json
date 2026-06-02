@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/code-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-code-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-code-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:caf658b68ce6d5790d9d5151fa5eee7c3021000e1dde31911f817214cdc411d4",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/regex-patterns@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-regex-patterns-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-regex-patterns-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8f48c025d967c9cc0d011bc1662c1cf86abfd93507c9e0851b90ea8b556fc1b",

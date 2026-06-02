@@ -6,6 +6,8 @@ export interface CommerceMembershipEntitlementUsageRecord {
   created_at: string;
   /** Entitlement id field on commerce membership entitlement usage record. */
   entitlement_id: string;
+  /** Id field on commerce membership entitlement usage record. */
+  id?: string;
   /** Idempotency key field on commerce membership entitlement usage record. */
   idempotency_key: string;
   /** Membership id field on commerce membership entitlement usage record. */

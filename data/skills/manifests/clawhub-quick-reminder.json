@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quick-reminder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quick-reminder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quick-reminder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:329a6a9f99f58ed3c2d7f7e6ae294a15abebd9bd9fc3b9185bd029d8934dacf6",

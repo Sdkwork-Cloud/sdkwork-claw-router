@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weave@0.1.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-weave-0.1.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weave-0.1.6.json"
+      },
       "version": "0.1.6",
       "runtime": "metadata",
       "checksumHash": "sha256:8abab0d1c2d3dda9cb3f40dc13dd17f6404f926d818084582c8ce97d55e02c81",

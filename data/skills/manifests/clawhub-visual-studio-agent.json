@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/visual-studio-agent@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-visual-studio-agent-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-visual-studio-agent-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:f227ad29cf598a23799a988755a8526d93a265e096613573a31ffaa541e4bafb",

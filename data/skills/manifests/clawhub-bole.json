@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bole@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bole-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bole-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ecc948a492bb17b9c83228f45eb565396d515a25a84c32c5fc0f976b0b69224",

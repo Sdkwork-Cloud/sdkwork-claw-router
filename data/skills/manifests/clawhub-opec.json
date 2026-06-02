@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opec@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-opec-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opec-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10af7342ec57e3efa9161da92a018afdf81215cf170eddf6bfe23bcd3111e1ac",

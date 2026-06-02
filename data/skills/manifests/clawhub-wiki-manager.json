@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wiki-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wiki-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wiki-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2cb5892d2e68d229905134d92b1770cc89cb125033852a8d762d82c07a39679",

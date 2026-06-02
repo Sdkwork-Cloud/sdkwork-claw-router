@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windfall-inference@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windfall-inference-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windfall-inference-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c6ee4a102f849c27f0963a8978faba1ddb44688813a88fa2e1b9700f60939fc7",

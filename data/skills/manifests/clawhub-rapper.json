@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rapper@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-rapper-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rapper-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2c4d1e1c48253685fa66de9ff9a48eb76b714aaac8f42fa23ac1d5430fb50c5a",

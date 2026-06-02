@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/echo-fade-memory@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-echo-fade-memory-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-echo-fade-memory-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2771b2f9886d65a70523c2c4b471224e6ce05d4a69e49a3cc6910cb7d2a62b27",

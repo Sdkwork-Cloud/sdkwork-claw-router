@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-guard-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-guard-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-guard-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f948211bd51e1ecfe3867ceef3b06a652f1ef6d20793b5fe406447e459f53ca8",

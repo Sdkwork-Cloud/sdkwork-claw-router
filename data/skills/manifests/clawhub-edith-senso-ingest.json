@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edith-senso-ingest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-edith-senso-ingest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edith-senso-ingest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c29d10ac8ce15fee0d8a2aad151643d241810edf0bb7c20b1f4fa490006a1d2",

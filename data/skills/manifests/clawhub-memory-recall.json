@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-recall@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-recall-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-recall-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7423f8362917d2a9e07a457aa2ae1e00f78ac83ecd175158ca0a2ff0ac77c64e",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/searxng-docker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-searxng-docker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-searxng-docker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8eeda09673e0bcae13f92d841fec6ce2f793079b77fa2b9ad77870b464dc2615",

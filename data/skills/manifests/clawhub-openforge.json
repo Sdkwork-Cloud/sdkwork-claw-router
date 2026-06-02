@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openforge@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openforge-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openforge-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0afa15a540c0425f3146631a5b385648c7257f4bf56a89e078118f6675436224",

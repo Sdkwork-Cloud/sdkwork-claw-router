@@ -13,7 +13,7 @@ data class AiModelFamilyRecord(
     val docsUrl: String? = null,
     val familyCode: String? = null,
     val familyType: String? = null,
-    val iconUrl: String? = null,
+    val icon: MediaResource? = null,
     val id: String? = null,
     val metadata: Map<String, String>? = null,
     val modelCount: String? = null,

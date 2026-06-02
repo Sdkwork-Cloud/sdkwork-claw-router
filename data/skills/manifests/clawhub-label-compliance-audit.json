@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/label-compliance-audit@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-label-compliance-audit-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-label-compliance-audit-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3d400a7a600a457e8ee071dcf2c3b9826ff6e061bb9125f1fbff0bef706e2356",

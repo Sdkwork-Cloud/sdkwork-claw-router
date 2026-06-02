@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cm-conversation-summarizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cm-conversation-summarizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cm-conversation-summarizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f1f8472968723a5ddfc427a1f9951a5183e43ce9e0269e9061a3772f4b2caf71",

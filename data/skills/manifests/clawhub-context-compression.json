@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/context-compression@3.13.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-context-compression-3.13.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-context-compression-3.13.3.json"
+      },
       "version": "3.13.3",
       "runtime": "metadata",
       "checksumHash": "sha256:537532155cdad8e098fc844625dd71c9dc45b56d6464562d0569a0ffc2d8ce85",

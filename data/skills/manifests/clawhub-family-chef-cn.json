@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/family-chef-cn@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-family-chef-cn-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-family-chef-cn-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ec139bd6ae9657b1d78cbc1b320f736aa1428f7bbf0d509ec19ac00560f69a1",

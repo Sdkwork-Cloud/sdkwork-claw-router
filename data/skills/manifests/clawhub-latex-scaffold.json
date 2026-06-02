@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/latex-scaffold@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-latex-scaffold-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-latex-scaffold-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1642e928fa99d418122d88c17f7442b517cb8b752a96a3d3fd72fc4ecc4668ef",

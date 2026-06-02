@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-organizer-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-organizer-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-organizer-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4b62b5cef6cd48ca73f7ac8ff404678b667de0adec606b27b6fd16f06604ba27",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-actions-artifact-budget-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-artifact-budget-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-actions-artifact-budget-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:406ff6abc4d892fc880c2a17df465b1180fcb9759156d272d8bd79360eaf3cff",

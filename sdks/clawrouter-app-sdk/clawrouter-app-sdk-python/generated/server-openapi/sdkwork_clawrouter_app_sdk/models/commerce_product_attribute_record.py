@@ -17,4 +17,5 @@ class CommerceProductAttributeRecord:
     tenant_id: str
     updated_at: str
     value_type: str
+    id: Optional[str] = None
     organization_id: Optional[str] = None

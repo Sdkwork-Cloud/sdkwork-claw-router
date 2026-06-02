@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lurefish@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lurefish-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lurefish-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d9e0f9944c1cf4c080ec9b73ed89eae4739ecf099312465fdc60a380877a0413",

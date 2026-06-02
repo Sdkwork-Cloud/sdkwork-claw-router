@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ctf-osint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ctf-osint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ctf-osint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:909e111fddd5c106feac456eb62c398a6ee2999752de4167d871ac93e551029a",

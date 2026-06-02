@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coding-agent-claude-print@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coding-agent-claude-print-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coding-agent-claude-print-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05668b59692fa64939d7c0f7a514e1c1ddd6e8ca9d213bb49021f498d36a7a1d",

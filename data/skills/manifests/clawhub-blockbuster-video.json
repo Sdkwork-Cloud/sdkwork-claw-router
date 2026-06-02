@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blockbuster-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blockbuster-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blockbuster-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c228a97b9efc07d3fb53447aa403cbb85f5496097e5fd55df1db4d1220d47767",

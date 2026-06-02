@@ -8,8 +8,8 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? AltText { get; set; }
         public string? ArtifactId { get; set; }
+        public MediaResource? Asset { get; set; }
         public string? AssetType { get; set; }
-        public string? AssetUrl { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }
         public string? DeletedAt { get; set; }
@@ -27,7 +27,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? TargetId { get; set; }
         public string? TargetType { get; set; }
         public string? TenantId { get; set; }
-        public string? ThumbnailUrl { get; set; }
+        public MediaResource? Thumbnail { get; set; }
         public string? Title { get; set; }
         public string? UpdatedAt { get; set; }
         public string? Uuid { get; set; }

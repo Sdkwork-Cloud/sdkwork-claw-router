@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cron-automation-manager@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cron-automation-manager-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cron-automation-manager-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ef33942c3fe4287f503cfce19aa04f2d647e769c382958ff0561d9545d82ec62",

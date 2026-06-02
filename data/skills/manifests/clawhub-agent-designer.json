@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-designer@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-designer-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-designer-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:379a1017258e0405db2483faea569f3109c9f77189e45e7c3b5f44d5b23113fc",

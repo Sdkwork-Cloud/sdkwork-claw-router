@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/luci-memories@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-luci-memories-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-luci-memories-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e852c6614e10aed4b898e936adad48fba0c0fcfb4861f354ba12399cf00aef20",

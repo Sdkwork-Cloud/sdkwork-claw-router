@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/job-hunter-gmail@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-job-hunter-gmail-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-job-hunter-gmail-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:49bff2c7149fc263743a16abdf6f7f449065631a67bce36c656792a4ef14bf16",

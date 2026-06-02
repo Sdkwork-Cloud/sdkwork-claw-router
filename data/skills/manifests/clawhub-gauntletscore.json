@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gauntletscore@5.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-gauntletscore-5.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gauntletscore-5.1.5.json"
+      },
       "version": "5.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7e30838dae1d1ee9494f0c5702a0f3d509c38326e3c30aeea6afe92b207d26fe",

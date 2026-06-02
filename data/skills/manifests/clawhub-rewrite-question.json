@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rewrite-question@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rewrite-question-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rewrite-question-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db4d94fa143a12ea90bf65e7fd3a0659acc7d4f126aa0f903a22f2a306298804",

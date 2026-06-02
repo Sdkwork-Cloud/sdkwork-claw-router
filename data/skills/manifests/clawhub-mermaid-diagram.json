@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mermaid-diagram@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mermaid-diagram-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mermaid-diagram-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5372a020faa99a52d91a3f7ffbf358f8142fdc02381f19c10d27fc787b160ca0",

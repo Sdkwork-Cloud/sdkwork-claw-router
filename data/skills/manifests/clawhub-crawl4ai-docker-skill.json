@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crawl4ai-docker-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crawl4ai-docker-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crawl4ai-docker-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cad9422954a05edcaa1a1bd1cd00ab2915f4e49ed209dd721a62b60f083a6ab8",

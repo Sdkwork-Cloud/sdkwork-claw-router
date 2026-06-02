@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alexa-cli@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alexa-cli-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alexa-cli-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e0763726309be3cc65afd512bc79af8cbd831a528e65feaa3d77f6003d0a98b2",

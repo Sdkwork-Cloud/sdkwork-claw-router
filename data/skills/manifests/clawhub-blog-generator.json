@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blog-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blog-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blog-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2467554050edbf94ec0f62d95ba833c014277a347ba5976d70a0c0f9d8e89660",

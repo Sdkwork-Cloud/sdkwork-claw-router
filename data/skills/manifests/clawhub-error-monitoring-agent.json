@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/error-monitoring-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-error-monitoring-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-error-monitoring-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96b62282fa6fbc4f434cc501216b7da73bd5f3d558cbdd475a104ba2e92dd844",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwen-qwen3@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwen-qwen3-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwen-qwen3-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ca0afcf4544e356a8bccf33742ac317edf35cc232a457ade7b391cd7cfd86c3f",

@@ -13,12 +13,6 @@ public class IamApi {
         this.client = client;
     }
 
-    /** List groups */
-    public ApiKeyGroupsListResult apiKeyGroupsList() throws Exception {
-        Object raw = client.get(ApiPaths.appPath("/iam/api_key_groups"));
-        return client.convertValue(raw, new TypeReference<ApiKeyGroupsListResult>() {});
-    }
-
     /** List keys */
     public ApiKeysListResult apiKeysList() throws Exception {
         Object raw = client.get(ApiPaths.appPath("/iam/api_keys"));

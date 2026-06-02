@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-ultra-scraping@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-ultra-scraping-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-ultra-scraping-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ed8c1ef615207a3f862f26c5a7704c0fc92a666c1f35bc63401ebbdbd834423",

@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wordpress-mcp@3.3.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-mcp-3.3.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wordpress-mcp-3.3.4.json"
+      },
       "version": "3.3.4",
       "runtime": "metadata",
       "checksumHash": "sha256:96447633a5d4009f1373cff138f21999a8efc65a24e2658a5d85d33c7b4671da",

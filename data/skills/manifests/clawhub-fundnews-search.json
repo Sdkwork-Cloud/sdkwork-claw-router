@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fundnews-search@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fundnews-search-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fundnews-search-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2f7646147bd0ea99ecef535a06043859c669b38e8e4fc951e3dcaab15f16ea44",

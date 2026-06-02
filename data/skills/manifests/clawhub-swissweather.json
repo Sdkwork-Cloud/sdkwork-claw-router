@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swissweather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swissweather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swissweather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0578ab63d326062b25f96a8dfeea61ec06943b9b21de1aa6e66b131ec206f543",

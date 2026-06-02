@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weibo-openclaw-ops@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weibo-openclaw-ops-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weibo-openclaw-ops-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:22370a6bf1c664542a9f1d63baee57bf8b3138b9c85cd78aa80675303a54ab45",

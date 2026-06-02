@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/worldbook@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-worldbook-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-worldbook-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:583c2c371239e326b0d3d37e6a54dfe5849197332782b2b524be85803d15e044",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/philips-hue@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-philips-hue-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-philips-hue-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:de9a8ffe8758886ef24f3362b671045b0c5e222ed638c565d7b55a1f12b85491",

@@ -56,6 +56,8 @@ export interface AiAgentRunRecord {
   request_id?: string;
   /** Retention until field on ai agent run record. */
   retention_until?: string;
+  /** Run status field on ai agent run record. */
+  run_status?: string;
   /** Run uuid field on ai agent run record. */
   run_uuid?: string;
   /** Runtime field on ai agent run record. */

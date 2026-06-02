@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memcore@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memcore-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memcore-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:84f7473543e1b422e0c9c86e746ab525729bff45d51e03accdd30a74a0fff6af",

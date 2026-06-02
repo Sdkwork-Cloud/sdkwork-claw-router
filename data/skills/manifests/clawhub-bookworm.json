@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bookworm@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bookworm-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bookworm-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:aad2b61b7f05182496f98d8d1496cd50c520b615b22427d51823df651f0c1f75",

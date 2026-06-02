@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcp-hello-world@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcp-hello-world-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcp-hello-world-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c27ddbc7db55a4df55256188c7b729a1f823ed5669996748f8e3a2418fb31827",

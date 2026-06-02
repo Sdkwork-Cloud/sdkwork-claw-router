@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/let-me-know@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-let-me-know-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-let-me-know-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dc85e816cc560bd6dc64139229cb9c740583079eda5a4d382535d2bc55992256",

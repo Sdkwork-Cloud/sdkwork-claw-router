@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/word-document-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-word-document-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-word-document-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a1720d68aab45405115a6835c1f133986efa98cf828081c01574dd74cf04be35",

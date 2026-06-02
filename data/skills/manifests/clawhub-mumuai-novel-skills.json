@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mumuai-novel-skills@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-mumuai-novel-skills-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mumuai-novel-skills-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:1b630e7d9765a276d3196e02dcda25a021279519d4a9a992595fb421b5aa2039",

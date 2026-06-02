@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bool-cli@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bool-cli-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bool-cli-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cd2fd0fc5e8bffbe282d162b183433c35d31b905e92994ed392dc4a28349c397",

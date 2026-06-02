@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-teleport@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-teleport-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-teleport-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55ad7a870d4f010674b30d3b8cca8dd8e5d145cbe9989553a2fbba04f81fadd9",

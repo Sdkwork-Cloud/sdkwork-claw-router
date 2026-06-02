@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rdm-assistant@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-rdm-assistant-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rdm-assistant-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c438130bf73e00e80fcd7fe27eb44db440818e84892243ecedf815f414cd6704",

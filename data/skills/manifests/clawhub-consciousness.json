@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/consciousness@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-consciousness-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-consciousness-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:79b9ab039b8a1df33052bfcbaf37541b8988bfa31b36fa8b12341c8d69ff8a2c",

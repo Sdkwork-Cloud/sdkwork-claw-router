@@ -4,8 +4,8 @@ package types
 type AdminSkillAssetCreateRequest struct {
 	AltText string `json:"altText"`
 	ArtifactId string `json:"artifactId"`
+	Asset MediaResource `json:"asset"`
 	AssetType int `json:"assetType"`
-	AssetUrl string `json:"assetUrl"`
 	DurationSeconds string `json:"durationSeconds"`
 	FileSize int `json:"fileSize"`
 	Height int `json:"height"`
@@ -13,7 +13,7 @@ type AdminSkillAssetCreateRequest struct {
 	PublishedAt string `json:"publishedAt"`
 	SortOrder int `json:"sortOrder"`
 	Status int `json:"status"`
-	ThumbnailUrl string `json:"thumbnailUrl"`
+	Thumbnail MediaResource `json:"thumbnail"`
 	Title string `json:"title"`
 	Width int `json:"width"`
 }

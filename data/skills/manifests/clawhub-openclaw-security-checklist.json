@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-security-checklist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-security-checklist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-security-checklist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c9ea44a2b51d2603615d3e278e000bef0f1df6825f8b2f7b6229082e6e5c996",

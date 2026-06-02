@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tailscale-serve@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tailscale-serve-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tailscale-serve-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0004a78d0333935119f20544d0cacb37cc2dab7bb49a3ec1cb94c7927f407dcf",

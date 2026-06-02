@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/runware-image@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-runware-image-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-runware-image-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de3f39c58a74e6c8b36a2bff5c9ac2de8a71323d48e3a216dc32151c3ed76801",

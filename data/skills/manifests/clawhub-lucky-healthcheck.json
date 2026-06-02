@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lucky-healthcheck@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lucky-healthcheck-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lucky-healthcheck-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8f63a6bd0e079e5fcab0535f8bcbab565d7445050663af5f7dccbebfbf24f7f6",

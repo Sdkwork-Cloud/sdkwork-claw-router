@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deepsafe-scan@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-deepsafe-scan-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deepsafe-scan-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4325d44cc4979a9dd02af9c206aecd1f1563c5d18420e122af38cc6d1f90b8f7",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baidu-ocr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-baidu-ocr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baidu-ocr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb763ad0d10e3f4eea3052f1b2bac4f6037ff54d74691240be5fd453cbbace0b",

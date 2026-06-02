@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/demo-cutter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-demo-cutter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-demo-cutter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4dd91faba6b54b64a411eb8050851e78e87e7210187b6d9ee9d53795dd695ab0",

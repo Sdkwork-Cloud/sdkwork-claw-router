@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voyageai-skill@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voyageai-skill-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voyageai-skill-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a23db15407faccbd4dbc1482a74ffb6e8b8007ed1847af3e5bd6ffe2b113a2ac",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/verified-agent-nifey@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-verified-agent-nifey-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-verified-agent-nifey-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b73700de9bb80468a9d61696e625082906c59204c0105e5d35301cb252c1ef48",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/long-text-tracker@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-long-text-tracker-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-long-text-tracker-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8f0111d2c930a8967a7d149f98b652c7daeaad3cdb9a5cd862503256493b46c4",

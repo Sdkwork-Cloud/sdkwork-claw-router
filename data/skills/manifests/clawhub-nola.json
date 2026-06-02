@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nola@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nola-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nola-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:80b9e49505e2451def446a7f3b1b8cab197938a2a2b9aa86e8d1bebf9e935f1e",

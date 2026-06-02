@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-agent-memory@3.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-agent-memory-3.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-agent-memory-3.0.6.json"
+      },
       "version": "3.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:52627eff907873745d855309311fde8293857c09fadc41272a6c04ea0ffc565d",

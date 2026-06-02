@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amygdala-memory@1.7.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amygdala-memory-1.7.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amygdala-memory-1.7.0.json"
+      },
       "version": "1.7.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b4b8a1eb889447cb581f72591a7c0a162741b7adc6565e4d25d612f87a6bd735",

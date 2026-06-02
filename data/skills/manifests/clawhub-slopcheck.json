@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slopcheck@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-slopcheck-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slopcheck-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:9e31c5df617e2ae1597029f5ccde50e351059a5126a25b278360b8fb694bbe5a",

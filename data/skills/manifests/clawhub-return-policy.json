@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/return-policy@2.3.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-return-policy-2.3.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-return-policy-2.3.6.json"
+      },
       "version": "2.3.6",
       "runtime": "metadata",
       "checksumHash": "sha256:195967df877621bc0aefb48097fe4211c21ef4a9d4df60c29a56cc02961bc055",

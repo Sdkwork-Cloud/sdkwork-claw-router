@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-dashboard@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-dashboard-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-dashboard-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:393faef9e7c82f0a93e006016673923461e5c15ae476a86b89caba3ecb18f6dd",

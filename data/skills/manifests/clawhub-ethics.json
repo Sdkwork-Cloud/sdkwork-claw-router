@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ethics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ethics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ethics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f99ea6d4a4b2d40a8c281babcc2cf112f88f51f93e981f2207b81946e60e0c4a",

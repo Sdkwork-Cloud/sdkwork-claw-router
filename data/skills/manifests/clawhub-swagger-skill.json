@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swagger-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-swagger-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swagger-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d5be301ae54fab11daceaae75b94b95f5d60dcc17094d1706f27a0a914d66fd6",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ostree@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ostree-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ostree-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ae2be4fbe042fb4c146dde3b1e3e90832e26a31e7adf544eaaa8c5b102200a3",

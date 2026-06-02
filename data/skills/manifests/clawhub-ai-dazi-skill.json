@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-dazi-skill@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-dazi-skill-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-dazi-skill-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e236df6c250a274ebd4ceb944fe4504fd41e6e72e2ee20f5fe26ef3a2f161248",

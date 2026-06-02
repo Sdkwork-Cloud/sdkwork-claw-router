@@ -2,14 +2,17 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class StudioCatalogArtifactRecord:
     """Studio catalog artifact record schema exposed by Claw Router."""
+    artifact: Optional[MediaResource] = None
     artifact_ref: Optional[str] = None
     artifact_size_bytes: Optional[str] = None
     artifact_type: Optional[str] = None
-    artifact_url: Optional[str] = None
     checksum_hash: Optional[str] = None
     created_at: Optional[str] = None
     data_scope: Optional[str] = None

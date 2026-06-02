@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/enigma@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-enigma-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-enigma-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:96fbc7ce01ba04012eb6bdd4edef719f6a23ccc1f623ce034bd52d9287198b84",

@@ -79,6 +79,10 @@ pub struct AiPromptRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
 
+    /// Tags field on ai prompt record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub tags: Option<std::collections::HashMap<String, String>>,
+
     /// Tenant id field on ai prompt record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub tenant_id: Option<String>,

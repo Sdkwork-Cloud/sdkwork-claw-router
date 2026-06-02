@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-sequence@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-sequence-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-sequence-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:74bef359618edc9eec7666eddc516342dc24bab9c74089b68f2c9a6540896b71",

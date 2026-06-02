@@ -23,6 +23,15 @@ import {
   uploadCourseApplicationVideo,
 } from "./packages/sdkwork-claw-router-courses/src/courseService.ts";
 
+function mediaResource(url: string, kind: "image" | "video" = "image") {
+  return {
+    kind,
+    source: url.startsWith("data:") ? "data_url" : "external_url",
+    url,
+    publicUrl: url,
+  };
+}
+
 test("course content snapshot metadata is explicit and release-bound", () => {
   assert.deepEqual(COURSE_CONTENT_SNAPSHOT_SOURCE, {
     sourceLabel: "Curated course content snapshot",
@@ -141,10 +150,10 @@ test("course API service normalizes live SDK payloads", () => {
         courseCode: "c1",
         title: "\u98de\u4e66 CLI \u4e0e Claude Code/Codex \u8fdc\u7a0b\u5f00\u53d1\u5b9e\u6218",
         description: "\u57fa\u4e8e Bilibili \u7684\u98de\u4e66 CLI\u3001Claude Code\u3001Codex \u8bfe\u7a0b\u3002",
-        thumbnailUrl: "https://example.com/course.jpg",
+        thumbnail: mediaResource("https://example.com/course.jpg"),
         instructor: {
           name: "SDKWork Academy",
-          avatar: "https://example.com/avatar.jpg",
+          avatar: mediaResource("https://example.com/avatar.jpg"),
           title: "AI Coding Curriculum Team",
           bio: "Curates practical AI coding courses.",
         },
@@ -188,7 +197,6 @@ test("course API service normalizes live SDK payloads", () => {
     code: "2000",
     data: {
       ...catalog.courses[0],
-      thumbnailUrl: catalog.courses[0].thumbnail,
       durationText: catalog.courses[0].duration,
       ratingScore: catalog.courses[0].rating,
       externalBvid: catalog.courses[0].bilibiliBvid,
@@ -228,10 +236,10 @@ test("course detail lesson selection switches the active lesson video", () => {
       courseCode: "c1",
       title: "\u98de\u4e66 CLI \u4e0e Claude Code/Codex \u8fdc\u7a0b\u5f00\u53d1\u5b9e\u6218",
       description: "\u57fa\u4e8e Bilibili \u7684\u98de\u4e66 CLI\u3001Claude Code\u3001Codex \u8bfe\u7a0b\u3002",
-      thumbnailUrl: "https://example.com/course.jpg",
+      thumbnail: mediaResource("https://example.com/course.jpg"),
       instructor: {
         name: "SDKWork Academy",
-        avatar: "https://example.com/avatar.jpg",
+        avatar: mediaResource("https://example.com/avatar.jpg"),
         title: "AI Coding Curriculum Team",
         bio: "Curates practical AI coding courses.",
       },
@@ -321,10 +329,10 @@ test("course detail lesson selection supports local uploaded video playback meta
       courseCode: "ai-video",
       title: "\u5373\u68a6 AI \u89c6\u9891\u5236\u4f5c\u96f6\u57fa\u7840\u6559\u7a0b",
       description: "Learn local and Bilibili video course playback.",
-      thumbnailUrl: "https://example.com/video-course.jpg",
+      thumbnail: mediaResource("https://example.com/video-course.jpg"),
       instructor: {
         name: "SDKWork Academy",
-        avatar: "https://example.com/avatar.jpg",
+        avatar: mediaResource("https://example.com/avatar.jpg"),
         title: "AI learning editor",
         bio: "Curates AI courses.",
       },
@@ -370,7 +378,7 @@ test("course detail lesson selection supports local uploaded video playback meta
           number: 2,
           title: "Local uploaded tutorial",
           durationText: "12:00",
-          videoUrl: "/uploads/courses/ai-video/local-uploaded-tutorial.mp4",
+          video: mediaResource("/uploads/courses/ai-video/local-uploaded-tutorial.mp4", "video"),
           sourceProvider: "local",
           freePreview: true,
         }],
@@ -453,7 +461,6 @@ test("course application submission is normalized through generated app SDK", as
               category: "ai-coding",
               sourceProvider: "bilibili",
               externalBvid: "BV1FAiPBeEZf",
-              videoUrl: "",
               contactName: "Ada",
               contactEmail: "ada@example.com",
               status: "pending",
@@ -484,7 +491,7 @@ test("course application submission is normalized through generated app SDK", as
       description: "A beginner-friendly Claude Code course for online learning.",
       sourceProvider: "bilibili",
       externalBvid: "BV1FAiPBeEZf",
-      videoUrl: undefined,
+      video: undefined,
       contactName: "Ada",
       contactEmail: "ada@example.com",
       notes: undefined,
@@ -513,7 +520,7 @@ test("course application video upload is normalized through generated app SDK", 
             return {
               code: "2000",
               data: {
-                videoUrl: "/uploads/courses/applications/course-application-video-lesson.mp4",
+                video: mediaResource("/uploads/courses/applications/course-application-video-lesson.mp4", "video"),
                 fileName: "course-application-video-lesson.mp4",
                 contentType: "video/mp4",
                 sizeBytes: 3,
@@ -575,7 +582,7 @@ test("course application video upload is normalized through generated app SDK", 
       fileName: "  Claude Code Lesson.mp4  ",
     });
 
-    assert.equal(result.videoUrl, "/uploads/courses/applications/course-application-video-lesson.mp4");
+    assert.equal(result.video.publicUrl, "/uploads/courses/applications/course-application-video-lesson.mp4");
     assert.equal(result.fileName, "course-application-video-lesson.mp4");
     assert.equal(result.contentType, "video/mp4");
     assert.equal(result.sizeBytes, 3);

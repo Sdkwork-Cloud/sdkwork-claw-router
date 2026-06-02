@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ee-datasheet-master@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ee-datasheet-master-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ee-datasheet-master-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:359b0a3fc68e51265a0a531ac9c8c327283b4af5754365a4fcbd2af4cc39b64f",

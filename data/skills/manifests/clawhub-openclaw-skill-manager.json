@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-manager@3.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-manager-3.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-manager-3.1.3.json"
+      },
       "version": "3.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6815f3bc6e4501ac39c55416d038728b9e8d2cc4cef5680eb40239315b161003",

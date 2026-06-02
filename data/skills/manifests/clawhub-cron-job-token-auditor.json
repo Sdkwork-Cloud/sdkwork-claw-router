@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cron-job-token-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cron-job-token-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cron-job-token-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56936771876ed2bee9b8ad0f049d9e36813cde5f89363117d95a3291184fd6b3",

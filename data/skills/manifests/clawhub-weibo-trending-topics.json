@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weibo-trending-topics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weibo-trending-topics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weibo-trending-topics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8108bbd02c4cd94ed6bbd83445c74549cf0376209179c230e048511d83e0fe9a",

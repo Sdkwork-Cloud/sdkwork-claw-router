@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qqemail-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qqemail-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qqemail-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:76ad2b55147b74703d589fa2b54f7ba816d513d0b38afe61fd952934c4180482",

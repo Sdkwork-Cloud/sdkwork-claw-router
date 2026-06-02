@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-reputation-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-reputation-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-reputation-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25b28914c97bbd8f014ee66e46b44e04a85bdb1fa64490d8858930bf91b6fe39",

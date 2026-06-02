@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentphone@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentphone-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentphone-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5581c534562269ada4d0d51860b70cc1557b85e95181606597e248102e0c26b0",

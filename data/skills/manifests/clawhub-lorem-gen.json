@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lorem-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lorem-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lorem-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ab20a282e13aa91b370b1a5f3296eb638f68afb17783a0b495d3237256b6a3b8",

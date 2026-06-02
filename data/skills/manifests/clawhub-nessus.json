@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nessus@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-nessus-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nessus-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3ee45edf0aae99dbd5d23a1a92e69f8b67068993ddb2b72a87cc156955968d06",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sandwich@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sandwich-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sandwich-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3e8cdda18aad76afc43ee7390bf9d0c1589533f38d44ac29a503cb4a7b909e8",

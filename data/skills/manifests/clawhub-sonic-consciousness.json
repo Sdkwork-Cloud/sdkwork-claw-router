@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sonic-consciousness@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sonic-consciousness-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sonic-consciousness-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:34b810edeec05c6398384950b601b3976b3b216579140a6d3a2d44016b311ca4",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/4k-pika-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-4k-pika-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-4k-pika-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8510727339068322041dd0d37af582e28214d1614c9875714803e2657933025c",

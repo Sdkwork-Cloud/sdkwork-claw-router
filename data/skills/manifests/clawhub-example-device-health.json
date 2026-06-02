@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/example-device-health@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-example-device-health-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-example-device-health-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1db2b63040371475c79590116da72d3300fb84bb0f0be28dec0d46288d4333b",

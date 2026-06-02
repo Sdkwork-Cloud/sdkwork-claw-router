@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/del-taco@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-del-taco-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-del-taco-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2bbd36dfd87d13e4a6be6446e014d403560d152750e0d6ae1def9256fac35c0",

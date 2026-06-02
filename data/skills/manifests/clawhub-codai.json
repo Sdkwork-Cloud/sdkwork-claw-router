@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2817dd39912273185643cbf3da8c7c8d38fc6356487887a225869ce47d57a9c6",

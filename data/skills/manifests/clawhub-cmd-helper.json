@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cmd-helper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cmd-helper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cmd-helper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d1a06159c7818651b8f8c4e2b0a9b4e0f5a4cb256005a7165b9011b7a11f3949",

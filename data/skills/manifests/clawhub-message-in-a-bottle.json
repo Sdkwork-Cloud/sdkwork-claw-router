@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/message-in-a-bottle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-message-in-a-bottle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-message-in-a-bottle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:79a30dafe90a5b398c96a1341c805175621f14ac640167d0d8bf6064c17e9ac6",

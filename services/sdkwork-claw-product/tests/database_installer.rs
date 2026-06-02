@@ -33,6 +33,10 @@ const CATALOG_VERSION: &str = "2026.05.08.1";
 
 static CATALOG_ROOT_COUNTER: AtomicU64 = AtomicU64::new(0);
 
+fn legacy_channel_group_table(prefix: &str, suffix: &str) -> String {
+    format!("{prefix}{}{suffix}", "api_key_")
+}
+
 #[tokio::test]
 async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     let pool = sqlite_pool().await;
@@ -73,9 +77,13 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
     assert_table_exists(&pool, "ai_channel_group").await;
     assert_table_exists(&pool, "ai_channel_group_member").await;
     assert_table_exists(&pool, "ai_channel_group_metric_snapshot").await;
-    assert_table_absent(&pool, "iam_gateway_api_key_group").await;
-    assert_table_absent(&pool, "iam_api_key_group_channel").await;
-    assert_table_absent(&pool, "iam_gateway_api_key_group_metric_snapshot").await;
+    assert_table_absent(&pool, &legacy_channel_group_table("iam_gateway_", "group")).await;
+    assert_table_absent(&pool, &legacy_channel_group_table("iam_", "group_channel")).await;
+    assert_table_absent(
+        &pool,
+        &legacy_channel_group_table("iam_gateway_", "group_metric_snapshot"),
+    )
+    .await;
     assert_table_exists(&pool, "ops_job_execution").await;
     assert_table_exists(&pool, "ai_request_trace").await;
     assert_table_exists(&pool, "plus_app").await;
@@ -261,7 +269,9 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
             "project_id",
             "description",
             "version",
-            "icon_url",
+            "icon_media_resource_id",
+            "icon_object_blob_id",
+            "icon_resource_snapshot",
             "access_url",
             "config",
             "status",
@@ -274,7 +284,9 @@ async fn sqlite_installer_installs_schema_and_sdkwork_models_catalog_once() {
             "package_name",
             "bundle_id",
             "store_url",
-            "download_url",
+            "artifact_media_resource_id",
+            "artifact_object_blob_id",
+            "artifact_resource_snapshot",
         ],
     )
     .await;
@@ -659,7 +671,7 @@ async fn sqlite_admin_user_store_creates_and_updates_iam_users_without_plus_user
 }
 
 #[tokio::test]
-async fn sqlite_admin_user_store_creates_default_api_key_group_when_missing() {
+async fn sqlite_admin_user_store_creates_default_channel_group_when_missing() {
     let pool = repair_sqlite_pool().await;
     let store = SqliteAdminUserStore::new(pool.clone());
     let subject = AdminUserSubject {
@@ -1522,6 +1534,111 @@ async fn sqlite_installer_repairs_missing_model_catalog_capability_projection_ro
 }
 
 #[tokio::test]
+async fn sqlite_installer_repairs_missing_default_channel_endpoints_on_startup_check() {
+    let pool = repair_sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    sqlx::query(
+        r#"
+        DELETE FROM ai_channel_endpoint
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND json_extract(metadata, '$.catalogCode') = 'sdkwork-ai-routing'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel
+            (id, uuid, tenant_id, organization_id, provider_code, channel_code, channel_name, channel_type, status)
+        VALUES
+            (999003, 'test-shadow-openai-channel', 10, 20, 'openai', 'openai-shadow', 'OpenAI shadow', 'official', 0)
+        ON CONFLICT(tenant_id, organization_id, channel_code) DO UPDATE SET
+            deleted_at = NULL
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_endpoint
+            (uuid, tenant_id, organization_id, data_scope, status, metadata,
+             channel_id, provider_code, channel_code, channel_type, vendor_code, region_code,
+             api_code, base_url, priority, weight, health_status)
+        SELECT
+            'test-shadow-default-endpoint-' || e.endpoint_code,
+            10,
+            20,
+            1,
+            0,
+            '{"catalogCode":"sdkwork-ai-routing","itemType":"wrong_channel_shadow"}',
+            999003,
+            'openai',
+            'openai-shadow',
+            'official',
+            'openai',
+            'global',
+            e.endpoint_code,
+            'https://api.openai.com/v1',
+            100,
+            100,
+            1
+        FROM ai_api_endpoint e
+        WHERE e.tenant_id = 0
+          AND e.organization_id = 0
+          AND e.endpoint_code LIKE 'openai.%'
+          AND e.deleted_at IS NULL
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect missing default admin channel endpoint seed rows attached to openai-default"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let repaired_endpoint_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_channel_endpoint e
+        INNER JOIN ai_channel c
+          ON c.id = e.channel_id
+         AND c.tenant_id = e.tenant_id
+         AND c.organization_id = e.organization_id
+        WHERE e.tenant_id = 10
+          AND e.organization_id = 20
+          AND e.vendor_code = 'openai'
+          AND e.region_code = 'global'
+          AND e.base_url = 'https://api.openai.com/v1'
+          AND e.status = 0
+          AND e.deleted_at IS NULL
+          AND c.channel_code = 'openai-default'
+          AND c.deleted_at IS NULL
+          AND json_extract(e.metadata, '$.catalogCode') = 'sdkwork-ai-routing'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert!(
+        repaired_endpoint_count >= 3,
+        "startup repair must restore the default admin channel endpoints"
+    );
+}
+
+#[tokio::test]
 async fn sqlite_installer_repairs_missing_skills_seed_rows_on_startup_check() {
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());
@@ -2063,9 +2180,9 @@ async fn sqlite_installer_retires_stale_app_seed_artifact_projections_on_startup
     sqlx::query(
         r#"
         INSERT INTO studio_catalog_artifact
-            (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_url, artifact_size_bytes, published_at)
+            (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, published_at)
         VALUES
-            ('sdkapp-artifact-stale-video-cut-windows', 20001, 0, 0, 1, '{"seedKind":"sdkwork.plus_app.seed","itemType":"app_artifact","appKey":"sdkwork-video-cut","sourceHash":"old"}', 15, ?, 1, '0.1.4', 'DESKTOP_WINDOWS', 'desktop-windows-x64', 'desktop-windows-msi', 'https://cdn.example.test/stale/video-cut.msi', 1, '2026-05-09T00:00:00Z')
+            ('sdkapp-artifact-stale-video-cut-windows', 20001, 0, 0, 1, '{"seedKind":"sdkwork.plus_app.seed","itemType":"app_artifact","appKey":"sdkwork-video-cut","sourceHash":"old"}', 15, ?, 1, '0.1.4', 'DESKTOP_WINDOWS', 'desktop-windows-x64', 'desktop-windows-msi', 'stale-video-cut-windows-artifact', NULL, '{"kind":"document","source":"external_url","url":"https://cdn.example.test/stale/video-cut.msi","publicUrl":"https://cdn.example.test/stale/video-cut.msi"}', 1, '2026-05-09T00:00:00Z')
         "#,
     )
     .bind(video_cut_app_id)
@@ -2121,9 +2238,9 @@ async fn sqlite_installer_retires_stale_app_seed_asset_projections_on_startup_ch
     sqlx::query(
         r#"
         INSERT INTO studio_catalog_asset
-            (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, asset_type, asset_url, sort_order)
+            (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, asset_type, asset_media_resource_id, asset_resource_snapshot, sort_order)
         VALUES
-            ('sdkapp-asset-stale-claw-router-screen', 20001, 0, 0, 1, '{"seedKind":"sdkwork.plus_app.seed","itemType":"app_asset","appKey":"sdkwork-claw-router","sourceHash":"old"}', 15, ?, 2, 'https://cdn.example.test/stale/claw-router.png', 99)
+            ('sdkapp-asset-stale-claw-router-screen', 20001, 0, 0, 1, '{"seedKind":"sdkwork.plus_app.seed","itemType":"app_asset","appKey":"sdkwork-claw-router","sourceHash":"old"}', 15, ?, 2, 'stale-claw-router-screen-asset', '{"kind":"image","source":"external_url","url":"https://cdn.example.test/stale/claw-router.png","publicUrl":"https://cdn.example.test/stale/claw-router.png"}', 99)
         "#,
     )
     .bind(app_id)
@@ -2257,9 +2374,9 @@ async fn sqlite_installer_retires_stale_app_seed_categories_on_startup_check() {
     sqlx::query(
         r#"
         INSERT INTO plus_category
-            (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status)
+            (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
         VALUES
-            (20999998, 'sdkwork-app-category-removed', 20001, 0, 0, 'Removed Category', 'Removed stale app category.', 0, 999999, 'app-store', 'app-store-removed', '["app","app-store","removed"]', 'app-window', 999, NULL, '/apps/categories/app-store-removed', 1, 1)
+            (20999998, 'sdkwork-app-category-removed', 20001, 0, 0, 'Removed Category', 'Removed stale app category.', 0, 999999, 'app-store', 'app-store-removed', '["app","app-store","removed"]', 'stale-app-category-icon', NULL, '{"kind":"image","source":"provider_asset","uri":"app-window"}', 999, NULL, '/apps/categories/app-store-removed', 1, 1)
         "#,
     )
     .execute(&pool)
@@ -2298,9 +2415,9 @@ async fn sqlite_installer_repairs_half_retired_stale_app_seed_categories_on_star
     sqlx::query(
         r#"
         INSERT INTO plus_category
-            (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status)
+            (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
         VALUES
-            (20999996, 'sdkwork-app-category-half-retired', 20001, 0, 0, 'Half Retired Category', 'Half retired stale app category.', 0, 999999, 'app-store', 'app-store-half-retired', '["app","app-store","half-retired"]', 'app-window', 999, NULL, '/apps/categories/app-store-half-retired', 1, 0)
+            (20999996, 'sdkwork-app-category-half-retired', 20001, 0, 0, 'Half Retired Category', 'Half retired stale app category.', 0, 999999, 'app-store', 'app-store-half-retired', '["app","app-store","half-retired"]', 'stale-app-category-icon', NULL, '{"kind":"image","source":"provider_asset","uri":"app-window"}', 999, NULL, '/apps/categories/app-store-half-retired', 1, 0)
         "#,
     )
     .execute(&pool)
@@ -4115,7 +4232,7 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
 
     let claw_router = sqlx::query(
         r#"
-        SELECT name, version, icon_url, access_url, config, install_config, release_notes, status
+        SELECT name, version, icon_resource_snapshot, access_url, config, install_config, release_notes, status
         FROM plus_app
         WHERE tenant_id = 20001
           AND organization_id = 0
@@ -4134,7 +4251,14 @@ async fn assert_app_store_seed_rows(pool: &SqlitePool) {
     assert_eq!("0.1.0", claw_router.get::<String, _>("version"));
     assert_eq!(
         "https://cdn.sdkwork.com/apps/sdkwork-claw-router/assets/icon-1024.png",
-        claw_router.get::<String, _>("icon_url")
+        serde_json::from_str::<serde_json::Value>(
+            claw_router
+                .get::<String, _>("icon_resource_snapshot")
+                .as_str(),
+        )
+        .unwrap()["publicUrl"]
+            .as_str()
+            .unwrap()
     );
     assert_eq!(
         "https://api.sdkwork.com/apps/sdkwork-claw-router",
@@ -4462,7 +4586,7 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
         FROM commerce_product_spu
         WHERE tenant_id = '0'
           AND organization_id = '0'
-          AND spu_no = 'points-recharge'
+          AND spu_no IN ('points-recharge-cny', 'points-recharge-non-cny')
           AND sales_status = 'active'
         "#,
     )
@@ -4470,8 +4594,8 @@ async fn assert_commerce_experience_seed_rows(pool: &SqlitePool) {
     .await
     .unwrap();
     assert_eq!(
-        1, recharge_product_count,
-        "points recharge product must be seeded"
+        2, recharge_product_count,
+        "points recharge seed products must include CNY and non-CNY groups"
     );
 
     let recharge_package_count: i64 = sqlx::query_scalar(

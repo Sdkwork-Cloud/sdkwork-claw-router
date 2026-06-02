@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac7e946335042f7f42ffdf4945590679aa384e5272dda279583c20ca4458e46e",

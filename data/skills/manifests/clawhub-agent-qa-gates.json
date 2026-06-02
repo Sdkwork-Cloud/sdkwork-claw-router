@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-qa-gates@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-qa-gates-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-qa-gates-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2860c57c66f06c4f726b7349d3461f3614c127d787c4d95acee452c5f4f23873",

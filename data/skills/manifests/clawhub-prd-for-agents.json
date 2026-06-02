@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prd-for-agents@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prd-for-agents-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prd-for-agents-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3612f0d23f93d50fca86d95f89ec90d96bacd3b8bc68a9b645e169f87d541c72",

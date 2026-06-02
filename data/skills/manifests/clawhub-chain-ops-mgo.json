@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chain-ops-mgo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chain-ops-mgo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chain-ops-mgo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b4633d1cfae2eefc183bd44e33d547dde87a64dbbe06189f5b5e6ebe64206113",

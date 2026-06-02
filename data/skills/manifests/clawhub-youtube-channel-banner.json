@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-channel-banner@0.10.7-dev",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-channel-banner-0.10.7-dev.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-channel-banner-0.10.7-dev.json"
+      },
       "version": "0.10.7-dev",
       "runtime": "metadata",
       "checksumHash": "sha256:a00c32164bbd42a96389a6543c3a3c10eec222cf8f82ffb49a608dfefc78f142",

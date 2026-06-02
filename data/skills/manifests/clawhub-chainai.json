@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chainai@0.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-chainai-0.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chainai-0.0.12.json"
+      },
       "version": "0.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:32d6cfc0f54f2ec560b4f500350104b9082c3e77452e6913d3887cf3a5b29ddd",

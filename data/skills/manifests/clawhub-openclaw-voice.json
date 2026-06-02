@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-voice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-voice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-voice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a6cf15e0bf98caf1d741ad98896a79925d26fd07c50e35bbe289ae0d9fc36374",

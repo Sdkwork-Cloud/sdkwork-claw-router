@@ -30,6 +30,7 @@ public class AiChatMessageRecord {
     private String tokenCount;
     private String traceId;
     private String turnId;
+    private String updatedAt;
     private String usageLinkId;
     private String userId;
     private String uuid;
@@ -248,6 +249,14 @@ public class AiChatMessageRecord {
 
     public void setTurnId(String turnId) {
         this.turnId = turnId;
+    }
+
+    public String getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public String getUsageLinkId() {

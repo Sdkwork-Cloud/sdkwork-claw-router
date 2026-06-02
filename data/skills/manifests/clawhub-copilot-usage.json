@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/copilot-usage@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-copilot-usage-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-copilot-usage-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8c100b70e79489469fff3d03767e0cf55f75050fa47e504dbf03497bf21de4ff",

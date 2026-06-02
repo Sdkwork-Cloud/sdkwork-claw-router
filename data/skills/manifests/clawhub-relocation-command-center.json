@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/relocation-command-center@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-relocation-command-center-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-relocation-command-center-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed1eb84ae55f9fd334c8bcbc7cb2da9ef5436302fc6dc71336fcf59866e20f2d",

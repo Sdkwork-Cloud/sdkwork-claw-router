@@ -17,7 +17,7 @@ class CommerceProductSpuItem:
     title: str
     updated_at: str
     brand: Optional[str] = None
-    category_id: Optional[str] = None
+    category_ids: Optional[List[str]] = None
     currency_code: Optional[str] = None
     default_sku_id: Optional[str] = None
     description: Optional[str] = None

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/novelcraft@3.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-novelcraft-3.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-novelcraft-3.2.3.json"
+      },
       "version": "3.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:0ae3f3881dbecdfdedaa31563cfbc6c57d1d64818d4bb386cbd808209a7d5fb5",

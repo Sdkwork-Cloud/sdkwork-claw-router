@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jenkins-executor-job@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jenkins-executor-job-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jenkins-executor-job-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64bf3419b6c6b36226b4871a2691032ee47411bc1303c330a658a0c135403bd3",

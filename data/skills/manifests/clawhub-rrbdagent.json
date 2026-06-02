@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rrbdagent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-rrbdagent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rrbdagent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4937cd71e7653da50f5f300d37a5b9aa367dd737573700f826fd5da007747cf0",

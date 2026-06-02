@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/keyapi-reddit-user-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-keyapi-reddit-user-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-keyapi-reddit-user-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fe020484bc8db7206060acbc60d33527faa4be08bd82f3f86712fe9ff128442a",

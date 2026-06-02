@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/manychat-cli@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-manychat-cli-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-manychat-cli-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bbdb888e303965546864de76e0e38385a53cf736b82bceccc6e442101f44aa0c",

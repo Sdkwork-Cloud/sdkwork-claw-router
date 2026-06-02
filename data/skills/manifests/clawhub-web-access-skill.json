@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/web-access-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-web-access-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-web-access-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:932a66edbc1bf7b2f742f15a5ec97a938e70e9bf8f0bfea75fd4a6b4663432df",

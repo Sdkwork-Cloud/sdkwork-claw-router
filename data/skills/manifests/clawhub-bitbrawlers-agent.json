@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bitbrawlers-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bitbrawlers-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bitbrawlers-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0492c3c254a44b3a75d037bd0ddd3aa11b89acf5e03ee9af7c700a48122adb4a",

@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/onchor@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-onchor-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-onchor-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be1d24d2d2ccfe8cec95fb32da9331bda436e503e5dbc78155cb47d778477e61",

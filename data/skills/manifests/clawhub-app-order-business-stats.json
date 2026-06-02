@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/app-order-business-stats@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-app-order-business-stats-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-app-order-business-stats-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d888c9750f58d1ba72ad7825876a940eca8292681a0056ceebbd7226e2bd2b4",

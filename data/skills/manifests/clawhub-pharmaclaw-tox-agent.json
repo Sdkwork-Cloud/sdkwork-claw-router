@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pharmaclaw-tox-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pharmaclaw-tox-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pharmaclaw-tox-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9152c067b6912ce817a628da6a66c59f9856189ca1b4430da33c326c2c9047b8",

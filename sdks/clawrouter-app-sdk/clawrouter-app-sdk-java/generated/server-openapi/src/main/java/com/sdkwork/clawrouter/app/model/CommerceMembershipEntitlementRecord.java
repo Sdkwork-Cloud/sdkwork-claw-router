@@ -4,6 +4,7 @@ package com.sdkwork.clawrouter.app.model;
 public class CommerceMembershipEntitlementRecord {
     private String createdAt;
     private String entitlementCode;
+    private String id;
     private String name;
     private String organizationId;
     private String planId;
@@ -28,6 +29,14 @@ public class CommerceMembershipEntitlementRecord {
 
     public void setEntitlementCode(String entitlementCode) {
         this.entitlementCode = entitlementCode;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scrape-web@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scrape-web-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scrape-web-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:12cbfc16d1cb517b265f855fab641b7e19ba95c3935f1d2597055d86ad16f65e",

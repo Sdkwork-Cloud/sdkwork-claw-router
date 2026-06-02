@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heart-core@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-heart-core-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heart-core-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:61e39bd25c3c1d470a82000f2e769e5c601f55304e91508056d8d5a42a79bbc1",

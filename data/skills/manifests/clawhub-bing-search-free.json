@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bing-search-free@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bing-search-free-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bing-search-free-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fdeac2f5ba52125dcd28bc69cafe78ac6aaf9e020c9e62bd339cb4a6472aa803",

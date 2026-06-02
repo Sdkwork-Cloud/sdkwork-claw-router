@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/s3-threat-modeling@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-s3-threat-modeling-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-s3-threat-modeling-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fbfeeaee47f6b004467066cfcf4e32939260898d2aeabf293ca7360eae1f3018",

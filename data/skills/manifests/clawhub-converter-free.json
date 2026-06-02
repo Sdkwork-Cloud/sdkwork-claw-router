@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/converter-free@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-converter-free-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-converter-free-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b7c174e334c1672baf2939852ac1548be745bc0be7c3ef5530d1e0eb168ca544",

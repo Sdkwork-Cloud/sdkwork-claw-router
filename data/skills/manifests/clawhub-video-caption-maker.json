@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-caption-maker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-caption-maker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-caption-maker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c2dd3013f9eb49434ba0dcfe0e8f6938316212612d468eba46e2e7f15e0dfc7",

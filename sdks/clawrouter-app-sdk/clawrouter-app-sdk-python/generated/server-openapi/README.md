@@ -108,8 +108,8 @@ print(result)
 ### ai
 
 ```python
-# List traces
-result = client.ai.gateway.traces.list()
+# List groups
+result = client.ai.channel_groups.list()
 print(result)
 ```
 
@@ -152,8 +152,8 @@ print(result)
 ### iam
 
 ```python
-# List groups
-result = client.iam.api_key_groups.list()
+# List keys
+result = client.iam.api_keys.list()
 print(result)
 ```
 

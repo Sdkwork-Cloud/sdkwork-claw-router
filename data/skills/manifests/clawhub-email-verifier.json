@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-verifier@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-verifier-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-verifier-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dcf118be504b57b78cf6235b513f6cfe5b91b7e855ccae205d77b2ecc5b9d481",

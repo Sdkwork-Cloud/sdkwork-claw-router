@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/movie-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-movie-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-movie-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c51ed5594f75df40f9f312b24bc64a56bcd76d3ce6214b2e615394c4c3b15db2",

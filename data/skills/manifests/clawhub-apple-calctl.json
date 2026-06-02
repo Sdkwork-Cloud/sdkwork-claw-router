@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-calctl@1.2.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-calctl-1.2.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-calctl-1.2.9.json"
+      },
       "version": "1.2.9",
       "runtime": "metadata",
       "checksumHash": "sha256:a0d4064d2970add84a6051717aa34238c9a44ffc024e62db91133b3b2cc4c920",

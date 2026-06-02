@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mediation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mediation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mediation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d3029fc610329d7d6f945b4e9161ac955f015c4f5c52c886901874a88202a8bb",

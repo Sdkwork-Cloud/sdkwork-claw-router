@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/labradoc-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-labradoc-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-labradoc-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25345b42531bf8b6abce86c217127a50834e67a4cb40c1986e7d88499afdc488",

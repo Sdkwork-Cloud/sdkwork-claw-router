@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rank-tracker@9.9.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-rank-tracker-9.9.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rank-tracker-9.9.5.json"
+      },
       "version": "9.9.5",
       "runtime": "metadata",
       "checksumHash": "sha256:41e58fef57bc78bd1887f4265894bd7cde62f85e859a4c02076df165c7433b4c",

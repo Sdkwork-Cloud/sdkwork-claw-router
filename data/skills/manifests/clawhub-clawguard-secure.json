@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawguard-secure@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawguard-secure-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawguard-secure-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:ba6821fa96f14a081bb46778203ddcc9f9298b4be6772d9edcf0f080c89c8682",

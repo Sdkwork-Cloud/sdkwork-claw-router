@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/go-music-skill@0.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-go-music-skill-0.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-go-music-skill-0.0.2.json"
+      },
       "version": "0.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6b5209f9b42caa9bc02bf9a1c2975f8e92d826f8b24351a2733bdc40bb09263c",

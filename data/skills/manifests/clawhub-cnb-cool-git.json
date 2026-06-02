@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cnb-cool-git@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cnb-cool-git-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cnb-cool-git-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d74c1dd45ab248d1446f6cd82866cfdf2eead6986875a471c0b8883e0bfb79dd",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subtitle-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subtitle-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subtitle-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2fe94cca6debe9820d924456f760ece21749b7773f355c27a7d92be4ba870185",

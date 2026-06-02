@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arista-device-health@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-arista-device-health-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arista-device-health-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a5a549c1fed88ced1994d0b63ce3e5a26ccf9da164f9f9cffadef9259ee21d8a",

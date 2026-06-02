@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-husband@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-husband-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-husband-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f6a72751f51d31733bed424e0943b3702b6c014a4723a9b9466ce703ca41fa68",

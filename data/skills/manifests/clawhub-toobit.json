@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toobit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toobit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toobit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a92d0a0c1a9edb5a53e0bf1e3df77b278d881b5b6784146aedd2e6710e18037b",

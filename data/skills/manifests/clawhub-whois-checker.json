@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whois-checker@4.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-whois-checker-4.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whois-checker-4.0.1.json"
+      },
       "version": "4.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:80ff43dbf7f14f74368c9807954f725fe56bbae537702b5651a51afcdb6f51f4",

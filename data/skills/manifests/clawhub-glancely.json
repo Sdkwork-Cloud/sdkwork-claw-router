@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glancely@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-glancely-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glancely-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b4ce850244d0d878502c798f4eab19127bc078dc6de12386442d9a372255f4f4",

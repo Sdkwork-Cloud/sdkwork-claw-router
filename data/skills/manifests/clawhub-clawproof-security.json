@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawproof-security@3.10.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawproof-security-3.10.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawproof-security-3.10.3.json"
+      },
       "version": "3.10.3",
       "runtime": "metadata",
       "checksumHash": "sha256:777790c5a8d60aef9c13b862956d76a525838bdd0464defab66fb8bccafc32e4",

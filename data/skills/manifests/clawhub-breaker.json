@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/breaker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-breaker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-breaker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75cd3c31f5a4f3eb9bd3ca7f8ec040e8b8aad33aa40ce628a72920f1e93d9895",

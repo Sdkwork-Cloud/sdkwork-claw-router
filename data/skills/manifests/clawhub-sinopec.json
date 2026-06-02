@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sinopec@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sinopec-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sinopec-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f66fac1bc27163f7c4cecd83d449848a050a61892a922891de6829cb04a7482",

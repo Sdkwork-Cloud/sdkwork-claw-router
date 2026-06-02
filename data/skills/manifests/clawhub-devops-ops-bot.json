@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/devops-ops-bot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-devops-ops-bot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-devops-ops-bot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bda88d5a40629dda1f0f8a0f25416805a42a2cbb487018e0de07886b6e2c57c9",

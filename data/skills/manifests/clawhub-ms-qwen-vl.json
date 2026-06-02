@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ms-qwen-vl@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ms-qwen-vl-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ms-qwen-vl-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:53629b3920e8a8fee9be1906ce2207768500f0dadf714777943268914c49fdd5",

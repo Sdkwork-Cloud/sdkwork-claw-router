@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/forum-scout@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-forum-scout-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-forum-scout-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18c1b3ab76a25587acbaa40eb2b184e78a713c901c58dbdcc276acc538e2a242",

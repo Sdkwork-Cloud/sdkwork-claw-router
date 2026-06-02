@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-review@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-review-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-review-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e96df861b403d80bd9bdc1c81f7b15f969af2cfd3fb9d6024041c089752b74a7",

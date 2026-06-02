@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taizi-agent-browser@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-taizi-agent-browser-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taizi-agent-browser-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1ef66a16638c7088f23eecee21013d6882dd215f28f49ebc7cfbb0c37a13133f",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maxmind-geoip2@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-maxmind-geoip2-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maxmind-geoip2-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:45995e2579e024f22c7fc1dfb7a34ca0ca609ad4853d817cd3a8ce0354e2df41",

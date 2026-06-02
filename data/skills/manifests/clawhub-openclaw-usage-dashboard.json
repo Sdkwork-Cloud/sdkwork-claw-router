@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-usage-dashboard@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-usage-dashboard-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-usage-dashboard-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:da1ecc60af953ad3cc2480efa7d8fab25f44f29e0cf3f82e732da5e863c3cbf8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sync-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sync-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sync-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00162fa160ba112cfef9139101148cda1ca9c826406a14de490aa37e2be3015a",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wistia@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-wistia-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wistia-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:736ca0e0ff4665c5f9f9cb76b22ed846658160594a03b14bfe03eb355c0231fd",

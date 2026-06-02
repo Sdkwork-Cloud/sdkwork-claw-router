@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/math-trick@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-math-trick-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-math-trick-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:896d993de53bb3b4958d9a2ea1b113e9514c5120566931811d54d13731a14eb5",

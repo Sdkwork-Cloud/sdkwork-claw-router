@@ -17,6 +17,66 @@ func NewAiApi(client *sdkhttp.Client) *AiApi {
     return &AiApi{client: client}
 }
 
+// List groups
+func (a *AiApi) ChannelGroupsList() (sdktypes.ChannelGroupsListResult, error) {
+    raw, err := a.client.Get(BackendApiPath("/ai/channel_groups"), nil, nil)
+    if err != nil {
+        var zero sdktypes.ChannelGroupsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChannelGroupsListResult](raw)
+}
+
+// Create group
+func (a *AiApi) ChannelGroupsCreate(body sdktypes.AdminChannelGroupCreateRequest) (sdktypes.ChannelGroupsCreateResult, error) {
+    raw, err := a.client.Post(BackendApiPath("/ai/channel_groups"), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.ChannelGroupsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChannelGroupsCreateResult](raw)
+}
+
+// Delete group
+func (a *AiApi) ChannelGroupsDelete(channelGroupId string) (sdktypes.ChannelGroupsDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/ai/channel_groups/%s", SerializePathParameter(channelGroupId, PathParameterSpec{Name: "channelGroupId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.ChannelGroupsDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChannelGroupsDeleteResult](raw)
+}
+
+// Update group
+func (a *AiApi) ChannelGroupsUpdate(channelGroupId string, body sdktypes.AdminChannelGroupUpdateRequest) (sdktypes.ChannelGroupsUpdateResult, error) {
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/ai/channel_groups/%s", SerializePathParameter(channelGroupId, PathParameterSpec{Name: "channelGroupId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.ChannelGroupsUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChannelGroupsUpdateResult](raw)
+}
+
+// List group channel bindings
+func (a *AiApi) ChannelGroupsBindingsList(channelGroupId string) (sdktypes.ChannelGroupsChannelBindingsListResult, error) {
+    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/ai/channel_groups/%s/channel_bindings", SerializePathParameter(channelGroupId, PathParameterSpec{Name: "channelGroupId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.ChannelGroupsChannelBindingsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChannelGroupsChannelBindingsListResult](raw)
+}
+
+// Replace group channel bindings
+func (a *AiApi) ChannelGroupsBindingsUpdate(channelGroupId string, body sdktypes.AdminChannelGroupChannelBindingsReplaceRequest) (sdktypes.ChannelGroupsChannelBindingsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/ai/channel_groups/%s/channel_bindings", SerializePathParameter(channelGroupId, PathParameterSpec{Name: "channelGroupId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.ChannelGroupsChannelBindingsUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChannelGroupsChannelBindingsUpdateResult](raw)
+}
+
 // List model rankings
 func (a *AiApi) ModelRankingsList(rankScope *string, vendorCode *string, modality *string, q *string, limit *int) (sdktypes.ModelRankingsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{

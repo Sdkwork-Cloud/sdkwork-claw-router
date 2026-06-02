@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/juggle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-juggle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-juggle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6ba77d6f90da3ac09dc26ab9760d679d04521314b6b3054651a67f8c7f987416",

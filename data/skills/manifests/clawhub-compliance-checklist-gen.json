@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/compliance-checklist-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-compliance-checklist-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-compliance-checklist-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:44283ad3bb4308d9ab169dd806e4738445b642cbb52ede92fc6839c77e30d386",

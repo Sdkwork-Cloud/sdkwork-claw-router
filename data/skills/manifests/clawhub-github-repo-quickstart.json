@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-repo-quickstart@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-repo-quickstart-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-repo-quickstart-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:61b858c2838371a4b94b26d81ae7f9852d70dccb252a2be0cff2994224526fc0",

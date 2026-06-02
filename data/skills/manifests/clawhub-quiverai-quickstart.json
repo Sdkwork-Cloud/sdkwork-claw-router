@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quiverai-quickstart@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quiverai-quickstart-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quiverai-quickstart-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74ff12447efc5fd9e78efc60722c10f27fb95b88b2df75a83917c9806abfcfcc",

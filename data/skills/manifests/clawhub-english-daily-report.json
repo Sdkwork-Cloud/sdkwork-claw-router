@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/english-daily-report@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-english-daily-report-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-english-daily-report-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:952281065397db8197d8a2f8ce094b8d8c9f7246845d906db69e3c3f6b835439",

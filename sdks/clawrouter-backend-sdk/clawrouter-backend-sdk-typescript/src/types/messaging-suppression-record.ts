@@ -2,6 +2,8 @@ import type { JsonValue } from './json-value';
 
 /** Messaging suppression record schema exposed by Claw Router. */
 export interface MessagingSuppressionRecord {
+  /** Channel field on messaging suppression record. */
+  channel?: string;
   /** Created at field on messaging suppression record. */
   created_at?: string;
   /** Data scope field on messaging suppression record. */
@@ -20,8 +22,20 @@ export interface MessagingSuppressionRecord {
   note?: string;
   /** Organization id field on messaging suppression record. */
   organization_id?: string;
+  /** Reason code field on messaging suppression record. */
+  reason_code?: string;
+  /** Scope id field on messaging suppression record. */
+  scope_id?: string;
+  /** Scope type field on messaging suppression record. */
+  scope_type?: string;
+  /** Source field on messaging suppression record. */
+  source?: string;
+  /** Starts at field on messaging suppression record. */
+  starts_at?: string;
   /** Status field on messaging suppression record. */
   status?: string;
+  /** Target hash field on messaging suppression record. */
+  target_hash?: string;
   /** Target masked field on messaging suppression record. */
   target_masked?: string;
   /** Tenant id field on messaging suppression record. */

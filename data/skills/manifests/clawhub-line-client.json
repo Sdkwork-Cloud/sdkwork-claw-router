@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/line-client@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-line-client-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-line-client-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ae3d46ac0388cf73f6d77201d04573b718c207e9f2f00ab8dcab0a06ccff737e",

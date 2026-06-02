@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-skill@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-skill-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-skill-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7a9d860be8811cafc30878084825dc7d40be11796aba0ae6ac30ab9c5992d1c3",

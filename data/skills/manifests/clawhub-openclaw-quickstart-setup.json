@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-quickstart-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-quickstart-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-quickstart-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d104a2dab2114f458356b5b958ee1abd313ebe6558b54c100ccbc4a84791f4f8",

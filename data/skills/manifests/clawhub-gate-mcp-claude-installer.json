@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gate-mcp-claude-installer@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-gate-mcp-claude-installer-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gate-mcp-claude-installer-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e513e01f5040f31b7fcc3eff9445b483c83e0b99fca7d4688786f3058be46e1c",

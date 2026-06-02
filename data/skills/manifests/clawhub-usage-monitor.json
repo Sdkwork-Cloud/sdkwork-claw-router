@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/usage-monitor@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-usage-monitor-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-usage-monitor-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:029d4b8012363b17acf05ecd36977ec0a54cf74cfcd6c0130487212308571139",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-archeologist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-archeologist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-archeologist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3e8af26f54e7d871033305099760ef5e790e66ff1465347796690ff6ca5621d7",

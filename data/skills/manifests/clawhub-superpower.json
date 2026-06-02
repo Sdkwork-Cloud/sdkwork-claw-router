@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/superpower@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-superpower-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-superpower-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2dab1fb273a38d0248a03452700fc1a83e45e35b3dea04a6b13345d47b99fea8",

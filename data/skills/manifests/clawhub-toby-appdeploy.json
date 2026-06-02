@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-appdeploy@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-appdeploy-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-appdeploy-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:67018399ca6432ab758897511027be39299c6801283b531b3203a99631b10106",

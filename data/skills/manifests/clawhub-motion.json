@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/motion@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-motion-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-motion-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6fb9b3bcd9bed6a7cd33f1cc643d7164c97759d1e4c0cb5fe41f2b182f2cb8cd",

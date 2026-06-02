@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apex-agent@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-apex-agent-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apex-agent-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e9ce4e7f8b6e36ccc41e65ab1a605c94691c92a21a3bec713bb6be77cc97fbe0",

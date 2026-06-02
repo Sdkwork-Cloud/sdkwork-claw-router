@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ghst@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ghst-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ghst-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67e47531c5703e34c0324b1aa27bad1e204d95d87f8b3ef4843ab04360d77dc8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bbva@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bbva-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bbva-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2e75df0d47493ad030342f12c80d880eca2d76430c7df39fc919fe6b2375624",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentpin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentpin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentpin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df6a3282a38ad5fb5d24af2207c2d16e7db3aceb9f647d3bbdc98abdb4e0097f",

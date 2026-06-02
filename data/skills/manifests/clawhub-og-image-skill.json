@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/og-image-skill@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-og-image-skill-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-og-image-skill-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d444d1cf687983d6559c7c327fa0122c6f17e75b3c263e92734018bafd094d5f",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/horizon-trader@0.5.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-horizon-trader-0.5.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-horizon-trader-0.5.5.json"
+      },
       "version": "0.5.5",
       "runtime": "metadata",
       "checksumHash": "sha256:f89eaaf2f0b4deec9db8bc1313b23c9c54695afc281234ae28a351d70de56673",

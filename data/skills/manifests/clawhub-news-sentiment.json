@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/news-sentiment@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-news-sentiment-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-news-sentiment-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c35fc081e93042c6acfec05445ae796b7c8b74f025e676855697a17bd45705f7",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pagerduty-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pagerduty-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pagerduty-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b9d64140812f0ab7f0793368b20d4cdf29036942e99a1bfa62b8abf530a3ce58",

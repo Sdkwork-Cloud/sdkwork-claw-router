@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/remote-skill-installer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-remote-skill-installer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-remote-skill-installer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:33cb947bd9c08ac73353a1e35c0820dac60e184a7e0895b592f57831ebe46a84",

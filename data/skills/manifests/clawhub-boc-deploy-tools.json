@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boc-deploy-tools@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boc-deploy-tools-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boc-deploy-tools-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:085bbf10e4c251befc37ee3991ee0b7ee4cdd4fda0e6bdcb28a2463631dabf5e",

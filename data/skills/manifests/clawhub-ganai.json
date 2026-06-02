@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ganai@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ganai-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ganai-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:07965cf1baa419b12a9a474d7e82dc1c967ee3c056159deddf80f6cd886526e3",

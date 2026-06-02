@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moria-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moria-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moria-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:22d98514ab1533659ca0121e80b322aa542c250493eeb0b2c7c02b1894fe7109",

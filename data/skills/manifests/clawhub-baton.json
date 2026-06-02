@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baton@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-baton-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baton-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:1519e287658c4ab2146b02ca2fffea524f0885a00f41bb469567e85edf506cb6",

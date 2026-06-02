@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abbvie@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-abbvie-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abbvie-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:6dac3cdb516ac5ee87df4ea69b323a710f65a1897efd7a0ddce1f06bddb1bc05",

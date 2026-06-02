@@ -13,6 +13,7 @@ class CommerceMembershipEntitlementRecord:
     status: str
     tenant_id: str
     updated_at: str
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     plan_id: Optional[str] = None
     quota_period: Optional[str] = None

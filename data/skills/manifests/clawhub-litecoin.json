@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/litecoin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-litecoin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-litecoin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:339aa3c56805bdbaa3adafa7fb8af1e44bdaa39334a89baf634d2d6e5a086d0f",

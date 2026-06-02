@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gearbox@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gearbox-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gearbox-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e45e6342007c22580487516de3659776e11166e4394c782a0ce59f4ff7bdc0e2",

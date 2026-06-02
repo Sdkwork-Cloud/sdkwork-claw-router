@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-harness@1.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-harness-1.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-harness-1.8.0.json"
+      },
       "version": "1.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fed7ea978694a129346a298aa13f6a190f4ddcc12a7294b7bf3bf2c5f177ca5b",

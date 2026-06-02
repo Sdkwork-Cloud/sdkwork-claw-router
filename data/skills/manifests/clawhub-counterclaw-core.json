@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/counterclaw-core@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-counterclaw-core-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-counterclaw-core-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a211caec9eb2a3b446b107501ace8d007970e89238cad3d408ba8d3d40c43e32",

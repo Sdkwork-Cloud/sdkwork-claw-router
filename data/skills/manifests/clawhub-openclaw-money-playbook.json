@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-money-playbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-money-playbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-money-playbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14adf20f00c443c01240344e7e1c32c5e5e521510a6eb0f1a9ecf471a71795ba",

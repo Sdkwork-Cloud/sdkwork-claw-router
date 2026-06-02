@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/send-tokens@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-send-tokens-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-send-tokens-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d422297eef0a0b2ea70ea9d3eb2bb7f1da49764c8c258e80a8f529aa60bb505e",

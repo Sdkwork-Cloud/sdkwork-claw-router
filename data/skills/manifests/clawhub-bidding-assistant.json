@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bidding-assistant@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bidding-assistant-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bidding-assistant-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4cf42aef89075106608665e03fc057c15e4f56386ed5f1dcb077419a65129450",

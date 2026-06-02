@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-bartender@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-bartender-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-bartender-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a5fee0889dbd63b1664b98df5a7982aef4a84005f1e55198f9690e35fa6ae82d",

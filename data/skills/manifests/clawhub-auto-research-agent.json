@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-research-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-research-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-research-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8d68976c7e67d41a84e5ec0354ca04bed14c5ab239e86d72d688e01ec2f6913e",

@@ -65,23 +65,34 @@ async function withBackendSdkFetch<T>(
   }
 }
 
+type ExpectedChannelGroupRecord = {
+  id: string;
+  groupName: string;
+  providerCode: string;
+  rateMultiplier: number;
+  officialPriceMultiplier: number | null;
+  accountCount: { available: number; total: number };
+  status: string;
+};
+
 test("admin group create input does not fabricate client persistence ids", () => {
   const form = new FormData();
-  form.set("name", " Default Enterprise ");
-  form.set("platform", " OpenAI ");
-  form.set("billingType", "subscription quota");
-  form.set("rateMultiplier", "2.5");
+  form.set("groupName", " Default Enterprise ");
+  form.set("groupCode", " enterprise-default ");
+  form.set("priceReferenceMode", "official_price");
+  form.set("officialPriceMultiplier", "2.5");
+  form.set("groupType", "dedicated");
   form.set("capacityTotal", "100");
-  form.set("type", "public");
+  form.set("status", "active");
 
   const input = createGroupInputFromForm(form);
 
   assert.deepEqual(input, {
-    name: "Default Enterprise",
-    platform: "OpenAI",
-    billingType: "subscription quota",
-    rateMultiplier: 2.5,
-    type: "public",
+    groupName: "Default Enterprise",
+    groupCode: "enterprise-default",
+    priceReferenceMode: "official_price",
+    officialPriceMultiplier: 2.5,
+    groupType: "dedicated",
     capacity: { total: 100 },
     status: "active",
   });
@@ -92,9 +103,9 @@ test("admin group create input does not fabricate client persistence ids", () =>
 
 test("admin group create input rejects invalid numeric values instead of defaulting rates", () => {
   const form = new FormData();
-  form.set("name", " Dedicated ");
-  form.set("platform", " Anthropic ");
-  form.set("billingType", "standard");
+  form.set("groupName", " Dedicated ");
+  form.set("groupCode", " dedicated ");
+  form.set("priceReferenceMode", "multiplier");
   form.set("rateMultiplier", "not-a-number");
 
   assert.throws(() => createGroupInputFromForm(form), /rateMultiplier must be greater than zero/);
@@ -102,30 +113,36 @@ test("admin group create input rejects invalid numeric values instead of default
 
 test("admin group create form reads backend-supported capacity instead of hardcoding it", () => {
   const form = new FormData();
-  form.set("name", " Enterprise Pool ");
-  form.set("platform", " OpenAI ");
-  form.set("billingType", "standard");
+  form.set("groupName", " Enterprise Pool ");
+  form.set("groupCode", " enterprise-pool ");
+  form.set("priceReferenceMode", "multiplier");
   form.set("rateMultiplier", "1.25");
   form.set("capacityTotal", "250");
-  form.set("type", "public");
+  form.set("groupType", "public");
 
   const input = createGroupInputFromForm(form);
 
   assert.equal(input.capacity.total, 250);
 });
 
-test("admin group create modal uses backend enums and does not expose ignored controls", () => {
+test("admin group create modal uses ai channel group billing modes and removes the platform selector", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
     "utf8",
   );
 
-  assert.match(source, /<option[^>]*value="standard">/);
-  assert.match(source, /<option[^>]*value="subscription">/);
-  assert.match(source, /<option[^>]*value="public">/);
-  assert.match(source, /<option[^>]*value="dedicated">/);
+  assert.match(source, /<option[^>]*value="multiplier">/);
+  assert.match(source, /<option[^>]*value="official_price">/);
+  assert.match(source, /name="groupCode"/);
+  assert.match(source, /name="groupName"/);
+  assert.match(source, /name="groupType"/);
+  assert.match(source, /name="priceReferenceMode"/);
+  assert.doesNotMatch(source, /name="platform"/);
+  assert.doesNotMatch(source, /name="billingType"/);
   assert.doesNotMatch(source, /name="isPublic"/);
   assert.match(source, /name="capacityTotal" type="number"[^>]*min="1"[^>]*step="1"/);
+  assert.match(source, /name="rateMultiplier" type="number"[^>]*min="0\.01"/);
+  assert.match(source, /name="officialPriceMultiplier" type="number"[^>]*min="0\.01"/);
   for (const field of ["description", "allowAllClients", "fallbackGroup"]) {
     assert.doesNotMatch(source, new RegExp(`name="${field}"`), `${field} is not supported by the backend command`);
   }
@@ -140,7 +157,7 @@ test("admin group edit modal select controls keep readable option colors in dark
     "utf8",
   );
 
-  for (const name of ["platform", "type", "billingType"]) {
+  for (const name of ["groupType", "priceReferenceMode", "status"]) {
     assert.match(
       source,
       new RegExp(`name="${name}"[^>]*className=\\{groupSelectClassName\\}`),
@@ -149,7 +166,7 @@ test("admin group edit modal select controls keep readable option colors in dark
   }
   assert.match(source, /const groupSelectClassName = '[^']*bg-white[^']*text-slate-900[^']*dark:bg-\[#202020\][^']*dark:text-white[^']*';/);
   assert.match(source, /const groupOptionClassName = 'bg-white text-slate-900 dark:bg-\[#202020\] dark:text-white';/);
-  assert.match(source, /<option className=\{groupOptionClassName\} value="standard">/);
+  assert.match(source, /<option className=\{groupOptionClassName\} value="multiplier">/);
   assert.match(source, /<option className=\{groupOptionClassName\} value="public">/);
 });
 
@@ -311,21 +328,22 @@ test("admin group page keeps existing rows visible when a refresh reports a load
 
 test("admin group update input does not reuse returned group view model", () => {
   const form = new FormData();
-  form.set("name", " Enterprise Tier ");
-  form.set("platform", " OpenAI ");
-  form.set("billingType", "subscription quota");
+  form.set("groupName", " Enterprise Tier ");
+  form.set("groupCode", " enterprise-tier ");
+  form.set("priceReferenceMode", "multiplier");
   form.set("rateMultiplier", "1.75");
   form.set("capacityTotal", "100");
-  form.set("type", "public");
+  form.set("groupType", "public");
+  form.set("status", "active");
 
   const input = createGroupUpdateInputFromForm(form);
 
   assert.deepEqual(input, {
-    name: "Enterprise Tier",
-    platform: "OpenAI",
-    billingType: "subscription quota",
+    groupName: "Enterprise Tier",
+    groupCode: "enterprise-tier",
+    priceReferenceMode: "multiplier",
     rateMultiplier: 1.75,
-    type: "public",
+    groupType: "public",
     capacity: { total: 100 },
     status: "active",
   });
@@ -341,20 +359,22 @@ test("admin group display labels are stable domain labels", () => {
   assert.equal(displayGroupStatus("disabled"), "disabled");
 });
 
-test("admin group service calls generated backend SDK paths and normalizes group data", async () => {
+test("admin group service calls generated backend SDK paths and normalizes ai channel group data", async () => {
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/iam/access_groups" && method === "GET") {
+      if (url === "/backend/v3/api/ai/channel_groups" && method === "GET") {
         return {
           items: [
             {
               id: "group-1",
-              name: "Default Enterprise",
-              platform: "OpenAI",
-              billingType: "subscription",
+              groupCode: "default-enterprise",
+              groupName: "Default Enterprise",
+              providerCode: "openai",
+              priceReferenceMode: "official_reference",
               rateMultiplier: "2.5",
-              type: "dedicated",
+              officialPriceMultiplier: "2.5",
+              groupType: "dedicated",
               accountCount: { available: "3", total: 5 },
               capacity: { used: "10", total: 200 },
               usage: { today: "6", total: 600 },
@@ -363,15 +383,17 @@ test("admin group service calls generated backend SDK paths and normalizes group
           ],
         };
       }
-      if (url === "/backend/v3/api/iam/access_groups" && method === "POST") {
+      if (url === "/backend/v3/api/ai/channel_groups" && method === "POST") {
         return {
           item: {
             id: "group-2",
-            name: "Created Group",
-            platform: "Anthropic",
-            billingType: "standard",
+            groupCode: "created-group",
+            groupName: "Created Group",
+            providerCode: "anthropic",
+            priceReferenceMode: "multiplier",
             rateMultiplier: 1.25,
-            type: "public",
+            officialPriceMultiplier: null,
+            groupType: "public",
             accountCount: { available: 0, total: 0 },
             capacity: { used: 0, total: 100 },
             usage: { today: 0, total: 0 },
@@ -379,15 +401,17 @@ test("admin group service calls generated backend SDK paths and normalizes group
           },
         };
       }
-      if (url === "/backend/v3/api/iam/access_groups/group-2" && method === "PATCH") {
+      if (url === "/backend/v3/api/ai/channel_groups/group-2" && method === "PATCH") {
         return {
           item: {
             id: "group-2",
-            name: "Updated Group",
-            platform: "Anthropic",
-            billingType: "subscription",
+            groupCode: "created-group",
+            groupName: "Updated Group",
+            providerCode: "anthropic",
+            priceReferenceMode: "official_price",
             rateMultiplier: 1.5,
-            type: "dedicated",
+            officialPriceMultiplier: 1.5,
+            groupType: "dedicated",
             accountCount: { available: 0, total: 0 },
             capacity: { used: 0, total: 150 },
             usage: { today: 0, total: 0 },
@@ -395,34 +419,35 @@ test("admin group service calls generated backend SDK paths and normalizes group
           },
         };
       }
-      if (url === "/backend/v3/api/iam/access_groups/group-2" && method === "DELETE") {
+      if (url === "/backend/v3/api/ai/channel_groups/group-2" && method === "DELETE") {
         return { deleted: true };
       }
       throw new Error(`Unexpected SDK request ${method} ${url}`);
     },
     async (captured) => {
-      const groups = await GroupService.fetchGroups();
+      const groups = await GroupService.fetchGroups() as unknown as ExpectedChannelGroupRecord[];
       const created = await GroupService.addGroup({
-        name: " Created Group ",
-        platform: " Anthropic ",
-        billingType: "standard",
+        groupName: " Created Group ",
+        groupCode: " created-group ",
+        priceReferenceMode: "multiplier",
         rateMultiplier: 1.25,
-        type: "public",
+        groupType: "public",
         capacity: { total: 100 },
         status: "active",
-      });
+      } as never);
       const updated = await GroupService.updateGroup("group-2", {
-        name: " Updated Group ",
-        billingType: "subscription quota",
-        rateMultiplier: 1.5,
-        type: "dedicated",
+        groupName: " Updated Group ",
+        priceReferenceMode: "official_price",
+        officialPriceMultiplier: 1.5,
+        groupType: "dedicated",
         capacity: { total: 150 },
         status: "disabled",
-      });
+      } as never);
       const deleted = await GroupService.deleteGroup("group-2");
 
       assert.equal(groups[0].id, "group-1");
       assert.equal(groups[0].rateMultiplier, 2.5);
+      assert.equal(groups[0].officialPriceMultiplier, 2.5);
       assert.equal(groups[0].accountCount.available, 3);
       assert.equal(created.id, "group-2");
       assert.equal(updated?.status, "disabled");
@@ -430,18 +455,18 @@ test("admin group service calls generated backend SDK paths and normalizes group
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
         [
-          "GET /backend/v3/api/iam/access_groups",
-          "POST /backend/v3/api/iam/access_groups",
-          "PATCH /backend/v3/api/iam/access_groups/group-2",
-          "DELETE /backend/v3/api/iam/access_groups/group-2",
+          "GET /backend/v3/api/ai/channel_groups",
+          "POST /backend/v3/api/ai/channel_groups",
+          "PATCH /backend/v3/api/ai/channel_groups/group-2",
+          "DELETE /backend/v3/api/ai/channel_groups/group-2",
         ],
       );
       assert.deepEqual(JSON.parse(captured[1].body), {
-        name: "Created Group",
-        platform: "Anthropic",
-        billingType: "standard",
+        groupName: "Created Group",
+        groupCode: "created-group",
+        priceReferenceMode: "multiplier",
         rateMultiplier: 1.25,
-        type: "public",
+        groupType: "public",
         capacity: { total: 100 },
         status: "active",
       });
@@ -456,12 +481,12 @@ test("admin group service manages channel bindings through generated backend SDK
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/iam/access_groups/group-1/channel_bindings" && method === "GET") {
+      if (url === "/backend/v3/api/ai/channel_groups/group-1/channel_bindings" && method === "GET") {
         return {
           items: [
             {
               id: "binding-1",
-              groupId: "group-1",
+              channelGroupId: "group-1",
               channelId: "3001",
               channelName: "OpenAI primary",
               providerCode: "openai",
@@ -479,12 +504,12 @@ test("admin group service manages channel bindings through generated backend SDK
           ],
         };
       }
-      if (url === "/backend/v3/api/iam/access_groups/group-1/channel_bindings" && method === "PUT") {
+      if (url === "/backend/v3/api/ai/channel_groups/group-1/channel_bindings" && method === "PUT") {
         return {
           items: [
             {
               id: "binding-1",
-              groupId: "group-1",
+              channelGroupId: "group-1",
               channelId: "3001",
               channelName: "OpenAI primary",
               providerCode: "openai",
@@ -523,8 +548,8 @@ test("admin group service manages channel bindings through generated backend SDK
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
         [
-          "GET /backend/v3/api/iam/access_groups/group-1/channel_bindings",
-          "PUT /backend/v3/api/iam/access_groups/group-1/channel_bindings",
+          "GET /backend/v3/api/ai/channel_groups/group-1/channel_bindings",
+          "PUT /backend/v3/api/ai/channel_groups/group-1/channel_bindings",
         ],
       );
       assert.deepEqual(JSON.parse(captured[1].body), {
@@ -555,40 +580,40 @@ test("admin group service rejects invalid command values before calling backend 
       await assert.rejects(
         () =>
           GroupService.addGroup({
-            name: " ",
-            platform: "OpenAI",
-            billingType: "standard",
+            groupCode: "default",
+            groupName: " ",
+            priceReferenceMode: "multiplier",
             rateMultiplier: 1,
-            type: "public",
+            groupType: "public",
             capacity: { total: 100 },
             status: "active",
-          }),
-        /name is required/,
+          } as never),
+        /groupName is required/,
       );
       await assert.rejects(
         () =>
           GroupService.addGroup({
-            name: "Invalid Capacity",
-            platform: "OpenAI",
-            billingType: "standard",
+            groupName: "Invalid Capacity",
+            groupCode: "invalid-capacity",
+            priceReferenceMode: "multiplier",
             rateMultiplier: 1,
-            type: "public",
+            groupType: "public",
             capacity: { total: 0 },
             status: "active",
-          }),
+          } as never),
         /capacity.total must be a positive integer/,
       );
       await assert.rejects(
         () =>
           GroupService.addGroup({
-            name: "Fractional Capacity",
-            platform: "OpenAI",
-            billingType: "standard",
+            groupName: "Fractional Capacity",
+            groupCode: "fractional-capacity",
+            priceReferenceMode: "multiplier",
             rateMultiplier: 1,
-            type: "public",
+            groupType: "public",
             capacity: { total: 1.5 },
             status: "active",
-          }),
+          } as never),
         /capacity.total must be a positive integer/,
       );
       await assert.rejects(
@@ -602,28 +627,28 @@ test("admin group service rejects invalid command values before calling backend 
       await assert.rejects(
         () =>
           GroupService.addGroup({
-            name: "Invalid Billing",
-            platform: "OpenAI",
-            billingType: "enterprise",
+            groupName: "Invalid Billing",
+            groupCode: "invalid-billing",
+            priceReferenceMode: "enterprise",
             rateMultiplier: 1,
-            type: "public",
+            groupType: "public",
             capacity: { total: 100 },
             status: "active",
-          }),
-        /billingType must be standard or subscription/,
+          } as never),
+        /priceReferenceMode must be multiplier or official_price/,
       );
       await assert.rejects(
         () =>
           GroupService.addGroup({
-            name: "Invalid Type",
-            platform: "OpenAI",
-            billingType: "standard",
+            groupName: "Invalid Type",
+            groupCode: "invalid-type",
+            priceReferenceMode: "multiplier",
             rateMultiplier: 1,
-            type: "private" as never,
+            groupType: "private" as never,
             capacity: { total: 100 },
             status: "active",
-          }),
-        /type must be public or dedicated/,
+          } as never),
+        /groupType must be public or dedicated/,
       );
       await assert.rejects(
         () =>
@@ -645,11 +670,11 @@ test("admin group service rejects unsafe SDK path ids before calling backend SDK
     async (captured) => {
       await assert.rejects(
         () => GroupService.updateGroup("group/2", { status: "disabled" }),
-        /groupId must be a safe path segment/,
+        /channelGroupId must be a safe path segment/,
       );
       await assert.rejects(
         () => GroupService.deleteGroup("group?debug=true"),
-        /groupId must be a safe path segment/,
+        /channelGroupId must be a safe path segment/,
       );
       assert.equal(captured.length, 0);
     },
@@ -659,7 +684,7 @@ test("admin group service rejects unsafe SDK path ids before calling backend SDK
 test("admin group update fails closed when backend success response omits the updated entity", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/iam/access_groups/group-2" && init?.method === "PATCH") {
+      if (url === "/backend/v3/api/ai/channel_groups/group-2" && init?.method === "PATCH") {
         return { updated: true };
       }
       throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
@@ -677,7 +702,7 @@ test("admin group delete fails closed unless backend confirms deletion", async (
   for (const response of [{}, { deleted: false }]) {
     await withBackendSdkFetch(
       (url, init) => {
-        if (url === "/backend/v3/api/iam/access_groups/group-2" && init?.method === "DELETE") {
+        if (url === "/backend/v3/api/ai/channel_groups/group-2" && init?.method === "DELETE") {
           return response;
         }
         throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
@@ -695,15 +720,17 @@ test("admin group delete fails closed unless backend confirms deletion", async (
 test("admin group list fails closed when backend omits stable group ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/iam/access_groups" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/ai/channel_groups" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
-              name: "Missing Id Group",
-              platform: "OpenAI",
-              billingType: "standard",
+              groupCode: "missing-id-group",
+              groupName: "Missing Id Group",
+              providerCode: "openai",
+              priceReferenceMode: "multiplier",
               rateMultiplier: 1,
-              type: "public",
+              officialPriceMultiplier: null,
+              groupType: "public",
               accountCount: { available: 0, total: 0 },
               capacity: { used: 0, total: 100 },
               usage: { today: 0, total: 0 },
@@ -726,7 +753,7 @@ test("admin group list fails closed when backend omits stable group ids", async 
 test("admin group list fails closed when backend returns malformed group rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/iam/access_groups" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/ai/channel_groups" && (init?.method ?? "GET") === "GET") {
         return { items: ["not-a-group-record"] };
       }
       throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
@@ -742,20 +769,22 @@ test("admin group list fails closed when backend returns malformed group rows", 
 
 test("admin group list fails closed when backend omits required group fields", async () => {
   for (const [field, message] of [
-    ["name", /Group name is required/],
+    ["groupName", /Group name is required/],
     ["rateMultiplier", /Group rate multiplier is required/],
     ["capacity", /Group capacity is required/],
   ] as const) {
     await withBackendSdkFetch(
       (url, init) => {
-        if (url === "/backend/v3/api/iam/access_groups" && (init?.method ?? "GET") === "GET") {
+        if (url === "/backend/v3/api/ai/channel_groups" && (init?.method ?? "GET") === "GET") {
           const group = {
             id: "group-1",
-            name: "Default Enterprise",
-            platform: "OpenAI",
-            billingType: "subscription",
+            groupCode: "default-enterprise",
+            groupName: "Default Enterprise",
+            providerCode: "openai",
+            officialPriceMultiplier: "2.5",
+            priceReferenceMode: "official_price",
             rateMultiplier: "2.5",
-            type: "dedicated",
+            groupType: "dedicated",
             accountCount: { available: "3", total: 5 },
             capacity: { used: "10", total: 200 },
             usage: { today: "6", total: 600 },
@@ -779,15 +808,17 @@ test("admin group list fails closed when backend omits required group fields", a
 test("admin group list keeps named groups visible when optional display fields are missing", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/iam/access_groups" && (init?.method ?? "GET") === "GET") {
+      if (url === "/backend/v3/api/ai/channel_groups" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
               id: "group-1",
-              name: "Default Enterprise",
-              billingType: "subscription",
+              groupCode: "default-enterprise",
+              groupName: "Default Enterprise",
+              priceReferenceMode: "official_price",
               rateMultiplier: "2.5",
-              type: "dedicated",
+              officialPriceMultiplier: "2.5",
+              groupType: "dedicated",
               accountCount: { available: "3", total: 5 },
               capacity: { used: "10", total: 200 },
               usage: { today: "6", total: 600 },
@@ -801,8 +832,8 @@ test("admin group list keeps named groups visible when optional display fields a
     async () => {
       const groups = await GroupService.fetchGroups();
 
-      assert.equal(groups[0].name, "Default Enterprise");
-      assert.equal(groups[0].platform, "unknown");
+      assert.equal(groups[0].groupName, "Default Enterprise");
+      assert.equal(groups[0].providerCode, "unknown");
     },
   );
 });
@@ -837,19 +868,21 @@ test("admin group table fills the available admin viewport", () => {
 
 test("admin group list fails closed when backend returns unsupported group enums", async () => {
   for (const [field, value, message] of [
-    ["type", "enterprise", /Unsupported group type: enterprise/],
+    ["groupType", "enterprise", /Unsupported group type: enterprise/],
     ["status", "archived", /Unsupported group status: archived/],
   ] as const) {
     await withBackendSdkFetch(
       (url, init) => {
-        if (url === "/backend/v3/api/iam/access_groups" && (init?.method ?? "GET") === "GET") {
+        if (url === "/backend/v3/api/ai/channel_groups" && (init?.method ?? "GET") === "GET") {
           const group = {
             id: "group-1",
-            name: "Default Enterprise",
-            platform: "OpenAI",
-            billingType: "subscription",
+            groupCode: "default-enterprise",
+            groupName: "Default Enterprise",
+            providerCode: "openai",
+            officialPriceMultiplier: "2.5",
+            priceReferenceMode: "official_price",
             rateMultiplier: "2.5",
-            type: "dedicated",
+            groupType: "dedicated",
             accountCount: { available: "3", total: 5 },
             capacity: { used: "10", total: 200 },
             usage: { today: "6", total: 600 },

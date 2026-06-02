@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vetty@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-vetty-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vetty-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:19b85f04e013eb622fe93443d101a15ad7b178b32d459286c3b3d804d9ddf2ae",

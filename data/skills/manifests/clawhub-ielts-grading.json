@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ielts-grading@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ielts-grading-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ielts-grading-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23700b61d6bec3e9c22cc90da3dcd5c0c5141e3977e92ecc575c90d0eed5ea7d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icp-exemption-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icp-exemption-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icp-exemption-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c499cf7b6fe9df55b3f69102706cf2510960e703852387774eddf96427e9ec1b",

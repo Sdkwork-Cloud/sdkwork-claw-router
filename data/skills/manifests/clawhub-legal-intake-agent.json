@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/legal-intake-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-legal-intake-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-legal-intake-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5edbe3559c74d86167641d441b602ec5d50b3de1ed130183df5acac2e31ed6cb",

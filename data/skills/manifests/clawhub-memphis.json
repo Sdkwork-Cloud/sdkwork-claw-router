@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memphis@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memphis-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memphis-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:79031c8b51b916a541bad62e98b8bc5449befd60b22627a659875478e9696a42",

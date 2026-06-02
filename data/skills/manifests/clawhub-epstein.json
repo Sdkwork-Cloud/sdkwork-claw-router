@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/epstein@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-epstein-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-epstein-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fdebffb5b78da209f55967d9a049985197d55a3a7b59dbd17b8441383bbbd615",

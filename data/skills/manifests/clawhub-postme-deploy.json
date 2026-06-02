@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/postme-deploy@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-postme-deploy-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-postme-deploy-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:53a2417f02dc2c44520d6c183481423ee6e0c2a8e15f1ee592bfc45fcbf05d29",

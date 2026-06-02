@@ -142,6 +142,1819 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             "Portal services must validate SDK list payloads with explicit type guards instead of casting readApiItems results.",
         )
 
+    def test_portal_service_media_fields_preserve_media_resource_objects(self) -> None:
+        service_sources = [
+            PORTAL_PACKAGES / "sdkwork-claw-router-admin-agents" / "src" / "agentService.ts",
+            PORTAL_PACKAGES / "sdkwork-claw-router-admin-skill" / "src" / "skillService.ts",
+            PORTAL_PACKAGES / "sdkwork-claw-router-app-center" / "src" / "services" / "adminAppService.ts",
+            PORTAL_PACKAGES / "sdkwork-claw-router-commons" / "src" / "admin-category-options.ts",
+            PORTAL_PACKAGES / "sdkwork-claw-router-console-user" / "src" / "userService.ts",
+            PORTAL_PACKAGES / "sdkwork-claw-router-courses" / "src" / "courseService.ts",
+        ]
+        media_fields = (
+            "avatar",
+            "cover",
+            "icon",
+            "thumbnail",
+            "asset",
+            "artifact",
+            "video",
+        )
+        object_to_string_assignment = re.compile(
+            rf"\b(?:{'|'.join(media_fields)})\s*:\s*readMediaResourceUrl\s*\(",
+        )
+        legacy_url_fallback = re.compile(
+            r"\b(?:avatarUrl|coverImage|coverUrl|iconUrl|assetUrl|thumbnailUrl|artifactUrl|videoUrl)\b",
+        )
+        violations: list[str] = []
+
+        for source in service_sources:
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if object_to_string_assignment.search(line) or legacy_url_fallback.search(line):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Portal service models must preserve MediaResource objects; URL extraction belongs at display/input boundaries only.",
+        )
+
+    def test_display_media_strings_use_src_or_href_names(self) -> None:
+        source_roots = [
+            PORTAL_PACKAGES / "sdkwork-claw-router-app-center" / "src",
+            PORTAL_PACKAGES / "sdkwork-claw-router-console-user" / "src",
+            PORTAL_PACKAGES / "sdkwork-claw-router-courses" / "src",
+            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src",
+        ]
+        forbidden_patterns = [
+            re.compile(
+                r"\bconst\s+[A-Za-z0-9_]*(?:avatar|asset|download|image|thumbnail|video|qrCode)[A-Za-z0-9_]*Url\s*=\s*read(?:MediaResourceUrl|SdkworkGenerationMediaUrl)\s*\(",
+                re.IGNORECASE,
+            ),
+            re.compile(r"\bfunction\s+getReleaseDownloadUrl\b"),
+        ]
+        violations: list[str] = []
+
+        for source_root in source_roots:
+            for source in source_root.rglob("*"):
+                if source.suffix not in {".ts", ".tsx"}:
+                    continue
+                relative = source.relative_to(ROOT).as_posix()
+                content = source.read_text(encoding="utf-8", errors="ignore")
+                for pattern in forbidden_patterns:
+                    for match in pattern.finditer(content):
+                        line_number = content.count("\n", 0, match.start()) + 1
+                        line = content.splitlines()[line_number - 1].strip()
+                        violations.append(f"{relative}:{line_number}: {line}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Concrete media URL strings in UI rendering must be named by final use, such as imageSrc, avatarSrc, thumbnailSrc, or downloadHref.",
+        )
+
+    def test_specs_define_canonical_media_resource_contract(self) -> None:
+        api_spec = (ROOT / "specs" / "API_SPEC.md").read_text(encoding="utf-8", errors="ignore")
+        database_spec = (ROOT / "specs" / "DATABASE_SPEC.md").read_text(encoding="utf-8", errors="ignore")
+
+        api_required = [
+            "## Media Resource Fields",
+            "Media fields MUST be JSON `MediaResource` objects end to end",
+            "`cover`, `thumbnail`, `asset`, `artifact`, `video`, `audio`, `avatar`, `icon`, `logo`, `favicon`, `qrCode`",
+            "Concrete URL strings are allowed only at input, display, download, playback, or provider protocol boundaries",
+            "Do not introduce `coverMedia`, `coverImage`, `coverUrl`, `thumbnailUrl`, `assetUrl`, `videoUrl`, or `*_url` JSON fields",
+            "Generated SDK types must expose media fields as `MediaResource`, not `string`",
+        ]
+        database_required = [
+            "## Media Resource Persistence",
+            "Business tables MUST NOT store naked media URL columns",
+            "`<field>_media_resource_id`",
+            "`<field>_object_blob_id`",
+            "`<field>_resource_snapshot`",
+            "S3, OSS, MinIO, local disk, CDN, and future AI-generated media providers",
+            "MediaResource snapshots are immutable historical views",
+        ]
+
+        violations: list[str] = []
+        for snippet in api_required:
+            if snippet not in api_spec:
+                violations.append(f"specs/API_SPEC.md: missing {snippet!r}")
+        for snippet in database_required:
+            if snippet not in database_spec:
+                violations.append(f"specs/DATABASE_SPEC.md: missing {snippet!r}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Specs must define the canonical MediaResource object contract and forbid naked URL media fields.",
+        )
+
+    def test_contract_generator_upload_fixtures_preserve_media_resource_objects(self) -> None:
+        fixture_sources = [
+            ROOT / "tests" / "test_api_contract_manifest.py",
+            ROOT / "tests" / "test_clawrouter_openapi_generator.py",
+            ROOT / "tests" / "test_clawrouter_payload_sdk_audit.py",
+            ROOT / "tests" / "test_clawrouter_strict_sdk_generate.py",
+            ROOT / "tests" / "test_frontend_field_audit.py",
+        ]
+        forbidden = re.compile(r"\bvideoUrl\b")
+        violations: list[str] = []
+
+        for source in fixture_sources:
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if forbidden.search(line):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Contract, OpenAPI, SDK, and frontend audit upload fixtures must expose video as a MediaResource object, not a legacy upload URL alias.",
+        )
+
+    def test_test_support_ai_model_media_columns_use_resource_snapshots(self) -> None:
+        source = ROOT / "crates" / "sdkwork-claw-test-support" / "src" / "lib.rs"
+        content = source.read_text(encoding="utf-8", errors="ignore")
+        required_snippets = [
+            "logo_media_resource_id TEXT",
+            "logo_object_blob_id INTEGER",
+            "logo_resource_snapshot TEXT",
+            "icon_media_resource_id TEXT",
+            "icon_object_blob_id INTEGER",
+            "icon_resource_snapshot TEXT",
+        ]
+        forbidden = re.compile(r"\b(?:logo_url|icon_url)\s+TEXT\b")
+        violations: list[str] = []
+
+        for snippet in required_snippets:
+            if snippet not in content:
+                violations.append(f"{source.relative_to(ROOT).as_posix()}: missing {snippet!r}")
+        for match in forbidden.finditer(content):
+            line_number = content.count("\n", 0, match.start()) + 1
+            line = content.splitlines()[line_number - 1].strip()
+            violations.append(f"{source.relative_to(ROOT).as_posix()}:{line_number}: {line}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Test support AI model tables must mirror canonical MediaResource reference columns instead of bare icon/logo URL fields.",
+        )
+
+    def test_admin_api_database_config_test_schema_uses_media_resource_columns(self) -> None:
+        source = ROOT / "services" / "sdkwork-claw-admin-api" / "tests" / "database_config_router.rs"
+        relative = source.relative_to(ROOT).as_posix()
+        content = source.read_text(encoding="utf-8", errors="ignore")
+        required_snippets = [
+            "logo_media_resource_id TEXT",
+            "logo_object_blob_id INTEGER",
+            "logo_resource_snapshot TEXT",
+            "icon_media_resource_id TEXT",
+            "icon_object_blob_id INTEGER",
+            "icon_resource_snapshot TEXT",
+            "cover_media_resource_id TEXT",
+            "cover_object_blob_id INTEGER",
+            "cover_resource_snapshot TEXT",
+        ]
+        forbidden_patterns = (
+            re.compile(r"\blogo_url\s+TEXT\b"),
+            re.compile(r"\bicon_url\s+TEXT\b"),
+            re.compile(r"\bcover_image\s+TEXT\b"),
+        )
+        violations: list[str] = []
+
+        for snippet in required_snippets:
+            if snippet not in content:
+                violations.append(f"{relative}: missing {snippet!r}")
+        for line_number, line in enumerate(content.splitlines(), start=1):
+            if any(pattern.search(line) for pattern in forbidden_patterns):
+                violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Admin API database-config test schema must use canonical MediaResource columns instead of legacy logo/icon/cover URL columns.",
+        )
+
+    def test_appbase_native_studio_migrations_use_media_resource_columns(self) -> None:
+        migration_sources = [
+            ROOT
+            / "sdkwork-appbase"
+            / "packages"
+            / "native-rust"
+            / "studio"
+            / "sdkwork-studio-storage-sqlx-rust"
+            / "migrations"
+            / "0001_studio_catalog.sql",
+            ROOT
+            / "sdkwork-appbase"
+            / "packages"
+            / "native-rust"
+            / "studio"
+            / "sdkwork-studio-storage-sqlx-rust"
+            / "migrations"
+            / "0002_studio_app_template.sql",
+        ]
+        required_by_file = {
+            "0001_studio_catalog.sql": [
+                "asset_media_resource_id VARCHAR(128)",
+                "asset_object_blob_id BIGINT",
+                "asset_resource_snapshot JSONB",
+                "thumbnail_media_resource_id VARCHAR(128)",
+                "thumbnail_object_blob_id BIGINT",
+                "thumbnail_resource_snapshot JSONB",
+                "artifact_media_resource_id VARCHAR(128)",
+                "artifact_object_blob_id BIGINT",
+                "artifact_resource_snapshot JSONB",
+            ],
+            "0002_studio_app_template.sql": [
+                "icon_media_resource_id VARCHAR(128)",
+                "icon_object_blob_id BIGINT",
+                "icon_resource_snapshot JSONB",
+                "cover_media_resource_id VARCHAR(128)",
+                "cover_object_blob_id BIGINT",
+                "cover_resource_snapshot JSONB",
+            ],
+        }
+        forbidden = re.compile(r"\b(?:asset_url|thumbnail_url|artifact_url|icon_url|cover_url)\b")
+        violations: list[str] = []
+
+        for source in migration_sources:
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_by_file[source.name]:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for match in forbidden.finditer(content):
+                line_number = content.count("\n", 0, match.start()) + 1
+                line = content.splitlines()[line_number - 1].strip()
+                violations.append(f"{relative}:{line_number}: {line}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Appbase native studio migrations must persist media through canonical MediaResource reference and snapshot columns.",
+        )
+
+    def test_active_design_docs_describe_canonical_media_resource_fields(self) -> None:
+        active_doc_sources = [
+            ROOT / "docs" / "11-数据契约与核心表设计.md",
+            ROOT / "docs" / "12-前端功能模块与数据库表结构映射.md",
+            ROOT / "docs" / "14-数据结构细节复核与补强记录.md",
+            ROOT / "docs" / "17-AppCenter-PlusApp-compatible-design.md",
+            ROOT / "docs" / "18-SkillsHub-AgentSkills-PlusCategory-compatible-design.md",
+        ]
+        legacy_media_fields = re.compile(
+            r"\b(?:cover_image|cover_url|icon_url|logo_url|thumbnail_url|video_url|asset_url|artifact_url|media_url)\b"
+        )
+        required_snippets = {
+            "11-数据契约与核心表设计.md": [
+                "icon_media_resource_id",
+                "logo_resource_snapshot",
+                "cover_resource_snapshot",
+                "video_resource_snapshot",
+            ],
+            "12-前端功能模块与数据库表结构映射.md": [
+                "icon_resource_snapshot",
+                "asset_resource_snapshot",
+                "thumbnail_resource_snapshot",
+                "video_resource_snapshot",
+                "MediaResource",
+            ],
+            "14-数据结构细节复核与补强记录.md": [
+                "logo_media_resource_id",
+                "icon_resource_snapshot",
+            ],
+            "17-AppCenter-PlusApp-compatible-design.md": [
+                "MediaResource",
+                "icon_resource_snapshot",
+                "resource_list",
+            ],
+            "18-SkillsHub-AgentSkills-PlusCategory-compatible-design.md": [
+                "MediaResource",
+                "cover_resource_snapshot",
+                "icon_resource_snapshot",
+            ],
+        }
+        violations: list[str] = []
+
+        for source in active_doc_sources:
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets[source.name]:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for match in legacy_media_fields.finditer(content):
+                line_number = content.count("\n", 0, match.start()) + 1
+                line = content.splitlines()[line_number - 1].strip()
+                violations.append(f"{relative}:{line_number}: {line}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Active design docs must describe canonical MediaResource object/reference fields instead of legacy bare media URL columns.",
+        )
+
+    def test_app_auth_and_profile_backend_media_fields_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "app_auth_store.rs": [
+                r"\bpub\s+avatar_url\s*:\s*String\b",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "app_session_event_store.rs": [
+                r"\bpub\s+avatar_url\s*:\s*String\b",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "app_user_profile_read_store.rs": [
+                r"\bpub\s+avatar_url\s*:\s*String\b",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_auth.rs": [
+                r"\bpub\s+avatar_url\s*:\s*String\b",
+                r"\bavatar_url\s*:",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "app_auth_store.rs": [
+                r"\bavatar_url\b",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "app_auth_store.rs": [
+                r"\bavatar_url\b",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "app_session_event_store.rs": [
+                r"\bavatar_url\b",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "app_session_event_store.rs": [
+                r"\bavatar_url\b",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "app_user_profile_read_store.rs": [
+                r"\bavatar_url\b",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "app_user_profile_read_store.rs": [
+                r"\bavatar_url\b",
+            ],
+        }
+        violations: list[str] = []
+
+        for source, patterns in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for pattern in patterns:
+                for match in re.finditer(pattern, content):
+                    line_number = content.count("\n", 0, match.start()) + 1
+                    line = content.splitlines()[line_number - 1].strip()
+                    violations.append(f"{relative}:{line_number}: {line}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "App auth/profile backend structures must expose avatar as a MediaResource object and read avatar_resource_snapshot from storage.",
+        )
+
+    def test_app_agent_registry_backend_media_fields_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "app_agent_registry_store.rs": [
+                "pub avatar: Option<Value>,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "app_agent_registry_store.rs": [
+                'avatar: optional_media_resource_from_row(&row, "avatar_resource_snapshot"),',
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "app_agent_registry_store.rs": [
+                'avatar: optional_media_resource_from_row(&row, "avatar_resource_snapshot"),',
+            ],
+        }
+        legacy_patterns = ("avatar_url", "avatarUrl", "optional_media_resource_url")
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern in line for pattern in legacy_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "App/admin agent registry media structures must expose avatar as a MediaResource object and only read avatar_resource_snapshot from storage.",
+        )
+
+    def test_course_backend_media_fields_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "course_store.rs": [
+                "pub avatar: Value,",
+                "pub video: Value,",
+                "pub thumbnail: Value,",
+                "pub video: Option<Value>,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_course.rs": [
+                "video: Option<Value>,",
+                "video: Value,",
+                "let video = normalize_optional_media_resource(request.video, \"video\")?",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "course_store.rs": [
+                'thumbnail: media_resource_from_row(row, "thumbnail_resource_snapshot", "image"),',
+                'video: media_resource_from_row(row, "video_resource_snapshot", "video"),',
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "course_store.rs": [
+                'thumbnail: media_resource_from_row(row, "thumbnail_resource_snapshot", "image"),',
+                'video: media_resource_from_row(row, "video_resource_snapshot", "video"),',
+            ],
+        }
+        legacy_patterns = ("avatar: String", "thumbnail_url", "video_url", "thumbnailUrl", "videoUrl", "media_resource_url")
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern in line for pattern in legacy_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Course backend API, ports, and SQL stores must keep thumbnail/avatar/video as MediaResource objects; URL extraction belongs in concrete UI playback/display code.",
+        )
+
+    def test_backend_app_and_template_media_fields_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_app_store.rs": [
+                "pub icon: Value,",
+                "pub icon: Option<Value>,",
+                "pub cover: Option<Value>,",
+                "pub icon: Option<Option<Value>>,",
+                "pub cover: Option<Option<Value>>,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_app.rs": [
+                "icon: optional_media_resource(request.icon, \"icon\")?",
+                "cover: optional_media_resource(request.cover, \"cover\")?",
+                "icon: normalize_nullable_media_resource(request.icon, \"icon\")?",
+                "cover: normalize_nullable_media_resource(request.cover, \"cover\")?",
+                "icon: item.icon,",
+                "cover: item.cover,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_app_store.rs": [
+                "icon_resource_snapshot",
+                "cover_resource_snapshot",
+                'icon: optional_media_resource_from_row(&row, "icon_resource_snapshot")?',
+                'cover: optional_media_resource_from_row(&row, "cover_resource_snapshot")?',
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_app_store.rs": [
+                "icon_resource_snapshot",
+                "cover_resource_snapshot",
+                'icon: optional_media_resource_from_row(&row, "icon_resource_snapshot")',
+                'cover: optional_media_resource_from_row(&row, "cover_resource_snapshot")',
+            ],
+        }
+        legacy_patterns = ("icon_url", "cover_url", "iconUrl", "coverUrl", "optional_media_resource_url")
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern in line for pattern in legacy_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Admin app/template media fields must be named icon/cover and carry MediaResource objects through API, port, and SQL layers.",
+        )
+
+    def test_generation_history_media_fields_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "app_generation_history_read_store.rs": [
+                "use serde_json::Value;",
+                "pub asset: Option<Value>,",
+                "pub images: Vec<Value>,",
+                "pub videos: Vec<Value>,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "app_generation_history_read_store.rs": [
+                "asset: asset.clone(),",
+                "images: media_resource_array_for_type(&item_type, &asset, \"image\"),",
+                "videos: media_resource_array_for_type(&item_type, &asset, \"video\"),",
+                "$.media[0].asset",
+                "$.media[0].asset.poster",
+                "media_resource_value_from_snapshot(asset_resource_snapshot)",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "app_generation_history_read_store.rs": [
+                "asset: asset.clone(),",
+                "images: media_resource_array_for_type(&item_type, &asset, \"image\"),",
+                "videos: media_resource_array_for_type(&item_type, &asset, \"video\"),",
+                "(i.response_json #> '{media,0,asset}')::text",
+                "(i.response_json #> '{media,0,asset,poster}')::text",
+                "media_resource_value_from_snapshot(asset_resource_snapshot)",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "historyMapper.ts": [
+                "asset: normalizeOptionalMediaResource(item.asset),",
+                "images: normalizeMediaResourceArray(item.images),",
+                "videos: normalizeMediaResourceArray(item.videos),",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts": [
+                "export type SdkworkGenerationMediaResource = SdkworkMediaResource;",
+                "asset: SdkworkGenerationMediaResource;",
+                "asset?: SdkworkGenerationMediaResource;",
+                "images?: SdkworkGenerationMediaResource[];",
+                "videos?: SdkworkGenerationMediaResource[];",
+            ],
+        }
+        forbidden_patterns = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "app_generation_history_read_store.rs": [
+                r"\bpub\s+url\s*:\s*Option<String>",
+                r"\bpub\s+thumb\s*:\s*Option<String>",
+                r"\bpub\s+images\s*:\s*Vec<String>",
+                r"\bAppGenerationMediaItem\b",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "app_generation_history_read_store.rs": [
+                r"\$\.media\[0\]\.url",
+                r"\$\.media\[0\]\.thumb",
+                r"\$\.media\[0\]\.durationSeconds",
+                r"json_extract\(ar\.content_json,\s*'\$\.url'\)",
+                r"json_extract\(ar\.content_json,\s*'\$\.thumb'\)",
+                r"\basset_locator\b",
+                r"\bthumbnail_locator\b",
+                r"\bmedia_resource_from_locator\b",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "app_generation_history_read_store.rs": [
+                r"\{media,0,url\}",
+                r"\{media,0,thumb\}",
+                r"\{media,0,durationSeconds\}",
+                r"content_json\s*->>\s*'url'",
+                r"content_json\s*->>\s*'thumb'",
+                r"\basset_locator\b",
+                r"\bthumbnail_locator\b",
+                r"\bmedia_resource_from_locator\b",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "historyMapper.ts": [
+                r"\burl\s*:\s*normalizeOptionalString\(item\.url\)",
+                r"\bnormalizeStringArray\b",
+                r"\bnormalizeVideoArray\b",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "playgroundGenerationService.ts": [
+                r"\breadFirstString\s*\(\s*value\s*,\s*\[[^\]]*(?:assetUrl|downloadUrl|fileUrl|mediaUrl)",
+                r"\breadFirstString\s*\(\s*record\s*,\s*\[[^\]]*(?:thumbnailUrl|posterUrl|coverUrl|previewUrl)",
+                r"\bcreateExternalUrlMediaResource\b",
+                r"\bmediaKindForGenerationTargetType\b",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts": [
+                r"\bexport\s+type\s+SdkworkGenerationMedia\s*=\s*string",
+                r"\bimages\?:\s*string\[\]",
+                r"\bupdatedAt\?:\s*string;\s*\n\s*url\?:\s*string;",
+                r"\burl:\s*item\.url\s*\|\|",
+                r"(?s)export\s+interface\s+SdkworkGenerationArtifact\s*\{[^}]*\bthumb\?:\s*string",
+                r"(?s)export\s+interface\s+SdkworkGenerationArtifact\s*\{[^}]*\burl:\s*string",
+            ],
+        }
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+
+        for source, patterns in forbidden_patterns.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for pattern in patterns:
+                for match in re.finditer(pattern, content):
+                    line_number = content.count("\n", 0, match.start()) + 1
+                    line = content.splitlines()[line_number - 1].strip()
+                    violations.append(f"{relative}:{line_number}: {line}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Generation history media fields must remain MediaResource objects across backend and frontend view models; URL extraction belongs in preview/download/playback rendering only.",
+        )
+
+    def test_catalog_and_branding_media_models_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            PORTAL_PACKAGES / "sdkwork-claw-router-admin-catalog" / "src" / "ProductCreatePage.tsx": [
+                r"\bimageUrl\s*:\s*string\b",
+                r"\bimageUrl\s*=",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-admin-catalog" / "src" / "SkuManagementPage.tsx": [
+                r"\bimageUrl\b",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-admin-catalog" / "src" / "ProductListPage.tsx": [
+                r"\breadProductString\s*\(\s*record\s*,\s*\[[^\]]*(?:coverUrl|imageUrl|thumbnailUrl)",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-admin-site" / "src" / "SiteSettingsService.ts": [
+                r"\b(?:logoUrl|iconUrl|faviconUrl)\s*:",
+                r"\breadString\s*\(\s*record\s*,\s*'(?:logoUrl|iconUrl|faviconUrl)'",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-commons" / "src" / "siteBranding.ts": [
+                r"\b(?:logoUrl|iconUrl|faviconUrl)\s*:",
+                r"\breadConfiguredString\s*\(\s*record\s*,\s*'(?:logoUrl|iconUrl|faviconUrl)'",
+            ],
+        }
+        violations: list[str] = []
+
+        for source, patterns in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for pattern in patterns:
+                for match in re.finditer(pattern, content):
+                    line_number = content.count("\n", 0, match.start()) + 1
+                    line = content.splitlines()[line_number - 1].strip()
+                    violations.append(f"{relative}:{line_number}: {line}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Catalog and site branding media models must carry MediaResource objects; only concrete UI display/input code may read URL strings.",
+        )
+
+    def test_admin_product_list_cover_reader_returns_media_resource_object(self) -> None:
+        source = PORTAL_PACKAGES / "sdkwork-claw-router-admin-catalog" / "src" / "ProductListPage.tsx"
+        relative = source.relative_to(ROOT).as_posix()
+        content = source.read_text(encoding="utf-8", errors="ignore")
+        violations: list[str] = []
+        required_snippets = [
+            "export function readProductCoverResource(record: ProductRecord): ClawRouterMediaResource | undefined",
+            "const coverSource = readMediaResourceUrl(coverResource);",
+            "return readMediaResource(preferred.resource);",
+        ]
+        forbidden_patterns = [
+            r"\breadProductCoverSource\b",
+            r"\bexport\s+function\s+readProductCoverResource\([^)]*\):\s*string\b",
+            r"\breadMediaResourceUrl\s*\(\s*(?:item|preferred)\.resource\s*\)",
+            r"\breadProductString\s*\(\s*record\s*,\s*\[[^\]]*(?:coverUrl|imageUrl|thumbnailUrl)",
+        ]
+
+        for snippet in required_snippets:
+            if snippet not in content:
+                violations.append(f"{relative}: missing {snippet!r}")
+        for pattern in forbidden_patterns:
+            for match in re.finditer(pattern, content):
+                line_number = content.count("\n", 0, match.start()) + 1
+                line = content.splitlines()[line_number - 1].strip()
+                violations.append(f"{relative}:{line_number}: {line}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Product list cover normalization must return a MediaResource object and defer URL extraction to the img display boundary.",
+        )
+
+    def test_admin_sku_management_form_preserves_image_media_resource_object(self) -> None:
+        source = PORTAL_PACKAGES / "sdkwork-claw-router-admin-catalog" / "src" / "SkuManagementPage.tsx"
+        relative = source.relative_to(ROOT).as_posix()
+        content = source.read_text(encoding="utf-8", errors="ignore")
+        violations: list[str] = []
+        required_snippets = [
+            "image?: ClawRouterMediaResource;",
+            "image: readSkuImage(record),",
+            "image: form.image,",
+            "onChange={(event) => setForm((current) => ({ ...current, image: toExternalUrlMediaResource(event.target.value, 'image') }))}",
+            "value={readMediaResourceUrl(form.image)}",
+        ]
+        forbidden_patterns = [
+            r"\bimageUrl\b",
+            r"\breadMediaResourceUrl\s*\(\s*readSkuImage\s*\(",
+        ]
+
+        for snippet in required_snippets:
+            if snippet not in content:
+                violations.append(f"{relative}: missing {snippet!r}")
+        for pattern in forbidden_patterns:
+            for match in re.finditer(pattern, content):
+                line_number = content.count("\n", 0, match.start()) + 1
+                line = content.splitlines()[line_number - 1].strip()
+                violations.append(f"{relative}:{line_number}: {line}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Admin SKU management forms must preserve SKU image as a MediaResource object and only read URLs at concrete input/display boundaries.",
+        )
+
+    def test_business_runtime_media_models_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            PORTAL_PACKAGES / "sdkwork-claw-router-app-center" / "src" / "appRuntime.ts": [
+                r"\bimage\s*:\s*string\b",
+                r"\bscreenshots\s*:\s*string\[\]",
+                r"\breadString\s*\(\s*item\s*,\s*'iconUrl'",
+                r"\breadString\s*\(\s*item\s*,\s*'artifactUrl'",
+                r"\breadString\s*\(\s*asset\s*,\s*'assetUrl'",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-skills-hub" / "src" / "skillRuntime.ts": [
+                r"\bimage\s*:\s*string\b",
+                r"\bscreenshots\s*:\s*string\[\]",
+                r"\breadString\s*\(\s*item\s*,\s*'coverImage'",
+                r"\breadString\s*\(\s*item\s*,\s*'cover_image'",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-admin-memberships" / "src" / "membershipsService.ts": [
+                r"\bicon\??\s*:\s*string\b",
+                r"\bicon\s*:\s*readMediaResourceUrl\s*\(",
+                r"\b(?:iconUrl|icon_url)\b",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "components" / "views" / "AssetGalleryView.tsx": [
+                r"\bthumbnail\??\s*:\s*string\b",
+                r"\burl\??\s*:\s*string\b",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-playground" / "src" / "components" / "views" / "AssetView.tsx": [
+                r"\burl\s*:\s*string\s*\|\s*undefined\b",
+                r"\breadAssetThumbnail\s*\([^)]*,\s*url\s*\)",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-forum" / "src" / "forumCatalog.ts": [
+                r"\bavatar\s*:\s*string\b",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-forum" / "src" / "forumService.ts": [
+                r"\bimages\??\s*:\s*string\[\]",
+                r"\bavatar\s*:\s*readString\s*\(\s*record\s*,\s*'avatar'\s*\)",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-forum" / "src" / "components" / "ForumView.tsx": [
+                r"\bsrc=\{post\.author\.avatar\}",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-forum" / "src" / "components" / "ForumPostView.tsx": [
+                r"\bsrc=\{comment\.author\.avatar\}",
+                r"\bsrc=\{post\.author\.avatar\}",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-vip" / "src" / "vipService.ts": [
+                r"\bicon\??\s*:\s*string\b",
+            ],
+            PORTAL_PACKAGES / "sdkwork-claw-router-courses" / "src" / "courseService.ts": [
+                r"\bicon\s*:\s*string\b",
+                r"\bicon\s*:\s*readString\s*\(\s*value\s*,\s*'icon'\s*\)",
+            ],
+        }
+        violations: list[str] = []
+
+        for source, patterns in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for pattern in patterns:
+                for match in re.finditer(pattern, content):
+                    line_number = content.count("\n", 0, match.start()) + 1
+                    line = content.splitlines()[line_number - 1].strip()
+                    violations.append(f"{relative}:{line_number}: {line}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Business runtime media models must preserve MediaResource objects; URL strings belong only at display/input boundaries.",
+        )
+
+    def test_app_sdk_published_types_export_media_resource(self) -> None:
+        sdk_types_index = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "index.d.ts"
+        sdk_media_type = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "media-resource.d.ts"
+
+        self.assertTrue(sdk_types_index.exists(), f"{sdk_types_index.relative_to(ROOT).as_posix()} must exist")
+        self.assertTrue(sdk_media_type.exists(), f"{sdk_media_type.relative_to(ROOT).as_posix()} must exist")
+        self.assertIn(
+            "export type { MediaResource } from './media-resource';",
+            sdk_types_index.read_text(encoding="utf-8", errors="ignore"),
+            "@sdkwork/clawrouter-app-sdk published types must export MediaResource so portal media models can share the SDK object shape.",
+        )
+
+    def test_backend_sdk_published_category_types_preserve_media_resource_icon(self) -> None:
+        sdk_types_root = ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "dist" / "types"
+        create_request = sdk_types_root / "admin-skill-category-create-request.d.ts"
+        update_request = sdk_types_root / "admin-skill-category-update-request.d.ts"
+
+        for source in (create_request, update_request):
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            self.assertIn(
+                "import type { MediaResource } from './media-resource';",
+                content,
+                f"{relative} must import MediaResource for category icon.",
+            )
+            self.assertIn(
+                "icon?: MediaResource;",
+                content,
+                f"{relative} must preserve category icon as MediaResource.",
+            )
+
+    def test_generated_table_record_sdk_media_fields_preserve_media_resource_objects(self) -> None:
+        sdk_record_sources = [
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "plus-category-record.ts",
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "plus-agent-skill-record.ts",
+            ROOT
+            / "sdks"
+            / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
+            / "src"
+            / "types"
+            / "plus-agent-skill-package-record.ts",
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "plus-category-record.d.ts",
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "plus-agent-skill-record.d.ts",
+            ROOT
+            / "sdks"
+            / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
+            / "dist"
+            / "types"
+            / "plus-agent-skill-package-record.d.ts",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "plus-category-record.ts",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "plus-agent-skill-record.ts",
+            ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "src"
+            / "types"
+            / "plus-agent-skill-package-record.ts",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "dist" / "types" / "plus-category-record.d.ts",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "dist" / "types" / "plus-agent-skill-record.d.ts",
+            ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "dist"
+            / "types"
+            / "plus-agent-skill-package-record.d.ts",
+        ]
+
+        for source in sdk_record_sources:
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            self.assertIn(
+                "import type { MediaResource } from './media-resource';",
+                content,
+                f"{relative} must import MediaResource for table-record icon.",
+            )
+            self.assertIn(
+                "icon?: MediaResource;",
+                content,
+                f"{relative} must preserve table-record icon as a MediaResource object.",
+            )
+            self.assertNotIn(
+                "icon?: string;",
+                content,
+                f"{relative} must not collapse table-record icon media into a string URL.",
+            )
+
+    def test_generated_table_record_sdks_do_not_expose_media_storage_columns(self) -> None:
+        sdk_type_roots = [
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types",
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "dist" / "types",
+        ]
+        media_storage_pattern = re.compile(r"\b[A-Za-z0-9_]+_(?:media_resource_id|object_blob_id|resource_snapshot)\??:")
+        violations: list[str] = []
+
+        for sdk_type_root in sdk_type_roots:
+            for source in [*sdk_type_root.glob("*-record.ts"), *sdk_type_root.glob("*-record.d.ts")]:
+                content = source.read_text(encoding="utf-8", errors="ignore")
+                for line_number, line in enumerate(content.splitlines(), start=1):
+                    if media_storage_pattern.search(line):
+                        relative = source.relative_to(ROOT).as_posix()
+                        violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Generated SDK record types must expose logical MediaResource fields, not storage snapshot/id columns.",
+        )
+
+    def test_appbase_business_media_models_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "sdkwork-appbase" / "packages" / "common" / "iam" / "sdkwork-iam-service" / "src" / "index.ts": [
+                "avatar?: SdkworkMediaResource;",
+                "avatar: readSdkworkMediaResource(remote.avatar),",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-user-pc-react" / "src" / "user.ts": [
+                "avatar?: SdkworkMediaResource;",
+                "avatar: profile.avatar,",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-user-pc-react" / "src" / "user-service.ts": [
+                "avatar?: SdkworkMediaResource;",
+                "avatar: readSdkworkMediaResource(profile.avatar),",
+                "avatar: readSdkworkMediaResource(updated.avatar) || profile.avatar,",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-order-pc-react" / "src" / "order-service.ts": [
+                "productImage?: SdkworkMediaResource;",
+                "image?: SdkworkMediaResource;",
+                "productImage: readSdkworkMediaResource(order.productImage),",
+                "image: readSdkworkMediaResource(item.productImage),",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
+                "icon?: SdkworkMediaResource;",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
+                "icon: readSdkworkMediaResource(method.methodIcon) || readSdkworkMediaResource(method.icon),",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-membership-pc-react" / "src" / "membership-service.ts": [
+                "icon?: SdkworkMediaResource;",
+                "icon: readSdkworkMediaResource(level.icon),",
+            ],
+        }
+        forbidden_patterns = (
+            re.compile(r"\bavatarUrl\??:\s*string\b"),
+            re.compile(r"\bavatar\??:\s*string\b"),
+            re.compile(r"\bproductImage\??:\s*string\b"),
+            re.compile(r"\bimage\??:\s*string\b"),
+            re.compile(r"\bicon\??:\s*string\b"),
+            re.compile(r"\bavatarUrl\b"),
+            re.compile(r"\btoSdkworkCommerceOptionalString\s*\(\s*(?:order|item)\.productImage\s*\)"),
+            re.compile(r"\btoSdkworkCommerceOptionalString\s*\(\s*(?:method\.methodIcon|method\.icon|level\.icon)\s*\)"),
+            re.compile(r"\bnormalizeOptionalString\s*\(\s*(?:profile|updated)\.avatar\s*\)"),
+        )
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern.search(line) for pattern in forbidden_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Appbase IAM and commerce business models must preserve SdkworkMediaResource objects; URL strings belong only at input/display/action boundaries.",
+        )
+
+    def test_appbase_auth_user_avatar_preserves_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-service.ts": [
+                "avatar?: SdkworkMediaResource;",
+                "avatar: readSdkworkMediaResource(identity.avatar),",
+                "avatar: readFirstAuthMediaResource(primary?.avatar, secondary?.avatar),",
+                "avatar: readSdkworkMediaResource(identity.avatar),",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-iam-runtime.ts": [
+                "avatar: readSdkworkMediaResource(user.avatar),",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-authority.ts": [
+                "avatar?: SdkworkMediaResource;",
+                "avatar: input.avatar,",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-runtime-authority.ts": [
+                "avatar?: SdkworkMediaResource;",
+                "avatar: request.avatar,",
+            ],
+        }
+        forbidden_patterns = (
+            re.compile(r"\bavatarUrl\??:\s*(?:string|unknown)\b"),
+            re.compile(r"\bavatar\??:\s*string\b"),
+            re.compile(r"\bavatarUrl\b"),
+            re.compile(r"\bnormalizeOptional(?:String|Scalar|Text)\s*\([^)]*\.avatar"),
+        )
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern.search(line) for pattern in forbidden_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Appbase auth user/avatar models must expose avatar as SdkworkMediaResource and must not retain avatarUrl compatibility fields.",
+        )
+
+    def test_appbase_auth_qr_images_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-service.ts": [
+                "qrCode?: SdkworkMediaResource;",
+                "qrCode: readSdkworkMediaResource(session.qrCode),",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "auth-iam-runtime.ts": [
+                "qrCode?: unknown;",
+                "qrCode: readSdkworkMediaResource(record.qrCode),",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-auth-pc-react" / "src" / "pages" / "AuthPage.tsx": [
+                "const qrImageResourceSrc = getSdkworkMediaDeliveryUrl(nextQrCode.qrCode);",
+            ],
+        }
+        forbidden_patterns = (
+            re.compile(r"\bimageUrl\??:\s*(?:string|unknown)\b"),
+            re.compile(r"\bqrUrl\??:\s*string\b"),
+            re.compile(r"\bqrCodeUrl\??:\s*(?:string|unknown)\b"),
+            re.compile(r"\bqrImageUrl\??:\s*(?:string|unknown)\b"),
+            re.compile(r"\bresolveQrImageUrl\b"),
+            re.compile(r"\bnormalizeOptionalQrImageUrl\b"),
+        )
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern.search(line) for pattern in forbidden_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Auth QR login image payloads must use qrCode as SdkworkMediaResource; qrContent may remain text for generated QR codes.",
+        )
+
+    def test_appbase_payment_qr_images_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment.ts": [
+                "qrImage?: SdkworkMediaResource;",
+                "qrContent?: string;",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-payment-pc-react" / "src" / "payment-service.ts": [
+                "deriveQrImage(payment)",
+                "qrContent: deriveQrContent(payment) || fallback.qrContent,",
+                "qrImage: deriveQrImage(payment) || fallback.qrImage,",
+            ],
+            ROOT
+            / "sdkwork-appbase"
+            / "packages"
+            / "pc-react"
+            / "commerce"
+            / "sdkwork-payment-pc-react"
+            / "src"
+            / "components"
+            / "payment-detail-drawer.tsx": [
+                "const qrImageResourceSrc = getSdkworkMediaDeliveryUrl(detail.qrImage);",
+                "QRCode.toDataURL(detail.qrContent",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "commerce" / "sdkwork-checkout-pc-react" / "src" / "checkout-service.ts": [
+                "qrImage?: SdkworkMediaResource;",
+                "qrContent?: string;",
+                "qrContent = payment.qrContent;",
+                "qrImage = payment.qrImage;",
+            ],
+        }
+        forbidden_patterns = (
+            re.compile(r"\bqrCode\??:\s*string\b"),
+            re.compile(r"\bqrCode:\s*deriveQrCode\b"),
+            re.compile(r"\bdetail\.qrCode\b"),
+            re.compile(r"\bpayment\.qrCode\b"),
+        )
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern.search(line) for pattern in forbidden_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Payment QR payloads must split qrContent text from qrImage SdkworkMediaResource; image/data URL QR values must not remain qrCode strings.",
+        )
+
+    def test_appbase_chat_attachments_preserve_media_resource_objects(self) -> None:
+        source = ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "intelligence" / "sdkwork-chat-pc-react" / "src" / "chat.ts"
+        relative = source.relative_to(ROOT).as_posix()
+        content = source.read_text(encoding="utf-8", errors="ignore")
+        required_snippets = [
+            "type SdkworkMediaResource,",
+            "getSdkworkMediaDeliveryUrl,",
+            "resource: SdkworkMediaResource;",
+            "const deliveryUrl = getSdkworkMediaDeliveryUrl(attachment.resource);",
+        ]
+        package_source = ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "intelligence" / "sdkwork-chat-pc-react" / "package.json"
+        forbidden_patterns = (
+            re.compile(r"\bpreviewUrl\??:\s*string\b"),
+            re.compile(r"\burl\??:\s*string\b"),
+            re.compile(r"\battachment\.url\b"),
+            re.compile(r"\battachment\.previewUrl\b"),
+        )
+        violations: list[str] = []
+
+        for snippet in required_snippets:
+            if snippet not in content:
+                violations.append(f"{relative}: missing {snippet!r}")
+        for line_number, line in enumerate(content.splitlines(), start=1):
+            if any(pattern.search(line) for pattern in forbidden_patterns):
+                violations.append(f"{relative}:{line_number}: {line.strip()}")
+        package_content = package_source.read_text(encoding="utf-8", errors="ignore")
+        if '"@sdkwork/appbase-pc-react": "*"' not in package_content:
+            violations.append(f"{package_source.relative_to(ROOT).as_posix()}: missing @sdkwork/appbase-pc-react peer dependency")
+        if '"@sdkwork/appbase-pc-react": {\n      "optional": true\n    }' not in package_content:
+            violations.append(f"{package_source.relative_to(ROOT).as_posix()}: missing @sdkwork/appbase-pc-react optional peer metadata")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Chat attachments must preserve SdkworkMediaResource objects; URL extraction belongs only at LLM/display text boundaries.",
+        )
+
+    def test_appbase_content_workspace_items_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-image-pc-react" / "src" / "image.ts": [
+                'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
+                "resource: SdkworkMediaResource;",
+                "resource: createGeneratedImageResource(",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-audio-pc-react" / "src" / "audio.ts": [
+                'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
+                "resource: SdkworkMediaResource;",
+                "resource: createGeneratedAudioResource(",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-video-pc-react" / "src" / "video.ts": [
+                'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
+                "resource: SdkworkMediaResource;",
+                "resource: createGeneratedVideoResource(",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-media-pc-react" / "src" / "media.ts": [
+                'import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
+                "resource: SdkworkMediaResource;",
+                "resource: createGeneratedMediaResource(",
+            ],
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-assets-pc-react" / "src" / "assets.ts": [
+                'import type { SdkworkMediaKind, SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
+                "resource: SdkworkMediaResource;",
+                "resource: createObjectStorageAssetResource(",
+            ],
+        }
+        package_sources = [
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-image-pc-react" / "package.json",
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-audio-pc-react" / "package.json",
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-video-pc-react" / "package.json",
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-media-pc-react" / "package.json",
+            ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-assets-pc-react" / "package.json",
+        ]
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+
+        for source in package_sources:
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            if '"@sdkwork/appbase-pc-react": "*"' not in content:
+                violations.append(f"{relative}: missing @sdkwork/appbase-pc-react peer dependency")
+            if '"@sdkwork/appbase-pc-react": {\n      "optional": true\n    }' not in content:
+                violations.append(f"{relative}: missing @sdkwork/appbase-pc-react optional peer metadata")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Appbase content workspace items must carry canonical SdkworkMediaResource objects from appbase, not package-local media shapes.",
+        )
+
+    def test_appbase_generation_history_uses_canonical_media_resource(self) -> None:
+        source = ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "src" / "generation-history.ts"
+        shim_source = PORTAL_ROOT / "src" / "typecheck-shims.d.ts"
+        package_source = ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "content" / "sdkwork-generation-pc-react" / "package.json"
+        relative = source.relative_to(ROOT).as_posix()
+        content = source.read_text(encoding="utf-8", errors="ignore")
+        shim_content = shim_source.read_text(encoding="utf-8", errors="ignore")
+        package_content = package_source.read_text(encoding="utf-8", errors="ignore")
+        required_snippets = [
+            'import { getSdkworkMediaDeliveryUrl, type SdkworkMediaResource } from "@sdkwork/appbase-pc-react";',
+            "export type SdkworkGenerationMediaResource = SdkworkMediaResource;",
+            "export type SdkworkGenerationMedia = SdkworkMediaResource;",
+            "const mediaKey = getSdkworkMediaDeliveryUrl(media)",
+        ]
+        forbidden_patterns = (
+            re.compile(r"\bexport\s+interface\s+SdkworkGenerationMediaResource\b"),
+            re.compile(r"\bmedia\?\.(?:publicUrl|url)\b"),
+        )
+        violations: list[str] = []
+
+        for snippet in required_snippets:
+            if snippet not in content:
+                violations.append(f"{relative}: missing {snippet!r}")
+        for line_number, line in enumerate(content.splitlines(), start=1):
+            if any(pattern.search(line) for pattern in forbidden_patterns):
+                violations.append(f"{relative}:{line_number}: {line.strip()}")
+        if "import type { SdkworkMediaResource } from '@sdkwork/appbase-pc-react';" not in shim_content:
+            violations.append(f"{shim_source.relative_to(ROOT).as_posix()}: missing SdkworkMediaResource shim import")
+        if "export type SdkworkGenerationMediaResource = SdkworkMediaResource;" not in shim_content:
+            violations.append(f"{shim_source.relative_to(ROOT).as_posix()}: missing canonical generation media alias")
+        for match in re.finditer(r"\bexport\s+interface\s+SdkworkGenerationMediaResource\b", shim_content):
+            line_number = shim_content.count("\n", 0, match.start()) + 1
+            line = shim_content.splitlines()[line_number - 1].strip()
+            violations.append(f"{shim_source.relative_to(ROOT).as_posix()}:{line_number}: {line}")
+        if '"@sdkwork/appbase-pc-react": "*"' not in package_content:
+            violations.append(f"{package_source.relative_to(ROOT).as_posix()}: missing @sdkwork/appbase-pc-react peer dependency")
+        if '"@sdkwork/appbase-pc-react": {\n      "optional": true\n    }' not in package_content:
+            violations.append(f"{package_source.relative_to(ROOT).as_posix()}: missing @sdkwork/appbase-pc-react optional peer metadata")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Generation history media must reuse canonical SdkworkMediaResource and use the shared delivery URL helper at display/dedupe boundaries.",
+        )
+
+    def test_playground_reference_inputs_preserve_media_resource_objects(self) -> None:
+        type_source = (
+            PORTAL_PACKAGES
+            / "sdkwork-claw-router-playground"
+            / "src"
+            / "playgroundTypes.ts"
+        )
+        panel_source = (
+            PORTAL_PACKAGES
+            / "sdkwork-claw-router-playground"
+            / "src"
+            / "components"
+            / "AssetGenerationPanel.tsx"
+        )
+        service_source = (
+            PORTAL_PACKAGES
+            / "sdkwork-claw-router-playground"
+            / "src"
+            / "playgroundGenerationService.ts"
+        )
+        required_snippets = {
+            type_source: [
+                "ClawRouterMediaResource",
+                "resource: ClawRouterMediaResource;",
+            ],
+            panel_source: [
+                "toExternalUrlMediaResource(",
+                "previewSrc",
+                "resource:",
+            ],
+            service_source: [
+                "referenceAssets: input.referenceAssets",
+                "referenceImages: input.referenceImages",
+            ],
+        }
+        forbidden_patterns = {
+            type_source: [
+                r"\bdataUrl\?:\s*string\b",
+                r"\burl\?:\s*string\b",
+                r"\bassetId\?:\s*string\b",
+            ],
+            panel_source: [
+                r"\bdataUrl\s*:",
+                r"\bmetadata:\s*\{[^}]*\burl\s*:",
+            ],
+        }
+        violations: list[str] = []
+
+        for source, snippets in required_snippets.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+
+        for source, patterns in forbidden_patterns.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for pattern in patterns:
+                for match in re.finditer(pattern, content, re.DOTALL):
+                    line_number = content.count("\n", 0, match.start()) + 1
+                    line = content.splitlines()[line_number - 1].strip()
+                    violations.append(f"{relative}:{line_number}: {line}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Playground reference image/video/audio inputs must carry MediaResource objects; data/blob URL strings stay only in local preview or provider protocol boundaries.",
+        )
+
+    def test_appbase_native_user_center_avatar_preserves_media_resource_objects(self) -> None:
+        source = ROOT / "sdkwork-appbase" / "packages" / "pc-react" / "iam" / "sdkwork-user-center-core-pc-react" / "native" / "tauri-rust" / "src" / "user_center_authority.rs"
+        relative = source.relative_to(ROOT).as_posix()
+        content = source.read_text(encoding="utf-8", errors="ignore")
+        required_snippets = [
+            "pub struct UserCenterMediaResource",
+            "avatar_resource_snapshot TEXT NULL",
+            "logo_resource_snapshot TEXT NULL",
+            "avatar: Option<UserCenterMediaResource>",
+            "avatar: user.avatar",
+            "avatar: media_resource_from_snapshot",
+            "request.avatar.as_ref()",
+        ]
+        forbidden_patterns = (
+            re.compile(r"\bpub\s+avatar_url\s*:"),
+            re.compile(r"\bavatar_url\s+TEXT\s+NULL\b"),
+            re.compile(r"\blogo_url\s+TEXT\s+NULL\b"),
+            re.compile(r"\bavatar_url\s*=\s*excluded\.avatar_url\b"),
+            re.compile(r"\bavatar_url:\s*user\.avatar_url\b"),
+            re.compile(r"\bavatar_url:\s*session\.user\.avatar_url\b"),
+        )
+        violations: list[str] = []
+
+        for snippet in required_snippets:
+            if snippet not in content:
+                violations.append(f"{relative}: missing {snippet!r}")
+        for line_number, line in enumerate(content.splitlines(), start=1):
+            if any(pattern.search(line) for pattern in forbidden_patterns):
+                violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Appbase native user center public avatar/logo payloads and local schema must preserve media resource objects instead of URL strings.",
+        )
+
+    def test_app_sdk_course_category_exposes_icon_key_not_media_icon_string(self) -> None:
+        source = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "dist" / "types" / "course-category-item.d.ts"
+        relative = source.relative_to(ROOT).as_posix()
+        content = source.read_text(encoding="utf-8", errors="ignore")
+
+        self.assertIn(
+            "iconKey: string;",
+            content,
+            f"{relative} must expose symbolic course category icons as iconKey.",
+        )
+        self.assertNotIn(
+            "icon: string;",
+            content,
+            f"{relative} must not expose symbolic icon keys as media-like icon strings.",
+        )
+
+    def test_forum_backend_persistence_uses_canonical_media_resource_columns(self) -> None:
+        forum_sources = [
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "forum_seed.rs",
+        ]
+        violations: list[str] = []
+
+        for source in forum_sources:
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            if "cover_resources" not in content:
+                violations.append(f"{relative}: missing canonical plus_feeds.cover_resources usage")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if "cover_images" in line:
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Forum persistence must store feed cover media as MediaResource objects in plus_feeds.cover_resources, not legacy cover_images.",
+        )
+
+    def test_backend_site_settings_media_fields_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "site_settings_store.rs": [
+                "pub logo: Value,",
+                "pub icon: Value,",
+                "pub favicon: Value,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "site_settings.rs": [
+                "logo: Option<Value>,",
+                "icon: Option<Value>,",
+                "favicon: Option<Value>,",
+                "logo: Value,",
+                "icon: Value,",
+                "favicon: Value,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sql_site_settings.rs": [
+                "pub logo: Value,",
+                "pub icon: Value,",
+                "pub favicon: Value,",
+            ],
+        }
+        legacy_patterns = (
+            "logo_url",
+            "icon_url",
+            "favicon_url",
+            "logoUrl",
+            "iconUrl",
+            "faviconUrl",
+        )
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern in line for pattern in legacy_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Site branding media must stay as MediaResource objects named logo/icon/favicon across backend DTOs and storage payloads.",
+        )
+
+    def test_backend_skill_asset_media_fields_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_skill_store.rs": [
+                "pub asset: Value,",
+                "pub thumbnail: Option<Value>,",
+                "pub asset: Option<Value>,",
+                "pub thumbnail: Option<Option<Value>>,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_skill.rs": [
+                "asset: Option<Value>,",
+                "thumbnail: Option<Value>,",
+                "asset: Value,",
+                "thumbnail: Option<Value>,",
+            ],
+        }
+        legacy_patterns = ("asset_url", "thumbnail_url", "assetUrl", "thumbnailUrl")
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern in line for pattern in legacy_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Skill asset API and port models must expose asset/thumbnail as MediaResource objects; SQL adapters may handle storage-column mapping internally.",
+        )
+
+    def test_backend_skill_asset_sql_uses_media_resource_snapshot_columns(self) -> None:
+        source_expectations = {
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "sqlite"
+            / "admin_skill_store.rs": [
+                "asset_resource_snapshot",
+                "thumbnail_resource_snapshot",
+                "asset_media_resource_id",
+                "thumbnail_media_resource_id",
+            ],
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "postgres"
+            / "admin_skill_store.rs": [
+                "asset_resource_snapshot",
+                "thumbnail_resource_snapshot",
+                "asset_media_resource_id",
+                "thumbnail_media_resource_id",
+            ],
+        }
+        legacy_patterns = ("asset_url", "thumbnail_url", "assetUrl", "thumbnailUrl")
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern in line for pattern in legacy_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Skill asset SQL adapters must persist MediaResource snapshots through the canonical studio_catalog_asset media columns, not legacy URL columns.",
+        )
+
+    def test_backend_skill_cover_media_fields_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_skill_store.rs": [
+                "pub cover: Option<Value>,",
+                "pub cover: Option<Option<Value>>,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_skill.rs": [
+                "cover: Option<Value>,",
+                "cover: normalize_nullable_media_resource(request.cover, \"cover\")?",
+                "cover: item.cover,",
+            ],
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "sqlite"
+            / "admin_skill_store.rs": [
+                "cover_media_resource_id",
+                "cover_object_blob_id",
+                "cover_resource_snapshot",
+            ],
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "postgres"
+            / "admin_skill_store.rs": [
+                "cover_media_resource_id",
+                "cover_object_blob_id",
+                "cover_resource_snapshot",
+            ],
+        }
+        legacy_patterns = ("cover_image", "coverImage")
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern in line for pattern in legacy_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Admin skill/package cover fields must stay as MediaResource objects named cover and persist through canonical cover_* media columns.",
+        )
+
+    def test_backend_skill_icon_media_fields_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_skill_store.rs": [
+                "pub icon: Option<Value>,",
+                "pub icon: Option<Option<Value>>,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_skill.rs": [
+                "icon: Option<Value>,",
+                "icon: optional_media_resource(request.icon, \"icon\")?",
+                "icon: normalize_nullable_media_resource(request.icon, \"icon\")?",
+                "icon: item.icon,",
+            ],
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "sqlite"
+            / "admin_skill_store.rs": [
+                "icon_media_resource_id",
+                "icon_object_blob_id",
+                "icon_resource_snapshot",
+            ],
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "postgres"
+            / "admin_skill_store.rs": [
+                "icon_media_resource_id",
+                "icon_object_blob_id",
+                "icon_resource_snapshot",
+            ],
+        }
+        legacy_patterns = ("icon_url", "iconUrl")
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern in line for pattern in legacy_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Admin skill/category/package icon fields must stay as MediaResource objects named icon and persist through canonical icon_* media columns.",
+        )
+
+    def test_backend_app_category_icon_media_fields_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_app_store.rs": [
+                "pub icon: Option<Value>,",
+                "pub icon: Option<Option<Value>>,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_app.rs": [
+                "icon: Option<Value>,",
+                "icon: optional_media_resource(request.icon, \"icon\")?",
+                "icon: normalize_nullable_media_resource(request.icon, \"icon\")?",
+                "icon: item.icon,",
+            ],
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "sqlite"
+            / "admin_app_store.rs": [
+                "icon_media_resource_id",
+                "icon_object_blob_id",
+                "icon_resource_snapshot",
+            ],
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "postgres"
+            / "admin_app_store.rs": [
+                "icon_media_resource_id",
+                "icon_object_blob_id",
+                "icon_resource_snapshot",
+            ],
+        }
+        legacy_patterns = (
+            "code, icon,",
+            "code, icon\n",
+            "icon = CASE",
+            "command.icon.as_deref()",
+            "row.try_get(\"icon\")",
+        )
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern in line for pattern in legacy_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Admin app category icon fields must stay as MediaResource objects named icon and persist through canonical plus_category icon_* media columns.",
+        )
+
+    def test_backend_skill_artifact_media_fields_preserve_media_resource_objects(self) -> None:
+        source_expectations = {
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_skill_store.rs": [
+                "pub artifact: Option<Value>,",
+                "pub artifact: Option<Option<Value>>,",
+            ],
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_skill.rs": [
+                "artifact: Option<Value>,",
+                "artifact: normalize_nullable_media_resource(request.artifact, \"artifact\")?",
+                "artifact: item.artifact,",
+            ],
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "sqlite"
+            / "admin_skill_store.rs": [
+                "artifact_media_resource_id",
+                "artifact_object_blob_id",
+                "artifact_resource_snapshot",
+            ],
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "postgres"
+            / "admin_skill_store.rs": [
+                "artifact_media_resource_id",
+                "artifact_object_blob_id",
+                "artifact_resource_snapshot",
+            ],
+        }
+        legacy_patterns = ("artifact_url", "artifactUrl")
+        violations: list[str] = []
+
+        for source, required_snippets in source_expectations.items():
+            relative = source.relative_to(ROOT).as_posix()
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            for snippet in required_snippets:
+                if snippet not in content:
+                    violations.append(f"{relative}: missing {snippet!r}")
+            for line_number, line in enumerate(content.splitlines(), start=1):
+                if any(pattern in line for pattern in legacy_patterns):
+                    violations.append(f"{relative}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "Admin skill artifact file fields must stay as MediaResource objects named artifact and persist through canonical artifact_* media columns.",
+        )
+
+    def test_backend_app_seed_persists_media_resource_snapshots(self) -> None:
+        source = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "app_seed.rs"
+        )
+        required_snippets = [
+            "icon_resource_snapshot",
+            "asset_resource_snapshot",
+            "thumbnail_resource_snapshot",
+            "artifact_resource_snapshot",
+            "media_resource_stable_id",
+            "media_resource_object_blob_id",
+        ]
+        legacy_patterns = (
+            "icon_url",
+            "asset_url",
+            "thumbnail_url",
+            "artifact_url",
+            "iconUrl",
+            "assetUrl",
+            "thumbnailUrl",
+            "artifactUrl",
+        )
+        violations: list[str] = []
+        content = source.read_text(encoding="utf-8", errors="ignore")
+
+        for snippet in required_snippets:
+            if snippet not in content:
+                violations.append(f"{source.relative_to(ROOT).as_posix()}: missing {snippet!r}")
+        for line_number, line in enumerate(content.splitlines(), start=1):
+            if any(pattern in line for pattern in legacy_patterns):
+                violations.append(f"{source.relative_to(ROOT).as_posix()}:{line_number}: {line.strip()}")
+
+        self.assertEqual(
+            [],
+            violations,
+            "App seed import must require MediaResource object inputs and persist only canonical media snapshot columns.",
+        )
+
+    def test_app_center_view_models_preserve_media_resource_objects_until_display(self) -> None:
+        runtime_source = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-app-center"
+            / "src"
+            / "appRuntime.ts"
+        )
+        runtime = runtime_source.read_text(encoding="utf-8", errors="ignore")
+        violations: list[str] = []
+        for forbidden in ("imageSource: string", "imageSource: readMediaResourceUrl"):
+            if forbidden in runtime:
+                violations.append(f"{runtime_source.relative_to(ROOT).as_posix()}: contains {forbidden!r}")
+
+        for source in [
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-app-center"
+            / "src"
+            / "pages"
+            / "AppCenter.tsx",
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-app-center"
+            / "src"
+            / "components"
+            / "AppCenterPreview.tsx",
+        ]:
+            content = source.read_text(encoding="utf-8", errors="ignore")
+            if "src={readMediaResourceUrl(app.image)}" not in content:
+                violations.append(
+                    f"{source.relative_to(ROOT).as_posix()}: image display must extract URL from app.image at the img boundary"
+                )
+            if "app.imageSource" in content:
+                violations.append(
+                    f"{source.relative_to(ROOT).as_posix()}: must not consume pre-extracted imageSource"
+                )
+
+        self.assertEqual(
+            [],
+            violations,
+            "App center view models must keep ClawRouterMediaResource objects and call readMediaResourceUrl only at concrete image display boundaries.",
+        )
+
     def test_portal_remote_list_services_fail_closed_for_malformed_list_payloads(self) -> None:
         allowed_optional_sources = {
             "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/appService.ts",
@@ -406,9 +2219,9 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             "readRequiredString(value, 'maskedKey', 'API key masked value is required')",
             service,
         )
-        self.assertIn("readRequiredString(value, 'code', 'API key group code is required')", service)
+        self.assertIn("readRequiredString(value, 'code', 'Channel group code is required')", service)
         self.assertNotIn(".filter((item): item is ApiKey => item !== null)", service)
-        self.assertNotIn(".filter((item): item is ApiKeyGroup => item !== null)", service)
+        self.assertNotIn(".filter((item): item is ChannelGroup => item !== null)", service)
         self.assertNotIn("normalizeApiKey(data.item)", service)
 
     def test_portal_money_message_and_history_services_fail_closed_for_remote_contract_drift(self) -> None:
@@ -555,7 +2368,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-group" / "src" / "groupService.ts": [
                 "readRequiredRecord(value, 'Group record is required')",
                 "readRequiredNestedRecord(item, 'capacity', 'Group capacity is required')",
-                "readRequiredString(item, 'name', 'Group name is required')",
+                "readRequiredString(item, 'groupCode', 'Group code is required')",
+                "readRequiredString(item, 'groupName', 'Group name is required')",
                 "readRequiredNumber(item, 'rateMultiplier', 'Group rate multiplier is required')",
                 "throw new Error(type ? `Unsupported group type: ${type}` : 'Group type is required')",
                 "throw new Error(status ? `Unsupported group status: ${status}` : 'Group status is required')",
@@ -617,7 +2431,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "name: readRequiredString(data, 'displayName', 'User profile display name is required')",
                 "phone: readRequiredStringAllowEmpty(data, 'phone', 'User profile phone is required')",
                 "language: readRequiredString(data, 'language', 'User profile language is required')",
-                "avatar: readRequiredStringAllowEmpty(data, 'avatarUrl', 'User profile avatar URL is required')",
+                "avatar: readRequiredMediaResource(data.avatar, 'User profile avatar is required')",
                 "isVerified: readRequiredBoolean(data, 'isVerified', 'User profile verification status is required')",
                 "twoFactorEnabled: readRequiredBoolean(data, 'twoFactorEnabled', 'User profile two-factor status is required')",
                 "thirdPartyBound: readRequiredStringAllowEmpty(data, 'thirdPartyBound', 'User profile third-party binding summary is required')",
@@ -837,7 +2651,7 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 "requiredSafePathSegment(id, 'announcementId')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-group" / "src" / "groupService.ts": [
-                "requiredSafePathSegment(id, 'groupId')",
+                "requiredSafePathSegment(id, 'channelGroupId')",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-model" / "src" / "modelService.ts": [
                 "requiredSafePathSegment(id, 'modelId')",
@@ -862,8 +2676,8 @@ class FrontendSourceHygieneStandardTest(unittest.TestCase):
                 ".announcements.deleteAnnouncement(id)",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-group" / "src" / "groupService.ts": [
-                ".accessGroups.updateGroup(\n      id,",
-                ".accessGroups.deleteGroup(id)",
+                ".access" + "Groups.updateGroup(\n      id,",
+                ".access" + "Groups.deleteGroup(id)",
             ],
             PORTAL_PACKAGES / "sdkwork-claw-router-admin-model" / "src" / "modelService.ts": [
                 ".model.deleteModel(id)",

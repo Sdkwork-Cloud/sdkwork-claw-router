@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-cog@1.0.11",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-cog-1.0.11.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-cog-1.0.11.json"
+      },
       "version": "1.0.11",
       "runtime": "metadata",
       "checksumHash": "sha256:a0d22ee00269a0f1856bbc73d1ac6db595c684a168db60fede7a6907fa5dda16",

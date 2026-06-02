@@ -11,9 +11,11 @@ public class AiChannelResourceRecord {
     private String deletedBy;
     private String effectiveFrom;
     private String effectiveTo;
+    private String grantType;
     private String id;
     private Map<String, String> metadata;
     private String organizationId;
+    private Integer priority;
     private String providerCode;
     private String resourceCode;
     private String resourceGroupCode;
@@ -24,6 +26,7 @@ public class AiChannelResourceRecord {
     private String updatedAt;
     private String uuid;
     private String version;
+    private Integer weight;
 
     public String getChannelCode() {
         return this.channelCode;
@@ -89,6 +92,14 @@ public class AiChannelResourceRecord {
         this.effectiveTo = effectiveTo;
     }
 
+    public String getGrantType() {
+        return this.grantType;
+    }
+
+    public void setGrantType(String grantType) {
+        this.grantType = grantType;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -111,6 +122,14 @@ public class AiChannelResourceRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     public String getProviderCode() {
@@ -191,5 +210,13 @@ public class AiChannelResourceRecord {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Integer getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
     }
 }

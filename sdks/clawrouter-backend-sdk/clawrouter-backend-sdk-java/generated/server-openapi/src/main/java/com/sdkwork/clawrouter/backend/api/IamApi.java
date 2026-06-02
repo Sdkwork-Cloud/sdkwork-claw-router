@@ -13,42 +13,6 @@ public class IamApi {
         this.client = client;
     }
 
-    /** List groups */
-    public AccessGroupsListResult accessGroupsList() throws Exception {
-        Object raw = client.get(ApiPaths.backendPath("/iam/access_groups"));
-        return client.convertValue(raw, new TypeReference<AccessGroupsListResult>() {});
-    }
-
-    /** Create group */
-    public AccessGroupsCreateResult accessGroupsCreate(AdminAccessGroupCreateRequest body) throws Exception {
-        Object raw = client.post(ApiPaths.backendPath("/iam/access_groups"), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<AccessGroupsCreateResult>() {});
-    }
-
-    /** Delete group */
-    public AccessGroupsDeleteResult accessGroupsDelete(String groupId) throws Exception {
-        Object raw = client.delete(ApiPaths.backendPath("/iam/access_groups/" + serializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false)) + ""));
-        return client.convertValue(raw, new TypeReference<AccessGroupsDeleteResult>() {});
-    }
-
-    /** Update group */
-    public AccessGroupsUpdateResult accessGroupsUpdate(String groupId, AdminAccessGroupUpdateRequest body) throws Exception {
-        Object raw = client.patch(ApiPaths.backendPath("/iam/access_groups/" + serializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false)) + ""), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<AccessGroupsUpdateResult>() {});
-    }
-
-    /** List group channel bindings */
-    public AccessGroupsChannelBindingsListResult accessGroupsChannelBindingsList(String groupId) throws Exception {
-        Object raw = client.get(ApiPaths.backendPath("/iam/access_groups/" + serializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false)) + "/channel_bindings"));
-        return client.convertValue(raw, new TypeReference<AccessGroupsChannelBindingsListResult>() {});
-    }
-
-    /** Replace group channel bindings */
-    public AccessGroupsChannelBindingsUpdateResult accessGroupsChannelBindingsUpdate(String groupId, AdminAccessGroupChannelBindingsReplaceRequest body) throws Exception {
-        Object raw = client.put(ApiPaths.backendPath("/iam/access_groups/" + serializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false)) + "/channel_bindings"), body, null, null, "application/json");
-        return client.convertValue(raw, new TypeReference<AccessGroupsChannelBindingsUpdateResult>() {});
-    }
-
     /** List API key map */
     public ApiKeysListResult apiKeysList() throws Exception {
         Object raw = client.get(ApiPaths.backendPath("/iam/api_keys"));

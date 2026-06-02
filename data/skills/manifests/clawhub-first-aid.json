@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/first-aid@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-first-aid-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-first-aid-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e3966265dd856029d6f67144aa1257683c8045d55dd075be70ee4facf1dc37e",

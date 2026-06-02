@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aana-ticket-update-checker-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aana-ticket-update-checker-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aana-ticket-update-checker-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce5a888f8d4a0f8131fdae27b1facc52ae63ea6d9a708e9e108621f0f7d2fd03",

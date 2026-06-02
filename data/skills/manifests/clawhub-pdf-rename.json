@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-rename@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-rename-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-rename-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c27860286e47f865e2d9b2587ab68adc841a08901f126a5dbb922424ffa5e9da",

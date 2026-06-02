@@ -1,13 +1,15 @@
+import type { MediaResource } from './media-resource';
+
 /** Updated skill catalog artifact snapshot returned by the backend. */
 export interface AdminSkillArtifactItem {
+  /** Artifact field on admin skill artifact item. */
+  artifact?: MediaResource;
   /** Artifact ref field on admin skill artifact item. */
   artifactRef?: string | null;
   /** Artifact size bytes field on admin skill artifact item. */
   artifactSizeBytes: number;
   /** Artifact type field on admin skill artifact item. */
   artifactType: number;
-  /** Artifact url field on admin skill artifact item. */
-  artifactUrl?: string | null;
   /** Checksum hash field on admin skill artifact item. */
   checksumHash?: string | null;
   /** Created at field on admin skill artifact item. */

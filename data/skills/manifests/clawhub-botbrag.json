@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/botbrag@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-botbrag-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-botbrag-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c326e633b2ca8a97c180f14a345da8dd6a2cdeac73552de12dfa3ae5511c88b3",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-meeting-summary@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-meeting-summary-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-meeting-summary-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1fdc769df49aad94eb5899cc2e1a72fbd72b3f1081b856c070c84e4bcccbe7b3",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/learning-plan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-learning-plan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-learning-plan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1072d4c273f488643d57a951696842e9ac401ac7126730eb2638141f4fdfc060",

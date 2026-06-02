@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-hansa-merchant@0.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-hansa-merchant-0.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-hansa-merchant-0.2.2.json"
+      },
       "version": "0.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4034caed4d44d792a82c8f92ef3ba195353fbab85d7f005bfe14d946d8d543fd",

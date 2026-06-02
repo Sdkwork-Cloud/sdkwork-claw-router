@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mackerel@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-mackerel-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mackerel-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:59af5271f60a12237790114a6f05b124ffddf713d454689d4540f5ce0356a0b7",

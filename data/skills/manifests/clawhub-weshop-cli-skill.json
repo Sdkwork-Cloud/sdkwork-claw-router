@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weshop-cli-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-weshop-cli-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weshop-cli-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:00b8b4b044032b3baadb22ad57320e9e824eb032a5bc9b535c991b048cbb7f86",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/night-patch@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-night-patch-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-night-patch-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:9ce0e205a56431aefe7f9a3c0409b2118b5ca1e5b977790dbcf9cfa3d3ab639d",

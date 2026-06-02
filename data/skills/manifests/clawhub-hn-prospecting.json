@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hn-prospecting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hn-prospecting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hn-prospecting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc7f9173e110fa394039375f6e2e2be66dd559f42247a90dbe5cef9ca342fdd6",

@@ -22,7 +22,7 @@ use sdkwork_commerce_storage_sqlx::{
 fn exposes_first_slice_commerce_table_catalog() {
     let tables = commerce_database_tables();
 
-    assert_eq!(tables.len(), 67);
+    assert_eq!(tables.len(), 68);
     assert!(tables.contains(&"commerce_idempotency_key"));
     assert!(tables.contains(&"commerce_account"));
     assert!(tables.contains(&"commerce_account_ledger_entry"));
@@ -234,6 +234,7 @@ fn initial_migration_declares_first_slice_tables_and_columns() {
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_product_attribute"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_product_attribute_value"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_product_spu"));
+    assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_product_spu_category"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_product_sku"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_product_sku_attribute_value"));
     assert!(sql.contains("CREATE TABLE IF NOT EXISTS commerce_recharge_package"));
@@ -321,6 +322,8 @@ fn initial_migration_declares_standard_query_indexes() {
         "idx_commerce_product_category_parent_status",
         "idx_commerce_product_attribute_status",
         "idx_commerce_product_spu_category_status",
+        "idx_commerce_product_spu_category_category",
+        "idx_commerce_product_spu_category_spu",
         "idx_commerce_product_spu_type_status",
         "idx_commerce_product_sku_spu_status",
         "idx_commerce_product_sku_price_status",
@@ -2263,8 +2266,8 @@ fn migration_runner_failure_recovery_rejects_recorded_failed_migration() {
 fn storage_capability_manifest_is_complete_for_first_slice_runtime_bootstrap() {
     let manifest = commerce_storage_capability_manifest();
 
-    assert_eq!(manifest.tables.len(), 67);
-    assert_eq!(manifest.indexes.len(), 64);
+    assert_eq!(manifest.tables.len(), 68);
+    assert_eq!(manifest.indexes.len(), 66);
     assert_eq!(manifest.migration_plan.len(), 13);
     assert_eq!(manifest.repository_bindings.len(), 15);
     assert_eq!(manifest.business_repositories.len(), 14);

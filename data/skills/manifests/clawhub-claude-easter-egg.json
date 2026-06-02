@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-easter-egg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-easter-egg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-easter-egg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6eafd8823d2c01d9b0c11694294348fab64ada9989fb93dd5aee9db1999eee02",

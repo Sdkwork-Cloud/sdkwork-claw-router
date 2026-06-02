@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcd@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcd-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcd-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:564c0238d58781377b9e2be00b6e2f29ea21079ac3c02e18b5764eb58b033082",

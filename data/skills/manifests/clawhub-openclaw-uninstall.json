@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-uninstall@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-uninstall-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-uninstall-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f547c2c49a525f4f56e068613d8a30484b9e10cf4623c833fc1ae975b47e7812",

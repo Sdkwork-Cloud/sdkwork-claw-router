@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-quality-check@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-quality-check-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-quality-check-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:733aee2bec55b6b43f7de5ff7f166dfca6ff50d51c33e7e85dbb14b57765c440",

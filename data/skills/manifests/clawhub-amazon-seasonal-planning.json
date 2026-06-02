@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-seasonal-planning@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-seasonal-planning-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-seasonal-planning-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9001d93c331f58e30c1318b006fbeefeca5e22b68513229df958a0e152ce0ba4",

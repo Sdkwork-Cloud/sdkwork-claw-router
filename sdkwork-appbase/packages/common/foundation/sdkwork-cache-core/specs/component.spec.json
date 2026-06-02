@@ -32,11 +32,6 @@
       "purpose": "Runtime configuration, environment, SDK bootstrap, and feature flag rules."
     },
     {
-      "file": "DEPLOYMENT_SPEC.md",
-      "path": "../../../../../../../specs/DEPLOYMENT_SPEC.md",
-      "purpose": "Desktop, service, container, and release runtime binding rules."
-    },
-    {
       "file": "DOCUMENTATION_SPEC.md",
       "path": "../../../../../../../specs/DOCUMENTATION_SPEC.md",
       "purpose": "Module README, examples, ADR, changelog, and runbook rules."
@@ -47,9 +42,19 @@
       "purpose": "Canonical domain ownership and naming."
     },
     {
+      "file": "FRONTEND_SPEC.md",
+      "path": "../../../../../../../specs/FRONTEND_SPEC.md",
+      "purpose": "UI, service, SDK, accessibility, and frontend runtime rules."
+    },
+    {
       "file": "GOVERNANCE_SPEC.md",
       "path": "../../../../../../../specs/GOVERNANCE_SPEC.md",
       "purpose": "Standard ownership, exception, compatibility, and migration rules."
+    },
+    {
+      "file": "I18N_SPEC.md",
+      "path": "../../../../../../../specs/I18N_SPEC.md",
+      "purpose": "User-facing language, locale, message catalog, and fallback rules."
     },
     {
       "file": "MODULE_SPEC.md",
@@ -57,29 +62,14 @@
       "purpose": "Reusable package contract and dependency direction."
     },
     {
-      "file": "OBSERVABILITY_SPEC.md",
-      "path": "../../../../../../../specs/OBSERVABILITY_SPEC.md",
-      "purpose": "Operational metrics, health, and admin observability rules."
-    },
-    {
-      "file": "PERFORMANCE_SPEC.md",
-      "path": "../../../../../../../specs/PERFORMANCE_SPEC.md",
-      "purpose": "TTL, fast-path, P0 call, and performance budget rules."
-    },
-    {
-      "file": "PRIVACY_SPEC.md",
-      "path": "../../../../../../../specs/PRIVACY_SPEC.md",
-      "purpose": "Personal, tenant, sensitive, and regulated data rules."
-    },
-    {
       "file": "README.md",
       "path": "../../../../../../../specs/README.md",
       "purpose": "SDKWork root standards entrypoint."
     },
     {
-      "file": "SECURITY_SPEC.md",
-      "path": "../../../../../../../specs/SECURITY_SPEC.md",
-      "purpose": "Secure auth, token, secrets, CORS, validation, and logging rules."
+      "file": "SDK_SPEC.md",
+      "path": "../../../../../../../specs/SDK_SPEC.md",
+      "purpose": "SDK generation and SDK integration rules."
     },
     {
       "file": "TEST_SPEC.md",
@@ -98,42 +88,22 @@
     "sdkClients": [],
     "events": [],
     "configKeys": [
-      "SdkworkCacheConnectionProfile",
-      "SdkworkCacheInstanceSpec",
-      "SdkworkCacheNamespacePolicy",
       "package.json#sdkwork"
-    ],
-    "runtimeTargets": [
-      "desktop_packaged",
-      "service"
-    ],
-    "providerKinds": [
-      "local_cache",
-      "redis_cache"
-    ],
-    "adminOperations": [
-      "snapshot",
-      "refreshAll",
-      "refreshInstance",
-      "deleteNamespace",
-      "deleteKey"
     ]
   },
   "integration": {
-    "authority": "Root SDKWork specs remain authoritative. Local cache specs may extend but must not contradict them.",
-    "dependencyPolicy": "Consumers integrate through @sdkwork/cache-core public exports and bind concrete stores in runtime bootstrap only.",
-    "runtimeBindingPolicy": "Desktop packaged runtimes must use local_cache instances. Service, Docker, and Kubernetes runtimes must use redis_cache instances.",
-    "managementPolicy": "Admin cache pages and operations should call application APIs backed by SdkworkCacheManager semantics instead of adapter internals. Cache instance keyPrefix values must be normalized, unique, and non-overlapping. Snapshot, refresh, and delete operations must be scoped by each cache instance keyPrefix so shared Redis databases or drivers never cross-count or invalidate unrelated keys.",
-    "securityPolicy": "Secret material must be referenced through connection profiles and protected runtime config, never browser-visible config."
+    "authority": "Root SDKWork specs remain authoritative. Local specs may extend but must not contradict them.",
+    "dependencyPolicy": "Consumers integrate through public package exports, declared runtime entrypoints, generated SDK clients, or documented adapters only.",
+    "sdkPolicy": "Generated SDK clients are injected through service/runtime boundaries; reusable UI must not create raw HTTP clients or manual auth headers.",
+    "languagePolicy": "Language-specific packages follow their native manifest and build tools while preserving the same component contract."
   },
   "verification": {
     "commands": [
-      "pnpm --dir apps/sdkwork-appbase exec vitest run packages/common/foundation/sdkwork-cache-core/tests/cache-core.standard.test.ts --config vitest.config.ts --configLoader native --pool vmThreads",
-      "pnpm --dir apps/sdkwork-appbase exec tsc -p packages/common/foundation/sdkwork-cache-core/tsconfig.json --noEmit"
+      "pnpm --filter @sdkwork/cache-core typecheck"
     ]
   },
   "metadata": {
-    "managedBy": "apps/sdkwork-appbase",
-    "standardVersion": "2026-05-18"
+    "managedBy": "apps/scripts/initialize-component-specs.mjs",
+    "standardVersion": "2026-05-13"
   }
 }

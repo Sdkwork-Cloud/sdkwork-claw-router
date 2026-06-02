@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scenario-war-room@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-scenario-war-room-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scenario-war-room-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:98d51f273d52cf8f13c74018d7a57e1a20eafff35af230dabe3fc67e02694f56",

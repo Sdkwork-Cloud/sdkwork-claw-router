@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/genoa@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-genoa-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-genoa-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:caed8dc49db4759c2889b5abc1694ba7eae0874c70308f304adfd1472fead790",

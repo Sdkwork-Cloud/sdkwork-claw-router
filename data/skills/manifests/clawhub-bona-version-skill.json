@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bona-version-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bona-version-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bona-version-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9496eb9e78ff768bfee6041df074ed076c7f2ed379592dfc0566a59c3926ce30",

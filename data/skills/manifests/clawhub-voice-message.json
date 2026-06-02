@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-message@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-message-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-message-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1651be0c66d3f4cc1fcf66d5c5faaf3772a4288ffdb5db1e8ccc7e3c0c43a7b3",

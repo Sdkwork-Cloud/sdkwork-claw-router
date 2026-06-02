@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/monorepo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-monorepo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-monorepo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fab4a0096c9b7c6e6d6c8c7199d38129cd73af2bd3233e29fe27d11616145033",

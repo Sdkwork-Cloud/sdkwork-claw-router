@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rocket-chat@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-rocket-chat-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rocket-chat-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:cc435543cdbc8ebdc49dde9e55962363180f2647f052768db09024cbf994373a",

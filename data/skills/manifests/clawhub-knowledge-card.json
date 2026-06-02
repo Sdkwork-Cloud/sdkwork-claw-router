@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-card@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-card-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-card-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7fe20855dede222c4126c695deca422aaf913496a6fb327c7238fd80ebab4e9e",

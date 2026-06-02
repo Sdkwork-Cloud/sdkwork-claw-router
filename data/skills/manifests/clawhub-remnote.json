@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/remnote@0.10.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-remnote-0.10.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-remnote-0.10.0.json"
+      },
       "version": "0.10.0",
       "runtime": "metadata",
       "checksumHash": "sha256:815d46fd7f0ecba9825a16fb68d5c23a2d31d2822916506b87dff467ff2db8d8",

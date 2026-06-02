@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-api-anthropic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-api-anthropic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-api-anthropic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5f8d2dafbfea5d29706ccd8d87a90d7b1c6a280995bc089e4c2f706a0dc17398",

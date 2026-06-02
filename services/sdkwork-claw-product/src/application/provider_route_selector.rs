@@ -521,7 +521,7 @@ impl<'a, C: PricingCatalog> ProviderRouteSelector<'a, C> {
         context: &AuthenticatedApiKeyContext,
     ) -> bool {
         match policy.policy_scope {
-            RoutingPolicyScope::ApiKeyGroup => {
+            RoutingPolicyScope::ChannelGroup => {
                 same_tenant_org(policy, context) && policy.subject_id == Some(context.group_id)
             }
             RoutingPolicyScope::ApiKey => {
@@ -853,7 +853,7 @@ fn candidate_chain_uses_rule_fallback(rule: &RoutingRule, candidates: &[RouteCan
 
 fn policy_rank(scope: RoutingPolicyScope) -> i32 {
     match scope {
-        RoutingPolicyScope::ApiKeyGroup => 0,
+        RoutingPolicyScope::ChannelGroup => 0,
         RoutingPolicyScope::ApiKey => 1,
         RoutingPolicyScope::Organization => 2,
         RoutingPolicyScope::Tenant => 3,
@@ -871,7 +871,7 @@ fn capability_match_rank(policy: &RoutingPolicy, capability: RoutingCapability) 
 
 fn scope_label(scope: RoutingPolicyScope) -> &'static str {
     match scope {
-        RoutingPolicyScope::ApiKeyGroup => "api key group",
+        RoutingPolicyScope::ChannelGroup => "channel group",
         RoutingPolicyScope::ApiKey => "api key",
         RoutingPolicyScope::Organization => "organization",
         RoutingPolicyScope::Tenant => "tenant",

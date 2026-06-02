@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-skil-song-s@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-skil-song-s-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-skil-song-s-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a12eae4d300dbcd0540f4dfaa024a2653681845998aeb1b0ec677fcaa0a29a03",

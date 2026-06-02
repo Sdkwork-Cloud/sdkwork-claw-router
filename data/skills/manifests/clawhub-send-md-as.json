@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/send-md-as@0.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-send-md-as-0.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-send-md-as-0.4.1.json"
+      },
       "version": "0.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6f9551ad8acb001dfe22183593d1457785424c5143fe6064bc477de8830a6c65",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bilibili-video-summary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-video-summary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bilibili-video-summary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d63e33d6e08d26f5bff2e4256f2678adb177f984e5561431907772f5656c5a90",

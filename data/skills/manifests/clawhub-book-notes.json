@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-notes@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-notes-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-notes-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5e802d38c7a8d5a24e5a42d227b21bf2a9140c3a29483b28a2b291a47da2c30f",

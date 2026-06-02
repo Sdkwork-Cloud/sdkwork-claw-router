@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-usage-cli@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-usage-cli-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-usage-cli-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fe607cd0895da58d4cadb52939088bbb5183c7d9fa07bf24ff7ab619dae3796b",

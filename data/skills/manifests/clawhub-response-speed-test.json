@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/response-speed-test@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-response-speed-test-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-response-speed-test-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:230afcd959314c5b9bf9bf2071d9cd363fe66a1dbe8a5772b2bfeb7c9978e203",

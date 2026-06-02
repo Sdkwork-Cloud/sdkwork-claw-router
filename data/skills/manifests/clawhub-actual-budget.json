@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/actual-budget@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-actual-budget-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-actual-budget-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:80dfdf40a0114a59ab938a23e5be270e4da996810232951cc8edd6e7df798a32",

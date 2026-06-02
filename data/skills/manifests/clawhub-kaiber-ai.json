@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kaiber-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kaiber-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kaiber-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d200b649b1b0bc62b1a19c79d85a573f04499b313c733bcc38a6331f183a92a9",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gold-price-monitor@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-gold-price-monitor-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gold-price-monitor-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:821afd6615481fa02d3009206810941a6432db812aec2b406b5089e1bd903c6d",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/supapost-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-supapost-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-supapost-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:21697f0528b2fda50388fded6e639bf70d5bc18575c782d1b28421e4838035da",

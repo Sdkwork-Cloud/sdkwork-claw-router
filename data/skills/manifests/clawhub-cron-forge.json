@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cron-forge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cron-forge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cron-forge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f27d930b637a3f14012e80bd683c282c3067b319cf114c7cd89740e8326effd",

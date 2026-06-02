@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-memory-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-memory-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-memory-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f6b341966e593bf57014be7ec2f6926a84c3a238593d8c402378a8d122469f9",

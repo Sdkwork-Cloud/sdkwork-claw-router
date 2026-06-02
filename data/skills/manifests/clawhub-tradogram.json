@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tradogram@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tradogram-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tradogram-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:59e387de35c3b43393a0f72d0e5ddf3574ecf8cb3d59c266fa40c048fbd5ae11",

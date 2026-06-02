@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/papercash@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-papercash-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-papercash-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6965cdb9845c8c866d05907c288fa320793e48b2fc0c460ccdc59c799cb5911c",

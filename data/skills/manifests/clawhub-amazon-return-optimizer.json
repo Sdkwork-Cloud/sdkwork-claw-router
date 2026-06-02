@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-return-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-return-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-return-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:085128f023ceaad3a91ce0e62ac3fa2d82de690a298d2c98455ba66401c8e640",

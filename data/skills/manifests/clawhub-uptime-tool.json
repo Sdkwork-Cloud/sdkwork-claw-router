@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/uptime-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-uptime-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-uptime-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5503092c500bbff67dad6472443fa7a8130c7021f57cf5c4eae92ec32837d242",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pco@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pco-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pco-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7fc0ad7936aa15497c65d30abecdfa17c2a8fdea9098056ef9eaec2b5fb52507",

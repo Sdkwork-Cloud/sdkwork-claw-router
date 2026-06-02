@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icepay@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-icepay-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icepay-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0678149876b89b3f8ac74503b8dfed92a9831d0dcacad027e9b426e07d721c85",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiaoming-writing-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiaoming-writing-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiaoming-writing-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c48a944214109a9cb005c2f68bc40227bff83ab065bf33aa163ed40091e1242",

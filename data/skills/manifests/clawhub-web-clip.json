@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/web-clip@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-web-clip-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-web-clip-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f44961100510a5565fdc090a412d38bdb2205c891d2c213bfeee8990abaaf70",

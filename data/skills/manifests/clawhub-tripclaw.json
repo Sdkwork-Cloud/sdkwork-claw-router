@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tripclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tripclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tripclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:151f883bc76821fbd5c3697b9969beed3eac40c6f35737fa86392aefdb9e1341",

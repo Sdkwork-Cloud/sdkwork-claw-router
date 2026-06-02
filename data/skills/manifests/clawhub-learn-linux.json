@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/learn-linux@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-learn-linux-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-learn-linux-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e2b4cc695f594f835a1f47c3c1241aae2bb836906cf82acdb7803b2791f701bb",

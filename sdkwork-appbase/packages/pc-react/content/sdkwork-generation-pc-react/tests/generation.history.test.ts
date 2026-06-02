@@ -10,6 +10,7 @@ import {
   restoreSdkworkGenerationSerializedConfigFromHistoryItem,
   type SdkworkGenerationArtifact,
   type SdkworkGenerationHistoryItem,
+  type SdkworkGenerationMediaResource,
 } from "../src/react.ts";
 
 describe("sdkwork-generation-pc-react history helpers", () => {
@@ -69,7 +70,10 @@ describe("sdkwork-generation-pc-react history helpers", () => {
     const imageHistory: SdkworkGenerationHistoryItem = {
       date: "2026-05-22",
       id: "image-history",
-      images: ["https://cdn.example/one.png", "https://cdn.example/two.png"],
+      images: [
+        mediaResource("image", "https://cdn.example/one.png"),
+        mediaResource("image", "https://cdn.example/two.png"),
+      ],
       prompt: "Two square images",
       type: "images",
     };
@@ -118,24 +122,24 @@ describe("sdkwork-generation-pc-react history helpers", () => {
 
   it("maps artifacts into history media collections for the requested modality", () => {
     const artifacts: SdkworkGenerationArtifact[] = [
-      { modality: "image", url: "https://cdn.example/a.png" },
-      { durationSeconds: 6, modality: "video", thumb: "https://cdn.example/v.jpg", url: "https://cdn.example/v.mp4" },
+      { modality: "image", asset: mediaResource("image", "https://cdn.example/a.png") },
+      { modality: "video", asset: videoResource("https://cdn.example/v.mp4", "https://cdn.example/v.jpg", 6) },
     ];
 
     expect(mapSdkworkGenerationArtifactsToHistoryMedia(artifacts, "image")).toEqual({
+      asset: mediaResource("image", "https://cdn.example/a.png"),
       durationSeconds: undefined,
-      images: ["https://cdn.example/a.png"],
-      url: "https://cdn.example/a.png",
+      images: [mediaResource("image", "https://cdn.example/a.png")],
       videos: [],
     });
     expect(mapSdkworkGenerationArtifactsToHistoryMedia(artifacts, "video")).toEqual({
+      asset: videoResource("https://cdn.example/v.mp4", "https://cdn.example/v.jpg", 6),
       durationSeconds: 6,
       images: [],
-      url: "https://cdn.example/v.mp4",
-      videos: [{ thumb: "https://cdn.example/v.jpg", url: "https://cdn.example/v.mp4" }],
+      videos: [videoResource("https://cdn.example/v.mp4", "https://cdn.example/v.jpg", 6)],
     });
-    expect(readSdkworkGenerationMediaUrl({ thumb: "thumb", url: "video" })).toBe("video");
-    expect(readSdkworkGenerationMediaUrl("image")).toBe("image");
+    expect(readSdkworkGenerationMediaUrl(videoResource("video", "thumb"))).toBe("video");
+    expect(readSdkworkGenerationMediaUrl(mediaResource("image", "image"))).toBe("image");
   });
 
   it("appends streamed artifacts to history items without duplicating existing media", () => {
@@ -150,39 +154,65 @@ describe("sdkwork-generation-pc-react history helpers", () => {
       videos: [],
     };
     const imageArtifact: SdkworkGenerationArtifact = {
+      asset: mediaResource("image", "https://cdn.example/image.png"),
       modality: "image",
-      url: "https://cdn.example/image.png",
     };
     const withImage = appendSdkworkGenerationArtifactToHistoryItem(base, imageArtifact, {
       updatedAt: "2026-05-22T00:00:01Z",
     });
     expect(withImage).toMatchObject({
-      images: ["https://cdn.example/image.png"],
+      asset: mediaResource("image", "https://cdn.example/image.png"),
+      images: [mediaResource("image", "https://cdn.example/image.png")],
       status: "processing",
       type: "images",
       updatedAt: "2026-05-22T00:00:01Z",
-      url: "https://cdn.example/image.png",
     });
     expect(appendSdkworkGenerationArtifactToHistoryItem(withImage, imageArtifact, {
       updatedAt: "2026-05-22T00:00:02Z",
     })).toMatchObject({
-      images: ["https://cdn.example/image.png"],
+      images: [mediaResource("image", "https://cdn.example/image.png")],
       updatedAt: "2026-05-22T00:00:02Z",
     });
 
     const withAudio = appendSdkworkGenerationArtifactToHistoryItem(base, {
-      durationSeconds: 4,
+      asset: mediaResource("audio", "https://cdn.example/sfx.wav", 4),
       modality: "sfx",
-      url: "https://cdn.example/sfx.wav",
     }, {
       updatedAt: "2026-05-22T00:00:03Z",
     });
     expect(withAudio).toMatchObject({
+      asset: mediaResource("audio", "https://cdn.example/sfx.wav", 4),
       durationSeconds: 4,
       status: "processing",
       type: "sfx",
       updatedAt: "2026-05-22T00:00:03Z",
-      url: "https://cdn.example/sfx.wav",
     });
   });
 });
+
+function mediaResource(
+  kind: "audio" | "image" | "video",
+  url: string,
+  durationSeconds?: number,
+): SdkworkGenerationMediaResource {
+  return {
+    kind,
+    source: "external_url",
+    url,
+    publicUrl: url,
+    ...(durationSeconds === undefined ? {} : { durationSeconds }),
+  };
+}
+
+function videoResource(
+  url: string,
+  poster: string,
+  durationSeconds?: number,
+): SdkworkGenerationMediaResource {
+  const thumbnail = mediaResource("image", poster);
+  return {
+    ...mediaResource("video", url, durationSeconds),
+    poster: thumbnail,
+    thumbnails: [thumbnail],
+  };
+}

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-ocr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-ocr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-ocr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:390dd00861c494e4011894b6e7156d042de2dde194737ff8a9514e07aed5c639",

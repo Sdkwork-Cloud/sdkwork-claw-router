@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-agent-marketplace-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-agent-marketplace-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-agent-marketplace-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be0e2421c99d82b55f9b3eea4715dfebc96194abe80b7a120c60ef0d7e2190d2",

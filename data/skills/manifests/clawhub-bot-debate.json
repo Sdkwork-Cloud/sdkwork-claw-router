@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bot-debate@2.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bot-debate-2.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bot-debate-2.4.0.json"
+      },
       "version": "2.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e14f406d17effd23e76366686039e4c1481aba10445c85134107fef679c5f8fc",

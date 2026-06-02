@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gmail-sender@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gmail-sender-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gmail-sender-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f84e9a496f212a91a1132d3f7a62a885977c8c68d04340c0f7564b87b1708e8",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mango-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mango-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mango-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4b4a7363dcc35e13fec7fc13bebd7c6b189f67b89df4a3acc46cce0528b74365",

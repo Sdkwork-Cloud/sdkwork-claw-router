@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-all-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-all-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-all-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23b142c16c87b1a73369e05cd3dd64de802a825d647417f814d6ade3c28d1dab",

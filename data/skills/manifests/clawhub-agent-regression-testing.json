@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-regression-testing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-regression-testing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-regression-testing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d1bcbdbd63bb75dc1f6e03fa764a04b4ebcb1cf5079fd03248042a25df031278",

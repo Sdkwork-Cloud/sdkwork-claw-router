@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-backtester@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-backtester-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-backtester-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4778f3e7be5478fc0e421f65728f542c50c4ad651009d7b567962d9c781ec1f9",

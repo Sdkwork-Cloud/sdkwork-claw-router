@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/e2e-flow-test@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-e2e-flow-test-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-e2e-flow-test-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce4f77e35fbfa14da877622401084e2b1c218d0528ce2aebb38004393178d1bd",

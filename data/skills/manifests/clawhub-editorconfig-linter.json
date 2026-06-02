@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/editorconfig-linter@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-editorconfig-linter-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-editorconfig-linter-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bb796384727bd9b1c0d9d41161277bd3f24d8ac0d8655c834440cf5e918af476",

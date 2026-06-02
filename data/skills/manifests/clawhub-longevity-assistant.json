@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/longevity-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-longevity-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-longevity-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c5a09e301300ca0b07a67dc5a37e399db9870b30673fe9ebb9e1ce38ba79e31",

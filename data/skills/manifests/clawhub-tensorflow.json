@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tensorflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tensorflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tensorflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b6beda45c451ba9358f5e2ee6d227feaa87f01b6b6765e1b9e1a96edd31f51bc",

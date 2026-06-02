@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/token-books@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-token-books-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-token-books-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6da1820515627b38c3bf2de717748972a94152562121d85e731c077df5d17606",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/m365-unified@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-m365-unified-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-m365-unified-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:384e3f00f4303db16ac598892afeaf14a30aa3cd51ac4d3a2f22dcbacaf8f04d",

@@ -165,10 +165,9 @@ x_response_entities:
         enum:
         - active
         - disabled
-      avatarUrl:
-        type: string
+      avatar:
+        $ref: '#/components/schemas/MediaResource'
         nullable: true
-        maxLength: 2048
       templateSource:
         type: string
         nullable: true
@@ -385,17 +384,19 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 64
-  admin_access_group_item:
-    name: AdminAccessGroupItem
+  admin_channel_group_item:
+    name: AdminChannelGroupItem
     type: object
     additionalProperties: false
     required:
     - id
-    - name
-    - platform
-    - billingType
+    - groupCode
+    - groupName
+    - providerCode
+    - priceReferenceMode
     - rateMultiplier
-    - type
+    - officialPriceMultiplier
+    - groupType
     - accountCount
     - capacity
     - usage
@@ -405,24 +406,32 @@ x_response_entities:
         type: string
         minLength: 1
         maxLength: 128
-      name:
-        type: string
-        minLength: 1
-        maxLength: 128
-      platform:
+      groupCode:
         type: string
         minLength: 1
         maxLength: 64
-      billingType:
+      groupName:
+        type: string
+        minLength: 1
+        maxLength: 128
+      providerCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+      priceReferenceMode:
         type: string
         enum:
-        - standard
-        - subscription
+        - multiplier
+        - official_price
       rateMultiplier:
         type: number
         minimum: 0.01
         maximum: 100
-      type:
+      officialPriceMultiplier:
+        type: number
+        minimum: 0.01
+        maximum: 100
+      groupType:
         type: string
         enum:
         - public
@@ -1105,8 +1114,7 @@ x_response_entities:
         maxLength: 128
         pattern: ^[A-Za-z0-9_-]+$
       icon:
-        type: string
-        maxLength: 255
+        $ref: '#/components/schemas/MediaResource'
       sortWeight:
         type: integer
         format: int32
@@ -1166,11 +1174,9 @@ x_response_entities:
         type: string
         maxLength: 4000
       icon:
-        type: string
-        maxLength: 255
-      coverImage:
-        type: string
-        maxLength: 255
+        $ref: '#/components/schemas/MediaResource'
+      cover:
+        $ref: '#/components/schemas/MediaResource'
       categoryId:
         type: string
         nullable: true
@@ -1252,11 +1258,9 @@ x_response_entities:
         type: string
         maxLength: 4000
       icon:
-        type: string
-        maxLength: 255
-      coverImage:
-        type: string
-        maxLength: 255
+        $ref: '#/components/schemas/MediaResource'
+      cover:
+        $ref: '#/components/schemas/MediaResource'
       categoryId:
         type: string
         nullable: true
@@ -1407,7 +1411,7 @@ x_response_entities:
     - targetType
     - targetId
     - assetType
-    - assetUrl
+    - asset
     - sortOrder
     - status
     - createdAt
@@ -1438,14 +1442,11 @@ x_response_entities:
         type: integer
         format: int32
         minimum: 0
-      assetUrl:
-        type: string
-        minLength: 1
-        maxLength: 1024
-      thumbnailUrl:
-        type: string
+      asset:
+        $ref: '#/components/schemas/MediaResource'
+      thumbnail:
+        $ref: '#/components/schemas/MediaResource'
         nullable: true
-        maxLength: 1024
       title:
         type: string
         nullable: true
@@ -1553,10 +1554,9 @@ x_response_entities:
         type: string
         nullable: true
         maxLength: 1024
-      artifactUrl:
-        type: string
+      artifact:
+        $ref: '#/components/schemas/MediaResource'
         nullable: true
-        maxLength: 1024
       artifactSizeBytes:
         type: integer
         format: int64
@@ -1636,7 +1636,13 @@ x_response_entities:
       model:
         type: string
         maxLength: 128
-      group:
+      channelGroup:
+        type: string
+        maxLength: 128
+      channelGroupId:
+        type: string
+        maxLength: 128
+      channelGroupName:
         type: string
         maxLength: 128
       rps:
@@ -2116,9 +2122,9 @@ x_response_entities:
     - siteName
     - shortName
     - description
-    - logoUrl
-    - iconUrl
-    - faviconUrl
+    - logo
+    - icon
+    - favicon
     - brandColor
     - accentColor
     - footerCopyright
@@ -2144,15 +2150,12 @@ x_response_entities:
       description:
         type: string
         maxLength: 4096
-      logoUrl:
-        type: string
-        maxLength: 2048
-      iconUrl:
-        type: string
-        maxLength: 2048
-      faviconUrl:
-        type: string
-        maxLength: 2048
+      logo:
+        $ref: '#/components/schemas/MediaResource'
+      icon:
+        $ref: '#/components/schemas/MediaResource'
+      favicon:
+        $ref: '#/components/schemas/MediaResource'
       brandColor:
         type: string
         pattern: ^#[0-9A-Fa-f]{3}(?:[0-9A-Fa-f]{3})?$
@@ -2210,15 +2213,12 @@ x_response_entities:
       description:
         type: string
         maxLength: 4096
-      logoUrl:
-        type: string
-        maxLength: 2048
-      iconUrl:
-        type: string
-        maxLength: 2048
-      faviconUrl:
-        type: string
-        maxLength: 2048
+      logo:
+        $ref: '#/components/schemas/MediaResource'
+      icon:
+        $ref: '#/components/schemas/MediaResource'
+      favicon:
+        $ref: '#/components/schemas/MediaResource'
       brandColor:
         type: string
         pattern: ^#[0-9A-Fa-f]{3}(?:[0-9A-Fa-f]{3})?$
@@ -2307,12 +2307,7 @@ x_response_entities:
         nullable: true
         maxLength: 64
       icon:
-        type: object
-        additionalProperties: true
-      iconUrl:
-        type: string
-        nullable: true
-        maxLength: 512
+        $ref: '#/components/schemas/MediaResource'
       resourceList:
         type: object
         additionalProperties: true
@@ -2381,10 +2376,8 @@ x_response_entities:
         type: string
         nullable: true
         maxLength: 512
-      downloadUrl:
-        type: string
-        nullable: true
-        maxLength: 512
+      artifact:
+        $ref: '#/components/schemas/MediaResource'
       createdAt:
         type: string
         minLength: 1
@@ -2421,8 +2414,7 @@ x_response_entities:
         maxLength: 128
         pattern: ^[A-Za-z0-9_-]+$
       icon:
-        type: string
-        maxLength: 255
+        $ref: '#/components/schemas/MediaResource'
       sortWeight:
         type: integer
         format: int32

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jenkins-fix@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jenkins-fix-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jenkins-fix-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f4c9b8d0d90b9b81f76331980b93dabf757eb0e79f87602cc36707cd23470f6c",

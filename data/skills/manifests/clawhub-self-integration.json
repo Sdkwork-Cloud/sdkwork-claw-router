@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-integration@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-integration-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-integration-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:168baa1e807a5eb015d54a071172d92babdaa1dfde80939cda14bbfcc80827eb",

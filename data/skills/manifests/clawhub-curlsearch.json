@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/curlsearch@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-curlsearch-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-curlsearch-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5402a80e27bc23e1a6157d92f0516075d9dca4c1092820e40f5a1cf10af94aca",

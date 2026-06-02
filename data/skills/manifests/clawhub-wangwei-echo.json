@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wangwei-echo@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-wangwei-echo-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wangwei-echo-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:76f094d81780071b0be1dc2dca353f7211c29c1c5916b06e386280dca3d870d8",

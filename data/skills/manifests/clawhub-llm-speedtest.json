@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-speedtest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-speedtest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-speedtest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff927d396a6ad959d5a4ff282b2032fe88511be256552e77eb4cfb68584e7dcc",

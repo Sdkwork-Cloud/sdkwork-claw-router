@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stackstate@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-stackstate-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stackstate-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:42bbf2e10612477804651f88192d94fca39df22c3fdd6af2edd4d3c1a9092356",

@@ -83,9 +83,9 @@ impl PostgresPricingCatalogLoader {
                 PricingCatalogSql::load_pricing_plans(),
             )
             .await?,
-            api_key_groups: row_mapping::load_api_key_groups(
+            channel_groups: row_mapping::load_channel_groups(
                 &self.pool,
-                PricingCatalogSql::load_api_key_groups(),
+                PricingCatalogSql::load_channel_groups(),
             )
             .await?,
             api_keys: self.load_api_key_rows().await?,
@@ -99,9 +99,9 @@ impl PostgresPricingCatalogLoader {
                 PricingCatalogSql::load_quota_policies(),
             )
             .await?,
-            api_key_group_metric_snapshots: row_mapping::load_api_key_group_metric_snapshots(
+            channel_group_metric_snapshots: row_mapping::load_channel_group_metric_snapshots(
                 &self.pool,
-                PricingCatalogSql::load_api_key_group_metric_snapshots(),
+                PricingCatalogSql::load_channel_group_metric_snapshots(),
             )
             .await?,
             prices: row_mapping::load_prices(&self.pool, PricingCatalogSql::load_prices()).await?,

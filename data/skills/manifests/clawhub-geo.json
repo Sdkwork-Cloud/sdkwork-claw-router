@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-geo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3444c8b143b60620e6d6ddc3938b5dba98590ce536c6f3aac271d835567c2764",

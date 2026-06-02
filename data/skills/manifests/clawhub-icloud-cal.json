@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icloud-cal@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-icloud-cal-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icloud-cal-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c9f5ed17f8089b1c052b3a6265b2ba68ce075a4824791205d6dcc68945ca0c77",

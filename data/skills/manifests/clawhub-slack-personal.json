@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slack-personal@0.1.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-slack-personal-0.1.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slack-personal-0.1.7.json"
+      },
       "version": "0.1.7",
       "runtime": "metadata",
       "checksumHash": "sha256:b4d82a29a755bb9cc171712f2876dd7f8fb27a339172a5c14faf1118d0cf1936",

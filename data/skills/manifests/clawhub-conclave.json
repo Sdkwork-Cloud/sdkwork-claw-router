@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/conclave@2.48.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-conclave-2.48.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-conclave-2.48.0.json"
+      },
       "version": "2.48.0",
       "runtime": "metadata",
       "checksumHash": "sha256:038101a1924480e16961a6ad97ac977e6421557616c953970c637b7f8a89d158",

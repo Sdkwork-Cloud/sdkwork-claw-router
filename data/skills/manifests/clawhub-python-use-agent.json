@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/python-use-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-python-use-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-python-use-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d95d90438e66a06adbff0de662c59e73a0c1fc021a741a3a8299121252cbe3c",

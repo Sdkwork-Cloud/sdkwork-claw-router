@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/release-management@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-release-management-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-release-management-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:36ea74d07d3db906abe6c79b340acaf2075b8bfc6f89473197c7bcfe8245d75f",

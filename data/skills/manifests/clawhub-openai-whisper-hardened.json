@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openai-whisper-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openai-whisper-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openai-whisper-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f519220addece534283b2436347a0819ae6e0599172bc89a87c81c48f5a1356",

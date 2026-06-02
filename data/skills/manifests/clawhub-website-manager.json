@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/website-manager@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-website-manager-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-website-manager-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:4821e8bb69b86333e13b3d20bc2de5582b8c1976557d21428745241a9c405445",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cmic-skill-scanner-darwin-arm64@0.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cmic-skill-scanner-darwin-arm64-0.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cmic-skill-scanner-darwin-arm64-0.8.0.json"
+      },
       "version": "0.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd9e9c51e9c9d0a4f203112742d4f59751fe8f19bc539e5e8c0accb731a70ff0",

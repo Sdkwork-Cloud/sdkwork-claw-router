@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/job-hunter-bot@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-job-hunter-bot-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-job-hunter-bot-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29b787915d7b10b9c33262d330297c3cb0ab9d81971a9deee550c2bca81aa626",

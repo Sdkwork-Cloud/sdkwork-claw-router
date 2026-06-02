@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pension@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pension-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pension-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b960b0ac8d4585ff80c0a4e175fadd245691dff23ad5bcd054194f04a2d435e",

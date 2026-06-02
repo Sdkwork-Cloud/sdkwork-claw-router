@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/restock-alert@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-restock-alert-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-restock-alert-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:806c05c56ff09ee0485fe0f373dce150784a9d273fc77ac2b353af73a1d58a8f",

@@ -10,11 +10,11 @@ impl PricingCatalogSql {
             Self::load_routing_policies(),
             Self::load_routing_rules(),
             Self::load_pricing_plans(),
-            Self::load_api_key_groups(),
+            Self::load_channel_groups(),
             Self::load_api_keys(),
             Self::load_access_policies(),
             Self::load_quota_policies(),
-            Self::load_api_key_group_metric_snapshots(),
+            Self::load_channel_group_metric_snapshots(),
             Self::load_prices(),
         ]
     }
@@ -610,7 +610,7 @@ ORDER BY priority ASC, effective_from DESC, id DESC
 "#
     }
 
-    pub fn load_api_key_groups() -> &'static str {
+    pub fn load_channel_groups() -> &'static str {
         r#"
 SELECT
     id,
@@ -685,7 +685,7 @@ ORDER BY updated_at DESC, id DESC
 "#
     }
 
-    pub fn load_api_key_group_metric_snapshots() -> &'static str {
+    pub fn load_channel_group_metric_snapshots() -> &'static str {
         r#"
 SELECT
     COALESCE(channel_group_id, 0) AS group_id,

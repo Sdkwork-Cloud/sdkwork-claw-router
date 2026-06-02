@@ -8,6 +8,8 @@ export interface CommercePaymentOperationAttemptRecord {
   created_at: string;
   /** Http status field on commerce payment operation attempt record. */
   http_status?: string;
+  /** Id field on commerce payment operation attempt record. */
+  id?: string;
   /** Idempotency key field on commerce payment operation attempt record. */
   idempotency_key: string;
   /** Native refund id field on commerce payment operation attempt record. */

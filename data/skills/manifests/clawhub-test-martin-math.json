@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-martin-math@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-martin-math-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-martin-math-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:782b5fedf8b78938220c53449178e2361bfecff2136c65b2b33dd29a35b3a53d",

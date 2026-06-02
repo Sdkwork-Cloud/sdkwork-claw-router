@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flue@1.0.18",
-      "artifactUrl": "data/skills/artifacts/clawhub-flue-1.0.18.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flue-1.0.18.json"
+      },
       "version": "1.0.18",
       "runtime": "metadata",
       "checksumHash": "sha256:ce61e065c1180cd6798042a68853c979002c1b2640b59d34dbfc6e3e31e83eeb",

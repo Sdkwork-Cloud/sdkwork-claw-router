@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workspace-bootstrap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workspace-bootstrap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workspace-bootstrap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8474d144d334a99cdaa6167584ee0f2f234b1ddd6c64b5580e39f114d3f85a41",

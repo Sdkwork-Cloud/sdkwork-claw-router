@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-data-monorepo@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-data-monorepo-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-data-monorepo-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:9548514c3c5e32957140cc7f854a8098ec73a211760af6a0572cd2099b1250d0",

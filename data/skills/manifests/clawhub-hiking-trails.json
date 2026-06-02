@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hiking-trails@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hiking-trails-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hiking-trails-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb8f46f14f835bfbefee0c5a09c8c7c6532f557c1741c36c5c9c8c7bb7bcc6ee",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wordcloud-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wordcloud-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wordcloud-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c7b8ed1353bf324ae09b2aee0c5acb45a4f1096050e588584a9a4b73ce52c267",

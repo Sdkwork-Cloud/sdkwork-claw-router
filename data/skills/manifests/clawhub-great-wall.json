@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/great-wall@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-great-wall-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-great-wall-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df6a2cb91a4d23107c7e4d6a18f583628b4cc4fc6744cef5db809c79d546f463",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bee@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bee-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bee-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:47ef014ad70e46cf9a45d86a71635d33abd2eddf9b6b918037ba32b1b87e613f",

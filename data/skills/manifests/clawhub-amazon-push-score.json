@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-push-score@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-push-score-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-push-score-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0327cf1f55299ec30c41b6e79cfecd6f368f772870f0c7e402f201ee94aa1c1",

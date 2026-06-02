@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/promql-validator@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-promql-validator-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-promql-validator-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a2af25306b1bf21701091eb2cf9896821dac4c786426e10c5f2e7da5cf26ed5",

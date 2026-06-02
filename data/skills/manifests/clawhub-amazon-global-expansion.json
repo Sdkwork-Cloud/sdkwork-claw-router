@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-global-expansion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-global-expansion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-global-expansion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5b5529640e5828dae97f41c7579240a1417762c780e8b39b7455f9cdaa8a731f",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/halo-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-halo-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-halo-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5df2ae56ee0ffa51fd388b49258d4660f7916400b17420f4c5ab7b48b8574078",

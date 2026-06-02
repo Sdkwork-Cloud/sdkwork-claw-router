@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dynamodb@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dynamodb-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dynamodb-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:570b981e1cf18fd66400c354b913d7e5af2de6fafe61d24d42afb9a90bbdbf57",

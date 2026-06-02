@@ -16,6 +16,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? ExternalMerchantId { get; set; }
         public string? ExternalObjectId { get; set; }
         public string? ExternalObjectType { get; set; }
+        public string? Id { get; set; }
         public string? LastErrorCode { get; set; }
         public string? LastErrorMessage { get; set; }
         public string? LastSyncAt { get; set; }

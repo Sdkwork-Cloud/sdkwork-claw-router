@@ -7,6 +7,7 @@ namespace Sdkwork.ClawRouter.App.Models
     public class CommerceInvoiceTitleRecord
     {
         public string? CreatedAt { get; set; }
+        public string? Id { get; set; }
         public string? Name { get; set; }
         public string? OwnerUserId { get; set; }
         public string? TaxNo { get; set; }

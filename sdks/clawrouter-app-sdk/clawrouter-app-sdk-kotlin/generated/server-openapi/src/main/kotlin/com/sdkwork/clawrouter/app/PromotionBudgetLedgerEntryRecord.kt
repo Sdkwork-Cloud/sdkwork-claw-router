@@ -1,16 +1,21 @@
 package com.sdkwork.clawrouter.app
 
 data class PromotionBudgetLedgerEntryRecord(
+    val amountDeltaMinor: String? = null,
     val applicationId: String? = null,
+    val balanceAmountMinor: String? = null,
+    val balanceQuantity: String? = null,
     val budgetAccountId: String? = null,
     val businessType: String? = null,
     val createdAt: String? = null,
     val currencyCode: String? = null,
     val direction: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val ledgerNo: String? = null,
     val occurredAt: String? = null,
     val organizationId: String? = null,
+    val quantityDelta: String? = null,
     val requestNo: String? = null,
     val sourceId: String? = null,
     val sourceType: String? = null,

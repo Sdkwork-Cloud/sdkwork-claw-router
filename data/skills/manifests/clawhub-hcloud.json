@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hcloud@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hcloud-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hcloud-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5b7a5572ae507a38b96db8a0fea8614d1fe4c1d8bb38f2610a385a98e476505",

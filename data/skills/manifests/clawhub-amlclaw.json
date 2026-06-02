@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amlclaw@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amlclaw-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amlclaw-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16752c6a2adb2fc61c4a5e2ff8d05127e525ee413ffd0d3a066e991ed013d71c",

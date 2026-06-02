@@ -18,6 +18,7 @@ class CommerceAccountLedgerEntryRecord:
     request_no: str
     tenant_id: str
     transaction_no: str
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     remark: Optional[str] = None
     source_id: Optional[str] = None

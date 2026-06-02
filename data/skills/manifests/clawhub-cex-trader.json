@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cex-trader@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cex-trader-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cex-trader-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4338f2365e87d7e9db28786ecc7a65551e76a7aa54439e35af68cfe22513b6e7",

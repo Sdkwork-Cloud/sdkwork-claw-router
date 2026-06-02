@@ -8,8 +8,8 @@ type RuntimeArtifactCreateRequest struct {
 	Metadata map[string]JsonValue `json:"metadata"`
 	MimeType string `json:"mimeType"`
 	Name string `json:"name"`
+	Resource MediaResource `json:"resource"`
 	Sha256 string `json:"sha256"`
 	SizeBytes int `json:"sizeBytes"`
 	StorageKey string `json:"storageKey"`
-	StorageUrl string `json:"storageUrl"`
 }

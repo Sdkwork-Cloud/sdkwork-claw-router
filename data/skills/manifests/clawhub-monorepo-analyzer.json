@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/monorepo-analyzer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-monorepo-analyzer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-monorepo-analyzer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a56b8beaad1a1910267efbdbd0da436e8fc543f7dfa2fd865200935c384b48d0",

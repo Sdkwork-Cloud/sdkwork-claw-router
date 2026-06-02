@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rtm@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rtm-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rtm-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d48129c3d70c17914b6cc0d622d835568fa2aa40aee465f6cb2618928f286ade",

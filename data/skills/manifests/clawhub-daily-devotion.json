@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-devotion@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-devotion-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-devotion-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:806020a2c1be4f2e5655e4fbf5a44e99707d63cf8fd951b1e652f95f5e2589ef",

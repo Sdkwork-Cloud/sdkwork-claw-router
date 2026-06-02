@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openai-agent-sdk@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openai-agent-sdk-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openai-agent-sdk-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7e896cb5dbdd7341ce41a0b8605e6df42e3166fae67a26f5c4f2a5bbe1dbaeca",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/briefing@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-briefing-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-briefing-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:218e394fff4aa45f55c311158c2797a7d13419310bf0d19c381410bfdeb7fee3",

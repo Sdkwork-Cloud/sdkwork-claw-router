@@ -3,8 +3,8 @@ package com.sdkwork.clawrouter.backend
 data class AdminSkillAssetItem(
     val altText: String? = null,
     val artifactId: String? = null,
+    val asset: MediaResource? = null,
     val assetType: Int? = null,
-    val assetUrl: String? = null,
     val createdAt: String? = null,
     val durationSeconds: String? = null,
     val fileSize: Int? = null,
@@ -17,7 +17,7 @@ data class AdminSkillAssetItem(
     val status: Int? = null,
     val targetId: String? = null,
     val targetType: Int? = null,
-    val thumbnailUrl: String? = null,
+    val thumbnail: MediaResource? = null,
     val title: String? = null,
     val updatedAt: String? = null,
     val width: Int? = null

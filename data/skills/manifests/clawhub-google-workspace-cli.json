@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-workspace-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-workspace-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-workspace-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:caf54afab7c8ec3898c7a0420122850b5b277c17729794b4a6b7902e4add7ca6",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bigdata@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bigdata-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bigdata-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4c5afed406cd744165d593a0f020129064a457869b6d54dc432edc51f9d1f118",

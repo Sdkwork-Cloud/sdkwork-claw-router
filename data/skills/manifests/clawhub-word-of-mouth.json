@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/word-of-mouth@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-word-of-mouth-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-word-of-mouth-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e326d29c90f87752c67bce8cae08b92fc821f2ebc0d8490ca71aac91d3180818",

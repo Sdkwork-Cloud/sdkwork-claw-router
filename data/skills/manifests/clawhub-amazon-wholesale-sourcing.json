@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-wholesale-sourcing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-wholesale-sourcing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-wholesale-sourcing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8060037c26552dcd0ee373c69390f2e297a2ba32e98bf050e332bfeffa25a656",

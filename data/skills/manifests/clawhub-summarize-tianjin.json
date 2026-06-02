@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/summarize-tianjin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-summarize-tianjin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-summarize-tianjin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3134cf7f3bf9fd9424339732a2f5bb6657467ed63cf60101b44c94ecfaa6a5d",

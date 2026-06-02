@@ -92,6 +92,22 @@ function seedLimitValue(value, name) {
   return positiveInteger(value, name);
 }
 
+function mediaResource(value, kind = 'image') {
+  const locator = normalizeText(value);
+  if (!locator) {
+    throw new Error(`MediaResource ${kind} locator must not be empty`);
+  }
+  const source = locator.startsWith('http://') || locator.startsWith('https://')
+    ? 'external_url'
+    : locator.startsWith('data:')
+      ? 'data_url'
+      : 'provider_asset';
+  if (source === 'provider_asset') {
+    return { kind, source, uri: locator };
+  }
+  return { kind, source, url: locator, publicUrl: locator };
+}
+
 export function parseClawHubMirrorArgs(argv) {
   const settings = {
     fetch: false,
@@ -714,7 +730,7 @@ function buildOfficialCategories() {
       groupName: 'official',
       code: 'sdkwork-official',
       tags: ['sdkwork', 'official', 'featured'],
-      icon: 'badge-check',
+      icon: mediaResource('badge-check'),
       sortWeight: 1,
       parentId: null,
       path: '/skills/sdkwork-official',
@@ -731,7 +747,7 @@ function buildOfficialCategories() {
       groupName: 'community',
       code: 'clawhub-community',
       tags: ['clawhub', 'community', 'mirror'],
-      icon: 'store',
+      icon: mediaResource('store'),
       sortWeight: 20,
       parentId: null,
       path: '/skills/clawhub-community',
@@ -751,8 +767,8 @@ function buildPackages() {
       name: 'SDKWork Official Skills',
       summary: 'Verified SDKWork skill package for prompt, retrieval, and workflow execution.',
       description: 'A curated official package of production-ready SDKWork skills that are bundled, supported, and safe for first-run SkillsHub initialization.',
-      icon: 'https://cdn.sdkwork.example/skills/packages/sdkwork-official-skills/icon.png',
-      coverImage: 'https://cdn.sdkwork.example/skills/packages/sdkwork-official-skills/cover.png',
+      icon: mediaResource('https://cdn.sdkwork.example/skills/packages/sdkwork-official-skills/icon.png'),
+      cover: mediaResource('https://cdn.sdkwork.example/skills/packages/sdkwork-official-skills/cover.png'),
       categoryId: OFFICIAL_CATEGORY_ID,
       enabled: true,
       featured: true,
@@ -768,8 +784,8 @@ function buildPackages() {
       name: 'ClawHub Community Mirror',
       summary: 'Local projection of community skills mirrored from the ClawHub public catalog.',
       description: 'ClawHub community skills are crawled into a local raw mirror and projected as metadata-only marketplace entries until their execution artifacts are reviewed.',
-      icon: 'https://cdn.sdkwork.example/skills/packages/clawhub-community-mirror/icon.png',
-      coverImage: 'https://cdn.sdkwork.example/skills/packages/clawhub-community-mirror/cover.png',
+      icon: mediaResource('https://cdn.sdkwork.example/skills/packages/clawhub-community-mirror/icon.png'),
+      cover: mediaResource('https://cdn.sdkwork.example/skills/packages/clawhub-community-mirror/cover.png'),
       categoryId: CLAWHUB_CATEGORY_ID,
       enabled: true,
       featured: false,
@@ -935,7 +951,7 @@ function buildCommunityProjection(details, rawIndex) {
     const description = truncateText(detail?.latestVersion?.changelog || detail?.skill?.summary || summary, 2000);
     const sourceUrl = `https://clawhub.ai/skills/${slug}`;
     const artifactRef = `clawhub://skills/${slug}@${version}`;
-    const artifactUrl = `data/skills/artifacts/clawhub-${slug}-${version}.json`;
+    const artifactPath = `data/skills/artifacts/clawhub-${slug}-${version}.json`;
     const manifestUrl = `data/skills/manifests/clawhub-${slug}.json`;
     const frameworks = deriveFrameworks(detail);
     const features = deriveFeatureLines(detail);
@@ -983,8 +999,8 @@ function buildCommunityProjection(details, rawIndex) {
       name,
       summary,
       description,
-      icon: image,
-      coverImage: image,
+      icon: mediaResource(image),
+      cover: mediaResource(image),
       categoryId: CLAWHUB_CATEGORY_ID,
       packageId: CLAWHUB_PACKAGE_ID,
       provider: 'ClawHub',
@@ -1074,7 +1090,7 @@ function buildCommunityProjection(details, rawIndex) {
       platformType: 'agent',
       osName: 'metadata',
       artifactRef,
-      artifactUrl,
+      artifact: mediaResource(artifactPath, 'document'),
       artifactSizeBytes,
       runtime: 'metadata',
       frameworks,
@@ -1103,7 +1119,7 @@ function buildCommunityProjection(details, rawIndex) {
       artifacts: [
         {
           artifactRef,
-          artifactUrl,
+          artifact: mediaResource(artifactPath, 'document'),
           version,
           runtime: 'metadata',
           checksumHash: artifact.checksumHash,
@@ -1123,8 +1139,8 @@ function buildCommunityProjection(details, rawIndex) {
       targetId: id,
       artifactId: null,
       assetType: 1,
-      assetUrl: image,
-      thumbnailUrl: image,
+      asset: mediaResource(image),
+      thumbnail: mediaResource(image),
       title: `${name} cover`,
       altText: `${name} ClawHub community skill preview`,
       mimeType: 'image/png',
@@ -1142,7 +1158,7 @@ function buildCommunityProjection(details, rawIndex) {
       value: manifest,
     });
     artifactPayloads.push({
-      path: artifactUrl,
+      path: artifactPath,
       value: artifactPayload,
     });
   });

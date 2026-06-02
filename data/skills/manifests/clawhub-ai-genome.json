@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-genome@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-genome-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-genome-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9f8a89cc310245506057c9c9f27a6b2590dbdd2a2f185a8e36ceea34dedc93f2",

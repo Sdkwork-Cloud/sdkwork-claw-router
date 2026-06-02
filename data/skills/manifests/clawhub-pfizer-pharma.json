@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pfizer-pharma@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pfizer-pharma-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pfizer-pharma-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d8eedac87d1c84c8a7a75e2fb607747e03a29473fd213fcd697e8d623f6844ff",

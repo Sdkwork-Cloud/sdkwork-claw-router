@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/passo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-passo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-passo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:429bb5d11ab608357647cceeece538fd2a5d13e7f28d03b96aee30f437121b5c",

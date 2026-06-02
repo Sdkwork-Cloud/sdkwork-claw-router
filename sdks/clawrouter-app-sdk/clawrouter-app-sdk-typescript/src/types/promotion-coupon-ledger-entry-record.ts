@@ -2,12 +2,16 @@
 export interface PromotionCouponLedgerEntryRecord {
   /** Application id field on promotion coupon ledger entry record. */
   application_id?: string;
+  /** Balance after field on promotion coupon ledger entry record. */
+  balance_after: string;
   /** Business type field on promotion coupon ledger entry record. */
   business_type: string;
   /** Created at field on promotion coupon ledger entry record. */
   created_at: string;
   /** Direction field on promotion coupon ledger entry record. */
   direction: string;
+  /** Id field on promotion coupon ledger entry record. */
+  id?: string;
   /** Idempotency key field on promotion coupon ledger entry record. */
   idempotency_key: string;
   /** Ledger no field on promotion coupon ledger entry record. */
@@ -18,6 +22,8 @@ export interface PromotionCouponLedgerEntryRecord {
   offer_id: string;
   /** Organization id field on promotion coupon ledger entry record. */
   organization_id?: string;
+  /** Quantity delta field on promotion coupon ledger entry record. */
+  quantity_delta: string;
   /** Request no field on promotion coupon ledger entry record. */
   request_no: string;
   /** Source id field on promotion coupon ledger entry record. */

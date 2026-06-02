@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/synap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-synap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-synap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:160f2d8d57f93c336ba11b4b868ac2c69972eb2eca2896fedddc4cc59b7297ef",

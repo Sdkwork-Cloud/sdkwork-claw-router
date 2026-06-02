@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fridge@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fridge-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fridge-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d9e04a8b31b8bc5516552f52bebdcac46f5626cd16a7cf2cc31eae40e56839ab",

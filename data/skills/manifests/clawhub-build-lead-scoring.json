@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/build-lead-scoring@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-build-lead-scoring-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-build-lead-scoring-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:350c24ae9692f479dd2e6736b20a4a37eeb6c76338bbacc6f108711df7ee9025",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pokecenter@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pokecenter-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pokecenter-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e9f196ba4ca09169b78f28a9811b4a88b12058b022ea76f959145650ef9f805",

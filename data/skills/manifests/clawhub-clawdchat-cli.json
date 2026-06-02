@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawdchat-cli@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawdchat-cli-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawdchat-cli-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a8654a2610bd1913629307f299046f43951e370ef99544348d503d492ff0f05a",

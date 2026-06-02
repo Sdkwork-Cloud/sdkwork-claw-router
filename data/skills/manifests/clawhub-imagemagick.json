@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/imagemagick@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-imagemagick-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-imagemagick-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1eb63cd25ccfd4f4e898592f4ffe0ea05d25c271978d9c1823a3632362fec4a4",

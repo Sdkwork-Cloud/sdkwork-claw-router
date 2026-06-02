@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ireland@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ireland-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ireland-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9ce906c626fef796480cf73aedb026069efaaae9e9bba6c322a60a890a2817fd",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/graphviz@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-graphviz-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-graphviz-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a2a698b3d0990e9e9196e1718a97fdfa302e043e3ed07d8786a0c12da04b69b",

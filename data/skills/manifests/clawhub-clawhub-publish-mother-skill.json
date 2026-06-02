@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawhub-publish-mother-skill@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-publish-mother-skill-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawhub-publish-mother-skill-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5cf2f17793b5fb94e7d67cc2c090213021d4c6708d04313749065fa15c2b5852",

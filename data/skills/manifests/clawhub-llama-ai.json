@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llama-ai@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-llama-ai-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llama-ai-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:019e41f3e7c1d14e2e0a7f6bba57e6f8a4d5140a6289be392f64c4be59a15994",

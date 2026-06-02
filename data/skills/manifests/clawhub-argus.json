@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/argus@1.9.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-argus-1.9.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-argus-1.9.3.json"
+      },
       "version": "1.9.3",
       "runtime": "metadata",
       "checksumHash": "sha256:f1403780080a795ba41b27b629c652540267d5d6ba7fcd2a9a0f0f664d5e7f7a",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generator-davinci@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-generator-davinci-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generator-davinci-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d86567360fade9d57d7ad897656d1549c7e246ed84c4570674542d97d447a574",

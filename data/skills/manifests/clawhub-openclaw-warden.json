@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-warden@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-warden-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-warden-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:8229d14ee31f07351219cff342e7a596a01dcb5b09232224528d816429c8d127",

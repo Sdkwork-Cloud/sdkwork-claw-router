@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-cc-rules@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-cc-rules-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-cc-rules-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7bebbe3edcf3f82dc11d1b820646b030cfff48b2b4b3134cab1c1d31073034e",

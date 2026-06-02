@@ -16,9 +16,10 @@ async fn sqlite_app_skills_reads_public_catalog_without_trusted_subject() {
         r#"
         INSERT INTO plus_category (
             id, tenant_id, organization_id, parent_id, name, description, shop_id,
-            type, group_name, code, tags, icon, sort_weight, path, visible, status
+            type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id,
+            icon_resource_snapshot, sort_weight, path, visible, status
         )
-        VALUES (3901, 0, 0, NULL, 'Official', NULL, NULL, 19, NULL, 'official', NULL, NULL, 1, '/official', 1, 1)
+        VALUES (3901, 0, 0, NULL, 'Official', NULL, NULL, 19, NULL, 'official', NULL, NULL, NULL, NULL, 1, '/official', 1, 1)
         "#,
     )
     .execute(&pool)
@@ -75,9 +76,11 @@ async fn sqlite_app_skills_loads_public_approved_published_enabled_skills() {
     assert_eq!("SDKWork", skill.developer);
     assert_eq!("Routes requests with market policies", skill.description);
     assert_eq!("Routing", skill.category);
+    assert_eq!("image", skill.image["kind"]);
+    assert_eq!("external_url", skill.image["source"]);
     assert_eq!(
         "https://cdn.example.test/skills/router-cover.png",
-        skill.image
+        skill.image["publicUrl"]
     );
     assert_eq!(4.7, skill.rating);
     assert_eq!("1.5K", skill.downloads);
@@ -92,7 +95,12 @@ async fn sqlite_app_skills_loads_public_approved_published_enabled_skills() {
     assert_eq!("Apache-2.0", skill.license);
     assert_eq!(vec!["wasm".to_owned(), "rust".to_owned()], skill.frameworks);
     assert_eq!(
-        vec!["https://cdn.example.test/skills/router-screen.png".to_owned()],
+        vec![serde_json::json!({
+            "kind": "image",
+            "source": "external_url",
+            "url": "https://cdn.example.test/skills/router-screen.png",
+            "publicUrl": "https://cdn.example.test/skills/router-screen.png"
+        })],
         skill.screenshots
     );
     assert_eq!(1, skill.packages.len());
@@ -310,7 +318,9 @@ async fn create_skill_tables(pool: &SqlitePool) {
             group_name TEXT,
             code TEXT,
             tags TEXT,
-            icon TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
             sort_weight INTEGER,
             path TEXT,
             visible INTEGER,
@@ -327,8 +337,12 @@ async fn create_skill_tables(pool: &SqlitePool) {
             name TEXT,
             summary TEXT,
             description TEXT,
-            icon TEXT,
-            cover_image TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
+            cover_media_resource_id TEXT,
+            cover_object_blob_id INTEGER,
+            cover_resource_snapshot TEXT,
             category_id INTEGER,
             enabled INTEGER,
             featured INTEGER,
@@ -348,8 +362,12 @@ async fn create_skill_tables(pool: &SqlitePool) {
             name TEXT,
             summary TEXT,
             description TEXT,
-            icon TEXT,
-            cover_image TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
+            cover_media_resource_id TEXT,
+            cover_object_blob_id INTEGER,
+            cover_resource_snapshot TEXT,
             category_id INTEGER,
             package_id INTEGER,
             provider TEXT,
@@ -434,8 +452,12 @@ async fn create_skill_tables(pool: &SqlitePool) {
             target_id INTEGER NOT NULL,
             artifact_id INTEGER,
             asset_type TEXT,
-            asset_url TEXT,
-            thumbnail_url TEXT,
+            asset_media_resource_id TEXT,
+            asset_object_blob_id INTEGER,
+            asset_resource_snapshot TEXT,
+            thumbnail_media_resource_id TEXT,
+            thumbnail_object_blob_id INTEGER,
+            thumbnail_resource_snapshot TEXT,
             title TEXT,
             sort_order INTEGER,
             published_at TEXT,
@@ -456,7 +478,9 @@ async fn create_skill_tables(pool: &SqlitePool) {
             os_name TEXT,
             version TEXT,
             artifact_ref TEXT,
-            artifact_url TEXT,
+            artifact_media_resource_id TEXT,
+            artifact_object_blob_id INTEGER,
+            artifact_resource_snapshot TEXT,
             artifact_size_bytes INTEGER,
             runtime TEXT,
             frameworks TEXT,
@@ -478,9 +502,10 @@ async fn seed_skills(pool: &SqlitePool) {
         r#"
         INSERT INTO plus_category (
             id, tenant_id, organization_id, parent_id, name, description, shop_id,
-            type, group_name, code, tags, icon, sort_weight, path, visible, status
+            type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id,
+            icon_resource_snapshot, sort_weight, path, visible, status
         )
-        VALUES (301, 10, 20, NULL, 'Routing', NULL, NULL, 19, NULL, 'routing', NULL, NULL, 10, '/routing', 1, 1)
+        VALUES (301, 10, 20, NULL, 'Routing', NULL, NULL, 19, NULL, 'routing', NULL, NULL, NULL, NULL, 10, '/routing', 1, 1)
         "#,
     )
     .execute(pool)
@@ -490,13 +515,19 @@ async fn seed_skills(pool: &SqlitePool) {
         r#"
         INSERT INTO plus_agent_skill_package (
             id, tenant_id, organization_id, user_id, package_key, name, summary,
-            description, icon, cover_image, category_id, enabled, featured,
+            description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
+            cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot,
+            category_id, enabled, featured,
             sort_weight, tags, latest_published_at
         )
         VALUES (
             701, 10, 20, 30, 'router-package', 'Router Package', 'Routes',
-            'Package context', 'https://cdn.example.test/skills/pkg.png',
-            'https://cdn.example.test/skills/pkg-cover.png', 301, 1, 1,
+            'Package context',
+            'test-skill-package-icon-701', NULL,
+            '{"kind":"image","source":"external_url","url":"https://cdn.example.test/skills/pkg.png","publicUrl":"https://cdn.example.test/skills/pkg.png"}',
+            'test-skill-package-cover-701', NULL,
+            '{"kind":"image","source":"external_url","url":"https://cdn.example.test/skills/pkg-cover.png","publicUrl":"https://cdn.example.test/skills/pkg-cover.png"}',
+            301, 1, 1,
             10, '["wasm","rust"]', '2026-05-02 07:00:00'
         )
         "#,
@@ -634,7 +665,9 @@ async fn insert_skill(
         r#"
         INSERT INTO plus_agent_skill (
             id, uuid, tenant_id, organization_id, user_id, skill_key, name, summary,
-            description, icon, cover_image, category_id, package_id, provider,
+            description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
+            cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot,
+            category_id, package_id, provider,
             version, version_name, runtime, entrypoint, manifest_url, repository_url,
             homepage_url, documentation_url, license_name, source_type, market_status,
             visibility, review_status, review_comment, reviewed_by, reviewed_at,
@@ -644,16 +677,20 @@ async fn insert_skill(
         )
         VALUES (
             ?1, ?2, ?3, ?4, ?5, 'router-skill', ?6, 'Routes',
-            ?7, 'https://cdn.example.test/skills/router.png',
-            'https://cdn.example.test/skills/router-cover.png', ?8, ?9, 'SDKWork',
+            ?7,
+            ?8, NULL,
+            '{"kind":"image","source":"external_url","url":"https://cdn.example.test/skills/router.png","publicUrl":"https://cdn.example.test/skills/router.png"}',
+            ?8, NULL,
+            '{"kind":"image","source":"external_url","url":"https://cdn.example.test/skills/router-cover.png","publicUrl":"https://cdn.example.test/skills/router-cover.png"}',
+            ?9, ?10, 'SDKWork',
             '2.1.0', '2.1.0', 'wasm', 'router:start',
             'https://cdn.example.test/skills/router-manifest.json',
-            NULL, NULL, NULL, 'Apache-2.0', 'COMMUNITY', ?10,
-            ?11, ?12, NULL, NULL, NULL,
-            0, 0, ?13, 1, 10, '0', 'USD',
+            NULL, NULL, NULL, 'Apache-2.0', 'COMMUNITY', ?11,
+            ?12, ?13, NULL, NULL, NULL,
+            0, 0, ?14, 1, 10, '0', 'USD',
             1500, 4.7, 10, '["wasm","rust"]', '["policy","fallback"]', NULL,
             '{"mode":"balanced","limits":{"maxRetries":3,"timeoutSeconds":30},"portal":{"features":["hidden metadata"]}}',
-            ?14,
+            ?15,
             '2026-05-01 08:00:00'
         )
         "#,
@@ -665,6 +702,7 @@ async fn insert_skill(
     .bind(user_id)
     .bind(name)
     .bind(description)
+    .bind(format!("test-skill-cover-{id}"))
     .bind(category_id)
     .bind(package_id)
     .bind(market_status)
@@ -682,10 +720,18 @@ async fn insert_skill_asset(pool: &SqlitePool) {
         r#"
         INSERT INTO studio_catalog_asset (
             id, tenant_id, organization_id, target_type, target_id, artifact_id,
-            asset_type, asset_url, thumbnail_url, title, sort_order, published_at,
+            asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot,
+            thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot,
+            title, sort_order, published_at,
             status, deleted_at, metadata
         )
-        VALUES (801, 10, 20, 35, 201, NULL, 'screenshot', 'https://cdn.example.test/skills/router-screen.png', NULL, NULL, 1, '2026-05-02 09:00:00', 1, NULL, 'raw-internal-metadata')
+        VALUES (
+            801, 10, 20, 35, 201, NULL, 'screenshot',
+            'test-skill-asset-801', NULL,
+            '{"kind":"image","source":"external_url","url":"https://cdn.example.test/skills/router-screen.png","publicUrl":"https://cdn.example.test/skills/router-screen.png"}',
+            NULL, NULL, NULL, NULL, 1, '2026-05-02 09:00:00',
+            1, NULL, 'raw-internal-metadata'
+        )
         "#,
     )
     .execute(pool)
@@ -698,14 +744,17 @@ async fn insert_skill_artifact(pool: &SqlitePool) {
         r#"
         INSERT INTO studio_catalog_artifact (
             id, tenant_id, organization_id, target_type, target_id, artifact_type,
-            platform_type, os_name, version, artifact_ref, artifact_url,
+            platform_type, os_name, version, artifact_ref, artifact_media_resource_id,
+            artifact_object_blob_id, artifact_resource_snapshot,
             artifact_size_bytes, runtime, frameworks, license_name, release_notes,
             published_at, status, deleted_at, metadata
         )
         VALUES (
             9101, 10, 20, 35, 201, 'skill-package',
             'wasm', 'any', '2.1.0', 'artifact://skills/router.wasm',
-            'https://cdn.example.test/skills/router.wasm', 5242880, 'wasm',
+            'media-resource-router-wasm', 91001,
+            '{"kind":"binary","source":"external_url","url":"https://cdn.example.test/skills/router.wasm","publicUrl":"https://cdn.example.test/skills/router.wasm","objectBlobId":91001}',
+            5242880, 'wasm',
             '["wasm","rust"]', 'Apache-2.0', 'Initial market release',
             '2026-05-02 08:00:00', 1, NULL, 'raw-internal-metadata'
         )

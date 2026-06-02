@@ -42,6 +42,14 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 
 - `.`
 - `./runtime`
+- `./api-result`
+- `./sdk-clients`
+- `./sdk-request-boundary`
+- `./components/BusinessState`
+- `./components/ConfirmDialog`
+- `./components/CopyButton`
+- `./idempotency`
+- `./utils/env`
 
 ## SDK Clients
 

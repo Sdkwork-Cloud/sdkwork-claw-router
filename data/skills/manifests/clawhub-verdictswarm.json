@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/verdictswarm@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-verdictswarm-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-verdictswarm-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6d88113a68f18df49701f346f13a6e5382f5865c569e04a7d940392e8fc6753d",

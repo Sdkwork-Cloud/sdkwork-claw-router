@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/highlevel-api@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-highlevel-api-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-highlevel-api-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4aeca824801eb229b0db79a4c13d4c1868324c031095dc6c56a125a1ecc656cf",

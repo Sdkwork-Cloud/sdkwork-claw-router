@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-parser@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-parser-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-parser-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f2786ee433af86e518ca0f9092c5c7c2a985e6f765c7a4cd5e5bc49e1f50dba2",

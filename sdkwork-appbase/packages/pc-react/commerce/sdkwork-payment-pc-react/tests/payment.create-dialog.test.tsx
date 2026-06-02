@@ -71,7 +71,7 @@ describe("sdkwork-payment-pc-react create dialog", () => {
       paymentSn: "PAY-1001",
       paymentUrl: "https://pay.sdkwork.ai/wechat/1001",
       productType: "native" as const,
-      qrCode: "weixin://wxpay/bizpayurl?pr=PAY1001",
+      qrContent: "weixin://wxpay/bizpayurl?pr=PAY1001",
       queryIntervalSeconds: 3,
       status: "pending" as const,
       statusLabel: "待支付",

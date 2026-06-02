@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jolly-rancher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jolly-rancher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jolly-rancher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14b39906cdb4be2f412a943a4467c4c48a1cc0d840c9d878eb6837d633e0acd7",

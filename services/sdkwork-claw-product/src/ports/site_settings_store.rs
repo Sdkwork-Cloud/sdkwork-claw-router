@@ -1,6 +1,8 @@
 use std::future::Future;
 use std::pin::Pin;
 
+use serde_json::{json, Value};
+
 use crate::domain::DomainResult;
 
 const DEFAULT_ICP_RECORD_NUMBER: &str = "京ICP备2026000000号-1";
@@ -24,9 +26,9 @@ pub struct SiteSettings {
     pub site_name: String,
     pub short_name: String,
     pub description: String,
-    pub logo_url: String,
-    pub icon_url: String,
-    pub favicon_url: String,
+    pub logo: Value,
+    pub icon: Value,
+    pub favicon: Value,
     pub brand_color: String,
     pub accent_color: String,
     pub footer_copyright: String,
@@ -49,9 +51,9 @@ impl Default for SiteSettings {
             site_name: "Claw Router".to_owned(),
             short_name: "Claw Router".to_owned(),
             description: "Unified AI gateway and model routing platform.".to_owned(),
-            logo_url: String::new(),
-            icon_url: String::new(),
-            favicon_url: String::new(),
+            logo: empty_media_resource("image"),
+            icon: empty_media_resource("image"),
+            favicon: empty_media_resource("image"),
             brand_color: "#0f172a".to_owned(),
             accent_color: "#e9583f".to_owned(),
             footer_copyright: "Claw Router. All rights reserved.".to_owned(),
@@ -75,9 +77,9 @@ impl SiteSettings {
         normalize_required_string(&mut self.site_name, "Claw Router");
         normalize_required_string(&mut self.short_name, &self.site_name);
         normalize_optional_string(&mut self.description);
-        normalize_optional_string(&mut self.logo_url);
-        normalize_optional_string(&mut self.icon_url);
-        normalize_optional_string(&mut self.favicon_url);
+        normalize_media_resource(&mut self.logo, "image");
+        normalize_media_resource(&mut self.icon, "image");
+        normalize_media_resource(&mut self.favicon, "image");
         normalize_color(&mut self.brand_color, "#0f172a");
         normalize_color(&mut self.accent_color, "#e9583f");
         normalize_optional_string(&mut self.footer_copyright);
@@ -138,6 +140,36 @@ fn is_hex_color(value: &str) -> bool {
         return false;
     }
     bytes[1..].iter().all(u8::is_ascii_hexdigit)
+}
+
+fn normalize_media_resource(value: &mut Value, fallback_kind: &str) {
+    let Some(object) = value.as_object_mut() else {
+        *value = empty_media_resource(fallback_kind);
+        return;
+    };
+    let kind = object
+        .get("kind")
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .unwrap_or(fallback_kind)
+        .to_owned();
+    let source = object
+        .get("source")
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+        .unwrap_or("external_url")
+        .to_owned();
+    object.insert("kind".to_owned(), Value::String(kind));
+    object.insert("source".to_owned(), Value::String(source));
+}
+
+fn empty_media_resource(kind: &str) -> Value {
+    json!({
+        "kind": kind,
+        "source": "external_url"
+    })
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]

@@ -24,6 +24,6 @@ type CourseItem struct {
 	RatingScore float64 `json:"ratingScore"`
 	StudentsCount int `json:"studentsCount"`
 	Tags []string `json:"tags"`
-	ThumbnailUrl string `json:"thumbnailUrl"`
+	Thumbnail MediaResource `json:"thumbnail"`
 	Title string `json:"title"`
 }

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-home-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-home-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-home-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e49c38e21f9ec9443966b923ab86b937aade2345fdb523470121b70987409473",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grounding-anything@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grounding-anything-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grounding-anything-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d886d0835fcb234e9e52e49cdc1acd36ea53817a011122b07934da7102aa04c",

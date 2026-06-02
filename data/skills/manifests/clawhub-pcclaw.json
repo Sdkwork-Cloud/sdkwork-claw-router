@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pcclaw@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pcclaw-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pcclaw-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a25346566596afa4db0c0ddefd80f4acb798fb479d224b3559025e5cc7fe735a",

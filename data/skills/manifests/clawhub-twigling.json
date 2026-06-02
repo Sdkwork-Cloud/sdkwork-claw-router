@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/twigling@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-twigling-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-twigling-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5743000c165f318d604cbda6bd2daf0cbe067dbb00c3a70b9b755dd0f3b46e76",

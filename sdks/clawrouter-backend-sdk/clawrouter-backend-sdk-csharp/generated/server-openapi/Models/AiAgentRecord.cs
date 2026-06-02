@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AiAgentRecord
     {
         public string? AgentCode { get; set; }
-        public string? AvatarUrl { get; set; }
+        public MediaResource? Avatar { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }
         public string? DefaultVersionId { get; set; }

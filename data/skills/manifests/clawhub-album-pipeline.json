@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/album-pipeline@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-album-pipeline-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-album-pipeline-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c64f923b817680b8213083e2f3af0fdf3080916a3ceb4bbed8486e91b368f50e",

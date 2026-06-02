@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nai-habit-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nai-habit-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nai-habit-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d05fbf47398fe63186a93ae0b11f3d72b471a4ea8cf7f19a24dd4bc62477e55",

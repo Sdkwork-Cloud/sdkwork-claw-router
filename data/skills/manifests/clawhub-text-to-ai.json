@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:055293236123f6bed89b2c320694d6730243d700b178a57a13305d9976397850",

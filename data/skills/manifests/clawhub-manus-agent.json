@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/manus-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-manus-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-manus-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:62a50cd3a3ef18f94f36d0f77ae44ea736fad6dce6d4adf2283390ef795ab275",

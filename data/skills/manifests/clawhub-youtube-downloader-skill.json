@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-downloader-skill@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-downloader-skill-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-downloader-skill-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:43cf4660ade0227b38caf1222142243ceafe0a93b96cb234338ef713ccdd07fa",

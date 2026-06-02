@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/birdeye-mcp-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-birdeye-mcp-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-birdeye-mcp-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5c320cf42a6deef900ce2c099b68b5d364e8ecc378d5eb455da496e6ea52e124",

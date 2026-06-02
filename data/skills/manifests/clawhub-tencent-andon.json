@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencent-andon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencent-andon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencent-andon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29ee7715f45e0c79131e29309b168181bbfd7179e86e8e6d48ad7089c49bd5de",

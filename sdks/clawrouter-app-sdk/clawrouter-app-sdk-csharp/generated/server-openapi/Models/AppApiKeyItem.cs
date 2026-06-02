@@ -6,12 +6,12 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AppApiKeyItem
     {
+        public string? ChannelGroup { get; set; }
+        public string? ChannelGroupName { get; set; }
         public string? CopyableKey { get; set; }
         public string? Created { get; set; }
         public bool? DefaultForRuntime { get; set; }
         public string? Expires { get; set; }
-        public string? Group { get; set; }
-        public string? GroupName { get; set; }
         public string? Id { get; set; }
         public string? IpLimit { get; set; }
         public string? MaskedKey { get; set; }

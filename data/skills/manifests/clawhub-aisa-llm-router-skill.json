@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aisa-llm-router-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aisa-llm-router-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aisa-llm-router-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:acfe95cde208919ef57b38b40b4ec71e2e3b13568797bb96ff23e2cea8e1cf75",

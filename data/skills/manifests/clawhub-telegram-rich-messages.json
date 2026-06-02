@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-rich-messages@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-rich-messages-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-rich-messages-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e0be057c98f6250cb01a28193779565135d33d468ece09474cb213ebc88f959c",

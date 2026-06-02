@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lm-studio-discord@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lm-studio-discord-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lm-studio-discord-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1d60485b31dd90f235c1f2c465b1d79491d155c2ead41d1254076c03a4eb93ef",

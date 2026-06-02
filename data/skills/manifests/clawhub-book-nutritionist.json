@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-nutritionist@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-nutritionist-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-nutritionist-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9a03beee147c892ec1683fd4aa070879bb94242075ebe3a5c08f797e4aebee80",

@@ -3,6 +3,7 @@ package types
 // Commerce invoice title record schema exposed by Claw Router.
 type CommerceInvoiceTitleRecord struct {
 	CreatedAt string `json:"created_at"`
+	Id string `json:"id"`
 	Name string `json:"name"`
 	OwnerUserId string `json:"owner_user_id"`
 	TaxNo string `json:"tax_no"`

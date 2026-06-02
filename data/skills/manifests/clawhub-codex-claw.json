@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-claw@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-claw-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-claw-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:32be018d08642c2a89c50469c90b7cdfabc15e789824134c2b2f26161bf792a5",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/emotion-detector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-emotion-detector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-emotion-detector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:117b6466e663c9a9ce934b12f47c50e777f5e4379aac112e9b2a2debd8d3b09c",

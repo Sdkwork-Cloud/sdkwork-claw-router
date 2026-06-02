@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-image@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-image-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-image-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0f1cfb58e5f89d1d9023647610c30cc2e5d657765c182bd2421f5829f2782fe",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yango@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-yango-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yango-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e4567e8325723bc69cfea39dd052d56f942cd1f5387e5d37101801448e98cfe9",

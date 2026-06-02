@@ -3,23 +3,37 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.Map;
 
 public class AiMcpBindingRecord {
+    private Map<String, String> allowedTools;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
     private String deletedBy;
+    private Map<String, String> deniedTools;
+    private Boolean enabled;
     private String id;
     private Map<String, String> metadata;
     private String organizationId;
     private String ownerId;
     private String ownerType;
+    private Map<String, String> policyJson;
+    private Integer priority;
     private String serverId;
     private String serverRevisionId;
+    private Map<String, String> snapshotJson;
     private String status;
     private String tenantId;
     private String toolId;
     private String updatedAt;
     private String uuid;
     private String version;
+
+    public Map<String, String> getAllowedTools() {
+        return this.allowedTools;
+    }
+
+    public void setAllowedTools(Map<String, String> allowedTools) {
+        this.allowedTools = allowedTools;
+    }
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -51,6 +65,22 @@ public class AiMcpBindingRecord {
 
     public void setDeletedBy(String deletedBy) {
         this.deletedBy = deletedBy;
+    }
+
+    public Map<String, String> getDeniedTools() {
+        return this.deniedTools;
+    }
+
+    public void setDeniedTools(Map<String, String> deniedTools) {
+        this.deniedTools = deniedTools;
+    }
+
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     public String getId() {
@@ -93,6 +123,22 @@ public class AiMcpBindingRecord {
         this.ownerType = ownerType;
     }
 
+    public Map<String, String> getPolicyJson() {
+        return this.policyJson;
+    }
+
+    public void setPolicyJson(Map<String, String> policyJson) {
+        this.policyJson = policyJson;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
     public String getServerId() {
         return this.serverId;
     }
@@ -107,6 +153,14 @@ public class AiMcpBindingRecord {
 
     public void setServerRevisionId(String serverRevisionId) {
         this.serverRevisionId = serverRevisionId;
+    }
+
+    public Map<String, String> getSnapshotJson() {
+        return this.snapshotJson;
+    }
+
+    public void setSnapshotJson(Map<String, String> snapshotJson) {
+        this.snapshotJson = snapshotJson;
     }
 
     public String getStatus() {

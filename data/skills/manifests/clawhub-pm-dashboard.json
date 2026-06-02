@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pm-dashboard@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pm-dashboard-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pm-dashboard-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:135711a0835ef252ab4563199d80e62e15058637b197b514b854576144a8909c",

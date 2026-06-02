@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bosch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bosch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bosch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:76313b3f072b0c09e8935bad2381bf586b5e9216f1f4dd570bf8b0a59472e45a",

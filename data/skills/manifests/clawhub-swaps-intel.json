@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swaps-intel@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swaps-intel-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swaps-intel-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d08da570943d0282c79f10aad894cafb1f8ece61f4aa513af9dbe48192ac787d",

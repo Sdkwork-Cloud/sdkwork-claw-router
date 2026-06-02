@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/atlassian-templates@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-atlassian-templates-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-atlassian-templates-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4d145769cf054e948ce47f366de4e1b30f596b0f65dea802d26290085616a37b",

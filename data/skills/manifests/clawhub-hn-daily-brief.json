@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hn-daily-brief@0.8.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-hn-daily-brief-0.8.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hn-daily-brief-0.8.2.json"
+      },
       "version": "0.8.2",
       "runtime": "metadata",
       "checksumHash": "sha256:672d5b5b7dad5132d6851313bbc66f6ddc1810935d594bc4fa6e68b6c6c11556",

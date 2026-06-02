@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medical-note-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-medical-note-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medical-note-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70c2369291ec780dffc90874ae29f78a47b28375001060ac5805a8c2fcc3e5ea",

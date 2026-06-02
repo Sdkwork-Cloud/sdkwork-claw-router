@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ledger-transaction-entry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ledger-transaction-entry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ledger-transaction-entry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cbdde6c21a98d94a79ddb8b9b59ca58db2786fa3056c8aaa78c543c3395adb90",

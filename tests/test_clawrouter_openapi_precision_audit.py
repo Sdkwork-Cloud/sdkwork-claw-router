@@ -1,4 +1,4 @@
-﻿import json
+import json
 import tempfile
 import textwrap
 import unittest
@@ -148,7 +148,7 @@ class ClawRouterOpenApiPrecisionAuditTest(unittest.TestCase):
                       properties:
                         trace_id:
                           type: string
-                    IamGatewayApiKeyGroupRecord:
+                    IamGatewayChannelGroupRecord:
                       type: object
                       x-table: ai_channel_group
                       properties:

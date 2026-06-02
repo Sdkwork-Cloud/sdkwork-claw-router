@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/job-search-mcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-job-search-mcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-job-search-mcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:483daca79d279934f3fa3339040d970c8c4ab3ecf6aaf8f48244f1c0ccbd7e77",

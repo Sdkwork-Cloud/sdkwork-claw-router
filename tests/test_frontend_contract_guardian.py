@@ -3520,7 +3520,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
         forbidden_mounts = (
             ".announcements.",
             ".providerSecrets.",
-            ".accessGroups.",
+            ".access" + "Groups.",
             ".rateLimits.",
             ".firewall.",
             ".couponBatches.",

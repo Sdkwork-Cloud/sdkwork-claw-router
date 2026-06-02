@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/getpost-sms@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-getpost-sms-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-getpost-sms-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ce8789e1a3391789e08a9fd603ca121bc3a6178ec199d7b913404747fc267d9",

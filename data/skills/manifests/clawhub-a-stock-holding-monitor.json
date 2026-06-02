@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/a-stock-holding-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-holding-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-a-stock-holding-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75e1a8fd5a4be96355a56bacd57f2744e65951b815f319a3ced4f053c8935364",

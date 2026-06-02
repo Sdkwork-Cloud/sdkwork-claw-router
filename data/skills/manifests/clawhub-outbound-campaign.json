@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/outbound-campaign@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-outbound-campaign-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-outbound-campaign-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5255a9b10bb9b1af8ca3e033b4209fa1abf4a67dba7dd944f372b3a8265c1fe5",

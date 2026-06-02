@@ -11,13 +11,13 @@ public class SkillCatalogItem {
     private List<String> features;
     private List<String> frameworks;
     private String id;
-    private String image;
+    private MediaResource image;
     private String lastUpdated;
     private String license;
     private String name;
     private List<SkillPackageItem> packages;
     private Double rating;
-    private List<String> screenshots;
+    private List<MediaResource> screenshots;
     private String size;
     private String version;
 
@@ -85,11 +85,11 @@ public class SkillCatalogItem {
         this.id = id;
     }
 
-    public String getImage() {
+    public MediaResource getImage() {
         return this.image;
     }
 
-    public void setImage(String image) {
+    public void setImage(MediaResource image) {
         this.image = image;
     }
 
@@ -133,11 +133,11 @@ public class SkillCatalogItem {
         this.rating = rating;
     }
 
-    public List<String> getScreenshots() {
+    public List<MediaResource> getScreenshots() {
         return this.screenshots;
     }
 
-    public void setScreenshots(List<String> screenshots) {
+    public void setScreenshots(List<MediaResource> screenshots) {
         this.screenshots = screenshots;
     }
 

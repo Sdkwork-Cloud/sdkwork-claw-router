@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cross-agent-mailbox@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cross-agent-mailbox-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cross-agent-mailbox-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b71abccfa7320833ad1e17ac0c1431998448c474d80ae79f7510cb062247af82",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-deep-research@2.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-deep-research-2.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-deep-research-2.1.3.json"
+      },
       "version": "2.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:9a7c4eb9e0fa44691af2bc52cca19236f207bc50c4c4fe700bb4fdda4e78fd8a",

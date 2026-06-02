@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deck-builder@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deck-builder-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deck-builder-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5bed775bd945a69a0dacac8c91f52144caaa81f4f272d847c5fbc82b35355ccd",

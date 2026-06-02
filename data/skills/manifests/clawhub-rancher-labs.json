@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rancher-labs@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-rancher-labs-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rancher-labs-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:66e7df2c6873037d9fbb4fc28fab56eec029845530b42f3d4385c829ee517ac5",

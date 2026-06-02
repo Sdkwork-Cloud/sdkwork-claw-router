@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pr-auto-merger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pr-auto-merger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pr-auto-merger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13258c61b47be838d37d60b5ae3cdd500c6ea0b5d303f499cda57006e9cef883",

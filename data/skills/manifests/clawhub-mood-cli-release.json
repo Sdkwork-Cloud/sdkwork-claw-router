@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mood-cli-release@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mood-cli-release-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mood-cli-release-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:84361b731fa096dd14a389ce50fcd2e279c472c13ba981586ea9a122e460c48c",

@@ -1,4 +1,4 @@
-use serde_json::Value;
+use serde_json::{json, Value};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{AppSkillItem, AppSkillPackageItem, AppStoreItem, AppStoreReleaseItem};
@@ -23,16 +23,14 @@ pub(crate) struct RawAppStoreRecord {
     pub description: String,
     pub version: String,
     pub icon: String,
-    pub icon_url: String,
+    pub icon_resource_snapshot: String,
     pub resource_list: String,
     pub config: String,
     pub app_type: String,
     pub install_skill: String,
     pub install_config: String,
     pub release_notes: String,
-    pub access_url: String,
-    pub store_url: String,
-    pub download_url: String,
+    pub artifact_resource_snapshot: String,
     pub rating: f64,
     pub download_count: i64,
 }
@@ -40,8 +38,8 @@ pub(crate) struct RawAppStoreRecord {
 #[derive(Debug, Clone, Default)]
 pub(crate) struct RawCatalogAsset {
     pub asset_type: String,
-    pub asset_url: String,
-    pub thumbnail_url: String,
+    pub asset_resource_snapshot: String,
+    pub thumbnail_resource_snapshot: String,
 }
 
 #[derive(Debug, Clone, Default)]
@@ -51,7 +49,7 @@ pub(crate) struct RawCatalogArtifact {
     pub os_name: String,
     pub version: String,
     pub artifact_ref: String,
-    pub artifact_url: String,
+    pub artifact_resource_snapshot: String,
     pub artifact_size_bytes: i64,
     pub frameworks: String,
     pub license_name: String,
@@ -68,8 +66,8 @@ pub(crate) struct RawAppSkillRecord {
     pub provider: String,
     pub description: String,
     pub category_name: String,
-    pub icon: String,
-    pub cover_image: String,
+    pub icon_resource_snapshot: String,
+    pub cover_resource_snapshot: String,
     pub version: String,
     pub license_name: String,
     pub install_count: i64,
@@ -93,9 +91,13 @@ pub(crate) fn build_app_item(
     let resource_list = parse_json(&raw.resource_list);
     let icon = parse_json(&raw.icon);
 
-    let screenshots = collect_asset_urls(&assets, &["screenshot", "2"])
+    let screenshots = collect_asset_media_resources(&assets, &["screenshot", "2"])
         .into_iter()
-        .chain(json_string_array(resource_list.as_ref(), &["screenshots"]))
+        .chain(json_media_resource_array(
+            resource_list.as_ref(),
+            &["screenshots"],
+            "image",
+        ))
         .take(20)
         .collect::<Vec<_>>();
 
@@ -118,16 +120,18 @@ pub(crate) fn build_app_item(
         ])
         .unwrap_or_else(|| DEFAULT_DEVELOPER.to_owned()),
         category: app_category(&raw.app_type, config.as_ref(), install_config.as_ref()),
-        image: first_non_empty(&[
-            raw.icon_url.clone(),
-            json_string(icon.as_ref(), &["url"]),
-            json_string(icon.as_ref(), &["image"]),
-            json_string(icon.as_ref(), &["src"]),
-            first_asset_url(&assets, &["cover", "icon", "1"]),
-            json_string(resource_list.as_ref(), &["cover"]),
-            json_string(resource_list.as_ref(), &["coverUrl"]),
-        ])
-        .unwrap_or_else(|| DEFAULT_APP_IMAGE.to_owned()),
+        image: first_media_resource(
+            vec![
+                media_resource_from_snapshot(&raw.icon_resource_snapshot, "image"),
+                icon.as_ref()
+                    .map(|value| value_to_media_resource(value, "image"))
+                    .unwrap_or_else(|| media_resource_from_url("", "image")),
+                first_asset_media_resource(&assets, &["cover", "icon", "1"]),
+                media_resource_from_url(&json_string(resource_list.as_ref(), &["cover"]), "image"),
+            ],
+            DEFAULT_APP_IMAGE,
+            "image",
+        ),
         rating: round_rating(raw.rating),
         description: normalize_text(&raw.description),
         downloads: format_count(raw.download_count),
@@ -152,6 +156,8 @@ pub(crate) fn build_skill_item(
     artifacts: Vec<RawCatalogArtifact>,
 ) -> AppSkillItem {
     let default_config = parse_json(&raw.default_config);
+    let cover_resource = media_resource_from_snapshot(&raw.cover_resource_snapshot, "image");
+    let icon_resource = media_resource_from_snapshot(&raw.icon_resource_snapshot, "image");
     let first_artifact = artifacts.first();
     let frameworks = first_non_empty_array(&[
         json_string_array(default_config.as_ref(), &["portal", "frameworks"]),
@@ -160,13 +166,13 @@ pub(crate) fn build_skill_item(
             .unwrap_or_default(),
         parse_string_array(&raw.tags),
     ]);
-    let screenshots = first_non_empty_array(&[
-        json_string_array(default_config.as_ref(), &["portal", "screenshots"]),
-        collect_asset_urls(&assets, &["screenshot", "2"]),
-        vec![raw.cover_image.clone()],
+    let screenshots = first_non_empty_media_array(&[
+        json_media_resource_array(default_config.as_ref(), &["portal", "screenshots"], "image"),
+        collect_asset_media_resources(&assets, &["screenshot", "2"]),
+        vec![cover_resource.clone()],
     ])
     .into_iter()
-    .filter(|value| !value.is_empty())
+    .filter(media_resource_has_locator)
     .take(20)
     .collect::<Vec<_>>();
     let artifact_size = first_artifact
@@ -180,7 +186,7 @@ pub(crate) fn build_skill_item(
             version: normalize_text(&artifact.version),
             artifact_ref: first_non_empty(&[
                 artifact.artifact_ref.clone(),
-                artifact.artifact_url.clone(),
+                artifact_public_locator(artifact),
             ])
             .unwrap_or_default(),
             artifact_size_bytes: artifact.artifact_size_bytes.max(0),
@@ -196,9 +202,10 @@ pub(crate) fn build_skill_item(
         developer: non_empty(raw.provider, DEFAULT_DEVELOPER),
         description: normalize_text(&raw.description),
         category: non_empty(raw.category_name, "Uncategorized"),
-        image: non_empty(
-            first_non_empty(&[raw.cover_image, raw.icon]).unwrap_or_default(),
+        image: first_media_resource(
+            vec![cover_resource, icon_resource],
             DEFAULT_SKILL_IMAGE,
+            "image",
         ),
         rating: round_rating(raw.rating_avg),
         downloads: format_count(raw.install_count),
@@ -215,7 +222,7 @@ pub(crate) fn build_skill_item(
         clawhub_image: first_non_empty(&[
             json_string(default_config.as_ref(), &["portal", "clawhubImage"]),
             first_artifact
-                .map(|artifact| artifact.artifact_ref.clone())
+                .map(artifact_primary_locator)
                 .unwrap_or_default(),
             raw.manifest_url,
         ])
@@ -411,21 +418,17 @@ fn build_app_releases(
             platform_type: platform_type_label(
                 &artifact.platform_type,
                 &artifact.os_name,
-                &artifact.artifact_url,
+                &artifact_locator_hint(artifact),
             ),
             os: os_label(
                 &artifact.os_name,
                 &artifact.platform_type,
-                &artifact.artifact_url,
+                &artifact_locator_hint(artifact),
             ),
             version: non_empty(artifact.version.clone(), &raw.version),
             size: format_size(artifact.artifact_size_bytes),
             release_date: date_only(&artifact.published_at),
-            download_url: first_non_empty(&[
-                artifact.artifact_url.clone(),
-                artifact.artifact_ref.clone(),
-            ])
-            .unwrap_or_default(),
+            artifact: catalog_artifact_media_resource(artifact),
             whats_new: optional_text(&artifact.release_notes),
         })
         .collect::<Vec<_>>();
@@ -434,21 +437,17 @@ fn build_app_releases(
         releases.extend(releases_from_json(raw, install_config));
     }
     if releases.is_empty() {
-        let download_url = first_non_empty(&[
-            raw.download_url.clone(),
-            raw.store_url.clone(),
-            raw.access_url.clone(),
-        ])
-        .unwrap_or_default();
-        if !download_url.is_empty() {
+        let artifact = media_resource_from_snapshot(&raw.artifact_resource_snapshot, "archive");
+        if media_resource_has_locator(&artifact) {
+            let locator = media_resource_public_locator(&artifact);
             releases.push(AppStoreReleaseItem {
                 id: format!("{}-latest", raw.id),
-                platform_type: platform_type_label("", "", &download_url),
-                os: os_label("", "", &download_url),
+                platform_type: platform_type_label("", "", &locator),
+                os: os_label("", "", &locator),
                 version: non_empty(raw.version.clone(), "Latest"),
                 size: String::new(),
                 release_date: String::new(),
-                download_url,
+                artifact,
                 whats_new: optional_text(&raw.release_notes),
             });
         }
@@ -468,17 +467,8 @@ fn releases_from_json(
             if object_bool_default(object, "enabled", true) == Some(false) {
                 return None;
             }
-            let url = first_non_empty(&[
-                object_string(object, "downloadUrl"),
-                object_string(object, "download_url"),
-                object_string(object, "artifactUrl"),
-                object_string(object, "artifact_url"),
-                object_string(object, "url"),
-            ])
-            .unwrap_or_default();
-            if url.is_empty() {
-                return None;
-            }
+            let artifact = json_release_artifact(object)?;
+            let locator = media_resource_public_locator(&artifact);
             let platform = object_string(object, "platformType");
             let os = object_string(object, "os");
             Some(AppStoreReleaseItem {
@@ -490,8 +480,8 @@ fn releases_from_json(
                     .unwrap_or_default(),
                     &format!("{}-{}", raw.id, index + 1),
                 ),
-                platform_type: platform_type_label(&platform, &os, &url),
-                os: os_label(&os, &platform, &url),
+                platform_type: platform_type_label(&platform, &os, &locator),
+                os: os_label(&os, &platform, &locator),
                 version: non_empty(object_string(object, "version"), &raw.version),
                 size: non_empty(
                     object_string(object, "size"),
@@ -504,7 +494,7 @@ fn releases_from_json(
                     ])
                     .unwrap_or_default(),
                 ),
-                download_url: url,
+                artifact,
                 whats_new: optional_text(
                     &first_non_empty(&[
                         object_string(object, "whatsNew"),
@@ -515,6 +505,21 @@ fn releases_from_json(
             })
         })
         .collect()
+}
+
+fn catalog_artifact_media_resource(artifact: &RawCatalogArtifact) -> Value {
+    first_media_resource_option(vec![
+        media_resource_from_snapshot(&artifact.artifact_resource_snapshot, "archive"),
+        media_resource_from_url(&artifact.artifact_ref, "archive"),
+    ])
+    .unwrap_or_else(|| media_resource_from_url("", "archive"))
+}
+
+fn json_release_artifact(object: &serde_json::Map<String, Value>) -> Option<Value> {
+    object
+        .get("artifact")
+        .and_then(media_resource_object)
+        .or_else(|| object.get("resource").and_then(media_resource_object))
 }
 
 fn app_category(app_type: &str, config: Option<&Value>, install_config: Option<&Value>) -> String {
@@ -614,7 +619,10 @@ fn looks_like_download(url: &str) -> bool {
     .any(|suffix| normalized.ends_with(suffix))
 }
 
-fn collect_asset_urls(assets: &[RawCatalogAsset], accepted_types: &[&str]) -> Vec<String> {
+fn collect_asset_media_resources(
+    assets: &[RawCatalogAsset],
+    accepted_types: &[&str],
+) -> Vec<Value> {
     assets
         .iter()
         .filter(|asset| {
@@ -624,16 +632,19 @@ fn collect_asset_urls(assets: &[RawCatalogAsset], accepted_types: &[&str]) -> Ve
                 .any(|accepted| asset_type == *accepted || asset_type.contains(*accepted))
         })
         .filter_map(|asset| {
-            first_non_empty(&[asset.asset_url.clone(), asset.thumbnail_url.clone()])
+            first_media_resource_option(vec![
+                media_resource_from_snapshot(&asset.asset_resource_snapshot, "image"),
+                media_resource_from_snapshot(&asset.thumbnail_resource_snapshot, "image"),
+            ])
         })
         .collect()
 }
 
-fn first_asset_url(assets: &[RawCatalogAsset], accepted_types: &[&str]) -> String {
-    collect_asset_urls(assets, accepted_types)
+fn first_asset_media_resource(assets: &[RawCatalogAsset], accepted_types: &[&str]) -> Value {
+    collect_asset_media_resources(assets, accepted_types)
         .into_iter()
-        .next()
-        .unwrap_or_default()
+        .find(media_resource_has_locator)
+        .unwrap_or_else(|| media_resource_from_url("", "image"))
 }
 
 fn parse_json(raw: &str) -> Option<Value> {
@@ -663,6 +674,14 @@ fn json_string_array(value: Option<&Value>, path: &[&str]) -> Vec<String> {
         .filter_map(|value| value_to_string(&value))
         .map(|value| normalize_text(&value))
         .filter(|value| !value.is_empty())
+        .collect()
+}
+
+fn json_media_resource_array(value: Option<&Value>, path: &[&str], kind: &str) -> Vec<Value> {
+    json_array(value, path)
+        .into_iter()
+        .map(|value| value_to_media_resource(&value, kind))
+        .filter(media_resource_has_locator)
         .collect()
 }
 
@@ -710,13 +729,135 @@ fn value_to_string(value: &Value) -> Option<String> {
         Value::String(value) => Some(value.clone()),
         Value::Number(value) => Some(value.to_string()),
         Value::Object(object) => object
-            .get("url")
-            .or_else(|| object.get("assetUrl"))
-            .or_else(|| object.get("asset_url"))
+            .get("publicUrl")
+            .or_else(|| object.get("public_url"))
+            .or_else(|| object.get("url"))
             .or_else(|| object.get("name"))
             .and_then(value_to_string),
         _ => None,
     }
+}
+
+fn value_to_media_resource(value: &Value, kind: &str) -> Value {
+    if let Value::Object(object) = value {
+        if matches!(object.get("kind"), Some(Value::String(_)))
+            && matches!(object.get("source"), Some(Value::String(_)))
+        {
+            return value.clone();
+        }
+    }
+    media_resource_from_url(&value_to_string(value).unwrap_or_default(), kind)
+}
+
+fn media_resource_object(value: &Value) -> Option<Value> {
+    let Value::Object(object) = value else {
+        return None;
+    };
+    if matches!(object.get("kind"), Some(Value::String(_)))
+        && matches!(object.get("source"), Some(Value::String(_)))
+    {
+        Some(value.clone())
+    } else {
+        None
+    }
+}
+
+fn media_resource_from_snapshot(snapshot: &str, kind: &str) -> Value {
+    let snapshot = normalize_text(snapshot);
+    if snapshot.is_empty() {
+        return media_resource_from_url("", kind);
+    }
+    parse_json(&snapshot)
+        .map(|value| value_to_media_resource(&value, kind))
+        .unwrap_or_else(|| media_resource_from_url(&snapshot, kind))
+}
+
+fn media_resource_from_url(url: &str, kind: &str) -> Value {
+    let url = normalize_text(url);
+    if url.is_empty() {
+        return json!({
+            "kind": kind,
+            "source": "external_url",
+        });
+    }
+    let source = if url.starts_with("data:") {
+        "data_url"
+    } else if url.contains("://") && !url.starts_with("http://") && !url.starts_with("https://") {
+        "provider_asset"
+    } else {
+        "external_url"
+    };
+    json!({
+        "kind": kind,
+        "source": source,
+        "url": url,
+        "publicUrl": url,
+    })
+}
+
+fn first_media_resource(values: Vec<Value>, fallback_url: &str, kind: &str) -> Value {
+    first_media_resource_option(values)
+        .unwrap_or_else(|| media_resource_from_url(fallback_url, kind))
+}
+
+fn first_media_resource_option(values: Vec<Value>) -> Option<Value> {
+    values.into_iter().find(media_resource_has_locator)
+}
+
+fn media_resource_has_locator(value: &Value) -> bool {
+    let Some(object) = value.as_object() else {
+        return false;
+    };
+    ["publicUrl", "url", "uri", "objectKey", "objectBlobId", "id"]
+        .iter()
+        .any(|key| {
+            object.get(*key).is_some_and(|value| match value {
+                Value::String(value) => !normalize_text(value).is_empty(),
+                Value::Number(number) => number.as_i64().unwrap_or_default() > 0,
+                _ => false,
+            })
+        })
+}
+
+fn artifact_snapshot_value(artifact: &RawCatalogArtifact) -> Option<Value> {
+    parse_json(&artifact.artifact_resource_snapshot)
+}
+
+fn artifact_public_locator(artifact: &RawCatalogArtifact) -> String {
+    artifact_snapshot_value(artifact)
+        .as_ref()
+        .map(media_resource_public_locator)
+        .filter(|value| !value.is_empty())
+        .unwrap_or_default()
+}
+
+fn artifact_primary_locator(artifact: &RawCatalogArtifact) -> String {
+    first_non_empty(&[
+        artifact.artifact_ref.clone(),
+        artifact_public_locator(artifact),
+    ])
+    .unwrap_or_default()
+}
+
+fn artifact_locator_hint(artifact: &RawCatalogArtifact) -> String {
+    first_non_empty(&[
+        artifact_public_locator(artifact),
+        artifact.artifact_ref.clone(),
+    ])
+    .unwrap_or_default()
+}
+
+fn media_resource_public_locator(value: &Value) -> String {
+    let Some(object) = value.as_object() else {
+        return value_to_string(value).unwrap_or_default();
+    };
+    first_non_empty(&[
+        object_string(object, "publicUrl"),
+        object_string(object, "public_url"),
+        object_string(object, "url"),
+        object_string(object, "uri"),
+    ])
+    .unwrap_or_default()
 }
 
 fn object_string(object: &serde_json::Map<String, Value>, key: &str) -> String {
@@ -765,6 +906,14 @@ fn first_non_empty_array(values: &[Vec<String>]) -> Vec<String> {
     values
         .iter()
         .find(|value| !value.is_empty())
+        .cloned()
+        .unwrap_or_default()
+}
+
+fn first_non_empty_media_array(values: &[Vec<Value>]) -> Vec<Value> {
+    values
+        .iter()
+        .find(|value| value.iter().any(media_resource_has_locator))
         .cloned()
         .unwrap_or_default()
 }

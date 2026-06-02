@@ -8,6 +8,6 @@ data class AdminCourseMutationRequest(
     val level: String? = null,
     val metadata: Map<String, String>? = null,
     val status: String? = null,
-    val thumbnailUrl: String? = null,
+    val thumbnail: MediaResource? = null,
     val title: String? = null
 )

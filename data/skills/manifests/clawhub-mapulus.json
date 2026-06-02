@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mapulus@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-mapulus-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mapulus-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:493020083824e6a709e5547c263d2a7f08bba3bbdf4d9c8ee4518daab8cf81df",

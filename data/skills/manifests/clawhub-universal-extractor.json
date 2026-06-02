@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/universal-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-universal-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-universal-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a65c7147460d13efc1f0041e5cf149cdeab0b9d6806ad9906c26adebbe52b6c6",

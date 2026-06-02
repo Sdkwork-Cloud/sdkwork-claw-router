@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linkmind-kb@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linkmind-kb-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linkmind-kb-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df56f3800653746e74c70ab38b715aaff2b645f183be55a8d27b14b5c1a086df",

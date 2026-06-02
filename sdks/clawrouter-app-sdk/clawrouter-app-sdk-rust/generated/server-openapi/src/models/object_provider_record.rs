@@ -27,6 +27,10 @@ pub struct ObjectProviderRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub endpoint_url: Option<String>,
 
+    /// Health status field on object provider record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub health_status: Option<String>,
+
     /// Id field on object provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -47,6 +51,10 @@ pub struct ObjectProviderRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
 
+    /// Path style enabled field on object provider record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub path_style_enabled: Option<bool>,
+
     /// Provider code field on object provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub provider_code: Option<String>,
@@ -66,6 +74,18 @@ pub struct ObjectProviderRecord {
     /// Status field on object provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
+
+    /// Supports lifecycle field on object provider record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub supports_lifecycle: Option<bool>,
+
+    /// Supports multipart field on object provider record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub supports_multipart: Option<bool>,
+
+    /// Supports object lock field on object provider record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub supports_object_lock: Option<bool>,
 
     /// Tenant id field on object provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

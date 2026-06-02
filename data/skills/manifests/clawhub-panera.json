@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/panera@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-panera-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-panera-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18b7c1c2467b3200aa1c818550afc3db5d9eae8487a920b7754a06570cde8174",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fasting@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fasting-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fasting-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:98dae411da47721c313b7541cc663350a4bcd19c83f2bc8fa9f94ebf039a12b7",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/defi@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-defi-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-defi-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8196750e3ed03efe39a45ea136de7abc72e3f084b73841666810e1f886329be2",

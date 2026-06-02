@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codesession@2.5.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-codesession-2.5.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codesession-2.5.1.json"
+      },
       "version": "2.5.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a1092ba9dc6ddf36fcfe12f29b04d58af963dac205592fb54305f63f46d34184",

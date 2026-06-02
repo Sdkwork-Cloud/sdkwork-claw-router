@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prediction-bridge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prediction-bridge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prediction-bridge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98807ab1e459d3db7c739f9a0d3d01348b257c21584d669e14feb3223becc53e",

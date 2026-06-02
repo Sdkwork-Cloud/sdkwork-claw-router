@@ -9,9 +9,11 @@ type AiChannelGroupResourceRecord struct {
 	DeletedBy string `json:"deleted_by"`
 	EffectiveFrom string `json:"effective_from"`
 	EffectiveTo string `json:"effective_to"`
+	GrantType string `json:"grant_type"`
 	Id string `json:"id"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	OrganizationId string `json:"organization_id"`
+	Priority int `json:"priority"`
 	ResourceCode string `json:"resource_code"`
 	ResourceGroupCode string `json:"resource_group_code"`
 	ResourceGroupId string `json:"resource_group_id"`

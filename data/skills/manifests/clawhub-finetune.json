@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finetune@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-finetune-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finetune-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:81d5e94b8f95daaa773147bb677c5ff58b6e1b6cb225b9c4562cf51388e54d67",

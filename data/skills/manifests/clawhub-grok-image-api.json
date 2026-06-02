@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grok-image-api@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-grok-image-api-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grok-image-api-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:52678f2c67e6c9e69138aefae490ed3205e8aa4b247b8eaeca8a10328bade64f",

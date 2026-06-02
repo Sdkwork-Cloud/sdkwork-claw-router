@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xendit@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-xendit-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xendit-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:65d3b9240c84e7771acbadb323d6498c2a854c49c52aeea7580e7296f748680a",

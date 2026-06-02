@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ssh-agentd-control@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ssh-agentd-control-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ssh-agentd-control-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b764c54dd8af908e9c8dc8b658a226d9046261a9a90b256f18f6568413a1ffd1",

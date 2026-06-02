@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/factucat-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-factucat-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-factucat-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8ba5c510722a2f672b346dc67c298fc8b9dd89a751dba7e4cdb4a25597fccfbb",

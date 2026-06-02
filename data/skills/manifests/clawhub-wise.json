@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wise@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wise-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wise-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:44b0ca8c7217fbd379f01ba0ec73e608a8f42949e1ade807d82f79f184634279",

@@ -737,6 +737,75 @@ tables:
     - id
   security:
     audit_required: true
+- table: media_resource
+  domain: content
+  profile: media_resource
+  compliance_level: L3
+  system_of_record: true
+  write_owner: storage-service
+  common_columns: user_entity
+  source_tables:
+  - object_blob
+  frontend_routes:
+  - /admin/storage
+  - /admin/storage/usage
+  - /admin/drive
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  required_columns:
+  - uuid
+  - media_resource_no
+  - kind
+  - source
+  columns:
+    media_resource_no: string(128)
+    kind: string(32)
+    source: string(32)
+    object_blob_id: int64
+    bucket_id: int64
+    object_key: string(1024)
+    object_version: string(256)
+    uri: string(1024)
+    file_name: string(512)
+    mime_type: string(256)
+    size_bytes:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    checksum_json: json
+    width: int32
+    height: int32
+    duration_seconds: decimal
+    alt_text: string(512)
+    title: string(255)
+    access_json: json
+    ai_json: json
+    renditions_json: json
+  indexes:
+  - name: uk_media_resource_no
+    unique: true
+    columns:
+    - tenant_id
+    - organization_id
+    - media_resource_no
+  - name: idx_media_resource_blob
+    columns:
+    - tenant_id
+    - organization_id
+    - object_blob_id
+    - status
+    - id
+  - name: idx_media_resource_kind_status
+    columns:
+    - tenant_id
+    - organization_id
+    - kind
+    - status
+    - id
+  security:
+    stores_secret_plaintext: false
+    audit_required: true
 - table: object_tag
   domain: content
   profile: object_tag

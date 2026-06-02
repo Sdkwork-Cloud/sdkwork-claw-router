@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-seat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0993e02648be004297f1c0c13309598847bd9de4b69c6fb5ad9a1093feb14dfb",

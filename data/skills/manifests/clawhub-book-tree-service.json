@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-tree-service@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-tree-service-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-tree-service-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c8f39e77cd9e5172ebf6e0e0a1bbf79a87cb483a2e134d1d85bcba6f75f87cd8",

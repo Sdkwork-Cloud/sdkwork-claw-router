@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finance-bp-core@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-finance-bp-core-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finance-bp-core-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1109abbed7402291324a7dbdd2df5b0a60ec7238ef235f5dd23c587997d89268",

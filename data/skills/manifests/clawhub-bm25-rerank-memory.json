@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bm25-rerank-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bm25-rerank-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bm25-rerank-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f2d576ba66255bd240aae5d1039eb8657c3f3807945e3af8439a70d13e2d162",

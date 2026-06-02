@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/imposter-smasher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-imposter-smasher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-imposter-smasher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e497840e4e7e3891f1062b3f5952eb566ed81e567ce7fb9169d9bac69b2e1a15",

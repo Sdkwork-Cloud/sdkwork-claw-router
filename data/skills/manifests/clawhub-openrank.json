@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openrank@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-openrank-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openrank-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:111a232594d9cf6c03bf7bed29b3ae42baaec860dc2d08d71c1573999af982c0",

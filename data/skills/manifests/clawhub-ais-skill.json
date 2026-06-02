@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ais-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ais-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ais-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:59b3ff42fd55193ec173b5ce088a878f53af24f80417f04898c6584c06967bae",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nginx-config-creator@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-nginx-config-creator-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nginx-config-creator-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e6495ab9a4a69794cbc977d75c16b8d2543c9fa985b3d6f4586b7a045d37df02",

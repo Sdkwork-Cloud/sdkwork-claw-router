@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chipchain@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-chipchain-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chipchain-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:41c5082fc88ec954bbef444b35b2893d3589eadb8d84e7f228eae8adebc7a35a",

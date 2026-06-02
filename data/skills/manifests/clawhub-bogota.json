@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bogota@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-bogota-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bogota-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:7439deb5019e8281434af259b3d36c8d17dcf563d191017a98aeb803b4ce5108",

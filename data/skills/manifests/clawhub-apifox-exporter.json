@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apifox-exporter@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apifox-exporter-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apifox-exporter-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c4f5d20c620d258c9ea841876b503d21a5258d3efc3c9f942f81267b3c0613e",

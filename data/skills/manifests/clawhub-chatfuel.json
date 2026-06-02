@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chatfuel@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-chatfuel-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chatfuel-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:84abf57e704c0b2e4af7b1cc5c5c315b037d3e9976d6c221aadf1dc8033bc345",

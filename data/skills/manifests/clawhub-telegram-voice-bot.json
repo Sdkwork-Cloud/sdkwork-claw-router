@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-voice-bot@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-voice-bot-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-voice-bot-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d792b0cf342dd0f918de8544610a62946757571f34f8147b83a5807fbbec119b",

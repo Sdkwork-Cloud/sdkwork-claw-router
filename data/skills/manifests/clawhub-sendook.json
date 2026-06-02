@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sendook@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sendook-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sendook-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3b9836566558f3498116143f618a573d1e5a6cc1867c306dd66cae073ba1bfc",

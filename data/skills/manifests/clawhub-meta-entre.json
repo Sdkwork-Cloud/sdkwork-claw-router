@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meta-entre@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meta-entre-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meta-entre-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc4139b53c4493e054148650b462a18842fea561444817d8de2687a84d587159",

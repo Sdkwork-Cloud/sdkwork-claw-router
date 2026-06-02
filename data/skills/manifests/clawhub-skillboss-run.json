@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skillboss-run@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skillboss-run-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skillboss-run-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c992f8b2e4065430491e9fdceb840717678165eecc6515efdc251f1eef57f687",

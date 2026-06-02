@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/conveyor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-conveyor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-conveyor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:37c2a0f10b9e1005528adaf64af9a2c4a2e4e82044bae29e2c7a0837a63b0db9",

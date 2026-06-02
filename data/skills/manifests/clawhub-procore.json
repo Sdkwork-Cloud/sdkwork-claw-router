@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/procore@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-procore-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-procore-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1cc47032dab6be4d4aebc02336ece193bc3ad66eac4fd01189b2d20022ba8588",

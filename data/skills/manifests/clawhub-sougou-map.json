@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sougou-map@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sougou-map-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sougou-map-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74f8f1b6e237093203f054c273387584c10866527b2749fe4a4aa47b310ecd2c",

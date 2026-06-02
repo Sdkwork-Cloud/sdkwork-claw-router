@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/env-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-env-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-env-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4b36ca61eb467f80c4bd35bffc112eb03a4e590e266bdf334c3a42e37c943a46",

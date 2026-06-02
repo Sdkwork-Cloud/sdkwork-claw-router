@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/article-tts@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-article-tts-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-article-tts-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31f1a1ad6d801548d5145e9b953b37ab6524ee099689122964cd2592abfc26f6",

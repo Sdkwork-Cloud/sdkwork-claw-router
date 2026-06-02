@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/web-search-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-web-search-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-web-search-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3e07b930d654f618ec528af1b7a14c203e8b47f6e614363ff02c8af0510d2308",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloudmonkey@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloudmonkey-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloudmonkey-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ac82ff531eb23dfe6feac68d50df4abf5cf9d8d44620f147cc357ae993e150e",

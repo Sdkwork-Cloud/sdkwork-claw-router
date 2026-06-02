@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/go-stargazing@1.4.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-go-stargazing-1.4.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-go-stargazing-1.4.2.json"
+      },
       "version": "1.4.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2abf98d420f25f89715cb3794cfc4f256427c231739e75228513f82cf96e5e55",

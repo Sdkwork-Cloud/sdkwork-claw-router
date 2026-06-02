@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/play-minecraft@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-play-minecraft-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-play-minecraft-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42dd1838076c1d5ad3169398f6dc8462e047449424c903c24e7e75b38ddcf599",

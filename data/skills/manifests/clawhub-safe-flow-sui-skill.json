@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/safe-flow-sui-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-safe-flow-sui-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-safe-flow-sui-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c15cdcb150d7d25611795f277580c776e94882e659fa1f357ac49c8cc331b3d8",

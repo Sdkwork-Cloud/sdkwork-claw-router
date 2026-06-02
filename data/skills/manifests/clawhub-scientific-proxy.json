@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scientific-proxy@1.8.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-scientific-proxy-1.8.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scientific-proxy-1.8.7.json"
+      },
       "version": "1.8.7",
       "runtime": "metadata",
       "checksumHash": "sha256:23ac833efa4635761e9056d5aa3696020c8b9eba8ee70099416350d48a540edf",

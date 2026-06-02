@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-reviews-pain-detector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-reviews-pain-detector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-reviews-pain-detector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fab08b8277995cb20da41e4b1bdf3a74d9d61df4b7d2f89fab2bb6d23de060db",

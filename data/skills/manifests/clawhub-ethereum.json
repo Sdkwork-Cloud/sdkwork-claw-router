@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ethereum@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ethereum-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ethereum-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cbf364c1b196ce6209eb329384462f00c40c6a4f03dd31b057ce5b4fb725b667",

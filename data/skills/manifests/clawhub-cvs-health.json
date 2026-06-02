@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cvs-health@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cvs-health-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cvs-health-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cef8b0d8a8fd90c9d211c0515a1677c4d39b85aa12b146ce5f157893bb300b49",

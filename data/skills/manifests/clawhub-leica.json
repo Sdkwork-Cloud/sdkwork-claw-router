@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/leica@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-leica-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-leica-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dca2cf5eca5639323a063fd0b01e24a657f9ccf4d206a1a2f8aaf359353afc69",

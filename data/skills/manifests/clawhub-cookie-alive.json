@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cookie-alive@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cookie-alive-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cookie-alive-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c9646db2cba029478ba889095e5cec149e293421699386defd85aa7a76ef200",

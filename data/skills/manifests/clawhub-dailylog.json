@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dailylog@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-dailylog-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dailylog-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cfcb5731cb29efe9a007f223d39e0a96d9854b09b0b3612281307215f81a7a2b",

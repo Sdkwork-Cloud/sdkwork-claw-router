@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cheapest-image-generation@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cheapest-image-generation-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cheapest-image-generation-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c8c972e5ec30c1dfc81dd989568dc6dc260b0f8952341341726fe1ec4a155ddc",

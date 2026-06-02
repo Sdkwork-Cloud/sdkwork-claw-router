@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-control@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-control-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-control-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:146c3eb8ecaaf74d96603e3f1849f82bdd318d73cecf22fc909515321d19ee1b",

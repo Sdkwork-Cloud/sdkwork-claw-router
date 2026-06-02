@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/roon-controller@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-roon-controller-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-roon-controller-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:48f64d35c013f57b9c84c2bd1927b91325dfdb675f17f95eabe6f5f3a030f5e0",

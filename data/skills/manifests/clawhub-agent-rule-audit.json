@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-rule-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-rule-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-rule-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1df8ee8c80e2fe6c9ca0ee73f2e9b8cdc4dbca283545814d7c7ebf102be693ca",

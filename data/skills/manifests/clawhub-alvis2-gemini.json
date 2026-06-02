@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alvis2-gemini@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alvis2-gemini-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alvis2-gemini-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:80291e2d97c3852e965b404e746b1e3cfd4569f91c8e3826cd50c2825688d693",

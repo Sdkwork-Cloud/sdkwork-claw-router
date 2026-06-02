@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-continuity@2.0.22",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-continuity-2.0.22.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-continuity-2.0.22.json"
+      },
       "version": "2.0.22",
       "runtime": "metadata",
       "checksumHash": "sha256:cb4bb5bf0ffddfb5a0217efdfe81a7674f5b9d1146e0ae1ccbcba865fe1b5553",

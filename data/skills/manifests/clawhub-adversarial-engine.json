@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adversarial-engine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-adversarial-engine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adversarial-engine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df06081a5b3014aede253614dac3e8b44ca9441af28542e657c3dcc6d555c60a",

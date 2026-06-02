@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/melbourne@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-melbourne-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-melbourne-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f560177f8e0d26ebaeae8f8b8d8492e075d828d84594e824ad7a1db390a597ea",

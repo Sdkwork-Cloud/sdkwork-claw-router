@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/binance-fiat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-binance-fiat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-binance-fiat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ac2a52d7173983748700020dc956c98191ef65abebbcc19121f0812dc012206",

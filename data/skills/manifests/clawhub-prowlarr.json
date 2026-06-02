@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prowlarr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prowlarr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prowlarr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7b6b1d930f337ebb99ad03783b30019cea02a20d70d9836db4fa7eb63e4987c",

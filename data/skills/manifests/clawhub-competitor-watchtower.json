@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/competitor-watchtower@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-competitor-watchtower-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-competitor-watchtower-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:58e709d3940d14b6addd2fc667a84d7d081a512d59ccc4153685cde97fadf103",

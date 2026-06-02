@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-relay@3.1.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-relay-3.1.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-relay-3.1.7.json"
+      },
       "version": "3.1.7",
       "runtime": "metadata",
       "checksumHash": "sha256:ae6f1d715dd4fb6b54e9c0959ed9078fe17e53a62106622b0efcaf932f061932",

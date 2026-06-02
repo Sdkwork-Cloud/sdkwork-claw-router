@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-summarization-loop@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-summarization-loop-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-summarization-loop-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8d9b4e40d44d349dd915bb33ad2094bdd5b7813b909b020d83396f79df96e66e",

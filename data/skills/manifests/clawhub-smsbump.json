@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smsbump@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-smsbump-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smsbump-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f559851994fa677b185ada5568b7223a60d4d23e7c46de306072f5c08446f3ef",

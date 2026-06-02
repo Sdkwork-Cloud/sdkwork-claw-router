@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/project-trident-plugin@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-project-trident-plugin-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-project-trident-plugin-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:02e667c5a64464394af0248bf0c1832c4193809e52b8eae4b2d6a68f7fda5da1",

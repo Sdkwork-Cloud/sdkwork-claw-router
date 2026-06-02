@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/debug-master@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-debug-master-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-debug-master-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1efceb4805e0cf1d102c36d75ad9e60ab431cffa503854a4a51494050e82dbf",

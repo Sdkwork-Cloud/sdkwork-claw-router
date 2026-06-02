@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/osm-p2p-hybrid@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-osm-p2p-hybrid-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-osm-p2p-hybrid-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0248ba131d75977d564ccec0182fb561eb8a5dd9cc60b3373622454fd8646f6b",

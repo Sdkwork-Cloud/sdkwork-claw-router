@@ -667,7 +667,7 @@ func (a *CommerceApi) PaymentsMethodsList(page *int, pageSize *int, status *stri
 }
 
 // Recharges Orders Create
-func (a *CommerceApi) RechargesOrdersCreate(body sdktypes.CommerceStandardCommandRequest, idempotencyKey string) (sdktypes.RechargesOrdersCreateResult, error) {
+func (a *CommerceApi) RechargesOrdersCreate(body sdktypes.CommerceRechargeOrderCreateRequest, idempotencyKey string) (sdktypes.RechargesOrdersCreateResult, error) {
     headers := BuildRequestHeaders(
         map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
         map[string]ParameterSpec{},
@@ -703,6 +703,16 @@ func (a *CommerceApi) RechargesPackagesList(page *int, pageSize *int, status *st
         return zero, err
     }
     return decodeResult[sdktypes.RechargesPackagesListResult](raw)
+}
+
+// Recharges Settings Retrieve
+func (a *CommerceApi) RechargesSettingsRetrieve() (sdktypes.RechargesSettingsRetrieveResult, error) {
+    raw, err := a.client.Get(AppApiPath("/recharges/settings"), nil, nil)
+    if err != nil {
+        var zero sdktypes.RechargesSettingsRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesSettingsRetrieveResult](raw)
 }
 
 // Refunds List

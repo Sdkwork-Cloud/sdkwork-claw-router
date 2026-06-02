@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-installer-agent@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-installer-agent-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-installer-agent-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e2daf13ee6ead3198e06621aae528e57df3a78adbc9c3ea2dbf655474a8f18df",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gradient@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gradient-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gradient-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4d4d96b460ce22aede731e1983b1edc44ad51da49cfefbae50d23511bdde828d",

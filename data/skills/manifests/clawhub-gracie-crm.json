@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gracie-crm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gracie-crm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gracie-crm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ae6e7ab423f1e39aedcd3eca54ce4e24c4f46582ab377d93d7f28057ad3a2db",

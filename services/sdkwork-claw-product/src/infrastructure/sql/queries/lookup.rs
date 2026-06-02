@@ -161,7 +161,7 @@ LIMIT 1
 "#
     }
 
-    pub fn find_api_key_group() -> &'static str {
+    pub fn find_channel_group() -> &'static str {
         r#"
 SELECT
     id,

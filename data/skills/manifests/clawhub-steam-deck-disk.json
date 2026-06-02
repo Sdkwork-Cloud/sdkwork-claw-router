@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/steam-deck-disk@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-steam-deck-disk-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-steam-deck-disk-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0c0f8a36de4cd1dba76f90963aca62466075c15da395f6e6ac0c8a542398464",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bytedance-app@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bytedance-app-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bytedance-app-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b20626453850fd62002759ead6d7bc6c36752d17055620009fc49c298e9f67db",

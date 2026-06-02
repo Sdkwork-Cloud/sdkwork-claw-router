@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/treasury-prime@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-treasury-prime-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-treasury-prime-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f9b80306d1fae3a232b1ba51a68b5473606c33363f9cad07c5fae0d04e0ac700",

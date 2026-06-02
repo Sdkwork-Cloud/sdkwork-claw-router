@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weclaw-installer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weclaw-installer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weclaw-installer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b0c33139f6167573367db78b59101efee9e7f9a32df4fe33ca893f178f1708a",

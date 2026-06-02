@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wrynai-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wrynai-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wrynai-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cd7c6a86c113d4bb37e89b7a367ab8883e7e45e8595c5dca55d0a220a8268fb2",

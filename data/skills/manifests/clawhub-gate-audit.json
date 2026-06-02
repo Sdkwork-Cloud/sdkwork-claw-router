@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gate-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gate-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gate-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:460a1677d103b3d024061514dcc171e5d7ce4407fc621c8856dc59670b1cf4ef",

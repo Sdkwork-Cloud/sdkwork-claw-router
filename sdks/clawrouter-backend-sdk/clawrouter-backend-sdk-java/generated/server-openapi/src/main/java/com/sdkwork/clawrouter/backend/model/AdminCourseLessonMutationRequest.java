@@ -12,7 +12,7 @@ public class AdminCourseLessonMutationRequest {
     private String sectionId;
     private String status;
     private String title;
-    private String videoUrl;
+    private MediaResource video;
 
     public String getDescription() {
         return this.description;
@@ -86,11 +86,11 @@ public class AdminCourseLessonMutationRequest {
         this.title = title;
     }
 
-    public String getVideoUrl() {
-        return this.videoUrl;
+    public MediaResource getVideo() {
+        return this.video;
     }
 
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
+    public void setVideo(MediaResource video) {
+        this.video = video;
     }
 }

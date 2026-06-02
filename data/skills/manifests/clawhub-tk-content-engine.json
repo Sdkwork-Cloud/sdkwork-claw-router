@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tk-content-engine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tk-content-engine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tk-content-engine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93937f84e097b38f248fe9b0008c10ed96e794a7d77850d6026eb1b964ee66e5",

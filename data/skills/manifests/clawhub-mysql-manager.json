@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mysql-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mysql-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mysql-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:223e9749120730d5c207ca8b1b83a14b1d6239f96237f4b49e242ac7da142fe9",

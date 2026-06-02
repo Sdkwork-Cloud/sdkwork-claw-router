@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sefaria-mcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sefaria-mcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sefaria-mcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a5839b7c4674e09be5096998e6f7c3f0b623f60c4fa0d16567ac1584399cbdef",

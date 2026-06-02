@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paimon-skill@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-paimon-skill-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paimon-skill-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:442e9e6a4cf6ad9dd85d6496b7629a16139ab5c1ee506158afcc9020791c9bf2",

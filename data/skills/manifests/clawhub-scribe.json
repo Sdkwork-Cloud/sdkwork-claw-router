@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scribe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scribe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scribe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e8335d18ed3b39e5973ab03fd1cf3afaae421de17d07b729b870f7e3990ef7b4",

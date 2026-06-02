@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cowboys@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cowboys-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cowboys-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d3819a6087d296807d7c42835f36a9dfd5535df8386f02561cdc3fc9c641a207",

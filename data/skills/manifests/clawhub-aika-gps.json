@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aika-gps@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aika-gps-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aika-gps-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:46cead5475fd2df0c279083ab52dd145c80d8784ca907f6293926e0f50c517bf",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cardinal-health@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cardinal-health-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cardinal-health-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b9dde238df19cd86caf957e4e5894e705d1873973fb5d7f77eca888a4b91c931",

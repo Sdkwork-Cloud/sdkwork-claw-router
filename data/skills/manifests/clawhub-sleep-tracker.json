@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sleep-tracker@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sleep-tracker-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sleep-tracker-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:55d0dc92cd3530dd00155c7626d1dda5b175b699cff2b4ff689e5c083bd16a25",

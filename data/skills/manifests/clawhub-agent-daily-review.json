@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-daily-review@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-daily-review-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-daily-review-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3220eb9cbb5c2a71021efc5bdb32d192d76abafb534df6aa5b7b37d5230ea072",

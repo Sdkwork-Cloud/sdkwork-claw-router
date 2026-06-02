@@ -48,7 +48,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/win-music-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-win-music-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-win-music-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1090bc87f40ed9c7f51ea03378c32eae1e59b591fde1199409fb174280f08951",

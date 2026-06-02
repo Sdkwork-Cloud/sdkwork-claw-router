@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ragclaw@0.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ragclaw-0.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ragclaw-0.5.0.json"
+      },
       "version": "0.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d2af29a9c095e7afad3ad49801f75de2fb9994a06da2e4e287b49a47a52f28c",

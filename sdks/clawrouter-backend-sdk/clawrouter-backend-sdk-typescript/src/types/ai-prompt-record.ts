@@ -40,6 +40,8 @@ export interface AiPromptRecord {
   published_version_id?: string;
   /** Status field on ai prompt record. */
   status?: string;
+  /** Tags field on ai prompt record. */
+  tags?: Record<string, JsonValue>;
   /** Tenant id field on ai prompt record. */
   tenant_id?: string;
   /** Updated at field on ai prompt record. */

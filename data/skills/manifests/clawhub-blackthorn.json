@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blackthorn@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-blackthorn-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blackthorn-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3980bc01f76278e48331d2e99ac997c7f685841bb5c18306ca9dbbdd2a06b216",

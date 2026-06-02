@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-loop@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-loop-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-loop-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:51bf64a0d065199cf550ba4939ad81f969084ac33f91400dd7b6992f88ce2b5f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mayu@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mayu-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mayu-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f56fbdd31856250abd194301fec4372cb5639488b11527e4fade06052a9418ca",

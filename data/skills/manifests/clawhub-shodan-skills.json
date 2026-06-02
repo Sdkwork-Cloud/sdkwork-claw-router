@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shodan-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shodan-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shodan-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:32e31fd020cbae9174b3549723a621a454b99ff3f9dabe608b86b0d4ca3ead88",

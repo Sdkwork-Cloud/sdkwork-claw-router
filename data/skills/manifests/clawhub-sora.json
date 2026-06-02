@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sora@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sora-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sora-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:258bab97863674f2bb4cf6fa4e5877e6d3855879940e7b654050a2751fb796a4",

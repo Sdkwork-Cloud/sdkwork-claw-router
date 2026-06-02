@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taxwise@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-taxwise-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taxwise-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c954a08394f9855d27d27e79b23291a3c43f62b3faa416d8590a51157fde2aa4",

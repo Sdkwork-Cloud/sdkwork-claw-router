@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-backup-rclone@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-backup-rclone-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-backup-rclone-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:524925d692ebacdc2fb3dd128cd020d50ea99d5e2714efd401085bbfd42093e9",

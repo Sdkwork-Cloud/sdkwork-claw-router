@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/float@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-float-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-float-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:db1c2e9ed0a0c8daf66fa0e7652f356d9e65c947130a42d9a84c035def5eed85",

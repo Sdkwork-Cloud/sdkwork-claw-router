@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vendor-performance-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vendor-performance-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vendor-performance-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da0f32f00147fa067440864cf33d72293ae7ff85c450af0695444c325ce0f8f1",

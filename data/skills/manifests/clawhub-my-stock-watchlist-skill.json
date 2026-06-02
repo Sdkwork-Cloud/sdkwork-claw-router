@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-stock-watchlist-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-stock-watchlist-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-stock-watchlist-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7df795514e9b53632b0a3cc047fcb6338d7f42e2214f5c159cc210415ad48a27",

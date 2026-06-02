@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1f74bafe1356f832645f8b85838174df2a4824f0db91925a76120167cc4a6b1",

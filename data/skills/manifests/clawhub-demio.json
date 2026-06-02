@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/demio@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-demio-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-demio-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:57f3c85487e29de1803ef044f48e5417eb75a1a7fe449f12faf17f5ccb33eaa8",

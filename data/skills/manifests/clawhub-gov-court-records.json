@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gov-court-records@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gov-court-records-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gov-court-records-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:58aa00c57ba5f670f5ba96930052a19b0a6b8b3e300adc388f7adc842261bc87",

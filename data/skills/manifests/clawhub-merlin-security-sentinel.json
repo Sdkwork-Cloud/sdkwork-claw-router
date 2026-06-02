@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/merlin-security-sentinel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-merlin-security-sentinel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-merlin-security-sentinel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:12b1ff153dbca91e6c8b045faf5cd1c6b8eeef94269a8b89d512a53ee9e8a890",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloudflare-wrangler@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-wrangler-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloudflare-wrangler-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce0f502aafb117a6281a5e0bb2bf9732d5b2185963a3b86552e7626d85d229f6",

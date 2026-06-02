@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-translation-pipeline-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-translation-pipeline-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-translation-pipeline-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:638ffd253eadf519a8eca67f65c73a35cc8d8b070ac2c792ffb05951d8ef881b",

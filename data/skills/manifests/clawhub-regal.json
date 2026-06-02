@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/regal@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-regal-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-regal-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:7658ef7820c992cd195f0d03977af230d1a4d24119c5418570368e0b0cab90ef",

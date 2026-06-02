@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-flow@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-flow-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-flow-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3dd64cfbcffc40b737182d44baf1901d40e708054858dd5a34267061cad6cbf",

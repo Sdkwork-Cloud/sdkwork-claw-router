@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentconcierge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentconcierge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentconcierge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:84870a0d5c91a4223e2f94f86fa61611ff10e5a7fc04566b0c373dd05d86756a",

@@ -20,6 +20,10 @@ pub struct CommerceFulfillmentOrderRecord {
     /// Fulfillment type field on commerce fulfillment order record.
     pub fulfillment_type: String,
 
+    /// Id field on commerce fulfillment order record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Order id field on commerce fulfillment order record.
     pub order_id: String,
 

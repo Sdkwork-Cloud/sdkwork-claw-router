@@ -14,6 +14,8 @@ export interface CommerceRefundEventRecord {
   event_type: string;
   /** From status field on commerce refund event record. */
   from_status?: string;
+  /** Id field on commerce refund event record. */
+  id?: string;
   /** Idempotency key field on commerce refund event record. */
   idempotency_key: string;
   /** Message field on commerce refund event record. */

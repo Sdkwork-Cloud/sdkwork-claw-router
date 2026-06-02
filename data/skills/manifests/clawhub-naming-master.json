@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/naming-master@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-naming-master-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-naming-master-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fb22c120b6ab28f27e92879c16cdbab4fae4f041f14f50d518aa213dad305c4f",

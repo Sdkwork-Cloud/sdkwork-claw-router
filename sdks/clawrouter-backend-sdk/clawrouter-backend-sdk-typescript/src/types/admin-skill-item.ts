@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Offline agent skill snapshot returned by the backend. */
 export interface AdminSkillItem {
@@ -10,8 +11,8 @@ export interface AdminSkillItem {
   categoryId?: string | null;
   /** Config schema field on admin skill item. */
   configSchema: Record<string, JsonValue>;
-  /** Cover image field on admin skill item. */
-  coverImage?: string;
+  /** Cover field on admin skill item. */
+  cover?: MediaResource;
   /** Created at field on admin skill item. */
   createdAt: string;
   /** Currency field on admin skill item. */
@@ -31,7 +32,7 @@ export interface AdminSkillItem {
   /** Homepage url field on admin skill item. */
   homepageUrl?: string;
   /** Icon field on admin skill item. */
-  icon?: string;
+  icon?: MediaResource;
   /** Id field on admin skill item. */
   id: string;
   /** Install count field on admin skill item. */

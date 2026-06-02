@@ -2,6 +2,10 @@ import type { JsonValue } from './json-value';
 
 /** Messaging template record schema exposed by Claw Router. */
 export interface MessagingTemplateRecord {
+  /** Category field on messaging template record. */
+  category?: string;
+  /** Channel field on messaging template record. */
+  channel?: string;
   /** Created at field on messaging template record. */
   created_at?: string;
   /** Current version id field on messaging template record. */
@@ -12,6 +16,8 @@ export interface MessagingTemplateRecord {
   deleted_at?: string;
   /** Deleted by field on messaging template record. */
   deleted_by?: string;
+  /** Delivery purpose field on messaging template record. */
+  delivery_purpose?: string;
   /** Description field on messaging template record. */
   description?: string;
   /** Id field on messaging template record. */
@@ -22,8 +28,16 @@ export interface MessagingTemplateRecord {
   organization_id?: string;
   /** Owner app id field on messaging template record. */
   owner_app_id?: string;
+  /** Publish status field on messaging template record. */
+  publish_status?: string;
+  /** Scene code field on messaging template record. */
+  scene_code?: string;
   /** Status field on messaging template record. */
   status?: string;
+  /** Template code field on messaging template record. */
+  template_code?: string;
+  /** Template name field on messaging template record. */
+  template_name?: string;
   /** Tenant id field on messaging template record. */
   tenant_id?: string;
   /** Updated at field on messaging template record. */

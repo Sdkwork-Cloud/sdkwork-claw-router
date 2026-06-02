@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baidu-search-pro@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-baidu-search-pro-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baidu-search-pro-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e925bd71c4ef71bbca16b45aee52467844ab2da26529115dd674ecd6da9454fd",

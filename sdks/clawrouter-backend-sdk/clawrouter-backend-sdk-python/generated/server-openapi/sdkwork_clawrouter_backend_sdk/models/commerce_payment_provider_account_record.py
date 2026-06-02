@@ -18,6 +18,7 @@ class CommercePaymentProviderAccountRecord:
     tenant_id: str
     updated_at: str
     certificate_ref: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     rotated_at: Optional[str] = None
     webhook_secret_ref: Optional[str] = None

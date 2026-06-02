@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/token-launcher@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-token-launcher-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-token-launcher-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:078f17c389ade812a67b3962362986e4482b6c11162b755066551ad02e76249e",

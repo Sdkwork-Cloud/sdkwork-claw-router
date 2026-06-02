@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tianyi-self-upgrade@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tianyi-self-upgrade-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tianyi-self-upgrade-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55911f77b3760cca486cbf58b92da7dc453d30a9dec59fe3aae6d15e25cf75ab",

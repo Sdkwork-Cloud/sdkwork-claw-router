@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/profit-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-profit-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-profit-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:87ea114a55d0b437f26e51952d6f3bfa12914d760a95ff5f7a55125f2167869b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/genomics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-genomics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-genomics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7759c5cc54eaf65de0a69a53556cadfb5a1b5099749a66a922095ae67173ce17",

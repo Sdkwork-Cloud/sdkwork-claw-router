@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/langchain-email-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-langchain-email-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-langchain-email-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ccc17dabbd9ed387d59737033df0ec9aa60c7fd7e4bd99adf025a49421a25fa2",

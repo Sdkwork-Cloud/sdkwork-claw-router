@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-twitter-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-twitter-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-twitter-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9630d93d82df26d148fe25ace2384933a97b08ecebf351de860b85bba5531ad4",

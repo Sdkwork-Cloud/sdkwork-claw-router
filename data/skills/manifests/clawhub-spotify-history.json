@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spotify-history@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spotify-history-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spotify-history-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6e5cfac9ef7329d0ef155ce0ebe410ef02e80d803c66ea10d5b1abd251640661",

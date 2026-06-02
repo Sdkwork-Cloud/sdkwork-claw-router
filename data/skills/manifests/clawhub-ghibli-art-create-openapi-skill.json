@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ghibli-art-create-openapi-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ghibli-art-create-openapi-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ghibli-art-create-openapi-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f7df05a1a62df5f0c563b07c78b18d66aebb9b15e8b4cd831d5a044b1fdff6b",

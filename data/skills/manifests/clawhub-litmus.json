@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/litmus@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-litmus-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-litmus-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9a7f1ee59a269436c03b6940ec474aa5ff92856fd4111c4be004879a578b9003",

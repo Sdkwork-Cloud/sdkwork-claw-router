@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/work-progress-summary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-work-progress-summary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-work-progress-summary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:064164556849bc16f363b1db64e47fee8368bc567b07390ae3465802d9014d7e",

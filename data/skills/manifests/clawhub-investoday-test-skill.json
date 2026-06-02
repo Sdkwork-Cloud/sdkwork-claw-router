@@ -48,7 +48,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/investoday-test-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-investoday-test-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-investoday-test-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:abe8ed2827432b8b718dafacede16dc6fa5628562db3bebb6193ac93b0e62623",

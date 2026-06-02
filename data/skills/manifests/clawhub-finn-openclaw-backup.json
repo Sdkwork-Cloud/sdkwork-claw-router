@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finn-openclaw-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-finn-openclaw-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finn-openclaw-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b72a82107141b98b39c7795ebe861441055c7301ec6dd534250dd3cf64656cfe",

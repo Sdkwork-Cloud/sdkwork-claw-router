@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mysql-query-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mysql-query-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mysql-query-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:210e54a50a31283d8a854c4abee67ec879c872aa9640ac14c1413ae7179c66c6",

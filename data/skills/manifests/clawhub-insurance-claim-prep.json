@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/insurance-claim-prep@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-insurance-claim-prep-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-insurance-claim-prep-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:68afbcd8e89b32eb591373d73ae340a31565afcc98ecfb61d7696fdf096ad0cc",

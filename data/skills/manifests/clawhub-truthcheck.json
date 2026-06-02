@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/truthcheck@0.4.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-truthcheck-0.4.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-truthcheck-0.4.4.json"
+      },
       "version": "0.4.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c6743f8abfc29c3f86730134f82900a3af52f90facb1e1f06b5d9aeb39a5bedf",

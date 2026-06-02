@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-image-gen@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-image-gen-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-image-gen-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef94f899db8a0e4d4bedf53a9eb75a81c66c69fb4d23e54d5e72f4546dd392ec",

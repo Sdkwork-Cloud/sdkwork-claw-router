@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-audio-transcribe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-audio-transcribe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-audio-transcribe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e290e2c8906156d1386829c12ab5d954d33c26d75b2141f4056fb9260ddef6f3",

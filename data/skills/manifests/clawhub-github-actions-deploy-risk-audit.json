@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-actions-deploy-risk-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-deploy-risk-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-actions-deploy-risk-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cb1360f308cf4ec6593a9edbd465717ec25bf3277b53154dbe982f37d571ff36",

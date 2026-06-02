@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/acpx-codex-playbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-acpx-codex-playbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-acpx-codex-playbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ad385e88ccc981fafd6d027696299be022e1d9b5ddca1227adeac681934c9bd",

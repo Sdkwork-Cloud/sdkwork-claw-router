@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ensp@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ensp-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ensp-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:27a8913139289757f3f121d521fc2da0457272ba44ca6b7000eea635a96ec21c",

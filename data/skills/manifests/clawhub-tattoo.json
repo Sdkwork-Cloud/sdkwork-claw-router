@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tattoo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tattoo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tattoo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:99199a7314d80fd8c56455cf2672f80f62d9a77500b0808c2fbcc72fb88b75dc",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nano-gpt-plugin@0.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-nano-gpt-plugin-0.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nano-gpt-plugin-0.1.3.json"
+      },
       "version": "0.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:42c4caedb35bd3d3efeb9711afec5eb671c981c37809bdcd6db382bbf75ca068",

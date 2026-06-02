@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amg-check-azure-spend@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amg-check-azure-spend-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amg-check-azure-spend-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cf4d5677260a133631631dabac8a725fa119c14affc638ecbd422bff323ce920",

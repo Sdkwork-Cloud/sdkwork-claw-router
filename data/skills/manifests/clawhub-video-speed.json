@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-speed@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-speed-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-speed-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:38df3a68f31dcfbe071945e52d5a04887c6f18f4097c7e926b5d1941d58dcdb9",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cashbuddy@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cashbuddy-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cashbuddy-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ed8c019003848dcd60f447bd3b3d248fe38db9d47a34e99ace9d98706395b4c1",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/truth-seeking-fact-check@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-truth-seeking-fact-check-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-truth-seeking-fact-check-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:82f25e770a83fc0e0e785693569b5ff9c78a54a894c7f5b5e839533dd620d17a",

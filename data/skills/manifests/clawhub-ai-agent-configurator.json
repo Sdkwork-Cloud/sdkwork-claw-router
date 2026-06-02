@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-agent-configurator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-agent-configurator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-agent-configurator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:54f894715ac2b2e6bc4bb733e4a71e498925f49b2083367315058cd95f9a81be",

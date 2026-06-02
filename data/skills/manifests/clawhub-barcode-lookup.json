@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/barcode-lookup@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-barcode-lookup-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-barcode-lookup-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:30788201520ac300e63cc465d8543c6d28a31177675a4a7502bb14ca337b06c4",

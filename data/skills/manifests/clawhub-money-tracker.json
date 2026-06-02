@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/money-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-money-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-money-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:306dd8ea75b6af02cef3d6d5fd0f1b375f39115d2b00dd03332a244738a165b9",

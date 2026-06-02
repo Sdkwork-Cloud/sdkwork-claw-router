@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-graph-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-graph-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-graph-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c6438b579f25ec734ff72560f2f567a8247c0dfdb35747f28b1af1e7eeb72014",

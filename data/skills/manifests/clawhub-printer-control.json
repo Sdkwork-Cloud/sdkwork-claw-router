@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/printer-control@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-printer-control-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-printer-control-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7e7ace3e65ab77d002fab660c200dacde0907057862bf5260f5ca77c0b76cc1f",

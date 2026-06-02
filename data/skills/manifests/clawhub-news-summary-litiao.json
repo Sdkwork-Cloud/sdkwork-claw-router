@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/news-summary-litiao@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-news-summary-litiao-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-news-summary-litiao-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc185fa0e77f7f2692205d74f0649f127cadf55e8a225f049ebf6a16c74377c2",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dele-deploy@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-dele-deploy-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dele-deploy-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:985bd38205cc488a17ca54518e8d382882be176d7640c821e822b96337f1b800",

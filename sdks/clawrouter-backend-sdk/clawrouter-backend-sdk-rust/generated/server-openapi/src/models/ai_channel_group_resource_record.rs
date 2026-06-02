@@ -30,6 +30,9 @@ pub struct AiChannelGroupResourceRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub effective_to: Option<String>,
 
+    /// Grant type field on ai channel group resource record.
+    pub grant_type: String,
+
     /// Id field on ai channel group resource record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -40,6 +43,10 @@ pub struct AiChannelGroupResourceRecord {
 
     /// Organization id field on ai channel group resource record.
     pub organization_id: String,
+
+    /// Priority field on ai channel group resource record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub priority: Option<i64>,
 
     /// Resource code field on ai channel group resource record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

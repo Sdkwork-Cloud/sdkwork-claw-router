@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cronjob@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cronjob-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cronjob-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a732ebb08f04117e50672428dc677826ba05f47af1b8d338c86e6ac089535403",

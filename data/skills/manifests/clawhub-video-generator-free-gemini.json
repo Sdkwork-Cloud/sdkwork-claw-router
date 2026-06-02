@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-generator-free-gemini@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-generator-free-gemini-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-generator-free-gemini-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1ea57574788f5f30d93caceea84b5a95b526f30044de66cb61534f88881a4bae",

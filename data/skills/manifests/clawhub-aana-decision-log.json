@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aana-decision-log@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aana-decision-log-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aana-decision-log-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10c7f0103d7689557851f84dd245a5e8c11d528dead6fed1c7105500e59e97b1",

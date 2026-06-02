@@ -47,6 +47,10 @@ pub struct UploadPartRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub presigned_url_expires_at: Option<String>,
 
+    /// Size bytes field on upload part record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub size_bytes: Option<String>,
+
     /// Status field on upload part record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,

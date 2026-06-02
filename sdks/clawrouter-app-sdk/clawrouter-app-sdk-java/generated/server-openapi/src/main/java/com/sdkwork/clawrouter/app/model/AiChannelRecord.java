@@ -22,6 +22,7 @@ public class AiChannelRecord {
     private String deletedBy;
     private String environment;
     private String externalChannelId;
+    private String healthStatus;
     private String id;
     private String lastBalanceCheckedAt;
     private Integer lastLatencyMs;
@@ -32,6 +33,7 @@ public class AiChannelRecord {
     private Map<String, String> metadata;
     private String nextRotateAt;
     private String organizationId;
+    private Integer priority;
     private String protocolCode;
     private String providerCode;
     private String providerId;
@@ -51,6 +53,7 @@ public class AiChannelRecord {
     private String upstreamBalanceCurrency;
     private String uuid;
     private String version;
+    private Integer weight;
 
     public Map<String, String> getAuthConfig() {
         return this.authConfig;
@@ -204,6 +207,14 @@ public class AiChannelRecord {
         this.externalChannelId = externalChannelId;
     }
 
+    public String getHealthStatus() {
+        return this.healthStatus;
+    }
+
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -282,6 +293,14 @@ public class AiChannelRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     public String getProtocolCode() {
@@ -434,5 +453,13 @@ public class AiChannelRecord {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Integer getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
     }
 }

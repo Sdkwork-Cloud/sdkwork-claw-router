@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/popeye-health@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-popeye-health-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-popeye-health-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1e1752b5eba855672672b2ff996ad9bdce0309c7176b65dd0a9790930bb01208",

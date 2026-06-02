@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sovereign-security-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-security-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sovereign-security-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdea1c971da8fbf5db62d0f0a9c93c6629fe4742060a00a990b93568b8eec947",

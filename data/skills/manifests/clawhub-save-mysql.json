@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/save-mysql@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-save-mysql-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-save-mysql-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3f56bf8fc5207a055f4309e2c647de5a48584cb725b905b17b0681e60e58743e",

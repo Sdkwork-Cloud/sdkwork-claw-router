@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podcast-to-substack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-podcast-to-substack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podcast-to-substack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f1dffa0d9c4aa8392a58aa7bbfa93f79920a80895724c992fb092c9f96a83f38",

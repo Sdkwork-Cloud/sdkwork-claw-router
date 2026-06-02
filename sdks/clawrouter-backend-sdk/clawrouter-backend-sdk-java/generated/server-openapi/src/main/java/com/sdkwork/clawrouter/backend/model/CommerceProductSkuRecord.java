@@ -6,6 +6,7 @@ public class CommerceProductSkuRecord {
     private String defaultCurrencyCode;
     private String defaultPriceAmount;
     private String fulfillmentType;
+    private String id;
     private String organizationId;
     private String publishedAt;
     private String salesUnit;
@@ -47,6 +48,14 @@ public class CommerceProductSkuRecord {
 
     public void setFulfillmentType(String fulfillmentType) {
         this.fulfillmentType = fulfillmentType;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrganizationId() {

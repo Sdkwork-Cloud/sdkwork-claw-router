@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-eyebrows@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-eyebrows-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-eyebrows-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f66215db740733023b2b239773f193d194fa1565bed7296f68b1eee4a01948f6",

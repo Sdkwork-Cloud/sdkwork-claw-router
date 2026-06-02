@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scan-to-skill@0.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-scan-to-skill-0.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scan-to-skill-0.2.2.json"
+      },
       "version": "0.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:090f8a80165893564b462805d8dba56bea475b31d2aac4164ce1b80d102b2506",

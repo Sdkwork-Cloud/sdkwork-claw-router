@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ps-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ps-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ps-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26ee90e57bc054389adbe6ed7aee1253fd7087317f530c504079765c87619ebe",

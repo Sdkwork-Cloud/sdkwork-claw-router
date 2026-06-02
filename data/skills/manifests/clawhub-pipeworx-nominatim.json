@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-nominatim@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-nominatim-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-nominatim-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f6b7e644893dfc59c7886b21d3e32cb4c2ffccd1ee81b1b495d1cdaeb5ea8d1d",

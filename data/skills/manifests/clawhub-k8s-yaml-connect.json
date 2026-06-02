@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/k8s-yaml-connect@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-k8s-yaml-connect-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-k8s-yaml-connect-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56db7320016d2ec7c13c96291fe0e0243ba6f44fca55fc2e46df21a296ff98a6",

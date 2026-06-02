@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openai-docs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openai-docs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openai-docs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c00713769c08adf881ddd23f141669373e18ef36e9bc97424807b6edd8aeab70",

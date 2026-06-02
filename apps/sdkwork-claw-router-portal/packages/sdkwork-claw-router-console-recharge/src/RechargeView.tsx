@@ -391,16 +391,17 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
           <label htmlFor={embedded ? 'console-wallet-recharge-custom-amount' : 'console-recharge-custom-amount'} className="block text-base font-semibold text-white">
             {t('console.recharge.customAmount', '自定义金额')}
           </label>
-          <div className="grid gap-3 sm:grid-cols-[160px_minmax(0,1fr)]">
-            <label className="block">
-              <span className="mb-1 block text-sm font-medium text-slate-400">
-                {t('console.recharge.currency', 'Currency')}
-              </span>
+          <div
+            data-console-recharge-custom-entry="inline-money"
+            className="flex h-12 w-full overflow-hidden rounded-md border border-[#3a3a3a] bg-[#252525] transition-colors focus-within:border-[#1677ff] focus-within:ring-2 focus-within:ring-[#1677ff]/20"
+          >
+            <label className="flex h-full shrink-0 items-center border-r border-[#3a3a3a] bg-[#2b2b2b]">
+              <span className="sr-only">{t('console.recharge.currency', 'Currency')}</span>
               <select
-                value={currentCurrencyCode}
-                disabled={Boolean(selectedOption) || isSubmitting}
+                value={customCurrencyCode}
+                disabled={isSubmitting}
                 onChange={handleCustomCurrencyChange}
-                className="h-12 w-full rounded-md border border-[#3a3a3a] bg-[#252525] px-3 text-sm text-white outline-none transition-colors focus:border-[#1677ff] focus:ring-2 focus:ring-[#1677ff]/20 disabled:cursor-not-allowed disabled:opacity-60"
+                className="h-full min-w-[104px] bg-transparent px-3 text-sm font-semibold text-white outline-none disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {customCurrencyCodes.map((currencyCode) => (
                   <option key={currencyCode} value={currencyCode}>
@@ -409,18 +410,16 @@ export function RechargePanel({ embedded = false, showTabs = true }: RechargePan
                 ))}
               </select>
             </label>
-            <div className="relative">
-              <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-slate-400">{currentCurrencyCode}</span>
-              <input
-                id={embedded ? 'console-wallet-recharge-custom-amount' : 'console-recharge-custom-amount'}
-                type="text"
-                inputMode="decimal"
-                value={customAmount}
-                onChange={handleCustomChange}
-                placeholder={t('console.recharge.customPlaceholder', '输入其他金额')}
-                className="h-12 w-full rounded-md border border-[#3a3a3a] bg-[#252525] pl-16 pr-4 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-[#1677ff] focus:ring-2 focus:ring-[#1677ff]/20"
-              />
-            </div>
+            <input
+              id={embedded ? 'console-wallet-recharge-custom-amount' : 'console-recharge-custom-amount'}
+              type="text"
+              inputMode="decimal"
+              value={customAmount}
+              disabled={isSubmitting}
+              onChange={handleCustomChange}
+              placeholder={t('console.recharge.customPlaceholder', '输入其他金额')}
+              className="h-full min-w-0 flex-1 bg-transparent px-4 text-sm text-white outline-none placeholder:text-slate-500 disabled:cursor-not-allowed disabled:opacity-60"
+            />
           </div>
         </div>
 

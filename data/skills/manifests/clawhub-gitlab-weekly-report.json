@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitlab-weekly-report@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-weekly-report-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitlab-weekly-report-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:148f96a898c642f2cbdc7bf86503911c4bd7d044df211bc76d9c4bf614f30e77",

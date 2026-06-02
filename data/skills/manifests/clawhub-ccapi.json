@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ccapi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ccapi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ccapi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05cdfb932a6a6ce3eb5f02c989ff059153b39e47bffbe3c0d44d52ad9268917a",

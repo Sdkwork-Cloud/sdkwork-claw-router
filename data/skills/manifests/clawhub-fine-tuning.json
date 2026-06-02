@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fine-tuning@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fine-tuning-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fine-tuning-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29bee4fa99d2eaef1a59b9125a1d7b352564aab6ec7cb722a3a9ab18f0ae478d",

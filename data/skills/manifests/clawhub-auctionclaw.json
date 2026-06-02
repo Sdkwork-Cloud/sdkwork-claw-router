@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auctionclaw@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auctionclaw-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auctionclaw-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:def9f30151a1d0181cda5e0b0c567ce84ce22f4124107c1aec217ad9f6d270d2",

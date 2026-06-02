@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tbot-controller@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tbot-controller-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tbot-controller-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57659cc56ace140c6c90472b42f1ccdaa87c32e4a49487e3955a52c820582612",

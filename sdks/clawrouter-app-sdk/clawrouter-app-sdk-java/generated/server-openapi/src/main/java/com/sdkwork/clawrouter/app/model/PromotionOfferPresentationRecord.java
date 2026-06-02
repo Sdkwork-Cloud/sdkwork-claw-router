@@ -10,6 +10,7 @@ public class PromotionOfferPresentationRecord {
     private Map<String, String> customerActionJson;
     private String displayName;
     private Map<String, String> fieldSchemaJson;
+    private String id;
     private String locale;
     private String logoAssetId;
     private String merchantDisplayName;
@@ -85,6 +86,14 @@ public class PromotionOfferPresentationRecord {
 
     public void setFieldSchemaJson(Map<String, String> fieldSchemaJson) {
         this.fieldSchemaJson = fieldSchemaJson;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getLocale() {

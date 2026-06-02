@@ -116,6 +116,20 @@ func (a *CommerceApi) CatalogCategoriesUpdate(categoryId string, body sdktypes.C
     return decodeResult[sdktypes.CatalogCategoriesUpdateResult](raw)
 }
 
+// Initialize admin category seed datasets
+func (a *CommerceApi) CatalogCategorySeedsCreate(body sdktypes.CommerceCategorySeedInitializeRequest, idempotencyKey string) (sdktypes.CatalogCategorySeedsCreateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Post(BackendApiPath("/catalog/category_seeds/initialize"), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.CatalogCategorySeedsCreateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CatalogCategorySeedsCreateResult](raw)
+}
+
 // List product price lists
 func (a *CommerceApi) CatalogPriceLists(currencyCode *string, marketCode *string, status *string, page *int, pageSize *int) (sdktypes.CatalogPriceListsListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
@@ -180,6 +194,16 @@ func (a *CommerceApi) CatalogProductsCreate(body sdktypes.CommerceProductSpuMuta
     return decodeResult[sdktypes.CatalogProductsCreateResult](raw)
 }
 
+// Delete product SPU
+func (a *CommerceApi) CatalogProductsDelete(productId string) (sdktypes.CatalogProductsDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/catalog/products/%s", SerializePathParameter(productId, PathParameterSpec{Name: "productId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.CatalogProductsDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CatalogProductsDeleteResult](raw)
+}
+
 // Update product SPU
 func (a *CommerceApi) CatalogProductsUpdate(productId string, body sdktypes.CommerceProductSpuMutationRequest, idempotencyKey string) (sdktypes.CatalogProductsUpdateResult, error) {
     headers := BuildRequestHeaders(
@@ -223,6 +247,16 @@ func (a *CommerceApi) CatalogSkusCreate(body sdktypes.CommerceProductSkuMutation
         return zero, err
     }
     return decodeResult[sdktypes.CatalogSkusCreateResult](raw)
+}
+
+// Delete product SKU
+func (a *CommerceApi) CatalogSkusDelete(skuId string) (sdktypes.CatalogSkusDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/catalog/skus/%s", SerializePathParameter(skuId, PathParameterSpec{Name: "skuId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.CatalogSkusDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.CatalogSkusDeleteResult](raw)
 }
 
 // Update product SKU
@@ -747,6 +781,44 @@ func (a *CommerceApi) PaymentsProviderAccountsCreate(body sdktypes.CommercePayme
     return decodeResult[sdktypes.PaymentsProviderAccountsCreateResult](raw)
 }
 
+// Payments Provider Accounts Delete
+func (a *CommerceApi) PaymentsProviderAccountsDelete(providerAccountId string) (sdktypes.PaymentsProviderAccountsDeleteResult, error) {
+    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/payments/provider_accounts/%s", SerializePathParameter(providerAccountId, PathParameterSpec{Name: "providerAccountId", Style: "simple", Explode: false}))), nil, nil)
+    if err != nil {
+        var zero sdktypes.PaymentsProviderAccountsDeleteResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsProviderAccountsDeleteResult](raw)
+}
+
+// Payments Provider Accounts Update
+func (a *CommerceApi) PaymentsProviderAccountsUpdate(providerAccountId string, body sdktypes.CommercePaymentProviderAccountMutationRequest, idempotencyKey string) (sdktypes.PaymentsProviderAccountsUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/payments/provider_accounts/%s", SerializePathParameter(providerAccountId, PathParameterSpec{Name: "providerAccountId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.PaymentsProviderAccountsUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsProviderAccountsUpdateResult](raw)
+}
+
+// Payments Provider Accounts Status Update
+func (a *CommerceApi) PaymentsProviderAccountsStatusUpdate(providerAccountId string, body sdktypes.CommercePaymentProviderAccountStatusUpdateRequest, idempotencyKey string) (sdktypes.PaymentsProviderAccountsStatusUpdateResult, error) {
+    headers := BuildRequestHeaders(
+        map[string]ParameterSpec{"Idempotency-Key": ParameterSpec{Value: idempotencyKey, Style: "simple", Explode: false},},
+        map[string]ParameterSpec{},
+    )
+    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/payments/provider_accounts/%s/status", SerializePathParameter(providerAccountId, PathParameterSpec{Name: "providerAccountId", Style: "simple", Explode: false}))), body, nil, headers, "application/json")
+    if err != nil {
+        var zero sdktypes.PaymentsProviderAccountsStatusUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsProviderAccountsStatusUpdateResult](raw)
+}
+
 // Payments Providers List
 func (a *CommerceApi) PaymentsProvidersList(page *int, pageSize *int, status *string) (sdktypes.PaymentsProvidersListResult, error) {
     query := BuildQueryString([]QueryParameterSpec{
@@ -795,6 +867,19 @@ func (a *CommerceApi) PaymentsRouteRulesList(methodCode *string, countryCode *st
         return zero, err
     }
     return decodeResult[sdktypes.PaymentsRouteRulesListResult](raw)
+}
+
+// Payments Runtime Snapshot Retrieve
+func (a *CommerceApi) PaymentsRuntimeSnapshotRetrieve(environment *string) (sdktypes.PaymentsRuntimeSnapshotRetrieveResult, error) {
+    query := BuildQueryString([]QueryParameterSpec{
+        {Name: "environment", Value: func() interface{} { if environment == nil { return nil }; return *environment }(), Style: "form", Explode: true, AllowReserved: false},
+    })
+    raw, err := a.client.Get(AppendQueryString(BackendApiPath("/payments/runtime/snapshot"), query), nil, nil)
+    if err != nil {
+        var zero sdktypes.PaymentsRuntimeSnapshotRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.PaymentsRuntimeSnapshotRetrieveResult](raw)
 }
 
 // Payments Webhook Events List
@@ -879,6 +964,26 @@ func (a *CommerceApi) RechargesPackagesUpdate(packageId string, body sdktypes.Co
         return zero, err
     }
     return decodeResult[sdktypes.RechargesPackagesUpdateResult](raw)
+}
+
+// Recharges Settings Retrieve
+func (a *CommerceApi) RechargesSettingsRetrieve() (sdktypes.RechargesSettingsRetrieveResult, error) {
+    raw, err := a.client.Get(BackendApiPath("/recharges/settings"), nil, nil)
+    if err != nil {
+        var zero sdktypes.RechargesSettingsRetrieveResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesSettingsRetrieveResult](raw)
+}
+
+// Recharges Settings Update
+func (a *CommerceApi) RechargesSettingsUpdate(body sdktypes.CommerceRechargeSettingsUpdateRequest) (sdktypes.RechargesSettingsUpdateResult, error) {
+    raw, err := a.client.Put(BackendApiPath("/recharges/settings"), body, nil, nil, "application/json")
+    if err != nil {
+        var zero sdktypes.RechargesSettingsUpdateResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.RechargesSettingsUpdateResult](raw)
 }
 
 // Refunds List

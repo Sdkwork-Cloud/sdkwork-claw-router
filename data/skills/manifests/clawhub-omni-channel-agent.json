@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/omni-channel-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-omni-channel-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-omni-channel-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f475d16f58f03a913423b49e41d587af75f10d9e3e9745f622b1ea6684b22b2d",

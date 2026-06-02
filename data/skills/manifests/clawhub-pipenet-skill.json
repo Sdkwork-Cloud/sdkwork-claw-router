@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipenet-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipenet-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipenet-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bc9eb10a94625d2f70b9b2d9858778b7245e40430edbf957300a632567b72919",

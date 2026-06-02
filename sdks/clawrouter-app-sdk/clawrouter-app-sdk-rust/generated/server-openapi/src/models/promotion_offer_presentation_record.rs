@@ -27,6 +27,10 @@ pub struct PromotionOfferPresentationRecord {
     /// Field schema json field on promotion offer presentation record.
     pub field_schema_json: std::collections::HashMap<String, String>,
 
+    /// Id field on promotion offer presentation record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Locale field on promotion offer presentation record.
     pub locale: String,
 

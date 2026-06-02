@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dao@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dao-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dao-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a29f14b1abb26338d530ed1715083a066fecefa3218db29f93cb00aad444957",

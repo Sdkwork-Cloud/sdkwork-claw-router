@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grok-imagine-video@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-grok-imagine-video-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grok-imagine-video-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0a0747d7f5a04c746e3fb833c8ceec59d8b14fd962d66ccfd30cc1276e9c1863",

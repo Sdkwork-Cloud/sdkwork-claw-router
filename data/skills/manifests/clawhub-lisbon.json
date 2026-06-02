@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lisbon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lisbon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lisbon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9f8a4d5568221d69986ea5edef4b64a18bcf2b4cd1a42dd4e9efb323018a792",

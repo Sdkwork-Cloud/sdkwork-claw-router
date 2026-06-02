@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-creator-setup@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-creator-setup-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-creator-setup-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7160aaa86d267305f6766314bf3b1e871e2fc35c47b0817369d9ddc6bfcdee55",

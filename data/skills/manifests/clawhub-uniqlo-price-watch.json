@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/uniqlo-price-watch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-uniqlo-price-watch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-uniqlo-price-watch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b81910ff763c025faac351561c94c601b4bef2f572fe8dfef230d7d21976590",

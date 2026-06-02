@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eyes@4.25.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eyes-4.25.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eyes-4.25.0.json"
+      },
       "version": "4.25.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0f044d40cbe0ef0ce9a0101bb9d94f78f45e95415771995e6fded8e2f2ab6e5",

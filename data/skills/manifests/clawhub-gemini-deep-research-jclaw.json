@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-deep-research-jclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-deep-research-jclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-deep-research-jclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5222a8df5c52e7e1f5c8dbba7c5bc198ddff7b19cb39ca9e51022afd5be94a4e",

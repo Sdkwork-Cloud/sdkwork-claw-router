@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trump-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trump-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trump-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a22205b1901b9b7810effb08c38822480cd02cfb58816e38646ac37fb1e2e1de",

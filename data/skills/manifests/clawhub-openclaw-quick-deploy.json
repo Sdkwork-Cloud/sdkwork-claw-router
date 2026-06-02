@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-quick-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-quick-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-quick-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b5587934bd7c52fd35d257778d7c427bb652a9b6b2f1838af48a3a235d4ba839",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quiz-battle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quiz-battle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quiz-battle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c973dfe18dc220b28e169ba8cb6ab45898c3327e7b653a7d060cb81a511724c7",

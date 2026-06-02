@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexus-reader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexus-reader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexus-reader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:33338f07007ad2c9cbb2eb3ad986732ea4d72dad528de10930535d3ce4c46831",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/build-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-build-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-build-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:068e4bf08a524bd7afe58f0a67c7fbec24f41a8f02f706f89e9fd0dc2ea96646",

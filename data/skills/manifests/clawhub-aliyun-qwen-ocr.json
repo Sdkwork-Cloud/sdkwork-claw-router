@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aliyun-qwen-ocr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-qwen-ocr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aliyun-qwen-ocr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d28bafb8241f7f68140ad87b5708680531fed516a33749cbf818caeba510f2d4",

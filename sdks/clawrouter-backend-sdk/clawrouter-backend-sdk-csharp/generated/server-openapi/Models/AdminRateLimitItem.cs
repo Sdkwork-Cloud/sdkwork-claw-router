@@ -8,7 +8,9 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? BlockDuration { get; set; }
         public int? Burst { get; set; }
-        public string? Group { get; set; }
+        public string? ChannelGroup { get; set; }
+        public string? ChannelGroupId { get; set; }
+        public string? ChannelGroupName { get; set; }
         public string? Id { get; set; }
         public string? KeyPrefix { get; set; }
         public string? Model { get; set; }

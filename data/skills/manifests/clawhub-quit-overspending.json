@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quit-overspending@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quit-overspending-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quit-overspending-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c76e0be82fa8082ff6959cf18008e3d9a8bd0a75a1b09c1a47dd5ab3b2bb9775",

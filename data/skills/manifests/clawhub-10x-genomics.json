@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/10x-genomics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-10x-genomics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-10x-genomics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:651b4959d7f9fbd9ff29d0323c02ccdfebadb3661846f726a1cc7c0d74bff170",

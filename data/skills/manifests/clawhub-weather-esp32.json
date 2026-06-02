@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-esp32@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-esp32-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-esp32-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7aa43647b9f62346057b9e9088630ea7e1b96f31109e2bf079ff565ff9c1ca30",

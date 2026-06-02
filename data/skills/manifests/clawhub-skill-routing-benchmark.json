@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-routing-benchmark@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-routing-benchmark-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-routing-benchmark-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb43b554b94ed9f639c52ec96b06c5a4b795144bae9c2b02805425a7a63192f0",

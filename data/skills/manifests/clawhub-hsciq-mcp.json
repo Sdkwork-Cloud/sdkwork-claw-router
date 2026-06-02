@@ -57,7 +57,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hsciq-mcp@2.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-hsciq-mcp-2.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hsciq-mcp-2.0.5.json"
+      },
       "version": "2.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:45af9d4eda7ea1284c40f90d63c6653f92096c6044030a667c36efa72f3e5ec9",

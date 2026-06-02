@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lobster-agent-summary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lobster-agent-summary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lobster-agent-summary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0d7d267471b6a2be8f25c7c962282f7124ba10d4ec4db36a773c6c1c90e6e39",

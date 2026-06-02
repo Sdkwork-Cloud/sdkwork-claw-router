@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-flight@2.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-flight-2.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-flight-2.4.1.json"
+      },
       "version": "2.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b079f25511ac951ac6684a052073d91ff2bb48873f884d68e9432963fb333257",

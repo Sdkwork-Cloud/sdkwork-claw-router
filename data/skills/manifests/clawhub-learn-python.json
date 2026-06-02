@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/learn-python@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-learn-python-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-learn-python-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2807d0f15c343333cadabef8189400ac0c9c2bd6c4144001008b37c0c5b512f7",

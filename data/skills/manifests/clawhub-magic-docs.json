@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/magic-docs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-magic-docs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-magic-docs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff4ed6de4e530a04fcbaf2a55910704145dbc890833eebee299b863244c2f59e",

@@ -9,7 +9,7 @@ use axum::routing::post;
 use axum::{Json, Router};
 use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
-    AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
     ProviderChannelRoute, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
     RoutingRule,
@@ -294,7 +294,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
         DecimalValue::parse("1.200000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
@@ -325,7 +325,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             10,
             20,
             "standard-group-embedding-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(9101),
         )

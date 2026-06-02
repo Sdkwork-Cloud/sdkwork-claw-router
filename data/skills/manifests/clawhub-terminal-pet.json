@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/terminal-pet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-terminal-pet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-terminal-pet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:38b15a7121add0075df80cfd55300a396a7ea6a0e7db3fa98a871340c74dee01",

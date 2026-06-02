@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wsl-powershell@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wsl-powershell-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wsl-powershell-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:36bb89e5a9386c1386419790458298a500df88a5e129bfa545bfde453a844c12",

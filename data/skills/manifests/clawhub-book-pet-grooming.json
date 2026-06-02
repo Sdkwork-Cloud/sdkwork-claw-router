@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-pet-grooming@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-pet-grooming-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-pet-grooming-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e3fc4e5501f371b84ac923a67784a23b24c2ce8704012467a80694821534681d",

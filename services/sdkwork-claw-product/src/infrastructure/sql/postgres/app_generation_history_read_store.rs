@@ -1,9 +1,10 @@
+use serde_json::{json, Value};
 use sqlx::{PgPool, Row};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
     AppGenerationHistoryItem, AppGenerationHistoryReadFuture, AppGenerationHistoryReadStore,
-    AppGenerationHistorySubject, AppGenerationMediaItem,
+    AppGenerationHistorySubject,
 };
 
 const LOAD_GENERATION_HISTORY: &str = r#"
@@ -17,32 +18,41 @@ WITH runtime_generation_candidates AS (
         lower(COALESCE(
             NULLIF(i.request_json ->> 'targetType', ''),
             NULLIF(i.response_json #>> '{media,0,modality}', ''),
+            NULLIF(i.response_json #>> '{media,0,asset,kind}', ''),
+            NULLIF(i.response_json #>> '{media,0,asset,mimeType}', ''),
+            NULLIF(ar.resource_snapshot ->> 'kind', ''),
             NULLIF(ar.content_json ->> 'modality', ''),
             NULLIF(ar.artifact_type, ''),
+            NULLIF(ar.resource_snapshot ->> 'mimeType', ''),
             NULLIF(ar.mime_type, ''),
-            NULLIF(ar.storage_url, ''),
-            NULLIF(i.response_json #>> '{media,0,url}', '')
+            NULLIF(ar.resource_snapshot ->> 'publicUrl', ''),
+            NULLIF(ar.resource_snapshot ->> 'url', ''),
+            NULLIF(ar.resource_snapshot ->> 'uri', ''),
+            NULLIF(ar.resource_snapshot ->> 'objectKey', ''),
+            NULLIF(i.response_json #>> '{media,0,asset,publicUrl}', ''),
+            NULLIF(i.response_json #>> '{media,0,asset,url}', ''),
+            NULLIF(i.response_json #>> '{media,0,asset,uri}', ''),
+            NULLIF(i.response_json #>> '{media,0,asset,objectKey}', '')
         )) AS target_signal,
         COALESCE(NULLIF(r.model, ''), NULLIF(i.model, ''), '') AS model_info,
         COALESCE(NULLIF(r.model, ''), NULLIF(i.model, ''), '') AS model_catalog_key,
         COALESCE(
-            NULLIF(ar.storage_url, ''),
-            NULLIF(i.response_json #>> '{media,0,url}', ''),
-            NULLIF(ar.content_json ->> 'url', ''),
+            NULLIF(ar.resource_snapshot::text, 'null'),
+            NULLIF((i.response_json #> '{media,0,asset}')::text, 'null'),
             ''
-        ) AS asset_url,
+        ) AS asset_resource_snapshot,
         COALESCE(
-            NULLIF(i.response_json #>> '{media,0,thumb}', ''),
-            NULLIF(i.response_json #>> '{media,0,thumbnailUrl}', ''),
-            NULLIF(ar.content_json ->> 'thumb', ''),
-            NULLIF(ar.content_json ->> 'thumbnailUrl', ''),
+            NULLIF((ar.resource_snapshot #> '{poster}')::text, 'null'),
+            NULLIF((ar.resource_snapshot #> '{thumbnails,0}')::text, 'null'),
+            NULLIF((i.response_json #> '{media,0,asset,poster}')::text, 'null'),
+            NULLIF((i.response_json #> '{media,0,asset,thumbnails,0}')::text, 'null'),
             ''
-        ) AS thumbnail_url,
+        ) AS thumbnail_resource_snapshot,
         i.request_json #>> '{generationConfig,aspectRatio}' AS aspect_ratio,
         COALESCE(
+            NULLIF(ar.resource_snapshot ->> 'durationSeconds', ''),
             NULLIF(i.request_json #>> '{generationConfig,durationSeconds}', ''),
-            NULLIF(i.response_json #>> '{media,0,durationSeconds}', ''),
-            NULLIF(ar.content_json ->> 'durationSeconds', '')
+            NULLIF(i.response_json #>> '{media,0,asset,durationSeconds}', '')
         ) AS duration_seconds,
         COALESCE(NULLIF(r.output_message, ''), NULLIF(i.response_json ->> 'outputText', ''), '') AS output_text,
         CASE lower(COALESCE(r.run_status, ''))
@@ -93,7 +103,16 @@ WITH runtime_generation_candidates AS (
               OR ar.runtime_invocation_id = i.uuid
           )
         ORDER BY
-          CASE WHEN NULLIF(ar.storage_url, '') IS NULL THEN 1 ELSE 0 END,
+          CASE
+              WHEN COALESCE(
+                  NULLIF(ar.resource_snapshot ->> 'publicUrl', ''),
+                  NULLIF(ar.resource_snapshot ->> 'url', ''),
+                  NULLIF(ar.resource_snapshot ->> 'uri', ''),
+                  NULLIF(ar.resource_snapshot ->> 'objectKey', ''),
+                  NULLIF(ar.resource_snapshot ->> 'objectBlobId', ''),
+                  NULLIF(ar.resource_snapshot ->> 'id', '')
+              ) IS NULL THEN 1 ELSE 0
+          END,
           ar.created_at ASC NULLS LAST,
           ar.id ASC
         LIMIT 1
@@ -123,8 +142,8 @@ runtime_generation_rows AS (
         END AS item_kind,
         model_info,
         model_catalog_key,
-        asset_url,
-        thumbnail_url,
+        asset_resource_snapshot,
+        thumbnail_resource_snapshot,
         aspect_ratio,
         duration_seconds,
         output_text,
@@ -140,8 +159,8 @@ SELECT
     a.asset_type AS item_kind,
     COALESCE(NULLIF(a.model_snapshot, ''), NULLIF(j.model, ''), '') AS model_info,
     COALESCE(NULLIF(a.model_snapshot, ''), NULLIF(j.model, ''), '') AS model_catalog_key,
-    COALESCE(NULLIF(a.asset_url, ''), '') AS asset_url,
-    COALESCE(NULLIF(a.thumbnail_url, ''), '') AS thumbnail_url,
+    COALESCE(a.asset_resource_snapshot::text, '') AS asset_resource_snapshot,
+    COALESCE(a.thumbnail_resource_snapshot::text, '') AS thumbnail_resource_snapshot,
     '' AS aspect_ratio,
     '' AS duration_seconds,
     '' AS output_text,
@@ -168,8 +187,8 @@ SELECT
     j.modality AS item_kind,
     COALESCE(NULLIF(j.model, ''), '') AS model_info,
     COALESCE(NULLIF(j.model, ''), '') AS model_catalog_key,
-    '' AS asset_url,
-    '' AS thumbnail_url,
+    '' AS asset_resource_snapshot,
+    '' AS thumbnail_resource_snapshot,
     '' AS aspect_ratio,
     '' AS duration_seconds,
     '' AS output_text,
@@ -201,8 +220,8 @@ SELECT
     item_kind,
     model_info,
     model_catalog_key,
-    asset_url,
-    thumbnail_url,
+    asset_resource_snapshot,
+    thumbnail_resource_snapshot,
     aspect_ratio,
     duration_seconds,
     output_text,
@@ -248,24 +267,17 @@ impl AppGenerationHistoryReadStore for PostgresAppGenerationHistoryReadStore {
 fn row_to_history_item(row: sqlx::postgres::PgRow) -> DomainResult<AppGenerationHistoryItem> {
     let item_type = item_type_label(required_integer_cell(&row, "item_kind", "item kind")?)?;
     let status = status_label(required_integer_cell(&row, "status_code", "status")?)?;
-    let asset_url = string_cell(&row, "asset_url");
-    let thumbnail_url = string_cell(&row, "thumbnail_url");
+    let asset_resource_snapshot = string_cell(&row, "asset_resource_snapshot");
+    let thumbnail_resource_snapshot = string_cell(&row, "thumbnail_resource_snapshot");
     let created_at = string_cell(&row, "created_at");
     let updated_at = string_cell(&row, "updated_at");
-    let url = optional_string(asset_url.clone());
-    let images = if (item_type == "image" || item_type == "images") && !asset_url.is_empty() {
-        vec![asset_url.clone()]
-    } else {
-        Vec::new()
-    };
-    let videos = if item_type == "video" && !asset_url.is_empty() {
-        vec![AppGenerationMediaItem {
-            url: asset_url.clone(),
-            thumb: optional_string(thumbnail_url),
-        }]
-    } else {
-        Vec::new()
-    };
+    let duration_seconds = optional_integer_cell(&row, "duration_seconds");
+    let asset = media_resource_from_snapshot(
+        item_type,
+        &asset_resource_snapshot,
+        &thumbnail_resource_snapshot,
+        duration_seconds,
+    );
 
     Ok(AppGenerationHistoryItem {
         id: string_cell(&row, "id"),
@@ -274,16 +286,80 @@ fn row_to_history_item(row: sqlx::postgres::PgRow) -> DomainResult<AppGeneration
         item_type: item_type.to_owned(),
         model_info: optional_string(string_cell(&row, "model_info")),
         model_catalog_key: optional_string(string_cell(&row, "model_catalog_key")),
-        url,
-        images,
-        videos,
+        asset: asset.clone(),
+        images: media_resource_array_for_type(&item_type, &asset, "image"),
+        videos: media_resource_array_for_type(&item_type, &asset, "video"),
         aspect_ratio: optional_string(string_cell(&row, "aspect_ratio")),
-        duration_seconds: optional_integer_cell(&row, "duration_seconds"),
+        duration_seconds,
         status: Some(status.to_owned()),
         output_text: optional_string(string_cell(&row, "output_text")),
         created_at: optional_string(created_at),
         updated_at: optional_string(updated_at),
     })
+}
+
+fn media_resource_from_snapshot(
+    item_type: &str,
+    asset_resource_snapshot: &str,
+    thumbnail_resource_snapshot: &str,
+    duration_seconds: Option<i64>,
+) -> Option<Value> {
+    let mut resource = media_resource_value_from_snapshot(asset_resource_snapshot)?;
+    if let Some(duration_seconds) = duration_seconds {
+        if resource.get("durationSeconds").is_none() {
+            resource["durationSeconds"] = json!(duration_seconds);
+        }
+    }
+    if item_type == "video" {
+        if let Some(thumbnail) = media_resource_value_from_snapshot(thumbnail_resource_snapshot) {
+            if resource.get("poster").is_none() {
+                resource["poster"] = thumbnail.clone();
+            }
+            let has_thumbnails = resource
+                .get("thumbnails")
+                .and_then(Value::as_array)
+                .is_some_and(|items| !items.is_empty());
+            if !has_thumbnails {
+                resource["thumbnails"] = json!([thumbnail]);
+            }
+        }
+    }
+    Some(resource)
+}
+
+fn media_resource_value_from_snapshot(snapshot: &str) -> Option<Value> {
+    let snapshot = snapshot.trim();
+    if snapshot.is_empty() {
+        return None;
+    }
+    let value: Value = serde_json::from_str(snapshot).ok()?;
+    if value.get("kind").and_then(Value::as_str).is_none()
+        || value.get("source").and_then(Value::as_str).is_none()
+    {
+        return None;
+    }
+    Some(value)
+}
+
+fn media_resource_array_for_type(
+    item_type: &str,
+    asset: &Option<Value>,
+    expected: &str,
+) -> Vec<Value> {
+    if media_kind_for_item_type(item_type) == expected {
+        asset.iter().cloned().collect()
+    } else {
+        Vec::new()
+    }
+}
+
+fn media_kind_for_item_type(item_type: &str) -> &'static str {
+    match item_type {
+        "image" | "images" => "image",
+        "video" => "video",
+        "audio" | "music" | "sfx" => "audio",
+        _ => "other",
+    }
 }
 
 fn require_subject(

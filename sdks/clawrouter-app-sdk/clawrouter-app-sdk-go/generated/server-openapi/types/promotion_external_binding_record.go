@@ -12,6 +12,7 @@ type PromotionExternalBindingRecord struct {
 	ExternalMerchantId string `json:"external_merchant_id"`
 	ExternalObjectId string `json:"external_object_id"`
 	ExternalObjectType string `json:"external_object_type"`
+	Id string `json:"id"`
 	LastErrorCode string `json:"last_error_code"`
 	LastErrorMessage string `json:"last_error_message"`
 	LastSyncAt string `json:"last_sync_at"`

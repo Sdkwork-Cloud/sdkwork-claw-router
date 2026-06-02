@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crayfish-plugin-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crayfish-plugin-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crayfish-plugin-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26a5e010a79affd17a71d5e3ea442fa44cf1faa43ed446a7a6ae0243c85b960a",

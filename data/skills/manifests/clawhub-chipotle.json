@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chipotle@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-chipotle-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chipotle-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4c545e6cb1d039bb85db5dc8ff381678f06555f56a10649293ebbbc20584bb5e",

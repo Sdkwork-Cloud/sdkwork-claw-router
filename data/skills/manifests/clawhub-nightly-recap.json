@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nightly-recap@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-nightly-recap-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nightly-recap-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:253642a88c414dc827f24a353ae731265b31d62f1f38bbea1520b025cac7f38e",

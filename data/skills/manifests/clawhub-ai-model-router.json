@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-model-router@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-model-router-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-model-router-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:495f66ee8ff13bf095825f0667e2639b0daeeabfd3862449a129903e4f3f2339",

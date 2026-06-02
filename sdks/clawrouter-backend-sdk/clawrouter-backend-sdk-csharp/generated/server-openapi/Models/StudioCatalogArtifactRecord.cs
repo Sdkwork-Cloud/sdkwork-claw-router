@@ -6,10 +6,10 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class StudioCatalogArtifactRecord
     {
+        public MediaResource? Artifact { get; set; }
         public string? ArtifactRef { get; set; }
         public string? ArtifactSizeBytes { get; set; }
         public string? ArtifactType { get; set; }
-        public string? ArtifactUrl { get; set; }
         public string? ChecksumHash { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }

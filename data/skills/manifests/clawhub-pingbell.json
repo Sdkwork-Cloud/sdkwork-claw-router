@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pingbell@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-pingbell-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pingbell-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:13a0a77436edcf095374f844dadb8999d74ab7f0ff55081dfe3361bc3d871b44",

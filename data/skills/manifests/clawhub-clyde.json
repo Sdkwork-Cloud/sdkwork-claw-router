@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clyde@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-clyde-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clyde-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c00377ef1c8d20bd4053d5840e4ca6e5c65c1137f1ea2a30a56226a06e7c07c4",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mio-companion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mio-companion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mio-companion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:06c290c8b5a7d313f8e7dbfcf317f66bab916f945851748d3cb59998856fa669",

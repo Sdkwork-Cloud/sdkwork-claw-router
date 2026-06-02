@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/json-linter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-json-linter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-json-linter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e6a5064fcd615e655217c4045d9f32d676b08165cad25b3ce589ec42f05ca220",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/teamclaw-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-teamclaw-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-teamclaw-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a91601d6279c0c90b1b4510c35f0f56863c07c8da032ed03a2e4b7a6d6d5bcc4",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-monitor@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-monitor-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-monitor-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9e1ab5efcd9685ff337e98e5cce11cdbe65c216ec1280c6a08c2540462322bc0",

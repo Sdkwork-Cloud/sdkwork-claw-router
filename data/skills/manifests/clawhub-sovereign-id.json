@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sovereign-id@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-id-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sovereign-id-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6956bcfc84c5d3a1bfcd672912274c9f801e0e577db72c20edfa1f6ae5dd1e7f",

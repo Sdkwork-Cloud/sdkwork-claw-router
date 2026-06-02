@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lemma@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lemma-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lemma-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f989c64047917efab55bdec423e94304f59c44be8cc2d24e7f938d6c3bab202",

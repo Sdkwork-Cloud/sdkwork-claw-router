@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/repo-surveyor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-repo-surveyor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-repo-surveyor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d076f075ae67f42c41018ff8d96bb426bbe3b2649ba4ee6134018e571618f9d7",

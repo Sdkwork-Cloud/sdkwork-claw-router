@@ -28,10 +28,16 @@ export interface OpsNotificationMessageRecord {
   metadata?: Record<string, JsonValue>;
   /** Organization id field on ops notification message record. */
   organization_id?: string;
+  /** Priority field on ops notification message record. */
+  priority?: number;
   /** Published at field on ops notification message record. */
   published_at?: string;
+  /** Scope type field on ops notification message record. */
+  scope_type?: string;
   /** Severity field on ops notification message record. */
   severity?: string;
+  /** Show as popup field on ops notification message record. */
+  show_as_popup?: boolean;
   /** Status field on ops notification message record. */
   status?: string;
   /** Summary field on ops notification message record. */

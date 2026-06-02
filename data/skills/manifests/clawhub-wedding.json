@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wedding@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wedding-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wedding-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb6c8c5c4452c06ef4a7b6a1f14a2c652c8cc3dc1ef7864bbef497a4f43fa9ba",

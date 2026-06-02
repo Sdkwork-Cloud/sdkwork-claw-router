@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fiserv@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fiserv-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fiserv-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:34a343f852d10a542e33d4104a97f0033880d2d6ad63c744f98032ed4a4ab658",

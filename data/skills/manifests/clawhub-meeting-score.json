@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-score@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-score-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-score-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:21180fd02a5c6f79bdfbac27aae6c8f4f023bef21340c9cd4cb5729535008528",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/devtest-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-devtest-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-devtest-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b0c98cea379e8068e1e4ca242878a68a399a102a0e8392ea450b2cab0159aee",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/micron@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-micron-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-micron-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:077f9150f691281804bbeaf8780cf1628d5a29a15be00ddbdd32bc9f48dbe48c",

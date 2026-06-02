@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clientify@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-clientify-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clientify-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8922be34602e3766d288d23a34829626d04c3a99d197bf3b5822d2b5392a9ce6",

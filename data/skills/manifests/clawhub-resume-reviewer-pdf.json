@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-reviewer-pdf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-reviewer-pdf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-reviewer-pdf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d91839d19976a7378d3307e45b9b9458d7e351835f3a299fb90f5d373274050f",

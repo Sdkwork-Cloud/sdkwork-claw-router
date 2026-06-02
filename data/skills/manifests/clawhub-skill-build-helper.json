@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-build-helper@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-build-helper-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-build-helper-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d8a0f3211384f53b671af7d9bbab1b8ad3ed49287eb266f92c024bb2e91b90f0",

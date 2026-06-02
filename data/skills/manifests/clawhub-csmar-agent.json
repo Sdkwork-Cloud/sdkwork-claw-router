@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/csmar-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-csmar-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-csmar-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:40c09f8e8f6835c0824ab4e97da3e49d1610aa6130fa22aae6042b5aae80e67f",

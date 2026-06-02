@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geometry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-geometry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geometry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:87c8d67dbeddbb6830fde6eb1a2318177d01436e9372991a6f18f3edb7a3f54a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flyai-commit-lint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flyai-commit-lint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flyai-commit-lint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ce89c0cecb8ffdc60be36a84925627beea69254fe9aa97c3c6d9e5f6106b2f0",

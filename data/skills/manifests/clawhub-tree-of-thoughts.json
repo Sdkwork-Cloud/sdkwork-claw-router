@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tree-of-thoughts@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tree-of-thoughts-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tree-of-thoughts-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2350dc4af041640ad5d718a0b3e7cc5190abaa87e14a19010ef779da93ef3c78",

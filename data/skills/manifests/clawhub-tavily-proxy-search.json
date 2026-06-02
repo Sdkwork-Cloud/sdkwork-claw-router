@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tavily-proxy-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tavily-proxy-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tavily-proxy-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d226d319b56cb0044d396556089c0d4e7de76609fa2b061f65d9631224633745",

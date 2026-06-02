@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/config-guardian@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-config-guardian-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-config-guardian-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8a2fd3c2e2d741db1aefbe6cdb1cac2c96fd6c491986bf9a6828e7a59c835b55",

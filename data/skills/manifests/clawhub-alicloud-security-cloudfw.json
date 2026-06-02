@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alicloud-security-cloudfw@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-security-cloudfw-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alicloud-security-cloudfw-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c53d24a0584f9f448d397f843b1a9f344544b1e61e0e74c96cd51e60abfc6697",

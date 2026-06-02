@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mytaxi@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mytaxi-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mytaxi-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:96c51bf6ee3a5e8ab008b4c53d77e38ac3c8600bc668c3f69e5935fc1173b070",

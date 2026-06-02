@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toolchain-bootstrap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toolchain-bootstrap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toolchain-bootstrap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:820d48f39d5083f38702388825bbdcca5a624ffa804531b97f01af6f5cc1d3c2",

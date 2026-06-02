@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bioinformatics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bioinformatics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bioinformatics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6472e35f8aa145c8e332a8c06935dbb4129c32942257b79374253015312184cc",

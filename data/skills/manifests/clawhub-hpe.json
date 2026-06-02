@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hpe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hpe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hpe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:510385291930c728055d97b8f8d77e2e20618a6f4e0bb078dccef5b92a9a23f3",

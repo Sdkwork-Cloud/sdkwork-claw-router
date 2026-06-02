@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/system-commander@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-system-commander-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-system-commander-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6e532e8ab1213600fac8e9460f55166daaf0d3203b4b903f1e6552d63f40c813",

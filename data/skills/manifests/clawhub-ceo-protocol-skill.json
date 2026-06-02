@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ceo-protocol-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ceo-protocol-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ceo-protocol-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ffc9eec6d40411fb44271f95755a6fd6fc7787692727422a22b01e9edd4852f3",

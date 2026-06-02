@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-mail-macos@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-mail-macos-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-mail-macos-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0718069408494d5456e080ac52ab5d6f8b95c114f25d03212bcd90dcd765602e",

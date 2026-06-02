@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jrv-mock-data@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jrv-mock-data-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jrv-mock-data-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eaaaa7b0b1d5e3672aac30d56997d40fc7a8e361c6696fd1191e8bcfe14cb243",

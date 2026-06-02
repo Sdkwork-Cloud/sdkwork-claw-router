@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lifelog@1.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-lifelog-1.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lifelog-1.2.4.json"
+      },
       "version": "1.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:4ed38a09981a972f11e692ce384d43af591bb9c7b5399e0dbab13087f63d72eb",

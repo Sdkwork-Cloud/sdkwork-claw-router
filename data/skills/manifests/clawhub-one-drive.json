@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/one-drive@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-one-drive-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-one-drive-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:74e8b457f03dae87e538938df2e978a1ce71b9413e0504111f1f751a238998ec",

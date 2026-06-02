@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/andara-rag-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-andara-rag-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-andara-rag-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c155fcd2491e6b5e3b5ed02b90fe34867cd2d1178f06e0396c91b39df51b64dd",

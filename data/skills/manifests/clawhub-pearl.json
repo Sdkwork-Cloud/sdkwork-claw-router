@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pearl@0.0.14",
-      "artifactUrl": "data/skills/artifacts/clawhub-pearl-0.0.14.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pearl-0.0.14.json"
+      },
       "version": "0.0.14",
       "runtime": "metadata",
       "checksumHash": "sha256:19c941e5db9756a686dbf44113a9a507a89feae996b0b4de90c7c785ee151936",

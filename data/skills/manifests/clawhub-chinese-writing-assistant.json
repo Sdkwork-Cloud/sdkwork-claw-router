@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-writing-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-writing-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-writing-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48738de73d671b922c02a412ebfd67d944e8ebb4ff88c83cfc85eac4833dc4bf",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/satellite-tracker@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-satellite-tracker-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-satellite-tracker-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c216ee01dc4b1b6ec396ef0ab5e220c74af5ee2b16acf900167b79f346350876",

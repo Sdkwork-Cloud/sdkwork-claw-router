@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inventory-manager@5.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-inventory-manager-5.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inventory-manager-5.0.0.json"
+      },
       "version": "5.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:778dfb964d7eec4f109532e1e4ff177d0fb0e27ff64e3757619f5eae99f2d17b",

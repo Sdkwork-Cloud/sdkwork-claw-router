@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sports@1.0.24",
-      "artifactUrl": "data/skills/artifacts/clawhub-sports-1.0.24.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sports-1.0.24.json"
+      },
       "version": "1.0.24",
       "runtime": "metadata",
       "checksumHash": "sha256:1dc5b2d0844990d7e571589cd1ff6b399c901a839ec643d0becb8fbd288b6e80",

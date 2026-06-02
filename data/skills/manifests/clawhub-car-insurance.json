@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/car-insurance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-car-insurance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-car-insurance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec0717e5283704464cc5c9e9678727577900e381bdc04dd91e46a095a26a3cc5",

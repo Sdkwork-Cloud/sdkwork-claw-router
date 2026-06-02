@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcp-workflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcp-workflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcp-workflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5676f29375afad9e1f914e4e1cbc04dc785080e4390fb738f2774d4365039ddc",

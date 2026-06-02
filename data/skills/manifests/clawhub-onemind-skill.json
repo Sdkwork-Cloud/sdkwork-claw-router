@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/onemind-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-onemind-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-onemind-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ab6746b41baf646bcc04d0362eac1559fa2ef32845558e980f06cba524277ff",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-tavily-search@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-tavily-search-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-tavily-search-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:47aeba4a37820693430b5a9a30c5042f5497c08cd040aa845dc72dcd754212f2",

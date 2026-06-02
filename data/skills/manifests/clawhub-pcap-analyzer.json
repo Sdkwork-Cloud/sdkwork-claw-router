@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pcap-analyzer@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pcap-analyzer-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pcap-analyzer-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d6db805dfdf23437a699b4fcac3e70332b885a352e12b785b09882f2ccd7c8e4",

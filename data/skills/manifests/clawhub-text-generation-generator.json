@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-generation-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-generation-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-generation-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31292189eadd33987a8076d255bcd75e4063c93ae5f31e0a16876f26f9e224f5",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/uos-packager@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-uos-packager-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-uos-packager-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7247db9b852c47d44578f67d167f84014632f6fa365d663091bd8e6d78d0f03b",

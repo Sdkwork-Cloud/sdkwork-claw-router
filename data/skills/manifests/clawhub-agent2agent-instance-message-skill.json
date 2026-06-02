@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent2agent-instance-message-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent2agent-instance-message-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent2agent-instance-message-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3844a7b310d879bfba79d73e56446cdb05dbd81e7a4ec9758d1cfd15ecc3bff7",

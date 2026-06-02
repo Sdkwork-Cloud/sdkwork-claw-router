@@ -3,17 +3,20 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.Map;
 
 public class CommerceBillingHistoryRecord {
+    private String amount;
     private String assetType;
     private String createdAt;
     private String currencyCode;
     private String direction;
     private String historyNo;
     private String historyType;
+    private String id;
     private Map<String, String> metadataJson;
     private String occurredAt;
     private String organizationId;
     private String ownerUserId;
     private String paymentMethod;
+    private String pointsDelta;
     private String referenceNo;
     private String relatedOrderId;
     private String relatedOrderNo;
@@ -23,6 +26,14 @@ public class CommerceBillingHistoryRecord {
     private String tenantId;
     private String title;
     private String updatedAt;
+
+    public String getAmount() {
+        return this.amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
 
     public String getAssetType() {
         return this.assetType;
@@ -72,6 +83,14 @@ public class CommerceBillingHistoryRecord {
         this.historyType = historyType;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public Map<String, String> getMetadataJson() {
         return this.metadataJson;
     }
@@ -110,6 +129,14 @@ public class CommerceBillingHistoryRecord {
 
     public void setPaymentMethod(String paymentMethod) {
         this.paymentMethod = paymentMethod;
+    }
+
+    public String getPointsDelta() {
+        return this.pointsDelta;
+    }
+
+    public void setPointsDelta(String pointsDelta) {
+        this.pointsDelta = pointsDelta;
     }
 
     public String getReferenceNo() {

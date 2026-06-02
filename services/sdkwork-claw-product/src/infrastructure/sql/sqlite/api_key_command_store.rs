@@ -4,11 +4,11 @@ use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::application::ApiKeySecretCodec;
 use crate::domain::{
-    ApiKeyGroup, DomainError, DomainResult, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
+    ChannelGroup, DomainError, DomainResult, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
 };
 use crate::ports::{
     ApiKeyCommandStoreFuture, CreateGatewayApiKeyCommand, CreatedGatewayApiKey,
-    DeleteGatewayApiKeyCommand, EnsureDefaultApiKeyGroupCommand, GatewayApiKeyCommandStore,
+    DeleteGatewayApiKeyCommand, EnsureDefaultChannelGroupCommand, GatewayApiKeyCommandStore,
     UpdateGatewayApiKeyCommand, UpdatedGatewayApiKey,
 };
 
@@ -33,17 +33,17 @@ impl SqliteGatewayApiKeyCommandStore {
 }
 
 impl GatewayApiKeyCommandStore for SqliteGatewayApiKeyCommandStore {
-    fn ensure_default_api_key_group<'a>(
+    fn ensure_default_channel_group<'a>(
         &'a self,
-        command: EnsureDefaultApiKeyGroupCommand,
-    ) -> ApiKeyCommandStoreFuture<'a, ApiKeyGroup> {
+        command: EnsureDefaultChannelGroupCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, ChannelGroup> {
         Box::pin(async move {
             let mut tx = self.pool.begin().await.map_err(|error| {
-                store_error("failed to begin default api key group transaction", error)
+                store_error("failed to begin default channel group transaction", error)
             })?;
-            let group = ensure_default_api_key_group(&mut tx, &command).await?;
+            let group = ensure_default_channel_group(&mut tx, &command).await?;
             tx.commit().await.map_err(|error| {
-                store_error("failed to commit default api key group transaction", error)
+                store_error("failed to commit default channel group transaction", error)
             })?;
             Ok(group)
         })
@@ -123,11 +123,11 @@ impl GatewayApiKeyCommandStore for SqliteGatewayApiKeyCommandStore {
     }
 }
 
-async fn ensure_default_api_key_group(
+async fn ensure_default_channel_group(
     tx: &mut Transaction<'_, Sqlite>,
-    command: &EnsureDefaultApiKeyGroupCommand,
-) -> DomainResult<ApiKeyGroup> {
-    if let Some(group) = find_api_key_group_by_code(tx, command).await? {
+    command: &EnsureDefaultChannelGroupCommand,
+) -> DomainResult<ChannelGroup> {
+    if let Some(group) = find_channel_group_by_code(tx, command).await? {
         return Ok(group);
     }
 
@@ -156,19 +156,19 @@ async fn ensure_default_api_key_group(
 
     if let Err(error) = insert_result {
         if !is_unique_violation(&error) {
-            return Err(store_error("failed to create default api key group", error));
+            return Err(store_error("failed to create default channel group", error));
         }
-        reactivate_default_api_key_group(tx, command, pricing_plan_id).await?;
+        reactivate_default_channel_group(tx, command, pricing_plan_id).await?;
     }
 
-    find_api_key_group_by_code(tx, command)
+    find_channel_group_by_code(tx, command)
         .await?
-        .ok_or_else(|| DomainError::new("default api key group could not be reloaded"))
+        .ok_or_else(|| DomainError::new("default channel group could not be reloaded"))
 }
 
-async fn reactivate_default_api_key_group(
+async fn reactivate_default_channel_group(
     tx: &mut Transaction<'_, Sqlite>,
-    command: &EnsureDefaultApiKeyGroupCommand,
+    command: &EnsureDefaultChannelGroupCommand,
     pricing_plan_id: Option<i64>,
 ) -> DomainResult<()> {
     sqlx::query(
@@ -198,14 +198,14 @@ async fn reactivate_default_api_key_group(
     .bind(&command.code)
     .execute(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to reactivate default api key group", error))?;
+    .map_err(|error| store_error("failed to reactivate default channel group", error))?;
     Ok(())
 }
 
-async fn find_api_key_group_by_code(
+async fn find_channel_group_by_code(
     tx: &mut Transaction<'_, Sqlite>,
-    command: &EnsureDefaultApiKeyGroupCommand,
-) -> DomainResult<Option<ApiKeyGroup>> {
+    command: &EnsureDefaultChannelGroupCommand,
+) -> DomainResult<Option<ChannelGroup>> {
     let row = sqlx::query(
         r#"
         SELECT
@@ -232,13 +232,13 @@ async fn find_api_key_group_by_code(
     .bind(&command.code)
     .fetch_optional(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to load default api key group", error))?;
+    .map_err(|error| store_error("failed to load default channel group", error))?;
 
     let Some(row) = row else {
         return Ok(None);
     };
     Ok(Some(
-        ApiKeyGroup::new_scoped(
+        ChannelGroup::new_scoped(
             row.try_get::<i64, _>("id").map_err(row_error)?,
             row.try_get::<i64, _>("tenant_id").map_err(row_error)?,
             row.try_get::<i64, _>("organization_id")
@@ -261,7 +261,7 @@ async fn find_api_key_group_by_code(
 
 async fn find_pricing_plan_id(
     tx: &mut Transaction<'_, Sqlite>,
-    command: &EnsureDefaultApiKeyGroupCommand,
+    command: &EnsureDefaultChannelGroupCommand,
 ) -> DomainResult<Option<i64>> {
     sqlx::query_scalar(
         r#"
@@ -290,7 +290,7 @@ async fn find_pricing_plan_id(
     .bind(command.tenant_id)
     .fetch_optional(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to load default api key group pricing plan", error))
+    .map_err(|error| store_error("failed to load default channel group pricing plan", error))
 }
 
 async fn ensure_idempotency_key_available(

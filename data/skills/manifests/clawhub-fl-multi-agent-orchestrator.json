@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fl-multi-agent-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fl-multi-agent-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fl-multi-agent-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:08c2be83bfe8e47a266322f72cd7f79515bad5abc3a483e10a1b33ce4bbe1aaa",

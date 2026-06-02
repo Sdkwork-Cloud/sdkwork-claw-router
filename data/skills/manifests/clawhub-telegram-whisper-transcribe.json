@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-whisper-transcribe@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-whisper-transcribe-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-whisper-transcribe-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:08c5eec41653372bfb5139a19c0d9bbd46572febf7002738beea2d760917b1c1",

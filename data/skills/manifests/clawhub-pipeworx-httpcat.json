@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-httpcat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-httpcat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-httpcat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7c747e3a8411492133d993fa07b8ee5521d23a2463ca79cd364def82649b294b",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ebay-agent@0.5.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-ebay-agent-0.5.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ebay-agent-0.5.3.json"
+      },
       "version": "0.5.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6d393d16cc90cc54d99f83c9ffcb28f3dcaa772d6be72f6b6f179cf9b0d04f31",

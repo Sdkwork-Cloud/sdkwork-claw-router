@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-to-svg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-to-svg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-to-svg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d301b32204ad949f04cec1109b9f039987b47f078d18816533222d79ecf7ad3e",

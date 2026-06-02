@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-wallets@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-wallets-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-wallets-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2bb22febb553b3d09ce964f8a4728f82d6d2178ffc3d19255604d6de7cd43898",

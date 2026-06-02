@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-tinman@0.6.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-tinman-0.6.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-tinman-0.6.4.json"
+      },
       "version": "0.6.4",
       "runtime": "metadata",
       "checksumHash": "sha256:f24e1ce4a4007a3f452285c74068d19694780863d2a4b9290d43f0cbdd35346a",

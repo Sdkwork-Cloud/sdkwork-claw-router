@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ayao-workflow-agent@1.7.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ayao-workflow-agent-1.7.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ayao-workflow-agent-1.7.0.json"
+      },
       "version": "1.7.0",
       "runtime": "metadata",
       "checksumHash": "sha256:658afeb831c036e1ef9d0f56af738040de04dda7dc0a908c716067aa59f769ae",

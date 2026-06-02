@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-bill-clawhub@2.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-bill-clawhub-2.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-bill-clawhub-2.2.5.json"
+      },
       "version": "2.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:9a38f724485df33dd7ab96d3c6251f6376080f32be075138ac72c0c791dd7a4a",

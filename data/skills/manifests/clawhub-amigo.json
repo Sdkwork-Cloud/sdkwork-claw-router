@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amigo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amigo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amigo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bec70ac6c9bf67bcc89fdd21e24c97c622285e3e367cd9b7b6759497fc29a9c2",

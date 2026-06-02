@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dogfood@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dogfood-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dogfood-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5c1e7de8b1b0130724ef26fcaade242b9c322fc03db62b37fe4bc537ce3e535b",

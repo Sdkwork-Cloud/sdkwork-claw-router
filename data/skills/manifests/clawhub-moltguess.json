@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltguess@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltguess-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltguess-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0321b106008c14f45078db4f5db9879ea5f3e38fb68e732d95836142257eace",

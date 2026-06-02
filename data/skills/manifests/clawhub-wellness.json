@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wellness@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wellness-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wellness-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:594dca6d9d353662560afe055f22fe319c199af09044f4c26876cd6a24612b3a",

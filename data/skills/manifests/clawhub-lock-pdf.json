@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lock-pdf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lock-pdf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lock-pdf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9fba6f43252a41a2d6b33cdfdd4161590a00ba830a67848188575cb5f702b47",

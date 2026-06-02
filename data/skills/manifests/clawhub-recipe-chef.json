@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/recipe-chef@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-recipe-chef-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-recipe-chef-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5fe52e18665bb1a1526a611d33b7995dac552a83cd4fd96c4d4d7ec24c8decdb",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-knowledge@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-knowledge-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-knowledge-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2b45adde0446094e412fc8689201590c334f86fd15e5e8e0511e692040e9f577",

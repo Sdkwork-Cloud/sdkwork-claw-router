@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/garmin-connect-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-garmin-connect-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-garmin-connect-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66a1a5ae59c7eab57233ed46df4d3b00126bd02dbe77909936cc70cf771f7dc3",

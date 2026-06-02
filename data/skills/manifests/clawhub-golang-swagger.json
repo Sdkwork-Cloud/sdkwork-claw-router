@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golang-swagger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-golang-swagger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golang-swagger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f4d780872d83a94bfc8d839e9c267894f64b559dfca94d64a5f6c5ce6488f708",

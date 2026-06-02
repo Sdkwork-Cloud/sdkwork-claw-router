@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/desktop-guardian@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-desktop-guardian-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-desktop-guardian-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:833b3c12157ecd54fb22e0ada9c6ed75fb880a47fd8c6e069362853d52b11aa2",

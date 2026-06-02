@@ -23,7 +23,7 @@ describe("sdkwork-user-pc-react", () => {
         lastName: "Young",
       }),
     ).toEqual({
-      avatarUrl: undefined,
+      avatar: undefined,
       displayName: "Jason Young",
       email: "jason@sdkwork.ai",
       id: "user-1",

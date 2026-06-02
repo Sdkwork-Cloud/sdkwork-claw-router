@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/speed-run@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-speed-run-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-speed-run-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4812010148cca3a5912b63fcbbe7fd56a877585b70e0dce8891a2b9f36817b68",

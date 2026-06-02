@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/web-to-pdf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-web-to-pdf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-web-to-pdf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0c7679c18c001ca982dff82821e199cdefe9e0b65c74917972cc69e740d27196",

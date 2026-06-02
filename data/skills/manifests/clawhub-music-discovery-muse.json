@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-discovery-muse@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-discovery-muse-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-discovery-muse-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d9060543801f899d1d95e16e7cc48aa4c0f370475869856c1166a1cd7978cd1",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/filewatch@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-filewatch-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-filewatch-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e2d9e4e06582ed243683f7518cbed100770d1e50fbc04ff4fdc37b83e64be49c",

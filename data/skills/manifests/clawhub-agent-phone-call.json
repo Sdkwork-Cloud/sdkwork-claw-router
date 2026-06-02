@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-phone-call@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-phone-call-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-phone-call-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:ce887aacfedbaa97c58e6d4faacb2b74f5eae27a43d608c737a730fb958f96d3",

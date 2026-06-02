@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proxmox-backup-server-manager@1.6.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-proxmox-backup-server-manager-1.6.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proxmox-backup-server-manager-1.6.0.json"
+      },
       "version": "1.6.0",
       "runtime": "metadata",
       "checksumHash": "sha256:405cde3a6da50dfa3445adf4bfbaea861bbeb8bb59ccca74132a48246fb824fc",

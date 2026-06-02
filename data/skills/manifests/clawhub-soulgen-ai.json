@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/soulgen-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-soulgen-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-soulgen-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6597010a1a982982bcd9105915bec869cf9c0220e587febc406962157dc2c60f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mongodb-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mongodb-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mongodb-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3082bd40c0a1cad45e90aadd623d5a54968bb7fc40a2370d27dda386a4f32d6",

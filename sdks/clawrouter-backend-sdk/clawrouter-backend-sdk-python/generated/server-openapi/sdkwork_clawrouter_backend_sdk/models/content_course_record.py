@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class ContentCourseRecord:
@@ -31,7 +34,7 @@ class ContentCourseRecord:
     students_count: Optional[str] = None
     tags: Optional[Dict[str, str]] = None
     tenant_id: Optional[str] = None
-    thumbnail_url: Optional[str] = None
+    thumbnail: Optional[MediaResource] = None
     title: Optional[str] = None
     updated_at: Optional[str] = None
     uuid: Optional[str] = None

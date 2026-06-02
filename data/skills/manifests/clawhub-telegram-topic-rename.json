@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-topic-rename@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-topic-rename-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-topic-rename-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:87392db8507dbd2dc4d1b96199d110d72714702d17a2cfbc145cc1f2e672aa6a",

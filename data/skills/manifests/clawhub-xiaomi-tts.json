@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiaomi-tts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiaomi-tts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiaomi-tts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a7b4319aa0f2742bf803a358429bf4d12377dbcbca3de7f89be6e3079fcc993e",

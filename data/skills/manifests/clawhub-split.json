@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/split@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-split-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-split-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:963c934fd013689f6a24548efe2ba5cd1ff1dc70dbc19e63bec5a12405f2e65b",

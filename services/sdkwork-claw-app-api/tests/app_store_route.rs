@@ -99,11 +99,11 @@ async fn database_config_app_store_route_reads_installed_published_apps_through_
     assert_eq!("sdkwork-skills-app", item["developer"]);
     assert_eq!(
         "https://cdn.sdkwork.com/apps/sdkwork-claw-router/assets/icon-1024.png",
-        item["image"]
+        item["image"]["publicUrl"]
     );
     assert!(item["features"].as_array().unwrap().len() >= 3);
     assert!(item["screenshots"].as_array().unwrap().iter().any(|value| {
-        value
+        value["publicUrl"]
             .as_str()
             .is_some_and(|url| url.ends_with("/media/desktop_windows-screenshot.png"))
     }));
@@ -126,9 +126,10 @@ async fn database_config_app_store_route_reads_installed_published_apps_through_
         .as_array()
         .unwrap()
         .iter()
-        .any(|release| release["downloadUrl"]
+        .any(|release| release["artifact"]["publicUrl"]
             == "https://cdn.sdkwork.com/apps/sdkwork-claw-router/STABLE/0.1.0/web.zip"
             && release["platformType"] == "Web"
+            && release["os"] == "PC Web"
             && release["version"] == "0.1.0"));
 
     let categories_payload = request_json(

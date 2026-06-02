@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/disney-pixar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-disney-pixar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-disney-pixar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f55caf40d9067b919848b10186c32bbe4fd5b33208e88c5ca26495772fe06d9b",

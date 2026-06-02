@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-elasticsearch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-elasticsearch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-elasticsearch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:237bafe092510f8ae69f37294065cbf6f33f15341201f9d438372c74922ae48a",

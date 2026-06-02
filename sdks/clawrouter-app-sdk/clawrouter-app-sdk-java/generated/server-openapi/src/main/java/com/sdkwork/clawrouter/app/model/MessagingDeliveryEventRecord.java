@@ -4,15 +4,21 @@ import java.util.Map;
 
 public class MessagingDeliveryEventRecord {
     private String createdAt;
+    private String eventAt;
+    private String eventType;
     private String id;
     private Boolean legalHold;
     private Map<String, String> metadata;
     private String organizationId;
     private String payloadHash;
+    private Map<String, String> payloadRedacted;
+    private String providerCode;
+    private String providerEventId;
     private String providerMessageId;
     private String requestId;
     private String retentionUntil;
     private String sendAttemptId;
+    private String sendRequestId;
     private String status;
     private String tenantId;
     private String traceId;
@@ -25,6 +31,22 @@ public class MessagingDeliveryEventRecord {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getEventAt() {
+        return this.eventAt;
+    }
+
+    public void setEventAt(String eventAt) {
+        this.eventAt = eventAt;
+    }
+
+    public String getEventType() {
+        return this.eventType;
+    }
+
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
     }
 
     public String getId() {
@@ -67,6 +89,30 @@ public class MessagingDeliveryEventRecord {
         this.payloadHash = payloadHash;
     }
 
+    public Map<String, String> getPayloadRedacted() {
+        return this.payloadRedacted;
+    }
+
+    public void setPayloadRedacted(Map<String, String> payloadRedacted) {
+        this.payloadRedacted = payloadRedacted;
+    }
+
+    public String getProviderCode() {
+        return this.providerCode;
+    }
+
+    public void setProviderCode(String providerCode) {
+        this.providerCode = providerCode;
+    }
+
+    public String getProviderEventId() {
+        return this.providerEventId;
+    }
+
+    public void setProviderEventId(String providerEventId) {
+        this.providerEventId = providerEventId;
+    }
+
     public String getProviderMessageId() {
         return this.providerMessageId;
     }
@@ -97,6 +143,14 @@ public class MessagingDeliveryEventRecord {
 
     public void setSendAttemptId(String sendAttemptId) {
         this.sendAttemptId = sendAttemptId;
+    }
+
+    public String getSendRequestId() {
+        return this.sendRequestId;
+    }
+
+    public void setSendRequestId(String sendRequestId) {
+        this.sendRequestId = sendRequestId;
     }
 
     public String getStatus() {

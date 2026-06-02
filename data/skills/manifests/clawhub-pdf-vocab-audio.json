@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-vocab-audio@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-vocab-audio-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-vocab-audio-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97ea33efe7e85bd11ee719ba8af8603abf487b1c15ba68fcd716f043ecc2b8c6",

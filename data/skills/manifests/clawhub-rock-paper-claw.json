@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rock-paper-claw@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-rock-paper-claw-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rock-paper-claw-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f0098e740d27a32112bd0cef11dd31284d9df872989677cbf15ef0019bb1cd66",

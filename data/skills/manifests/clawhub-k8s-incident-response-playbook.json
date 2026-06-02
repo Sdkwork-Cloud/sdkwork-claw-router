@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/k8s-incident-response-playbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-k8s-incident-response-playbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-k8s-incident-response-playbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:958877851c895f9236fdae3d6d29122ee0f2d160498589bb7c6e2539daf601dd",

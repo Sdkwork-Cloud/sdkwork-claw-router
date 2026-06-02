@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trump-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trump-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trump-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9f1d422a4f89cdd64d37366c33b38fe24cf253d7ae15020de606f7c18d4b0879",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wallarm@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-wallarm-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wallarm-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8fab3b58221bc7a122bd437b968e20a39399b7cdef7b3402e2edb530f1d91413",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bluetooth@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bluetooth-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bluetooth-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56a6fb46ab387342c76b0ce0230c78f794fdcd7e620e5c2f284a7fe8f676e4ca",

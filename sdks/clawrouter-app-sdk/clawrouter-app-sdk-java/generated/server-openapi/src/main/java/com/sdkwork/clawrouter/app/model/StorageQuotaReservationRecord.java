@@ -14,6 +14,7 @@ public class StorageQuotaReservationRecord {
     private String organizationId;
     private String releasedAt;
     private String reservationNo;
+    private String reservedBytes;
     private String scopeId;
     private String scopeType;
     private String status;
@@ -109,6 +110,14 @@ public class StorageQuotaReservationRecord {
 
     public void setReservationNo(String reservationNo) {
         this.reservationNo = reservationNo;
+    }
+
+    public String getReservedBytes() {
+        return this.reservedBytes;
+    }
+
+    public void setReservedBytes(String reservedBytes) {
+        this.reservedBytes = reservedBytes;
     }
 
     public String getScopeId() {

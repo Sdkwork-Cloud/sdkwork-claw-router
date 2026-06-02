@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/introvert@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-introvert-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-introvert-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ea0b224c9d193049783026f8b5823e55ca6a0cd3eff5b1f663c80b9c90e29a0",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/incident-dossier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-incident-dossier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-incident-dossier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fa64263c1b81b920b09b2cf80f78df59870df6bee0db60534238144c52bf4122",

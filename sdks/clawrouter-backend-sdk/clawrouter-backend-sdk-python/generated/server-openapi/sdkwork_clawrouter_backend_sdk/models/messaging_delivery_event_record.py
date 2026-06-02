@@ -7,15 +7,21 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class MessagingDeliveryEventRecord:
     """Messaging delivery event record schema exposed by Claw Router."""
     created_at: Optional[str] = None
+    event_at: Optional[str] = None
+    event_type: Optional[str] = None
     id: Optional[str] = None
     legal_hold: Optional[bool] = None
     metadata: Optional[Dict[str, str]] = None
     organization_id: Optional[str] = None
     payload_hash: Optional[str] = None
+    payload_redacted: Optional[Dict[str, str]] = None
+    provider_code: Optional[str] = None
+    provider_event_id: Optional[str] = None
     provider_message_id: Optional[str] = None
     request_id: Optional[str] = None
     retention_until: Optional[str] = None
     send_attempt_id: Optional[str] = None
+    send_request_id: Optional[str] = None
     status: Optional[str] = None
     tenant_id: Optional[str] = None
     trace_id: Optional[str] = None

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paylock-solana@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paylock-solana-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paylock-solana-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b33f627b985a58cccdc2d63d4dec4f3abeb4b301da73e69f26aa2c3a96cd2c6e",

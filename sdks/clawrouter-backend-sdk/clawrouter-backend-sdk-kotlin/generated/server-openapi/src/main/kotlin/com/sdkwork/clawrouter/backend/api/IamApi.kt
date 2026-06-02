@@ -8,42 +8,6 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 
 class IamApi(private val client: HttpClient) {
 
-    /** List groups */
-    suspend fun accessGroupsList(): AccessGroupsListResult? {
-        val raw = client.get(ApiPaths.backendPath("/iam/access_groups"))
-        return client.convertValue(raw, object : TypeReference<AccessGroupsListResult>() {})
-    }
-
-    /** Create group */
-    suspend fun accessGroupsCreate(body: AdminAccessGroupCreateRequest): AccessGroupsCreateResult? {
-        val raw = client.post(ApiPaths.backendPath("/iam/access_groups"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<AccessGroupsCreateResult>() {})
-    }
-
-    /** Delete group */
-    suspend fun accessGroupsDelete(groupId: String): AccessGroupsDeleteResult? {
-        val raw = client.delete(ApiPaths.backendPath("/iam/access_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}"))
-        return client.convertValue(raw, object : TypeReference<AccessGroupsDeleteResult>() {})
-    }
-
-    /** Update group */
-    suspend fun accessGroupsUpdate(groupId: String, body: AdminAccessGroupUpdateRequest): AccessGroupsUpdateResult? {
-        val raw = client.patch(ApiPaths.backendPath("/iam/access_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<AccessGroupsUpdateResult>() {})
-    }
-
-    /** List group channel bindings */
-    suspend fun accessGroupsChannelBindingsList(groupId: String): AccessGroupsChannelBindingsListResult? {
-        val raw = client.get(ApiPaths.backendPath("/iam/access_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}/channel_bindings"))
-        return client.convertValue(raw, object : TypeReference<AccessGroupsChannelBindingsListResult>() {})
-    }
-
-    /** Replace group channel bindings */
-    suspend fun accessGroupsChannelBindingsUpdate(groupId: String, body: AdminAccessGroupChannelBindingsReplaceRequest): AccessGroupsChannelBindingsUpdateResult? {
-        val raw = client.put(ApiPaths.backendPath("/iam/access_groups/${serializePathParameter(groupId, PathParameterSpec("groupId", "simple", false))}/channel_bindings"), body, null, null, "application/json")
-        return client.convertValue(raw, object : TypeReference<AccessGroupsChannelBindingsUpdateResult>() {})
-    }
-
     /** List API key map */
     suspend fun apiKeysList(): ApiKeysListResult? {
         val raw = client.get(ApiPaths.backendPath("/iam/api_keys"))

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dial-a-cron@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dial-a-cron-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dial-a-cron-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d81a0dd30e892f06560061e4b66dabcfc732901af1554f9dad854196c3193477",

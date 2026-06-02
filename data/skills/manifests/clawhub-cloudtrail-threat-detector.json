@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloudtrail-threat-detector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloudtrail-threat-detector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloudtrail-threat-detector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bcd74f79a078c07673e81f32d721f76baad9156dfc74ed2e98383701621c1dba",

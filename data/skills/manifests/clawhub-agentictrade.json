@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentictrade@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentictrade-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentictrade-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:20c6311e557bf3649648b3557ae26cb1cd184982c4384fe293d45f945d4f160a",

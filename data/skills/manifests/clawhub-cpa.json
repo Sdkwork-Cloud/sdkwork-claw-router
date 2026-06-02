@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cpa@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cpa-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cpa-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c745b347862d9db6aba3740f5779480d68fa0e49ec2a16917415dbcb4d8321f3",

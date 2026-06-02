@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marketing-os@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marketing-os-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marketing-os-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d25722ffac2729a3350a4511cbf879a903af4a5a204e625dcc4808bba86848e1",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dynamic-temperature@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-dynamic-temperature-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dynamic-temperature-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5fb3b12824d719884ac6fc8b36c8b2ea50e85f5233c8392dd44ee28f384b823d",

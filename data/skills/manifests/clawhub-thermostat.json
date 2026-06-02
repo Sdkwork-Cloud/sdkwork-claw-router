@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thermostat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-thermostat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thermostat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8477f7848a3c412f814d4d43b32110c893519239031e3cfd365b15a0e96dda79",

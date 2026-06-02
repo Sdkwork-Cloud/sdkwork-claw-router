@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/money-radar@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-money-radar-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-money-radar-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:119d2dee111c4f402157a01cb2bc0ccacdbee9aa52a3fbf48e3591e9f6f3116a",

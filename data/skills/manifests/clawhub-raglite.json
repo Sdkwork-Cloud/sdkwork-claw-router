@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/raglite@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-raglite-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-raglite-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:f84f0b8c0ce993f474da8afa5c7b55a7b11353f9f22dfbe450ea4ed7647af439",

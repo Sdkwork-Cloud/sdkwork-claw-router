@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/basecred@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-basecred-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-basecred-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cdc719decd2d063f8c12d47f2c31717066c02c79bfe992952f6f2f3629a13de4",

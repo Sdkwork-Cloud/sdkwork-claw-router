@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/s3-incident-runbooks@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-s3-incident-runbooks-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-s3-incident-runbooks-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ad0a08664a3348ab7c9493b440e806dbdae527f5f1431e8595c48aebbfb49db",

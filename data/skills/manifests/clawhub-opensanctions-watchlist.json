@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opensanctions-watchlist@0.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-opensanctions-watchlist-0.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opensanctions-watchlist-0.3.2.json"
+      },
       "version": "0.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:bfca64c00c4b514972ef9138ce44ffc8557f50aef8b4e734668f0fb2f0499765",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/libtv@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-libtv-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-libtv-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0aa56f72bfe269f1094519eefff8299498901ee6b750fe9de619601095e2157",

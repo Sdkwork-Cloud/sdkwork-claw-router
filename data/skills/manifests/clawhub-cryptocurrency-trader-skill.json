@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cryptocurrency-trader-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cryptocurrency-trader-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cryptocurrency-trader-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c739eb459850e68428de9e9291533f62c3ef9854e3a5d6cdafb8ea51c0550e5b",

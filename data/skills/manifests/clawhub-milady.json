@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/milady@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-milady-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-milady-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8174ad09b73f5ae494602169bb873ef1c5223b01acd612a20a04553f0632e72",

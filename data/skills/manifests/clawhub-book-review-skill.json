@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-review-skill@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-review-skill-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-review-skill-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:98700f09c5cebb2fa7497b590a4b07ccab2ccb3881da4717f0a04a7d46303cc2",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcporter-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcporter-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcporter-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc8912d543f5d5777074e61906725e2e9935d2d52f54757d4b47c9b7655ade67",

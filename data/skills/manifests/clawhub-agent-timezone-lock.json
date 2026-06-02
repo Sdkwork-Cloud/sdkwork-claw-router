@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-timezone-lock@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-timezone-lock-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-timezone-lock-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8cfabe0a83af8e78c49642caf2fd49b68f65388d7e02f157670c749c60935504",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdfmonkey@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdfmonkey-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdfmonkey-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:dba040fa373a49f55b58ebdd119307508b6ec2e274c86a750bf9126b4668d8b6",

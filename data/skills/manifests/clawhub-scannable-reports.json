@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scannable-reports@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scannable-reports-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scannable-reports-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ae49ae7db6079965598d5bc35150e3774e975235686212cd7fd0cc50cc46a696",

@@ -438,6 +438,7 @@ export default defineConfig(({mode}) => {
         { find: '@sdkwork/iam-runtime', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-runtime/src/index.ts') },
         { find: '@sdkwork/iam-sdk-ports', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-sdk-ports/src/index.ts') },
         { find: '@sdkwork/iam-service', replacement: path.resolve(appbaseRoot, 'packages/common/iam/sdkwork-iam-service/src/index.ts') },
+        { find: '@sdkwork/runtime-bootstrap', replacement: path.resolve(appbaseRoot, 'packages/common/foundation/sdkwork-runtime-bootstrap/src/index.ts') },
         { find: '@sdkwork/ui-pc-react/components/ui/button', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/components/ui/button.tsx') },
         { find: '@sdkwork/ui-pc-react/components/ui/feedback/states', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/components/ui/feedback/states.tsx') },
         { find: '@sdkwork/ui-pc-react/theme', replacement: path.resolve(sdkworkUiRoot, 'sdkwork-ui-pc-react/src/theme/index.ts') },

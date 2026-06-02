@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/notes-know-you@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-notes-know-you-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-notes-know-you-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:648769248761d6dbf748bf4c01861a374be6edcded8565854cdf0bab759656a9",

@@ -41,6 +41,7 @@ data class AiRuntimeInvocationRecord(
     val sandboxPolicy: String? = null,
     val startedAt: String? = null,
     val status: String? = null,
+    val streaming: Boolean? = null,
     val tenantId: String? = null,
     val toolCallId: String? = null,
     val toolName: String? = null,

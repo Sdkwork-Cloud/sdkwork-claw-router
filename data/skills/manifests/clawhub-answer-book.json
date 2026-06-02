@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/answer-book@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-answer-book-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-answer-book-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f9c4b0e2dab4a2d6d54c91e65a3f6838f7a493e8bdc94ab1650eaee2d38bc66",

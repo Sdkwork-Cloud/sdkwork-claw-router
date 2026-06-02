@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-optimizer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-optimizer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-optimizer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:80df2919a3f7055e625f418fd6d619b66f3cfa5232d22ef54797524ee9dfbe5e",

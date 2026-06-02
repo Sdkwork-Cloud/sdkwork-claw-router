@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill4agent-cn@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill4agent-cn-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill4agent-cn-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:13567761ef5d87a94d88c2f9af772fd9603aca7d0a762b83770f0e9e03be9084",

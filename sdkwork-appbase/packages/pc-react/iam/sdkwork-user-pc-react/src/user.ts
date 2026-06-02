@@ -1,6 +1,7 @@
 import {
   createSdkworkAppCapabilityManifest,
   type CreateSdkworkAppCapabilityManifestOptions,
+  type SdkworkMediaResource,
   type SdkworkAppCapabilityManifest,
 } from "@sdkwork/appbase-pc-react";
 import { searchDocuments, type SdkworkSearchDocument } from "@sdkwork/search-pc-react";
@@ -8,7 +9,7 @@ import { searchDocuments, type SdkworkSearchDocument } from "@sdkwork/search-pc-
 export type SdkworkUserCenterGroup = "account" | "billing" | "security" | "workspace";
 
 export interface SdkworkUserProfileInput {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   displayName?: string;
   email?: string;
   firstName?: string;
@@ -18,7 +19,7 @@ export interface SdkworkUserProfileInput {
 }
 
 export interface SdkworkUserProfileSummary {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   displayName: string;
   email?: string;
   id: string;
@@ -345,7 +346,7 @@ export function createUserProfileSummary(
   const displayName = computeDisplayName(profile);
 
   return {
-    avatarUrl: profile.avatarUrl,
+    avatar: profile.avatar,
     displayName,
     email: profile.email?.trim() || undefined,
     id: profile.id,

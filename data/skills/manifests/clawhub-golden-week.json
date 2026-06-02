@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golden-week@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-golden-week-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golden-week-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb120125572210f516c7139a997a755de0d135eafda6b4b2d8d7fd1a7b27b09c",

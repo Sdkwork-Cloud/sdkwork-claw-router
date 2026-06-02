@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/remarkable@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-remarkable-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-remarkable-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92ee8fe1a7ab005d31d1a48af837336f06602b69be51a8c3d1f7d6ff996f35bc",

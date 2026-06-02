@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lethe@0.1.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-lethe-0.1.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lethe-0.1.8.json"
+      },
       "version": "0.1.8",
       "runtime": "metadata",
       "checksumHash": "sha256:8abd51905b35cace9ba4113ac2bd5371fb1fb25314c7b03857089581cff9d02b",

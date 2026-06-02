@@ -630,7 +630,7 @@ namespace Sdkwork.ClawRouter.App.Api
         /// <summary>
         /// Recharges Orders Create
         /// </summary>
-        public async Task<Sdkwork.ClawRouter.App.Models.RechargesOrdersCreateResult?> RechargesOrdersCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceStandardCommandRequest body, string idempotencyKey)
+        public async Task<Sdkwork.ClawRouter.App.Models.RechargesOrdersCreateResult?> RechargesOrdersCreateAsync(Sdkwork.ClawRouter.App.Models.CommerceRechargeOrderCreateRequest body, string idempotencyKey)
         {
             var requestHeaders = BuildRequestHeaders(
                 new Dictionary<string, HeaderParameterSpec>
@@ -662,6 +662,14 @@ namespace Sdkwork.ClawRouter.App.Api
                 new QueryParameterSpec("status", status, "form", true, false, null),
             });
             return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.RechargesPackagesListResult>(ApiPaths.AppendQueryString(ApiPaths.AppPath("/recharges/packages"), queryString));
+        }
+
+        /// <summary>
+        /// Recharges Settings Retrieve
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.RechargesSettingsRetrieveResult?> RechargesSettingsRetrieveAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.RechargesSettingsRetrieveResult>(ApiPaths.AppPath("/recharges/settings"));
         }
 
         /// <summary>

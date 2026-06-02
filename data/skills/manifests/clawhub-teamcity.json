@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/teamcity@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-teamcity-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-teamcity-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1baf5b8e273dca35e4c57212bdef2025ce0b4049823835eed20b36f6c9acdcb9",

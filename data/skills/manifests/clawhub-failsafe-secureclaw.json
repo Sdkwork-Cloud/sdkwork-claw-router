@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/failsafe-secureclaw@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-failsafe-secureclaw-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-failsafe-secureclaw-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:46ed1ece86f06dcf0c0dbdff686b9065a4c4e7d841137a0868b60241480ed4d3",

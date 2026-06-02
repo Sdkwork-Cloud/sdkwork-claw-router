@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tax-guide@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tax-guide-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tax-guide-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9a7ec50c544a84edbeb09160065f5405bbd136b9cbb3bac29a8c879b18f80a6d",

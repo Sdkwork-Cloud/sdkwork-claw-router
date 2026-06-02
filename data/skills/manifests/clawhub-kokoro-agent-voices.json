@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kokoro-agent-voices@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-kokoro-agent-voices-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kokoro-agent-voices-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:413640c347b2b387a67df3fc717e921b41f0b00a5096e3b33fac2ba57cb80009",

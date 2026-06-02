@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-sentence-correction@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-sentence-correction-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-sentence-correction-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6815b99a7dd17237ce4653df96cc63d85ef57c815a6d777504e993dd1003faf0",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/excel-skill02@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-excel-skill02-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-excel-skill02-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8cc5065cb0a18875cbcc5072260ee6845b0b92b107e5527460669c367504264a",

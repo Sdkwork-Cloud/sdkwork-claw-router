@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/browser-gemini-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-browser-gemini-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-browser-gemini-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0dff182399b359860ed0f110364d9635638e3937af8fb817a087c9d105d55110",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flask@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flask-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flask-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3d13c524b197285a5faa281da55d756808340131e9999eaca6f2f39345d2057",

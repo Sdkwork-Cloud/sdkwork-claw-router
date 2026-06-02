@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spell@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spell-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spell-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:38a4b7ba84e2455824bae2e560e5c484e9652e0dea7576fe79f013ed4c920fe9",

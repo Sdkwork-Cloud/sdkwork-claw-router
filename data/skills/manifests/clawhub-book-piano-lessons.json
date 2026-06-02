@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-piano-lessons@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-piano-lessons-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-piano-lessons-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ff6d997c50bcf07241551e179dcd370fe28983f30b2b05676187c9f78a62e133",

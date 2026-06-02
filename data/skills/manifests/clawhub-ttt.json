@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ttt@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ttt-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ttt-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1b41430df7f3135a285671d829e54c2c49ca0a06beef40617178754198c75fe0",

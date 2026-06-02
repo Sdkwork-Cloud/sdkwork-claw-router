@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buying@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-buying-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buying-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0538317da08aca68af818fbe8c5836eb5997f4fcc2d17ae35cfc803ef79f3c21",

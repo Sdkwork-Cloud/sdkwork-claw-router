@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memoclaw@1.23.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-memoclaw-1.23.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memoclaw-1.23.5.json"
+      },
       "version": "1.23.5",
       "runtime": "metadata",
       "checksumHash": "sha256:233d77a9067a686e014af50c2c5b983e390fa44827ed1016e8c87972fe29cc7a",

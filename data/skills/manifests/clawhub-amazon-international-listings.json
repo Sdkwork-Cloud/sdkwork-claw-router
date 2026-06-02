@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-international-listings@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-international-listings-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-international-listings-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dcbf3c071f65441c47dff6db8f1859cc5545936ffcceb80f54a2dec1ae048b39",

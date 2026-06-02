@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paytm-integration-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-paytm-integration-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paytm-integration-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:fa9b11e455d1aae731eb2307f3ef9c025ef1c6281f0fa9d1178f4076504c1f9c",

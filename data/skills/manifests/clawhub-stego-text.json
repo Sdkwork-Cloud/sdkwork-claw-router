@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stego-text@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-stego-text-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stego-text-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6928a5ca28a1348585794520021b10ad67fdffa97071bff8fd21da30acc1f59e",

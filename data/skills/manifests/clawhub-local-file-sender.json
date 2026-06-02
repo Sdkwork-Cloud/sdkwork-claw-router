@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-file-sender@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-file-sender-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-file-sender-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:de03da26993ea32c6883631df04954c630117660da6b681c766774f458fa02aa",

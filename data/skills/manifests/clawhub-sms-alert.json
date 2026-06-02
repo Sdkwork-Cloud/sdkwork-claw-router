@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sms-alert@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-sms-alert-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sms-alert-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:634853b573b04bbd17563dd0a610fe7ae7ca0dd3923e63fa51b96fb0f2153b59",

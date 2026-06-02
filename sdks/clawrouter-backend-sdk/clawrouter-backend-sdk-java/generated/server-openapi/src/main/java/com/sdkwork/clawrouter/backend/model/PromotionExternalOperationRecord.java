@@ -16,6 +16,7 @@ public class PromotionExternalOperationRecord {
     private String externalOperationId;
     private String externalRequestNo;
     private String externalStatus;
+    private String id;
     private String idempotencyKey;
     private String nextRetryAt;
     private String occurredAt;
@@ -28,6 +29,7 @@ public class PromotionExternalOperationRecord {
     private String replayOpId;
     private String requestHash;
     private String responseHash;
+    private Integer retryCount;
     private Map<String, String> sanitizedRequestJson;
     private Map<String, String> sanitizedResponseJson;
     private String status;
@@ -137,6 +139,14 @@ public class PromotionExternalOperationRecord {
         this.externalStatus = externalStatus;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getIdempotencyKey() {
         return this.idempotencyKey;
     }
@@ -231,6 +241,14 @@ public class PromotionExternalOperationRecord {
 
     public void setResponseHash(String responseHash) {
         this.responseHash = responseHash;
+    }
+
+    public Integer getRetryCount() {
+        return this.retryCount;
+    }
+
+    public void setRetryCount(Integer retryCount) {
+        this.retryCount = retryCount;
     }
 
     public Map<String, String> getSanitizedRequestJson() {

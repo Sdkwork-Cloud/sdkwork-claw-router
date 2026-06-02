@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::app_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelVendorsListResult, ModelsListResult, UsageLogsListResult};
+use crate::models::{ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelVendorsListResult, ModelsListResult, UsageLogsListResult};
 
 #[derive(Clone)]
 pub struct AiApi {
@@ -13,6 +13,12 @@ pub struct AiApi {
 impl AiApi {
     pub fn new(client: Arc<SdkworkHttpClient>) -> Self {
         Self { client }
+    }
+
+    /// List groups
+    pub async fn channel_groups_list(&self) -> Result<ChannelGroupsListResult, SdkworkError> {
+        let path = app_path(&"/ai/channel_groups".to_string());
+        self.client.get(&path, None, None).await
     }
 
     /// List dashboard overview

@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Runtime artifact create request schema exposed by Claw Router. */
 export interface RuntimeArtifactCreateRequest {
@@ -14,12 +15,12 @@ export interface RuntimeArtifactCreateRequest {
   mimeType?: string;
   /** Name field on runtime artifact create request. */
   name?: string;
+  /** Resource field on runtime artifact create request. */
+  resource?: MediaResource;
   /** Sha 256 field on runtime artifact create request. */
   sha256?: string;
   /** Size bytes field on runtime artifact create request. */
   sizeBytes?: number;
   /** Storage key field on runtime artifact create request. */
   storageKey?: string;
-  /** Storage url field on runtime artifact create request. */
-  storageUrl?: string;
 }

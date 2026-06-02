@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drumstick@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-drumstick-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drumstick-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c39ddda32312f0bbd441edd32be9cdf738606fc5621231ecef2d4a660b890386",

@@ -8,6 +8,8 @@ export interface CommercePriceListRecord {
   customer_segment?: string;
   /** Ends at field on commerce price list record. */
   ends_at?: string;
+  /** Id field on commerce price list record. */
+  id?: string;
   /** Market code field on commerce price list record. */
   market_code?: string;
   /** Organization id field on commerce price list record. */

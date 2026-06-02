@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/human-google-manager@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-human-google-manager-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-human-google-manager-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3732dee1cfb179299a7ff78e604e2ea459f6a331e0ab0a99b76330f1162d2e82",

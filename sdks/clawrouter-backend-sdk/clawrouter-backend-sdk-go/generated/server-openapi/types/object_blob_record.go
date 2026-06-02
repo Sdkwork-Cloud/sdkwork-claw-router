@@ -13,14 +13,17 @@ type ObjectBlobRecord struct {
 	Id string `json:"id"`
 	KmsKeyRef string `json:"kms_key_ref"`
 	LastVerifiedAt string `json:"last_verified_at"`
+	LegalHold bool `json:"legal_hold"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	ObjectKey string `json:"object_key"`
 	OrganizationId string `json:"organization_id"`
 	OriginalFilename string `json:"original_filename"`
 	OwnerId string `json:"owner_id"`
 	OwnerType string `json:"owner_type"`
+	PhysicalSizeBytes string `json:"physical_size_bytes"`
 	ProviderId string `json:"provider_id"`
 	RetentionUntil string `json:"retention_until"`
+	SizeBytes string `json:"size_bytes"`
 	Status string `json:"status"`
 	StorageClass string `json:"storage_class"`
 	StorageEtag string `json:"storage_etag"`

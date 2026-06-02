@@ -4,7 +4,7 @@ package types
 type ForumCommunityLink struct {
 	Id string `json:"id"`
 	Label string `json:"label"`
-	QrCodeUrl string `json:"qrCodeUrl"`
+	QrCode MediaResource `json:"qrCode"`
 	Tone string `json:"tone"`
 	Url string `json:"url"`
 }

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sam@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sam-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sam-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:331746c9adfadbcf0bca3b0d501cd8c75b43f7000ec0bcb40b4eb6bed4fd1736",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dify-kb-search@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-dify-kb-search-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dify-kb-search-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:439fb9496904c33f592e7e4629a2c1107dbb02759f50b4108dfb03e0fd6c1af5",

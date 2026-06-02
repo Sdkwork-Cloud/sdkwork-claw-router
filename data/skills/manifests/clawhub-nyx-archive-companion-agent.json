@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nyx-archive-companion-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nyx-archive-companion-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nyx-archive-companion-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5cd7277b9beb28068635c6e43ba96a12242518953ca5b57b0c7e87fd4a23bfff",

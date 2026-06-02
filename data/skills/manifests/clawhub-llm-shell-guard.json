@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-shell-guard@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-shell-guard-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-shell-guard-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:65f48901cf960ce27b8a4c1eddc80e004561007c8bb7abf9b567341e67a0e869",

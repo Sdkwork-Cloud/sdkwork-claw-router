@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-gitee@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-gitee-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-gitee-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ccb0c2d6908b3beaa4f45485fbd153aace9abb0d7c2e89172f5d9e0da83837d9",

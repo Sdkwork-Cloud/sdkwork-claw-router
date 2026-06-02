@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nerve-bridge-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nerve-bridge-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nerve-bridge-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d3098721275a62a6cbcb2ca7bd529db14895edb0185578bb2a6f28ac28a250fe",

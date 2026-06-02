@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hermes-agent-yuhu@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hermes-agent-yuhu-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hermes-agent-yuhu-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ace56ef796eb572ccb66a8d842e5d6e0d77d74db76e0f6e8c1c40a7c8342ab65",

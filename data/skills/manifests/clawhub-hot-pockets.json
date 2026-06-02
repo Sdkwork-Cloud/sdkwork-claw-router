@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hot-pockets@99.99.99",
-      "artifactUrl": "data/skills/artifacts/clawhub-hot-pockets-99.99.99.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hot-pockets-99.99.99.json"
+      },
       "version": "99.99.99",
       "runtime": "metadata",
       "checksumHash": "sha256:df42334601b3e2f9b1a1ab39debc63486c2e048703dff3022688ceecb0e14214",

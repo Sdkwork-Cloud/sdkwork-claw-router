@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/storage-cleanup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-storage-cleanup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-storage-cleanup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dfe4fd7ab6706e820d02f7357241723a9d6c09fd0c06800fd7656058b4d79d7f",

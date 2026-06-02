@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modesty-ai-daily-briefing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-modesty-ai-daily-briefing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modesty-ai-daily-briefing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8c7ebff309a95f57d750c025c8a7ea2e9e3ee2e1f152014739b433248b69741c",

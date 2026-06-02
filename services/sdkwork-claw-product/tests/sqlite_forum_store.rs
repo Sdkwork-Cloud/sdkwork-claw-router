@@ -4,6 +4,7 @@ use sdkwork_claw_product::ports::{
     ForumCommentReadStore, ForumFeedCommandStore, ForumFeedQuery, ForumFeedReadStore, ForumSubject,
 };
 use sdkwork_claw_product_test_support::{repair_sqlite_pool, schema_sqlite_pool};
+use serde_json::json;
 
 #[tokio::test]
 async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
@@ -20,7 +21,12 @@ async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
                 title: Some("Provider fallback patterns".to_owned()),
                 content: "How should Claw Router handle model provider failover?".to_owned(),
                 category_id: Some(1001),
-                images: vec!["https://cdn.sdkwork.com/forum/failover.png".to_owned()],
+                images: vec![json!({
+                    "kind": "image",
+                    "source": "external_url",
+                    "url": "https://cdn.sdkwork.com/forum/failover.png",
+                    "publicUrl": "https://cdn.sdkwork.com/forum/failover.png"
+                })],
                 tags: vec!["routing".to_owned(), "fallback".to_owned()],
                 source: Some("community".to_owned()),
                 source_url: Some("https://sdkwork.com/forum/provider-fallback".to_owned()),
@@ -38,9 +44,11 @@ async fn sqlite_forum_store_uses_java_plus_feeds_and_comments_contract() {
     );
     assert_eq!("feeds", feed.content_type);
     assert_eq!(1001, feed.category_id);
+    assert_eq!("image", feed.cover["kind"]);
+    assert_eq!("external_url", feed.cover["source"]);
     assert_eq!(
         "https://cdn.sdkwork.com/forum/failover.png",
-        feed.cover_image
+        feed.cover["publicUrl"]
     );
     assert_eq!(vec!["routing".to_owned(), "fallback".to_owned()], feed.tags);
     assert_eq!(0, feed.view_count);

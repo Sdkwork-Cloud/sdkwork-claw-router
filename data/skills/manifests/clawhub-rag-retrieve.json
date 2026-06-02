@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rag-retrieve@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rag-retrieve-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rag-retrieve-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2c60edf11c6b26a62af65b2d5602098f406ae0c75a0ddf58d6ad2bec5ae6d8e",

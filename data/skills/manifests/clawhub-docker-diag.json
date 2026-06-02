@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-diag@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-diag-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-diag-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c097cbeff99f0542771f393373a8ffbaabd30dab44a3b21b92f09aa7592bbf7",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kingsumo@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-kingsumo-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kingsumo-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c08edbdc7d8fd48a525cbf2e39ac25f9019925be10096cc03e451122555469eb",

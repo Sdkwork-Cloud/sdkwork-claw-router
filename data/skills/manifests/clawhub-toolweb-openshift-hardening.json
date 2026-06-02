@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toolweb-openshift-hardening@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-openshift-hardening-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toolweb-openshift-hardening-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26c6bee708f45d386cadfb80997d0a2b0ff5df66939a676dde9acd3c5870536d",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentlux@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentlux-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentlux-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ea2f674a0a198108b3188f0edcd0c64165e4abc6e259877686984d4d02063f6",

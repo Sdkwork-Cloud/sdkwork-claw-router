@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fortune-telling@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fortune-telling-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fortune-telling-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eac7fc47f32fe6d4e91a82c1b8e6da33e43e955e88c6ee9c0a97d75012f6e6a4",

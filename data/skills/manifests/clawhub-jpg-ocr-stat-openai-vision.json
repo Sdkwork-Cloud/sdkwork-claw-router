@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jpg-ocr-stat-openai-vision@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jpg-ocr-stat-openai-vision-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jpg-ocr-stat-openai-vision-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3178693ae93f88e18dcb63e81386b28594adb4ff7470dcdbaad17d60ea20f1b3",

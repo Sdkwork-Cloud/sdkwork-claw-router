@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cargo-flight@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cargo-flight-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cargo-flight-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f64fb0ea8f42da236b47eb5804bdb1a16d51ba8cdd5847e149b6e6a35fc91df2",

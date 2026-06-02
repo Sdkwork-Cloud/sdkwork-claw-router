@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/graduation@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-graduation-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-graduation-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a5da2ef710fa94f7affef507802578f9120e29752d1817f43b5525c8d0dbc8a0",

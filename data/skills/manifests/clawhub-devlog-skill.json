@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/devlog-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-devlog-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-devlog-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:4c05a69d04090f6a6ba9f135cbd58c53393f685e7dd2a0709dad28f9613d2a15",

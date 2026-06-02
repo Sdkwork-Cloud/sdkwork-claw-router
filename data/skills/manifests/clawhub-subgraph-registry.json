@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subgraph-registry@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subgraph-registry-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subgraph-registry-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf718ce74c928c141041eb294196bdd725e4cc5168598e86a00b33d56f99ca70",

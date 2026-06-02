@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/warden-studio-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-warden-studio-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-warden-studio-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b5a70a0e7c2714ff112c38414e23f96a7df08fa3aa5e5a5fe973069cacdccc00",

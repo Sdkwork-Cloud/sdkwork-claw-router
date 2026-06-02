@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dockerfile-builder@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dockerfile-builder-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dockerfile-builder-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d2e722a0d3b4231dbb14d84e2fa73a3fb666563d6aa8af74b0cb3ab68a28d9d",

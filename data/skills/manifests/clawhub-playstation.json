@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/playstation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-playstation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-playstation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:911f71c76c5d04946a68c6374c30630c33d8a98f7ad0f16dd41ef8a856c988f8",

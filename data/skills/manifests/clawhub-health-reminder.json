@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-reminder@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-reminder-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-reminder-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:61c98c92991f32a90ebee6458ab5be3f08a0ce55f2f6ad74e6855c8537fad92a",

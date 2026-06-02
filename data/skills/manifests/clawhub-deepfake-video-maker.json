@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deepfake-video-maker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deepfake-video-maker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deepfake-video-maker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e8c6ed4336a9b787548788a890b3ebebd44278113d61c50a072fa95ea8889ac",

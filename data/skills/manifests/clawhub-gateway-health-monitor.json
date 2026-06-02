@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gateway-health-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gateway-health-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gateway-health-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:612f1c4395389a00b6213cbd2147ea2f9db25277d22294f7a14826eb3327828d",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dchat@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dchat-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dchat-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67c69a320dc8c1dec7a99720b8ef495c585b81361c09111db4066e380af9f2a8",

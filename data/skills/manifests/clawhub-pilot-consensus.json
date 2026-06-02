@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-consensus@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-consensus-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-consensus-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e5071b3fbfdc42f2adf6069e70b8b5790bccb54211300f1c80588e32323f3c5",

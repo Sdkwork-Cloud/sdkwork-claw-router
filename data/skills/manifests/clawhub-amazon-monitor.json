@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b403a55c68150a3a03b8d74666cd948230598ff657b2508a5a14b1632c61daba",

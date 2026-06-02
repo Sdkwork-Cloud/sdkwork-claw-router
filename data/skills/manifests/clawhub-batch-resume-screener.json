@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/batch-resume-screener@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-batch-resume-screener-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-batch-resume-screener-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0771ebe4a02bcca44c1df1c96112872d6034bad93856074e6c96ad19a730df99",

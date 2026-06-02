@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-deep-reader@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-deep-reader-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-deep-reader-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6d9288f0b25d2006ec8fa9fc596ab5e0f98db2fe680c7f2d35f37d729938f53f",

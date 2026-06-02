@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-discovery-seo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-discovery-seo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-discovery-seo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a80b6b436d66e3901c092b4df20eb75c066cda83f0dec46494b56109fb90a50e",

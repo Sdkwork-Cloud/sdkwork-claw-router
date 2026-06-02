@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nooks@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-nooks-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nooks-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:457efe69ab01fa057f45786abc341670c38b50e729dd82a1702b664ace57ee07",

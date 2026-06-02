@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-rooom@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-rooom-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-rooom-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:83590d8a802657a88ae34dcebbbb5eb5c2e67bb9f136fa5952b2a35f9e7cb50b",

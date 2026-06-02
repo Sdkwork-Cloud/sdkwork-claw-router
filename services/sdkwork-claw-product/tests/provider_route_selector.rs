@@ -3,7 +3,7 @@ use sdkwork_claw_product::application::{
     SelectProviderChannelRouteQuery, SelectProviderRouteQuery,
 };
 use sdkwork_claw_product::domain::{
-    AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
     ProviderChannelRoute, RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicy,
     RoutingPolicyScope, RoutingRule,
@@ -32,7 +32,7 @@ fn base_catalog() -> InMemoryPricingCatalog {
         DecimalValue::parse("1.200000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
@@ -130,7 +130,7 @@ fn add_group_policy_rule(
         10,
         20,
         &format!("group-policy-{policy_id}"),
-        RoutingPolicyScope::ApiKeyGroup,
+        RoutingPolicyScope::ChannelGroup,
         Some(10),
         Some(profile_id),
     ));
@@ -191,7 +191,7 @@ fn channel_route_api_code(route_key: &str) -> &str {
 }
 
 #[test]
-fn selector_prefers_api_key_group_policy_over_global_policy() {
+fn selector_prefers_channel_group_policy_over_global_policy() {
     let mut catalog = base_catalog();
     add_callable_route(
         &mut catalog,
@@ -272,7 +272,7 @@ fn selector_prefers_policy_matching_the_request_capability() {
             10,
             20,
             "group-embedding-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(101),
         )
@@ -297,7 +297,7 @@ fn selector_prefers_policy_matching_the_request_capability() {
             10,
             20,
             "group-chat-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(201),
         )
@@ -362,7 +362,7 @@ fn selector_prefers_capability_specific_policy_over_generic_policy_in_same_scope
             10,
             20,
             "group-chat-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(201),
         )
@@ -439,7 +439,7 @@ fn selector_rejects_group_policy_without_requested_capability_instead_of_global_
             10,
             20,
             "group-embedding-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(201),
         )
@@ -472,7 +472,7 @@ fn selector_rejects_group_policy_without_requested_capability_instead_of_global_
     );
     assert!(error
         .to_string()
-        .contains("api key group policy scope has no routing policy for capability Chat"));
+        .contains("channel group policy scope has no routing policy for capability Chat"));
 }
 
 #[test]
@@ -576,7 +576,7 @@ fn selector_plan_respects_policy_fallback_mode_none() {
             10,
             20,
             "group-policy-no-fallback",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(201),
         )
@@ -632,7 +632,7 @@ fn selector_rejects_rule_fallback_chain_when_policy_fallback_mode_is_none() {
             10,
             20,
             "group-policy-no-fallback",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(201),
         )
@@ -759,7 +759,7 @@ fn selector_prices_candidate_routes_with_canonical_catalog_key_and_region_contex
         DecimalValue::parse("1.000000").unwrap(),
         Money::cny("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
@@ -975,7 +975,7 @@ fn selector_routes_group_bound_channel_route_by_route_key_without_explicit_polic
 }
 
 #[test]
-fn selector_prefers_api_key_group_channel_route_over_global_policy() {
+fn selector_prefers_channel_group_channel_route_over_global_policy() {
     let mut catalog = base_catalog();
     add_callable_channel_route(&mut catalog, 3001, "openrouter-global");
     add_callable_channel_route(&mut catalog, 3002, "openrouter-group");
@@ -1382,7 +1382,7 @@ fn selector_routes_group_bound_channel_route_without_explicit_policy_rule() {
 }
 
 #[test]
-fn selector_explains_when_channel_route_exists_but_api_key_group_has_no_matching_binding() {
+fn selector_explains_when_channel_route_exists_but_channel_group_has_no_matching_binding() {
     let mut catalog = base_catalog();
     catalog.add_provider_channel_route(
         ProviderChannelRoute::new("openrouter", 3001)
@@ -1999,7 +1999,7 @@ fn selector_uses_bound_channel_route_weight_when_priorities_match() {
 }
 
 #[test]
-fn selector_rejects_channel_route_when_group_bindings_exist_but_not_for_api_key_group() {
+fn selector_rejects_channel_route_when_group_bindings_exist_but_not_for_channel_group() {
     let mut catalog = base_catalog();
     catalog.add_provider_channel_route(
         ProviderChannelRoute::new("openrouter-other-group", 3001)
@@ -2032,7 +2032,7 @@ fn selector_rejects_channel_route_when_group_bindings_exist_but_not_for_api_key_
 }
 
 #[test]
-fn selector_rejects_model_route_when_group_bindings_exist_but_not_for_api_key_group() {
+fn selector_rejects_model_route_when_group_bindings_exist_but_not_for_channel_group() {
     let mut catalog = base_catalog();
     add_callable_route(
         &mut catalog,

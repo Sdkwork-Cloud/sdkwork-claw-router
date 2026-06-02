@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-translate@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-translate-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-translate-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f7b919babfc3333d097263e61d815216cbd819320780313b4e7aedc9b5a4da92",

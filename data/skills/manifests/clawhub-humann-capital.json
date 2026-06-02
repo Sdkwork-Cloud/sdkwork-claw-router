@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/humann-capital@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-humann-capital-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-humann-capital-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd3e90e67f455b0651068bf179018e0b214b3779c851674f0edad36cdaf666c7",

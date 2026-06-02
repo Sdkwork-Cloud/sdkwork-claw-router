@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/freerid@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-freerid-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-freerid-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c987ecf92f1144b78fe54da84bacacfdb75ed9d094524ba513762a33186b003a",

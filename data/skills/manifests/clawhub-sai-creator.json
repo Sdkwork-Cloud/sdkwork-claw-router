@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sai-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sai-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sai-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff87c28833e307017418d0d47424575551ec484e475187e1dbe32140b2c02997",

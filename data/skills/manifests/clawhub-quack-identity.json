@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quack-identity@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quack-identity-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quack-identity-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c24951293bba02471e5e2a43346845141ea770ebeed77f676b4ccba8b497facb",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/camscanner-image-hd@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-camscanner-image-hd-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-camscanner-image-hd-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:afcf5af11249f3a2fb14473867895eb3ef89644471d27170d763347cd55d17e4",

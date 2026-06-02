@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skylv-package-updater@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skylv-package-updater-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skylv-package-updater-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1df19aaef71e70790644a7ec128b991d4e79270ef5bb92c6aa534a428ab18319",

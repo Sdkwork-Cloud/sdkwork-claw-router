@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/azure-doc-ocr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-azure-doc-ocr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-azure-doc-ocr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee78468453f1abedf97b0515e247523d371d74c74e60b4d2a9f1298b091c065a",

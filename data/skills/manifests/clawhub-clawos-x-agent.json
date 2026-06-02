@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawos-x-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawos-x-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawos-x-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1da4f0a02970c1c0f0321398db7dfbc618cec4f84dd5d6ffc8b712a925646942",

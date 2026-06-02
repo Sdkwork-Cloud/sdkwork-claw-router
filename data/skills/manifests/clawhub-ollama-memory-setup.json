@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ollama-memory-setup@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-ollama-memory-setup-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ollama-memory-setup-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:182a60d808eeef1e258783944db3f0871206d877165dca561ea0ce259818b301",

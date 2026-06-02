@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gdpr-pci-checklist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gdpr-pci-checklist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gdpr-pci-checklist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b575f7942ce8ed977d4378f5f59f8d649e11aa25867abbd05112c4765a8475b7",

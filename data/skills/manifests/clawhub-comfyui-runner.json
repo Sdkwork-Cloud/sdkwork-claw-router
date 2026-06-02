@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comfyui-runner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-runner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comfyui-runner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b222ad0166e31b07b54cf6f06ac5d9727a0f49a5332f8bb9b80781b84108726e",

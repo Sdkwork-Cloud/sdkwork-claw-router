@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/long-memory@7.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-long-memory-7.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-long-memory-7.2.0.json"
+      },
       "version": "7.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db0e8b6d19e3dd332b245d8afc91eafabbefa038372ff02cb696b4b232a25428",

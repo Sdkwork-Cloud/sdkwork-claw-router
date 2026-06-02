@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hk-stock-short-selling@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hk-stock-short-selling-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hk-stock-short-selling-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f2b04d14bebcca8728d3c08202e5fdc14a88723ec4a89773f64519564e6fb747",

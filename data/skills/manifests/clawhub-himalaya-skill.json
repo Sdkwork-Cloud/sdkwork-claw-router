@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/himalaya-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-himalaya-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-himalaya-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ef469fb90a311315aed39e10d5f3668c95e272484ffd890d8ec6704813535a8",

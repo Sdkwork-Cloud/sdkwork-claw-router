@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-tweet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-tweet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-tweet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a7b762f4b8d7b64a4a894eaa1b18e9f8b2d3a32bbec18e0c4590e6509f995cb8",

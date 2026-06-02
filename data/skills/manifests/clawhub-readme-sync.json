@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/readme-sync@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-readme-sync-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-readme-sync-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:956b7eb910e3d0eb1386af1466dbb4a3380a9271f8e6e392c1ab376f14b19fa3",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pptx-ocr@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pptx-ocr-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pptx-ocr-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f07a699aabbb0575c45352ed4f4460a42e8b4b3580e45e85d33c32beaed7637e",

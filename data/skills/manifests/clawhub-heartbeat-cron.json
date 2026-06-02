@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heartbeat-cron@0.4.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-heartbeat-cron-0.4.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heartbeat-cron-0.4.4.json"
+      },
       "version": "0.4.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9d32eee8186c50e61c8bbbe2d967b5dba119bbada4d1223e1b1829864a18f7fe",

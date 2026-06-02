@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edgeone-skill-scanner@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-edgeone-skill-scanner-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edgeone-skill-scanner-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:09f2d29fdf4d0fdc25347e2880f384baea24f740b5d7a12e44a6fb09c60d50ca",

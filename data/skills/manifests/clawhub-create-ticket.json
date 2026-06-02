@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-ticket@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-ticket-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-ticket-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1822394732c181f9ea86a9c97c5317f103ed4eb63f3f8a311ce862453dc89578",

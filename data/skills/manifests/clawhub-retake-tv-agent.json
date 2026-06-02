@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/retake-tv-agent@2.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-retake-tv-agent-2.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-retake-tv-agent-2.1.2.json"
+      },
       "version": "2.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:50f87a772664435379b7944fbd1595c7e7c9205cd4c17d37bdf40468e7225068",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-kline-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-kline-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-kline-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b165426dec699c6ddcbd3465cec8e6c307055bc0312fb3384a1e878a05814087",

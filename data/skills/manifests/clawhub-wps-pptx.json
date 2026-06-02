@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wps-pptx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wps-pptx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wps-pptx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7246e2b81ee9f078dd6cf8ee224b2b9dcf29849aea7fdd5d0f488438075bed8b",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wa-relay-skill@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wa-relay-skill-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wa-relay-skill-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:875fef1ff1433b244204fa731dcdb96e5076c54d211d21a9f5e34a6e64dd54b5",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-config-validator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-config-validator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-config-validator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e81010c4af57b380aed2b0cf060267198053c30722d36c47b1da2d47312ae78",

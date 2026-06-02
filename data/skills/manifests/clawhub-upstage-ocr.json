@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/upstage-ocr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-upstage-ocr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-upstage-ocr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:822ab2b302d6b8099b088ea419e25f884d49ac3aedb515f52ad1c77662baa42b",

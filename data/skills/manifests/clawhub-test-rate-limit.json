@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-rate-limit@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-rate-limit-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-rate-limit-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3668f81f32d31ac976c397c9499e3497a6a527a4929888dc3b5c5bbccde85237",

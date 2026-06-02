@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tekin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tekin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tekin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:303d2f16e1e77a60ea737801cb027202f10d956a485d5f8bb0e8ed14f3b417ea",

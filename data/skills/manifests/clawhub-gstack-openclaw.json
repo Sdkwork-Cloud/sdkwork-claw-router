@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gstack-openclaw@2.5.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-gstack-openclaw-2.5.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gstack-openclaw-2.5.10.json"
+      },
       "version": "2.5.10",
       "runtime": "metadata",
       "checksumHash": "sha256:ae6cf5c3cbccdfaf45f62ebb8cdc0b3caf8f58b25c7aaaf4357a69e35ecfe98e",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finops-cloud-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-finops-cloud-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finops-cloud-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:445f6454c5cb715e69031ebde0e2eda913e8e8b6aa71c3d0c237b6dbb5e9b12d",

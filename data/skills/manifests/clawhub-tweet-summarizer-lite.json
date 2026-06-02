@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tweet-summarizer-lite@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tweet-summarizer-lite-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tweet-summarizer-lite-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:31f305e247cc8894e274c84fdc63bfd11ef9ee4e3691d51232dd5a79444b9e4d",

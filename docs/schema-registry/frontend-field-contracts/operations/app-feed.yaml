@@ -74,9 +74,8 @@ frontend_operations:
               type: string
               minLength: 1
               maxLength: 2048
-            qrCodeUrl:
-              type: string
-              maxLength: 2048
+            qrCode:
+              $ref: '#/components/schemas/MediaResource'
             tone:
               type: string
               enum:
@@ -174,7 +173,7 @@ frontend_operations:
       - title
       - content
       - summary
-      - coverImage
+      - cover
       - contentType
       - categoryId
       - tags
@@ -205,9 +204,8 @@ frontend_operations:
         summary:
           type: string
           maxLength: 1024
-        coverImage:
-          type: string
-          maxLength: 2048
+        cover:
+          $ref: '#/components/schemas/MediaResource'
         contentType:
           type: string
           enum:
@@ -241,8 +239,7 @@ frontend_operations:
               minLength: 1
               maxLength: 128
             avatar:
-              type: string
-              maxLength: 2048
+              $ref: '#/components/schemas/MediaResource'
             bio:
               type: string
               maxLength: 512
@@ -328,8 +325,7 @@ frontend_operations:
         type: array
         maxItems: 20
         items:
-          type: string
-          maxLength: 2048
+          $ref: '#/components/schemas/MediaResource'
       tags:
         type: array
         maxItems: 20

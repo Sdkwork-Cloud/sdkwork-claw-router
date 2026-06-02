@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pepsi-cola@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pepsi-cola-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pepsi-cola-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7283927bb35ee3142d62abef6869659f32de70488eb28551dc43d9ecb395764",

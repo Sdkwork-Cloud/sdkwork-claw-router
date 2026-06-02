@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ocean-chat@2.10.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ocean-chat-2.10.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ocean-chat-2.10.2.json"
+      },
       "version": "2.10.2",
       "runtime": "metadata",
       "checksumHash": "sha256:fad88f61a00a1361d6fd109ab37875e12d7d371433ae2e6b0f70cbbf8fad5a6c",

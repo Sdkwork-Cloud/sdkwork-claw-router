@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/free-motion-video-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-free-motion-video-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-free-motion-video-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:72d01eec2442b37e5aa67e06e1e23b80375fb3a0ea4f57527040646f07fed692",

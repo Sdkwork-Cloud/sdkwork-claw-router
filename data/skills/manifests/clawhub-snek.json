@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snek@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-snek-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snek-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a791c976955541b9c2cd73d0eadc66af33ef68983af8cc8767d8d5a0d72c8125",

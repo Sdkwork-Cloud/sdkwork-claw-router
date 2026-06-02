@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slipbot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slipbot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slipbot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:38c7022ef4a4344d8366101f65c5a9508f8bbe92fdb439816e6796338792d7c4",

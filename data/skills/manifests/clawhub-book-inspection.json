@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-inspection@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-inspection-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-inspection-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d88624e908e2c29ed1345b425625fc30ede2a20060a80cba49cfd3814b8f3248",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/devops-automation-pack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-devops-automation-pack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-devops-automation-pack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9c81251280fcae12f2daca128cc5fd8207d4b5fc530fca85710945b4fbbe783b",

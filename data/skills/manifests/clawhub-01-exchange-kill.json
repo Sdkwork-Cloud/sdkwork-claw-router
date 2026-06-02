@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/01-exchange-kill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-01-exchange-kill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-01-exchange-kill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:825915e585cb65ed7397485787efa9b38c2875bc4710761ca2eb36a22f21a7e2",

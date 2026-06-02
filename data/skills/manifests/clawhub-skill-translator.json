@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-translator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-translator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-translator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0cd92ca2cd9b7ecb739bbc5c239ca9fb7f3f83ba75228006c451a47e3683334",

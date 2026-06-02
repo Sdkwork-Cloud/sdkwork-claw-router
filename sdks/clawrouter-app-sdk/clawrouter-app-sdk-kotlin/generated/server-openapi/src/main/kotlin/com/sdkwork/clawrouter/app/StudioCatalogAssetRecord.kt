@@ -3,8 +3,8 @@ package com.sdkwork.clawrouter.app
 data class StudioCatalogAssetRecord(
     val altText: String? = null,
     val artifactId: String? = null,
+    val asset: MediaResource? = null,
     val assetType: String? = null,
-    val assetUrl: String? = null,
     val createdAt: String? = null,
     val dataScope: String? = null,
     val deletedAt: String? = null,
@@ -22,7 +22,7 @@ data class StudioCatalogAssetRecord(
     val targetId: String? = null,
     val targetType: String? = null,
     val tenantId: String? = null,
-    val thumbnailUrl: String? = null,
+    val thumbnail: MediaResource? = null,
     val title: String? = null,
     val updatedAt: String? = null,
     val uuid: String? = null,

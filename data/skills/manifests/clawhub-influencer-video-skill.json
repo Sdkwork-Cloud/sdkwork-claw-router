@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/influencer-video-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-influencer-video-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-influencer-video-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:144d58787cc2c0a87c94a570f49acef845187e42d852dc953b912d33dd4af3a2",

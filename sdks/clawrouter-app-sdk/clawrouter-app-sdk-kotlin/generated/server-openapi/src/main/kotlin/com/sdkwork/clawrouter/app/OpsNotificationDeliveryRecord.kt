@@ -1,6 +1,7 @@
 package com.sdkwork.clawrouter.app
 
 data class OpsNotificationDeliveryRecord(
+    val appId: String? = null,
     val archivedAt: String? = null,
     val createdAt: String? = null,
     val dataScope: String? = null,

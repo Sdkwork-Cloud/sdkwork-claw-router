@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medical-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-medical-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medical-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:983767de6d1823539ada5c36fad7336028c8828dcc1bc9722d3e22fa38c83693",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/graceful-restart@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-graceful-restart-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-graceful-restart-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e63b816b6ee936e06d31e4086de6849d3f7df159b5b609fd01704162a9a6f3c2",

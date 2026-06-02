@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cmdb-query@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cmdb-query-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cmdb-query-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98e57eb6ddaf89b8396e1d2534d9190190eaa1709420e0e65b71d7ebe4a17c08",

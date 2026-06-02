@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/doc-converter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-doc-converter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-doc-converter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce420d1b51b190865c24757d5e77cf8163e889eb03520fb9439d10ae7c744f41",

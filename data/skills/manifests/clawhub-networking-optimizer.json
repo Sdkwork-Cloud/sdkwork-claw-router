@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/networking-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-networking-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-networking-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:332482900f230767673ab5ee56e545bd6da7f6316584f01b381d002ed30a5d2f",

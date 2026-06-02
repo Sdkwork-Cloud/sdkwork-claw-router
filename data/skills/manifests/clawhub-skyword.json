@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skyword@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-skyword-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skyword-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b3695323cdc59246adb018550e0724b983924c3b84bc99a83238ccce2052d55a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/file-sync@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-file-sync-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-file-sync-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e96947ddf4a2824f3ad8e92bc0ca9d58a8f140e11032f0c899d035b22c9ee5f6",

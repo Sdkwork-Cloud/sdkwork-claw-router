@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/postsyncer@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-postsyncer-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-postsyncer-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:791b12e1f06a82b8710776bb0e9b777e83a074172f4416719d682af27e2edc2d",

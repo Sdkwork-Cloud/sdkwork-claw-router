@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/immigration@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-immigration-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-immigration-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c390842a9b316cf7a150f80a28f9cd3be312756cfd984f0bed8dde93e209d2a1",

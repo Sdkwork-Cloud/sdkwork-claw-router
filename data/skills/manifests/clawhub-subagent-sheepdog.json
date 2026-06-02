@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subagent-sheepdog@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-subagent-sheepdog-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subagent-sheepdog-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f9e14a32437a4561969fc53bd1a596efb6323752837cdcc1f9e2fd7becf22ad9",

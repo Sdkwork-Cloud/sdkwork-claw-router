@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swamp@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swamp-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swamp-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9cbcaac594432b92b44fc2f27cfface587c0f1c8f559789f78a422604d459781",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/groq-whisper-api@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-groq-whisper-api-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-groq-whisper-api-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b5058d75c53383bdfff8eab57d2ca5f340e9cd4326061eb068542358affd7b9",

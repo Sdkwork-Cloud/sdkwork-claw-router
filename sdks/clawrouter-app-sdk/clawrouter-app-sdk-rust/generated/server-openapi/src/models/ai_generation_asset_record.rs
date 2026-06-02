@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Ai generation asset record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AiGenerationAssetRecord {
@@ -7,13 +9,13 @@ pub struct AiGenerationAssetRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub active_index: Option<i64>,
 
+    /// Asset field on ai generation asset record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub asset: Option<MediaResource>,
+
     /// Asset type field on ai generation asset record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub asset_type: Option<String>,
-
-    /// Asset url field on ai generation asset record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub asset_url: Option<String>,
 
     /// Created at field on ai generation asset record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -79,6 +81,10 @@ pub struct AiGenerationAssetRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub model_snapshot: Option<String>,
 
+    /// Object key field on ai generation asset record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub object_key: Option<String>,
+
     /// Organization id field on ai generation asset record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
@@ -111,10 +117,6 @@ pub struct AiGenerationAssetRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
 
-    /// Storage key field on ai generation asset record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub storage_key: Option<String>,
-
     /// Storage provider field on ai generation asset record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub storage_provider: Option<String>,
@@ -123,9 +125,9 @@ pub struct AiGenerationAssetRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub tenant_id: Option<String>,
 
-    /// Thumbnail url field on ai generation asset record.
+    /// Thumbnail field on ai generation asset record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub thumbnail_url: Option<String>,
+    pub thumbnail: Option<MediaResource>,
 
     /// Updated at field on ai generation asset record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

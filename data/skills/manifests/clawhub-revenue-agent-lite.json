@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/revenue-agent-lite@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-revenue-agent-lite-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-revenue-agent-lite-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c74d994e6c0acfb12c59156f40e4b113694cfefd539e63f9bbabee30df4725f",

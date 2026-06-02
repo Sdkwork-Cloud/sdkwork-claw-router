@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/macos-disk-cleaner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-macos-disk-cleaner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-macos-disk-cleaner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4d736276c051fa6d31ff464bc725a2faab7c8bfc59f03051ba78bce78970e009",

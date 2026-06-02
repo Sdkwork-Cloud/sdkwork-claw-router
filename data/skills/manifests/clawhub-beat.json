@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beat@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-beat-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beat-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00325e7d76310a6623a08e7e37886807d22aeafde2824111c82b9ed4a9e24511",

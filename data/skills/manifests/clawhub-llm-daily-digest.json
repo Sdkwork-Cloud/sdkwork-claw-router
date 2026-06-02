@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-daily-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-daily-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-daily-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4562d9b4f8c29440f5b3dc84d8767161a2f918265ade81c07a946c51cdc3ab23",

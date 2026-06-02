@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-for-ragflow@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-for-ragflow-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-for-ragflow-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:90af0f05532963a5d0c170c1587fab434d23eb6893a90d2f8474f9840237b02d",

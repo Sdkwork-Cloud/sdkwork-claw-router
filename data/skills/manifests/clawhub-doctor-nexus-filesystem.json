@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/doctor-nexus-filesystem@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-doctor-nexus-filesystem-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-doctor-nexus-filesystem-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7afa10fddf3ab8a1f06043d9e412b6dd5c381e729a58fbda3e88117b5694fa3c",

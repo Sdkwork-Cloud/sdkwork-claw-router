@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/elasticsearch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-elasticsearch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-elasticsearch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d6073f8a29978f760bcb0f7dfb7ac76c7fa892823f522ae6b6d586ac43fb6df5",

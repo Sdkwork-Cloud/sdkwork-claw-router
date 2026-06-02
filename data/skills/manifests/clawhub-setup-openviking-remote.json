@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/setup-openviking-remote@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-setup-openviking-remote-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-setup-openviking-remote-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5fc0c3ae5889dc28bb540db5e31b9f5b66a416eb42efcf08936b44391ac9e6da",

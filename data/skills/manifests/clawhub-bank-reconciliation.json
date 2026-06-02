@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bank-reconciliation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bank-reconciliation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bank-reconciliation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d34b98f1fbbc814ed47164d6f8585fe70456933c8fb44b2bd0a53b635d89682d",

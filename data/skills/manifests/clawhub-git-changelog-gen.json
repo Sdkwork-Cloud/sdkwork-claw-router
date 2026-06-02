@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-changelog-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-changelog-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-changelog-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0bed626161e61331cede1681c03b0e927de4b8e681acc723637e8976ce240b56",

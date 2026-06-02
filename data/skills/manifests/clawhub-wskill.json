@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wskill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wskill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wskill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8bfb379a965b015f3bfa312f61c93d7217f9d68f708c44ead54dd7582291081c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cartpilot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cartpilot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cartpilot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a8a9f01c2596fab16308cd3268c319776e793f6eb3bebba3eb6659827f30b7f",

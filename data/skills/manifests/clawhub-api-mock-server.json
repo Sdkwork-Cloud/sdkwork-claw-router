@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/api-mock-server@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-api-mock-server-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-api-mock-server-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ac3b53a57ebf887bb80045ac8df179159b52fbed7b65158f5f9222acb89f0b9",

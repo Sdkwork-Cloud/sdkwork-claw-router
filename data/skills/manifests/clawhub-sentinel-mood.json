@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentinel-mood@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentinel-mood-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentinel-mood-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de3dda7a53193a3f7fcce9e8df9f7f5cb2283eb7f3e9f44e62bcef3dcc3b069f",

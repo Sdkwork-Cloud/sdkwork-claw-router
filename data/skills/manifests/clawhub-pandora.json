@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pandora@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pandora-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pandora-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4dc2e90bf6234b0f1ca7ce202782c6b22b80505d94c1b75235bd20bcaaa8e07d",

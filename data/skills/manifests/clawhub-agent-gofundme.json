@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-gofundme@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-gofundme-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-gofundme-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f576f02e929f1a7085a436bf390d57749f48a4a29f4628713928a1b513d9ff47",

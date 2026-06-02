@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class AiProviderRecord:
@@ -22,7 +25,7 @@ class AiProviderRecord:
     deleted_by: Optional[str] = None
     description: Optional[str] = None
     docs_url: Optional[str] = None
-    icon_url: Optional[str] = None
+    icon: Optional[MediaResource] = None
     id: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
     metadata_schema_version: Optional[str] = None

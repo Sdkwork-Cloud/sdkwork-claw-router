@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ssh-config-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ssh-config-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ssh-config-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:72175572ffd67a715ca32d4b8bfdb9328457d0c7ee37abf58ff52726203f1034",

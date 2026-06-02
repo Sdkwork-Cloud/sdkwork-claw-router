@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vmware-aria@1.5.22",
-      "artifactUrl": "data/skills/artifacts/clawhub-vmware-aria-1.5.22.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vmware-aria-1.5.22.json"
+      },
       "version": "1.5.22",
       "runtime": "metadata",
       "checksumHash": "sha256:e3c68edf300c1948ebf2d85e2926595468136b76bbbb4e61699cd9ed1f49482e",

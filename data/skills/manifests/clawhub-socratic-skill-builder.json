@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/socratic-skill-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-socratic-skill-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-socratic-skill-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7983eedcf80b9aa68de2d0be4f00e6c4550a20f846468bf2bb4d76fa439d174",

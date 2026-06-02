@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slack-member-fetch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slack-member-fetch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slack-member-fetch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c6e12710d7c4cd71e1ec21c6337ed3c0d3086b20685826d60f78dc1805d3a21",

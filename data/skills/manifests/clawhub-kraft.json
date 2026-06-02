@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kraft@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kraft-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kraft-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15ffd49c4a6535332effbe0d5805f9ff79adcb4488bcb7b24fa8e44d223980c5",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/send-feishu-image@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-send-feishu-image-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-send-feishu-image-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2cb71eb99921ff2bc702040249b977e852501241323383b2fb1ddaddd66ae49",

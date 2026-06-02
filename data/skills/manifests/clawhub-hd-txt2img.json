@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hd-txt2img@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hd-txt2img-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hd-txt2img-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8add7873b2b6fc0a071f48f0ac81946ee4816bf83e5ab9b3f181707ad5d4fbda",

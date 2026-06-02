@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pay-with-bolt@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pay-with-bolt-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pay-with-bolt-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:186ee712e1585e864df952603892fc4fb5541d3eff47eb80beba0386f743cd34",

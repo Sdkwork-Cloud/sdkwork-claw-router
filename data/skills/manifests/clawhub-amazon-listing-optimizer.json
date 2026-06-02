@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-listing-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-listing-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-listing-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ed32d130d025d81fec1420a364f831500a1cfbcc91c20c421ffaff002ebc501",

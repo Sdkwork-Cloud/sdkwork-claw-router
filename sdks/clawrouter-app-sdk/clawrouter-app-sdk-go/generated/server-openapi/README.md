@@ -121,8 +121,8 @@ fmt.Println(result)
 ### ai
 
 ```go
-// List traces
-result, err := client.Ai.GatewayTracesList()
+// List groups
+result, err := client.Ai.ChannelGroupsList()
 if err != nil {
     panic(err)
 }
@@ -180,8 +180,8 @@ fmt.Println(result)
 ### iam
 
 ```go
-// List groups
-result, err := client.Iam.ApiKeyGroupsList()
+// List keys
+result, err := client.Iam.ApiKeysList()
 if err != nil {
     panic(err)
 }

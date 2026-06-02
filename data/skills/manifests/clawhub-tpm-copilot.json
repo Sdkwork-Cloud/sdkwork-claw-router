@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tpm-copilot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tpm-copilot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tpm-copilot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d6999c2808744eaca8e332f25915cea8a9af29a6fca6ea7975dc1b75dab4ed16",

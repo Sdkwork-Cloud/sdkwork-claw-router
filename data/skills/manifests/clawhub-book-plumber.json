@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-plumber@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-plumber-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-plumber-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:25e73b39f58cb2d536d3ad4a8d80a4ea31eeb4d57a6193c215616f523ea8dd1c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/selection-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-selection-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-selection-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f5dc9a92253e76ba803b18823bbe504bfb324564ba1da1b1b523dd394796023",

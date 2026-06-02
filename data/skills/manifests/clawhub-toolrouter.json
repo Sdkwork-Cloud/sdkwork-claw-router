@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toolrouter@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-toolrouter-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toolrouter-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3f0a5c0bd26d51230172176fe1be05872041463c4fb1248536284694dc036ccf",

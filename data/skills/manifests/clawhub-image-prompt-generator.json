@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-prompt-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-prompt-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-prompt-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a3538896249cf9b85d936bd496cc17a46fa115bf18284abb731be25e5c88d76a",

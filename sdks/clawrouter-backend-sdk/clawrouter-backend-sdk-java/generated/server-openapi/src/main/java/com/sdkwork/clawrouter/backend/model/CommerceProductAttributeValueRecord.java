@@ -5,7 +5,9 @@ public class CommerceProductAttributeValueRecord {
     private String attributeId;
     private String createdAt;
     private String displayValue;
+    private String id;
     private String organizationId;
+    private String sortOrder;
     private String status;
     private String tenantId;
     private String updatedAt;
@@ -35,12 +37,28 @@ public class CommerceProductAttributeValueRecord {
         this.displayValue = displayValue;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getOrganizationId() {
         return this.organizationId;
     }
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getSortOrder() {
+        return this.sortOrder;
+    }
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
     }
 
     public String getStatus() {

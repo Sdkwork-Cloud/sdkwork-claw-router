@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/messages-summary@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-messages-summary-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-messages-summary-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:298700f35e591dab47115450d6f2cc2a0c1a8d5b810fe4c8777b00eb04254c59",

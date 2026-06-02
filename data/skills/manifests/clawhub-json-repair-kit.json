@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/json-repair-kit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-json-repair-kit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-json-repair-kit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ce5443f6617f6b199a94882622b10e53cc44d2ddeff0469c7230f163b931b6b",

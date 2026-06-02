@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lobster-says@2.5.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-lobster-says-2.5.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lobster-says-2.5.8.json"
+      },
       "version": "2.5.8",
       "runtime": "metadata",
       "checksumHash": "sha256:feb3a01a28d3e8c5cd8885fcc4b043d04d6d875b8974288648c77ab70886ba54",

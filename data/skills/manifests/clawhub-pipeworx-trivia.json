@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-trivia@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-trivia-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-trivia-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:611066bec63d95cc939f6da22ca0110e3b8456d033b0002a47aa2f3923dfc1dc",

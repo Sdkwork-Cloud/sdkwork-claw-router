@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-16mbti@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-16mbti-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-16mbti-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64d5e929569b749b68c65ed906e9736bca8d9076117289f2ba82c4e24fd582e2",

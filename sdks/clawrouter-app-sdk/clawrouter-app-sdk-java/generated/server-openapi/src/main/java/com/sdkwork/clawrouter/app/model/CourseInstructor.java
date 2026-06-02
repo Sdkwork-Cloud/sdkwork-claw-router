@@ -2,16 +2,16 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class CourseInstructor {
-    private String avatar;
+    private MediaResource avatar;
     private String bio;
     private String name;
     private String title;
 
-    public String getAvatar() {
+    public MediaResource getAvatar() {
         return this.avatar;
     }
 
-    public void setAvatar(String avatar) {
+    public void setAvatar(MediaResource avatar) {
         this.avatar = avatar;
     }
 

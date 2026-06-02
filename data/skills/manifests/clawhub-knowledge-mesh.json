@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-mesh@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-mesh-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-mesh-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:76130ae43eb63fe5ea3e8d9d18e67f0c3724f804b4372814cc4bc038c2f2c8ea",

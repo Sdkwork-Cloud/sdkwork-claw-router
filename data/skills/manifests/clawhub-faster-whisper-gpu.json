@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/faster-whisper-gpu@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-faster-whisper-gpu-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-faster-whisper-gpu-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9dfdfdf3bf53d003bfd9d724282e2cf061e4113b93760aa29d94cd07a56bd6a2",

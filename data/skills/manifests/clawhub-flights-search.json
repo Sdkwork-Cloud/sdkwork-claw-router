@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flights-search@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flights-search-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flights-search-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ae70374a8d6496b0f9157f08834a6fb04178f83af68f7012e31ce6a846ae0447",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-iterating-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-iterating-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-iterating-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3669364132ecbef4ddc8c55b9be8cbe80029b2ecb6caea06872f152629e51b8",

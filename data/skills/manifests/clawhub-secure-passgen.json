@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/secure-passgen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-secure-passgen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-secure-passgen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8f41dfd0f775d5c7b281c7d2adc1342be43ca80af6ffb7432495e8ffa3c7928",

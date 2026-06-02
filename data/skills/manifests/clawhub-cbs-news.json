@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cbs-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cbs-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cbs-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:03a34c229883133282c1f5d9624aa61be4c980fbf3b8ceb3caabad758df00d2b",

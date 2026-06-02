@@ -1,9 +1,9 @@
 package com.sdkwork.clawrouter.app
 
 data class CreateApiKeyRequest(
+    val channelGroup: String? = null,
     val defaultForRuntime: Boolean? = null,
     val expires: String? = null,
-    val group: String? = null,
     val ipLimit: String? = null,
     val isUnlimitedQuota: Boolean? = null,
     val modalities: List<String>? = null,

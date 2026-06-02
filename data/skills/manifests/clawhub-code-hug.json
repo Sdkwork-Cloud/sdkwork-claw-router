@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/code-hug@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-code-hug-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-code-hug-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:849f4b08420885f3f76463ed22904c84afdf14a26a35ae298acdd32643c2362e",

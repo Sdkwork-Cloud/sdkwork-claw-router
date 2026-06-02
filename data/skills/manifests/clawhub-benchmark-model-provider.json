@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/benchmark-model-provider@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-benchmark-model-provider-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-benchmark-model-provider-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:517860460def9d74fe292ab254ef910e0151b339961302b60851444c89803e27",

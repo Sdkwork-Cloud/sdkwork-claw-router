@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dockerfile-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dockerfile-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dockerfile-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c982af1ce3a9703979bb775e886f8690f3f84e15e9d5f30ae2c89eb393810de",

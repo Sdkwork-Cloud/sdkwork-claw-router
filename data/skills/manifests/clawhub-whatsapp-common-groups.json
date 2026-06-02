@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whatsapp-common-groups@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-common-groups-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whatsapp-common-groups-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:edf1cd98de7e3b710ad5f71469607799697245f2ca798795572c4347d7704470",

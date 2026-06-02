@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slashbot@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slashbot-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slashbot-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1dfb0fb743cf5ef3e4cdabb08382bebd7ad455045fed63c9ce63287d3f475088",

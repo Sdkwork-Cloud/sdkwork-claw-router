@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/genome-report@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-genome-report-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-genome-report-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e00f7c269e6caf9a7ce843ff38853325fa8eeff35ed014aa59f9d310ab1d706d",

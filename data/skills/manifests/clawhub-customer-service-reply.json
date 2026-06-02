@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customer-service-reply@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-customer-service-reply-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customer-service-reply-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:38941a40b5907476b200c39b114d0ecbd9c11b8c6376f6f8d859371a5ce49ead",

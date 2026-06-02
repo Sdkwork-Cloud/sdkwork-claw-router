@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hashcats-amazon@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hashcats-amazon-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hashcats-amazon-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e17394737d654f92f502f04f231b3eef7bd51be802eb89dec9c379156ee475c9",

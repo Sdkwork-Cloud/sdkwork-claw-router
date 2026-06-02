@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linkly@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-linkly-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linkly-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0f56876b80c79c532171fa956bddfd772127b90ba5aa74d62f781f0f0a21c680",

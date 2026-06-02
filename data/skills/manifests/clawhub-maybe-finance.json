@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maybe-finance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-maybe-finance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maybe-finance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d37cd3914f4bf097e20328310de33285ddfa11837d4d513eb2b3c07033920b71",

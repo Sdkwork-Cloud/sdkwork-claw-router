@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/denfly-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-denfly-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-denfly-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9d6b93fa10b2b20f0ed2d429935a298c469adc9be07bc2392713e2ffc59bbe5",

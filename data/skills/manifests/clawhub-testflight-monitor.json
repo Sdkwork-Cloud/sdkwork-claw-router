@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/testflight-monitor@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-testflight-monitor-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-testflight-monitor-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c63191de3756e859755981aeb1e88e0205370cfe9c2d0c5bf05b8b2e8a423fb2",

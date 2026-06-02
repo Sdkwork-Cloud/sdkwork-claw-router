@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tandoor-recipes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tandoor-recipes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tandoor-recipes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c545128725251383e1dcb533dedd930e9ded3bb9e9201aae243326c7a171db65",

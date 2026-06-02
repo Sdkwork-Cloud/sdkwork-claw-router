@@ -12,6 +12,8 @@ export interface CommerceRefundAttemptRecord {
   failure_code?: string;
   /** Failure message field on commerce refund attempt record. */
   failure_message?: string;
+  /** Id field on commerce refund attempt record. */
+  id?: string;
   /** Organization id field on commerce refund attempt record. */
   organization_id?: string;
   /** Out refund no field on commerce refund attempt record. */

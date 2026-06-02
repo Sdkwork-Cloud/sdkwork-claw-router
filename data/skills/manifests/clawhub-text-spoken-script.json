@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-spoken-script@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-spoken-script-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-spoken-script-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ce857f2cdd4b9e10b74f716222bd24651f2413f62ef562bc31985ba15b2fd34d",

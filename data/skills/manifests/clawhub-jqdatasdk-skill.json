@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jqdatasdk-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jqdatasdk-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jqdatasdk-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15ab4fea0e487aa7862010ea921765ed35f64e4cabdf2081807ae1af5266f9b1",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-auction@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-auction-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-auction-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:485c9cb863d66bc02cfe7cd9fa593e889875f754881fc62b16816d3eeb2576e3",

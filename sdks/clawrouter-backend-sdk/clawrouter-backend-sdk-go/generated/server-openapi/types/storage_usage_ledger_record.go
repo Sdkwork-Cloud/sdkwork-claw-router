@@ -5,10 +5,15 @@ type StorageUsageLedgerRecord struct {
 	AppId string `json:"app_id"`
 	BusinessDomain string `json:"business_domain"`
 	CreatedAt string `json:"created_at"`
+	DeltaFileCount string `json:"delta_file_count"`
+	DeltaLogicalBytes string `json:"delta_logical_bytes"`
+	DeltaPhysicalBytes string `json:"delta_physical_bytes"`
+	DeltaReservedBytes string `json:"delta_reserved_bytes"`
 	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	LegalHold bool `json:"legal_hold"`
 	Metadata map[string]JsonValue `json:"metadata"`
+	OccurredAt string `json:"occurred_at"`
 	OrganizationId string `json:"organization_id"`
 	PayloadHash string `json:"payload_hash"`
 	Reason string `json:"reason"`

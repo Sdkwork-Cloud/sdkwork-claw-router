@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-prd-hunter@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-prd-hunter-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-prd-hunter-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:a49054a5d775f4c5926658a1dda9f0559eae29d23dae971e87d64ded483a0829",

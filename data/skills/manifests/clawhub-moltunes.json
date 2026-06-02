@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltunes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltunes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltunes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13275cea414beb5820efa28a015f0b56d8f10ebca9e6753e6c972d80335cbb02",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-text-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-text-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-text-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b181cfc83b61fac051a5a8b05c33c40b6808541505c81e7ebf4827ede5173a6",

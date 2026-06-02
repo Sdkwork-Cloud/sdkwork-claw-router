@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-checker@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-checker-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-checker-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:7afeab1ad28c315a42d48311700d4de98a49b390f1cdb4aaef684e937377b3b6",

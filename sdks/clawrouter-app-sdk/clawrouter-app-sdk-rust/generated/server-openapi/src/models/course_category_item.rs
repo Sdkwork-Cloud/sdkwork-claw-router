@@ -13,8 +13,9 @@ pub struct CourseCategoryItem {
     /// Description field on course category item.
     pub description: String,
 
-    /// Icon field on course category item.
-    pub icon: String,
+    /// Icon key field on course category item.
+    #[serde(rename = "iconKey")]
+    pub icon_key: String,
 
     /// Id field on course category item.
     pub id: String,

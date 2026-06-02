@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dermatologist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dermatologist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dermatologist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f9b62bdd0dd62d8165a8b853e76d30450a2aafcacf71bebe76969b9b25181d1",

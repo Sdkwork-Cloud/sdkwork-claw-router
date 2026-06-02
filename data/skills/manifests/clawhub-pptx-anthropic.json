@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pptx-anthropic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pptx-anthropic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pptx-anthropic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42bb18f9d2a4b9a41e3744aa000fc7ed02533999b18545fe80bcd40e74654cf4",

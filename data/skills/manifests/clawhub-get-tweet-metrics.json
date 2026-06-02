@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/get-tweet-metrics@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-get-tweet-metrics-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-get-tweet-metrics-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c7ff94d9377b37e34c6abc56d841a4fbc2b553d1c46b895a279d6062f8b8b7db",

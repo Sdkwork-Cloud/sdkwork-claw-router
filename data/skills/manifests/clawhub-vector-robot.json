@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vector-robot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vector-robot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vector-robot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:036312b6521216502b1dd3d2ab3776306a8ae0a4a145cd9028767725c99d7924",

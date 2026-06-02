@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-reader@1.3.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-reader-1.3.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-reader-1.3.7.json"
+      },
       "version": "1.3.7",
       "runtime": "metadata",
       "checksumHash": "sha256:89316ec8b6a626339f5f02ee9ba901781b323d29b0873d2b3e0235f230ba842b",

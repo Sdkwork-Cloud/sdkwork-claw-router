@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rose-docker-build-skill@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-rose-docker-build-skill-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rose-docker-build-skill-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3b49d8f337a8115c2c14aa2e9b0910b4c6151fdf6999982fd85542a882c2124f",

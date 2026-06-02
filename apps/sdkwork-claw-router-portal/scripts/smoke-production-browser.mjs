@@ -44,7 +44,17 @@ const MACOS_CHROME_CANDIDATES = [
   "/Applications/Chromium.app/Contents/MacOS/Chromium",
 ];
 
+function mediaResource(url, kind = "image") {
+  return {
+    kind,
+    source: url.startsWith("data:") ? "data_url" : "external_url",
+    url,
+    publicUrl: url,
+  };
+}
+
 const TRANSPARENT_PIXEL_DATA_URL = "data:image/gif;base64,R0lGODlhAQABAAAAACw=";
+const TRANSPARENT_IMAGE_RESOURCE = mediaResource(TRANSPARENT_PIXEL_DATA_URL, "image");
 const APP_SDK_FIXTURE_MODE = "app-sdk-success";
 const APP_SDK_EMPTY_FIXTURE_MODE = "app-sdk-empty";
 const APP_SDK_FAILURE_FIXTURE_MODE = "app-sdk-failure";
@@ -87,7 +97,7 @@ const BROWSER_SMOKE_APP_RECORD = {
       platformType: "Web",
       osName: "PC Web",
       version: "1.0.0",
-      artifactUrl: "https://apps.example.test/browser-smoke-app",
+      artifact: mediaResource("https://apps.example.test/browser-smoke-app", "archive"),
       publishedAt: "2026-05-03T00:00:00Z",
       releaseNotes: "Browser smoke release artifact.",
     },
@@ -208,8 +218,7 @@ const BROWSER_SMOKE_ADMIN_APP_RECORD = {
   name: "Browser Smoke Admin App",
   description: "Production smoke validates backend SDK app management rendering.",
   version: "1.0.0",
-  icon: { source: "browser-smoke" },
-  iconUrl: "/apps/browser-smoke.svg",
+  icon: mediaResource("/apps/browser-smoke.svg"),
   resourceList: { assets: ["artifact://apps/browser-smoke/app.zip"] },
   projectId: "1001",
   accessUrl: "https://apps.example.test/browser-smoke",
@@ -226,7 +235,7 @@ const BROWSER_SMOKE_ADMIN_APP_RECORD = {
   packageName: "com.sdkwork.browser.smoke",
   bundleId: "com.sdkwork.browser.smoke.web",
   storeUrl: "https://store.example.test/browser-smoke",
-  downloadUrl: "https://cdn.example.test/browser-smoke/app.zip",
+  artifact: mediaResource("https://cdn.example.test/browser-smoke/app.zip", "archive"),
   createdAt: "2026-05-09T00:00:00Z",
   updatedAt: "2026-05-09T00:00:00Z",
 };
@@ -236,7 +245,7 @@ const BROWSER_SMOKE_ADMIN_APP_CATEGORY = {
   name: "Browser Smoke App Category",
   description: "Production browser smoke app category.",
   code: "browser-smoke-app-category",
-  icon: "/icons/browser-smoke-app.svg",
+  icon: mediaResource("/icons/browser-smoke-app.svg"),
   sortWeight: 1,
   parentId: null,
   path: "/apps/browser-smoke",
@@ -513,10 +522,10 @@ const BROWSER_SMOKE_COURSE_RECORDS = [
     courseCode: "c1",
     title: "Claw Router Fundamentals: Zero to Hero",
     description: "Master Claw Router fundamentals, SDK surfaces, and production routing workflows.",
-    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    thumbnail: TRANSPARENT_IMAGE_RESOURCE,
     instructor: {
       name: "Sarah Chen",
-      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      avatar: TRANSPARENT_IMAGE_RESOURCE,
       title: "Principal API Platform Instructor",
       bio: "Curates practical Claw Router courses for production teams.",
     },
@@ -546,10 +555,10 @@ const BROWSER_SMOKE_COURSE_RECORDS = [
     courseCode: "c2",
     title: "Advanced API Architecture and Design",
     description: "Design advanced API architecture for multi-surface SDK ownership and routed services.",
-    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    thumbnail: TRANSPARENT_IMAGE_RESOURCE,
     instructor: {
       name: "David Smith",
-      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      avatar: TRANSPARENT_IMAGE_RESOURCE,
       title: "Distributed API Architect",
       bio: "Builds architecture courses for Claw Router platform teams.",
     },
@@ -579,10 +588,10 @@ const BROWSER_SMOKE_COURSE_RECORDS = [
     courseCode: "c3",
     title: "Authentication and Authorization Flows",
     description: "Security course for session validation, IAM contracts, and authorization guard behavior.",
-    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    thumbnail: TRANSPARENT_IMAGE_RESOURCE,
     instructor: {
       name: "Maya Patel",
-      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      avatar: TRANSPARENT_IMAGE_RESOURCE,
       title: "Identity Platform Instructor",
       bio: "Teaches security and authorization implementation patterns.",
     },
@@ -612,10 +621,10 @@ const BROWSER_SMOKE_COURSE_RECORDS = [
     courseCode: "c4",
     title: "Microservices and Distributed Tracing",
     description: "Operate advanced distributed services with tracing, observability, and diagnostics.",
-    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    thumbnail: TRANSPARENT_IMAGE_RESOURCE,
     instructor: {
       name: "Ops Academy",
-      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      avatar: TRANSPARENT_IMAGE_RESOURCE,
       title: "Operations Curriculum Team",
       bio: "Teaches operational practices for distributed API gateways.",
     },
@@ -645,10 +654,10 @@ const BROWSER_SMOKE_COURSE_RECORDS = [
     courseCode: "c5",
     title: "Real-time Integrations and Webhooks",
     description: "Build real-time integration workflows and webhook processing.",
-    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    thumbnail: TRANSPARENT_IMAGE_RESOURCE,
     instructor: {
       name: "Integration Guild",
-      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      avatar: TRANSPARENT_IMAGE_RESOURCE,
       title: "Integration Instructor",
       bio: "Focuses on integration and webhook design.",
     },
@@ -678,10 +687,10 @@ const BROWSER_SMOKE_COURSE_RECORDS = [
     courseCode: "c6",
     title: "Frontend State Management with Claw",
     description: "Frontend application state patterns for Claw Router portal modules.",
-    thumbnailUrl: TRANSPARENT_PIXEL_DATA_URL,
+    thumbnail: TRANSPARENT_IMAGE_RESOURCE,
     instructor: {
       name: "Frontend Academy",
-      avatar: TRANSPARENT_PIXEL_DATA_URL,
+      avatar: TRANSPARENT_IMAGE_RESOURCE,
       title: "Frontend Instructor",
       bio: "Designs frontend workflow courses.",
     },
@@ -2095,15 +2104,25 @@ const BROWSER_SMOKE_ROUTES = [
   },
 ];
 
-async function canBindPort(port) {
+async function canBindPortOnHost(port, host) {
   return new Promise((resolve) => {
     const server = createServer();
     server.unref();
-    server.once("error", () => resolve(false));
-    server.listen({ host: "127.0.0.1", port, exclusive: true }, () => {
+    server.once("error", (error) => {
+      if (error?.code === "EAFNOSUPPORT" || error?.code === "EINVAL") {
+        resolve(true);
+        return;
+      }
+      resolve(false);
+    });
+    server.listen({ host, port, exclusive: true }, () => {
       server.close(() => resolve(true));
     });
   });
+}
+
+async function canBindPort(port) {
+  return (await canBindPortOnHost(port, "127.0.0.1")) && (await canBindPortOnHost(port, "::1"));
 }
 
 async function findAvailablePort(startPort = PORT_SEARCH_START) {
@@ -3636,14 +3655,25 @@ async function applyBrowserLocale(cdp) {
       "Accept-Language": "en-US,en;q=0.9",
     },
   });
-  await cdp.send("Emulation.setLocaleOverride", {
-    locale: "en-US",
-  });
+  await sendLocaleOverride(cdp, "en-US");
   await cdp.send("Emulation.setUserAgentOverride", {
     userAgent: await evaluateExpression(cdp, "navigator.userAgent"),
     acceptLanguage: "en-US,en;q=0.9",
     platform: await evaluateExpression(cdp, "navigator.platform"),
   });
+}
+
+async function sendLocaleOverride(cdp, locale) {
+  try {
+    await cdp.send("Emulation.setLocaleOverride", {
+      locale,
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (!message.includes("Another locale override is already in effect")) {
+      throw error;
+    }
+  }
 }
 
 function createToolApiRequestCollector() {

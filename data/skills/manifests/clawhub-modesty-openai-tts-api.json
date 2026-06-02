@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modesty-openai-tts-api@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-modesty-openai-tts-api-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modesty-openai-tts-api-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29cd9416c553867c1d0304372d427b8e64dc1f6e338c1dd37523630696ee5814",

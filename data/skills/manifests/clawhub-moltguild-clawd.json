@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltguild-clawd@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltguild-clawd-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltguild-clawd-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c74d5e5085ba991350012e474b7cb09c18340c0a4b36cc4102085414a8ced4e7",

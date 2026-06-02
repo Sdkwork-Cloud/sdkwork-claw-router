@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nutrition-cli@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nutrition-cli-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nutrition-cli-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:675c39de8e09f64388cfdb39b73c4081452d2f14d39efdf37c3ddf32f5affa79",

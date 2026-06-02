@@ -8,6 +8,7 @@ data class PromotionOfferPresentationRecord(
     val customerActionJson: Map<String, String>? = null,
     val displayName: String? = null,
     val fieldSchemaJson: Map<String, String>? = null,
+    val id: String? = null,
     val locale: String? = null,
     val logoAssetId: String? = null,
     val merchantDisplayName: String? = null,

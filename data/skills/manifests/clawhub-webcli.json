@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/webcli@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-webcli-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-webcli-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:726ef209440d88ad2eb42770be707437cb16c5fb237ca183e1e651dbd903a8d3",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mega-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mega-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mega-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8b5b754f9391b5b6be9a77902a5dd2210fb617f0c1ec7a8a69f19b72e696a68c",

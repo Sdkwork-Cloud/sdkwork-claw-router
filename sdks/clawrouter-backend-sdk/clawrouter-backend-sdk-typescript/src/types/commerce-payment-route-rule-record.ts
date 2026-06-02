@@ -16,8 +16,12 @@ export interface CommercePaymentRouteRuleRecord {
   currency_code?: string;
   /** Ends at field on commerce payment route rule record. */
   ends_at?: string;
+  /** Id field on commerce payment route rule record. */
+  id?: string;
   /** Organization id field on commerce payment route rule record. */
   organization_id?: string;
+  /** Priority field on commerce payment route rule record. */
+  priority: string;
   /** Purchase type field on commerce payment route rule record. */
   purchase_type?: string;
   /** Risk level field on commerce payment route rule record. */

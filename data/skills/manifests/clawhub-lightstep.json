@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lightstep@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lightstep-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lightstep-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:51bd62ff4d50c697f143cf3f4cfd1fbce38a30e285bb96b22b83fc8842e8831f",

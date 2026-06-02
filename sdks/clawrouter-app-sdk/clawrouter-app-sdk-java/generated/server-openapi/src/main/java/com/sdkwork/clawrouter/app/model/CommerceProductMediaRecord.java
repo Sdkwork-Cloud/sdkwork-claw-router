@@ -1,17 +1,22 @@
 package com.sdkwork.clawrouter.app.model;
 
+import java.util.Map;
 
 public class CommerceProductMediaRecord {
     private String altText;
     private String createdAt;
-    private String mediaType;
+    private String id;
+    private String mediaResourceId;
+    private String mediaRole;
+    private String objectBlobId;
     private String organizationId;
     private String ownerId;
     private String ownerType;
+    private Map<String, String> resourceSnapshot;
+    private String sortOrder;
     private String status;
     private String tenantId;
     private String updatedAt;
-    private String url;
 
     public String getAltText() {
         return this.altText;
@@ -29,12 +34,36 @@ public class CommerceProductMediaRecord {
         this.createdAt = createdAt;
     }
 
-    public String getMediaType() {
-        return this.mediaType;
+    public String getId() {
+        return this.id;
     }
 
-    public void setMediaType(String mediaType) {
-        this.mediaType = mediaType;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMediaResourceId() {
+        return this.mediaResourceId;
+    }
+
+    public void setMediaResourceId(String mediaResourceId) {
+        this.mediaResourceId = mediaResourceId;
+    }
+
+    public String getMediaRole() {
+        return this.mediaRole;
+    }
+
+    public void setMediaRole(String mediaRole) {
+        this.mediaRole = mediaRole;
+    }
+
+    public String getObjectBlobId() {
+        return this.objectBlobId;
+    }
+
+    public void setObjectBlobId(String objectBlobId) {
+        this.objectBlobId = objectBlobId;
     }
 
     public String getOrganizationId() {
@@ -61,6 +90,22 @@ public class CommerceProductMediaRecord {
         this.ownerType = ownerType;
     }
 
+    public Map<String, String> getResourceSnapshot() {
+        return this.resourceSnapshot;
+    }
+
+    public void setResourceSnapshot(Map<String, String> resourceSnapshot) {
+        this.resourceSnapshot = resourceSnapshot;
+    }
+
+    public String getSortOrder() {
+        return this.sortOrder;
+    }
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
     public String getStatus() {
         return this.status;
     }
@@ -83,13 +128,5 @@ public class CommerceProductMediaRecord {
 
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public String getUrl() {
-        return this.url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 }

@@ -125,9 +125,10 @@ frontend_operations:
   api_path: /app/v3/api/catalog/products
   sdk_domain: commerce
   summary: List visible catalog products
-  description: Returns buyer-visible SPUs with stable product type, category, media, and price summary fields.
+  description: Returns buyer-visible SPUs with stable product type, category bindings, media, and price summary fields.
   read_sources:
   - commerce_product_spu
+  - commerce_product_spu_category
   - commerce_product_sku
   - commerce_product_category
   - commerce_product_media
@@ -220,10 +221,13 @@ frontend_operations:
               type: string
               nullable: true
               maxLength: 20000
-            categoryId:
-              type: string
-              nullable: true
-              maxLength: 128
+            categoryIds:
+              type: array
+              maxItems: 3
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
             brand:
               type: string
               nullable: true
@@ -262,8 +266,8 @@ frontend_operations:
                 - id
                 - ownerType
                 - ownerId
-                - mediaType
-                - url
+                - mediaRole
+                - resource
                 - sortOrder
                 - status
                 properties:
@@ -280,16 +284,18 @@ frontend_operations:
                     type: string
                     minLength: 1
                     maxLength: 128
-                  mediaType:
+                  mediaRole:
                     type: string
                     enum:
-                    - image
+                    - main_image
+                    - gallery_image
+                    - detail_image
+                    - sku_image
                     - video
-                    - document
-                  url:
-                    type: string
-                    minLength: 1
-                    maxLength: 2048
+                    - manual
+                    - certificate
+                  resource:
+                    $ref: '#/components/schemas/MediaResource'
                   altText:
                     type: string
                     nullable: true
@@ -338,6 +344,7 @@ frontend_operations:
   description: Returns one buyer-visible SPU with purchasable SKU variants, attributes, media, and price summary.
   read_sources:
   - commerce_product_spu
+  - commerce_product_spu_category
   - commerce_product_sku
   - commerce_product_category
   - commerce_product_attribute

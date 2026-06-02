@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/saver-skill@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-saver-skill-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-saver-skill-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5b00178053d81ecd1a78d2f4ca97ce649e80c540a8d337ffc21b6a2bbfbe62dd",

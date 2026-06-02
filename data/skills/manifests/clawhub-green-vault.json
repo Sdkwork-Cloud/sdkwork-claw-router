@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/green-vault@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-green-vault-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-green-vault-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0232c45d9241e4c38d40053469f0dc2184c75e360e7cf563bbe317f0f6501278",

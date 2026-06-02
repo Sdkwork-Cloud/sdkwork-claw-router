@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/iso-27001-internal-audit@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-iso-27001-internal-audit-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-iso-27001-internal-audit-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:17a45e4b069a3cc8cd1cc85b1d15a83fc67145daf0718a4f171bd5de618e88c2",

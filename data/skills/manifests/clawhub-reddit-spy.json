@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reddit-spy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reddit-spy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reddit-spy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97eaff3a471716c7f1a53237c6d36c0b64bb667bf816fec64aface615f2f180c",

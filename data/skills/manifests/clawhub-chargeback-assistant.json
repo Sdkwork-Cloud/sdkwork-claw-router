@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chargeback-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chargeback-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chargeback-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e584714e8edd6a3f3fbb0d495eb9273e506a6568fb4ca5370e95fdacb190456",

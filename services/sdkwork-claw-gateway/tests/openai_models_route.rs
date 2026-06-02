@@ -4,7 +4,7 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
-    AiModel, ApiKeyGroup, DecimalValue, GatewayApiKey, ModelVendor, ModelVendorDefinition,
+    AiModel, ChannelGroup, DecimalValue, GatewayApiKey, ModelVendor, ModelVendorDefinition,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
@@ -23,7 +23,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
         "openai",
         vec!["chat", "tools"],
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",

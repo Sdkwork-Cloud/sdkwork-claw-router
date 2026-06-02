@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-updater-hold@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-updater-hold-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-updater-hold-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ccbbd5cf34c08e6a5459b006d9d132476a7be12aa70f7c8713a4b77107b5d27",

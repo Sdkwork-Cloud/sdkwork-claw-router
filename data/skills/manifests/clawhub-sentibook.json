@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentibook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentibook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentibook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:49faac6ef1c9dc5766f920f1da3c0de5b27e2b947bfe251918e1dfcaf4d006c4",

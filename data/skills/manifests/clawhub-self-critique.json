@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-critique@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-critique-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-critique-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce03995ba5521fa48562346ea3ff504da5faeeb1590d5fc8079134542f4dfa1d",

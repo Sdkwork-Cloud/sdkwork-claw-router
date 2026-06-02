@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/excel-sum@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-excel-sum-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-excel-sum-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a6923ed8bd6ed4dd479afd4e9e1aa621c3ffb754280c64bdc4885f32507da54",

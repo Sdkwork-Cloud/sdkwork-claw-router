@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/svix@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-svix-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-svix-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:b5d2dab5c0200cfa2658a95263af8937ab429a2a6951af5873a4bea1353cf96b",

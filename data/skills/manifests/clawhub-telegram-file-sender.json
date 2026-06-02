@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-file-sender@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-file-sender-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-file-sender-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:eb67ff9ec47a6bb63538f9371c3eff1012539209c966adc71bdb01aebbc34f0b",

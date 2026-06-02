@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dvc-pipeline-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dvc-pipeline-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dvc-pipeline-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f4a448bd23dbd101e94eefa67dffaa09b3b577fb43a2459634a4c80be24bd67",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reddit-researcher-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reddit-researcher-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reddit-researcher-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:88c9b0cb0f37a906fb57c5b05c73a67313ed2b39f587f4258be2753f596e26ed",

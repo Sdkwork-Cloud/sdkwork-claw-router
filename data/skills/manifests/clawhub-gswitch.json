@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gswitch@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gswitch-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gswitch-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:772db9ce3cb76e30311295912a803731427ac96386837684b217ae69b0ae7594",

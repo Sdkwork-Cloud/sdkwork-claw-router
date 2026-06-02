@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-failure-registry@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-failure-registry-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-failure-registry-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:548f8f7f0c3b4e9a084194b3a0f28fd85c027c3f91b6c8e8d3f686ed1065ef80",

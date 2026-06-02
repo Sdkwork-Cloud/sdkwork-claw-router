@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hedera@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hedera-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hedera-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:059db50d3ec12bf874c13b55b455dc423e9caf49501cc4ac2a95cbce297039a9",

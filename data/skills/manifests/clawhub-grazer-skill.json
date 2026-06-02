@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grazer-skill@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grazer-skill-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grazer-skill-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:65f2027aa2896471b471d26e182473da60c8ae8d91c2335db53e345a9f990ae4",

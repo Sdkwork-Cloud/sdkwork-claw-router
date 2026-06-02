@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fargo@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fargo-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fargo-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75e290f314d73c6e0a3fe878dc45e143436953b140dc0929a2ded46ceef0018e",

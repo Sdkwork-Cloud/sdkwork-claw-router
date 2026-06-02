@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ceed3d2b04f1843c7cf271384782f325ef484f89fbe98f0e85a0a38efcf8cdc1",

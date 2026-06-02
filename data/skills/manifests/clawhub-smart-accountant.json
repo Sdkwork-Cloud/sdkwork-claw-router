@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-accountant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-accountant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-accountant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c26c265ab48410d3a70b2ee284afc1c1c83316476b293e4f9b1d87606d980023",

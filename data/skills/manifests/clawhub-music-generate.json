@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-generate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-generate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-generate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c165ea603cf0dce6a37014958a6ba0bd89bbe31da5840867fd7edd27b96e0c43",

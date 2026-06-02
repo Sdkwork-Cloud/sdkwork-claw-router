@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-overflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-overflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-overflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ed3050f6dcacf4165bd963a45eeb5013740771d0d238f8e638ce6d821def831",

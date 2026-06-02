@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moe@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-moe-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moe-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1204d1729741cd8a3b9dd8a88286a2cc14c8e19da6215556081d630562a10251",

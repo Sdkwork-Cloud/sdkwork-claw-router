@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/diet@3.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-diet-3.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-diet-3.4.1.json"
+      },
       "version": "3.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b60ca94d4534aa2e074ce19dc45c9b175b28ade9f1146a46147f3a9f391722c2",

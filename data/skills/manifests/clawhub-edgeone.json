@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edgeone@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-edgeone-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edgeone-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a896b6a008471ee0ae09c5856a84eb8fdae3cb73ad703e712eea749b02770867",

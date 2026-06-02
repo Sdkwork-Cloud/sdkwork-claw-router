@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/401k-plan-health@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-401k-plan-health-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-401k-plan-health-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be093d555a35bfcbe669642635756415932e89883cf8df00cba3f9f9e010db4c",

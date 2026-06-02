@@ -3,7 +3,7 @@ package types
 // Commerce product spu item schema exposed by Claw Router.
 type CommerceProductSpuItem struct {
 	Brand string `json:"brand"`
-	CategoryId string `json:"categoryId"`
+	CategoryIds []string `json:"categoryIds"`
 	CreatedAt string `json:"createdAt"`
 	CurrencyCode string `json:"currencyCode"`
 	DefaultSkuId string `json:"defaultSkuId"`

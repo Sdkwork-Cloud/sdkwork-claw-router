@@ -6,17 +6,23 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AiMcpBindingRecord
     {
+        public Dictionary<string, string>? AllowedTools { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }
         public string? DeletedAt { get; set; }
         public string? DeletedBy { get; set; }
+        public Dictionary<string, string>? DeniedTools { get; set; }
+        public bool? Enabled { get; set; }
         public string? Id { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? OrganizationId { get; set; }
         public string? OwnerId { get; set; }
         public string? OwnerType { get; set; }
+        public Dictionary<string, string>? PolicyJson { get; set; }
+        public int? Priority { get; set; }
         public string? ServerId { get; set; }
         public string? ServerRevisionId { get; set; }
+        public Dictionary<string, string>? SnapshotJson { get; set; }
         public string? Status { get; set; }
         public string? TenantId { get; set; }
         public string? ToolId { get; set; }

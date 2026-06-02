@@ -12,6 +12,10 @@ pub struct CommerceProductAttributeRecord {
     /// Filterable field on commerce product attribute record.
     pub filterable: bool,
 
+    /// Id field on commerce product attribute record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Name field on commerce product attribute record.
     pub name: String,
 

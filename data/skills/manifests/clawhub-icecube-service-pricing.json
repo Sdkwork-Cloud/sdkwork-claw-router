@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icecube-service-pricing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icecube-service-pricing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icecube-service-pricing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:61124e7464cf261a9ffe5cd1214b442d4801f676f08c6be1bc6acc64e9f9f1ef",

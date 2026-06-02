@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/api-device-status@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-api-device-status-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-api-device-status-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:323ae808dbd404bd29afd3b13cda39a8c0b5704b8c556712a93bda60d23d6a9d",

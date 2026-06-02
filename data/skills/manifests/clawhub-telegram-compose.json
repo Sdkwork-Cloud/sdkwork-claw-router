@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-compose@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-compose-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-compose-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:22b0293e5df9700e27341e6831cb582203fecefc46189e6ab8fac7c7e11c6b77",

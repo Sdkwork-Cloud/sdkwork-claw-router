@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/safe-flow-solana-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-safe-flow-solana-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-safe-flow-solana-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b7ba461aa7060f851a3a58f5f22eb28c20f15dd0f569556636cd13e233d48754",

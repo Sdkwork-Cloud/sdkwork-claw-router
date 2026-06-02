@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/emelia@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-emelia-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-emelia-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9923f21c44407898201542000e6c3b0920acb0297bb16f7f130e77d2917a94be",

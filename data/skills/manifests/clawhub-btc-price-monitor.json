@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/btc-price-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-btc-price-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-btc-price-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52056736a1b34031cee4411f7a9e7bab0520b8ce2475e55c5dd3d3c5272c7243",

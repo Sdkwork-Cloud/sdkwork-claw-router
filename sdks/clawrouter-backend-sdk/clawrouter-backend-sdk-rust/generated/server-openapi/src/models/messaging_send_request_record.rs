@@ -11,6 +11,10 @@ pub struct MessagingSendRequestRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub app_id: Option<String>,
 
+    /// Channel field on messaging send request record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel: Option<String>,
+
     /// Created at field on messaging send request record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -18,6 +22,18 @@ pub struct MessagingSendRequestRecord {
     /// Delivered at field on messaging send request record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub delivered_at: Option<String>,
+
+    /// Delivery purpose field on messaging send request record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub delivery_purpose: Option<String>,
+
+    /// Delivery status field on messaging send request record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub delivery_status: Option<String>,
+
+    /// Dry run field on messaging send request record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub dry_run: Option<bool>,
 
     /// Expires at field on messaging send request record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -30,6 +46,10 @@ pub struct MessagingSendRequestRecord {
     /// Id field on messaging send request record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
+
+    /// Idempotency key field on messaging send request record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub idempotency_key: Option<String>,
 
     /// Legal hold field on messaging send request record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -47,9 +67,21 @@ pub struct MessagingSendRequestRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub payload_hash: Option<String>,
 
+    /// Render hash field on messaging send request record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub render_hash: Option<String>,
+
     /// Request id field on messaging send request record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub request_id: Option<String>,
+
+    /// Request no field on messaging send request record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub request_no: Option<String>,
+
+    /// Request payload redacted field on messaging send request record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub request_payload_redacted: Option<std::collections::HashMap<String, String>>,
 
     /// Resolved provider account id field on messaging send request record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -67,6 +99,10 @@ pub struct MessagingSendRequestRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub retention_until: Option<String>,
 
+    /// Scene code field on messaging send request record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub scene_code: Option<String>,
+
     /// Scheduled at field on messaging send request record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub scheduled_at: Option<String>,
@@ -79,9 +115,17 @@ pub struct MessagingSendRequestRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
 
+    /// Target hash field on messaging send request record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub target_hash: Option<String>,
+
     /// Target masked field on messaging send request record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub target_masked: Option<String>,
+
+    /// Target type field on messaging send request record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub target_type: Option<String>,
 
     /// Template variant id field on messaging send request record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

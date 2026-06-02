@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lab-result-interpretation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lab-result-interpretation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lab-result-interpretation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed57eb897ba133c7d7d86c446fe1203d242ffc7210713e828ef4fc6ca941e250",

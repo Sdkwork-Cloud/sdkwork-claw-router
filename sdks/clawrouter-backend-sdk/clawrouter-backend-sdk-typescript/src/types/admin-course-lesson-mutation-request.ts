@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Admin course lesson mutation request schema exposed by Claw Router. */
 export interface AdminCourseLessonMutationRequest {
@@ -20,6 +21,6 @@ export interface AdminCourseLessonMutationRequest {
   status?: string;
   /** Title field on admin course lesson mutation request. */
   title?: string;
-  /** Video url field on admin course lesson mutation request. */
-  videoUrl?: string;
+  /** Video field on admin course lesson mutation request. */
+  video?: MediaResource;
 }

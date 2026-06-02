@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/release-note-localizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-release-note-localizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-release-note-localizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:425fb3673dbd4098d04bbf86a3ea95ef362f2fb90966be56c5dbfc8747869cb7",

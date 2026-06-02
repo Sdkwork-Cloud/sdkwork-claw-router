@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/recognize-intent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-recognize-intent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-recognize-intent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7497dfb52ca7fbb0c51380e74bb00c288e2919d9979510d24bda3aca13fe9628",

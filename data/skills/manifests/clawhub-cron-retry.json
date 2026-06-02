@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cron-retry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cron-retry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cron-retry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:690f4550fcecaea47df2e1b02da57af46bfe5ee86cd1c065681286315fedf300",

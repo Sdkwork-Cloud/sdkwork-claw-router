@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unifai@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-unifai-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unifai-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:f2d1901a9b765a45ccaefae7286cd8453477918d45ec2320880e35e50cd36844",

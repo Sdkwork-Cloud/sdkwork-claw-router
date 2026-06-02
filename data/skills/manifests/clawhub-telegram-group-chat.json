@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-group-chat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-group-chat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-group-chat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c66087d76264c1b6f2b9ead570636d020f59a057efb84e00745671514969eb5b",

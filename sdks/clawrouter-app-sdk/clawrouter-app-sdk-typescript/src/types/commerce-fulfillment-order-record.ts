@@ -10,6 +10,8 @@ export interface CommerceFulfillmentOrderRecord {
   fulfillment_no: string;
   /** Fulfillment type field on commerce fulfillment order record. */
   fulfillment_type: string;
+  /** Id field on commerce fulfillment order record. */
+  id?: string;
   /** Order id field on commerce fulfillment order record. */
   order_id: string;
   /** Organization id field on commerce fulfillment order record. */

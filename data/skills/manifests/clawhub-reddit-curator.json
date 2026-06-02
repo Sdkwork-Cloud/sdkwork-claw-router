@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reddit-curator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reddit-curator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reddit-curator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ddc34c81dc069e109b92db204b032598f1fafbfad1d95966f86d102ac92372a2",

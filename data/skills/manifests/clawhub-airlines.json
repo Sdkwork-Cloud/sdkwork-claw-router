@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/airlines@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-airlines-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-airlines-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:ff313bfc939168ab55c4370fd51c5f85f850a58d21853525875f2062fd7c692a",

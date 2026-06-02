@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blue-origin@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-blue-origin-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blue-origin-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:a084e107c18cb76bbd94041d4cea9fa10927943c99c3768824512a780550f86a",

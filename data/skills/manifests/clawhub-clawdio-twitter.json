@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawdio-twitter@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawdio-twitter-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawdio-twitter-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5887d43ade4ce8a6e6d3c2b249eef331e325a323a6000c96909794d66417bdef",

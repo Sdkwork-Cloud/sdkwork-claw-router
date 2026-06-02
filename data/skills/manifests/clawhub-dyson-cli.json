@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dyson-cli@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dyson-cli-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dyson-cli-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df10824034e5ef638e41bd3c7517c93aa6fddb3b2c1cfaae567f3c99d1a6e2f8",

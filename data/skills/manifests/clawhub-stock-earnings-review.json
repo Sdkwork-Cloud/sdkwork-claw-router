@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-earnings-review@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-earnings-review-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-earnings-review-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:257f66bf72789fe7592682085869bbd7f299e244f5fb086b62b0c6ce9723c7c8",

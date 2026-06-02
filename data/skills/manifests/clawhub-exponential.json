@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/exponential@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-exponential-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-exponential-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd5f7267ee9531804d4b97c2551364028f4b63e2a76e1e87774526cc20a02f0b",

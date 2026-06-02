@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-bus@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-bus-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-bus-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9ee5b52483bbbc265ed05834a6997482676805b4bebfb1a77f2fe203d7b524e",

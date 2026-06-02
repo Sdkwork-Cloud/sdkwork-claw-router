@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/copywriting@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-copywriting-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-copywriting-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:138dc6a9d418f7d0877583116595a655886471e23f71f4944c50233836a8a8fc",

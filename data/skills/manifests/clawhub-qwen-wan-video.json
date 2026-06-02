@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwen-wan-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwen-wan-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwen-wan-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e4f2408df78f904e4218d5ac2857481de4302866dd39071c275c54c75755893b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tengu@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tengu-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tengu-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ceda4dc186b8adac16e20d268b8420dffb779c2c5dc52c53d1b55835aa50eb54",

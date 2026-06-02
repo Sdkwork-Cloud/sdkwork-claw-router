@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wappalyzer@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-wappalyzer-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wappalyzer-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8349f4d340b5712204806b14fa31bc961826a19c7623560a1df09cd1f3b12ec5",

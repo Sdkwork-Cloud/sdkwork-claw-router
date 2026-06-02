@@ -23,9 +23,13 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? DisabledAt { get; set; }
         public int? DiscountPercentBps { get; set; }
         public string? ExpiresAt { get; set; }
+        public string? FaceValueMinor { get; set; }
+        public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
         public string? LockExpiresAt { get; set; }
         public string? LockedAt { get; set; }
+        public string? MaximumDiscountAmountMinor { get; set; }
+        public string? MinimumOrderAmountMinor { get; set; }
         public string? OfferId { get; set; }
         public string? OfferVersionId { get; set; }
         public string? OrganizationId { get; set; }

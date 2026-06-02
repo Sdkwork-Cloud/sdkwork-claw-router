@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/libby-book-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-libby-book-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-libby-book-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c9156c30f980d93e224b8cd6a4158e15b3cf4b073df4c90dfec32d4ee07fbc0",

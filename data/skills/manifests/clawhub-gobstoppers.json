@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gobstoppers@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gobstoppers-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gobstoppers-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c598afb9ce08acc2fdfcf9929a48cf312d639be459215f6b377b6f37656c0410",

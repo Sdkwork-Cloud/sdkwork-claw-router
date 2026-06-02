@@ -1,9 +1,10 @@
+use serde_json::{json, Value};
 use sqlx::{Row, SqlitePool};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
     AppGenerationHistoryItem, AppGenerationHistoryReadFuture, AppGenerationHistoryReadStore,
-    AppGenerationHistorySubject, AppGenerationMediaItem,
+    AppGenerationHistorySubject,
 };
 
 const LOAD_GENERATION_HISTORY: &str = r#"
@@ -17,32 +18,41 @@ WITH runtime_generation_candidates AS (
         lower(COALESCE(
             NULLIF(CASE WHEN json_valid(i.request_json) THEN json_extract(i.request_json, '$.targetType') END, ''),
             NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].modality') END, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].asset.kind') END, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].asset.mimeType') END, ''),
+            NULLIF(CASE WHEN json_valid(ar.resource_snapshot) THEN json_extract(ar.resource_snapshot, '$.kind') END, ''),
             NULLIF(CASE WHEN json_valid(ar.content_json) THEN json_extract(ar.content_json, '$.modality') END, ''),
             NULLIF(ar.artifact_type, ''),
+            NULLIF(CASE WHEN json_valid(ar.resource_snapshot) THEN json_extract(ar.resource_snapshot, '$.mimeType') END, ''),
             NULLIF(ar.mime_type, ''),
-            NULLIF(ar.storage_url, ''),
-            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].url') END, '')
+            NULLIF(CASE WHEN json_valid(ar.resource_snapshot) THEN json_extract(ar.resource_snapshot, '$.publicUrl') END, ''),
+            NULLIF(CASE WHEN json_valid(ar.resource_snapshot) THEN json_extract(ar.resource_snapshot, '$.url') END, ''),
+            NULLIF(CASE WHEN json_valid(ar.resource_snapshot) THEN json_extract(ar.resource_snapshot, '$.uri') END, ''),
+            NULLIF(CASE WHEN json_valid(ar.resource_snapshot) THEN json_extract(ar.resource_snapshot, '$.objectKey') END, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].asset.publicUrl') END, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].asset.url') END, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].asset.uri') END, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].asset.objectKey') END, '')
         )) AS target_signal,
         COALESCE(NULLIF(r.model, ''), NULLIF(i.model, ''), '') AS model_info,
         COALESCE(NULLIF(r.model, ''), NULLIF(i.model, ''), '') AS model_catalog_key,
         COALESCE(
-            NULLIF(ar.storage_url, ''),
-            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].url') END, ''),
-            NULLIF(CASE WHEN json_valid(ar.content_json) THEN json_extract(ar.content_json, '$.url') END, ''),
+            NULLIF(CASE WHEN json_valid(ar.resource_snapshot) THEN ar.resource_snapshot END, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].asset') END, ''),
             ''
-        ) AS asset_url,
+        ) AS asset_resource_snapshot,
         COALESCE(
-            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].thumb') END, ''),
-            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].thumbnailUrl') END, ''),
-            NULLIF(CASE WHEN json_valid(ar.content_json) THEN json_extract(ar.content_json, '$.thumb') END, ''),
-            NULLIF(CASE WHEN json_valid(ar.content_json) THEN json_extract(ar.content_json, '$.thumbnailUrl') END, ''),
+            NULLIF(CASE WHEN json_valid(ar.resource_snapshot) THEN json_extract(ar.resource_snapshot, '$.poster') END, ''),
+            NULLIF(CASE WHEN json_valid(ar.resource_snapshot) THEN json_extract(ar.resource_snapshot, '$.thumbnails[0]') END, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].asset.poster') END, ''),
+            NULLIF(CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].asset.thumbnails[0]') END, ''),
             ''
-        ) AS thumbnail_url,
+        ) AS thumbnail_resource_snapshot,
         CASE WHEN json_valid(i.request_json) THEN json_extract(i.request_json, '$.generationConfig.aspectRatio') END AS aspect_ratio,
         COALESCE(
+            CASE WHEN json_valid(ar.resource_snapshot) THEN json_extract(ar.resource_snapshot, '$.durationSeconds') END,
             CASE WHEN json_valid(i.request_json) THEN json_extract(i.request_json, '$.generationConfig.durationSeconds') END,
-            CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].durationSeconds') END,
-            CASE WHEN json_valid(ar.content_json) THEN json_extract(ar.content_json, '$.durationSeconds') END
+            CASE WHEN json_valid(i.response_json) THEN json_extract(i.response_json, '$.media[0].asset.durationSeconds') END
         ) AS duration_seconds,
         COALESCE(
             NULLIF(r.output_message, ''),
@@ -99,7 +109,16 @@ WITH runtime_generation_candidates AS (
                 OR aa.runtime_invocation_id = i.uuid
             )
           ORDER BY
-            CASE WHEN NULLIF(aa.storage_url, '') IS NULL THEN 1 ELSE 0 END,
+            CASE
+                WHEN COALESCE(
+                    NULLIF(CASE WHEN json_valid(aa.resource_snapshot) THEN json_extract(aa.resource_snapshot, '$.publicUrl') END, ''),
+                    NULLIF(CASE WHEN json_valid(aa.resource_snapshot) THEN json_extract(aa.resource_snapshot, '$.url') END, ''),
+                    NULLIF(CASE WHEN json_valid(aa.resource_snapshot) THEN json_extract(aa.resource_snapshot, '$.uri') END, ''),
+                    NULLIF(CASE WHEN json_valid(aa.resource_snapshot) THEN json_extract(aa.resource_snapshot, '$.objectKey') END, ''),
+                    NULLIF(CASE WHEN json_valid(aa.resource_snapshot) THEN json_extract(aa.resource_snapshot, '$.objectBlobId') END, ''),
+                    NULLIF(CASE WHEN json_valid(aa.resource_snapshot) THEN json_extract(aa.resource_snapshot, '$.id') END, '')
+                ) IS NULL THEN 1 ELSE 0
+            END,
             aa.created_at ASC,
             aa.id ASC
           LIMIT 1
@@ -129,8 +148,8 @@ runtime_generation_rows AS (
         END AS item_kind,
         model_info,
         model_catalog_key,
-        asset_url,
-        thumbnail_url,
+        asset_resource_snapshot,
+        thumbnail_resource_snapshot,
         aspect_ratio,
         duration_seconds,
         output_text,
@@ -146,8 +165,8 @@ SELECT
     a.asset_type AS item_kind,
     COALESCE(NULLIF(a.model_snapshot, ''), NULLIF(j.model, ''), '') AS model_info,
     COALESCE(NULLIF(a.model_snapshot, ''), NULLIF(j.model, ''), '') AS model_catalog_key,
-    COALESCE(NULLIF(a.asset_url, ''), '') AS asset_url,
-    COALESCE(NULLIF(a.thumbnail_url, ''), '') AS thumbnail_url,
+    COALESCE(CAST(a.asset_resource_snapshot AS TEXT), '') AS asset_resource_snapshot,
+    COALESCE(CAST(a.thumbnail_resource_snapshot AS TEXT), '') AS thumbnail_resource_snapshot,
     '' AS aspect_ratio,
     '' AS duration_seconds,
     '' AS output_text,
@@ -174,8 +193,8 @@ SELECT
     j.modality AS item_kind,
     COALESCE(NULLIF(j.model, ''), '') AS model_info,
     COALESCE(NULLIF(j.model, ''), '') AS model_catalog_key,
-    '' AS asset_url,
-    '' AS thumbnail_url,
+    '' AS asset_resource_snapshot,
+    '' AS thumbnail_resource_snapshot,
     '' AS aspect_ratio,
     '' AS duration_seconds,
     '' AS output_text,
@@ -207,8 +226,8 @@ SELECT
     item_kind,
     model_info,
     model_catalog_key,
-    asset_url,
-    thumbnail_url,
+    asset_resource_snapshot,
+    thumbnail_resource_snapshot,
     aspect_ratio,
     duration_seconds,
     output_text,
@@ -254,24 +273,17 @@ impl AppGenerationHistoryReadStore for SqliteAppGenerationHistoryReadStore {
 fn row_to_history_item(row: sqlx::sqlite::SqliteRow) -> DomainResult<AppGenerationHistoryItem> {
     let item_type = item_type_label(required_integer_cell(&row, "item_kind", "item kind")?)?;
     let status = status_label(required_integer_cell(&row, "status_code", "status")?)?;
-    let asset_url = string_cell(&row, "asset_url");
-    let thumbnail_url = string_cell(&row, "thumbnail_url");
+    let asset_resource_snapshot = string_cell(&row, "asset_resource_snapshot");
+    let thumbnail_resource_snapshot = string_cell(&row, "thumbnail_resource_snapshot");
     let created_at = string_cell(&row, "created_at");
     let updated_at = string_cell(&row, "updated_at");
-    let url = optional_string(asset_url.clone());
-    let images = if (item_type == "image" || item_type == "images") && !asset_url.is_empty() {
-        vec![asset_url.clone()]
-    } else {
-        Vec::new()
-    };
-    let videos = if item_type == "video" && !asset_url.is_empty() {
-        vec![AppGenerationMediaItem {
-            url: asset_url.clone(),
-            thumb: optional_string(thumbnail_url),
-        }]
-    } else {
-        Vec::new()
-    };
+    let duration_seconds = optional_integer_cell(&row, "duration_seconds");
+    let asset = media_resource_from_snapshot(
+        item_type,
+        &asset_resource_snapshot,
+        &thumbnail_resource_snapshot,
+        duration_seconds,
+    );
 
     Ok(AppGenerationHistoryItem {
         id: string_cell(&row, "id"),
@@ -280,16 +292,80 @@ fn row_to_history_item(row: sqlx::sqlite::SqliteRow) -> DomainResult<AppGenerati
         item_type: item_type.to_owned(),
         model_info: optional_string(string_cell(&row, "model_info")),
         model_catalog_key: optional_string(string_cell(&row, "model_catalog_key")),
-        url,
-        images,
-        videos,
+        asset: asset.clone(),
+        images: media_resource_array_for_type(&item_type, &asset, "image"),
+        videos: media_resource_array_for_type(&item_type, &asset, "video"),
         aspect_ratio: optional_string(string_cell(&row, "aspect_ratio")),
-        duration_seconds: optional_integer_cell(&row, "duration_seconds"),
+        duration_seconds,
         status: Some(status.to_owned()),
         output_text: optional_string(string_cell(&row, "output_text")),
         created_at: optional_string(created_at),
         updated_at: optional_string(updated_at),
     })
+}
+
+fn media_resource_from_snapshot(
+    item_type: &str,
+    asset_resource_snapshot: &str,
+    thumbnail_resource_snapshot: &str,
+    duration_seconds: Option<i64>,
+) -> Option<Value> {
+    let mut resource = media_resource_value_from_snapshot(asset_resource_snapshot)?;
+    if let Some(duration_seconds) = duration_seconds {
+        if resource.get("durationSeconds").is_none() {
+            resource["durationSeconds"] = json!(duration_seconds);
+        }
+    }
+    if item_type == "video" {
+        if let Some(thumbnail) = media_resource_value_from_snapshot(thumbnail_resource_snapshot) {
+            if resource.get("poster").is_none() {
+                resource["poster"] = thumbnail.clone();
+            }
+            let has_thumbnails = resource
+                .get("thumbnails")
+                .and_then(Value::as_array)
+                .is_some_and(|items| !items.is_empty());
+            if !has_thumbnails {
+                resource["thumbnails"] = json!([thumbnail]);
+            }
+        }
+    }
+    Some(resource)
+}
+
+fn media_resource_value_from_snapshot(snapshot: &str) -> Option<Value> {
+    let snapshot = snapshot.trim();
+    if snapshot.is_empty() {
+        return None;
+    }
+    let value: Value = serde_json::from_str(snapshot).ok()?;
+    if value.get("kind").and_then(Value::as_str).is_none()
+        || value.get("source").and_then(Value::as_str).is_none()
+    {
+        return None;
+    }
+    Some(value)
+}
+
+fn media_resource_array_for_type(
+    item_type: &str,
+    asset: &Option<Value>,
+    expected: &str,
+) -> Vec<Value> {
+    if media_kind_for_item_type(item_type) == expected {
+        asset.iter().cloned().collect()
+    } else {
+        Vec::new()
+    }
+}
+
+fn media_kind_for_item_type(item_type: &str) -> &'static str {
+    match item_type {
+        "image" | "images" => "image",
+        "video" => "video",
+        "audio" | "music" | "sfx" => "audio",
+        _ => "other",
+    }
 }
 
 fn require_subject(

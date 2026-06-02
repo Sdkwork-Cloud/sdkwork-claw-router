@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/turing-tavily-web-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-turing-tavily-web-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-turing-tavily-web-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2cd61dba29cc882b54c61916e2d222760eab80929d3a9c6f73fb7b21418537b",

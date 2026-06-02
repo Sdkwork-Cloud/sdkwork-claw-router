@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seville@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-seville-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seville-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eeba7a82b12554166a1be9e2d00019f07780621d5648feede764670ffdb04fa4",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/karpathy-wiki-improve@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-wiki-improve-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-karpathy-wiki-improve-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9562fc41dfabd7b4f6c9d2f782174b75b3288187897205429af6f4c379985ff8",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoice-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoice-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoice-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:143650da2146cfe8b5d0bb5817e862c0b215ebc9dd324271b6a0c6746aed351e",

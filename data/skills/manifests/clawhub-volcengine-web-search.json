@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/volcengine-web-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-web-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-volcengine-web-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d6437ea5dde5771bdb8e5da41e55865c52d5d0a80d00d38e60c9d3446cc7201",

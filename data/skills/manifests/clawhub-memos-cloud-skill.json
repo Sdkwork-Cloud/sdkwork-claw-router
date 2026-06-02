@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memos-cloud-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-memos-cloud-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memos-cloud-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f45f7d5a2afedaf0e1971d637dc82106132ac7f1ec12fc11a058c90bf756f455",

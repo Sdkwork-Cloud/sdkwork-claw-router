@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/doctor-visit-prep@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-doctor-visit-prep-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-doctor-visit-prep-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5121cb6c435c624768e81e745d4e42c5136835cc98c628fd8611cbce8bddc1f8",

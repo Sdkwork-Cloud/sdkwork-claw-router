@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/confluence-atlassian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-confluence-atlassian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-confluence-atlassian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:58ae51ca20f469e5c2953bb7a7ce1628e5ab741c6155feb84f0fe790dd9a42b2",

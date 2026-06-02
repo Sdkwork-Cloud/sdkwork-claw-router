@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-minimax@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-minimax-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-minimax-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1e1cd36a9f9fdba360a43403a97e6dbaa8cb07a173c52b1c126033462b032ea4",

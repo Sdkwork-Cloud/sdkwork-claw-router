@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-hardening-zurbrick@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-hardening-zurbrick-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-hardening-zurbrick-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56ac8aee3bc4491ffc1782971b4113caa31684ddc4c9fe75904a788233670c6d",

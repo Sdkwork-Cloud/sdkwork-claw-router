@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dole@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dole-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dole-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2bfe4538bd1a65bd9376cf600c7f0c391e972081764d7f1cd2051752459fd2f4",

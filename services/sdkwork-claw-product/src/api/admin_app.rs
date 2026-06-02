@@ -35,8 +35,9 @@ const MAX_PACKAGE_LEN: usize = 255;
 const MAX_DESCRIPTION_LEN: usize = 4000;
 const MAX_CATEGORY_NAME_LEN: usize = 255;
 const MAX_CATEGORY_CODE_LEN: usize = 128;
-const MAX_CATEGORY_ICON_LEN: usize = 255;
 const MAX_CATEGORY_PATH_LEN: usize = 1024;
+const MAX_MEDIA_LABEL_LEN: usize = 64;
+const MAX_MEDIA_LOCATOR_LEN: usize = 1024;
 const MAX_TEMPLATE_NO_LEN: usize = 64;
 const MAX_TEMPLATE_CODE_LEN: usize = 128;
 const MAX_TEMPLATE_NAME_LEN: usize = 255;
@@ -109,7 +110,6 @@ struct CreateAppRequest {
     description: Option<String>,
     version: Option<String>,
     icon: Option<Value>,
-    icon_url: Option<String>,
     resource_list: Option<Value>,
     project_id: Option<Value>,
     access_url: Option<String>,
@@ -125,7 +125,7 @@ struct CreateAppRequest {
     package_name: Option<String>,
     bundle_id: Option<String>,
     store_url: Option<String>,
-    download_url: Option<String>,
+    artifact: Option<Value>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -141,8 +141,8 @@ struct CreateTemplateRequest {
     runtime: Option<String>,
     framework: Option<String>,
     language: Option<String>,
-    icon_url: Option<String>,
-    cover_url: Option<String>,
+    icon: Option<Value>,
+    cover: Option<Value>,
     visibility: Option<String>,
     publish_status: Option<String>,
     featured: Option<bool>,
@@ -166,7 +166,6 @@ struct UpdateAppRequest {
     description: Option<Value>,
     version: Option<Value>,
     icon: Option<Value>,
-    icon_url: Option<Value>,
     resource_list: Option<Value>,
     project_id: Option<Value>,
     access_url: Option<Value>,
@@ -180,7 +179,7 @@ struct UpdateAppRequest {
     package_name: Option<Value>,
     bundle_id: Option<Value>,
     store_url: Option<Value>,
-    download_url: Option<Value>,
+    artifact: Option<Value>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -194,8 +193,8 @@ struct UpdateTemplateRequest {
     runtime: Option<Value>,
     framework: Option<Value>,
     language: Option<Value>,
-    icon_url: Option<Value>,
-    cover_url: Option<Value>,
+    icon: Option<Value>,
+    cover: Option<Value>,
     visibility: Option<String>,
     publish_status: Option<String>,
     featured: Option<bool>,
@@ -217,7 +216,7 @@ struct CreateCategoryRequest {
     name: Option<String>,
     description: Option<String>,
     code: Option<String>,
-    icon: Option<String>,
+    icon: Option<Value>,
     sort_weight: Option<i32>,
     parent_id: Option<Value>,
     path: Option<String>,
@@ -283,7 +282,7 @@ struct AdminAppCategoryItemResponse {
     #[serde(skip_serializing_if = "Option::is_none")]
     code: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    icon: Option<String>,
+    icon: Option<Value>,
     sort_weight: i32,
     #[serde(skip_serializing_if = "Option::is_none")]
     parent_id: Option<String>,
@@ -314,8 +313,6 @@ struct AdminAppItemResponse {
     #[serde(skip_serializing_if = "Option::is_none")]
     version: Option<String>,
     icon: Value,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    icon_url: Option<String>,
     resource_list: Value,
     #[serde(skip_serializing_if = "Option::is_none")]
     project_id: Option<String>,
@@ -340,7 +337,7 @@ struct AdminAppItemResponse {
     #[serde(skip_serializing_if = "Option::is_none")]
     store_url: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    download_url: Option<String>,
+    artifact: Option<Value>,
     created_at: String,
     updated_at: String,
 }
@@ -368,9 +365,9 @@ struct AdminAppTemplateItemResponse {
     #[serde(skip_serializing_if = "Option::is_none")]
     language: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    icon_url: Option<String>,
+    icon: Option<Value>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    cover_url: Option<String>,
+    cover: Option<Value>,
     visibility: String,
     publish_status: String,
     featured: bool,
@@ -1240,7 +1237,6 @@ fn build_create_app_command(
         icon: request
             .icon
             .unwrap_or_else(|| Value::Object(Default::default())),
-        icon_url: normalize_optional_url(request.icon_url.as_deref(), "iconUrl")?,
         resource_list: request
             .resource_list
             .unwrap_or_else(|| Value::Object(Default::default())),
@@ -1295,7 +1291,7 @@ fn build_create_app_command(
             MAX_PACKAGE_LEN,
         )?,
         store_url: normalize_optional_url(request.store_url.as_deref(), "storeUrl")?,
-        download_url: normalize_optional_url(request.download_url.as_deref(), "downloadUrl")?,
+        artifact: optional_media_resource(request.artifact, "artifact")?,
         request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
@@ -1364,8 +1360,8 @@ fn build_create_template_command(
             "language",
             MAX_TEMPLATE_KIND_LEN,
         )?,
-        icon_url: normalize_optional_url(request.icon_url.as_deref(), "iconUrl")?,
-        cover_url: normalize_optional_url(request.cover_url.as_deref(), "coverUrl")?,
+        icon: optional_media_resource(request.icon, "icon")?,
+        cover: optional_media_resource(request.cover, "cover")?,
         visibility: request
             .visibility
             .as_deref()
@@ -1429,7 +1425,7 @@ fn build_create_category_command(
             MAX_DESCRIPTION_LEN,
         )?,
         code: normalize_optional_text(request.code.as_deref(), "code", MAX_CATEGORY_CODE_LEN)?,
-        icon: normalize_optional_text(request.icon.as_deref(), "icon", MAX_CATEGORY_ICON_LEN)?,
+        icon: optional_media_resource(request.icon, "icon")?,
         sort_weight: request.sort_weight.unwrap_or_default(),
         parent_id: request
             .parent_id
@@ -1486,12 +1482,7 @@ fn build_update_app_command(
             .as_ref()
             .map(|value| normalize_nullable_text_value(value, "version", MAX_VERSION_LEN))
             .transpose()?,
-        icon: request.icon,
-        icon_url: request
-            .icon_url
-            .as_ref()
-            .map(|value| normalize_nullable_url_value(value, "iconUrl"))
-            .transpose()?,
+        icon: normalize_media_resource_option(request.icon, "icon")?,
         resource_list: request.resource_list,
         project_id: request
             .project_id
@@ -1530,11 +1521,7 @@ fn build_update_app_command(
             .as_ref()
             .map(|value| normalize_nullable_url_value(value, "storeUrl"))
             .transpose()?,
-        download_url: request
-            .download_url
-            .as_ref()
-            .map(|value| normalize_nullable_url_value(value, "downloadUrl"))
-            .transpose()?,
+        artifact: normalize_nullable_media_resource(request.artifact, "artifact")?,
         request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
     })
@@ -1597,16 +1584,8 @@ fn build_update_template_command(
             .as_ref()
             .map(|value| normalize_nullable_code_value(value, "language", MAX_TEMPLATE_KIND_LEN))
             .transpose()?,
-        icon_url: request
-            .icon_url
-            .as_ref()
-            .map(|value| normalize_nullable_url_value(value, "iconUrl"))
-            .transpose()?,
-        cover_url: request
-            .cover_url
-            .as_ref()
-            .map(|value| normalize_nullable_url_value(value, "coverUrl"))
-            .transpose()?,
+        icon: normalize_nullable_media_resource(request.icon, "icon")?,
+        cover: normalize_nullable_media_resource(request.cover, "cover")?,
         visibility: request
             .visibility
             .as_deref()
@@ -1703,11 +1682,7 @@ fn build_update_category_command(
             .as_ref()
             .map(|value| normalize_nullable_text_value(value, "code", MAX_CATEGORY_CODE_LEN))
             .transpose()?,
-        icon: request
-            .icon
-            .as_ref()
-            .map(|value| normalize_nullable_text_value(value, "icon", MAX_CATEGORY_ICON_LEN))
-            .transpose()?,
+        icon: normalize_nullable_media_resource(request.icon, "icon")?,
         sort_weight: request.sort_weight,
         parent_id,
         path: request
@@ -1829,7 +1804,6 @@ fn to_app_response(item: AdminAppItem) -> AdminAppItemResponse {
         description: item.description,
         version: item.version,
         icon: item.icon,
-        icon_url: item.icon_url,
         resource_list: item.resource_list,
         project_id: item.project_id.map(|value| value.to_string()),
         access_url: item.access_url,
@@ -1846,7 +1820,7 @@ fn to_app_response(item: AdminAppItem) -> AdminAppItemResponse {
         package_name: item.package_name,
         bundle_id: item.bundle_id,
         store_url: item.store_url,
-        download_url: item.download_url,
+        artifact: item.artifact,
         created_at: item.created_at,
         updated_at: item.updated_at,
     }
@@ -1866,8 +1840,8 @@ fn to_template_response(item: AdminAppTemplateItem) -> AdminAppTemplateItemRespo
         runtime: item.runtime,
         framework: item.framework,
         language: item.language,
-        icon_url: item.icon_url,
-        cover_url: item.cover_url,
+        icon: item.icon,
+        cover: item.cover,
         visibility: item.visibility,
         publish_status: item.publish_status,
         featured: item.featured,
@@ -2203,6 +2177,92 @@ fn normalize_array_value(
         ))),
         None => Ok(Value::Array(Vec::new())),
     }
+}
+
+fn optional_media_resource(
+    value: Option<Value>,
+    field: &str,
+) -> Result<Option<Value>, AdminAppCommandBuildError> {
+    normalize_media_resource_option(value, field)
+}
+
+fn normalize_nullable_media_resource(
+    value: Option<Value>,
+    field: &str,
+) -> Result<Option<Option<Value>>, AdminAppCommandBuildError> {
+    let Some(value) = value else {
+        return Ok(None);
+    };
+    if value.is_null() {
+        return Ok(Some(None));
+    }
+    normalize_media_resource(value, field).map(Some)
+}
+
+fn normalize_media_resource_option(
+    value: Option<Value>,
+    field: &str,
+) -> Result<Option<Value>, AdminAppCommandBuildError> {
+    let Some(value) = value else {
+        return Ok(None);
+    };
+    normalize_media_resource(value, field)
+}
+
+fn normalize_media_resource(
+    value: Value,
+    field: &str,
+) -> Result<Option<Value>, AdminAppCommandBuildError> {
+    if value.is_null() {
+        return Ok(None);
+    }
+    let mut object = value.as_object().cloned().ok_or_else(|| {
+        AdminAppCommandBuildError::BadRequest(format!("{field} must be a MediaResource object"))
+    })?;
+    let kind = media_resource_required_text(field, &object, "kind", MAX_MEDIA_LABEL_LEN)?;
+    let source = media_resource_required_text(field, &object, "source", MAX_MEDIA_LABEL_LEN)?;
+    object.insert("kind".to_owned(), Value::String(kind));
+    object.insert("source".to_owned(), Value::String(source));
+
+    let mut has_locator = false;
+    for key in ["id", "publicUrl", "url", "uri", "objectKey", "objectBlobId"] {
+        if let Some(value) = object.get_mut(key) {
+            let Some(text) = value.as_str() else {
+                return Err(AdminAppCommandBuildError::BadRequest(format!(
+                    "{field}.{key} must be a string"
+                )));
+            };
+            let normalized = normalize_optional_text(
+                Some(text),
+                &format!("{field}.{key}"),
+                MAX_MEDIA_LOCATOR_LEN,
+            )
+            .map_err(AdminAppCommandBuildError::BadRequest)?;
+            if let Some(normalized) = normalized {
+                has_locator = true;
+                *value = Value::String(normalized);
+            } else {
+                *value = Value::String(String::new());
+            }
+        }
+    }
+    if !has_locator {
+        return Err(AdminAppCommandBuildError::BadRequest(format!(
+            "{field} must include a media resource locator"
+        )));
+    }
+
+    Ok(Some(Value::Object(object)))
+}
+
+fn media_resource_required_text(
+    field: &str,
+    object: &serde_json::Map<String, Value>,
+    key: &str,
+    max_len: usize,
+) -> Result<String, AdminAppCommandBuildError> {
+    let value = object.get(key).and_then(Value::as_str);
+    normalize_required_text(value, &format!("{field}.{key}"), max_len)
 }
 
 fn normalize_code(

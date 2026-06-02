@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vvmai-image-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vvmai-image-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vvmai-image-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:612dcc05c8f0629bcccba401fc1ad2645696c695a65cbb8400f8105b29823c38",

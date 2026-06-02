@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/napa@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-napa-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-napa-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5949bfad6309a3dea146160eea0944e50cd5a2c199ad20343e94b475ff52cb06",

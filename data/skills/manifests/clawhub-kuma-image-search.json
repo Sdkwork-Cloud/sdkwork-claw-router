@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kuma-image-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kuma-image-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kuma-image-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5b34b55a3a3d94a3b677581fe1d3db0a750caf825889879d2ec823c4bb51b01b",

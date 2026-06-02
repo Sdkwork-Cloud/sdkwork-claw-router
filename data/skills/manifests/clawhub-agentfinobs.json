@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentfinobs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentfinobs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentfinobs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f2cc96d9e52b9d6007be944d01f2de664cd11093a70ec85ef58b3e31f69c886f",

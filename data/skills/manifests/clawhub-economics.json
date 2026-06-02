@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/economics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-economics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-economics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1925c6d07100db8d19819709135c7f3c5c282cd5e442108db7ed8da132b4a9f7",

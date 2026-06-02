@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bossclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bossclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bossclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a30c7203c31d557a3da2e9968ac8e8e965e82cb0a1754fd38f36c042d8e3f24a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zh-en-translator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zh-en-translator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zh-en-translator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6d25e55ab88689c3258084e159648e49a15ba850398136f83240abf76cf4b205",

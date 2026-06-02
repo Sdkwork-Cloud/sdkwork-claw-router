@@ -26,8 +26,8 @@ import { ConfirmDialog } from 'sdkwork-claw-router-commons/components/ConfirmDia
 import { CopyButton } from 'sdkwork-claw-router-commons/components/CopyButton';
 import { CreateKeyDrawer, type ApiKeyFormValues } from './CreateKeyDrawer';
 import { createApiKeyInputsFromForm } from './apiKeyForm';
-import { ApiKeyService, type ApiKey, type ApiKeyGroup } from './apiKeyService';
-import { formatApiKeyGroupOptionLabel, resolveApiKeyGroupCode, resolveApiKeyGroupName } from './apiKeyGroups';
+import { ApiKeyService, type ApiKey, type ChannelGroup } from './apiKeyService';
+import { formatChannelGroupOptionLabel, resolveChannelGroupCode, resolveChannelGroupName } from './channelGroups';
 import { ApiKeyUsageDetailsDrawer } from './usage-details/ApiKeyUsageDetailsDrawer';
 
 type TranslationFunction = ReturnType<typeof useTranslation>['t'];
@@ -53,7 +53,7 @@ function getApiKeyProductErrorMessage(error: unknown, fallback: string, t: Trans
 export function ApiKeysView() {
   const { t } = useTranslation();
   const [keysData, setKeysData] = useState<ApiKey[]>([]);
-  const [groups, setGroups] = useState<ApiKeyGroup[]>([]);
+  const [groups, setGroups] = useState<ChannelGroup[]>([]);
   const [groupsLoaded, setGroupsLoaded] = useState(false);
   const [groupsLoading, setGroupsLoading] = useState(false);
   const [groupSelectorKeyId, setGroupSelectorKeyId] = useState<string | null>(null);
@@ -134,12 +134,12 @@ export function ApiKeysView() {
       return keysData;
     }
     return keysData.filter((key) => {
-      const groupName = displayApiKeyGroupName(key, groups).toLowerCase();
+      const groupName = displayChannelGroupName(key, groups).toLowerCase();
       return (
         key.displayName.toLowerCase().includes(query) ||
         key.name.toLowerCase().includes(query) ||
         key.maskedKey.toLowerCase().includes(query) ||
-        key.group.toLowerCase().includes(query) ||
+        key.channelGroup.toLowerCase().includes(query) ||
         groupName.includes(query)
       );
     });
@@ -181,7 +181,7 @@ export function ApiKeysView() {
     try {
       const updated = await ApiKeyService.updateKey(editingKey.id, {
         name: data.name,
-        group: data.group,
+        channelGroup: data.channelGroup,
         quota: data.quota,
         isUnlimitedQuota: data.isUnlimitedQuota,
         modalities: data.modalities,
@@ -198,13 +198,13 @@ export function ApiKeysView() {
   };
 
   const handleGroupChange = async (key: ApiKey, group: string) => {
-    if (group === key.group) {
+    if (group === key.channelGroup) {
       return;
     }
     setMutatingKeyId(key.id);
     setError(null);
     try {
-      const updated = await ApiKeyService.updateKey(key.id, { group });
+      const updated = await ApiKeyService.updateKey(key.id, { channelGroup: group });
       setKeysData((previous) => previous.map((item) => mergeUpdatedApiKey(item, updated)));
     } catch (reason) {
       setError(getApiKeyProductErrorMessage(reason, t('console.apiKeys.errors.groupUpdateFallback', 'API Key 分组更新失败。'), t));
@@ -365,13 +365,13 @@ export function ApiKeysView() {
                       <div className="flex items-center gap-1.5">
                         {groupSelectorKeyId === key.id ? (
                           <>
-                            <label className="sr-only" htmlFor={`api-key-group-${key.id}`}>
+                            <label className="sr-only" htmlFor={`channel-group-${key.id}`}>
                               {t('console.apiKeys.group', '分组')}
                             </label>
                             <select
-                              id={`api-key-group-${key.id}`}
+                              id={`channel-group-${key.id}`}
                               autoFocus
-                              value={resolveApiKeyGroupCode(key.group, groups)}
+                              value={resolveChannelGroupCode(key.channelGroup, groups)}
                               disabled={mutatingKeyId === key.id || groupsLoading}
                               onBlur={() => setGroupSelectorKeyId(null)}
                               onFocus={() => {
@@ -386,13 +386,13 @@ export function ApiKeysView() {
                             >
                               {groups.map((group) => (
                                 <option key={group.code} value={group.code}>
-                                  {formatApiKeyGroupOptionLabel(group)}
+                                  {formatChannelGroupOptionLabel(group)}
                                 </option>
                               ))}
-                              {groups.length > 0 && !groups.some((group) => group.code === key.group) && (
-                                <option value={key.group}>{displayApiKeyGroupName(key, groups)}</option>
+                              {groups.length > 0 && !groups.some((group) => group.code === key.channelGroup) && (
+                                <option value={key.channelGroup}>{displayChannelGroupName(key, groups)}</option>
                               )}
-                              {groups.length === 0 && <option value={key.group}>{displayApiKeyGroupName(key, groups)}</option>}
+                              {groups.length === 0 && <option value={key.channelGroup}>{displayChannelGroupName(key, groups)}</option>}
                             </select>
                             {groupsLoading && <Loader2 className="h-3 w-3 animate-spin text-blue-500" />}
                           </>
@@ -406,7 +406,7 @@ export function ApiKeysView() {
                             className="inline-flex max-w-[170px] items-center gap-1 rounded border border-blue-200 bg-blue-50 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-600 transition-colors hover:bg-blue-100 disabled:opacity-60 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-400 dark:hover:bg-blue-500/20"
                             title={t('console.apiKeys.changeGroup', '切换分组')}
                           >
-                            <span className="truncate">{displayApiKeyGroupName(key, groups)}</span>
+                            <span className="truncate">{displayChannelGroupName(key, groups)}</span>
                             <ChevronDown className="h-3 w-3 shrink-0" />
                           </button>
                         )}
@@ -693,6 +693,6 @@ function displayApiKeyStatus(status: ApiKey['status'], t: TranslationFunction): 
     : t('console.apiKeys.status.disabled', '已停用');
 }
 
-function displayApiKeyGroupName(key: ApiKey, groups: ApiKeyGroup[]): string {
-  return key.groupName?.trim() || resolveApiKeyGroupName(key.group, groups);
+function displayChannelGroupName(key: ApiKey, groups: ChannelGroup[]): string {
+  return key.channelGroupName?.trim() || resolveChannelGroupName(key.channelGroup, groups);
 }

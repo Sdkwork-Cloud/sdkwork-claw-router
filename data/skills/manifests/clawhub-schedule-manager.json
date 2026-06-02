@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/schedule-manager@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-schedule-manager-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-schedule-manager-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f809ad8db0664b210f11d32827d4c1c842cd0617b8ca05040405cc3e24c94985",

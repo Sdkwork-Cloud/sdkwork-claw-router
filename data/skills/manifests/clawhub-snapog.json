@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snapog@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-snapog-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snapog-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d05746d7e8dc24da4709637528274dfa0ee7724bc5ea4cb22b22369392eb9bcd",

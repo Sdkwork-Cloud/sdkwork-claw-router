@@ -2,6 +2,7 @@ import {
   createSdkworkAppCapabilityManifest,
   type CreateSdkworkAppCapabilityManifestOptions,
   type SdkworkAppCapabilityManifest,
+  type SdkworkMediaResource,
 } from "@sdkwork/appbase-pc-react";
 import type { SdkworkImConversation, SdkworkImParticipant } from "@sdkwork/im-pc-react";
 
@@ -15,7 +16,7 @@ export type SdkworkContactRelationship =
 export type SdkworkContactScope = "external" | "group" | "personal" | "workspace";
 
 export interface SdkworkContactRecord {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   displayName: string;
   email?: string;
   headline?: string;
@@ -89,7 +90,7 @@ export interface CreateContactDigestOptions {
 }
 
 export interface SdkworkContactDigest {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   digestStatus: SdkworkContactDigestStatus;
   displayName: string;
   headline?: string;
@@ -452,7 +453,7 @@ export function createContactDigest(
   options: CreateContactDigestOptions = {},
 ): SdkworkContactDigest {
   return {
-    ...(contact.avatarUrl ? { avatarUrl: contact.avatarUrl } : {}),
+    ...(contact.avatar ? { avatar: contact.avatar } : {}),
     digestStatus: resolveContactDigestStatus(contact),
     displayName: contact.displayName,
     ...(contact.headline ? { headline: contact.headline } : {}),
@@ -578,7 +579,7 @@ export function toImParticipant(
   contact: SdkworkContactRecord,
 ): SdkworkImParticipant {
   return {
-    avatarUrl: contact.avatarUrl,
+    ...(contact.avatar ? { avatar: contact.avatar } : {}),
     id: contact.id,
     name: contact.displayName,
     presence: contact.presence,

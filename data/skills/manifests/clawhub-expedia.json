@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/expedia@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-expedia-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-expedia-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cf233bc08f2f85ae44ef51de0190949aa50880509ad97a3b5b5949b40453a290",

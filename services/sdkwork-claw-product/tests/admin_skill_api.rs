@@ -39,7 +39,7 @@ async fn admin_skill_route_manages_categories_skills_and_market_review_state() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"name":"Prompt Engineering","code":"prompt-engineering","description":"Prompt and instruction skills","icon":"https://cdn.example.test/icons/prompt.png","sortWeight":90}"#,
+                    r#"{"name":"Prompt Engineering","code":"prompt-engineering","description":"Prompt and instruction skills","icon":{"kind":"image","source":"external_url","url":"https://cdn.example.test/icons/prompt.png","publicUrl":"https://cdn.example.test/icons/prompt.png"},"sortWeight":90}"#,
                 ))
                 .unwrap(),
         )
@@ -309,7 +309,7 @@ async fn admin_skill_route_manages_skill_packages() {
                 .internal_trusted_subject(10, 20, 30)
                 .header("X-Request-Id", "req-create-skill-package")
                 .body(Body::from(
-                    r#"{"packageKey":"agent-productivity","name":"Agent Productivity Pack","summary":"Productivity skill bundle","description":"Curated agent productivity skills","icon":"https://cdn.example.test/package/icon.png","coverImage":"https://cdn.example.test/package/cover.png","enabled":true,"featured":true,"sortWeight":100,"tags":["agent","productivity","agent"]}"#,
+                    r#"{"packageKey":"agent-productivity","name":"Agent Productivity Pack","summary":"Productivity skill bundle","description":"Curated agent productivity skills","icon":{"kind":"image","source":"external_url","url":"https://cdn.example.test/package/icon.png","publicUrl":"https://cdn.example.test/package/icon.png"},"cover":{"kind":"image","source":"external_url","url":"https://cdn.example.test/package/cover.png","publicUrl":"https://cdn.example.test/package/cover.png"},"enabled":true,"featured":true,"sortWeight":100,"tags":["agent","productivity","agent"]}"#,
                 ))
                 .unwrap(),
         )
@@ -327,6 +327,10 @@ async fn admin_skill_route_manages_skill_packages() {
     assert_eq!(
         json!(["agent", "productivity"]),
         create_payload["data"]["item"]["tags"]
+    );
+    assert_eq!(
+        "https://cdn.example.test/package/cover.png",
+        create_payload["data"]["item"]["cover"]["url"]
     );
 
     let update_response = router
@@ -475,7 +479,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
                 .internal_trusted_subject(10, 20, 30)
                 .header("X-Request-Id", "req-create-skill-asset")
                 .body(Body::from(
-                    r#"{"assetType":1,"assetUrl":"https://cdn.example.test/skills/asset-ready/cover.png","thumbnailUrl":"https://cdn.example.test/skills/asset-ready/thumb.png","title":"Skill cover","altText":"Skill marketplace cover","mimeType":"image/png","width":1200,"height":720,"fileSize":182000,"sortOrder":10,"publishedAt":"2026-05-09T00:00:00Z"}"#,
+                    r#"{"assetType":1,"asset":{"kind":"image","source":"external_url","url":"https://cdn.example.test/skills/asset-ready/cover.png","publicUrl":"https://cdn.example.test/skills/asset-ready/cover.png"},"thumbnail":{"kind":"image","source":"external_url","url":"https://cdn.example.test/skills/asset-ready/thumb.png","publicUrl":"https://cdn.example.test/skills/asset-ready/thumb.png"},"title":"Skill cover","altText":"Skill marketplace cover","mimeType":"image/png","width":1200,"height":720,"fileSize":182000,"sortOrder":10,"publishedAt":"2026-05-09T00:00:00Z"}"#,
                 ))
                 .unwrap(),
         )
@@ -490,7 +494,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
     assert_eq!(1, create_asset_payload["data"]["item"]["assetType"]);
     assert_eq!(
         "https://cdn.example.test/skills/asset-ready/cover.png",
-        create_asset_payload["data"]["item"]["assetUrl"]
+        create_asset_payload["data"]["item"]["asset"]["url"]
     );
     assert_eq!(1200, create_asset_payload["data"]["item"]["width"]);
 
@@ -503,7 +507,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"title":"Updated cover","sortOrder":20,"thumbnailUrl":null}"#,
+                    r#"{"title":"Updated cover","sortOrder":20,"thumbnail":null}"#,
                 ))
                 .unwrap(),
         )
@@ -518,7 +522,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
     assert_eq!(20, update_asset_payload["data"]["item"]["sortOrder"]);
     assert_eq!(
         true,
-        update_asset_payload["data"]["item"]["thumbnailUrl"].is_null()
+        update_asset_payload["data"]["item"]["thumbnail"].is_null()
     );
 
     let list_asset_response = router
@@ -553,7 +557,7 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
                 .internal_trusted_subject(10, 20, 30)
                 .header("X-Request-Id", "req-create-skill-artifact")
                 .body(Body::from(
-                    r#"{"artifactType":1,"version":"1.0.0","platformType":"agent","osName":"runtime","artifactRef":"builtin://sdkwork.skills.asset_ready@1.0.0","artifactUrl":"data/skills/artifacts/asset-ready-1.0.0.json","artifactSizeBytes":2048,"runtime":"builtin","frameworks":["Rust service","OpenAI-compatible","Rust service"],"licenseName":"SDKWork Commercial","checksumHash":"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","releaseNotes":"Initial release.","publishedAt":"2026-05-09T00:00:00Z"}"#,
+                    r#"{"artifactType":1,"version":"1.0.0","platformType":"agent","osName":"runtime","artifactRef":"builtin://sdkwork.skills.asset_ready@1.0.0","artifact":{"kind":"document","source":"external_url","url":"data/skills/artifacts/asset-ready-1.0.0.json","publicUrl":"data/skills/artifacts/asset-ready-1.0.0.json"},"artifactSizeBytes":2048,"runtime":"builtin","frameworks":["Rust service","OpenAI-compatible","Rust service"],"licenseName":"SDKWork Commercial","checksumHash":"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","releaseNotes":"Initial release.","publishedAt":"2026-05-09T00:00:00Z"}"#,
                 ))
                 .unwrap(),
         )
@@ -567,6 +571,10 @@ async fn admin_skill_route_manages_skill_assets_and_artifacts() {
     assert_eq!(
         "builtin://sdkwork.skills.asset_ready@1.0.0",
         create_artifact_payload["data"]["item"]["artifactRef"]
+    );
+    assert_eq!(
+        "data/skills/artifacts/asset-ready-1.0.0.json",
+        create_artifact_payload["data"]["item"]["artifact"]["url"]
     );
     assert_eq!(
         json!(["Rust service", "OpenAI-compatible"]),
@@ -934,7 +942,7 @@ impl AdminSkillStore for TestAdminSkillStore {
                 summary: command.summary,
                 description: command.description,
                 icon: command.icon,
-                cover_image: command.cover_image,
+                cover: command.cover,
                 category_id: command.category_id,
                 enabled: command.enabled,
                 featured: command.featured,
@@ -1067,7 +1075,7 @@ impl AdminSkillStore for TestAdminSkillStore {
                 summary: command.summary,
                 description: command.description,
                 icon: command.icon,
-                cover_image: command.cover_image,
+                cover: command.cover,
                 category_id: command.category_id,
                 package_id: command.package_id,
                 provider: command.provider,
@@ -1283,8 +1291,8 @@ impl AdminSkillStore for TestAdminSkillStore {
                 target_id: command.skill_id,
                 artifact_id: command.artifact_id,
                 asset_type: command.asset_type,
-                asset_url: command.asset_url,
-                thumbnail_url: command.thumbnail_url,
+                asset: command.asset,
+                thumbnail: command.thumbnail,
                 title: command.title,
                 alt_text: command.alt_text,
                 mime_type: command.mime_type,
@@ -1321,8 +1329,11 @@ impl AdminSkillStore for TestAdminSkillStore {
             if let Some(title) = command.title {
                 item.title = title;
             }
-            if let Some(thumbnail_url) = command.thumbnail_url {
-                item.thumbnail_url = thumbnail_url;
+            if let Some(asset) = command.asset {
+                item.asset = asset;
+            }
+            if let Some(thumbnail) = command.thumbnail {
+                item.thumbnail = thumbnail;
             }
             if let Some(sort_order) = command.sort_order {
                 item.sort_order = sort_order;
@@ -1402,7 +1413,7 @@ impl AdminSkillStore for TestAdminSkillStore {
                 platform_type: command.platform_type,
                 os_name: command.os_name,
                 artifact_ref: command.artifact_ref,
-                artifact_url: command.artifact_url,
+                artifact: command.artifact,
                 artifact_size_bytes: command.artifact_size_bytes,
                 runtime: command.runtime,
                 frameworks: command.frameworks,

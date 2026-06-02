@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kirk-agent-selfie@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kirk-agent-selfie-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kirk-agent-selfie-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:88a43f83114f026df880318334feb074edaf3aff3c7b2b4193a0ced90c6edfb2",

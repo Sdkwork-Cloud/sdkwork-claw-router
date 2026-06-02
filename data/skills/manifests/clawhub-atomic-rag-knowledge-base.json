@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/atomic-rag-knowledge-base@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-atomic-rag-knowledge-base-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-atomic-rag-knowledge-base-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b6c2bd9c628b851cfa5d5c960e5855a4f62931812f1af3ff11648bb3850c17dd",

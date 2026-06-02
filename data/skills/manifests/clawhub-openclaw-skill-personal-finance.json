@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-personal-finance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-personal-finance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-personal-finance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:79e7358457788c7fc59625924ee8e0ca46d15348e8678ee42a39c9c7a53c16a7",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medical-scribe-dictation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-medical-scribe-dictation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medical-scribe-dictation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8c0da0d39a17cfed002414afdc5f4c34a454ef0aa6ba446b300cca329b0d451",

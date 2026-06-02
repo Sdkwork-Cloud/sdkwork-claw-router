@@ -65,6 +65,13 @@ pub struct PromotionUserCouponRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub expires_at: Option<String>,
 
+    /// Face value minor field on promotion user coupon record.
+    pub face_value_minor: String,
+
+    /// Id field on promotion user coupon record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on promotion user coupon record.
     pub idempotency_key: String,
 
@@ -75,6 +82,12 @@ pub struct PromotionUserCouponRecord {
     /// Locked at field on promotion user coupon record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub locked_at: Option<String>,
+
+    /// Maximum discount amount minor field on promotion user coupon record.
+    pub maximum_discount_amount_minor: String,
+
+    /// Minimum order amount minor field on promotion user coupon record.
+    pub minimum_order_amount_minor: String,
 
     /// Offer id field on promotion user coupon record.
     pub offer_id: String,

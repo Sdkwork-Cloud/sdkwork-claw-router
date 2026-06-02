@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentcloud-ocr-licenseplate@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-ocr-licenseplate-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentcloud-ocr-licenseplate-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:bb6f91390a0788a02386e806e48bc786795091aa274df1d90b89dd51ac7e5547",

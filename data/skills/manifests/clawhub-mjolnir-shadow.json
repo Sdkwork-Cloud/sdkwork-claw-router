@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mjolnir-shadow@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mjolnir-shadow-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mjolnir-shadow-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8fbd837447accf981fb747ec81b2e11d5afe005f578902395eaba6c6dbb9d04",

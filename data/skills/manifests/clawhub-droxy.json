@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/droxy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-droxy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-droxy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:33dce8415dee348c691b937bb51dc4c5147a7cfce4cc893d04d52dcb8d5e06fc",

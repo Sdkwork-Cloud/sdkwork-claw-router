@@ -4,6 +4,7 @@ package types
 type CommercePaymentWebhookEventRecord struct {
 	CreatedAt string `json:"created_at"`
 	EventId string `json:"event_id"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	Message string `json:"message"`
 	Nonce string `json:"nonce"`

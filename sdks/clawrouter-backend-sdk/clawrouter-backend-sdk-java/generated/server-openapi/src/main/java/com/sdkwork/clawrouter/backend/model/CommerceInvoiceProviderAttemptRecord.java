@@ -7,6 +7,7 @@ public class CommerceInvoiceProviderAttemptRecord {
     private String failedAt;
     private String failureCode;
     private String failureMessage;
+    private String id;
     private String invoiceId;
     private String organizationId;
     private String providerAccountId;
@@ -56,6 +57,14 @@ public class CommerceInvoiceProviderAttemptRecord {
 
     public void setFailureMessage(String failureMessage) {
         this.failureMessage = failureMessage;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getInvoiceId() {

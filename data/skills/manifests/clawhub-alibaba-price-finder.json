@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alibaba-price-finder@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alibaba-price-finder-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alibaba-price-finder-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:682f1ac0dd3904a6e110c127c5bbed02e33f272048352d5102426f8d008a1b36",

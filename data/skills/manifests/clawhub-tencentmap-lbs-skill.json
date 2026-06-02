@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentmap-lbs-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentmap-lbs-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentmap-lbs-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:33863479c455d69653da69af87214c4f5f2b82196d14e2d44a6988f3265b6deb",

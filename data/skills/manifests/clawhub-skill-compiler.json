@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-compiler@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-compiler-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-compiler-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fef6878cdd55bfbd160784c09ebfe682074155f07738465090b14067d7671fdc",

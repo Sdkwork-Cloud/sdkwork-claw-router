@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/freqtrade-crypto-bot@0.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-freqtrade-crypto-bot-0.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-freqtrade-crypto-bot-0.3.3.json"
+      },
       "version": "0.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c38d5b9e7874b05af02ff64c0d432704a31122b675fcf7f2628f30faa77619e8",

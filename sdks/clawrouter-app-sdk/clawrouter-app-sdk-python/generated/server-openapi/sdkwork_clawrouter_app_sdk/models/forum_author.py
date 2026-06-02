@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class ForumAuthor:
@@ -9,5 +12,5 @@ class ForumAuthor:
     id: int
     is_following: bool
     name: str
-    avatar: Optional[str] = None
+    avatar: Optional[MediaResource] = None
     bio: Optional[str] = None

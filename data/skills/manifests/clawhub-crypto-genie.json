@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-genie@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-genie-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-genie-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26c9eb2aff3e3f2093e80465c33b7ebdd92b649a4d7201457cbad3d3fdcdbcdf",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sonic-build@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sonic-build-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sonic-build-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:58e60aea50c48de0ae361ffc2bfd3e01fe602c14b6fe8122c2752093f747e731",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yugabyte@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-yugabyte-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yugabyte-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d4ad437a3e1482a33f564dbb74fc5740b274f572d1236ac869bda4b74a830c93",

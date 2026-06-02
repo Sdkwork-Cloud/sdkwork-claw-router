@@ -4,6 +4,7 @@ package com.sdkwork.clawrouter.app.model;
 public class PromotionOfferTimeWindowRecord {
     private String createdAt;
     private String endsAt;
+    private String id;
     private String localEndTime;
     private String localStartTime;
     private String offerVersionId;
@@ -29,6 +30,14 @@ public class PromotionOfferTimeWindowRecord {
 
     public void setEndsAt(String endsAt) {
         this.endsAt = endsAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getLocalEndTime() {

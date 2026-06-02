@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cortana-persona@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cortana-persona-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cortana-persona-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b7d421d51fdf570ed17a1e78795abe046f8d76ba823d1abd46d7fdd4f5829c1",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-sagemaker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-sagemaker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-sagemaker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:439eb58639c4a76fa1f7b470b21e0b7e7cb66334b29e9225158681062a146372",

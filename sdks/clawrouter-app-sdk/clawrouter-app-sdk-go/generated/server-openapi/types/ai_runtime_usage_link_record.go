@@ -4,6 +4,7 @@ package types
 type AiRuntimeUsageLinkRecord struct {
 	AgentRunId string `json:"agent_run_id"`
 	AgentRunStepId string `json:"agent_run_step_id"`
+	AgentRunStepIdKey string `json:"agent_run_step_id_key"`
 	AgentSessionId string `json:"agent_session_id"`
 	CachedTokens string `json:"cached_tokens"`
 	ChatItemId string `json:"chat_item_id"`

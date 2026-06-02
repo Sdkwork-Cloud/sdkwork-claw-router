@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class SiteRuntimeSettingsResponse:
@@ -11,12 +14,12 @@ class SiteRuntimeSettingsResponse:
     custom_css: str
     description: str
     docs_url: str
-    favicon_url: str
+    favicon: MediaResource
     footer_copyright: str
-    icon_url: str
+    icon: MediaResource
     icp_record_number: str
     icp_record_url: str
-    logo_url: str
+    logo: MediaResource
     police_record_number: str
     police_record_url: str
     privacy_url: str

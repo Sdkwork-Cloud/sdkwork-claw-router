@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shuttle-ai-chatbot@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-shuttle-ai-chatbot-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shuttle-ai-chatbot-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:53a3d7e9034aac64ccea4e596aa139cba5b7708f79d8e657354b5264e59e0df6",

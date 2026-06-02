@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/afrexai-release-notes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-release-notes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-afrexai-release-notes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:781dee2a92c8a7dc0d8b71e6bf83ab4e1aae47c4fe67fe0f47b0c96890661c5b",

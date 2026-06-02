@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-security-monitor@5.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-security-monitor-5.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-security-monitor-5.3.2.json"
+      },
       "version": "5.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:97f80b6fa68616a461b4f30fa6857a35563d24cf5f65f914731b81a68e65dfef",

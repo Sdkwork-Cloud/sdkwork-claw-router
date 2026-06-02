@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/power-user-pack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-power-user-pack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-power-user-pack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:08ce4a318330a81146d21ea2c351270b3336ad66c9243509e4298d74bae8b6da",

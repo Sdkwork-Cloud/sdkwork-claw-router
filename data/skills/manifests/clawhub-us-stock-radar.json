@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/us-stock-radar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-us-stock-radar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-us-stock-radar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26dfae95528413412579327324989abaf910f8f16795dd8e98bdd1d484c590da",

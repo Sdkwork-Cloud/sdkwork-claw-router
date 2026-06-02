@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/master-agent-workflow-global@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-master-agent-workflow-global-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-master-agent-workflow-global-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35567acaddaa9472a917f919f8de0b4564934f9112f8d5ef03a60b2759f9cf10",

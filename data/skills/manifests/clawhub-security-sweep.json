@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-sweep@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-sweep-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-sweep-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4987f45f125c4bcd2b8d03a15e21c4e5def0b2c506de622b04cfcbc8804fc463",

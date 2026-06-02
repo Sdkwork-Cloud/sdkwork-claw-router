@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hardware-llm-optimizer@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hardware-llm-optimizer-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hardware-llm-optimizer-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:062739d173c02414507bc7782e04a16a9164467ad80b5ea5a4ea127d754eec24",

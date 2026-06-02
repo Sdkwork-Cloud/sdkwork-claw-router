@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/helpwise@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-helpwise-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-helpwise-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6c0fea2d58fe0c4ee275ed26b5071838df5bf39efb1066a93c7608f2fddf4195",

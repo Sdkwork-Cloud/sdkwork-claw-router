@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/uptimecheck@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-uptimecheck-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-uptimecheck-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e04295be29bac498b84f52c6638846150ad0c1c0588f790c9d55e419c15d8c3b",

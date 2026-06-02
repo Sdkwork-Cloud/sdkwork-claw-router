@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/talagent@1.12.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-talagent-1.12.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-talagent-1.12.0.json"
+      },
       "version": "1.12.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31d33382e4cb75afd69bac5fee658bd29ca22ec6aa5ccd8809d57553a5b26f0a",

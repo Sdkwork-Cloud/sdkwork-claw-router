@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glovo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-glovo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glovo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7789973081b9a557a4015e05b3d7e5fe2d34f73453416ac2a01c39058ac9acd",

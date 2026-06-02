@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wsl-chrome-cdp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wsl-chrome-cdp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wsl-chrome-cdp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8b82dafd6502e0b70fed3b01c1daf8a9a6b45cf02c4ed855db198396fe02df8e",

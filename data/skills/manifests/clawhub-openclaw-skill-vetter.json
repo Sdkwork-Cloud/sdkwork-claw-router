@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-vetter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-vetter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-vetter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3416726574b30c95a6d0f9c4285ea5544ec8498a05e42fde2adab1d0e27da17d",

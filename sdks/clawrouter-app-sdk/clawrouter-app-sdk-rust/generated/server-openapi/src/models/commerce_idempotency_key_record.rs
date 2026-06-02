@@ -9,6 +9,10 @@ pub struct CommerceIdempotencyKeyRecord {
     /// Expires at field on commerce idempotency key record.
     pub expires_at: String,
 
+    /// Id field on commerce idempotency key record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on commerce idempotency key record.
     pub idempotency_key: String,
 

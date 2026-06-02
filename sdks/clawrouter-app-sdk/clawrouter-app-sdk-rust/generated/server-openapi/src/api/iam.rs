@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::base::{RequestHeaders};
 use crate::api::paths::app_path;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{ApiKeyGroupsListResult, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult};
+use crate::models::{ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult};
 
 #[derive(Clone)]
 pub struct IamApi {
@@ -13,12 +13,6 @@ pub struct IamApi {
 impl IamApi {
     pub fn new(client: Arc<SdkworkHttpClient>) -> Self {
         Self { client }
-    }
-
-    /// List groups
-    pub async fn api_key_groups_list(&self) -> Result<ApiKeyGroupsListResult, SdkworkError> {
-        let path = app_path(&"/iam/api_key_groups".to_string());
-        self.client.get(&path, None, None).await
     }
 
     /// List keys

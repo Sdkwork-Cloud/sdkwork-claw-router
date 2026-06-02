@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-frontmatter-doctor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-frontmatter-doctor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-frontmatter-doctor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f8f61db9ae4459822c5d1872b3b7125fcf998dfaef68e3812930200c9660c364",

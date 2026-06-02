@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cn-stock-brief@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-cn-stock-brief-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cn-stock-brief-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:19f81be80783786bcf018f1d73d720e62b86485b9b01fd6bba1fc93e215b6100",

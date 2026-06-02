@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wol-wakeup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wol-wakeup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wol-wakeup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eed8a6b9d27c7b120d4c54d26ee7cbfa3f7e017fd31006391224e8542e26990b",

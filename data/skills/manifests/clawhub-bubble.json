@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bubble@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-bubble-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bubble-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:04f18ea76b0d8e866a9dac9409a97656c216318c798ad14f0c3e572c971d4f7f",

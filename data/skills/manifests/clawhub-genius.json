@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/genius@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-genius-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-genius-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ea63ec5dc3ac3fab844e6d0c95d62c3d3b2b687048095cb60633e2d0460a593",

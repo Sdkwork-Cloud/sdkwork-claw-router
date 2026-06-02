@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/succession-plan@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-succession-plan-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-succession-plan-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2b39e010f97dd5f3954dbd51c264ebb839dc197b65135b8eda168b2164699658",

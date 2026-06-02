@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ocean-agent@3.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-ocean-agent-3.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ocean-agent-3.0.3.json"
+      },
       "version": "3.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:1865fae13f17409afe4fae7e9ca4a6fe72451bb34cd106115cc96225ebc752ca",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-workflow-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-workflow-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-workflow-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f51b5ba46c9098951217f2e71723cedec713ace60a1ae512b80ab88e561b2938",

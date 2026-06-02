@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitlab-auto-review@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-auto-review-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitlab-auto-review-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c5186d889cf71009062fe5eedc2d753ba9c86a23b6df0685b75c0458db6a1f72",

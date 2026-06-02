@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ubuntu-landscape@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ubuntu-landscape-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ubuntu-landscape-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:462264ed8aa2223a50aaa572fa449a847a49ec242fbaa87ac15bd3e396eafe90",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/virtual-try-on@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-virtual-try-on-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-virtual-try-on-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b21aa0fda944e7755b6891e9ea1b01c96017f0e57d7889680e00f7b6575e490c",

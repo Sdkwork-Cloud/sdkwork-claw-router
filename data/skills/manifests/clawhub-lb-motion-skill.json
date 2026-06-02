@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lb-motion-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lb-motion-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lb-motion-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e472be04dd38ee2721992fb2f787ef10be57441223cfca5ef14934ff7ac9981",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-improving-local@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-local-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-improving-local-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df67a0ac9feefbf940dcad6e9ecac5471f705ab3ddd40baf86fbae9ffb81b2af",

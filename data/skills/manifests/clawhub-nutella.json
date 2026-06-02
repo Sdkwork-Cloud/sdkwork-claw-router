@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nutella@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nutella-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nutella-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7023ad8fcefeafcc8d72cd4e54be100093f7951e1bcce11ec74d21ef8b4b9118",

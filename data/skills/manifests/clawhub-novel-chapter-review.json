@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/novel-chapter-review@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-novel-chapter-review-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-novel-chapter-review-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0fe65576109048f3fb70015547375c97d1a3d0078587242ca0b088abd2970094",

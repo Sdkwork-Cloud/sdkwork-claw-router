@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mario@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mario-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mario-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:faa3e8077081f82f43982f9457d6e2d936c210619646a260b8ec4adbd1cc560a",

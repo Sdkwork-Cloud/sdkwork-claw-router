@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-image-ai-free@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-image-ai-free-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-image-ai-free-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b724aba5e949cd711284bfad405cfc3f295c5a436fba9b67eec3ab39e2a3b0bc",

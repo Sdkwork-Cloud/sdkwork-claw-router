@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hetzner-cloud@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hetzner-cloud-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hetzner-cloud-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9b77b8d583c8be6232524f37da4a6e2ff47cf72cc6d4cc338279e0338f77ae68",

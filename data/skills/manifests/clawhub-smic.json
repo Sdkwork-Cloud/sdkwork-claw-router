@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smic@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-smic-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smic-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f0e0805e244c7b32529f0908e9f12a9209d841fc9c9a2e2ccb98d9fee5fc91cf",

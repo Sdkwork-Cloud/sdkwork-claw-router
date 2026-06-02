@@ -7,6 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class CommerceExchangeRuleRecord
     {
         public string? CreatedAt { get; set; }
+        public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
         public string? OrganizationId { get; set; }
         public string? Rate { get; set; }

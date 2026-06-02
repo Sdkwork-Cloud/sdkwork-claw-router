@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/poka-yoke@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-poka-yoke-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-poka-yoke-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c06051f10697311f7bbab68ef4823dd7688021b43274133d7978c276a7d9006",

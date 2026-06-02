@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/content-creator-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-content-creator-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-content-creator-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:613317a75d30162153ae58ab6e1b7f55ebfbecef359be602a54517006bb4bef1",

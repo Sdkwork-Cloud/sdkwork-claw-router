@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tettra@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-tettra-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tettra-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6940a5599f95a7ca3b929a03d031f12b1bc7f331f13dcee0ca4ddfe9207870bf",

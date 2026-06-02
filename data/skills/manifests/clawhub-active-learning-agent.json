@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/active-learning-agent@2.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-active-learning-agent-2.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-active-learning-agent-2.4.0.json"
+      },
       "version": "2.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16b85f96a2246f3c4e0e63b3191f09b5932d55d9edd22916b3279bdbc2e8c300",

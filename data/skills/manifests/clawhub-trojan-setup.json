@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trojan-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trojan-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trojan-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bda3d46a5fe5770c43a43dddd2cd6ba2a69126ce7cbf090509b6c97620543301",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/penpal@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-penpal-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-penpal-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:8705b521dca9c74c25037413577620256f7a9da2a99e2f0658bc896092ee077a",

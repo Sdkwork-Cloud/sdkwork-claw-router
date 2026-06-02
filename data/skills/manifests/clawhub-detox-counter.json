@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/detox-counter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-detox-counter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-detox-counter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a857ddf76dcac8cfc1591077deefc315ef367562e9a524e1fd229663a61267d",

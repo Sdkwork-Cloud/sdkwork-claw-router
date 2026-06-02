@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chemistry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chemistry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chemistry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:520a1549c9b673f77c3f2558772a3bb1241ec9de0c9f807726789b9a3387249f",

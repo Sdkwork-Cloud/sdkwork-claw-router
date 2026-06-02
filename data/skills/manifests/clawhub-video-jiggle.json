@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-jiggle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-jiggle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-jiggle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c322acd2fd0c3cf8fea7462336afce7e04dcf104d3f4304363625d86133cf03f",

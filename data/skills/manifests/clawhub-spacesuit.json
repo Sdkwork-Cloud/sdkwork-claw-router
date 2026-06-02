@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spacesuit@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spacesuit-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spacesuit-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f5a0297673cee7875b0cc02d35cbec8ba0d47b0dd1750755bdf40bdfd95a46e6",

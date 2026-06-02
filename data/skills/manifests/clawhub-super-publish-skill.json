@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/super-publish-skill@1.0.101",
-      "artifactUrl": "data/skills/artifacts/clawhub-super-publish-skill-1.0.101.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-super-publish-skill-1.0.101.json"
+      },
       "version": "1.0.101",
       "runtime": "metadata",
       "checksumHash": "sha256:bd42f94243884b4a0351c6a423f20ba7959221be77fe5ee2c1a3771166ed16c4",

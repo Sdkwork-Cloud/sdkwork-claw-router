@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aiprox-swarm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aiprox-swarm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aiprox-swarm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7204a0935164d52db870b68546709bab3ddcf6c9a03184212214c5acfe51cc18",

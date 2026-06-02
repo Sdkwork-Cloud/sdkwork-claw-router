@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/botcast@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-botcast-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-botcast-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b98931be47c7eb6d1393543170369cf21107917c07d37cde24ae9dd233dfd004",

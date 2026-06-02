@@ -20,6 +20,7 @@ import { useTranslation } from 'react-i18next';
 import {
   buildPortalAuthLoginRedirect,
   hasStoredPortalSession,
+  readMediaResourceUrl,
 } from 'sdkwork-claw-router-commons/runtime';
 import {
   deriveForumCatalogViewModel,
@@ -338,7 +339,7 @@ export function ForumView() {
                   className="bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-white/10 hover:border-blue-300 dark:hover:border-blue-500/30 rounded-xl p-6 transition-colors group"
                 >
                   <Link to={`/forum/${post.id}`} className="flex items-start gap-4">
-                    <img src={post.author.avatar} alt={post.author.name} className="w-10 h-10 rounded-full" />
+                    <img src={readMediaResourceUrl(post.author.avatar)} alt={post.author.name} className="w-10 h-10 rounded-full" />
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-2 mb-1">
                         <span className="font-semibold text-slate-900 dark:text-white">{post.author.name}</span>
@@ -408,7 +409,7 @@ export function ForumView() {
                     className={`bg-white dark:bg-[#161b22] border border-slate-200 dark:border-white/10 rounded-lg p-3 flex flex-col items-center group hover:shadow-md transition-all ${communityToneClassById[link.tone]}`}
                   >
                     <div className="bg-white p-1.5 rounded-lg mb-2 shadow-sm border border-slate-100">
-                      <img src={link.qrCodeUrl} alt={`${link.label} QR Code`} className="w-full aspect-square object-contain group-hover:scale-105 transition-transform" />
+                      <img src={readMediaResourceUrl(link.qrCode)} alt={`${link.label} QR Code`} className="w-full aspect-square object-contain group-hover:scale-105 transition-transform" />
                     </div>
                     <span className="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
                       {link.id === 'douyin' ? <Music className="w-3.5 h-3.5 text-[#FE2C55]" /> : null}

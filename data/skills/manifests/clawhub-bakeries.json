@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bakeries@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bakeries-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bakeries-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4adf599fbc3f2baddeab488c619c2996914207457b487f1f2a8df1b5552a54de",

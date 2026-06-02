@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/csv-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-csv-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-csv-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef8330b7d2e96201cd9f1e8d93f9f1163ef4c23b99fdf719218dc32f7d63409a",

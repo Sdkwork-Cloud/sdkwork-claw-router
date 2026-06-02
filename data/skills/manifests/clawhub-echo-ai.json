@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/echo-ai@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-echo-ai-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-echo-ai-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:043a7c05c4a4422c10a80c1f3aea41594b5b3284d1b4b639ee0d1eec4fcc2a88",

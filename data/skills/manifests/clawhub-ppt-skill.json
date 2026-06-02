@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ppt-skill@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ppt-skill-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ppt-skill-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1af0963f7eec63fd64c7d531c1a3a74574223b195d7cf8627ee704fc1f1ccbdf",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/continuous-agent-loop@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-continuous-agent-loop-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-continuous-agent-loop-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:703f3fb930b1a194d41137c6ccf133cbaf01070618d17c7fa1b43c5134042cde",

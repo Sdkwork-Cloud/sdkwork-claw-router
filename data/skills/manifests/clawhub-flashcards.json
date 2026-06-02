@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flashcards@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flashcards-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flashcards-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d7649e9ddd4bf87cb0b64a6d3b1362721e734010863df1b3c7fee6d1e3d0324",

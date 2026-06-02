@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-monitor-openclaw-server@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-monitor-openclaw-server-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-monitor-openclaw-server-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:853b70470c6dc559fe697bdd845a1672454bd47e4744b571fe3d5def6b44fb0f",

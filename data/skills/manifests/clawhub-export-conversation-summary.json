@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/export-conversation-summary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-export-conversation-summary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-export-conversation-summary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de1e8776e0bc8664b517f3bad92f7e0ecfefa0519dbc1b61a3a2431207073f41",

@@ -36,7 +36,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
                 .internal_trusted_subject(10, 20, 30)
                 .header("X-Request-Id", "00000000-0000-4000-8000-000000000101")
                 .body(Body::from(
-                    r#"{"name":"Claw Router Portal","description":"Unified app portal","version":"1.0.0","iconUrl":"https://cdn.example.test/app.png","accessUrl":"https://portal.example.test","config":{"standard":{"appKey":"claw-router-portal"}},"appType":"web","platforms":{"platforms":["web"]},"installPlatforms":{"platforms":["web"]},"installSkill":{"name":"Portal Installer"},"installConfig":{"packages":[{"version":"1.0.0","downloadUrl":"https://cdn.example.test/portal.zip"}]},"releaseNotes":[{"version":"1.0.0","notes":["Initial release"]}],"packageName":"com.sdkwork.claw.portal","bundleId":"com.sdkwork.claw.portal","storeUrl":"https://store.example.test/portal","downloadUrl":"https://cdn.example.test/portal.zip"}"#,
+                    r#"{"name":"Claw Router Portal","description":"Unified app portal","version":"1.0.0","icon":{"kind":"image","source":"external_url","url":"https://cdn.example.test/app.png","publicUrl":"https://cdn.example.test/app.png"},"accessUrl":"https://portal.example.test","config":{"standard":{"appKey":"claw-router-portal"}},"appType":"web","platforms":{"platforms":["web"]},"installPlatforms":{"platforms":["web"]},"installSkill":{"name":"Portal Installer"},"installConfig":{"packages":[{"version":"1.0.0","downloadUrl":"https://cdn.example.test/portal.zip"}]},"releaseNotes":[{"version":"1.0.0","notes":["Initial release"]}],"packageName":"com.sdkwork.claw.portal","bundleId":"com.sdkwork.claw.portal","storeUrl":"https://store.example.test/portal","artifact":{"kind":"archive","source":"external_url","url":"https://cdn.example.test/portal.zip","publicUrl":"https://cdn.example.test/portal.zip"}}"#,
                 ))
                 .unwrap(),
         )
@@ -1080,7 +1080,6 @@ impl AdminAppStore for TestAdminAppStore {
                 description: command.description,
                 version: command.version,
                 icon: command.icon,
-                icon_url: command.icon_url,
                 resource_list: command.resource_list,
                 project_id: command.project_id,
                 access_url: command.access_url,
@@ -1097,7 +1096,7 @@ impl AdminAppStore for TestAdminAppStore {
                 package_name: command.package_name,
                 bundle_id: command.bundle_id,
                 store_url: command.store_url,
-                download_url: command.download_url,
+                artifact: command.artifact,
                 created_at: command.requested_at.clone(),
                 updated_at: command.requested_at,
             };
@@ -1129,6 +1128,9 @@ impl AdminAppStore for TestAdminAppStore {
             if let Some(value) = command.version {
                 item.version = value;
             }
+            if let Some(value) = command.icon {
+                item.icon = value;
+            }
             if let Some(value) = command.config {
                 item.config = value;
             }
@@ -1137,6 +1139,9 @@ impl AdminAppStore for TestAdminAppStore {
             }
             if let Some(value) = command.release_notes {
                 item.release_notes = value;
+            }
+            if let Some(value) = command.artifact {
+                item.artifact = value;
             }
             item.updated_at = command.requested_at;
             Ok(Some(item.clone()))
@@ -1272,8 +1277,8 @@ impl AdminAppStore for TestAdminAppStore {
                 runtime: command.runtime,
                 framework: command.framework,
                 language: command.language,
-                icon_url: command.icon_url,
-                cover_url: command.cover_url,
+                icon: command.icon,
+                cover: command.cover,
                 visibility: command.visibility,
                 publish_status: command.publish_status,
                 featured: command.featured,
@@ -1318,6 +1323,12 @@ impl AdminAppStore for TestAdminAppStore {
             }
             if let Some(value) = command.framework {
                 item.framework = value;
+            }
+            if let Some(value) = command.icon {
+                item.icon = value;
+            }
+            if let Some(value) = command.cover {
+                item.cover = value;
             }
             if let Some(value) = command.featured {
                 item.featured = value;

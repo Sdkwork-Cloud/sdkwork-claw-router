@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:73c55d9f858ca294ebcafbef30a4c27d6d1248e6735ff8d9c7b523c19aee43ff",

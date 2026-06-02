@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podcast-article@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-podcast-article-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podcast-article-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b2a5aabfb46f3952259649315c354f25a0581ed6e06467bf7a64888c1cf83160",

@@ -2,24 +2,33 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class CommerceRechargePackageMutationRequest {
-    private Integer bonus;
-    private String rmb;
+    private Integer bonusPoints;
+    private String currencyCode;
+    private String priceAmount;
     private String status;
 
-    public Integer getBonus() {
-        return this.bonus;
+    public Integer getBonusPoints() {
+        return this.bonusPoints;
     }
 
-    public void setBonus(Integer bonus) {
-        this.bonus = bonus;
+    public void setBonusPoints(Integer bonusPoints) {
+        this.bonusPoints = bonusPoints;
     }
 
-    public String getRmb() {
-        return this.rmb;
+    public String getCurrencyCode() {
+        return this.currencyCode;
     }
 
-    public void setRmb(String rmb) {
-        this.rmb = rmb;
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+
+    public String getPriceAmount() {
+        return this.priceAmount;
+    }
+
+    public void setPriceAmount(String priceAmount) {
+        this.priceAmount = priceAmount;
     }
 
     public String getStatus() {

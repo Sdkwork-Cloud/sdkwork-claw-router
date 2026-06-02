@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medical-translation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-medical-translation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medical-translation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c9c2f10945c45b1e337b0ce308c924afff640c27359d571efef474044bc95550",

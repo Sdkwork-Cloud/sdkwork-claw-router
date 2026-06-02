@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-ansible@0.1.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-ansible-0.1.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-ansible-0.1.6.json"
+      },
       "version": "0.1.6",
       "runtime": "metadata",
       "checksumHash": "sha256:1cf4b0a6db68660469bee7e3da4cc63e586eda261e326812126e4ef8b0615738",

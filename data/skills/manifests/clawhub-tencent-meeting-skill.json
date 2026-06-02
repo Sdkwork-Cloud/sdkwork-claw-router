@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencent-meeting-skill@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencent-meeting-skill-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencent-meeting-skill-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:d9d8f05f4f70559200e1ec0e8bf4a8cde79f7d28c08ef32651b305c4d33b82b6",

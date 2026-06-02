@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/intelligence-analyst-claw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-intelligence-analyst-claw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-intelligence-analyst-claw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b98d41ddc70e04221725d2ebb286699aef3492f5e7d081628d730d223d2fce16",

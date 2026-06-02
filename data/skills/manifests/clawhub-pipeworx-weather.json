@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ad4b59ee5e50f024904b6adb9baf1961242d0f3336c96031ce15e10908815e9a",

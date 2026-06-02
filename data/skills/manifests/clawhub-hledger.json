@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hledger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hledger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hledger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:109bed4fc77b9917a83cc70f0900379289e4259166492bd20354c74dbc84d1c5",

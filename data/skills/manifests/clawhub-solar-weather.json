@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solar-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solar-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solar-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35a4b53751b84fc3b5b9b576b608305181d169258c160c292b353c07cede54f4",

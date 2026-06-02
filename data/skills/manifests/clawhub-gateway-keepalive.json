@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gateway-keepalive@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gateway-keepalive-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gateway-keepalive-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:533baefcb575be31cb97fa195aa4bc5ad4eeb469326ea49512add7711b5f4ccf",

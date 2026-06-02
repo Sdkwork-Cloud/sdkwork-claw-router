@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/supplier-scorecard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-supplier-scorecard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-supplier-scorecard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15f3d42bf0cc4d8843c00d9d6952c23aa0c53efbfa9374e9ee6568329bcdd606",

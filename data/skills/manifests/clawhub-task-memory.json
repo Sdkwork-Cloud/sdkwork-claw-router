@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-memory@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-memory-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-memory-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b82c94e095bb629f1718659d7c517375ba4d951696c499cfcc7513a1bfdde4d1",

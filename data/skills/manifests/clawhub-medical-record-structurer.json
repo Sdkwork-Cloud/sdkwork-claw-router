@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medical-record-structurer@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-medical-record-structurer-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medical-record-structurer-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98f651f8e89c4f494cc62ce3885426536f7b2bf4991d7856e3823c48b60c5b4f",

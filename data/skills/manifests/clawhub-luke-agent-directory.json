@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/luke-agent-directory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-luke-agent-directory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-luke-agent-directory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:efda92ab2fd266b2ec607a1d136fea083356ad2bb5e0cfce144d7a689bfcb3d3",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-play@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-play-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-play-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:dd5a84fe4a8b15b95307dcdabdb220ada65497a0cbc2a129d5874025d6fed2a9",

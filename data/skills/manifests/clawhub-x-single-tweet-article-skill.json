@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/x-single-tweet-article-skill@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-x-single-tweet-article-skill-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-x-single-tweet-article-skill-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:94664f4e77ce9772e60ccf393520343d91c115e0106fd0c9541fcf773dbe8b9e",

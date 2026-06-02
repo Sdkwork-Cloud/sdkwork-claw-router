@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amlbot@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-amlbot-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amlbot-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:fbe4b6ad364e75174e3abf826421e221c93eee23585c3e45fea34e9379f4b76e",

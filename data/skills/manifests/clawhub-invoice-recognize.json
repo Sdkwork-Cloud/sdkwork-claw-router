@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoice-recognize@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoice-recognize-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoice-recognize-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:04ba15fe8208262d4bdf454bd579db49da708dc4404a95146d6ac343ac01357a",

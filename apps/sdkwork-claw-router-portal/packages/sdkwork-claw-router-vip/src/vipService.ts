@@ -7,8 +7,10 @@ import {
   readApiItems,
   readApiRecord,
   readRequiredApiItems,
+  readMediaResource,
   readString,
   type ApiRecord,
+  type ClawRouterMediaResource,
 } from 'sdkwork-claw-router-commons/runtime';
 
 export interface VipPackageGroup {
@@ -50,7 +52,7 @@ export interface VipPackageFeature {
   id: string;
   name: string;
   description?: string;
-  icon?: string;
+  iconKey?: string;
   included: boolean;
 }
 
@@ -78,7 +80,7 @@ export interface VipPurchaseResult {
   paymentId?: string;
   cashierUrl?: string;
   qrCodePayload?: string;
-  qrCodeImageUrl?: string;
+  qrCode?: ClawRouterMediaResource;
   requestPaymentPayload?: string;
 }
 
@@ -150,7 +152,7 @@ export class VipService {
     const paymentId = readFirstString(data, ['paymentId', 'payment_id', 'paymentIntentId', 'payment_intent_id']);
     const qrCodePayload = readStandardQrCodePayload(data, 'VIP');
     const cashierUrl = readStandardCashierUrl(data, 'VIP', qrCodePayload);
-    const qrCodeImageUrl = readFirstString(data, ['qrCodeImageUrl', 'qr_code_image_url', 'qrCodeUrl', 'qr_code_url']);
+    const qrCode = readMediaResource(data.qrCode);
     const requestPaymentPayload = readStandardRequestPaymentPayload(data);
     return {
       success,
@@ -163,7 +165,7 @@ export class VipService {
       ...(paymentId ? { paymentId } : {}),
       ...(cashierUrl ? { cashierUrl } : {}),
       ...(qrCodePayload ? { qrCodePayload } : {}),
-      ...(qrCodeImageUrl ? { qrCodeImageUrl } : {}),
+      ...(qrCode ? { qrCode } : {}),
       ...(requestPaymentPayload ? { requestPaymentPayload } : {}),
     };
   }

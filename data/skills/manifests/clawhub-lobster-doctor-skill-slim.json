@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lobster-doctor-skill-slim@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lobster-doctor-skill-slim-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lobster-doctor-skill-slim-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:55e27f1b349ff8ee10c73ff674eb229f4ed53233154fbe1429e430a944480c63",

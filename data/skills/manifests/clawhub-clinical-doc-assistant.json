@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clinical-doc-assistant@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-clinical-doc-assistant-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clinical-doc-assistant-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:b9af1cc47f9c1ca1217a3af230386a5749027304e0edc3097aa651c828b6f1d6",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/compressor-online-2gb@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-compressor-online-2gb-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-compressor-online-2gb-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93d57a472e202cf6ffe24dde599a7d38c784b1a20eb5b0e861bd5a0f39312dfe",

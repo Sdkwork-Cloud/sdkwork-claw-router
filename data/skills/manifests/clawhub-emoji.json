@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/emoji@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-emoji-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-emoji-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8e6197cd30b1ed0079cc4bcd6a8f3c940fc3a009be329f1e17cd4503825f1f81",

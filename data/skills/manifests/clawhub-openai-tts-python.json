@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openai-tts-python@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-openai-tts-python-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openai-tts-python-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c8af081f0343280b68698191baa5da68484e13658067d1bd1a096cf6e06d707c",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chef-inspec@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-chef-inspec-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chef-inspec-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:3999f1d4208b2d3ba30ab66fb3de9d78bba6209bb7ea4ce1d06032802f97c0f3",

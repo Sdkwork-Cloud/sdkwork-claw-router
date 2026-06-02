@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trivia-quiz@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-trivia-quiz-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trivia-quiz-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2b3e96bf4b0d6beac72457182a04bc49fdce005e2473e9503cd81233baa5743c",

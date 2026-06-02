@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ffmpeg-chinese-subtitle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ffmpeg-chinese-subtitle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ffmpeg-chinese-subtitle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:59c76c8a85401591261efa3ba33b386c8ac91d035077cf30531f6e38211b9517",

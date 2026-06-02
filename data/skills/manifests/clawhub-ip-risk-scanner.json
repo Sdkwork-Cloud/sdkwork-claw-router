@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ip-risk-scanner@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ip-risk-scanner-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ip-risk-scanner-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4a6474628de7758868fb12b0907181709161636e4cf9eb3719daaae25e478a88",

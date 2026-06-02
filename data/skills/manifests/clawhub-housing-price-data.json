@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/housing-price-data@2.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-housing-price-data-2.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-housing-price-data-2.2.3.json"
+      },
       "version": "2.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:3bc67c834eaf70ccda5a466e873bb42f5c32438f7da2f7c64c250650c0174c07",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workday@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-workday-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workday-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:db3fa47f7d195855c52a21d98397387fb3f5e0fea822a39eec6181ccd74105b8",

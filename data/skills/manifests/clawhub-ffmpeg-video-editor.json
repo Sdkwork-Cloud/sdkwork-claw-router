@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ffmpeg-video-editor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ffmpeg-video-editor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ffmpeg-video-editor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cb29731f317c41ce2083d0968c443849c68242034dd21293cd4473742c289b07",

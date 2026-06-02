@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-docker-setup@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-docker-setup-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-docker-setup-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:058d13d4f53a9915dffbdac357bab2cef30897fa94a8761bebdacab629f3c50c",

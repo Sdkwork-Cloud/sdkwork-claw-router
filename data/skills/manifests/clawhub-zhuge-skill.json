@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zhuge-skill@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-zhuge-skill-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zhuge-skill-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1659b78e056e28dc1e0139fc2a9202450faf8cb58e0fe1cdd061e0b8e7da03ad",

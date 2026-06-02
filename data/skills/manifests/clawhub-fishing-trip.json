@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fishing-trip@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fishing-trip-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fishing-trip-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9db4e943507c81a6637929d178919504c3344dd387fa9682ecaae0ab3b17939a",

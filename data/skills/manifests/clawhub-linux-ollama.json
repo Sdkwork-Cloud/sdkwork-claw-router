@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linux-ollama@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linux-ollama-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linux-ollama-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5bfd1f08c6b0d507525bae26c51ae5440d7f460526513a04ea396a34d0d5ccaf",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawdvine-skill-latest@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawdvine-skill-latest-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawdvine-skill-latest-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92d008361300aedc7a945e01e598a5523ce8f80bb417f41346e783b70a092237",

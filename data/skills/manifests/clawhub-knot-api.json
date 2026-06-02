@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knot-api@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-knot-api-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knot-api-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3dc12934eb66bb712f54a4c5857650548d428484278289567d21911e2db50e9f",

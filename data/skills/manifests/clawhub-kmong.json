@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kmong@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kmong-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kmong-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00049e44989fec3937d9dee89e5e62589b19c0745f8f1f39d233459864aa72f7",

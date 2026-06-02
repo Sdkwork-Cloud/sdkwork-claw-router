@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opencal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-opencal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opencal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd16ef0f7e774762af435c9a03d4376fcdfbd1f8365f89549a9de33b92dc62a2",

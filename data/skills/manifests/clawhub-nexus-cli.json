@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexus-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexus-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexus-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d76cdcce60dd2dae6706797253c1a334424b5c011c056495008ee5c00988e96a",

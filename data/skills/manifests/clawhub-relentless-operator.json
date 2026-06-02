@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/relentless-operator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-relentless-operator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-relentless-operator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93e1841d2d9ae006cbf73838b9d0e3414db80cb977d915bcf574144aeec3c97d",

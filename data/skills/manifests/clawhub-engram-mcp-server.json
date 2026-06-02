@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/engram-mcp-server@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-engram-mcp-server-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-engram-mcp-server-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2514a31d40646ce72190fd683aee649813a91af8c228fc6a49fa952d46afbfdd",

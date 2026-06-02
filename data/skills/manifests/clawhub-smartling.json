@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smartling@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-smartling-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smartling-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:f1a2a214c4407ac2fdf595e8499dbeb41b2f3bdd9288cc10a7246dc11e501bbb",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deadlinks@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deadlinks-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deadlinks-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7729f4cf5e01d80772d7ed470223c4d7856d88a720c8dec37a817ebdeda0488d",

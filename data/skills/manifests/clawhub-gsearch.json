@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gsearch@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gsearch-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gsearch-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a975aabf0480639e9a6952e71174cd1c8ec646559ffdf1362d7fc3c795bd891c",

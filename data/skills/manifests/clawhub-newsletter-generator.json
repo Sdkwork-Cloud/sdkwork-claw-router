@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/newsletter-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-newsletter-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-newsletter-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:385d2561168a569b1810fa7abbfc54cf4103d4c4fb1cae3c8383faca6a71194e",

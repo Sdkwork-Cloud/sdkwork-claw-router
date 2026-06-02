@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-video-analyze@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-video-analyze-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-video-analyze-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:58c12a8b1c7a1380f5415a6aa8f79cdbf2c8aa56c50a88d00fec7f5d6304233f",

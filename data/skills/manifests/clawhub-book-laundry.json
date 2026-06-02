@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-laundry@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-laundry-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-laundry-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:add9c2b76b17894ee12c045596205d81a589f40852889fc238e70192b918dd03",

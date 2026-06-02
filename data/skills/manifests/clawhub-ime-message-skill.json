@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ime-message-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ime-message-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ime-message-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6cfe122f7fef9323624f55d4f18ea83951167a9d6e923f6b9239fce0f129671b",

@@ -8,9 +8,12 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? CartId { get; set; }
         public string? CreatedAt { get; set; }
+        public string? Id { get; set; }
         public Dictionary<string, string>? MetadataJson { get; set; }
         public string? OrganizationId { get; set; }
         public Dictionary<string, string>? PriceSnapshotJson { get; set; }
+        public string? Quantity { get; set; }
+        public bool? Selected { get; set; }
         public string? SkuId { get; set; }
         public string? TenantId { get; set; }
         public string? UpdatedAt { get; set; }

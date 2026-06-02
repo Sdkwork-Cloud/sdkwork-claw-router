@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-multi-bot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-multi-bot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-multi-bot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:68698a49625d3c275c07860a880645637612de0e28709f1bfec1f573f63260d2",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/compliance-posture-intake@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-compliance-posture-intake-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-compliance-posture-intake-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:06da736827160a341103489af7d7b7cb2c9977ea46962b643f09214e5e131328",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/uplo-customer-success@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-uplo-customer-success-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-uplo-customer-success-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b617a7fe63e8d65f86abdfed52fb1a2082f01cdb9037fea17b48d91d3ba5b839",

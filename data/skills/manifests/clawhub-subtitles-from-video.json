@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subtitles-from-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subtitles-from-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subtitles-from-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b41d1d4fdd9148d88179eb946fd485efeda3ee8f9f4831caaaa3df9d5581c1e1",

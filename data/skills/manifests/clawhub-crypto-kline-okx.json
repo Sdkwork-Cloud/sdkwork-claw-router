@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-kline-okx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-kline-okx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-kline-okx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de041131520d5e3d138101306b60b1391c7709380444c4b09272d0f1d2974192",

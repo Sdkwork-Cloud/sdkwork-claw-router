@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lmao@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lmao-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lmao-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a134941288b4a3c2d4dc98564febe57309c62a3260b7f364ef97433570d6b027",

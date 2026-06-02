@@ -16,7 +16,7 @@ pub struct AdminSkillSubject {
     pub operator_type: i32,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct AdminSkillCategoryItem {
     pub id: i64,
     pub uuid: String,
@@ -25,7 +25,7 @@ pub struct AdminSkillCategoryItem {
     pub name: String,
     pub description: Option<String>,
     pub code: Option<String>,
-    pub icon: Option<String>,
+    pub icon: Option<Value>,
     pub sort_weight: i32,
     pub parent_id: Option<i64>,
     pub path: Option<String>,
@@ -34,7 +34,7 @@ pub struct AdminSkillCategoryItem {
     pub category_type: i32,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct AdminSkillPackageItem {
     pub id: i64,
     pub uuid: String,
@@ -45,8 +45,8 @@ pub struct AdminSkillPackageItem {
     pub name: String,
     pub summary: Option<String>,
     pub description: Option<String>,
-    pub icon: Option<String>,
-    pub cover_image: Option<String>,
+    pub icon: Option<Value>,
+    pub cover: Option<Value>,
     pub category_id: Option<i64>,
     pub enabled: bool,
     pub featured: bool,
@@ -68,8 +68,8 @@ pub struct AdminSkillItem {
     pub name: String,
     pub summary: Option<String>,
     pub description: Option<String>,
-    pub icon: Option<String>,
-    pub cover_image: Option<String>,
+    pub icon: Option<Value>,
+    pub cover: Option<Value>,
     pub category_id: Option<i64>,
     pub package_id: Option<i64>,
     pub provider: Option<String>,
@@ -120,8 +120,8 @@ pub struct AdminSkillAssetItem {
     pub target_id: i64,
     pub artifact_id: Option<i64>,
     pub asset_type: i32,
-    pub asset_url: String,
-    pub thumbnail_url: Option<String>,
+    pub asset: Value,
+    pub thumbnail: Option<Value>,
     pub title: Option<String>,
     pub alt_text: Option<String>,
     pub mime_type: Option<String>,
@@ -149,7 +149,7 @@ pub struct AdminSkillArtifactItem {
     pub platform_type: String,
     pub os_name: String,
     pub artifact_ref: Option<String>,
-    pub artifact_url: Option<String>,
+    pub artifact: Option<Value>,
     pub artifact_size_bytes: i64,
     pub runtime: Option<String>,
     pub frameworks: Vec<String>,
@@ -177,7 +177,7 @@ pub struct ListAdminSkillPackagesQuery {
     pub page_size: Option<i64>,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct CreateAdminSkillCategoryCommand {
     pub subject: AdminSkillSubject,
     pub category_uuid: String,
@@ -185,7 +185,7 @@ pub struct CreateAdminSkillCategoryCommand {
     pub name: String,
     pub description: Option<String>,
     pub code: Option<String>,
-    pub icon: Option<String>,
+    pub icon: Option<Value>,
     pub sort_weight: i32,
     pub parent_id: Option<i64>,
     pub path: Option<String>,
@@ -196,7 +196,7 @@ pub struct CreateAdminSkillCategoryCommand {
     pub requested_at: String,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct UpdateAdminSkillCategoryCommand {
     pub subject: AdminSkillSubject,
     pub category_id: i64,
@@ -204,7 +204,7 @@ pub struct UpdateAdminSkillCategoryCommand {
     pub name: Option<String>,
     pub description: Option<Option<String>>,
     pub code: Option<Option<String>>,
-    pub icon: Option<Option<String>>,
+    pub icon: Option<Option<Value>>,
     pub sort_weight: Option<i32>,
     pub parent_id: Option<Option<i64>>,
     pub path: Option<Option<String>>,
@@ -224,7 +224,7 @@ pub struct DeleteAdminSkillCategoryCommand {
     pub requested_at: String,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct CreateAdminSkillPackageCommand {
     pub subject: AdminSkillSubject,
     pub package_uuid: String,
@@ -233,8 +233,8 @@ pub struct CreateAdminSkillPackageCommand {
     pub name: String,
     pub summary: Option<String>,
     pub description: Option<String>,
-    pub icon: Option<String>,
-    pub cover_image: Option<String>,
+    pub icon: Option<Value>,
+    pub cover: Option<Value>,
     pub category_id: Option<i64>,
     pub enabled: bool,
     pub featured: bool,
@@ -244,7 +244,7 @@ pub struct CreateAdminSkillPackageCommand {
     pub requested_at: String,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct UpdateAdminSkillPackageCommand {
     pub subject: AdminSkillSubject,
     pub package_id: i64,
@@ -253,8 +253,8 @@ pub struct UpdateAdminSkillPackageCommand {
     pub name: Option<String>,
     pub summary: Option<String>,
     pub description: Option<Option<String>>,
-    pub icon: Option<Option<String>>,
-    pub cover_image: Option<Option<String>>,
+    pub icon: Option<Option<Value>>,
+    pub cover: Option<Option<Value>>,
     pub category_id: Option<Option<i64>>,
     pub enabled: Option<bool>,
     pub featured: Option<bool>,
@@ -305,8 +305,8 @@ pub struct CreateAdminSkillCommand {
     pub name: String,
     pub summary: Option<String>,
     pub description: Option<String>,
-    pub icon: Option<String>,
-    pub cover_image: Option<String>,
+    pub icon: Option<Value>,
+    pub cover: Option<Value>,
     pub category_id: Option<i64>,
     pub package_id: Option<i64>,
     pub provider: Option<String>,
@@ -347,8 +347,8 @@ pub struct UpdateAdminSkillCommand {
     pub name: Option<String>,
     pub summary: Option<String>,
     pub description: Option<Option<String>>,
-    pub icon: Option<Option<String>>,
-    pub cover_image: Option<Option<String>>,
+    pub icon: Option<Option<Value>>,
+    pub cover: Option<Option<Value>>,
     pub category_id: Option<Option<i64>>,
     pub package_id: Option<Option<i64>>,
     pub provider: Option<Option<String>>,
@@ -432,8 +432,8 @@ pub struct CreateAdminSkillAssetCommand {
     pub audit_log_uuid: String,
     pub artifact_id: Option<i64>,
     pub asset_type: i32,
-    pub asset_url: String,
-    pub thumbnail_url: Option<String>,
+    pub asset: Value,
+    pub thumbnail: Option<Value>,
     pub title: Option<String>,
     pub alt_text: Option<String>,
     pub mime_type: Option<String>,
@@ -456,8 +456,8 @@ pub struct UpdateAdminSkillAssetCommand {
     pub audit_log_uuid: String,
     pub artifact_id: Option<Option<i64>>,
     pub asset_type: Option<i32>,
-    pub asset_url: Option<String>,
-    pub thumbnail_url: Option<Option<String>>,
+    pub asset: Option<Value>,
+    pub thumbnail: Option<Option<Value>>,
     pub title: Option<Option<String>>,
     pub alt_text: Option<Option<String>>,
     pub mime_type: Option<Option<String>>,
@@ -499,7 +499,7 @@ pub struct CreateAdminSkillArtifactCommand {
     pub platform_type: String,
     pub os_name: String,
     pub artifact_ref: Option<String>,
-    pub artifact_url: Option<String>,
+    pub artifact: Option<Value>,
     pub artifact_size_bytes: i64,
     pub runtime: Option<String>,
     pub frameworks: Vec<String>,
@@ -524,7 +524,7 @@ pub struct UpdateAdminSkillArtifactCommand {
     pub platform_type: Option<String>,
     pub os_name: Option<String>,
     pub artifact_ref: Option<Option<String>>,
-    pub artifact_url: Option<Option<String>>,
+    pub artifact: Option<Option<Value>>,
     pub artifact_size_bytes: Option<i64>,
     pub runtime: Option<Option<String>>,
     pub frameworks: Option<Vec<String>>,

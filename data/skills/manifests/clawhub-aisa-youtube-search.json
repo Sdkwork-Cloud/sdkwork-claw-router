@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aisa-youtube-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aisa-youtube-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aisa-youtube-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:43e0db5635ff974be6478781210226a4d3d882273d7dbfe0fd75677d2cdadfcb",

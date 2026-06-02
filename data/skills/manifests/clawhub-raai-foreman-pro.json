@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/raai-foreman-pro@3.5.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-raai-foreman-pro-3.5.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-raai-foreman-pro-3.5.4.json"
+      },
       "version": "3.5.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9429f199a9a08baf8e4d154a9bd718e494928e7ebb66e76132b06fa67a9a57f0",

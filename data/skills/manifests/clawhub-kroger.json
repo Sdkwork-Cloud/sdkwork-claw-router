@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kroger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kroger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kroger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fede9975584de260cfada36b982321c74b6be805718ec3116abc22b489a8a49c",

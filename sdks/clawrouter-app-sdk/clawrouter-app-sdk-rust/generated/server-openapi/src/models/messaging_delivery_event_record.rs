@@ -7,6 +7,14 @@ pub struct MessagingDeliveryEventRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
 
+    /// Event at field on messaging delivery event record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub event_at: Option<String>,
+
+    /// Event type field on messaging delivery event record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub event_type: Option<String>,
+
     /// Id field on messaging delivery event record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -27,6 +35,18 @@ pub struct MessagingDeliveryEventRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub payload_hash: Option<String>,
 
+    /// Payload redacted field on messaging delivery event record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub payload_redacted: Option<std::collections::HashMap<String, String>>,
+
+    /// Provider code field on messaging delivery event record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_code: Option<String>,
+
+    /// Provider event id field on messaging delivery event record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_event_id: Option<String>,
+
     /// Provider message id field on messaging delivery event record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub provider_message_id: Option<String>,
@@ -42,6 +62,10 @@ pub struct MessagingDeliveryEventRecord {
     /// Send attempt id field on messaging delivery event record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub send_attempt_id: Option<String>,
+
+    /// Send request id field on messaging delivery event record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub send_request_id: Option<String>,
 
     /// Status field on messaging delivery event record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

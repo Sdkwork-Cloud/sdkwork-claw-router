@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-verify@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-verify-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-verify-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8c668932cb9510fdf48540c7c9bc9a686822691347246d5ba1e17d92655bcede",

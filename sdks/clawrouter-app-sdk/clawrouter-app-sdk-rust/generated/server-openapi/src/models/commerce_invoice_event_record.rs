@@ -23,6 +23,10 @@ pub struct CommerceInvoiceEventRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub from_status: Option<String>,
 
+    /// Id field on commerce invoice event record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on commerce invoice event record.
     pub idempotency_key: String,
 

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/caption-generator-meme@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-caption-generator-meme-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-caption-generator-meme-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2533747c0f083a934a2cff87a8acd97371a88c367eddc72708f4a3867636dd1",

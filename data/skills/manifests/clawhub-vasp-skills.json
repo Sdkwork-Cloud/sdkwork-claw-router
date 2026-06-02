@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vasp-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vasp-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vasp-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b6a5e8903905bf60c3b0856b4f4d1ba5141e0ba8fc8feb9d2e9125aac96ef5ed",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-os-blueprint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-os-blueprint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-os-blueprint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f7f5dfd0ffc08c55da0d0629f85c05b6c82da56c947954e182c497d2e6395e9c",

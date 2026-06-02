@@ -1630,6 +1630,60 @@
         "description": "Provider-native request extension fields. Values are passed through only after SDKWORK validates the provider, operation, and allowed fields.",
         "additionalProperties": true
       },
+      "MediaResource": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "SDKWORK standard media resource object. Clients must keep the object shape through API and SDK layers and only extract a delivery URL at rendering or provider handoff boundaries.",
+        "required": [
+          "kind",
+          "source"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "archive",
+              "audio",
+              "document",
+              "image",
+              "model",
+              "other",
+              "video",
+              "voice"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "data_url",
+              "external_url",
+              "generated",
+              "object_storage",
+              "provider_asset"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "publicUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "objectKey": {
+            "type": "string"
+          },
+          "objectBlobId": {
+            "type": "string"
+          }
+        }
+      },
       "PaymentProviderOptions": {
         "type": "object",
         "additionalProperties": false,
@@ -1713,10 +1767,9 @@
             "format": "uri",
             "description": "Redirect URL for browser payment."
           },
-          "qrCodeUrl": {
-            "type": "string",
-            "format": "uri",
-            "description": "QR code URL or resource URL."
+          "qrCode": {
+            "$ref": "#/components/schemas/MediaResource",
+            "description": "QR code image media resource. Clients extract a concrete URL only at the rendering boundary."
           },
           "clientSecret": {
             "type": "string",

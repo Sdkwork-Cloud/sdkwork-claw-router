@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Admin app category create request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminAppCategoryCreateRequest {
@@ -11,9 +13,9 @@ pub struct AdminAppCategoryCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
 
-    /// Optional icon URL or asset path.
+    /// Icon field on admin app category create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// App store category display name.
     pub name: String,

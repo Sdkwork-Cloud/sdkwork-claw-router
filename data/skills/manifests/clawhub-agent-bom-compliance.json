@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bom-compliance@0.86.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-compliance-0.86.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bom-compliance-0.86.2.json"
+      },
       "version": "0.86.2",
       "runtime": "metadata",
       "checksumHash": "sha256:16029ecb033927b6ea3cbeaac841e98da511b64c1eafeffb60d2c19ebfe337b1",

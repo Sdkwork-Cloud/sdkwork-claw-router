@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/frugal-orchestrator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-frugal-orchestrator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-frugal-orchestrator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5115fa23a7f83c6b5fad09d91552503927e6c24597e979592d68acfed955f0bc",

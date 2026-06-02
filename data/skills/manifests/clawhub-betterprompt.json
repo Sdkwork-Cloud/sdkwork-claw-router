@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/betterprompt@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-betterprompt-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-betterprompt-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e312652cd789eed37306ea1fc7b7effd002a88c4faf6fd6abd973b26df71e64f",

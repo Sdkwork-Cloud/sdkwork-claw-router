@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/getblock@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-getblock-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-getblock-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:72982731646b3f08069f0a25ececcdbadd372ae766ec612b6fa02caa27fd2797",

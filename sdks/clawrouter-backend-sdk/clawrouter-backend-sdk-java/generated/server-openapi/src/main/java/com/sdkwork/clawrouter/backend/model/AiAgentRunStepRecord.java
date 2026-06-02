@@ -31,6 +31,7 @@ public class AiAgentRunStepRecord {
     private String startedAt;
     private String status;
     private Integer stepIndex;
+    private String stepStatus;
     private String stepType;
     private String tenantId;
     private String title;
@@ -266,6 +267,14 @@ public class AiAgentRunStepRecord {
 
     public void setStepIndex(Integer stepIndex) {
         this.stepIndex = stepIndex;
+    }
+
+    public String getStepStatus() {
+        return this.stepStatus;
+    }
+
+    public void setStepStatus(String stepStatus) {
+        this.stepStatus = stepStatus;
     }
 
     public String getStepType() {

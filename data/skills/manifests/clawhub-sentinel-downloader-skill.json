@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentinel-downloader-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentinel-downloader-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentinel-downloader-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:64b2924fde0098258b9e488f96f82416f2f6461c5f264dcbf56f3a4e6f387aa6",

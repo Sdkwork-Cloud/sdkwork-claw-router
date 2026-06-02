@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-waxing@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-waxing-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-waxing-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:79e8ad16116962c32c897c4c27cf5385fc9b630a262f8505ddc1d55e574dde2f",

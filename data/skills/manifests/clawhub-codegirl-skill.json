@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codegirl-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codegirl-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codegirl-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af1128d66ba44af0bba069e6eb92d87ce2e24427516d8c12abc63e3d306aeef2",

@@ -771,7 +771,7 @@ function buildServiceProviderSections(
     {
       id: 'bindings',
       title: t('admin.serviceProvider.bindings.title', 'Access Bindings'),
-      description: t('admin.serviceProvider.bindings.desc', 'API key, API key group, user, organization, and tenant ownership resolution.'),
+      description: t('admin.serviceProvider.bindings.desc', 'API key, channel group, user, organization, and tenant ownership resolution.'),
       icon: <KeyRound className="h-4 w-4" />,
       group: t('admin.serviceProvider.group.governance', 'Governance'),
       load: () => backendServiceProviderBindingsList(serviceProviderListParams),

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-sheets-assistant@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-sheets-assistant-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-sheets-assistant-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:1eda24c0af8fd4524cc8d2bc5136e5ec7e8565d991f852b095632c5195dd9524",

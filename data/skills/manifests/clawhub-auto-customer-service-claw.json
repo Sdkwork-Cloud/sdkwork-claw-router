@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-customer-service-claw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-customer-service-claw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-customer-service-claw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29051cbe06280936e8759d36e1b36bb5d61ef150283f3168164322f3994483df",

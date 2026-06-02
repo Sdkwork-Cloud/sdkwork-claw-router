@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deployment-workflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deployment-workflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deployment-workflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:78a22fd102bb527dae8f1b01bc361877a895c64bb37ee8bbaa994a420c84456f",

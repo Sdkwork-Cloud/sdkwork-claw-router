@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-agent-router@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-agent-router-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-agent-router-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb94d200db46f57902c86b2c102ba6aba81d6c76f72f84115dd1bc532b1a35e0",

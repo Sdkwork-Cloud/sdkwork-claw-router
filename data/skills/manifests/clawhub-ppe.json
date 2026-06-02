@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ppe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ppe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ppe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:223e5310a4e18f8b8b7ae94013fc128d59c641bb8da72f2df10c704e433e3f60",

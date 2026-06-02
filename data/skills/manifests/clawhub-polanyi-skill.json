@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/polanyi-skill@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-polanyi-skill-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-polanyi-skill-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b03a8adef8ed42e23086669174c6d3a4d95517d56b4202b0be2613bd5297ce42",

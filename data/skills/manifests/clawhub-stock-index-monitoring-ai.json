@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-index-monitoring-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-index-monitoring-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-index-monitoring-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef19fafb97c309563d2cf4ea15d27479006042843e85a44586805d7a25a26450",

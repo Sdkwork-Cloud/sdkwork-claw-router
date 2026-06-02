@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-processor@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-processor-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-processor-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:653dfb5122e3460050d8df2e89e1e86d80e122cc6282228fd858b728def0b179",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mythos@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mythos-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mythos-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:48f0aeab2b9155c5ca210bfe6ee55f9b71454b49447ebce728bfef6992fbda9b",

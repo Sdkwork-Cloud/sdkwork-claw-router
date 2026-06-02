@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/schedule-interpreter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-schedule-interpreter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-schedule-interpreter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35eba1a6fbc2bfcb205ea47afbd45c259a7fec7c1391d117320b5a76d36a662d",

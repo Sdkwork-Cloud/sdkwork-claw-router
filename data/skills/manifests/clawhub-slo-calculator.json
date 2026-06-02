@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slo-calculator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-slo-calculator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slo-calculator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ff54bde0dae941f376fc7cd478f4ad6bbf9e62d94ee92339712e9f927662041a",

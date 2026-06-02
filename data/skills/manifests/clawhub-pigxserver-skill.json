@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pigxserver-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pigxserver-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pigxserver-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:949f7897756f760cabd5b6672cfbe6b69b3a8409204ac3a4beba071e25f3bea3",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wrangler@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wrangler-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wrangler-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:389dcfb718b3639b34d97c72533b2e9708a0c5466151d9a63411208a8db98af5",

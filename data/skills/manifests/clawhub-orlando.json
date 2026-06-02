@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/orlando@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-orlando-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-orlando-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ff3fd834c6d35ac06e67afc8182a837c302d6822d2ef668ee2d5ada8bd69d7a",

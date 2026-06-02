@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/american-eagle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-american-eagle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-american-eagle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f247b0da3cb45b9ac64ccbdf1a04bbfd85d68274c885e065c3835c173ee3c89d",

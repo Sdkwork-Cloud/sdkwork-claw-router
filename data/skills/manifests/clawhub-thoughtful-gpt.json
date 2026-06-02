@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thoughtful-gpt@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-thoughtful-gpt-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thoughtful-gpt-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a344f0591a66532b28164bcf6441665ec0429fd6c1a8d64ded232fa3b2eb042f",

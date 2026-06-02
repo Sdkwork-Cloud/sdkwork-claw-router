@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arxiv-translate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-translate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arxiv-translate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:370c229722dba1d6aa06c1e91994e2bcd1c7bdc4f69f819df392ae5404712169",

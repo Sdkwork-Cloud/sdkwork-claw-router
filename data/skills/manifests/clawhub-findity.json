@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/findity@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-findity-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-findity-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a228147e41660e121331c5843dcda519bf5b304a7d9130360e4429267e16c42e",

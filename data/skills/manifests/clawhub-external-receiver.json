@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/external-receiver@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-external-receiver-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-external-receiver-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:842f89a2673e407002602d7acd352a6155fb90fc23ac4b3d83376f3873f406fe",

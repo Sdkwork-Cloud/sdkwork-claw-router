@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mongo-db@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mongo-db-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mongo-db-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09c3608b23038b5cae36f58a41ad8078323a11441661983d0d037ee94a880307",

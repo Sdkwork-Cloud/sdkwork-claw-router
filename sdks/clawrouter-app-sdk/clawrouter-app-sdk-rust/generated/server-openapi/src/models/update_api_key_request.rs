@@ -3,6 +3,11 @@ use serde::{Deserialize, Serialize};
 /// Update api key request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct UpdateApiKeyRequest {
+    /// API key channel group code to bind to this key.
+    #[serde(rename = "channelGroup")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel_group: Option<String>,
+
     /// Marks this API key as the default backend runtime API key for Playground and app runtime calls.
     #[serde(rename = "defaultForRuntime")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -11,10 +16,6 @@ pub struct UpdateApiKeyRequest {
     /// Expiration timestamp in YYYY-MM-DDTHH:mm format, or never.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub expires: Option<String>,
-
-    /// API key group code to bind to this key.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub group: Option<String>,
 
     /// Comma-separated IP or CIDR allowlist, or unrestricted.
     #[serde(rename = "ipLimit")]

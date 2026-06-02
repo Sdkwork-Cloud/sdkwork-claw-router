@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/raspberry-pi-servo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-raspberry-pi-servo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-raspberry-pi-servo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9b92cf0e98f48408dbcd779e25b78b9b71995d54ca3fe7aabdf0e48a50e154dd",

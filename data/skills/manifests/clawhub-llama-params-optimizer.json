@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llama-params-optimizer@3.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llama-params-optimizer-3.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llama-params-optimizer-3.1.0.json"
+      },
       "version": "3.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d96782ea50538bdbcf5dac4aeea372c0ad43c6351eba786407c8975ae7e5c58f",

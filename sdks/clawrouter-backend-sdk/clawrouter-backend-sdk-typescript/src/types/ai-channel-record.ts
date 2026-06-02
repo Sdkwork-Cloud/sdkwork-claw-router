@@ -40,6 +40,8 @@ export interface AiChannelRecord {
   environment?: string;
   /** External channel id field on ai channel record. */
   external_channel_id?: string;
+  /** Health status field on ai channel record. */
+  health_status?: string;
   /** Id field on ai channel record. */
   id?: string;
   /** Last balance checked at field on ai channel record. */
@@ -60,6 +62,8 @@ export interface AiChannelRecord {
   next_rotate_at?: string;
   /** Organization id field on ai channel record. */
   organization_id: string;
+  /** Priority field on ai channel record. */
+  priority?: number;
   /** Protocol code field on ai channel record. */
   protocol_code?: string;
   /** Provider code field on ai channel record. */
@@ -98,4 +102,6 @@ export interface AiChannelRecord {
   uuid: string;
   /** Version field on ai channel record. */
   version?: string;
+  /** Weight field on ai channel record. */
+  weight?: number;
 }

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quiver-ai@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-quiver-ai-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quiver-ai-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cc4d77b9dec5dee3beed7f8f619c521a07066d2147715da06dcb2dccfc038484",

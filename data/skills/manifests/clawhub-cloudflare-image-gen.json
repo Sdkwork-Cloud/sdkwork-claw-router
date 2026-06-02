@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloudflare-image-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-image-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloudflare-image-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c4329e68ded295e6794610e006c5ac8652aca31b1d383905b7339359e86ff60",

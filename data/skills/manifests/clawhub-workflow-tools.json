@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workflow-tools@1.5.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-workflow-tools-1.5.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workflow-tools-1.5.1.json"
+      },
       "version": "1.5.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3637e273364e621f2055d45f2c22694a7e68a630e553ed4dba10234824c23877",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/binance-skill-export@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-binance-skill-export-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-binance-skill-export-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48aba377ad16e29b5b5248033eeff22ca92ae1d6d1ae35ab68752b15a3863d53",

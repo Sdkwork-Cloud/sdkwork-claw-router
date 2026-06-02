@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-connector@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-connector-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-connector-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6eef8fba185880b5acbb146d98918ff0eff8c3a5701c0385923f1df8c9046529",

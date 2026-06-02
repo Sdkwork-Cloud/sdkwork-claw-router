@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zfs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zfs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zfs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7da14101e1aa20ea4a4269c65cea86e4fb8099d1d079b8eee70287e1ac246ff",

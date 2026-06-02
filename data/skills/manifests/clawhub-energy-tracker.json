@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/energy-tracker@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-energy-tracker-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-energy-tracker-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd29c9029cec7b66724f8877a4829859b977a41d707b7584ee5b2cdd00672c9c",

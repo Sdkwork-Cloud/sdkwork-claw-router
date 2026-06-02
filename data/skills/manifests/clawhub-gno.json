@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gno@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gno-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gno-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66a461fee59d68ca647c8904d264e61ab7f170659a2c793232794e64daa2ef6e",

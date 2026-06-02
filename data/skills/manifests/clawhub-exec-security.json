@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/exec-security@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-exec-security-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-exec-security-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:02342b5073ccc5d01b1e9c6956cbeda8e1f96b2efe3c6fe785a593a5526f26dc",

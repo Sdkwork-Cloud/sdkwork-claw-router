@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bird-chrome@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bird-chrome-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bird-chrome-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d9289e24071514d634eb141b044afdd981237953b94d4a12c5fc3f597a89b9a3",

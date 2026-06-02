@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agriculture@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agriculture-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agriculture-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a3ab471d7d80f3c41775e4ed225c0a3898e733d716ec7b209e929e53e9d1230",

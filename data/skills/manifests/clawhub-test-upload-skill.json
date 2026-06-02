@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-upload-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-upload-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-upload-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:59c68c713e9b01cee4e838e232726773d55542ae30fbe6682145658cf49b793d",

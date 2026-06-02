@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/patent-disclosure-skill@1.8.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-patent-disclosure-skill-1.8.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-patent-disclosure-skill-1.8.4.json"
+      },
       "version": "1.8.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8eb0e8019aa9f81f9d80ca36d6430b0bf0f7a9e22245dc355bbf8d643f80cc1b",

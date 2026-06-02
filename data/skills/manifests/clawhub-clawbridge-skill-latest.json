@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawbridge-skill-latest@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawbridge-skill-latest-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawbridge-skill-latest-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ae7f697ad25b33d3003f23a2aa5b267713659a0c14ffc21bc408ddd43ce63d73",

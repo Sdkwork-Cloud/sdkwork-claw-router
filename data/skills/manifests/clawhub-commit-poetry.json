@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/commit-poetry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-commit-poetry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-commit-poetry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc99a778fa41df500cba313ec3a72dfbfdd1e78a473f91e7f237fffb1df30a14",

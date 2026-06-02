@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/redc@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-redc-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-redc-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:ec12a72356474813b82bff64da195ba0e064d124903dca7a5938227f98edef8a",

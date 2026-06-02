@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/receipt-expense-workbench@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-receipt-expense-workbench-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-receipt-expense-workbench-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14964cf19fe61c4b77ffaacdaf191f0664668bfcdcbce1fc7ed2105045c65940",

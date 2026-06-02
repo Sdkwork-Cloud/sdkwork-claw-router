@@ -226,7 +226,7 @@ function RiskDashboardView() {
               <div key={rule.id} className="flex items-center justify-between gap-4 text-sm">
                 <div className="min-w-0">
                   <div className="font-medium text-slate-900 dark:text-white truncate">{rule.model}</div>
-                  <div className="text-xs text-slate-500 truncate">{rule.group}</div>
+                  <div className="text-xs text-slate-500 truncate">{rule.channelGroupName ?? rule.channelGroup}</div>
                 </div>
                 <div className="font-mono text-red-600 dark:text-red-400">{rule.tpm.toLocaleString()} tpm</div>
               </div>
@@ -650,7 +650,7 @@ function ModelRateLimitView({ search, setSearch }: { search: string, setSearch: 
              ) : filteredLimits.map(m => (
                <tr key={m.id} className="hover:bg-slate-50 dark:hover:bg-white/5">
                  <td className="px-4 py-3 font-medium font-mono text-slate-900 dark:text-slate-200"><span className="bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-500/20 px-2 py-1 rounded text-xs">{m.model}</span></td>
-                 <td className="px-4 py-3">{m.group}</td>
+                 <td className="px-4 py-3">{m.channelGroupName ?? m.channelGroup}</td>
                  <td className="px-4 py-3 font-mono text-red-600 dark:text-red-400">{m.rpm} <span className="text-slate-400 text-xs font-sans">RPM</span></td>
                  <td className="px-4 py-3 font-mono text-red-600 dark:text-red-400">{m.tpm} <span className="text-slate-400 text-xs font-sans">TPM</span></td>
                  <td className="px-4 py-3">

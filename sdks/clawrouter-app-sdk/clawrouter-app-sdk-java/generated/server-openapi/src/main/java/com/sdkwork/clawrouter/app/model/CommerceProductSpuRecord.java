@@ -3,9 +3,9 @@ package com.sdkwork.clawrouter.app.model;
 
 public class CommerceProductSpuRecord {
     private String brand;
-    private String categoryId;
     private String createdAt;
     private String description;
+    private String id;
     private String organizationId;
     private String productType;
     private String publishedAt;
@@ -24,14 +24,6 @@ public class CommerceProductSpuRecord {
         this.brand = brand;
     }
 
-    public String getCategoryId() {
-        return this.categoryId;
-    }
-
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
-    }
-
     public String getCreatedAt() {
         return this.createdAt;
     }
@@ -46,6 +38,14 @@ public class CommerceProductSpuRecord {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrganizationId() {

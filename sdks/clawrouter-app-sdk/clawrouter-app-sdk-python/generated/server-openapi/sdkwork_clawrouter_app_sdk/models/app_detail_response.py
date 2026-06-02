@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
     from .app_release_item import AppReleaseItem
+    from .media_resource import MediaResource
 
 
 @dataclass
@@ -15,8 +16,8 @@ class AppDetailResponse:
     downloads: str
     features: List[str]
     id: str
-    image: str
+    image: MediaResource
     name: str
     rating: float
     releases: List[AppReleaseItem]
-    screenshots: List[str]
+    screenshots: List[MediaResource]

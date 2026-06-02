@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/product-analysis-skill@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-product-analysis-skill-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-product-analysis-skill-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c55339ff7b35811054d92494b978bb28d9a4c7e6a54b55af74011bdf5fb4376e",

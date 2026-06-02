@@ -12,6 +12,10 @@ export interface CommerceUserAddressRecord {
   created_at: string;
   /** District field on commerce user address record. */
   district?: string;
+  /** Id field on commerce user address record. */
+  id?: string;
+  /** Is default field on commerce user address record. */
+  is_default: boolean;
   /** Organization id field on commerce user address record. */
   organization_id?: string;
   /** Owner user id field on commerce user address record. */

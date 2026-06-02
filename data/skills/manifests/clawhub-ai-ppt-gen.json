@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-ppt-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-ppt-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-ppt-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1d062df5791f9d99df19221d503469ead0e50103fc17f183a104a8fae9259fe3",

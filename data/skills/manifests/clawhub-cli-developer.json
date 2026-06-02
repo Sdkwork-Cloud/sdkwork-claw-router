@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cli-developer@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cli-developer-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cli-developer-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f2bac7f07e785661810b05584be6576db3f9116f606430cb50ac45cfb5118b27",

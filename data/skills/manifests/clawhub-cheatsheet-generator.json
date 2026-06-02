@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cheatsheet-generator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cheatsheet-generator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cheatsheet-generator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fc7002607dedf629df42e44f62d4002cf5c53b835b02a5aa1e1fa670eb441339",

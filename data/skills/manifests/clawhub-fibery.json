@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fibery@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-fibery-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fibery-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:37353af3b4caa6ed8ac40c4264e478ab5012482aa382ea088d299e62c43d0109",

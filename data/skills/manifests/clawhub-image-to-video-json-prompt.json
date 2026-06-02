@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-to-video-json-prompt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-to-video-json-prompt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-to-video-json-prompt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:310aa795c03a89f11f10d4f088bc5aa8add06cd3f318886e382df9d4bea01e4d",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tesseract-image-ocr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tesseract-image-ocr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tesseract-image-ocr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b034f0277faf300eea54df022878c3930914ce3add9b0395773f95594792d5c9",

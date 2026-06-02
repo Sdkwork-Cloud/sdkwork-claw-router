@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boxed-ffmpeg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boxed-ffmpeg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boxed-ffmpeg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0becf2e41465b6cd8dccccc08b81ae17b4b5d55e4e5f4a79eeaa3ca20917418d",

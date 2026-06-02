@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zsh-themes@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-zsh-themes-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zsh-themes-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c1ec53885df79c9fb90e4a99df1351aa228685cc0aff901318310f4fcc951957",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nlm@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nlm-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nlm-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cdcf05d1301c64cb14b7e280568f5ee2188e1f2456e67957ef7bd7541120c311",

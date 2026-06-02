@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-example-synthesizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-example-synthesizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-example-synthesizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:392a1ad264b314a0fb2cb761d8d6f5ff11299b3bd329129c85b0d7144ea341c2",

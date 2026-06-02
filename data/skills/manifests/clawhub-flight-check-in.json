@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flight-check-in@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flight-check-in-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flight-check-in-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ea81666c90d17fd0ca6eb3abfe2985a6f08c9d3c08b33725b275a73538050dc",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/roi@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-roi-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-roi-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:83f3a2eb95cd0df2fa297b3944555beadf870043cc1013e4061d75cfa5c123d0",

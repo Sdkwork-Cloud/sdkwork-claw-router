@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scan-to-markdown@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scan-to-markdown-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scan-to-markdown-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f2dd0f93c7969a792560e862573ada0732194d3987555e4cd9c8a6b02418e3d",

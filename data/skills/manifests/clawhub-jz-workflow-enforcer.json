@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jz-workflow-enforcer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jz-workflow-enforcer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jz-workflow-enforcer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e8df1a50acef711679a192d735ba49fc456c718de0082cd4f920a0f9535386fc",

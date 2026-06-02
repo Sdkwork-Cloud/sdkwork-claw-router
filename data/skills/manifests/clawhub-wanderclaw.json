@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wanderclaw@3.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-wanderclaw-3.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wanderclaw-3.2.4.json"
+      },
       "version": "3.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d4faf2cb27046a8974f732212709a0c2789f04b9f519e2cde1f9c5799c3f46cd",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ppt-maker-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ppt-maker-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ppt-maker-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3a78969e81fcb8e8a95a1f6f24b7904cc05f5734098e72dc92b51d8840aa107",

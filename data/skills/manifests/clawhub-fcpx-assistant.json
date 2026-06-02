@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fcpx-assistant@3.0.0-beta",
-      "artifactUrl": "data/skills/artifacts/clawhub-fcpx-assistant-3.0.0-beta.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fcpx-assistant-3.0.0-beta.json"
+      },
       "version": "3.0.0-beta",
       "runtime": "metadata",
       "checksumHash": "sha256:65a788928b1c55ef8afdc86d55162d50ddd281ada7e4461a0abc2af2426afe62",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/custom-mysql@1.1.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-custom-mysql-1.1.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-custom-mysql-1.1.6.json"
+      },
       "version": "1.1.6",
       "runtime": "metadata",
       "checksumHash": "sha256:1be7d953e2da7a0dc57ecd6ece6e0f875aab2c7035b3d5c6739e52c1d82a7933",

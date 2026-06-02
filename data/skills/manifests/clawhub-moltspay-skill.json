@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltspay-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltspay-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltspay-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3db399b06a2bf042b3120cf1db6efb489d034e50d9106c7076c66b2d73f752e",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fallout@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fallout-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fallout-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5da76ff3c14e3a566e16394d808ff62ae4c7fb3b876ce11fb25f279e63917fb1",

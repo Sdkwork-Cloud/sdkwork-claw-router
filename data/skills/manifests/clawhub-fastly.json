@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fastly@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-fastly-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fastly-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8ddcd24abb71451b2633ed135d27b358b24975fed2c6a3eaaa99e6feaa74b335",

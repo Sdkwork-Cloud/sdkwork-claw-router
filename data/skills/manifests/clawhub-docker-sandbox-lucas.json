@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-sandbox-lucas@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-sandbox-lucas-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-sandbox-lucas-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c5806aadbcde3c73d6db3942c90204ab906ef6a13d0693576b97df017f99025c",

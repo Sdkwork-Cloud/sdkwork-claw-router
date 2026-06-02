@@ -439,9 +439,9 @@ export function Playground() {
 
   const previewKind = previewItem ? getSdkworkGenerationPreviewKind(previewItem.type) : null;
   const isText = previewItem?.type === 'text';
-  const previewVideoUrl = previewKind === 'video' ? readSdkworkGenerationMediaUrl(previewItem?.videos?.[activeIndex]) || previewItem?.url : undefined;
-  const previewImageUrl = previewKind === 'image' ? previewItem?.images?.[activeIndex] : undefined;
-  const previewAudioUrl = previewKind === 'audio' ? previewItem?.url : undefined;
+  const previewVideoUrl = previewKind === 'video' ? readSdkworkGenerationMediaUrl(previewItem?.videos?.[activeIndex] ?? previewItem?.asset) : undefined;
+  const previewImageUrl = previewKind === 'image' ? readSdkworkGenerationMediaUrl(previewItem?.images?.[activeIndex] ?? previewItem?.asset) : undefined;
+  const previewAudioUrl = previewKind === 'audio' ? readSdkworkGenerationMediaUrl(previewItem?.asset) : undefined;
   const previewText = previewKind === 'text' ? previewItem?.outputText : undefined;
   const previewThumbnails = previewKind === 'video' ? previewItem?.videos : previewKind === 'image' ? previewItem?.images : undefined;
   const previewAssetUrl = previewVideoUrl || previewImageUrl || previewAudioUrl || '';

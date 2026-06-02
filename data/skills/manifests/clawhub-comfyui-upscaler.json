@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comfyui-upscaler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-upscaler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comfyui-upscaler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ce1e032e8fc3ef077139b9d81f53f8c360a51cadd4983f81112c1ff4283a416",

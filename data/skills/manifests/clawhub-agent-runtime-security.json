@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-runtime-security@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-runtime-security-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-runtime-security-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4b41cff640c74d344485fe843e4e11237c66a3e00468fae8462159dbbf4a7903",

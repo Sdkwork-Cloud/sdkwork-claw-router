@@ -2,6 +2,8 @@
 export interface CommerceExchangeRuleRecord {
   /** Created at field on commerce exchange rule record. */
   created_at: string;
+  /** Id field on commerce exchange rule record. */
+  id?: string;
   /** Idempotency key field on commerce exchange rule record. */
   idempotency_key: string;
   /** Organization id field on commerce exchange rule record. */

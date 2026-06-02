@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Updated skill category snapshot returned by the backend. */
 export interface AdminSkillCategoryItem {
   /** Code field on admin skill category item. */
@@ -5,7 +7,7 @@ export interface AdminSkillCategoryItem {
   /** Description field on admin skill category item. */
   description?: string;
   /** Icon field on admin skill category item. */
-  icon?: string;
+  icon?: MediaResource;
   /** Id field on admin skill category item. */
   id: string;
   /** Name field on admin skill category item. */

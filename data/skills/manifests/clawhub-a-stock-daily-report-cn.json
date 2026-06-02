@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/a-stock-daily-report-cn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-daily-report-cn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-a-stock-daily-report-cn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f27c20725683a299be4407cf39f3414cf44444e1a509ba43db5c5a79b50ecb0",

@@ -116,9 +116,20 @@ class AppCategorySeedManifestGenerator:
             "description": f"{name} SDKWork app category",
             "code": code,
             "tags": ["sdkwork-app", normalized],
-            "icon": f"https://cdn.sdkwork.com/app-categories/{normalized}.svg",
+            "icon": self._media_resource(
+                f"https://cdn.sdkwork.com/app-categories/{normalized}.svg",
+                "image",
+            ),
             "sortWeight": 100 + index,
             "path": f"/app-store/{normalized}",
+        }
+
+    def _media_resource(self, url: str, kind: str) -> dict[str, str]:
+        return {
+            "kind": kind,
+            "source": "external_url",
+            "url": url,
+            "publicUrl": url,
         }
 
     def _portal_category(self, app: Any) -> str:

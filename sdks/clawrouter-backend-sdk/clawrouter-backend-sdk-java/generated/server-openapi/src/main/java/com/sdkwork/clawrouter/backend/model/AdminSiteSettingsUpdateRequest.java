@@ -7,12 +7,12 @@ public class AdminSiteSettingsUpdateRequest {
     private String customCss;
     private String description;
     private String docsUrl;
-    private String faviconUrl;
+    private MediaResource favicon;
     private String footerCopyright;
-    private String iconUrl;
+    private MediaResource icon;
     private String icpRecordNumber;
     private String icpRecordUrl;
-    private String logoUrl;
+    private MediaResource logo;
     private String policeRecordNumber;
     private String policeRecordUrl;
     private String privacyUrl;
@@ -63,12 +63,12 @@ public class AdminSiteSettingsUpdateRequest {
         this.docsUrl = docsUrl;
     }
 
-    public String getFaviconUrl() {
-        return this.faviconUrl;
+    public MediaResource getFavicon() {
+        return this.favicon;
     }
 
-    public void setFaviconUrl(String faviconUrl) {
-        this.faviconUrl = faviconUrl;
+    public void setFavicon(MediaResource favicon) {
+        this.favicon = favicon;
     }
 
     public String getFooterCopyright() {
@@ -79,12 +79,12 @@ public class AdminSiteSettingsUpdateRequest {
         this.footerCopyright = footerCopyright;
     }
 
-    public String getIconUrl() {
-        return this.iconUrl;
+    public MediaResource getIcon() {
+        return this.icon;
     }
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+    public void setIcon(MediaResource icon) {
+        this.icon = icon;
     }
 
     public String getIcpRecordNumber() {
@@ -103,12 +103,12 @@ public class AdminSiteSettingsUpdateRequest {
         this.icpRecordUrl = icpRecordUrl;
     }
 
-    public String getLogoUrl() {
-        return this.logoUrl;
+    public MediaResource getLogo() {
+        return this.logo;
     }
 
-    public void setLogoUrl(String logoUrl) {
-        this.logoUrl = logoUrl;
+    public void setLogo(MediaResource logo) {
+        this.logo = logo;
     }
 
     public String getPoliceRecordNumber() {

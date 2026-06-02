@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-session-logs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-session-logs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-session-logs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb38c5d9754fb02ebc668dcc09872589c72f06f5363f61cd542665cf0729135c",

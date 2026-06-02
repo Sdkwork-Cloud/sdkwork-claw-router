@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/readme-authoring@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-readme-authoring-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-readme-authoring-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:39ffd029515ac4c9ea1f84adb5fda1b5cb3ad75011967aed52a0bb784d1c4011",

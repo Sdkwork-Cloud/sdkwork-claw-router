@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/odps-sql@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-odps-sql-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-odps-sql-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6ae3a04a7c4fc571004f788a179383865a69e38ce2d49b03a138ebfe6452141b",

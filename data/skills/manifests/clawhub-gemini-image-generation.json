@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-image-generation@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-image-generation-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-image-generation-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:e3249202e3a1490dfbb6376e6b038513ccbfee2da8753da0c391730eb1fa5994",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-repo-cleaner@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-repo-cleaner-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-repo-cleaner-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f7bc769ac9f8f2daa303bd783b2f3a2734f7cda149579fbe5afa9a462009ac68",

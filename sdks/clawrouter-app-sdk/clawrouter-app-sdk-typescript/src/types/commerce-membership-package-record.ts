@@ -8,6 +8,8 @@ export interface CommerceMembershipPackageRecord {
   duration_days: string;
   /** Ends at field on commerce membership package record. */
   ends_at?: string;
+  /** Id field on commerce membership package record. */
+  id?: string;
   /** Organization id field on commerce membership package record. */
   organization_id?: string;
   /** Package group id field on commerce membership package record. */
@@ -22,6 +24,8 @@ export interface CommerceMembershipPackageRecord {
   recurrence_cycle?: string;
   /** Sku id field on commerce membership package record. */
   sku_id: string;
+  /** Sort order field on commerce membership package record. */
+  sort_order: string;
   /** Starts at field on commerce membership package record. */
   starts_at?: string;
   /** Status field on commerce membership package record. */

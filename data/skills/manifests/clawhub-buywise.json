@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buywise@1.5.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-buywise-1.5.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buywise-1.5.2.json"
+      },
       "version": "1.5.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c96c279378554918791ae44788becbe265f9fe020944e7cb0eb8dc38f68da7d3",

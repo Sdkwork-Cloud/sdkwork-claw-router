@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cmus@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cmus-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cmus-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:64fc4436671fcb408599bdf1aa30ac4ced13a4f03e1486ed1ff63df2d0be471e",

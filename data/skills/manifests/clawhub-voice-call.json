@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-call@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-call-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-call-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:654b2c22712d9341d6fc677151f3eec51fc3c34a3a0628262bd7b774d6d00ea5",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/idempotency@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-idempotency-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-idempotency-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e4c29451f7ec82a9d247c99aefd209e7b02951daf58697df979f8db708991725",

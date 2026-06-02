@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ransomware-preventer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ransomware-preventer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ransomware-preventer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2677f9cb96ede07842baa413fdc591c1573d0b0ac5e5e8cdaddd95d3b6c67fc8",

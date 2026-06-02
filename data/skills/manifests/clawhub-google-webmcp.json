@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-webmcp@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-webmcp-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-webmcp-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5c3cd6b47ff0da458354bee6da880181b28ab6d388f59ad16061a1d1b5a5f4cc",

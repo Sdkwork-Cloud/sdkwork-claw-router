@@ -1,4 +1,5 @@
 import type { ForumAuthor } from './forum-author';
+import type { MediaResource } from './media-resource';
 
 /** Forum feed item schema exposed by Claw Router. */
 export interface ForumFeedItem {
@@ -12,8 +13,8 @@ export interface ForumFeedItem {
   content: string;
   /** Content type field on forum feed item. */
   contentType: 'feeds';
-  /** Cover image field on forum feed item. */
-  coverImage: string;
+  /** Cover field on forum feed item. */
+  cover: MediaResource;
   /** Created at field on forum feed item. */
   createdAt: string;
   /** Id field on forum feed item. */

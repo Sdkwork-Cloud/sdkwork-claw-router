@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seedstr@2.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-seedstr-2.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seedstr-2.1.4.json"
+      },
       "version": "2.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:68a932dbf170c1cc4132ff683e48b21916298ce4b10dcbc89122f12ffa54ccf9",

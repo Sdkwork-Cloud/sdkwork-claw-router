@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-reach-skip@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-reach-skip-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-reach-skip-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a9c3af442ea57ca07fefbf421d54e756bc9a6b8f68acbc11b50c466bae704e2",

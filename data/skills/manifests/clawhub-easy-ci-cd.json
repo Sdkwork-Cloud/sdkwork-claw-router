@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/easy-ci-cd@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-easy-ci-cd-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-easy-ci-cd-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:738271a3a6480bc77e50137096a9ded837710f77d5c6ee346ee2a7ab706fce39",

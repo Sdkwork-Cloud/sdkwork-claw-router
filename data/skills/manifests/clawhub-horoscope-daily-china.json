@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/horoscope-daily-china@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-horoscope-daily-china-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-horoscope-daily-china-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:28ee7f05844806e87d2b3c8bb947bcd18322400ade4dd36d1390ced355c3d371",

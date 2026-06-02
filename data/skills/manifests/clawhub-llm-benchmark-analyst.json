@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-benchmark-analyst@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-benchmark-analyst-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-benchmark-analyst-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec79713aa55c1fefdd6b47ec775a3b9c6a3286386fba3025964ee486af7fd243",

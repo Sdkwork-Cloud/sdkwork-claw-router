@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/builtin-tools@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-builtin-tools-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-builtin-tools-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d29790a16f2f61ac857d000fc1405861693774dd1ab31cbcbb559ec9cf5155d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/content-asset-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-content-asset-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-content-asset-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05b4f622268f0d83f2001784de5b1914dff023c8eade2f4f8861362ba06bfc60",

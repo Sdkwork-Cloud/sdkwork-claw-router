@@ -4,6 +4,7 @@ package types
 type PromotionOfferTimeWindowRecord struct {
 	CreatedAt string `json:"created_at"`
 	EndsAt string `json:"ends_at"`
+	Id string `json:"id"`
 	LocalEndTime string `json:"local_end_time"`
 	LocalStartTime string `json:"local_start_time"`
 	OfferVersionId string `json:"offer_version_id"`

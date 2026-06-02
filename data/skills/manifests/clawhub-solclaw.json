@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:840b2ba65a90a09a5637471e89bf5c3834451de50097e300c56ffba48b0fc004",

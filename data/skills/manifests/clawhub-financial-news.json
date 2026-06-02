@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/financial-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-financial-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-financial-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97fcc33e38e1f0471448f3b0d9b8a7ae5d4dc96f57d5f769a0f4c2f333a53f01",

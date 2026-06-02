@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blackrock-group@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blackrock-group-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blackrock-group-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ae182393021aef4128e6c26f141fa3f04f9eb66818029af472ecde88691ef21a",

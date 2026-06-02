@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hz-proactive-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hz-proactive-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hz-proactive-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:996a3bcdc1275b1b6e77d140f33194e0f93aee4188647bd58391a1132ab574be",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mintclub@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mintclub-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mintclub-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:142c28924c71ddf323e1e883ef95993d35e5117db00634a0650dd50a63edbe82",

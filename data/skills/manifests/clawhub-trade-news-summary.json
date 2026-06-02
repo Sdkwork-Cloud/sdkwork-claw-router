@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trade-news-summary@2.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-trade-news-summary-2.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trade-news-summary-2.3.3.json"
+      },
       "version": "2.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:2889120b8d0c18c1fcae4e9fe4ef5da56072eeecddf78ce751fba48eb0be64fa",

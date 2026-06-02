@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/embrace@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-embrace-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-embrace-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:fa39bd66dc55fe115506e879665f14977758b958a4f11c7c471c79dbdddc46f9",

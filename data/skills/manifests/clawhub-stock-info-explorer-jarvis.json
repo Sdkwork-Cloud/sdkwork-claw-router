@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-info-explorer-jarvis@1.2.11",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-info-explorer-jarvis-1.2.11.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-info-explorer-jarvis-1.2.11.json"
+      },
       "version": "1.2.11",
       "runtime": "metadata",
       "checksumHash": "sha256:99803b8f7dda39b142c47662b7a76d3f0bd7e2cf813a7acaf20b1281489900aa",

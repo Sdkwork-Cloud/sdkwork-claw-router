@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-vertex-ai@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-vertex-ai-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-vertex-ai-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:1c1fee9188694d15706e8a28f64b45ded317e2224f450eaf1f3c8980aee5dedd",

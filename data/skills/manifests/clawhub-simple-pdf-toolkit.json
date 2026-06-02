@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/simple-pdf-toolkit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-simple-pdf-toolkit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-simple-pdf-toolkit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7fa50208c27a734b1a188de807c354f086c25418721920a823df515adaae95e",

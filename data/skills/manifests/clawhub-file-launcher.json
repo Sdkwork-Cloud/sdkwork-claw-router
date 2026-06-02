@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/file-launcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-file-launcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-file-launcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d526810f5c9899f51af8c2d4fc33440c77e5dcb011253db186f1c2f4b399569b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ollama-vision@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ollama-vision-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ollama-vision-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b764abc97023d1b2c76c5ef6de4fbbc278f9847d77cd3656117918df25fc3145",

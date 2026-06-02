@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gratitude-journal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gratitude-journal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gratitude-journal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1a41db014a3c105e28195317e1796fd3de9d4252234563c7665e4e5df60b14ef",

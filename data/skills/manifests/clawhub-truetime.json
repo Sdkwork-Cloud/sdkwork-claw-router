@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/truetime@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-truetime-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-truetime-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d4275133621a58dc3418715d7a9d15896fe40a9731fddf020d3c489d6f9f2b5d",

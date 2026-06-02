@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/explain-simply@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-explain-simply-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-explain-simply-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d766cf951bace0608516911347490e2a837e43cbdce095a0afd977e2b654c82",

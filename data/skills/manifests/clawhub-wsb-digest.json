@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wsb-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wsb-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wsb-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1ead8332c66f0d506a3724efc36558b678b4f787ab505d7c81d2ce88d097d712",

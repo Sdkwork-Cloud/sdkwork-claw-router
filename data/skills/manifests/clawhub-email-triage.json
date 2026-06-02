@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-triage@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-triage-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-triage-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:900c4b9b0aefcca1b3699e397dade3fefe1d5b711c2c9a30a5597b9b798adfc4",

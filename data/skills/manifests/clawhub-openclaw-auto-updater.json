@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-auto-updater@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-auto-updater-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-auto-updater-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75470ca6877e325406665eb772629b1be1f662a2af70bff5f911651ce5b97d35",

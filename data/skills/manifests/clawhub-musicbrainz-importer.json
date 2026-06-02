@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/musicbrainz-importer@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-musicbrainz-importer-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-musicbrainz-importer-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:86e58106cee12a7f8745d4ddbb8b993b73649bbabb6a567536a409e266410a66",

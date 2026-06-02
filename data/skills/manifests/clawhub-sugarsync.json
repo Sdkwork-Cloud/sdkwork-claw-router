@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sugarsync@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sugarsync-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sugarsync-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e2c05e11f7cb67ec6e057350ffeaf16ec0ed96f58f67eceea8d6bacb38bfc85a",

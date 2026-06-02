@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generate-alias@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-generate-alias-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generate-alias-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:da87194dfc04fd59f9337ee010fc1f76818c7575cf7115a80d3601528b57906d",

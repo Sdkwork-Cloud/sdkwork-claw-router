@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/freeland@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-freeland-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-freeland-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7aa550aa4d9aec7d398ead41330d329380972a186c0a63e1df7769397b7cc274",

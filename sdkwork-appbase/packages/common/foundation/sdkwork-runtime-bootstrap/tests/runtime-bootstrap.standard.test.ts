@@ -3,7 +3,9 @@ import { describe, expect, it, vi } from "vitest";
 import {
   SDKWORK_API_PREFIXES,
   createSdkworkRuntimeBootstrap,
+  readSdkworkMediaResource,
   normalizeSdkworkApiBaseUrl,
+  toExternalSdkworkMediaResource,
 } from "@sdkwork/runtime-bootstrap";
 
 describe("sdkwork runtime bootstrap", () => {
@@ -130,5 +132,26 @@ describe("sdkwork runtime bootstrap", () => {
     expect(() =>
       normalizeSdkworkApiBaseUrl(`https://api.example.com/${legacyAppVersionPrefix}`, "app"),
     ).toThrow(/noncanonical SDKWork API prefix/);
+  });
+
+  it("keeps media resources as objects and rejects bare URL strings", () => {
+    const resource = {
+      kind: "image",
+      publicUrl: "https://cdn.example.test/avatar.png",
+      source: "external_url",
+      url: "https://cdn.example.test/avatar.png",
+    };
+
+    expect(readSdkworkMediaResource(resource)).toEqual(resource);
+    expect(readSdkworkMediaResource("https://cdn.example.test/avatar.png")).toBeUndefined();
+  });
+
+  it("marks data URL media input with the data_url source", () => {
+    expect(toExternalSdkworkMediaResource(" data:image/png;base64,AAAA ", "image")).toEqual({
+      kind: "image",
+      publicUrl: "data:image/png;base64,AAAA",
+      source: "data_url",
+      url: "data:image/png;base64,AAAA",
+    });
   });
 });

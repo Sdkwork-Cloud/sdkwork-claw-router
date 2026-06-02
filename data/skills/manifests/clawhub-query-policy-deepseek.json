@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/query-policy-deepseek@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-query-policy-deepseek-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-query-policy-deepseek-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:61ac299d7b835a39a21cb900f35ba3dc07ef539ac43d5498c8a90385037b66e1",

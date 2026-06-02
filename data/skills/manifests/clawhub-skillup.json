@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skillup@0.1.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-skillup-0.1.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skillup-0.1.9.json"
+      },
       "version": "0.1.9",
       "runtime": "metadata",
       "checksumHash": "sha256:68791bf45076f8843a02b76694d0aa7b26372c40fb74202855932ded51df7158",

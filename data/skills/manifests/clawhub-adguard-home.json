@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adguard-home@1.2.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-adguard-home-1.2.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adguard-home-1.2.7.json"
+      },
       "version": "1.2.7",
       "runtime": "metadata",
       "checksumHash": "sha256:81ab2f0066e6f0de99eb5f82822991f6891fb1ffb5cbdde6d9bd432725d3958f",

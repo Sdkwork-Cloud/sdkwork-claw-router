@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boot-installer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boot-installer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boot-installer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:daac6d95a778cd9cb6d48687c0dac582044198ba6e838e60b115a879b33ef03a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/craigslist-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-craigslist-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-craigslist-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c88091552c250347c56d8a8300f0a4db59919c77b09b407c659fdb6dbc5f0bd7",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-tracker-aiyst@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-tracker-aiyst-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-tracker-aiyst-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:414f2dd0b8fc10fb2ee6dcf2f8b2220707f9eb32af7cc8485460e1e3078672d3",

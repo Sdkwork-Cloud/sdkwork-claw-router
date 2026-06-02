@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/repo-runner@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-repo-runner-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-repo-runner-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6d2aab54eb11c81370882c4fc72501d2800ca1a1c192af159d193848724d210f",

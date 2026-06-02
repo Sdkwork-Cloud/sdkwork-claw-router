@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lufthansa@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lufthansa-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lufthansa-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5909cbe4ec1c99f855132d70b64ce2559ecc2a913de8430d595c774ea7fa8000",

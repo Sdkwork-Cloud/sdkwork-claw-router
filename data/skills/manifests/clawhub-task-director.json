@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-director@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-director-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-director-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1c558d1b255c515dc4143e726347865b6a56080fc1c911cd5641b233df88eec",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nemo@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-nemo-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nemo-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1666d3d71f97ba5cbab7f420d3e946b33260b41d0715ad492fc4f0784186004c",

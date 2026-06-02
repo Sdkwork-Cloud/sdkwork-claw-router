@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dcl-prompt-firewall@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-dcl-prompt-firewall-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dcl-prompt-firewall-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6547ec8f50de1c7d0beec0eccdeab72d5d3d03e303141fe79fa4075a4c0a03e5",

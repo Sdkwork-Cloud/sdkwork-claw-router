@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pull-request-reviewer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pull-request-reviewer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pull-request-reviewer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93b42b85d0b371795f39e254c83f567f69d51b880d8acf167427ffadc98a3e64",

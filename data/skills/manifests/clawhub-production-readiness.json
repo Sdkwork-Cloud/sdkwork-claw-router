@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/production-readiness@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-production-readiness-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-production-readiness-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0edecdcbd65f77effa85c80e92a1ac1c504155e55053a6aa1bca4c9fa8eabe0",

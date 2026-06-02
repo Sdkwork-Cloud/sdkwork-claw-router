@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hansei@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-hansei-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hansei-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8efa9266e65e65521d65cc05be5438a544648af10296fc7fee9149371e5a06e2",

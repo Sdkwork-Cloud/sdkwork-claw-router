@@ -10,19 +10,38 @@
   "entrypoint": "sdkwork.skills.workflow_planner",
   "provider": "SDKWork",
   "licenseName": "SDKWork Commercial",
-  "capabilities": ["workflow.plan", "task.decomposition", "verification.gates"],
+  "capabilities": [
+    "workflow.plan",
+    "task.decomposition",
+    "verification.gates"
+  ],
   "configSchema": {
     "type": "object",
     "properties": {
-      "planningDepth": { "type": "string", "enum": ["lean", "standard", "deep"] }
+      "planningDepth": {
+        "type": "string",
+        "enum": [
+          "lean",
+          "standard",
+          "deep"
+        ]
+      }
     }
   },
   "defaultConfig": {
     "planningDepth": "standard",
     "portal": {
       "developer": "Workflow Studio",
-      "features": ["Phase planning", "Dependency mapping", "Verification gates"],
-      "frameworks": ["Rust service", "OpenAPI", "React portal"],
+      "features": [
+        "Phase planning",
+        "Dependency mapping",
+        "Verification gates"
+      ],
+      "frameworks": [
+        "Rust service",
+        "OpenAPI",
+        "React portal"
+      ],
       "sizeText": "28 KB",
       "clawhubImage": "https://cdn.sdkwork.example/skills/workflow-planner/clawhub.png",
       "screenshots": [
@@ -33,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "builtin://sdkwork.skills.workflow_planner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/workflow-planner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/workflow-planner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "builtin",
       "checksumHash": "sha256:6451ff3603260240ffedaef84da63056cc70a649e3cd5a07d05a3efe795c8a14",

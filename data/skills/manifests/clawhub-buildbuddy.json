@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buildbuddy@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-buildbuddy-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buildbuddy-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8b48b3952de4c29a6fc2f408fc83cf6b42d0f8810e2160abed8afd0545b10c3c",

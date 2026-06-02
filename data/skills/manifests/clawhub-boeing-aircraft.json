@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boeing-aircraft@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boeing-aircraft-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boeing-aircraft-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aa5552593efbe9fb4224af9163a5261e0e318af8ef84a200822595f1a41bb10c",

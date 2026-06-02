@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cat-food-tracker@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cat-food-tracker-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cat-food-tracker-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4edae61b514f40e12f74e46fa341fa34b001431b57c807c794396c6ac9659b76",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-daily@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-daily-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-daily-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6434db72c86950dfc3b4b3beb69f85c0219a1a87ba049651fb8a698eed23963b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/danube@8.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-danube-8.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-danube-8.0.12.json"
+      },
       "version": "8.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:fab07c40e4b36c807b2e6096d16dbec9f356059576053fecfc5a3fef00252878",

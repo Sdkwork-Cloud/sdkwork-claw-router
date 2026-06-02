@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/who-is-actor@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-who-is-actor-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-who-is-actor-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:c0334f92cb9370b20370f76990fb79735dc7c50f89ba47260f129c58d1da4d3b",

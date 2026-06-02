@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/legal-compliance-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-legal-compliance-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-legal-compliance-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f50d128d81eb9c2bccc18627e49e1d26315b4fa445038a225b203e6ba31a94d5",

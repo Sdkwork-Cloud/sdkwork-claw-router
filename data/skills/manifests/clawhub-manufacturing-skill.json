@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/manufacturing-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-manufacturing-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-manufacturing-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:58383a00cae8c40b3e7251032659c79517295f88cf195cd4a0374ead8ba30dee",

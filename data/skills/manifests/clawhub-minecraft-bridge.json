@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minecraft-bridge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-minecraft-bridge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minecraft-bridge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97cc50201ec4f4f656876a75c794d7d48c985f81c06b1b388f2ae6c9085dab77",

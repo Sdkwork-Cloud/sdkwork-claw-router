@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quickfind@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-quickfind-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quickfind-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d7c7893698579f37068ede9ff932f98bd960f717f173e82d2ac348cb2b43dd72",

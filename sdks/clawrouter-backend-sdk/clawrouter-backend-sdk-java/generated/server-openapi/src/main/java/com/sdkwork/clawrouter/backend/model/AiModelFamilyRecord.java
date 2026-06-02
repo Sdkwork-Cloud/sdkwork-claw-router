@@ -15,7 +15,7 @@ public class AiModelFamilyRecord {
     private String docsUrl;
     private String familyCode;
     private String familyType;
-    private String iconUrl;
+    private MediaResource icon;
     private String id;
     private Map<String, String> metadata;
     private String modelCount;
@@ -126,12 +126,12 @@ public class AiModelFamilyRecord {
         this.familyType = familyType;
     }
 
-    public String getIconUrl() {
-        return this.iconUrl;
+    public MediaResource getIcon() {
+        return this.icon;
     }
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+    public void setIcon(MediaResource icon) {
+        this.icon = icon;
     }
 
     public String getId() {

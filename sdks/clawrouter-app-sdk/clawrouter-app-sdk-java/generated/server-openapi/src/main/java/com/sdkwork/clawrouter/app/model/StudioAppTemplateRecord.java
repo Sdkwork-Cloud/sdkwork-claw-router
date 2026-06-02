@@ -7,7 +7,7 @@ public class StudioAppTemplateRecord {
     private Map<String, String> capabilityManifest;
     private String categoryCode;
     private String categoryId;
-    private String coverUrl;
+    private MediaResource cover;
     private String createdAt;
     private String currentVersionId;
     private String dataScope;
@@ -22,7 +22,7 @@ public class StudioAppTemplateRecord {
     private String gitRef;
     private String gitRepoUrl;
     private String gitSubPath;
-    private String iconUrl;
+    private MediaResource icon;
     private String id;
     private String language;
     private Map<String, String> metadata;
@@ -77,12 +77,12 @@ public class StudioAppTemplateRecord {
         this.categoryId = categoryId;
     }
 
-    public String getCoverUrl() {
-        return this.coverUrl;
+    public MediaResource getCover() {
+        return this.cover;
     }
 
-    public void setCoverUrl(String coverUrl) {
-        this.coverUrl = coverUrl;
+    public void setCover(MediaResource cover) {
+        this.cover = cover;
     }
 
     public String getCreatedAt() {
@@ -197,12 +197,12 @@ public class StudioAppTemplateRecord {
         this.gitSubPath = gitSubPath;
     }
 
-    public String getIconUrl() {
-        return this.iconUrl;
+    public MediaResource getIcon() {
+        return this.icon;
     }
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+    public void setIcon(MediaResource icon) {
+        this.icon = icon;
     }
 
     public String getId() {

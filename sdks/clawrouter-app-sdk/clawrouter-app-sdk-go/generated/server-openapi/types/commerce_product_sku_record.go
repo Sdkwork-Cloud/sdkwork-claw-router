@@ -6,6 +6,7 @@ type CommerceProductSkuRecord struct {
 	DefaultCurrencyCode string `json:"default_currency_code"`
 	DefaultPriceAmount string `json:"default_price_amount"`
 	FulfillmentType string `json:"fulfillment_type"`
+	Id string `json:"id"`
 	OrganizationId string `json:"organization_id"`
 	PublishedAt string `json:"published_at"`
 	SalesUnit string `json:"sales_unit"`

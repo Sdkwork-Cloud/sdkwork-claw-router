@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/token-scan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-token-scan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-token-scan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1528f1daf1519f58d620483a446e6fdad19578db460b9450670aef65b270f39f",

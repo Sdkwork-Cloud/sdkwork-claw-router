@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitlab-api-client@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-api-client-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitlab-api-client-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e920ee59012acbd0b1beb85167526eacc0755dfb6d0bbbd188d44048eb8e1b94",

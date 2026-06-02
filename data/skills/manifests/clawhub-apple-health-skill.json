@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-health-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-health-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-health-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:635594c4eead2011ee9cc63360916eefd9c19d543e2749841194b28948b6afe6",

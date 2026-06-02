@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/namely-integration@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-namely-integration-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-namely-integration-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c6ed7325856ea5614e90754574c0dfb7856dbf36715932c57bb8f745092fb2c9",

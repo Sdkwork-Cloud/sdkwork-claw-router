@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/enhanced-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-enhanced-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-enhanced-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:50e8584125808b54951f924e48b9e3b2f64907e7fe56144210ea0c7e92e040ab",

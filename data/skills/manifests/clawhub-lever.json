@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lever@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-lever-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lever-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:7c46f8172bd787201fb7a46be5faa9a5193f6ada1be5798123b12ce9258e7f98",

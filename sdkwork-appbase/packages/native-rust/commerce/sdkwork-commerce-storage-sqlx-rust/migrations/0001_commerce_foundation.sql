@@ -562,6 +562,20 @@ CREATE TABLE IF NOT EXISTS commerce_product_spu (
   UNIQUE (tenant_id, spu_no)
 );
 
+CREATE TABLE IF NOT EXISTS commerce_product_spu_category (
+  id TEXT PRIMARY KEY,
+  tenant_id TEXT NOT NULL,
+  organization_id TEXT,
+  spu_id TEXT NOT NULL,
+  category_id TEXT NOT NULL,
+  primary_flag INTEGER NOT NULL DEFAULT 0,
+  sort_order INTEGER NOT NULL DEFAULT 0,
+  status TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  UNIQUE (tenant_id, spu_id, category_id)
+);
+
 CREATE TABLE IF NOT EXISTS commerce_product_sku (
   id TEXT PRIMARY KEY,
   tenant_id TEXT NOT NULL,
@@ -1338,6 +1352,12 @@ CREATE INDEX IF NOT EXISTS idx_commerce_product_attribute_status
 
 CREATE INDEX IF NOT EXISTS idx_commerce_product_spu_category_status
   ON commerce_product_spu (tenant_id, organization_id, category_id, sales_status);
+
+CREATE INDEX IF NOT EXISTS idx_commerce_product_spu_category_category
+  ON commerce_product_spu_category (tenant_id, organization_id, category_id, status);
+
+CREATE INDEX IF NOT EXISTS idx_commerce_product_spu_category_spu
+  ON commerce_product_spu_category (tenant_id, organization_id, spu_id, primary_flag, sort_order);
 
 CREATE INDEX IF NOT EXISTS idx_commerce_product_spu_type_status
   ON commerce_product_spu (tenant_id, organization_id, product_type, sales_status);

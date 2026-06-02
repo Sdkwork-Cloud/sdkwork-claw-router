@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/birthday-reminder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-birthday-reminder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-birthday-reminder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1d7376b0e6858e48cdecbcdc0f5cc0c2b0fc6b097e0481c734f61ef99254ed51",

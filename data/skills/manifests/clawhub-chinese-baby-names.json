@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-baby-names@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-baby-names-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-baby-names-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3548c208422f8f22667d611fbbeb074e712aca482d1dca6e0abe68367251cf44",

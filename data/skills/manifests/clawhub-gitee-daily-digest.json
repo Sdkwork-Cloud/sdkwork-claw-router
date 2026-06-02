@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitee-daily-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitee-daily-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitee-daily-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:24dec6822b2868b1a5596b712ca83653a185ff86c29bcb8d29bd2865219fc603",

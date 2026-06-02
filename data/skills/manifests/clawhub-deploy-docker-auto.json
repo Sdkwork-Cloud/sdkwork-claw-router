@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deploy-docker-auto@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deploy-docker-auto-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deploy-docker-auto-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:367b7e6151b8af81c96ab35690029f9a0cb62476caaeeaf8f1e11c883fd2c2f4",

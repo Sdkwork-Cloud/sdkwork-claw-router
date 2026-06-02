@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skillsmith-jojo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skillsmith-jojo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skillsmith-jojo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2cabc19f98d0b0fe210c24e4db8504070ebfdaf8b6a9ff6d55ae55960e7fb909",

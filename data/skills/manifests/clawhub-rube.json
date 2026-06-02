@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rube@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rube-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rube-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d57aad5eb63f9393b8639b69cd7df1fd97f234b99524188f4ee9dc54ae48c82e",

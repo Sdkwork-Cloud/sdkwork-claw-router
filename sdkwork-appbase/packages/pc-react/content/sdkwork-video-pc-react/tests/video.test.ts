@@ -31,7 +31,9 @@ describe("sdkwork-video-pc-react domain contract", () => {
       videoId: "video-launch-cut",
     });
 
-    expect(createEmptySdkworkVideoWorkspace()).toMatchObject({
+    const workspace = createEmptySdkworkVideoWorkspace();
+
+    expect(workspace).toMatchObject({
       digest: {
         presetCount: 3,
         totalVideos: 4,
@@ -40,6 +42,12 @@ describe("sdkwork-video-pc-react domain contract", () => {
       presets: expect.arrayContaining([
         expect.objectContaining({ id: "launch-teaser" }),
       ]),
+    });
+    expect(workspace.videos[0]).toMatchObject({
+      resource: {
+        kind: "video",
+        source: "generated",
+      },
     });
   });
 });

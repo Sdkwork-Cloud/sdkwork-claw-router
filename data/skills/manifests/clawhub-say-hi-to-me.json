@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/say-hi-to-me@0.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-say-hi-to-me-0.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-say-hi-to-me-0.0.2.json"
+      },
       "version": "0.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6d9d8428fc2d9e1bf7c36b337f517465a73eafe39898230e27709e7ac98237b3",

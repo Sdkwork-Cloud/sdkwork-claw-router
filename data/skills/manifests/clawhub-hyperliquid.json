@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hyperliquid@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hyperliquid-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hyperliquid-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6aa34bcca40406e13a5473fb68f3acdbb9c01f5d0cd8dd3d5dadda7b450e6aa9",

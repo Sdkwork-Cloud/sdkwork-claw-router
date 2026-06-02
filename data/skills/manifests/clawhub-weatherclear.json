@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weatherclear@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weatherclear-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weatherclear-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9bc5d54e83e5fb3de0a042522bcd797c0de5421fe4b8e9d10f2704746027328e",

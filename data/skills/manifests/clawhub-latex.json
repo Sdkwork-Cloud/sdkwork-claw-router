@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/latex@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-latex-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-latex-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb0f1381b69b060b6784ce5e5e2cdfbb844e4ad9112f386a75689146dddaa9f9",

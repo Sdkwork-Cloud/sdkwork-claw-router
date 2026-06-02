@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kubernetes-operator-scaffolder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kubernetes-operator-scaffolder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kubernetes-operator-scaffolder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a9c1804fe2dd27d37cde71e97077a77c5fa39d9c3b9045acfa3d34d7f4c8e32",

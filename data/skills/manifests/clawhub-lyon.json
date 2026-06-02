@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lyon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lyon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lyon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:039181bb61386dac1a88ae3e279a7c57f5ec48e03035e3242b61be5df87373bd",

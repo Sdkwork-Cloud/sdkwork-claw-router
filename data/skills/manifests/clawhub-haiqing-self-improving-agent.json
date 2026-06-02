@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/haiqing-self-improving-agent@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-haiqing-self-improving-agent-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-haiqing-self-improving-agent-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c4207deb8dbfe4950feeb43c2d56db58c88ad33e63b000b473028a7804ad4069",

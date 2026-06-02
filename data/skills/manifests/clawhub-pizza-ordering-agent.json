@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pizza-ordering-agent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pizza-ordering-agent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pizza-ordering-agent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:164b20914e6e0471782a024a8ffed77b4b9c854c237264056958e3ed1a7083f5",

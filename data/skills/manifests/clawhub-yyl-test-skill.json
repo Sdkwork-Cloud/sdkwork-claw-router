@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yyl-test-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yyl-test-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yyl-test-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cf53fe7bbc57c2be7fe3a7fe17d562fde9eaf6968b224eefb71383aaf1b44e25",

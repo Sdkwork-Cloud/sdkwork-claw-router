@@ -1,9 +1,11 @@
-import type { GenerationHistoryMediaItem } from './generation-history-media-item';
+import type { MediaResource } from './media-resource';
 
 /** Generation history item schema exposed by Claw Router. */
 export interface GenerationHistoryItem {
   /** Aspect ratio field on generation history item. */
   aspectRatio?: '1:1' | '16:9' | '9:16';
+  /** Asset field on generation history item. */
+  asset?: MediaResource;
   /** Created at field on generation history item. */
   createdAt?: string;
   /** Date field on generation history item. */
@@ -13,7 +15,7 @@ export interface GenerationHistoryItem {
   /** Id field on generation history item. */
   id: string;
   /** Images field on generation history item. */
-  images: string[];
+  images: MediaResource[];
   /** Model catalog key field on generation history item. */
   modelCatalogKey?: string;
   /** Model info field on generation history item. */
@@ -28,8 +30,6 @@ export interface GenerationHistoryItem {
   type: 'text' | 'image' | 'images' | 'video' | 'music' | 'audio' | 'sfx';
   /** Updated at field on generation history item. */
   updatedAt?: string;
-  /** Url field on generation history item. */
-  url?: string;
   /** Videos field on generation history item. */
-  videos: GenerationHistoryMediaItem[];
+  videos: MediaResource[];
 }

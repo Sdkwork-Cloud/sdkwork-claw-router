@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stockly@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-stockly-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stockly-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8eab9217a4ac01fc8f0b96f9f23a4980437cc856f001ba9bf60d90f71bd7feab",

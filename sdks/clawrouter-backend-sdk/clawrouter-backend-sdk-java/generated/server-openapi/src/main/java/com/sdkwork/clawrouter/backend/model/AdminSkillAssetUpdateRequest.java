@@ -4,8 +4,8 @@ package com.sdkwork.clawrouter.backend.model;
 public class AdminSkillAssetUpdateRequest {
     private String altText;
     private String artifactId;
+    private MediaResource asset;
     private Integer assetType;
-    private String assetUrl;
     private String durationSeconds;
     private Integer fileSize;
     private Integer height;
@@ -13,7 +13,7 @@ public class AdminSkillAssetUpdateRequest {
     private String publishedAt;
     private Integer sortOrder;
     private Integer status;
-    private String thumbnailUrl;
+    private MediaResource thumbnail;
     private String title;
     private Integer width;
 
@@ -33,20 +33,20 @@ public class AdminSkillAssetUpdateRequest {
         this.artifactId = artifactId;
     }
 
+    public MediaResource getAsset() {
+        return this.asset;
+    }
+
+    public void setAsset(MediaResource asset) {
+        this.asset = asset;
+    }
+
     public Integer getAssetType() {
         return this.assetType;
     }
 
     public void setAssetType(Integer assetType) {
         this.assetType = assetType;
-    }
-
-    public String getAssetUrl() {
-        return this.assetUrl;
-    }
-
-    public void setAssetUrl(String assetUrl) {
-        this.assetUrl = assetUrl;
     }
 
     public String getDurationSeconds() {
@@ -105,12 +105,12 @@ public class AdminSkillAssetUpdateRequest {
         this.status = status;
     }
 
-    public String getThumbnailUrl() {
-        return this.thumbnailUrl;
+    public MediaResource getThumbnail() {
+        return this.thumbnail;
     }
 
-    public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+    public void setThumbnail(MediaResource thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     public String getTitle() {

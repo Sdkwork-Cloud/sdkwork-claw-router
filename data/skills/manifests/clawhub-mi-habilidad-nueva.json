@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mi-habilidad-nueva@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mi-habilidad-nueva-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mi-habilidad-nueva-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dee620d43ca23496beedf09479bba397d0fec28e5898a7b8f80b67215c949cff",

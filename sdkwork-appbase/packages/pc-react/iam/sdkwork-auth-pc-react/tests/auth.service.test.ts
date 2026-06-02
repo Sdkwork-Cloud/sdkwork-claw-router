@@ -13,6 +13,27 @@ interface LocalAuthTestUser {
   name: string;
 }
 
+const authAvatar = {
+  kind: "image",
+  publicUrl: "https://cdn.sdkwork.ai/avatar.png",
+  source: "external_url",
+  url: "https://cdn.sdkwork.ai/avatar.png",
+} as const;
+
+const runtimeQrCode = {
+  kind: "image",
+  publicUrl: "https://cdn.sdkwork.ai/auth/qr-runtime.png",
+  source: "external_url",
+  url: "https://cdn.sdkwork.ai/auth/qr-runtime.png",
+} as const;
+
+const resourceQrCode = {
+  kind: "image",
+  publicUrl: "https://cdn.sdkwork.ai/auth/qr-resource.png",
+  source: "external_url",
+  url: "https://cdn.sdkwork.ai/auth/qr-resource.png",
+} as const;
+
 describe("sdkwork-auth-pc-react service", () => {
   it("creates an auth controller from a standard IAM runtime without product-specific auth adapters", async () => {
     const tokenStore = {
@@ -592,7 +613,7 @@ describe("sdkwork-auth-pc-react service", () => {
     expect(create).not.toHaveBeenCalled();
   });
 
-  it("normalizes backend QR image URL aliases from IAM runtime responses", async () => {
+  it("preserves backend QR images as MediaResource objects from IAM runtime responses", async () => {
     const controller = createSdkworkIamRuntimeAuthController({
       getRuntime: () => ({
         service: {
@@ -628,7 +649,7 @@ describe("sdkwork-auth-pc-react service", () => {
             qrAuth: {
               sessions: {
                 create: vi.fn().mockResolvedValue({
-                  qrCodeUrl: " https://cdn.sdkwork.ai/auth/qr-runtime.png ",
+                  qrCode: runtimeQrCode,
                   qrContent: "sdkwork://auth/runtime-url-fallback",
                   sessionKey: "qr-runtime-url-1",
                 }),
@@ -649,12 +670,12 @@ describe("sdkwork-auth-pc-react service", () => {
 
     await expect(controller.generateLoginQrCode()).resolves.toMatchObject({
       qrContent: "sdkwork://auth/runtime-url-fallback",
+      qrCode: runtimeQrCode,
       sessionKey: "qr-runtime-url-1",
-      qrUrl: "https://cdn.sdkwork.ai/auth/qr-runtime.png",
     });
   });
 
-  it("ignores legacy qrUrl content payloads when they duplicate the QR content", async () => {
+  it("keeps text-only IAM runtime QR content separate from QR image resources", async () => {
     const controller = createSdkworkIamRuntimeAuthController({
       getRuntime: () => ({
         service: {
@@ -691,7 +712,6 @@ describe("sdkwork-auth-pc-react service", () => {
               sessions: {
                 create: vi.fn().mockResolvedValue({
                   qrContent: "https://mp.weixin.qq.com/sdkwork-login?session_key=qr-runtime-content-1",
-                  qrUrl: "https://mp.weixin.qq.com/sdkwork-login?session_key=qr-runtime-content-1",
                   sessionKey: "qr-runtime-content-1",
                 }),
                 retrieve: vi.fn(),
@@ -711,12 +731,12 @@ describe("sdkwork-auth-pc-react service", () => {
 
     await expect(controller.generateLoginQrCode()).resolves.toMatchObject({
       qrContent: "https://mp.weixin.qq.com/sdkwork-login?session_key=qr-runtime-content-1",
+      qrCode: undefined,
       sessionKey: "qr-runtime-content-1",
-      qrUrl: undefined,
     });
   });
 
-  it("does not treat IAM runtime non-image QR URL aliases as rendered image assets", async () => {
+  it("keeps IAM runtime fallback URLs as QR content instead of rendered image assets", async () => {
     const controller = createSdkworkIamRuntimeAuthController({
       getRuntime: () => ({
         service: {
@@ -752,7 +772,6 @@ describe("sdkwork-auth-pc-react service", () => {
             qrAuth: {
               sessions: {
                 create: vi.fn().mockResolvedValue({
-                  qrCodeUrl: " https://mp.weixin.qq.com/sdkwork-login?session_key=qr-runtime-alias-1 ",
                   qrContent: {
                     content: "https://console.example.test/auth/qr/qr-runtime-alias-1?session_key=qr-runtime-alias-1&purpose=login",
                     mode: "fallback_url",
@@ -776,8 +795,8 @@ describe("sdkwork-auth-pc-react service", () => {
 
     await expect(controller.generateLoginQrCode()).resolves.toMatchObject({
       qrContent: "https://console.example.test/auth/qr/qr-runtime-alias-1?session_key=qr-runtime-alias-1&purpose=login",
+      qrCode: undefined,
       sessionKey: "qr-runtime-alias-1",
-      qrUrl: undefined,
       type: "fallback_url",
     });
   });
@@ -807,7 +826,7 @@ describe("sdkwork-auth-pc-react service", () => {
             retrieve: vi.fn().mockResolvedValue({
               code: "2000",
               data: {
-                avatarUrl: "https://cdn.sdkwork.ai/avatar.png",
+                avatar: authAvatar,
                 email: "sdkwork@sdkwork.ai",
                 displayName: "Sdkwork Operator",
                 userId: "user-1",
@@ -845,7 +864,7 @@ describe("sdkwork-auth-pc-react service", () => {
       authToken: "auth-token-1",
       refreshToken: "refresh-token-1",
       user: {
-        avatarUrl: "https://cdn.sdkwork.ai/avatar.png",
+        avatar: authAvatar,
         displayName: "Sdkwork Operator",
         email: "sdkwork@sdkwork.ai",
         firstName: "Sdkwork",
@@ -1784,7 +1803,7 @@ describe("sdkwork-auth-pc-react service", () => {
     });
   });
 
-  it("normalizes platform QR image URL aliases when an SDK still provides rendered assets", async () => {
+  it("preserves platform QR images as MediaResource objects from SDK responses", async () => {
     const service = createSdkworkAuthService({
       getClient: () => ({
         auth: {},
@@ -1795,7 +1814,7 @@ describe("sdkwork-auth-pc-react service", () => {
               data: {
                 expiresAt: "2026-05-21T05:05:00.000Z",
                 qrContent: "sdkwork://auth/resource-url-fallback",
-                qrImageUrl: " https://cdn.sdkwork.ai/auth/qr-resource.png ",
+                qrCode: resourceQrCode,
                 sessionKey: "qr-resource-url-1",
               },
             }),
@@ -1807,12 +1826,12 @@ describe("sdkwork-auth-pc-react service", () => {
 
     await expect(service.generateLoginQrCode()).resolves.toMatchObject({
       qrContent: "sdkwork://auth/resource-url-fallback",
+      qrCode: resourceQrCode,
       sessionKey: "qr-resource-url-1",
-      qrUrl: "https://cdn.sdkwork.ai/auth/qr-resource.png",
     });
   });
 
-  it("ignores QR URL content payloads when they duplicate the QR content", async () => {
+  it("keeps text-only QR content separate from QR image resources", async () => {
     const service = createSdkworkAuthService({
       getClient: () => ({
         auth: {},
@@ -1822,7 +1841,6 @@ describe("sdkwork-auth-pc-react service", () => {
             create: vi.fn().mockResolvedValue({
               data: {
                 qrContent: "https://wxaurl.cn/sdkwork-login?session_key=qr-resource-content-1",
-                qrUrl: "https://wxaurl.cn/sdkwork-login?session_key=qr-resource-content-1",
                 sessionKey: "qr-resource-content-1",
               },
             }),
@@ -1834,12 +1852,12 @@ describe("sdkwork-auth-pc-react service", () => {
 
     await expect(service.generateLoginQrCode()).resolves.toMatchObject({
       qrContent: "https://wxaurl.cn/sdkwork-login?session_key=qr-resource-content-1",
+      qrCode: undefined,
       sessionKey: "qr-resource-content-1",
-      qrUrl: undefined,
     });
   });
 
-  it("does not treat non-image QR URL aliases as rendered image assets", async () => {
+  it("keeps fallback QR URLs as content instead of rendered image assets", async () => {
     const service = createSdkworkAuthService({
       getClient: () => ({
         auth: {},
@@ -1848,7 +1866,6 @@ describe("sdkwork-auth-pc-react service", () => {
             sessions: {
               create: vi.fn().mockResolvedValue({
                 data: {
-                  qrCodeUrl: " https://mp.weixin.qq.com/sdkwork-login?session_key=qr-resource-alias-1 ",
                   qrContent: {
                     content: "https://console.example.test/auth/qr/qr-resource-alias-1?session_key=qr-resource-alias-1&purpose=login",
                     mode: "fallback_url",
@@ -1864,8 +1881,8 @@ describe("sdkwork-auth-pc-react service", () => {
 
     await expect(service.generateLoginQrCode()).resolves.toMatchObject({
       qrContent: "https://console.example.test/auth/qr/qr-resource-alias-1?session_key=qr-resource-alias-1&purpose=login",
+      qrCode: undefined,
       sessionKey: "qr-resource-alias-1",
-      qrUrl: undefined,
       type: "fallback_url",
     });
   });

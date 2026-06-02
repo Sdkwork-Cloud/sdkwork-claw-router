@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flatsome-wordpress@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flatsome-wordpress-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flatsome-wordpress-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cdba09e2deadc61dbb3ccf5998a58f3ca385674adf16fb5a7ae3e512571305ec",

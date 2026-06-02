@@ -20,6 +20,7 @@ data class AiChannelRecord(
     val deletedBy: String? = null,
     val environment: String? = null,
     val externalChannelId: String? = null,
+    val healthStatus: String? = null,
     val id: String? = null,
     val lastBalanceCheckedAt: String? = null,
     val lastLatencyMs: Int? = null,
@@ -30,6 +31,7 @@ data class AiChannelRecord(
     val metadata: Map<String, String>? = null,
     val nextRotateAt: String? = null,
     val organizationId: String? = null,
+    val priority: Int? = null,
     val protocolCode: String? = null,
     val providerCode: String? = null,
     val providerId: String? = null,
@@ -48,5 +50,6 @@ data class AiChannelRecord(
     val upstreamBalanceAmount: String? = null,
     val upstreamBalanceCurrency: String? = null,
     val uuid: String? = null,
-    val version: String? = null
+    val version: String? = null,
+    val weight: Int? = null
 )

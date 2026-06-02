@@ -12,6 +12,8 @@ export interface AiPromptBindingRecord {
   deleted_at?: string;
   /** Deleted by field on ai prompt binding record. */
   deleted_by?: string;
+  /** Enabled field on ai prompt binding record. */
+  enabled?: boolean;
   /** Id field on ai prompt binding record. */
   id?: string;
   /** Metadata field on ai prompt binding record. */
@@ -22,10 +24,16 @@ export interface AiPromptBindingRecord {
   owner_id?: string;
   /** Owner type field on ai prompt binding record. */
   owner_type?: string;
+  /** Policy json field on ai prompt binding record. */
+  policy_json?: Record<string, JsonValue>;
+  /** Priority field on ai prompt binding record. */
+  priority?: number;
   /** Prompt id field on ai prompt binding record. */
   prompt_id?: string;
   /** Prompt version id field on ai prompt binding record. */
   prompt_version_id?: string;
+  /** Snapshot json field on ai prompt binding record. */
+  snapshot_json?: Record<string, JsonValue>;
   /** Status field on ai prompt binding record. */
   status?: string;
   /** Tenant id field on ai prompt binding record. */

@@ -3,8 +3,11 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.Map;
 
 public class MessagingProviderAccountRecord {
+    private String accountCode;
+    private String accountName;
     private String authType;
     private String baseUrl;
+    private String channel;
     private String createdAt;
     private String credentialHash;
     private String credentialRef;
@@ -13,18 +16,36 @@ public class MessagingProviderAccountRecord {
     private String deletedAt;
     private String deletedBy;
     private String deliveryPurpose;
+    private String healthStatus;
     private String id;
     private String lastUsedAt;
     private String lastVerifiedAt;
     private String maskedLabel;
     private Map<String, String> metadata;
     private String organizationId;
+    private String providerCode;
     private String providerId;
     private String status;
     private String tenantId;
     private String updatedAt;
     private String uuid;
     private String version;
+
+    public String getAccountCode() {
+        return this.accountCode;
+    }
+
+    public void setAccountCode(String accountCode) {
+        this.accountCode = accountCode;
+    }
+
+    public String getAccountName() {
+        return this.accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
 
     public String getAuthType() {
         return this.authType;
@@ -40,6 +61,14 @@ public class MessagingProviderAccountRecord {
 
     public void setBaseUrl(String baseUrl) {
         this.baseUrl = baseUrl;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
     }
 
     public String getCreatedAt() {
@@ -106,6 +135,14 @@ public class MessagingProviderAccountRecord {
         this.deliveryPurpose = deliveryPurpose;
     }
 
+    public String getHealthStatus() {
+        return this.healthStatus;
+    }
+
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -152,6 +189,14 @@ public class MessagingProviderAccountRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getProviderCode() {
+        return this.providerCode;
+    }
+
+    public void setProviderCode(String providerCode) {
+        this.providerCode = providerCode;
     }
 
     public String getProviderId() {

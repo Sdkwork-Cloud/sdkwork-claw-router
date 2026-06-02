@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-assistant-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-assistant-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-assistant-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd3eed4664be47aa53ee7bd6eebc2626fe5de43e45eb6ab4b542a84f2dfd52ae",

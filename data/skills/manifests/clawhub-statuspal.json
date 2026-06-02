@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/statuspal@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-statuspal-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-statuspal-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7ffbd26d765531994ef40350fb743abfc44379d0ec66482378107e599f00e721",

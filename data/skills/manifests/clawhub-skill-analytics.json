@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-analytics@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-analytics-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-analytics-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89a156b216a739c6f564adc337eef34ff52ccb789de338546c4efc566d682634",

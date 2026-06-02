@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kraken-agent@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-kraken-agent-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kraken-agent-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:2a559b53e87bf76b4e01ae14dd63805cc9b16f306cec966ee5507040b56429a4",

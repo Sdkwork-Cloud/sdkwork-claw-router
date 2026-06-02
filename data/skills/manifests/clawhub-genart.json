@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/genart@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-genart-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-genart-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c826dab4accab8dcaaadbf40ee4f269b819a4a625d92fad3b4b8cff2159b9b23",

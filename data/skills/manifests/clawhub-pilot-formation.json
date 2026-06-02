@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-formation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-formation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-formation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0269cd581a439e42bf5c69e42a3b559c57d2c5aeb6a083c3fa98fd0ae02d73d1",

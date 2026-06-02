@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tidyfiles@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tidyfiles-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tidyfiles-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62857c8c3fa791fae16987449d8f77902c4f001323e8ad8a76dc6459108e892b",

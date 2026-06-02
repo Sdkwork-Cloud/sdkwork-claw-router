@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/idle-shutdown@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-idle-shutdown-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-idle-shutdown-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b2aa4fc645a02473ca67cf8cbccc88108dbb65e284a4c7d426f468d8509be2ae",

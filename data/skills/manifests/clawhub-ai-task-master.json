@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-task-master@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-task-master-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-task-master-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:405df506a131a4d8ff4ed901567d5585a1285f808e3e1ed425a47e8af0884615",

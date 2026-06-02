@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/market-intelligence-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-market-intelligence-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-market-intelligence-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b327c73fb46cdbd7c68ce73ba14cfdd982cad9b584d3954ac4d03cb13353b1c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mem-rag-milvus@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mem-rag-milvus-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mem-rag-milvus-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dff3a8e9ebbb6e5d248de87e6909d297540b6cbf7025df4183dab97c6c16ef7c",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/app-dev-workflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-app-dev-workflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-app-dev-workflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70c3e0ed139234f4eca387c88f08219690c5493e936c65f5752535db5cea814a",

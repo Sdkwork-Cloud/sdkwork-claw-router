@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lean-cloud-backtest@0.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-lean-cloud-backtest-0.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lean-cloud-backtest-0.3.3.json"
+      },
       "version": "0.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:b51ff67f77b1474975d47ef5ade4597fe9e5f4ad0d8f956d097b27af91fdf24b",

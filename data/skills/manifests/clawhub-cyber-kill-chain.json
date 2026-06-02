@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cyber-kill-chain@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cyber-kill-chain-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cyber-kill-chain-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28e87bc6e6e89066a8996f44859c9ddd4db8d701c0f0012b96d4faf6fed74352",

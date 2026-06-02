@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-lift@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-lift-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-lift-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b8c19bfbbbd03486b7fcd76a9fb7fab4d583d7bf652b5f2d8549c1d139b60392",

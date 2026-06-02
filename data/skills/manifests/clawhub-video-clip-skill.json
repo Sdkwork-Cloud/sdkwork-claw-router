@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-clip-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-clip-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-clip-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:06a267f1c4d8962eebf86605e4ac90dc1b2cd951f65efaf996c7390cebd4a1d6",

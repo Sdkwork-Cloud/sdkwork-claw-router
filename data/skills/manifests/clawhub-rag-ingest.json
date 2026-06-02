@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rag-ingest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rag-ingest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rag-ingest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7b07512a3bd33204cd369d918b17072ea78ab759d8536b39576c2f3a94391ee",

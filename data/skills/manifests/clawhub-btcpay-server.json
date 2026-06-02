@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/btcpay-server@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-btcpay-server-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-btcpay-server-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9bc52c7b3be5fed2fb7a2a97b115c72cdfa5497ab9f2a982dfc596a684df0274",

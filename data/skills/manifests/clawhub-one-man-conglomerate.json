@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/one-man-conglomerate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-one-man-conglomerate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-one-man-conglomerate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c2e67c534a1adff0e344126e7c7ee0de486dc2bf05f9f9fe61e31c7caf4e0cf",

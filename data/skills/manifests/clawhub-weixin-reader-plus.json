@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weixin-reader-plus@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weixin-reader-plus-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weixin-reader-plus-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56178150370252dcb3b43f70d2351edcd5cdc583406cab36c23fa29d4a5322ff",

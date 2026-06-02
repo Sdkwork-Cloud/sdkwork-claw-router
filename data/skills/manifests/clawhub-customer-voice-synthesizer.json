@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customer-voice-synthesizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-customer-voice-synthesizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customer-voice-synthesizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5b8b4c88ccb03516f429ecb3341df7564009738ee5609c531f11c5f67c71bd8b",

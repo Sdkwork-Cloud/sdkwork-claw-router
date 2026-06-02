@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aana-meeting-summary-checker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aana-meeting-summary-checker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aana-meeting-summary-checker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25f978e3104e775f7bee25ee36de3c61cb709dbfab5d7b735d02cf0a100cbec1",

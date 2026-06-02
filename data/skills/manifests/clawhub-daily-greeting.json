@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-greeting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-greeting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-greeting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d7a14288d2498a0301c70de4f3c39b2d110110c319f862b0b163a165277cba0",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/umami@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-umami-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-umami-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:057110b6fe91a122369f8183cd3c3d8ff5ee60c41adb1a1ff36509ea02589ea3",

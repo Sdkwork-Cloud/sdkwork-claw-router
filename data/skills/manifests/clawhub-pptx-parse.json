@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pptx-parse@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pptx-parse-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pptx-parse-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec357c73ac1ce0fd32259e6534c68e47c17d9f4d233ef9652fc8690c93fe0852",

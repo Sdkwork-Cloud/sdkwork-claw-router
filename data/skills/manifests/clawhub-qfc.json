@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qfc@3.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qfc-3.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qfc-3.4.0.json"
+      },
       "version": "3.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fa0eb8e0b7ecaf0e197e28fe2ad70789e2d664f315946b946f648469320fc62a",

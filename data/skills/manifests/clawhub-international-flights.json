@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/international-flights@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-international-flights-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-international-flights-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f244a365a82865f34d989406de19aa25ae76286a1f88bdd1901d372539ba739",

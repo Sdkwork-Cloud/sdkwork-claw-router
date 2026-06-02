@@ -758,7 +758,7 @@ frontend_operations:
           name: AdminAppItemResponse
           type: object
           additionalProperties: false
-          required: &id017
+          required: &id020
           - id
           - uuid
           - name
@@ -774,7 +774,7 @@ frontend_operations:
           - releaseNotes
           - createdAt
           - updatedAt
-          properties: &id018
+          properties: &id021
             id:
               type: string
               minLength: 1
@@ -800,12 +800,7 @@ frontend_operations:
               nullable: true
               maxLength: 64
             icon:
-              type: object
-              additionalProperties: true
-            iconUrl:
-              type: string
-              nullable: true
-              maxLength: 512
+              $ref: '#/components/schemas/MediaResource'
             resourceList:
               type: object
               additionalProperties: true
@@ -821,9 +816,9 @@ frontend_operations:
               name: AdminAppConfig
               type: object
               additionalProperties: true
-              required: &id015
+              required: &id018
               - standard
-              properties: &id016
+              properties: &id019
                 standard:
                   name: AdminAppConfigStandard
                   type: object
@@ -899,10 +894,8 @@ frontend_operations:
               type: string
               nullable: true
               maxLength: 512
-            downloadUrl:
-              type: string
-              nullable: true
-              maxLength: 512
+            artifact:
+              $ref: '#/components/schemas/MediaResource'
             createdAt:
               type: string
               minLength: 1
@@ -973,8 +966,7 @@ frontend_operations:
               maxLength: 128
               pattern: ^[A-Za-z0-9_-]+$
             icon:
-              type: string
-              maxLength: 255
+              $ref: '#/components/schemas/MediaResource'
             sortWeight:
               type: integer
               format: int32
@@ -1033,9 +1025,7 @@ frontend_operations:
         pattern: ^[A-Za-z0-9_-]+$
         description: Optional stable category code.
       icon:
-        type: string
-        maxLength: 255
-        description: Optional icon URL or asset path.
+        $ref: '#/components/schemas/MediaResource'
       sortWeight:
         type: integer
         format: int32
@@ -1101,10 +1091,8 @@ frontend_operations:
         pattern: ^[A-Za-z0-9_-]+$
         description: Optional stable category code.
       icon:
-        type: string
+        $ref: '#/components/schemas/MediaResource'
         nullable: true
-        maxLength: 255
-        description: Optional icon URL or asset path.
       sortWeight:
         type: integer
         format: int32
@@ -1224,7 +1212,7 @@ frontend_operations:
           name: AdminAppTemplateItemResponse
           type: object
           additionalProperties: false
-          required: &id019
+          required: &id015
           - id
           - uuid
           - templateNo
@@ -1241,7 +1229,7 @@ frontend_operations:
           - capabilityManifest
           - createdAt
           - updatedAt
-          properties: &id020
+          properties: &id016
             id:
               type: string
               minLength: 1
@@ -1296,14 +1284,12 @@ frontend_operations:
               nullable: true
               maxLength: 64
               pattern: ^[A-Za-z0-9._:-]+$
-            iconUrl:
-              type: string
+            icon:
+              $ref: '#/components/schemas/MediaResource'
               nullable: true
-              maxLength: 1024
-            coverUrl:
-              type: string
+            cover:
+              $ref: '#/components/schemas/MediaResource'
               nullable: true
-              maxLength: 1024
             visibility:
               type: string
               enum:
@@ -1409,7 +1395,7 @@ frontend_operations:
     required:
     - templateCode
     - templateName
-    properties: &id021
+    properties:
       templateNo:
         type: string
         minLength: 1
@@ -1452,12 +1438,10 @@ frontend_operations:
         type: string
         maxLength: 64
         pattern: ^[A-Za-z0-9._:-]+$
-      iconUrl:
-        type: string
-        maxLength: 1024
-      coverUrl:
-        type: string
-        maxLength: 1024
+      icon:
+        $ref: '#/components/schemas/MediaResource'
+      cover:
+        $ref: '#/components/schemas/MediaResource'
       visibility:
         type: string
         enum:
@@ -1518,7 +1502,7 @@ frontend_operations:
         items:
           type: object
           additionalProperties: true
-  response_schema: &id022
+  response_schema: &id017
     name: AdminAppTemplateMutationResponse
     required:
     - item
@@ -1527,8 +1511,8 @@ frontend_operations:
         name: AdminAppTemplateItemResponse
         type: object
         additionalProperties: false
-        required: *id019
-        properties: *id020
+        required: *id015
+        properties: *id016
         description: Persisted app template snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -1541,7 +1525,7 @@ frontend_operations:
   read_sources:
   - studio_app_template
   query_parameters: []
-  response_schema: *id022
+  response_schema: *id017
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
   operation: updateAppTemplate
@@ -1597,14 +1581,12 @@ frontend_operations:
         nullable: true
         maxLength: 64
         pattern: ^[A-Za-z0-9._:-]+$
-      iconUrl:
-        type: string
+      icon:
+        $ref: '#/components/schemas/MediaResource'
         nullable: true
-        maxLength: 1024
-      coverUrl:
-        type: string
+      cover:
+        $ref: '#/components/schemas/MediaResource'
         nullable: true
-        maxLength: 1024
       visibility:
         type: string
         enum:
@@ -1665,7 +1647,7 @@ frontend_operations:
         items:
           type: object
           additionalProperties: true
-  response_schema: *id022
+  response_schema: *id017
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
   operation: deleteAppTemplate
@@ -1709,7 +1691,7 @@ frontend_operations:
   - studio_app_template
   - ops_audit_log
   request_body_required: false
-  response_schema: *id022
+  response_schema: *id017
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
   operation: offlineAppTemplate
@@ -1725,7 +1707,7 @@ frontend_operations:
   - studio_app_template
   - ops_audit_log
   request_body_required: false
-  response_schema: *id022
+  response_schema: *id017
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
   operation: createApp
@@ -1763,11 +1745,7 @@ frontend_operations:
         type: string
         maxLength: 64
       icon:
-        type: object
-        additionalProperties: true
-      iconUrl:
-        type: string
-        maxLength: 512
+        $ref: '#/components/schemas/MediaResource'
       resourceList:
         type: object
         additionalProperties: true
@@ -1783,9 +1761,9 @@ frontend_operations:
         name: AdminAppConfig
         type: object
         additionalProperties: true
-        required: *id015
-        properties: *id016
-        description: Java-compatible PlusApp config. Standard app keys are stored under config.standard.appKey; marketStatus is stored under config.portal.marketStatus.
+        required: *id018
+        properties: *id019
+        description: Canonical PlusApp config. Standard app keys are stored under config.standard.appKey; marketStatus is stored under config.portal.marketStatus.
       status:
         type: string
         enum:
@@ -1828,9 +1806,8 @@ frontend_operations:
       storeUrl:
         type: string
         maxLength: 512
-      downloadUrl:
-        type: string
-        maxLength: 512
+      artifact:
+        $ref: '#/components/schemas/MediaResource'
   response_schema:
     name: AdminAppMutationResponse
     required:
@@ -1840,8 +1817,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id017
-        properties: *id018
+        required: *id020
+        properties: *id021
         description: Persisted PlusApp snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -1865,8 +1842,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id017
-        properties: *id018
+        required: *id020
+        properties: *id021
         description: PlusApp detail snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -1905,12 +1882,7 @@ frontend_operations:
         nullable: true
         maxLength: 64
       icon:
-        type: object
-        additionalProperties: true
-      iconUrl:
-        type: string
-        nullable: true
-        maxLength: 512
+        $ref: '#/components/schemas/MediaResource'
       resourceList:
         type: object
         additionalProperties: true
@@ -1927,9 +1899,9 @@ frontend_operations:
         name: AdminAppConfig
         type: object
         additionalProperties: true
-        required: *id015
-        properties: *id016
-        description: Java-compatible PlusApp config. When supplied, config.standard.appKey is required and must use lowercase kebab-case.
+        required: *id018
+        properties: *id019
+        description: Canonical PlusApp config. When supplied, config.standard.appKey is required and must use lowercase kebab-case.
       appType:
         type: string
         nullable: true
@@ -1965,10 +1937,9 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 512
-      downloadUrl:
-        type: string
+      artifact:
+        $ref: '#/components/schemas/MediaResource'
         nullable: true
-        maxLength: 512
   response_schema:
     name: AdminAppMutationResponse
     required:
@@ -1978,8 +1949,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id017
-        properties: *id018
+        required: *id020
+        properties: *id021
         description: Updated PlusApp snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -2030,8 +2001,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id017
-        properties: *id018
+        required: *id020
+        properties: *id021
         description: Enabled PlusApp snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -2056,8 +2027,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id017
-        properties: *id018
+        required: *id020
+        properties: *id021
         description: Disabled PlusApp snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -2082,8 +2053,8 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id017
-        properties: *id018
+        required: *id020
+        properties: *id021
         description: Published PlusApp snapshot returned by the backend.
 - route: /admin/app
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts
@@ -2108,6 +2079,6 @@ frontend_operations:
         name: AdminAppItemResponse
         type: object
         additionalProperties: false
-        required: *id017
-        properties: *id018
+        required: *id020
+        properties: *id021
         description: Offline PlusApp snapshot returned by the backend.

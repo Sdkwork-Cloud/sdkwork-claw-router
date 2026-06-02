@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gardening@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gardening-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gardening-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fbee9bdf1be4ce0e3db2e3f97a2c20e7b6c9faf3444fd4c63a0a2f5591a27f78",

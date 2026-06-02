@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-status-page-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-status-page-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-status-page-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:489d18d0c47de97d08ad14dbd1ae30d2494f23dd18fed363a11edb296ccef668",

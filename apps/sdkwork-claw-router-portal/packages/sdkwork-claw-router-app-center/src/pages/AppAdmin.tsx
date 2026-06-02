@@ -18,7 +18,7 @@ import {
   X,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { AdminTableShell, BottomPagination, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, BottomPagination, BusinessStateTableRow, ConfirmDialog, readMediaResourceUrl } from 'sdkwork-claw-router-commons';
 import {
   AdminAppService,
   createAdminAppInputFromForm,
@@ -938,7 +938,7 @@ export function AppAdmin() {
                     </td>
                     <td className="px-4 py-4 text-slate-600 dark:text-slate-300">
                       <div className="max-w-xs truncate">{app.accessUrl || '-'}</div>
-                      <div className="mt-1 max-w-xs truncate text-xs text-slate-500">{app.downloadUrl || app.storeUrl || '-'}</div>
+                      <div className="mt-1 max-w-xs truncate text-xs text-slate-500">{readMediaResourceUrl(app.artifact) || app.storeUrl || '-'}</div>
                     </td>
                     <td className="px-4 py-4">
                       <div className="flex justify-end gap-2">
@@ -1117,8 +1117,8 @@ function AppModal({
             <Field label={t('admin.app.fields.bundleId')} name="bundleId" defaultValue={app?.bundleId ?? ''} />
             <Field label={t('admin.app.fields.accessUrl')} name="accessUrl" defaultValue={app?.accessUrl ?? ''} />
             <Field label={t('admin.app.fields.storeUrl')} name="storeUrl" defaultValue={app?.storeUrl ?? ''} />
-            <Field label={t('admin.app.fields.downloadUrl')} name="downloadUrl" defaultValue={app?.downloadUrl ?? ''} />
-            <Field label={t('admin.app.fields.iconUrl')} name="iconUrl" defaultValue={app?.iconUrl ?? ''} />
+            <Field label={t('admin.app.fields.artifact')} name="artifact" defaultValue={readMediaResourceUrl(app?.artifact)} />
+            <Field label={t('admin.app.fields.icon')} name="icon" defaultValue={readMediaResourceUrl(app?.icon)} />
             <Field label={t('admin.app.fields.projectId')} name="projectId" defaultValue={app?.projectId ?? ''} />
             {!isEdit ? (
               <>
@@ -1138,7 +1138,6 @@ function AppModal({
             <TextArea label={t('admin.app.fields.description')} name="description" rows={4} defaultValue={app?.description ?? ''} plain />
           </div>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <TextArea label={t('admin.app.fields.icon')} name="icon" defaultValue={formatJson(app?.icon ?? {})} />
             <TextArea label={t('admin.app.fields.resourceList')} name="resourceList" defaultValue={formatJson(app?.resourceList ?? {})} />
             <TextArea label={t('admin.app.fields.config')} name="config" defaultValue={formatJson(app?.config ?? {})} />
             <TextArea label={t('admin.app.fields.platforms')} name="platforms" defaultValue={formatJson(app?.platforms ?? {})} />
@@ -1217,8 +1216,8 @@ function TemplateModal({
             <Field label={t('admin.app.fields.runtime')} name="runtime" defaultValue={template?.runtime ?? 'web'} />
             <Field label={t('admin.app.fields.framework')} name="framework" defaultValue={template?.framework ?? 'react'} />
             <Field label={t('admin.app.fields.language')} name="language" defaultValue={template?.language ?? 'typescript'} />
-            <Field label={t('admin.app.fields.iconUrl')} name="iconUrl" defaultValue={template?.iconUrl ?? ''} />
-            <Field label={t('admin.app.fields.coverUrl')} name="coverUrl" defaultValue={template?.coverUrl ?? ''} />
+            <Field label={t('admin.app.fields.icon')} name="icon" defaultValue={readMediaResourceUrl(template?.icon)} />
+            <Field label={t('admin.app.fields.cover')} name="cover" defaultValue={readMediaResourceUrl(template?.cover)} />
             <SelectField label={t('admin.app.fields.visibility')} name="visibility" defaultValue={template?.visibility ?? 'TENANT'}>
               <option value="PRIVATE">{t('admin.app.template.visibility.private')}</option>
               <option value="TENANT">{t('admin.app.template.visibility.tenant')}</option>
@@ -1322,7 +1321,7 @@ function CategoryModal({
               <option value="false">{t('admin.app.boolean.no')}</option>
             </SelectField>
             <Field label={t('admin.app.fields.status')} name="status" type="number" defaultValue={String(category?.status ?? 1)} />
-            <Field label={t('admin.app.fields.icon')} name="icon" defaultValue={category?.icon ?? ''} />
+            <Field label={t('admin.app.fields.icon')} name="icon" defaultValue={readMediaResourceUrl(category?.icon)} />
             <Field label={t('admin.app.fields.path')} name="path" defaultValue={category?.path ?? ''} />
           </div>
           <TextArea label={t('admin.app.fields.description')} name="description" defaultValue={category?.description ?? ''} rows={4} plain />

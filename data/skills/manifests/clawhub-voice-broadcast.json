@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-broadcast@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-broadcast-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-broadcast-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bca7644af75a3bb2b33e4a66719df240dcaa5f96bd7ec51270d732fd34519571",

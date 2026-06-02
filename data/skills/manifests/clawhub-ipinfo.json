@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ipinfo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ipinfo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ipinfo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e84b6ce1cdf79c916a05e925783e13ab8c70fbcafb0f4da98b5991ace71fd7e",

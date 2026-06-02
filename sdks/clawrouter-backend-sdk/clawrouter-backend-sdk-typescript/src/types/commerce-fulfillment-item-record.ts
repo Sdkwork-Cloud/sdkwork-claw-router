@@ -4,10 +4,14 @@ export interface CommerceFulfillmentItemRecord {
   created_at: string;
   /** Fulfillment id field on commerce fulfillment item record. */
   fulfillment_id: string;
+  /** Id field on commerce fulfillment item record. */
+  id?: string;
   /** Order item id field on commerce fulfillment item record. */
   order_item_id: string;
   /** Organization id field on commerce fulfillment item record. */
   organization_id?: string;
+  /** Quantity field on commerce fulfillment item record. */
+  quantity: string;
   /** Sku id field on commerce fulfillment item record. */
   sku_id: string;
   /** Status field on commerce fulfillment item record. */

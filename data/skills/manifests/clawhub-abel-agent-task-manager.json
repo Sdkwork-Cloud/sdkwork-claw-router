@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abel-agent-task-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abel-agent-task-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abel-agent-task-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18bb8e0eba6e5c7344043840b2a58c0ce200a4d328e3bac5a305ec1b51ace261",

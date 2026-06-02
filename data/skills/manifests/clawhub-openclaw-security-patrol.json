@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-security-patrol@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-security-patrol-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-security-patrol-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:760d700e7d18fc6606558391832b28000d5024fa90669174ee93e56f5368e006",

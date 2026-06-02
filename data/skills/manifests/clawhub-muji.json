@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/muji@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-muji-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-muji-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3911c9524067de9e4f2d9de3c1c190d08e89b660336db73de2276e6c6eada05a",

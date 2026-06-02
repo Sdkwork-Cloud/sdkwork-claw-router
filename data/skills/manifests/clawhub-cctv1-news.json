@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cctv1-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cctv1-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cctv1-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:78b991215cabbeab11fa6b8ac8af711c69b3e9154b366925fd14d15cf1fdf5ca",

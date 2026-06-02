@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/binary-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-binary-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-binary-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:601ae1bb67ec7dbc8a57c3ff53d1b777e7cae61972498e42a8b471955857e967",

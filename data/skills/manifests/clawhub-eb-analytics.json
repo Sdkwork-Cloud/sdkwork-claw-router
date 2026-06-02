@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eb-analytics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eb-analytics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eb-analytics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c71c668de4e68968cd26b1c96b7f58e63cf4276a8cbdca32ff05fb28630d548c",

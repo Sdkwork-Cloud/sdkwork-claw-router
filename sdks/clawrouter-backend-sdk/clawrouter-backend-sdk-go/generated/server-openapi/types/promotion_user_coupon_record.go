@@ -19,9 +19,13 @@ type PromotionUserCouponRecord struct {
 	DisabledAt string `json:"disabled_at"`
 	DiscountPercentBps int `json:"discount_percent_bps"`
 	ExpiresAt string `json:"expires_at"`
+	FaceValueMinor string `json:"face_value_minor"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	LockExpiresAt string `json:"lock_expires_at"`
 	LockedAt string `json:"locked_at"`
+	MaximumDiscountAmountMinor string `json:"maximum_discount_amount_minor"`
+	MinimumOrderAmountMinor string `json:"minimum_order_amount_minor"`
 	OfferId string `json:"offer_id"`
 	OfferVersionId string `json:"offer_version_id"`
 	OrganizationId string `json:"organization_id"`

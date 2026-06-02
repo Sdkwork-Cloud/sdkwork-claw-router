@@ -1,11 +1,12 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Iam user response schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct IamUserResponse {
-    /// Avatar url field on iam user response.
-    #[serde(rename = "avatarUrl")]
-    pub avatar_url: String,
+    /// Avatar field on iam user response.
+    pub avatar: MediaResource,
 
     /// Display name field on iam user response.
     #[serde(rename = "displayName")]

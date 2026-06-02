@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/morningstar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-morningstar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-morningstar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52df267b697134fc56ddc782d6ba20be96ed6980229dc0b2ce989fd9cfb9002b",

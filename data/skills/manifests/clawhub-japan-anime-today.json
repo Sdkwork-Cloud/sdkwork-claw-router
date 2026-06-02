@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/japan-anime-today@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-japan-anime-today-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-japan-anime-today-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:43ed2bd15d7dabd5a3746e605f477df3466e9351c37f758cb92c3b79970dcc0a",

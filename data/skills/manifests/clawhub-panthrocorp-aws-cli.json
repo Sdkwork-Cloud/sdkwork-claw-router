@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/panthrocorp-aws-cli@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-panthrocorp-aws-cli-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-panthrocorp-aws-cli-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:670203a5db40d47c3a2150cae2c45c65e26f63c955610326f52d3dd2877f8c2b",

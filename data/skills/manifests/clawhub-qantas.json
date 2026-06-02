@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qantas@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qantas-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qantas-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca6e6d832236d3274ee98a1c9b6a0140eb90e9689faafa4f400c38522a6e66b9",

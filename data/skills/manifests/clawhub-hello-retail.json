@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hello-retail@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-hello-retail-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hello-retail-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e5a220d59e5b09e97710a5b07297a32bbf0deb2d92b99cf94f0101df8ccebe1a",

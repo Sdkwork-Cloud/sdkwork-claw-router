@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kbo-results@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kbo-results-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kbo-results-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8830ecb8be7107f3f485940513eb7ddc677975744461bde82c8da77602989be",

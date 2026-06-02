@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/striver@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-striver-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-striver-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:44c840f68d1cc30039162edce3c138a9900899cb4bc7c0612414faebbd0c4813",

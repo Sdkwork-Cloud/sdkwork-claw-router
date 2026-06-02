@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comparison-table-gen@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-comparison-table-gen-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comparison-table-gen-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db09cbdeea2763254cbc797a142159129dcf9e068adb835102605084737b2113",

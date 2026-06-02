@@ -7,6 +7,7 @@ data class CommerceDigitalDeliveryRecord(
     val deliveryRef: String? = null,
     val deliveryType: String? = null,
     val fulfillmentId: String? = null,
+    val id: String? = null,
     val orderItemId: String? = null,
     val organizationId: String? = null,
     val status: String? = null,

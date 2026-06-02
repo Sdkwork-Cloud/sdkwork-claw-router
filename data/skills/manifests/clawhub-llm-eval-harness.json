@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-eval-harness@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-eval-harness-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-eval-harness-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4e5fea9aefa7f57c8a1a7a326d841d7892055f3787de38a9d7504b3f1ee7a114",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spicy-ai-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spicy-ai-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spicy-ai-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a659bc36a64107157c4ae93a265b79a573f7e468d363bc82cfddc7ec2be378d2",

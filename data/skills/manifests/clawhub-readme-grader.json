@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/readme-grader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-readme-grader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-readme-grader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c485752161c267961e1884e33d33b3bf7b7b597d47672a16277537614cff53d1",

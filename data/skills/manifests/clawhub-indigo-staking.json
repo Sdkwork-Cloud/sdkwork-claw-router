@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/indigo-staking@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-indigo-staking-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-indigo-staking-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bc9eb07f5eee18932b4e408f195101dad4edb4401a46c4d71b9e52e94fd8360a",

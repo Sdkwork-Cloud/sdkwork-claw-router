@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/report-sql@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-report-sql-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-report-sql-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4da7d31b9d763ea0df7d17e9eae178d05c4f5f9c42c79ff094cdbd4dfb302084",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lockout@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lockout-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lockout-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:559f5d1ab15b3e7b8922d58d86249e2a5dd1bb8af764961048fc70c429e17d97",

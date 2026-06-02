@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/craftsman@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-craftsman-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-craftsman-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b6cab991efb390e4256bb5f9f39bdd0aad7f89dc0f9e7a679e6bd2a6a7533f69",

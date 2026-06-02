@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tito@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tito-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tito-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:30fae8550644b9b4320bc20fc090033c32c755a18cdc87ae545a65ce33295c61",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paystack@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-paystack-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paystack-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:37186d53298352f0758235f0232d087fd9821b88d3c51594bd4ee4f2e5f15693",

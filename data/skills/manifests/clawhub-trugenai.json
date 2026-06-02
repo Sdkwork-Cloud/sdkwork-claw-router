@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trugenai@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-trugenai-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trugenai-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6bf3d08df7f12cd7603ee222054e608dc360e3c087f5d054bd2002a2f98f7a4d",

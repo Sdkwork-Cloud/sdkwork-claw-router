@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shelly-meeting-summarizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shelly-meeting-summarizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shelly-meeting-summarizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a6735e19e5b304351d267321869eba7f74508c5d13b1e59dd91eccf038372e2",

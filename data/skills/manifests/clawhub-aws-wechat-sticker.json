@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-wechat-sticker@1.0.23",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-wechat-sticker-1.0.23.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-wechat-sticker-1.0.23.json"
+      },
       "version": "1.0.23",
       "runtime": "metadata",
       "checksumHash": "sha256:de3ae211a288a2c9d8a39b0ceb983646422e132706e698bcfe12db2491c9ae2c",

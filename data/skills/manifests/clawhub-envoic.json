@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/envoic@0.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-envoic-0.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-envoic-0.0.9.json"
+      },
       "version": "0.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:0604f1abc64f9d9d73181484ec0d0537580263cdbfba4835499784eedd975c01",

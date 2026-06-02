@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prepper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prepper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prepper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:814c2daa816ea4ec24d2e116b0afb33eebcd2883614a26c60f7b296893791d40",

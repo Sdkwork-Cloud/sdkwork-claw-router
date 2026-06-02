@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youdotcom-cli@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-youdotcom-cli-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youdotcom-cli-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3b0dc21e4ccc26b545215da0c99b4864ed6fd87e49d2d91b2da251f8aae7a92b",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/roku@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-roku-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-roku-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8887c54eb7f79a68f048e13fa4011ce9702e47ba8634119d709ebec3702ef18e",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/convert-document-to-markdown@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-convert-document-to-markdown-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-convert-document-to-markdown-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ec26743d8ab681b13a96cbd48b433049b0cca5ee7e9e3fe4f3f2250aa02932a",

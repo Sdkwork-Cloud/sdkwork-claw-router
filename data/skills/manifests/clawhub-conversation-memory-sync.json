@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/conversation-memory-sync@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-conversation-memory-sync-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-conversation-memory-sync-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4957ee627aa0583511e8b82c61e627193458d205b2bf5de70569d996b4287267",

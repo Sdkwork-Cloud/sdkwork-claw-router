@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-namer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-namer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-namer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b1f8af78d99c5845b4e39e39398155adbacfd092da94262870738d7e752f6e1",

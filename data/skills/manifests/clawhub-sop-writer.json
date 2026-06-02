@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sop-writer@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sop-writer-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sop-writer-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b75e319acd8624a5688da7a2f0b8325b6ce0ef288f29566606e18dbfdad89447",

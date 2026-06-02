@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/orderflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-orderflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-orderflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2dda397f886d5e006db73e45bee8a382f5bed2c92f36a5ea273de387b9305310",

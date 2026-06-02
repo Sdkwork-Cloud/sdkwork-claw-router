@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/china-stock-screener@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-china-stock-screener-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-china-stock-screener-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6ccecee3f47172c2b59f80cbfc86e9079669ffc9f73a1fc8d3c96ff001d2c6ad",

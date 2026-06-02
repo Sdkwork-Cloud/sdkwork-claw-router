@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rustchain-mcp@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rustchain-mcp-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rustchain-mcp-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5fc13dfa71fccb195b072d550ac5c9916e57494d858ff25dc649371b01faa52a",

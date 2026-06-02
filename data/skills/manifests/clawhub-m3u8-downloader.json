@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/m3u8-downloader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-m3u8-downloader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-m3u8-downloader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d8348f6fcb9788b1e380dbfbc00c40cee03ea5e108ef58bc291fd3f30ee271df",

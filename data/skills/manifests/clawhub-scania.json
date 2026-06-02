@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scania@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scania-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scania-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3db64c3d63a028afc40b38ec14f14cb99f0f55ce025ce2b4d627fa97b3253d2",

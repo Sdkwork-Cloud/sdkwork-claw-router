@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quickbooks-online@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-quickbooks-online-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quickbooks-online-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7256a130751fb0cd161bc3c48bebbb861c0893dc20df44e396b88b8c920f81ab",

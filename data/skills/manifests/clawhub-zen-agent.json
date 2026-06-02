@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zen-agent@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zen-agent-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zen-agent-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c328cb7343dc380f28e6373433065819658e0003eaff43f03faffc47ce3962be",

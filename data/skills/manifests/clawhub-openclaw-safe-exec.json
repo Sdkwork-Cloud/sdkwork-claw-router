@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-safe-exec@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-safe-exec-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-safe-exec-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:718b39fb9d8e1672d9ae89e44c81366ad85749923f36cd6ab99bfb709f59f4df",

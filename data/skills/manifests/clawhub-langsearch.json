@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/langsearch@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-langsearch-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-langsearch-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6fb38876c3e4420b31e795c85d93fb91640006aea9c03330b6d96a842088ffe1",

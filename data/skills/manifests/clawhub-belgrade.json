@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/belgrade@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-belgrade-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-belgrade-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8879d07c1526ce4fc470cf76e12e6535a39ef40fe834151daa7266cfea0a2fef",

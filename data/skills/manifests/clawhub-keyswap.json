@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/keyswap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-keyswap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-keyswap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7343024c94d1e633e3eccbe94d911badd0899060ef189c2f40bd5f21684e301",

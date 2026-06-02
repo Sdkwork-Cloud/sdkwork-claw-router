@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/synbo@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-synbo-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-synbo-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35ac0e5ba8fbec037fcfcde230feed02b6ab354efd34447e7f633357d862a00e",

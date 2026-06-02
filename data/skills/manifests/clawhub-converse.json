@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/converse@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-converse-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-converse-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:38bd0c6fd09ba4fc020adb0a817f48f80a4289454c5c6e38d5c618147f21ee8b",

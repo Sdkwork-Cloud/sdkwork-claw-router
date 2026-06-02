@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spend-ledger@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spend-ledger-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spend-ledger-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2132b7af5f87b2eb5d3397cc1b6fde43a9aac08613bb1296fa8331c1fbfc6f6",

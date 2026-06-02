@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/genealogy-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-genealogy-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-genealogy-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bd9094710953250854cabf271f18ec4faa16bec511eead0e6e9f98b9eff7d37f",

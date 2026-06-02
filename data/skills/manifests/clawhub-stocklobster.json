@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stocklobster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stocklobster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stocklobster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a0a9f9693a259e0a932f987e9dc24d47bb49465b9f13281f402921307713c1f",

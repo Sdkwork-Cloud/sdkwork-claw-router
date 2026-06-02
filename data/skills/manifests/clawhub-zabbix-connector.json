@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zabbix-connector@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-zabbix-connector-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zabbix-connector-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:49f2d45859748c427f6b6b58ad85fea5b77d52a3eca8904212e507f542370afa",

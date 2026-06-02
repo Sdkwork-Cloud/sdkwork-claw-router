@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/traffic-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-traffic-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-traffic-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c13c5e45f46698bbf1c120aa422ce010c9c42913c6c2446e53c3a1a7a6023ddd",

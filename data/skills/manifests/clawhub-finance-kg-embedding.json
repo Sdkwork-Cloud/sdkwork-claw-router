@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finance-kg-embedding@0.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-finance-kg-embedding-0.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finance-kg-embedding-0.3.3.json"
+      },
       "version": "0.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:22d5c06eb10afd8cf6002057e345c5054adfd3136f98d4dfc1e2e4b26b629cbf",

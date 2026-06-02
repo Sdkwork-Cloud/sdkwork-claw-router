@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yang-openclaw-health@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yang-openclaw-health-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yang-openclaw-health-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:53ae743d0161c4b73bb2206c36a468b1ff145ef850541605e83a1d1fabe663ed",

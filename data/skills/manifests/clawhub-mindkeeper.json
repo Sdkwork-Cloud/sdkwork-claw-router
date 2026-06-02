@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mindkeeper@1.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-mindkeeper-1.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mindkeeper-1.2.4.json"
+      },
       "version": "1.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:b9f8ad88a8cc6c64f93965368116cb0437085da8f20286d53777a74d13e032de",

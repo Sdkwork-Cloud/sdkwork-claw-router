@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chewy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chewy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chewy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4fe460a380a7c1119327a207dce3e9a25e8319f5276c770150f6f6912213a2fd",

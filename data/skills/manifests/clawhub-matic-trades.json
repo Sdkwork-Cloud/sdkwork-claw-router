@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/matic-trades@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-matic-trades-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-matic-trades-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca29eff6adabba735ac8a579078c2174cd72424c3bef0edccd0663e26428cb28",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f308ca6a8ab656ed72cbfd2582acd7548e7d5fe55d50d8943c0c461f35ae30b6",

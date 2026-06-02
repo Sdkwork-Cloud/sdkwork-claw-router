@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/benefit-calc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-benefit-calc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-benefit-calc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26e60324061a07f47233ad393e32d5f32a54d6c5b2a81d5349ec624aa08c59ec",

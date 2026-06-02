@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/metal-price@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-metal-price-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-metal-price-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fcec8b502e8a74c65755f23b22af1d6c5548eef701bc83214416ad57200f288f",

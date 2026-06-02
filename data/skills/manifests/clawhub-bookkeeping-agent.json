@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bookkeeping-agent@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-bookkeeping-agent-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bookkeeping-agent-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:9d5daec9e1d567258f610f1cdc654b07957a47c02dc829061121cf1de7f3982e",

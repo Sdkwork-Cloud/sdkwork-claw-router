@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-ledger@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-ledger-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-ledger-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ca23117511afbbb5a699fa87ff1df0d19ba58c061a6c27322fc19105a6fb72fc",

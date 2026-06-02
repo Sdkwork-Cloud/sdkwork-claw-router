@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/markitdown-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-markitdown-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-markitdown-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1ad4d5d0840a58dfd835879a1991acd0f5a0f78034637b8f86e451bc76666856",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/archer-daniels-midland@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-archer-daniels-midland-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-archer-daniels-midland-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ddaa58547139079a7a8939ae4e762c2d5b84f421bdcaadea6cdf8fbdb2e74ea7",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tomba@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tomba-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tomba-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4b04af5440d7b98d9629422918c192c1b0f576536477a0d39e8ac975074872fb",

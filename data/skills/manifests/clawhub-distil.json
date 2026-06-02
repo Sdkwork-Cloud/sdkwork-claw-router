@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/distil@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-distil-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-distil-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1e26edc732edf522f41db1f0e5f5f7bef1c9aa5b1e0e89e0e41a2b07b8730f6f",

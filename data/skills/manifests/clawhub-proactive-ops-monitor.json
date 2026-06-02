@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proactive-ops-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-proactive-ops-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proactive-ops-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da85ad0047a1ac98e2b61621549a58d4f6c252c4900eddf49391a998f6667885",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coin-news-openclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coin-news-openclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coin-news-openclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92b552a35e264772d668da8209dfffc0ce593c1f1dd4b301d4793bd0a0216003",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fifa@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-fifa-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fifa-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:0c030cc3b3853644a60b87d5a0b90d7150513f24128ced0b8a7095584bc15d97",

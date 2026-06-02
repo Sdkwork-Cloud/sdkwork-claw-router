@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/setup-multi-gateway@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-setup-multi-gateway-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-setup-multi-gateway-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de2e5d805d96f4b3e34f595945432342206861e7d21886a0de4725755b6746fe",

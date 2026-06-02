@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/estee-lauder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-estee-lauder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-estee-lauder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:406da9ac24a71cc531b8547cd80876e0bf4681363f66025e45b55f8541dbab49",

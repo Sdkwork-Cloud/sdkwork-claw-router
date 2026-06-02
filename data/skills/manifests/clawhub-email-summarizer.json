@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-summarizer@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-summarizer-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-summarizer-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:33d7d0dde8ed1974f5940a8be7c86e941c62208cf2512414887e47d4fbc0dcf2",

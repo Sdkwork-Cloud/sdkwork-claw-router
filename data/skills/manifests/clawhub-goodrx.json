@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goodrx@99.99.99",
-      "artifactUrl": "data/skills/artifacts/clawhub-goodrx-99.99.99.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goodrx-99.99.99.json"
+      },
       "version": "99.99.99",
       "runtime": "metadata",
       "checksumHash": "sha256:f8bf6653daf83f726c1796fdb680f8fe49c08c86e354b3df3a2182dfffe6b59c",

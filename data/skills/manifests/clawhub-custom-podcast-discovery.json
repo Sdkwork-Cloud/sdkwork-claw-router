@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/custom-podcast-discovery@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-custom-podcast-discovery-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-custom-podcast-discovery-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:282c570945c383a284d069bc326b4acef3f301df32e589cd7712112b9b79eb6d",

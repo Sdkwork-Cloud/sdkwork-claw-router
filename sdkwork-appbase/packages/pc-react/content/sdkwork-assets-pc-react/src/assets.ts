@@ -1,3 +1,5 @@
+import type { SdkworkMediaKind, SdkworkMediaResource } from "@sdkwork/appbase-pc-react";
+
 export type SdkworkAssetReadiness = "needs-license" | "ready" | "review";
 export type SdkworkAssetLicenseTone = "approved" | "restricted" | "review";
 
@@ -7,6 +9,7 @@ export interface SdkworkAsset {
   id: string;
   licenseTone: SdkworkAssetLicenseTone;
   readiness: SdkworkAssetReadiness;
+  resource: SdkworkMediaResource;
   sizeLabel: string;
   tags: string[];
   title: string;
@@ -106,6 +109,52 @@ function sortSdkworkAssets(assets: readonly SdkworkAsset[]): SdkworkAsset[] {
   );
 }
 
+function mapAssetFormatToMediaKind(format: string): SdkworkMediaKind {
+  if (["png", "svg", "webp", "jpg", "jpeg", "gif"].includes(format)) {
+    return "image";
+  }
+  if (["mp4", "mov", "webm"].includes(format)) {
+    return "video";
+  }
+  if (["mp3", "wav", "aac", "flac"].includes(format)) {
+    return "audio";
+  }
+  return "document";
+}
+
+function parseSizeBytes(sizeLabel: string): string | undefined {
+  const match = /^(\d+(?:\.\d+)?)\s*(KB|MB|GB)$/i.exec(sizeLabel.trim());
+  if (!match) {
+    return undefined;
+  }
+  const value = Number.parseFloat(match[1]);
+  const unit = match[2].toUpperCase();
+  const multiplier = unit === "GB" ? 1024 * 1024 * 1024 : unit === "MB" ? 1024 * 1024 : 1024;
+  return Math.round(value * multiplier).toString();
+}
+
+function createObjectStorageAssetResource(
+  id: string,
+  title: string,
+  format: string,
+  sizeLabel: string,
+  collectionId: string,
+): SdkworkMediaResource {
+  return {
+    fileName: `${id}.${format}`,
+    id: `media-resource-${id}`,
+    kind: mapAssetFormatToMediaKind(format),
+    metadata: {
+      collectionId,
+    },
+    ...(format === "svg" ? { mimeType: "image/svg+xml" } : {}),
+    objectKey: `assets/${collectionId}/${id}.${format}`,
+    sizeBytes: parseSizeBytes(sizeLabel),
+    source: "object_storage",
+    title,
+  };
+}
+
 export function createDefaultSdkworkAssetCollections(): SdkworkAssetCollection[] {
   return [
     { assetCount: 2, id: "brand-system", licenseTone: "approved", title: "Brand System" },
@@ -115,7 +164,7 @@ export function createDefaultSdkworkAssetCollections(): SdkworkAssetCollection[]
 }
 
 export function createDefaultSdkworkAssets(): SdkworkAsset[] {
-  return [
+  const assets = [
     {
       collectionId: "brand-system",
       format: "svg",
@@ -123,7 +172,7 @@ export function createDefaultSdkworkAssets(): SdkworkAsset[] {
       licenseTone: "approved",
       readiness: "ready",
       sizeLabel: "512 KB",
-      tags: ["brand", "logo"],
+      tags: ["brand", "logo"] as string[],
       title: "Logo Lockup",
       updatedAt: "2026-04-03T05:00:00.000Z",
     },
@@ -134,7 +183,7 @@ export function createDefaultSdkworkAssets(): SdkworkAsset[] {
       licenseTone: "approved",
       readiness: "ready",
       sizeLabel: "2.4 MB",
-      tags: ["brand", "banner"],
+      tags: ["brand", "banner"] as string[],
       title: "Brand Banner",
       updatedAt: "2026-04-02T07:00:00.000Z",
     },
@@ -145,7 +194,7 @@ export function createDefaultSdkworkAssets(): SdkworkAsset[] {
       licenseTone: "restricted",
       readiness: "needs-license",
       sizeLabel: "4.0 MB",
-      tags: ["campaign"],
+      tags: ["campaign"] as string[],
       title: "Launch Poster",
       updatedAt: "2026-04-01T09:00:00.000Z",
     },
@@ -156,11 +205,16 @@ export function createDefaultSdkworkAssets(): SdkworkAsset[] {
       licenseTone: "review",
       readiness: "review",
       sizeLabel: "6.1 MB",
-      tags: ["product", "render"],
+      tags: ["product", "render"] as string[],
       title: "Device Render",
       updatedAt: "2026-03-30T08:30:00.000Z",
     },
-  ];
+  ] as const;
+
+  return assets.map((asset) => ({
+    ...asset,
+    resource: createObjectStorageAssetResource(asset.id, asset.title, asset.format, asset.sizeLabel, asset.collectionId),
+  }));
 }
 
 export function summarizeSdkworkAssetsWorkspace(

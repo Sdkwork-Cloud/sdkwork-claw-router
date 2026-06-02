@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chaos@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chaos-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chaos-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56c4403fb4d1d8542032bd42eae858e26f029dad23d1a40ec89244579932758d",

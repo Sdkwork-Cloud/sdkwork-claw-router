@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
+import { readMediaResourceUrl, toExternalUrlMediaResource } from "./packages/sdkwork-claw-router-commons/src/media-resource.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import {
   AdminSkillService,
@@ -26,6 +27,15 @@ type CapturedBackendRequest = {
   headers: Record<string, string>;
   body: string;
 };
+
+function mediaResource(
+  url: string,
+  kind: "image" | "video" | "audio" | "archive" | "document" | "other" = "image",
+) {
+  const resource = toExternalUrlMediaResource(url, kind);
+  assert.ok(resource, `expected media resource for ${url}`);
+  return resource;
+}
 
 async function withBackendSdkFetch<T>(
   handler: (url: string, init?: RequestInit) => unknown,
@@ -167,8 +177,8 @@ function sampleAsset(overrides: Record<string, unknown> = {}) {
     targetId: "8101",
     artifactId: null,
     assetType: 1,
-    assetUrl: "https://cdn.example.test/skills/research/cover.png",
-    thumbnailUrl: "https://cdn.example.test/skills/research/thumb.png",
+    asset: mediaResource("https://cdn.example.test/skills/research/cover.png", "other"),
+    thumbnail: mediaResource("https://cdn.example.test/skills/research/thumb.png"),
     title: "Skill cover",
     altText: "Skill marketplace cover",
     mimeType: "image/png",
@@ -196,7 +206,7 @@ function sampleArtifact(overrides: Record<string, unknown> = {}) {
     platformType: "agent",
     osName: "runtime",
     artifactRef: "builtin://sdkwork.skills.research_brief@1.0.0",
-    artifactUrl: "data/skills/artifacts/research-brief-1.0.0.json",
+    artifact: mediaResource("data/skills/artifacts/research-brief-1.0.0.json", "archive"),
     artifactSizeBytes: 2048,
     runtime: "builtin",
     frameworks: ["Rust service", "OpenAI-compatible"],
@@ -334,7 +344,7 @@ test("admin skill update helper omits empty editable fields", () => {
 
   const assetForm = new FormData();
   assetForm.set("title", " Skill cover ");
-  assetForm.set("thumbnailUrl", " ");
+  assetForm.set("thumbnail", " ");
   assetForm.set("sortOrder", "20");
   assert.deepEqual(updateSkillAssetInputFromForm(assetForm), {
     title: "Skill cover",
@@ -355,8 +365,8 @@ test("admin skill asset and artifact form helpers normalize marketplace resource
   const assetForm = new FormData();
   assetForm.set("artifactId", "9201");
   assetForm.set("assetType", "1");
-  assetForm.set("assetUrl", " artifact://skills/research/cover.png ");
-  assetForm.set("thumbnailUrl", " artifact://skills/research/cover-thumb.png ");
+  assetForm.set("asset", " artifact://skills/research/cover.png ");
+  assetForm.set("thumbnail", " artifact://skills/research/cover-thumb.png ");
   assetForm.set("title", " Skill cover ");
   assetForm.set("altText", " Marketplace cover ");
   assetForm.set("mimeType", " image/png ");
@@ -369,8 +379,8 @@ test("admin skill asset and artifact form helpers normalize marketplace resource
   assert.deepEqual(createSkillAssetInputFromForm(assetForm), {
     artifactId: "9201",
     assetType: 1,
-    assetUrl: "artifact://skills/research/cover.png",
-    thumbnailUrl: "artifact://skills/research/cover-thumb.png",
+    asset: mediaResource("artifact://skills/research/cover.png", "other"),
+    thumbnail: mediaResource("artifact://skills/research/cover-thumb.png"),
     title: "Skill cover",
     altText: "Marketplace cover",
     mimeType: "image/png",
@@ -387,7 +397,7 @@ test("admin skill asset and artifact form helpers normalize marketplace resource
   artifactForm.set("platformType", " agent ");
   artifactForm.set("osName", " runtime ");
   artifactForm.set("artifactRef", " builtin://sdkwork.skills.research_brief@1.1.0 ");
-  artifactForm.set("artifactUrl", " data/skills/artifacts/research-brief-1.1.0.json ");
+  artifactForm.set("artifact", " data/skills/artifacts/research-brief-1.1.0.json ");
   artifactForm.set("artifactSizeBytes", "4096");
   artifactForm.set("runtime", " builtin ");
   artifactForm.set("frameworks", "Rust service, OpenAI-compatible, Rust service");
@@ -402,7 +412,7 @@ test("admin skill asset and artifact form helpers normalize marketplace resource
     platformType: "agent",
     osName: "runtime",
     artifactRef: "builtin://sdkwork.skills.research_brief@1.1.0",
-    artifactUrl: "data/skills/artifacts/research-brief-1.1.0.json",
+    artifact: mediaResource("data/skills/artifacts/research-brief-1.1.0.json", "archive"),
     artifactSizeBytes: 4096,
     runtime: "builtin",
     frameworks: ["Rust service", "OpenAI-compatible"],
@@ -423,7 +433,7 @@ test("admin skill form helpers reject negative control values before submit", ()
   );
 
   const assetForm = new FormData();
-  assetForm.set("assetUrl", "artifact://skills/research/cover.png");
+  assetForm.set("asset", "artifact://skills/research/cover.png");
   assetForm.set("assetType", "-1");
   assert.throws(
     () => createSkillAssetInputFromForm(assetForm),
@@ -431,7 +441,7 @@ test("admin skill form helpers reject negative control values before submit", ()
   );
 
   const artifactForm = new FormData();
-  artifactForm.set("artifactUrl", "artifact://skills/research/skill.json");
+  artifactForm.set("artifact", "artifact://skills/research/skill.json");
   artifactForm.set("artifactType", "-1");
   assert.throws(
     () => createSkillArtifactInputFromForm(artifactForm),
@@ -677,8 +687,8 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
       const assets = await AdminSkillService.fetchSkillAssets("8101");
       const asset = await AdminSkillService.getSkillAsset("8101", "9101");
       const createdAsset = await AdminSkillService.createSkillAsset("8101", {
-        assetUrl: " artifact://skills/research/cover.png ",
-        thumbnailUrl: " artifact://skills/research/cover-thumb.png ",
+        asset: mediaResource("artifact://skills/research/cover.png", "other"),
+        thumbnail: mediaResource("artifact://skills/research/cover-thumb.png"),
         title: " Created asset ",
         altText: " Skill cover ",
         artifactId: "9201",
@@ -691,7 +701,7 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
       });
       const updatedAsset = await AdminSkillService.updateSkillAsset("8101", "9101", {
         title: " Updated asset ",
-        thumbnailUrl: null,
+        thumbnail: null,
         sortOrder: 20,
       });
       const deletedAsset = await AdminSkillService.deleteSkillAsset("8101", "9101");
@@ -702,7 +712,7 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
         version: " 1.1.0 ",
         platformType: " web ",
         osName: " any ",
-        artifactUrl: " artifact://skills/research/skill.json ",
+        artifact: mediaResource("artifact://skills/research/skill.json", "archive"),
         artifactSizeBytes: 4096,
         runtime: " agent-skill ",
         frameworks: ["React portal", "Rust service", "React portal"],
@@ -711,7 +721,7 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
       });
       const updatedArtifact = await AdminSkillService.updateSkillArtifact("8101", "9201", {
         version: "1.2.0",
-        artifactUrl: null,
+        artifact: null,
         frameworks: ["Rust service"],
       });
       const deletedArtifact = await AdminSkillService.deleteSkillArtifact("8101", "9201");
@@ -740,8 +750,8 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
         "DELETE /backend/v3/api/ecosystem/skills/8101/artifacts/9201",
       ]);
       assert.deepEqual(JSON.parse(captured[2].body), {
-        assetUrl: "artifact://skills/research/cover.png",
-        thumbnailUrl: "artifact://skills/research/cover-thumb.png",
+        asset: mediaResource("artifact://skills/research/cover.png", "other"),
+        thumbnail: mediaResource("artifact://skills/research/cover-thumb.png"),
         title: "Created asset",
         altText: "Skill cover",
         artifactId: "9201",
@@ -756,7 +766,7 @@ test("admin skill service calls generated backend SDK asset and artifact paths",
         version: "1.1.0",
         platformType: "web",
         osName: "any",
-        artifactUrl: "artifact://skills/research/skill.json",
+        artifact: mediaResource("artifact://skills/research/skill.json", "archive"),
         artifactSizeBytes: 4096,
         runtime: "agent-skill",
         frameworks: ["React portal", "Rust service"],
@@ -826,7 +836,7 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
         return { item: sampleAsset({ id: "9102", title: "Skill demo cover" }) };
       }
       if (url === "/backend/v3/api/ecosystem/skills/8101/assets/9101" && method === "PUT") {
-        return { item: sampleAsset({ title: "Skill cover updated", thumbnailUrl: null }) };
+        return { item: sampleAsset({ title: "Skill cover updated", thumbnail: null }) };
       }
       if (url === "/backend/v3/api/ecosystem/skills/8101/assets/9101" && method === "DELETE") {
         return { deleted: true };
@@ -892,8 +902,8 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
       const assets = await AdminSkillService.fetchSkillAssets("8101");
       const asset = await AdminSkillService.getSkillAsset("8101", "9101");
       const createdAsset = await AdminSkillService.createSkillAsset("8101", {
-        assetUrl: " https://cdn.example.test/skills/research/demo.png ",
-        thumbnailUrl: " https://cdn.example.test/skills/research/demo-thumb.png ",
+        asset: mediaResource("https://cdn.example.test/skills/research/demo.png", "other"),
+        thumbnail: mediaResource("https://cdn.example.test/skills/research/demo-thumb.png"),
         title: " Skill demo cover ",
         altText: " Skill demo ",
         mimeType: " image/png ",
@@ -905,7 +915,7 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
       });
       const updatedAsset = await AdminSkillService.updateSkillAsset("8101", "9101", {
         title: " Skill cover updated ",
-        thumbnailUrl: null,
+        thumbnail: null,
       });
       const deletedAsset = await AdminSkillService.deleteSkillAsset("8101", "9101");
       const artifacts = await AdminSkillService.fetchSkillArtifacts("8101");
@@ -913,7 +923,7 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
       const createdArtifact = await AdminSkillService.createSkillArtifact("8101", {
         version: " 1.0.1 ",
         artifactRef: " builtin://sdkwork.skills.research_brief@1.0.1 ",
-        artifactUrl: " data/skills/artifacts/research-brief-1.0.1.json ",
+        artifact: mediaResource("data/skills/artifacts/research-brief-1.0.1.json", "archive"),
         artifactSizeBytes: 4096,
         runtime: " builtin ",
         frameworks: ["Rust service", "OpenAI-compatible", "Rust service"],
@@ -944,9 +954,9 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
       assert.equal(created.id, "9001");
       assert.equal(updated.name, "Research Brief Pro");
       assert.equal(assets[0].targetType, 35);
-      assert.equal(asset.assetUrl, "https://cdn.example.test/skills/research/cover.png");
+      assert.equal(readMediaResourceUrl(asset.asset), "https://cdn.example.test/skills/research/cover.png");
       assert.equal(createdAsset.id, "9102");
-      assert.equal(updatedAsset.thumbnailUrl, null);
+      assert.equal(updatedAsset.thumbnail, undefined);
       assert.equal(deletedAsset, true);
       assert.equal(artifacts[0].frameworks.length, 2);
       assert.equal(artifact.artifactRef, "builtin://sdkwork.skills.research_brief@1.0.0");
@@ -1003,8 +1013,8 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
       const createAssetRequest = captured.find((request) => request.method === "POST" && request.url === "/backend/v3/api/ecosystem/skills/8101/assets");
       assert.ok(createAssetRequest);
       assert.deepEqual(JSON.parse(createAssetRequest.body), {
-        assetUrl: "https://cdn.example.test/skills/research/demo.png",
-        thumbnailUrl: "https://cdn.example.test/skills/research/demo-thumb.png",
+        asset: mediaResource("https://cdn.example.test/skills/research/demo.png", "other"),
+        thumbnail: mediaResource("https://cdn.example.test/skills/research/demo-thumb.png"),
         title: "Skill demo cover",
         altText: "Skill demo",
         mimeType: "image/png",
@@ -1014,12 +1024,18 @@ test("admin skill service calls generated backend SDK paths and normalizes packa
         sortOrder: 20,
         status: 1,
       });
+      const updateAssetRequest = captured.find((request) => request.method === "PUT" && request.url === "/backend/v3/api/ecosystem/skills/8101/assets/9101");
+      assert.ok(updateAssetRequest);
+      assert.deepEqual(JSON.parse(updateAssetRequest.body), {
+        title: "Skill cover updated",
+        thumbnail: null,
+      });
       const createArtifactRequest = captured.find((request) => request.method === "POST" && request.url === "/backend/v3/api/ecosystem/skills/8101/artifacts");
       assert.ok(createArtifactRequest);
       assert.deepEqual(JSON.parse(createArtifactRequest.body), {
         version: "1.0.1",
         artifactRef: "builtin://sdkwork.skills.research_brief@1.0.1",
-        artifactUrl: "data/skills/artifacts/research-brief-1.0.1.json",
+        artifact: mediaResource("data/skills/artifacts/research-brief-1.0.1.json", "archive"),
         artifactSizeBytes: 4096,
         runtime: "builtin",
         frameworks: ["Rust service", "OpenAI-compatible"],
@@ -1051,12 +1067,12 @@ test("admin skill service validates path segments and structured JSON form field
   await assert.rejects(() => AdminSkillService.createSkillPackage({ packageKey: "valid", name: "" }), /name is required/);
   await assert.rejects(() => AdminSkillService.createSkill({ skillKey: "", name: "x" }), /skillKey is required/);
   await assert.rejects(() => AdminSkillService.createSkill({ skillKey: "valid", name: "" }), /name is required/);
-  await assert.rejects(() => AdminSkillService.createSkillAsset("8101", { assetUrl: "" }), /assetUrl is required/);
+  await assert.rejects(() => AdminSkillService.createSkillAsset("8101", { asset: undefined as never }), /asset is required/);
   await assert.rejects(
-    () => AdminSkillService.createSkillAsset("8101", { assetUrl: "relative/path.png" }),
-    /assetUrl must be an http\(s\), builtin, artifact, data\/skills, or absolute path reference/,
+    () => AdminSkillService.createSkillAsset("8101", { asset: "relative/path.png" as never }),
+    /asset is required|asset must be a media resource/,
   );
-  await assert.rejects(() => AdminSkillService.createSkillArtifact("8101", { version: "1.0.0" }), /artifactRef or artifactUrl is required/);
+  await assert.rejects(() => AdminSkillService.createSkillArtifact("8101", { version: "1.0.0" }), /artifactRef or artifact is required/);
   await assert.rejects(
     () => AdminSkillService.createSkillArtifact("8101", {
       artifactRef: "builtin://sdkwork.skills.research@1.0.0",

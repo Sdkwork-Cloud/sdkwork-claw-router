@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cdo@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cdo-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cdo-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:76e20febfb038fb2080f5a60c43181260fd3ffb2b84f0190b0330f0f866682ec",

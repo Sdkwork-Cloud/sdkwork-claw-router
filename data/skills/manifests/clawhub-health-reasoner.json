@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-reasoner@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-reasoner-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-reasoner-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8251f774dc12643ba35682dda463673e93c117ea6dbe628cf61047a47864efa6",

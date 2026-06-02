@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/duoplus-agent@1.0.11",
-      "artifactUrl": "data/skills/artifacts/clawhub-duoplus-agent-1.0.11.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-duoplus-agent-1.0.11.json"
+      },
       "version": "1.0.11",
       "runtime": "metadata",
       "checksumHash": "sha256:34cb9fa55732394bea958e4a8af770d50fb9216b8f34ee390b394ea5f8c48bcd",

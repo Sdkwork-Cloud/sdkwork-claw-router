@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codemagic@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-codemagic-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codemagic-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:66f99ee0d76d27c02515242bcd53620e7960b8c327536910eea94b1acc743bd6",

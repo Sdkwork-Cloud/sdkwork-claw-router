@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-ops-toolkit@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-ops-toolkit-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-ops-toolkit-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2f905e863566ab4fbc52d58f2d7f4d7b8ad077eb4bb9506039ca8437aeff5d8f",

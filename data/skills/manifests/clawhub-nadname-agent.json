@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nadname-agent@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nadname-agent-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nadname-agent-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6227ca4c50ae60e8956031717fc98d79a5653440a315c19b3d64cf0f6cd3457c",

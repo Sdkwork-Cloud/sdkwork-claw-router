@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-docx-formatter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-docx-formatter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-docx-formatter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb0c04565a4736d8a4d13509391b3b4b77aaf1c3d2d4d2195cad6742492979ca",

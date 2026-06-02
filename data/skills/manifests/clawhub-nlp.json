@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nlp@3.4.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-nlp-3.4.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nlp-3.4.2.json"
+      },
       "version": "3.4.2",
       "runtime": "metadata",
       "checksumHash": "sha256:364d3e3c8ad3de623809df73bd8d6f8f2d59bbeb371650bd1fed3afb00def4d9",

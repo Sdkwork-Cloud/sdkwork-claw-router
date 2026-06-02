@@ -15,7 +15,7 @@ const categories = [
     code: 'ai-coding',
     name: 'AI Coding',
     description: 'Claude Code, OpenAI Codex, Codex CLI, AI coding, writing code, MCP, and production verification courses.',
-    icon: 'terminal-square',
+    iconKey: 'terminal-square',
     sortWeight: 10,
     tags: ['Claude Code', 'Codex', 'AI Coding', '写代码'],
     palette: ['#0f172a', '#2563eb', '#22d3ee'],
@@ -25,7 +25,7 @@ const categories = [
     code: 'openclaw-agent',
     name: 'OpenClaw 智能体',
     description: 'OpenClaw, OpenClaw 养虾指南, Agent workspace setup, agent capability design, and application delivery courses.',
-    icon: 'bot',
+    iconKey: 'bot',
     sortWeight: 20,
     tags: ['OpenClaw', '智能体', 'Agent', '养虾指南'],
     palette: ['#111827', '#dc2626', '#f59e0b'],
@@ -35,7 +35,7 @@ const categories = [
     code: 'agent-workflow',
     name: '智能体工作流',
     description: 'Dify, Coze, LangGraph, RAG, Function Calling, multi-agent workflow, and AgentOps courses.',
-    icon: 'workflow',
+    iconKey: 'workflow',
     sortWeight: 30,
     tags: ['Dify', 'Coze', 'LangGraph', '智能体'],
     palette: ['#082f49', '#059669', '#a3e635'],
@@ -45,7 +45,7 @@ const categories = [
     code: 'ai-image-creation',
     name: '即梦 AI 图片制作',
     description: '即梦、AI 图片制作、图像控制、局部重绘、角色一致性 and commercial visual asset courses.',
-    icon: 'image',
+    iconKey: 'image',
     sortWeight: 40,
     tags: ['即梦', '图片制作', 'AI Painting'],
     palette: ['#1f2937', '#db2777', '#f97316'],
@@ -55,7 +55,7 @@ const categories = [
     code: 'ai-video-creation',
     name: '即梦 AI 视频制作',
     description: '即梦、可灵、Runway, Pika, AI 视频制作, image-to-video, editing, voiceover, and publishing courses.',
-    icon: 'clapperboard',
+    iconKey: 'clapperboard',
     sortWeight: 50,
     tags: ['即梦', '可灵', 'AI Video', '视频制作'],
     palette: ['#18181b', '#7c3aed', '#06b6d4'],
@@ -65,7 +65,7 @@ const categories = [
     code: 'ai-short-drama',
     name: 'AI 短剧制作',
     description: 'AI 短剧、AI 漫剧、脚本、分镜、角色、配音、剪辑 and release workflow courses.',
-    icon: 'film',
+    iconKey: 'film',
     sortWeight: 60,
     tags: ['短剧', 'AI 漫剧', '分镜', '可灵'],
     palette: ['#111827', '#e11d48', '#facc15'],
@@ -75,7 +75,7 @@ const categories = [
     code: 'ai-productivity',
     name: 'AI 办公与生产力',
     description: 'AI office automation, research, documents, presentations, spreadsheets, and knowledge work courses.',
-    icon: 'briefcase',
+    iconKey: 'briefcase',
     sortWeight: 70,
     tags: ['AI 办公', '知识库', '自动化'],
     palette: ['#0c4a6e', '#0284c7', '#f8fafc'],
@@ -85,7 +85,7 @@ const categories = [
     code: 'ai-marketing-content',
     name: 'AI 内容营销',
     description: 'AI content marketing, social media planning, copywriting, video account operations, and growth courses.',
-    icon: 'megaphone',
+    iconKey: 'megaphone',
     sortWeight: 80,
     tags: ['内容营销', '小红书', '短视频'],
     palette: ['#312e81', '#f43f5e', '#fbbf24'],
@@ -95,7 +95,7 @@ const categories = [
     code: 'ai-design-commerce',
     name: 'AI 设计电商',
     description: 'AI design, product images, e-commerce poster, digital human display, and brand visual courses.',
-    icon: 'palette',
+    iconKey: 'palette',
     sortWeight: 90,
     tags: ['电商图', '海报', '设计'],
     palette: ['#164e63', '#14b8a6', '#f97316'],
@@ -105,7 +105,7 @@ const categories = [
     code: 'ai-data-automation',
     name: 'AI 数据与自动化',
     description: 'AI data analysis, crawler workflow, low-code automation, enterprise assistant, and dashboard courses.',
-    icon: 'database-zap',
+    iconKey: 'database-zap',
     sortWeight: 100,
     tags: ['数据分析', '自动化', 'RPA'],
     palette: ['#1e293b', '#65a30d', '#38bdf8'],
@@ -141,6 +141,25 @@ const instructors = [
     bio: 'Turns AI tools into repeatable business, marketing, and automation workflows.',
   },
 ];
+
+function mediaResource(locator, kind = 'image', title) {
+  return {
+    kind,
+    source: locator.startsWith('data:') ? 'data_url' : 'external_url',
+    url: locator,
+    publicUrl: locator,
+    ...(title ? { title } : {}),
+  };
+}
+
+function providerVideoResource(externalBvid) {
+  return {
+    kind: 'video',
+    source: 'provider_asset',
+    uri: externalBvid,
+    provider: 'bilibili',
+  };
+}
 
 const categoryBvidPools = {
   'ai-coding': [
@@ -534,10 +553,10 @@ for (let index = 0; index < courseCount; index += 1) {
     courseCode,
     title,
     description,
-    thumbnailUrl: `/assets/courses/covers/${category}.svg`,
+    thumbnail: mediaResource(`/assets/courses/covers/${category}.svg`, 'image', category),
     instructor: {
       name: instructor.name,
-      avatar: `/assets/courses/avatars/${instructor.key}.svg`,
+      avatar: mediaResource(`/assets/courses/avatars/${instructor.key}.svg`, 'image', instructor.name),
       title: instructor.title,
       bio: instructor.bio,
     },
@@ -579,7 +598,7 @@ for (let index = 0; index < courseCount; index += 1) {
       lessonNo: 1,
       title: `${track}：课程导学`,
       description: `通过 Bilibili 课程了解 ${title} 的应用场景、工具准备和学习路径。`,
-      videoUrl: '',
+      video: providerVideoResource(externalBvid),
       externalBvid,
       sourceProvider: 'bilibili',
       durationSeconds: 720 + (index % 6) * 60,
@@ -596,7 +615,7 @@ for (let index = 0; index < courseCount; index += 1) {
       lessonNo: 2,
       title: `${track}：关键步骤拆解`,
       description: `继续使用 Bilibili 嵌入视频拆解 ${categoryMeta.tags.slice(0, 3).join('、')} 的核心操作。`,
-      videoUrl: '',
+      video: providerVideoResource(bvidForCategory(category, index, 3)),
       externalBvid: bvidForCategory(category, index, 3),
       sourceProvider: 'bilibili',
       durationSeconds: 900 + (index % 5) * 90,
@@ -613,7 +632,7 @@ for (let index = 0; index < courseCount; index += 1) {
       lessonNo: 3,
       title: `${track}：本地上传实战教程`,
       description: `使用平台本地上传视频复盘 ${title} 的完整实操过程。`,
-      videoUrl: `/uploads/courses/${courseCode}/local-uploaded-tutorial.mp4`,
+      video: mediaResource(`/uploads/courses/${courseCode}/local-uploaded-tutorial.mp4`, 'video'),
       externalBvid: '',
       sourceProvider: 'local',
       durationSeconds: 600 + (index % 4) * 120,
@@ -768,7 +787,7 @@ function writeAssets() {
   for (const category of categories) {
     writeFileSync(
       join(coversDir, `${category.code}.svg`),
-      coverSvg(category.name, category.code, category.palette, category.icon),
+      coverSvg(category.name, category.code, category.palette, category.iconKey),
       'utf8',
     );
   }

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/web-artifacts-builder-anthropic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-web-artifacts-builder-anthropic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-web-artifacts-builder-anthropic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b53d7bb0d4149d483d226292af835ec3e6d04c452cc3686994ecb8b5ef7e306",

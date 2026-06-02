@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/plan2meal@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-plan2meal-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-plan2meal-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:5ff7171389327faaf22e08750765254889347f05b904025f2741e35f8777f4dc",

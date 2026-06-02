@@ -17,6 +17,7 @@ class CommercePaymentProviderAccountItem:
     settlement_currency: str
     status: str
     updated_at: str
+    account_role: Optional[str] = None
     certificate_ref: Optional[str] = None
     note: Optional[str] = None
     rotated_at: Optional[str] = None

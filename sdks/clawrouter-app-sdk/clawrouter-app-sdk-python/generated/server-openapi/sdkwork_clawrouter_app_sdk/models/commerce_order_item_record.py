@@ -14,3 +14,4 @@ class CommerceOrderItemRecord:
     title: str
     total_amount: str
     unit_price_amount: str
+    id: Optional[str] = None

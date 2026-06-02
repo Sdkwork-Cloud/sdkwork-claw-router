@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mysql-slow-query-analyzer@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mysql-slow-query-analyzer-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mysql-slow-query-analyzer-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6607174dfcbe7fd70789fb97e3abfa828ee0f883ae6262ea4c2e79eb09c8e2a9",

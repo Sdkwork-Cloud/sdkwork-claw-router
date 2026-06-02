@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-scorecard@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-scorecard-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-scorecard-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:5e3e796bebd954b159743d0c34ea0e64366a85437aec73a78a2bf96e58ed67f4",

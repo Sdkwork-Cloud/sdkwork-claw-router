@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zephyr-squad-legacy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-zephyr-squad-legacy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zephyr-squad-legacy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1553e5ad235fadd95490231337b20bf5031431c8541025c83f63fd413752526d",

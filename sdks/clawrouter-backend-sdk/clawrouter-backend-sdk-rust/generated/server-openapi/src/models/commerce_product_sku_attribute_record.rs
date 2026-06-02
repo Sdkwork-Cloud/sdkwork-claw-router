@@ -17,6 +17,10 @@ pub struct CommerceProductSkuAttributeRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub custom_value: Option<String>,
 
+    /// Id field on commerce product sku attribute record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Organization id field on commerce product sku attribute record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,

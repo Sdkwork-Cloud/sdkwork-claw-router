@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/session-cost@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-session-cost-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-session-cost-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:78053ea79c7b1e198e97d00801fd1313f2ca24193e1956bdf7d595cdeb3d60bb",

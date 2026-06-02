@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nag@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-nag-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nag-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:f9fb3ff7830656f986777b49fa9adc5566d43cfaf1f35a246a406f51c87e6e46",

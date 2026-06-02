@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/neondb-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-neondb-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-neondb-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9f3043fe47306f3b3db0a5dddebbbf21a9273ff5a22d8162c280e16c9c4fb871",

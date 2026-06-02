@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/divination@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-divination-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-divination-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4380272244204ba3f619d3468ba5fe3bba347b25b40210ca80e825ba34e2443f",

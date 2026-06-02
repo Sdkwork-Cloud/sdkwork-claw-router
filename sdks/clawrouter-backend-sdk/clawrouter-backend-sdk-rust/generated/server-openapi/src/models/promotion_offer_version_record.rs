@@ -27,6 +27,9 @@ pub struct PromotionOfferVersionRecord {
     /// Currency code field on promotion offer version record.
     pub currency_code: String,
 
+    /// Customer visible field on promotion offer version record.
+    pub customer_visible: bool,
+
     /// Discount amount minor field on promotion offer version record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub discount_amount_minor: Option<String>,
@@ -45,6 +48,10 @@ pub struct PromotionOfferVersionRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub fixed_price_minor: Option<String>,
 
+    /// Id field on promotion offer version record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Liability policy field on promotion offer version record.
     pub liability_policy: String,
 
@@ -54,6 +61,9 @@ pub struct PromotionOfferVersionRecord {
     /// Maximum discount amount minor field on promotion offer version record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub maximum_discount_amount_minor: Option<String>,
+
+    /// Minimum order amount minor field on promotion offer version record.
+    pub minimum_order_amount_minor: String,
 
     /// Offer id field on promotion offer version record.
     pub offer_id: String,

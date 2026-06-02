@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ionsec-threat-intel@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ionsec-threat-intel-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ionsec-threat-intel-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ac342cee7af18ad21c307af6f005a8a7f4a15a8e6554ab2778e1cc74a17176bf",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/filechat-rag@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-filechat-rag-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-filechat-rag-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ae5408a6c6790e99b6ca1ac64f7595377be81b0c176c051105399a89526375ec",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lore@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lore-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lore-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d1d1d759d20ea823e1d32f3bcbb276684e954bb7f7760e28fa99364f48b5f975",

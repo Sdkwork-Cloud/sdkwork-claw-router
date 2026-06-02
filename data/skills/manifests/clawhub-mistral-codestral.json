@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mistral-codestral@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-mistral-codestral-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mistral-codestral-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a3f73ef7947bb7d753db0b69db4ebb5c575993ca4068dcfdb190f58b7191c905",

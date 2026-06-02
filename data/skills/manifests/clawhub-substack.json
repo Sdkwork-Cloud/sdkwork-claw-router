@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/substack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-substack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-substack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a976b8cf2278450abbeb5c46588276b620c3a79d8de3fb895b257e1faf0444d8",

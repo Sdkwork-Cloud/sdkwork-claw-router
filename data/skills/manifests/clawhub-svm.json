@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/svm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-svm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-svm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da56dab365d5abcba9c63ac462f41ec60a1942ab4ad580644fa7741e1b196cec",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-summarize-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-summarize-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-summarize-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:84a0f73bf46d7860a05077eed1e18301271ea1b12cb4447b5d11fee4aae3b66c",

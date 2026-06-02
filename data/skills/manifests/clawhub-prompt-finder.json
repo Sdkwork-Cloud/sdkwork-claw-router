@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-finder@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-finder-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-finder-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3f5e66a50c5bead6107b2e4c2ab1d5eccbb97de67f2258df98b1759dd79dcc60",

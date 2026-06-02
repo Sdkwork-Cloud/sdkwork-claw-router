@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/investor-reading-list@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-investor-reading-list-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-investor-reading-list-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:610f37552f52e8e1a4639978fc5362a3c44031bc6cde98338095fbdbba3629c7",

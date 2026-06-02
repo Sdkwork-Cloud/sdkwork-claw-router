@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-analysis-skill@0.1.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-analysis-skill-0.1.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-analysis-skill-0.1.6.json"
+      },
       "version": "0.1.6",
       "runtime": "metadata",
       "checksumHash": "sha256:75e32b47659362a70ba12b4539fba9d9da936ea0c3e5326088048f5dd3ef5cb1",

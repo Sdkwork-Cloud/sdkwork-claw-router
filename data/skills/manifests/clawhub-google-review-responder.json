@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-review-responder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-review-responder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-review-responder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42a8ada8328d858e41b700fea0a20216fd1e171722b058c45d0048e4e847f3b2",

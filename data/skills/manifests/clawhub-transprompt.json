@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/transprompt@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-transprompt-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-transprompt-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b995c9b32235f1b6643ff0967091c70083cfb749ec4ece203727211a3cd44b48",

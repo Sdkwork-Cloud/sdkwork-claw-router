@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/liveagent@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-liveagent-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-liveagent-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5985e7ec9f281adc2393e9b255aecd76581bf77c9f8ec1765da555d0fef74435",

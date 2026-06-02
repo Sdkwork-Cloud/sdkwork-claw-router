@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/awiki-agent-did-message@1.3.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-awiki-agent-did-message-1.3.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-awiki-agent-did-message-1.3.10.json"
+      },
       "version": "1.3.10",
       "runtime": "metadata",
       "checksumHash": "sha256:1cc0ff75c7984794fbd664c901532ec486b194467e242971b7f088f1392e5b45",

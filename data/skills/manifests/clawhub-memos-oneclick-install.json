@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memos-oneclick-install@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memos-oneclick-install-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memos-oneclick-install-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d9ce1f2e3931fa878794368b492de5a85344ee9575f962963ca99037c190c78b",

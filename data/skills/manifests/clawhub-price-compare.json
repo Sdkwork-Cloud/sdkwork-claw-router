@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/price-compare@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-price-compare-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-price-compare-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:33805e7e407ee3e04cc3dd63544d0fdad4127cb040be862a1c89c0689a69e471",

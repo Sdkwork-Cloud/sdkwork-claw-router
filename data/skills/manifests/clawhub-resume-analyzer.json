@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:698491683a84b8bb91817718a7b4eb71391f40d51b150904e64a50455b91a891",

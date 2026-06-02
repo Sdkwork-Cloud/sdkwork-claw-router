@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/poe-connector@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-poe-connector-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-poe-connector-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a263ec7e55560b281cbdf236ad87c22d37342ddee3e4c3d49f8a8f120b77554c",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hoka@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hoka-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hoka-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:51664ceaf03f9964b75160ffd7cdba8daa988ef2f326bdf79c675438d4d13c7c",

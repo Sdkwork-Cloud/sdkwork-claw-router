@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/missive@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-missive-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-missive-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:db685b7291de2a65322fcf75566d5c8e1febd0d8a0ead213175cc5681bc2c27e",

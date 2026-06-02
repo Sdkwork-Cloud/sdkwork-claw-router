@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sshexec@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sshexec-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sshexec-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6ec8da26e3463471888b0983909ec9f744dd3393abdab205e0d08dc75927ad35",

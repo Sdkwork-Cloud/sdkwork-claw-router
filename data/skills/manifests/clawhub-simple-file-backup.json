@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/simple-file-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-simple-file-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-simple-file-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:312d2fa151cc75df3c8a5728c9fafb4a340a500698fb7653ebfb4ae0c8520851",

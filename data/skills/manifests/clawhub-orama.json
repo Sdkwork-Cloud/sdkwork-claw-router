@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/orama@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-orama-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-orama-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ccab9cfbb4f324a8a85b224654c94c0e099562abc850a071b3ad86dddc5cf983",

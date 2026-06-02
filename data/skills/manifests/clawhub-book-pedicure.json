@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-pedicure@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-pedicure-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-pedicure-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:eb57c5864086c9ee09fdea8f0149b3345cdb95c1edeb39b4a8c5180e9ff49663",

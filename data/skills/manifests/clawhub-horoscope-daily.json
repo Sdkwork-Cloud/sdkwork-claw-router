@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/horoscope-daily@2.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-horoscope-daily-2.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-horoscope-daily-2.3.0.json"
+      },
       "version": "2.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f72dc59421c01211ea57127165a51ab0fc0c25136b64870931b45af8f345d3a",

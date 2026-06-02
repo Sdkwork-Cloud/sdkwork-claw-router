@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/imap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-imap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-imap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e8354bb185b0eded4728b6930d5dcf7b5611e153548372eae3ea244cfaa96dfe",

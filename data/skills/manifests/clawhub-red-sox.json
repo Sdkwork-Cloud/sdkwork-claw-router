@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/red-sox@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-red-sox-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-red-sox-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3169f1770384978a732461b50839c68a07027d0933e03c7ab2c61ce703ba799a",

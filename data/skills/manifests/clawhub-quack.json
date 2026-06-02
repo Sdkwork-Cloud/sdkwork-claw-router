@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f867eb691dac54641c274918f1ea801358a80984da99a981f4ef5f91a4330ee",

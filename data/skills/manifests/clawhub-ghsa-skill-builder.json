@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ghsa-skill-builder@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ghsa-skill-builder-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ghsa-skill-builder-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:751fe00c9c3da8517d68cb60ebfa58810e84ee16ff66ffe7a32b226039a50236",

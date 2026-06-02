@@ -3,6 +3,9 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.Map;
 
 public class MessagingSenderIdentityRecord {
+    private Map<String, String> approvalPayload;
+    private String approvalStatus;
+    private String channel;
     private String countryCode;
     private String createdAt;
     private String dataScope;
@@ -13,8 +16,11 @@ public class MessagingSenderIdentityRecord {
     private String fromEmail;
     private String fromName;
     private String id;
+    private String identityCode;
     private Map<String, String> metadata;
     private String organizationId;
+    private String providerAccountId;
+    private String providerCode;
     private String rejectionReason;
     private String replyTo;
     private String senderId;
@@ -25,6 +31,30 @@ public class MessagingSenderIdentityRecord {
     private String uuid;
     private String verifiedAt;
     private String version;
+
+    public Map<String, String> getApprovalPayload() {
+        return this.approvalPayload;
+    }
+
+    public void setApprovalPayload(Map<String, String> approvalPayload) {
+        this.approvalPayload = approvalPayload;
+    }
+
+    public String getApprovalStatus() {
+        return this.approvalStatus;
+    }
+
+    public void setApprovalStatus(String approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
 
     public String getCountryCode() {
         return this.countryCode;
@@ -106,6 +136,14 @@ public class MessagingSenderIdentityRecord {
         this.id = id;
     }
 
+    public String getIdentityCode() {
+        return this.identityCode;
+    }
+
+    public void setIdentityCode(String identityCode) {
+        this.identityCode = identityCode;
+    }
+
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
@@ -120,6 +158,22 @@ public class MessagingSenderIdentityRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getProviderAccountId() {
+        return this.providerAccountId;
+    }
+
+    public void setProviderAccountId(String providerAccountId) {
+        this.providerAccountId = providerAccountId;
+    }
+
+    public String getProviderCode() {
+        return this.providerCode;
+    }
+
+    public void setProviderCode(String providerCode) {
+        this.providerCode = providerCode;
     }
 
     public String getRejectionReason() {

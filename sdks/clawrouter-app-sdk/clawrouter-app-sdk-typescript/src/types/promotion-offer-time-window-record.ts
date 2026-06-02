@@ -4,6 +4,8 @@ export interface PromotionOfferTimeWindowRecord {
   created_at: string;
   /** Ends at field on promotion offer time window record. */
   ends_at?: string;
+  /** Id field on promotion offer time window record. */
+  id?: string;
   /** Local end time field on promotion offer time window record. */
   local_end_time?: string;
   /** Local start time field on promotion offer time window record. */

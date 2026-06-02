@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jina-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jina-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jina-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:049350ce55765015791d9aafbde1922652129f46881fb018bd23dd6918549421",

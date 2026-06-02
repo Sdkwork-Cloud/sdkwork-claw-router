@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-hosted-ai@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-hosted-ai-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-hosted-ai-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2c1e525060f3d1cf6c5ecf68d30272fce3369bf9a2b9b3e48ab08faa052f2899",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ms-voice-tts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ms-voice-tts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ms-voice-tts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d356a627c02d6fb722d5cef939b90c1791ac275a5eb9e75760591d429fffd3eb",

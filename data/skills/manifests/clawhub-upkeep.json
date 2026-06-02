@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/upkeep@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-upkeep-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-upkeep-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ae8711fbcda1592006f044120a1118f056b4dd79c48e04bd0de57bbb41913aa6",

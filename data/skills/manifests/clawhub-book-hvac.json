@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-hvac@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-hvac-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-hvac-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:73ce61e7346210ddc522d6c200513d09119fc988a221a0eb7b77299b9ed51d39",

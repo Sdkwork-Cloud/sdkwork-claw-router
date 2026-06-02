@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-deliverability@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-deliverability-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-deliverability-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:84b688b04107cf5a7a32e26cad3370990f59d102df0568ef4c2144ebb395e358",

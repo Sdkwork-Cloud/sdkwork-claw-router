@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cron-copilot-ops@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cron-copilot-ops-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cron-copilot-ops-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1365df57636cb2775fb9eb801d55de30281690baaac89979c92f430cc19d7e4e",

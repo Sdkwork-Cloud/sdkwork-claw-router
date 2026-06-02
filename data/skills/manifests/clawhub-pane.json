@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pane@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-pane-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pane-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6f29771cfb019840d954fc305de60aba6397ea4ebfb23505d1ea037aa512878e",

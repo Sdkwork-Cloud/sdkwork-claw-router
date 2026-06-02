@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-prompt-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-prompt-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-prompt-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8cae156b1220b20c7b58987c0dcc9edf980cdf7958a570f17de05527472dea8",

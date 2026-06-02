@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mjolnir-brain@3.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-mjolnir-brain-3.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mjolnir-brain-3.0.2.json"
+      },
       "version": "3.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0bac2b50fdb2a425eb1ce856cb5c80b35f54b0ce0d459b8043085fee014505e7",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-package-manager-installer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-package-manager-installer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-package-manager-installer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7f6131adb4b2cbbec9f336d98df920b7d05a49fc270f2a4749f57feebbd5b32",

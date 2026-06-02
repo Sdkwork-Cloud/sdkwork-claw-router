@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/discord@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-discord-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-discord-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5ff95df5acffb63e20a71e28b9b6a6c8321d823dc5db203d2ff153e5680e09bb",

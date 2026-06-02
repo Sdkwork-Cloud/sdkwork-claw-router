@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bazhuayu-webhook@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-bazhuayu-webhook-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bazhuayu-webhook-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:b211daa44e551936876d7897c9df4b16e3168a3b0ae292850bc534f901ed0bd2",

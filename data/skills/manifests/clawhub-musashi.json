@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/musashi@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-musashi-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-musashi-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7690b1972b4f1d5d25c1fbe62e57ae50126289eee795c8dfd2ee440aea96f0cd",

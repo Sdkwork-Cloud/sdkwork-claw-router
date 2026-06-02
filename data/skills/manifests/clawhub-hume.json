@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hume@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-hume-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hume-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:62600a1b6c599adc6a1bdc476d3314068da310affb4b6e5d9b50c4699173596b",

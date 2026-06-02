@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sayba@2.33.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sayba-2.33.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sayba-2.33.0.json"
+      },
       "version": "2.33.0",
       "runtime": "metadata",
       "checksumHash": "sha256:33cf2ac2d0146c247c694c9d96954674473346906c640ac8d601268a1cb0eb78",

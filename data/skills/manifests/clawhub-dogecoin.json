@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dogecoin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dogecoin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dogecoin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f50145a74f04a963739ef786bee30a309aaec9a48ffbbf75ffdc60f65e1b64b5",

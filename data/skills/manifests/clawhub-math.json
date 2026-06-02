@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/math@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-math-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-math-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:135471da86ccb73e1f0f9df37f7628390226a482e3cd2a74578c58d50550c1f8",

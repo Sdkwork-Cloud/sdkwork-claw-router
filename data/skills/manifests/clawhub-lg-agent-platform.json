@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lg-agent-platform@1.0.11",
-      "artifactUrl": "data/skills/artifacts/clawhub-lg-agent-platform-1.0.11.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lg-agent-platform-1.0.11.json"
+      },
       "version": "1.0.11",
       "runtime": "metadata",
       "checksumHash": "sha256:7e41370a1f88bb666dd73956bb034334ffcb17860ac2296234c6712043ce7bc6",

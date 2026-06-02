@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-memory-optimizer@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-memory-optimizer-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-memory-optimizer-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ac14ef684a8da54b8454248e02063e82e60349a09941f805c0c757e163e2830",

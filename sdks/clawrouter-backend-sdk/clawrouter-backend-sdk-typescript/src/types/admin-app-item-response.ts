@@ -1,5 +1,6 @@
 import type { AdminAppConfig } from './admin-app-config';
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Offline PlusApp snapshot returned by the backend. */
 export interface AdminAppItemResponse {
@@ -9,6 +10,8 @@ export interface AdminAppItemResponse {
   appKey?: string | null;
   /** App type field on admin app item response. */
   appType?: string | null;
+  /** Artifact field on admin app item response. */
+  artifact?: MediaResource;
   /** Bundle id field on admin app item response. */
   bundleId?: string | null;
   /** Config field on admin app item response. */
@@ -17,12 +20,8 @@ export interface AdminAppItemResponse {
   createdAt: string;
   /** Description field on admin app item response. */
   description?: string | null;
-  /** Download url field on admin app item response. */
-  downloadUrl?: string | null;
   /** Icon field on admin app item response. */
-  icon: Record<string, JsonValue>;
-  /** Icon url field on admin app item response. */
-  iconUrl?: string | null;
+  icon: MediaResource;
   /** Id field on admin app item response. */
   id: string;
   /** Install config field on admin app item response. */

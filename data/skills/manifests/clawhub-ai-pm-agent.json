@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-pm-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-pm-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-pm-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:40c55141e47d2c1fedd1454387fce24ac5eb443a799735124c7cf05f698029b4",

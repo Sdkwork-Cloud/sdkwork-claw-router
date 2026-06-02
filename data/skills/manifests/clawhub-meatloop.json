@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meatloop@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meatloop-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meatloop-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:27420c1cbbf01d39a9ff662b516cf85e75acb70220f2295ef73513896d8b42e3",

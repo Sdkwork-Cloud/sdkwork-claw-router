@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/companion-checkin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-companion-checkin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-companion-checkin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:546c86d4a3d7c04ce3cf366762f609817c49bd27c9e00bdf8f17130d761327eb",

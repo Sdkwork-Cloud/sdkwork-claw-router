@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/idiom-dictionary@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-idiom-dictionary-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-idiom-dictionary-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:382dd0305d11553adbc21edd6ca62be63cebe282d7ad7d08416554434e2776d4",

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{ForumAuthor};
+use crate::models::{ForumAuthor, MediaResource};
 
 /// Forum feed item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -23,9 +23,8 @@ pub struct ForumFeedItem {
     #[serde(rename = "contentType")]
     pub content_type: String,
 
-    /// Cover image field on forum feed item.
-    #[serde(rename = "coverImage")]
-    pub cover_image: String,
+    /// Cover field on forum feed item.
+    pub cover: MediaResource,
 
     /// Created at field on forum feed item.
     #[serde(rename = "createdAt")]

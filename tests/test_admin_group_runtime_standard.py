@@ -20,14 +20,19 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
             "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts#updateGroup"
         ]
 
-        self.assertEqual("AdminAccessGroupCreateRequest", add_group["request_schema"]["name"])
-        self.assertEqual(["name"], add_group["request_schema"]["schema"]["required"])
-        self.assertEqual("AdminAccessGroupMutationResponse", add_group["response_schema"]["name"])
+        self.assertEqual("/backend/v3/api/ai/channel_groups", add_group["api_path"])
+        self.assertEqual("AdminChannelGroupCreateRequest", add_group["request_schema"]["name"])
+        self.assertEqual(
+            ["groupName", "groupCode", "priceReferenceMode", "groupType", "status"],
+            add_group["request_schema"]["schema"]["required"],
+        )
+        self.assertEqual("AdminChannelGroupMutationResponse", add_group["response_schema"]["name"])
         self.assertEqual(["item"], add_group["response_schema"]["schema"]["required"])
 
-        self.assertEqual("AdminAccessGroupUpdateRequest", update_group["request_schema"]["name"])
+        self.assertEqual("/backend/v3/api/ai/channel_groups/{channelGroupId}", update_group["api_path"])
+        self.assertEqual("AdminChannelGroupUpdateRequest", update_group["request_schema"]["name"])
         self.assertEqual([], update_group["request_schema"]["schema"]["required"])
-        self.assertEqual("AdminAccessGroupMutationResponse", update_group["response_schema"]["name"])
+        self.assertEqual("AdminChannelGroupMutationResponse", update_group["response_schema"]["name"])
         self.assertEqual(["item"], update_group["response_schema"]["schema"]["required"])
 
     def test_admin_group_frontend_and_backend_sdk_do_not_use_generic_write_payloads(self) -> None:
@@ -40,45 +45,67 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "groupService.ts"
         ).read_text(encoding="utf-8")
-        iam_api = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "iam.ts"
+        ai_api = (
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "ai.ts"
         ).read_text(encoding="utf-8")
         type_exports = (
             ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("AdminAccessGroupCreateRequest", service)
-        self.assertIn("AdminAccessGroupUpdateRequest", service)
+        self.assertIn("static async fetchGroups(): Promise<GroupData[]>", service)
+        self.assertIn("static async addGroup(group: GroupCreateInput): Promise<GroupData>", service)
+        self.assertIn("static async updateGroup(id: string, updates: GroupUpdateInput): Promise<GroupData>", service)
         self.assertIn("toCreateGroupRequest", service)
         self.assertIn("toUpdateGroupRequest", service)
-        self.assertNotIn("as unknown as Record<string, unknown>", service)
-        self.assertNotIn("updates as Record<string, unknown>", service)
-
-        self.assertIn("AdminAccessGroupCreateRequest", iam_api)
-        self.assertIn("AdminAccessGroupUpdateRequest", iam_api)
-        self.assertIn("AccessGroupsCreateResult", iam_api)
-        self.assertIn("AccessGroupsUpdateResult", iam_api)
+        self.assertIn("getClawRouterBackendSdkClient().ai.channelGroups.list()", service)
+        self.assertIn("getClawRouterBackendSdkClient().ai.channelGroups.create(", service)
+        self.assertIn("getClawRouterBackendSdkClient().ai.channelGroups.update(", service)
+        self.assertIn("getClawRouterBackendSdkClient().ai.channelGroups.delete(", service)
         self.assertIn(
-            "async create(body: AdminAccessGroupCreateRequest): Promise<AccessGroupsCreateResult>",
-            iam_api,
+            "getClawRouterBackendSdkClient().ai.channelGroups.channelBindings.list(",
+            service,
         )
         self.assertIn(
-            "async update(groupId: string, body: AdminAccessGroupUpdateRequest): Promise<AccessGroupsUpdateResult>",
-            iam_api,
+            "getClawRouterBackendSdkClient().ai.channelGroups.channelBindings.update(",
+            service,
         )
-        self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
-        self.assertNotIn(
-            "async update(groupId: string | number, body?: OperationRequest): Promise<PlusApiResult>",
-            iam_api,
-        )
-        self.assertNotIn("async update(groupId: string | number", iam_api)
-        self.assertNotIn("headers?: Record<string, string>", iam_api)
+        self.assertNotIn(".http.request<", service)
+        self.assertNotIn("BACKEND_API_PREFIX", service)
+        self.assertNotIn("AI_CHANNEL_GROUPS_PATH", service)
+        self.assertNotIn("type BackendChannelGroupCreateRequest", service)
+        self.assertNotIn("type BackendChannelGroupUpdateRequest", service)
 
-        self.assertIn("export type { AdminAccessGroupCreateRequest }", type_exports)
-        self.assertIn("export type { AdminAccessGroupUpdateRequest }", type_exports)
-        self.assertIn("export type { AdminAccessGroupMutationResponse }", type_exports)
-        self.assertIn("export type { AccessGroupsCreateResult }", type_exports)
-        self.assertIn("export type { AccessGroupsUpdateResult }", type_exports)
+        self.assertIn("AdminChannelGroupCreateRequest", ai_api)
+        self.assertIn("AdminChannelGroupUpdateRequest", ai_api)
+        self.assertIn("ChannelGroupsCreateResult", ai_api)
+        self.assertIn("ChannelGroupsUpdateResult", ai_api)
+        self.assertIn("ChannelGroupsDeleteResult", ai_api)
+        self.assertIn("ChannelGroupsChannelBindingsListResult", ai_api)
+        self.assertIn("ChannelGroupsChannelBindingsUpdateResult", ai_api)
+        self.assertIn(
+            "async create(body: AdminChannelGroupCreateRequest): Promise<ChannelGroupsCreateResult>",
+            ai_api,
+        )
+        self.assertIn(
+            "async update(channelGroupId: string, body: AdminChannelGroupUpdateRequest): Promise<ChannelGroupsUpdateResult>",
+            ai_api,
+        )
+        self.assertIn(
+            "async delete(channelGroupId: string): Promise<ChannelGroupsDeleteResult>",
+            ai_api,
+        )
+        self.assertIn("public readonly channelGroups: AiChannelGroupsApi;", ai_api)
+        self.assertNotIn("access" + "Groups", ai_api)
+        self.assertNotIn("Admin" + "Access" + "Group", ai_api)
+        self.assertNotIn("router/channel_groups", ai_api)
+        self.assertNotIn("headers?: Record<string, string>", ai_api)
+
+        self.assertIn("export type { AdminChannelGroupCreateRequest }", type_exports)
+        self.assertIn("export type { AdminChannelGroupUpdateRequest }", type_exports)
+        self.assertIn("export type { AdminChannelGroupMutationResponse }", type_exports)
+        self.assertIn("export type { ChannelGroupsCreateResult }", type_exports)
+        self.assertIn("export type { ChannelGroupsUpdateResult }", type_exports)
+        self.assertIn("export type { ChannelGroupsDeleteResult }", type_exports)
 
     def test_admin_group_channel_binding_drawer_lists_only_current_group_bindings(self) -> None:
         view = (
@@ -167,6 +194,8 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         self.assertIn("function toCreateGroupRequest(group: GroupCreateInput)", service)
         self.assertIn("function toUpdateGroupRequest(updates: GroupUpdateInput)", service)
         self.assertNotIn("Partial<GroupData", service)
+        self.assertNotIn("platform:", service)
+        self.assertNotIn("billingType", service)
         self.assertIn("createGroupInputFromForm", view)
         self.assertIn("GroupService.addGroup(createGroupInputFromForm(formData))", view)
         self.assertNotIn("Date.now()", view)
@@ -178,10 +207,10 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("Math.random()", form)
         self.assertIn("admin-group-runtime.test.ts", verifier)
 
-    def test_admin_group_read_model_fails_closed_for_billing_type_group_type_and_status(self) -> None:
+    def test_admin_group_read_model_uses_canonical_public_fields_without_public_billing_type(self) -> None:
         store_paths = [
-            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_access_group_store.rs",
-            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_access_group_store.rs",
+            "services/sdkwork-claw-product/src/infrastructure/sql/sqlite/admin_channel_group_store.rs",
+            "services/sdkwork-claw-product/src/infrastructure/sql/postgres/admin_channel_group_store.rs",
         ]
 
         for relative_path in store_paths:
@@ -189,38 +218,36 @@ class AdminGroupRuntimeStandardTest(unittest.TestCase):
             compact_store = " ".join(store.split())
             with self.subTest(store=relative_path):
                 self.assertIn(
-                    'billing_type: billing_type_label(required_integer_cell( &row, "billing_type", "billing_type", )?)?',
+                    'group_code: row.try_get("group_code").map_err(row_error)?',
                     compact_store,
                 )
                 self.assertIn(
-                    'group_type: group_type_label(required_integer_cell(&row, "group_type", "group_type")?)?',
+                    'group_name: row.try_get("group_name").map_err(row_error)?',
                     compact_store,
                 )
                 self.assertIn(
-                    'status: status_label(required_integer_cell(&row, "status", "status")?)?',
+                    'provider_code: row.try_get("provider_code").map_err(row_error)?',
                     compact_store,
                 )
                 self.assertIn(
-                    "fn billing_type_label(value: i64) -> DomainResult<String>",
+                    'price_reference_mode: price_reference_mode_label(required_integer_cell(',
                     compact_store,
                 )
                 self.assertIn(
-                    "fn group_type_label(value: i64) -> DomainResult<String>",
+                    "fn group_type_cell",
                     compact_store,
                 )
                 self.assertIn(
                     "fn status_label(value: i64) -> DomainResult<String>",
                     compact_store,
                 )
-                self.assertIn("missing admin access group billing_type from database row", store)
-                self.assertIn("missing admin access group group_type from database row", store)
-                self.assertIn("missing admin access group status from database row", store)
-                self.assertIn("invalid admin access group billing_type from database row", store)
-                self.assertIn("invalid admin access group group_type from database row", store)
-                self.assertIn("invalid admin access group status from database row", store)
-                self.assertNotIn('billing_type_label(optional_integer_cell(&row, "billing_type"))', store)
-                self.assertNotIn('group_type_label(optional_integer_cell(&row, "group_type"))', store)
-                self.assertNotIn('status_label(optional_integer_cell(&row, "status"))', store)
+                self.assertIn("missing admin channel group price_reference_mode from database row", store)
+                self.assertIn("missing admin channel group group_type from database row", store)
+                self.assertIn("missing admin channel group status from database row", store)
+                self.assertIn("invalid admin channel group price_reference_mode from database row", store)
+                self.assertIn("invalid admin channel group group_type from database row", store)
+                self.assertNotIn("billingType", store)
+                self.assertNotIn("platform:", store)
 
 
 if __name__ == "__main__":

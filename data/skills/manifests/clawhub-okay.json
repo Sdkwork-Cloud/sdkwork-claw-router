@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/okay@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-okay-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-okay-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e5aa23609836fe7a7dae52c569558e02fb0de3c69fd00d11a62619b73453e8e2",

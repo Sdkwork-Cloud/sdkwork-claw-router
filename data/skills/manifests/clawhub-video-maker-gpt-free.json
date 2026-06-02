@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-maker-gpt-free@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-maker-gpt-free-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-maker-gpt-free-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f2d37a25dd70fa46ad2944d662d931a828ae137976790e244039a199ee7171c2",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taskflow3@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-taskflow3-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taskflow3-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f93c3e753c71a87b1a01ad20d71bd8ef40bbc389167090c0a352f3f0de21ba34",

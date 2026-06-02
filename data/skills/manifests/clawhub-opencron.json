@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opencron@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-opencron-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opencron-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:753384ddac4cb0df7b046ad42565a97a9f6530a80ae52aa153296c366f62544b",

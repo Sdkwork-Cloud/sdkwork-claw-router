@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/furniture@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-furniture-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-furniture-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d8d6e076032a0527e776ae9eef7b252d3832ad87df779ef7526fee9cbe28f47e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adb@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-adb-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adb-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4777655e0e363998df604ea70bb400a41109410cbb3ff1368a4b87ba14ebb6d8",

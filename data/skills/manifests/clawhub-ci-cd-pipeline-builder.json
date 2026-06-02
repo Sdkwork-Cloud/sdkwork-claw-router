@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ci-cd-pipeline-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ci-cd-pipeline-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ci-cd-pipeline-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a32627ad9522c6a3248ba64157f952f0cbd8a70fa2c68a76b0b6d6f6af4ca9a",

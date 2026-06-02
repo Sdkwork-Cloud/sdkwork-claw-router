@@ -4,6 +4,7 @@ package types
 type CommerceIdempotencyKeyRecord struct {
 	CreatedAt string `json:"created_at"`
 	ExpiresAt string `json:"expires_at"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	LockedUntil string `json:"locked_until"`
 	OrganizationId string `json:"organization_id"`

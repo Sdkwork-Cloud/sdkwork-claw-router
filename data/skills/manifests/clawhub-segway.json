@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/segway@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-segway-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-segway-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1dd54131e64a0b4deb3cdf35472a495923da705439bf53fddd535a66f8f64c14",

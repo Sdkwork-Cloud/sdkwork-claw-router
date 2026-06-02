@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-reflect-engine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-reflect-engine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-reflect-engine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e33d590238d5cff94209b6a87a180bb9d295612e15ef2244f3c8a14fec933a7e",

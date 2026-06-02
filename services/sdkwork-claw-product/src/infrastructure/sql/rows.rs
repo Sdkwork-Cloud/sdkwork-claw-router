@@ -1,11 +1,10 @@
 use crate::domain::{
-    provider_native_model_id, AiModel, AiModelPublicMetadata, ApiKeyGroup,
-    ApiKeyGroupMetricSnapshot, BillingMeter, DecimalValue, DomainError, DomainResult,
-    GatewayAccessPolicy, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendor,
-    ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderAuthProfile,
-    ProviderChannelGroupBinding, ProviderChannelRoute, ProviderRetryPolicy, QuotaPolicy,
-    RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope,
-    RoutingRule,
+    provider_native_model_id, AiModel, AiModelPublicMetadata, BillingMeter, ChannelGroup,
+    ChannelGroupMetricSnapshot, DecimalValue, DomainError, DomainResult, GatewayAccessPolicy,
+    GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money,
+    PriceSide, PricingPlan, ProviderAuthProfile, ProviderChannelGroupBinding, ProviderChannelRoute,
+    ProviderRetryPolicy, QuotaPolicy, RouteCandidate, RoutingCapability, RoutingFallbackMode,
+    RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 
 pub struct ModelVendorRow {
@@ -405,7 +404,7 @@ impl GatewayApiKeyRow {
     }
 }
 
-pub struct ApiKeyGroupRow {
+pub struct ChannelGroupRow {
     pub id: i64,
     pub tenant_id: i64,
     pub organization_id: i64,
@@ -449,7 +448,7 @@ impl QuotaPolicyRow {
     }
 }
 
-pub struct ApiKeyGroupMetricSnapshotRow {
+pub struct ChannelGroupMetricSnapshotRow {
     pub group_id: i64,
     pub capacity_used: Option<String>,
     pub capacity_limit: Option<String>,
@@ -457,9 +456,9 @@ pub struct ApiKeyGroupMetricSnapshotRow {
     pub snapshot_at: Option<String>,
 }
 
-impl ApiKeyGroupMetricSnapshotRow {
-    pub fn try_into_domain(self) -> DomainResult<ApiKeyGroupMetricSnapshot> {
-        Ok(ApiKeyGroupMetricSnapshot {
+impl ChannelGroupMetricSnapshotRow {
+    pub fn try_into_domain(self) -> DomainResult<ChannelGroupMetricSnapshot> {
+        Ok(ChannelGroupMetricSnapshot {
             group_id: self.group_id,
             capacity_used: parse_optional_decimal(self.capacity_used)?,
             capacity_limit: parse_optional_decimal(self.capacity_limit)?,
@@ -469,9 +468,9 @@ impl ApiKeyGroupMetricSnapshotRow {
     }
 }
 
-impl ApiKeyGroupRow {
-    pub fn try_into_domain(self) -> DomainResult<ApiKeyGroup> {
-        Ok(ApiKeyGroup {
+impl ChannelGroupRow {
+    pub fn try_into_domain(self) -> DomainResult<ChannelGroup> {
+        Ok(ChannelGroup {
             id: self.id,
             tenant_id: self.tenant_id,
             organization_id: self.organization_id,

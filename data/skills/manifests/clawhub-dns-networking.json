@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dns-networking@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dns-networking-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dns-networking-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:39c8faf29b3c2a5573637cc2696b0cd6b4973c857daf3925f2949838c1130c29",

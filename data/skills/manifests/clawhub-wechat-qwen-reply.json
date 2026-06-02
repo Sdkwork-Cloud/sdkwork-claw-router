@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-qwen-reply@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-qwen-reply-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-qwen-reply-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:14737ba591a34d48e5547694e7a36ffaa15b851b9a02d8cffbb5a7b8d32b5602",

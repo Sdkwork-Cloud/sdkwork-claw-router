@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/todo-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-todo-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-todo-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f31ab608aa7b21221f6ffeec124806b18cebb64fee35a68bf01801dab7d1d78",

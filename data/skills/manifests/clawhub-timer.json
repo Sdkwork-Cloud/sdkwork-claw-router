@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/timer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-timer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-timer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3e444dbba687a0d41a192a3a21a136a937f4e1286e92ec1aadefc5b34c2384a1",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generate-drama@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-generate-drama-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generate-drama-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5731edc70d328cf68d860a592707502237f522c533f2482f9fe0e611050f01e8",

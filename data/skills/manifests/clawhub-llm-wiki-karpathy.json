@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-wiki-karpathy@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-wiki-karpathy-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-wiki-karpathy-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:14a1088d42aec4c4b26dda53e39a02ba0edbb83318166fcce2e14e68e3ef014b",

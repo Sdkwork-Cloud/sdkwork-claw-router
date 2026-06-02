@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dragon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dragon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dragon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e84ae343ceffbb78b077c5e110ed2a8d8c96cd6c3cbffee17067e480bd33022",

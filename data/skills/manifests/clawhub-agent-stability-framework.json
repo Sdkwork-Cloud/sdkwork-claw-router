@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-stability-framework@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-stability-framework-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-stability-framework-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9c955dad6d36286fb49f305d6ace275920da4ff281ca721483e30ebde06fe9ae",

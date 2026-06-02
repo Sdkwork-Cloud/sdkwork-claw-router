@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/network-log-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-network-log-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-network-log-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92cf4bba98f9eb69b6010ba702318c839d3341dcec65ccb4a5697606d7ec9ded",

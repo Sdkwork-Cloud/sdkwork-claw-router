@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-voice-message-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-voice-message-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-voice-message-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a8dfbe63b96c010693e0af56046542a7926ebc7cb489c911fd126219a362e74",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/awesome-claude-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-awesome-claude-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-awesome-claude-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9cdfe6af9e303b351e5529d119779b61dd7ce7db50f1e41bdb24b49b997de5d7",

@@ -14,8 +14,12 @@ export interface AiMcpToolRecord {
   description?: string;
   /** Discovered at field on ai mcp tool record. */
   discovered_at?: string;
+  /** Enabled field on ai mcp tool record. */
+  enabled?: boolean;
   /** Id field on ai mcp tool record. */
   id?: string;
+  /** Input schema field on ai mcp tool record. */
+  input_schema?: Record<string, JsonValue>;
   /** Last invoked at field on ai mcp tool record. */
   last_invoked_at?: string;
   /** Metadata field on ai mcp tool record. */
@@ -24,12 +28,22 @@ export interface AiMcpToolRecord {
   name?: string;
   /** Organization id field on ai mcp tool record. */
   organization_id?: string;
+  /** Output schema field on ai mcp tool record. */
+  output_schema?: Record<string, JsonValue>;
+  /** Rate limit policy field on ai mcp tool record. */
+  rate_limit_policy?: Record<string, JsonValue>;
+  /** Requires approval field on ai mcp tool record. */
+  requires_approval?: boolean;
+  /** Risk level field on ai mcp tool record. */
+  risk_level?: string;
   /** Schema hash field on ai mcp tool record. */
   schema_hash?: string;
   /** Server id field on ai mcp tool record. */
   server_id?: string;
   /** Server revision id field on ai mcp tool record. */
   server_revision_id?: string;
+  /** Sort weight field on ai mcp tool record. */
+  sort_weight?: number;
   /** Status field on ai mcp tool record. */
   status?: string;
   /** Tenant id field on ai mcp tool record. */

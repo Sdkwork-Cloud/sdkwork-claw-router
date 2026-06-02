@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aria@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-aria-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aria-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2b54899ce6b2d772db305c5910f3bb3185613f9d5b9b34eb62e941c1ec1b083d",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/npv@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-npv-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-npv-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:83dcf984f96f5bc7b396ddc38d50674966aa0dfb0e1a172fe5150274ff47d631",

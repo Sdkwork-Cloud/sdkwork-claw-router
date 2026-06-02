@@ -10,7 +10,7 @@ public class AdminCourseMutationRequest {
     private String level;
     private Map<String, String> metadata;
     private String status;
-    private String thumbnailUrl;
+    private MediaResource thumbnail;
     private String title;
 
     public String getCategory() {
@@ -69,12 +69,12 @@ public class AdminCourseMutationRequest {
         this.status = status;
     }
 
-    public String getThumbnailUrl() {
-        return this.thumbnailUrl;
+    public MediaResource getThumbnail() {
+        return this.thumbnail;
     }
 
-    public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+    public void setThumbnail(MediaResource thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     public String getTitle() {

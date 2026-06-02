@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resignation-letter@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resignation-letter-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resignation-letter-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f501e440ecc4ccdf03002e71584d38850d88c592eaa1ecdc757d87a0d53ab472",

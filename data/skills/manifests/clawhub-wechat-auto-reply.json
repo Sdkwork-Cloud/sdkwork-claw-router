@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-auto-reply@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-auto-reply-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-auto-reply-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f66fdec2239e492e47e4a6faf3745608925a3fb3f1c65552d9ad82107c5e7709",

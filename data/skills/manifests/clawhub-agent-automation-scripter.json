@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-automation-scripter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-automation-scripter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-automation-scripter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0bcad03f29fbfebb9b0bc4931ab530aebc6266c2a8fe69108ea6f31928b2a458",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/payment-route-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-payment-route-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-payment-route-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc73997246f988c2717f97c134b3d7d8d221fd419f18016b86b48dc77e84e642",

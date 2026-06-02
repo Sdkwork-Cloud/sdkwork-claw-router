@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/native-sentry@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-native-sentry-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-native-sentry-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e61724a0af6e2830c06376c2128ece08214b018b0cd4099792aa3903427be154",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/get-stock-line@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-get-stock-line-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-get-stock-line-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f5567344c2a7dfb1a1584c985f1178e8b4778a9887cea3f372c6c94dc64b991",

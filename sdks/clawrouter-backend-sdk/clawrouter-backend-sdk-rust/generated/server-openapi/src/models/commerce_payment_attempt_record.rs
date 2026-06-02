@@ -16,6 +16,10 @@ pub struct CommercePaymentAttemptRecord {
     /// Currency code field on commerce payment attempt record.
     pub currency_code: String,
 
+    /// Id field on commerce payment attempt record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Order id field on commerce payment attempt record.
     pub order_id: String,
 

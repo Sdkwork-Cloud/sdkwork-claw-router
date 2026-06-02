@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Enabled skill package snapshot returned by the backend.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminSkillPackageItem {
@@ -8,10 +10,9 @@ pub struct AdminSkillPackageItem {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub category_id: Option<String>,
 
-    /// Cover image field on admin skill package item.
-    #[serde(rename = "coverImage")]
+    /// Cover field on admin skill package item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cover_image: Option<String>,
+    pub cover: Option<MediaResource>,
 
     /// Created at field on admin skill package item.
     #[serde(rename = "createdAt")]
@@ -29,7 +30,7 @@ pub struct AdminSkillPackageItem {
 
     /// Icon field on admin skill package item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Id field on admin skill package item.
     pub id: String,

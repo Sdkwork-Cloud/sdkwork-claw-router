@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-api-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-api-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-api-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c77ffd0ba1b310692beb0b9efda3216c6cd4caec752d2a99818aef817792a113",

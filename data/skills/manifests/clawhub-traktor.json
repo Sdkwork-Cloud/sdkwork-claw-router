@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/traktor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-traktor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-traktor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23c052ed0d436278130b1b33bbad6adb4245f1a4fc3da69b9ffc8f8322ded28f",

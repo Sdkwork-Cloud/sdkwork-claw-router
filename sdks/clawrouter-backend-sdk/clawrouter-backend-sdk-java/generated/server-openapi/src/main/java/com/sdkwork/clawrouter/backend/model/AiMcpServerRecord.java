@@ -11,6 +11,7 @@ public class AiMcpServerRecord {
     private String deletedBy;
     private String deprecatedAt;
     private String description;
+    private String healthStatus;
     private String id;
     private String lastCheckedAt;
     private String lastErrorMasked;
@@ -23,6 +24,7 @@ public class AiMcpServerRecord {
     private String publishedRevisionId;
     private String serverKey;
     private String status;
+    private Map<String, String> tags;
     private String tenantId;
     private String transport;
     private String updatedAt;
@@ -92,6 +94,14 @@ public class AiMcpServerRecord {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getHealthStatus() {
+        return this.healthStatus;
+    }
+
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
     }
 
     public String getId() {
@@ -188,6 +198,14 @@ public class AiMcpServerRecord {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Map<String, String> getTags() {
+        return this.tags;
+    }
+
+    public void setTags(Map<String, String> tags) {
+        this.tags = tags;
     }
 
     public String getTenantId() {

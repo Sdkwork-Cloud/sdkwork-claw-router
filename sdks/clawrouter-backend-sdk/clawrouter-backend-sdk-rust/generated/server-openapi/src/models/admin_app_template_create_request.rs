@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Admin app template create request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminAppTemplateCreateRequest {
@@ -23,10 +25,9 @@ pub struct AdminAppTemplateCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub category_id: Option<String>,
 
-    /// Cover url field on admin app template create request.
-    #[serde(rename = "coverUrl")]
+    /// Cover field on admin app template create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cover_url: Option<String>,
+    pub cover: Option<MediaResource>,
 
     /// Default app config field on admin app template create request.
     #[serde(rename = "defaultAppConfig")]
@@ -65,10 +66,9 @@ pub struct AdminAppTemplateCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub git_sub_path: Option<String>,
 
-    /// Icon url field on admin app template create request.
-    #[serde(rename = "iconUrl")]
+    /// Icon field on admin app template create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon_url: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Language field on admin app template create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

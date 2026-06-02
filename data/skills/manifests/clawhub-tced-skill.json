@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tced-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tced-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tced-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:752ed0f9d7290945fc830e24bfd79b297a3e59f9a7ff2fbed66c9b308ff0d877",

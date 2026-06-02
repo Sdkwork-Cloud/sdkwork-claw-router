@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitlab-team-report@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-team-report-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitlab-team-report-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4713018f9f13fd35f0af1626dacc3c8ee0735a946b940230943ba48c5e530598",

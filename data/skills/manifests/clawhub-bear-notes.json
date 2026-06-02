@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bear-notes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bear-notes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bear-notes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2d2927985a166d5dd8372fab3bed08dbbf8d82ac0d6322e8c170f3cf853defca",

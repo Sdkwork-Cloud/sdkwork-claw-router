@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-reach@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-reach-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-reach-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbfa0721f4253b416dd5a26f4688db042e19adc50eabcc676084f2760e8038b2",

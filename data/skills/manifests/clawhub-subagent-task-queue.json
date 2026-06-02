@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subagent-task-queue@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subagent-task-queue-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subagent-task-queue-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96552499a2596f2b932eb79e1c7baedfb0eeb863022529ab7a8c557c14dffa45",

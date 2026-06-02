@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/phi-phi4@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-phi-phi4-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-phi-phi4-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b6803020025e7f5ca207b44408a19c95c6c7f8bd97d955b25f97da6faa197272",

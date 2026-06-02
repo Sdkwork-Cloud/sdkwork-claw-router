@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Studio app template record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct StudioAppTemplateRecord {
@@ -19,9 +21,9 @@ pub struct StudioAppTemplateRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub category_id: Option<String>,
 
-    /// Cover url field on studio app template record.
+    /// Cover field on studio app template record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cover_url: Option<String>,
+    pub cover: Option<MediaResource>,
 
     /// Created at field on studio app template record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -79,9 +81,9 @@ pub struct StudioAppTemplateRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub git_sub_path: Option<String>,
 
-    /// Icon url field on studio app template record.
+    /// Icon field on studio app template record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon_url: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Id field on studio app template record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

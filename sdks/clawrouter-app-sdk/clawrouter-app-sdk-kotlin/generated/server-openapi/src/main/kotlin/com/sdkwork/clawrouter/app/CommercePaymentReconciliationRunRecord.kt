@@ -4,6 +4,7 @@ data class CommercePaymentReconciliationRunRecord(
     val completedAt: String? = null,
     val createdAt: String? = null,
     val differenceAmount: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val matchedCount: String? = null,
     val mismatchedCount: String? = null,

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-brawl@1.0.15",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-brawl-1.0.15.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-brawl-1.0.15.json"
+      },
       "version": "1.0.15",
       "runtime": "metadata",
       "checksumHash": "sha256:603bfdd49fcd3ceda24dd39b64956f922742458eedc4a460f59f546e8701dc86",

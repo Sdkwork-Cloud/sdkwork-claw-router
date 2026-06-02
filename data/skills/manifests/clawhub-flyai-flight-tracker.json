@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flyai-flight-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flyai-flight-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flyai-flight-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:899269bb43cdb85822ddd346fc794fe53c6c860f4a23c612cd960d117f64fb0f",

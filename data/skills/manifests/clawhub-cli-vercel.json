@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cli-vercel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cli-vercel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cli-vercel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c36ecd4e2d8eb63be34fdff3b17d747c30a01a99eda377f8766ae1f76d980c9",

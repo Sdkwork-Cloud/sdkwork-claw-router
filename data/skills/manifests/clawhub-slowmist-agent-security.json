@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slowmist-agent-security@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-slowmist-agent-security-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slowmist-agent-security-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d141d9e3bb8c2025ea3f705955d94b554cf50b4f760aabac67c47274b0cd9962",

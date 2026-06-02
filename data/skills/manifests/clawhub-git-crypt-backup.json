@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-crypt-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-crypt-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-crypt-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:36d131bc3b7bcc5a3d6507597b80b343a5e715d83cc52f250f2013e7f66e769b",

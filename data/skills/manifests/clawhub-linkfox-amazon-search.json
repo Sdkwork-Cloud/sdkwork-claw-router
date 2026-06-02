@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linkfox-amazon-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-amazon-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linkfox-amazon-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e2069525024e49dbeb4d7579b83431cdddb1f20175ae9feff946ca9a353e23b6",

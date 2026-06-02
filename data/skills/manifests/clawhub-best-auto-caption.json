@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/best-auto-caption@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-best-auto-caption-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-best-auto-caption-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:02bc09fe425e0fb7b1ef94d1a181db6420daf82d4365709e5d0c39b93c3a6a26",

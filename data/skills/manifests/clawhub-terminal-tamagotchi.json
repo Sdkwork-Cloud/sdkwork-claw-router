@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/terminal-tamagotchi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-terminal-tamagotchi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-terminal-tamagotchi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0a685ef5c3ea2ba485652167baff634eb15f76f7a27929b80fb2405255c10ba",

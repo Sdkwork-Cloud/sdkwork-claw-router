@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-self-hosted-whisper@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-self-hosted-whisper-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-self-hosted-whisper-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:141c8f4cf0306a82ef781a36eba9b8e44ab9338bd5074cf6c472afc66f6a4883",

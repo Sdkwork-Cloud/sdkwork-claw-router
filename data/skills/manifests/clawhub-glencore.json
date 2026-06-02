@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glencore@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-glencore-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glencore-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c66541e3cb37b2831e6d6c9c699b5701067caeb7be92d95d937c198758b10a70",

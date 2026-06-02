@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Commerce membership benefit mutation request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CommerceMembershipBenefitMutationRequest {
@@ -18,7 +20,7 @@ pub struct CommerceMembershipBenefitMutationRequest {
 
     /// Icon field on commerce membership benefit mutation request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Id field on commerce membership benefit mutation request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kimberly-clark@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kimberly-clark-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kimberly-clark-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f699fda82d0939916ec3493290d202f79796d52b578211c1e71a76ce7101e42",

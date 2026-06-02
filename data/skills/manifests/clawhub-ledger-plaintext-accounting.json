@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ledger-plaintext-accounting@0.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-ledger-plaintext-accounting-0.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ledger-plaintext-accounting-0.3.3.json"
+      },
       "version": "0.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:b9ccd9298981e6d92bbf9f5e7a2a4b71859845ecc8bc7ef04a1d2bf44ad88c43",

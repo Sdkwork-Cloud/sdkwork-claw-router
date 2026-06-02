@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/historical-map@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-historical-map-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-historical-map-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ccbaca13d3bd42eec6d936277f4cec6fc0dffae05f83cd1de257b639c0005460",

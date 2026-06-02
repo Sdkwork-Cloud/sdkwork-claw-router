@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-recommender@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-recommender-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-recommender-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6339a53e44d311965587691df957e99f10afc5aca5f8fecd8e74609685941bd9",

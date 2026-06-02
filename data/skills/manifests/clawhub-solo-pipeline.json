@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solo-pipeline@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solo-pipeline-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solo-pipeline-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e897a74b292eb46303f00148d3b07c85197eb3f342340177d5c45ae876a30166",

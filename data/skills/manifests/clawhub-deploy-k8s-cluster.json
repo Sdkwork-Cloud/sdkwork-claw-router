@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deploy-k8s-cluster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deploy-k8s-cluster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deploy-k8s-cluster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d56552bf979bb5f9f61766bf1e62783814a312fcef4e9e29bd10006cea05c103",

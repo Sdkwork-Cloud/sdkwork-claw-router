@@ -49,7 +49,7 @@ frontend_models:
   - label
   - name
   - description
-  - icon
+  - iconKey
   - sortWeight
   - courseCount
   data_sources:
@@ -106,7 +106,7 @@ frontend_models:
   - categories.label
   - categories.name
   - categories.description
-  - categories.icon
+  - categories.iconKey
   - categories.sortWeight
   - categories.courseCount
   - page
@@ -128,7 +128,7 @@ frontend_models:
   - description
   - sourceProvider
   - externalBvid
-  - videoUrl
+  - video
   - contactName
   - contactEmail
   - notes
@@ -144,7 +144,7 @@ frontend_models:
   - category
   - sourceProvider
   - externalBvid
-  - videoUrl
+  - video
   - contactName
   - contactEmail
   - status
@@ -165,7 +165,7 @@ frontend_models:
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts
   interface: CourseApplicationVideoUploadResult
   fields:
-  - videoUrl
+  - video
   - fileName
   - contentType
   - sizeBytes

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-commerce-engine@1.7.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-commerce-engine-1.7.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-commerce-engine-1.7.1.json"
+      },
       "version": "1.7.1",
       "runtime": "metadata",
       "checksumHash": "sha256:180c7988f467ba19219729aa8937bf6af2156e008d5b165c7063ca33986e3696",

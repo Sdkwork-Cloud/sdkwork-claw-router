@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-actions-self-hosted-risk-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-self-hosted-risk-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-actions-self-hosted-risk-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c52a90c30209746445da417f116fb41b88c42a87bedbef130b1064e901c613d8",

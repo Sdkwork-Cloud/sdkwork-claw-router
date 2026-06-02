@@ -12,6 +12,7 @@ use futures_util::stream;
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 use serde::Serialize;
+use serde_json::{Map, Value};
 use sha2::{Digest, Sha256};
 use tokio::fs;
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
@@ -36,7 +37,7 @@ const MAX_COURSE_APPLICATION_CATEGORY_LEN: usize = 64;
 const MAX_COURSE_APPLICATION_DESCRIPTION_LEN: usize = 2000;
 const MAX_COURSE_APPLICATION_SOURCE_PROVIDER_LEN: usize = 64;
 const MAX_COURSE_APPLICATION_BVID_LEN: usize = 64;
-const MAX_COURSE_APPLICATION_VIDEO_URL_LEN: usize = 1024;
+const MAX_COURSE_APPLICATION_VIDEO_LOCATOR_LEN: usize = 1024;
 const MAX_COURSE_APPLICATION_CONTACT_NAME_LEN: usize = 128;
 const MAX_COURSE_APPLICATION_CONTACT_EMAIL_LEN: usize = 254;
 const MAX_COURSE_APPLICATION_NOTES_LEN: usize = 2000;
@@ -81,7 +82,7 @@ struct CourseApplicationRequest {
     description: String,
     source_provider: String,
     external_bvid: Option<String>,
-    video_url: Option<String>,
+    video: Option<Value>,
     contact_name: Option<String>,
     contact_email: Option<String>,
     notes: Option<String>,
@@ -90,7 +91,7 @@ struct CourseApplicationRequest {
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct CourseApplicationVideoUploadResponse {
-    video_url: String,
+    video: Value,
     file_name: String,
     content_type: String,
     size_bytes: u64,
@@ -471,9 +472,16 @@ async fn store_course_application_video(
         remove_file_quietly(&temp_path).await;
         return course_error("course video upload finalize failed", error);
     }
+    let video_locator = format!("/uploads/courses/{COURSE_UPLOAD_APPLICATIONS_DIR}/{file_name}");
     Json(PlusApiResult::success(
         CourseApplicationVideoUploadResponse {
-            video_url: format!("/uploads/courses/{COURSE_UPLOAD_APPLICATIONS_DIR}/{file_name}"),
+            video: upload_video_media_resource(
+                &video_locator,
+                &file_name,
+                &content_type,
+                size_bytes as u64,
+                &sha256,
+            ),
             file_name,
             content_type,
             size_bytes: size_bytes as u64,
@@ -547,16 +555,12 @@ fn course_application_command(
     let source_provider = normalize_source_provider(request.source_provider)?;
     let external_bvid =
         normalize_optional_bvid(request.external_bvid, MAX_COURSE_APPLICATION_BVID_LEN)?;
-    let video_url = normalize_optional_video_url(
-        request.video_url,
-        "videoUrl",
-        MAX_COURSE_APPLICATION_VIDEO_URL_LEN,
-    )?;
+    let video = normalize_optional_media_resource(request.video, "video")?;
     if source_provider == "bilibili" && external_bvid.is_none() {
         return Err("externalBvid is required when sourceProvider is bilibili".to_owned());
     }
-    if source_provider == "local" && video_url.is_none() {
-        return Err("videoUrl is required when sourceProvider is local".to_owned());
+    if source_provider == "local" && video.is_none() {
+        return Err("video is required when sourceProvider is local".to_owned());
     }
     Ok(CreateCourseApplicationCommand {
         subject,
@@ -566,7 +570,7 @@ fn course_application_command(
         description,
         source_provider,
         external_bvid,
-        video_url,
+        video,
         contact_name: normalize_optional_text(
             request.contact_name,
             "contactName",
@@ -704,20 +708,88 @@ fn normalize_optional_bvid(
     Ok(Some(value))
 }
 
-fn normalize_optional_video_url(
-    value: Option<String>,
+fn normalize_optional_media_resource(
+    value: Option<Value>,
     field: &str,
-    max_len: usize,
-) -> Result<Option<String>, String> {
-    let Some(value) = normalize_optional_text(value, field, max_len)? else {
+) -> Result<Option<Value>, String> {
+    let Some(value) = value else {
         return Ok(None);
     };
-    if is_safe_course_video_url(value.as_str()) {
-        return Ok(Some(value));
+    if value.is_null() {
+        return Ok(None);
     }
-    Err(format!(
-        "{field} must be an https URL or a /uploads/courses/ path"
-    ))
+    normalize_media_resource(value, field).map(Some)
+}
+
+fn normalize_media_resource(value: Value, field: &str) -> Result<Value, String> {
+    let mut object = value
+        .as_object()
+        .cloned()
+        .ok_or_else(|| format!("{field} must be a MediaResource object"))?;
+    let kind = media_resource_required_text(field, &object, "kind")?;
+    let source = media_resource_required_text(field, &object, "source")?;
+    object.insert("kind".to_owned(), Value::String(kind));
+    object.insert("source".to_owned(), Value::String(source));
+
+    let mut has_locator = false;
+    for key in ["id", "publicUrl", "url", "uri", "objectKey", "objectBlobId"] {
+        if let Some(value) = object.get_mut(key) {
+            let Some(text) = value.as_str() else {
+                return Err(format!("{field}.{key} must be a string"));
+            };
+            let normalized = normalize_optional_text(
+                Some(text.to_owned()),
+                &format!("{field}.{key}"),
+                MAX_COURSE_APPLICATION_VIDEO_LOCATOR_LEN,
+            )?;
+            if let Some(normalized) = normalized {
+                has_locator = true;
+                *value = Value::String(normalized);
+            } else {
+                *value = Value::String(String::new());
+            }
+        }
+    }
+    if !has_locator {
+        return Err(format!("{field} must include a media resource locator"));
+    }
+
+    Ok(Value::Object(object))
+}
+
+fn media_resource_required_text(
+    field: &str,
+    object: &Map<String, Value>,
+    key: &str,
+) -> Result<String, String> {
+    let value = object.get(key).and_then(Value::as_str).map(str::to_owned);
+    normalize_required_text(
+        value,
+        &format!("{field}.{key}"),
+        MAX_COURSE_APPLICATION_VIDEO_LOCATOR_LEN,
+    )
+}
+
+fn upload_video_media_resource(
+    url: &str,
+    file_name: &str,
+    content_type: &str,
+    size_bytes: u64,
+    sha256: &str,
+) -> Value {
+    serde_json::json!({
+        "kind": "video",
+        "source": "external_url",
+        "url": url,
+        "publicUrl": url,
+        "fileName": file_name,
+        "mimeType": content_type,
+        "sizeBytes": size_bytes.to_string(),
+        "checksum": {
+            "algorithm": "sha256",
+            "value": sha256
+        }
+    })
 }
 
 fn normalize_optional_email(value: Option<String>) -> Result<Option<String>, String> {
@@ -733,13 +805,6 @@ fn normalize_optional_email(value: Option<String>) -> Result<Option<String>, Str
         return Ok(Some(value));
     }
     Err("contactEmail must be a valid email address".to_owned())
-}
-
-fn is_safe_course_video_url(value: &str) -> bool {
-    value.starts_with("/uploads/courses/")
-        || value.starts_with("https://")
-        || value.starts_with("http://localhost/")
-        || value.starts_with("http://127.0.0.1/")
 }
 
 pub fn configured_course_upload_root() -> PathBuf {

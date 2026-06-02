@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kibana@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-kibana-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kibana-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:314581a74520cc110e4b2bc21069cf37c9a01e312aee465716e282caf0580e1f",

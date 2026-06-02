@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-travel-agent@1.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-travel-agent-1.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-travel-agent-1.1.4.json"
+      },
       "version": "1.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:523b9ed3f8aa2cb169fae2cbd7aa8ac75e19ce44031c4693d80cffa651840405",

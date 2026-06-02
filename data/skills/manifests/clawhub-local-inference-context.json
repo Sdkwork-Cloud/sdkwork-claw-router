@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-inference-context@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-inference-context-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-inference-context-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:856a14411fab120cc44cb694587364c16e891765b76fb110455e1dd80ba602ab",

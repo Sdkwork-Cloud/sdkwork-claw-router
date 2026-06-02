@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fivetran-integration@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-fivetran-integration-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fivetran-integration-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2e69a6c3b4f02be8ec3d6d122c51269097fb3f42176847cbcea70904ac12801e",

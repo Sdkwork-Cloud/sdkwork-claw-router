@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paraphraser@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paraphraser-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paraphraser-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:248d64b04fac1c4fb914e37c8072a01dbec6b9f75938fe34493bea42560237aa",

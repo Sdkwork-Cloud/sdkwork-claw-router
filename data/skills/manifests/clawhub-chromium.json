@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chromium@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chromium-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chromium-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:12aff753510b767f911006643c085e5d057a2e9ab86129c7917459e884695486",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/character-count@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-character-count-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-character-count-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d4ef110943ca27eaf406a930233d6c9b94b622e9ce774b612e5c62e440f9168a",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/runtime-attestation-probe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-runtime-attestation-probe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-runtime-attestation-probe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5895b9d6cfa3bd8674cfc22379d7054a4748a7d52a4cb9ddfb928e18909b38b3",

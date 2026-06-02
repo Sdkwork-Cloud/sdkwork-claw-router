@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/document-processor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-document-processor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-document-processor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:33d26132e85f6fcc6dcadf44154205c22d3fa855cbd2cd3cbce8289fd663bc26",

@@ -33,6 +33,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? PromptTokens { get; set; }
         public string? RequestId { get; set; }
         public string? RetentionUntil { get; set; }
+        public string? RunStatus { get; set; }
         public string? RunUuid { get; set; }
         public string? Runtime { get; set; }
         public string? SourceSurface { get; set; }

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lecture-notes-master@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lecture-notes-master-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lecture-notes-master-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1df8d1b53a06aa11168e95dd6f11ecf387b0772d9f7f80f169c23a5578a43544",

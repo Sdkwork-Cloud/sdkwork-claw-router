@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/next-video-gen@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-next-video-gen-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-next-video-gen-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:2e5fa4488af4ce5334a34dff15e95c597fbe18d51b3713a3713df59629428aa0",

@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Updated app store category snapshot returned by the backend. */
 export interface AdminAppCategoryItem {
   /** Code field on admin app category item. */
@@ -5,7 +7,7 @@ export interface AdminAppCategoryItem {
   /** Description field on admin app category item. */
   description?: string;
   /** Icon field on admin app category item. */
-  icon?: string;
+  icon?: MediaResource;
   /** Id field on admin app category item. */
   id: string;
   /** Name field on admin app category item. */

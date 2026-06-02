@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mars-news-aggregator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mars-news-aggregator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mars-news-aggregator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7313930c88469aa2665ae367eefa126e8ae6b8c3a1062ca8fd17991ce163d57e",

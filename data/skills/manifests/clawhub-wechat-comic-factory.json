@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-comic-factory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-comic-factory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-comic-factory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac31a7e4edd02b39a69c58cd8e0226f12efded30008a7d7ebea55a03b27aaa5e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podcast-agent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-podcast-agent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podcast-agent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:98ea164bed2b6b16d454013727975c66e93b231ad6e5a7bfdb10f3ee6b902d82",

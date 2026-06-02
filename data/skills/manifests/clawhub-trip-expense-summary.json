@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trip-expense-summary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trip-expense-summary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trip-expense-summary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:90f893a2e9a8ae666cd9fad91ccf070b515a77ecbd585a4ed90fa6e8982045a2",

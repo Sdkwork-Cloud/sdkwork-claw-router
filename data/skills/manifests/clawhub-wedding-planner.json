@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wedding-planner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wedding-planner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wedding-planner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31ff7f64d68f1ba6ad24d5307ea36b125d6a780b2cd1642c8df05ac87d272bb3",

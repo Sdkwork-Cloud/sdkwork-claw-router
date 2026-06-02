@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workflow-migrate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workflow-migrate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workflow-migrate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4756011b138756d278fd61a0547f332eed307ef0568f34fc39841e47267f6de7",

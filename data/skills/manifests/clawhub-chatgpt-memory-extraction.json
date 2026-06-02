@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chatgpt-memory-extraction@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-chatgpt-memory-extraction-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chatgpt-memory-extraction-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1c477dc55a0b11c2a46b535b71dfed9e8c62f8022b52db7564c480449a775738",

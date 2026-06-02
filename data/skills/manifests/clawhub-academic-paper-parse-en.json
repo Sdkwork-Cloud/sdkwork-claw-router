@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/academic-paper-parse-en@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-academic-paper-parse-en-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-academic-paper-parse-en-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3591b72135689ae61f723aad7e61a267e545c1692408cc5f23ba8809bb838e73",

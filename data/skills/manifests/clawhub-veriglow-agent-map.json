@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/veriglow-agent-map@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-veriglow-agent-map-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-veriglow-agent-map-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b97b61a11f4500d458514fd42936c222efbe752cffd8e47d3325812b7dd5e27a",

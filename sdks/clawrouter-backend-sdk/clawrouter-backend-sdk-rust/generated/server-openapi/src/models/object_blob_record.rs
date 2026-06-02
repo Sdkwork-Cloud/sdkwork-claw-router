@@ -47,6 +47,10 @@ pub struct ObjectBlobRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub last_verified_at: Option<String>,
 
+    /// Legal hold field on object blob record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub legal_hold: Option<bool>,
+
     /// Metadata field on object blob record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub metadata: Option<std::collections::HashMap<String, String>>,
@@ -71,6 +75,10 @@ pub struct ObjectBlobRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub owner_type: Option<String>,
 
+    /// Physical size bytes field on object blob record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub physical_size_bytes: Option<String>,
+
     /// Provider id field on object blob record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub provider_id: Option<String>,
@@ -78,6 +86,10 @@ pub struct ObjectBlobRecord {
     /// Retention until field on object blob record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub retention_until: Option<String>,
+
+    /// Size bytes field on object blob record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub size_bytes: Option<String>,
 
     /// Status field on object blob record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

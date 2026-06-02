@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/magento2@1.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-magento2-1.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-magento2-1.3.1.json"
+      },
       "version": "1.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:080a85d270499f1108a97029bf0e84b17c365333277478414d8b18630e5beb5e",

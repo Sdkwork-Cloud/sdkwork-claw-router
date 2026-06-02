@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vlm-grounding@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vlm-grounding-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vlm-grounding-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:94d1169685b65e2a8c1d33651cfb13d2dba0bb5df4d35c7d2abdc9a3e167a793",

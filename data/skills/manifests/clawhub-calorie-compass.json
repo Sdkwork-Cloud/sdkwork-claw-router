@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/calorie-compass@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-calorie-compass-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-calorie-compass-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fed5b142df685b5516c573ade7a200986f227364915ae9af5cd0f01b854817cc",

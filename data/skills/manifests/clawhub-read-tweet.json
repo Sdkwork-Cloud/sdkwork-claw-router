@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/read-tweet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-read-tweet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-read-tweet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:69621bf79729707b41653d7ec6b0f3a44acbb5e512d2ca2477a7d84c33a78402",

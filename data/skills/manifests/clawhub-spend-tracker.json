@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spend-tracker@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-spend-tracker-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spend-tracker-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a306d2b2830c492ade86e7ad7bc8fac8743f4ad86b9d5ac78e419dfe4ae9f70f",

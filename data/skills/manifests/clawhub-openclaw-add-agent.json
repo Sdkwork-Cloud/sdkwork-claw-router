@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-add-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-add-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-add-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93eafc9b9b6e5f0b0c07af609fd5d3f313df19b0eb269f7d2797b64687c6a717",

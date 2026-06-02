@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blackfire@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-blackfire-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blackfire-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1737c6198fb9f277cf6c089f1ce0e9cd99fb70d86701e8776612e21f14f8817d",

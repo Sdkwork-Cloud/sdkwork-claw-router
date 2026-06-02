@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tendermint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tendermint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tendermint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6fe672b69788e3668eb60af3767f4618eaf843bc829353dc411aaa5a43f9e9c1",

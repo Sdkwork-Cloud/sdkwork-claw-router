@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-image-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-image-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-image-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:675a8aee254e518bc83a9a757050fd234c0165dad105d6a337754a01f1e70b79",

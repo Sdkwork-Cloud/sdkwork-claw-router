@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thecolony-heartbeat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-thecolony-heartbeat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thecolony-heartbeat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1423e2b594e32585f48974cb0b8d44263e36536f059dc9f7fb2b9f3628583fa2",

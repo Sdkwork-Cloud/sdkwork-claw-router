@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wecom@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-wecom-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wecom-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:2f211acc136d6332e72f545a1c8dde7ef6636bda544619da32ff4999f9ef83f0",

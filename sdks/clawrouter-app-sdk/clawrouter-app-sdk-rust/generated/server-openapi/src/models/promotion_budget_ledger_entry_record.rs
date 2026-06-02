@@ -3,9 +3,18 @@ use serde::{Deserialize, Serialize};
 /// Promotion budget ledger entry record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct PromotionBudgetLedgerEntryRecord {
+    /// Amount delta minor field on promotion budget ledger entry record.
+    pub amount_delta_minor: String,
+
     /// Application id field on promotion budget ledger entry record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub application_id: Option<String>,
+
+    /// Balance amount minor field on promotion budget ledger entry record.
+    pub balance_amount_minor: String,
+
+    /// Balance quantity field on promotion budget ledger entry record.
+    pub balance_quantity: String,
 
     /// Budget account id field on promotion budget ledger entry record.
     pub budget_account_id: String,
@@ -22,6 +31,10 @@ pub struct PromotionBudgetLedgerEntryRecord {
     /// Direction field on promotion budget ledger entry record.
     pub direction: String,
 
+    /// Id field on promotion budget ledger entry record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on promotion budget ledger entry record.
     pub idempotency_key: String,
 
@@ -34,6 +47,9 @@ pub struct PromotionBudgetLedgerEntryRecord {
     /// Organization id field on promotion budget ledger entry record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Quantity delta field on promotion budget ledger entry record.
+    pub quantity_delta: String,
 
     /// Request no field on promotion budget ledger entry record.
     pub request_no: String,

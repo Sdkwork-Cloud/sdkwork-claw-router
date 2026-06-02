@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ctf-reverse@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ctf-reverse-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ctf-reverse-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9fdbe990678fadd8a05b28853055d0369b8c29de16e92c9e04586d81a412ae36",

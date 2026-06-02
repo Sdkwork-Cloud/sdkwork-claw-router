@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ask-leonidas@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ask-leonidas-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ask-leonidas-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70bb9a69c3b25e8d304174cc887451ec46810d372d0231433ef4ca93fd172775",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rts-dashboard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rts-dashboard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rts-dashboard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:130e2f1dafe5b8918095962cba2d7c087beb65f13f5ba66265aaa4463adcded2",

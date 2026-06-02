@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-content-creator@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-content-creator-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-content-creator-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e627579db9cb7775be6b671c3b27b1ba3404c0b66759eb6385f2ae0e16ffda95",

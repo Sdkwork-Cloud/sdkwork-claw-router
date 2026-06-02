@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-review-advisor@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-review-advisor-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-review-advisor-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f5ddbe41b05065c401bc0aac89fe291a9348175efd1e6aae7847ff8ded7be59",

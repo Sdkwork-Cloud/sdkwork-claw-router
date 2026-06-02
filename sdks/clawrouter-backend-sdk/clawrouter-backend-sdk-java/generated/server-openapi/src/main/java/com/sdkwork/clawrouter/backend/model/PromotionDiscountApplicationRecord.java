@@ -8,8 +8,10 @@ public class PromotionDiscountApplicationRecord {
     private String budgetAccountId;
     private String createdAt;
     private String currencyCode;
+    private String discountAmountMinor;
     private String failureCode;
     private String failureMessage;
+    private String id;
     private String idempotencyKey;
     private String offerId;
     private String offerVersionId;
@@ -72,6 +74,14 @@ public class PromotionDiscountApplicationRecord {
         this.currencyCode = currencyCode;
     }
 
+    public String getDiscountAmountMinor() {
+        return this.discountAmountMinor;
+    }
+
+    public void setDiscountAmountMinor(String discountAmountMinor) {
+        this.discountAmountMinor = discountAmountMinor;
+    }
+
     public String getFailureCode() {
         return this.failureCode;
     }
@@ -86,6 +96,14 @@ public class PromotionDiscountApplicationRecord {
 
     public void setFailureMessage(String failureMessage) {
         this.failureMessage = failureMessage;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

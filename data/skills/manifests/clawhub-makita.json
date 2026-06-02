@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/makita@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-makita-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-makita-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:87189153fe053747fd34d5b4103aae966a9102c042011a5298ed6681e64686ab",

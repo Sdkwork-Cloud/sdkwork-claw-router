@@ -376,7 +376,9 @@ test("admin commerce packages are split by product, inventory, order, payment, m
     "sdkwork-claw-router-admin-catalog": [
       "CatalogAdmin",
       "getClawRouterBackendSdkClient().commerce.catalog.products.list",
+      "getClawRouterBackendSdkClient().commerce.catalog.products.delete",
       "getClawRouterBackendSdkClient().commerce.catalog.skus.list",
+      "getClawRouterBackendSdkClient().commerce.catalog.skus.delete",
       "getClawRouterBackendSdkClient().commerce.catalog.categories.list",
     ],
     "sdkwork-claw-router-admin-inventory": [
@@ -494,9 +496,136 @@ test("admin orders center uses server pagination and exposes common row actions"
   }
 });
 
+test("admin catalog product center exposes product edit route and dedicated sku management", () => {
+  const appSource = readPortalFile("./src/App.tsx");
+  const catalogIndexSource = readPortalFile("./packages/sdkwork-claw-router-admin-catalog/src/index.tsx");
+  const productListSource = readPortalFile("./packages/sdkwork-claw-router-admin-catalog/src/ProductListPage.tsx");
+
+  assert.match(appSource, /path="catalog\/products\/:productId\/edit"/);
+  assert.match(catalogIndexSource, /type CatalogAdminTab =[\s\S]*'productEdit'/);
+  assert.match(catalogIndexSource, /useParams/);
+  assert.match(catalogIndexSource, /<ProductCreatePage[\s\S]*mode="edit"[\s\S]*productId=\{productId\}/);
+  assert.match(catalogIndexSource, /<SkuManagementPage \/>/);
+  assert.match(productListSource, /\/admin\/catalog\/products\/\$\{encodeURIComponent\(productId\)\}\/edit/);
+});
+
+test("admin catalog category management uses compact cascade columns and modal editing", () => {
+  const categorySource = readPortalFile("./packages/sdkwork-claw-router-admin-catalog/src/CategoryManagementPage.tsx");
+  const handleMoveSource = categorySource.match(/async function handleCategoryMove[\s\S]*?\n  }\n\n  return \(/)?.[0] ?? "";
+
+  assert.match(categorySource, /data-admin-category-cascade-manager/);
+  assert.match(categorySource, /data-admin-category-cascade-column/);
+  assert.match(categorySource, /data-admin-category-create-modal/);
+  assert.match(categorySource, /openCategoryModal\('create'/);
+  assert.match(categorySource, /openCategoryModal\('edit'/);
+  assert.match(categorySource, /handleCategoryMove/);
+  assert.match(categorySource, /data-admin-category-hover-actions/);
+  assert.match(categorySource, /data-admin-category-more-action/);
+  assert.match(categorySource, /data-admin-category-inline-move-up/);
+  assert.match(categorySource, /data-admin-category-inline-move-down/);
+  assert.match(categorySource, /data-admin-category-context-menu/);
+  assert.match(categorySource, /data-admin-category-action-create-child/);
+  assert.match(categorySource, /data-admin-category-action-edit/);
+  assert.match(categorySource, /data-admin-category-action-delete/);
+  assert.match(categorySource, /data-admin-category-action-move-up/);
+  assert.match(categorySource, /data-admin-category-action-move-down/);
+  assert.match(categorySource, /onContextMenu/);
+  assert.match(categorySource, /moveCategorySortOrder/);
+  assert.match(categorySource, /applyCategoryMoveLocally/);
+  assert.match(handleMoveSource, /setState\(/);
+  assert.doesNotMatch(handleMoveSource, /loadCategories\(\)/);
+  assert.doesNotMatch(handleMoveSource, /分类排序已更新。/);
+  assert.match(categorySource, /updateCommerceCategory\(record\.id/);
+  assert.match(categorySource, /buildCategoryColumns/);
+  assert.match(categorySource, /activePathIds/);
+  assert.match(categorySource, /pageSize:\s*200/);
+  assert.match(categorySource, /h-\[calc\(100vh-96px\)\]/);
+  assert.match(categorySource, /max-h-\[calc\(100vh-96px\)\]/);
+  assert.match(categorySource, /w-\[360px\]/);
+  assert.match(categorySource, /data-admin-category-scroll-shell/);
+  assert.match(categorySource, /data-admin-category-toolbar/);
+  assert.match(categorySource, /generateCategoryNo/);
+  assert.match(categorySource, /data-admin-category-generated-no/);
+  assert.match(categorySource, /CategoryParentCascader/);
+  assert.match(categorySource, /data-admin-category-parent-cascader/);
+  assert.match(categorySource, /buildCategoryParentColumns/);
+  assert.match(categorySource, /findCategoryPathIds/);
+  assert.match(categorySource, /readOnly/);
+  assert.match(categorySource, /data-admin-category-initialize-button/);
+  assert.match(categorySource, /CATEGORY_SEED_DATASETS\s*=\s*\['product'\]\s*as const/);
+  assert.doesNotMatch(categorySource, /Catalog Taxonomy/);
+  assert.doesNotMatch(categorySource, /\u7c7b\u76ee\u521d\u59cb\u5316\u4e0e\u7ef4\u62a4/u);
+  assert.doesNotMatch(categorySource, /\u6309\u4e1a\u52a1\u57df\u521d\u59cb\u5316\u6807\u51c6\u5206\u7c7b/u);
+  assert.doesNotMatch(categorySource, /<CategoryInput label="分类编号"/);
+  assert.doesNotMatch(categorySource, /<select[\s\S]*value=\{form\.parentId\}/);
+  assert.doesNotMatch(categorySource, /data-admin-category-editor-panel/);
+  assert.doesNotMatch(categorySource, /data-admin-category-detail-panel/);
+  assert.doesNotMatch(categorySource, /CategoryEditorPanel/);
+  assert.doesNotMatch(categorySource, /function CategoryIconAction/);
+  assert.doesNotMatch(categorySource, /lg:grid-cols-\[minmax\(0,1fr\)_320px\]/);
+  assert.doesNotMatch(categorySource, /data-admin-category-seed-dataset/);
+  assert.doesNotMatch(categorySource, /selectedDatasets/);
+  assert.doesNotMatch(categorySource, /onDatasetToggle/);
+  assert.doesNotMatch(categorySource, /categorySeedDatasetLabel/);
+  assert.doesNotMatch(categorySource, /'courses'|'agents'|'agent-skills'|'mcp'|'apps'/);
+  assert.doesNotMatch(categorySource, /pageSize:\s*500/);
+  assert.doesNotMatch(categorySource, /选择一个分类/);
+});
+
+test("admin catalog product edit reuses product create flow and updates existing skus", () => {
+  const productCreateSource = readPortalFile("./packages/sdkwork-claw-router-admin-catalog/src/ProductCreatePage.tsx");
+  const catalogServiceSource = readPortalFile("./packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts");
+
+  assert.match(catalogServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.products\.update/);
+  assert.match(catalogServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.products\.delete/);
+  assert.match(catalogServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.skus\.update/);
+  assert.match(catalogServiceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.catalog\.skus\.delete/);
+  assert.doesNotMatch(catalogServiceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
+  assert.match(productCreateSource, /export function ProductCreatePage\(\{[\s\S]*mode = 'create'/);
+  assert.match(productCreateSource, /loadProductDraftForEdit/);
+  assert.match(productCreateSource, /updateCommerceProduct\(options\.productId/);
+  assert.match(productCreateSource, /updateCommerceSku\(sku\.backendSkuId/);
+  assert.doesNotMatch(productCreateSource, /pageSize:\s*500/);
+});
+
+test("admin catalog product edit opens the detail step instead of the basic step", () => {
+  const productCreateSource = readPortalFile("./packages/sdkwork-claw-router-admin-catalog/src/ProductCreatePage.tsx");
+
+  assert.match(productCreateSource, /useState<ProductCreateStep>\(\(\) => initialProductCreateStep\(mode\)\)/);
+  assert.match(productCreateSource, /function initialProductCreateStep\(mode: ProductCreatePageMode\): ProductCreateStep/);
+  assert.match(productCreateSource, /mode === 'edit'\s*\?\s*'detail'\s*:\s*'basic'/);
+});
+
+test("admin catalog sku management supports list create edit view and archive operations", () => {
+  const skuManagementSource = readPortalFile("./packages/sdkwork-claw-router-admin-catalog/src/SkuManagementPage.tsx");
+
+  assert.match(skuManagementSource, /data-admin-catalog-sku-management-page/);
+  assert.match(skuManagementSource, /listCommerceSkus/);
+  assert.match(skuManagementSource, /createCommerceSku/);
+  assert.match(skuManagementSource, /updateCommerceSku/);
+  assert.match(skuManagementSource, /deleteCommerceSku/);
+  assert.match(skuManagementSource, /mode: 'create' \| 'edit' \| 'view'/);
+  assert.match(skuManagementSource, /archiveSku/);
+  assert.match(skuManagementSource, /readSkuRecords/);
+  assert.doesNotMatch(skuManagementSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
+});
+
+test("admin catalog contract and backend sdk expose product and sku delete operations", () => {
+  const contractSource = readFileSync(new URL("../../docs/schema-registry/frontend-field-contracts/operations/backend-commerce-catalog.yaml", import.meta.url), "utf8");
+  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/commerce.ts");
+
+  assert.match(contractSource, /operation_id: catalog\.products\.delete/);
+  assert.match(contractSource, /operation_id: catalog\.skus\.delete/);
+  assert.match(backendCommerceSdk, /class CommerceCatalogProductsApi[\s\S]*async delete\(productId: string\)/);
+  assert.match(backendCommerceSdk, /class CommerceCatalogSkusApi[\s\S]*async delete\(skuId: string\)/);
+});
+
 test("admin payments center exposes complete payment modules and aligned provider account controls", () => {
   const viewSource = readPortalFile("./packages/sdkwork-claw-router-admin-payments/src/index.tsx");
   const serviceSource = readPortalFile("./packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts");
+  const adminResourceCenterSource = readPortalFile("./packages/sdkwork-claw-router-commons/src/components/AdminResourceCenter.tsx");
+  const backendCommerceSdk = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/api/commerce.ts");
+  const providerAccountMutationSdkType = readPortalFile("../../sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript/src/types/commerce-payment-provider-account-mutation-request.ts");
   const i18nSource = [
     readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin-commerce/payments.ts"),
     readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/core-columns.ts"),
@@ -533,27 +662,181 @@ test("admin payments center exposes complete payment modules and aligned provide
   assert.match(viewSource, /PAYMENT_PROVIDER_CODES/);
   assert.match(viewSource, /PAYMENT_PROVIDER_ENVIRONMENTS/);
   assert.match(viewSource, /PAYMENT_PROVIDER_ACCOUNT_STATUSES/);
+  assert.match(viewSource, /rowActions:\s*\[/);
+  assert.match(viewSource, /backendPaymentsProviderAccountsUpdate/);
+  assert.match(viewSource, /backendPaymentsProviderAccountsDelete/);
+  assert.match(viewSource, /backendPaymentsProviderAccountsStatusUpdate/);
+  assert.match(viewSource, /providerAccountFormMode/);
+  assert.match(viewSource, /selectedPaymentProviderCode/);
+  assert.match(viewSource, /data-admin-payment-provider-account-shell/);
+  assert.match(viewSource, /data-admin-payment-provider-list/);
+  assert.match(viewSource, /data-admin-payment-provider-logo/);
+  assert.match(viewSource, /data-admin-payment-provider-account-form/);
+  assert.match(viewSource, /h-\[calc\(100vh-16px\)\]/);
+  assert.match(viewSource, /max-h-\[980px\]/);
+  assert.match(viewSource, /max-w-\[min\(1720px,calc\(100vw-16px\)\)\]/);
+  assert.match(viewSource, /xl:grid-cols-\[232px_minmax\(0,1fr\)\]/);
+  assert.match(viewSource, /data-admin-payment-provider-compact-form/);
+  assert.doesNotMatch(viewSource, /xl:grid-cols-\[minmax\(0,1fr\)_360px\]/);
+  assert.match(viewSource, /xl:grid-cols-4/);
+  assert.match(viewSource, /mt-1 h-20/);
+  assert.doesNotMatch(viewSource, /selectedPaymentProviderOption \? \(/);
+  assert.match(viewSource, /PaymentProviderLogo/);
+  assert.doesNotMatch(viewSource, /generatedAccountNo/);
+  assert.doesNotMatch(viewSource, /createGeneratedPaymentProviderAccountNo/);
+  assert.doesNotMatch(viewSource, /const accountNo = requiredText\(form\.accountNo, 'accountNo'\)/);
+  assert.doesNotMatch(viewSource, /\baccountNo,\s*$/m);
+  assert.doesNotMatch(viewSource, /accountNo: form\./);
+  assert.match(viewSource, /PaymentProviderCredentialModeSwitch/);
+  assert.match(viewSource, /PAYMENT_PROVIDER_CREDENTIAL_PROFILES/);
+  assert.doesNotMatch(viewSource, /PAYMENT_PROVIDER_SETUP_GUIDES/);
+  assert.match(viewSource, /resolvePaymentProviderCredentialProfile/);
+  assert.match(viewSource, /showPaymentProviderCredentialField/);
+  assert.match(viewSource, /allowFileUpload/);
+  assert.match(viewSource, /data-admin-payment-provider-credential-file-upload/);
+  assert.match(viewSource, /type="file"/);
+  assert.match(viewSource, /PAYMENT_PROVIDER_CREDENTIAL_FILE_ACCEPT/);
+  assert.match(viewSource, /\.text\(\)/);
+  assert.match(viewSource, /admin\.commerce\.payments\.providerAccounts\.credentials\.uploadFile/);
+  assert.match(viewSource, /admin\.commerce\.payments\.providerAccounts\.credentials\.fileReadError/);
+  assert.match(viewSource, /paymentProviderAccountMerchantIdLabel/);
+  assert.match(viewSource, /paymentProviderCredentialFieldPlaceholder/);
+  assert.doesNotMatch(viewSource, /<PaymentProviderRequiredProgress/);
+  assert.doesNotMatch(viewSource, /<PaymentProviderSetupGuide/);
+  assert.doesNotMatch(viewSource, /PaymentProviderRequiredProgress\(/);
+  assert.doesNotMatch(viewSource, /PaymentProviderSetupGuide\(/);
+  assert.doesNotMatch(viewSource, /requiredPaymentCredentialProgress/);
+  assert.doesNotMatch(viewSource, /missingPaymentCredentialLabels/);
+  assert.match(viewSource, /paymentProviderAccountChannelScopeLabel/);
+  assert.match(viewSource, /formatPaymentProviderAccountAvailability/);
+  assert.match(viewSource, /admin\.commerce\.payments\.providerAccounts\.channelScope/);
+  assert.match(viewSource, /admin\.commerce\.payments\.providerAccounts\.availability\.activeOnly/);
+  assert.doesNotMatch(viewSource, /data-admin-payment-provider-credential-profile/);
+  assert.match(viewSource, /paymentApiKey/);
+  assert.match(viewSource, /paymentClientId/);
+  assert.match(viewSource, /paymentClientSecret/);
+  assert.match(viewSource, /rsaPrivateKey/);
+  assert.match(viewSource, /rsaPublicKey/);
+  assert.match(viewSource, /aesKey/);
+  assert.match(viewSource, /webhookSigningKey/);
+  assert.match(viewSource, /wechatPayApiV3Key/);
+  assert.match(viewSource, /paypalClientSecret/);
+  assert.match(viewSource, /stripeSecretKey/);
+  assert.match(viewSource, /credentialMode/);
+  assert.match(viewSource, /accountRole/);
+  assert.match(viewSource, /merchant/);
+  assert.match(viewSource, /service_provider/);
   assert.match(viewSource, /PaymentProviderAccountTextArea/);
   assert.match(viewSource, /admin\.commerce\.payments\.providerAccounts\.note/);
   assert.match(viewSource, /note: form\.note\.trim\(\)/);
   assert.match(contractSource, /operation_id: payments\.providerAccounts\.list[\s\S]*read_sources:[\s\S]*- commerce_payment_provider_account[\s\S]*- ops_audit_log/);
+  assert.match(contractSource, /operation_id: payments\.providerAccounts\.update/);
+  assert.match(contractSource, /operation_id: payments\.providerAccounts\.delete/);
+  assert.match(contractSource, /operation_id: payments\.providerAccounts\.status\.update/);
+  const mutationRequestSchema = contractSource.slice(
+    contractSource.indexOf("name: CommercePaymentProviderAccountMutationRequest"),
+    contractSource.indexOf("response_schema: &commercePaymentProviderAccountMutationResponse"),
+  );
+  assert.match(mutationRequestSchema, /- providerCode/);
+  assert.doesNotMatch(mutationRequestSchema, /- accountNo/);
+  assert.doesNotMatch(mutationRequestSchema, /\baccountNo:/);
   assert.match(viewSource, /admin\.commerce\.payments\.providerAccounts\.rotatedAt/);
   assert.match(viewSource, /rotatedAt: form\.rotatedAt\.trim\(\)/);
+  assert.match(adminResourceCenterSource, /isVisible\?: \(record: AdminResourceRecord\) => boolean/);
+  assert.match(adminResourceCenterSource, /recordRowActions\.filter\(\(action\) => action\.isVisible\?\.\(record\) \?\? true\)\.map/);
+  assert.match(viewSource, /ConfirmDialog/);
+  assert.match(viewSource, /providerAccountDeleteConfirmation/);
+  assert.match(viewSource, /executeConfirmedProviderAccountDelete/);
+  assert.match(viewSource, /data-admin-payment-provider-account-feedback/);
+  assert.doesNotMatch(viewSource, /window\.confirm/);
+  assert.match(viewSource, /providerAccounts\.actions\.enable', 'Enable'/);
+  assert.match(viewSource, /providerAccounts\.actions\.setAvailable', 'Set available'/);
+  assert.match(viewSource, /updateProviderAccountStatus\(record, 'inactive'\)/);
+  assert.match(viewSource, /updateProviderAccountStatus\(record, 'active'\)/);
+  assert.match(viewSource, /updateProviderAccountStatus\(record, 'disabled'\)/);
+  assert.match(viewSource, /isVisible: \(record\) => readRecordText\(record, 'status'\) === 'disabled'/);
+  assert.match(viewSource, /isVisible: \(record\) => readRecordText\(record, 'status'\) === 'inactive'/);
+  assert.match(viewSource, /isVisible: \(record\) => \['active', 'inactive'\]\.includes\(readRecordText\(record, 'status'\)\)/);
+  assert.match(viewSource, /providerAccounts\.status\.setAvailableSuccess', 'Provider account is now the available account/);
+  assert.match(viewSource, /providerAccounts\.status\.enableSuccess', 'Provider account enabled as a standby account/);
   for (const key of [
     "admin.commerce.payments.providerAccounts.accountNo",
     "admin.commerce.payments.providerAccounts.status",
+    "admin.commerce.payments.providerAccounts.channelScope",
+    "admin.commerce.payments.providerAccounts.availability",
+    "admin.commerce.payments.providerAccounts.availability.activeOnly",
+    "admin.commerce.payments.providerAccounts.availability.standby",
+    "admin.commerce.payments.providerAccounts.availability.disabled",
+    "admin.commerce.payments.providerAccounts.accountRole",
+    "admin.commerce.payments.providerAccounts.accountRole.merchant",
+    "admin.commerce.payments.providerAccounts.accountRole.serviceProvider",
+    "admin.commerce.payments.providerAccounts.credentials.paymentApiKey",
+    "admin.commerce.payments.providerAccounts.credentials.paymentClientId",
+    "admin.commerce.payments.providerAccounts.credentials.paymentClientSecret",
+    "admin.commerce.payments.providerAccounts.credentials.uploadFile",
+    "admin.commerce.payments.providerAccounts.credentials.fileReadError",
+    "admin.commerce.payments.providerAccounts.credentials.requiredProgress",
+    "admin.commerce.payments.providerAccounts.credentials.setupGuide",
+    "admin.commerce.payments.providerAccounts.credentials.placeholder.privateKey",
+    "admin.commerce.payments.providerAccounts.credentials.placeholder.stripeSecretKey",
+    "admin.commerce.payments.providerAccounts.merchantId.wechatPayMerchant",
+    "admin.commerce.payments.providerAccounts.merchantId.wechatPayServiceProvider",
+    "admin.commerce.payments.providerAccounts.merchantId.alipay",
+    "admin.commerce.payments.providerAccounts.merchantId.stripe",
+    "admin.commerce.payments.providerAccounts.credentials.source.wechatPay",
+    "admin.commerce.payments.providerAccounts.credentials.source.alipay",
+    "admin.commerce.payments.providerAccounts.credentials.source.paypal",
+    "admin.commerce.payments.providerAccounts.credentials.source.stripe",
+    "admin.commerce.payments.providerAccounts.credentials.credentialMode",
+    "admin.commerce.payments.providerAccounts.credentials.credentialMode.rsa",
+    "admin.commerce.payments.providerAccounts.credentials.credentialMode.aes",
+    "admin.commerce.payments.providerAccounts.credentials.rsaPrivateKey",
+    "admin.commerce.payments.providerAccounts.credentials.rsaPublicKey",
+    "admin.commerce.payments.providerAccounts.credentials.aesKey",
+    "admin.commerce.payments.providerAccounts.credentials.webhookSigningKey",
+    "admin.commerce.payments.providerAccounts.credentials.certificateSerialNo",
+    "admin.commerce.payments.providerAccounts.credentials.profile.wechatPay",
+    "admin.commerce.payments.providerAccounts.credentials.profile.wechatPay.desc",
+    "admin.commerce.payments.providerAccounts.credentials.profile.alipay",
+    "admin.commerce.payments.providerAccounts.credentials.profile.alipay.desc",
+    "admin.commerce.payments.providerAccounts.credentials.profile.paypal",
+    "admin.commerce.payments.providerAccounts.credentials.profile.paypal.desc",
+    "admin.commerce.payments.providerAccounts.credentials.profile.stripe",
+    "admin.commerce.payments.providerAccounts.credentials.profile.stripe.desc",
+    "admin.commerce.payments.providerAccounts.credentials.profile.applePay",
+    "admin.commerce.payments.providerAccounts.credentials.profile.googlePay",
+    "admin.commerce.payments.providerAccounts.credentials.wechatPayApiV3Key",
+    "admin.commerce.payments.providerAccounts.credentials.alipayAppId",
+    "admin.commerce.payments.providerAccounts.credentials.stripeSecretKey",
+    "admin.commerce.payments.providerAccounts.credentials.paypalClientId",
+    "admin.commerce.payments.providerAccounts.credentials.paypalClientSecret",
     "admin.commerce.payments.providerAccounts.note",
     "admin.commerce.payments.providerAccounts.rotatedAt",
+    "admin.commerce.payments.providerAccounts.actions.edit",
+    "admin.commerce.payments.providerAccounts.actions.enable",
+    "admin.commerce.payments.providerAccounts.actions.setAvailable",
+    "admin.commerce.payments.providerAccounts.actions.disable",
+    "admin.commerce.payments.providerAccounts.actions.delete",
+    "admin.commerce.payments.providerAccounts.deleteTitle",
+    "admin.commerce.payments.providerAccounts.deleteConfirm",
     "admin.commerce.payments.providerAccounts.environment.sandbox",
     "admin.commerce.payments.providerAccounts.environment.production",
     "admin.commerce.payments.providerAccounts.status.active",
     "admin.commerce.payments.providerAccounts.status.inactive",
     "admin.commerce.payments.providerAccounts.status.disabled",
+    "admin.commerce.payments.providerAccounts.status.enableNote",
+    "admin.commerce.payments.providerAccounts.status.setAvailableNote",
+    "admin.commerce.payments.providerAccounts.status.enableSuccess",
+    "admin.commerce.payments.providerAccounts.status.setAvailableSuccess",
     "admin.commerce.payments.providerAccounts.providerOptionsEmpty",
     "admin.commerce.payments.providerAccounts.providerOptionsError",
   ]) {
     assert.match(i18nSource, new RegExp(`"${escapeRegExp(key)}"`));
   }
+  assert.doesNotMatch(
+    viewSource,
+    /PaymentProviderAccountInput label=\{t\('admin\.commerce\.payments\.providerAccounts\.accountNo'/,
+  );
   assert.doesNotMatch(
     viewSource,
     /PaymentProviderAccountInput label=\{t\('admin\.commerce\.payments\.providerAccounts\.providerCode'/,
@@ -566,6 +849,30 @@ test("admin payments center exposes complete payment modules and aligned provide
     viewSource,
     /PaymentProviderAccountInput label=\{t\('admin\.commerce\.payments\.providerAccounts\.status'/,
   );
+  assert.doesNotMatch(
+    viewSource,
+    /PaymentProviderAccountInput label=\{t\('admin\.commerce\.payments\.providerAccounts\.secretRef'/,
+  );
+  assert.doesNotMatch(
+    viewSource,
+    /PaymentProviderAccountInput label=\{t\('admin\.commerce\.payments\.providerAccounts\.webhookSecretRef'/,
+  );
+  assert.doesNotMatch(
+    viewSource,
+    /PaymentProviderAccountInput label=\{t\('admin\.commerce\.payments\.providerAccounts\.certificateRef'/,
+  );
+  assert.doesNotMatch(viewSource, /provider\.providerType, provider\.settlementType, provider\.status/);
+  assert.match(serviceSource, /backendPaymentsProviderAccountsUpdate/);
+  assert.match(serviceSource, /backendPaymentsProviderAccountsDelete/);
+  assert.match(serviceSource, /backendPaymentsProviderAccountsStatusUpdate/);
+  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.payments\.providerAccounts\.update/);
+  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.payments\.providerAccounts\.delete/);
+  assert.match(serviceSource, /getClawRouterBackendSdkClient\(\)\.commerce\.payments\.providerAccounts\.status\.update/);
+  assert.match(backendCommerceSdk, /class CommercePaymentsProviderAccountsStatusApi/);
+  assert.match(backendCommerceSdk, /async update\(providerAccountId: string/);
+  assert.match(backendCommerceSdk, /async delete\(providerAccountId: string/);
+  assert.match(backendCommerceSdk, /public readonly status: CommercePaymentsProviderAccountsStatusApi/);
+  assert.doesNotMatch(providerAccountMutationSdkType, /\baccountNo:/);
   assert.doesNotMatch(serviceSource, /\bfetch\s*\(|axios|XMLHttpRequest/);
 });
 
@@ -589,6 +896,7 @@ test("admin payments center table columns match payment SDK list item contracts"
   assertPaymentSectionColumns(viewSource, "providerAccounts", [
     "accountNo",
     "providerCode",
+    "accountRole",
     "merchantId",
     "environment",
     "countryCode",

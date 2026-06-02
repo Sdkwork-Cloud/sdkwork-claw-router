@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sovereign-content-machine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-content-machine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sovereign-content-machine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce4f1e985c6c3a10146aee1126188e537c0c5b898e76344547e564cec7acf7e8",

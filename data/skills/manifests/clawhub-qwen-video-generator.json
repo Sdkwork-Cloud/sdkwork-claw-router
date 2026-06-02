@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwen-video-generator@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwen-video-generator-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwen-video-generator-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:98c7e75203ad1e4a4dd5a290746103158ec9a027643be601dbfab0fb2b04d65b",

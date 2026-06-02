@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sop-bom-report@1.4.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-sop-bom-report-1.4.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sop-bom-report-1.4.3.json"
+      },
       "version": "1.4.3",
       "runtime": "metadata",
       "checksumHash": "sha256:b592a0e231884a1247cb02aeccb74145dfa16b3509cc9490513fb3ae387ebcce",

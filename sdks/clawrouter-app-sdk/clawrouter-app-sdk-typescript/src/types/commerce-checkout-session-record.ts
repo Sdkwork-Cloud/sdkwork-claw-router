@@ -8,6 +8,8 @@ export interface CommerceCheckoutSessionRecord {
   currency_code: string;
   /** Expires at field on commerce checkout session record. */
   expires_at: string;
+  /** Id field on commerce checkout session record. */
+  id?: string;
   /** Idempotency key field on commerce checkout session record. */
   idempotency_key: string;
   /** Organization id field on commerce checkout session record. */

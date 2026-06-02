@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gpu-cluster-monitor@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-gpu-cluster-monitor-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gpu-cluster-monitor-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f0344eadb3fd2ea7cbf547c501b7ac5ff39cd61034cf87940c078381b940267f",

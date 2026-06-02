@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/browser-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-browser-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-browser-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f37384dac622ce1af1c161668a6430978f78d9290f26a3e97e266d43a71ed468",

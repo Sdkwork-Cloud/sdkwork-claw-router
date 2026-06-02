@@ -4,8 +4,12 @@ export interface AdminRateLimitItem {
   blockDuration?: string;
   /** Burst field on admin rate limit item. */
   burst?: number;
-  /** Group field on admin rate limit item. */
-  group?: string;
+  /** Channel group field on admin rate limit item. */
+  channelGroup?: string;
+  /** Channel group id field on admin rate limit item. */
+  channelGroupId?: string;
+  /** Channel group name field on admin rate limit item. */
+  channelGroupName?: string;
   /** Id field on admin rate limit item. */
   id: string;
   /** Key prefix field on admin rate limit item. */

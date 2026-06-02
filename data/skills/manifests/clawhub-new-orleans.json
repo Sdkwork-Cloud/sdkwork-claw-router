@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/new-orleans@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-new-orleans-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-new-orleans-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2233b6b26480ea8c7c0ed1a12c5a20ca13e8f957fb61ba6e7160dfbeccabc0e4",

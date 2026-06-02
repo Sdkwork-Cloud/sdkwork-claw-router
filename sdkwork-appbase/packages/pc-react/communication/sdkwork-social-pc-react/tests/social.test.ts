@@ -15,6 +15,34 @@ import {
   type SdkworkSocialProfile,
 } from "../src";
 
+const launchImage = {
+  bucketId: "social-media",
+  fileName: "launch.png",
+  id: "media-resource-launch",
+  kind: "image",
+  mimeType: "image/png",
+  objectKey: "posts/launch-moment/launch.png",
+  publicUrl: "https://cdn.sdkwork.ai/social/launch.png",
+  sizeBytes: "8192",
+  source: "object_storage",
+} as const;
+
+const sketchImage = {
+  id: "media-resource-sketch",
+  kind: "image",
+  source: "external_url",
+  url: "https://example.com/sketch.png",
+} as const;
+
+const demoVideo = {
+  durationSeconds: 64,
+  id: "media-resource-demo",
+  kind: "video",
+  mimeType: "video/mp4",
+  source: "external_url",
+  url: "https://example.com/demo.mp4",
+} as const;
+
 const profiles: SdkworkSocialProfile[] = [
   {
     displayName: "Current User",
@@ -76,7 +104,7 @@ const posts: SdkworkSocialPost[] = [
     createdAt: "2026-04-02T10:30:00.000Z",
     id: "launch-moment",
     isPinned: true,
-    media: [{ type: "image", url: "https://example.com/launch.png" }],
+    media: [launchImage],
     relevanceScore: 82,
     stats: {
       commentCount: 8,
@@ -107,7 +135,7 @@ const posts: SdkworkSocialPost[] = [
     content: "Private design sketch for the next campaign.",
     createdAt: "2026-04-02T10:20:00.000Z",
     id: "private-sketch",
-    media: [{ type: "image", url: "https://example.com/sketch.png" }],
+    media: [sketchImage],
     relevanceScore: 75,
     stats: {
       commentCount: 3,
@@ -138,7 +166,7 @@ const posts: SdkworkSocialPost[] = [
     content: "Video demo reel for the AI authoring flow.",
     createdAt: "2026-04-02T10:10:00.000Z",
     id: "demo-reel",
-    media: [{ type: "video", url: "https://example.com/demo.mp4" }],
+    media: [demoVideo],
     relevanceScore: 60,
     stats: {
       commentCount: 11,

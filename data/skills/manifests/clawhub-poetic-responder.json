@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/poetic-responder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-poetic-responder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-poetic-responder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:efd475ea62473502208aa7c554f3d932ee1167e31bb5b54a21bd7f066b41f8c3",

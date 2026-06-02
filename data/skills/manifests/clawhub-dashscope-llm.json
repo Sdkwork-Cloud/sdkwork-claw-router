@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dashscope-llm@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-dashscope-llm-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dashscope-llm-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:59563b32eb3819de5945c3dbb3c4b4e9d0c391609793eafd203296077515b8a6",

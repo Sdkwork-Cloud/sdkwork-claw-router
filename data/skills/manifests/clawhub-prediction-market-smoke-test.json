@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prediction-market-smoke-test@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prediction-market-smoke-test-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prediction-market-smoke-test-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5012d2118b6e2b1c3edb154c375b4ac201f8920664ea847614607c597bbb8799",

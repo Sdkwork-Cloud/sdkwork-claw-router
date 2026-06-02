@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-x-scraper@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-x-scraper-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-x-scraper-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6e009d01ebbfb8f1d502518349a8b0729157b03d54c8c46f0c458e9c7384b092",

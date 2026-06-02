@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kirk-image@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kirk-image-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kirk-image-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:41434d5ae4e97fbeac70087d9e1ce4cd0204043f2b40fc6fe840d3eff9e3adc2",

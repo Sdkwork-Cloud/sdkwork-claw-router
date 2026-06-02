@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fix-llm-artifacts@1.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-fix-llm-artifacts-1.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fix-llm-artifacts-1.1.4.json"
+      },
       "version": "1.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9d0899529495eeee1d8b8d7f1d91c79c339a9783746b9b1beed9f6a64d905e36",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-key-pool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-key-pool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-key-pool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29c1e68f47621b98e489b528b4e03b70987f0d899f3da910c25f7f6ff03f938a",

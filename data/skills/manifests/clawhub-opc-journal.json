@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opc-journal@2.5.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-opc-journal-2.5.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opc-journal-2.5.2.json"
+      },
       "version": "2.5.2",
       "runtime": "metadata",
       "checksumHash": "sha256:569c7e8989c0bc8cd0792db948efe25f96d90578d0cc9d2a3ad27c1b3fce16dd",

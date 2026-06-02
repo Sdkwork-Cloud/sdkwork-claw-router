@@ -5,12 +5,15 @@ type UploadSessionRecord struct {
 	AbortedAt string `json:"aborted_at"`
 	BucketId string `json:"bucket_id"`
 	CompletedAt string `json:"completed_at"`
+	CompletedBytes string `json:"completed_bytes"`
+	CompletedPartCount int `json:"completed_part_count"`
 	ContentType string `json:"content_type"`
 	CreatedAt string `json:"created_at"`
 	DataScope string `json:"data_scope"`
 	DeletedAt string `json:"deleted_at"`
 	DeletedBy string `json:"deleted_by"`
 	ExpectedSha256 string `json:"expected_sha256"`
+	ExpectedSizeBytes string `json:"expected_size_bytes"`
 	ExpiresAt string `json:"expires_at"`
 	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
@@ -21,6 +24,8 @@ type UploadSessionRecord struct {
 	OriginalFilename string `json:"original_filename"`
 	OwnerId string `json:"owner_id"`
 	OwnerType string `json:"owner_type"`
+	PartCount int `json:"part_count"`
+	PartSizeBytes string `json:"part_size_bytes"`
 	ProviderId string `json:"provider_id"`
 	RequestId string `json:"request_id"`
 	S3UploadId string `json:"s3_upload_id"`

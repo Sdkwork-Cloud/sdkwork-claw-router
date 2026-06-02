@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alerting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alerting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alerting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:69a94ff3150fcc853f07b81f525b31c079951d5129c685d61fe48b194f04ad3b",

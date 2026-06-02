@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sandbox-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sandbox-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sandbox-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10593d238166938c5e8f36140e115834727fddec3196bd54fd8279ee684ac409",

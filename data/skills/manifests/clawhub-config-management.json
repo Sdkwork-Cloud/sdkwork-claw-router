@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/config-management@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-config-management-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-config-management-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:affe789af6c86f7971594c180c03ff126a9124da9f312a5fc6a7b163536253bc",

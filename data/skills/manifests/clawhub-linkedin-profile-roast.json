@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linkedin-profile-roast@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-profile-roast-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linkedin-profile-roast-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c64ba1e661a79df4e333994d2b96a53ad3c5695c23338fe099beabea9129d807",

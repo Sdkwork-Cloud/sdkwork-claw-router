@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quit-vaping@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quit-vaping-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quit-vaping-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0ad5a2710c981aae68bb5aa22251c6b286c51321b43a06172da6959cf9c1bdb",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/new-agent-task-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-new-agent-task-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-new-agent-task-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b6be75869f77f5deb76b696b92d27349ee1b46e8ce74cf8d4d080f3f9d41524",

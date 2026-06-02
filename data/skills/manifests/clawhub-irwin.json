@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/irwin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-irwin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-irwin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7161a20abf490e6a1f19d5b875f1788993c2025feff6372eaf5a998cfbb25b4b",

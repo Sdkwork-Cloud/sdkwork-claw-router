@@ -5,7 +5,7 @@ public class CommerceMembershipBenefitMutationRequest {
     private String benefitKey;
     private Boolean claimed;
     private String description;
-    private String icon;
+    private MediaResource icon;
     private Integer id;
     private String name;
     private String type;
@@ -36,11 +36,11 @@ public class CommerceMembershipBenefitMutationRequest {
         this.description = description;
     }
 
-    public String getIcon() {
+    public MediaResource getIcon() {
         return this.icon;
     }
 
-    public void setIcon(String icon) {
+    public void setIcon(MediaResource icon) {
         this.icon = icon;
     }
 

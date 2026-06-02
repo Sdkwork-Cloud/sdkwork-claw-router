@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stopwatch@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stopwatch-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stopwatch-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:213b71e809d24e8e9b37dd793d1cd258ec86feecc0ab6a54b26d66acf19fda02",

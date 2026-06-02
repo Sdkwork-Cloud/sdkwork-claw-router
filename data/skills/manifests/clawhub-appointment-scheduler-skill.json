@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/appointment-scheduler-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-appointment-scheduler-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-appointment-scheduler-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2712bd653f945b33dea34fa7cbe8af22e900021a505d4961f53fee423a1dca10",

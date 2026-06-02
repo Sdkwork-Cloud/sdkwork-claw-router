@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deai-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-deai-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deai-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b1285c480ab5f435bd7ef13477a5274c072c65e254bb122cc479cf273a229811",

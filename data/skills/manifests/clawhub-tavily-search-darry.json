@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tavily-search-darry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tavily-search-darry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tavily-search-darry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:faf5e9ffe682459fa43aa976a7e96515fe55d304726dfa5d6a5a7936fd391b68",

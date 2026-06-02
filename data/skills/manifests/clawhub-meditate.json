@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meditate@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-meditate-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meditate-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:47d575e9e88c492d3b61e0c64d3bfb8adb32cd453aca990eff80beca6f665208",

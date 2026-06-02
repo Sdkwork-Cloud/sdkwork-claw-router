@@ -1,6 +1,8 @@
 use std::future::Future;
 use std::pin::Pin;
 
+use serde_json::Value;
+
 use crate::domain::DomainResult;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -60,7 +62,7 @@ pub struct AppSessionUserRecord {
     pub username: String,
     pub display_name: String,
     pub email: String,
-    pub avatar_url: String,
+    pub avatar: Value,
     pub phone: String,
     pub language: String,
     pub is_verified: bool,

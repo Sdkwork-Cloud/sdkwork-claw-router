@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/poku@1.0.13",
-      "artifactUrl": "data/skills/artifacts/clawhub-poku-1.0.13.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-poku-1.0.13.json"
+      },
       "version": "1.0.13",
       "runtime": "metadata",
       "checksumHash": "sha256:8b56d2d669e07af705cd6e33026df537c1ae25e15532a486d2a5b6df0ea398a0",

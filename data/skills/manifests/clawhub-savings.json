@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/savings@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-savings-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-savings-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbda5e92b128486763ce36e5956d04d10a8760ebff9329c8181fd29efcba065b",

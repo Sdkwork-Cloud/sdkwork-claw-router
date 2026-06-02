@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/package-updater@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-package-updater-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-package-updater-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:73791d980389eec952c00020f76e9f5926a305582af3baa507ff6f1fe6e36c23",

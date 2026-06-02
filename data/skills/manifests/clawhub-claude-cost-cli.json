@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-cost-cli@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-cost-cli-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-cost-cli-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f598b0d8b19e05c08e7e66de6a79db58a5f85f7751a278107a146ef7d893515",

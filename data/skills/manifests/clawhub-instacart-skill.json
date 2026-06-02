@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/instacart-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-instacart-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-instacart-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a7c949e30111e0a23485e1868ca49c85e690dc07e8249598b3f6a3804536e1c1",

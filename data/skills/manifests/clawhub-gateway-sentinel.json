@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gateway-sentinel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gateway-sentinel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gateway-sentinel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:daf7b9a6b9a46ad119c2110ba78377901d61ff4bc915f30d9f32be1003beab06",

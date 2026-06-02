@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/indeed@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-indeed-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-indeed-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:deeaed54916ec63ed226e615e5d82a985bbbc33fd996eb00931ca59520a4e23e",

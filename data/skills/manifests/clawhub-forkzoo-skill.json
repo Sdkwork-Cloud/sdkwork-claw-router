@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/forkzoo-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-forkzoo-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-forkzoo-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5774275eb66d310afc9547724fe179b4aac4f2dad4c4f3a58ca82cb4d7428d28",

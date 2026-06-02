@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swarmind@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swarmind-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swarmind-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ccd26ef11e72a1f02e35e6b793c96759224e8c6033e87dcb55ac4a579b53cccd",

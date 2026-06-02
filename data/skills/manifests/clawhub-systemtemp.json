@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/systemtemp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-systemtemp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-systemtemp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc518f9fe0d4bea0df45d885ef70226b8ed354a3d9fbd9e5370984df6dd1ac66",

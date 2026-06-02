@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawlock@2.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawlock-2.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawlock-2.3.0.json"
+      },
       "version": "2.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5fe4679457c72b0f647da02de824f1f30a10aedd217b48b85d735ca397c0274c",

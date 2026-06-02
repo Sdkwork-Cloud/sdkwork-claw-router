@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class CommerceMembershipBenefitMutationRequest:
@@ -10,7 +13,7 @@ class CommerceMembershipBenefitMutationRequest:
     benefit_key: Optional[str] = None
     claimed: Optional[bool] = None
     description: Optional[str] = None
-    icon: Optional[str] = None
+    icon: Optional[MediaResource] = None
     id: Optional[int] = None
     type: Optional[str] = None
     usage_limit: Optional[int] = None

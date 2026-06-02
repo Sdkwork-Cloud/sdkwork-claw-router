@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flat-lay-cli-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flat-lay-cli-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flat-lay-cli-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d6be2ed9d47c48151e20d562b186e9a143da5ff064fe8c04b02205fe0ed846c7",

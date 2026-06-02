@@ -2,6 +2,9 @@ use sha2::{Digest, Sha256};
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::sql_admin_product_center::{
+    media_resource_locator, media_resource_object_blob_id, media_resource_stable_id,
+};
 use crate::ports::{
     AdminAppCategoryItem, AdminAppCommandFuture, AdminAppItem, AdminAppPage, AdminAppStore,
     AdminAppTemplateItem, AdminAppTemplatePage, CreateAdminAppCategoryCommand,
@@ -583,7 +586,8 @@ async fn list_categories(
 ) -> DomainResult<Vec<AdminAppCategoryItem>> {
     let rows = sqlx::query(
         r#"
-        SELECT id, uuid, tenant_id, organization_id, name, description, code, icon,
+        SELECT id, uuid, tenant_id, organization_id, name, description, code,
+               CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, 1) AS visible,
                COALESCE(status, 1) AS status, type AS category_type
@@ -708,7 +712,9 @@ async fn list_apps(pool: &SqlitePool, query: ListAdminAppsQuery) -> DomainResult
         r#"
         SELECT
             id, uuid, tenant_id, organization_id, user_id, name, description, version,
-            CAST(icon AS TEXT) AS icon, icon_url, CAST(resource_list AS TEXT) AS resource_list,
+            CAST(icon AS TEXT) AS icon,
+            CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
+            CAST(resource_list AS TEXT) AS resource_list,
             project_id, access_url, CAST(config AS TEXT) AS config,
             json_extract(config, '$.standard.appKey') AS app_key,
             COALESCE(status, 1) AS status,
@@ -722,7 +728,8 @@ async fn list_apps(pool: &SqlitePool, query: ListAdminAppsQuery) -> DomainResult
             CAST(install_skill AS TEXT) AS install_skill,
             CAST(install_config AS TEXT) AS install_config,
             CAST(release_notes AS TEXT) AS release_notes,
-            package_name, bundle_id, store_url, download_url,
+            package_name, bundle_id, store_url,
+            CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
         FROM plus_app
@@ -865,7 +872,9 @@ async fn list_app_templates(
         SELECT
             id, uuid, tenant_id, organization_id, template_no, template_code, template_name,
             description, category_id, category_code, template_type, runtime, framework, language,
-            icon_url, cover_url, COALESCE(visibility, 1) AS visibility,
+            CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
+            CAST(cover_resource_snapshot AS TEXT) AS cover_resource_snapshot,
+            COALESCE(visibility, 1) AS visibility,
             COALESCE(publish_status, 1) AS publish_status,
             COALESCE(featured, 0) AS featured, COALESCE(sort_weight, 0) AS sort_weight,
             source_app_id, git_repo_url, git_ref, git_sub_path, current_version_id,
@@ -1032,7 +1041,9 @@ fn app_by_id_query() -> sqlx::query::Query<'static, Sqlite, sqlx::sqlite::Sqlite
         r#"
         SELECT
             id, uuid, tenant_id, organization_id, user_id, name, description, version,
-            CAST(icon AS TEXT) AS icon, icon_url, CAST(resource_list AS TEXT) AS resource_list,
+            CAST(icon AS TEXT) AS icon,
+            CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
+            CAST(resource_list AS TEXT) AS resource_list,
             project_id, access_url, CAST(config AS TEXT) AS config,
             json_extract(config, '$.standard.appKey') AS app_key,
             COALESCE(status, 1) AS status,
@@ -1046,7 +1057,8 @@ fn app_by_id_query() -> sqlx::query::Query<'static, Sqlite, sqlx::sqlite::Sqlite
             CAST(install_skill AS TEXT) AS install_skill,
             CAST(install_config AS TEXT) AS install_config,
             CAST(release_notes AS TEXT) AS release_notes,
-            package_name, bundle_id, store_url, download_url,
+            package_name, bundle_id, store_url,
+            CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
         FROM plus_app
@@ -1080,7 +1092,9 @@ fn app_by_id_owned_query(
         r#"
         SELECT
             id, uuid, tenant_id, organization_id, user_id, name, description, version,
-            CAST(icon AS TEXT) AS icon, icon_url, CAST(resource_list AS TEXT) AS resource_list,
+            CAST(icon AS TEXT) AS icon,
+            CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
+            CAST(resource_list AS TEXT) AS resource_list,
             project_id, access_url, CAST(config AS TEXT) AS config,
             json_extract(config, '$.standard.appKey') AS app_key,
             COALESCE(status, 1) AS status,
@@ -1094,7 +1108,8 @@ fn app_by_id_owned_query(
             CAST(install_skill AS TEXT) AS install_skill,
             CAST(install_config AS TEXT) AS install_config,
             CAST(release_notes AS TEXT) AS release_notes,
-            package_name, bundle_id, store_url, download_url,
+            package_name, bundle_id, store_url,
+            CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
             CAST(created_at AS TEXT) AS created_at,
             CAST(updated_at AS TEXT) AS updated_at
         FROM plus_app
@@ -1117,7 +1132,9 @@ async fn load_template_by_id(
         SELECT
             id, uuid, tenant_id, organization_id, template_no, template_code, template_name,
             description, category_id, category_code, template_type, runtime, framework, language,
-            icon_url, cover_url, COALESCE(visibility, 1) AS visibility,
+            CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
+            CAST(cover_resource_snapshot AS TEXT) AS cover_resource_snapshot,
+            COALESCE(visibility, 1) AS visibility,
             COALESCE(publish_status, 1) AS publish_status,
             COALESCE(featured, 0) AS featured, COALESCE(sort_weight, 0) AS sort_weight,
             source_app_id, git_repo_url, git_ref, git_sub_path, current_version_id,
@@ -1178,7 +1195,9 @@ async fn load_template_by_id_tx(
         SELECT
             id, uuid, tenant_id, organization_id, template_no, template_code, template_name,
             description, category_id, category_code, template_type, runtime, framework, language,
-            icon_url, cover_url, COALESCE(visibility, 1) AS visibility,
+            CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
+            CAST(cover_resource_snapshot AS TEXT) AS cover_resource_snapshot,
+            COALESCE(visibility, 1) AS visibility,
             COALESCE(publish_status, 1) AS publish_status,
             COALESCE(featured, 0) AS featured, COALESCE(sort_weight, 0) AS sort_weight,
             source_app_id, git_repo_url, git_ref, git_sub_path, current_version_id,
@@ -1213,17 +1232,28 @@ async fn insert_app_template(
     let id = next_template_assigned_id(tx, &command.template_uuid).await?;
     let visibility = template_visibility_code(&command.visibility)?;
     let publish_status = template_publish_status_code(&command.publish_status)?;
+    let icon = command.icon.as_ref();
+    let icon_media_resource_id = icon.map(media_resource_stable_id);
+    let icon_object_blob_id = icon.and_then(media_resource_object_blob_id);
+    let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
+    let cover = command.cover.as_ref();
+    let cover_media_resource_id = cover.map(media_resource_stable_id);
+    let cover_object_blob_id = cover.and_then(media_resource_object_blob_id);
+    let cover_resource_snapshot = cover.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
         INSERT INTO studio_app_template
             (id, uuid, tenant_id, organization_id, data_scope, status, template_no, template_code,
              template_name, description, category_id, category_code, template_type, runtime,
-             framework, language, icon_url, cover_url, visibility, publish_status, featured,
+             framework, language,
+             icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
+             cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot,
+             visibility, publish_status, featured,
              sort_weight, source_app_id, git_repo_url, git_ref, git_sub_path,
              app_config_schema, default_app_config, variable_schema,
              dependency_manifest, capability_manifest, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 1, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, 1, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
     .bind(id)
@@ -1240,8 +1270,12 @@ async fn insert_app_template(
     .bind(command.runtime.as_deref())
     .bind(command.framework.as_deref())
     .bind(command.language.as_deref())
-    .bind(command.icon_url.as_deref())
-    .bind(command.cover_url.as_deref())
+    .bind(icon_media_resource_id)
+    .bind(icon_object_blob_id)
+    .bind(icon_resource_snapshot)
+    .bind(cover_media_resource_id)
+    .bind(cover_object_blob_id)
+    .bind(cover_resource_snapshot)
     .bind(visibility)
     .bind(publish_status)
     .bind(command.featured)
@@ -1289,6 +1323,22 @@ async fn update_app_template(
             .as_deref()
             .unwrap_or(existing.publish_status.as_str()),
     )?;
+    let icon_changed = command.icon.is_some();
+    let icon = command
+        .icon
+        .clone()
+        .unwrap_or_else(|| existing.icon.clone());
+    let icon_media_resource_id = icon.as_ref().map(media_resource_stable_id);
+    let icon_object_blob_id = icon.as_ref().and_then(media_resource_object_blob_id);
+    let icon_resource_snapshot = icon.as_ref().map(serde_json::Value::to_string);
+    let cover_changed = command.cover.is_some();
+    let cover = command
+        .cover
+        .clone()
+        .unwrap_or_else(|| existing.cover.clone());
+    let cover_media_resource_id = cover.as_ref().map(media_resource_stable_id);
+    let cover_object_blob_id = cover.as_ref().and_then(media_resource_object_blob_id);
+    let cover_resource_snapshot = cover.as_ref().map(serde_json::Value::to_string);
     sqlx::query(
         r#"
         UPDATE studio_app_template
@@ -1300,8 +1350,12 @@ async fn update_app_template(
             runtime = ?,
             framework = ?,
             language = ?,
-            icon_url = ?,
-            cover_url = ?,
+            icon_media_resource_id = CASE WHEN ? THEN ? ELSE icon_media_resource_id END,
+            icon_object_blob_id = CASE WHEN ? THEN ? ELSE icon_object_blob_id END,
+            icon_resource_snapshot = CASE WHEN ? THEN ? ELSE icon_resource_snapshot END,
+            cover_media_resource_id = CASE WHEN ? THEN ? ELSE cover_media_resource_id END,
+            cover_object_blob_id = CASE WHEN ? THEN ? ELSE cover_object_blob_id END,
+            cover_resource_snapshot = CASE WHEN ? THEN ? ELSE cover_resource_snapshot END,
             visibility = ?,
             publish_status = ?,
             featured = ?,
@@ -1346,8 +1400,18 @@ async fn update_app_template(
     .bind(command.runtime.clone().unwrap_or(existing.runtime))
     .bind(command.framework.clone().unwrap_or(existing.framework))
     .bind(command.language.clone().unwrap_or(existing.language))
-    .bind(command.icon_url.clone().unwrap_or(existing.icon_url))
-    .bind(command.cover_url.clone().unwrap_or(existing.cover_url))
+    .bind(icon_changed)
+    .bind(icon_media_resource_id)
+    .bind(icon_changed)
+    .bind(icon_object_blob_id)
+    .bind(icon_changed)
+    .bind(icon_resource_snapshot)
+    .bind(cover_changed)
+    .bind(cover_media_resource_id)
+    .bind(cover_changed)
+    .bind(cover_object_blob_id)
+    .bind(cover_changed)
+    .bind(cover_resource_snapshot)
     .bind(visibility)
     .bind(publish_status)
     .bind(command.featured.unwrap_or(existing.featured))
@@ -1490,12 +1554,27 @@ async fn insert_app(
     let status_code = app_status_code(&command.status)?;
     let market_status = app_market_status(&command.market_status)?;
     normalize_config(&mut config, command.app_key.as_deref(), Some(market_status))?;
+    let icon_resource = media_resource_from_value(&command.icon, "image");
+    let icon_media_resource_id = icon_resource.as_ref().map(media_resource_stable_id);
+    let icon_object_blob_id = icon_resource
+        .as_ref()
+        .and_then(media_resource_object_blob_id);
+    let icon_resource_snapshot = icon_resource.as_ref().map(serde_json::Value::to_string);
+    let artifact_resource = command
+        .artifact
+        .as_ref()
+        .and_then(|artifact| media_resource_from_value(artifact, "archive"));
+    let artifact_media_resource_id = artifact_resource.as_ref().map(media_resource_stable_id);
+    let artifact_object_blob_id = artifact_resource
+        .as_ref()
+        .and_then(media_resource_object_blob_id);
+    let artifact_resource_snapshot = artifact_resource.as_ref().map(serde_json::Value::to_string);
     sqlx::query(
         r#"
         INSERT INTO plus_app
-            (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_url, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, download_url, created_at, updated_at)
+            (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
     .bind(id)
@@ -1509,7 +1588,9 @@ async fn insert_app(
     .bind(command.project_id)
     .bind(command.description.as_deref())
     .bind(command.version.as_deref())
-    .bind(command.icon_url.as_deref())
+    .bind(icon_media_resource_id)
+    .bind(icon_object_blob_id)
+    .bind(icon_resource_snapshot)
     .bind(command.access_url.as_deref())
     .bind(config.to_string())
     .bind(status_code)
@@ -1522,7 +1603,9 @@ async fn insert_app(
     .bind(command.package_name.as_deref())
     .bind(command.bundle_id.as_deref())
     .bind(command.store_url.as_deref())
-    .bind(command.download_url.as_deref())
+    .bind(artifact_media_resource_id)
+    .bind(artifact_object_blob_id)
+    .bind(artifact_resource_snapshot)
     .bind(&command.requested_at)
     .bind(&command.requested_at)
     .execute(&mut **tx)
@@ -1536,12 +1619,18 @@ async fn insert_category(
     command: &CreateAdminAppCategoryCommand,
 ) -> DomainResult<i64> {
     let id = next_category_assigned_id(tx, &command.category_uuid).await?;
+    let icon = command.icon.as_ref();
+    let icon_media_resource_id = icon.map(media_resource_stable_id);
+    let icon_object_blob_id = icon.and_then(media_resource_object_blob_id);
+    let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
         INSERT INTO plus_category
-            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, group_name, code, icon, sort_weight, parent_id, path, visible, status, created_at, updated_at)
+            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, group_name, code,
+             icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
+             sort_weight, parent_id, path, visible, status, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (?, ?, ?, ?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         "#,
     )
     .bind(id)
@@ -1553,7 +1642,9 @@ async fn insert_category(
     .bind(command.category_type)
     .bind(APP_STORE_CATEGORY_GROUP)
     .bind(command.code.as_deref())
-    .bind(command.icon.as_deref())
+    .bind(icon_media_resource_id)
+    .bind(icon_object_blob_id)
+    .bind(icon_resource_snapshot)
     .bind(command.sort_weight)
     .bind(command.parent_id)
     .bind(command.path.as_deref())
@@ -1575,7 +1666,8 @@ async fn load_category_by_id(
 ) -> DomainResult<Option<AdminAppCategoryItem>> {
     let row = sqlx::query(
         r#"
-        SELECT id, uuid, tenant_id, organization_id, name, description, code, icon,
+        SELECT id, uuid, tenant_id, organization_id, name, description, code,
+               CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, 1) AS visible,
                COALESCE(status, 1) AS status, type AS category_type
@@ -1622,6 +1714,26 @@ async fn update_app(
         app_key.as_deref(),
         Some(existing.market_status.as_str()),
     )?;
+    let next_icon = command
+        .icon
+        .clone()
+        .unwrap_or_else(|| existing.icon.clone());
+    let icon_resource = media_resource_from_value(&next_icon, "image");
+    let icon_media_resource_id = icon_resource.as_ref().map(media_resource_stable_id);
+    let icon_object_blob_id = icon_resource
+        .as_ref()
+        .and_then(media_resource_object_blob_id);
+    let icon_resource_snapshot = icon_resource.as_ref().map(serde_json::Value::to_string);
+    let artifact_resource = match &command.artifact {
+        Some(Some(artifact)) => media_resource_from_value(artifact, "archive"),
+        Some(None) => None,
+        None => existing.artifact.clone(),
+    };
+    let artifact_media_resource_id = artifact_resource.as_ref().map(media_resource_stable_id);
+    let artifact_object_blob_id = artifact_resource
+        .as_ref()
+        .and_then(media_resource_object_blob_id);
+    let artifact_resource_snapshot = artifact_resource.as_ref().map(serde_json::Value::to_string);
     sqlx::query(
         r#"
         UPDATE plus_app
@@ -1630,7 +1742,9 @@ async fn update_app(
             description = ?,
             version = ?,
             icon = ?,
-            icon_url = ?,
+            icon_media_resource_id = ?,
+            icon_object_blob_id = ?,
+            icon_resource_snapshot = ?,
             resource_list = ?,
             project_id = ?,
             access_url = ?,
@@ -1644,7 +1758,9 @@ async fn update_app(
             package_name = ?,
             bundle_id = ?,
             store_url = ?,
-            download_url = ?,
+            artifact_media_resource_id = ?,
+            artifact_object_blob_id = ?,
+            artifact_resource_snapshot = ?,
             updated_at = ?,
             v = COALESCE(v, 0) + 1
         WHERE id = ?
@@ -1663,8 +1779,10 @@ async fn update_app(
             .map(str::to_owned),
     )
     .bind(command.version.clone().unwrap_or(existing.version))
-    .bind(command.icon.clone().unwrap_or(existing.icon).to_string())
-    .bind(command.icon_url.clone().unwrap_or(existing.icon_url))
+    .bind(next_icon.to_string())
+    .bind(icon_media_resource_id)
+    .bind(icon_object_blob_id)
+    .bind(icon_resource_snapshot)
     .bind(
         command
             .resource_list
@@ -1719,12 +1837,9 @@ async fn update_app(
     )
     .bind(command.bundle_id.clone().unwrap_or(existing.bundle_id))
     .bind(command.store_url.clone().unwrap_or(existing.store_url))
-    .bind(
-        command
-            .download_url
-            .clone()
-            .unwrap_or(existing.download_url),
-    )
+    .bind(artifact_media_resource_id)
+    .bind(artifact_object_blob_id)
+    .bind(artifact_resource_snapshot)
     .bind(&command.requested_at)
     .bind(command.app_id)
     .bind(command.subject.tenant_id)
@@ -1750,7 +1865,9 @@ async fn update_category(
         SET name = CASE WHEN ? THEN ? ELSE name END,
             description = CASE WHEN ? THEN ? ELSE description END,
             code = CASE WHEN ? THEN ? ELSE code END,
-            icon = CASE WHEN ? THEN ? ELSE icon END,
+            icon_media_resource_id = CASE WHEN ? THEN ? ELSE icon_media_resource_id END,
+            icon_object_blob_id = CASE WHEN ? THEN ? ELSE icon_object_blob_id END,
+            icon_resource_snapshot = CASE WHEN ? THEN ? ELSE icon_resource_snapshot END,
             sort_weight = CASE WHEN ? THEN ? ELSE sort_weight END,
             parent_id = CASE WHEN ? THEN ? ELSE parent_id END,
             path = CASE WHEN ? THEN ? ELSE path END,
@@ -1772,7 +1889,29 @@ async fn update_category(
     .bind(command.code.is_some())
     .bind(command.code.clone().flatten())
     .bind(command.icon.is_some())
-    .bind(command.icon.clone().flatten())
+    .bind(
+        command
+            .icon
+            .as_ref()
+            .and_then(|value| value.as_ref())
+            .map(media_resource_stable_id),
+    )
+    .bind(command.icon.is_some())
+    .bind(
+        command
+            .icon
+            .as_ref()
+            .and_then(|value| value.as_ref())
+            .and_then(media_resource_object_blob_id),
+    )
+    .bind(command.icon.is_some())
+    .bind(
+        command
+            .icon
+            .as_ref()
+            .and_then(|value| value.as_ref())
+            .map(serde_json::Value::to_string),
+    )
     .bind(command.sort_weight.is_some())
     .bind(command.sort_weight)
     .bind(command.parent_id.is_some())
@@ -2179,6 +2318,10 @@ fn normalize_config(
 
 fn app_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAppItem> {
     let config = json_cell(&row, "config", "{}")?;
+    let stored_icon = json_cell(&row, "icon", "{}")?;
+    let icon = optional_media_resource_from_row(&row, "icon_resource_snapshot")?
+        .or_else(|| media_resource_from_value(&stored_icon, "image"))
+        .unwrap_or_else(|| serde_json::json!({ "kind": "image", "source": "external_url" }));
     let market_status = string_cell(&row, "market_status")
         .filter(|value| !value.trim().is_empty())
         .unwrap_or_else(|| "DRAFT".to_owned());
@@ -2191,8 +2334,7 @@ fn app_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAppItem> {
         name: row.try_get("name").map_err(row_error)?,
         description: row.try_get("description").ok().flatten(),
         version: row.try_get("version").ok().flatten(),
-        icon: json_cell(&row, "icon", "{}")?,
-        icon_url: row.try_get("icon_url").ok().flatten(),
+        icon,
         resource_list: json_cell(&row, "resource_list", "{}")?,
         project_id: row.try_get("project_id").ok().flatten(),
         access_url: row.try_get("access_url").ok().flatten(),
@@ -2208,7 +2350,7 @@ fn app_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAppItem> {
         package_name: row.try_get("package_name").ok().flatten(),
         bundle_id: row.try_get("bundle_id").ok().flatten(),
         store_url: row.try_get("store_url").ok().flatten(),
-        download_url: row.try_get("download_url").ok().flatten(),
+        artifact: optional_media_resource_from_row(&row, "artifact_resource_snapshot")?,
         created_at: row.try_get("created_at").unwrap_or_default(),
         updated_at: row.try_get("updated_at").unwrap_or_default(),
         config,
@@ -2224,7 +2366,7 @@ fn category_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAppCateg
         name: row.try_get("name").map_err(row_error)?,
         description: row.try_get("description").ok().flatten(),
         code: row.try_get("code").ok().flatten(),
-        icon: row.try_get("icon").ok().flatten(),
+        icon: optional_media_resource_from_row(&row, "icon_resource_snapshot")?,
         sort_weight: integer_cell(&row, "sort_weight") as i32,
         parent_id: row.try_get("parent_id").ok().flatten(),
         path: row.try_get("path").ok().flatten(),
@@ -2250,8 +2392,8 @@ fn template_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminAppTempl
         runtime: row.try_get("runtime").ok().flatten(),
         framework: row.try_get("framework").ok().flatten(),
         language: row.try_get("language").ok().flatten(),
-        icon_url: row.try_get("icon_url").ok().flatten(),
-        cover_url: row.try_get("cover_url").ok().flatten(),
+        icon: optional_media_resource_from_row(&row, "icon_resource_snapshot")?,
+        cover: optional_media_resource_from_row(&row, "cover_resource_snapshot")?,
         visibility: template_visibility_label(integer_cell(&row, "visibility")),
         publish_status: template_publish_status_label(integer_cell(&row, "publish_status")),
         featured: integer_cell(&row, "featured") != 0,
@@ -2287,6 +2429,40 @@ fn json_cell(
     }
     serde_json::from_str(value.as_str())
         .map_err(|error| DomainError::new(format!("invalid app json column {column}: {error}")))
+}
+
+fn optional_media_resource_from_row(
+    row: &sqlx::sqlite::SqliteRow,
+    column: &str,
+) -> DomainResult<Option<serde_json::Value>> {
+    let Some(value) = row.try_get::<Option<String>, _>(column).ok().flatten() else {
+        return Ok(None);
+    };
+    if value.trim().is_empty() {
+        return Ok(None);
+    }
+    let resource = serde_json::from_str(value.as_str()).map_err(|error| {
+        DomainError::new(format!("invalid media resource column {column}: {error}"))
+    })?;
+    Ok(Some(resource))
+}
+
+fn media_resource_from_value(value: &serde_json::Value, kind: &str) -> Option<serde_json::Value> {
+    let locator = media_resource_locator(value)?;
+    let mut object = value.as_object().cloned().unwrap_or_default();
+    object
+        .entry("kind".to_owned())
+        .or_insert_with(|| serde_json::Value::String(kind.to_owned()));
+    object
+        .entry("source".to_owned())
+        .or_insert_with(|| serde_json::Value::String("external_url".to_owned()));
+    if !object.contains_key("url") {
+        object.insert("url".to_owned(), serde_json::Value::String(locator.clone()));
+    }
+    if !object.contains_key("publicUrl") {
+        object.insert("publicUrl".to_owned(), serde_json::Value::String(locator));
+    }
+    Some(serde_json::Value::Object(object))
 }
 
 fn string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<String> {

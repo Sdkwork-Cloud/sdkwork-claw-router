@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dji@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dji-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dji-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9b7c3e86c7e35d48662656ae57ede3c9d1c0d3a4e0e09d352f5d4587f0310a47",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/table-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-table-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-table-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b834f4d77ae3c521dee3327513fb8b9b206939c74d34000846519683870459fe",

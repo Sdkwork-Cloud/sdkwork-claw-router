@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-ai-doctor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-ai-doctor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-ai-doctor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c89b21d1597eefc5fba0758275887a8ac05c62f89472e3422e0e93546b0aa01",

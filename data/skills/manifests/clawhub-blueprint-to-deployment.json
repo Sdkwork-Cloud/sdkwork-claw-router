@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blueprint-to-deployment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blueprint-to-deployment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blueprint-to-deployment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:54c329d33b0c953d685fc0568e91ce349bb91b8d7e50840a3238caa6b1b43a27",

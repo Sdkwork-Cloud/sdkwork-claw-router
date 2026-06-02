@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/forescout@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-forescout-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-forescout-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b6c52160a0677c76d2bfd66621b22a0e0d4bb02a314ead502c0a0cde2fe7402f",

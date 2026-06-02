@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/format-converter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-format-converter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-format-converter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b818a4d016fcee25920dc18b5cc21e15996ab3d698f694f70bb5480f7266944a",

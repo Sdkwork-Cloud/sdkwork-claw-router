@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/devops-pipeline-management@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-devops-pipeline-management-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-devops-pipeline-management-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a15f18dc9fd27dc3487f7ada8fa8bd7bf743cff68090f7317bb4673473a9498",

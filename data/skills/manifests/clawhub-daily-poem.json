@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-poem@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-poem-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-poem-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:44764fa91e8c5eecefc170f62227e504659e1f23215356f4ae10b9c5418bc93f",

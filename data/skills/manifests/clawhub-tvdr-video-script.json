@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tvdr-video-script@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tvdr-video-script-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tvdr-video-script-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66ebb6db0c245958664ee5887c62c5343cc2a03e05e513291746f1615ed11f30",

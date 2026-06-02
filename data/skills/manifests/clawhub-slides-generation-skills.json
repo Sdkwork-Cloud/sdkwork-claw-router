@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slides-generation-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slides-generation-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slides-generation-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:717223f2b66432ebc4d5193f81f055c427f7b19dcd8592614c923f8b91b65dad",

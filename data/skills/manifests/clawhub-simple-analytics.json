@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/simple-analytics@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-simple-analytics-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-simple-analytics-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:83e89795be2a2798d0ffd03a7021c2e0bff74be5dabc1e3b0980277732b02bfa",

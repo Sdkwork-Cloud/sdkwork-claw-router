@@ -12,10 +12,10 @@ type AiModelVendorRecord struct {
 	Description string `json:"description"`
 	DisplayName string `json:"display_name"`
 	DocsUrl string `json:"docs_url"`
-	IconUrl string `json:"icon_url"`
+	Icon MediaResource `json:"icon"`
 	Id string `json:"id"`
 	LegalName string `json:"legal_name"`
-	LogoUrl string `json:"logo_url"`
+	Logo MediaResource `json:"logo"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	ModelFamilies map[string]JsonValue `json:"model_families"`
 	OpenSource bool `json:"open_source"`

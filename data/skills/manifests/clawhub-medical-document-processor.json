@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medical-document-processor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-medical-document-processor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medical-document-processor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f5cb3933d654398a221dcbf18a72c2343d29a2a9e94867559825cda30857071",

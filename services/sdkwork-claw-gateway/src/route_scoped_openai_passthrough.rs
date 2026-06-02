@@ -2051,7 +2051,7 @@ where
 mod tests {
     use super::*;
     use sdkwork_claw_product::domain::{
-        ApiKeyGroup, DecimalValue, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendor,
+        ChannelGroup, DecimalValue, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendor,
         ModelVendorDefinition, Money, PriceSide, PricingPlan, RouteCandidate, RoutingPolicy,
         RoutingPolicyScope, RoutingRule,
     };
@@ -2344,7 +2344,7 @@ mod tests {
             DecimalValue::parse("1.200000").unwrap(),
             Money::usd("0.000000").unwrap(),
         ));
-        catalog.add_api_key_group(ApiKeyGroup::new(
+        catalog.add_channel_group(ChannelGroup::new(
             10,
             "standard-group",
             "standard",
@@ -2401,7 +2401,7 @@ mod tests {
             10,
             20,
             "standard-group-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(9101),
         ));

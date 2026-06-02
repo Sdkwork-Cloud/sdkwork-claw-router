@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/recharge@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-recharge-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-recharge-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c15aab1cc36ff16d4aa7db1f271c182753ae06b4ab86808e1eb97c35e008cd1a",

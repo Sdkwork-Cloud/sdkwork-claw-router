@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-pdf-builder@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-pdf-builder-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-pdf-builder-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:99e709d8dae93e6f447dc1734e15b4cbf969654055a001f48809a26f76beacf9",

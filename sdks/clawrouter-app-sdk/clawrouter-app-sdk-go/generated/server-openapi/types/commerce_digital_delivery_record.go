@@ -8,6 +8,7 @@ type CommerceDigitalDeliveryRecord struct {
 	DeliveryRef string `json:"delivery_ref"`
 	DeliveryType string `json:"delivery_type"`
 	FulfillmentId string `json:"fulfillment_id"`
+	Id string `json:"id"`
 	OrderItemId string `json:"order_item_id"`
 	OrganizationId string `json:"organization_id"`
 	Status string `json:"status"`

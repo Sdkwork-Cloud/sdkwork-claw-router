@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mistral@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mistral-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mistral-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e6194ef0ba3ebecc756905bf727d8e24a60f8e014b3f45a2b4335c4d0d531cb1",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/property-management-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-property-management-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-property-management-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b2e1cf362c07f2da3457ec2f2143fc77d5825e4de259998e2d5a4ba1b05577fd",

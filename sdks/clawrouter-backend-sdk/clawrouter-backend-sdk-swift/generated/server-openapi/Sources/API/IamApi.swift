@@ -7,36 +7,6 @@ public class IamApi {
         self.client = client
     }
 
-    /// List groups
-    public func accessGroupsList() async throws -> AccessGroupsListResult? {
-        return try await client.get(ApiPaths.backendPath("/iam/access_groups"), responseType: AccessGroupsListResult.self)
-    }
-
-    /// Create group
-    public func accessGroupsCreate(body: AdminAccessGroupCreateRequest) async throws -> AccessGroupsCreateResult? {
-        return try await client.post(ApiPaths.backendPath("/iam/access_groups"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AccessGroupsCreateResult.self)
-    }
-
-    /// Delete group
-    public func accessGroupsDelete(groupId: String) async throws -> AccessGroupsDeleteResult? {
-        return try await client.delete(ApiPaths.backendPath("/iam/access_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))"), responseType: AccessGroupsDeleteResult.self)
-    }
-
-    /// Update group
-    public func accessGroupsUpdate(groupId: String, body: AdminAccessGroupUpdateRequest) async throws -> AccessGroupsUpdateResult? {
-        return try await client.patch(ApiPaths.backendPath("/iam/access_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AccessGroupsUpdateResult.self)
-    }
-
-    /// List group channel bindings
-    public func accessGroupsChannelBindingsList(groupId: String) async throws -> AccessGroupsChannelBindingsListResult? {
-        return try await client.get(ApiPaths.backendPath("/iam/access_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))/channel_bindings"), responseType: AccessGroupsChannelBindingsListResult.self)
-    }
-
-    /// Replace group channel bindings
-    public func accessGroupsChannelBindingsUpdate(groupId: String, body: AdminAccessGroupChannelBindingsReplaceRequest) async throws -> AccessGroupsChannelBindingsUpdateResult? {
-        return try await client.put(ApiPaths.backendPath("/iam/access_groups/\(serializePathParameter(groupId, PathParameterSpec(name: "groupId", style: "simple", explode: false)))/channel_bindings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: AccessGroupsChannelBindingsUpdateResult.self)
-    }
-
     /// List API key map
     public func apiKeysList() async throws -> ApiKeysListResult? {
         return try await client.get(ApiPaths.backendPath("/iam/api_keys"), responseType: ApiKeysListResult.self)

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/a-share-trader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-a-share-trader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-a-share-trader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bfcf29ab2607c5f504a8b35eb7b270dd14f3692d6a85851a14f26f312109351b",

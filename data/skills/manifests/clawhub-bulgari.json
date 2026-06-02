@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bulgari@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bulgari-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bulgari-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:798092e3f634820db70300b9493e2d68ab8093611f528eee356a85d005fd3280",

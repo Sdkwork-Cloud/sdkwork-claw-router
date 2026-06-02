@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentdojo@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentdojo-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentdojo-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:434e930b200e58c5a0aa4538c5137ef4bc96932d1cfa299b7965bd5ced2ff9ee",

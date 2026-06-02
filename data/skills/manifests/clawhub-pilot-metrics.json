@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-metrics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-metrics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-metrics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62f5f25d74acf057027d1285b214dd93792acf0e418eb79d92b2d935063f20be",

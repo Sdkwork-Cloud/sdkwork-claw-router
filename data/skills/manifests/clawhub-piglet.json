@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/piglet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-piglet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-piglet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6359fd2a915f77b3e84751f059c5cd2b9534effde503ba55cb98f75a3b5b892d",

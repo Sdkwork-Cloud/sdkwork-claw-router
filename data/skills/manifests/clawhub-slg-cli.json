@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slg-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slg-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slg-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52f95659114db8ee40cdbac484ab81128526ca3acf16e8f441041d3be222ef68",

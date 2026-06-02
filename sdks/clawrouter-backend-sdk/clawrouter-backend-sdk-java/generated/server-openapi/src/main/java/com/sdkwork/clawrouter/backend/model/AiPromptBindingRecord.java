@@ -8,13 +8,17 @@ public class AiPromptBindingRecord {
     private String dataScope;
     private String deletedAt;
     private String deletedBy;
+    private Boolean enabled;
     private String id;
     private Map<String, String> metadata;
     private String organizationId;
     private String ownerId;
     private String ownerType;
+    private Map<String, String> policyJson;
+    private Integer priority;
     private String promptId;
     private String promptVersionId;
+    private Map<String, String> snapshotJson;
     private String status;
     private String tenantId;
     private String updatedAt;
@@ -61,6 +65,14 @@ public class AiPromptBindingRecord {
         this.deletedBy = deletedBy;
     }
 
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -101,6 +113,22 @@ public class AiPromptBindingRecord {
         this.ownerType = ownerType;
     }
 
+    public Map<String, String> getPolicyJson() {
+        return this.policyJson;
+    }
+
+    public void setPolicyJson(Map<String, String> policyJson) {
+        this.policyJson = policyJson;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
     public String getPromptId() {
         return this.promptId;
     }
@@ -115,6 +143,14 @@ public class AiPromptBindingRecord {
 
     public void setPromptVersionId(String promptVersionId) {
         this.promptVersionId = promptVersionId;
+    }
+
+    public Map<String, String> getSnapshotJson() {
+        return this.snapshotJson;
+    }
+
+    public void setSnapshotJson(Map<String, String> snapshotJson) {
+        this.snapshotJson = snapshotJson;
     }
 
     public String getStatus() {

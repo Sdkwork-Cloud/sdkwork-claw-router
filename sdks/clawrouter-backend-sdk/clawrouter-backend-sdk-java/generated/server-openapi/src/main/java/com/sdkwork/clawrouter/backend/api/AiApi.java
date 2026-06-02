@@ -13,6 +13,42 @@ public class AiApi {
         this.client = client;
     }
 
+    /** List groups */
+    public ChannelGroupsListResult channelGroupsList() throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/ai/channel_groups"));
+        return client.convertValue(raw, new TypeReference<ChannelGroupsListResult>() {});
+    }
+
+    /** Create group */
+    public ChannelGroupsCreateResult channelGroupsCreate(AdminChannelGroupCreateRequest body) throws Exception {
+        Object raw = client.post(ApiPaths.backendPath("/ai/channel_groups"), body, null, null, "application/json");
+        return client.convertValue(raw, new TypeReference<ChannelGroupsCreateResult>() {});
+    }
+
+    /** Delete group */
+    public ChannelGroupsDeleteResult channelGroupsDelete(String channelGroupId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/ai/channel_groups/" + serializePathParameter(channelGroupId, new PathParameterSpec("channelGroupId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<ChannelGroupsDeleteResult>() {});
+    }
+
+    /** Update group */
+    public ChannelGroupsUpdateResult channelGroupsUpdate(String channelGroupId, AdminChannelGroupUpdateRequest body) throws Exception {
+        Object raw = client.patch(ApiPaths.backendPath("/ai/channel_groups/" + serializePathParameter(channelGroupId, new PathParameterSpec("channelGroupId", "simple", false)) + ""), body, null, null, "application/json");
+        return client.convertValue(raw, new TypeReference<ChannelGroupsUpdateResult>() {});
+    }
+
+    /** List group channel bindings */
+    public ChannelGroupsChannelBindingsListResult channelGroupsBindingsList(String channelGroupId) throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/ai/channel_groups/" + serializePathParameter(channelGroupId, new PathParameterSpec("channelGroupId", "simple", false)) + "/channel_bindings"));
+        return client.convertValue(raw, new TypeReference<ChannelGroupsChannelBindingsListResult>() {});
+    }
+
+    /** Replace group channel bindings */
+    public ChannelGroupsChannelBindingsUpdateResult channelGroupsBindingsUpdate(String channelGroupId, AdminChannelGroupChannelBindingsReplaceRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/ai/channel_groups/" + serializePathParameter(channelGroupId, new PathParameterSpec("channelGroupId", "simple", false)) + "/channel_bindings"), body, null, null, "application/json");
+        return client.convertValue(raw, new TypeReference<ChannelGroupsChannelBindingsUpdateResult>() {});
+    }
+
     /** List model rankings */
     public ModelRankingsListResult modelRankingsList(String rankScope, String vendorCode, String modality, String q, Integer limit) throws Exception {
         String query = buildQueryString(List.of(

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/photo-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-photo-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-photo-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f2d65621085a1ebb704c967cb12808a704f327d70716a079e809d0408f17779",

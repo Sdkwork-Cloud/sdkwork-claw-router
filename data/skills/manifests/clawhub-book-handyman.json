@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-handyman@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-handyman-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-handyman-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8121a479fe9aa6e9d81a60ce4d2c4467d20a38d068d0e5d064213063ad346607",

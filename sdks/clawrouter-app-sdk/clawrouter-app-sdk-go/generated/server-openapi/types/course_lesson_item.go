@@ -15,5 +15,5 @@ type CourseLessonItem struct {
 	SortOrder int `json:"sortOrder"`
 	SourceProvider string `json:"sourceProvider"`
 	Title string `json:"title"`
-	VideoUrl string `json:"videoUrl"`
+	Video MediaResource `json:"video"`
 }

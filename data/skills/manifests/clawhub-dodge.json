@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dodge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dodge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dodge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd742a2303e137e4acba77e6e1b22f8c8e1440b6ae38c5bccec56538c164e667",

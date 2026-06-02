@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baskin-robbins@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-baskin-robbins-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baskin-robbins-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:099de05f270d3c4a18c8c33bdfb329b14bd326a1a22d12ddf7403920c588296a",

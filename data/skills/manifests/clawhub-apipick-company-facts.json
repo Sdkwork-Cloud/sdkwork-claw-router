@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apipick-company-facts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apipick-company-facts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apipick-company-facts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:378bc3a3424bedde96e52eb815b7b73636594377e30531af6c9831e41040193f",

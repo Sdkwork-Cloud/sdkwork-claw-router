@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-confluence-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-confluence-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-confluence-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1825fe3dc42c188cb8a013a20ae63b3ed8997bfe8bdd1a93ddbf986adfd31cd",

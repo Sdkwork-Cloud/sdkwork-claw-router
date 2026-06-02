@@ -2,7 +2,7 @@ use sqlx::sqlite::SqliteRow;
 use sqlx::{Row, SqlitePool};
 
 use crate::infrastructure::sql::rows::{
-    AiModelRow, ApiKeyGroupMetricSnapshotRow, ApiKeyGroupRow, GatewayAccessPolicyRow,
+    AiModelRow, ChannelGroupMetricSnapshotRow, ChannelGroupRow, GatewayAccessPolicyRow,
     GatewayApiKeyRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow, PricingPlanRow,
     ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
 };
@@ -181,12 +181,12 @@ pub async fn load_pricing_plans(
     .await
 }
 
-pub async fn load_api_key_groups(
+pub async fn load_channel_groups(
     pool: &SqlitePool,
     sql: &'static str,
-) -> Result<Vec<ApiKeyGroupRow>, sqlx::Error> {
+) -> Result<Vec<ChannelGroupRow>, sqlx::Error> {
     map_query(sql, |row| {
-        Ok(ApiKeyGroupRow {
+        Ok(ChannelGroupRow {
             id: row.try_get("id")?,
             tenant_id: row.try_get("tenant_id")?,
             organization_id: row.try_get("organization_id")?,
@@ -258,12 +258,12 @@ pub async fn load_quota_policies(
     .await
 }
 
-pub async fn load_api_key_group_metric_snapshots(
+pub async fn load_channel_group_metric_snapshots(
     pool: &SqlitePool,
     sql: &'static str,
-) -> Result<Vec<ApiKeyGroupMetricSnapshotRow>, sqlx::Error> {
+) -> Result<Vec<ChannelGroupMetricSnapshotRow>, sqlx::Error> {
     map_query(sql, |row| {
-        Ok(ApiKeyGroupMetricSnapshotRow {
+        Ok(ChannelGroupMetricSnapshotRow {
             group_id: row.try_get("group_id")?,
             capacity_used: row.try_get("capacity_used")?,
             capacity_limit: row.try_get("capacity_limit")?,

@@ -1,5 +1,6 @@
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAppGenerationHistoryReadStore;
 use sdkwork_claw_product::ports::{AppGenerationHistoryReadStore, AppGenerationHistorySubject};
+use serde_json::Value;
 use sqlx::sqlite::SqlitePoolOptions;
 use sqlx::SqlitePool;
 
@@ -51,16 +52,16 @@ async fn sqlite_generation_history_loads_visible_statuses_for_subject_without_se
     );
     assert_eq!(
         "https://cdn.example.test/video-102.mp4",
-        items[3].videos[0].url
+        media_public_url(&items[3].videos[0])
     );
     assert_eq!(
-        Some("https://cdn.example.test/video-102.jpg"),
-        items[3].videos[0].thumb.as_deref()
+        "https://cdn.example.test/video-102.jpg",
+        media_public_url(&items[3].videos[0]["poster"])
     );
     assert_eq!("image", items[4].item_type);
     assert_eq!(
-        vec!["https://cdn.example.test/image-101.png".to_owned()],
-        items[4].images
+        "https://cdn.example.test/image-101.png",
+        media_public_url(&items[4].images[0])
     );
 
     let payload = serde_json::to_string(&items).unwrap();
@@ -172,20 +173,34 @@ async fn sqlite_generation_history_loads_standard_agent_runtime_playground_gener
     assert_eq!("2026-05-04T11:00:00Z", item.created_at.as_deref().unwrap());
     assert_eq!("2026-05-04T11:01:00Z", item.updated_at.as_deref().unwrap());
     assert_eq!(
-        vec!["https://cdn.example.test/runtime-image.png".to_owned()],
-        item.images
+        "https://cdn.example.test/runtime-image.png",
+        media_public_url(&item.images[0])
     );
     assert_eq!(
         "https://cdn.example.test/runtime-image.png",
-        item.url.as_deref().unwrap()
+        media_public_url(item.asset.as_ref().unwrap())
+    );
+    assert_eq!(
+        "image/png",
+        item.asset.as_ref().unwrap()["mimeType"]
+            .as_str()
+            .expect("media resource mimeType must be preserved")
+    );
+    assert_eq!(
+        "runtime/storage/hidden-image.png",
+        item.asset.as_ref().unwrap()["objectKey"]
+            .as_str()
+            .expect("media resource objectKey must be preserved")
+    );
+    assert_eq!(
+        5,
+        item.asset.as_ref().unwrap()["durationSeconds"]
+            .as_i64()
+            .expect("media resource durationSeconds must be preserved")
     );
 
     let payload = serde_json::to_string(&items).unwrap();
-    for internal_value in [
-        "runtime/storage/hidden-image.png",
-        "runtime-image-sha256",
-        "agent-run-trace-secret",
-    ] {
+    for internal_value in ["runtime-image-sha256", "agent-run-trace-secret"] {
         assert!(
             !payload.contains(internal_value),
             "generation history DTO must not expose standard runtime internal value: {internal_value}"
@@ -215,7 +230,14 @@ async fn sqlite_generation_history_keeps_text_only_agent_runtime_output_as_text(
     assert_eq!("Text answer", item.output_text.as_deref().unwrap());
     assert!(item.images.is_empty());
     assert!(item.videos.is_empty());
-    assert!(item.url.is_none());
+    assert!(item.asset.is_none());
+}
+
+fn media_public_url(value: &Value) -> &str {
+    value
+        .get("publicUrl")
+        .and_then(Value::as_str)
+        .expect("media resource publicUrl")
 }
 
 async fn sqlite_pool() -> SqlitePool {
@@ -248,8 +270,12 @@ async fn create_generation_tables(pool: &SqlitePool) {
             prompt_snapshot TEXT,
             asset_type INTEGER,
             model_snapshot TEXT,
-            asset_url TEXT,
-            thumbnail_url TEXT,
+            asset_media_resource_id TEXT,
+            asset_object_blob_id INTEGER,
+            asset_resource_snapshot TEXT,
+            thumbnail_media_resource_id TEXT,
+            thumbnail_object_blob_id INTEGER,
+            thumbnail_resource_snapshot TEXT,
             status INTEGER NOT NULL,
             deleted_at TEXT,
             storage_key TEXT,
@@ -390,8 +416,9 @@ async fn create_generation_tables(pool: &SqlitePool) {
             mime_type TEXT,
             content_text TEXT,
             content_json TEXT,
-            storage_key TEXT,
-            storage_url TEXT,
+            media_resource_id TEXT,
+            object_blob_id INTEGER,
+            resource_snapshot TEXT,
             sha256 TEXT,
             size_bytes INTEGER,
             created_at TEXT NOT NULL,
@@ -721,8 +748,8 @@ async fn seed_standard_agent_runtime_generation(pool: &SqlitePool) {
             1,
             '2026-05-04 11:00:05',
             '2026-05-04 11:01:00',
-            '{"targetType":"image","generationConfig":{"aspectRatio":"16:9","durationSeconds":5}}',
-            '{"outputText":"Generated launch image text","media":[{"modality":"image","url":"https://cdn.example.test/runtime-image.png","mimeType":"image/png","durationSeconds":5}]}',
+            '{"targetType":"image","generationConfig":{"aspectRatio":"16:9"}}',
+            '{"outputText":"Generated launch image text","media":[{"modality":"image","asset":{"kind":"image","source":"external_url","publicUrl":"https://cdn.example.test/runtime-image-response.png","url":"https://cdn.example.test/runtime-image-response.png","mimeType":"image/png","durationSeconds":9}}]}',
             '2026-05-04 11:00:05',
             '{"surface":"playground"}'
         )
@@ -746,8 +773,9 @@ async fn seed_standard_agent_runtime_generation(pool: &SqlitePool) {
             name,
             mime_type,
             content_json,
-            storage_key,
-            storage_url,
+            media_resource_id,
+            object_blob_id,
+            resource_snapshot,
             sha256,
             size_bytes,
             created_at,
@@ -764,9 +792,10 @@ async fn seed_standard_agent_runtime_generation(pool: &SqlitePool) {
             'image',
             'runtime-image.png',
             'image/png',
-            '{"url":"https://cdn.example.test/runtime-image.png","modality":"image","durationSeconds":5}',
-            'runtime/storage/hidden-image.png',
-            'https://cdn.example.test/runtime-image.png',
+            '{"modality":"image"}',
+            'media-resource-runtime-image-1',
+            445,
+            '{"kind":"image","source":"external_url","publicUrl":"https://cdn.example.test/runtime-image.png","mimeType":"image/png","durationSeconds":5,"objectKey":"runtime/storage/hidden-image.png"}',
             'runtime-image-sha256',
             12345,
             '2026-05-04 11:00:50',
@@ -1003,8 +1032,8 @@ async fn insert_asset(
     prompt_snapshot: &str,
     asset_type: i64,
     model_snapshot: &str,
-    asset_url: &str,
-    thumbnail_url: &str,
+    asset_locator: &str,
+    thumbnail_locator: &str,
     status: i64,
     deleted_at: Option<&str>,
     storage_key: &str,
@@ -1024,8 +1053,8 @@ async fn insert_asset(
             prompt_snapshot,
             asset_type,
             model_snapshot,
-            asset_url,
-            thumbnail_url,
+            asset_resource_snapshot,
+            thumbnail_resource_snapshot,
             status,
             deleted_at,
             storage_key,
@@ -1045,8 +1074,8 @@ async fn insert_asset(
     .bind(prompt_snapshot)
     .bind(asset_type)
     .bind(model_snapshot)
-    .bind(asset_url)
-    .bind(thumbnail_url)
+    .bind(media_resource_snapshot(asset_locator))
+    .bind(media_resource_snapshot(thumbnail_locator))
     .bind(status)
     .bind(deleted_at)
     .bind(storage_key)
@@ -1055,6 +1084,22 @@ async fn insert_asset(
     .execute(pool)
     .await
     .unwrap();
+}
+
+fn media_resource_snapshot(locator: &str) -> Option<String> {
+    let locator = locator.trim();
+    if locator.is_empty() {
+        return None;
+    }
+    Some(
+        serde_json::json!({
+            "kind": "asset",
+            "source": "external_url",
+            "url": locator,
+            "publicUrl": locator
+        })
+        .to_string(),
+    )
 }
 
 async fn insert_job(

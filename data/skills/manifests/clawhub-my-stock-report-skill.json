@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-stock-report-skill@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-stock-report-skill-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-stock-report-skill-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1a335ca46c5736169d71eee9a509cd05c7b1a960dca1dcc6ecab6842dff58ad5",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wittiot-device-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wittiot-device-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wittiot-device-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a4a03247a02384e82c94cb37411de96a4c30e230a8eb1bb8d46d3002e59e2d8f",

@@ -2,9 +2,11 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class CommerceMembershipRecord {
+    private Boolean autoRenew;
     private String createdAt;
     private String expiresAt;
     private String graceUntil;
+    private String id;
     private String membershipNo;
     private String organizationId;
     private String ownerUserId;
@@ -15,6 +17,14 @@ public class CommerceMembershipRecord {
     private String status;
     private String tenantId;
     private String updatedAt;
+
+    public Boolean getAutoRenew() {
+        return this.autoRenew;
+    }
+
+    public void setAutoRenew(Boolean autoRenew) {
+        this.autoRenew = autoRenew;
+    }
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -38,6 +48,14 @@ public class CommerceMembershipRecord {
 
     public void setGraceUntil(String graceUntil) {
         this.graceUntil = graceUntil;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getMembershipNo() {

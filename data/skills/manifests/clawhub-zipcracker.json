@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zipcracker@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-zipcracker-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zipcracker-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:392146901fa989c88a135ac4fce68e95ab385d4b30df13179be71df9df39f48a",

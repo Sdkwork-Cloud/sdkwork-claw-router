@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/command-skill-creator@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-command-skill-creator-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-command-skill-creator-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5cde5761c638d4c245fc8aeb448c1bc3c31e105ac09715fcc3287606867cde80",

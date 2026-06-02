@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/planetexpress-marketplace@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-planetexpress-marketplace-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-planetexpress-marketplace-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c35862e3342843a900a38db7deef48262eb44814e0f5bfb90b9afce448e993bb",

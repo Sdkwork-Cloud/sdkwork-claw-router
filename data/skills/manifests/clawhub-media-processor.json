@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/media-processor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-media-processor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-media-processor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8e0ec0425c330c89ca5dbefce4c3ece874342f0342fe6d90e65ec3af08e2937",

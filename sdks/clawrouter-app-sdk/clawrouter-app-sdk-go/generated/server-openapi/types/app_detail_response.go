@@ -8,9 +8,9 @@ type AppDetailResponse struct {
 	Downloads string `json:"downloads"`
 	Features []string `json:"features"`
 	Id string `json:"id"`
-	Image string `json:"image"`
+	Image MediaResource `json:"image"`
 	Name string `json:"name"`
 	Rating float64 `json:"rating"`
 	Releases []AppReleaseItem `json:"releases"`
-	Screenshots []string `json:"screenshots"`
+	Screenshots []MediaResource `json:"screenshots"`
 }

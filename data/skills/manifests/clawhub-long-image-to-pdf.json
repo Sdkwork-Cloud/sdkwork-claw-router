@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/long-image-to-pdf@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-long-image-to-pdf-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-long-image-to-pdf-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:31d671de50764588b602e742a79acd4fdff73b52e7504466c4a6db9de1ea3505",

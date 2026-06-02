@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hersheys@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hersheys-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hersheys-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e722fee635655609d5be3c3cc8df2e7467d3e4cee369f7ada2848dd5e0aabc9",

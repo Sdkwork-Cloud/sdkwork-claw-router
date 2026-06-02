@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/znote@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-znote-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-znote-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b9e4b12f6ea19d814e8c8e3ff6bc20708776fa400d36e26a29e9362521dbb9fd",

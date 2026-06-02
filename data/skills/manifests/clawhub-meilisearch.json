@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meilisearch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meilisearch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meilisearch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:138fc5dee5eb7e64fd4ddd4860df005e32d645f78443f9e872a31023bf390deb",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dm-bot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dm-bot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dm-bot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:158e8bb8aaf97f71eba4da5e6d26d87a3b12d41ccbaf17c500a4ccb4070434f8",

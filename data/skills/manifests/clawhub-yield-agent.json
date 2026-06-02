@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yield-agent@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-yield-agent-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yield-agent-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:654a191002e553d734fcab47aa479790064f816f8979951fab6970bdcb64a565",

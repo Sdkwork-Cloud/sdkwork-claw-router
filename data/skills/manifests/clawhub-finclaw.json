@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-finclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3db46d674647f33b6aadc37684ac49750ad82a88a72996133029451cb0495ab5",

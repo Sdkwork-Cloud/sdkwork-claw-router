@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-github-trending@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-github-trending-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-github-trending-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed090c6fd9861279c6b46dff0c646c639a93625f2b1f63e19d532da62d8c1a8a",

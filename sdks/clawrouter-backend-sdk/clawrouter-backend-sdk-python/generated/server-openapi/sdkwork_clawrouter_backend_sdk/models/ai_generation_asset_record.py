@@ -2,13 +2,16 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class AiGenerationAssetRecord:
     """Ai generation asset record schema exposed by Claw Router."""
     active_index: Optional[int] = None
+    asset: Optional[MediaResource] = None
     asset_type: Optional[str] = None
-    asset_url: Optional[str] = None
     created_at: Optional[str] = None
     data_scope: Optional[str] = None
     deleted_at: Optional[str] = None
@@ -25,6 +28,7 @@ class AiGenerationAssetRecord:
     metadata: Optional[Dict[str, str]] = None
     mime_type: Optional[str] = None
     model_snapshot: Optional[str] = None
+    object_key: Optional[str] = None
     organization_id: Optional[str] = None
     owner_id: Optional[str] = None
     owner_type: Optional[str] = None
@@ -33,10 +37,9 @@ class AiGenerationAssetRecord:
     share_token_hash: Optional[str] = None
     shared: Optional[bool] = None
     status: Optional[str] = None
-    storage_key: Optional[str] = None
     storage_provider: Optional[str] = None
     tenant_id: Optional[str] = None
-    thumbnail_url: Optional[str] = None
+    thumbnail: Optional[MediaResource] = None
     updated_at: Optional[str] = None
     user_id: Optional[str] = None
     uuid: Optional[str] = None

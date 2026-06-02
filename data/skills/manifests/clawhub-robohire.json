@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/robohire@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-robohire-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-robohire-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ad9b115b58ba910edb42034ae3398d4c48f7be1cb2cd17d329671e30496d709",

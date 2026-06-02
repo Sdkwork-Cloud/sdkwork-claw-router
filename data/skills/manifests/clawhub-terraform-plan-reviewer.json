@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/terraform-plan-reviewer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-terraform-plan-reviewer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-terraform-plan-reviewer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:54a98639561400d329e350f1c3fb8bf2b89383d0f97e421d5bbb7a5a741f190b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trading-card-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trading-card-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trading-card-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10a887255228d3dae9118909f21d6505961b9b33eeefd6080d7b9c57a3db3cf8",

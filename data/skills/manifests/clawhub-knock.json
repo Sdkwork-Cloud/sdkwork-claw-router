@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knock@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-knock-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knock-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:016bfe179b4f4f14c4a60ed5745184e9e558d2b1ca74f9a3b0fe287603cb18ad",

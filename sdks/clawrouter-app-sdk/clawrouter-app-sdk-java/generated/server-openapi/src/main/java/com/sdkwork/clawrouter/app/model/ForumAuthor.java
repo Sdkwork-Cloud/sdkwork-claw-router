@@ -2,17 +2,17 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class ForumAuthor {
-    private String avatar;
+    private MediaResource avatar;
     private String bio;
     private Integer id;
     private Boolean isFollowing;
     private String name;
 
-    public String getAvatar() {
+    public MediaResource getAvatar() {
         return this.avatar;
     }
 
-    public void setAvatar(String avatar) {
+    public void setAvatar(MediaResource avatar) {
         this.avatar = avatar;
     }
 

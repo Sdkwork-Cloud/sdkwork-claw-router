@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/respawn@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-respawn-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-respawn-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:50feae58171379dc6f6d563d0cb532f3be97bad226b039b626fea21791ea6cc8",

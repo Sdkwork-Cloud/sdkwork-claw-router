@@ -15,7 +15,7 @@ public class CourseLessonItem {
     private Integer sortOrder;
     private String sourceProvider;
     private String title;
-    private String videoUrl;
+    private MediaResource video;
 
     public String getContent() {
         return this.content;
@@ -121,11 +121,11 @@ public class CourseLessonItem {
         this.title = title;
     }
 
-    public String getVideoUrl() {
-        return this.videoUrl;
+    public MediaResource getVideo() {
+        return this.video;
     }
 
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
+    public void setVideo(MediaResource video) {
+        this.video = video;
     }
 }

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paint-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paint-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paint-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e130c98f5533444f7dfd514c86f75414b0b4b9078bd3977d1b72f5e5736e1e37",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/box-pointcloud-collector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-box-pointcloud-collector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-box-pointcloud-collector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1a49b474d3b13e61d7e65dc2025793e94444ab2ac02fad2080725705671e81bf",

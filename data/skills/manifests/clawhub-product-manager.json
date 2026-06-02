@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/product-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-product-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-product-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af7ad5421de8d10ee2c4ae7f29e87efb645933a61c95ac89ef81d25e49146803",

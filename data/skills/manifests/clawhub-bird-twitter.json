@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bird-twitter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bird-twitter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bird-twitter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a3db334e44b64c5c5b0b9673f63c8bc5728d3267f056d9047a0d4561fad98e3a",

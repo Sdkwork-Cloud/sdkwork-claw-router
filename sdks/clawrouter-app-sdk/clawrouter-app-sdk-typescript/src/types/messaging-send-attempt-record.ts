@@ -2,6 +2,10 @@ import type { JsonValue } from './json-value';
 
 /** Messaging send attempt record schema exposed by Claw Router. */
 export interface MessagingSendAttemptRecord {
+  /** Attempt no field on messaging send attempt record. */
+  attempt_no?: number;
+  /** Attempted at field on messaging send attempt record. */
+  attempted_at?: string;
   /** Created at field on messaging send attempt record. */
   created_at?: string;
   /** Failure code field on messaging send attempt record. */
@@ -22,6 +26,10 @@ export interface MessagingSendAttemptRecord {
   organization_id?: string;
   /** Payload hash field on messaging send attempt record. */
   payload_hash?: string;
+  /** Provider account id field on messaging send attempt record. */
+  provider_account_id?: string;
+  /** Provider code field on messaging send attempt record. */
+  provider_code?: string;
   /** Provider message id field on messaging send attempt record. */
   provider_message_id?: string;
   /** Provider request id field on messaging send attempt record. */
@@ -34,6 +42,8 @@ export interface MessagingSendAttemptRecord {
   retention_until?: string;
   /** Retry after at field on messaging send attempt record. */
   retry_after_at?: string;
+  /** Send request id field on messaging send attempt record. */
+  send_request_id?: string;
   /** Status field on messaging send attempt record. */
   status?: string;
   /** Tenant id field on messaging send attempt record. */

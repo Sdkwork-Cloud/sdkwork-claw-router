@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deepdive-osint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deepdive-osint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deepdive-osint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1bfa460143199538a9283e72784747b6c44c1ee6560bf4c2b5181c495f3ff4ca",

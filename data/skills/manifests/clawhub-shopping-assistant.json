@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shopping-assistant@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shopping-assistant-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shopping-assistant-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca4d825617a899f0252807d1d7c66b3d91e6a29e86cb9ee414d9fbf2d916d03c",

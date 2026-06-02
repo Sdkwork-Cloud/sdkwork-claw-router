@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-ugc-pipeline@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-ugc-pipeline-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-ugc-pipeline-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f97c3ea373a775c3b59f5ec4bed4fa6676c21ffa7136fd94c7dee08cd428ff08",

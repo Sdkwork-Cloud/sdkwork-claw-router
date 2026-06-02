@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cowhorse-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cowhorse-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cowhorse-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d9df44e5c44e497463f06d9ace826fb8a2fe733d6cbbb141e5f33274a8bb8bc",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/threatbook-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-threatbook-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-threatbook-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23adac4aa5103a88cb7c8e8fe75f8270949a30bac6a4ae91e1799719addcf883",

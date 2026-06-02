@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rei@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-rei-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rei-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e92ca5804e8c3788b8cb181f09d09b38ddbbbdb266a4c627b2689a71d63d5922",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/principles-agent@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-principles-agent-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-principles-agent-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1ced1705a23603a18b01c8c7c7269bff882f679e4cf69ce1f68dc0bb25ab17ec",

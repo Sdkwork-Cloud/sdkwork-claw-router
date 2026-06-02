@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/humanpay@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-humanpay-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-humanpay-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e36f96565173049c86c7450fa516a9a5f3c1bc46fa59b010ccda93ebb41e8924",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seo-content-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-seo-content-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seo-content-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96a682ce52a1b6ad5df6cd1998055b51017a784fd432890f54c8c4c9b13d012f",

@@ -1,9 +1,10 @@
 package com.sdkwork.clawrouter.backend.model;
 
+import java.util.List;
 
 public class CommerceProductSpuMutationRequest {
     private String brand;
-    private String categoryId;
+    private List<String> categoryIds;
     private String description;
     private String productType;
     private String spuNo;
@@ -19,12 +20,12 @@ public class CommerceProductSpuMutationRequest {
         this.brand = brand;
     }
 
-    public String getCategoryId() {
-        return this.categoryId;
+    public List<String> getCategoryIds() {
+        return this.categoryIds;
     }
 
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
+    public void setCategoryIds(List<String> categoryIds) {
+        this.categoryIds = categoryIds;
     }
 
     public String getDescription() {

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opclawtm-skill@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-opclawtm-skill-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opclawtm-skill-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:fa74fd46b2e10467b572d351b7e0966f26b8c0876c2f9868c22c3267d16302a8",

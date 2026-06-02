@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apicurio-registry@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-apicurio-registry-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apicurio-registry-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2588462bb112188455cb813fa4cb8de2d07a98a03d471b14df7d926bc05a80f5",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/travel-planner-amap@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-travel-planner-amap-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-travel-planner-amap-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4e9c0151ae762fe3257f3ecb338b9dddfdd1beefa502207aabb8a66c3f66fb02",

@@ -13,5 +13,5 @@ type CourseApplicationCreateResponse struct {
 	Status string `json:"status"`
 	SubmittedAt string `json:"submittedAt"`
 	Title string `json:"title"`
-	VideoUrl string `json:"videoUrl"`
+	Video MediaResource `json:"video"`
 }

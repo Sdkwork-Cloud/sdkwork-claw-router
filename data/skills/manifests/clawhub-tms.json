@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tms@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-tms-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tms-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:5ca4c11957b230f327e583a900f6c75852ff05898c8f415bcb50e9abe63803ce",

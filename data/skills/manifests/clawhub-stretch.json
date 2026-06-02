@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stretch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stretch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stretch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8ba8ef08a41d5968de3d21b2a09116d6f42d5944590e3357df5ad64644567d73",

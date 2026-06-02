@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dify-chat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dify-chat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dify-chat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df6fa7d026ea235538db552289f4ef1d50434e71f2bed927bfb39f16a39bfd81",

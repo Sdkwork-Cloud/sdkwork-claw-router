@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/payfit@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-payfit-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-payfit-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:018a1a7e39739fb6d3cf5720212ee1c0281fb72e5103f8218d2c1077dd2224bc",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rare-disease-hpo-mapper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rare-disease-hpo-mapper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rare-disease-hpo-mapper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55ee7ef1ace9e49043ca3bff8cd39473b876f55300d33ee9f44bf6b00ea1924f",

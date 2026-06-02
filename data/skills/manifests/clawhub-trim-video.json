@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trim-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trim-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trim-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc5679719c627392261a020c7821d4fd4cf2be5535132e8253b2424f9556ba07",

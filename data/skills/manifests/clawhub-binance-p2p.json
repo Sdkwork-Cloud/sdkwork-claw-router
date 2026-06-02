@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/binance-p2p@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-binance-p2p-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-binance-p2p-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e76d8427ab00be8d4f9c7a2f488fa44c326383de0ada1215cc8332976890a346",

@@ -3,7 +3,8 @@ package com.sdkwork.clawrouter.app.model;
 
 public class CommerceInvoiceRecord {
     private String createdAt;
-    private String documentUrl;
+    private MediaResource document;
+    private String id;
     private String invoiceCode;
     private String invoiceNo;
     private String issuedAt;
@@ -24,12 +25,20 @@ public class CommerceInvoiceRecord {
         this.createdAt = createdAt;
     }
 
-    public String getDocumentUrl() {
-        return this.documentUrl;
+    public MediaResource getDocument() {
+        return this.document;
     }
 
-    public void setDocumentUrl(String documentUrl) {
-        this.documentUrl = documentUrl;
+    public void setDocument(MediaResource document) {
+        this.document = document;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getInvoiceCode() {

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-scorer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-scorer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-scorer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71e66a9de6c0f7e264101ed24d670ae6d858f3443ff53d76093d0a4425f9209f",

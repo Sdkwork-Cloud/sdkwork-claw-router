@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wof-predict@1.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-wof-predict-1.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wof-predict-1.2.4.json"
+      },
       "version": "1.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:3da6a077b3b9a16f7614411c3cf7d703a7927c1ae7f7a1caaecc2369213f36a4",

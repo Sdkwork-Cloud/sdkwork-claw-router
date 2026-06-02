@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/iphone@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-iphone-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-iphone-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a690913d2ad0ad4ce1947774e5823a90796cd990a14a49c31fe0b887d7b427f",

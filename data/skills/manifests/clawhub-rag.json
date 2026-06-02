@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rag@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rag-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rag-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62f54c1dc5e45326744a2d09fa27b98509eaf0857ce623414816dae0d14c4148",

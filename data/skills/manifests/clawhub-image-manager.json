@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66ac42b1d1e29e6c090b41fd00f1c96e970af0a46d12d1452122193c94b7be90",

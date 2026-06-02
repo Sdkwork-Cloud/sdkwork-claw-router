@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-dna-v5@5.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-dna-v5-5.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-dna-v5-5.1.4.json"
+      },
       "version": "5.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8d727a39026e2754dd5b32e517a95f0f98031889b43fb36dbbee19bc39c6a370",

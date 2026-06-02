@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/math-expression@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-math-expression-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-math-expression-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ff13f7a15205e7275798140ede948c414894f29387e9181d4d4d98b700751197",

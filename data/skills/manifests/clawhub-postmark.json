@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/postmark@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-postmark-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-postmark-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8dc8d134edb98c891b7586da5084e45608f59f2b7acb32b35ebc2af8c2c5475d",

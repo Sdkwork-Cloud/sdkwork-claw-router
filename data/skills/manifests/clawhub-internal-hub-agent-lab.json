@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/internal-hub-agent-lab@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-internal-hub-agent-lab-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-internal-hub-agent-lab-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:08b0c67a9291e3fcf4fd31addc7f375804aa17fbb92335cb5c381494e2a6e2a1",

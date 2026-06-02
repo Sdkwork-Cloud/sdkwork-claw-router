@@ -10,14 +10,17 @@ public class PromotionOfferVersionRecord {
     private String createdAt;
     private String createdBy;
     private String currencyCode;
+    private Boolean customerVisible;
     private String discountAmountMinor;
     private Integer discountPercentBps;
     private String discountType;
     private String faceValueMinor;
     private String fixedPriceMinor;
+    private String id;
     private String liabilityPolicy;
     private String lifecycleStatus;
     private String maximumDiscountAmountMinor;
+    private String minimumOrderAmountMinor;
     private String offerId;
     private String organizationId;
     private String publishedAt;
@@ -89,6 +92,14 @@ public class PromotionOfferVersionRecord {
         this.currencyCode = currencyCode;
     }
 
+    public Boolean getCustomerVisible() {
+        return this.customerVisible;
+    }
+
+    public void setCustomerVisible(Boolean customerVisible) {
+        this.customerVisible = customerVisible;
+    }
+
     public String getDiscountAmountMinor() {
         return this.discountAmountMinor;
     }
@@ -129,6 +140,14 @@ public class PromotionOfferVersionRecord {
         this.fixedPriceMinor = fixedPriceMinor;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getLiabilityPolicy() {
         return this.liabilityPolicy;
     }
@@ -151,6 +170,14 @@ public class PromotionOfferVersionRecord {
 
     public void setMaximumDiscountAmountMinor(String maximumDiscountAmountMinor) {
         this.maximumDiscountAmountMinor = maximumDiscountAmountMinor;
+    }
+
+    public String getMinimumOrderAmountMinor() {
+        return this.minimumOrderAmountMinor;
+    }
+
+    public void setMinimumOrderAmountMinor(String minimumOrderAmountMinor) {
+        this.minimumOrderAmountMinor = minimumOrderAmountMinor;
     }
 
     public String getOfferId() {

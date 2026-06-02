@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kickbox@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-kickbox-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kickbox-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:58e1df435409e1e92f7f50faf5e74092a66ce96bae0d0475b532d7681ea127e2",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blackbox-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blackbox-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blackbox-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d24baccc237f5f1a0ae0c5f7772688b1741ca18a750b2cdad5da5ee3f7cc43c",

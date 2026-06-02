@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/travelassistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-travelassistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-travelassistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:046d722a0c18cfd583406e1e1d02940c83498ecd54abbc88bcce96466be9eb02",

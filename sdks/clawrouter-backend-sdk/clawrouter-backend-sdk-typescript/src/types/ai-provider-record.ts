@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Ai provider record schema exposed by Claw Router. */
 export interface AiProviderRecord {
@@ -24,8 +25,8 @@ export interface AiProviderRecord {
   display_name: string;
   /** Docs url field on ai provider record. */
   docs_url?: string;
-  /** Icon url field on ai provider record. */
-  icon_url?: string;
+  /** Icon field on ai provider record. */
+  icon?: MediaResource;
   /** Id field on ai provider record. */
   id?: string;
   /** Metadata field on ai provider record. */

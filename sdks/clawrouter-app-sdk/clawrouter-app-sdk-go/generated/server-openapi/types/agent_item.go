@@ -2,7 +2,7 @@ package types
 
 // Agent item schema exposed by Claw Router.
 type AgentItem struct {
-	AvatarUrl string `json:"avatarUrl"`
+	Avatar MediaResource `json:"avatar"`
 	Capabilities AgentCapabilities `json:"capabilities"`
 	Code string `json:"code"`
 	CreatedAt string `json:"createdAt"`

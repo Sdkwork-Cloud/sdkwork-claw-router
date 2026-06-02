@@ -13,6 +13,10 @@ pub struct CommerceMembershipPackageGroupRecord {
     /// Group no field on commerce membership package group record.
     pub group_no: String,
 
+    /// Id field on commerce membership package group record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Name field on commerce membership package group record.
     pub name: String,
 
@@ -23,6 +27,9 @@ pub struct CommerceMembershipPackageGroupRecord {
     /// Plan id field on commerce membership package group record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub plan_id: Option<String>,
+
+    /// Sort order field on commerce membership package group record.
+    pub sort_order: String,
 
     /// Status field on commerce membership package group record.
     pub status: String,

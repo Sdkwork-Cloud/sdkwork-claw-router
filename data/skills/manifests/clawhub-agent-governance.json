@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-governance@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-governance-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-governance-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:008a798deaf824625ef8c10b99376638c1929fc528ff04148016b7d0807df16a",

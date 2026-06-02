@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/device-magic@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-device-magic-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-device-magic-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:7e60a83983c035dd536de782bd18fc03fd3f169213de09e9250625e97ad744e2",

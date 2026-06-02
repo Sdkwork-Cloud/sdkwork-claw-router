@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/escape@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-escape-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-escape-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8783aca412424085e7c77607faec20fee20c9a36e38ac8720e20d466bcc67555",

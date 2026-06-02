@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/04-text-to-image@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-04-text-to-image-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-04-text-to-image-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:fbac182bbd8accad0adeded8df4399d85bbd49c7ad92378024a6d6efa0857dec",

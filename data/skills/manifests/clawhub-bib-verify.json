@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bib-verify@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bib-verify-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bib-verify-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:508409fa668149a41129863417ad270156ba8b2ffc82b1d092749e4dfea3ce05",

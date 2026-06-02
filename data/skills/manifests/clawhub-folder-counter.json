@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/folder-counter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-folder-counter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-folder-counter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8e31f7e97f70c23e21c7f26e039b832decfd251cfefe428e13a79e42df68d6f2",

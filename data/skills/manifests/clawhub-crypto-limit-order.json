@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-limit-order@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-limit-order-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-limit-order-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6064d0ed6a37a93edac5c040d8d8be5f885d94903d9dbeab26929ebdcf68d33c",

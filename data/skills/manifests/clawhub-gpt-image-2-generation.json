@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gpt-image-2-generation@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gpt-image-2-generation-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gpt-image-2-generation-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4cb673bc8d5d5b2672f0c81caabdf0c0111c84caef34c3b2de694d8d23e56df3",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aliyun-qwen-rerank@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-qwen-rerank-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aliyun-qwen-rerank-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8815d4b38e834fc5836bae4de23cf8588aedbbca622127fc33a5b1d28df9b58",

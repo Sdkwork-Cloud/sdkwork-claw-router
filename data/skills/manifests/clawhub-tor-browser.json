@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tor-browser@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tor-browser-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tor-browser-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1afb817e82c352bafcadebf0fc9c412ef344ab2387f0f45c33fc5cf1d19ef168",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-parser-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-parser-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-parser-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2ba1a39980df38434b5279ba9b5a7b5fdaf84a29b82a3e6ed371493655a7eab7",

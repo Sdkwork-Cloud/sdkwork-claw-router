@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/termux-zero-token@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-termux-zero-token-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-termux-zero-token-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:46677ec8301b488136be37be466885bb9abb7e2cd64d04633ba36b8786ed9a02",

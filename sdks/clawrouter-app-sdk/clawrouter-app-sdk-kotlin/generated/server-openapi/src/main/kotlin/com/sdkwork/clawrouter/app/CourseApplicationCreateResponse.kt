@@ -12,5 +12,5 @@ data class CourseApplicationCreateResponse(
     val status: String? = null,
     val submittedAt: String? = null,
     val title: String? = null,
-    val videoUrl: String? = null
+    val video: MediaResource? = null
 )

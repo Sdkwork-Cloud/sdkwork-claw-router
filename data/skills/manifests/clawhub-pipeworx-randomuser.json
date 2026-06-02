@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-randomuser@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-randomuser-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-randomuser-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf62926c062cfa0a7efe5b9a10302b5413e07d1f7f5adf730dfb1636bf5a164a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-wacli-playbook@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-wacli-playbook-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-wacli-playbook-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29455ee6b131edada24d0c818e4067dd74a648995329e3fced23209ebc10d719",

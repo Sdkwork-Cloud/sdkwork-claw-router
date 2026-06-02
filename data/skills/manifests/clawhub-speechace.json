@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/speechace@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-speechace-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-speechace-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d8c5417001fc887b273fb4c16eb4265453a32914aea991046204e23ffb01e893",

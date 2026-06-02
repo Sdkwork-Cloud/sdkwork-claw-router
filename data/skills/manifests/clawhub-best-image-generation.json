@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/best-image-generation@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-best-image-generation-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-best-image-generation-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d225dc89c6b3740a3febd20fe3467f2331b95ff65ffa2837f9b3e32f8ee2796b",

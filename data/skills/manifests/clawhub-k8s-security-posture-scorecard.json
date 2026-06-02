@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/k8s-security-posture-scorecard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-k8s-security-posture-scorecard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-k8s-security-posture-scorecard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:39b495e02906174b1cbdac3573c1529785fa634c0980577eb0fbd26bf03ee55e",

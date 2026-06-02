@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ski-assistant@6.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ski-assistant-6.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ski-assistant-6.0.1.json"
+      },
       "version": "6.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4526fa66820c5592af903dd4941bf0b030b27aaaaabcecc92d431b916ce4a6a5",

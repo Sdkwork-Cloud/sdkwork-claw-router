@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-stock-tradeagents-rebuild-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-stock-tradeagents-rebuild-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-stock-tradeagents-rebuild-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e6eced3e70ce3e189f5a8318e76cb124abbfa480cbb06a2408eab58d2c1af305",

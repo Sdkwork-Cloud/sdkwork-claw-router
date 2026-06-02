@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stocktoday-skill@1.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-stocktoday-skill-1.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stocktoday-skill-1.1.4.json"
+      },
       "version": "1.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:59a09792e4583419cc03036de02ef4eef3aeddf5e96449f816519c2e4ad5aa9a",

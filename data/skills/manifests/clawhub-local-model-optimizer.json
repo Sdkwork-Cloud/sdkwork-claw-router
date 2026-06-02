@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-model-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-model-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-model-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c89ca800417b17a0cce6656c07954205019c49461c4d60d3b45597a1b886e8d0",

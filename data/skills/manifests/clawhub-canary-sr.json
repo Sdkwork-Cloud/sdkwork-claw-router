@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/canary-sr@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-canary-sr-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-canary-sr-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:bfcb7517e50c17445628aa2b640405847a6d59a9c8817523c43c79a72175aba5",

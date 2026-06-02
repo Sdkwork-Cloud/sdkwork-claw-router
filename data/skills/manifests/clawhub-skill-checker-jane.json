@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-checker-jane@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-checker-jane-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-checker-jane-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d6746d012e327e48a7450bbacacce23b36688039d82dcd896f9b7c657c697338",

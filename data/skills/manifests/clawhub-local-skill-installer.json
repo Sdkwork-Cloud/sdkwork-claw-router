@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-skill-installer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-skill-installer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-skill-installer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c60133121a69fbc52be48b607720dd073523cddf36a74e5f79b7fc22bd028e5c",

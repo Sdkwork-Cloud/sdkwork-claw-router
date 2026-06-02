@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-distillation@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-distillation-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-distillation-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:81bac2443c08026c3f38c54ae7a1fc58715d224eb95430ff93fa8a30ddb3280b",

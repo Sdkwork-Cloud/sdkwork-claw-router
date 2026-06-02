@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workflow-guardian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workflow-guardian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workflow-guardian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a7341d8df307b6794b560ec9e2c7175a14c2dd279fd8e4611a861968b317cb6",

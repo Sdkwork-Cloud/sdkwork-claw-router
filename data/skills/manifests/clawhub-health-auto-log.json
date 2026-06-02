@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-auto-log@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-auto-log-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-auto-log-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b2a7bb662a2daa87493adae6b431bcc9c6ab19e1a95675168bf51a2a49e6340",

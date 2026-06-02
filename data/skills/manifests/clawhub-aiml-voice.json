@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aiml-voice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aiml-voice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aiml-voice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6d05649b5e89b8fc45545df7d1052835fe0ce086b3188f6c72078f970385606f",

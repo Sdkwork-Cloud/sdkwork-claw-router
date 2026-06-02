@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smarty@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-smarty-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smarty-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:88c926ab6c2b101c481c6674b4e815be4e8963686ead11e260de45cd39847996",

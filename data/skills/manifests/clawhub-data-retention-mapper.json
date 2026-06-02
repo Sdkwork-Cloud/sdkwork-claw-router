@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/data-retention-mapper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-data-retention-mapper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-data-retention-mapper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5b0e42aa860948ce4f13362b4e61d1db1be3696eb20e7de74006d0ecc522a68e",

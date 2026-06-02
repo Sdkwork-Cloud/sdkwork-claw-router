@@ -25,5 +25,5 @@ data class ContentCourseLessonRecord(
     val updatedAt: String? = null,
     val uuid: String? = null,
     val version: String? = null,
-    val videoUrl: String? = null
+    val video: MediaResource? = null
 )

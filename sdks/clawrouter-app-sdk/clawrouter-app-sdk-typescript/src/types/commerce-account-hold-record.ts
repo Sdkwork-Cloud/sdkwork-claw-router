@@ -10,6 +10,8 @@ export interface CommerceAccountHoldRecord {
   created_at: string;
   /** Expires at field on commerce account hold record. */
   expires_at: string;
+  /** Id field on commerce account hold record. */
+  id?: string;
   /** Idempotency key field on commerce account hold record. */
   idempotency_key: string;
   /** Organization id field on commerce account hold record. */

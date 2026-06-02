@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/watsonx-ai@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-watsonx-ai-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-watsonx-ai-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f937cd177c423e2ae90c20a432d7f7092a5161b6b4e19ad53752c4f82c4704a7",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rbw-bitwarden@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rbw-bitwarden-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rbw-bitwarden-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e05fb43e01cb2a723d5d6703ca205d96945ca69c6c781e15a8fb6b8806a60737",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/halo-blog@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-halo-blog-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-halo-blog-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:8da9f592d5c8aff87de6b8cdb71a3180a708c61792fc733301682e77cc3de4cb",

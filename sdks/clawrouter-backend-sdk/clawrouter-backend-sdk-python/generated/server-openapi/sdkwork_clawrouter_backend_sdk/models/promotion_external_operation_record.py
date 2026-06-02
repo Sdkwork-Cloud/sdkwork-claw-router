@@ -14,6 +14,7 @@ class PromotionExternalOperationRecord:
     operation_no: str
     operation_type: str
     platform: str
+    retry_count: int
     sanitized_request_json: Dict[str, str]
     sanitized_response_json: Dict[str, str]
     status: str
@@ -28,6 +29,7 @@ class PromotionExternalOperationRecord:
     external_operation_id: Optional[str] = None
     external_request_no: Optional[str] = None
     external_status: Optional[str] = None
+    id: Optional[str] = None
     next_retry_at: Optional[str] = None
     organization_id: Optional[str] = None
     provider_code: Optional[str] = None

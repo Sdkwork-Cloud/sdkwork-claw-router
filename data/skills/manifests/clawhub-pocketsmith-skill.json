@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pocketsmith-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pocketsmith-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pocketsmith-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b7eca2ac814268ff1b5659648436b5c01c9f504812a92d312967a520ca0144bd",

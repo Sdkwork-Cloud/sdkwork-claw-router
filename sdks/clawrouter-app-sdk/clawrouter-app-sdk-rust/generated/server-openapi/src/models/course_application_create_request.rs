@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Course application create request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CourseApplicationCreateRequest {
@@ -35,8 +37,7 @@ pub struct CourseApplicationCreateRequest {
     /// Title field on course application create request.
     pub title: String,
 
-    /// Video url field on course application create request.
-    #[serde(rename = "videoUrl")]
+    /// Video field on course application create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub video_url: Option<String>,
+    pub video: Option<MediaResource>,
 }

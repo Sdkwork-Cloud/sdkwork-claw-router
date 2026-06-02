@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alicloud-security-kms@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-security-kms-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alicloud-security-kms-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:73e5acd56df011fd11b1476a3f0d877278e0592af33fbaf241ccc322fd12dff0",

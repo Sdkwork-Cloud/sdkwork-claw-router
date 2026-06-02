@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/content-watcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-content-watcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-content-watcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f236bc0cfad3b69f0f6efe2f3a05c54dffbee6046fe2b2ce411a536e3276605",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/keyence@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-keyence-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-keyence-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8d7fe5a5d5624c3383481e6c72f6663d4395d7de1e99ac66b6f4eb6c92355905",

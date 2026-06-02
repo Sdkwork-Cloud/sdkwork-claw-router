@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quantumexecute-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-quantumexecute-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quantumexecute-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:67dec2f7dd8eeeef5f182b7bd49f07b6cecadfbe99200ad3473070e449df6a79",

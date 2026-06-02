@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chuntai-desktop-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chuntai-desktop-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chuntai-desktop-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3690e6d5136a623f7b9a1446a3ddfdf1c5fcaf47500baae44b64fde5921e6fd6",

@@ -2,9 +2,11 @@ package com.sdkwork.clawrouter.backend
 
 data class CommerceProductSkuMutationRequest(
     val attributes: List<CommerceProductSkuAttributeItem>? = null,
+    val barcode: String? = null,
     val defaultCurrencyCode: String? = null,
     val defaultPriceAmount: String? = null,
     val fulfillmentType: String? = null,
+    val image: MediaResource? = null,
     val productId: String? = null,
     val salesUnit: String? = null,
     val skuNo: String? = null,

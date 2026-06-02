@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docx-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docx-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docx-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f35816c5b4fb1ed8572f1e3c59c7e097d286829bd5b645ae5d5d753b509eb4e9",

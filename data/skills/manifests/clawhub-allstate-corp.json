@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/allstate-corp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-allstate-corp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-allstate-corp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:392f96603306c747efd700de4d17357883be8759d1ccea0d26312bead3da8a33",

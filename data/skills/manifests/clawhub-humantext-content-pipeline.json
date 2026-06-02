@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/humantext-content-pipeline@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-humantext-content-pipeline-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-humantext-content-pipeline-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:80d4e25f5dfe94b79b94beff1faa71ad41cae66560e5082f7693d4dc195c2b47",

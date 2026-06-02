@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-notify@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-notify-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-notify-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56dcdfc14d93f195cc4ae7462c2c205584eb1f0441e2e70f78f133612d07261d",

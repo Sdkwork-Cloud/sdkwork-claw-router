@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-translate-cli-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-translate-cli-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-translate-cli-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f5cdb7bafb9eee1c727f7f05a9d9550664558b1cc118d78a9a2304ee7e956ace",

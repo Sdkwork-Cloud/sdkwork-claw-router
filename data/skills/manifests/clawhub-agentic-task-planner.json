@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentic-task-planner@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentic-task-planner-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentic-task-planner-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:61a6ce0e831843f7d3e7e1231310d03508490ec50515bee3d579ad073830a958",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pretix@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-pretix-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pretix-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:4218f1f23a11f011a71ae8b28301048de6b69eadc56121fd53cc23c13604bac8",

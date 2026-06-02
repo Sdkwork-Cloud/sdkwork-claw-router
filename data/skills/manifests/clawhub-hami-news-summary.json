@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hami-news-summary@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-hami-news-summary-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hami-news-summary-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4298f1e20e0b21eaad6c5de78f3a1b440372fde751d4f1288459f6b5e9cb369b",

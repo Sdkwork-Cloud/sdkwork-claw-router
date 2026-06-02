@@ -6,12 +6,11 @@ import java.util.Map;
 public class AdminAppUpdateRequest {
     private String accessUrl;
     private String appType;
+    private MediaResource artifact;
     private String bundleId;
     private AdminAppConfig config;
     private String description;
-    private String downloadUrl;
-    private Map<String, String> icon;
-    private String iconUrl;
+    private MediaResource icon;
     private Map<String, String> installConfig;
     private Map<String, String> installPlatforms;
     private Map<String, String> installSkill;
@@ -41,6 +40,14 @@ public class AdminAppUpdateRequest {
         this.appType = appType;
     }
 
+    public MediaResource getArtifact() {
+        return this.artifact;
+    }
+
+    public void setArtifact(MediaResource artifact) {
+        this.artifact = artifact;
+    }
+
     public String getBundleId() {
         return this.bundleId;
     }
@@ -65,28 +72,12 @@ public class AdminAppUpdateRequest {
         this.description = description;
     }
 
-    public String getDownloadUrl() {
-        return this.downloadUrl;
-    }
-
-    public void setDownloadUrl(String downloadUrl) {
-        this.downloadUrl = downloadUrl;
-    }
-
-    public Map<String, String> getIcon() {
+    public MediaResource getIcon() {
         return this.icon;
     }
 
-    public void setIcon(Map<String, String> icon) {
+    public void setIcon(MediaResource icon) {
         this.icon = icon;
-    }
-
-    public String getIconUrl() {
-        return this.iconUrl;
-    }
-
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
     }
 
     public Map<String, String> getInstallConfig() {

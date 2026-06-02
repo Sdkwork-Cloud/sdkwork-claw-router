@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-agenda-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-agenda-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-agenda-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18c32c26c63ac84f67341385212a3f6768ee6fef3944281250a13e5655de64b0",

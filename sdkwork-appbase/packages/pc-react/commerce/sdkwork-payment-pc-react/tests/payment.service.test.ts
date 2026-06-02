@@ -10,6 +10,20 @@ import {
   type SdkworkPaymentMessagesOverrides,
 } from "../src";
 
+const wechatIcon = {
+  kind: "image",
+  publicUrl: "https://cdn.sdkwork.ai/icons/wechat.png",
+  source: "external_url",
+  url: "https://cdn.sdkwork.ai/icons/wechat.png",
+} as const;
+
+const alipayIcon = {
+  kind: "image",
+  publicUrl: "https://cdn.sdkwork.ai/icons/alipay.png",
+  source: "external_url",
+  url: "https://cdn.sdkwork.ai/icons/alipay.png",
+} as const;
+
 describe("sdkwork-payment-pc-react service", () => {
   beforeEach(() => {
     configureCommerceServiceMockSession({ authToken: "payment-auth-token" });
@@ -26,7 +40,7 @@ describe("sdkwork-payment-pc-react service", () => {
         {
           available: true,
           code: "WECHAT_PAY",
-          icon: "https://cdn.sdkwork.ai/icons/wechat.png",
+          icon: wechatIcon,
           methodName: "WeChat Pay",
           productTypes: [
             {
@@ -45,7 +59,7 @@ describe("sdkwork-payment-pc-react service", () => {
         {
           available: true,
           code: "ALIPAY",
-          icon: "https://cdn.sdkwork.ai/icons/alipay.png",
+          icon: alipayIcon,
           methodName: "Alipay",
           productTypes: [
             {
@@ -147,6 +161,7 @@ describe("sdkwork-payment-pc-react service", () => {
     });
     expect(dashboard.methods[0]).toMatchObject({
       code: "WECHAT_PAY",
+      icon: wechatIcon,
       label: "WeChat Pay",
       recommendedProductType: "native",
     });
@@ -314,7 +329,7 @@ describe("sdkwork-payment-pc-react service", () => {
       orderId: "ORDER-9",
       paymentMethod: "WECHAT_PAY",
       paymentUrl: "https://pay.sdkwork.ai/wechat/1001",
-      qrCode: "weixin://wxpay/bizpayurl?pr=PAY1001",
+      qrContent: "weixin://wxpay/bizpayurl?pr=PAY1001",
       status: "pending",
       subject: "Pro Annual",
     });

@@ -75,16 +75,23 @@ fn app_skills_sql_returns_contract_projection_fields() {
         "AS provider",
         "AS description",
         "AS category_name",
-        "AS cover_image",
+        "AS icon_resource_snapshot",
+        "AS cover_resource_snapshot",
         "AS rating_avg",
         "AS install_count",
         "AS capabilities",
         "AS default_config",
         "AS artifact_ref",
+        "AS artifact_resource_snapshot",
         "AS artifact_size_bytes",
     ] {
         assert_sql_contains(POSTGRES_APP_SKILLS, expected);
     }
+
+    assert!(
+        !POSTGRES_APP_SKILLS.contains("AS artifact_url"),
+        "Postgres app skills SQL must read canonical artifact_resource_snapshot instead of legacy artifact_url"
+    );
 }
 
 #[test]

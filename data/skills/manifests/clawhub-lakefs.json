@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lakefs@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-lakefs-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lakefs-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:292a1bcbee083ea02a5113c3b88a7698449147cca461a5016fcc0f0d786ca853",

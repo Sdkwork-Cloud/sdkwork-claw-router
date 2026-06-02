@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/content-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-content-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-content-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8f7aa3d2b6c2c2cebbab7d50b97f25dcac93810fead5bd39d928271a041f6192",

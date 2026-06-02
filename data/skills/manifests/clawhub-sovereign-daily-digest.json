@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sovereign-daily-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-daily-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sovereign-daily-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c159873a5f403c5f0fa38c62b1f508c3061d2af27b55326f602a45c97625884c",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloud-convert@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloud-convert-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloud-convert-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:26379c71d9ce8d8ca495f61c3f142db33415a4cdad22325c821fb693f4310355",

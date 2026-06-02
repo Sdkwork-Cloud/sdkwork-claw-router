@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { createSdkworkUserService } from "../src";
 
+const avatar = {
+  kind: "image",
+  publicUrl: "https://cdn.sdkwork.ai/avatar.png",
+  source: "external_url",
+  url: "https://cdn.sdkwork.ai/avatar.png",
+} as const;
+
 describe("sdkwork-user-pc-react service", () => {
   it("maps remote profile and notification settings into reusable user-center preferences", async () => {
     const storage = new Map<string, string>();
@@ -30,7 +37,7 @@ describe("sdkwork-user-pc-react service", () => {
         getUserProfile: async () => ({
           code: "2000",
           data: {
-            avatar: "https://cdn.sdkwork.ai/avatar.png",
+            avatar,
             email: "sdkwork@sdkwork.ai",
             nickname: "Sdkwork Operator",
           },
@@ -52,7 +59,7 @@ describe("sdkwork-user-pc-react service", () => {
     });
 
     await expect(service.getProfile()).resolves.toEqual({
-      avatarUrl: "https://cdn.sdkwork.ai/avatar.png",
+      avatar,
       email: "sdkwork@sdkwork.ai",
       firstName: "Sdkwork",
       lastName: "Operator",

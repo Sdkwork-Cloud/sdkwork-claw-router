@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heartai@2.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-heartai-2.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heartai-2.3.1.json"
+      },
       "version": "2.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bc8ffaf2e407005449eba50613951ffab332c5b132c2f9ea36b3b0cdcfdf7d19",

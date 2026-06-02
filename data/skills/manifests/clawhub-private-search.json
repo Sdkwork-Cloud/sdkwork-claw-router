@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/private-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-private-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-private-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d09672143b81579018dce623ca0724e93b51395e05930c180ca32b021298a46c",

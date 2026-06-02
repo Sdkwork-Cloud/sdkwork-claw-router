@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-lawyer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-lawyer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-lawyer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:64735836a604c5f3369fe041a2d07bd987abdb4417c20302262e790af7d10829",

@@ -171,6 +171,30 @@ test("portal resolves sdkwork UI workspace imports to the app workspace source r
   );
 });
 
+test("portal resolves runtime bootstrap workspace imports to the appbase foundation source root", async () => {
+  const config = await resolvePortalViteConfig();
+  const aliases = config.resolve?.alias;
+  const expectedRuntimeBootstrapEntry = path.resolve(
+    import.meta.dirname,
+    "../../../sdkwork-appbase/packages/common/foundation/sdkwork-runtime-bootstrap/src/index.ts",
+  );
+
+  assert.ok(Array.isArray(aliases));
+  assert.equal(
+    aliases.find((alias) => (
+      typeof alias === "object"
+      && alias !== null
+      && "find" in alias
+      && alias.find === "@sdkwork/runtime-bootstrap"
+    ))?.replacement,
+    expectedRuntimeBootstrapEntry,
+  );
+  assert.ok(
+    existsSync(expectedRuntimeBootstrapEntry),
+    "@sdkwork/runtime-bootstrap alias must point to a real source file",
+  );
+});
+
 test("workspace package imports resolve to one React and router runtime instance", async () => {
   const config = await resolvePortalViteConfig();
 

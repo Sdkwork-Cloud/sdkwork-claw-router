@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hotdog@10.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-hotdog-10.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hotdog-10.1.1.json"
+      },
       "version": "10.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b7fdbd0a80bac8376304e6d2bce13bcd6d7d4887ec327b573bfb9e5ac61ad0d2",

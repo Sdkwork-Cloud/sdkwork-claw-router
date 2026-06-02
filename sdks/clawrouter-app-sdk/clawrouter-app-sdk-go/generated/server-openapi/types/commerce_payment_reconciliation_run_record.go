@@ -5,6 +5,7 @@ type CommercePaymentReconciliationRunRecord struct {
 	CompletedAt string `json:"completed_at"`
 	CreatedAt string `json:"created_at"`
 	DifferenceAmount string `json:"difference_amount"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	MatchedCount string `json:"matched_count"`
 	MismatchedCount string `json:"mismatched_count"`

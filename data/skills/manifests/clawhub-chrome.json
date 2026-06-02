@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chrome@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chrome-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chrome-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8eccc29bb3b6e9ac909945bd02e6a4591d8c3c2649ad9175e5fcec35cdb5e2f0",

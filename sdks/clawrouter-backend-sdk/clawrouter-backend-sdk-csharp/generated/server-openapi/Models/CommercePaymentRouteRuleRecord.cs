@@ -14,7 +14,9 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? CreatedAt { get; set; }
         public string? CurrencyCode { get; set; }
         public string? EndsAt { get; set; }
+        public string? Id { get; set; }
         public string? OrganizationId { get; set; }
+        public string? Priority { get; set; }
         public string? PurchaseType { get; set; }
         public string? RiskLevel { get; set; }
         public string? RuleNo { get; set; }

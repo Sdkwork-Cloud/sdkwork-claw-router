@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boggle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boggle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boggle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e0dce38e9041ab5c5ce12eaa9fceee314e21d306af4207881c1b5bc53841ae15",

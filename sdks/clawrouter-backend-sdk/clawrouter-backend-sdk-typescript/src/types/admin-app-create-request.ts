@@ -1,5 +1,6 @@
 import type { AdminAppConfig } from './admin-app-config';
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Admin app create request schema exposed by Claw Router. */
 export interface AdminAppCreateRequest {
@@ -7,18 +8,16 @@ export interface AdminAppCreateRequest {
   accessUrl?: string;
   /** App type field on admin app create request. */
   appType?: string;
+  /** Artifact field on admin app create request. */
+  artifact?: MediaResource;
   /** Bundle id field on admin app create request. */
   bundleId?: string;
   /** Config field on admin app create request. */
   config: AdminAppConfig;
   /** Description field on admin app create request. */
   description?: string;
-  /** Download url field on admin app create request. */
-  downloadUrl?: string;
   /** Icon field on admin app create request. */
-  icon?: Record<string, JsonValue>;
-  /** Icon url field on admin app create request. */
-  iconUrl?: string;
+  icon?: MediaResource;
   /** Install config field on admin app create request. */
   installConfig?: Record<string, JsonValue>;
   /** Install platforms field on admin app create request. */

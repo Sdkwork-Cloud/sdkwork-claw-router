@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ingersoll-rand@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ingersoll-rand-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ingersoll-rand-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52464fee23f70d86fac90f4a0a4b9a032317877ba96d4e93babfd149d378f30a",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smartproxy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-smartproxy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smartproxy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8ccb616d7185e5c475669e8a7fa586f6f92a8b3e60f1195b367073ef6f49dc54",

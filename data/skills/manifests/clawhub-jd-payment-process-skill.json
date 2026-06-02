@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jd-payment-process-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jd-payment-process-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jd-payment-process-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b72656955d1768f65a15ac20110884c38fc70853342b1a5ecc8789f0629a0a95",

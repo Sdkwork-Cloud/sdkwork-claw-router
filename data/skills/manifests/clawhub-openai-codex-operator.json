@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openai-codex-operator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-openai-codex-operator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openai-codex-operator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a17efb976122db7b91faa17dd923d7869ddaa87fb2cfe8a2265f22a599ce43f8",

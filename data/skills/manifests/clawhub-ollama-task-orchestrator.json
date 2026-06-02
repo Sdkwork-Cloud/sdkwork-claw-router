@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ollama-task-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ollama-task-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ollama-task-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c5b400864a15cac6c7b6150d3832e234a03f1cf86b193c4072a62094390b149f",

@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Ai model record schema exposed by Claw Router. */
 export interface AiModelRecord {
@@ -38,8 +39,8 @@ export interface AiModelRecord {
   family_code?: string;
   /** Family id field on ai model record. */
   family_id?: string;
-  /** Icon url field on ai model record. */
-  icon_url?: string;
+  /** Icon field on ai model record. */
+  icon?: MediaResource;
   /** Id field on ai model record. */
   id?: string;
   /** Input modalities field on ai model record. */

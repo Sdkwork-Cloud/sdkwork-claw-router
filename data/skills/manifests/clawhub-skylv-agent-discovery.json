@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skylv-agent-discovery@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skylv-agent-discovery-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skylv-agent-discovery-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ceb2fe498c49aa848d4ab3daef056a326a459af5bbc359a9261d52d663f00303",

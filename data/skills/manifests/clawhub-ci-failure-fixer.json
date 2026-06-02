@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ci-failure-fixer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ci-failure-fixer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ci-failure-fixer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8394ea18540226df6847d4824fcbbaa561e25fa6ed7990baa3a0ec9520d0832f",

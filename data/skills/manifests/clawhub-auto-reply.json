@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-reply@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-reply-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-reply-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:06660fa8c242df8dc0bd81534cd93c7cbe931ddc339fbfbf2bfaf66b9b5bd889",

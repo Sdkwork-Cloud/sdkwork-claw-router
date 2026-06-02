@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coda@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coda-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coda-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b165ec284706c24a95425a141bb7dd563d49b47477d9fe75ba527a35725a7d6",

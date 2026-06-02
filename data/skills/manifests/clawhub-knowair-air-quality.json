@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowair-air-quality@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowair-air-quality-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowair-air-quality-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:030ca0e6ef7d09696372ae83139e4d769d108d0fa3f76c22624e4dd7eb91c2f3",

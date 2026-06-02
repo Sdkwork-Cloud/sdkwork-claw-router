@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generate-lego-3d-build-plan@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-generate-lego-3d-build-plan-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generate-lego-3d-build-plan-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:c6b0402b98da29f09c25721c874b10aea997f6d8699ad4efd66f94e01f91b323",

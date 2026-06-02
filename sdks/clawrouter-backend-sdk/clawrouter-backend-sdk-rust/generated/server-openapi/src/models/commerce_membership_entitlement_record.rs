@@ -9,6 +9,10 @@ pub struct CommerceMembershipEntitlementRecord {
     /// Entitlement code field on commerce membership entitlement record.
     pub entitlement_code: String,
 
+    /// Id field on commerce membership entitlement record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Name field on commerce membership entitlement record.
     pub name: String,
 

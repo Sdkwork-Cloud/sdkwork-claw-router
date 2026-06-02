@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/morning-briefing-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-morning-briefing-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-morning-briefing-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86926fc96b6760cbbca170218c84585b267391dd8e22df45ccf2e732998a030b",

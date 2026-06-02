@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paper-view-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-paper-view-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paper-view-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b2e2180309bb8716952cada9236ba9a2a629fe629e14323e63ee787cd10cb8ac",

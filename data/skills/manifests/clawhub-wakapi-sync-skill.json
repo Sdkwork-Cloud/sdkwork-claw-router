@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wakapi-sync-skill@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wakapi-sync-skill-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wakapi-sync-skill-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:720bc6be1834b442d9a439d7aa02ea029b070cfe3437e34940d98421ceeea698",

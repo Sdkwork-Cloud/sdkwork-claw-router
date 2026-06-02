@@ -3,14 +3,22 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.List;
 
 public class UpdateApiKeyRequest {
+    private String channelGroup;
     private Boolean defaultForRuntime;
     private String expires;
-    private String group;
     private String ipLimit;
     private Boolean isUnlimitedQuota;
     private List<String> modalities;
     private String name;
     private String quota;
+
+    public String getChannelGroup() {
+        return this.channelGroup;
+    }
+
+    public void setChannelGroup(String channelGroup) {
+        this.channelGroup = channelGroup;
+    }
 
     public Boolean getDefaultForRuntime() {
         return this.defaultForRuntime;
@@ -26,14 +34,6 @@ public class UpdateApiKeyRequest {
 
     public void setExpires(String expires) {
         this.expires = expires;
-    }
-
-    public String getGroup() {
-        return this.group;
-    }
-
-    public void setGroup(String group) {
-        this.group = group;
     }
 
     public String getIpLimit() {

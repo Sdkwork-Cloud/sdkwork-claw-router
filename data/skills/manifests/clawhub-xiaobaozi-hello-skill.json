@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiaobaozi-hello-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiaobaozi-hello-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiaobaozi-hello-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55ccf40cbb9ba98a3f82c02514e9850509b4b8a10c639b2b6493b462fcd06ffb",

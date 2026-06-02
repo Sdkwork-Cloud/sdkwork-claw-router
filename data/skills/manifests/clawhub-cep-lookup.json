@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cep-lookup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cep-lookup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cep-lookup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:750394838982055ad8782b208b65d48bc25715d03f543d079d815578bf8e7271",

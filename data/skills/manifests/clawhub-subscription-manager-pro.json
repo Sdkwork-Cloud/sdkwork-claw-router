@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subscription-manager-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subscription-manager-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subscription-manager-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a49c90ed5081516bffdb3c4f2fb7fd9eb468e6e45789153c49da2adb1606a68e",

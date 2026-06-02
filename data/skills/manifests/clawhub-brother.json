@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/brother@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-brother-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-brother-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:022966152b15fd10a68e8a2f59930a77d053e26b9995ed1be232839bb341d4b8",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cairn-cli@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cairn-cli-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cairn-cli-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d1870ef85c14818c7a8f8342fa02f7153425e856bb06fa307679384197577eed",

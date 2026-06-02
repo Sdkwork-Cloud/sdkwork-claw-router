@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vagrant-integration@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-vagrant-integration-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vagrant-integration-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:36852b21ff82386c3c13bd8aa7d7df2683aed6420664fdc5ce3c20919e8cd917",

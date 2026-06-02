@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chatbot-personality-set@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chatbot-personality-set-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chatbot-personality-set-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7465be68fe12887fd22dc9ff8a0c7097cb2867c1a55a56def5cf018f3852c12a",

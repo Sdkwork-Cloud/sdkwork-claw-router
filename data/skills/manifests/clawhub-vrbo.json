@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vrbo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vrbo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vrbo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:21e6c9b0d967990ea6da20010e825ef0032ca960be595e3c0fde2fbbe6b575af",

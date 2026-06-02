@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jz-agent-guardrails@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jz-agent-guardrails-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jz-agent-guardrails-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c28c65fedb27ad38cb056961572821d189b4e588de0a525cdcae6782225e1f00",

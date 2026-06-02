@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ned-analytics@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ned-analytics-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ned-analytics-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:99b9f711708d0799add33312ed2d758f0fb2653ea30ddab21df6caecd5fdfe17",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/learning-aggregator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-learning-aggregator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-learning-aggregator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cf3cc7530b79a55d6c7478b140f07cd835df23f4648c2550778cb715b00c37fe",

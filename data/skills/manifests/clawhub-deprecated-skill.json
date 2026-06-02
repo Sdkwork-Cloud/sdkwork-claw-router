@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deprecated-skill@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deprecated-skill-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deprecated-skill-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c93182c872d63be5796637ab60db099298a02d1bd8673c2498d459bf9f74250f",

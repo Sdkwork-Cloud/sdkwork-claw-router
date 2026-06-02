@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/php@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-php-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-php-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c6857bfc55a346164c9e70741fc86a85c8c4aef65b1dcab9ee19ab49fdc76ae6",

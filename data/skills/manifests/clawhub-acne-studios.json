@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/acne-studios@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-acne-studios-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-acne-studios-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3771f65a01b7c68eabcc7627b8fdfa8681fb17dec3d7de35182a630f8ab571e2",

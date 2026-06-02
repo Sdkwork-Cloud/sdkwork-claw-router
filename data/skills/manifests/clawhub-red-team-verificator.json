@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/red-team-verificator@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-red-team-verificator-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-red-team-verificator-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4576512d1de5be3a864ce171ebc70b6df84fc74bb18317a7f5823c495b159b80",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/signal-vs-noise@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-signal-vs-noise-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-signal-vs-noise-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e9322f72492255fcd7f24b166f748e582f25e9311748181c8b0096b14323d1c",

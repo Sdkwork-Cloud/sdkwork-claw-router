@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proofreader@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-proofreader-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proofreader-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce68f09bcef297d562750e650d0e5c9faff43ee17761335259ef2ead6aa70b80",

@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Updated app store category snapshot returned by the backend.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminAppCategoryItem {
@@ -13,7 +15,7 @@ pub struct AdminAppCategoryItem {
 
     /// Icon field on admin app category item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Id field on admin app category item.
     pub id: String,

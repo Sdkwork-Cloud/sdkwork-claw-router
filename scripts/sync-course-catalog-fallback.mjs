@@ -36,7 +36,7 @@ const fallbackCourses = seed.courses.slice(0, 6).map((course) => ({
   courseCode: course.courseCode,
   title: course.title,
   description: course.description,
-  thumbnail: course.thumbnailUrl,
+  thumbnail: course.thumbnail,
   instructor: {
     name: course.instructor.name,
     avatar: course.instructor.avatar,

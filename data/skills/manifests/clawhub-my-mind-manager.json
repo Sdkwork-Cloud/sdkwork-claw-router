@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-mind-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-mind-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-mind-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:119b3981d0e45a7acdeabe5fc6f9c01d40ef36c1971527b7d59029f9845b0312",

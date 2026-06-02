@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trio@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-trio-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trio-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a429e323ed8e85cd958fdb70796cd00a786f8b2fd2c7340d6408aa31ea44686a",

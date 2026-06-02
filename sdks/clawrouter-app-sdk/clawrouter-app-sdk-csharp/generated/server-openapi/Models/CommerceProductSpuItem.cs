@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.App.Models
     public class CommerceProductSpuItem
     {
         public string? Brand { get; set; }
-        public string? CategoryId { get; set; }
+        public List<string>? CategoryIds { get; set; }
         public string? CreatedAt { get; set; }
         public string? CurrencyCode { get; set; }
         public string? DefaultSkuId { get; set; }

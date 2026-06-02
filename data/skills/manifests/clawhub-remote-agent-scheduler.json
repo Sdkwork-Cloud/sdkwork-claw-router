@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/remote-agent-scheduler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-remote-agent-scheduler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-remote-agent-scheduler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6cebf5ebd60381ec35ee5961318fecfd840329fa3c9769cc0dd88a6fff85c6a1",

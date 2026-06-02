@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tmux-remote-control@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tmux-remote-control-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tmux-remote-control-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ba98b018e774bd9a686d7d983e61cb5d56a281d7df31bfd83e45fa48aa51cb1",

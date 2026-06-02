@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/butler-mode@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-butler-mode-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-butler-mode-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6f813a7ff702a7246a359ebaa95b97f646d8992e68d1d1b70c7ac86a05252faf",

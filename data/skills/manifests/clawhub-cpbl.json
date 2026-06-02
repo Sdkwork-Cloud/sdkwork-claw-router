@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cpbl@1.4.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-cpbl-1.4.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cpbl-1.4.3.json"
+      },
       "version": "1.4.3",
       "runtime": "metadata",
       "checksumHash": "sha256:79d16a3ec0a7f2cfa846dc0ff199240118b25ea4976ba7c4e6dc6d55945ad35c",

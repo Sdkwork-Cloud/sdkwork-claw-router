@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mistral-ocr@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-mistral-ocr-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mistral-ocr-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:174ac9d163295eac78d669d9e8820be41f4d3c84e3f3f45555916db63802cff5",

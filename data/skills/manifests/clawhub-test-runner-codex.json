@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-runner-codex@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-runner-codex-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-runner-codex-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c099e6d413e43e3c472a23352970a8048916277d0ea6d8ecb57c81510a0bebef",

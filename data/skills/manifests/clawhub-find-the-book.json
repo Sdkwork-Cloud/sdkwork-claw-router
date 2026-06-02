@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/find-the-book@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-find-the-book-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-find-the-book-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e3962f4595a1c609b008d86ad6a0b57374a76302de1dba6df40dc59a7a1c5e7a",

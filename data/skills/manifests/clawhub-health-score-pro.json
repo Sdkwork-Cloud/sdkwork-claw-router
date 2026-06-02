@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-score-pro@1.6.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-score-pro-1.6.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-score-pro-1.6.1.json"
+      },
       "version": "1.6.1",
       "runtime": "metadata",
       "checksumHash": "sha256:273ce4f07a87ac175bff303a9aae168eeea8aca20dbca8373604d7655c7eb166",

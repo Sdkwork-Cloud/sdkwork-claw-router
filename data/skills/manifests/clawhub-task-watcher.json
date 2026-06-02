@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-watcher@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-watcher-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-watcher-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:60a62d66bb322b98cb1923e4292205a7acce75055480c610794e5fc1678ddc1d",

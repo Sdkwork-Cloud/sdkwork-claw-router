@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/speech-translation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-speech-translation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-speech-translation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3648471ba0b6efc8547b87cdc7eef3e2c806f4b332f80a092de38d9d221e0f0",

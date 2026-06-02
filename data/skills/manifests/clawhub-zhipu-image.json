@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zhipu-image@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zhipu-image-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zhipu-image-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:80761e3a690bb180dd6f289044746540ac016732da1295e18db24a9e388faa77",

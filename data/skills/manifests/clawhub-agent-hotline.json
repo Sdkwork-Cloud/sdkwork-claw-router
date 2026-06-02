@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-hotline@0.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-hotline-0.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-hotline-0.1.3.json"
+      },
       "version": "0.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:f3743d2ef53d37c3b02fbdc0ae1e134e4a3235f21823270f6f0d85c0165ee5ba",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-voice-skill@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-voice-skill-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-voice-skill-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b344f612e9a77b017ff73b9d17c5a13fd4f1753f294d50167bc5b1c932eb1d31",

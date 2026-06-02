@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-trend-radar@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-trend-radar-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-trend-radar-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:07b1b7eb975cf79aa0e9ea5b3b8f19fc31613f9a26c4d46da362a504c17c2dd4",

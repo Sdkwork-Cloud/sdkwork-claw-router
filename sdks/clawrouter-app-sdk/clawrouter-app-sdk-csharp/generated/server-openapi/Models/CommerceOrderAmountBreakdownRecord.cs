@@ -9,6 +9,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? CreatedAt { get; set; }
         public string? CurrencyCode { get; set; }
         public string? DiscountAmount { get; set; }
+        public string? Id { get; set; }
         public string? OrderId { get; set; }
         public string? OriginalAmount { get; set; }
         public string? PayableAmount { get; set; }

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/punishment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-punishment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-punishment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d41b69ad58754e3ab39c2abbffd17ff015366fe864080489a1f216114a22febb",

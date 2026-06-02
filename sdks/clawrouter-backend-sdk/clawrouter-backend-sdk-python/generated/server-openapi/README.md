@@ -21,7 +21,7 @@ client = SdkworkBackendClient(config)
 client.set_api_key("your-api-key")
 
 # Use the SDK
-result = client.ai.model_vendors.list()
+result = client.ai.channel_groups.list()
 ```
 
 ## Authentication Modes (Mutually Exclusive)
@@ -103,8 +103,8 @@ print(result)
 ### ai
 
 ```python
-# List vendors
-result = client.ai.model_vendors.list()
+# List groups
+result = client.ai.channel_groups.list()
 print(result)
 ```
 
@@ -135,8 +135,8 @@ print(result)
 ### iam
 
 ```python
-# List groups
-result = client.iam.access_groups.list()
+# List API key map
+result = client.iam.api_keys.list()
 print(result)
 ```
 
@@ -254,7 +254,7 @@ print(result)
 
 ```python
 try:
-    client.ai.model_vendors.list()
+    client.ai.channel_groups.list()
 except Exception as error:
     print(f"Error: {error}")
 ```

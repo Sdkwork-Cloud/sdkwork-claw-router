@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/red-baron@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-red-baron-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-red-baron-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:19534e31a776725bfada5b41196d7478023c2037c434e833c8b3be0b563b0e2c",

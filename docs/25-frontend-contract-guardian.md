@@ -1,4 +1,4 @@
-﻿# Frontend Contract Guardian
+# Frontend Contract Guardian
 
 `tools.frontend_contract_guardian` keeps the database design aligned with the actual
 `apps/sdkwork-claw-router-portal` application instead of relying on a manual checklist.

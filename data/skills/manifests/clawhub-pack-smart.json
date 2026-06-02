@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pack-smart@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pack-smart-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pack-smart-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70f23b10dd49fb34dd70f71301db6d919e5ef37cb07d3cd9358de77bb74ce554",

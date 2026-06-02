@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grs-image@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grs-image-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grs-image-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3e9f234bc63cbd20d940399d71c20ec57977b2f10fad037b851c768a166a62ab",

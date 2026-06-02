@@ -27,7 +27,12 @@ describe("sdkwork-user-pc-react controller", () => {
         },
       }),
       getProfile: vi.fn().mockResolvedValue({
-        avatarUrl: "https://cdn.sdkwork.ai/avatar.png",
+        avatar: {
+          kind: "image",
+          publicUrl: "https://cdn.sdkwork.ai/avatar.png",
+          source: "external_url",
+          url: "https://cdn.sdkwork.ai/avatar.png",
+        },
         email: "sdkwork@sdkwork.ai",
         firstName: "Sdkwork",
         lastName: "Operator",

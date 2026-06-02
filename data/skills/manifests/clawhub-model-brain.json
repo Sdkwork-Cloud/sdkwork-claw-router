@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-brain@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-brain-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-brain-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f637b11389d48f8ae11d7159383cc81cd4981ee0993db6a084da3585b907def1",

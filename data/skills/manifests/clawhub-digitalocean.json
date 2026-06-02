@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/digitalocean@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-digitalocean-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-digitalocean-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2ede83dfa741d92eb19977a85964672872196539c9bbc782b15c494d76abd49e",

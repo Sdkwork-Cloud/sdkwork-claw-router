@@ -30,9 +30,8 @@ x_response_entities:
         nullable: true
         maxLength: 512
       icon:
-        type: string
+        $ref: '#/components/schemas/MediaResource'
         nullable: true
-        maxLength: 512
       claimed:
         type: boolean
       usageLimit:
@@ -76,9 +75,8 @@ x_response_entities:
         nullable: true
         maxLength: 512
       icon:
-        type: string
+        $ref: '#/components/schemas/MediaResource'
         nullable: true
-        maxLength: 512
       badge:
         type: string
         nullable: true
@@ -455,7 +453,8 @@ x_response_entities:
     - id
     - name
     - maskedKey
-    - group
+    - channelGroup
+    - channelGroupName
     - quota
     - usedQuota
     - modalities
@@ -482,15 +481,15 @@ x_response_entities:
         minLength: 1
         maxLength: 256
         description: Full plaintext API key returned only by authenticated owner management responses; public catalog responses omit this field.
-      group:
+      channelGroup:
         type: string
         minLength: 1
         maxLength: 128
-      groupName:
+      channelGroupName:
         type: string
         minLength: 1
         maxLength: 128
-        description: Display name snapshot for the bound API key group so the list view does not need to preload selectable groups.
+        description: Display name snapshot for the bound channel group so the list view does not need to preload selectable groups.
       rate:
         type: string
         nullable: true
@@ -530,8 +529,8 @@ x_response_entities:
       defaultForRuntime:
         type: boolean
         description: Whether this key is the current console default for backend runtime API key selection.
-  app_api_key_group:
-    name: AppApiKeyGroup
+  app_channel_group:
+    name: AppChannelGroup
     type: object
     additionalProperties: false
     required:
@@ -566,10 +565,10 @@ x_response_entities:
         type: string
         maxLength: 128
         description: API key display name.
-      group:
+      channelGroup:
         type: string
         maxLength: 64
-        description: API key group code to bind to this key.
+        description: API key channel group code to bind to this key.
       quota:
         type: string
         format: decimal
@@ -611,7 +610,7 @@ x_response_entities:
     - version
     - size
     - releaseDate
-    - downloadUrl
+    - artifact
     properties:
       id:
         type: string
@@ -650,9 +649,8 @@ x_response_entities:
       releaseDate:
         type: string
         maxLength: 64
-      downloadUrl:
-        type: string
-        maxLength: 2048
+      artifact:
+        $ref: '#/components/schemas/MediaResource'
       whatsNew:
         type: string
         maxLength: 4096
@@ -691,8 +689,7 @@ x_response_entities:
         minLength: 1
         maxLength: 128
       image:
-        type: string
-        maxLength: 2048
+        $ref: '#/components/schemas/MediaResource'
       rating:
         type: number
         minimum: 0
@@ -795,8 +792,7 @@ x_response_entities:
             minLength: 1
             maxLength: 128
           image:
-            type: string
-            maxLength: 2048
+            $ref: '#/components/schemas/MediaResource'
           rating:
             type: number
             minimum: 0

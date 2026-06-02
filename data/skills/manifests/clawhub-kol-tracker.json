@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kol-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kol-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kol-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:82596f45901faeebe090b3e569bdbcf197f79474d052564b777599ce140fa324",

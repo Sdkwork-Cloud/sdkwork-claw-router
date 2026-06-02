@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/background-remover-claw-skill@1.7.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-background-remover-claw-skill-1.7.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-background-remover-claw-skill-1.7.0.json"
+      },
       "version": "1.7.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd308238f95cc137e8aacd9e1d512c93db96916dd626712e0e1474e7ef4f2fab",

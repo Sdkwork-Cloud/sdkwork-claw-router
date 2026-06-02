@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unbox@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-unbox-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unbox-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6dbf378a0cf7186067adfb4a99f227aca737e7d9c3d645edf6416d34540dd122",

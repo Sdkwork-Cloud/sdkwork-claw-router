@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/entity-optimizer@9.9.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-entity-optimizer-9.9.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-entity-optimizer-9.9.5.json"
+      },
       "version": "9.9.5",
       "runtime": "metadata",
       "checksumHash": "sha256:1b67670a4bcfc967faf20180f1437bcf6acec8491f9633a899d9731f77b6f86d",

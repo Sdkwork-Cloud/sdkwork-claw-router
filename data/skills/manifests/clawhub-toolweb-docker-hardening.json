@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toolweb-docker-hardening@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-docker-hardening-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toolweb-docker-hardening-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:afbe64f5971a6da73826d1ed4bc1504e17e85b342c5e8fa8065812ec65ed861c",

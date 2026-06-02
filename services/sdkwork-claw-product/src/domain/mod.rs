@@ -7,7 +7,7 @@ mod routing;
 mod types;
 
 pub use access::{
-    ApiKeyGroup, ApiKeyGroupMetricSnapshot, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
+    ChannelGroup, ChannelGroupMetricSnapshot, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
 };
 pub use catalog::{
     provider_native_model_id, AiModel, AiModelPublicMetadata, ModelProviderRoute,

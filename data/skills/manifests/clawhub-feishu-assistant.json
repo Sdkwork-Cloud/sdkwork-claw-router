@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-assistant@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-assistant-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-assistant-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:de7bf6909d6e1dd68bd018f7295c8c629aadb6e151f03c001b55fb5352b25013",

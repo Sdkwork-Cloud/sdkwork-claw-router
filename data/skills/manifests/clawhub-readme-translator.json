@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/readme-translator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-readme-translator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-readme-translator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6e42e37144f54a3bf588dc990eac8c3915079548c94893d3c95120f72ecbcd18",

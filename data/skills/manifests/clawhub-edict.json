@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edict@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-edict-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edict-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:996198f8dc80322807336217c03c61f22770b3b8e8e8a98e8766a0378c6a4ff2",

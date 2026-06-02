@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amap-cli-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-amap-cli-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amap-cli-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:149154fbbf2f76274d7378f8f8f9445f6df2538c52d9cd363570782a06daaecf",

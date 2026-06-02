@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arxiv-paper-downloader@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-paper-downloader-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arxiv-paper-downloader-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:4d2402f684eaace6b837c4bc86b2debb4ea9b34ad8012d65baabc68a5d05c6ad",

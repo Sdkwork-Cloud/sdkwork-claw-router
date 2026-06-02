@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-ensemble-forecast@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-ensemble-forecast-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-ensemble-forecast-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e61f2abf43a65ab2285f0059647b0022fef145708c2d36e694bf41d69af8b8fd",

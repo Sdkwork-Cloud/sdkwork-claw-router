@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linkfoxagent@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-linkfoxagent-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linkfoxagent-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:8690ecfaafe1a4a014d04e86a87900f410a3da044d699cf7a1595838691724b0",

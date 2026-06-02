@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/forex@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-forex-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-forex-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f03dbe9262f49563ab63cea269902edf6e4c1bc3113c77449505ceaf51dafeb1",

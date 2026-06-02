@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/polymarket-edge-trader@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-edge-trader-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-polymarket-edge-trader-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6aded7d207dfd11a21cc99fbe261d454eabbfe3b73f3e5b405c86a2da2e20cda",

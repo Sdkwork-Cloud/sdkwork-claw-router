@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vwu-openai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vwu-openai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vwu-openai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8f3da27dfedaf06b2d6c1b5febf40b765713bc076a6109d4e95e39ad25455d8",

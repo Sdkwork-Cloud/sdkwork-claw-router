@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/k8s-debug@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-k8s-debug-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-k8s-debug-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:40e3c78c4b1a538354e5fb0da1cc67d8eb17ee2f729e0faf5ed94cb7fb3bdf6a",

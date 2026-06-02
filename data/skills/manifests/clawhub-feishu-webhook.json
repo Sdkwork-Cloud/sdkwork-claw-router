@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-webhook@1.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-webhook-1.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-webhook-1.2.4.json"
+      },
       "version": "1.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e71106d3b6fe955709986882d04a383f4c0263d983878527390a4f438a4d8fac",

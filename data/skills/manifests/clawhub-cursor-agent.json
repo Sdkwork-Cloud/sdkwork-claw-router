@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cursor-agent@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cursor-agent-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cursor-agent-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b289add8e01a7b5cf0e023d354ee8c8c20bee93eaec74da11730c3093a33747",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-distill@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-distill-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-distill-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f58d59ce1b14c8969e5ffcd83721aa83a98128b2d863875d0b7d69023598dc9b",

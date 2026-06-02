@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bot-police@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bot-police-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bot-police-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0fb995a32f8acb595843b11bd484120b2ae40a4c5ad6509789d211fc87c8d4d",

@@ -2222,7 +2222,7 @@ async fn gateway_database_router_does_not_duplicate_openai_v1_prefix_for_configu
 }
 
 #[tokio::test]
-async fn gateway_database_openai_passthrough_routes_by_api_key_group_channel_route() {
+async fn gateway_database_openai_passthrough_routes_by_channel_group_channel_route() {
     let captured_standard = Arc::new(Mutex::new(Vec::new()));
     let standard_provider = Router::new()
         .route(

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nova-self-improver@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nova-self-improver-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nova-self-improver-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:605db5d7fc8d5e393ff3cc19696ee2d73786f86ef24014201402269f4ead9413",

@@ -14,14 +14,17 @@ public class ObjectBlobRecord {
     private String id;
     private String kmsKeyRef;
     private String lastVerifiedAt;
+    private Boolean legalHold;
     private Map<String, String> metadata;
     private String objectKey;
     private String organizationId;
     private String originalFilename;
     private String ownerId;
     private String ownerType;
+    private String physicalSizeBytes;
     private String providerId;
     private String retentionUntil;
+    private String sizeBytes;
     private String status;
     private String storageClass;
     private String storageEtag;
@@ -120,6 +123,14 @@ public class ObjectBlobRecord {
         this.lastVerifiedAt = lastVerifiedAt;
     }
 
+    public Boolean getLegalHold() {
+        return this.legalHold;
+    }
+
+    public void setLegalHold(Boolean legalHold) {
+        this.legalHold = legalHold;
+    }
+
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
@@ -168,6 +179,14 @@ public class ObjectBlobRecord {
         this.ownerType = ownerType;
     }
 
+    public String getPhysicalSizeBytes() {
+        return this.physicalSizeBytes;
+    }
+
+    public void setPhysicalSizeBytes(String physicalSizeBytes) {
+        this.physicalSizeBytes = physicalSizeBytes;
+    }
+
     public String getProviderId() {
         return this.providerId;
     }
@@ -182,6 +201,14 @@ public class ObjectBlobRecord {
 
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
+    }
+
+    public String getSizeBytes() {
+        return this.sizeBytes;
+    }
+
+    public void setSizeBytes(String sizeBytes) {
+        this.sizeBytes = sizeBytes;
     }
 
     public String getStatus() {

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crash-snapshots@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-crash-snapshots-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crash-snapshots-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e4c75a85e9d1d6b2ecf490e498403a01db715d9285ecf7c9ac8a3974f098cf89",

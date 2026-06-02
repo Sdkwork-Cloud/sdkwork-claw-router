@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sla-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sla-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sla-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3a26a32b4d4c551516a5c33e65123b05ffe38195efc337c7484d933fab8b671",

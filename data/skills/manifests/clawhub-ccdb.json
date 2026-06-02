@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ccdb@0.1.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-ccdb-0.1.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ccdb-0.1.6.json"
+      },
       "version": "0.1.6",
       "runtime": "metadata",
       "checksumHash": "sha256:b44b0a3740bddc272adfb0fc0f25cd38722625bbbfc3853f9692c52d88147b34",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-master@2.6.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-master-2.6.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-master-2.6.5.json"
+      },
       "version": "2.6.5",
       "runtime": "metadata",
       "checksumHash": "sha256:45210b973a4e463955a1fb4a3382899d7dc357c790a7eed487791d4c4efce1ea",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chain-sensei@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chain-sensei-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chain-sensei-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d6e0f52637b3db1086836b1a7e76c735b70fa11e0565188a3cefa78dad41d380",

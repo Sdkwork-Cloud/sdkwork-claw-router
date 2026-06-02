@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mtv@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mtv-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mtv-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:101641f0d5c507c298833860a2a941ea375334cc6bfb9eb7fc643e7d1aa78918",

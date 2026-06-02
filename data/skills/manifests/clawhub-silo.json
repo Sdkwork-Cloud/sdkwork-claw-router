@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/silo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-silo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-silo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1a76bc37f43f24f6626ae022161e3c198b569d77dfb62e33cf9780b8e0e17b3",

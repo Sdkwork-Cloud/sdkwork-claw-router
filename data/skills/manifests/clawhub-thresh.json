@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thresh@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-thresh-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thresh-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5417b7713c5c25c17104960d36580e6b289bb4a13874437b17c421732e312d82",

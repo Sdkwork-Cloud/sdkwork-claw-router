@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-team-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-team-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-team-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0cad534fd2f8b2cbdf33ae248271bc0cc855bf84de9cb47e2de587bcecdc4d37",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generate-daily-sports-update@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-generate-daily-sports-update-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generate-daily-sports-update-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4750b6a3700f77235744be22b9e8f1354b8575fd12832642c4f9baa84278499d",

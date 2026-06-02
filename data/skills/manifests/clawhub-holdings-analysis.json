@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/holdings-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-holdings-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-holdings-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:87183c1fcac7e67cc624a9089cee378fd96a38260ba42868da39a7335ea44e38",

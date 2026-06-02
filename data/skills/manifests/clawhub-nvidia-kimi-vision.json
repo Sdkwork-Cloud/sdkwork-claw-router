@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nvidia-kimi-vision@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-nvidia-kimi-vision-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nvidia-kimi-vision-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:3dea111a6405febb578519e39bc1f621d645fb71e5c78320091582f78c9998c7",

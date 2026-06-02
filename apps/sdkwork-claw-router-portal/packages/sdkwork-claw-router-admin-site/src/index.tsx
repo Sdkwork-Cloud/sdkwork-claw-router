@@ -2,7 +2,10 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Image, Loader2, Palette, RefreshCw, Save, Settings2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
-import type { AdminSiteSettingsUpdateRequest } from '@sdkwork/clawrouter-backend-sdk';
+import {
+  readMediaResourceUrl,
+  toExternalUrlMediaResource,
+} from 'sdkwork-claw-router-commons/runtime';
 import {
   DEFAULT_SITE_SETTINGS,
   SiteSettingsService,
@@ -53,7 +56,7 @@ export function ClawRouterSiteSettingsPage() {
     setSaveError(null);
     setSaveSuccess(null);
     try {
-      const saved = await SiteSettingsService.updateSettings(toUpdateRequest(form));
+      const saved = await SiteSettingsService.updateSettings(form);
       setForm(saved);
       setSaveSuccess(t('admin.siteSettings.messages.saved'));
     } catch (error) {
@@ -66,6 +69,12 @@ export function ClawRouterSiteSettingsPage() {
   const updateField = (field: keyof SiteSettingsForm, value: string) => {
     setForm((current) => ({ ...current, [field]: value }));
   };
+  const updateMediaField = (field: 'logo' | 'icon' | 'favicon', value: string) => {
+    setForm((current) => ({ ...current, [field]: toExternalUrlMediaResource(value, 'image') }));
+  };
+  const logoSource = readMediaResourceUrl(form.logo);
+  const iconSource = readMediaResourceUrl(form.icon);
+  const faviconSource = readMediaResourceUrl(form.favicon);
 
   if (loading) {
     return (
@@ -137,16 +146,16 @@ export function ClawRouterSiteSettingsPage() {
         <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#1a1a1a]">
           <SectionHeader icon={<Image className="h-5 w-5 text-emerald-500" />} title={t('admin.siteSettings.sections.assets')} />
           <div className="mt-5 grid grid-cols-1 gap-4">
-            <TextField label={t('admin.siteSettings.fields.logoUrl')} onChange={(value) => updateField('logoUrl', value)} value={form.logoUrl} />
-            <TextField label={t('admin.siteSettings.fields.iconUrl')} onChange={(value) => updateField('iconUrl', value)} value={form.iconUrl} />
-            <TextField label={t('admin.siteSettings.fields.faviconUrl')} onChange={(value) => updateField('faviconUrl', value)} value={form.faviconUrl} />
+            <TextField label={t('admin.siteSettings.fields.logo')} onChange={(value) => updateMediaField('logo', value)} value={logoSource} />
+            <TextField label={t('admin.siteSettings.fields.icon')} onChange={(value) => updateMediaField('icon', value)} value={iconSource} />
+            <TextField label={t('admin.siteSettings.fields.favicon')} onChange={(value) => updateMediaField('favicon', value)} value={faviconSource} />
             <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-white/10 dark:bg-white/5">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 dark:bg-white">
-                {form.logoUrl ? <img alt={form.siteName} className="h-7 w-7 object-contain" src={form.logoUrl} /> : <Image className="h-5 w-5 text-white dark:text-slate-900" />}
+                {logoSource ? <img alt={form.siteName} className="h-7 w-7 object-contain" src={logoSource} /> : <Image className="h-5 w-5 text-white dark:text-slate-900" />}
               </div>
               <div className="min-w-0">
                 <p className="truncate text-sm font-semibold text-slate-900 dark:text-white">{form.shortName || form.siteName}</p>
-                <p className="truncate text-xs text-slate-500 dark:text-slate-400">{form.logoUrl || t('admin.siteSettings.preview.noLogo')}</p>
+                <p className="truncate text-xs text-slate-500 dark:text-slate-400">{logoSource || t('admin.siteSettings.preview.noLogo')}</p>
               </div>
             </div>
           </div>
@@ -265,31 +274,6 @@ function ColorField({ label, value, onChange }: {
       </div>
     </label>
   );
-}
-
-function toUpdateRequest(form: SiteSettingsForm): AdminSiteSettingsUpdateRequest {
-  return {
-    siteName: form.siteName,
-    shortName: form.shortName,
-    description: form.description,
-    logoUrl: form.logoUrl,
-    iconUrl: form.iconUrl,
-    faviconUrl: form.faviconUrl,
-    brandColor: form.brandColor,
-    accentColor: form.accentColor,
-    footerCopyright: form.footerCopyright,
-    icpRecordNumber: form.icpRecordNumber,
-    icpRecordUrl: form.icpRecordUrl,
-    policeRecordNumber: form.policeRecordNumber,
-    policeRecordUrl: form.policeRecordUrl,
-    seoTitle: form.seoTitle,
-    seoDescription: form.seoDescription,
-    supportUrl: form.supportUrl,
-    docsUrl: form.docsUrl,
-    privacyUrl: form.privacyUrl,
-    termsUrl: form.termsUrl,
-    customCss: form.customCss,
-  };
 }
 
 function errorMessage(error: unknown, fallback: string): string {

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seo-audit-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-seo-audit-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seo-audit-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0b6a9f07d47f52e73ecc1814eea887a8c92759626a3ca21f0870e2ca193db1b",

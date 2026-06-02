@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blog-image-embedder@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-blog-image-embedder-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blog-image-embedder-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5a1a355d7fd2011793eb8ff9ddf0ea2b44e58dd597d97013058705f745de4f0b",

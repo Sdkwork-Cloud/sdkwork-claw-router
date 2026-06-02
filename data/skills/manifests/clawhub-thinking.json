@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thinking@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-thinking-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thinking-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6faf0c2ea8ec7e4c3bc21827258af27fabeef4db0c2056d1d624e7fd95dd4714",

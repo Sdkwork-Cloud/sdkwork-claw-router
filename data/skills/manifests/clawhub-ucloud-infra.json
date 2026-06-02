@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ucloud-infra@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ucloud-infra-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ucloud-infra-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:edd7c1d8c2f7e50033c723ea60467031b77d6c8f63cff7c280a9bf50f0d07ef2",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lora-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lora-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lora-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbba6c7705ca84a98c46663df7ae643f12fb531431c5859487ec065343fc3efa",

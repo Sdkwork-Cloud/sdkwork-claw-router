@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/theta@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-theta-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-theta-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:60bf375c31077b837a50ef5d284d2ae3e0a39335b34e5e89fbe3d1961060a888",

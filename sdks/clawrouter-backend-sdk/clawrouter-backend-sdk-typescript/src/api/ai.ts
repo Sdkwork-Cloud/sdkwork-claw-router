@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult } from '../types';
+import type { AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult } from '../types';
 
 
 export class AiAiResourcesApi {
@@ -163,8 +163,59 @@ export class AiModelRankingsApi {
   }
 }
 
+export class AiChannelGroupsChannelBindingsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List group channel bindings */
+  async list(channelGroupId: string): Promise<ChannelGroupsChannelBindingsListResult> {
+    return this.client.get<ChannelGroupsChannelBindingsListResult>(backendApiPath(`/ai/channel_groups/${serializePathParameter(channelGroupId, { name: 'channelGroupId', style: 'simple', explode: false })}/channel_bindings`));
+  }
+
+/** Replace group channel bindings */
+  async update(channelGroupId: string, body: AdminChannelGroupChannelBindingsReplaceRequest): Promise<ChannelGroupsChannelBindingsUpdateResult> {
+    return this.client.put<ChannelGroupsChannelBindingsUpdateResult>(backendApiPath(`/ai/channel_groups/${serializePathParameter(channelGroupId, { name: 'channelGroupId', style: 'simple', explode: false })}/channel_bindings`), body, undefined, undefined, 'application/json');
+  }
+}
+
+export class AiChannelGroupsApi {
+  private client: HttpClient;
+  public readonly channelBindings: AiChannelGroupsChannelBindingsApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.channelBindings = new AiChannelGroupsChannelBindingsApi(client);
+  }
+
+
+/** List groups */
+  async list(): Promise<ChannelGroupsListResult> {
+    return this.client.get<ChannelGroupsListResult>(backendApiPath(`/ai/channel_groups`));
+  }
+
+/** Create group */
+  async create(body: AdminChannelGroupCreateRequest): Promise<ChannelGroupsCreateResult> {
+    return this.client.post<ChannelGroupsCreateResult>(backendApiPath(`/ai/channel_groups`), body, undefined, undefined, 'application/json');
+  }
+
+/** Delete group */
+  async delete(channelGroupId: string): Promise<ChannelGroupsDeleteResult> {
+    return this.client.delete<ChannelGroupsDeleteResult>(backendApiPath(`/ai/channel_groups/${serializePathParameter(channelGroupId, { name: 'channelGroupId', style: 'simple', explode: false })}`));
+  }
+
+/** Update group */
+  async update(channelGroupId: string, body: AdminChannelGroupUpdateRequest): Promise<ChannelGroupsUpdateResult> {
+    return this.client.patch<ChannelGroupsUpdateResult>(backendApiPath(`/ai/channel_groups/${serializePathParameter(channelGroupId, { name: 'channelGroupId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
+  }
+}
+
 export class AiApi {
   private client: HttpClient;
+  public readonly channelGroups: AiChannelGroupsApi;
   public readonly modelRankings: AiModelRankingsApi;
   public readonly modelVendors: AiModelVendorsApi;
   public readonly models: AiModelsApi;
@@ -172,6 +223,7 @@ export class AiApi {
 
   constructor(client: HttpClient) {
     this.client = client;
+    this.channelGroups = new AiChannelGroupsApi(client);
     this.modelRankings = new AiModelRankingsApi(client);
     this.modelVendors = new AiModelVendorsApi(client);
     this.models = new AiModelsApi(client);

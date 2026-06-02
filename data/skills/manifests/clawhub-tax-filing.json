@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tax-filing@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tax-filing-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tax-filing-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3dc32f2e2f7d0a69302b6bc15fd9815b74fc7297e17bce3442bcd4f7284a19aa",

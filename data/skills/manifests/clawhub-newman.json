@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/newman@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-newman-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-newman-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4219709587899d2fed352e260477d54b02542a9d8a07562e0ec95f75339e287c",

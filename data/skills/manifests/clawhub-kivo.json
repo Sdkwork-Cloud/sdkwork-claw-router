@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kivo@1.11.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kivo-1.11.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kivo-1.11.0.json"
+      },
       "version": "1.11.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f774196e04763d423eece38936e4eed8c8f2094611572b400f670b563c8faf4b",

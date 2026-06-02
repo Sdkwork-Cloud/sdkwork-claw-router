@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentcloud-tione-skill@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-tione-skill-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentcloud-tione-skill-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:23495b2a3f380506f6f6e26f1fde33b9ee164dfc111ca74eceb1551e6f330e0f",

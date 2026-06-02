@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quant-trader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quant-trader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quant-trader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8f413aa585ac8f6f42307431a5fe5fb576ba507ad8705539ab57604f3b497e71",

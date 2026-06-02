@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/campaign-analytics@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-campaign-analytics-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-campaign-analytics-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8bab9468b6e571d832be9baf54f536c977354f215fbbb6e15457466d99b961ce",

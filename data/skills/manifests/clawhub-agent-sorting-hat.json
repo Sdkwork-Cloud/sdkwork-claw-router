@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-sorting-hat@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-sorting-hat-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-sorting-hat-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e80ca6201cc4e5757cbc9ef607f5c3092c4ef08a88e9eb24b2e8bac58ae7f7d2",

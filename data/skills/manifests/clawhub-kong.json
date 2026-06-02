@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kong@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-kong-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kong-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:b6cb7e77e1b93fa22604605c59a650656aba85e9332d4c79a0af7e5a7a30b8cc",

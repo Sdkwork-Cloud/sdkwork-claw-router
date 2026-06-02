@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rust-unsafe-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rust-unsafe-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rust-unsafe-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89de1f3c84a4f4bbb7c0bc0c8df1c06530c77b2f82489f5da70ee8b443d24eb4",

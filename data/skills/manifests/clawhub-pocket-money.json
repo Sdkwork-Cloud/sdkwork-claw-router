@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pocket-money@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pocket-money-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pocket-money-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0701cc936153953f180f52408658785a46f73e8100819bbf5100833f9f90fef1",

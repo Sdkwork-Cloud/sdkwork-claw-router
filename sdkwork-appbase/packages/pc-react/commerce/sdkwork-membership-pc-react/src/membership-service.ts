@@ -10,6 +10,10 @@ import {
   type SdkworkCommerceService,
 } from "@sdkwork/commerce-service";
 import {
+  readSdkworkMediaResource,
+  type SdkworkMediaResource,
+} from "@sdkwork/appbase-pc-react";
+import {
   createSdkworkMembershipMessages,
   type SdkworkMembershipMessages,
   type SdkworkMembershipMessagesOverrides,
@@ -29,7 +33,7 @@ export interface SdkworkMembershipBenefit {
 export interface SdkworkMembershipLevel {
   badge?: string;
   description?: string;
-  icon?: string;
+  icon?: SdkworkMediaResource;
   id: string;
   isCurrent: boolean;
   levelValue: number;
@@ -117,7 +121,7 @@ interface RemoteMembershipBenefit {
 interface RemoteMembershipLevel {
   badge?: string;
   description?: string;
-  icon?: string;
+  icon?: unknown;
   id?: number | string;
   levelValue?: number | string;
   name?: string;
@@ -241,7 +245,7 @@ function mapLevels(
   return sortLevels(levels.map((level) => ({
     badge: toSdkworkCommerceOptionalString(level.badge),
     description: toSdkworkCommerceOptionalString(level.description),
-    icon: toSdkworkCommerceOptionalString(level.icon),
+    icon: readSdkworkMediaResource(level.icon),
     id: `membership-level-${toSdkworkCommerceNumber(level.id)}`,
     isCurrent: currentLevelValue !== null && toSdkworkCommerceNumber(level.levelValue) === currentLevelValue,
     levelValue: toSdkworkCommerceNumber(level.levelValue),

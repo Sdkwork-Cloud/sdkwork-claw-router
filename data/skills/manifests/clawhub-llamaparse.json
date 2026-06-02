@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llamaparse@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-llamaparse-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llamaparse-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7fe0e2d7292f1709db98cf97217553ca4edcebce43ad8a7399582b7ebbc957a3",

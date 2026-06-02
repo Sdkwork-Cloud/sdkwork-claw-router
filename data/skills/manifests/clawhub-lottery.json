@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lottery@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lottery-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lottery-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:343685f35d78eef50c78c6ddc4ea5c6d943c6404811759503960b67f08a0a8b0",

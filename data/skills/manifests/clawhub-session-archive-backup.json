@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/session-archive-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-session-archive-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-session-archive-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f382f8978846329bcecc9bff838679c4d2b3ac48f9e067d99846378d5d3f3fe",

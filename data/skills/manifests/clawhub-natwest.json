@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/natwest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-natwest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-natwest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:741d8879252fb7c5e880987e7a28dd60324db29627a261cc02864e5fb1c73d8b",

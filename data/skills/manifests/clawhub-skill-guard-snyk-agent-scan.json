@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-guard-snyk-agent-scan@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-guard-snyk-agent-scan-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-guard-snyk-agent-scan-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:18365f77d22db3506a884595f543cc068413e1c5af89f960056b466a3983d30d",

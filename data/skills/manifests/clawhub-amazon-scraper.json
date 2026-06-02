@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-scraper@3.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-scraper-3.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-scraper-3.4.1.json"
+      },
       "version": "3.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5583f6cf3d21f9bb222eb9e9a654f7d7880a3a98202247fded8deefa450ab2c9",

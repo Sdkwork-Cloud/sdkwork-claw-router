@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/keyco@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-keyco-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-keyco-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dcf824130c2a3ac0e57bdc04ac5c22cbe7fde640f5481bad44e23d4f46d45544",

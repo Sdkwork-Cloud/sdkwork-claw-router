@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/last-minute@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-last-minute-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-last-minute-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be946cb2d8773b2b03a60bf182cd973917c4a1e90f13951360f155eaf48802ea",

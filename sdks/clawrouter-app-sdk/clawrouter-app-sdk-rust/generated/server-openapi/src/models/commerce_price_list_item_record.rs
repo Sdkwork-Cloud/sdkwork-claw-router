@@ -10,9 +10,16 @@ pub struct CommercePriceListItemRecord {
     /// Created at field on commerce price list item record.
     pub created_at: String,
 
+    /// Id field on commerce price list item record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Max quantity field on commerce price list item record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub max_quantity: Option<String>,
+
+    /// Min quantity field on commerce price list item record.
+    pub min_quantity: String,
 
     /// Organization id field on commerce price list item record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

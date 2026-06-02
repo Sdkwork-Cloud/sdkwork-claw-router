@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/social-security-card-ocr@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-social-security-card-ocr-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-social-security-card-ocr-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:a1d309a55aa795cd03d6c380bf6311df1a0d6f844b622bb42e4f5040fda45b98",

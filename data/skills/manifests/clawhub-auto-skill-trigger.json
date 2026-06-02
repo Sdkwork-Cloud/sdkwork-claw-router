@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-skill-trigger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-skill-trigger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-skill-trigger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cb1be24bad0f0b4908c04ecc88bc53d3ad2044bf09fae72522a16c20a1d4ed8c",

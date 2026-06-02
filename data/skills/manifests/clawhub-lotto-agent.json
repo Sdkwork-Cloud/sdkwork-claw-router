@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lotto-agent@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lotto-agent-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lotto-agent-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dd9e9fd255b39f9a1bc84455b4c802feca69ed98a5182c747796d170f366c2f8",

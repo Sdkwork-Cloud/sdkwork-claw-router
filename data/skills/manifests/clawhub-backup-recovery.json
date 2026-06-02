@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/backup-recovery@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-backup-recovery-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-backup-recovery-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8563db8b3903a7fdfd46005292bc6ac03bfe617a9a633c09f8c3bd416ea4a8f5",

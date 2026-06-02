@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ffmpeg-static@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ffmpeg-static-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ffmpeg-static-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6a2703325552cac796bb3951e71d0c2f84e215c94c9aa3478614113c7f84f5d3",

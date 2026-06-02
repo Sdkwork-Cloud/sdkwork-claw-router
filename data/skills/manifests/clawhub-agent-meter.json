@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-meter@0.6.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-meter-0.6.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-meter-0.6.4.json"
+      },
       "version": "0.6.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ab83b7360c1e975abf5f1ce327a2b8b58b7ced1db7306fc593696c39d9b57642",

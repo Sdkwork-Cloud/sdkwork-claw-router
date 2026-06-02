@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oracle-db@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-oracle-db-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oracle-db-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:940ac883989e07d57189ec740c2f08d25d3ee9dd4a282dc933fef41ece483059",

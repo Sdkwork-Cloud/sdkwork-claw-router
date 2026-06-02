@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/teammate-skill@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-teammate-skill-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-teammate-skill-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d64d59e6f69ffe8ba74bfa2bc2e3fea852fc198910d7b7a4b7d601e0269f7d81",

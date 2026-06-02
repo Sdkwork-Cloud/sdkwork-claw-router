@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dxyz-cpanel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dxyz-cpanel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dxyz-cpanel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5273e723495e1bb9f0d1ed7b590831ddd4917222386a68e796ce867ad80390b",

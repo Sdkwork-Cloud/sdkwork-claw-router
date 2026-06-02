@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/contactor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-contactor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-contactor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8e8fa461347577567aca5efceb014f83bdb189a4a30abbc4f8232c03798faefb",

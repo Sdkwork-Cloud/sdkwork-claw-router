@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-pptx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-pptx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-pptx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3adfb8fbe3bb7e5842a4fc33f3375ffaddf2fc61da7a71d0cc94c01d4fc00119",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-daily-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-daily-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-daily-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5c4bdbce6e96e3dc87970b417f9d963585ce9ea13256b33a8298d3dd4b549f5f",

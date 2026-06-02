@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-auto-body@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-auto-body-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-auto-body-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:69eb3ec9ed4bc60d508ad89c31338e611638968beca1fa35a8e1032a1b35db5c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-assistant-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-assistant-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-assistant-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:823f39f888593f48582d7e7f75f99f980be4793f6063f741213a38d413200b89",

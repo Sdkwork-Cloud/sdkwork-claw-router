@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ding-skills@2.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ding-skills-2.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ding-skills-2.3.1.json"
+      },
       "version": "2.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:68b4aa307e046182c640100c8a18d0ac61e6105898037d43e3569d2bc805069d",

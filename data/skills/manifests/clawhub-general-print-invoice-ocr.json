@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/general-print-invoice-ocr@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-general-print-invoice-ocr-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-general-print-invoice-ocr-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:df5bcc58aa3c92e560dfa1353b94f792d6820d5796146ef37fbb7aae33294dc7",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/custom-api-summary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-custom-api-summary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-custom-api-summary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5dcbef2ad96e28e70de52d02e50d164a18159093f3e56438b307356a96bb6e4b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/website-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-website-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-website-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b813e512107e6197f139680c15d38e9f75a47d4c0504b41cc820f517c7613f59",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solo-impl@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solo-impl-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solo-impl-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:316e304c47837511dcd8bc93a62014bb1eecbfb6681823ac20c5c1f8fc33782d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/celine@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-celine-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-celine-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:f91e366159b739eb60f7dfd6d2039d94cca8ecbc877c93720a02dee830ff5d17",

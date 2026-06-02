@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cairo@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cairo-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cairo-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c21faf07926b2908dcc781cda191572b61f9528dce4471de8e56bd8d2b92fd20",

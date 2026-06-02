@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/server-host-hardening@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-server-host-hardening-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-server-host-hardening-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f8339d0d8101533614558c2eaa062ff7da42ae6d19bcfae3b50b637eefa8a488",

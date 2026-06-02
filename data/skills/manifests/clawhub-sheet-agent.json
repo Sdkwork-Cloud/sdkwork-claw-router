@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sheet-agent@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-sheet-agent-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sheet-agent-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:e393bad97922af61e4578cbd6a187356b9163cde0162cced9296a9db783d2383",

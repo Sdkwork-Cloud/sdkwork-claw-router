@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/project-context-sync@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-project-context-sync-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-project-context-sync-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d59c5088bfe81aef579eb7da122eca4769037fc84507785d2223f22c65766de6",

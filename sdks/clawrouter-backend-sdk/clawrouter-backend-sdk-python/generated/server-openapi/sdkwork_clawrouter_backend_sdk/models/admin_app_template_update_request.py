@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class AdminAppTemplateUpdateRequest:
@@ -10,7 +13,7 @@ class AdminAppTemplateUpdateRequest:
     capability_manifest: Optional[List[Dict[str, str]]] = None
     category_code: Optional[str] = None
     category_id: Optional[str] = None
-    cover_url: Optional[str] = None
+    cover: Optional[MediaResource] = None
     default_app_config: Optional[Dict[str, str]] = None
     dependency_manifest: Optional[List[Dict[str, str]]] = None
     description: Optional[str] = None
@@ -19,7 +22,7 @@ class AdminAppTemplateUpdateRequest:
     git_ref: Optional[str] = None
     git_repo_url: Optional[str] = None
     git_sub_path: Optional[str] = None
-    icon_url: Optional[str] = None
+    icon: Optional[MediaResource] = None
     language: Optional[str] = None
     publish_status: Optional[str] = None
     runtime: Optional[str] = None

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-chat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-chat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-chat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ac221464092e94f3efd2eb930f8d29ec81eab9417683a704f7ddb40ab19d940",

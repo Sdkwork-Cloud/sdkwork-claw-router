@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tfl-cli@0.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tfl-cli-0.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tfl-cli-0.3.1.json"
+      },
       "version": "0.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:599cd92fcdd7b1119aaa74ff4277c3b92470040df761656097bd84394e87974c",

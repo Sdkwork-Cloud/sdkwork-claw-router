@@ -5,7 +5,9 @@ type CommerceProductAttributeValueRecord struct {
 	AttributeId string `json:"attribute_id"`
 	CreatedAt string `json:"created_at"`
 	DisplayValue string `json:"display_value"`
+	Id string `json:"id"`
 	OrganizationId string `json:"organization_id"`
+	SortOrder string `json:"sort_order"`
 	Status string `json:"status"`
 	TenantId string `json:"tenant_id"`
 	UpdatedAt string `json:"updated_at"`

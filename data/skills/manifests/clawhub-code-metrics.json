@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/code-metrics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-code-metrics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-code-metrics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e100c94c4694e1ef345bafdca18ac44a107e44fba38351c3860bf851b7bad873",

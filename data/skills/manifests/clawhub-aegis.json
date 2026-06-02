@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aegis@3.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aegis-3.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aegis-3.4.0.json"
+      },
       "version": "3.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d6dc45fde3a3a1f1b5ebe1237e44c0e30666db9c9e54bec22bcbb0cbf1f0058",

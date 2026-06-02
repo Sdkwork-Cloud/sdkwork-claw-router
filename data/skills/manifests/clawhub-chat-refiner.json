@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-refiner@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-refiner-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-refiner-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cae57f752082dd61d541ba3905167f195c1938b5faec7063ba80a90939edec5f",

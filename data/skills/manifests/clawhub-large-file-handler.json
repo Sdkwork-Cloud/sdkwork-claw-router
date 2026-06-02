@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/large-file-handler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-large-file-handler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-large-file-handler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a38d386ad5d1d63caba1750f46119495ba8ae28fabbaafa8faf4179bd13ea425",

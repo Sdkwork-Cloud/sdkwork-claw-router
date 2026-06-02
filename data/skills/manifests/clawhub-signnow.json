@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/signnow@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-signnow-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-signnow-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:f6114d7c3faf6a8147dd7c4a06d14204aab746afeaf21c5996a28875325954c2",

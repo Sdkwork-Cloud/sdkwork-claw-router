@@ -29,7 +29,7 @@ public class ContentCourseApplicationRecord {
     private String userId;
     private String uuid;
     private String version;
-    private String videoUrl;
+    private MediaResource video;
 
     public String getCategory() {
         return this.category;
@@ -239,11 +239,11 @@ public class ContentCourseApplicationRecord {
         this.version = version;
     }
 
-    public String getVideoUrl() {
-        return this.videoUrl;
+    public MediaResource getVideo() {
+        return this.video;
     }
 
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
+    public void setVideo(MediaResource video) {
+        this.video = video;
     }
 }

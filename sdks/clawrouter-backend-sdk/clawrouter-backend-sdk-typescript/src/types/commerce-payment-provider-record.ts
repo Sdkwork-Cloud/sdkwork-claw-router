@@ -6,12 +6,16 @@ export interface CommercePaymentProviderRecord {
   created_at: string;
   /** Display name field on commerce payment provider record. */
   display_name: string;
+  /** Id field on commerce payment provider record. */
+  id?: string;
   /** Organization id field on commerce payment provider record. */
   organization_id?: string;
   /** Provider code field on commerce payment provider record. */
   provider_code: string;
   /** Provider type field on commerce payment provider record. */
   provider_type: string;
+  /** Sort order field on commerce payment provider record. */
+  sort_order: string;
   /** Status field on commerce payment provider record. */
   status: string;
   /** Supported countries field on commerce payment provider record. */

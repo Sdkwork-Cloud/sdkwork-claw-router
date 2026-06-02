@@ -65,13 +65,23 @@ async fn seed_recharge_data(pool: &SqlitePool) {
 }
 
 fn subject_request(method: &str, uri: &str, body: Body) -> Request<Body> {
+    subject_request_with_idempotency(method, uri, "recharge-idem-1", "recharge-request-1", body)
+}
+
+fn subject_request_with_idempotency(
+    method: &str,
+    uri: &str,
+    idempotency_key: &str,
+    request_no: &str,
+    body: Body,
+) -> Request<Body> {
     Request::builder()
         .method(method)
         .uri(uri)
         .header("content-type", "application/json")
         .extension(standard_context())
-        .header("Idempotency-Key", "recharge-idem-1")
-        .header("Sdkwork-Request-No", "recharge-request-1")
+        .header("Idempotency-Key", idempotency_key)
+        .header("Sdkwork-Request-No", request_no)
         .body(body)
         .expect("request")
 }
@@ -362,6 +372,361 @@ async fn app_recharge_router_creates_recharge_order_and_checkout_reads_status() 
         serde_json::Value::Null,
         payload["data"]["requestPaymentPayload"]
     );
+}
+
+#[tokio::test]
+async fn app_recharge_router_reuses_pending_unpaid_order_for_same_user_package_amount_and_currency()
+{
+    let pool = migrated_pool().await;
+    seed_recharge_data(&pool).await;
+    let inspect_pool = pool.clone();
+    let app = app_recharge_checkout_router_with_sqlite_pool(pool);
+
+    let first_response = app
+        .clone()
+        .oneshot(subject_request_with_idempotency(
+            "POST",
+            "/app/v3/api/recharges/orders",
+            "recharge-idem-reuse-1",
+            "recharge-request-reuse-1",
+            Body::from(
+                r#"{"clientRequestNo":"console-recharge-1","amount":"10.00","currencyCode":"CNY","packageId":"pack-owner-10","source":"console-recharge"}"#,
+            ),
+        ))
+        .await
+        .expect("first recharge response");
+
+    assert_eq!(StatusCode::OK, first_response.status());
+    let first_payload = response_json(first_response).await;
+    assert_eq!("2000", first_payload["code"]);
+    let first_order_no = first_payload["data"]["orderNo"]
+        .as_str()
+        .expect("first order no")
+        .to_owned();
+    let first_out_trade_no = first_payload["data"]["outTradeNo"]
+        .as_str()
+        .expect("first out trade no")
+        .to_owned();
+
+    let second_response = app
+        .oneshot(subject_request_with_idempotency(
+            "POST",
+            "/app/v3/api/recharges/orders",
+            "recharge-idem-reuse-2",
+            "recharge-request-reuse-2",
+            Body::from(
+                r#"{"clientRequestNo":"console-recharge-2","amount":"10.00","currencyCode":"CNY","packageId":"pack-owner-10","source":"console-recharge"}"#,
+            ),
+        ))
+        .await
+        .expect("second recharge response");
+
+    assert_eq!(StatusCode::OK, second_response.status());
+    let second_payload = response_json(second_response).await;
+    assert_eq!("2000", second_payload["code"]);
+    assert_eq!(first_order_no, second_payload["data"]["orderNo"]);
+    assert_eq!(first_out_trade_no, second_payload["data"]["outTradeNo"]);
+    assert_eq!(
+        first_payload["data"]["cashierUrl"],
+        second_payload["data"]["cashierUrl"]
+    );
+    assert_eq!(
+        first_payload["data"]["qrCodePayload"],
+        second_payload["data"]["qrCodePayload"]
+    );
+    assert_eq!(
+        first_payload["data"]["points"],
+        second_payload["data"]["points"]
+    );
+
+    let order_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(*)
+        FROM commerce_order
+        WHERE tenant_id = 'tenant-1'
+          AND owner_user_id = 'user-1'
+          AND subject = 'points_recharge'
+        "#,
+    )
+    .fetch_one(&inspect_pool)
+    .await
+    .expect("recharge order count");
+    assert_eq!(1, order_count);
+
+    let payment_intent_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(*)
+        FROM commerce_payment_intent
+        WHERE tenant_id = 'tenant-1'
+          AND owner_user_id = 'user-1'
+        "#,
+    )
+    .fetch_one(&inspect_pool)
+    .await
+    .expect("recharge payment intent count");
+    assert_eq!(1, payment_intent_count);
+
+    let payment_attempt_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(*)
+        FROM commerce_payment_attempt
+        WHERE tenant_id = 'tenant-1'
+          AND owner_user_id = 'user-1'
+        "#,
+    )
+    .fetch_one(&inspect_pool)
+    .await
+    .expect("recharge payment attempt count");
+    assert_eq!(1, payment_attempt_count);
+}
+
+#[tokio::test]
+async fn app_recharge_router_reuses_original_package_order_after_switching_packages_with_fallback_method(
+) {
+    let pool = migrated_pool().await;
+    seed_recharge_data(&pool).await;
+    sqlx::query(
+        r#"
+        UPDATE commerce_payment_method
+        SET status = 'inactive'
+        WHERE tenant_id = 'tenant-1'
+          AND organization_id = 'org-1'
+          AND method_key = 'wechat'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .expect("deactivate preferred method");
+    sqlx::query(
+        r#"
+        INSERT INTO commerce_payment_method
+            (id, tenant_id, organization_id, method_key, display_name, provider, status, sort_weight, request_no, idempotency_key, created_at, updated_at)
+        VALUES
+            ('method-alipay', 'tenant-1', 'org-1', 'alipay', 'Alipay', 'alipay', 'active', 2, 'seed-method-alipay', 'seed-method-alipay', '2026-05-20 00:00:00', '2026-05-20 00:00:00')
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .expect("insert fallback method");
+    let inspect_pool = pool.clone();
+    let app = app_recharge_checkout_router_with_sqlite_pool(pool);
+
+    let package_a_first = app
+        .clone()
+        .oneshot(subject_request_with_idempotency(
+            "POST",
+            "/app/v3/api/recharges/orders",
+            "recharge-idem-switch-a-1",
+            "recharge-request-switch-a-1",
+            Body::from(
+                r#"{"clientRequestNo":"console-recharge-switch-a-1","amount":"10.00","currencyCode":"CNY","packageId":"pack-owner-10","source":"console-recharge"}"#,
+            ),
+        ))
+        .await
+        .expect("package a first response");
+
+    assert_eq!(StatusCode::OK, package_a_first.status());
+    let package_a_first_payload = response_json(package_a_first).await;
+    assert_eq!("2000", package_a_first_payload["code"]);
+    assert_eq!("alipay", package_a_first_payload["data"]["paymentMethod"]);
+    let package_a_order_no = package_a_first_payload["data"]["orderNo"]
+        .as_str()
+        .expect("package a order no")
+        .to_owned();
+
+    let package_b_response = app
+        .clone()
+        .oneshot(subject_request_with_idempotency(
+            "POST",
+            "/app/v3/api/recharges/orders",
+            "recharge-idem-switch-b-1",
+            "recharge-request-switch-b-1",
+            Body::from(
+                r#"{"clientRequestNo":"console-recharge-switch-b-1","amount":"20.00","currencyCode":"CNY","packageId":"pack-tenant-20","source":"console-recharge"}"#,
+            ),
+        ))
+        .await
+        .expect("package b response");
+
+    assert_eq!(StatusCode::OK, package_b_response.status());
+    let package_b_payload = response_json(package_b_response).await;
+    assert_eq!("2000", package_b_payload["code"]);
+    assert_eq!("alipay", package_b_payload["data"]["paymentMethod"]);
+    assert_ne!(package_a_order_no, package_b_payload["data"]["orderNo"]);
+
+    let package_a_second = app
+        .oneshot(subject_request_with_idempotency(
+            "POST",
+            "/app/v3/api/recharges/orders",
+            "recharge-idem-switch-a-2",
+            "recharge-request-switch-a-2",
+            Body::from(
+                r#"{"clientRequestNo":"console-recharge-switch-a-2","amount":"10.00","currencyCode":"CNY","packageId":"pack-owner-10","source":"console-recharge"}"#,
+            ),
+        ))
+        .await
+        .expect("package a second response");
+
+    assert_eq!(StatusCode::OK, package_a_second.status());
+    let package_a_second_payload = response_json(package_a_second).await;
+    assert_eq!("2000", package_a_second_payload["code"]);
+    assert_eq!("alipay", package_a_second_payload["data"]["paymentMethod"]);
+    assert_eq!(
+        package_a_order_no,
+        package_a_second_payload["data"]["orderNo"]
+    );
+
+    let order_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(*)
+        FROM commerce_order
+        WHERE tenant_id = 'tenant-1'
+          AND owner_user_id = 'user-1'
+          AND subject = 'points_recharge'
+        "#,
+    )
+    .fetch_one(&inspect_pool)
+    .await
+    .expect("recharge order count after switch");
+    assert_eq!(2, order_count);
+
+    let package_a_order_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(*)
+        FROM commerce_payment_attempt
+        WHERE tenant_id = 'tenant-1'
+          AND owner_user_id = 'user-1'
+          AND amount = '10.00'
+          AND currency_code = 'CNY'
+        "#,
+    )
+    .fetch_one(&inspect_pool)
+    .await
+    .expect("package a payment attempt count");
+    assert_eq!(1, package_a_order_count);
+}
+
+#[tokio::test]
+async fn app_recharge_router_creates_new_order_after_previous_package_order_is_paid() {
+    let pool = migrated_pool().await;
+    seed_recharge_data(&pool).await;
+    let inspect_pool = pool.clone();
+    let app = app_recharge_checkout_router_with_sqlite_pool(pool);
+
+    let first_response = app
+        .clone()
+        .oneshot(subject_request_with_idempotency(
+            "POST",
+            "/app/v3/api/recharges/orders",
+            "recharge-idem-paid-1",
+            "recharge-request-paid-1",
+            Body::from(
+                r#"{"clientRequestNo":"console-recharge-paid-1","amount":"10.00","currencyCode":"CNY","packageId":"pack-owner-10","source":"console-recharge"}"#,
+            ),
+        ))
+        .await
+        .expect("first paid-scene response");
+
+    assert_eq!(StatusCode::OK, first_response.status());
+    let first_payload = response_json(first_response).await;
+    let first_order_no = first_payload["data"]["orderNo"]
+        .as_str()
+        .expect("first paid-scene order no")
+        .to_owned();
+
+    sqlx::query(
+        r#"
+        UPDATE commerce_order
+        SET status = 'paid',
+            paid_at = '2026-05-20 10:05:00',
+            updated_at = '2026-05-20 10:05:00'
+        WHERE tenant_id = 'tenant-1'
+          AND owner_user_id = 'user-1'
+          AND order_no = ?1
+        "#,
+    )
+    .bind(&first_order_no)
+    .execute(&inspect_pool)
+    .await
+    .expect("mark order paid");
+
+    sqlx::query(
+        r#"
+        UPDATE commerce_payment_intent
+        SET status = 'succeeded',
+            updated_at = '2026-05-20 10:05:00'
+        WHERE tenant_id = 'tenant-1'
+          AND owner_user_id = 'user-1'
+          AND order_id = (
+              SELECT id
+              FROM commerce_order
+              WHERE tenant_id = 'tenant-1'
+                AND owner_user_id = 'user-1'
+                AND order_no = ?1
+          )
+        "#,
+    )
+    .bind(&first_order_no)
+    .execute(&inspect_pool)
+    .await
+    .expect("mark payment intent succeeded");
+
+    sqlx::query(
+        r#"
+        UPDATE commerce_payment_attempt
+        SET status = 'succeeded',
+            paid_at = '2026-05-20 10:05:00',
+            updated_at = '2026-05-20 10:05:00'
+        WHERE tenant_id = 'tenant-1'
+          AND owner_user_id = 'user-1'
+          AND order_id = (
+              SELECT id
+              FROM commerce_order
+              WHERE tenant_id = 'tenant-1'
+                AND owner_user_id = 'user-1'
+                AND order_no = ?1
+          )
+        "#,
+    )
+    .bind(&first_order_no)
+    .execute(&inspect_pool)
+    .await
+    .expect("mark payment attempt succeeded");
+
+    let second_response = app
+        .oneshot(subject_request_with_idempotency(
+            "POST",
+            "/app/v3/api/recharges/orders",
+            "recharge-idem-paid-2",
+            "recharge-request-paid-2",
+            Body::from(
+                r#"{"clientRequestNo":"console-recharge-paid-2","amount":"10.00","currencyCode":"CNY","packageId":"pack-owner-10","source":"console-recharge"}"#,
+            ),
+        ))
+        .await
+        .expect("second paid-scene response");
+
+    assert_eq!(StatusCode::OK, second_response.status());
+    let second_payload = response_json(second_response).await;
+    let second_order_no = second_payload["data"]["orderNo"]
+        .as_str()
+        .expect("second paid-scene order no");
+    assert_ne!(first_order_no, second_order_no);
+
+    let package_order_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(*)
+        FROM commerce_order
+        WHERE tenant_id = 'tenant-1'
+          AND owner_user_id = 'user-1'
+          AND subject = 'points_recharge'
+          AND currency_code = 'CNY'
+        "#,
+    )
+    .fetch_one(&inspect_pool)
+    .await
+    .expect("paid-scene recharge order count");
+    assert_eq!(2, package_order_count);
 }
 
 #[tokio::test]

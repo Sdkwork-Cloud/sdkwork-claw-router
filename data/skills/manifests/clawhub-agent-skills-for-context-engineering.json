@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-skills-for-context-engineering@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-skills-for-context-engineering-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-skills-for-context-engineering-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:65d97c80c85b256423bfea7bc9e0f75ab76a34c44dfda177404cdb744408e033",

@@ -28,6 +28,13 @@ type MembershipPlanBenefitFormValue = Omit<MembershipsAdminPlanBenefitInput, 'us
   usageLimitText: string;
 };
 
+const baseBenefitTypeOptions = [
+  { value: 'quota', label: 'Quota' },
+  { value: 'feature', label: 'Feature' },
+  { value: 'discount', label: 'Discount' },
+  { value: 'service', label: 'Service' },
+];
+
 export function MembershipPlanDrawerForm({
   mode,
   initialValue,
@@ -35,7 +42,6 @@ export function MembershipPlanDrawerForm({
   onSubmit,
 }: MembershipPlanDrawerFormProps) {
   const { t } = useTranslation();
-  const [code, setCode] = useState(initialValue?.planNo || initialValue?.levelCode || '');
   const [name, setName] = useState(initialValue?.name ?? '');
   const [rank, setRank] = useState(String(initialValue?.rank ?? 0));
   const [status, setStatus] = useState<'active' | 'inactive' | 'disabled'>(
@@ -56,7 +62,9 @@ export function MembershipPlanDrawerForm({
     setError(null);
     try {
       await onSubmit({
-        code,
+        code: mode === 'edit' && (initialValue?.planNo || initialValue?.levelCode)
+          ? initialValue.planNo || initialValue.levelCode
+          : buildMembershipPlanCode(name),
         name,
         rank: parseOptionalNonNegativeIntegerField(rank, t('admin.commerce.memberships.plans.form.rank', 'Rank')),
         status,
@@ -77,7 +85,6 @@ export function MembershipPlanDrawerForm({
 
   return (
     <MembershipFormFrame error={error}>
-      <MembershipTextField label={t('admin.commerce.memberships.plans.form.code', 'Code')} value={code} onChange={setCode} placeholder={t('admin.commerce.memberships.plans.form.codePlaceholder', 'vip_gold')} />
       <MembershipTextField label={t('admin.commerce.memberships.plans.form.name', 'Name')} value={name} onChange={setName} placeholder={t('admin.commerce.memberships.plans.form.namePlaceholder', 'Gold Member')} />
       <div className="grid grid-cols-2 gap-4">
         <MembershipTextField label={t('admin.commerce.memberships.plans.form.rank', 'Rank')} value={rank} onChange={setRank} placeholder="0" />
@@ -122,7 +129,12 @@ export function MembershipPlanDrawerForm({
               </div>
               <MembershipTextField label={t('admin.commerce.memberships.plans.form.benefitName', 'Name')} value={benefit.name} onChange={(value) => updateBenefit(index, { name: value })} />
               <MembershipTextField label={t('admin.commerce.memberships.plans.form.benefitKey', 'Benefit key')} value={benefit.benefitKey ?? ''} onChange={(value) => updateBenefit(index, { benefitKey: value })} />
-              <MembershipTextField label={t('admin.commerce.memberships.plans.form.benefitType', 'Type')} value={benefit.type ?? ''} onChange={(value) => updateBenefit(index, { type: value })} />
+              <MembershipSelectField
+                label={t('admin.commerce.memberships.plans.form.benefitType', 'Type')}
+                value={benefit.type ?? 'quota'}
+                options={benefitTypeOptions(benefit.type)}
+                onChange={(value) => updateBenefit(index, { type: value || 'quota' })}
+              />
               <MembershipTextField label={t('admin.commerce.memberships.plans.form.usageLimit', 'Usage limit')} value={benefit.usageLimitText} onChange={(value) => updateBenefit(index, { usageLimitText: value })} />
               <MembershipTextField label={t('admin.commerce.memberships.plans.form.description', 'Description')} value={benefit.description ?? ''} onChange={(value) => updateBenefit(index, { description: value })} />
             </div>
@@ -166,4 +178,24 @@ function toMembershipPlanBenefitFormValue(
     ...input,
     usageLimitText: usageLimit === undefined ? '' : String(usageLimit),
   };
+}
+
+function buildMembershipPlanCode(name: string): string {
+  const normalizedName = name
+    .trim()
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 32);
+  const suffix = Date.now().toString(36).slice(-6);
+  return `membership-${normalizedName || 'plan'}-${suffix}`;
+}
+
+function benefitTypeOptions(currentType: string | undefined): Array<{ value: string; label: string }> {
+  const normalizedCurrentType = currentType?.trim() ?? '';
+  if (!normalizedCurrentType || baseBenefitTypeOptions.some((option) => option.value === normalizedCurrentType)) {
+    return baseBenefitTypeOptions;
+  }
+  return [...baseBenefitTypeOptions, { value: normalizedCurrentType, label: normalizedCurrentType }];
 }

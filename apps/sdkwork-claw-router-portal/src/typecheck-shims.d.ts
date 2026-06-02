@@ -350,11 +350,14 @@ declare module '@sdkwork/generation-pc-react/generation-service' {
 }
 
 declare module '@sdkwork/generation-pc-react/generation-history' {
+  import type { SdkworkMediaResource } from '@sdkwork/appbase-pc-react';
+
   export type SdkworkGenerationAssetModality = 'audio' | 'image' | 'music' | 'sfx' | 'video';
   export type SdkworkGenerationAssetAspectRatio = '1:1' | '16:9' | '9:16';
   export type SdkworkGenerationHistoryType = 'text' | 'image' | 'images' | 'video' | 'music' | 'audio' | 'sfx';
   export type SdkworkGenerationPreviewKind = 'audio' | 'image' | 'text' | 'video';
-  export type SdkworkGenerationMedia = string | { thumb?: string; url?: string };
+  export type SdkworkGenerationMediaResource = SdkworkMediaResource;
+  export type SdkworkGenerationMedia = SdkworkGenerationMediaResource;
 
   export interface SdkworkGenerationSerializedAssetConfig {
     aspectRatio?: SdkworkGenerationAssetAspectRatio;
@@ -375,11 +378,8 @@ declare module '@sdkwork/generation-pc-react/generation-history' {
   }
 
   export interface SdkworkGenerationArtifact {
-    durationSeconds?: number;
-    mimeType?: string;
+    asset: SdkworkGenerationMediaResource;
     modality: SdkworkGenerationAssetModality;
-    thumb?: string;
-    url: string;
   }
 
   export interface SdkworkGenerationHistoryItem {
@@ -390,7 +390,8 @@ declare module '@sdkwork/generation-pc-react/generation-history' {
     durationSeconds?: number;
     generationConfig?: SdkworkGenerationSerializedAssetConfig;
     id: string;
-    images?: string[];
+    asset?: SdkworkGenerationMediaResource;
+    images?: SdkworkGenerationMediaResource[];
     modelCatalogKey?: string;
     modelInfo?: string;
     outputText?: string;
@@ -398,8 +399,7 @@ declare module '@sdkwork/generation-pc-react/generation-history' {
     status?: string;
     type: SdkworkGenerationHistoryType;
     updatedAt?: string;
-    url?: string;
-    videos?: SdkworkGenerationMedia[];
+    videos?: SdkworkGenerationMediaResource[];
   }
 
   export function appendSdkworkGenerationArtifactToHistoryItem<TItem extends SdkworkGenerationHistoryItem>(
@@ -422,10 +422,10 @@ declare module '@sdkwork/generation-pc-react/generation-history' {
     artifacts: readonly SdkworkGenerationArtifact[],
     targetType?: SdkworkGenerationAssetModality,
   ): {
+    asset?: SdkworkGenerationMediaResource;
     durationSeconds?: number;
-    images: string[];
-    url?: string;
-    videos: SdkworkGenerationMedia[];
+    images: SdkworkGenerationMediaResource[];
+    videos: SdkworkGenerationMediaResource[];
   };
   export function mapSdkworkGenerationHistoryTypeToModality(
     historyType: SdkworkGenerationHistoryType,
@@ -443,6 +443,7 @@ declare module '@sdkwork/generation-pc-react/generation-history' {
 
 declare module '@sdkwork/generation-pc-react/react' {
   import type { ReactNode } from 'react';
+  import type { SdkworkMediaResource } from '@sdkwork/appbase-pc-react';
 
   export type SdkworkGenerationAssetModality = 'audio' | 'image' | 'music' | 'sfx' | 'video';
   export type SdkworkGenerationAssetAspectRatio = '1:1' | '16:9' | '9:16';
@@ -450,7 +451,8 @@ declare module '@sdkwork/generation-pc-react/react' {
   export type SdkworkGenerationModelBucket = 'llms' | 'images' | 'videos' | 'audios' | 'music' | 'sfx';
   export type SdkworkGenerationHistoryType = 'text' | 'image' | 'images' | 'video' | 'music' | 'audio' | 'sfx';
   export type SdkworkGenerationPreviewKind = 'audio' | 'image' | 'text' | 'video';
-  export type SdkworkGenerationMedia = string | { thumb?: string; url?: string };
+  export type SdkworkGenerationMediaResource = SdkworkMediaResource;
+  export type SdkworkGenerationMedia = SdkworkGenerationMediaResource;
 
   export interface SdkworkGenerationImageModeConfig {
     aspectRatio: 'auto' | '1:1' | '16:9' | '21:9' | '2:3' | '3:2' | '3:4' | '4:3' | '9:16';
@@ -532,11 +534,8 @@ declare module '@sdkwork/generation-pc-react/react' {
   }
 
   export interface SdkworkGenerationArtifact {
-    durationSeconds?: number;
-    mimeType?: string;
+    asset: SdkworkGenerationMediaResource;
     modality: SdkworkGenerationAssetModality;
-    thumb?: string;
-    url: string;
   }
 
   export interface SdkworkGenerationHistoryItem {
@@ -547,7 +546,8 @@ declare module '@sdkwork/generation-pc-react/react' {
     durationSeconds?: number;
     generationConfig?: SdkworkGenerationSerializedAssetConfig;
     id: string;
-    images?: string[];
+    asset?: SdkworkGenerationMediaResource;
+    images?: SdkworkGenerationMediaResource[];
     modelCatalogKey?: string;
     modelInfo?: string;
     outputText?: string;
@@ -555,8 +555,7 @@ declare module '@sdkwork/generation-pc-react/react' {
     status?: string;
     type: SdkworkGenerationHistoryType;
     updatedAt?: string;
-    url?: string;
-    videos?: SdkworkGenerationMedia[];
+    videos?: SdkworkGenerationMediaResource[];
   }
 
   export interface SdkworkGenerationModeOption<TValue = string | number | boolean> {

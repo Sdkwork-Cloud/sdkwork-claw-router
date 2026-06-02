@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shieldpay@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-shieldpay-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shieldpay-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b279b5321b573ead33e46ab99669cfeb801f455c9ef47ae2c6791df85aa176f0",

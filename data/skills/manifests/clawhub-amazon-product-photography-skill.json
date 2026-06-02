@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-product-photography-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-product-photography-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-product-photography-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:660859717df1869292438adaa3c96f524a004b08fd5ae53b7030b6f0ed6a17d1",

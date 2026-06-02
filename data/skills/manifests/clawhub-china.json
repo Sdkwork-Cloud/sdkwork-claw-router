@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/china@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-china-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-china-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a905b54f4a9056c99aebe417f8137e507abbd4e69e0893293267ce4605f8462",

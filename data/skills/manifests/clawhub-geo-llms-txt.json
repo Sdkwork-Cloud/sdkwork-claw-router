@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geo-llms-txt@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-geo-llms-txt-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geo-llms-txt-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:305b485993a5627290328c03787f29aad987d9837558d0eed04a69c7cd5f111e",

@@ -14,11 +14,13 @@ data class AiChannelEndpointRecord(
     val deletedBy: String? = null,
     val effectiveFrom: String? = null,
     val effectiveTo: String? = null,
+    val healthStatus: String? = null,
     val id: String? = null,
     val lastLatencyMs: Int? = null,
     val metadata: Map<String, String>? = null,
     val organizationId: String? = null,
     val pathPrefix: String? = null,
+    val priority: Int? = null,
     val providerCode: String? = null,
     val regionCode: String? = null,
     val retryPolicy: Map<String, String>? = null,
@@ -29,5 +31,6 @@ data class AiChannelEndpointRecord(
     val uuid: String? = null,
     val vendorCode: String? = null,
     val vendorId: String? = null,
-    val version: String? = null
+    val version: String? = null,
+    val weight: Int? = null
 )

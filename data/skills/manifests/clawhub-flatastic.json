@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flatastic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flatastic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flatastic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9cfe1ef7dcb5ab9ccc15e8f1ec0cf50b3dd034867446674ca68268ba9ce67213",

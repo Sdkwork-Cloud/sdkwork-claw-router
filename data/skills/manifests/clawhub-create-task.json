@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-task@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-task-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-task-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:86cc5b52de66a08c398788ca5593750ac6477547973f2ab7ae41cb26541fd0c2",

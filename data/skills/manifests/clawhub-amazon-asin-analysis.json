@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-asin-analysis@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-asin-analysis-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-asin-analysis-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5b4596ea2e95fa3ca41ec38069e9389eed0033ee8c9e25f30ad55ab550700e10",

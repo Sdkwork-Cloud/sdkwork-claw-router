@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prediction-market-trader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prediction-market-trader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prediction-market-trader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c30b04aa5f2e46f45bbcf4024cb0a6d4a83a08cffdcaf2447d955a072d45c4b",

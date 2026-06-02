@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hive-intel-publisher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hive-intel-publisher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hive-intel-publisher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93263cd57a3affc1f056df7b0e8a9a0f65c69c873ac09e6dd555d2aa28064cc1",

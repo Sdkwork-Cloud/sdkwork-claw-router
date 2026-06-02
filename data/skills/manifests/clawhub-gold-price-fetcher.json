@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gold-price-fetcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gold-price-fetcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gold-price-fetcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:504fe0d273603a1db0998f0f3d014bb84d834dd7b42bdee40ef746e0220050e5",

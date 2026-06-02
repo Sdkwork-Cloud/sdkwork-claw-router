@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sleepwell@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sleepwell-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sleepwell-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b494de0270224166f1213b311c9e4f58ffe9144a78fc2ebb4ebcdeee1f1f3747",

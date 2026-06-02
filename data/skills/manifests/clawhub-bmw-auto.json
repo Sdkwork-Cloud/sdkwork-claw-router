@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bmw-auto@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bmw-auto-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bmw-auto-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:711c4702be3755222cdc3b5d438d0116546ee15352972c32365571a17e554399",

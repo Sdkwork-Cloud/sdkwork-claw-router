@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trakt-readonly@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-trakt-readonly-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trakt-readonly-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:0b8acc232cf0befc3eb66536d1385a93dfd925d407ade6027b1da95f4bf2a9b0",

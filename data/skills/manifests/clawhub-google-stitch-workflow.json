@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-stitch-workflow@1.6.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-stitch-workflow-1.6.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-stitch-workflow-1.6.5.json"
+      },
       "version": "1.6.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7c4380eb4d403f88029ce8f3ea91a02f5b20232d1b6df2a6fe2370df9fe7d501",

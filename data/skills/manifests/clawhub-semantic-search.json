@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/semantic-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-semantic-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-semantic-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:294e70d4c04a3875c2449a4b063efacb2bd69719ac38e042b2c22e5e14a2bd74",

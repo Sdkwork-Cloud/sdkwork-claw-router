@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/worldclim-extract@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-worldclim-extract-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-worldclim-extract-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ab657914767ee2c05f33a0b8cd3560ee7aa9f9d88782a0a05622f329462c865",

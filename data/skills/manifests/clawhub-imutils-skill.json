@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/imutils-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-imutils-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-imutils-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a0c524ba451ba57fb87d69a2365e10dbddaaba96709eb1b159c6bac3f0aab2da",

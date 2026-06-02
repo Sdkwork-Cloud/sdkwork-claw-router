@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flightmapify@1.4.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-flightmapify-1.4.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flightmapify-1.4.6.json"
+      },
       "version": "1.4.6",
       "runtime": "metadata",
       "checksumHash": "sha256:51304f10cadc5e03beb674a23cef52438ebd591d42cd9d1df1c4c32664765b16",

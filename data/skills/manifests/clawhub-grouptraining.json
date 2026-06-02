@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grouptraining@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grouptraining-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grouptraining-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b13eea0646d8bf7296554fc41ace4d3f2e514cfda62824840c2330441a6dc670",

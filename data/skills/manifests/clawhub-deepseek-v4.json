@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deepseek-v4@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-deepseek-v4-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deepseek-v4-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:61ba4d38b60b1934ec3fc26dbe98f4185174ba73b72286a76f3eb57bc32038cc",

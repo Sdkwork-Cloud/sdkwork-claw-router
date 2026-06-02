@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coe-consensus@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coe-consensus-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coe-consensus-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:227a2f43a55da34adec4bb7fba72560ead2a88b64165df89d9c1476b2089ef47",

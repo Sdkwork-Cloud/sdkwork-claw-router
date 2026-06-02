@@ -35,6 +35,10 @@ pub struct AiPromptVersionRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub deprecated_at: Option<String>,
 
+    /// Examples json field on ai prompt version record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub examples_json: Option<std::collections::HashMap<String, String>>,
+
     /// Id field on ai prompt version record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -47,9 +51,17 @@ pub struct AiPromptVersionRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub metadata: Option<std::collections::HashMap<String, String>>,
 
+    /// Model constraints field on ai prompt version record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub model_constraints: Option<std::collections::HashMap<String, String>>,
+
     /// Organization id field on ai prompt version record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Output schema field on ai prompt version record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub output_schema: Option<std::collections::HashMap<String, String>>,
 
     /// Prompt id field on ai prompt version record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -66,6 +78,10 @@ pub struct AiPromptVersionRecord {
     /// Review status field on ai prompt version record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub review_status: Option<String>,
+
+    /// Safety policy field on ai prompt version record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub safety_policy: Option<std::collections::HashMap<String, String>>,
 
     /// Status field on ai prompt version record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -86,6 +102,10 @@ pub struct AiPromptVersionRecord {
     /// Uuid field on ai prompt version record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub uuid: Option<String>,
+
+    /// Variable schema field on ai prompt version record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub variable_schema: Option<std::collections::HashMap<String, String>>,
 
     /// Version field on ai prompt version record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yandex-music@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yandex-music-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yandex-music-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c78a737bd2823c5d7a7f29a74a73582a73fa1eaf10853f10aaa2754d8d567c0",

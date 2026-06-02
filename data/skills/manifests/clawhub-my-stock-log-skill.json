@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-stock-log-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-stock-log-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-stock-log-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ac4b3bdee1b9a582e04e91563533849084567345176b6d308d1df64c6dcc46ec",

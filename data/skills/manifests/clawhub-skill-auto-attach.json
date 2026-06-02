@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-auto-attach@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-auto-attach-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-auto-attach-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f4c272db01fdd783c45c0a7202f15618e7c73879d84538a89d030bf8a9bfac8",

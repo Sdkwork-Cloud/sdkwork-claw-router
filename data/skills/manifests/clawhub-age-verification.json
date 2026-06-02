@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/age-verification@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-age-verification-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-age-verification-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8347cc1ce05a72cc00c2171455ba88a45278e35d9621b398b88c3c524cfcdd94",

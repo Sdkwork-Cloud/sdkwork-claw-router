@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linux-distros@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linux-distros-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linux-distros-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7b65a8b37cc265665ef8fd780ebb99023edcf15b7a6ecd9ec0e5f3fd73cc3959",

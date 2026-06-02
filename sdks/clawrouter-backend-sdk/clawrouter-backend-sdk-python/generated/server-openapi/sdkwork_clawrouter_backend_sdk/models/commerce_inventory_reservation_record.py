@@ -9,12 +9,14 @@ class CommerceInventoryReservationRecord:
     created_at: str
     expires_at: str
     idempotency_key: str
+    quantity: str
     reservation_no: str
     sku_id: str
     status: str
     tenant_id: str
     updated_at: str
     checkout_session_id: Optional[str] = None
+    id: Optional[str] = None
     order_id: Optional[str] = None
     organization_id: Optional[str] = None
     warehouse_id: Optional[str] = None

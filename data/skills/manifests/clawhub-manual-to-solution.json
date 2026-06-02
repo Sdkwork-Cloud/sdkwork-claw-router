@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/manual-to-solution@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-manual-to-solution-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-manual-to-solution-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0ccb0fb759fe3e9cdd6aa592f4182cbeeb8e12a01b7dbd2b9905930b659c69f7",

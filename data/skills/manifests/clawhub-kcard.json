@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kcard@1.6.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-kcard-1.6.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kcard-1.6.5.json"
+      },
       "version": "1.6.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7427cb460b2af10ee3f41ac209b4b78df10045e6c10f1221a8ca08cec09fd8cc",

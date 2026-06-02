@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentry-observability@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentry-observability-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentry-observability-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ffde0676912b5547a75228da3d2e53b404d8cd2401e6bd96e646e8fd17a0a391",

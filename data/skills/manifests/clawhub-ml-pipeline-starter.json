@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ml-pipeline-starter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ml-pipeline-starter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ml-pipeline-starter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e0d30fa1d14696ab99e71b68548b195c9ecd269967bf0695cce93e10a4a28a84",

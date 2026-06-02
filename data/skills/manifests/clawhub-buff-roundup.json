@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buff-roundup@2.3.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-buff-roundup-2.3.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buff-roundup-2.3.5.json"
+      },
       "version": "2.3.5",
       "runtime": "metadata",
       "checksumHash": "sha256:d8764bb94cee8b94d02b7951ac8c5740dcd4c0fad2d88fa4ebda77dee2e82007",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/synology-backup@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-synology-backup-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-synology-backup-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:26a42f899c258102f0fef2d5f00fe26a57dc8c4eb768ee648f555a0b95f615d7",

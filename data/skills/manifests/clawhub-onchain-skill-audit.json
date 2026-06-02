@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/onchain-skill-audit@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-onchain-skill-audit-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-onchain-skill-audit-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d02a5a2f73a3c3eae460d4d17907e5c665947e7add32f91c8b67731c8f369bb7",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generate-pdf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-generate-pdf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generate-pdf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:036e06e0f146ca78ac1b255fbec56e9c1f051fb1745b8de7e4001a5c5327d956",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-switchboard@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-switchboard-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-switchboard-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09acd4b44ee0807f24e90a490a7ab3b94971c7765dd22ba87be2ba92e991d79d",

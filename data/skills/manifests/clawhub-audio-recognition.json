@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-recognition@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-recognition-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-recognition-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3371329e1a808d106b2554bb0444931399cc69520f5fd89fe651184d8f0a27b",

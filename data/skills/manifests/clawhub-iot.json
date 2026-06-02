@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/iot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-iot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-iot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3642c63fbc7ab8506d15c2327280c82080f11a61f7e1b5f698b7ae5bb56bdd0f",

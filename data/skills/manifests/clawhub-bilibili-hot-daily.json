@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bilibili-hot-daily@2.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-hot-daily-2.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bilibili-hot-daily-2.1.2.json"
+      },
       "version": "2.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f001049a83121fffca65474cd2032ebd93d704eb3b38e2962db69eb3eaffa38c",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sat-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sat-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sat-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1fc533e8ef7404d990c35181c7746a66c9e4ee82c23dd17d044146fe06d0d231",

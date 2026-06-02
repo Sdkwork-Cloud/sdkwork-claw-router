@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitlab-code-review@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-code-review-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitlab-code-review-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:087e80171e7f03b24f6691bf1e913fec6d1be082a18aed8797f12a0e55774339",

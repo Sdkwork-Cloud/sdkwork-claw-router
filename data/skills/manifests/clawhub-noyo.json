@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/noyo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-noyo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-noyo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5111b535a5e94af81f5a2227659a5f971e415ff9ad62ce35c38e2d5c9c8e3021",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/papi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-papi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-papi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9dc0a066c5af35e647133b98ab2e8b496299a42274748a06eaac54b0a835467",

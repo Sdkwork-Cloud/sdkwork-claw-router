@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloud-infra-automation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloud-infra-automation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloud-infra-automation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:434728d585aef5a5d892c459d4bbe29852d425f9dcdffa526fb216912a183996",

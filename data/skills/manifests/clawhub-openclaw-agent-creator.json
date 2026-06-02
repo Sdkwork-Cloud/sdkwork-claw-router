@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-agent-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-agent-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-agent-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:07ada08a2bf6bfa5887dd3abad8a36f905e01f29b728d617c065ff3ab50b044c",

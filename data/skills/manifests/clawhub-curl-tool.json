@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/curl-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-curl-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-curl-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:997aaab05e1e26601cdb9fa932808f6674b554a2321e09218580191d53e49e7e",

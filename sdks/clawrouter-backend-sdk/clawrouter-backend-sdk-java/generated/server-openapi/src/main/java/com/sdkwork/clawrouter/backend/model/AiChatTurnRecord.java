@@ -38,6 +38,7 @@ public class AiChatTurnRecord {
     private String tenantId;
     private String traceId;
     private String turnNo;
+    private String updatedAt;
     private Map<String, String> usageSnapshot;
     private String userId;
     private String uuid;
@@ -320,6 +321,14 @@ public class AiChatTurnRecord {
 
     public void setTurnNo(String turnNo) {
         this.turnNo = turnNo;
+    }
+
+    public String getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public Map<String, String> getUsageSnapshot() {

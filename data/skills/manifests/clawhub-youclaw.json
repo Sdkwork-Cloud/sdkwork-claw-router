@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youclaw@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-youclaw-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youclaw-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:affd3d2b0da414aa9cfb333c87c4612f5654385aa0462c8daf6601cf9399b386",

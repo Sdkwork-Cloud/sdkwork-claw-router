@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-miner@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-miner-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-miner-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:34bf11154fec88ea27b827bccea170090bcfbc62acf26d5033e22445150e49f8",

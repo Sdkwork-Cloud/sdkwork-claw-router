@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unzipped-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-unzipped-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unzipped-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8b6c6b6849a0202ed55913767280e471e2f666307ae9c05f26835b5366b7f9b2",

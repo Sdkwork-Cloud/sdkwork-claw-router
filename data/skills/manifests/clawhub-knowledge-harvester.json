@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-harvester@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-harvester-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-harvester-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3d40953c5e99de14893629c6838c9207fb913160192f074f09ce89b436b7888",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/graph-rag-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-graph-rag-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-graph-rag-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f2f04d0362cc3a9a7a524cad1a555898dfcb7ec76b1e5da01bd04a6f33471fcb",

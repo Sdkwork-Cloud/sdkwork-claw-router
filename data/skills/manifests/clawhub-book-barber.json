@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-barber@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-barber-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-barber-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:aa1d0f0d77a73df115c5dbc01b166f3a8f1a1d265eed0f0b2ae6ab25953d84d9",

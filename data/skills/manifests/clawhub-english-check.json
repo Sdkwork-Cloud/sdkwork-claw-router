@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/english-check@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-english-check-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-english-check-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6fde8b55437cf5474c0f132f084178b93d9d794130c0814ef5b4a33f58b0be69",

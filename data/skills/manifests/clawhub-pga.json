@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pga@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pga-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pga-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af681e2ae6e687a31b28b5cb351938f26c35d2877983eb23761e2b00058edb2d",

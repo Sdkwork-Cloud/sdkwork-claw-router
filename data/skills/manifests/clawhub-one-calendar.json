@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/one-calendar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-one-calendar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-one-calendar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a921981e08f979d1f4ff3c1b1782219efb73dd10e45d43bc1299c197ef14912e",

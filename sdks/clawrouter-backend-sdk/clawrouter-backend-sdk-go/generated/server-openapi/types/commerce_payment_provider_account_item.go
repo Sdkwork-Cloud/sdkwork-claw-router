@@ -3,6 +3,7 @@ package types
 // Commerce payment provider account item schema exposed by Claw Router.
 type CommercePaymentProviderAccountItem struct {
 	AccountNo string `json:"accountNo"`
+	AccountRole string `json:"accountRole"`
 	CertificateRef string `json:"certificateRef"`
 	CountryCode string `json:"countryCode"`
 	CreatedAt string `json:"createdAt"`

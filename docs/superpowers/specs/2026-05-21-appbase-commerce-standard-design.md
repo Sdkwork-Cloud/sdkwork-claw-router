@@ -584,7 +584,8 @@ registry records. The following is the logical contract.
 `commerce_payment_method`
 
 - User-facing or admin-configured method.
-- Key columns: `method_code`, `method_type`, `display_name`, `icon_url`,
+- Key columns: `method_code`, `method_type`, `display_name`,
+  `icon_media_resource_id`, `icon_object_blob_id`, `icon_resource_snapshot`,
   `status`, `sort_order`.
 - Method types: `card`, `wallet`, `bank_redirect`, `qr_code`, `app_pay`,
   `web_pay`, `mini_program_pay`, `h5_pay`, `native_pay`, `balance`.

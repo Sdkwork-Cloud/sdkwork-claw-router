@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-ip-checker-iplookup@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-ip-checker-iplookup-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-ip-checker-iplookup-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:31e46cb2978e3b68c6b348f4b40f0f437cd49e15bd730caaa0a609d3cd25f39a",

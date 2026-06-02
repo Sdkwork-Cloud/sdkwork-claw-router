@@ -30,7 +30,7 @@ fun main() = runBlocking {
     client.setApiKey("your-api-key")
 
     // Use the SDK
-    val result = client.ai.modelVendorsList()
+    val result = client.ai.channelGroupsList()
     println(result)
 }
 ```
@@ -108,8 +108,8 @@ println(result)
 ### ai
 
 ```kotlin
-// List vendors
-val result = client.ai.modelVendorsList()
+// List groups
+val result = client.ai.channelGroupsList()
 println(result)
 ```
 
@@ -140,8 +140,8 @@ println(result)
 ### iam
 
 ```kotlin
-// List groups
-val result = client.iam.accessGroupsList()
+// List API key map
+val result = client.iam.apiKeysList()
 println(result)
 ```
 
@@ -262,7 +262,7 @@ import kotlinx.coroutines.runBlocking
 
 fun main() = runBlocking {
     try {
-        val result = client.ai.modelVendorsList()
+        val result = client.ai.channelGroupsList()
         println(result)
     } catch (e: Exception) {
         println("Error: ${e.message}")

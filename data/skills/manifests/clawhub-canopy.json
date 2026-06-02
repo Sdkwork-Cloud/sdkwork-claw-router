@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/canopy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-canopy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-canopy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:27fd4872451bc4ae1ce73e706ba5125bec10848640c9503cc7c54389c30a39d8",

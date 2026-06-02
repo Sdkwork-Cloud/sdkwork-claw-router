@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/binance-square-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-binance-square-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-binance-square-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bde3649beebfe81666023e9d2116bf14bec31f413b16c560ca5cc3667a5c706f",

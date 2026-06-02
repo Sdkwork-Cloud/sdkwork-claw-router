@@ -2400,8 +2400,13 @@ describe("sdkwork-auth-pc-react page", () => {
       service: {
         generateLoginQrCode: vi.fn().mockResolvedValue({
           qrContent: "sdkwork://auth/backend-image-fallback",
+          qrCode: {
+            kind: "image",
+            publicUrl: "https://cdn.sdkwork.ai/auth/qr-backend-image.png",
+            source: "external_url",
+            url: "https://cdn.sdkwork.ai/auth/qr-backend-image.png",
+          },
           sessionKey: "qr-backend-image-1",
-          qrUrl: " https://cdn.sdkwork.ai/auth/qr-backend-image.png ",
         }),
         checkLoginQrCodeStatus: vi.fn().mockResolvedValue({
           status: "pending",

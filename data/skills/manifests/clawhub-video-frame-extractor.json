@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-frame-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-frame-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-frame-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6fff8f8e1f27e6c31a000746e1fb43321904cd1e4e92954fcba4c1c183073fd4",

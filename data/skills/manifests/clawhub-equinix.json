@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/equinix@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-equinix-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-equinix-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:90c9901f41a6ddc89b7ebfcc0df456e8ce08b61027724f8c6f10d5ed2dba0e3b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/production-operations-agent@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-production-operations-agent-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-production-operations-agent-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2eb2ec52dcfad8896d708e01c840bdf9b540fead86a6a35058b57d428db2319e",

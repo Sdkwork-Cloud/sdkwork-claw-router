@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aigc-risk-assessment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aigc-risk-assessment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aigc-risk-assessment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52373704f7936787de85d541c0ed4493eb2ab695c1ac979839555c2ae3deaefb",

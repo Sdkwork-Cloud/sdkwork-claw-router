@@ -14,12 +14,15 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? ChannelCode { get; set; }
         public string? ClaimCodeHash { get; set; }
         public string? ClaimCodeSuffix { get; set; }
+        public string? ClaimedQuantity { get; set; }
         public string? CodeNo { get; set; }
         public string? CodeType { get; set; }
         public string? CreatedAt { get; set; }
         public string? CreatedBy { get; set; }
         public string? CurrencyCode { get; set; }
         public string? ExpiresAt { get; set; }
+        public string? Id { get; set; }
+        public string? MaxClaims { get; set; }
         public string? OfferId { get; set; }
         public string? OfferVersionId { get; set; }
         public string? OrganizationId { get; set; }

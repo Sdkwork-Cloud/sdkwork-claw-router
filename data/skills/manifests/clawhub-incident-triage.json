@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/incident-triage@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-incident-triage-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-incident-triage-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8096ad8bd9a5357bb4e7f476b3483cc7e541d00eeb37f73b75d2f2435d15a395",

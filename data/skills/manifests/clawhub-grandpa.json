@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grandpa@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grandpa-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grandpa-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98da067a541f9a4ac78fa2d74de75e694932635b8ea2241c678306db86ec77bb",

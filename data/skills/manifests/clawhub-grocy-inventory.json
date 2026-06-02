@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grocy-inventory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grocy-inventory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grocy-inventory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f7738793a00641b7ee8ec8f943e9555e2f637cb33e251fa5d653d7c5c83d5179",

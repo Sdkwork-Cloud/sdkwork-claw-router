@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/switchboard@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-switchboard-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-switchboard-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ec55c7ca6e4567a24f277e6fa76785d692c8a1f8ac4ee6291ee927689d2aedc7",

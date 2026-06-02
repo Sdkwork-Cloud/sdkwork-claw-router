@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/locker-vault@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-locker-vault-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-locker-vault-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3259042c02315c2af9892c354394502e51a4714cf894df5d5d4f98a7703013ed",

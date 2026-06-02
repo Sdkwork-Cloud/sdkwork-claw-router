@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltbook-daily-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltbook-daily-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltbook-daily-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:49ed52726f6a077dd1b834447fc93b5a4f23b25c92f0058ebe9ae30e2714cf22",

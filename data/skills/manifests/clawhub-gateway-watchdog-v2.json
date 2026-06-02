@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gateway-watchdog-v2@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gateway-watchdog-v2-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gateway-watchdog-v2-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3f51eafa3fe890270edfb8aa5d7497e69615e979e0d679d8ea83beb25d84d10",

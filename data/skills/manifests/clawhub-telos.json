@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telos@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-telos-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telos-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:990e0e6986bcc09297bc9e7c2b16179cc2e556e62e45190b271fdc4de54a2839",

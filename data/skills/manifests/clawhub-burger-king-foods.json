@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/burger-king-foods@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-burger-king-foods-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-burger-king-foods-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b0217a8f27aab4648596ebada4a2ddd3a17e314dbc11083c2254317a996752c",

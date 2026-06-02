@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/process-output@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-process-output-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-process-output-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:014aa5caca83c5c009099b263d07e4382c119dbdd9d82946f4875457e7a00695",

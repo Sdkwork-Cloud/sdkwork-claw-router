@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chocolatey@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-chocolatey-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chocolatey-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6d5a692da632e6d9c8f696ab7bdaf1446543dfea1a3c4db371c3d3b9e606c7b5",

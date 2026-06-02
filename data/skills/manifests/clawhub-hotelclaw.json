@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hotelclaw@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-hotelclaw-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hotelclaw-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6af039b26c53e931043f09667d390fe79b4fba3febbb35eaa84532fa15e51fd7",

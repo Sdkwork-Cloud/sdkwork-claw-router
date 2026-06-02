@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-paper-pipeline@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-paper-pipeline-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-paper-pipeline-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0df14deb0856bca1c559a675855d54309f4b01f6f9170ec9c7f40a110a6714d0",

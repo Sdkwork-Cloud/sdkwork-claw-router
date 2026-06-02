@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yahoo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yahoo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yahoo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:58058d9ff685f64e1f1ad4e27728f204387c32ba2b0887c558851ec1c85e84b1",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-reviewer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-reviewer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-reviewer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66e8a715212c3c335cd8f893680207595c68a6c90a565ac5f5da47ccb06365dd",

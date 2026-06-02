@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prudential@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prudential-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prudential-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4bf5dd0a63501e823942319568c7bb44bcc8e512b6501109ea51979c118955c5",

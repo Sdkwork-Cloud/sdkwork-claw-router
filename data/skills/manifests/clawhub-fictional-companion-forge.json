@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fictional-companion-forge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fictional-companion-forge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fictional-companion-forge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97a6e9f9b2c40a5019c3236f68d66e0f966b4d28b948614572f14e4fc468dbea",

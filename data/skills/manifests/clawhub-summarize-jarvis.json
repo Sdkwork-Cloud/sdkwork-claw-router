@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/summarize-jarvis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-summarize-jarvis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-summarize-jarvis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb752e003f59c18dcd67803f4463fcad5dac92159eb65b5d193b9840e850ed4c",

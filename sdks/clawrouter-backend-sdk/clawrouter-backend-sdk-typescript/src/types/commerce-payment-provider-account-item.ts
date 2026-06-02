@@ -2,6 +2,8 @@
 export interface CommercePaymentProviderAccountItem {
   /** Account no field on commerce payment provider account item. */
   accountNo: string;
+  /** Account role field on commerce payment provider account item. */
+  accountRole?: 'merchant' | 'service_provider' | null;
   /** Certificate ref field on commerce payment provider account item. */
   certificateRef?: string | null;
   /** Country code field on commerce payment provider account item. */

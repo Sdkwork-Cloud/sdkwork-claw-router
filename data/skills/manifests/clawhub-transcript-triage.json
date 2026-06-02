@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/transcript-triage@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-transcript-triage-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-transcript-triage-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:635f0ef45ccc9fa382e3a10e1db1756d789b9fcc95e24e5f401ceb339b80472a",

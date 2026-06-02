@@ -459,7 +459,7 @@ public class CommerceApi {
     }
 
     /** Recharges Orders Create */
-    public RechargesOrdersCreateResult rechargesOrdersCreate(CommerceStandardCommandRequest body, String idempotencyKey) throws Exception {
+    public RechargesOrdersCreateResult rechargesOrdersCreate(CommerceRechargeOrderCreateRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
                 Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
                 Map.of()
@@ -483,6 +483,12 @@ public class CommerceApi {
         ));
         Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/recharges/packages"), query));
         return client.convertValue(raw, new TypeReference<RechargesPackagesListResult>() {});
+    }
+
+    /** Recharges Settings Retrieve */
+    public RechargesSettingsRetrieveResult rechargesSettingsRetrieve() throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/recharges/settings"));
+        return client.convertValue(raw, new TypeReference<RechargesSettingsRetrieveResult>() {});
     }
 
     /** Refunds List */

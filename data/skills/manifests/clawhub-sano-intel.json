@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sano-intel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sano-intel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sano-intel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:94cb0c4cb2c403e9ae1dd8372b12dcbaf0714b975ff6a47604c8624b0b61e974",

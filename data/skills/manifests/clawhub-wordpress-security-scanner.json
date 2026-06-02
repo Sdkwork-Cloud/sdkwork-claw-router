@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wordpress-security-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-security-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wordpress-security-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c6f535c95745b2fd9e68cd2f03815c9a8d8c950caee54306519ec9b643bbb83",

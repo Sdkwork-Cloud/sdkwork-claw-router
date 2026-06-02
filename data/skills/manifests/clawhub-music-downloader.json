@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-downloader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-downloader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-downloader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a93c117c174c970bfed2fc360ef631fe6195fb92645fa3e67746d26a99da232b",

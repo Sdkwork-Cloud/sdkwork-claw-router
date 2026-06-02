@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiaopi-auto-updater@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiaopi-auto-updater-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiaopi-auto-updater-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a20b3ebd7d0ffddc715dac36877f464e1d52cc2cc107372e475a3a0b9a224abf",

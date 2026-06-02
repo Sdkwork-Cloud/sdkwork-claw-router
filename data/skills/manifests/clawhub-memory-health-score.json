@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-health-score@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-health-score-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-health-score-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1704b8367ab71b465379b8daea280aaa987d65f164739266e3757f8bb5d2beba",

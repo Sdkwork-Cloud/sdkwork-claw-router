@@ -28,6 +28,8 @@ export interface AiChannelEndpointRecord {
   effective_from?: string;
   /** Effective to field on ai channel endpoint record. */
   effective_to?: string;
+  /** Health status field on ai channel endpoint record. */
+  health_status?: string;
   /** Id field on ai channel endpoint record. */
   id?: string;
   /** Last latency ms field on ai channel endpoint record. */
@@ -38,6 +40,8 @@ export interface AiChannelEndpointRecord {
   organization_id: string;
   /** Path prefix field on ai channel endpoint record. */
   path_prefix?: string;
+  /** Priority field on ai channel endpoint record. */
+  priority?: number;
   /** Provider code field on ai channel endpoint record. */
   provider_code?: string;
   /** Region code field on ai channel endpoint record. */
@@ -60,4 +64,6 @@ export interface AiChannelEndpointRecord {
   vendor_id?: string;
   /** Version field on ai channel endpoint record. */
   version?: string;
+  /** Weight field on ai channel endpoint record. */
+  weight?: number;
 }

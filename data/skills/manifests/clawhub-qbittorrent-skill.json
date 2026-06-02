@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qbittorrent-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qbittorrent-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qbittorrent-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a46d11ffca019ce4c5f7b6749f2f8c3199a7b4b5803adb652927f3f2310109c",

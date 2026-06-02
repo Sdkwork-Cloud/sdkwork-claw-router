@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chiquita@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chiquita-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chiquita-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf934f2235719d4548a3df2f6c511c2a4170d82543bd8f37b65315b529631473",

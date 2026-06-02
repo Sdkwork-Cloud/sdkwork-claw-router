@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/netlify-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-netlify-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-netlify-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2024769d7090634be4d17d5de83ba328a6d8a94a481e888fccbb0e95e9ec609e",

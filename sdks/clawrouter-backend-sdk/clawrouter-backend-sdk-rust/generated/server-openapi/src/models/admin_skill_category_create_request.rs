@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Admin skill category create request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminSkillCategoryCreateRequest {
@@ -11,9 +13,9 @@ pub struct AdminSkillCategoryCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
 
-    /// Optional icon URL or asset path.
+    /// Icon field on admin skill category create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Skill category display name.
     pub name: String,

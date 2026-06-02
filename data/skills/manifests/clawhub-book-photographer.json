@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-photographer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-photographer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-photographer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:189f1905aa67aa7246a443c1e321a974a2cc9e4245f5aebcd4c486e90ab7f3f6",

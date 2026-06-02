@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dead-or-alive@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dead-or-alive-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dead-or-alive-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7e87bbef5dbbe2e7c620e18e3c507cc2656bc7cf5dd0d49a8c98a58db2b8d088",

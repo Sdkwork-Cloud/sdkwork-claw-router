@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/matchclaws@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-matchclaws-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-matchclaws-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:a1dfcd76d0df4f2fb10b28405ac0d1df1855c908f4c77c800c992a1df49ccce3",

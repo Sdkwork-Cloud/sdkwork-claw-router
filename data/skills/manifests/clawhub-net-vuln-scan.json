@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/net-vuln-scan@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-net-vuln-scan-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-net-vuln-scan-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f79308757bcfc83d7ec2703871afbce5eb5d2978dc6b7735bc9b2c0e68d52ba0",

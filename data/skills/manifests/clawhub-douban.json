@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/douban@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-douban-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-douban-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:17f9021e554b0e0abacf71b7ae774cfee29eb1942517fae3f51142ff7e770942",

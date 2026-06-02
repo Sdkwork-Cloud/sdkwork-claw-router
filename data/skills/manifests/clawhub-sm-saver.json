@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sm-saver@0.0.0-pr-check",
-      "artifactUrl": "data/skills/artifacts/clawhub-sm-saver-0.0.0-pr-check.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sm-saver-0.0.0-pr-check.json"
+      },
       "version": "0.0.0-pr-check",
       "runtime": "metadata",
       "checksumHash": "sha256:045c08cb7da71084804e1656f6a9295069d5a173c22c40722a2d2ef617f3bb49",

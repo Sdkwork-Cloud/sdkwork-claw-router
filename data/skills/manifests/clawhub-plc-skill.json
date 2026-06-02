@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/plc-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-plc-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-plc-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c5bf7e1f883a6f5c0fa5c1e255fa0ccbc070c57448e94b04b1136817c2aa56b9",

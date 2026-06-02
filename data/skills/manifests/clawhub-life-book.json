@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/life-book@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-life-book-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-life-book-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3e5c888710711db8dcea4d945e778ae9a24ca2510bc0da17b5f1bf4171781073",

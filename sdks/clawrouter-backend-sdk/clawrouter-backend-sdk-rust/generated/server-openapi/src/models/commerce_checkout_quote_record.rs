@@ -12,8 +12,15 @@ pub struct CommerceCheckoutQuoteRecord {
     /// Currency code field on commerce checkout quote record.
     pub currency_code: String,
 
+    /// Discount amount field on commerce checkout quote record.
+    pub discount_amount: String,
+
     /// Expires at field on commerce checkout quote record.
     pub expires_at: String,
+
+    /// Id field on commerce checkout quote record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
 
     /// Organization id field on commerce checkout quote record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -27,6 +34,12 @@ pub struct CommerceCheckoutQuoteRecord {
 
     /// Quote no field on commerce checkout quote record.
     pub quote_no: String,
+
+    /// Shipping amount field on commerce checkout quote record.
+    pub shipping_amount: String,
+
+    /// Tax amount field on commerce checkout quote record.
+    pub tax_amount: String,
 
     /// Tenant id field on commerce checkout quote record.
     pub tenant_id: String,

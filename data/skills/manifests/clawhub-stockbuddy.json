@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stockbuddy@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-stockbuddy-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stockbuddy-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:bcd115cd65ffed4d995477830d9e1a3a263b7a23711eb5f32e3fa738ba4dd6f3",

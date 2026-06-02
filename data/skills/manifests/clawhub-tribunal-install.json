@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tribunal-install@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tribunal-install-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tribunal-install-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b87082a051e9e6ba6d0d3cae7bfb7209048f74898f697d3f589f9b066c6decd",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anthropic-chat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-anthropic-chat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anthropic-chat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89b5383892294dfd0d54a2d6a2b6727f95a376e4b7e69de2b9407c6cdaf0dd8d",

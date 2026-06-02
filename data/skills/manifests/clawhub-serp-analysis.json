@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/serp-analysis@9.9.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-serp-analysis-9.9.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-serp-analysis-9.9.5.json"
+      },
       "version": "9.9.5",
       "runtime": "metadata",
       "checksumHash": "sha256:346a017acdb96d2160cdaea2720c353948d4619b89a908ef6436c6b92223b132",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/word-letter-frequency@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-word-letter-frequency-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-word-letter-frequency-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f43487b55e112f03a6554cf90da556f30433e7bc105f4d1a9bb63c7cf23305a1",

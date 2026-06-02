@@ -16,6 +16,8 @@ export interface PromotionOfferVersionRecord {
   created_by?: string;
   /** Currency code field on promotion offer version record. */
   currency_code: string;
+  /** Customer visible field on promotion offer version record. */
+  customer_visible: boolean;
   /** Discount amount minor field on promotion offer version record. */
   discount_amount_minor?: string;
   /** Discount percent bps field on promotion offer version record. */
@@ -26,12 +28,16 @@ export interface PromotionOfferVersionRecord {
   face_value_minor: string;
   /** Fixed price minor field on promotion offer version record. */
   fixed_price_minor?: string;
+  /** Id field on promotion offer version record. */
+  id?: string;
   /** Liability policy field on promotion offer version record. */
   liability_policy: string;
   /** Lifecycle status field on promotion offer version record. */
   lifecycle_status: string;
   /** Maximum discount amount minor field on promotion offer version record. */
   maximum_discount_amount_minor?: string;
+  /** Minimum order amount minor field on promotion offer version record. */
+  minimum_order_amount_minor: string;
   /** Offer id field on promotion offer version record. */
   offer_id: string;
   /** Organization id field on promotion offer version record. */

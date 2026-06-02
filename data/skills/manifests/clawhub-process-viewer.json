@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/process-viewer@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-process-viewer-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-process-viewer-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b75215e523604109b159ae1ca037e1924a196f8a8fb05a425e31ec150ff1c4c4",

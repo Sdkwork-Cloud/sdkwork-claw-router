@@ -6,10 +6,15 @@ public class StorageUsageLedgerRecord {
     private String appId;
     private String businessDomain;
     private String createdAt;
+    private String deltaFileCount;
+    private String deltaLogicalBytes;
+    private String deltaPhysicalBytes;
+    private String deltaReservedBytes;
     private String id;
     private String idempotencyKey;
     private Boolean legalHold;
     private Map<String, String> metadata;
+    private String occurredAt;
     private String organizationId;
     private String payloadHash;
     private String reason;
@@ -49,6 +54,38 @@ public class StorageUsageLedgerRecord {
         this.createdAt = createdAt;
     }
 
+    public String getDeltaFileCount() {
+        return this.deltaFileCount;
+    }
+
+    public void setDeltaFileCount(String deltaFileCount) {
+        this.deltaFileCount = deltaFileCount;
+    }
+
+    public String getDeltaLogicalBytes() {
+        return this.deltaLogicalBytes;
+    }
+
+    public void setDeltaLogicalBytes(String deltaLogicalBytes) {
+        this.deltaLogicalBytes = deltaLogicalBytes;
+    }
+
+    public String getDeltaPhysicalBytes() {
+        return this.deltaPhysicalBytes;
+    }
+
+    public void setDeltaPhysicalBytes(String deltaPhysicalBytes) {
+        this.deltaPhysicalBytes = deltaPhysicalBytes;
+    }
+
+    public String getDeltaReservedBytes() {
+        return this.deltaReservedBytes;
+    }
+
+    public void setDeltaReservedBytes(String deltaReservedBytes) {
+        this.deltaReservedBytes = deltaReservedBytes;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -79,6 +116,14 @@ public class StorageUsageLedgerRecord {
 
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
+    }
+
+    public String getOccurredAt() {
+        return this.occurredAt;
+    }
+
+    public void setOccurredAt(String occurredAt) {
+        this.occurredAt = occurredAt;
     }
 
     public String getOrganizationId() {

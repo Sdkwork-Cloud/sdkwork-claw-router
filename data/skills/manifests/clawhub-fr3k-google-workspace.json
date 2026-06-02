@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fr3k-google-workspace@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fr3k-google-workspace-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fr3k-google-workspace-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fdddd29e7961e091c61867cf469742ff95d746a0d86464236b4e6a9edaf8205b",

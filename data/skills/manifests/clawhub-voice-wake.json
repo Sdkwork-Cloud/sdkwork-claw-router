@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-wake@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-wake-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-wake-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d23de4067648ed8ba2e48a9021332342538770c4776860e1f3e2e7f96adbb2e8",

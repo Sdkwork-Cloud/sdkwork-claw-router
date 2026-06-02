@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-games-skill@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-games-skill-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-games-skill-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5437e945803df04e9433b64a39b0ccd85a64d79b6e27e44302c60bf896f77420",

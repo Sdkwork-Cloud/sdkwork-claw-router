@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pi-admin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pi-admin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pi-admin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7156898ca0f5f928b534450b083c5f239bb6be3ccde616bb75cb394588bf072c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-deploy-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-deploy-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-deploy-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9506f9f869e6adc2b05214eed24f28cbce3b4be90bc3131672ac81eab7924d3a",

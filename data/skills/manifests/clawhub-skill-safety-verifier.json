@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-safety-verifier@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-safety-verifier-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-safety-verifier-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f0ada296f3ce9c09bd673fc209864d30cf9a06184f649435913da8c1df5ec716",

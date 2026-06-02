@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/python-packaging@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-python-packaging-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-python-packaging-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7180e1b89a4590338480ca91758d7b9245b71a68fa3f210c8111423f6ced162c",

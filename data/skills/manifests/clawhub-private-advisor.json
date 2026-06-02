@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/private-advisor@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-private-advisor-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-private-advisor-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2d32b16a3722e859fb1459334a86dc197eb10275b75ac68c29125deccca9265",

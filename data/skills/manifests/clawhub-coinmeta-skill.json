@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coinmeta-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-coinmeta-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coinmeta-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:9ee2498091eb8801f37acf74704d9f91c835e82d84dcb220fc9ed4c4d0c12da9",

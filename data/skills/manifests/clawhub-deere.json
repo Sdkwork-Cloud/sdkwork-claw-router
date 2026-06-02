@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deere@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deere-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deere-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a04848dfff6d1fe0ef8593f85c2dfa3b432ed3c3cb48d02e5f63300f437b3fdf",

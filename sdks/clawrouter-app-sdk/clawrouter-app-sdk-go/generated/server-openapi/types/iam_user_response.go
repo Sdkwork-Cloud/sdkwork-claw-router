@@ -2,7 +2,7 @@ package types
 
 // Iam user response schema exposed by Claw Router.
 type IamUserResponse struct {
-	AvatarUrl string `json:"avatarUrl"`
+	Avatar MediaResource `json:"avatar"`
 	DisplayName string `json:"displayName"`
 	Email string `json:"email"`
 	Id string `json:"id"`

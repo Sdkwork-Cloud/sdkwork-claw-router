@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-skill-authoring@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-skill-authoring-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-skill-authoring-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8a5584a0b8f25cb147152c3ff5d02f2c3a722ab688406bbb27bd796c8fb9047c",

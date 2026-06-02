@@ -264,7 +264,7 @@ async fn import_sqlite_feeds(
             r#"
             INSERT INTO plus_feeds
                 (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope,
-                 user_id, title, summary, category_id, content_type, content_id, cover_images,
+                 user_id, title, summary, category_id, content_type, content_id, cover_resources,
                  resource_list, author, source, source_url, publish_time, tags, status, view_count,
                  like_count, comment_count, share_count, favorite_count, is_top, is_hot,
                  is_recommended, sort_order)
@@ -283,7 +283,7 @@ async fn import_sqlite_feeds(
                 category_id = excluded.category_id,
                 content_type = excluded.content_type,
                 content_id = excluded.content_id,
-                cover_images = excluded.cover_images,
+                cover_resources = excluded.cover_resources,
                 resource_list = excluded.resource_list,
                 author = excluded.author,
                 source = excluded.source,
@@ -347,7 +347,7 @@ async fn import_postgres_feeds(
             r#"
             INSERT INTO plus_feeds
                 (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope,
-                 user_id, title, summary, category_id, content_type, content_id, cover_images,
+                 user_id, title, summary, category_id, content_type, content_id, cover_resources,
                  resource_list, author, source, source_url, publish_time, tags, status, view_count,
                  like_count, comment_count, share_count, favorite_count, is_top, is_hot,
                  is_recommended, sort_order)
@@ -368,7 +368,7 @@ async fn import_postgres_feeds(
                 category_id = excluded.category_id,
                 content_type = excluded.content_type,
                 content_id = excluded.content_id,
-                cover_images = excluded.cover_images,
+                cover_resources = excluded.cover_resources,
                 resource_list = excluded.resource_list,
                 author = excluded.author,
                 source = excluded.source,

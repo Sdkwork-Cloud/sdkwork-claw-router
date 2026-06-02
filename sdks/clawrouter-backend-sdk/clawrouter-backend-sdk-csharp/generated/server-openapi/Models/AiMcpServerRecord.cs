@@ -14,6 +14,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? DeletedBy { get; set; }
         public string? DeprecatedAt { get; set; }
         public string? Description { get; set; }
+        public string? HealthStatus { get; set; }
         public string? Id { get; set; }
         public string? LastCheckedAt { get; set; }
         public string? LastErrorMasked { get; set; }
@@ -26,6 +27,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? PublishedRevisionId { get; set; }
         public string? ServerKey { get; set; }
         public string? Status { get; set; }
+        public Dictionary<string, string>? Tags { get; set; }
         public string? TenantId { get; set; }
         public string? Transport { get; set; }
         public string? UpdatedAt { get; set; }

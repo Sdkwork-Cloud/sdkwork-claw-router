@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quant-buddy-skill@4.14.18",
-      "artifactUrl": "data/skills/artifacts/clawhub-quant-buddy-skill-4.14.18.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quant-buddy-skill-4.14.18.json"
+      },
       "version": "4.14.18",
       "runtime": "metadata",
       "checksumHash": "sha256:fa4a2f11b5d1a9a8d9998b0a76508c5e4f62020426155db7fcc773ebc855f62d",

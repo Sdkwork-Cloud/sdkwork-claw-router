@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aliyun-qwen-text-embedding@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-qwen-text-embedding-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aliyun-qwen-text-embedding-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7618b45e2cf4cc523490915148199542aa493902d03993f57772980cc3cb733c",

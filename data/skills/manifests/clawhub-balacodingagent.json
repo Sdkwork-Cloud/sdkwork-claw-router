@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/balacodingagent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-balacodingagent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-balacodingagent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5dcb8176120e2e7ae1910b5d6f620bbcc2dbf547974b1e35e4d12635c177a28d",

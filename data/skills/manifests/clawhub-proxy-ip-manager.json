@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proxy-ip-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-proxy-ip-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proxy-ip-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a5bd0e1a2bbe72d06bf64852f72295f27d8afa00f58e2c804117e7d0d6ff6ede",

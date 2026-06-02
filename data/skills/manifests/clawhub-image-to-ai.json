@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-to-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-to-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-to-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13221fcf437ee0e6f0c522a14a1b1d398603b97096b3c2d54cabc564f9a5462f",

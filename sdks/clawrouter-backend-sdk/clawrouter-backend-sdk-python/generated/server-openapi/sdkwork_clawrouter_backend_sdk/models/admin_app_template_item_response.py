@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class AdminAppTemplateItemResponse:
@@ -24,14 +27,14 @@ class AdminAppTemplateItemResponse:
     visibility: str
     category_code: Optional[str] = None
     category_id: Optional[str] = None
-    cover_url: Optional[str] = None
+    cover: Optional[MediaResource] = None
     current_version_id: Optional[str] = None
     description: Optional[str] = None
     framework: Optional[str] = None
     git_ref: Optional[str] = None
     git_repo_url: Optional[str] = None
     git_sub_path: Optional[str] = None
-    icon_url: Optional[str] = None
+    icon: Optional[MediaResource] = None
     language: Optional[str] = None
     runtime: Optional[str] = None
     source_app_id: Optional[str] = None

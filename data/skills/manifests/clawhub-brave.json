@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/brave@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-brave-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-brave-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ba1baa1d80af937b36ef34b7c94b39c4930df4965895b3cfa2be6d29ad73747",

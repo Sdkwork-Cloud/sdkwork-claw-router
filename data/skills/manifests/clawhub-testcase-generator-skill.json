@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/testcase-generator-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-testcase-generator-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-testcase-generator-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ae9423358d48c923185171c646cf0d88b9907ce82d95c9e1f3e50d370f9e229c",

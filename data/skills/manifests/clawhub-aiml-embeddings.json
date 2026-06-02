@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aiml-embeddings@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aiml-embeddings-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aiml-embeddings-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:30cee7817d0c7f3dc460f0170d831d761d0acad580297433905e9adbc9ca7448",

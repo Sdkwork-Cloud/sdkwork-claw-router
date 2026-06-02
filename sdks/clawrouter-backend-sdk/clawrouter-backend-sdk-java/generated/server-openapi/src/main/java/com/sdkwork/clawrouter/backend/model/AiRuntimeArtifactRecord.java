@@ -15,20 +15,21 @@ public class AiRuntimeArtifactRecord {
     private String createdAt;
     private String id;
     private Boolean legalHold;
+    private String mediaResourceId;
     private String messageId;
     private Map<String, String> metadata;
     private String mimeType;
     private String name;
+    private String objectBlobId;
     private String organizationId;
     private String payloadHash;
     private String requestId;
+    private Map<String, String> resourceSnapshot;
     private String retentionUntil;
     private String runtimeInvocationId;
     private String sha256;
     private String sizeBytes;
     private String status;
-    private String storageKey;
-    private String storageUrl;
     private String tenantId;
     private String traceId;
     private String userId;
@@ -130,6 +131,14 @@ public class AiRuntimeArtifactRecord {
         this.legalHold = legalHold;
     }
 
+    public String getMediaResourceId() {
+        return this.mediaResourceId;
+    }
+
+    public void setMediaResourceId(String mediaResourceId) {
+        this.mediaResourceId = mediaResourceId;
+    }
+
     public String getMessageId() {
         return this.messageId;
     }
@@ -162,6 +171,14 @@ public class AiRuntimeArtifactRecord {
         this.name = name;
     }
 
+    public String getObjectBlobId() {
+        return this.objectBlobId;
+    }
+
+    public void setObjectBlobId(String objectBlobId) {
+        this.objectBlobId = objectBlobId;
+    }
+
     public String getOrganizationId() {
         return this.organizationId;
     }
@@ -184,6 +201,14 @@ public class AiRuntimeArtifactRecord {
 
     public void setRequestId(String requestId) {
         this.requestId = requestId;
+    }
+
+    public Map<String, String> getResourceSnapshot() {
+        return this.resourceSnapshot;
+    }
+
+    public void setResourceSnapshot(Map<String, String> resourceSnapshot) {
+        this.resourceSnapshot = resourceSnapshot;
     }
 
     public String getRetentionUntil() {
@@ -224,22 +249,6 @@ public class AiRuntimeArtifactRecord {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public String getStorageKey() {
-        return this.storageKey;
-    }
-
-    public void setStorageKey(String storageKey) {
-        this.storageKey = storageKey;
-    }
-
-    public String getStorageUrl() {
-        return this.storageUrl;
-    }
-
-    public void setStorageUrl(String storageUrl) {
-        this.storageUrl = storageUrl;
     }
 
     public String getTenantId() {

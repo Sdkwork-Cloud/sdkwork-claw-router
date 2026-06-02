@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whatsapp-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whatsapp-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:382fdf91d38186fd15d23fd7d04eaf1e33c38b2db66a09bcd47cfff69e94afd6",

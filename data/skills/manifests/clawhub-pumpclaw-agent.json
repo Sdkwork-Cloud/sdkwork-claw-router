@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pumpclaw-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pumpclaw-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pumpclaw-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a37285e65b083cd7fa5faa3b8be8ffc3956e21baa50317cfa43a16d18b5477bd",

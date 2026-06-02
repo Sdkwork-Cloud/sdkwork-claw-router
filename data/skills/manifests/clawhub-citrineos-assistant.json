@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/citrineos-assistant@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-citrineos-assistant-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-citrineos-assistant-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:399177db0c39017e58265c85b16b1751315b19302feb675c7665d3fa6989bdb6",

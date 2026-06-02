@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gopass@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gopass-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gopass-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:85a172ccd686d36da51f1e95232b5c188286579e24b3588ff8158434a6876467",

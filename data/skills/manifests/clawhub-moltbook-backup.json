@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltbook-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltbook-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltbook-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93e51a3842f53aaaa53431473870513060af2dff7020e164098bc7e1adfab71f",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hidden-pet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hidden-pet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hidden-pet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a4760fa4dd879a767d93a8aff956b7b503176290d5f92a2d93d9831183070a57",

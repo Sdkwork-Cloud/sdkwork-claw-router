@@ -10,7 +10,9 @@ public class CommercePaymentRouteRuleRecord {
     private String createdAt;
     private String currencyCode;
     private String endsAt;
+    private String id;
     private String organizationId;
+    private String priority;
     private String purchaseType;
     private String riskLevel;
     private String ruleNo;
@@ -84,12 +86,28 @@ public class CommercePaymentRouteRuleRecord {
         this.endsAt = endsAt;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getOrganizationId() {
         return this.organizationId;
     }
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
     }
 
     public String getPurchaseType() {

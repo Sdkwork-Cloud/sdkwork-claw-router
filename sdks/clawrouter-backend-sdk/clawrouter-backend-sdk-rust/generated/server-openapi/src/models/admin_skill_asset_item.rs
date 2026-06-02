@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Updated skill catalog asset snapshot returned by the backend.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminSkillAssetItem {
@@ -13,13 +15,12 @@ pub struct AdminSkillAssetItem {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub artifact_id: Option<String>,
 
+    /// Asset field on admin skill asset item.
+    pub asset: MediaResource,
+
     /// Asset type field on admin skill asset item.
     #[serde(rename = "assetType")]
     pub asset_type: i64,
-
-    /// Asset url field on admin skill asset item.
-    #[serde(rename = "assetUrl")]
-    pub asset_url: String,
 
     /// Created at field on admin skill asset item.
     #[serde(rename = "createdAt")]
@@ -71,10 +72,9 @@ pub struct AdminSkillAssetItem {
     #[serde(rename = "targetType")]
     pub target_type: i64,
 
-    /// Thumbnail url field on admin skill asset item.
-    #[serde(rename = "thumbnailUrl")]
+    /// Thumbnail field on admin skill asset item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub thumbnail_url: Option<String>,
+    pub thumbnail: Option<MediaResource>,
 
     /// Title field on admin skill asset item.
     #[serde(default, skip_serializing_if = "Option::is_none")]

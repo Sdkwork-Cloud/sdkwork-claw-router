@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/send-sms@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-send-sms-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-send-sms-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:fc2aca45790657eb184720e3a74499b87af627195fe39757f8e7a9a3bf1a7181",

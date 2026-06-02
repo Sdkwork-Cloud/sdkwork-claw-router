@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tweet-writer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tweet-writer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tweet-writer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6cdab67873b8d1936bd98ad9bc0747946eccc87cb3f0221a54f52940a0728dcf",

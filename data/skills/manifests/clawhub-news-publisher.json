@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/news-publisher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-news-publisher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-news-publisher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ad952ddd72c29dfa03ddce9128b1cdb32c134757e3e912d955ab5fdedd0c31a",

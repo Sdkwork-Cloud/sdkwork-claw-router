@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/batch-migration-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-batch-migration-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-batch-migration-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e55d22be1fef9c492c2538f3055da99da265dc19f552db047ce2fdb3cfbc7353",

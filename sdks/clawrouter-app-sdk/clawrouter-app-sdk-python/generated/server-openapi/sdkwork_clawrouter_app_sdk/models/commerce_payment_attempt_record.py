@@ -18,5 +18,6 @@ class CommercePaymentAttemptRecord:
     tenant_id: str
     updated_at: str
     callback_payload: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     paid_at: Optional[str] = None

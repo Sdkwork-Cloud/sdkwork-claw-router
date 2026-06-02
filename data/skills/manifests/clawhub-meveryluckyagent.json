@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meveryluckyagent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meveryluckyagent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meveryluckyagent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5bfd1813cadae10b419551661dc6e8aa848f3d9a10a8d0993e5e837712473bef",

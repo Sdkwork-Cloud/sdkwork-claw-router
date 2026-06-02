@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mealie@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mealie-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mealie-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6ce1e6b3c056b9d6a46f6ae8da339fdf39241f94b5cab25da197bf57eba9fd8d",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whisper-transcribe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whisper-transcribe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whisper-transcribe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c500c52dd15b995f6f60e8097bd44d1d2b84df1e50b20d83dbe96e348404b4d",

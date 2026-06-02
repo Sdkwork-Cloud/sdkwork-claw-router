@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unesco@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-unesco-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unesco-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:7a46c66750d3dbeef85a3b11aa336ffac00ae1480b8d0bb4c83ada1bfa7ac095",

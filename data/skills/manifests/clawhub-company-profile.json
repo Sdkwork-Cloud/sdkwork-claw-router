@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/company-profile@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-company-profile-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-company-profile-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ebd2a323e8430de0e6166784a0fd5396c90ef48da83c24037ae762b7173e22e1",

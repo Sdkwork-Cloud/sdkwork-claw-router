@@ -6,6 +6,9 @@ use sdkwork_claw_product::application::{EntityUuidGenerator, InMemoryPaymentInte
 use sdkwork_claw_product::domain::DomainResult;
 use tower::ServiceExt;
 
+mod common;
+use common::InternalTrustedSubjectHeaders;
+
 struct TestUuidGenerator;
 
 impl EntityUuidGenerator for TestUuidGenerator {
@@ -352,9 +355,7 @@ fn trusted_json_request(
         .method(method)
         .uri(path)
         .header("content-type", "application/json")
-        .header("x-sdkwork-tenant-id", "10")
-        .header("x-sdkwork-organization-id", "20")
-        .header("x-sdkwork-user-id", "30");
+        .internal_trusted_subject(10, 20, 30);
     if let Some(idempotency_key) = idempotency_key {
         builder = builder.header("Idempotency-Key", idempotency_key);
     }

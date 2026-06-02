@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-transcript-pipeline-lite@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-transcript-pipeline-lite-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-transcript-pipeline-lite-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c86aa9ee7c162e4cb74ce5f16b4eddeedcd80dd58f15fc0bf5790f7e409e122a",

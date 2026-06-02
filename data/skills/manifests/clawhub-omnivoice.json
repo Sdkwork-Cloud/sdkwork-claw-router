@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/omnivoice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-omnivoice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-omnivoice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:057a3aca2d16cbb014580959a26e9e057c83cc445a5ecc87e3357238a92a3a41",

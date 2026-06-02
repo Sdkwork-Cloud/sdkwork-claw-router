@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ace-music@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ace-music-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ace-music-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66adf295f14d26c92b16cba15862029d95cc257661960768818189504fc2ec2e",

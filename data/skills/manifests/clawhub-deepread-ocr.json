@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deepread-ocr@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deepread-ocr-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deepread-ocr-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:387eb4867d02d15fde710aea55167926e825e0377bd91b6d0688ccd11bc67626",

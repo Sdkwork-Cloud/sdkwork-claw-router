@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/equity@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-equity-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-equity-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e021c809d622dbd4af515ac3ca4e52403880e0d2f3e41fc916f086574eeefc49",

@@ -10,7 +10,7 @@ use sdkwork_claw_product::ports::{
     AppGenerationHistoryItem, AppGenerationHistoryReadFuture, AppGenerationHistoryReadStore,
     AppGenerationHistorySubject,
 };
-use serde_json::Value;
+use serde_json::{json, Value};
 use tower::ServiceExt;
 
 #[tokio::test]
@@ -23,8 +23,14 @@ async fn generation_history_route_returns_store_items_for_trusted_subject() {
             item_type: "image".to_owned(),
             model_info: Some("image-pro".to_owned()),
             model_catalog_key: Some("image-pro".to_owned()),
-            url: Some("https://cdn.example.test/assets/asset-1.png".to_owned()),
-            images: vec!["https://cdn.example.test/assets/asset-1.png".to_owned()],
+            asset: Some(media_resource(
+                "image",
+                "https://cdn.example.test/assets/asset-1.png",
+            )),
+            images: vec![media_resource(
+                "image",
+                "https://cdn.example.test/assets/asset-1.png",
+            )],
             videos: Vec::new(),
             aspect_ratio: Some("16:9".to_owned()),
             duration_seconds: None,
@@ -40,12 +46,15 @@ async fn generation_history_route_returns_store_items_for_trusted_subject() {
             item_type: "video".to_owned(),
             model_info: Some("video-pro".to_owned()),
             model_catalog_key: Some("video-pro".to_owned()),
-            url: None,
+            asset: Some(video_resource(
+                "https://cdn.example.test/assets/job-2.mp4",
+                "https://cdn.example.test/assets/job-2.jpg",
+            )),
             images: Vec::new(),
-            videos: vec![sdkwork_claw_product::ports::AppGenerationMediaItem {
-                url: "https://cdn.example.test/assets/job-2.mp4".to_owned(),
-                thumb: Some("https://cdn.example.test/assets/job-2.jpg".to_owned()),
-            }],
+            videos: vec![video_resource(
+                "https://cdn.example.test/assets/job-2.mp4",
+                "https://cdn.example.test/assets/job-2.jpg",
+            )],
             aspect_ratio: Some("16:9".to_owned()),
             duration_seconds: Some(5),
             status: Some("completed".to_owned()),
@@ -60,7 +69,7 @@ async fn generation_history_route_returns_store_items_for_trusted_subject() {
             item_type: "text".to_owned(),
             model_info: Some("llm-pro".to_owned()),
             model_catalog_key: Some("llm-pro".to_owned()),
-            url: None,
+            asset: None,
             images: Vec::new(),
             videos: Vec::new(),
             aspect_ratio: None,
@@ -94,7 +103,12 @@ async fn generation_history_route_returns_store_items_for_trusted_subject() {
     assert_eq!("image", payload["data"]["items"][0]["type"]);
     assert_eq!(
         "https://cdn.example.test/assets/asset-1.png",
-        payload["data"]["items"][0]["images"][0]
+        payload["data"]["items"][0]["images"][0]["publicUrl"]
+    );
+    assert!(payload["data"]["items"][0].get("url").is_none());
+    assert_eq!(
+        "https://cdn.example.test/assets/asset-1.png",
+        payload["data"]["items"][0]["asset"]["publicUrl"]
     );
     assert_eq!("image-pro", payload["data"]["items"][0]["modelCatalogKey"]);
     assert_eq!("16:9", payload["data"]["items"][0]["aspectRatio"]);
@@ -103,7 +117,11 @@ async fn generation_history_route_returns_store_items_for_trusted_subject() {
     assert_eq!("video", payload["data"]["items"][1]["type"]);
     assert_eq!(
         "https://cdn.example.test/assets/job-2.mp4",
-        payload["data"]["items"][1]["videos"][0]["url"]
+        payload["data"]["items"][1]["videos"][0]["publicUrl"]
+    );
+    assert_eq!(
+        "https://cdn.example.test/assets/job-2.jpg",
+        payload["data"]["items"][1]["videos"][0]["poster"]["publicUrl"]
     );
     assert_eq!(5, payload["data"]["items"][1]["durationSeconds"]);
     assert_eq!("Generated video", payload["data"]["items"][1]["outputText"]);
@@ -128,6 +146,26 @@ async fn generation_history_route_returns_store_items_for_trusted_subject() {
         }],
         *subjects
     );
+}
+
+fn media_resource(kind: &str, locator: &str) -> Value {
+    json!({
+        "kind": kind,
+        "source": "external_url",
+        "url": locator,
+        "publicUrl": locator,
+    })
+}
+
+fn video_resource(locator: &str, poster: &str) -> Value {
+    json!({
+        "kind": "video",
+        "source": "external_url",
+        "url": locator,
+        "publicUrl": locator,
+        "poster": media_resource("image", poster),
+        "thumbnails": [media_resource("image", poster)],
+    })
 }
 
 #[tokio::test]

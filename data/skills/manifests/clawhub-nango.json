@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nango@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nango-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nango-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a33ab6a85f2107bc67f36c976466d70941154a54990d22686ca733279ea075ab",

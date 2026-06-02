@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spotify-linux@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spotify-linux-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spotify-linux-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f9d8de4697a73f163aa5041d072309f028c16c41ab6dce3bbb9199bfb08c918",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/luckylobster-skill@0.10.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-luckylobster-skill-0.10.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-luckylobster-skill-0.10.0.json"
+      },
       "version": "0.10.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55cd06bcc43481acf00fafd986cfead13e7dc64ad56f59dbcdbd992dbc15bff7",

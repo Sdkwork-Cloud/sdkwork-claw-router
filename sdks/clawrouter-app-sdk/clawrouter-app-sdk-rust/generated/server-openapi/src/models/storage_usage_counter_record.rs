@@ -27,9 +27,17 @@ pub struct StorageUsageCounterRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub deleted_by: Option<String>,
 
+    /// File count field on storage usage counter record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub file_count: Option<String>,
+
     /// Id field on storage usage counter record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
+
+    /// Last ledger id field on storage usage counter record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub last_ledger_id: Option<String>,
 
     /// Metadata field on storage usage counter record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -46,6 +54,14 @@ pub struct StorageUsageCounterRecord {
     /// Owner type field on storage usage counter record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub owner_type: Option<String>,
+
+    /// Reserved bytes field on storage usage counter record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub reserved_bytes: Option<String>,
+
+    /// Retained bytes field on storage usage counter record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub retained_bytes: Option<String>,
 
     /// Scope id field on storage usage counter record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -67,9 +83,21 @@ pub struct StorageUsageCounterRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub tenant_id: Option<String>,
 
+    /// Trash bytes field on storage usage counter record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub trash_bytes: Option<String>,
+
     /// Updated at field on storage usage counter record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub updated_at: Option<String>,
+
+    /// Used logical bytes field on storage usage counter record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub used_logical_bytes: Option<String>,
+
+    /// Used physical bytes field on storage usage counter record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub used_physical_bytes: Option<String>,
 
     /// User id field on storage usage counter record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

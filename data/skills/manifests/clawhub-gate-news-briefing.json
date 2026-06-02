@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gate-news-briefing@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-gate-news-briefing-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gate-news-briefing-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:044e5976f13072e023644e669a0724575260928fcebcaecd10b2b0df8cc9974a",

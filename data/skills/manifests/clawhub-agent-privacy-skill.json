@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-privacy-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-privacy-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-privacy-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64fce4c9710b3d4f1c51608bca32af1f590f7a974f935333528f904f3a8b111f",

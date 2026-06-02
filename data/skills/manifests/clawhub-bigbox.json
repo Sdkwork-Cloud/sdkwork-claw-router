@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bigbox@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-bigbox-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bigbox-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0a5ef4cdee05f8e02bd8fcb1422c3dfbd123fa1b7dbb2cb9fef5ee82505efb41",

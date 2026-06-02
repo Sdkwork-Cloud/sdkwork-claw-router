@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abe-finance-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abe-finance-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abe-finance-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:464c6af7e78ea806ad3503c591e416fc2744097eac2573c31e496e1ee130f984",

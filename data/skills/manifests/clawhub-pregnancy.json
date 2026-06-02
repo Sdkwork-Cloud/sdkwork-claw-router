@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pregnancy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pregnancy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pregnancy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8fdb85c587c8af1942ec1c2c4f06424d18fa0417db45b2f0bbf7dfa194f0c161",

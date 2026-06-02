@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/orange@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-orange-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-orange-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:271215564a6e47b0dbfc84eed0b7c123348673749ecd2f550def7e829ea74ebb",

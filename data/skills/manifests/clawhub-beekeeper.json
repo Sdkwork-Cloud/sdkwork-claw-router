@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beekeeper@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-beekeeper-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beekeeper-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1b8002715331693d241773729e583327a8748687a8937ee1367738725ed6df8a",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/learn-docker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-learn-docker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-learn-docker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc912000e7cb98b5ee778b9034fb667cea99b8ffacd1a0f5c775b48fe1bfdbdf",

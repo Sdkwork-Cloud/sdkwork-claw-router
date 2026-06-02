@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-concurrency-controller@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-concurrency-controller-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-concurrency-controller-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71b8eb020d75d1bc7c81ffe0b2208b148eac4d004131a58ae0f5f8b749e857c5",

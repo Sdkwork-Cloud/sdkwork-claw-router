@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nzbget@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-nzbget-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nzbget-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:085ab2a53b2a25b7157298b181f02d1eb14c8be57c26143aeba22e3ed9a746c3",

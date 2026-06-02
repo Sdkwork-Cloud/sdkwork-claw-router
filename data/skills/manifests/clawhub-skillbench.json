@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skillbench@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skillbench-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skillbench-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e5ee70101b399f2faf769cd7a074a00ae05a9c096b85fe21e9e1376bd4a9ff0",

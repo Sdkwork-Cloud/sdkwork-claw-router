@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiaopi-skill-vetter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiaopi-skill-vetter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiaopi-skill-vetter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e62df433ef6dbcf9246b86d516c0c79a91d21e45087beb479f48391077e7daba",

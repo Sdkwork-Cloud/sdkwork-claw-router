@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lifi-skill@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lifi-skill-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lifi-skill-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d6617c6037a2cd76aa44dbd93fa15e487ac7dec91be7879959d6870aea73c91b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-invoice-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-invoice-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-invoice-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bc36028dca6923394bfe4ebaf3bbd349b395c2c3b9b15c01e8bbd43ed5bb0322",

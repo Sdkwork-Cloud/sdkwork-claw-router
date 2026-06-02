@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/raigo-owasp-top-10-llm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-raigo-owasp-top-10-llm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-raigo-owasp-top-10-llm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8372b0120d09b357a7b623320e94ed30c7a1bcecef2824ba11e1f816f7b18f94",

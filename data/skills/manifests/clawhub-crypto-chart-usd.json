@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-chart-usd@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-chart-usd-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-chart-usd-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:f3f256ec7fe2561a6853417d6f69a607f25eb0b123458903428e48a58361632f",

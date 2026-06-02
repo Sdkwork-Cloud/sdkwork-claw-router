@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/raai-knowledge-base-pro@3.5.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-raai-knowledge-base-pro-3.5.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-raai-knowledge-base-pro-3.5.3.json"
+      },
       "version": "3.5.3",
       "runtime": "metadata",
       "checksumHash": "sha256:077181b8168efc9b157d1739f522c1c20f6c856adca82e7a2e3cd760c6f9d5a1",

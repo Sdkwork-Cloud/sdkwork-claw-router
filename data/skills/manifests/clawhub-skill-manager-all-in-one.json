@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-manager-all-in-one@4.5.14",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-manager-all-in-one-4.5.14.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-manager-all-in-one-4.5.14.json"
+      },
       "version": "4.5.14",
       "runtime": "metadata",
       "checksumHash": "sha256:ad5fb2e16384a71e34952a3c0ff8fbdb4ba2f98070074628ad4811fccda75589",

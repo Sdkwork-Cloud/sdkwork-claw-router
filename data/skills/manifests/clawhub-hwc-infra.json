@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hwc-infra@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hwc-infra-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hwc-infra-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dfab269a3b45a764fa820ab665a541c86e646b94081e077d8a7b0a7d26491cd3",

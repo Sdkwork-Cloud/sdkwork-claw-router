@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/checkmate@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-checkmate-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-checkmate-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2e6783792b49b54cdfe31439e7e81719f93f3a5a8fecfece0b9b421c96fd9611",

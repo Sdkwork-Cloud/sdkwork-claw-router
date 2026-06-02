@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arm-holdings@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-arm-holdings-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arm-holdings-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:53799d41a7fba892fff751b174cd850c1106516b9ab7cff166404b3b3c8c6097",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/context-usage@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-context-usage-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-context-usage-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75d34579693bc76aac1fe8ed4a1f98f06ec3884e0481b012b3fd4ddf59f1e69d",

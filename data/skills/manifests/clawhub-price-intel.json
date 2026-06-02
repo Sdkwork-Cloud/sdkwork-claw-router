@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/price-intel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-price-intel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-price-intel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ae433674ac352d459fe5c49f719154fa7be11b4d6508ffee1e1fa34fe174eaee",

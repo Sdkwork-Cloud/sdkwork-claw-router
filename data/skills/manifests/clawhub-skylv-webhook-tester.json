@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skylv-webhook-tester@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skylv-webhook-tester-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skylv-webhook-tester-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7317c484f18b19b52d0ae794a516af513571ada4073332144da1ff26f71992df",

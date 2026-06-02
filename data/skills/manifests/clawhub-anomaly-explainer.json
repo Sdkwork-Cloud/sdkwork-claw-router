@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anomaly-explainer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-anomaly-explainer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anomaly-explainer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ebbb4763b57984522cbbc58781d8b50809d15db22c58cc249b50a8f1b8664c15",

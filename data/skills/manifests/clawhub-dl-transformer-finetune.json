@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dl-transformer-finetune@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dl-transformer-finetune-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dl-transformer-finetune-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:679bee73b3af4cced3b99d6429baa6f6a36374b444b8d2fd29a43db211fb2f12",

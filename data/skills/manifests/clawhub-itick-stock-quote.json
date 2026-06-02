@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/itick-stock-quote@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-itick-stock-quote-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-itick-stock-quote-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:81f8b8fc979200196648b2a8ee5392d00bca45fbb0a41901b72ede80f7e86a58",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/assistant-reliability-watchtower@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-assistant-reliability-watchtower-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-assistant-reliability-watchtower-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:682434e107df810fc61902b39edcfd7378974b1517c038df7e698928474e852d",

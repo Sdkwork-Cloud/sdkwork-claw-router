@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vin@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-vin-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vin-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8e99645b41bc79836d5a6719ba015f41d9aef9d8be51ecdd1643e76b83e64ac4",

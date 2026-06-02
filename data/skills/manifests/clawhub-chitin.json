@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chitin@1.4.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-chitin-1.4.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chitin-1.4.5.json"
+      },
       "version": "1.4.5",
       "runtime": "metadata",
       "checksumHash": "sha256:3523b576ea6f3508e3a59b0d847db5e8ecc423b437945b19151ff055f4acb38b",

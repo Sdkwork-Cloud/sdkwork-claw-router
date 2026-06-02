@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fitlog@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fitlog-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fitlog-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6af23563c15e2fcea003b1b499c0b98c2d88b7c7543c94e02c83cdc7ad6a7566",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/config-pull-template@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-config-pull-template-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-config-pull-template-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4d004f5a572b40cab0a05d5894412ac73116fabba3e56f88d700ea80d0028102",

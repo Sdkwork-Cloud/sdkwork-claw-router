@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llmrouter@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-llmrouter-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llmrouter-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7a403bf853a7d1877775744c865555ceff601175d3b513739bf84ecf3e3d197d",

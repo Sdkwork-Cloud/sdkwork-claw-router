@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cron-backup@0.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cron-backup-0.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cron-backup-0.3.2.json"
+      },
       "version": "0.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c4ced7a28bf11ce9a29b91a5e587149aa4efdea346089f2a8b6bf664f9dc9f60",

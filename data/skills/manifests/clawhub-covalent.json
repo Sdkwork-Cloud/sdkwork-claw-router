@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/covalent@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-covalent-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-covalent-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:87173cf821b19168fdb77d94993a7cbec1526139670479a5bee681ff451b61dc",

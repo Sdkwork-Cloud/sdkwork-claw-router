@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opc-cashflow-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-opc-cashflow-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opc-cashflow-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cb9ade940995870d6c5373e8a6efad27d59d6aacd16fb800947caf4468224000",

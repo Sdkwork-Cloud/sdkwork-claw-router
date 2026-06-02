@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edison-youtube-full@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-edison-youtube-full-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edison-youtube-full-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e358b55eece6cfd82fb28e8ccff0f59ed28ba485cf33cf615216b235cde3d3ab",

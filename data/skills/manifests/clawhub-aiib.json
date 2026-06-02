@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aiib@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aiib-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aiib-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71e638aad3743501d2b2fceee9568a9898eb09f1cb0a8a2062d57eb165ec9fa3",

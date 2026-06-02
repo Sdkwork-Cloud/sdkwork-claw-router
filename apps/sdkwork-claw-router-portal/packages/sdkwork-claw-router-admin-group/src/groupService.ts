@@ -15,18 +15,21 @@ import {
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 import type {
-  AdminAccessGroupChannelBindingsReplaceRequest,
-  AdminAccessGroupCreateRequest,
-  AdminAccessGroupUpdateRequest,
+  AdminChannelGroupCreateRequest,
+  AdminChannelGroupUpdateRequest,
 } from '@sdkwork/clawrouter-backend-sdk';
+
+export type GroupPriceReferenceMode = 'multiplier' | 'official_price';
 
 export interface GroupData {
   id: string;
-  name: string;
-  platform: string;
-  billingType: string;
+  groupCode: string;
+  groupName: string;
+  providerCode: string;
+  priceReferenceMode: GroupPriceReferenceMode;
   rateMultiplier: number;
-  type: 'public' | 'dedicated';
+  officialPriceMultiplier: number | null;
+  groupType: 'public' | 'dedicated';
   accountCount: { available: number; total: number };
   capacity: { used: number; total: number };
   usage: { today: number; total: number };
@@ -34,28 +37,30 @@ export interface GroupData {
 }
 
 export type GroupCreateInput = {
-  name: string;
-  platform: string;
-  billingType: string;
-  rateMultiplier: number;
-  type: GroupData['type'];
+  groupName: string;
+  groupCode: string;
+  priceReferenceMode: GroupPriceReferenceMode;
+  rateMultiplier?: number;
+  officialPriceMultiplier?: number;
+  groupType: GroupData['groupType'];
   capacity: { total: number };
   status: GroupData['status'];
 };
 
 export type GroupUpdateInput = {
-  name?: string;
-  platform?: string;
-  billingType?: string;
+  groupName?: string;
+  groupCode?: string;
+  priceReferenceMode?: GroupPriceReferenceMode;
   rateMultiplier?: number;
-  type?: GroupData['type'];
+  officialPriceMultiplier?: number;
+  groupType?: GroupData['groupType'];
   capacity?: { total: number };
   status?: GroupData['status'];
 };
 
 export interface GroupChannelBindingData {
   id: string;
-  groupId: string;
+  channelGroupId: string;
   channelId: string;
   channelName: string;
   providerCode: string;
@@ -93,14 +98,13 @@ export interface GroupChannelOption {
 
 export class GroupService {
   static async fetchGroups(): Promise<GroupData[]> {
-    const result = await getClawRouterBackendSdkClient().iam.accessGroups.list();
+    const result = await getClawRouterBackendSdkClient().ai.channelGroups.list();
     ensureSdkworkApiSuccess(result, 'Failed to fetch groups');
-    return readRequiredApiItems(result, 'Failed to fetch groups')
-      .map(normalizeGroup);
+    return readRequiredApiItems(result, 'Failed to fetch groups').map(normalizeGroup);
   }
 
   static async addGroup(group: GroupCreateInput): Promise<GroupData> {
-    const result = await getClawRouterBackendSdkClient().iam.accessGroups.create(
+    const result = await getClawRouterBackendSdkClient().ai.channelGroups.create(
       toCreateGroupRequest(group),
     );
     ensureSdkworkApiSuccess(result, 'Failed to add group');
@@ -108,8 +112,9 @@ export class GroupService {
   }
 
   static async updateGroup(id: string, updates: GroupUpdateInput): Promise<GroupData> {
-    const result = await getClawRouterBackendSdkClient().iam.accessGroups.update(
-      requiredSafePathSegment(id, 'groupId'),
+    const channelGroupId = requiredSafePathSegment(id, 'channelGroupId');
+    const result = await getClawRouterBackendSdkClient().ai.channelGroups.update(
+      channelGroupId,
       toUpdateGroupRequest(updates),
     );
     ensureSdkworkApiSuccess(result, 'Failed to update group');
@@ -117,16 +122,16 @@ export class GroupService {
   }
 
   static async deleteGroup(id: string): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().iam.accessGroups.delete(
-      requiredSafePathSegment(id, 'groupId'),
-    );
+    const channelGroupId = requiredSafePathSegment(id, 'channelGroupId');
+    const result = await getClawRouterBackendSdkClient().ai.channelGroups.delete(channelGroupId);
     ensureDeleteResult(result, 'Group delete confirmation is required');
     return true;
   }
 
   static async fetchGroupChannelBindings(groupId: string): Promise<GroupChannelBindingData[]> {
-    const result = await getClawRouterBackendSdkClient().iam.accessGroups.channelBindings.list(
-      requiredSafePathSegment(groupId, 'groupId'),
+    const channelGroupId = requiredSafePathSegment(groupId, 'channelGroupId');
+    const result = await getClawRouterBackendSdkClient().ai.channelGroups.channelBindings.list(
+      channelGroupId,
     );
     ensureSdkworkApiSuccess(result, 'Failed to fetch group channel bindings');
     return readRequiredApiItems(result, 'Failed to fetch group channel bindings')
@@ -137,8 +142,9 @@ export class GroupService {
     groupId: string,
     items: GroupChannelBindingInput[],
   ): Promise<GroupChannelBindingData[]> {
-    const result = await getClawRouterBackendSdkClient().iam.accessGroups.channelBindings.update(
-      requiredSafePathSegment(groupId, 'groupId'),
+    const channelGroupId = requiredSafePathSegment(groupId, 'channelGroupId');
+    const result = await getClawRouterBackendSdkClient().ai.channelGroups.channelBindings.update(
+      channelGroupId,
       toReplaceChannelBindingsRequest(items),
     );
     ensureSdkworkApiSuccess(result, 'Failed to save group channel bindings');
@@ -154,33 +160,75 @@ export class GroupService {
   }
 }
 
-function toCreateGroupRequest(group: GroupCreateInput): AdminAccessGroupCreateRequest {
-  return pruneUndefined({
-    name: requiredText(group.name, 'name'),
-    platform: optionalText(group.platform),
-    billingType: toBackendBillingType(group.billingType),
-    rateMultiplier: optionalPositiveNumber(group.rateMultiplier, 'rateMultiplier'),
-    type: toBackendGroupType(group.type),
-    capacity: toCreateCapacityRequest(group.capacity),
-    status: toBackendStatus(group.status),
-  });
+function toCreateGroupRequest(group: GroupCreateInput): AdminChannelGroupCreateRequest {
+  const request = baseChannelGroupRequest(group);
+  if (group.priceReferenceMode === 'official_price') {
+    request.officialPriceMultiplier = optionalPositiveNumber(
+      group.officialPriceMultiplier,
+      'officialPriceMultiplier',
+    );
+  } else {
+    request.rateMultiplier = optionalPositiveNumber(group.rateMultiplier, 'rateMultiplier');
+  }
+  return request;
 }
 
-function toUpdateGroupRequest(updates: GroupUpdateInput): AdminAccessGroupUpdateRequest {
-  return pruneUndefined({
-    name: updates.name === undefined ? undefined : requiredText(updates.name, 'name'),
-    platform: optionalText(updates.platform),
-    billingType: updates.billingType === undefined ? undefined : toBackendBillingType(updates.billingType),
-    rateMultiplier: optionalPositiveNumber(updates.rateMultiplier, 'rateMultiplier'),
-    type: updates.type === undefined ? undefined : toBackendGroupType(updates.type),
-    capacity: updates.capacity === undefined ? undefined : toUpdateCapacityRequest(updates.capacity),
+function toUpdateGroupRequest(updates: GroupUpdateInput): AdminChannelGroupUpdateRequest {
+  const request: AdminChannelGroupUpdateRequest = pruneUndefined({
+    groupName:
+      updates.groupName === undefined ? undefined : requiredText(updates.groupName, 'groupName'),
+    groupCode:
+      updates.groupCode === undefined ? undefined : requiredText(updates.groupCode, 'groupCode'),
+    priceReferenceMode:
+      updates.priceReferenceMode === undefined
+        ? undefined
+        : toPriceReferenceMode(updates.priceReferenceMode),
+    groupType:
+      updates.groupType === undefined ? undefined : toBackendGroupType(updates.groupType),
+    capacity:
+      updates.capacity === undefined ? undefined : toCapacityRequest(updates.capacity.total),
     status: updates.status === undefined ? undefined : toBackendStatus(updates.status),
   });
+  if (updates.rateMultiplier !== undefined) {
+    request.rateMultiplier = optionalPositiveNumber(updates.rateMultiplier, 'rateMultiplier');
+  }
+  if (updates.officialPriceMultiplier !== undefined) {
+    request.officialPriceMultiplier = optionalPositiveNumber(
+      updates.officialPriceMultiplier,
+      'officialPriceMultiplier',
+    );
+  }
+  return request;
+}
+
+function baseChannelGroupRequest(
+  group: Pick<
+    GroupCreateInput,
+    'groupName' | 'groupCode' | 'priceReferenceMode' | 'groupType' | 'capacity' | 'status'
+  >,
+): AdminChannelGroupCreateRequest {
+  return {
+    groupName: requiredText(group.groupName, 'groupName'),
+    groupCode: requiredText(group.groupCode, 'groupCode'),
+    priceReferenceMode: toPriceReferenceMode(group.priceReferenceMode),
+    groupType: toBackendGroupType(group.groupType),
+    capacity: toCapacityRequest(group.capacity.total),
+    status: toBackendStatus(group.status),
+  };
 }
 
 function toReplaceChannelBindingsRequest(
   items: GroupChannelBindingInput[],
-): AdminAccessGroupChannelBindingsReplaceRequest {
+): {
+  items: Array<{
+    channelId: string;
+    priority?: number;
+    weight?: number;
+    status?: GroupChannelBindingData['status'];
+    modelScope?: string[];
+    capabilities?: string[];
+  }>;
+} {
   return {
     items: items.map((item) => pruneUndefined({
       channelId: requiredText(item.channelId, 'channelId'),
@@ -193,35 +241,26 @@ function toReplaceChannelBindingsRequest(
   };
 }
 
-function toCreateCapacityRequest(capacity: GroupCreateInput['capacity']): { total: number } | undefined {
-  const total = optionalPositiveInteger(capacity.total, 'capacity.total');
-  return total === undefined ? undefined : { total };
+function toCapacityRequest(total: number): { total: number } | undefined {
+  const normalized = optionalPositiveInteger(total, 'capacity.total');
+  return normalized === undefined ? undefined : { total: normalized };
 }
 
-function toUpdateCapacityRequest(capacity: NonNullable<GroupUpdateInput['capacity']>): { total: number } | undefined {
-  const total = optionalPositiveInteger(capacity.total, 'capacity.total');
-  return total === undefined ? undefined : { total };
-}
-
-function toBackendBillingType(billingType: string): AdminAccessGroupCreateRequest['billingType'] {
-  const normalized = billingType.trim().toLowerCase();
-  if (normalized === 'standard') {
-    return 'standard';
+function toPriceReferenceMode(value: GroupPriceReferenceMode): GroupPriceReferenceMode {
+  if (value === 'multiplier' || value === 'official_price') {
+    return value;
   }
-  if (normalized === 'subscription' || normalized === 'subscription quota') {
-    return 'subscription';
-  }
-  throw new Error('billingType must be standard or subscription');
+  throw new Error('priceReferenceMode must be multiplier or official_price');
 }
 
-function toBackendGroupType(type: GroupData['type']): AdminAccessGroupCreateRequest['type'] {
+function toBackendGroupType(type: GroupData['groupType']): GroupData['groupType'] {
   if (type === 'public' || type === 'dedicated') {
     return type;
   }
-  throw new Error('type must be public or dedicated');
+  throw new Error('groupType must be public or dedicated');
 }
 
-function toBackendStatus(status: GroupData['status']): AdminAccessGroupCreateRequest['status'] {
+function toBackendStatus(status: GroupData['status']): GroupData['status'] {
   if (status === 'active' || status === 'disabled') {
     return status;
   }
@@ -235,11 +274,6 @@ function toBackendBindingStatus(
     return status;
   }
   throw new Error('status must be active or disabled');
-}
-
-function optionalText(value: string | undefined): string | undefined {
-  const normalized = value?.trim();
-  return normalized ? normalized : undefined;
 }
 
 function requiredText(value: string, fieldName: string): string {
@@ -302,18 +336,24 @@ function normalizeGroup(value: unknown): GroupData {
   const usage = readRequiredNestedRecord(item, 'usage', 'Group usage is required');
   return {
     id: readRequiredString(item, 'id', 'Group id is required'),
-    name: readRequiredString(item, 'name', 'Group name is required'),
-    platform: readDisplayString(item, 'platform', 'unknown'),
-    billingType: readRequiredString(item, 'billingType', 'Group billing type is required'),
+    groupCode: readRequiredString(item, 'groupCode', 'Group code is required'),
+    groupName: readRequiredString(item, 'groupName', 'Group name is required'),
+    providerCode: readDisplayString(item, 'providerCode', 'unknown'),
+    priceReferenceMode: readPriceReferenceMode(item),
     rateMultiplier: readRequiredNumber(item, 'rateMultiplier', 'Group rate multiplier is required'),
-    type: readGroupType(item),
+    officialPriceMultiplier: readNullableNumber(item, 'officialPriceMultiplier'),
+    groupType: readGroupType(item),
     accountCount: {
       available: readRequiredNonNegativeNumber(
         accountCount,
         'available',
         'Group available account count is required',
       ),
-      total: readRequiredNonNegativeNumber(accountCount, 'total', 'Group total account count is required'),
+      total: readRequiredNonNegativeNumber(
+        accountCount,
+        'total',
+        'Group total account count is required',
+      ),
     },
     capacity: {
       used: readRequiredNonNegativeNumber(capacity, 'used', 'Group used capacity is required'),
@@ -331,7 +371,11 @@ function normalizeGroupChannelBinding(value: unknown): GroupChannelBindingData {
   const item = readRequiredRecord(value, 'Group channel binding record is required');
   return {
     id: readRequiredString(item, 'id', 'Group channel binding id is required'),
-    groupId: readRequiredString(item, 'groupId', 'Group channel binding group id is required'),
+    channelGroupId: readRequiredString(
+      item,
+      'channelGroupId',
+      'Group channel binding channel group id is required',
+    ),
     channelId: readRequiredString(item, 'channelId', 'Group channel binding channel id is required'),
     channelName: readRequiredString(item, 'channelName', 'Group channel binding channel name is required'),
     providerCode: readRequiredString(item, 'providerCode', 'Group channel binding provider code is required'),
@@ -382,8 +426,38 @@ function readDisplayString(record: ApiRecord, key: string, fallback: string): st
   return value ? value : fallback;
 }
 
-function readGroupType(item: ApiRecord): GroupData['type'] {
-  const type = readString(item, 'type');
+function readNullableNumber(record: ApiRecord, key: string): number | null {
+  const value = record[key];
+  if (value === null || value === undefined || value === '') {
+    return null;
+  }
+  if (typeof value === 'number') {
+    return Number.isFinite(value) ? value : null;
+  }
+  if (typeof value === 'string') {
+    const normalized = value.trim();
+    if (!normalized) {
+      return null;
+    }
+    const parsed = Number.parseFloat(normalized);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+  return null;
+}
+
+function readPriceReferenceMode(item: ApiRecord): GroupPriceReferenceMode {
+  const value = readString(item, 'priceReferenceMode')?.trim().toLowerCase();
+  if (value === 'multiplier') {
+    return 'multiplier';
+  }
+  if (value === 'official_price' || value === 'official_reference') {
+    return 'official_price';
+  }
+  throw new Error(value ? `Unsupported group price reference mode: ${value}` : 'Group price reference mode is required');
+}
+
+function readGroupType(item: ApiRecord): GroupData['groupType'] {
+  const type = readString(item, 'groupType');
   if (type === 'public' || type === 'dedicated') {
     return type;
   }
@@ -403,7 +477,11 @@ function readBindingStatus(item: ApiRecord): GroupChannelBindingData['status'] {
   if (status === 'active' || status === 'disabled') {
     return status;
   }
-  throw new Error(status ? `Unsupported group channel binding status: ${status}` : 'Group channel binding status is required');
+  throw new Error(
+    status
+      ? `Unsupported group channel binding status: ${status}`
+      : 'Group channel binding status is required',
+  );
 }
 
 function readBindingHealthStatus(item: ApiRecord): GroupChannelBindingData['healthStatus'] {
@@ -411,7 +489,11 @@ function readBindingHealthStatus(item: ApiRecord): GroupChannelBindingData['heal
   if (status === 'active' || status === 'error') {
     return status;
   }
-  throw new Error(status ? `Unsupported group channel binding health status: ${status}` : 'Group channel binding health status is required');
+  throw new Error(
+    status
+      ? `Unsupported group channel binding health status: ${status}`
+      : 'Group channel binding health status is required',
+  );
 }
 
 function readChannelStatus(item: ApiRecord): GroupChannelOption['status'] {

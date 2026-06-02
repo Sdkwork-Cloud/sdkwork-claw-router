@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/algernon-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-algernon-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-algernon-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:023e7b44335062fabf1e9b50271f2d55d2de043b545717d34bc0cbbb66254255",

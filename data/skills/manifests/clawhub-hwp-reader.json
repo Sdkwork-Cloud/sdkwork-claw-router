@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hwp-reader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hwp-reader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hwp-reader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:22337d7debfc127cd6c6a195f61a8fa2952922f6c930afda4a15292c0f1bd1c9",

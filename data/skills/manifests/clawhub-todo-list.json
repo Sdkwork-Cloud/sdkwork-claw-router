@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/todo-list@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-todo-list-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-todo-list-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5338c7f19b8b3d3150225a63378296073fa48fd030a256c17f852ef071247642",

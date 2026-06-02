@@ -3,7 +3,9 @@ package com.sdkwork.clawrouter.backend
 data class AdminRateLimitItem(
     val blockDuration: String? = null,
     val burst: Int? = null,
-    val group: String? = null,
+    val channelGroup: String? = null,
+    val channelGroupId: String? = null,
+    val channelGroupName: String? = null,
     val id: String? = null,
     val keyPrefix: String? = null,
     val model: String? = null,

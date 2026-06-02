@@ -5,9 +5,11 @@ public class CommerceMembershipPackageGroupRecord {
     private String createdAt;
     private String description;
     private String groupNo;
+    private String id;
     private String name;
     private String organizationId;
     private String planId;
+    private String sortOrder;
     private String status;
     private String tenantId;
     private String updatedAt;
@@ -36,6 +38,14 @@ public class CommerceMembershipPackageGroupRecord {
         this.groupNo = groupNo;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -58,6 +68,14 @@ public class CommerceMembershipPackageGroupRecord {
 
     public void setPlanId(String planId) {
         this.planId = planId;
+    }
+
+    public String getSortOrder() {
+        return this.sortOrder;
+    }
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
     }
 
     public String getStatus() {

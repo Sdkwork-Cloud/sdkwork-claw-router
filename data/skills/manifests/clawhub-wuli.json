@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wuli@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-wuli-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wuli-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:cb2258e2cbcd9ce723063c292020278578e8f3c09678c08f0194ab23068e7a24",

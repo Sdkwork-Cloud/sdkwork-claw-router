@@ -408,6 +408,22 @@ fn runtime_events_and_artifacts_are_user_scoped_fact_tables() {
             && !artifact_table.contains("user_id BIGINT NOT NULL DEFAULT"),
         "Postgres runtime event and artifact writes must not silently default missing product user ownership"
     );
+    for expected in [
+        "media_resource_id VARCHAR(128)",
+        "object_blob_id BIGINT",
+        "resource_snapshot JSONB",
+    ] {
+        assert!(
+            artifact_table.contains(expected),
+            "Postgres runtime artifacts must expose canonical resource column `{expected}`"
+        );
+    }
+    for forbidden in ["storage_url", "storage_key"] {
+        assert!(
+            !artifact_table.contains(forbidden),
+            "Postgres runtime artifacts must not fall back to legacy column `{forbidden}`"
+        );
+    }
     for table_name in ["ai_runtime_invocation_event", "ai_runtime_artifact"] {
         let table = postgres_table(&schema, table_name);
         assert!(
@@ -435,6 +451,23 @@ fn runtime_events_and_artifacts_are_user_scoped_fact_tables() {
         registry.contains("user_id: int64"),
         "schema registry must record user_id on runtime event and artifact tables"
     );
+    let artifact_registry = registry_table(&registry, "ai_runtime_artifact");
+    for expected in [
+        "media_resource_id: string(128)",
+        "object_blob_id: int64",
+        "resource_snapshot: json",
+    ] {
+        assert!(
+            artifact_registry.contains(expected),
+            "schema registry runtime artifact contract must document `{expected}`"
+        );
+    }
+    for forbidden in ["storage_url:", "storage_key:"] {
+        assert!(
+            !artifact_registry.contains(forbidden),
+            "schema registry runtime artifact contract must not document legacy column `{forbidden}`"
+        );
+    }
     assert_registry_index_columns(
         registry_table(&registry, "ai_runtime_invocation_event"),
         "idx_ai_runtime_invocation_event_user_created",

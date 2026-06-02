@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mirage-proxy@0.5.17",
-      "artifactUrl": "data/skills/artifacts/clawhub-mirage-proxy-0.5.17.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mirage-proxy-0.5.17.json"
+      },
       "version": "0.5.17",
       "runtime": "metadata",
       "checksumHash": "sha256:3261bf210bc9d6e76976995fe13b552544f0b685be0058b659a493033aa6fbd7",

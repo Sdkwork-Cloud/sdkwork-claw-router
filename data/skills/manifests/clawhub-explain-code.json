@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/explain-code@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-explain-code-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-explain-code-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:655af059c85a24a5b0a490cbd6e86188afa058687efa49fa8363d8da9b25b70b",

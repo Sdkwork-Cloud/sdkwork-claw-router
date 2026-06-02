@@ -8,6 +8,8 @@ export interface CommerceShipmentRecord {
   delivered_at?: string;
   /** Fulfillment id field on commerce shipment record. */
   fulfillment_id: string;
+  /** Id field on commerce shipment record. */
+  id?: string;
   /** Organization id field on commerce shipment record. */
   organization_id?: string;
   /** Shipment no field on commerce shipment record. */

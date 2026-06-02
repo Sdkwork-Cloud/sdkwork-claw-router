@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-anchor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-anchor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-anchor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a5a4e23740a1e1d4c2b64eb547a43faa4ca3e51f3fde632c0f4c5ff970626614",

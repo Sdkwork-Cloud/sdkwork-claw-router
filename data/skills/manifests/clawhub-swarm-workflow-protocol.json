@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swarm-workflow-protocol@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swarm-workflow-protocol-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swarm-workflow-protocol-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c92cf9e2603230e6411212ffb1910359635c811fd61215ace6cede2f1659c5d0",

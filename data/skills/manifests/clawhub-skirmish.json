@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skirmish@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skirmish-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skirmish-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:78865ae73d64b332d2ee9a4a3e3538e5d057f0fe30dc11741f238ede7270d173",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-lashes@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-lashes-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-lashes-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:af56e04848d91a7ea368ce7cd159403e6d83aa1a00bda6315c878c0011655409",

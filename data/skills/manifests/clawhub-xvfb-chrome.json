@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xvfb-chrome@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-xvfb-chrome-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xvfb-chrome-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0bad5a85ee91ac19ef1803915d418c3090d3f0a067d45e5ffac0a2c27a1aaeb8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stealth-proxy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stealth-proxy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stealth-proxy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aefcfd0acb2ff30629b3ab00c268ba36cea80c0080c4626da64dea4030f9c17d",

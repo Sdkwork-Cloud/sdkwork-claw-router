@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-private-label@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-private-label-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-private-label-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2d72d4c992e5585f8a602a0093ed154d707ef89771b86f3dd96b988d1edc3bfe",

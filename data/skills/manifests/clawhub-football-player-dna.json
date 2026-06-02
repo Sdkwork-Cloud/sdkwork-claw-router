@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/football-player-dna@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-football-player-dna-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-football-player-dna-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a927a41869da0ba51d14df592817023649ad5b9e259eddf793f18b8dcb32ed7a",

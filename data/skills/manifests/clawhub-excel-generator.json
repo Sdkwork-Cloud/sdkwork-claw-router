@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/excel-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-excel-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-excel-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbcabc318f8cc64696c914748b13fdcd852559469b2a28baebbc23480bfd47f8",

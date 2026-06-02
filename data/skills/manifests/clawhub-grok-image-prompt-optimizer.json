@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grok-image-prompt-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grok-image-prompt-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grok-image-prompt-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7cb566a664cfb4a6c1002b6b18ceb7f71b56335f0f2ff2f98c37752fab20673",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-evaluator@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-evaluator-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-evaluator-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:291bf0ed488dd6ec862d809f0afe0a56eb6403f81f1d94db756725f35405a016",

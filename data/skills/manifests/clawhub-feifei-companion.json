@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feifei-companion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feifei-companion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feifei-companion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3323ae344d98f3ed0ed9af6734933df02bd036ab049222e6526b4b42b6e468f9",

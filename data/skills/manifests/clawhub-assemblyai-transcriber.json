@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/assemblyai-transcriber@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-assemblyai-transcriber-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-assemblyai-transcriber-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:032d19a28565da8dce39a14938b76cbf1a82b776a7a63da36dadfb8428d56fcd",

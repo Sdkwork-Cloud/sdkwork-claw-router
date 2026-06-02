@@ -101,8 +101,8 @@ println!("{result:?}");
 ### ai
 
 ```rust
-// List traces
-let result = client.ai().gateway_traces_list().await?;
+// List groups
+let result = client.ai().channel_groups_list().await?;
 println!("{result:?}");
 ```
 
@@ -145,8 +145,8 @@ println!("{result:?}");
 ### iam
 
 ```rust
-// List groups
-let result = client.iam().api_key_groups_list().await?;
+// List keys
+let result = client.iam().api_keys_list().await?;
 println!("{result:?}");
 ```
 

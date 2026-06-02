@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meituan-coupons@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meituan-coupons-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meituan-coupons-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a9ed36f03d1a10f6289431d686b874ae1dde00ab288b72412425fb4854ace1dd",

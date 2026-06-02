@@ -76,6 +76,10 @@ pub struct AiChannelRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub external_channel_id: Option<String>,
 
+    /// Health status field on ai channel record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub health_status: Option<String>,
+
     /// Id field on ai channel record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -114,6 +118,10 @@ pub struct AiChannelRecord {
 
     /// Organization id field on ai channel record.
     pub organization_id: String,
+
+    /// Priority field on ai channel record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub priority: Option<i64>,
 
     /// Protocol code field on ai channel record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -187,4 +195,8 @@ pub struct AiChannelRecord {
     /// Version field on ai channel record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub version: Option<String>,
+
+    /// Weight field on ai channel record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub weight: Option<i64>,
 }

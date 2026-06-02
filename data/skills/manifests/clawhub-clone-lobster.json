@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clone-lobster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clone-lobster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clone-lobster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef3ea4a91dc8a4aaeefd56fb85108f44878aaf95efd1c0303642b19121eabd73",

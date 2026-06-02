@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/honcho@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-honcho-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-honcho-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:acdbc2ca97fb6e156ca1f949272ac551e65e9a493d6c4aaa224e293a5af16dee",

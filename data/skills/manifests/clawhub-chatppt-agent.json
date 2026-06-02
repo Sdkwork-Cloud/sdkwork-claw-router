@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chatppt-agent@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-chatppt-agent-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chatppt-agent-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a7140c8f20dcb4956c7d8b0b831c820d18e8029dbb4e7eab6d4e749b8c1d4643",

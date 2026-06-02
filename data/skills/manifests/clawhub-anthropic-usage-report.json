@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anthropic-usage-report@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-anthropic-usage-report-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anthropic-usage-report-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1cf5ae6b4412c28919b4f8cf9327c65a2064e07d0981a8b4cadff1af26bd1ab1",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/termius@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-termius-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-termius-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5e38ba3a2ae7b671aaffb77522eae0575600d3131c1bbc937849414445a8715c",

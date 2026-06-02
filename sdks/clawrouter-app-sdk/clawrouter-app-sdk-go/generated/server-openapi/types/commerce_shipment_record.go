@@ -6,6 +6,7 @@ type CommerceShipmentRecord struct {
 	CreatedAt string `json:"created_at"`
 	DeliveredAt string `json:"delivered_at"`
 	FulfillmentId string `json:"fulfillment_id"`
+	Id string `json:"id"`
 	OrganizationId string `json:"organization_id"`
 	ShipmentNo string `json:"shipment_no"`
 	ShippedAt string `json:"shipped_at"`

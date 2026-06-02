@@ -15,6 +15,22 @@ pub struct StorageUsageLedgerRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
 
+    /// Delta file count field on storage usage ledger record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub delta_file_count: Option<String>,
+
+    /// Delta logical bytes field on storage usage ledger record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub delta_logical_bytes: Option<String>,
+
+    /// Delta physical bytes field on storage usage ledger record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub delta_physical_bytes: Option<String>,
+
+    /// Delta reserved bytes field on storage usage ledger record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub delta_reserved_bytes: Option<String>,
+
     /// Id field on storage usage ledger record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -30,6 +46,10 @@ pub struct StorageUsageLedgerRecord {
     /// Metadata field on storage usage ledger record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub metadata: Option<std::collections::HashMap<String, String>>,
+
+    /// Occurred at field on storage usage ledger record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub occurred_at: Option<String>,
 
     /// Organization id field on storage usage ledger record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/undertow@0.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-undertow-0.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-undertow-0.2.2.json"
+      },
       "version": "0.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:86f2d6955d6d55196b55fd8c02ca7812320836baed9049001cfbd24bb2a913c9",

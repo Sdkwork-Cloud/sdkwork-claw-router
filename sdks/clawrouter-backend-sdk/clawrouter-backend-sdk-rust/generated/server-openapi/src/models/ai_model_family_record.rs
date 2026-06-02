@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Ai model family record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AiModelFamilyRecord {
@@ -49,9 +51,9 @@ pub struct AiModelFamilyRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub family_type: Option<String>,
 
-    /// Icon url field on ai model family record.
+    /// Icon field on ai model family record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon_url: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Id field on ai model family record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

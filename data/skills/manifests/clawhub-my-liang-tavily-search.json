@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-liang-tavily-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-liang-tavily-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-liang-tavily-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b75487c20c5e3d3d658119c5f3772a9f78ac5ac9c8125cf6ccaff1c08ea2da17",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/title-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-title-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-title-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6bd67f77a29423e1dddde45b960dbe9e4af6e4879b57cb9513b5f0474e82e548",

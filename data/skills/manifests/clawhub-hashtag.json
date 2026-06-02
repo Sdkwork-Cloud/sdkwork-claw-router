@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hashtag@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-hashtag-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hashtag-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:55644f4594e4526dfc6d4ef0573ce812bddb1a8215a1a1e2a65094ca73503646",

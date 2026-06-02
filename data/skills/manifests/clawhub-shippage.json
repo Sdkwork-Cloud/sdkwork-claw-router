@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shippage@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shippage-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shippage-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da2ae252aec70bc058659823f63c4ccd1ce7264daf0a57c796c1f5cfb4b91637",

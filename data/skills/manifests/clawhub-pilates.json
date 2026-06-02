@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilates@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilates-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilates-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b51c3ea560453ff21c1a68f59402b2df479417fa64d84c823de66fbb5d9f44ce",

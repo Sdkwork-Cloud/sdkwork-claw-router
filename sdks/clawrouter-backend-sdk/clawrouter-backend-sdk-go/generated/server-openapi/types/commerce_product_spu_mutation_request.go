@@ -3,7 +3,7 @@ package types
 // Commerce product spu mutation request schema exposed by Claw Router.
 type CommerceProductSpuMutationRequest struct {
 	Brand string `json:"brand"`
-	CategoryId string `json:"categoryId"`
+	CategoryIds []string `json:"categoryIds"`
 	Description string `json:"description"`
 	ProductType string `json:"productType"`
 	SpuNo string `json:"spuNo"`

@@ -10,6 +10,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? CurrencyCode { get; set; }
         public string? DurationDays { get; set; }
         public string? EndsAt { get; set; }
+        public string? Id { get; set; }
         public string? OrganizationId { get; set; }
         public string? PackageGroupId { get; set; }
         public string? PackageNo { get; set; }
@@ -17,6 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? PriceAmount { get; set; }
         public string? RecurrenceCycle { get; set; }
         public string? SkuId { get; set; }
+        public string? SortOrder { get; set; }
         public string? StartsAt { get; set; }
         public string? Status { get; set; }
         public string? TenantId { get; set; }

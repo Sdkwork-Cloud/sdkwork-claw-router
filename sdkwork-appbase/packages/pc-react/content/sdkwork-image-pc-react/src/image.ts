@@ -1,9 +1,12 @@
+import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";
+
 export type SdkworkImageJobStatus = "queued" | "ready" | "rendering";
 
 export interface SdkworkImageAsset {
   id: string;
   presetId: string;
   prompt: string;
+  resource: SdkworkMediaResource;
   resolution: string;
   status: SdkworkImageJobStatus;
   style: string;
@@ -95,6 +98,31 @@ function sortSdkworkImages(images: readonly SdkworkImageAsset[]): SdkworkImageAs
   );
 }
 
+function createGeneratedImageResource(
+  id: string,
+  title: string,
+  prompt: string,
+  resolution: string,
+  style: string,
+): SdkworkMediaResource {
+  const [width, height] = resolution.split("x").map((part) => Number.parseInt(part, 10));
+  return {
+    ai: {
+      provenance: "generated",
+    },
+    altText: prompt,
+    id: `media-resource-${id}`,
+    kind: "image",
+    metadata: {
+      style,
+    },
+    source: "generated",
+    title,
+    ...(Number.isFinite(width) ? { width } : {}),
+    ...(Number.isFinite(height) ? { height } : {}),
+  };
+}
+
 export function createDefaultSdkworkImagePresets(): SdkworkImagePreset[] {
   return [
     { id: "studio-product", itemCount: 2, title: "Studio Product" },
@@ -104,12 +132,17 @@ export function createDefaultSdkworkImagePresets(): SdkworkImagePreset[] {
 }
 
 export function createDefaultSdkworkImages(): SdkworkImageAsset[] {
-  return [
+  const images = [
     { id: "image-device-beauty", presetId: "studio-product", prompt: "Premium device beauty shot", resolution: "2048x2048", status: "ready", style: "studio", title: "Device Beauty", updatedAt: "2026-04-03T04:20:00.000Z" },
     { id: "image-desktop-closeup", presetId: "studio-product", prompt: "Operator desk closeup", resolution: "1792x1024", status: "rendering", style: "editorial", title: "Desktop Closeup", updatedAt: "2026-04-02T04:20:00.000Z" },
     { id: "image-brand-scene", presetId: "brand-illustration", prompt: "Brand scene illustration", resolution: "1536x1536", status: "ready", style: "illustration", title: "Brand Scene", updatedAt: "2026-04-01T04:20:00.000Z" },
     { id: "image-launch-poster", presetId: "launch-key-visual", prompt: "Launch campaign poster", resolution: "1024x1536", status: "queued", style: "campaign", title: "Launch Poster", updatedAt: "2026-03-31T04:20:00.000Z" },
-  ];
+  ] as const;
+
+  return images.map((image) => ({
+    ...image,
+    resource: createGeneratedImageResource(image.id, image.title, image.prompt, image.resolution, image.style),
+  }));
 }
 
 export function summarizeSdkworkImageWorkspace(

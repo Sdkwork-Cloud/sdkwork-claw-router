@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-global@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-global-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-global-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aab73e0743de04e73dfcf3e72722f719a2a982d0bbd1ead577aae97d86217410",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multi-search-aggregator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-multi-search-aggregator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multi-search-aggregator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0c78a506cab9a4e81f2fb69e7596bfe01a4799b0ebad65104b4a680b612fa9a5",

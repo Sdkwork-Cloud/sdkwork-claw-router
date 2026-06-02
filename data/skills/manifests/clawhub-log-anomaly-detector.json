@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/log-anomaly-detector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-log-anomaly-detector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-log-anomaly-detector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f7fd8eb26f91968c541032fd60173f96e70fa21ed080399a996932217323306",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vision-identify@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vision-identify-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vision-identify-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18e410b964e53b220a1646f83dc0c1babf743188ebb6e877ce0a3977712a688c",

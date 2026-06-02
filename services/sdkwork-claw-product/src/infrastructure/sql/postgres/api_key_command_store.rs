@@ -4,11 +4,11 @@ use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::application::ApiKeySecretCodec;
 use crate::domain::{
-    ApiKeyGroup, DomainError, DomainResult, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
+    ChannelGroup, DomainError, DomainResult, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
 };
 use crate::ports::{
     ApiKeyCommandStoreFuture, CreateGatewayApiKeyCommand, CreatedGatewayApiKey,
-    DeleteGatewayApiKeyCommand, EnsureDefaultApiKeyGroupCommand, GatewayApiKeyCommandStore,
+    DeleteGatewayApiKeyCommand, EnsureDefaultChannelGroupCommand, GatewayApiKeyCommandStore,
     UpdateGatewayApiKeyCommand, UpdatedGatewayApiKey,
 };
 
@@ -33,17 +33,17 @@ impl PostgresGatewayApiKeyCommandStore {
 }
 
 impl GatewayApiKeyCommandStore for PostgresGatewayApiKeyCommandStore {
-    fn ensure_default_api_key_group<'a>(
+    fn ensure_default_channel_group<'a>(
         &'a self,
-        command: EnsureDefaultApiKeyGroupCommand,
-    ) -> ApiKeyCommandStoreFuture<'a, ApiKeyGroup> {
+        command: EnsureDefaultChannelGroupCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, ChannelGroup> {
         Box::pin(async move {
             let mut tx = self.pool.begin().await.map_err(|error| {
-                store_error("failed to begin default api key group transaction", error)
+                store_error("failed to begin default channel group transaction", error)
             })?;
-            let group = ensure_default_api_key_group(&mut tx, &command).await?;
+            let group = ensure_default_channel_group(&mut tx, &command).await?;
             tx.commit().await.map_err(|error| {
-                store_error("failed to commit default api key group transaction", error)
+                store_error("failed to commit default channel group transaction", error)
             })?;
             Ok(group)
         })
@@ -123,10 +123,10 @@ impl GatewayApiKeyCommandStore for PostgresGatewayApiKeyCommandStore {
     }
 }
 
-async fn ensure_default_api_key_group(
+async fn ensure_default_channel_group(
     tx: &mut Transaction<'_, Postgres>,
-    command: &EnsureDefaultApiKeyGroupCommand,
-) -> DomainResult<ApiKeyGroup> {
+    command: &EnsureDefaultChannelGroupCommand,
+) -> DomainResult<ChannelGroup> {
     let pricing_plan_id = find_pricing_plan_id(tx, command).await?;
     let group = sqlx::query(
         r#"
@@ -168,14 +168,14 @@ async fn ensure_default_api_key_group(
     .bind(command.official_price_multiplier.to_fixed_string(6))
     .fetch_one(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to ensure default api key group", error))?;
+    .map_err(|error| store_error("failed to ensure default channel group", error))?;
 
-    api_key_group_from_row(group)
+    channel_group_from_row(group)
 }
 
 async fn find_pricing_plan_id(
     tx: &mut Transaction<'_, Postgres>,
-    command: &EnsureDefaultApiKeyGroupCommand,
+    command: &EnsureDefaultChannelGroupCommand,
 ) -> DomainResult<Option<i64>> {
     sqlx::query_scalar(
         r#"
@@ -201,11 +201,11 @@ async fn find_pricing_plan_id(
     .bind(command.organization_id)
     .fetch_optional(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to load default api key group pricing plan", error))
+    .map_err(|error| store_error("failed to load default channel group pricing plan", error))
 }
 
-fn api_key_group_from_row(row: sqlx::postgres::PgRow) -> DomainResult<ApiKeyGroup> {
-    Ok(ApiKeyGroup::new_scoped(
+fn channel_group_from_row(row: sqlx::postgres::PgRow) -> DomainResult<ChannelGroup> {
+    Ok(ChannelGroup::new_scoped(
         row.try_get::<i64, _>("id").map_err(row_error)?,
         row.try_get::<i64, _>("tenant_id").map_err(row_error)?,
         row.try_get::<i64, _>("organization_id")

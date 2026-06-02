@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weibo-auto-post@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weibo-auto-post-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weibo-auto-post-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb7cb3d92af84f57cd697f0b15344aa1fa08d19fb825a66a0029d2dcd0811e2c",

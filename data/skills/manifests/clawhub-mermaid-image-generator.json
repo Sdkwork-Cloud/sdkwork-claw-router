@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mermaid-image-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mermaid-image-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mermaid-image-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c440d77cd6309f7f0833b9368c16a5b177a83526559994ad756718d0e3b6e89",

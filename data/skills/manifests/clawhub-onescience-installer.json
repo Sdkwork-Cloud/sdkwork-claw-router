@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/onescience-installer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-onescience-installer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-onescience-installer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64603a605ca76485b8b03b9ba8349cb2ee98102058103c2f89e50025d0157e6f",

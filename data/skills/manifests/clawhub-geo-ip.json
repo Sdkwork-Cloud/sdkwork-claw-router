@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geo-ip@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-geo-ip-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geo-ip-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4baec9a4f118a67b65c83cdcb3980c0506005b0351ad6721b1872549650e5edc",

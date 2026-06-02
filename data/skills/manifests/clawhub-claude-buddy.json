@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-buddy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-buddy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-buddy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:296fdad5dd1eba4c4eb5438a93c0f5c8b9ef55bff5c0ff94b41b03b7b0464108",

@@ -19,6 +19,10 @@ pub struct CommerceOrderAddressSnapshotRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub district: Option<String>,
 
+    /// Id field on commerce order address snapshot record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Order id field on commerce order address snapshot record.
     pub order_id: String,
 
@@ -39,6 +43,9 @@ pub struct CommerceOrderAddressSnapshotRecord {
     /// Region code field on commerce order address snapshot record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub region_code: Option<String>,
+
+    /// Snapshot version field on commerce order address snapshot record.
+    pub snapshot_version: String,
 
     /// Source address id field on commerce order address snapshot record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

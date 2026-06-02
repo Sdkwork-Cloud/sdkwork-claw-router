@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/strain-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-strain-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-strain-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:042cbce099511c4f5edd41a715ee473121cdbb9e2b77291762f8a7b6e472756b",

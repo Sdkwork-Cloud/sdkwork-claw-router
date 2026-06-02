@@ -9,6 +9,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? BalanceAfter { get; set; }
         public string? CreatedAt { get; set; }
         public string? EntitlementId { get; set; }
+        public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
         public string? MembershipId { get; set; }
         public string? OccurredAt { get; set; }

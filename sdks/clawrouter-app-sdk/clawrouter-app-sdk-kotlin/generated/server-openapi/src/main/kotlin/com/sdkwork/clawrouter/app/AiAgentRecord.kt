@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.app
 
 data class AiAgentRecord(
     val agentCode: String? = null,
-    val avatarUrl: String? = null,
+    val avatar: MediaResource? = null,
     val createdAt: String? = null,
     val dataScope: String? = null,
     val defaultVersionId: String? = null,

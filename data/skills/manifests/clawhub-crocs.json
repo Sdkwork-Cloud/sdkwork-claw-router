@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crocs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crocs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crocs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eabbcc8b471927ed803ca947d27bad6b878c72b8c6b2ebe274748d0a6e2396dd",

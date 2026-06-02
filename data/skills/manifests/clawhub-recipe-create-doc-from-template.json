@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/recipe-create-doc-from-template@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-recipe-create-doc-from-template-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-recipe-create-doc-from-template-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:3ddd8ef575a3b39d63dddf824bf6cc566177cea743919dfd476f020e4e2a77c5",

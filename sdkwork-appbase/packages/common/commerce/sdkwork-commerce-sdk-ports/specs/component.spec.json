@@ -49,7 +49,7 @@
     {
       "file": "GOVERNANCE_SPEC.md",
       "path": "../../../../../../../specs/GOVERNANCE_SPEC.md",
-      "purpose": "Standard ownership, exception, dependency, and release rules."
+      "purpose": "Standard ownership, exception, compatibility, and migration rules."
     },
     {
       "file": "I18N_SPEC.md",
@@ -108,7 +108,7 @@
   },
   "integration": {
     "authority": "Root SDKWork specs remain authoritative. Local specs may extend but must not contradict them.",
-    "dependencyPolicy": "Consumers integrate through public package exports, declared runtime entrypoints, or generated SDK clients only.",
+    "dependencyPolicy": "Consumers integrate through public package exports, declared runtime entrypoints, generated SDK clients, or documented adapters only.",
     "sdkPolicy": "Generated SDK clients are injected through service/runtime boundaries; reusable UI must not create raw HTTP clients or manual auth headers.",
     "languagePolicy": "Language-specific packages follow their native manifest and build tools while preserving the same component contract."
   },

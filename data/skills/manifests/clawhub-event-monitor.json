@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/event-monitor@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-event-monitor-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-event-monitor-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1fb67d20667855b6a5de31dc8fc4263d852355b3a2454201f471968c9b694586",

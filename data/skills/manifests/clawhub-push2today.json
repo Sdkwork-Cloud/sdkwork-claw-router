@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/push2today@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-push2today-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-push2today-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:03abee7294a0c74aefd2fe03feb4d398757fde118b59856151966c7b05a90a6c",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meat-protein-kjeldahl@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-meat-protein-kjeldahl-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meat-protein-kjeldahl-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dc35556241d38af8fe4c7969811de42408b69b78a59ddf81f42e388b45286e64",

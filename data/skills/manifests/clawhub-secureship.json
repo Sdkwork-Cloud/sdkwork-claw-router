@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/secureship@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-secureship-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-secureship-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e6b8faf820596b7f4f4a8c6aaa6ebcf8b3332c84474116ebe91f04309c913244",

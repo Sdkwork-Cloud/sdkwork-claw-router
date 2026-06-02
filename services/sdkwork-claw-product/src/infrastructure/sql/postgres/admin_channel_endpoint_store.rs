@@ -256,34 +256,38 @@ async fn insert_channel_endpoint(
             (
                 SELECT v.id
                 FROM ai_model_vendor v
-                WHERE v.tenant_id = a.tenant_id
-                  AND v.organization_id = a.organization_id
-                  AND v.vendor_code = $5
+                WHERE (v.tenant_id = $5 OR v.tenant_id = 0)
+                  AND (v.organization_id = $6 OR v.organization_id = 0)
+                  AND v.vendor_code = $7
                   AND v.deleted_at IS NULL
+                ORDER BY CASE WHEN v.tenant_id = $8 AND v.organization_id = $9 THEN 0 ELSE 1 END,
+                         v.id ASC
                 LIMIT 1
             ),
-            $6,
-            $7,
+            $10,
+            $11,
             (
                 SELECT e.id
                 FROM ai_api_endpoint e
-                WHERE e.tenant_id = a.tenant_id
-                  AND e.organization_id = a.organization_id
-                  AND e.endpoint_code = $8
+                WHERE (e.tenant_id = $12 OR e.tenant_id = 0)
+                  AND (e.organization_id = $13 OR e.organization_id = 0)
+                  AND e.endpoint_code = $14
                   AND e.deleted_at IS NULL
+                ORDER BY CASE WHEN e.tenant_id = $15 AND e.organization_id = $16 THEN 0 ELSE 1 END,
+                         e.id ASC
                 LIMIT 1
             ),
-            $9,
-            $10,
-            $11,
-            $12,
+            $17,
+            $18,
+            $19,
+            $20,
             1,
-            $13,
-            $14
+            $21,
+            $22
         FROM ai_channel a
-        WHERE a.id = $15
-          AND a.tenant_id = $16
-          AND a.organization_id = $17
+        WHERE a.id = $23
+          AND a.tenant_id = $24
+          AND a.organization_id = $25
           AND a.deleted_at IS NULL
         RETURNING id
         "#,
@@ -292,10 +296,18 @@ async fn insert_channel_endpoint(
     .bind(status_code(&command.status))
     .bind(&command.requested_at)
     .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(&command.vendor_code)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(&command.vendor_code)
     .bind(&command.region_code)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(&command.api_endpoint_code)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(&command.api_endpoint_code)
     .bind(&command.base_url)
     .bind(command.priority)
@@ -339,44 +351,56 @@ async fn update_channel_endpoint_core(
             vendor_id = CASE WHEN $2 THEN (
                 SELECT v.id
                 FROM ai_model_vendor v
-                WHERE v.tenant_id = ai_channel_endpoint.tenant_id
-                  AND v.organization_id = ai_channel_endpoint.organization_id
-                  AND v.vendor_code = $3
+                WHERE (v.tenant_id = $3 OR v.tenant_id = 0)
+                  AND (v.organization_id = $4 OR v.organization_id = 0)
+                  AND v.vendor_code = $5
                   AND v.deleted_at IS NULL
+                ORDER BY CASE WHEN v.tenant_id = $6 AND v.organization_id = $7 THEN 0 ELSE 1 END,
+                         v.id ASC
                 LIMIT 1
             ) ELSE vendor_id END,
-            region_code = COALESCE($4, region_code),
-            api_code = COALESCE($5, api_code),
-            api_endpoint_id = CASE WHEN $6 THEN (
+            region_code = COALESCE($8, region_code),
+            api_code = COALESCE($9, api_code),
+            api_endpoint_id = CASE WHEN $10 THEN (
                 SELECT e.id
                 FROM ai_api_endpoint e
-                WHERE e.tenant_id = ai_channel_endpoint.tenant_id
-                  AND e.organization_id = ai_channel_endpoint.organization_id
-                  AND e.endpoint_code = $7
+                WHERE (e.tenant_id = $11 OR e.tenant_id = 0)
+                  AND (e.organization_id = $12 OR e.organization_id = 0)
+                  AND e.endpoint_code = $13
                   AND e.deleted_at IS NULL
+                ORDER BY CASE WHEN e.tenant_id = $14 AND e.organization_id = $15 THEN 0 ELSE 1 END,
+                         e.id ASC
                 LIMIT 1
             ) ELSE api_endpoint_id END,
-            base_url = COALESCE($8, base_url),
-            priority = COALESCE($9, priority),
-            weight = COALESCE($10, weight),
-            status = COALESCE($11, status),
-            effective_from = CASE WHEN $12 THEN $13 ELSE effective_from END,
-            effective_to = CASE WHEN $14 THEN $15 ELSE effective_to END,
-            updated_at = $16,
+            base_url = COALESCE($16, base_url),
+            priority = COALESCE($17, priority),
+            weight = COALESCE($18, weight),
+            status = COALESCE($19, status),
+            effective_from = CASE WHEN $20 THEN $21 ELSE effective_from END,
+            effective_to = CASE WHEN $22 THEN $23 ELSE effective_to END,
+            updated_at = $24,
             version = COALESCE(version, 0) + 1
-        WHERE id = $17
-          AND tenant_id = $18
-          AND organization_id = $19
+        WHERE id = $25
+          AND tenant_id = $26
+          AND organization_id = $27
           AND deleted_at IS NULL
         "#,
     )
     .bind(command.vendor_code.as_deref())
     .bind(command.vendor_code.is_some())
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(command.vendor_code.as_deref())
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(command.region_code.as_deref())
     .bind(command.api_endpoint_code.as_deref())
     .bind(command.api_endpoint_code.is_some())
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(command.api_endpoint_code.as_deref())
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(command.base_url.as_deref())
     .bind(command.priority)
     .bind(command.weight)
@@ -415,8 +439,8 @@ async fn ensure_vendor_exists(
         r#"
         SELECT COUNT(1)
         FROM ai_model_vendor
-        WHERE tenant_id = $1
-          AND organization_id = $2
+        WHERE (tenant_id = $1 OR tenant_id = 0)
+          AND (organization_id = $2 OR organization_id = 0)
           AND vendor_code = $3
           AND deleted_at IS NULL
         "#,
@@ -445,8 +469,8 @@ async fn ensure_api_endpoint_exists(
         r#"
         SELECT COUNT(1)
         FROM ai_api_endpoint
-        WHERE tenant_id = $1
-          AND organization_id = $2
+        WHERE (tenant_id = $1 OR tenant_id = 0)
+          AND (organization_id = $2 OR organization_id = 0)
           AND endpoint_code = $3
           AND deleted_at IS NULL
         "#,

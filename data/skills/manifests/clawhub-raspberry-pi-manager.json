@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/raspberry-pi-manager@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-raspberry-pi-manager-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-raspberry-pi-manager-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3bf0454e46030d7d70cd6951d0d41313061c28401c7a0b240a751e7833c26840",

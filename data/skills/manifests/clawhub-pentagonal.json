@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pentagonal@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pentagonal-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pentagonal-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e2c7ee6f62e196159b89618234e879e85986f698257fb6d2c28b525f11d80ab3",

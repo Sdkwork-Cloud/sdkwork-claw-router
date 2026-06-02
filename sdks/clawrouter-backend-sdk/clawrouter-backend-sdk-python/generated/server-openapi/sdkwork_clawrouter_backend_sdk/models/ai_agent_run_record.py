@@ -33,6 +33,7 @@ class AiAgentRunRecord:
     prompt_tokens: Optional[str] = None
     request_id: Optional[str] = None
     retention_until: Optional[str] = None
+    run_status: Optional[str] = None
     run_uuid: Optional[str] = None
     runtime: Optional[str] = None
     source_surface: Optional[str] = None

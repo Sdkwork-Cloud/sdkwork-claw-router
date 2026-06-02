@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fullstack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fullstack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fullstack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62d1352a2f52632d2a17842f7848d9fa3548c58d81ba0c14a561e5239596f797",

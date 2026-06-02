@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clarity-gate@2.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-clarity-gate-2.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clarity-gate-2.1.3.json"
+      },
       "version": "2.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c3e43bba9734e9ac99e437c5adf415cc9bf13bf19d58c4560678262a067be97b",

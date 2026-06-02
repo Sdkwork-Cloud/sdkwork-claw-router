@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/surreal-sync@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-surreal-sync-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-surreal-sync-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:03ada0805f6be1b226c6f414f747da2187066b5f7a311662195bebdadc640c49",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mkdir-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mkdir-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mkdir-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1607b20d3db6be19699aae11e5339b8eac8f752b6d139b80a1eb11c8630571ca",

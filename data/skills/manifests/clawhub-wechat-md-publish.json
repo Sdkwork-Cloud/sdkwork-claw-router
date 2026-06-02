@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-md-publish@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-md-publish-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-md-publish-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62209f12afb1c83ec165d6bad6b00001ae5795c0d06d1617878b4bbd7ef09257",

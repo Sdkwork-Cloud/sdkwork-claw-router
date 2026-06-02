@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sourdough-starter-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sourdough-starter-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sourdough-starter-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1fe2ef21bcf8c53a12954af42312b5d7625b673c10b9f214504cced2c58cb596",

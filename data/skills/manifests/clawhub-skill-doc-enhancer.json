@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-doc-enhancer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-doc-enhancer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-doc-enhancer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:452eb523ad172780068f5a2ff91835f58bed3f1040d8f1cc8b6b54cb49332938",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-direct-send@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-direct-send-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-direct-send-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:94028baef5a5e863f9fe99566aff725eb7f7f23924d207b7f303dcf38c4fe971",

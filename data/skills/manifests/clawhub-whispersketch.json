@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whispersketch@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whispersketch-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whispersketch-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eee2425f2d531bbcebe062a772065ceda556d3a70dbc9b55f1bd5cb488c908ce",

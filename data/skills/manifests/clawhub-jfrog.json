@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jfrog@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-jfrog-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jfrog-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:90487111cdad27ae4050f8fb202b067abff100e2a70e33282e71de157e32ecfb",

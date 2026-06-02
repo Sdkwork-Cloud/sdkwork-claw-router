@@ -15,9 +15,9 @@ import {
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { CopyButton } from 'sdkwork-claw-router-commons/components/CopyButton';
-import type { ApiKey, ApiKeyGroup } from './apiKeyService';
-import { DEFAULT_API_KEY_GROUP, type ApiKeyFormValues as ApiKeyFormValuesContract } from './apiKeyForm';
-import { formatApiKeyGroupOptionLabel, resolveApiKeyGroupCode } from './apiKeyGroups';
+import type { ApiKey, ChannelGroup } from './apiKeyService';
+import { DEFAULT_CHANNEL_GROUP, type ApiKeyFormValues as ApiKeyFormValuesContract } from './apiKeyForm';
+import { formatChannelGroupOptionLabel } from './channelGroups';
 
 export type ApiKeyFormValues = ApiKeyFormValuesContract;
 
@@ -25,7 +25,7 @@ interface KeyFormDrawerProps {
   isOpen: boolean;
   mode?: 'create' | 'view' | 'edit';
   initialData?: ApiKey | null;
-  groups: ApiKeyGroup[];
+  groups: ChannelGroup[];
   groupsLoading?: boolean;
   submitting?: boolean;
   onClose: () => void;
@@ -57,9 +57,9 @@ export function CreateKeyDrawer({
   const { t } = useTranslation();
   const isView = mode === 'view';
   const isEdit = mode === 'edit';
-  const defaultGroup = useMemo(() => groups[0]?.code ?? DEFAULT_API_KEY_GROUP, [groups]);
+  const defaultGroup = useMemo(() => groups[0]?.code ?? DEFAULT_CHANNEL_GROUP, [groups]);
   const [name, setName] = useState('');
-  const [group, setGroup] = useState(defaultGroup);
+  const [channelGroup, setChannelGroup] = useState(defaultGroup);
   const [expiryType, setExpiryType] = useState<'never' | 'custom' | '1h' | '1d' | '1m'>('never');
   const [expiryDate, setExpiryDate] = useState('');
   const [createCount, setCreateCount] = useState(1);
@@ -74,7 +74,12 @@ export function CreateKeyDrawer({
     }
     if (initialData) {
       setName(initialData.displayName);
-      setGroup(resolveApiKeyGroupCode(initialData.group, groups));
+      const normalizedGroup = initialData.channelGroup.trim();
+      setChannelGroup(
+        groups.some((item) => item.code === normalizedGroup)
+          ? normalizedGroup
+          : defaultGroup,
+      );
       setIpLimit(initialData.ipLimit === 'unrestricted' ? '' : initialData.ipLimit);
       setExpiryType(initialData.expires === 'never' ? 'never' : 'custom');
       setExpiryDate(initialData.expires === 'never' ? '' : initialData.expires.replace(' ', 'T').slice(0, 16));
@@ -85,7 +90,7 @@ export function CreateKeyDrawer({
       return;
     }
     setName('');
-    setGroup(defaultGroup);
+    setChannelGroup(defaultGroup);
     setExpiryType('never');
     setExpiryDate('');
     setCreateCount(1);
@@ -100,10 +105,11 @@ export function CreateKeyDrawer({
   }
 
   const title = isView
-    ? t('console.apiKeys.detailsTitle', 'API Key 详情')
+    ? t('console.apiKeys.detailsTitle', 'API 密钥详情')
     : isEdit
-      ? t('console.apiKeys.editTitle', '编辑 API Key')
-      : t('console.apiKeys.createTitle', '创建 API Key');
+      ? t('console.apiKeys.editTitle', '编辑 API 密钥')
+      : t('console.apiKeys.createTitle', '创建 API 密钥');
+  const group = channelGroup;
   const canSubmit = !isView && !submitting && name.trim().length > 0 && group.length > 0 && allowedModalities.size > 0;
 
   const handleExpiryShortcut = (type: 'never' | '1h' | '1d' | '1m') => {
@@ -116,9 +122,15 @@ export function CreateKeyDrawer({
       return;
     }
     const date = new Date();
-    if (type === '1h') date.setHours(date.getHours() + 1);
-    if (type === '1d') date.setDate(date.getDate() + 1);
-    if (type === '1m') date.setMonth(date.getMonth() + 1);
+    if (type === '1h') {
+      date.setHours(date.getHours() + 1);
+    }
+    if (type === '1d') {
+      date.setDate(date.getDate() + 1);
+    }
+    if (type === '1m') {
+      date.setMonth(date.getMonth() + 1);
+    }
     setExpiryDate(toLocalInputValue(date));
   };
 
@@ -141,7 +153,7 @@ export function CreateKeyDrawer({
     }
     await onSubmit({
       name: name.trim(),
-      group,
+      channelGroup: group,
       quota: isUnlimitedQuota ? '0.000000' : quota.trim(),
       isUnlimitedQuota,
       modalities: Array.from(allowedModalities),
@@ -154,22 +166,25 @@ export function CreateKeyDrawer({
   return (
     <div className="fixed inset-0 z-[100] flex justify-end bg-black/50 backdrop-blur-sm animate-in fade-in duration-300">
       <div
-        className="w-full max-w-xl bg-white dark:bg-[#1e1e1e] h-full shadow-2xl flex flex-col animate-in slide-in-from-right duration-300 border-l border-slate-200 dark:border-white/10"
+        className="h-full w-full max-w-xl animate-in slide-in-from-right border-l border-slate-200 bg-white shadow-2xl duration-300 dark:border-white/10 dark:bg-[#1e1e1e]"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-white/10 shrink-0">
-          <div className="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-lg">
-            <Key className="w-5 h-5 text-lobster-500" />
+        <div className="flex items-center justify-between border-b border-slate-200 px-6 py-4 dark:border-white/10">
+          <div className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
+            <Key className="h-5 w-5 text-lobster-500" />
             {title}
           </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-900 hover:bg-slate-100 dark:hover:text-white dark:hover:bg-white/10 p-2 rounded-full transition-colors">
-            <X className="w-5 h-5" />
+          <button
+            onClick={onClose}
+            className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-white/10 dark:hover:text-white"
+          >
+            <X className="h-5 w-5" />
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
-          {isView && initialData && (
-            <div className="bg-slate-50 dark:bg-[#252525] p-5 rounded-xl border border-slate-200 dark:border-white/5 space-y-4">
+        <div className="custom-scrollbar flex-1 space-y-6 overflow-y-auto p-6">
+          {isView && initialData ? (
+            <div className="space-y-4 rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-white/5 dark:bg-[#252525]">
               <ReadOnlyRow
                 label={t('console.apiKeys.maskedToken', 'Masked token')}
                 value={initialData.maskedKey}
@@ -179,68 +194,80 @@ export function CreateKeyDrawer({
                 copiedLabel={t('console.apiKeys.keyCopied', '密钥已复制')}
                 copyDisabled={!initialData.copyableKey}
               />
-              <ReadOnlyRow label={t('console.apiKeys.status', '状态')} value={initialData.status} />
-              <ReadOnlyRow label={t('console.apiKeys.usedQuota', '已用额度')} value={initialData.usedQuota} />
-              <ReadOnlyRow label={t('console.apiKeys.created', '创建时间')} value={initialData.created} monospace />
+              <ReadOnlyRow label={t('console.apiKeys.status', 'Status')} value={initialData.status} />
+              <ReadOnlyRow label={t('console.apiKeys.usedQuota', 'Used quota')} value={initialData.usedQuota} />
+              <ReadOnlyRow label={t('console.apiKeys.created', 'Created')} value={initialData.created} monospace />
             </div>
-          )}
+          ) : null}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
-              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">{t('console.apiKeys.name', 'Name')}</label>
+              <label className="mb-1.5 block text-sm font-semibold text-slate-700 dark:text-slate-300">
+                {t('console.apiKeys.name', 'Name')}
+              </label>
               <input
                 type="text"
                 disabled={isView}
                 value={name}
                 onChange={(event) => setName(event.target.value)}
-                className="w-full bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/10 px-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-60"
-                placeholder={t('console.apiKeys.namePlaceholder', 'Production key')}
+                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-blue-500 focus:outline-none disabled:opacity-60 dark:border-white/10 dark:bg-[#252525] dark:text-white"
+                placeholder={t('console.apiKeys.namePlaceholder', '生产环境密钥')}
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">{t('console.apiKeys.group', 'Group')}</label>
+              <label className="mb-1.5 block text-sm font-semibold text-slate-700 dark:text-slate-300">
+                {t('console.apiKeys.group', '分组')}
+              </label>
               <select
                 disabled={isView}
                 value={group}
-                onFocus={onRequestGroups}
-                onChange={(event) => setGroup(event.target.value)}
-                className="w-full bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/10 px-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-60"
+                onFocus={() => {
+                  void onRequestGroups?.();
+                }}
+                onChange={(event) => setChannelGroup(event.target.value)}
+                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-blue-500 focus:outline-none disabled:opacity-60 dark:border-white/10 dark:bg-[#252525] dark:text-white"
               >
-                {groupsLoading && <option value={group}>{t('console.apiKeys.loadingGroups', '正在加载分组...')}</option>}
+                {groupsLoading ? (
+                  <option value={group}>{t('console.apiKeys.loadingGroups', '加载分组中...')}</option>
+                ) : null}
                 {groups.map((item) => (
                   <option key={item.code} value={item.code}>
-                    {formatApiKeyGroupOptionLabel(item)}
+                    {formatChannelGroupOptionLabel(item)}
                   </option>
                 ))}
-                {!groupsLoading && groups.length > 0 && !groups.some((item) => item.code === group) && (
+                {!groupsLoading && groups.length > 0 && !groups.some((item) => item.code === group) ? (
                   <option value={group}>{group}</option>
-                )}
-                {!groupsLoading && groups.length === 0 && <option value={DEFAULT_API_KEY_GROUP}>{t('console.apiKeys.defaultGroup', '默认分组')}</option>}
+                ) : null}
+                {!groupsLoading && groups.length === 0 ? (
+                  <option value={DEFAULT_CHANNEL_GROUP}>{t('console.apiKeys.defaultGroup', '默认分组')}</option>
+                ) : null}
               </select>
             </div>
           </div>
 
-          <section className="bg-slate-50 dark:bg-[#252525] p-5 rounded-xl border border-slate-200 dark:border-white/5 space-y-4">
-            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3">
-              <span className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-blue-400" />
+          <section className="space-y-4 rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-white/5 dark:bg-[#252525]">
+            <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
+              <span className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
+                <Calendar className="h-4 w-4 text-blue-400" />
                 {t('console.apiKeys.expiration', 'Expiration')}
               </span>
-              {!isView && (
+              {!isView ? (
                 <div className="flex items-center gap-2 text-xs">
                   {(['never', '1m', '1d', '1h'] as const).map((item) => (
                     <button
                       key={item}
                       onClick={() => handleExpiryShortcut(item)}
-                      className={`px-2.5 py-1 rounded transition-colors ${
-                        expiryType === item ? 'bg-blue-600 text-white' : 'bg-white text-slate-700 hover:bg-slate-100 dark:bg-white/10 dark:text-white dark:hover:bg-white/20'
+                      className={`rounded px-2.5 py-1 transition-colors ${
+                        expiryType === item
+                          ? 'bg-blue-600 text-white'
+                          : 'bg-white text-slate-700 hover:bg-slate-100 dark:bg-white/10 dark:text-white dark:hover:bg-white/20'
                       }`}
                     >
                       {item === 'never' ? t('common.actions.never') : item.toUpperCase()}
                     </button>
                   ))}
                 </div>
-              )}
+              ) : null}
             </div>
             <input
               type="datetime-local"
@@ -250,64 +277,72 @@ export function CreateKeyDrawer({
                 setExpiryDate(event.target.value);
                 setExpiryType('custom');
               }}
-              className="w-full bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 px-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-50"
+              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-blue-500 focus:outline-none disabled:opacity-50 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
             />
-            {expiryType === 'never' && (
-              <div className="text-xs text-emerald-500 flex items-center gap-1.5">
-                <Check className="w-3.5 h-3.5" />
+            {expiryType === 'never' ? (
+              <div className="flex items-center gap-1.5 text-xs text-emerald-500">
+                <Check className="h-3.5 w-3.5" />
                 {t('console.apiKeys.neverExpires', 'Never expires')}
               </div>
-            )}
+            ) : null}
           </section>
 
           {!isView && !isEdit && (
-            <section className="bg-slate-50 dark:bg-[#252525] p-5 rounded-xl border border-slate-200 dark:border-white/5 space-y-3">
-              <span className="text-sm font-bold text-slate-900 dark:text-white block">{t('console.apiKeys.createCount', 'Create count')}</span>
+            <section className="space-y-3 rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-white/5 dark:bg-[#252525]">
+              <span className="block text-sm font-bold text-slate-900 dark:text-white">
+                {t('console.apiKeys.createCount', 'Create count')}
+              </span>
               <input
                 type="number"
                 min="1"
                 max="100"
                 value={createCount}
                 onChange={(event) => setCreateCount(Number(event.target.value))}
-                className="w-full bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 px-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500"
+                className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 focus:border-blue-500 focus:outline-none dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
               />
             </section>
           )}
 
-          <section className="bg-slate-50 dark:bg-[#252525] p-5 rounded-xl border border-slate-200 dark:border-white/5 space-y-4">
+          <section className="space-y-4 rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-white/5 dark:bg-[#252525]">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center">
-                <CreditCard className="w-4 h-4 text-white" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500">
+                <CreditCard className="h-4 w-4 text-white" />
               </div>
-              <span className="text-sm font-bold text-slate-900 dark:text-white">{t('console.apiKeys.quota', 'Quota')}</span>
+              <span className="text-sm font-bold text-slate-900 dark:text-white">
+                {t('console.apiKeys.quota', 'Quota')}
+              </span>
             </div>
-            <div className="flex items-center bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2">
-              <Zap className={`w-4 h-4 mr-2 ${isUnlimitedQuota ? 'text-slate-500' : 'text-amber-500'}`} />
+            <div className="flex items-center rounded-lg border border-slate-200 bg-white px-3 py-2 dark:border-white/10 dark:bg-[#1e1e1e]">
+              <Zap className={`mr-2 h-4 w-4 ${isUnlimitedQuota ? 'text-slate-500' : 'text-amber-500'}`} />
               <input
                 type="text"
                 disabled={isView || isUnlimitedQuota}
                 value={quota}
                 onChange={(event) => setQuota(event.target.value)}
-                className="w-full bg-transparent text-slate-900 dark:text-white text-sm focus:outline-none disabled:opacity-50"
+                className="w-full bg-transparent text-sm text-slate-900 focus:outline-none disabled:opacity-50 dark:text-white"
               />
             </div>
-            <div className="flex items-center justify-between border-t border-slate-200 dark:border-white/5 pt-4">
-              <span className="text-sm font-bold text-slate-900 dark:text-white">{t('console.apiKeys.unlimited', 'Unlimited')}</span>
+            <div className="flex items-center justify-between border-t border-slate-200 pt-4 dark:border-white/5">
+              <span className="text-sm font-bold text-slate-900 dark:text-white">
+                {t('console.apiKeys.unlimited', 'Unlimited')}
+              </span>
               <button
                 disabled={isView}
                 onClick={() => setIsUnlimitedQuota((value) => !value)}
-                className={`w-10 h-6 rounded-full transition-colors relative flex items-center p-1 ${
+                className={`relative flex h-6 w-10 items-center rounded-full p-1 transition-colors ${
                   isUnlimitedQuota ? 'bg-emerald-500' : 'bg-slate-600'
                 } disabled:opacity-50`}
               >
-                <span className={`w-4 h-4 rounded-full bg-white transition-transform ${isUnlimitedQuota ? 'translate-x-4' : 'translate-x-0'}`} />
+                <span className={`h-4 w-4 rounded-full bg-white transition-transform ${isUnlimitedQuota ? 'translate-x-4' : 'translate-x-0'}`} />
               </button>
             </div>
           </section>
 
           <section className="space-y-3">
-            <label className="block text-sm font-bold text-slate-700 dark:text-slate-300">{t('console.apiKeys.modalities', 'Modalities')}</label>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+            <label className="block text-sm font-bold text-slate-700 dark:text-slate-300">
+              {t('console.apiKeys.modalities', 'Modalities')}
+            </label>
+            <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
               {MODALITIES.map((item) => {
                 const Icon = item.icon;
                 const checked = allowedModalities.has(item.id);
@@ -317,12 +352,16 @@ export function CreateKeyDrawer({
                     key={item.id}
                     disabled={isView}
                     onClick={() => toggleModality(item.id)}
-                    className={`p-3 rounded-lg border flex flex-col items-center gap-2 transition-colors ${
-                      checked ? `${item.bg} ${item.border}` : 'bg-slate-100 dark:bg-[#252525] border-transparent opacity-50 grayscale'
+                    className={`flex flex-col items-center gap-2 rounded-lg border p-3 transition-colors ${
+                      checked
+                        ? `${item.bg} ${item.border}`
+                        : 'border-transparent bg-slate-100 opacity-50 grayscale dark:bg-[#252525]'
                     } disabled:cursor-default`}
                   >
-                    <Icon className={`w-5 h-5 ${checked ? item.color : 'text-slate-400'}`} />
-                    <span className={`text-xs font-bold leading-tight ${checked ? item.color : 'text-slate-500'}`}>{t(item.labelKey)}</span>
+                    <Icon className={`h-5 w-5 ${checked ? item.color : 'text-slate-400'}`} />
+                    <span className={`text-xs font-bold leading-tight ${checked ? item.color : 'text-slate-500'}`}>
+                      {t(item.labelKey)}
+                    </span>
                   </button>
                 );
               })}
@@ -330,34 +369,43 @@ export function CreateKeyDrawer({
           </section>
 
           <div>
-            <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5">{t('console.apiKeys.ipAllowlist', 'IP allowlist')}</label>
+            <label className="mb-1.5 block text-sm font-bold text-slate-700 dark:text-slate-300">
+              {t('console.apiKeys.ipAllowlist', 'IP allowlist')}
+            </label>
             <div className="relative">
-              <MapPin className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+              <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
               <input
                 type="text"
                 disabled={isView}
                 value={ipLimit}
                 onChange={(event) => setIpLimit(event.target.value)}
-                className="w-full bg-white dark:bg-[#252525] border border-slate-200 dark:border-white/10 pl-9 pr-3 py-2 rounded-lg text-slate-900 dark:text-white text-sm focus:outline-none focus:border-blue-500 disabled:opacity-50"
+                className="w-full rounded-lg border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 focus:border-blue-500 focus:outline-none disabled:opacity-50 dark:border-white/10 dark:bg-[#252525] dark:text-white"
                 placeholder={t('console.apiKeys.ipAllowlistPlaceholder', '192.168.1.1, 10.0.0.0/24')}
               />
             </div>
           </div>
         </div>
 
-        <div className="p-4 border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#1a1a1a] flex justify-end gap-3 shrink-0">
-          <button onClick={onClose} className="px-4 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 border border-slate-200 dark:border-white/10 transition-colors">
+        <div className="flex justify-end gap-3 border-t border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#1a1a1a]">
+          <button
+            onClick={onClose}
+            className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white"
+          >
             {isView ? t('common.actions.close') : t('common.actions.cancel')}
           </button>
-          {!isView && (
+          {!isView ? (
             <button
               disabled={!canSubmit}
               onClick={submit}
-              className="px-5 py-2 rounded-lg text-sm font-medium bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white transition-colors shadow-sm"
+              className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
             >
-            {submitting ? t('common.actions.saving', '保存中...') : isEdit ? t('common.actions.save', '保存') : t('common.actions.createKey')}
+              {submitting
+                ? t('common.actions.saving', 'Saving...')
+                : isEdit
+                  ? t('common.actions.save', 'Save')
+                  : t('common.actions.createKey')}
             </button>
-          )}
+          ) : null}
         </div>
       </div>
     </div>
@@ -382,10 +430,12 @@ function ReadOnlyRow({
   copyDisabled?: boolean;
 }) {
   return (
-    <div className="flex justify-between gap-3 items-center text-sm border-t first:border-t-0 border-slate-200 dark:border-white/10 pt-3 first:pt-0">
+    <div className="flex items-center justify-between gap-3 border-t border-slate-200 pt-3 text-sm first:border-t-0 first:pt-0 dark:border-white/10">
       <span className="text-slate-500 dark:text-slate-400">{label}</span>
       <span className="flex min-w-0 items-center gap-2">
-        <span className={`truncate font-medium text-slate-800 dark:text-slate-200 ${monospace ? 'font-mono' : ''}`}>{value}</span>
+        <span className={`truncate font-medium text-slate-800 dark:text-slate-200 ${monospace ? 'font-mono' : ''}`}>
+          {value}
+        </span>
         {copyLabel ? (
           <CopyButton
             text={copyText ?? ''}

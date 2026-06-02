@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goose@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-goose-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goose-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1f7dbadb6d9ac8977874964b0f6b5d858d25a591dc48aa59a74edd966c3e04ed",

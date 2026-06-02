@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-to-free@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-to-free-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-to-free-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:14de761493884cae33fe61b7da31ee707db38e222cd8c4dd3a1a012daa4bf08c",

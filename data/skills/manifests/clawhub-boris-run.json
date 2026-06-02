@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boris-run@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boris-run-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boris-run-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8dc5d60b26e5c9a2cea67de5102236b838355d74fd74f5d608cd917398efa6d",

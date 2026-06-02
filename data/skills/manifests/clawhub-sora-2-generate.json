@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sora-2-generate@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sora-2-generate-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sora-2-generate-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:32d986881769b243f3e1499eff49b467242daceeb3812d0fbe072861072d09fe",

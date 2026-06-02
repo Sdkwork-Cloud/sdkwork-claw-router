@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/webhook-debugger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-webhook-debugger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-webhook-debugger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:99fd931b485d7e465dbe548355047e8085779f801abf48c38c0825aa2cd7fb80",

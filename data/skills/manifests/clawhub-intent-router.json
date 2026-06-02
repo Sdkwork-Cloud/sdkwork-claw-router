@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/intent-router@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-intent-router-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-intent-router-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:437a268683321f5a461c747722ed60cfc041c870e0d9f42500bcbb2300db2e81",

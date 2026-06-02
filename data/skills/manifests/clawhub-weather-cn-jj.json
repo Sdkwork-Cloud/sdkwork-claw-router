@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-cn-jj@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-cn-jj-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-cn-jj-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f4d0987dc37193cd8ff7e1508addb73ece1f150f21094f285384e82ee1be03c1",

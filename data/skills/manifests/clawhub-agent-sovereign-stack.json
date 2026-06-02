@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-sovereign-stack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-sovereign-stack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-sovereign-stack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7b97b5eadb98ed0669c6ef63d357faac390aa2b54be5764cccd6c53d799a8b55",

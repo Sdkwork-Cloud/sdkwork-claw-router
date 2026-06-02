@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-transcript-action-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-transcript-action-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-transcript-action-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a4d374fce6975b43d80113c2a0717495db8416d779354ed68cb5497bcfae0b37",

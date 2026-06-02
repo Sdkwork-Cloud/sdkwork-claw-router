@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alvis2-scrape@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alvis2-scrape-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alvis2-scrape-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a873d3085c68bbb99cec1fa36f970eb249c04c920b7bd48a7e05eda7e89e4dd2",

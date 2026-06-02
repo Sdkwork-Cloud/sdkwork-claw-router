@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/go-install@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-go-install-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-go-install-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3524ce73cff5191ab531dfe2e3b9bc8cdbc1db001c6f585b6d320def651bbe83",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workspace-local-retrieval@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workspace-local-retrieval-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workspace-local-retrieval-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c33c785b8781e0e253a9bb5d9c9b193c678bdc883d917c4d63594b847c4643c",

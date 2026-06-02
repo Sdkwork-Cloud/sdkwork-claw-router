@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/news-fact-check@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-news-fact-check-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-news-fact-check-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0bcf99d400e85d93b105711356f1238c49f7d9bdc6e8c4d6e5c26756d6c9c5b6",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ghostscore@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-ghostscore-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ghostscore-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:922caf01ffa20a70ec3176fd3d8b996a525c0734165faa9b6694c866d15ff6ce",

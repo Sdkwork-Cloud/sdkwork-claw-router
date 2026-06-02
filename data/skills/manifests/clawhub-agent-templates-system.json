@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-templates-system@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-templates-system-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-templates-system-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13599aeb84dfaa72d3cb5217927fe269e2c43b17ab98d84f45e909b9a7a488fa",

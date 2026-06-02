@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pulse-app-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pulse-app-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pulse-app-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66266ee13675891e8cc07843bc08448558a549c730165c6930786c456054d08c",

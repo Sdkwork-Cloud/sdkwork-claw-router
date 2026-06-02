@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-actions-commit-health-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-commit-health-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-actions-commit-health-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1cfe97686f36a74a8991613c2bcee10064d48551b58fe5a4dfaa5e4baac30473",

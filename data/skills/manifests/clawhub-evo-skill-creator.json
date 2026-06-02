@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/evo-skill-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-evo-skill-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-evo-skill-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:646a7721d2218213d706a72c4a283e31bc78ae755ab6d2717a25a3622cdc996e",

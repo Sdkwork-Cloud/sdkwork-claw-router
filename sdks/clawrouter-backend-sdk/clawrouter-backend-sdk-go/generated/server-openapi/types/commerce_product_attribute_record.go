@@ -5,6 +5,7 @@ type CommerceProductAttributeRecord struct {
 	AttributeNo string `json:"attribute_no"`
 	CreatedAt string `json:"created_at"`
 	Filterable bool `json:"filterable"`
+	Id string `json:"id"`
 	Name string `json:"name"`
 	OrganizationId string `json:"organization_id"`
 	Required bool `json:"required"`

@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Studio catalog asset record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct StudioCatalogAssetRecord {
@@ -11,13 +13,13 @@ pub struct StudioCatalogAssetRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub artifact_id: Option<String>,
 
+    /// Asset field on studio catalog asset record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub asset: Option<MediaResource>,
+
     /// Asset type field on studio catalog asset record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub asset_type: Option<String>,
-
-    /// Asset url field on studio catalog asset record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub asset_url: Option<String>,
 
     /// Created at field on studio catalog asset record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -87,9 +89,9 @@ pub struct StudioCatalogAssetRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub tenant_id: Option<String>,
 
-    /// Thumbnail url field on studio catalog asset record.
+    /// Thumbnail field on studio catalog asset record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub thumbnail_url: Option<String>,
+    pub thumbnail: Option<MediaResource>,
 
     /// Title field on studio catalog asset record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

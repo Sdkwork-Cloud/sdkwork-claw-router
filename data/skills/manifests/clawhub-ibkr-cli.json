@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ibkr-cli@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ibkr-cli-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ibkr-cli-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:631f2f8877ab5d496a472ab4ca7e6deadd6b700de30716a8fed8019db99290ff",

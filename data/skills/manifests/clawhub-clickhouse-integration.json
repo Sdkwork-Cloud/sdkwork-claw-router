@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clickhouse-integration@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-clickhouse-integration-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clickhouse-integration-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:66f75c11b293155f6a4bd7efaaf32200f9e8d1cecef9aa9d0b3adfa19954252e",

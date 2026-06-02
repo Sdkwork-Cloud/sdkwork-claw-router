@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/game-servers@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-game-servers-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-game-servers-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0bcaa733cd928cebea68f83f9d2186df39635ea5427d16edac02a79b65d48654",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-fact-check-verify@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-fact-check-verify-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-fact-check-verify-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:f25048ac71209342c96278095a177484b7a1d6fa7c5313791c6c234d0b506c92",

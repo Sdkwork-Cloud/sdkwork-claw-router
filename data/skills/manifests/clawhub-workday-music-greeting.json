@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workday-music-greeting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workday-music-greeting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workday-music-greeting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b5e527d472848f8d9c183efedeb752ecd5fcd34af83452c41383a6c36c67a16",

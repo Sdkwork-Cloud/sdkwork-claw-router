@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/backtester@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-backtester-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-backtester-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac872eb340050b07e01ca14f4c89cc6fa6acf103152c01152cbc9d68c7d19630",

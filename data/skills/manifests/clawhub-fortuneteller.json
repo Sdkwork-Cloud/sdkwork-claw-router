@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fortuneteller@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fortuneteller-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fortuneteller-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7b04927182190d23f134a5f842e99ba4275e75c3be945c2e7f4deb5eea5db7cc",

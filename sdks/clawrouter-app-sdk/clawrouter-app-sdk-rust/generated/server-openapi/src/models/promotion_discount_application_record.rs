@@ -20,6 +20,9 @@ pub struct PromotionDiscountApplicationRecord {
     /// Currency code field on promotion discount application record.
     pub currency_code: String,
 
+    /// Discount amount minor field on promotion discount application record.
+    pub discount_amount_minor: String,
+
     /// Failure code field on promotion discount application record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub failure_code: Option<String>,
@@ -27,6 +30,10 @@ pub struct PromotionDiscountApplicationRecord {
     /// Failure message field on promotion discount application record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub failure_message: Option<String>,
+
+    /// Id field on promotion discount application record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
 
     /// Idempotency key field on promotion discount application record.
     pub idempotency_key: String,

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/picnic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-picnic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-picnic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:49c1e85ac612d52c3c006ca5df3a9d2a7c78212e6355701d833f38a1d0a339a9",

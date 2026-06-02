@@ -19,7 +19,6 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 ## Contract Manifest
 
 - [component.spec.json](./component.spec.json) is the machine-readable component contract.
-- [appbase-capabilities.yaml](./appbase-capabilities.yaml) is the machine-readable capability building-block catalog.
 - Consumers should integrate through public exports, runtime entrypoints, SDK clients, or adapters declared in the manifest.
 - Generated SDK language outputs are represented at their SDK family root instead of duplicating local specs in generated folders.
 

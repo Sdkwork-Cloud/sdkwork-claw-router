@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/servicenow-agent@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-servicenow-agent-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-servicenow-agent-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:231082c2f57089265dc218a9b4bacf33729c89841dccae316b4a1f8d7dc7139c",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ollama-web-search-cli@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-ollama-web-search-cli-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ollama-web-search-cli-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:3cf4be6e3bcef99ab4da6fee1797082906a2338a8d748416a1062270dcb0ec9f",

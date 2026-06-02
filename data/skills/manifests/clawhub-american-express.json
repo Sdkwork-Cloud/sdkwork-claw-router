@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/american-express@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-american-express-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-american-express-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:920d8a2923d4aa65cbd050a689b23852ebd246803bf74817ec826f3cda0587ce",

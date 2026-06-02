@@ -1,11 +1,13 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Forum author schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct ForumAuthor {
     /// Avatar field on forum author.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub avatar: Option<String>,
+    pub avatar: Option<MediaResource>,
 
     /// Bio field on forum author.
     #[serde(default, skip_serializing_if = "Option::is_none")]

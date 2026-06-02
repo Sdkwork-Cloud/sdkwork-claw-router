@@ -25,6 +25,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? PublishedAt { get; set; }
         public string? PublishedVersionId { get; set; }
         public string? Status { get; set; }
+        public Dictionary<string, string>? Tags { get; set; }
         public string? TenantId { get; set; }
         public string? UpdatedAt { get; set; }
         public string? Uuid { get; set; }

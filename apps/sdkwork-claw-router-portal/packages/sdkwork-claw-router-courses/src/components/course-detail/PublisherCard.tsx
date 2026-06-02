@@ -1,15 +1,17 @@
 import React from 'react';
 import { MessageSquare, Star } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { readMediaResourceUrl } from 'sdkwork-claw-router-commons';
 import type { CoursePublisherView } from '../../data';
 
 export function PublisherCard({ publisher }: { publisher: CoursePublisherView }) {
   const { t } = useTranslation();
+  const avatarSrc = readMediaResourceUrl(publisher.avatar) || '/assets/courses/avatars/learner.svg';
   return (
     <div className="bg-white dark:bg-[#0d1117] rounded-xl border border-slate-200 dark:border-white/10 p-4 shadow-sm flex flex-col gap-3 w-full">
       <div className="flex items-center gap-3">
         <div className="relative">
-          <img src={publisher.avatar} alt={publisher.name} className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10" />
+          <img src={avatarSrc} alt={publisher.name} className="w-12 h-12 rounded-full border border-slate-200 dark:border-white/10" />
           <div className="absolute -bottom-1 -right-1 bg-yellow-400 rounded-full p-0.5 border-2 border-white dark:border-[#0d1117]">
             <Star className="w-2.5 h-2.5 text-white fill-white" />
           </div>

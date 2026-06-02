@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:47975f8046db9abd4d13479c82370ad61ffe759bfaba0d771ebb5009eba7af66",

@@ -2,6 +2,12 @@ import type { JsonValue } from './json-value';
 
 /** Messaging sender identity record schema exposed by Claw Router. */
 export interface MessagingSenderIdentityRecord {
+  /** Approval payload field on messaging sender identity record. */
+  approval_payload?: Record<string, JsonValue>;
+  /** Approval status field on messaging sender identity record. */
+  approval_status?: string;
+  /** Channel field on messaging sender identity record. */
+  channel?: string;
   /** Country code field on messaging sender identity record. */
   country_code?: string;
   /** Created at field on messaging sender identity record. */
@@ -22,10 +28,16 @@ export interface MessagingSenderIdentityRecord {
   from_name?: string;
   /** Id field on messaging sender identity record. */
   id?: string;
+  /** Identity code field on messaging sender identity record. */
+  identity_code?: string;
   /** Metadata field on messaging sender identity record. */
   metadata?: Record<string, JsonValue>;
   /** Organization id field on messaging sender identity record. */
   organization_id?: string;
+  /** Provider account id field on messaging sender identity record. */
+  provider_account_id?: string;
+  /** Provider code field on messaging sender identity record. */
+  provider_code?: string;
   /** Rejection reason field on messaging sender identity record. */
   rejection_reason?: string;
   /** Reply to field on messaging sender identity record. */

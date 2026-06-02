@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/percy@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-percy-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-percy-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:afb46a941d908bb37bd4ec232ed1dc30dc98a00c02dadbd3e32c5415ae4ef7f2",

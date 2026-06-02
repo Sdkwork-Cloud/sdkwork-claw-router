@@ -252,8 +252,8 @@ struct AppRuntimeCreateArtifactRequest {
     mime_type: Option<String>,
     content_text: Option<String>,
     content_json: Option<Value>,
+    resource: Option<Value>,
     storage_key: Option<String>,
-    storage_url: Option<String>,
     sha256: Option<String>,
     size_bytes: Option<i64>,
     metadata: Option<Value>,
@@ -3379,14 +3379,16 @@ async fn runtime_gateway_binary_asset_sse_response(
                 .and_then(normalize_generation_asset_modality)
         })
         .unwrap_or_else(|| "audio".to_owned());
-    let asset = serde_json::json!({
-        "url": format!(
+    let asset = generation_asset_event_value(
+        format!(
             "data:{mime_type};base64,{}",
             general_purpose::STANDARD.encode(bytes.as_ref())
         ),
-        "mimeType": mime_type,
-        "modality": modality
-    });
+        modality,
+        Some(mime_type.clone()),
+        None,
+        None,
+    );
     let event_uuid = entity_uuid_generator.generate_entity_uuid()?;
     let item = store
         .create_event(CreateAppRuntimeEventCommand {
@@ -3610,8 +3612,8 @@ where
         return Err(DomainError::new("runtime route API key is disabled"));
     }
     let group = catalog
-        .find_api_key_group(api_key.group_id)
-        .ok_or_else(|| DomainError::new("runtime route API key group is not available"))?;
+        .find_channel_group(api_key.group_id)
+        .ok_or_else(|| DomainError::new("runtime route channel group is not available"))?;
     let context = AuthenticatedApiKeyContext {
         api_key_id: api_key.id,
         tenant_id: api_key.tenant_id,
@@ -3906,13 +3908,13 @@ where
         );
         return Err(failure);
     }
-    let Some(group) = catalog.find_api_key_group(api_key.group_id) else {
+    let Some(group) = catalog.find_channel_group(api_key.group_id) else {
         let failure = runtime_gateway_route_probe_failure(
             api_key,
             None,
             Some(capability_label),
             format!(
-                "runtime route API key group is not available: {}",
+                "runtime route channel group is not available: {}",
                 api_key.group_id
             ),
             false,
@@ -4054,7 +4056,7 @@ fn runtime_api_key_cannot_route_error(
         })
         .unwrap_or_default();
     DomainError::new(format!(
-        "runtime route API key cannot route requested model: {requested_model_key};{selected_key}{probe_failure} verify the API key group is bound to an active channel account in the channel route and has a valid pricing plan"
+        "runtime route API key cannot route requested model: {requested_model_key};{selected_key}{probe_failure} verify the channel group is bound to an active channel account in the channel route and has a valid pricing plan"
     ))
 }
 
@@ -4667,13 +4669,8 @@ fn generation_asset_from_object(
     .and_then(|value| normalize_generation_asset_modality(&value))
     .or_else(|| modality_from_mime_type(mime_type.as_deref(), target_type))
     .or_else(|| modality_from_url(&asset_url, target_type))?;
-    let mut asset = Map::new();
-    asset.insert("url".to_owned(), Value::String(asset_url));
-    asset.insert("modality".to_owned(), Value::String(modality));
-    if let Some(mime_type) = mime_type {
-        asset.insert("mimeType".to_owned(), Value::String(mime_type));
-    }
-    if let Some(thumb) = object_string(
+    let duration_seconds = generation_asset_duration_seconds(object);
+    let thumbnail = object_string(
         object,
         &[
             "thumb",
@@ -4683,15 +4680,76 @@ fn generation_asset_from_object(
             "coverUrl",
             "previewUrl",
         ],
-    ) {
-        asset.insert("thumb".to_owned(), Value::String(thumb));
+    );
+    Some(generation_asset_event_value(
+        asset_url,
+        modality,
+        mime_type,
+        duration_seconds,
+        thumbnail,
+    ))
+}
+
+fn generation_asset_event_value(
+    locator: String,
+    modality: String,
+    mime_type: Option<String>,
+    duration_seconds: Option<f64>,
+    thumbnail_locator: Option<String>,
+) -> Value {
+    let mut resource = generation_media_resource(locator, generation_media_kind(&modality));
+    if let Some(mime_type) = mime_type {
+        resource.insert("mimeType".to_owned(), Value::String(mime_type));
     }
-    if let Some(duration_seconds) = generation_asset_duration_seconds(object) {
+    if let Some(duration_seconds) = duration_seconds {
         if let Some(number) = serde_json::Number::from_f64(duration_seconds) {
-            asset.insert("durationSeconds".to_owned(), Value::Number(number));
+            resource.insert("durationSeconds".to_owned(), Value::Number(number));
         }
     }
-    Some(Value::Object(asset))
+    if let Some(thumbnail_locator) = thumbnail_locator {
+        let thumbnail = Value::Object(generation_media_resource(thumbnail_locator, "image"));
+        resource.insert("poster".to_owned(), thumbnail.clone());
+        resource.insert("thumbnails".to_owned(), Value::Array(vec![thumbnail]));
+    }
+
+    let mut asset = Map::new();
+    asset.insert("asset".to_owned(), Value::Object(resource));
+    asset.insert("modality".to_owned(), Value::String(modality));
+    Value::Object(asset)
+}
+
+fn generation_media_resource(locator: String, kind: &str) -> Map<String, Value> {
+    let source = if locator.starts_with("data:") {
+        "data_url"
+    } else {
+        "external_url"
+    };
+    let mut resource = Map::new();
+    resource.insert("kind".to_owned(), Value::String(kind.to_owned()));
+    resource.insert("source".to_owned(), Value::String(source.to_owned()));
+    resource.insert("url".to_owned(), Value::String(locator.clone()));
+    resource.insert("publicUrl".to_owned(), Value::String(locator));
+    resource
+}
+
+fn generation_media_kind(modality: &str) -> &'static str {
+    match modality {
+        "image" => "image",
+        "video" => "video",
+        "music" | "sfx" | "audio" => "audio",
+        _ => "other",
+    }
+}
+
+fn generation_asset_locator(value: &Value) -> Option<&str> {
+    value
+        .get("asset")
+        .and_then(|asset| asset.get("url"))
+        .and_then(Value::as_str)
+}
+
+fn generation_asset_modality(value: &Value) -> Option<&str> {
+    value.get("modality").and_then(Value::as_str)
 }
 
 fn collect_inline_data_assets(
@@ -4714,22 +4772,24 @@ fn collect_inline_data_assets(
         .unwrap_or_else(|| "image/png".to_owned());
     let modality = modality_from_mime_type(Some(&mime_type), target_type)
         .unwrap_or_else(|| "image".to_owned());
-    let asset = serde_json::json!({
-        "url": format!("data:{mime_type};base64,{data}"),
-        "mimeType": mime_type,
-        "modality": modality
-    });
+    let asset = generation_asset_event_value(
+        format!("data:{mime_type};base64,{data}"),
+        modality,
+        Some(mime_type),
+        None,
+        None,
+    );
     if !generation_asset_exists(assets, &asset) {
         assets.push(asset);
     }
 }
 
 fn generation_asset_exists(assets: &[Value], candidate: &Value) -> bool {
-    let candidate_url = candidate.get("url").and_then(Value::as_str);
-    let candidate_modality = candidate.get("modality").and_then(Value::as_str);
+    let candidate_url = generation_asset_locator(candidate);
+    let candidate_modality = generation_asset_modality(candidate);
     assets.iter().any(|asset| {
-        asset.get("url").and_then(Value::as_str) == candidate_url
-            && asset.get("modality").and_then(Value::as_str) == candidate_modality
+        generation_asset_locator(asset) == candidate_url
+            && generation_asset_modality(asset) == candidate_modality
     })
 }
 
@@ -5432,15 +5492,21 @@ fn build_create_artifact_command(
     request: AppRuntimeCreateArtifactRequest,
 ) -> Result<CreateAppRuntimeArtifactCommand, AppRuntimeBuildError> {
     validate_non_negative(request.size_bytes, "sizeBytes")?;
+    let artifact_type = normalize_required_text(
+        request.artifact_type.as_deref(),
+        "artifactType",
+        MAX_KIND_LEN,
+    )?;
+    let storage_key =
+        normalize_optional_text(request.storage_key.as_deref(), "storageKey", MAX_PATH_LEN)?;
+    let resource = normalize_runtime_media_resource(request.resource, "resource")?;
+    let resource =
+        finalize_runtime_artifact_resource(resource, storage_key.as_deref(), &artifact_type);
     Ok(CreateAppRuntimeArtifactCommand {
         subject,
         invocation_id: normalize_id(&invocation_id, "invocationId")?,
         artifact_uuid: generate_entity_uuid(state)?,
-        artifact_type: normalize_required_text(
-            request.artifact_type.as_deref(),
-            "artifactType",
-            MAX_KIND_LEN,
-        )?,
+        artifact_type,
         name: normalize_optional_text(request.name.as_deref(), "name", MAX_NAME_LEN)?,
         mime_type: normalize_optional_text(request.mime_type.as_deref(), "mimeType", MAX_KIND_LEN)?,
         content_text: normalize_optional_text(
@@ -5449,16 +5515,8 @@ fn build_create_artifact_command(
             MAX_TEXT_LEN,
         )?,
         content_json: normalize_object(request.content_json, "contentJson")?,
-        storage_key: normalize_optional_text(
-            request.storage_key.as_deref(),
-            "storageKey",
-            MAX_PATH_LEN,
-        )?,
-        storage_url: normalize_optional_text(
-            request.storage_url.as_deref(),
-            "storageUrl",
-            MAX_PATH_LEN,
-        )?,
+        storage_key,
+        resource,
         sha256: normalize_optional_text(request.sha256.as_deref(), "sha256", MAX_KIND_LEN)?,
         size_bytes: request.size_bytes,
         metadata: normalize_metadata(request.metadata)?,
@@ -5604,6 +5662,99 @@ fn normalize_object(value: Option<Value>, field: &str) -> Result<Value, String> 
 
 fn normalize_metadata(value: Option<Value>) -> Result<Value, String> {
     normalize_object(value, "metadata")
+}
+
+fn normalize_runtime_media_resource(
+    value: Option<Value>,
+    field: &str,
+) -> Result<Option<Value>, String> {
+    let Some(value) = value else {
+        return Ok(None);
+    };
+    if value.is_null() {
+        return Ok(None);
+    }
+    let mut object = value
+        .as_object()
+        .cloned()
+        .ok_or_else(|| format!("{field} must be a MediaResource object"))?;
+    let kind = normalize_required_text(
+        object.get("kind").and_then(Value::as_str),
+        &format!("{field}.kind"),
+        MAX_KIND_LEN,
+    )?;
+    let source = normalize_required_text(
+        object.get("source").and_then(Value::as_str),
+        &format!("{field}.source"),
+        MAX_KIND_LEN,
+    )?;
+    object.insert("kind".to_owned(), Value::String(kind));
+    object.insert("source".to_owned(), Value::String(source));
+
+    let mut has_locator = false;
+    for key in ["id", "publicUrl", "url", "uri", "objectKey", "objectBlobId"] {
+        if let Some(value) = object.get_mut(key) {
+            let Some(text) = value.as_str() else {
+                return Err(format!("{field}.{key} must be a string"));
+            };
+            let normalized =
+                normalize_optional_text(Some(text), &format!("{field}.{key}"), MAX_PATH_LEN)?;
+            if let Some(normalized) = normalized {
+                has_locator = true;
+                *value = Value::String(normalized);
+            } else {
+                *value = Value::String(String::new());
+            }
+        }
+    }
+    if !has_locator {
+        return Err(format!("{field} must include a media resource locator"));
+    }
+
+    Ok(Some(Value::Object(object)))
+}
+
+fn finalize_runtime_artifact_resource(
+    resource: Option<Value>,
+    storage_key: Option<&str>,
+    artifact_type: &str,
+) -> Option<Value> {
+    if resource.is_some() {
+        return resource;
+    }
+    let storage_key = storage_key
+        .map(str::trim)
+        .filter(|value| !value.is_empty())?;
+    Some(serde_json::json!({
+        "kind": runtime_artifact_media_kind(artifact_type),
+        "source": "object_storage",
+        "objectKey": storage_key,
+    }))
+}
+
+fn runtime_artifact_media_kind(artifact_type: &str) -> &'static str {
+    let normalized = artifact_type.trim().to_ascii_lowercase();
+    if normalized.contains("image") {
+        "image"
+    } else if normalized.contains("video") {
+        "video"
+    } else if normalized.contains("audio")
+        || normalized.contains("voice")
+        || normalized.contains("music")
+    {
+        "audio"
+    } else if normalized.contains("archive") || normalized.contains("zip") {
+        "archive"
+    } else if normalized.contains("model") {
+        "model"
+    } else if normalized.contains("document")
+        || normalized.contains("markdown")
+        || normalized.contains("text")
+    {
+        "document"
+    } else {
+        "other"
+    }
 }
 
 fn validate_invocation_status(status: &str) -> Result<(), String> {

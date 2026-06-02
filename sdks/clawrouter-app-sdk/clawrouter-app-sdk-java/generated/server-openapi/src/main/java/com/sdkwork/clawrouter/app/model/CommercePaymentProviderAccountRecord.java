@@ -7,6 +7,7 @@ public class CommercePaymentProviderAccountRecord {
     private String countryCode;
     private String createdAt;
     private String environment;
+    private String id;
     private String merchantId;
     private String organizationId;
     private String providerCode;
@@ -56,6 +57,14 @@ public class CommercePaymentProviderAccountRecord {
 
     public void setEnvironment(String environment) {
         this.environment = environment;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getMerchantId() {

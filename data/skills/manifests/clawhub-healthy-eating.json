@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/healthy-eating@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-healthy-eating-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-healthy-eating-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2788eee70928a93de6f57e523618cc649096ba88841adb7b3b0a2e13951e207e",

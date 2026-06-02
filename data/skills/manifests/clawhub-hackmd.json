@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hackmd@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hackmd-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hackmd-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f8a8a1d909ec9af14ed9b258a73e30016f5ed0bb784bec8f964c4bdc5bd0c913",

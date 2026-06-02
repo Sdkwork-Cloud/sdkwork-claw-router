@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aps-filesystem-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aps-filesystem-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aps-filesystem-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a6e9e9217dcd789be506cf8340386e95c1e293203465c4a4d178724f21bd741a",

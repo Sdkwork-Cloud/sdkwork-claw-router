@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flyio@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flyio-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flyio-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8713162150cb5ed03806180435e1471f84a4b34ed998bed5812acc3f003efca3",

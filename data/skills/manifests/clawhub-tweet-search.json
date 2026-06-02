@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tweet-search@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tweet-search-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tweet-search-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:713402e7f4a59feba9b7d731e9ce5491ed53bca1b202054c389f6ad91b7323d5",

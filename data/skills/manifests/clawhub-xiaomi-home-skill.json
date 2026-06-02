@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiaomi-home-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiaomi-home-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiaomi-home-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:717a9fa659476fb56ff11deefab3b8d869fb2c36ecb132fe73504717a4381599",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-merge-and-republish@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-merge-and-republish-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-merge-and-republish-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a7d2ad02e613b3984a8f7a07a913cd0a96f7192848ad6af0b16632fb042f0ce",

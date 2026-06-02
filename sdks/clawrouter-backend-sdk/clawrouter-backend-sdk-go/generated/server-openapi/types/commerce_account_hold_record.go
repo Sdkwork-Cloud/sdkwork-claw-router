@@ -7,6 +7,7 @@ type CommerceAccountHoldRecord struct {
 	AssetType string `json:"asset_type"`
 	CreatedAt string `json:"created_at"`
 	ExpiresAt string `json:"expires_at"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	OrganizationId string `json:"organization_id"`
 	OwnerUserId string `json:"owner_user_id"`

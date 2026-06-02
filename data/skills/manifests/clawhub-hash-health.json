@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hash-health@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-hash-health-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hash-health-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:ecada9658c6f276beb7f1fe97d07b4613c750bb48c1fad888fccc46b07673dea",

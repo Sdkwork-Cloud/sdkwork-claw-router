@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/burp-zap-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-burp-zap-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-burp-zap-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:deb86af1218a229812f829babb96f5494ec44ae5316df898fa82e8b8e782a34f",

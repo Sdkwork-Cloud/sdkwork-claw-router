@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coveralls@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-coveralls-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coveralls-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d24a890231d488c3ef868988b35944ad93ab6d989fa3d083857533612348c3d4",

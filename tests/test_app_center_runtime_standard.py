@@ -48,7 +48,8 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("getClawRouterAppSdkClient().platform.apps.store.retrieve", service_source)
         self.assertIn("getClawRouterAppSdkClient().platform.apps.store.categories.list", service_source)
         self.assertIn("normalizeAppApiRecord", service_source)
-        self.assertIn("filterAppsForCatalog", service_source)
+        self.assertIn("toAppCatalogQueryParams", service_source)
+        self.assertNotIn("filterAppsForCatalog(", service_source)
         self.assertIn(
             "sdkwork-claw-router-commons",
             package_manifest.get("dependencies", {}),
@@ -164,6 +165,66 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("case '0':", app_service)
         self.assertNotIn("status.toUpperCase()", app_service)
 
+    def test_public_app_store_release_artifacts_are_media_resources(self) -> None:
+        contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
+            encoding="utf-8"
+        )
+        openapi = (ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json").read_text(
+            encoding="utf-8"
+        )
+        sdk_release_type = (
+            ROOT
+            / "sdks"
+            / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
+            / "src"
+            / "types"
+            / "app-release-item.ts"
+        ).read_text(encoding="utf-8")
+        release_port = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "ports"
+            / "app_store_read_store.rs"
+        ).read_text(encoding="utf-8")
+        catalog_mapping = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "app_catalog_mapping.rs"
+        ).read_text(encoding="utf-8")
+        release_schema = contract[contract.index("app_release_item:"):contract.index("app_catalog_item:")]
+
+        self.assertIn("- artifact", release_schema)
+        self.assertIn("artifact:\n        $ref: '#/components/schemas/MediaResource'", release_schema)
+        self.assertNotIn("downloadUrl", release_schema)
+        self.assertIn('"artifact":', openapi)
+        self.assertIn("import type { MediaResource } from './media-resource';", sdk_release_type)
+        self.assertIn("artifact: MediaResource;", sdk_release_type)
+        self.assertNotIn("downloadUrl", sdk_release_type)
+
+        self.assertIn("pub artifact: Value,", release_port)
+        self.assertNotIn("pub download_url: String,", release_port)
+        self.assertIn("artifact: catalog_artifact_media_resource(artifact),", catalog_mapping)
+        self.assertIn("let artifact = json_release_artifact(object)?;", catalog_mapping)
+        release_artifact_reader_start = catalog_mapping.index("fn json_release_artifact")
+        release_artifact_reader = catalog_mapping[
+            release_artifact_reader_start:
+            catalog_mapping.index("fn app_category(", release_artifact_reader_start)
+        ]
+        self.assertIn('get("artifact")', release_artifact_reader)
+        self.assertIn('get("resource")', release_artifact_reader)
+        self.assertNotIn('object_string(object, "downloadUrl")', release_artifact_reader)
+        self.assertNotIn('object_string(object, "download_url")', release_artifact_reader)
+        self.assertNotIn('object_string(object, "url")', release_artifact_reader)
+        self.assertNotIn("value_to_media_resource", release_artifact_reader)
+        self.assertNotIn("media_resource_from_url", release_artifact_reader)
+
     def test_admin_app_management_contract_and_backend_sdk_boundary_are_complete(self) -> None:
         contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
             encoding="utf-8"
@@ -237,14 +298,14 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("{ name: 'market_status', value: params?.marketStatus", backend_app_api)
         self.assertIn("{ name: 'category_id', value: params?.categoryId", backend_app_api)
         self.assertNotIn("AdminAppListRequest", backend_app_api)
-        self.assertIn("async create(body: AdminAppCreateRequest, params?: PlatformAppsCreateParams): Promise<AppsCreateResult>", backend_app_api)
-        self.assertIn("async retrieve(appId: string, params?: PlatformAppsRetrieveParams): Promise<AppsRetrieveResult>", backend_app_api)
-        self.assertIn("async update(appId: string, body: AdminAppUpdateRequest, params?: PlatformAppsUpdateParams): Promise<AppsUpdateResult>", backend_app_api)
-        self.assertIn("async delete(appId: string, params?: PlatformAppsDeleteParams): Promise<AppsDeleteResult>", backend_app_api)
-        self.assertIn("async enable(appId: string, params?: PlatformAppsEnableParams): Promise<AppsEnableResult>", backend_app_api)
-        self.assertIn("async disable(appId: string, params?: PlatformAppsDisableParams): Promise<AppsDisableResult>", backend_app_api)
-        self.assertIn("async publish(appId: string, params?: PlatformAppsPublishParams): Promise<AppsPublishResult>", backend_app_api)
-        self.assertIn("async unpublish(appId: string, params?: PlatformAppsUnpublishParams): Promise<AppsUnpublishResult>", backend_app_api)
+        self.assertIn("async create(body: AdminAppCreateRequest): Promise<AppsCreateResult>", backend_app_api)
+        self.assertIn("async retrieve(appId: string): Promise<AppsRetrieveResult>", backend_app_api)
+        self.assertIn("async update(appId: string, body: AdminAppUpdateRequest): Promise<AppsUpdateResult>", backend_app_api)
+        self.assertIn("async delete(appId: string): Promise<AppsDeleteResult>", backend_app_api)
+        self.assertIn("async enable(appId: string): Promise<AppsEnableResult>", backend_app_api)
+        self.assertIn("async disable(appId: string): Promise<AppsDisableResult>", backend_app_api)
+        self.assertIn("async publish(appId: string): Promise<AppsPublishResult>", backend_app_api)
+        self.assertIn("async unpublish(appId: string): Promise<AppsUnpublishResult>", backend_app_api)
 
         backend_create_request = (
             ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "admin-app-create-request.ts"
@@ -313,6 +374,97 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             self.assertIn(expected, contract)
             self.assertIn(expected, openapi)
 
+    def test_admin_app_artifact_fields_are_media_resource_objects(self) -> None:
+        contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
+            encoding="utf-8"
+        )
+        openapi = (ROOT / "generated" / "openapi" / "clawrouter-backend-openapi.json").read_text(
+            encoding="utf-8"
+        )
+        backend_create_request = (
+            ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "src"
+            / "types"
+            / "admin-app-create-request.ts"
+        ).read_text(encoding="utf-8")
+        backend_update_request = (
+            ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "src"
+            / "types"
+            / "admin-app-update-request.ts"
+        ).read_text(encoding="utf-8")
+        backend_item_response = (
+            ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "src"
+            / "types"
+            / "admin-app-item-response.ts"
+        ).read_text(encoding="utf-8")
+        admin_service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-app-center"
+            / "src"
+            / "services"
+            / "adminAppService.ts"
+        ).read_text(encoding="utf-8")
+        app_admin_source = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-app-center"
+            / "src"
+            / "pages"
+            / "AppAdmin.tsx"
+        ).read_text(encoding="utf-8")
+        api_admin_app_source = (
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_app.rs"
+        ).read_text(encoding="utf-8")
+        admin_app_port = (
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_app_store.rs"
+        ).read_text(encoding="utf-8")
+
+        admin_item_schema = contract[contract.index("admin_app_item:"):contract.index("admin_app_category_item:")]
+        self.assertIn("artifact:\n        $ref: '#/components/schemas/MediaResource'", admin_item_schema)
+        self.assertNotIn("downloadUrl", admin_item_schema)
+        self.assertIn('"artifact":', openapi)
+
+        for sdk_type in [backend_create_request, backend_update_request, backend_item_response]:
+            self.assertIn("import type { MediaResource }", sdk_type)
+            self.assertIn("artifact", sdk_type)
+            self.assertNotIn("downloadUrl", sdk_type)
+
+        self.assertIn("artifact?: ClawRouterMediaResource | null;", admin_service)
+        self.assertIn("artifact: readMediaResource(item.artifact)", admin_service)
+        self.assertIn("input.artifact", admin_service)
+        self.assertNotIn("downloadUrl: string", admin_service)
+        self.assertNotIn("downloadUrl?: string", admin_service)
+        self.assertNotIn("readNullableString(item, 'downloadUrl')", admin_service)
+        self.assertNotIn("normalizeNullableUrl(input.downloadUrl", admin_service)
+
+        self.assertIn("readMediaResourceUrl(app.artifact)", app_admin_source)
+        self.assertIn('name="artifact"', app_admin_source)
+        self.assertNotIn("app.downloadUrl", app_admin_source)
+        self.assertNotIn('name="downloadUrl"', app_admin_source)
+
+        self.assertIn("artifact: Option<Value>", api_admin_app_source)
+        self.assertIn("artifact: item.artifact", api_admin_app_source)
+        self.assertNotIn("download_url: Option<String>", api_admin_app_source)
+        self.assertIn("pub artifact: Option<Value>", admin_app_port)
+        self.assertNotIn("pub download_url: Option<String>", admin_app_port)
+        self.assertNotIn("pub download_url: Option<Option<String>>", admin_app_port)
+
     def test_public_app_store_contract_documents_stable_identity_and_public_projection(self) -> None:
         contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
             encoding="utf-8"
@@ -324,11 +476,16 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         expected_contract_phrases = [
             "Stable application identity from plus_app.config.standard.appKey when present; falls back to plus_app.id only when appKey is absent.",
             "Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED.",
-            "Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections; tenant isolation is always enforced.",
             "Path parameter appId accepts either the stable appKey or numeric plus_app.id and applies the same ACTIVE/PUBLISHED and public organization_id = 0 visibility rules as getApps.",
         ]
 
         for expected in expected_contract_phrases:
+            self.assertIn(expected, contract)
+            self.assertIn(expected, openapi)
+        for expected in [
+            "Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections;",
+            "tenant isolation is always enforced.",
+        ]:
             self.assertIn(expected, contract)
             self.assertIn(expected, openapi)
 
@@ -353,6 +510,17 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             / "services"
             / "adminAppService.ts"
         ).read_text(encoding="utf-8")
+        i18n_source = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "resources"
+            / "admin"
+            / "app-center.ts"
+        ).read_text(encoding="utf-8")
 
         for field_name in [
             "appKey",
@@ -369,18 +537,19 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
                 self.assertIn(f"name=\"{field_name}\"", app_admin_source)
                 self.assertIn(f"'{field_name}'", admin_service)
 
-        for label in [
-            'label="App Key"',
-            'label="Icon"',
-            'label="Resource List"',
-            'label="Config"',
-            'label="Platforms"',
-            'label="Install Platforms"',
-            'label="Install Skill"',
-            'label="Install Config"',
-            'label="Release Notes"',
+        for label_key, english_label in [
+            ("admin.app.fields.appKey", "App Key"),
+            ("admin.app.fields.icon", "Icon"),
+            ("admin.app.fields.resourceList", "Resource List"),
+            ("admin.app.fields.config", "Config"),
+            ("admin.app.fields.platforms", "Platforms"),
+            ("admin.app.fields.installPlatforms", "Install Platforms"),
+            ("admin.app.fields.installSkill", "Install Skill"),
+            ("admin.app.fields.installConfig", "Install Config"),
+            ("admin.app.fields.releaseNotes", "Release Notes"),
         ]:
-            self.assertIn(label, app_admin_source)
+            self.assertIn(f"label={{t('{label_key}')}}", app_admin_source)
+            self.assertIn(f'"{label_key}": "{english_label}"', i18n_source)
 
     def test_admin_app_management_page_uses_backend_query_filters(self) -> None:
         app_admin_source = (
@@ -404,7 +573,7 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("pageSize,", app_admin_source)
         self.assertIn("useEffect(() =>", app_admin_source)
         self.assertIn("void loadApps();", app_admin_source)
-        self.assertIn("}, [loadApps]);", app_admin_source)
+        self.assertIn("}, [activeTab, loadApps]);", app_admin_source)
 
         forbidden_local_filter_tokens = [
             "return apps.filter((app)",
@@ -435,7 +604,16 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
     def test_admin_app_management_has_stable_route_navigation_and_package_export(self) -> None:
         portal = ROOT / "apps" / "sdkwork-claw-router-portal"
         app_source = (portal / "src" / "App.tsx").read_text(encoding="utf-8")
-        admin_layout_source = (portal / "src" / "AdminLayout.tsx").read_text(encoding="utf-8")
+        admin_registry_source = (portal / "src" / "adminModuleRegistry.ts").read_text(encoding="utf-8")
+        core_navigation_source = (
+            portal
+            / "packages"
+            / "sdkwork-claw-router-i18n"
+            / "src"
+            / "resources"
+            / "admin"
+            / "core-navigation.ts"
+        ).read_text(encoding="utf-8")
         app_center_index = (
             portal
             / "packages"
@@ -449,9 +627,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             app_source,
         )
         self.assertIn('<Route path="app" element={<AppAdmin />} />', app_source)
-        self.assertIn("{ path: '/admin/app'", admin_layout_source)
-        self.assertIn("label: 'App Store'", admin_layout_source)
-        self.assertIn("Package className=\"w-4 h-4\"", admin_layout_source)
+        self.assertIn("defaultPath: '/admin/app'", admin_registry_source)
+        self.assertIn("itemBlock({ path: '/admin/app', labelKey: 'admin.menu.appStore', icon: Package })", admin_registry_source)
+        self.assertIn('"admin.menu.appStore": "App Store"', core_navigation_source)
         self.assertIn("export * from './pages/AppAdmin';", app_center_index)
 
     def test_app_center_sdk_routes_have_retryable_error_states(self) -> None:
@@ -484,8 +662,12 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
                 self.assertIn("loadError", source)
                 self.assertIn("catch", source)
                 self.assertIn("onRetry", source)
-                self.assertIn("Failed to load", source)
                 self.assertNotIn("console.error", source)
+
+        self.assertIn("apps.errors.loadFallback", list_source)
+        self.assertIn("apps.errors.categoriesLoadFallback", list_source)
+        self.assertIn("Failed to load app details.", detail_source)
+        self.assertIn("Failed to load featured apps.", preview_source)
 
         for source in [list_source, detail_source]:
             self.assertIn("finally", source)
@@ -610,6 +792,9 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         self.assertIn("APP_SDK_FIXTURE_MODE", smoke_source)
         self.assertIn("APP_SDK_FAILURE_FIXTURE_MODE", smoke_source)
         self.assertIn("BROWSER_SMOKE_APP_RECORD", smoke_source)
+        self.assertIn('artifact: mediaResource("https://apps.example.test/browser-smoke-app", "archive")', smoke_source)
+        self.assertNotIn('downloadUrl: "https://apps.example.test/browser-smoke-app"', smoke_source)
+        self.assertNotIn('artifactUrl: "https://apps.example.test/browser-smoke-app"', smoke_source)
         self.assertIn("/app/v3/api/platform/apps/store", smoke_source)
         self.assertIn("Browser Smoke App", smoke_source)
         self.assertIn("Browser smoke apps unavailable", smoke_source)
@@ -683,18 +868,64 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
+        app_sdk_plus_app_record = (
+            ROOT
+            / "sdks"
+            / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
+            / "src"
+            / "types"
+            / "plus-app-record.ts"
+        ).read_text(encoding="utf-8")
+        backend_sdk_plus_app_record = (
+            ROOT
+            / "sdks"
+            / "clawrouter-backend-sdk"
+            / "clawrouter-backend-sdk-typescript"
+            / "src"
+            / "types"
+            / "plus-app-record.ts"
+        ).read_text(encoding="utf-8")
 
         self.assertIn("getClawRouterAppSdkClient().platform.apps.store.retrieve", app_service)
-        self.assertIn("downloadUrl: readString(item, 'downloadUrl')", app_runtime)
-        self.assertIn("plus_app: [name, description, icon_url, resource_list, platforms, install_config, release_notes, download_url]", contract)
-        self.assertIn("studio_catalog_artifact: [target_type, target_id, version, artifact_size_bytes, artifact_url, published_at]", contract)
+        self.assertIn("artifact?: ClawRouterMediaResource", app_runtime)
+        self.assertIn("readMediaResource(item.artifact)", app_runtime)
+        self.assertIn("readMediaResource(item.artifactResourceSnapshot)", app_runtime)
+        self.assertIn("readMediaResourceUrl(release?.artifact)", app_runtime)
+        self.assertNotIn("downloadUrl: readString(item, 'downloadUrl')", app_runtime)
+        self.assertNotIn("downloadUrl: string", app_runtime)
+        for sdk_record in [app_sdk_plus_app_record, backend_sdk_plus_app_record]:
+            self.assertIn("import type { MediaResource }", sdk_record)
+            self.assertIn("artifact?: MediaResource;", sdk_record)
+            self.assertNotIn("download_url", sdk_record)
+        for token in (
+            "plus_app:",
+            "- icon_media_resource_id",
+            "- icon_object_blob_id",
+            "- icon_resource_snapshot",
+            "- resource_list",
+            "- platforms",
+            "- install_config",
+            "- release_notes",
+            "studio_catalog_artifact:",
+            "- target_type",
+            "- target_id",
+            "- version",
+            "- artifact_size_bytes",
+            "- artifact_media_resource_id",
+            "- artifact_object_blob_id",
+            "- artifact_resource_snapshot",
+            "- published_at",
+        ):
+            self.assertIn(token, contract)
+        self.assertNotIn("- download_url", contract)
 
         self.assertIn("isReleaseDownloadable(", app_details)
-        self.assertIn("getReleaseDownloadUrl(", app_details)
-        self.assertIn("href={downloadUrl}", app_details)
+        self.assertIn("getReleaseDownloadHref(", app_details)
+        self.assertIn("href={downloadHref}", app_details)
         self.assertIn("target=\"_blank\"", app_details)
         self.assertIn("rel=\"noreferrer\"", app_details)
-        self.assertIn("Download unavailable", app_details)
+        self.assertIn("common.actions.downloadUnavailable", app_details)
         self.assertIn("setSelectedRelease(release)", app_details)
 
         for forbidden_fake_download in [
@@ -708,6 +939,78 @@ class AppCenterRuntimeStandardTest(unittest.TestCase):
             "handleDownload(",
         ]:
             self.assertNotIn(forbidden_fake_download, app_details)
+
+    def test_plus_app_registry_is_not_bound_to_legacy_java_media_url_contract(self) -> None:
+        registry = (ROOT / "docs" / "schema-registry" / "tables" / "003-legacy.yaml").read_text(
+            encoding="utf-8"
+        )
+        plus_app_section = registry[
+            registry.index("- table: plus_app") : registry.index("- table: plus_category")
+        ]
+        self.assertIn("profile: router_owned_standard", plus_app_section)
+        self.assertIn("write_owner: sdkwork-claw-product", plus_app_section)
+        self.assertIn("compatibility_rule: canonical_media_resource_contract", plus_app_section)
+        self.assertNotIn("java_contract:", plus_app_section)
+        self.assertNotIn("keep_physical_structure_identical", plus_app_section)
+
+        legacy_audit = json.loads(
+            (ROOT / "generated" / "schema" / "legacy" / "java-legacy-contract-audit.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        audited_tables = [item["table"] for item in legacy_audit.get("tables", [])]
+        self.assertNotIn(
+            "plus_app",
+            audited_tables,
+            "plus_app is router-owned now; Java legacy audit must not reintroduce icon_url/download_url.",
+        )
+
+    def test_official_sdks_do_not_reintroduce_legacy_plus_app_media_url_fields(self) -> None:
+        sdk_root = ROOT / "sdks"
+        text_suffixes = {
+            ".cs",
+            ".dart",
+            ".go",
+            ".java",
+            ".json",
+            ".kt",
+            ".md",
+            ".py",
+            ".rs",
+            ".swift",
+            ".ts",
+            ".yaml",
+            ".yml",
+        }
+        sdk_families = [
+            "clawrouter-app-sdk",
+            "clawrouter-backend-sdk",
+            "clawrouter-open-sdk",
+        ]
+        forbidden_tokens = ("download_url", "downloadUrl", "icon_url", "iconUrl")
+        offenders: list[str] = []
+
+        scan_roots: list[Path] = []
+        for family in sdk_families:
+            family_root = sdk_root / family
+            scan_roots.append(family_root / f"{family}-typescript" / "src")
+            scan_roots.extend(family_root.glob(f"{family}-*/generated/server-openapi"))
+
+        for root in scan_roots:
+            if not root.exists():
+                continue
+            for path in root.rglob("*"):
+                if not path.is_file() or path.suffix not in text_suffixes:
+                    continue
+                source = path.read_text(encoding="utf-8", errors="ignore")
+                if any(token in source for token in forbidden_tokens):
+                    offenders.append(path.relative_to(ROOT).as_posix())
+
+        self.assertEqual(
+            [],
+            offenders,
+            "official generated SDK outputs must not expose legacy PlusApp media URL fields.",
+        )
 
 
 if __name__ == "__main__":

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-video-free@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-video-free-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-video-free-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8860ccf9850f1aa2dbfda38440e56208d82dda6d14a404c8d5b0d2cd4465de13",

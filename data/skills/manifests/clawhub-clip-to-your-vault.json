@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clip-to-your-vault@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clip-to-your-vault-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clip-to-your-vault-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c73cba0f733d9e0738eab0c1f5a09e03884811d6c0cf02675a48f59a80758b61",

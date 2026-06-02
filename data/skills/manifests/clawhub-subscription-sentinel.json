@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subscription-sentinel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subscription-sentinel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subscription-sentinel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31376208a16418cf14d8f19b041974470731308178f91645266d603f92f13fcf",

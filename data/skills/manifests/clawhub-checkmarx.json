@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/checkmarx@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-checkmarx-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-checkmarx-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:19145031a610e2d0777a8c88804fd782e12b54a0d108f79613b17edab75d5bf5",

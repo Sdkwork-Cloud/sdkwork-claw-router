@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/matomo@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-matomo-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-matomo-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b441e07b725c72b49efb31356ea15fdb2ee95720a9b9f27050b513e60ba1935b",

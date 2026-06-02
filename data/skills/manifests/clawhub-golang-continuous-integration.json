@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golang-continuous-integration@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-golang-continuous-integration-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golang-continuous-integration-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f8c70167102381def607d33c8c77a41add6e50923a164a5dc8c260dd1dc00551",

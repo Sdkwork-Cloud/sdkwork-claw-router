@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opc-essentials@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-opc-essentials-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opc-essentials-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b22b0bdede404db369817b1b6a4c7422ab18d3832dd9da4e25d9dd7a48e263bb",

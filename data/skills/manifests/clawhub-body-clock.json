@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/body-clock@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-body-clock-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-body-clock-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1fdbf519a4b0b53652c4003fcda5c1a822584099ead24bb37d3b84e54fe42332",

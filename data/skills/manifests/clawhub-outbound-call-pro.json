@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/outbound-call-pro@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-outbound-call-pro-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-outbound-call-pro-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1d662754038402096244199dc974708dab22355e4c00c53affe7acec20dfd4fa",

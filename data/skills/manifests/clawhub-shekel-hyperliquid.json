@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shekel-hyperliquid@1.14.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shekel-hyperliquid-1.14.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shekel-hyperliquid-1.14.0.json"
+      },
       "version": "1.14.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2ffce180d3eb80e1fd9b44cb477a3ee70fed98fef7b08011d32079df3134eb0",

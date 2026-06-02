@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cold-start-path@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cold-start-path-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cold-start-path-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:46b36f1a9e416f8da7e089ff1d83bee965ece127d3d50c1ec5edf30612d37909",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pandoc@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pandoc-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pandoc-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:99ab38180d7c245255a74a553994519e97a64cd97bbf284bddc4ef0d4f1cfca2",

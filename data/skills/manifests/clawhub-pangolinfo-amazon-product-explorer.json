@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pangolinfo-amazon-product-explorer@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pangolinfo-amazon-product-explorer-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pangolinfo-amazon-product-explorer-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52d21633e412ee57e9d57eb688d0782829bd420a53f38e8ca6a84026a39acc01",

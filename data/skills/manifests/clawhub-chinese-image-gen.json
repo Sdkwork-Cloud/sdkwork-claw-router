@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-image-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-image-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-image-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cd868c9262e5381c9d014e1f33dd22dc0e35574b0ad5438890ac69591daabed5",

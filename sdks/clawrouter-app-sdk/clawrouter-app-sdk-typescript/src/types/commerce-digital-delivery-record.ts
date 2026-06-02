@@ -12,6 +12,8 @@ export interface CommerceDigitalDeliveryRecord {
   delivery_type: string;
   /** Fulfillment id field on commerce digital delivery record. */
   fulfillment_id: string;
+  /** Id field on commerce digital delivery record. */
+  id?: string;
   /** Order item id field on commerce digital delivery record. */
   order_item_id: string;
   /** Organization id field on commerce digital delivery record. */

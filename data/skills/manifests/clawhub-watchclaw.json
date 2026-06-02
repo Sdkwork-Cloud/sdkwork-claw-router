@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/watchclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-watchclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-watchclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4432e58e3239630ffae95dc28544951f8df7f284c08eb50a6c48c530e16cbb36",

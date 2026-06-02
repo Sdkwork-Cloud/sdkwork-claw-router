@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jitsu@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-jitsu-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jitsu-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:eced6bb72258ae52e3e8c728e8f6b5cb8538945338d1ddcfcf9e1b800b8c7180",

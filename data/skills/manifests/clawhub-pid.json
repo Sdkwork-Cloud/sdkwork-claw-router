@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pid@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pid-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pid-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:44673da72df7b0ed67074705fe31781f23918bae78a20c6a6f77822a351e291d",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/newsnow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-newsnow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-newsnow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:20eb8e07684a97b13a6727b4c78b9cc91f5b3ddd255718168fb93d111eaae348",

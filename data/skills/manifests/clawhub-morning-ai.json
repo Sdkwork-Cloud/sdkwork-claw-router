@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/morning-ai@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-morning-ai-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-morning-ai-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:8fb1c2ef53e318794737ba22aa28367c3c746bd137d213a6c9b54d334698f113",

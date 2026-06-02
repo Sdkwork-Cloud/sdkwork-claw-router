@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/luke-pdf-read-summarize@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-luke-pdf-read-summarize-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-luke-pdf-read-summarize-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:75c60e4fb54e8db9d36b0656a29ec1ae5f1e0437b39aa00e235046acbc312dac",

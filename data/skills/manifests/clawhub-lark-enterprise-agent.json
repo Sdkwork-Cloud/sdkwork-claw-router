@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lark-enterprise-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lark-enterprise-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lark-enterprise-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:94d1d8d49264fbce51524b62e8c9e057b210a5071fdf3d1df0e9cbf86e0559b6",

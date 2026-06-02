@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeline-crm@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeline-crm-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeline-crm-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ff6e120e72623f37cfdd9a4bf5996569a8a29642be7e0136c968707c18147e0b",

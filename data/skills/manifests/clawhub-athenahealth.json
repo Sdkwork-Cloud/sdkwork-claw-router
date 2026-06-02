@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/athenahealth@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-athenahealth-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-athenahealth-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1e52e308e1c494769bf4e0d42b4f31adaa2895e23817d1ca234386752ba3216f",

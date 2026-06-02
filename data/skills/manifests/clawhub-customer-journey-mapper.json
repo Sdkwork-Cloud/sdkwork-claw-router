@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customer-journey-mapper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-customer-journey-mapper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customer-journey-mapper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42bd9b18e410f7fa5139e62186c46df4554b2568abb4204c14f64810452ed62b",

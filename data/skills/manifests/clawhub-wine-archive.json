@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wine-archive@0.1.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-wine-archive-0.1.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wine-archive-0.1.8.json"
+      },
       "version": "0.1.8",
       "runtime": "metadata",
       "checksumHash": "sha256:bf5fcf7a44b63d1f3ac41ace861b3a47ec8a18b204c0786b2a5d4b11e1448eb9",

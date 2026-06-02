@@ -17,6 +17,10 @@ pub struct CommerceOrderCancellationRecord {
     /// Created at field on commerce order cancellation record.
     pub created_at: String,
 
+    /// Id field on commerce order cancellation record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on commerce order cancellation record.
     pub idempotency_key: String,
 

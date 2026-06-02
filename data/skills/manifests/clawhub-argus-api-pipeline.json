@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/argus-api-pipeline@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-argus-api-pipeline-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-argus-api-pipeline-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e340676c7912bba5f298cc5e8472db638045a5defdfbc877f5cb47a6b653ecd6",

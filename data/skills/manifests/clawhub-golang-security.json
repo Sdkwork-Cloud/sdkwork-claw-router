@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golang-security@1.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-golang-security-1.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golang-security-1.1.4.json"
+      },
       "version": "1.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:84a17773558f71ad900d09cd74576dfc2a253cc50ba4c9b7178b9c3e1c0fdb82",

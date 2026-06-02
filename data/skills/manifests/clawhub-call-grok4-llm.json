@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/call-grok4-llm@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-call-grok4-llm-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-call-grok4-llm-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f4bec45d4d2c2face79f502e37631de70223776855fc0a305878634e1ac32d89",

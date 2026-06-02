@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/environment-security@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-environment-security-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-environment-security-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:adff66fdfda60ec4c5a2038e7e7128d825eef5a8ab9ea8f2361ab5874c5d41a1",

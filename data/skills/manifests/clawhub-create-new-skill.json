@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-new-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-new-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-new-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6e8feaf3cf14e95aa53d39b23644ba577a9089d82a57b48fb3e6b4a6ad27b00c",

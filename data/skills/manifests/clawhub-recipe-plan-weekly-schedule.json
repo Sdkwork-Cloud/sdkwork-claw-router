@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/recipe-plan-weekly-schedule@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-recipe-plan-weekly-schedule-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-recipe-plan-weekly-schedule-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:0ab51a9910098529778056ede0df83eb8fe5ea3675808e6c3ac3e23778966c84",

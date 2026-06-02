@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paycor@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-paycor-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paycor-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:32bf32d7e621894f6869567c5ff775cf0c519741ff062a9389a328c4eb333a67",

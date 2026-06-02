@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/perplexity-web-search@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-perplexity-web-search-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-perplexity-web-search-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cbcc4067906a8900b37ada6d8b60c8453d4bef75f5465fb830a074ba1481b73a",

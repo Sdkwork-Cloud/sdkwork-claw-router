@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/document-similarity@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-document-similarity-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-document-similarity-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6357dbb036a792aa735fd5bbd4b5e29d17c01b14754f4115ce373509c410142e",

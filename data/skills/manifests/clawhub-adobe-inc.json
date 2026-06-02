@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adobe-inc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-adobe-inc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adobe-inc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:635d7bc024fec0a2878ad88ff06ad261c2d336fa50a281020c5614192d866cb7",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pumble@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-pumble-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pumble-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e216bd611a22ebff27be684bed07123eb5955d4a685a011d7d9d3db04006da2e",

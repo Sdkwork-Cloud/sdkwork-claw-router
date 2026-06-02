@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chartgen-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chartgen-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chartgen-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e81ea51249857b7b4bc7d01dbd119d3e0dd3dae327237c7ad5599d25e633a319",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/answer-box@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-answer-box-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-answer-box-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:69a04f5392bed48624c91e3c885569d41fa1279959088df45a60efa4496c7f54",

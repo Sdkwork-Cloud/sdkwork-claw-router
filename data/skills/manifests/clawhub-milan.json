@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/milan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-milan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-milan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ecd8eeced94bba9ef82dd1732885dbea916c83c580fcd4eaa4821f42472a7e55",

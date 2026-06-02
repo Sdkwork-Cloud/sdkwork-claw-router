@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/remote-claw@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-remote-claw-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-remote-claw-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4098bf7ae289ad3c6aa1e84d5c5ca502fb113508421c9daf87f6567ec7fdf15a",

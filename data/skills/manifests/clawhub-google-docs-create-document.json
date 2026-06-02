@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-docs-create-document@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-docs-create-document-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-docs-create-document-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a82025da6b180ef0345108f449cc60122b5fbcdb4fcdcf25fe6667ee42bc9f33",

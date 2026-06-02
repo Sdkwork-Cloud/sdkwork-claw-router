@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-entry-analyzer@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-entry-analyzer-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-entry-analyzer-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ab8ef34ce2cdc5c85d1b666161265b16589cd41f7af11470f7eefab2048729b2",

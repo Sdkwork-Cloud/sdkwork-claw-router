@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/automaton@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-automaton-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-automaton-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc1c6ad8862f17da56e24aaaff2b197d5d36fc174d592ccc78eb5658ad28a66b",

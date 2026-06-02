@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-tts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-tts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-tts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:11b37d2dc86e2f25523583c36281262bcfa184cb5d8d1937522468b0ed89e385",

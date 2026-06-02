@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cpmo-daily-report@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cpmo-daily-report-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cpmo-daily-report-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:297d100fd1f50783a3c5e97e25f712a8c9dd16c5aa36b3a86aa8017de513df42",

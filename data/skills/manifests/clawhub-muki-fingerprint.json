@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/muki-fingerprint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-muki-fingerprint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-muki-fingerprint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:711652e4da7acd0a849d113421ae75e4c8b062dd95d49b7e10877ef9f7f244ab",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/discord-server-admin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-discord-server-admin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-discord-server-admin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:946e436262d4ffb860b8f88072613b700509b45e69a8710ac2ea462cf02c84bf",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-sprout@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-sprout-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-sprout-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ef483fef78e3e305e23d6e18457ed2d91bbf799fd6ced13701873494429516c0",

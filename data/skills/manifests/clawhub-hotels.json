@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hotels@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hotels-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hotels-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3799d86fc41d6dc3cbd784a2a165f9b1a196b351ba6b3ad36ed65bbd418d2513",

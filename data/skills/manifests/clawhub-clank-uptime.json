@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clank-uptime@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clank-uptime-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clank-uptime-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0fb6740d9a2a7a9a577346ce9f56aed055a558f79e527a59e3ae59d5c0d155c3",

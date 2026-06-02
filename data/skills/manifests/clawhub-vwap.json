@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vwap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vwap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vwap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8352d25dcce7ce566b98338f0b9c3f0354a76e59f905598a5fa158519f3aa9ab",

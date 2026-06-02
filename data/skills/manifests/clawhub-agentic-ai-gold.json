@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentic-ai-gold@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentic-ai-gold-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentic-ai-gold-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57683e74a6b80f294f01ae2709a2bde8446a160bc9f1a0477ef27d63fcaaea37",

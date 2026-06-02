@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llmfit-advisor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llmfit-advisor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llmfit-advisor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:232d29dc75036834d7ae1526c2684e02e2b941cb80dd5c9550d84fd16b9b50fb",

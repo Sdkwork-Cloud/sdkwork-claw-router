@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modellix@1.0.16",
-      "artifactUrl": "data/skills/artifacts/clawhub-modellix-1.0.16.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modellix-1.0.16.json"
+      },
       "version": "1.0.16",
       "runtime": "metadata",
       "checksumHash": "sha256:c35946d52858124d6858c9f26d8ca571b4b5a569cbef61b08d573acde657486f",

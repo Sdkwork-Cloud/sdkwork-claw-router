@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/effective-git@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-effective-git-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-effective-git-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3f0fe6441ce2404b68608a3190c0bb37e084498a748ba4ba0d68c78bd081a8e",

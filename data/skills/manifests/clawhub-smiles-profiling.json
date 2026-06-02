@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smiles-profiling@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smiles-profiling-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smiles-profiling-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:291e68eb7c77aadbb8cd78779d766bbb1bc77c9ee652260074ab1c85a36ca4a0",

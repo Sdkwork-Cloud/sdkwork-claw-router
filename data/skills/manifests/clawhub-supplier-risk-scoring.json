@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/supplier-risk-scoring@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-supplier-risk-scoring-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-supplier-risk-scoring-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89e316b35f64c3cd7dc5867caa28b3483fc366316899faa042f5935e681c4202",

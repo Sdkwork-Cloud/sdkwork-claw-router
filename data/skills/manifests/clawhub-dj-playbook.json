@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dj-playbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dj-playbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dj-playbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fa8a3dd1ec474a69be40197e8cf413008e90d0112595077995b9a48096673c2e",

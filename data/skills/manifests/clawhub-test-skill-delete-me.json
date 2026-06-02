@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-skill-delete-me@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-skill-delete-me-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-skill-delete-me-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b93ac0705f34f028a965156247d269c6e92eb89cbf0889aeb31fc4e40792ea6",

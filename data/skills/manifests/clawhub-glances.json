@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glances@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-glances-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glances-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ea0e9b6b369d533948ff605e3031d628d4c5eebef5a10783632f2d32ab0be466",

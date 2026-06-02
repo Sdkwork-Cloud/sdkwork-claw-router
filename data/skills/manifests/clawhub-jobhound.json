@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jobhound@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jobhound-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jobhound-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da57dd4017815b7ad732735652e4608e51ea0c6ea768f298e4a10a6fab876b93",

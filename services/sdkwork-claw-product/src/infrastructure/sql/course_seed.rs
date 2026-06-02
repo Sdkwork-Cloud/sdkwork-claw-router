@@ -5,6 +5,10 @@ use serde_json::Value;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Row, SqlitePool};
 
+use crate::infrastructure::sql::sql_admin_product_center::{
+    media_resource_object_blob_id, media_resource_stable_id,
+};
+
 const COURSE_SEED_JSON: &str = include_str!("../../../../../data/courses/course-seed.json");
 const SYSTEM_TENANT_ID: i64 = 0;
 const SYSTEM_ORGANIZATION_ID: i64 = 0;
@@ -40,7 +44,7 @@ struct CourseCategorySeed {
     name: String,
     description: String,
     code: String,
-    icon: String,
+    icon_key: String,
     sort_weight: i32,
     tags: Vec<String>,
 }
@@ -53,7 +57,8 @@ struct CourseSeed {
     course_code: String,
     title: String,
     description: String,
-    thumbnail_url: String,
+    #[serde(deserialize_with = "deserialize_required_media_resource")]
+    thumbnail: Value,
     instructor: Value,
     duration_text: String,
     lessons_count: i32,
@@ -104,7 +109,8 @@ struct CourseLessonSeed {
     lesson_no: i32,
     title: String,
     description: String,
-    video_url: String,
+    #[serde(deserialize_with = "deserialize_required_media_resource")]
+    video: Value,
     external_bvid: String,
     source_provider: String,
     duration_seconds: i64,
@@ -203,6 +209,51 @@ impl CourseSeedCatalog {
                 ))
             })
     }
+}
+
+fn deserialize_required_media_resource<'de, D>(deserializer: D) -> Result<Value, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    let raw = Value::deserialize(deserializer)?;
+    validate_seed_media_resource(raw)
+}
+
+fn validate_seed_media_resource<E>(value: Value) -> Result<Value, E>
+where
+    E: serde::de::Error,
+{
+    let object = value
+        .as_object()
+        .ok_or_else(|| E::custom("course seed media resource must be an object"))?;
+    let kind = object
+        .get("kind")
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty());
+    let source = object
+        .get("source")
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty());
+    let locator = ["publicUrl", "url", "uri", "objectKey", "objectBlobId", "id"]
+        .iter()
+        .find_map(|key| {
+            object
+                .get(*key)
+                .and_then(|value| match value {
+                    Value::String(text) => Some(text.trim().to_owned()),
+                    Value::Number(number) => Some(number.to_string()),
+                    _ => None,
+                })
+                .filter(|value| !value.is_empty())
+        });
+    if kind.is_none() || source.is_none() || locator.is_none() {
+        return Err(E::custom(
+            "course seed media resource must include kind, source, and a stable locator",
+        ));
+    }
+    Ok(value)
 }
 
 pub(crate) fn bundled_course_seed_payload() -> Result<String, serde_json::Error> {
@@ -1028,12 +1079,16 @@ async fn import_sqlite_categories(
     seed: &CourseSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     for item in &seed.bundle.categories {
+        let icon = course_category_icon_resource(&item.icon_key);
+        let icon_media_resource_id = media_resource_stable_id(&icon);
+        let icon_object_blob_id = Option::<i64>::None;
+        let icon_resource_snapshot = icon.to_string();
         sqlx::query(
             r#"
             INSERT INTO plus_category
-                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status)
+                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -1046,7 +1101,9 @@ async fn import_sqlite_categories(
                 group_name = excluded.group_name,
                 code = excluded.code,
                 tags = excluded.tags,
-                icon = excluded.icon,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
                 sort_weight = excluded.sort_weight,
                 parent_id = excluded.parent_id,
                 path = excluded.path,
@@ -1067,7 +1124,9 @@ async fn import_sqlite_categories(
         .bind("course")
         .bind(&item.code)
         .bind(json_string(&item.tags))
-        .bind(&item.icon)
+        .bind(icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(icon_resource_snapshot)
         .bind(item.sort_weight)
         .bind(Option::<i64>::None)
         .bind(format!("/course/{}", item.code))
@@ -1084,12 +1143,16 @@ async fn import_postgres_categories(
     seed: &CourseSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     for item in &seed.bundle.categories {
+        let icon = course_category_icon_resource(&item.icon_key);
+        let icon_media_resource_id = media_resource_stable_id(&icon);
+        let icon_object_blob_id = Option::<i64>::None;
+        let icon_resource_snapshot = icon.to_string();
         sqlx::query(
             r#"
             INSERT INTO plus_category
-                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status)
+                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15, $16, $17, $18)
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15::jsonb, $16, $17, $18, $19, $20)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -1102,7 +1165,9 @@ async fn import_postgres_categories(
                 group_name = excluded.group_name,
                 code = excluded.code,
                 tags = excluded.tags,
-                icon = excluded.icon,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
                 sort_weight = excluded.sort_weight,
                 parent_id = excluded.parent_id,
                 path = excluded.path,
@@ -1123,7 +1188,9 @@ async fn import_postgres_categories(
         .bind("course")
         .bind(&item.code)
         .bind(json_string(&item.tags))
-        .bind(&item.icon)
+        .bind(icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(icon_resource_snapshot)
         .bind(item.sort_weight)
         .bind(Option::<i64>::None)
         .bind(format!("/course/{}", item.code))
@@ -1140,6 +1207,10 @@ async fn import_sqlite_courses(
     seed: &CourseSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     for item in &seed.bundle.courses {
+        let thumbnail = item.thumbnail.clone();
+        let thumbnail_media_resource_id = media_resource_stable_id(&thumbnail);
+        let thumbnail_object_blob_id = media_resource_object_blob_id(&thumbnail);
+        let thumbnail_resource_snapshot = thumbnail.to_string();
         sqlx::query(course_insert_sqlite())
             .bind(item.id)
             .bind(&item.uuid)
@@ -1151,7 +1222,9 @@ async fn import_sqlite_courses(
             .bind(&item.course_code)
             .bind(&item.title)
             .bind(&item.description)
-            .bind(&item.thumbnail_url)
+            .bind(thumbnail_media_resource_id)
+            .bind(thumbnail_object_blob_id)
+            .bind(thumbnail_resource_snapshot)
             .bind(item.instructor.to_string())
             .bind(&item.duration_text)
             .bind(item.lessons_count)
@@ -1177,6 +1250,10 @@ async fn import_postgres_courses(
     seed: &CourseSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     for item in &seed.bundle.courses {
+        let thumbnail = item.thumbnail.clone();
+        let thumbnail_media_resource_id = media_resource_stable_id(&thumbnail);
+        let thumbnail_object_blob_id = media_resource_object_blob_id(&thumbnail);
+        let thumbnail_resource_snapshot = thumbnail.to_string();
         sqlx::query(course_insert_postgres())
             .bind(item.id)
             .bind(&item.uuid)
@@ -1188,7 +1265,9 @@ async fn import_postgres_courses(
             .bind(&item.course_code)
             .bind(&item.title)
             .bind(&item.description)
-            .bind(&item.thumbnail_url)
+            .bind(thumbnail_media_resource_id)
+            .bind(thumbnail_object_blob_id)
+            .bind(thumbnail_resource_snapshot)
             .bind(item.instructor.to_string())
             .bind(&item.duration_text)
             .bind(item.lessons_count)
@@ -1273,6 +1352,10 @@ async fn import_sqlite_lessons(
     for item in &seed.bundle.lessons {
         let course_id = seed.course_id(&item.course_code)?;
         delete_sqlite_lesson_natural_key_conflict(tx, item.id, course_id, item.lesson_no).await?;
+        let video = item.video.clone();
+        let video_media_resource_id = media_resource_stable_id(&video);
+        let video_object_blob_id = media_resource_object_blob_id(&video);
+        let video_resource_snapshot = video.to_string();
         sqlx::query(lesson_insert_sqlite())
             .bind(item.id)
             .bind(&item.uuid)
@@ -1286,7 +1369,9 @@ async fn import_sqlite_lessons(
             .bind(item.lesson_no)
             .bind(&item.title)
             .bind(&item.description)
-            .bind(&item.video_url)
+            .bind(video_media_resource_id)
+            .bind(video_object_blob_id)
+            .bind(video_resource_snapshot)
             .bind(&item.external_bvid)
             .bind(&item.source_provider)
             .bind(item.duration_seconds)
@@ -1307,6 +1392,10 @@ async fn import_postgres_lessons(
     for item in &seed.bundle.lessons {
         let course_id = seed.course_id(&item.course_code)?;
         delete_postgres_lesson_natural_key_conflict(tx, item.id, course_id, item.lesson_no).await?;
+        let video = item.video.clone();
+        let video_media_resource_id = media_resource_stable_id(&video);
+        let video_object_blob_id = media_resource_object_blob_id(&video);
+        let video_resource_snapshot = video.to_string();
         sqlx::query(lesson_insert_postgres())
             .bind(item.id)
             .bind(&item.uuid)
@@ -1320,7 +1409,9 @@ async fn import_postgres_lessons(
             .bind(item.lesson_no)
             .bind(&item.title)
             .bind(&item.description)
-            .bind(&item.video_url)
+            .bind(video_media_resource_id)
+            .bind(video_object_blob_id)
+            .bind(video_resource_snapshot)
             .bind(&item.external_bvid)
             .bind(&item.source_provider)
             .bind(item.duration_seconds)
@@ -1650,9 +1741,9 @@ async fn import_postgres_reactions(
 fn course_insert_sqlite() -> &'static str {
     r#"
     INSERT INTO content_course
-        (id, uuid, tenant_id, organization_id, data_scope, status, metadata, course_code, title, description, thumbnail_url, instructor_snapshot, duration_text, lessons_count, rating_score, students_count, level, category, tags, external_bvid, content, price_amount, currency, is_collection, published_at)
+        (id, uuid, tenant_id, organization_id, data_scope, status, metadata, course_code, title, description, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, instructor_snapshot, duration_text, lessons_count, rating_score, students_count, level, category, tags, external_bvid, content, price_amount, currency, is_collection, published_at)
     VALUES
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(course_code) DO UPDATE SET
         uuid = excluded.uuid,
         tenant_id = excluded.tenant_id,
@@ -1662,7 +1753,9 @@ fn course_insert_sqlite() -> &'static str {
         metadata = excluded.metadata,
         title = excluded.title,
         description = excluded.description,
-        thumbnail_url = excluded.thumbnail_url,
+        thumbnail_media_resource_id = excluded.thumbnail_media_resource_id,
+        thumbnail_object_blob_id = excluded.thumbnail_object_blob_id,
+        thumbnail_resource_snapshot = excluded.thumbnail_resource_snapshot,
         instructor_snapshot = excluded.instructor_snapshot,
         duration_text = excluded.duration_text,
         lessons_count = excluded.lessons_count,
@@ -1685,9 +1778,9 @@ fn course_insert_sqlite() -> &'static str {
 fn course_insert_postgres() -> &'static str {
     r#"
     INSERT INTO content_course
-        (id, uuid, tenant_id, organization_id, data_scope, status, metadata, course_code, title, description, thumbnail_url, instructor_snapshot, duration_text, lessons_count, rating_score, students_count, level, category, tags, external_bvid, content, price_amount, currency, is_collection, published_at)
+        (id, uuid, tenant_id, organization_id, data_scope, status, metadata, course_code, title, description, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, instructor_snapshot, duration_text, lessons_count, rating_score, students_count, level, category, tags, external_bvid, content, price_amount, currency, is_collection, published_at)
     VALUES
-        ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10, $11, $12::jsonb, $13, $14, $15::numeric, $16, $17, $18, $19::jsonb, $20, $21, $22::numeric, $23, $24, $25::timestamptz)
+        ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10, $11, $12, $13::jsonb, $14::jsonb, $15, $16, $17::numeric, $18, $19, $20, $21::jsonb, $22, $23, $24::numeric, $25, $26, $27::timestamptz)
     ON CONFLICT(course_code) DO UPDATE SET
         uuid = excluded.uuid,
         tenant_id = excluded.tenant_id,
@@ -1697,7 +1790,9 @@ fn course_insert_postgres() -> &'static str {
         metadata = excluded.metadata,
         title = excluded.title,
         description = excluded.description,
-        thumbnail_url = excluded.thumbnail_url,
+        thumbnail_media_resource_id = excluded.thumbnail_media_resource_id,
+        thumbnail_object_blob_id = excluded.thumbnail_object_blob_id,
+        thumbnail_resource_snapshot = excluded.thumbnail_resource_snapshot,
         instructor_snapshot = excluded.instructor_snapshot,
         duration_text = excluded.duration_text,
         lessons_count = excluded.lessons_count,
@@ -1770,9 +1865,9 @@ fn section_insert_postgres() -> &'static str {
 fn lesson_insert_sqlite() -> &'static str {
     r#"
     INSERT INTO content_course_lesson
-        (id, uuid, tenant_id, organization_id, data_scope, status, metadata, course_id, section_id, lesson_no, title, description, video_url, external_bvid, source_provider, duration_seconds, duration_text, content, sort_order, free_preview)
+        (id, uuid, tenant_id, organization_id, data_scope, status, metadata, course_id, section_id, lesson_no, title, description, video_media_resource_id, video_object_blob_id, video_resource_snapshot, external_bvid, source_provider, duration_seconds, duration_text, content, sort_order, free_preview)
     VALUES
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(id) DO UPDATE SET
         uuid = excluded.uuid,
         tenant_id = excluded.tenant_id,
@@ -1785,7 +1880,9 @@ fn lesson_insert_sqlite() -> &'static str {
         metadata = excluded.metadata,
         title = excluded.title,
         description = excluded.description,
-        video_url = excluded.video_url,
+        video_media_resource_id = excluded.video_media_resource_id,
+        video_object_blob_id = excluded.video_object_blob_id,
+        video_resource_snapshot = excluded.video_resource_snapshot,
         external_bvid = excluded.external_bvid,
         source_provider = excluded.source_provider,
         duration_seconds = excluded.duration_seconds,
@@ -1801,9 +1898,9 @@ fn lesson_insert_sqlite() -> &'static str {
 fn lesson_insert_postgres() -> &'static str {
     r#"
     INSERT INTO content_course_lesson
-        (id, uuid, tenant_id, organization_id, data_scope, status, metadata, course_id, section_id, lesson_no, title, description, video_url, external_bvid, source_provider, duration_seconds, duration_text, content, sort_order, free_preview)
+        (id, uuid, tenant_id, organization_id, data_scope, status, metadata, course_id, section_id, lesson_no, title, description, video_media_resource_id, video_object_blob_id, video_resource_snapshot, external_bvid, source_provider, duration_seconds, duration_text, content, sort_order, free_preview)
     VALUES
-        ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)
+        ($1, $2, $3, $4, $5, $6, $7::jsonb, $8, $9, $10, $11, $12, $13, $14, $15::jsonb, $16, $17, $18, $19, $20, $21, $22)
     ON CONFLICT(id) DO UPDATE SET
         uuid = excluded.uuid,
         tenant_id = excluded.tenant_id,
@@ -1816,7 +1913,9 @@ fn lesson_insert_postgres() -> &'static str {
         metadata = excluded.metadata,
         title = excluded.title,
         description = excluded.description,
-        video_url = excluded.video_url,
+        video_media_resource_id = excluded.video_media_resource_id,
+        video_object_blob_id = excluded.video_object_blob_id,
+        video_resource_snapshot = excluded.video_resource_snapshot,
         external_bvid = excluded.external_bvid,
         source_provider = excluded.source_provider,
         duration_seconds = excluded.duration_seconds,
@@ -2001,7 +2100,7 @@ fn author_json(user_id: i64) -> String {
     serde_json::json!({
         "id": user_id,
         "name": format!("Learner-{user_id}"),
-        "avatar": "/assets/courses/avatars/learner.svg",
+        "avatar": external_url_media_resource("/assets/courses/avatars/learner.svg", "image"),
         "bio": "Course learner",
         "isFollowing": false
     })
@@ -2018,6 +2117,23 @@ fn seed_metadata(seed: &CourseSeedCatalog, item_type: &str, item_uuid: &str) -> 
         "sourceHash": &seed.source_hash,
     })
     .to_string()
+}
+
+fn external_url_media_resource(url: &str, kind: &str) -> Value {
+    serde_json::json!({
+        "kind": kind,
+        "source": "external_url",
+        "url": url,
+        "publicUrl": url
+    })
+}
+
+fn course_category_icon_resource(icon_key: &str) -> Value {
+    serde_json::json!({
+        "kind": "image",
+        "source": "provider_asset",
+        "uri": icon_key
+    })
 }
 
 fn seed_hash() -> String {

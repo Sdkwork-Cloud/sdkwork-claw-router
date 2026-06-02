@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qshell-copilot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qshell-copilot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qshell-copilot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3fc17090dd1bd0636eb2ebcbff5ae5a3b6df3ed1262a191b7c01cc781b4154a6",

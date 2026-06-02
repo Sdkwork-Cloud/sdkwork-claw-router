@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-selfie-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-selfie-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-selfie-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff4b643ad1fde0635b7633f0a4804687c7a469f4e258ac95fa71c5e43250e0d8",

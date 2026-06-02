@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deepmind@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deepmind-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deepmind-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:68542bb0d703c4fafb6493ed85ab1f0d433fbb3e33f6645f6ad295da32dd1d0a",

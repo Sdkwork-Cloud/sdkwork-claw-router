@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-manager@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-manager-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-manager-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:82e77989034854511bac60f520488b2685d81497384e1b7fd4da0f4434083219",

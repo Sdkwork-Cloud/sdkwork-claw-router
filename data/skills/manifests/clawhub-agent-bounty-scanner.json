@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bounty-scanner@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bounty-scanner-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bounty-scanner-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:80a554e1db1e1eba2498868c2426557a753032e282201d65a9324304c793de45",

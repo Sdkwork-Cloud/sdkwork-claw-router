@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-development@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-development-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-development-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1751a482771a7542fcd1a14ac7739a6c052c46d23d0754c33929b98f378434cf",

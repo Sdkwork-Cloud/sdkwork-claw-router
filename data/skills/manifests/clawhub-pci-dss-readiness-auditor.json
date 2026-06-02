@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pci-dss-readiness-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pci-dss-readiness-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pci-dss-readiness-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:85a0f67f0cc1ec4a5be5c11afec644a4e102b398479ac09fc92ba83487fa4b65",

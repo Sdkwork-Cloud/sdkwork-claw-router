@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gstack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gstack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gstack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d4ccfcae703d8d8b4c6732cf791adf9e6885de053ebc8ce23050340995d6a657",

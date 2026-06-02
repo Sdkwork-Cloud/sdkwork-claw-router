@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/airfly@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-airfly-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-airfly-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c73e21dc8365fc362c356aa782f2fba7fb076d8f6049d1269e030c9c6f7eb393",

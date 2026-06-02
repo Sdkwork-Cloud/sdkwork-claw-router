@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/exxon-mobil@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-exxon-mobil-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-exxon-mobil-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ca7ac85b4f9f809d4c4469520f05e5b955777514177c5a107eb5c00995b2e82",

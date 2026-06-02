@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pptx-master@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-pptx-master-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pptx-master-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:81cd75fb72aedb21e5a2beb2bc16647da1ced8087bd4957afcd95c8ecdaecef5",

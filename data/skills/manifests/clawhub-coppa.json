@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coppa@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coppa-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coppa-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f3803aa730387b9a2562682cd1a612ac7ca9962a9d54cfa407e8c08a4600d58",

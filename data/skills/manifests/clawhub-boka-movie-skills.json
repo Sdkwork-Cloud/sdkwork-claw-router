@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boka-movie-skills@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-boka-movie-skills-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boka-movie-skills-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:da504b7e28dbb78b91b241b6d7558433e4ea7de11ab5d3586c00cf64483ff4d2",

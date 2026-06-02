@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ze-ri-skill@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ze-ri-skill-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ze-ri-skill-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b39fdb101167e7f585581b9b6e0bc824f292b32eba9b1b6b1e9d14ad549206fb",

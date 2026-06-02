@@ -51,6 +51,10 @@ pub struct AiRuntimeArtifactRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub legal_hold: Option<bool>,
 
+    /// Media resource id field on ai runtime artifact record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub media_resource_id: Option<String>,
+
     /// Message id field on ai runtime artifact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub message_id: Option<String>,
@@ -67,6 +71,10 @@ pub struct AiRuntimeArtifactRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
 
+    /// Object blob id field on ai runtime artifact record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub object_blob_id: Option<String>,
+
     /// Organization id field on ai runtime artifact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
@@ -78,6 +86,10 @@ pub struct AiRuntimeArtifactRecord {
     /// Request id field on ai runtime artifact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub request_id: Option<String>,
+
+    /// Resource snapshot field on ai runtime artifact record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub resource_snapshot: Option<std::collections::HashMap<String, String>>,
 
     /// Retention until field on ai runtime artifact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -98,14 +110,6 @@ pub struct AiRuntimeArtifactRecord {
     /// Status field on ai runtime artifact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
-
-    /// Storage key field on ai runtime artifact record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub storage_key: Option<String>,
-
-    /// Storage url field on ai runtime artifact record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub storage_url: Option<String>,
 
     /// Tenant id field on ai runtime artifact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

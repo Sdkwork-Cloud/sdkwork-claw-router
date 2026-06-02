@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ifood@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ifood-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ifood-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2178d3f600830638902bab4547e4a9df22e410a555b1e2fe0cdb634757d4b782",

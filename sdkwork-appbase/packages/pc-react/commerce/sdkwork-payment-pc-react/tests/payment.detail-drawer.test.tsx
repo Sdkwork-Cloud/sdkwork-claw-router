@@ -11,6 +11,7 @@ import {
   SdkworkPaymentDetailDrawer,
   SdkworkPaymentIntlProvider,
   createSdkworkPaymentController,
+  type SdkworkPaymentDetail,
 } from "../src";
 
 function createPaymentDashboard() {
@@ -76,7 +77,7 @@ describe("sdkwork-payment-pc-react detail drawer", () => {
       closed: true,
       paymentId: "1001",
     });
-    const detail = {
+    const detail: SdkworkPaymentDetail = {
       amountCny: 699,
       canClose: true,
       canReconcile: true,
@@ -93,7 +94,12 @@ describe("sdkwork-payment-pc-react detail drawer", () => {
       paymentSn: "PAY-1001",
       paymentUrl: "https://pay.sdkwork.ai/wechat/1001",
       productType: "native" as const,
-      qrCode: "data:image/png;base64,AAAA",
+      qrImage: {
+        kind: "image",
+        publicUrl: "data:image/png;base64,AAAA",
+        source: "data_url",
+        url: "data:image/png;base64,AAAA",
+      },
       queryIntervalSeconds: 3,
       remark: "Scan to pay",
       status: "pending" as const,
@@ -199,7 +205,7 @@ describe("sdkwork-payment-pc-react detail drawer", () => {
           paymentProvider: "WECHAT_PAY",
           paymentSn: "PAY-1002",
           productType: "native",
-          qrCode: "weixin://wxpay/bizpayurl?pr=PAY1002",
+          qrContent: "weixin://wxpay/bizpayurl?pr=PAY1002",
           status: "pending",
           statusLabel: "Pending",
           subject: "Workspace billing",

@@ -6,6 +6,8 @@ export interface CommerceOrderAmountBreakdownRecord {
   currency_code: string;
   /** Discount amount field on commerce order amount breakdown record. */
   discount_amount: string;
+  /** Id field on commerce order amount breakdown record. */
+  id?: string;
   /** Order id field on commerce order amount breakdown record. */
   order_id: string;
   /** Original amount field on commerce order amount breakdown record. */

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comic-brief@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-comic-brief-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comic-brief-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f15af82c61fc374681bc2d98e75b88cafc89b0b2b7cc6bea7d0d035ebf6b44d",

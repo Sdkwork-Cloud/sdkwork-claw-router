@@ -25,6 +25,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? DeletedBy { get; set; }
         public string? Environment { get; set; }
         public string? ExternalChannelId { get; set; }
+        public string? HealthStatus { get; set; }
         public string? Id { get; set; }
         public string? LastBalanceCheckedAt { get; set; }
         public int? LastLatencyMs { get; set; }
@@ -35,6 +36,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public Dictionary<string, string>? Metadata { get; set; }
         public string? NextRotateAt { get; set; }
         public string? OrganizationId { get; set; }
+        public int? Priority { get; set; }
         public string? ProtocolCode { get; set; }
         public string? ProviderCode { get; set; }
         public string? ProviderId { get; set; }
@@ -54,5 +56,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? UpstreamBalanceCurrency { get; set; }
         public string? Uuid { get; set; }
         public string? Version { get; set; }
+        public int? Weight { get; set; }
     }
 }

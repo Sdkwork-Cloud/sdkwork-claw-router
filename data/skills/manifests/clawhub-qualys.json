@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qualys@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-qualys-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qualys-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d64c79d9f71f4af9e7e1490ccac9f0a9cb3a4968ca6f2d37665e5f9880d34d57",

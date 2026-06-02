@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/okr-work-manager@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-okr-work-manager-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-okr-work-manager-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62634129f862a47d16610399539f3ec44b7e35b5b094e0caff16cc1fd90318ef",

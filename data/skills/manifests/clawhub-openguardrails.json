@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openguardrails@6.8.20",
-      "artifactUrl": "data/skills/artifacts/clawhub-openguardrails-6.8.20.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openguardrails-6.8.20.json"
+      },
       "version": "6.8.20",
       "runtime": "metadata",
       "checksumHash": "sha256:91a4f6a40ada321abeefc5efede39074f19bea0e19bd453a102d0240d9646099",

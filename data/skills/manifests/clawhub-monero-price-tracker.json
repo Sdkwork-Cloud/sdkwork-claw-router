@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/monero-price-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-monero-price-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-monero-price-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:65d29cc28ac415041dff252b06accf8e625660001d017e6dea45394afa79d0c6",

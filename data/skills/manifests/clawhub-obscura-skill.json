@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/obscura-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-obscura-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-obscura-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52ef9bfb0a3e63efa0d339b498022b3792c24dca89dda69ee44db98a5f9b00a7",

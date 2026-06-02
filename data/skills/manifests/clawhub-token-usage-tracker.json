@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/token-usage-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-token-usage-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-token-usage-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e0a476826894743cf06346420d23825156cf7ab6e0c3b9b3b46c090196aa9c36",

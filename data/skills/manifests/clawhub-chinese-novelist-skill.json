@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-novelist-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-novelist-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-novelist-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7259247c39a4e938db0296a33d1a7292d989b5dabc58f88a207f059ba059fd2b",

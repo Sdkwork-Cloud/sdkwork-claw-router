@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meta-skill-weaver@2.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meta-skill-weaver-2.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meta-skill-weaver-2.5.0.json"
+      },
       "version": "2.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d49dbabf0ca57afd70104f44afae22b0e405361a26408fdd8a098e2970a18911",

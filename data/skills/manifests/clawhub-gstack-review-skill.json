@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gstack-review-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gstack-review-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gstack-review-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5c42380dbc968bc6cb75cffaa71b2ab0b21326941085eaa32b775dbbaa007632",

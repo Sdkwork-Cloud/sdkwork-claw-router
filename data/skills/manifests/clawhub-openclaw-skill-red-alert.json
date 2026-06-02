@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-red-alert@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-red-alert-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-red-alert-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d6695b985c7c5f8ce65e3f5c79bb3f9712a0b7d06d3f6761eafa2e16f8bf83cf",

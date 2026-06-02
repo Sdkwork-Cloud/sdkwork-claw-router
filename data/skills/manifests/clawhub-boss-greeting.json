@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boss-greeting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boss-greeting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boss-greeting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:02b731bb12e006e30d4761a561cb9896cb61a4906d8bfd9b57a6d25e6a74f270",

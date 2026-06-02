@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/privy@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-privy-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-privy-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b42c306d341872ea86cc05f1d5a76234d762798342b4d506e14f063e273dd4d9",

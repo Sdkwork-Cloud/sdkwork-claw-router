@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bags@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bags-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bags-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:21d328cbd1a1f24cfafccce0e8567d979bca6add4054a33dc7125159fb5f0c58",

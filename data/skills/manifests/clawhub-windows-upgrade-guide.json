@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-upgrade-guide@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-upgrade-guide-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-upgrade-guide-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3364450783c8b44aae5a2d8ce88ca8d247e894b2b4a7e2f0afa51ca3da023bf9",

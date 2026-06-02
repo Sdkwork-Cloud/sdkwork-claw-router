@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-caption@0.10.7-dev",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-caption-0.10.7-dev.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-caption-0.10.7-dev.json"
+      },
       "version": "0.10.7-dev",
       "runtime": "metadata",
       "checksumHash": "sha256:8376ce1e354214ed55be69685d28723a4d7236b80df620080b479c10db6753a4",

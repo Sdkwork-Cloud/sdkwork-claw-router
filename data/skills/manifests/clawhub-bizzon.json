@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bizzon@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-bizzon-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bizzon-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:672365eaf3159ea4656e03b51db2a7e8408e50d85066ab20f0003c1041c6fed8",

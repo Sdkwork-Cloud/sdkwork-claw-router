@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-optimizer-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-optimizer-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-optimizer-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c6caf376470b8b4b2ee282c7fd568a71a0074591692d63b260c124033d6f465",

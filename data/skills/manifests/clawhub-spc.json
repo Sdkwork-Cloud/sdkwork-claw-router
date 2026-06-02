@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spc@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spc-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spc-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f19f6bbc26cf6a8771de8fa3826f31872ca5bb0e52048ea9ea5bfe0cc799ef92",

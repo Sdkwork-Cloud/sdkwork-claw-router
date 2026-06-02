@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comfyui-mcp-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-mcp-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comfyui-mcp-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c73953949cfe0ca13a179c280b632ee87655a721fd089e1cea2ef36d2aaad6d7",

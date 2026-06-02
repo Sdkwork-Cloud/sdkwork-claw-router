@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cinnabon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cinnabon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cinnabon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dce75b9209b61641fbb039d0c28d7f47adfcc585a5a65ad6287f0edf33551223",

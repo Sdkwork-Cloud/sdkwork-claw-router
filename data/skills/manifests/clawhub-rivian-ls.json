@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rivian-ls@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rivian-ls-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rivian-ls-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:24f346e73e3022102e9da2168463898aa4bf1018a5bde02973ef165013f4a117",

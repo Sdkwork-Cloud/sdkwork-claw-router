@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/consul-api@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-consul-api-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-consul-api-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:33b3ed015307e08fdd3a9e57eec36eb04acd64e86fd0f8808d2eec9e5558a7f4",

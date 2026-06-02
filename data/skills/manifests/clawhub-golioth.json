@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golioth@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-golioth-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golioth-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5bae889c75c634ba7f30c21e194a6b290854681ca51de47f95210ce8b89449a9",

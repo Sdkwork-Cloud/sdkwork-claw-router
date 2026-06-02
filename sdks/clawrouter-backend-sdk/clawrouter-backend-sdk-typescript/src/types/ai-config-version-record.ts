@@ -8,6 +8,8 @@ export interface AiConfigVersionRecord {
   changed_object_type?: string;
   /** Config scope field on ai config version record. */
   config_scope: string;
+  /** Config version field on ai config version record. */
+  config_version: string;
   /** Created at field on ai config version record. */
   created_at?: string;
   /** Data scope field on ai config version record. */

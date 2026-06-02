@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cc3po-webhook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cc3po-webhook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cc3po-webhook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56567a1904f73fc0cde861e97b9270f5c7d1bedb8cacbccb0e6d04bd0018aadb",

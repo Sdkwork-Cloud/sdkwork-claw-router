@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-self-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-self-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-self-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b24a84235dd526d853d3f18779f77c089df527381d3b9bd207de69cc973ab1db",

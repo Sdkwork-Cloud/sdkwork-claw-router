@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/isnad-scan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-isnad-scan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-isnad-scan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ccc3598ab8f0418c9ad4c983dd1fb21773543deaa9124865aac247124e0687bd",

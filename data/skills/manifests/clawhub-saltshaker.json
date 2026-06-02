@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/saltshaker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-saltshaker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-saltshaker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c27cb6c596be7134f570484df3857a053a8cceaf228d4390fa20b1276799c1b1",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/handoffs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-handoffs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-handoffs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cbe34a5f4c2c5603685864c9dbeb9448ab97e178f16d6e64cf1d95ebcc09ce1a",

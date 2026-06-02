@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gate-mc-installer@2026.3.4-1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gate-mc-installer-2026.3.4-1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gate-mc-installer-2026.3.4-1.json"
+      },
       "version": "2026.3.4-1",
       "runtime": "metadata",
       "checksumHash": "sha256:767bb135c6ef40a6c7c99e9d61e7f0676a65ccd5f85d1cf264ab80ef41a46339",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-payment-processor@2.9.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-payment-processor-2.9.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-payment-processor-2.9.1.json"
+      },
       "version": "2.9.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3ae002c94dc54626b2b0d26621fa4db117cb281741c54810c222fbea1f12ebc7",

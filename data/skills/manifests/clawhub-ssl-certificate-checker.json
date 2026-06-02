@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ssl-certificate-checker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ssl-certificate-checker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ssl-certificate-checker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7e42f5bcebffa6c7ee6ff6a76876ca0b1dea8c24e74f337b914e1cb65d2b7e05",

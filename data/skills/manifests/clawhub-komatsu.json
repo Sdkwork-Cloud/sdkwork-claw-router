@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/komatsu@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-komatsu-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-komatsu-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af6e6a05d90ac5eca51c0eabeefbe00d7fb838e6869a9c8a35525dc13b2cebd8",

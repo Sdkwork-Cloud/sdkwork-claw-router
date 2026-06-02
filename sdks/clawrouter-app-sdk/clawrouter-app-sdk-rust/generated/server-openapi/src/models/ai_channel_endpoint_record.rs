@@ -50,6 +50,10 @@ pub struct AiChannelEndpointRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub effective_to: Option<String>,
 
+    /// Health status field on ai channel endpoint record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub health_status: Option<String>,
+
     /// Id field on ai channel endpoint record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -68,6 +72,10 @@ pub struct AiChannelEndpointRecord {
     /// Path prefix field on ai channel endpoint record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub path_prefix: Option<String>,
+
+    /// Priority field on ai channel endpoint record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub priority: Option<i64>,
 
     /// Provider code field on ai channel endpoint record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -107,4 +115,8 @@ pub struct AiChannelEndpointRecord {
     /// Version field on ai channel endpoint record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub version: Option<String>,
+
+    /// Weight field on ai channel endpoint record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub weight: Option<i64>,
 }

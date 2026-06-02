@@ -1,5 +1,508 @@
 fragment: operations/backend-ai
 frontend_operations:
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: fetchGroups
+  operation_id: channelGroups.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/channel_groups
+  read_sources:
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
+  - ai_pricing_plan
+  query_parameters: []
+  response_schema:
+    name: AdminChannelGroupsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminChannelGroupItem
+          type: object
+          additionalProperties: false
+          required: &adminChannelGroupItemRequired
+          - id
+          - groupCode
+          - groupName
+          - providerCode
+          - priceReferenceMode
+          - rateMultiplier
+          - officialPriceMultiplier
+          - groupType
+          - accountCount
+          - capacity
+          - usage
+          - status
+          properties: &adminChannelGroupItemProperties
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            groupCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            groupName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            providerCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            priceReferenceMode:
+              type: string
+              enum:
+              - multiplier
+              - official_price
+            rateMultiplier:
+              type: number
+              minimum: 0.01
+              maximum: 100
+            officialPriceMultiplier:
+              type: number
+              minimum: 0.01
+              maximum: 100
+            groupType:
+              type: string
+              enum:
+              - public
+              - dedicated
+            accountCount:
+              name: AdminCountPair
+              type: object
+              additionalProperties: false
+              required:
+              - available
+              - total
+              properties:
+                available:
+                  type: number
+                  minimum: 0
+                total:
+                  type: number
+                  minimum: 0
+            capacity:
+              name: AdminCapacityPair
+              type: object
+              additionalProperties: false
+              required:
+              - used
+              - total
+              properties:
+                used:
+                  type: number
+                  minimum: 0
+                total:
+                  type: number
+                  minimum: 0
+            usage:
+              name: AdminUsagePair
+              type: object
+              additionalProperties: false
+              required:
+              - today
+              - total
+              properties:
+                today:
+                  type: number
+                  minimum: 0
+                total:
+                  type: number
+                  minimum: 0
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: addGroup
+  operation_id: channelGroups.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/ai/channel_groups
+  read_sources:
+  - ai_channel_group
+  - ai_pricing_plan
+  write_tables:
+  - ai_channel_group
+  - ai_pricing_plan_binding
+  - ops_audit_log
+  request_schema:
+    name: AdminChannelGroupCreateRequest
+    required:
+    - groupName
+    - groupCode
+    - priceReferenceMode
+    - groupType
+    - status
+    properties:
+      groupName:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: AI channel group display name.
+      groupCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+        description: Stable AI channel group code.
+      priceReferenceMode:
+        type: string
+        enum:
+        - multiplier
+        - official_price
+        description: Pricing reference mode for this AI channel group.
+      rateMultiplier:
+        type: number
+        minimum: 0.01
+        maximum: 100
+        description: Customer rate multiplier rounded to six decimals.
+      officialPriceMultiplier:
+        type: number
+        minimum: 0.01
+        maximum: 100
+        description: Official price multiplier rounded to six decimals.
+      groupType:
+        type: string
+        enum:
+        - public
+        - dedicated
+        description: AI channel group allocation mode.
+      capacity:
+        type: object
+        additionalProperties: false
+        properties:
+          total:
+            type: number
+            minimum: 0
+            maximum: 1000000000
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+  response_schema:
+    name: AdminChannelGroupMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminChannelGroupItem
+        type: object
+        additionalProperties: false
+        required: *adminChannelGroupItemRequired
+        properties: *adminChannelGroupItemProperties
+        description: Persisted channel group snapshot returned by the backend.
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: updateGroup
+  operation_id: channelGroups.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/ai/channel_groups/{channelGroupId}
+  path_params:
+  - channelGroupId
+  read_sources:
+  - ai_channel_group
+  - ai_pricing_plan
+  write_tables:
+  - ai_channel_group
+  - ai_pricing_plan_binding
+  - ops_audit_log
+  request_schema:
+    name: AdminChannelGroupUpdateRequest
+    required: []
+    properties:
+      groupName:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: AI channel group display name.
+      groupCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9_-]+$
+        description: Stable AI channel group code.
+      priceReferenceMode:
+        type: string
+        enum:
+        - multiplier
+        - official_price
+        description: Pricing reference mode for this AI channel group.
+      rateMultiplier:
+        type: number
+        minimum: 0.01
+        maximum: 100
+        description: Customer rate multiplier rounded to six decimals.
+      officialPriceMultiplier:
+        type: number
+        minimum: 0.01
+        maximum: 100
+        description: Official price multiplier rounded to six decimals.
+      groupType:
+        type: string
+        enum:
+        - public
+        - dedicated
+        description: AI channel group allocation mode.
+      capacity:
+        type: object
+        additionalProperties: false
+        properties:
+          total:
+            type: number
+            minimum: 0
+            maximum: 1000000000
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+  response_schema:
+    name: AdminChannelGroupMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminChannelGroupItem
+        type: object
+        additionalProperties: false
+        required: *adminChannelGroupItemRequired
+        properties: *adminChannelGroupItemProperties
+        description: Persisted channel group snapshot returned by the backend.
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: deleteGroup
+  operation_id: channelGroups.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/ai/channel_groups/{channelGroupId}
+  path_params:
+  - channelGroupId
+  read_sources:
+  - ai_channel_group
+  write_tables:
+  - ai_channel_group
+  - ai_pricing_plan_binding
+  - ops_audit_log
+  response_schema:
+    name: AdminDeleteResponse
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: fetchGroupChannelBindings
+  operation_id: channelGroups.channelBindings.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/channel_groups/{channelGroupId}/channel_bindings
+  path_params:
+  - channelGroupId
+  read_sources:
+  - ai_channel_group
+  - ai_channel_group_member
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
+  query_parameters: []
+  response_schema:
+    name: AdminChannelGroupChannelBindingsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 1000
+        items:
+          name: AdminChannelGroupChannelBindingItem
+          type: object
+          additionalProperties: false
+          required: &adminChannelGroupChannelBindingItemRequired
+          - id
+          - channelGroupId
+          - channelId
+          - channelName
+          - providerCode
+          - providerName
+          - channelCode
+          - models
+          - capabilities
+          - modelScope
+          - priority
+          - weight
+          - status
+          - healthStatus
+          properties: &adminChannelGroupChannelBindingItemProperties
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            channelGroupId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            channelId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            channelName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            providerCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            providerName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            channelCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            models:
+              type: array
+              maxItems: 200
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+            capabilities:
+              type: array
+              maxItems: 32
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
+            modelScope:
+              type: array
+              maxItems: 200
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+            priority:
+              type: integer
+              minimum: 0
+              maximum: 1000000
+            weight:
+              type: integer
+              minimum: 0
+              maximum: 1000000
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+            healthStatus:
+              type: string
+              enum:
+              - active
+              - error
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: replaceGroupChannelBindings
+  operation_id: channelGroups.channelBindings.update
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/ai/channel_groups/{channelGroupId}/channel_bindings
+  path_params:
+  - channelGroupId
+  read_sources:
+  - ai_channel_group
+  - ai_channel_group_member
+  - ai_channel
+  - ai_channel_model
+  - ai_provider
+  write_tables:
+  - ai_channel_group_member
+  - ops_audit_log
+  - ops_config_snapshot
+  request_schema:
+    name: AdminChannelGroupChannelBindingsReplaceRequest
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 1000
+        items:
+          name: AdminChannelGroupChannelBindingInput
+          type: object
+          additionalProperties: false
+          required:
+          - channelId
+          properties:
+            channelId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            priority:
+              type: integer
+              minimum: 0
+              maximum: 1000000
+            weight:
+              type: integer
+              minimum: 0
+              maximum: 1000000
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+            modelScope:
+              type: array
+              maxItems: 200
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+            capabilities:
+              type: array
+              maxItems: 32
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
+  response_schema:
+    name: AdminChannelGroupChannelBindingsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 1000
+        items:
+          name: AdminChannelGroupChannelBindingItem
+          type: object
+          additionalProperties: false
+          required: *adminChannelGroupChannelBindingItemRequired
+          properties: *adminChannelGroupChannelBindingItemProperties
 - route: /admin/channel/resources
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: fetchAiResources

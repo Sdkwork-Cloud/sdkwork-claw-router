@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/novel-writer-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-novel-writer-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-novel-writer-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1892ebbbe91d1ccc59e1243669b810edc2937afd775bcd009d70a89bbce3cbca",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-forge@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-forge-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-forge-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10b43921dc15108365d4735fb2b0e9d5854866e884cd5dccc5278249ab71fcb7",

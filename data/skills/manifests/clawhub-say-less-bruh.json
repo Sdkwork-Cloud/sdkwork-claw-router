@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/say-less-bruh@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-say-less-bruh-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-say-less-bruh-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be7eccf5f05824ae12b9e864e522d0e0a307c8c5d0859312deab1e99aa986e7b",

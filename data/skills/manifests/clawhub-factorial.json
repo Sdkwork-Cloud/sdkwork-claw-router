@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/factorial@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-factorial-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-factorial-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3db158747bca0a223e651650a5d9e46f5a78faee630f32bd0d6133c27afbcc7f",

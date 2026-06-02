@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/msteamschinaadapter@10.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-msteamschinaadapter-10.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-msteamschinaadapter-10.0.2.json"
+      },
       "version": "10.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:92ba3980c86e2d6f0f90748872c62f7659aebf7488857f1cfe7ac2fe009011be",

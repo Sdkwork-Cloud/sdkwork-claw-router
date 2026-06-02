@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-reality-show@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-reality-show-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-reality-show-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:80fa8ca76762e1a23e133af127ffb52c47696843eb3678e42d40f46da68871bd",

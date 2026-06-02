@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crowdin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crowdin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crowdin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26b9564168a68006ce29053c2e235aad07f001c1597331554f83e45009c9ca51",

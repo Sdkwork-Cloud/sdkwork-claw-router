@@ -1,12 +1,12 @@
 use std::collections::BTreeMap;
 
 use crate::domain::{
-    AiModel, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter, DecimalValue, DomainResult,
+    AiModel, BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, DecimalValue, DomainResult,
     GatewayAccessPolicy, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition,
     Money, PriceSide, PricingPlan, ProviderChannelRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
 };
 use crate::infrastructure::sql::rows::{
-    AiModelRow, ApiKeyGroupMetricSnapshotRow, ApiKeyGroupRow, GatewayAccessPolicyRow,
+    AiModelRow, ChannelGroupMetricSnapshotRow, ChannelGroupRow, GatewayAccessPolicyRow,
     GatewayApiKeyRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow, PricingPlanRow,
     ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
 };
@@ -22,11 +22,11 @@ pub struct PricingCatalogRows {
     pub routing_policies: Vec<RoutingPolicyRow>,
     pub routing_rules: Vec<RoutingRuleRow>,
     pub pricing_plans: Vec<PricingPlanRow>,
-    pub api_key_groups: Vec<ApiKeyGroupRow>,
+    pub channel_groups: Vec<ChannelGroupRow>,
     pub api_keys: Vec<GatewayApiKeyRow>,
     pub access_policies: Vec<GatewayAccessPolicyRow>,
     pub quota_policies: Vec<QuotaPolicyRow>,
-    pub api_key_group_metric_snapshots: Vec<ApiKeyGroupMetricSnapshotRow>,
+    pub channel_group_metric_snapshots: Vec<ChannelGroupMetricSnapshotRow>,
     pub prices: Vec<ModelPriceRow>,
 }
 
@@ -42,7 +42,7 @@ pub struct SqlPricingCatalogSnapshotSummary {
     pub routing_policies: usize,
     pub routing_rules: usize,
     pub pricing_plans: usize,
-    pub api_key_groups: usize,
+    pub channel_groups: usize,
     pub api_keys: usize,
     pub prices: usize,
     pub managed_provider_secrets: usize,
@@ -56,11 +56,11 @@ pub struct SqlPricingCatalogSnapshot {
     routing_policies: Vec<RoutingPolicy>,
     routing_rules: Vec<RoutingRule>,
     pricing_plans: Vec<PricingPlan>,
-    api_key_groups: Vec<ApiKeyGroup>,
+    channel_groups: Vec<ChannelGroup>,
     api_keys: Vec<GatewayApiKey>,
     access_policies: Vec<GatewayAccessPolicy>,
     quota_policies: Vec<QuotaPolicy>,
-    api_key_group_metric_snapshots: Vec<ApiKeyGroupMetricSnapshot>,
+    channel_group_metric_snapshots: Vec<ChannelGroupMetricSnapshot>,
     prices: Vec<ModelPrice>,
     managed_provider_secrets: BTreeMap<String, String>,
 }
@@ -92,7 +92,7 @@ impl SqlPricingCatalogSnapshot {
             routing_policies: map_rows(rows.routing_policies, RoutingPolicyRow::try_into_domain)?,
             routing_rules: map_rows(rows.routing_rules, RoutingRuleRow::try_into_domain)?,
             pricing_plans,
-            api_key_groups: map_rows(rows.api_key_groups, ApiKeyGroupRow::try_into_domain)?,
+            channel_groups: map_rows(rows.channel_groups, ChannelGroupRow::try_into_domain)?,
             api_keys: rows
                 .api_keys
                 .into_iter()
@@ -103,9 +103,9 @@ impl SqlPricingCatalogSnapshot {
                 GatewayAccessPolicyRow::try_into_domain,
             )?,
             quota_policies: map_rows(rows.quota_policies, QuotaPolicyRow::try_into_domain)?,
-            api_key_group_metric_snapshots: map_rows(
-                rows.api_key_group_metric_snapshots,
-                ApiKeyGroupMetricSnapshotRow::try_into_domain,
+            channel_group_metric_snapshots: map_rows(
+                rows.channel_group_metric_snapshots,
+                ChannelGroupMetricSnapshotRow::try_into_domain,
             )?,
             prices: map_rows(rows.prices, ModelPriceRow::try_into_domain)?,
             managed_provider_secrets,
@@ -144,7 +144,7 @@ impl SqlPricingCatalogSnapshot {
             routing_policies: self.routing_policies.len(),
             routing_rules: self.routing_rules.len(),
             pricing_plans: self.pricing_plans.len(),
-            api_key_groups: self.api_key_groups.len(),
+            channel_groups: self.channel_groups.len(),
             api_keys: self.api_keys.len(),
             prices: self.prices.len(),
             managed_provider_secrets: self.managed_provider_secrets.len(),
@@ -207,8 +207,8 @@ impl PricingCatalog for RefreshableSqlPricingCatalog {
         self.current_snapshot().list_api_keys()
     }
 
-    fn list_api_key_groups(&self) -> Vec<ApiKeyGroup> {
-        self.current_snapshot().list_api_key_groups()
+    fn list_channel_groups(&self) -> Vec<ChannelGroup> {
+        self.current_snapshot().list_channel_groups()
     }
 
     fn list_model_prices(
@@ -234,8 +234,8 @@ impl PricingCatalog for RefreshableSqlPricingCatalog {
         self.current_snapshot().find_api_key_by_hash(key_hash)
     }
 
-    fn find_api_key_group(&self, group_id: i64) -> Option<ApiKeyGroup> {
-        self.current_snapshot().find_api_key_group(group_id)
+    fn find_channel_group(&self, group_id: i64) -> Option<ChannelGroup> {
+        self.current_snapshot().find_channel_group(group_id)
     }
 
     fn find_access_policy(&self, policy_id: i64) -> Option<GatewayAccessPolicy> {
@@ -246,12 +246,12 @@ impl PricingCatalog for RefreshableSqlPricingCatalog {
         self.current_snapshot().find_quota_policy(policy_id)
     }
 
-    fn find_latest_api_key_group_metric_snapshot(
+    fn find_latest_channel_group_metric_snapshot(
         &self,
         group_id: i64,
-    ) -> Option<ApiKeyGroupMetricSnapshot> {
+    ) -> Option<ChannelGroupMetricSnapshot> {
         self.current_snapshot()
-            .find_latest_api_key_group_metric_snapshot(group_id)
+            .find_latest_channel_group_metric_snapshot(group_id)
     }
 
     fn find_pricing_plan(&self, plan_code: &str) -> Option<PricingPlan> {
@@ -330,8 +330,8 @@ impl PricingCatalog for SqlPricingCatalogSnapshot {
         self.api_keys.clone()
     }
 
-    fn list_api_key_groups(&self) -> Vec<ApiKeyGroup> {
-        self.api_key_groups.clone()
+    fn list_channel_groups(&self) -> Vec<ChannelGroup> {
+        self.channel_groups.clone()
     }
 
     fn list_model_prices(
@@ -376,8 +376,8 @@ impl PricingCatalog for SqlPricingCatalogSnapshot {
             .cloned()
     }
 
-    fn find_api_key_group(&self, group_id: i64) -> Option<ApiKeyGroup> {
-        self.api_key_groups
+    fn find_channel_group(&self, group_id: i64) -> Option<ChannelGroup> {
+        self.channel_groups
             .iter()
             .find(|group| group.id == group_id)
             .cloned()
@@ -397,11 +397,11 @@ impl PricingCatalog for SqlPricingCatalogSnapshot {
             .cloned()
     }
 
-    fn find_latest_api_key_group_metric_snapshot(
+    fn find_latest_channel_group_metric_snapshot(
         &self,
         group_id: i64,
-    ) -> Option<ApiKeyGroupMetricSnapshot> {
-        self.api_key_group_metric_snapshots
+    ) -> Option<ChannelGroupMetricSnapshot> {
+        self.channel_group_metric_snapshots
             .iter()
             .find(|snapshot| snapshot.group_id == group_id)
             .cloned()

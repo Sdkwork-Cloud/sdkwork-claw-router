@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dokidoki@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-dokidoki-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dokidoki-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6dd6f11268638b8ceb2b659a31814e1757630c888f297dc5ec5012835005fa50",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-airports@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-airports-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-airports-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52f66dc09da1c95dd1b0d3f02d97b698ea135767ed46254d8785deb5be1a8433",

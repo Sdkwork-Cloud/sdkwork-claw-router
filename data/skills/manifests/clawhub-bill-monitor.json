@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bill-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bill-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bill-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2111fdd87711be33f9eb62cf70dd828b901d05b6a20ec59ef7cbafbd7a31b3df",

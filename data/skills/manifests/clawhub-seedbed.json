@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seedbed@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-seedbed-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seedbed-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a6f475e975c119bb562da81b253e3cb717866fbfe1c5da5a5d966a3ea9f2ef5f",

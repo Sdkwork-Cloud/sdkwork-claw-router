@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/15five@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-15five-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-15five-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:f02a5a849b33ea3ae502f4de7c52a1b778d2c7eb83fdf0987229526941035866",

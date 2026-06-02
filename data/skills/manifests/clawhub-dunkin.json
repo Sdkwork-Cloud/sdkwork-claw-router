@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dunkin@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-dunkin-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dunkin-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:eaf7a4d8dc19a4e473612861be6ebca91c19d6bb79841d2722a24b923cad88be",

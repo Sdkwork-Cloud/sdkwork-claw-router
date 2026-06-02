@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moat-evaluator@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moat-evaluator-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moat-evaluator-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2243311911a90fafcdf1a62ceab9e0cfcceaed4c8c983cc84948c4a28f2c8f60",

@@ -1,4 +1,4 @@
-﻿import json
+import json
 import hashlib
 import tempfile
 import textwrap
@@ -25,6 +25,19 @@ from tools.openapi_component_generator import OpenApiComponentGenerator
 from tools.schema_compiler import SchemaCompiler
 from tools.schema_manifest import SchemaManifestGenerator
 from tools.schema_quality_gate import SchemaQualityGate
+
+
+def media_resource(locator: str, kind: str = "image") -> dict:
+    source = (
+        "external_url"
+        if locator.startswith(("http://", "https://"))
+        else "data_url"
+        if locator.startswith("data:")
+        else "provider_asset"
+    )
+    if source == "provider_asset":
+        return {"kind": kind, "source": source, "uri": locator}
+    return {"kind": kind, "source": source, "url": locator, "publicUrl": locator}
 
 
 class SchemaQualityGateTest(unittest.TestCase):
@@ -756,6 +769,8 @@ class SchemaQualityGateTest(unittest.TestCase):
                         "packageKey": "agent-productivity-suite",
                         "categoryId": 1901,
                         "enabled": True,
+                        "icon": media_resource("https://cdn.example.test/packages/agent-productivity/icon.png"),
+                        "cover": media_resource("https://cdn.example.test/packages/agent-productivity/cover.png"),
                     }
                 ]
             ),
@@ -784,6 +799,8 @@ class SchemaQualityGateTest(unittest.TestCase):
                         "builtin": True,
                         "isBuiltin": True,
                         "enabled": True,
+                        "icon": media_resource("https://cdn.example.test/skills/prompt-optimizer/icon.png"),
+                        "cover": media_resource("https://cdn.example.test/skills/prompt-optimizer/cover.png"),
                         "capabilities": ["prompt.analysis"],
                         "configSchema": {"type": "object"},
                         "defaultConfig": {},
@@ -793,7 +810,17 @@ class SchemaQualityGateTest(unittest.TestCase):
             encoding="utf-8",
         )
         (skills_root / "assets.json").write_text(
-            json.dumps([{"uuid": "asset", "targetType": 35, "targetId": 8101}]),
+            json.dumps(
+                [
+                    {
+                        "uuid": "asset",
+                        "targetType": 35,
+                        "targetId": 8101,
+                        "asset": media_resource("https://cdn.example.test/skills/prompt-optimizer/cover.png"),
+                        "thumbnail": media_resource("https://cdn.example.test/skills/prompt-optimizer/thumb.png"),
+                    }
+                ]
+            ),
             encoding="utf-8",
         )
         artifact_payload = {
@@ -817,7 +844,10 @@ class SchemaQualityGateTest(unittest.TestCase):
                         "targetType": 35,
                         "targetId": 8101,
                         "artifactRef": "builtin://sdkwork.skills.prompt_optimizer@1.0.0",
-                        "artifactUrl": "data/skills/artifacts/prompt-optimizer-1.0.0.json",
+                        "artifact": media_resource(
+                            "data/skills/artifacts/prompt-optimizer-1.0.0.json",
+                            "document",
+                        ),
                         "version": "1.0.0",
                         "runtime": "builtin",
                         "checksumHash": checksum_hash,
@@ -844,7 +874,10 @@ class SchemaQualityGateTest(unittest.TestCase):
                     "artifacts": [
                         {
                             "artifactRef": "builtin://sdkwork.skills.prompt_optimizer@1.0.0",
-                            "artifactUrl": "data/skills/artifacts/prompt-optimizer-1.0.0.json",
+                            "artifact": media_resource(
+                                "data/skills/artifacts/prompt-optimizer-1.0.0.json",
+                                "document",
+                            ),
                             "version": "1.0.0",
                             "runtime": "builtin",
                             "checksumHash": checksum_hash,

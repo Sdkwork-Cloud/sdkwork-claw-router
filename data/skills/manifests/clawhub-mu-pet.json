@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mu-pet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mu-pet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mu-pet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:549bc853dcc1ff97848d80bdfb16582e01bdc74d20df86a755c7621c70a69e43",

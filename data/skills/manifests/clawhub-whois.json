@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whois@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whois-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whois-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:354febc1cd4e23af0cb7cc17f6cc7e7e4800d9d002d01e95f55eac6aeac88cfc",

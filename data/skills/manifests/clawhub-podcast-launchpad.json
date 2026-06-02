@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podcast-launchpad@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-podcast-launchpad-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podcast-launchpad-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:811a06245df820320c55c3585985c5ca9ff3c3e70d0acf950bbc16b9249f84da",

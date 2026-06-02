@@ -31,7 +31,9 @@ describe("sdkwork-image-pc-react domain contract", () => {
       type: "image-route-intent",
     });
 
-    expect(createEmptySdkworkImageWorkspace()).toMatchObject({
+    const workspace = createEmptySdkworkImageWorkspace();
+
+    expect(workspace).toMatchObject({
       digest: {
         presetCount: 3,
         totalImages: 4,
@@ -40,6 +42,12 @@ describe("sdkwork-image-pc-react domain contract", () => {
       presets: expect.arrayContaining([
         expect.objectContaining({ id: "studio-product" }),
       ]),
+    });
+    expect(workspace.images[0]).toMatchObject({
+      resource: {
+        kind: "image",
+        source: "generated",
+      },
     });
   });
 });

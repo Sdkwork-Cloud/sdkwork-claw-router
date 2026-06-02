@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/car-connect@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-car-connect-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-car-connect-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:362539b8dba5d85f498b632cca7dfe8ab69e5b70b912774badcfeecd4f5d42d0",

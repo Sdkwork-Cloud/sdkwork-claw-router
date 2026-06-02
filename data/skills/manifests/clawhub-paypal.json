@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paypal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paypal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paypal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:73ab2a776d58b487e7781db82cea308fa64235e049c58e54a6980e4eb0c313b5",

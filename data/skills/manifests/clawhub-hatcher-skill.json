@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hatcher-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hatcher-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hatcher-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7e35f4b2692b5c10980aedf5bb812050d441507cf8de864ba25eca55b680f83",

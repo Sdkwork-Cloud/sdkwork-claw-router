@@ -33,9 +33,16 @@ pub struct CommercePaymentRouteRuleRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub ends_at: Option<String>,
 
+    /// Id field on commerce payment route rule record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Organization id field on commerce payment route rule record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Priority field on commerce payment route rule record.
+    pub priority: String,
 
     /// Purchase type field on commerce payment route rule record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

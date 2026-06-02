@@ -10,8 +10,10 @@ class CommerceMembershipPlanRecord:
     level_code: str
     name: str
     plan_no: str
+    sort_order: str
     status: str
     tenant_id: str
     updated_at: str
     benefits_json: Optional[Dict[str, str]] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None

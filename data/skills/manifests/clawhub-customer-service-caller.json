@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customer-service-caller@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-customer-service-caller-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customer-service-caller-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0396324e3e71e0f1d9f27f90e58f5665b74dcc0771f5ca025ac3b72d50e8d7e",

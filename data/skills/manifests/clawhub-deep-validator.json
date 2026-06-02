@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deep-validator@2.5.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-deep-validator-2.5.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deep-validator-2.5.2.json"
+      },
       "version": "2.5.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a86899de146907e10c08b0553538326e6f6eb0a502bdb0f395e52a01f10aa218",

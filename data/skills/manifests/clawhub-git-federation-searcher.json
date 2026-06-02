@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-federation-searcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-federation-searcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-federation-searcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d58b0344ec4685542facd26d8d46e9bbe00ccc6f0c9581a2640c067b97ef5cf3",

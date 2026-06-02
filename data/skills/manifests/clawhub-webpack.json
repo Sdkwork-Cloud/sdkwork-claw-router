@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/webpack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-webpack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-webpack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b93d37420d1e61a61bfc076ec1f547112ef06c1e962f2dbaf7b94a95c75c526",

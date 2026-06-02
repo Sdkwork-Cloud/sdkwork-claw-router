@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fedex@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fedex-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fedex-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a58adcbdd0f0d80992aad4e9cfa282534563666f614bc8eae325a10566ac92b6",

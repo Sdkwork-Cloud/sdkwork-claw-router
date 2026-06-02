@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-podcast-pipeline@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-podcast-pipeline-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-podcast-pipeline-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:276b41f5642a75665f19ac168266498d1d05b762aec19f454ec9edca5850877a",

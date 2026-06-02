@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grep-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grep-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grep-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96f16e007a737568795781f2ccdb050243b803aee3c27acf2c2ed10c2163325b",

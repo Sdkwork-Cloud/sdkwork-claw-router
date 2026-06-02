@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/server-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-server-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-server-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:312cdc01537ba66a1561b60cfe26a855b160562d2f65e6b6ace48627c2bc28b1",

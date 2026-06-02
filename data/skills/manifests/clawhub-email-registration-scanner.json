@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-registration-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-registration-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-registration-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:feb3296bdef343a14419c747ad0fa15cd6984e027bc1fb10d719184038e6af06",

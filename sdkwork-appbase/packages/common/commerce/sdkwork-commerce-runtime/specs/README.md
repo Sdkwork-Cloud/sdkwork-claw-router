@@ -19,7 +19,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 ## Contract Manifest
 
 - [component.spec.json](./component.spec.json) is the machine-readable component contract.
-- Consumers should integrate through public exports, declared runtime entrypoints, or generated SDK clients listed in the manifest.
+- Consumers should integrate through public exports, runtime entrypoints, SDK clients, or adapters declared in the manifest.
 - Generated SDK language outputs are represented at their SDK family root instead of duplicating local specs in generated folders.
 
 ## Canonical Specs
@@ -31,7 +31,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | [DOCUMENTATION_SPEC.md](../../../../../../../specs/DOCUMENTATION_SPEC.md) | Module README, examples, ADR, changelog, and runbook rules. |
 | [DOMAIN_SPEC.md](../../../../../../../specs/DOMAIN_SPEC.md) | Canonical domain ownership and naming. |
 | [FRONTEND_SPEC.md](../../../../../../../specs/FRONTEND_SPEC.md) | UI, service, SDK, accessibility, and frontend runtime rules. |
-| [GOVERNANCE_SPEC.md](../../../../../../../specs/GOVERNANCE_SPEC.md) | Standard ownership, exception, dependency, and release rules. |
+| [GOVERNANCE_SPEC.md](../../../../../../../specs/GOVERNANCE_SPEC.md) | Standard ownership, exception, compatibility, and migration rules. |
 | [I18N_SPEC.md](../../../../../../../specs/I18N_SPEC.md) | User-facing language, locale, message catalog, and fallback rules. |
 | [MODULE_SPEC.md](../../../../../../../specs/MODULE_SPEC.md) | Reusable package contract and dependency direction. |
 | [PERFORMANCE_SPEC.md](../../../../../../../specs/PERFORMANCE_SPEC.md) | Latency, pagination, bundle, scalability, and retry budget rules. |

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/long-task-checkin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-long-task-checkin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-long-task-checkin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7d27eec409a0f79b74faec0712ae8226326e3b1b1cf38aa2481f97be98e8a52",

@@ -15,12 +15,19 @@ pub struct CommercePaymentChannelRecord {
     /// Currency code field on commerce payment channel record.
     pub currency_code: String,
 
+    /// Id field on commerce payment channel record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Method id field on commerce payment channel record.
     pub method_id: String,
 
     /// Organization id field on commerce payment channel record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Priority field on commerce payment channel record.
+    pub priority: String,
 
     /// Provider account id field on commerce payment channel record.
     pub provider_account_id: String,

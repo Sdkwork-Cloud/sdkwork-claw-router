@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-leaderboard@1.20.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-leaderboard-1.20.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-leaderboard-1.20.1.json"
+      },
       "version": "1.20.1",
       "runtime": "metadata",
       "checksumHash": "sha256:37b0cfd88287ec9eccffef28d75101fec09083ad07e0a989e607552229163d0f",

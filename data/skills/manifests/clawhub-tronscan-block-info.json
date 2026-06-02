@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tronscan-block-info@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-tronscan-block-info-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tronscan-block-info-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:405bed71d6651a4189ed45ae6ffec987c0fbdad259dd6122e21046258387a0ea",

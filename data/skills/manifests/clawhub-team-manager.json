@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/team-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-team-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-team-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93954f254f3c13e6b887368532d984b58b2a61c606c8bd3e720f6fb0196a40c8",

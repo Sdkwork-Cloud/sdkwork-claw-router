@@ -116,12 +116,15 @@ importers:
       '@sdkwork/notification-pc-react':
         specifier: workspace:*
         version: link:../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react
+      '@sdkwork/runtime-bootstrap':
+        specifier: workspace:*
+        version: link:../../../sdkwork-appbase/packages/common/foundation/sdkwork-runtime-bootstrap
       '@sdkwork/sdk-common':
         specifier: ^1.0.2
         version: 1.0.2
       '@sdkwork/ui-pc-react':
         specifier: workspace:*
-        version: link:../../../../../sdkwork-ui/sdkwork-ui-pc-react
+        version: link:../../../sdkwork-ui/sdkwork-ui-pc-react
       '@tailwindcss/vite':
         specifier: ^4.1.14
         version: 4.2.2(vite@6.4.2(@types/node@22.19.17)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0))
@@ -290,12 +293,15 @@ importers:
       sdkwork-claw-router-admin-marketing:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-marketing
-      sdkwork-claw-router-admin-messaging:
+      sdkwork-claw-router-admin-mcp:
         specifier: workspace:*
-        version: link:packages/sdkwork-claw-router-admin-messaging
+        version: link:packages/sdkwork-claw-router-admin-mcp
       sdkwork-claw-router-admin-memberships:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-memberships
+      sdkwork-claw-router-admin-messaging:
+        specifier: workspace:*
+        version: link:packages/sdkwork-claw-router-admin-messaging
       sdkwork-claw-router-admin-model:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-model
@@ -311,12 +317,21 @@ importers:
       sdkwork-claw-router-admin-payments:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-payments
+      sdkwork-claw-router-admin-prompts:
+        specifier: workspace:*
+        version: link:packages/sdkwork-claw-router-admin-prompts
       sdkwork-claw-router-admin-ratelimit:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-ratelimit
       sdkwork-claw-router-admin-record:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-record
+      sdkwork-claw-router-admin-runtime-region:
+        specifier: workspace:*
+        version: link:packages/sdkwork-claw-router-admin-runtime-region
+      sdkwork-claw-router-admin-service-nodes:
+        specifier: workspace:*
+        version: link:packages/sdkwork-claw-router-admin-service-nodes
       sdkwork-claw-router-admin-service-provider:
         specifier: workspace:*
         version: link:packages/sdkwork-claw-router-admin-service-provider
@@ -475,7 +490,433 @@ importers:
         specifier: ~5.8.2
         version: 5.8.3
 
-  ../../../../../sdkwork-ui/sdkwork-ui-pc-react:
+  ../../../../spring-ai-plus-app-api/sdkwork-sdk-app/sdkwork-app-sdk-typescript:
+    dependencies:
+      '@sdkwork/sdk-common':
+        specifier: ^1.0.2
+        version: 1.0.2
+    devDependencies:
+      '@types/node':
+        specifier: ^20.0.0
+        version: 20.19.39
+      rollup:
+        specifier: ^4.0.0
+        version: 4.60.1
+      typescript:
+        specifier: ^5.3.0
+        version: 5.8.3
+
+  ../../../sdkwork-appbase/packages/common/commerce/sdkwork-commerce-contracts: {}
+
+  ../../../sdkwork-appbase/packages/common/commerce/sdkwork-commerce-rpc-contracts: {}
+
+  ../../../sdkwork-appbase/packages/common/commerce/sdkwork-commerce-runtime:
+    dependencies:
+      '@sdkwork/commerce-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-commerce-contracts
+      '@sdkwork/commerce-sdk-ports':
+        specifier: workspace:*
+        version: link:../sdkwork-commerce-sdk-ports
+      '@sdkwork/commerce-service':
+        specifier: workspace:*
+        version: link:../sdkwork-commerce-service
+      '@sdkwork/runtime-bootstrap':
+        specifier: workspace:*
+        version: link:../../foundation/sdkwork-runtime-bootstrap
+
+  ../../../sdkwork-appbase/packages/common/commerce/sdkwork-commerce-sdk-ports:
+    dependencies:
+      '@sdkwork/commerce-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-commerce-contracts
+
+  ../../../sdkwork-appbase/packages/common/commerce/sdkwork-commerce-service:
+    dependencies:
+      '@sdkwork/commerce-sdk-ports':
+        specifier: workspace:*
+        version: link:../sdkwork-commerce-sdk-ports
+
+  ../../../sdkwork-appbase/packages/common/conversation/sdkwork-conversation: {}
+
+  ../../../sdkwork-appbase/packages/common/foundation/sdkwork-cache-core:
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/common/foundation/sdkwork-runtime-bootstrap:
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-contracts:
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-rpc-contracts: {}
+
+  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-runtime:
+    dependencies:
+      '@sdkwork/iam-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-iam-contracts
+      '@sdkwork/iam-sdk-ports':
+        specifier: workspace:*
+        version: link:../sdkwork-iam-sdk-ports
+      '@sdkwork/iam-service':
+        specifier: workspace:*
+        version: link:../sdkwork-iam-service
+      '@sdkwork/runtime-bootstrap':
+        specifier: workspace:*
+        version: link:../../foundation/sdkwork-runtime-bootstrap
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-adapter:
+    dependencies:
+      '@sdkwork/iam-sdk-ports':
+        specifier: workspace:*
+        version: link:../sdkwork-iam-sdk-ports
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports:
+    dependencies:
+      '@sdkwork/iam-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-iam-contracts
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-service:
+    dependencies:
+      '@sdkwork/iam-contracts':
+        specifier: workspace:*
+        version: link:../sdkwork-iam-contracts
+      '@sdkwork/iam-sdk-ports':
+        specifier: workspace:*
+        version: link:../sdkwork-iam-sdk-ports
+      '@sdkwork/runtime-bootstrap':
+        specifier: workspace:*
+        version: link:../../foundation/sdkwork-runtime-bootstrap
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/common/integration/sdkwork-platform:
+    dependencies:
+      '@sdkwork/conversation':
+        specifier: workspace:*
+        version: link:../../conversation/sdkwork-conversation
+
+  ../../../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react:
+    dependencies:
+      lucide-react:
+        specifier: 'catalog:'
+        version: 0.546.0(react@19.2.4)
+
+  ../../../sdkwork-appbase/packages/pc-react/device/sdkwork-distribution-pc-react:
+    dependencies:
+      lucide-react:
+        specifier: 'catalog:'
+        version: 0.546.0(react@19.2.4)
+
+  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-appbase-pc-react:
+    dependencies:
+      '@sdkwork/runtime-bootstrap':
+        specifier: workspace:*
+        version: link:../../../common/foundation/sdkwork-runtime-bootstrap
+    devDependencies:
+      '@sdkwork/ui-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-ui/sdkwork-ui-pc-react
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-command-pc-react:
+    devDependencies:
+      '@sdkwork/core-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
+      '@sdkwork/ui-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-ui/sdkwork-ui-pc-react
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-i18n-pc-react:
+    dependencies:
+      i18next:
+        specifier: ^26.1.0
+        version: 26.1.0(typescript@6.0.2)
+      react-i18next:
+        specifier: ^17.0.7
+        version: 17.0.7(i18next@26.1.0(typescript@6.0.2))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@6.0.2)
+
+  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-router-pc-react:
+    devDependencies:
+      '@sdkwork/core-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
+      '@sdkwork/ui-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-ui/sdkwork-ui-pc-react
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-search-pc-react:
+    devDependencies:
+      '@sdkwork/core-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
+      '@sdkwork/ui-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-ui/sdkwork-ui-pc-react
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-shell-pc-react:
+    devDependencies:
+      '@sdkwork/core-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
+      '@sdkwork/ui-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-ui/sdkwork-ui-pc-react
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-workspace-pc-react:
+    devDependencies:
+      '@sdkwork/core-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
+      '@sdkwork/ui-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-ui/sdkwork-ui-pc-react
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/host/sdkwork-host-pc-react: {}
+
+  ../../../sdkwork-appbase/packages/pc-react/host/sdkwork-host-tauri-pc-react: {}
+
+  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react:
+    dependencies:
+      '@sdkwork/appbase-pc-react':
+        specifier: workspace:*
+        version: link:../../foundation/sdkwork-appbase-pc-react
+      '@sdkwork/i18n-pc-react':
+        specifier: workspace:*
+        version: link:../../foundation/sdkwork-i18n-pc-react
+      lucide-react:
+        specifier: 'catalog:'
+        version: 0.546.0(react@19.2.4)
+      qrcode:
+        specifier: 'catalog:'
+        version: 1.5.4
+    devDependencies:
+      '@sdkwork/core-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
+      '@sdkwork/ui-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-ui/sdkwork-ui-pc-react
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-runtime-pc-react:
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-core-pc-react:
+    dependencies:
+      '@sdkwork/iam-contracts':
+        specifier: workspace:*
+        version: link:../../../common/iam/sdkwork-iam-contracts
+      '@sdkwork/iam-runtime':
+        specifier: workspace:*
+        version: link:../../../common/iam/sdkwork-iam-runtime
+      '@sdkwork/iam-sdk-adapter':
+        specifier: workspace:*
+        version: link:../../../common/iam/sdkwork-iam-sdk-adapter
+      '@sdkwork/iam-sdk-ports':
+        specifier: workspace:*
+        version: link:../../../common/iam/sdkwork-iam-sdk-ports
+      '@sdkwork/iam-service':
+        specifier: workspace:*
+        version: link:../../../common/iam/sdkwork-iam-service
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-organization-pc-react:
+    dependencies:
+      '@sdkwork/iam-service':
+        specifier: workspace:*
+        version: link:../../../common/iam/sdkwork-iam-service
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-permission-pc-react:
+    dependencies:
+      '@sdkwork/iam-service':
+        specifier: workspace:*
+        version: link:../../../common/iam/sdkwork-iam-service
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-react:
+    dependencies:
+      '@sdkwork/iam-runtime':
+        specifier: workspace:*
+        version: link:../../../common/iam/sdkwork-iam-runtime
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-tenant-pc-react:
+    dependencies:
+      '@sdkwork/iam-service':
+        specifier: workspace:*
+        version: link:../../../common/iam/sdkwork-iam-service
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-user-center-core-pc-react:
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-user-center-pc-react:
+    dependencies:
+      '@sdkwork/auth-pc-react':
+        specifier: workspace:*
+        version: link:../sdkwork-auth-pc-react
+      '@sdkwork/user-pc-react':
+        specifier: workspace:*
+        version: link:../sdkwork-user-pc-react
+    devDependencies:
+      '@sdkwork/core-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
+      '@sdkwork/ui-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-ui/sdkwork-ui-pc-react
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-user-center-validation-pc-react:
+    dependencies:
+      '@sdkwork/user-center-core-pc-react':
+        specifier: workspace:*
+        version: link:../sdkwork-user-center-core-pc-react
+    devDependencies:
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-user-pc-react:
+    dependencies:
+      '@sdkwork/appbase-pc-react':
+        specifier: workspace:*
+        version: link:../../foundation/sdkwork-appbase-pc-react
+      '@sdkwork/search-pc-react':
+        specifier: workspace:*
+        version: link:../../foundation/sdkwork-search-pc-react
+    devDependencies:
+      '@sdkwork/core-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
+      '@sdkwork/ui-pc-react':
+        specifier: workspace:*
+        version: link:../../../../../sdkwork-ui/sdkwork-ui-pc-react
+      typescript:
+        specifier: ^6.0.2
+        version: 6.0.2
+
+  ../../../sdkwork-appbase/packages/pc-react/integration/sdkwork-open-platform-admin-pc-react: {}
+
+  ../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react:
+    dependencies:
+      lucide-react:
+        specifier: 'catalog:'
+        version: 0.546.0(react@19.2.4)
+
+  ../../../sdkwork-core/sdkwork-core-pc-react:
+    dependencies:
+      '@sdkwork/app-sdk':
+        specifier: ^1.0.34
+        version: 1.0.34
+      '@sdkwork/im-sdk':
+        specifier: ^0.1.1
+        version: 0.1.1
+      '@sdkwork/rtc-sdk':
+        specifier: ^0.1.1
+        version: 0.1.1(@sdkwork/im-sdk@0.1.1)
+    devDependencies:
+      '@testing-library/react':
+        specifier: ^16.3.2
+        version: 16.3.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: 'catalog:'
+        version: 19.2.3(@types/react@19.2.14)
+      jsdom:
+        specifier: ^29.0.1
+        version: 29.1.1
+      react:
+        specifier: 'catalog:'
+        version: 19.2.4
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.2.4(react@19.2.4)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.8.3
+      vite:
+        specifier: 8.0.3
+        version: 8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0)
+      vite-plugin-dts:
+        specifier: 'catalog:'
+        version: 4.5.4(@types/node@25.6.2)(rollup@4.60.1)(typescript@5.8.3)(vite@8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0))
+      vitest:
+        specifier: ^4.1.2
+        version: 4.1.5(@types/node@25.6.2)(jiti@2.6.1)(jsdom@29.1.1)(lightningcss@1.32.0)(tsx@4.21.0)
+
+  ../../../sdkwork-ui/sdkwork-ui-pc-react:
     dependencies:
       '@radix-ui/react-avatar':
         specifier: ^1.1.11
@@ -609,429 +1050,10 @@ importers:
         version: 1.6.4(@algolia/client-search@5.52.1)(@types/node@25.6.2)(@types/react@19.2.14)(lightningcss@1.32.0)(postcss@8.5.14)(qrcode@1.5.4)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@6.0.2)
       vitest:
         specifier: ^4.1.2
-        version: 4.1.5(@types/node@25.6.2)(jsdom@29.1.1)(vite@8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0))
+        version: 4.1.5(@types/node@25.6.2)(jiti@2.6.1)(jsdom@29.1.1)(lightningcss@1.32.0)(tsx@4.21.0)
       vue:
         specifier: ^3.5.32
         version: 3.5.34(typescript@6.0.2)
-
-  ../../../../spring-ai-plus-app-api/sdkwork-sdk-app/sdkwork-app-sdk-typescript:
-    dependencies:
-      '@sdkwork/sdk-common':
-        specifier: ^1.0.2
-        version: 1.0.2
-    devDependencies:
-      '@types/node':
-        specifier: ^20.0.0
-        version: 20.19.39
-      rollup:
-        specifier: ^4.0.0
-        version: 4.60.1
-      typescript:
-        specifier: ^5.3.0
-        version: 5.8.3
-
-  ../../../sdkwork-appbase/packages/common/commerce/sdkwork-commerce-contracts: {}
-
-  ../../../sdkwork-appbase/packages/common/commerce/sdkwork-commerce-rpc-contracts: {}
-
-  ../../../sdkwork-appbase/packages/common/commerce/sdkwork-commerce-runtime:
-    dependencies:
-      '@sdkwork/commerce-contracts':
-        specifier: workspace:*
-        version: link:../sdkwork-commerce-contracts
-      '@sdkwork/commerce-sdk-ports':
-        specifier: workspace:*
-        version: link:../sdkwork-commerce-sdk-ports
-      '@sdkwork/commerce-service':
-        specifier: workspace:*
-        version: link:../sdkwork-commerce-service
-      '@sdkwork/runtime-bootstrap':
-        specifier: workspace:*
-        version: link:../../foundation/sdkwork-runtime-bootstrap
-
-  ../../../sdkwork-appbase/packages/common/commerce/sdkwork-commerce-sdk-ports:
-    dependencies:
-      '@sdkwork/commerce-contracts':
-        specifier: workspace:*
-        version: link:../sdkwork-commerce-contracts
-
-  ../../../sdkwork-appbase/packages/common/commerce/sdkwork-commerce-service:
-    dependencies:
-      '@sdkwork/commerce-sdk-ports':
-        specifier: workspace:*
-        version: link:../sdkwork-commerce-sdk-ports
-
-  ../../../sdkwork-appbase/packages/common/conversation/sdkwork-conversation: {}
-
-  ../../../sdkwork-appbase/packages/common/foundation/sdkwork-cache-core:
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/common/foundation/sdkwork-runtime-bootstrap:
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-contracts:
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-rpc-contracts: {}
-
-  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-runtime:
-    dependencies:
-      '@sdkwork/iam-contracts':
-        specifier: workspace:*
-        version: link:../sdkwork-iam-contracts
-      '@sdkwork/iam-sdk-ports':
-        specifier: workspace:*
-        version: link:../sdkwork-iam-sdk-ports
-      '@sdkwork/iam-service':
-        specifier: workspace:*
-        version: link:../sdkwork-iam-service
-      '@sdkwork/runtime-bootstrap':
-        specifier: workspace:*
-        version: link:../../foundation/sdkwork-runtime-bootstrap
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-adapter:
-    dependencies:
-      '@sdkwork/iam-sdk-ports':
-        specifier: workspace:*
-        version: link:../sdkwork-iam-sdk-ports
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-sdk-ports:
-    dependencies:
-      '@sdkwork/iam-contracts':
-        specifier: workspace:*
-        version: link:../sdkwork-iam-contracts
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/common/iam/sdkwork-iam-service:
-    dependencies:
-      '@sdkwork/iam-contracts':
-        specifier: workspace:*
-        version: link:../sdkwork-iam-contracts
-      '@sdkwork/iam-sdk-ports':
-        specifier: workspace:*
-        version: link:../sdkwork-iam-sdk-ports
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/common/integration/sdkwork-platform:
-    dependencies:
-      '@sdkwork/conversation':
-        specifier: workspace:*
-        version: link:../../conversation/sdkwork-conversation
-
-  ../../../sdkwork-appbase/packages/pc-react/content/sdkwork-generation-pc-react:
-    dependencies:
-      lucide-react:
-        specifier: 'catalog:'
-        version: 0.546.0(react@19.2.4)
-
-  ../../../sdkwork-appbase/packages/pc-react/device/sdkwork-distribution-pc-react:
-    dependencies:
-      lucide-react:
-        specifier: 'catalog:'
-        version: 0.546.0(react@19.2.4)
-
-  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-appbase-pc-react:
-    devDependencies:
-      '@sdkwork/ui-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../../../sdkwork-ui/sdkwork-ui-pc-react
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-command-pc-react:
-    devDependencies:
-      '@sdkwork/core-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
-      '@sdkwork/ui-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../../../sdkwork-ui/sdkwork-ui-pc-react
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-i18n-pc-react:
-    dependencies:
-      i18next:
-        specifier: ^26.1.0
-        version: 26.1.0(typescript@6.0.2)
-      react-i18next:
-        specifier: ^17.0.7
-        version: 17.0.7(i18next@26.1.0(typescript@6.0.2))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@6.0.2)
-
-  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-router-pc-react:
-    devDependencies:
-      '@sdkwork/core-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
-      '@sdkwork/ui-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../../../sdkwork-ui/sdkwork-ui-pc-react
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-search-pc-react:
-    devDependencies:
-      '@sdkwork/core-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
-      '@sdkwork/ui-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../../../sdkwork-ui/sdkwork-ui-pc-react
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-shell-pc-react:
-    devDependencies:
-      '@sdkwork/core-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
-      '@sdkwork/ui-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../../../sdkwork-ui/sdkwork-ui-pc-react
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/foundation/sdkwork-workspace-pc-react:
-    devDependencies:
-      '@sdkwork/core-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
-      '@sdkwork/ui-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../../../sdkwork-ui/sdkwork-ui-pc-react
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/host/sdkwork-host-pc-react: {}
-
-  ../../../sdkwork-appbase/packages/pc-react/host/sdkwork-host-tauri-pc-react: {}
-
-  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-pc-react:
-    dependencies:
-      '@sdkwork/appbase-pc-react':
-        specifier: workspace:*
-        version: link:../../foundation/sdkwork-appbase-pc-react
-      '@sdkwork/i18n-pc-react':
-        specifier: workspace:*
-        version: link:../../foundation/sdkwork-i18n-pc-react
-      lucide-react:
-        specifier: 'catalog:'
-        version: 0.546.0(react@19.2.4)
-      qrcode:
-        specifier: 'catalog:'
-        version: 1.5.4
-    devDependencies:
-      '@sdkwork/core-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
-      '@sdkwork/ui-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../../../sdkwork-ui/sdkwork-ui-pc-react
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-auth-runtime-pc-react:
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-core-pc-react:
-    dependencies:
-      '@sdkwork/iam-contracts':
-        specifier: workspace:*
-        version: link:../../../common/iam/sdkwork-iam-contracts
-      '@sdkwork/iam-runtime':
-        specifier: workspace:*
-        version: link:../../../common/iam/sdkwork-iam-runtime
-      '@sdkwork/iam-sdk-adapter':
-        specifier: workspace:*
-        version: link:../../../common/iam/sdkwork-iam-sdk-adapter
-      '@sdkwork/iam-sdk-ports':
-        specifier: workspace:*
-        version: link:../../../common/iam/sdkwork-iam-sdk-ports
-      '@sdkwork/iam-service':
-        specifier: workspace:*
-        version: link:../../../common/iam/sdkwork-iam-service
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-organization-pc-react:
-    dependencies:
-      '@sdkwork/iam-service':
-        specifier: workspace:*
-        version: link:../../../common/iam/sdkwork-iam-service
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-permission-pc-react:
-    dependencies:
-      '@sdkwork/iam-service':
-        specifier: workspace:*
-        version: link:../../../common/iam/sdkwork-iam-service
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-react:
-    dependencies:
-      '@sdkwork/iam-runtime':
-        specifier: workspace:*
-        version: link:../../../common/iam/sdkwork-iam-runtime
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-iam-tenant-pc-react:
-    dependencies:
-      '@sdkwork/iam-service':
-        specifier: workspace:*
-        version: link:../../../common/iam/sdkwork-iam-service
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-user-center-core-pc-react:
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-user-center-pc-react:
-    dependencies:
-      '@sdkwork/auth-pc-react':
-        specifier: workspace:*
-        version: link:../sdkwork-auth-pc-react
-      '@sdkwork/user-pc-react':
-        specifier: workspace:*
-        version: link:../sdkwork-user-pc-react
-    devDependencies:
-      '@sdkwork/core-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
-      '@sdkwork/ui-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../../../sdkwork-ui/sdkwork-ui-pc-react
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-user-center-validation-pc-react:
-    dependencies:
-      '@sdkwork/user-center-core-pc-react':
-        specifier: workspace:*
-        version: link:../sdkwork-user-center-core-pc-react
-    devDependencies:
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/iam/sdkwork-user-pc-react:
-    dependencies:
-      '@sdkwork/appbase-pc-react':
-        specifier: workspace:*
-        version: link:../../foundation/sdkwork-appbase-pc-react
-      '@sdkwork/search-pc-react':
-        specifier: workspace:*
-        version: link:../../foundation/sdkwork-search-pc-react
-    devDependencies:
-      '@sdkwork/core-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../sdkwork-core/sdkwork-core-pc-react
-      '@sdkwork/ui-pc-react':
-        specifier: workspace:*
-        version: link:../../../../../../../sdkwork-ui/sdkwork-ui-pc-react
-      typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
-
-  ../../../sdkwork-appbase/packages/pc-react/integration/sdkwork-open-platform-admin-pc-react: {}
-
-  ../../../sdkwork-appbase/packages/pc-react/notification/sdkwork-notification-pc-react:
-    dependencies:
-      lucide-react:
-        specifier: 'catalog:'
-        version: 0.546.0(react@19.2.4)
-
-  ../../../sdkwork-core/sdkwork-core-pc-react:
-    dependencies:
-      '@sdkwork/app-sdk':
-        specifier: ^1.0.34
-        version: 1.0.34
-      '@sdkwork/im-sdk':
-        specifier: ^0.1.1
-        version: 0.1.1
-      '@sdkwork/rtc-sdk':
-        specifier: ^0.1.1
-        version: 0.1.1(@sdkwork/im-sdk@0.1.1)
-    devDependencies:
-      '@testing-library/react':
-        specifier: ^16.3.2
-        version: 16.3.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@types/react':
-        specifier: 'catalog:'
-        version: 19.2.14
-      '@types/react-dom':
-        specifier: 'catalog:'
-        version: 19.2.3(@types/react@19.2.14)
-      jsdom:
-        specifier: ^29.0.1
-        version: 29.1.1
-      react:
-        specifier: 'catalog:'
-        version: 19.2.4
-      react-dom:
-        specifier: 'catalog:'
-        version: 19.2.4(react@19.2.4)
-      typescript:
-        specifier: 'catalog:'
-        version: 5.8.3
-      vite:
-        specifier: 8.0.3
-        version: 8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0)
-      vite-plugin-dts:
-        specifier: 'catalog:'
-        version: 4.5.4(@types/node@25.6.2)(rollup@4.60.1)(typescript@5.8.3)(vite@8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0))
-      vitest:
-        specifier: ^4.1.2
-        version: 4.1.5(@types/node@25.6.2)(jsdom@29.1.1)(vite@8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0))
 
   ../../packages/common/file/sdkwork-file-api-contracts:
     dependencies:
@@ -1280,7 +1302,7 @@ importers:
     devDependencies:
       vitest:
         specifier: ^4.1.2
-        version: 4.1.5(@types/node@25.6.2)(jsdom@29.1.1)(vite@8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0))
+        version: 4.1.5(@types/node@25.6.2)(jiti@2.6.1)(jsdom@29.1.1)(lightningcss@1.32.0)(tsx@4.21.0)
 
   packages/sdkwork-claw-router-admin-catalog:
     dependencies:
@@ -1345,13 +1367,19 @@ importers:
         specifier: workspace:*
         version: link:../sdkwork-claw-router-commons
 
-  packages/sdkwork-claw-router-admin-messaging:
+  packages/sdkwork-claw-router-admin-mcp:
     dependencies:
       sdkwork-claw-router-commons:
         specifier: workspace:*
         version: link:../sdkwork-claw-router-commons
 
   packages/sdkwork-claw-router-admin-memberships:
+    dependencies:
+      sdkwork-claw-router-commons:
+        specifier: workspace:*
+        version: link:../sdkwork-claw-router-commons
+
+  packages/sdkwork-claw-router-admin-messaging:
     dependencies:
       sdkwork-claw-router-commons:
         specifier: workspace:*
@@ -1393,6 +1421,12 @@ importers:
         specifier: workspace:*
         version: link:../sdkwork-claw-router-commons
 
+  packages/sdkwork-claw-router-admin-prompts:
+    dependencies:
+      sdkwork-claw-router-commons:
+        specifier: workspace:*
+        version: link:../sdkwork-claw-router-commons
+
   packages/sdkwork-claw-router-admin-ratelimit:
     dependencies:
       sdkwork-claw-router-commons:
@@ -1400,6 +1434,18 @@ importers:
         version: link:../sdkwork-claw-router-commons
 
   packages/sdkwork-claw-router-admin-record:
+    dependencies:
+      sdkwork-claw-router-commons:
+        specifier: workspace:*
+        version: link:../sdkwork-claw-router-commons
+
+  packages/sdkwork-claw-router-admin-runtime-region:
+    dependencies:
+      sdkwork-claw-router-commons:
+        specifier: workspace:*
+        version: link:../sdkwork-claw-router-commons
+
+  packages/sdkwork-claw-router-admin-service-nodes:
     dependencies:
       sdkwork-claw-router-commons:
         specifier: workspace:*
@@ -5771,7 +5817,6 @@ packages:
       '@vitest/ui': 4.1.5
       happy-dom: '*'
       jsdom: '*'
-      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
     peerDependenciesMeta:
       '@edge-runtime/vm':
         optional: true
@@ -7710,13 +7755,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.5(vite@8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0))':
+  '@vitest/mocker@4.1.5(vite@6.4.2(@types/node@25.6.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0))':
     dependencies:
       '@vitest/spy': 4.1.5
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0)
+      vite: 6.4.2(@types/node@25.6.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
 
   '@vitest/pretty-format@4.1.5':
     dependencies:
@@ -9907,7 +9952,7 @@ snapshots:
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
-      postcss: 8.5.8
+      postcss: 8.5.14
       rolldown: 1.0.0-rc.12
       tinyglobby: 0.2.15
     optionalDependencies:
@@ -9969,10 +10014,10 @@ snapshots:
       - typescript
       - universal-cookie
 
-  vitest@4.1.5(@types/node@25.6.2)(jsdom@29.1.1)(vite@8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0)):
+  vitest@4.1.5(@types/node@25.6.2)(jiti@2.6.1)(jsdom@29.1.1)(lightningcss@1.32.0)(tsx@4.21.0):
     dependencies:
       '@vitest/expect': 4.1.5
-      '@vitest/mocker': 4.1.5(vite@8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0))
+      '@vitest/mocker': 4.1.5(vite@6.4.2(@types/node@25.6.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0))
       '@vitest/pretty-format': 4.1.5
       '@vitest/runner': 4.1.5
       '@vitest/snapshot': 4.1.5
@@ -9989,13 +10034,23 @@ snapshots:
       tinyexec: 1.1.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.1.0
-      vite: 8.0.3(@types/node@25.6.2)(esbuild@0.27.7)(jiti@2.6.1)(tsx@4.21.0)
+      vite: 6.4.2(@types/node@25.6.2)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 25.6.2
       jsdom: 29.1.1
     transitivePeerDependencies:
+      - jiti
+      - less
+      - lightningcss
       - msw
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - terser
+      - tsx
+      - yaml
 
   void-elements@3.1.0: {}
 

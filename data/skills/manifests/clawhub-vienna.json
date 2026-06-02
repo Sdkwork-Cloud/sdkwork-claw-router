@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vienna@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vienna-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vienna-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b59fcccc5212c15821b47d4a3e487369db9824700214f206ff31057d94d14136",

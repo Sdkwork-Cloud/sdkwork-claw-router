@@ -1,9 +1,13 @@
+import type { MediaResource } from './media-resource';
+
 /** Commerce invoice record schema exposed by Claw Router. */
 export interface CommerceInvoiceRecord {
   /** Created at field on commerce invoice record. */
   created_at: string;
-  /** Document url field on commerce invoice record. */
-  document_url?: string;
+  /** Document field on commerce invoice record. */
+  document?: MediaResource;
+  /** Id field on commerce invoice record. */
+  id?: string;
   /** Invoice code field on commerce invoice record. */
   invoice_code?: string;
   /** Invoice no field on commerce invoice record. */

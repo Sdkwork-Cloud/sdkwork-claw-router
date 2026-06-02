@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/discord-chat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-discord-chat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-discord-chat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e0aaf26baa04e561415b2b0e8690669c98ed5c2477b1f985d28b4e3e2959d6c7",

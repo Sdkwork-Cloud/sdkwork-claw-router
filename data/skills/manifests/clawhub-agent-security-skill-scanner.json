@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-security-skill-scanner@6.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-security-skill-scanner-6.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-security-skill-scanner-6.2.0.json"
+      },
       "version": "6.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:82f4cf37263ee485abbddad090fc986a65d43862009f36d57d005778760daa9b",

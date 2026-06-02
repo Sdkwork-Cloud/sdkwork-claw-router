@@ -357,27 +357,19 @@ test("recharge package list, recharge settings, and order creation use standard 
   );
 });
 
-test("recharge order cancellation uses the standard recharge cancellation path", async () => {
+test("recharge order service no longer exposes a frontend cancellation path for package switching", () => {
   const rechargeServiceSource = readPortalFile(
     "./packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
   );
-
-  assert.match(rechargeServiceSource, /appRechargesOrdersCancel/);
-  assert.match(rechargeServiceSource, /static async cancelRechargeOrder/);
-  assert.match(rechargeServiceSource, /commerce\.orders\.cancellations\.create/);
-
-  await withBillingSdkResponse(
-    { code: "2000", data: { requestNo: "recharge-cancel-1", status: "cancelled", success: true } },
-    async (captured) => {
-      await RechargeService.cancelRechargeOrder("recharge-order-1");
-
-      assert.equal(requestPath(captured[0]?.url), "/app/v3/api/orders/recharge-order-1/cancellations");
-      assert.equal(captured[0]?.method, "POST");
-      const body = JSON.parse(captured[0]?.body ?? "{}");
-      assert.equal(body.clientRequestNo.startsWith("recharge-cancel-"), true);
-      assert.equal(body.note, "package-switch");
-    },
+  const checkoutServiceSource = readPortalFile(
+    "./packages/sdkwork-claw-router-console-checkout/src/checkoutService.ts",
   );
+
+  assert.doesNotMatch(rechargeServiceSource, /appRechargesOrdersCancel/);
+  assert.doesNotMatch(rechargeServiceSource, /static async cancelRechargeOrder/);
+  assert.doesNotMatch(rechargeServiceSource, /commerce\.orders\.cancellations\.create/);
+  assert.match(checkoutServiceSource, /appOrdersCancellationsCreate/);
+  assert.match(checkoutServiceSource, /commerce\.orders\.cancellations\.create/);
 });
 
 test("console recharge page matches the product recharge reference layout", () => {
@@ -432,6 +424,12 @@ test("console recharge page matches the product recharge reference layout", () =
   assert.match(rechargeViewSource, /customCurrencyCodes/);
   assert.match(rechargeViewSource, /handleCustomCurrencyChange/);
   assert.match(rechargeViewSource, /console\.recharge\.currency/);
+  assert.match(rechargeViewSource, /data-console-recharge-custom-entry="inline-money"/);
+  assert.match(rechargeViewSource, /value=\{customCurrencyCode\}/);
+  assert.match(rechargeViewSource, /disabled=\{isSubmitting\}/);
+  assert.doesNotMatch(rechargeViewSource, /value=\{currentCurrencyCode\}/);
+  assert.doesNotMatch(rechargeViewSource, /Boolean\(selectedOption\) \|\| isSubmitting/);
+  assert.doesNotMatch(rechargeViewSource, /pointer-events-none absolute left-4/);
   assert.doesNotMatch(rechargeViewSource, /pointsForAmount\(/);
   assert.doesNotMatch(rechargeViewSource, /referenceRechargeOptions/);
   assert.doesNotMatch(rechargeViewSource, /return referenceRechargeOptions/);

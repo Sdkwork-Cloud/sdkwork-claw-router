@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tieba-cli@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-tieba-cli-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tieba-cli-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:364c18fb5a796d69fdaf235992224018337ad49a16bf3ae73f14709e9e630e3a",

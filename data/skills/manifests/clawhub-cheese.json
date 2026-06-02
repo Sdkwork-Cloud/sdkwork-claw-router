@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cheese@4.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cheese-4.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cheese-4.1.0.json"
+      },
       "version": "4.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1b545e186e7a0f781c8e0bb852b7fb8c0e984398a3d4aa453e4b3cf61b9795f",

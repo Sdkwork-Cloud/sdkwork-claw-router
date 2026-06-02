@@ -23,7 +23,7 @@ let client = SdkworkBackendClient(config: config)
 client.setApiKey("your-api-key")
 
 // Use the SDK
-let result = try await client.ai.modelVendorsList()
+let result = try await client.ai.channelGroupsList()
 print(result)
 ```
 
@@ -103,8 +103,8 @@ print(result)
 ### ai
 
 ```swift
-// List vendors
-let result = try await client.ai.modelVendorsList()
+// List groups
+let result = try await client.ai.channelGroupsList()
 print(result)
 ```
 
@@ -135,8 +135,8 @@ print(result)
 ### iam
 
 ```swift
-// List groups
-let result = try await client.iam.accessGroupsList()
+// List API key map
+let result = try await client.iam.apiKeysList()
 print(result)
 ```
 
@@ -254,7 +254,7 @@ print(result)
 
 ```swift
 do {
-    try await client.ai.modelVendorsList()
+    try await client.ai.channelGroupsList()
 } catch {
     print("Error: \(error)")
 }

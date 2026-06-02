@@ -4,7 +4,7 @@ package types
 type AdminSkillCategoryUpdateRequest struct {
 	Code string `json:"code"`
 	Description string `json:"description"`
-	Icon string `json:"icon"`
+	Icon MediaResource `json:"icon"`
 	Name string `json:"name"`
 	ParentId string `json:"parentId"`
 	Path string `json:"path"`

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/guide-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-guide-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-guide-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da6dc7576bc1948ebe9521f636dd9398a126e89908181e3efa9f75fae55c80d4",

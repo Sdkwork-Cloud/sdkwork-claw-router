@@ -4,6 +4,9 @@ import {
 } from "react";
 import * as QRCode from "qrcode";
 import {
+  getSdkworkMediaDeliveryUrl,
+} from "@sdkwork/appbase-pc-react";
+import {
   Button,
   DetailDrawer,
   DetailDrawerMetric,
@@ -36,33 +39,34 @@ export function SdkworkPaymentDetailDrawer({
     formatTimestamp,
   } = useSdkworkPaymentIntl();
   const detail = state.detail;
-  const [qrImageUrl, setQrImageUrl] = useState<string>();
+  const [qrImageSrc, setQrImageSrc] = useState<string>();
 
   useEffect(() => {
     let cancelled = false;
 
     async function renderQrCode(): Promise<void> {
-      if (!detail?.qrCode) {
-        setQrImageUrl(undefined);
+      if (!detail?.qrImage && !detail?.qrContent) {
+        setQrImageSrc(undefined);
         return;
       }
 
-      if (detail.qrCode.startsWith("data:image")) {
-        setQrImageUrl(detail.qrCode);
+      const qrImageResourceSrc = getSdkworkMediaDeliveryUrl(detail.qrImage);
+      if (qrImageResourceSrc) {
+        setQrImageSrc(qrImageResourceSrc);
         return;
       }
 
       try {
-        const nextQrImageUrl = await QRCode.toDataURL(detail.qrCode, {
+        const nextQrImageSrc = await QRCode.toDataURL(detail.qrContent || "", {
           margin: 0,
           width: 240,
         });
         if (!cancelled) {
-          setQrImageUrl(nextQrImageUrl);
+          setQrImageSrc(nextQrImageSrc);
         }
       } catch {
         if (!cancelled) {
-          setQrImageUrl(undefined);
+          setQrImageSrc(undefined);
         }
       }
     }
@@ -72,7 +76,7 @@ export function SdkworkPaymentDetailDrawer({
     return () => {
       cancelled = true;
     };
-  }, [detail?.qrCode]);
+  }, [detail?.qrContent, detail?.qrImage]);
 
   return (
     <DetailDrawer
@@ -139,15 +143,15 @@ export function SdkworkPaymentDetailDrawer({
             </div>
           </DetailDrawerSection>
 
-          {(qrImageUrl || detail.paymentUrl || detail.qrCode) ? (
+          {(qrImageSrc || detail.paymentUrl || detail.qrContent) ? (
             <DetailDrawerSection description={copy.detail.scanDescription} title={copy.detail.scanTitle}>
               <div className="grid gap-4 lg:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]">
                 <div className="rounded-[1.5rem] border border-[var(--sdk-color-border-default)] bg-[var(--sdk-color-surface-panel-muted)] p-4">
-                  {qrImageUrl ? (
+                  {qrImageSrc ? (
                     <img
                       alt={copy.detail.qrImageAlt}
                       className="mx-auto h-60 w-60 rounded-[1rem] p-3"
-                      src={qrImageUrl}
+                      src={qrImageSrc}
                       style={createSdkworkPaymentQrSurfaceStyle()}
                     />
                   ) : (
@@ -176,7 +180,7 @@ export function SdkworkPaymentDetailDrawer({
 
                   <div>
                     <div className="font-medium text-[var(--sdk-color-text-primary)]">{copy.detail.qrPayloadLabel}</div>
-                    <div className="mt-1 break-all">{detail.qrCode || copy.common.emptyValue}</div>
+                    <div className="mt-1 break-all">{detail.qrContent || copy.common.emptyValue}</div>
                   </div>
 
                   <div>

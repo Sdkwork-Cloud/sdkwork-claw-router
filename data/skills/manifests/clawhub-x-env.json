@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/x-env@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-x-env-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-x-env-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9689129d7c35f841828a2c477a6d6a2790099559be65d09b37e111a083a4385",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pathe-movie@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pathe-movie-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pathe-movie-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d84f479152aaf269c17ad2c79de232addebf553c94b7d28f3170f1fc9b070650",

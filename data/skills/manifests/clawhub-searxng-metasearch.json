@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/searxng-metasearch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-searxng-metasearch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-searxng-metasearch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0eb3c7fd4b3ab79e5fb56c012e897ea62bb73b9633db914b44f16f4a28865bd8",

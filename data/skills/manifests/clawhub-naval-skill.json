@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/naval-skill@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-naval-skill-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-naval-skill-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6e903ec9e2bcd630b4d10fc8f23c59f41117689be625706482431054fd08cc0e",

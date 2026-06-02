@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/free-image-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-free-image-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-free-image-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2015f28687727ffe5e469e77e6ac2adc8816f2f6ed77ed8d8c9cc49ada869a9c",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/exchange-rate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-exchange-rate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-exchange-rate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:17f03953f90415e94d8925039c59e62114bf42d3317ad6b0aae3fbebfaef8a33",

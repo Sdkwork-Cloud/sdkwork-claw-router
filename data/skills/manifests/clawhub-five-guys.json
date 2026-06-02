@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/five-guys@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-five-guys-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-five-guys-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7beabf1e9dd5b5c570a29de23987a077f50a23e819890c5728b0710be6f03c6d",

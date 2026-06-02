@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agenttherapy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agenttherapy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agenttherapy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4d95fabf66dbfc0eb39ac4de74c658cbc0f32bf8f402423b4f20b84208c2e301",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mova-intent-calibration@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mova-intent-calibration-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mova-intent-calibration-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:40255ab24d409d05370be97bdda0ffe873703d2ed490919c952745dbc8c0f87a",

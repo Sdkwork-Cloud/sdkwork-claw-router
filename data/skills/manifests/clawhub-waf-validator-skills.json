@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/waf-validator-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-waf-validator-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-waf-validator-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55049364c1ae405844c84c1589c1f8e57e5873e0fd8bad77e247ff4331d1f89f",

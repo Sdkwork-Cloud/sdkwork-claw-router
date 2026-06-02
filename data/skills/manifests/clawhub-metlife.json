@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/metlife@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-metlife-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-metlife-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9a2524d2249007a3d1872a9eb8af0493e64a135d6e744254181a3487a2ce859b",

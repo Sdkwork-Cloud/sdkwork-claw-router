@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-watcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-watcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-watcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e4f84f9b325cbd4cbb713b7420b65d06c466cedfaeaa390b280914452d12ca13",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gusto@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gusto-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gusto-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0a39f6cf7cb26672deabb0e8615b909f41fbfe3059b749b6a729522e09c7fb97",

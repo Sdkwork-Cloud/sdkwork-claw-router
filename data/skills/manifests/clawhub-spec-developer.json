@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spec-developer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spec-developer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spec-developer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e9422146a749b8b54341e92d15e500a8ae72a3ceab297690b8fd8067ff426cc2",

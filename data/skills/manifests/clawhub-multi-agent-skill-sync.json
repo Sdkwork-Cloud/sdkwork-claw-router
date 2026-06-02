@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multi-agent-skill-sync@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-skill-sync-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multi-agent-skill-sync-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:216debc405e32d6f079f821b381b6a054a8b56c77fc48f913d654f095d9f7418",

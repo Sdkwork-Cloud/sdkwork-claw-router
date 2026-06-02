@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eo-ability-rag@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eo-ability-rag-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eo-ability-rag-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e41f2a03dd1a5d48d06253f25459a67af6b2227b8515bfd3701a6a1b051074cd",

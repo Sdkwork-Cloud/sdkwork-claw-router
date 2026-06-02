@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-price-alert@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-price-alert-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-price-alert-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e4b17466343f61141fe7a3525c9a1d15e946f24e0ade5e2f2ac8149c3dec3aa",

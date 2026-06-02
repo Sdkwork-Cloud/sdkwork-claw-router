@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ctf-pwn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ctf-pwn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ctf-pwn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0439aaa01ba8bda3a8921c45f08a55d9aacfb9a092b81fd313815e0dc0884c52",

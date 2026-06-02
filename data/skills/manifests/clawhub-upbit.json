@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/upbit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-upbit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-upbit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cad47ccc9ffc884ebd4eb22a34facfe8a068993be7be768add839135cc8c0b61",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-socket-proxy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-socket-proxy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-socket-proxy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c3df23afe98cc9ff6b687bb87c5fa4f8b98aaf1f1b3ffaab92d145bebdc1f05",

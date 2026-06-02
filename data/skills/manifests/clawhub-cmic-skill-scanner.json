@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cmic-skill-scanner@0.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cmic-skill-scanner-0.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cmic-skill-scanner-0.8.0.json"
+      },
       "version": "0.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1ac7c399da7710d7a919445b55fd42ee63110f8904965bcb62f73d43f6ba6966",

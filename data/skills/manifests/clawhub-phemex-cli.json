@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/phemex-cli@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-phemex-cli-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-phemex-cli-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9710470b6175ede868f6ec82a67603cd5c228a3ee5f042ab5926a3be869e7283",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltext@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltext-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltext-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:a531c7f6d84c3a3be5042d5146d9adf8cc54112187ea843bbb8f4279a3567337",

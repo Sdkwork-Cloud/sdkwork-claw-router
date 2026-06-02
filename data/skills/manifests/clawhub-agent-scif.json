@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-scif@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-scif-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-scif-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f61e68bd43ba0d9ffee063eab26f5b10626a81ae674bb8dcc0fc362e039ee094",

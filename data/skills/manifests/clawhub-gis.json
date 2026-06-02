@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a1d0e57b4b1c1912398d0503a3d9fad32839852acce1a22dc8803c4e2e99f6cb",

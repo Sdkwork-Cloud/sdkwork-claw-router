@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/degov-agent-skills@0.6.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-degov-agent-skills-0.6.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-degov-agent-skills-0.6.1.json"
+      },
       "version": "0.6.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c46595c9d44cef6b2537dcab64a31bc671e75b979002b513586d18c5b34f43ec",

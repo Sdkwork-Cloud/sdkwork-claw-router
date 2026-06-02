@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bgm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bgm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bgm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc728110c66055b0110bda1e8eabf7fbe6281c119402f7114c71cb083dfb6037",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/performance-benchmark@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-performance-benchmark-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-performance-benchmark-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:31ed481f57b40870921f785f61ba92b834602008a59632f4bbafd369878027ab",

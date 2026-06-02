@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/andon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-andon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-andon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e17be27de7e3fda491e01ee51c6e42bb5a3d250b13ab881a4315297aee069f0e",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personal-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-personal-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personal-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b59b0b9a0cff2a88fedd71bdccdb0312c220c364c483e7065519155c8d8f56e9",

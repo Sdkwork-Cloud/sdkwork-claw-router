@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/risk@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-risk-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-risk-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:afd47082601f408b8524cb1788aef16f87730805026ed8e48301f7d3c6b0ea18",

@@ -6,6 +6,7 @@ public class CommerceShipmentRecord {
     private String createdAt;
     private String deliveredAt;
     private String fulfillmentId;
+    private String id;
     private String organizationId;
     private String shipmentNo;
     private String shippedAt;
@@ -44,6 +45,14 @@ public class CommerceShipmentRecord {
 
     public void setFulfillmentId(String fulfillmentId) {
         this.fulfillmentId = fulfillmentId;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrganizationId() {

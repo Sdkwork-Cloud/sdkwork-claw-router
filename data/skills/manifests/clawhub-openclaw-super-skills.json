@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-super-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-super-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-super-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:78db941729e242a04be509f2542b311e1e9a3687d7c17bcc2b5b1f84edca151c",

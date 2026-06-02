@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/contact-enrichment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-contact-enrichment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-contact-enrichment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8367105241fe4e40b6b15b6fc70a393143129caa46d3d3ab00cce7d4a37ceca9",

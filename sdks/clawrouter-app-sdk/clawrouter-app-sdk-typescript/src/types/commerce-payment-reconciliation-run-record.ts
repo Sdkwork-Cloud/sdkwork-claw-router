@@ -6,6 +6,8 @@ export interface CommercePaymentReconciliationRunRecord {
   created_at: string;
   /** Difference amount field on commerce payment reconciliation run record. */
   difference_amount: string;
+  /** Id field on commerce payment reconciliation run record. */
+  id?: string;
   /** Idempotency key field on commerce payment reconciliation run record. */
   idempotency_key: string;
   /** Matched count field on commerce payment reconciliation run record. */

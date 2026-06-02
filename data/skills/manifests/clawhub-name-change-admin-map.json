@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/name-change-admin-map@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-name-change-admin-map-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-name-change-admin-map-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:30c774a770943ef8badf5c7a9c1cbd5d50dec3f05357e15279bb3b635d1c19b2",

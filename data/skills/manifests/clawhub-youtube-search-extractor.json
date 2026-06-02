@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-search-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-search-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-search-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf861fd88995ac70c42ec59f797b2bb0387d3befd739bd705dc2dc9bb95ca4e5",

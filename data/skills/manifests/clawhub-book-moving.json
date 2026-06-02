@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-moving@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-moving-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-moving-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bb4f858a9e9893a6745fde7686ef6ad0be9763bf01b6f24ccfc95289d9a16c28",

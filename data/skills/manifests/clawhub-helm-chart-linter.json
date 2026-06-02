@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/helm-chart-linter@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-helm-chart-linter-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-helm-chart-linter-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:843b60c2e803e840245cf6b98cc430c683b672effae5f22770855a4986d6f257",

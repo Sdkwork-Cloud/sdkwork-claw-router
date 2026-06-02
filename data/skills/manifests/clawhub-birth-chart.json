@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/birth-chart@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-birth-chart-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-birth-chart-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a6a01e6331577b38f3ceb5252ad5a9e3909ae08dbc6521e9115e37315e65889",

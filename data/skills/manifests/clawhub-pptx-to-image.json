@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pptx-to-image@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pptx-to-image-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pptx-to-image-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b15fd3d1325f810c5a261c9c8d2beb3a3e59ae6d113571bf7770b27c4cde855d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/english-learning@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-english-learning-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-english-learning-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6d765905dec4999243c0e53e69638b0178b6518c85228eaaddba93a1486ed010",

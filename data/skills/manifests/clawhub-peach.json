@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/peach@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-peach-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-peach-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:593ffdc7a9b9a5e67473912bf381ab0ce81416ca44213f75328c1c5f781b39f1",

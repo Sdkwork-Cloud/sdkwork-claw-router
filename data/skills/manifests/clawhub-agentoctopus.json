@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentoctopus@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentoctopus-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentoctopus-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:481d20eb65d13103b696c0a83d4d25802f9d8e537cd4c130863d67ecbb4cbec5",

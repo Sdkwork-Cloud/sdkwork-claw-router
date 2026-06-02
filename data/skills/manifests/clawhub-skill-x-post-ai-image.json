@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-x-post-ai-image@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-x-post-ai-image-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-x-post-ai-image-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8a8fc5cbe533c61e0cae16d605ad26b40a1f10bb08b47e3d6d7b5e9308ed7934",

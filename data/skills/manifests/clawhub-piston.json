@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/piston@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-piston-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-piston-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5b2595c839e0af268eda7520892bc4d65b8d29d11641d747ea60547168eb4560",

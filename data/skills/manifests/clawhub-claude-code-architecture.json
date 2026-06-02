@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-architecture@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-architecture-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-architecture-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:31c839ca4f4b5a928b8438b2c8aed415bee90f69bd30f5ed856eb294a2797188",

@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Admin course mutation request schema exposed by Claw Router. */
 export interface AdminCourseMutationRequest {
@@ -16,8 +17,8 @@ export interface AdminCourseMutationRequest {
   metadata?: Record<string, JsonValue>;
   /** Status field on admin course mutation request. */
   status?: string;
-  /** Thumbnail url field on admin course mutation request. */
-  thumbnailUrl?: string;
+  /** Thumbnail field on admin course mutation request. */
+  thumbnail?: MediaResource;
   /** Title field on admin course mutation request. */
   title?: string;
 }

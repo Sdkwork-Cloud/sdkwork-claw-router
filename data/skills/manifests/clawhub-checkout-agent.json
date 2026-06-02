@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/checkout-agent@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-checkout-agent-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-checkout-agent-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb424aaad6526d349cf9093d7b90720c3afb176c2061b1ba129e97b7cca833e8",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/banana-farmer@1.9.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-banana-farmer-1.9.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-banana-farmer-1.9.0.json"
+      },
       "version": "1.9.0",
       "runtime": "metadata",
       "checksumHash": "sha256:548eaeaf12182a136e0927273eb7d4a44e25060da27cce75cd027925e8eb54a3",

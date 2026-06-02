@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-quick-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-quick-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-quick-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:22a3b771bb6502975dedbd3bea5c169df21aecb40d1990f61caa9ca9c0c142b5",

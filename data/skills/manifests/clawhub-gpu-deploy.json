@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gpu-deploy@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gpu-deploy-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gpu-deploy-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5755a32a2312560e50d1fc23488cb838a4e0f9ffb67551dcf4df3b055502ea85",

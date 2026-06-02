@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/today-trending@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-today-trending-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-today-trending-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5c7ee1d473c12c1ecd787956cf7f2f03c022d8ee5a9d6f000a9cc88369a91632",

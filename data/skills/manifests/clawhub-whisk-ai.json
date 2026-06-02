@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whisk-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whisk-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whisk-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f740221879031a281575970db3aec3860117dfbf5d700d5c4bf177ef1eab19a",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reinstall-openclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reinstall-openclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reinstall-openclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57aab70be4bce8074d0a03da998cf1cd88dd59ba39295789bb753eb40904a6fe",

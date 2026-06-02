@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moody@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moody-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moody-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ec3e3f0c406ca6f2dceb15b5bf35b69ea1a6d23f49d4fad1bf2cfa661f232a0",

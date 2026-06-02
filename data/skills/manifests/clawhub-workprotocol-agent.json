@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workprotocol-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workprotocol-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workprotocol-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6fb40a6dd36a2389da84d51fdf829b722b31bb944205bd1cee5a639ec8e6e7d0",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lays@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lays-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lays-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9fd3800fa3391f1c4f6b0b74622ddd0aa5a0e9b6c337d55483a804160ea773e2",

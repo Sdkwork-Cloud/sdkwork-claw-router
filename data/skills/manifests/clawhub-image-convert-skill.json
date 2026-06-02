@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-convert-skill@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-convert-skill-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-convert-skill-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:798c0891640bddde5910b09738c3118ba386ee19fff5403f20f5a030e2e6ecd3",

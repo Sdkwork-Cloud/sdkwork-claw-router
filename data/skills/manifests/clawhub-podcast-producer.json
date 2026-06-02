@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podcast-producer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-podcast-producer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podcast-producer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f601ba12d3544f14405aae113c08aaa82527fb69c5cb0271592e03b8cdafb959",

@@ -26,6 +26,6 @@ data class CourseDetail(
     val source: CourseOverviewSource? = null,
     val studentsCount: Int? = null,
     val tags: List<String>? = null,
-    val thumbnailUrl: String? = null,
+    val thumbnail: MediaResource? = null,
     val title: String? = null
 )

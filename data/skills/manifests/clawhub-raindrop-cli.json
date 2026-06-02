@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/raindrop-cli@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-raindrop-cli-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-raindrop-cli-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:951d620770aca86ee44c119270bc14b0ec38bfb524d01408ea43486742ea58a9",

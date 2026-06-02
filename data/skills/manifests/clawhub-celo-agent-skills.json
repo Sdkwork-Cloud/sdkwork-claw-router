@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/celo-agent-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-celo-agent-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-celo-agent-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c30b5490d43a0ad1cc2ccbc6d51a9c6cb5e0e27de455cc0efa2170457296263c",

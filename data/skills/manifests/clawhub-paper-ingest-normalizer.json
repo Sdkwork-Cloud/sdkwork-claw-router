@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paper-ingest-normalizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paper-ingest-normalizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paper-ingest-normalizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b109a552147bff7d155bf2b903d1cba6f6dd0c6a0db4e672373d0053a9c39b0c",

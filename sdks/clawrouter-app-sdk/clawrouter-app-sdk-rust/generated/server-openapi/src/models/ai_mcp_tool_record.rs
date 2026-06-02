@@ -27,9 +27,17 @@ pub struct AiMcpToolRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub discovered_at: Option<String>,
 
+    /// Enabled field on ai mcp tool record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub enabled: Option<bool>,
+
     /// Id field on ai mcp tool record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
+
+    /// Input schema field on ai mcp tool record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub input_schema: Option<std::collections::HashMap<String, String>>,
 
     /// Last invoked at field on ai mcp tool record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -47,6 +55,22 @@ pub struct AiMcpToolRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
 
+    /// Output schema field on ai mcp tool record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub output_schema: Option<std::collections::HashMap<String, String>>,
+
+    /// Rate limit policy field on ai mcp tool record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub rate_limit_policy: Option<std::collections::HashMap<String, String>>,
+
+    /// Requires approval field on ai mcp tool record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub requires_approval: Option<bool>,
+
+    /// Risk level field on ai mcp tool record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub risk_level: Option<String>,
+
     /// Schema hash field on ai mcp tool record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub schema_hash: Option<String>,
@@ -58,6 +82,10 @@ pub struct AiMcpToolRecord {
     /// Server revision id field on ai mcp tool record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub server_revision_id: Option<String>,
+
+    /// Sort weight field on ai mcp tool record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub sort_weight: Option<i64>,
 
     /// Status field on ai mcp tool record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

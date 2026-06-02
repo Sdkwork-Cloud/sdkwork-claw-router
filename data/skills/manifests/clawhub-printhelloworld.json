@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/printhelloworld@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-printhelloworld-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-printhelloworld-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9425c4c53b79c1f377cdc0df0c9771f79a63902cdf3837de38c4fafd1610673d",

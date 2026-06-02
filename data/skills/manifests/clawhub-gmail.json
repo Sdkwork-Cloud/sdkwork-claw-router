@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gmail@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-gmail-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gmail-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:3281346659832a1565e3563322cc0fdd0be0a5f60aac8eab68312cace1f41141",

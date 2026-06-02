@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/undersheet@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-undersheet-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-undersheet-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:508f514b1dc9ef19cc3714116d766bd49fa72487f663555dc33381a55d46b058",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sogni-agent@1.5.16",
-      "artifactUrl": "data/skills/artifacts/clawhub-sogni-agent-1.5.16.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sogni-agent-1.5.16.json"
+      },
       "version": "1.5.16",
       "runtime": "metadata",
       "checksumHash": "sha256:6c01da0c9295ed5bc75e17cd1916c09b12a662839d578cd914bfe73b733c2fdf",

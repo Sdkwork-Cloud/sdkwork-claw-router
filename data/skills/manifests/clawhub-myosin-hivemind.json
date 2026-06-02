@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/myosin-hivemind@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-myosin-hivemind-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-myosin-hivemind-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f63431489504122dcfbd7b76eb7b3d2c3f24cd6d8347319ed3c15e6ebb20b841",

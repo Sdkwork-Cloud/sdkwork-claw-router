@@ -111,6 +111,10 @@ pub struct AiChatMessageRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub turn_id: Option<String>,
 
+    /// Updated at field on ai chat message record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub updated_at: Option<String>,
+
     /// Usage link id field on ai chat message record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub usage_link_id: Option<String>,

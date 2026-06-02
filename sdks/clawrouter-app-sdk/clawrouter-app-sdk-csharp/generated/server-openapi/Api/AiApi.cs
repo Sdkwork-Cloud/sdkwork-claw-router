@@ -16,6 +16,14 @@ namespace Sdkwork.ClawRouter.App.Api
         }
 
         /// <summary>
+        /// List groups
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.App.Models.ChannelGroupsListResult?> ChannelGroupsListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.App.Models.ChannelGroupsListResult>(ApiPaths.AppPath("/ai/channel_groups"));
+        }
+
+        /// <summary>
         /// List dashboard overview
         /// </summary>
         public async Task<Sdkwork.ClawRouter.App.Models.DashboardOverviewRetrieveResult?> DashboardOverviewRetrieveAsync(string? timeRange = null, string? startTime = null, string? endTime = null)

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/concierge@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-concierge-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-concierge-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:21dc7a867e69f5cb536e52fe63e947f2f851c4a274e9e5fb60681738744b96a0",

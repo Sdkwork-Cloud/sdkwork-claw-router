@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dgx-spark-temperature@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dgx-spark-temperature-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dgx-spark-temperature-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f68836ed2c18efbbe6033e8172b15ec84738dd89a4e5b46954cf9644538fa24",

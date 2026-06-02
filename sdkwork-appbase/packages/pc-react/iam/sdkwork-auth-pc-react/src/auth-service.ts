@@ -6,6 +6,10 @@ import {
   resolveAppClientAccessToken,
 } from "@sdkwork/core-pc-react";
 import {
+  readSdkworkMediaResource,
+  type SdkworkMediaResource,
+} from "@sdkwork/appbase-pc-react";
+import {
   createSdkworkAuthMessages,
   formatSdkworkAuthTemplate,
 } from "./auth-copy.ts";
@@ -29,7 +33,7 @@ export type SdkworkAuthLoginQrCodeStatus =
   | "scanned";
 
 export interface SdkworkAuthUser {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   displayName: string;
   email: string;
   firstName: string;
@@ -51,7 +55,7 @@ export interface SdkworkAuthSession extends Required<Pick<SdkworkAuthStoredSessi
 }
 
 export interface SdkworkAuthIdentityInput {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   displayName?: string;
   email?: string;
   firstName?: string;
@@ -176,8 +180,8 @@ export interface SdkworkAuthLoginQrCodeCallbackInput {
 export interface SdkworkAuthLoginQrCode {
   description?: string;
   expireTime?: number;
+  qrCode?: SdkworkMediaResource;
   qrContent?: string;
-  qrUrl?: string;
   sessionKey: string;
   title?: string;
   type?: string;
@@ -293,8 +297,7 @@ interface SdkworkAppSdkEnvelope<T> {
 }
 
 interface SdkworkRemoteIdentity {
-  avatar?: string;
-  avatarUrl?: string;
+  avatar?: unknown;
   displayName?: string;
   email?: string;
   firstName?: string;
@@ -322,11 +325,8 @@ interface SdkworkRemoteLoginData {
 interface SdkworkRemoteQrCode {
   description?: string;
   expireTime?: number;
-  imageUrl?: string;
-  qrCodeUrl?: string;
+  qrCode?: unknown;
   qrContent?: string;
-  qrImageUrl?: string;
-  qrUrl?: string;
   title?: string;
   type?: string;
 }
@@ -349,11 +349,8 @@ interface SdkworkRemotePlatformQrAuthSession extends SdkworkRemoteQrCodeStatus {
   expireTime?: number;
   expiresAt?: string;
   fallbackUrl?: string;
-  imageUrl?: string;
-  qrCodeUrl?: string;
+  qrCode?: unknown;
   qrContent?: SdkworkRemotePlatformQrContent | string;
-  qrImageUrl?: string;
-  qrUrl?: string;
   sessionKey?: string;
   title?: string;
   type?: string;
@@ -405,6 +402,17 @@ function isExpiredQrLoginCodeError(error: unknown): boolean {
 function normalizeOptionalString(value: unknown): string | undefined {
   const normalized = typeof value === "string" ? value.trim() : "";
   return normalized || undefined;
+}
+
+function readFirstAuthMediaResource(...values: unknown[]): SdkworkMediaResource | undefined {
+  for (const value of values) {
+    const resource = readSdkworkMediaResource(value);
+    if (resource) {
+      return resource;
+    }
+  }
+
+  return undefined;
 }
 
 function splitDisplayName(name: string) {
@@ -459,9 +467,7 @@ export function createSdkworkAuthUserFromIdentity(
     : splitDisplayName(displayName);
 
   return {
-    ...(normalizeOptionalString(identity.avatarUrl)
-      ? { avatarUrl: normalizeOptionalString(identity.avatarUrl) }
-      : {}),
+    avatar: readSdkworkMediaResource(identity.avatar),
     displayName,
     email: normalizeOptionalString(identity.email) || "",
     firstName: nameParts.firstName,
@@ -512,16 +518,7 @@ function mergeIdentity(
   secondary?: SdkworkRemoteIdentity | null,
 ): SdkworkRemoteIdentity {
   return {
-    avatar:
-      normalizeOptionalString(primary?.avatarUrl)
-      || normalizeOptionalString(primary?.avatar)
-      || normalizeOptionalString(secondary?.avatarUrl)
-      || normalizeOptionalString(secondary?.avatar),
-    avatarUrl:
-      normalizeOptionalString(primary?.avatarUrl)
-      || normalizeOptionalString(primary?.avatar)
-      || normalizeOptionalString(secondary?.avatarUrl)
-      || normalizeOptionalString(secondary?.avatar),
+    avatar: readFirstAuthMediaResource(primary?.avatar, secondary?.avatar),
     displayName:
       normalizeOptionalString(primary?.displayName)
       || normalizeOptionalString(primary?.name)
@@ -569,7 +566,7 @@ function toAuthUser(identity?: SdkworkRemoteIdentity | null): SdkworkAuthUser | 
   const username = normalizeOptionalString(identity.username);
   const email = normalizeOptionalString(identity.email) || "";
   return createSdkworkAuthUserFromIdentity({
-    avatarUrl: normalizeOptionalString(identity.avatarUrl) || normalizeOptionalString(identity.avatar),
+    avatar: readSdkworkMediaResource(identity.avatar),
     displayName: displayName || name || nickname || [firstName, lastName].filter(Boolean).join(" ").trim(),
     email,
     firstName,
@@ -774,8 +771,8 @@ function toPlatformLoginQrCode(
   return {
     description: normalizeOptionalString(session.description),
     expireTime: resolveQrExpireTime(session),
+    qrCode: readSdkworkMediaResource(session.qrCode),
     qrContent: resolvePlatformQrContent(session),
-    qrUrl: resolveQrImageUrl(session),
     sessionKey,
     title: normalizeOptionalString(session.title),
     type: resolvePlatformQrContentMode(session) || fallbackType,
@@ -817,27 +814,6 @@ function buildOAuthAuthorizationUrlRetrieveArgs(
     normalizeOptionalString(input.state),
     normalizeOptionalString(input.scope),
   ];
-}
-
-function resolveQrImageUrl(
-  qrCode: SdkworkRemoteQrCode | SdkworkRemotePlatformQrAuthSession | undefined | null,
-): string | undefined {
-  return normalizeOptionalQrImageUrl(qrCode?.qrUrl)
-    || normalizeOptionalQrImageUrl(qrCode?.qrCodeUrl)
-    || normalizeOptionalQrImageUrl(qrCode?.qrImageUrl)
-    || normalizeOptionalQrImageUrl(qrCode?.imageUrl);
-}
-
-function normalizeOptionalQrImageUrl(value: unknown): string | undefined {
-  const normalized = normalizeOptionalString(value);
-  if (!normalized) {
-    return undefined;
-  }
-
-  return normalized.startsWith("data:image/")
-    || /\.(?:apng|avif|bmp|gif|jpe?g|png|svg|webp)(?:[?#].*)?$/iu.test(normalized)
-    ? normalized
-    : undefined;
 }
 
 function normalizeBooleanSetting(value: unknown): boolean | undefined {

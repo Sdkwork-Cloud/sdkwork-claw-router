@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thermo-fisher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-thermo-fisher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thermo-fisher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce75e55c23fa296f780c1d546bb9b1579e8c3bf80471b461a6dbbfe047a97d84",

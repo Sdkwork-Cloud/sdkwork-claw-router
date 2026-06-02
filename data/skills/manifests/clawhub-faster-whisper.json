@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/faster-whisper@1.5.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-faster-whisper-1.5.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-faster-whisper-1.5.1.json"
+      },
       "version": "1.5.1",
       "runtime": "metadata",
       "checksumHash": "sha256:36c336e4346cbf3569aceeed9f3820c766dccfb6abcd7b9879d6a98d376cef14",

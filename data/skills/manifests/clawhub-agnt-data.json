@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agnt-data@1.0.15",
-      "artifactUrl": "data/skills/artifacts/clawhub-agnt-data-1.0.15.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agnt-data-1.0.15.json"
+      },
       "version": "1.0.15",
       "runtime": "metadata",
       "checksumHash": "sha256:fa165668a24e0ac6ef92ed22654834e0e3d041f1637cf8f31cd17cf7c4d934fd",

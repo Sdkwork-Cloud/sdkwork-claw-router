@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codeflow@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-codeflow-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codeflow-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6654df0374256e9339b9506e46b0aa8351b004b3022a06fee3727d45a60e5dca",

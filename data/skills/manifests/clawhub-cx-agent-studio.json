@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cx-agent-studio@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cx-agent-studio-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cx-agent-studio-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:395fdc8b3e4f13064dfabdb2c0214127ffeff6ccc4de8968626c03226699a106",

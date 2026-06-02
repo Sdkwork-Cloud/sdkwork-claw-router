@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quran-explainer@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quran-explainer-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quran-explainer-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28bfefb4342cc7542cea905b66f0b2527e3c20d159be740363d5fdbebf0a987d",

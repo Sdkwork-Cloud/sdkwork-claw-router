@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mistro@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-mistro-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mistro-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:525f1e19837a065db9c169e113fc3683cae670d57114e5556089750c76f3677e",

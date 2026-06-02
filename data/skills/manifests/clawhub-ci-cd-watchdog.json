@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ci-cd-watchdog@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ci-cd-watchdog-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ci-cd-watchdog-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:704b30f3b21ee7ed7f5bb0bf4ce5c166c1300e13751c329e4a7facfcd39b6bd3",

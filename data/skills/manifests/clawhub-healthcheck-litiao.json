@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/healthcheck-litiao@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-healthcheck-litiao-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-healthcheck-litiao-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f377b914280ea50327c1c139293dac46215c56df0061bb61163c73332a406952",

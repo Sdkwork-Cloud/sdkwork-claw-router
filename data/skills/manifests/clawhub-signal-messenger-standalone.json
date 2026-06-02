@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/signal-messenger-standalone@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-signal-messenger-standalone-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-signal-messenger-standalone-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e13a3090eddcedb7b0fd00579f0497a4f9b66fc0089c29540022026036a2b334",

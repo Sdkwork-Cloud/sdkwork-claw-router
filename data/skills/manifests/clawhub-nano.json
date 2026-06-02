@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nano@2.8.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-nano-2.8.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nano-2.8.5.json"
+      },
       "version": "2.8.5",
       "runtime": "metadata",
       "checksumHash": "sha256:14be1994ff600990e4eaf17ce707acab00b07d06f47aef3a60536cb5bcbb0428",

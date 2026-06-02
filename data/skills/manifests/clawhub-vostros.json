@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vostros@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-vostros-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vostros-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:10315811b91a767805f519c8a2f4685de4cef408d440d474d639b9052cefbb99",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-skill-reviewer@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-skill-reviewer-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-skill-reviewer-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee9cf0bd98427f3a83a3af1d38f89852461966a5a36428cb768f33ad1d615142",

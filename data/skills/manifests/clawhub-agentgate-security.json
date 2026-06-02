@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentgate-security@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentgate-security-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentgate-security-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a3c54d7e79db41e0c67801fedd965e3720045f22d946cbd4eb800fe4a26978bb",

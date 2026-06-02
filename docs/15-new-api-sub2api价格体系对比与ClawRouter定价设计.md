@@ -125,7 +125,7 @@ sub2api 的优点是渠道定价、区间定价和定价来源回退链比较清
 
 `ai_pricing_plan_binding` 用于专属覆盖，不替代业务分组：
 
-- `subject_type=api_key_group`：某业务分组绑定方案。
+- `subject_type=channel_group`：某业务分组绑定方案。
 - `subject_type=api_key`：单个 Key 特价。
 - `subject_type=user`：用户专属倍率。
 - `subject_type=vip_level`：VIP 等级定价。
@@ -140,7 +140,7 @@ sub2api 的优点是渠道定价、区间定价和定价来源回退链比较清
 | --- | --- | --- | --- |
 | `official_reference` | 官方参考价 | global、vendor、model | 前台展示、销售价倍率参考、缺价回退 |
 | `upstream_cost` | 供应商上游成本价 | provider、channel | 路由成本优化、毛利分析、供应商对账 |
-| `customer_charge` | 客户销售价 | pricing_plan、api_key_group、sku、tenant | 用户扣费、模型页展示、账单 |
+| `customer_charge` | 客户销售价 | pricing_plan、channel_group、sku、tenant | 用户扣费、模型页展示、账单 |
 | `internal_transfer` | 内部结算价 | organization、workspace | 内部成本分摊 |
 
 一个模型可以有多个供应商价格：

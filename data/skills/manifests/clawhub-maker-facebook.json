@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maker-facebook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-maker-facebook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maker-facebook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05dd9ca7e5d13e2a60a936fadf028b46b220a5332a9049c5d7c53939ddc3d97d",

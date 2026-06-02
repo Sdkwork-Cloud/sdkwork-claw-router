@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flyai-search-cheap-flights@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flyai-search-cheap-flights-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flyai-search-cheap-flights-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca2d89140ad4710a62fb2dabe7c5edb62f9c13ff7700a2090e8695605336006a",

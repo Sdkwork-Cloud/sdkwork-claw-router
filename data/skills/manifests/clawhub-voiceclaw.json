@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voiceclaw@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-voiceclaw-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voiceclaw-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:dbb0be21d13a3aa3be5982845ea97a75788d857761fa21a9f66ce9266d76c808",

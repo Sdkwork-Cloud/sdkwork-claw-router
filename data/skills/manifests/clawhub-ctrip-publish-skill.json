@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ctrip-publish-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ctrip-publish-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ctrip-publish-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:11f98639de57ec6dd8ed54064323ab1503b04fc1a47740255d8875ed9b357c83",

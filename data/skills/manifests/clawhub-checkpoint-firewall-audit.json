@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/checkpoint-firewall-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-checkpoint-firewall-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-checkpoint-firewall-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55c947ca4efe7fcbeb464ed96594f39996ecb6fae06ef9613cd7e7bb0df44457",

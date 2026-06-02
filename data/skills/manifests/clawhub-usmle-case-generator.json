@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/usmle-case-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-usmle-case-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-usmle-case-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:662b2fc132fb302bd59b4665cf6367bd3b9f35e46db5255a34ee6537ae4b6a8f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spec-steering-workflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spec-steering-workflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spec-steering-workflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:32abc4ea1bbae1e8b8173a2d97ec6dab5f80014eb305c80267295a403b803ef0",

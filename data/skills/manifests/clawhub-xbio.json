@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xbio@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xbio-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xbio-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2d0bdfd8454af94bf6f915065a87cf8559003309edfeb49fcb30c1f267355ddd",

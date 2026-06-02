@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sakura@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sakura-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sakura-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05896a2b9b833a0aa1b40664ec4c17bbc6dcabf5ba8f86741b2ab34a2c8c64de",

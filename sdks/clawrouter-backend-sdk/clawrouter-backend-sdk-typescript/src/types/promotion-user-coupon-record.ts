@@ -34,12 +34,20 @@ export interface PromotionUserCouponRecord {
   discount_percent_bps?: number;
   /** Expires at field on promotion user coupon record. */
   expires_at?: string;
+  /** Face value minor field on promotion user coupon record. */
+  face_value_minor: string;
+  /** Id field on promotion user coupon record. */
+  id?: string;
   /** Idempotency key field on promotion user coupon record. */
   idempotency_key: string;
   /** Lock expires at field on promotion user coupon record. */
   lock_expires_at?: string;
   /** Locked at field on promotion user coupon record. */
   locked_at?: string;
+  /** Maximum discount amount minor field on promotion user coupon record. */
+  maximum_discount_amount_minor: string;
+  /** Minimum order amount minor field on promotion user coupon record. */
+  minimum_order_amount_minor: string;
   /** Offer id field on promotion user coupon record. */
   offer_id: string;
   /** Offer version id field on promotion user coupon record. */

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/s2-matrix-pod@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-s2-matrix-pod-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-s2-matrix-pod-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:176975829c385d4491f00f782ee1ffa74e0fee207760d97172d0019fe476a14f",

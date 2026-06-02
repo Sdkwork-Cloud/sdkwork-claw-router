@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/runbook-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-runbook-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-runbook-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0fb2f713e9c6863b55c8743860918a69b559fba3a902a506f72bbf30bdda91a4",

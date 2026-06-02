@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-cleaner@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-cleaner-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-cleaner-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:12750f8cd79f4b5f235be421eff3d02f71f5cc5891e5747877dfc086af54fb9e",

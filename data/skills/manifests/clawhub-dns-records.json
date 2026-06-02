@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dns-records@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dns-records-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dns-records-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e351e4da1d75ee726230998c357d81ee4651890a818050341b7580dfe620ae0b",

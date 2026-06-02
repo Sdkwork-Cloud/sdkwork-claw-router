@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/circle-wallet@1.0.17",
-      "artifactUrl": "data/skills/artifacts/clawhub-circle-wallet-1.0.17.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-circle-wallet-1.0.17.json"
+      },
       "version": "1.0.17",
       "runtime": "metadata",
       "checksumHash": "sha256:f61ae6769f4b53a70bb981149b9cb374191308ec1949161633e1b110842690c5",

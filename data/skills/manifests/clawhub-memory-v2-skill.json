@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-v2-skill@2.5.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-v2-skill-2.5.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-v2-skill-2.5.4.json"
+      },
       "version": "2.5.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2749f4239f59c70d9612f23bdd3c2c336425f324af1537d192e34d019129b6f3",

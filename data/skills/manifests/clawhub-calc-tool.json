@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/calc-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-calc-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-calc-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a13d0a5b1f93b69214bfb4fff679f3c42a11d95d4cff0aba0f1a9aa0d9bbedbe",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/miaoda-text-gen-image@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-miaoda-text-gen-image-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-miaoda-text-gen-image-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f1f8c45a803dfb584355c8ed8f8d8ac5a7b0a77817d2e643349908784730131",

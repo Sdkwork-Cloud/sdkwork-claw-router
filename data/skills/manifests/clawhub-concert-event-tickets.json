@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/concert-event-tickets@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-concert-event-tickets-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-concert-event-tickets-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ae0644a84fc122c376ef60e8e2969ea0ce716e15abee2d91d6db69c62f0094c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proxy-universal@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-proxy-universal-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proxy-universal-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:1709d50e0aad31b08348348295fed997a28bae27d2eb03b1fe12867b8a83a322",

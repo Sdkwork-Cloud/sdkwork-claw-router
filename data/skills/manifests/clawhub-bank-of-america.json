@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bank-of-america@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bank-of-america-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bank-of-america-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bbf84b1780d53a096e4fdd3000ca0008cc7220888e5ba1611fcb78cf0de0e76a",

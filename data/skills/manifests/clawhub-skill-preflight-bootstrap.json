@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-preflight-bootstrap@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-preflight-bootstrap-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-preflight-bootstrap-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ca81a385bd74707457b42d19c91ed245391f435a28668f1294ea6aca7c4c850",

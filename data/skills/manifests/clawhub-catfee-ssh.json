@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/catfee-ssh@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-catfee-ssh-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-catfee-ssh-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:936371dc97a6aad982fd2405ac8ad36f6bd34df521a2c17133c2cf82c179225f",

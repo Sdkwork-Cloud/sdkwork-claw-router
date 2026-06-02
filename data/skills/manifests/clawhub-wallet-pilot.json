@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wallet-pilot@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wallet-pilot-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wallet-pilot-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:111271f19cfe41eb91deffa0266b4ea17c7fb41e169ec28ac7a1cb41cee821a5",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-legal-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-legal-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-legal-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:694d65731d91e37074778390c541a2bd1e070118abbd464f36c07cea1f840f32",

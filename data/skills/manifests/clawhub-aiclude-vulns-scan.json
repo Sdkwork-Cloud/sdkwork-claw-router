@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aiclude-vulns-scan@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aiclude-vulns-scan-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aiclude-vulns-scan-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:adb8b7003bb25550e231e9b085799db28c8b6845ced5a427ede39db5b0579993",

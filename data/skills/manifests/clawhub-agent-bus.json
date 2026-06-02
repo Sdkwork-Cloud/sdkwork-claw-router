@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bus@0.9.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bus-0.9.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bus-0.9.2.json"
+      },
       "version": "0.9.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5eac75343b908b667f85f9412e5b5575cb4aefa84b3713b436251c9cbd54953a",

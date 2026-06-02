@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shaping@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shaping-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shaping-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2dd3a926e8c76365ff7d1fee8142e1955585e20c885c78928225669027cc7d15",

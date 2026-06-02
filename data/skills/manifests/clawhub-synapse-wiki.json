@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/synapse-wiki@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-synapse-wiki-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-synapse-wiki-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:00f164f0a684f35d0c845db703487503764a1888a152615759e2e417dbb5cfe4",

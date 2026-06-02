@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crontab-validator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-crontab-validator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crontab-validator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f6ff6a6dba1fbf8bab211979669c0cf7ac787a4f3f5f4aa360cc168e965f859d",

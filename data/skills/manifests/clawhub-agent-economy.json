@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-economy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-economy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-economy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:54e0f9d6881b55689ecf901de15b001c0d33e77b0f5486ba2a7852a9aeb787bc",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/last30days-skill-cn@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-last30days-skill-cn-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-last30days-skill-cn-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c7125bb94e3f39580fbf49154f8fbe8dbe3346bf94b787325061dd6470841c7",

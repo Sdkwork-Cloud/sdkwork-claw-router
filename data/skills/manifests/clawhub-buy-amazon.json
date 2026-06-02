@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buy-amazon@1.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-buy-amazon-1.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buy-amazon-1.2.4.json"
+      },
       "version": "1.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6e6ec51953a5f2195e25d37fc90457d1bc2311484e42d0cda508cee60fcbeb5a",

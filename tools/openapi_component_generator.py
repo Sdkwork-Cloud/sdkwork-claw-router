@@ -19,6 +19,13 @@ else:
 
 STRING_TYPE_PATTERN = re.compile(r"^string\((\d+)\)$")
 
+MEDIA_RESOURCE_SUFFIX = "_resource_snapshot"
+MEDIA_STORAGE_SUFFIXES = (
+    "_media_resource_id",
+    "_object_blob_id",
+    MEDIA_RESOURCE_SUFFIX,
+)
+
 COMMON_COLUMN_TYPES = {
     "id": "int64",
     "uuid": "string(64)",
@@ -48,6 +55,109 @@ COMMON_COLUMN_TYPES = {
     "source_id": "int64",
     "source_version": "int64",
     "rebuild_version": "int64",
+}
+
+
+MEDIA_RESOURCE_COMPONENTS: dict[str, Any] = {
+    "MediaKind": {
+        "type": "string",
+        "enum": ["image", "video", "audio", "voice", "document", "archive", "model", "other"],
+    },
+    "MediaSource": {
+        "type": "string",
+        "enum": ["object_storage", "external_url", "data_url", "provider_asset", "generated"],
+    },
+    "MediaChecksum": {
+        "type": "object",
+        "additionalProperties": False,
+        "required": ["algorithm", "value"],
+        "properties": {
+            "algorithm": {
+                "type": "string",
+                "enum": ["sha256", "md5", "etag"],
+            },
+            "value": {"type": "string", "minLength": 1, "maxLength": 256},
+        },
+    },
+    "MediaAccess": {
+        "type": "object",
+        "additionalProperties": False,
+        "required": ["visibility"],
+        "properties": {
+            "visibility": {
+                "type": "string",
+                "enum": ["private", "tenant", "organization", "public", "signed"],
+            },
+            "expiresAt": {"type": "string", "format": "date-time"},
+        },
+    },
+    "MediaAiProvenance": {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "provenance": {
+                "type": "string",
+                "enum": ["uploaded", "generated", "edited", "imported"],
+            },
+            "provider": {"type": "string", "maxLength": 128},
+            "model": {"type": "string", "maxLength": 128},
+            "promptId": {"type": "string", "maxLength": 128},
+            "generationTaskId": {"type": "string", "maxLength": 128},
+            "sourceMediaIds": {
+                "type": "array",
+                "items": {"type": "string", "maxLength": 128},
+                "maxItems": 64,
+            },
+            "seed": {"type": "string", "maxLength": 128},
+            "moderationStatus": {
+                "type": "string",
+                "enum": ["unknown", "pending", "approved", "rejected", "blocked"],
+            },
+            "safetyLabels": {
+                "type": "array",
+                "items": {"type": "string", "maxLength": 128},
+                "maxItems": 64,
+            },
+        },
+    },
+    "MediaResource": {
+        "type": "object",
+        "additionalProperties": False,
+        "required": ["kind", "source"],
+        "properties": {
+            "id": {"type": "string", "maxLength": 128},
+            "kind": {"$ref": "#/components/schemas/MediaKind"},
+            "source": {"$ref": "#/components/schemas/MediaSource"},
+            "url": {"type": "string", "format": "uri", "maxLength": 4096},
+            "publicUrl": {"type": "string", "format": "uri", "maxLength": 4096},
+            "uri": {"type": "string", "maxLength": 4096},
+            "objectBlobId": {"type": "string", "format": "int64"},
+            "bucketId": {"type": "string", "format": "int64"},
+            "objectKey": {"type": "string", "maxLength": 1024},
+            "objectVersion": {"type": "string", "maxLength": 256},
+            "fileName": {"type": "string", "maxLength": 512},
+            "mimeType": {"type": "string", "maxLength": 256},
+            "sizeBytes": {"type": "string", "pattern": "^[0-9]+$"},
+            "checksum": {"$ref": "#/components/schemas/MediaChecksum"},
+            "width": {"type": "integer", "format": "int32", "minimum": 0},
+            "height": {"type": "integer", "format": "int32", "minimum": 0},
+            "durationSeconds": {"type": "number", "minimum": 0},
+            "altText": {"type": "string", "maxLength": 512},
+            "title": {"type": "string", "maxLength": 255},
+            "poster": {"$ref": "#/components/schemas/MediaResource"},
+            "thumbnails": {
+                "type": "array",
+                "items": {"$ref": "#/components/schemas/MediaResource"},
+            },
+            "variants": {
+                "type": "array",
+                "items": {"$ref": "#/components/schemas/MediaResource"},
+            },
+            "access": {"$ref": "#/components/schemas/MediaAccess"},
+            "ai": {"$ref": "#/components/schemas/MediaAiProvenance"},
+            "metadata": {"type": "object", "additionalProperties": True},
+        },
+    },
 }
 
 
@@ -109,7 +219,7 @@ class OpenApiComponentGenerator:
         if not isinstance(common_column_groups, dict):
             common_column_groups = {}
 
-        components: dict[str, Any] = {}
+        components: dict[str, Any] = dict(MEDIA_RESOURCE_COMPONENTS)
         for table in tables:
             if not isinstance(table, dict) or not isinstance(table.get("table"), str):
                 continue
@@ -119,8 +229,13 @@ class OpenApiComponentGenerator:
 
     def _component_schema(self, table: dict[str, Any], common_column_groups: dict[str, Any]) -> dict[str, Any]:
         properties: dict[str, Any] = {}
+        media_fields = self._media_resource_fields(table)
         for name, registry_type in self._columns(table, common_column_groups):
+            if self._is_media_storage_column(name, media_fields):
+                continue
             properties[name] = self._property_schema(registry_type)
+        for name in media_fields:
+            properties[name] = {"$ref": "#/components/schemas/MediaResource"}
 
         schema = {
             "type": "object",
@@ -156,10 +271,62 @@ class OpenApiComponentGenerator:
 
         explicit = table.get("columns", {})
         if isinstance(explicit, dict):
-            for name, registry_type in explicit.items():
-                if isinstance(name, str) and isinstance(registry_type, str):
+            for name, registry_entry in explicit.items():
+                if not isinstance(name, str):
+                    continue
+                registry_type = self._registry_column_type(registry_entry)
+                if registry_type:
                     columns.append((name, registry_type))
         return columns
+
+    def _registry_column_type(self, registry_entry: Any) -> str:
+        if isinstance(registry_entry, str):
+            return registry_entry
+        if isinstance(registry_entry, dict):
+            value = registry_entry.get("type")
+            if isinstance(value, str):
+                return value
+        return ""
+
+    def _media_resource_fields(self, table: dict[str, Any]) -> list[str]:
+        fields: list[str] = []
+
+        frontend_contract = table.get("frontend_contract")
+        field_mapping = frontend_contract.get("field_mapping") if isinstance(frontend_contract, dict) else None
+        if isinstance(field_mapping, dict):
+            for field_name, mapping in field_mapping.items():
+                if not isinstance(field_name, str) or not isinstance(mapping, str):
+                    continue
+                expected_snapshot = f"{field_name}{MEDIA_RESOURCE_SUFFIX}"
+                mapping_tokens = mapping.split()
+                if (
+                    len(mapping_tokens) == 2
+                    and mapping_tokens[0] == expected_snapshot
+                    and mapping_tokens[1] == "MediaResource"
+                    and self._is_valid_media_field_name(field_name)
+                ):
+                    fields.append(field_name)
+
+        explicit = table.get("columns", {})
+        if isinstance(explicit, dict):
+            for column_name in explicit:
+                if not isinstance(column_name, str) or not column_name.endswith(MEDIA_RESOURCE_SUFFIX):
+                    continue
+                field_name = column_name[: -len(MEDIA_RESOURCE_SUFFIX)]
+                if self._is_valid_media_field_name(field_name):
+                    fields.append(field_name)
+
+        return sorted(dict.fromkeys(fields))
+
+    def _is_media_storage_column(self, column_name: str, media_fields: list[str]) -> bool:
+        return any(
+            column_name == f"{field_name}{suffix}"
+            for field_name in media_fields
+            for suffix in MEDIA_STORAGE_SUFFIXES
+        )
+
+    def _is_valid_media_field_name(self, value: str) -> bool:
+        return bool(re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*", value))
 
     def _property_schema(self, registry_type: str) -> dict[str, Any]:
         string_match = STRING_TYPE_PATTERN.match(registry_type)

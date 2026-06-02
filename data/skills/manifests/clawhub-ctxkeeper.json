@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ctxkeeper@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ctxkeeper-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ctxkeeper-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:46a53a554c4f3604456789775a537c1d189ac6828c3b73a46ba3f18932d20d1b",

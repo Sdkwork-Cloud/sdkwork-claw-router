@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/madeira@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-madeira-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-madeira-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:911a89f85dac0b0692a33112c2d912f0cbcdf76a85e92ccf683192261c9c77ee",

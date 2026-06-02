@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cart-agent@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cart-agent-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cart-agent-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a876ef8e1f0711c79b6baea00a21059314778ae18fa313010bc0555da26ef5b4",

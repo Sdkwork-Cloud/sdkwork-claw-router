@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fashion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fashion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fashion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8d8f6c862c8f485990705db5bcd956a261acdbe6d729dab4c03a17965217f6ca",

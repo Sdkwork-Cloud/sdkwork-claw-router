@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qweather-china@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-qweather-china-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qweather-china-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:bf6194ab6a1dc0e612ca743860afd590b98f268cc7daf919ed4d8d833eab0cfd",

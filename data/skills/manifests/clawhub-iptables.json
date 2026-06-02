@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/iptables@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-iptables-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-iptables-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:735a26299f300028238c2b3dbff29b3ad029cc1427039452592d8a1085192805",

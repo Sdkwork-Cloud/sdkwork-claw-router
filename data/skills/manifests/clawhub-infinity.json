@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/infinity@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-infinity-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-infinity-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0d9d7ccf88bbb340d9f3de984c6fc0c8489da82386d4beff1f49f87ce10f6742",

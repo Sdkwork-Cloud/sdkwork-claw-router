@@ -35,6 +35,10 @@ pub struct AiMcpServerRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
 
+    /// Health status field on ai mcp server record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub health_status: Option<String>,
+
     /// Id field on ai mcp server record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -82,6 +86,10 @@ pub struct AiMcpServerRecord {
     /// Status field on ai mcp server record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
+
+    /// Tags field on ai mcp server record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub tags: Option<std::collections::HashMap<String, String>>,
 
     /// Tenant id field on ai mcp server record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

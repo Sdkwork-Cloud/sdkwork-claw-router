@@ -30,6 +30,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? UpdatedAt { get; set; }
         public string? Uuid { get; set; }
         public string? Version { get; set; }
-        public string? VideoUrl { get; set; }
+        public MediaResource? Video { get; set; }
     }
 }

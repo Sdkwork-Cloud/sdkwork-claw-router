@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swarm-2@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swarm-2-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swarm-2-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:410f6726ff2fd6928945b0b1dfab782b985e6a81eaedfc83be883fb6c0f6f9b0",

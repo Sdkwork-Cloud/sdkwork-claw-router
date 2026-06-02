@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/best-practice-skill-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-best-practice-skill-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-best-practice-skill-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6477426433b4bc4f73573cdce67387a975130b87a3bed25f3d0ffb0c48b5fdcc",

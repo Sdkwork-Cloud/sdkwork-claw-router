@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vision-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vision-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vision-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3edb42f977eed92f6c30f35560b2f6fd8d5bae243fe021e706ee4c48f88f717",

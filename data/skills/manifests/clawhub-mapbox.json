@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mapbox@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mapbox-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mapbox-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:892a74bdaef8e6b9feb8ab466d9791f126db0e24da9519c6adef8cc15963af9b",

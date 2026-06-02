@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prediction-agg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prediction-agg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prediction-agg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af6f6fad42d62c54544ba4e52f9fdaca3a2e47977c98edb1a4e61be3b543b554",

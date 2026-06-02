@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-review@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-review-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-review-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:940fe800326d7c107dc1822a3120bfe84ef4864795e7f2829a0997a61ed575c3",

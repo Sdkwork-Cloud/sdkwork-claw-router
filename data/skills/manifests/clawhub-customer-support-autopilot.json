@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customer-support-autopilot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-customer-support-autopilot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customer-support-autopilot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2b43763b1964129b38a21ac13ef7411cb9d4a765a86376e4044bdb0aebc9763",

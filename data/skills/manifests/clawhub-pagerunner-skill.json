@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pagerunner-skill@1.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pagerunner-skill-1.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pagerunner-skill-1.3.1.json"
+      },
       "version": "1.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8854e33d5777290d99856415709460b1ea94e104a1257f2c32d7ecf1a6d9930c",

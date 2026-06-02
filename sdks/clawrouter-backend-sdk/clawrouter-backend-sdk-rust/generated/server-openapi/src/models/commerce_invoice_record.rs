@@ -1,14 +1,20 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Commerce invoice record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CommerceInvoiceRecord {
     /// Created at field on commerce invoice record.
     pub created_at: String,
 
-    /// Document url field on commerce invoice record.
+    /// Document field on commerce invoice record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub document_url: Option<String>,
+    pub document: Option<MediaResource>,
+
+    /// Id field on commerce invoice record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
 
     /// Invoice code field on commerce invoice record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

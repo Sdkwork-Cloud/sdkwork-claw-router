@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/code-runner-local@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-code-runner-local-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-code-runner-local-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b92be5faa239b5873e9bbccbc95ce0282404ba36c237c30418e3dc13b3479f5",

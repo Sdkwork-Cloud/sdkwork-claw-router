@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-to-doc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-to-doc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-to-doc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8a670df14140a6d24c3d44e7cfbb12b504e1e1f5b73cc3a326902a181b836441",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smartrmail@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-smartrmail-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smartrmail-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ffd3bc155375702067134e1ac26d805dcef9a0ea450476b710eca7fd60bd47ac",

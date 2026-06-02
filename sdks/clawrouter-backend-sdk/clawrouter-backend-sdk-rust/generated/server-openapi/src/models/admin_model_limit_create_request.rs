@@ -3,8 +3,9 @@ use serde::{Deserialize, Serialize};
 /// Admin model limit create request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminModelLimitCreateRequest {
-    /// Access group or quota group identifier.
-    pub group: String,
+    /// AI channel group code or identifier.
+    #[serde(rename = "channelGroup")]
+    pub channel_group: String,
 
     /// AI model identifier.
     pub model: String,

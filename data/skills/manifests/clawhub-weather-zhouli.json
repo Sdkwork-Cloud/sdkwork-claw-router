@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-zhouli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-zhouli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-zhouli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8ca3b4a864d676ad54136e46d16edd49db7f21e4bf058f58b3545bc077f3606d",

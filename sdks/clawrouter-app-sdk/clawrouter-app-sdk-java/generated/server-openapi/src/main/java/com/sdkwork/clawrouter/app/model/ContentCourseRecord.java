@@ -28,7 +28,7 @@ public class ContentCourseRecord {
     private String studentsCount;
     private Map<String, String> tags;
     private String tenantId;
-    private String thumbnailUrl;
+    private MediaResource thumbnail;
     private String title;
     private String updatedAt;
     private String uuid;
@@ -234,12 +234,12 @@ public class ContentCourseRecord {
         this.tenantId = tenantId;
     }
 
-    public String getThumbnailUrl() {
-        return this.thumbnailUrl;
+    public MediaResource getThumbnail() {
+        return this.thumbnail;
     }
 
-    public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+    public void setThumbnail(MediaResource thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     public String getTitle() {

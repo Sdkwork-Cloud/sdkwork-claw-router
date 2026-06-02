@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/naif@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-naif-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-naif-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d55974c4577657bb0d7404e97ba26faa9d210f71c5000d4d1e65c48a4a4d25f",

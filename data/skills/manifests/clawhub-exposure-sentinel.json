@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/exposure-sentinel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-exposure-sentinel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-exposure-sentinel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d3970c399af11bc8cea4a904c71e312fc88028826122c5b37edc20da3cd77c4",

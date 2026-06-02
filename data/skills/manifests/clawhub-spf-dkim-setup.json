@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spf-dkim-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spf-dkim-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spf-dkim-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5935cfd2553cb26366d39e6cf2ae808ac04a25465f9dec536248a4483de3ee94",

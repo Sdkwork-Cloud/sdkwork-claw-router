@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hamburg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hamburg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hamburg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d626baafa78920b53e0fd5b1fd8e9361196a76467084f4563032fe8cdbb7093a",

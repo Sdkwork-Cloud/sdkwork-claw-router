@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flowforge@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flowforge-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flowforge-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e90ca55de50f9611571822d47b1d54b22bbbcaf95edb0309059f711ad769102a",

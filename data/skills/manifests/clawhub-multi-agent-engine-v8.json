@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multi-agent-engine-v8@8.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-engine-v8-8.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multi-agent-engine-v8-8.2.1.json"
+      },
       "version": "8.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5e634b7e7099277010f864abed4f0490330f02c6ccd22d1180435243f51536c5",

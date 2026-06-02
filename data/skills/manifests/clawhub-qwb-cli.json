@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwb-cli@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwb-cli-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwb-cli-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:adc6456909d236112bd69e35f7caecc5ea63540929ef48ca4d84aa234f09709f",

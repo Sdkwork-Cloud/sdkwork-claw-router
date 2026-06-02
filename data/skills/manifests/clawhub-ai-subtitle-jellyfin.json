@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-subtitle-jellyfin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-subtitle-jellyfin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-subtitle-jellyfin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:49ea77f1e12eb69f18ef8481a30b267d050a0cb29634df91440f670580ff7ac9",

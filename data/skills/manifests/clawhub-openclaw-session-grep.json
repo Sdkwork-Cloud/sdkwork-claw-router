@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-session-grep@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-session-grep-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-session-grep-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aeb48086584b373eaa56580785bdc3736bab0d3a9b42178ebd04d1de08595feb",

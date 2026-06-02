@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/todo-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-todo-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-todo-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8dd11f12a1acbe827365b07b9e0ab8ead8aebee99c814c919e52523e4882d2cb",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generate-qr-code@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-generate-qr-code-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generate-qr-code-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4d5b34fdf2b2c92f7e48253d1692220f99af5b5c53d886f2ec0d9eeada857585",

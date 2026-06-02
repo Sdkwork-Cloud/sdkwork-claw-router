@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finance-knowledge@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-finance-knowledge-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finance-knowledge-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7d35e0141fd237e95a27db8ded67840cab6b014772fb2faa3ec0bbb09b8cebac",

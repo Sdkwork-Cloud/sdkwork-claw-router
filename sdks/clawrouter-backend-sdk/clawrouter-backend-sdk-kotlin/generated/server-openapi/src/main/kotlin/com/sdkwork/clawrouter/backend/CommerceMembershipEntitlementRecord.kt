@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.backend
 data class CommerceMembershipEntitlementRecord(
     val createdAt: String? = null,
     val entitlementCode: String? = null,
+    val id: String? = null,
     val name: String? = null,
     val organizationId: String? = null,
     val planId: String? = null,

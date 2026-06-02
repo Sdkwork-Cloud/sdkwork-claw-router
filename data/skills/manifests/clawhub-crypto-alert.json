@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-alert@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-alert-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-alert-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8e16de7c8db6a4946503221931049862eb893173ded8d7035ee01ee267ad2bb7",

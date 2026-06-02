@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aice@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-aice-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aice-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:adb7e12d2cadce6e207f64988a4665c24f9c26f7c7e2d5f6a6b60216ad7113aa",

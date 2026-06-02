@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-picker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-picker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-picker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b231efeffaa6899e596f5bcf7d200638dda30d313fc329f6e5324762d8377335",

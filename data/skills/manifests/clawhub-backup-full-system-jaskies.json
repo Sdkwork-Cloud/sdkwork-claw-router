@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/backup-full-system-jaskies@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-backup-full-system-jaskies-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-backup-full-system-jaskies-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:347375d684d03839ee2426afef889715bb0bb81679b2fb48416d94524d7bd3ee",

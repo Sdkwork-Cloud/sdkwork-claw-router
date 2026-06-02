@@ -1,13 +1,15 @@
+import type { MediaResource } from './media-resource';
+
 /** Admin skill asset create request schema exposed by Claw Router. */
 export interface AdminSkillAssetCreateRequest {
   /** Alt text field on admin skill asset create request. */
   altText?: string;
   /** Artifact id field on admin skill asset create request. */
   artifactId?: string | null;
+  /** Asset field on admin skill asset create request. */
+  asset: MediaResource;
   /** Asset type field on admin skill asset create request. */
   assetType?: number;
-  /** Asset url field on admin skill asset create request. */
-  assetUrl: string;
   /** Duration seconds field on admin skill asset create request. */
   durationSeconds?: string;
   /** File size field on admin skill asset create request. */
@@ -22,8 +24,8 @@ export interface AdminSkillAssetCreateRequest {
   sortOrder?: number;
   /** Status field on admin skill asset create request. */
   status?: number;
-  /** Thumbnail url field on admin skill asset create request. */
-  thumbnailUrl?: string;
+  /** Thumbnail field on admin skill asset create request. */
+  thumbnail?: MediaResource;
   /** Title field on admin skill asset create request. */
   title?: string;
   /** Width field on admin skill asset create request. */

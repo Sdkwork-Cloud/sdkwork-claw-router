@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/todokan@1.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-todokan-1.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-todokan-1.3.2.json"
+      },
       "version": "1.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:57b83a26ef440940c11f868c545fc9212e7e237cbfb40e17dccef96cfb43a290",

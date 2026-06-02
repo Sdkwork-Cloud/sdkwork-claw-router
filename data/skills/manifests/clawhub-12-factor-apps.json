@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/12-factor-apps@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-12-factor-apps-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-12-factor-apps-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c78eac8ebe507f0f7f7daa46908658a8f1019d45d21d2778ee2d0f0fd9a87862",

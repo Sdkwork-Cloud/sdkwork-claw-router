@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/morfeo-content-pipeline@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-morfeo-content-pipeline-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-morfeo-content-pipeline-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca4403c3e84ba8090495a8793f951ac64c2e63a4e3c4d2a8ccd58b01df6c5f01",

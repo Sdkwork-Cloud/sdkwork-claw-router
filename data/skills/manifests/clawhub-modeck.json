@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modeck@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-modeck-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modeck-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8169f41723ffeabd83fd129d1bac53b30884206e2eff13a8e3c9c4466dffd9bd",

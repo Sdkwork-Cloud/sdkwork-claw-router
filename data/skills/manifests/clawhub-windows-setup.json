@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-setup@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-setup-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-setup-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e19af950688e1a910df59ecfddacc80b472b0b0c63870a28d8eb88679e7c666b",

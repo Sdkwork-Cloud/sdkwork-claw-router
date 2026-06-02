@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/udemy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-udemy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-udemy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7f9ae4f0e36a279a66b8c39ae0f006eea4dc76cc3b56e5e920183346f41a0b6",

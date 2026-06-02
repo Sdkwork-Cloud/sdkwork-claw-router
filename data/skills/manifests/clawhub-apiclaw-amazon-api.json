@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apiclaw-amazon-api@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apiclaw-amazon-api-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apiclaw-amazon-api-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d92eeedd7eec0caeef7cd07df2887e732b53e87b9776236af475953564f74f58",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mayar-payment-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mayar-payment-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mayar-payment-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:846eadb1b53e2102d3e15702598dea5d93aa70743000098ed38d5795b33886a6",

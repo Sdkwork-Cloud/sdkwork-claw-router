@@ -29,6 +29,7 @@ type AiAgentRunRecord struct {
 	PromptTokens string `json:"prompt_tokens"`
 	RequestId string `json:"request_id"`
 	RetentionUntil string `json:"retention_until"`
+	RunStatus string `json:"run_status"`
 	RunUuid string `json:"run_uuid"`
 	Runtime string `json:"runtime"`
 	SourceSurface string `json:"source_surface"`

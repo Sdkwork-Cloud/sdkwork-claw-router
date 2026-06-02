@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawguard-checker@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawguard-checker-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawguard-checker-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8725536f5f6f97eb40fb184c4e6550f1c2813421141c04c634af8d6377a8862",

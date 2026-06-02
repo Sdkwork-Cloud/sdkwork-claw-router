@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pixar-studio@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pixar-studio-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pixar-studio-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2bbb8b016087e267594e6dd1fc5f547ff44d280d806fa8fb50a535d33975b6ab",

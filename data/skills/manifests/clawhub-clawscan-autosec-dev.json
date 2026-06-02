@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawscan-autosec-dev@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawscan-autosec-dev-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawscan-autosec-dev-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d68aa877a9100295b173866ee146d978fba3d7e3d2e1be43514d28b484443132",

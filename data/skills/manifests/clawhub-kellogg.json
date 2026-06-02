@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kellogg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kellogg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kellogg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:50266ecfc79cb4e02742cf94dbaffcf9835e973ad5f5ad8ab5255dde8d9a0795",

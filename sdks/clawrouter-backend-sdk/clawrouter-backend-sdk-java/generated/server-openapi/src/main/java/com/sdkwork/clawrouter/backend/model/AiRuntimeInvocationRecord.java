@@ -43,6 +43,7 @@ public class AiRuntimeInvocationRecord {
     private String sandboxPolicy;
     private String startedAt;
     private String status;
+    private Boolean streaming;
     private String tenantId;
     private String toolCallId;
     private String toolName;
@@ -370,6 +371,14 @@ public class AiRuntimeInvocationRecord {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Boolean getStreaming() {
+        return this.streaming;
+    }
+
+    public void setStreaming(Boolean streaming) {
+        this.streaming = streaming;
     }
 
     public String getTenantId() {

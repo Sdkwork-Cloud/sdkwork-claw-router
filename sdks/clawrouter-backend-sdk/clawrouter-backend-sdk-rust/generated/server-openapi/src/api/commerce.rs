@@ -4,7 +4,7 @@ use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsListResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult};
+use crate::models::{AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogCategorySeedsCreateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsDeleteResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusDeleteResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceCategorySeedInitializeRequest, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePaymentProviderAccountStatusUpdateRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceRechargeSettingsUpdateRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsDeleteResult, PaymentsProviderAccountsListResult, PaymentsProviderAccountsStatusUpdateResult, PaymentsProviderAccountsUpdateResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsRuntimeSnapshotRetrieveResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult};
 
 #[derive(Clone)]
 pub struct CommerceApi {
@@ -93,6 +93,18 @@ impl CommerceApi {
         self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
+    /// Initialize admin category seed datasets
+    pub async fn catalog_category_seeds_create(&self, body: &CommerceCategorySeedInitializeRequest, idempotency_key: &str) -> Result<CatalogCategorySeedsCreateResult, SdkworkError> {
+        let path = backend_path(&"/catalog/category_seeds/initialize".to_string());
+        let headers = build_request_headers(
+            &[
+                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
     /// List product price lists
     pub async fn catalog_price_lists(&self, currency_code: Option<&str>, market_code: Option<&str>, status: Option<&str>, page: Option<i64>, page_size: Option<i64>) -> Result<CatalogPriceListsListResult, SdkworkError> {
         let query = build_query_string(&[
@@ -145,6 +157,12 @@ impl CommerceApi {
         self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
+    /// Delete product SPU
+    pub async fn catalog_products_delete(&self, product_id: &str) -> Result<CatalogProductsDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/catalog/products/{}", serialize_path_parameter(product_id, PathParameterSpec::new("productId", "simple", false))));
+        self.client.delete(&path, None, None).await
+    }
+
     /// Update product SPU
     pub async fn catalog_products_update(&self, product_id: &str, body: &CommerceProductSpuMutationRequest, idempotency_key: &str) -> Result<CatalogProductsUpdateResult, SdkworkError> {
         let path = backend_path(&format!("/catalog/products/{}", serialize_path_parameter(product_id, PathParameterSpec::new("productId", "simple", false))));
@@ -180,6 +198,12 @@ impl CommerceApi {
             &[],
         );
         self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Delete product SKU
+    pub async fn catalog_skus_delete(&self, sku_id: &str) -> Result<CatalogSkusDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/catalog/skus/{}", serialize_path_parameter(sku_id, PathParameterSpec::new("skuId", "simple", false))));
+        self.client.delete(&path, None, None).await
     }
 
     /// Update product SKU
@@ -580,6 +604,36 @@ impl CommerceApi {
         self.client.post(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
     }
 
+    /// Payments Provider Accounts Delete
+    pub async fn payments_provider_accounts_delete(&self, provider_account_id: &str) -> Result<PaymentsProviderAccountsDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/payments/provider_accounts/{}", serialize_path_parameter(provider_account_id, PathParameterSpec::new("providerAccountId", "simple", false))));
+        self.client.delete(&path, None, None).await
+    }
+
+    /// Payments Provider Accounts Update
+    pub async fn payments_provider_accounts_update(&self, provider_account_id: &str, body: &CommercePaymentProviderAccountMutationRequest, idempotency_key: &str) -> Result<PaymentsProviderAccountsUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/payments/provider_accounts/{}", serialize_path_parameter(provider_account_id, PathParameterSpec::new("providerAccountId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Payments Provider Accounts Status Update
+    pub async fn payments_provider_accounts_status_update(&self, provider_account_id: &str, body: &CommercePaymentProviderAccountStatusUpdateRequest, idempotency_key: &str) -> Result<PaymentsProviderAccountsStatusUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/payments/provider_accounts/{}/status", serialize_path_parameter(provider_account_id, PathParameterSpec::new("providerAccountId", "simple", false))));
+        let headers = build_request_headers(
+            &[
+                ("Idempotency-Key", HeaderParameterSpec::new(idempotency_key, "simple", false, None)),
+            ],
+            &[],
+        );
+        self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
     /// Payments Providers List
     pub async fn payments_providers_list(&self, page: Option<i64>, page_size: Option<i64>, status: Option<&str>) -> Result<PaymentsProvidersListResult, SdkworkError> {
         let query = build_query_string(&[
@@ -615,6 +669,15 @@ impl CommerceApi {
             QueryParameterSpec::new("status", status, "form", true, false, None),
         ]);
         let path = append_query_string(backend_path(&"/payments/route_rules".to_string()), &query);
+        self.client.get(&path, None, None).await
+    }
+
+    /// Payments Runtime Snapshot Retrieve
+    pub async fn payments_runtime_snapshot_retrieve(&self, environment: Option<&str>) -> Result<PaymentsRuntimeSnapshotRetrieveResult, SdkworkError> {
+        let query = build_query_string(&[
+            QueryParameterSpec::new("environment", environment, "form", true, false, None),
+        ]);
+        let path = append_query_string(backend_path(&"/payments/runtime/snapshot".to_string()), &query);
         self.client.get(&path, None, None).await
     }
 
@@ -680,6 +743,18 @@ impl CommerceApi {
             &[],
         );
         self.client.patch(&path, Some(body), None, headers.as_ref(), Some("application/json")).await
+    }
+
+    /// Recharges Settings Retrieve
+    pub async fn recharges_settings_retrieve(&self) -> Result<RechargesSettingsRetrieveResult, SdkworkError> {
+        let path = backend_path(&"/recharges/settings".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// Recharges Settings Update
+    pub async fn recharges_settings_update(&self, body: &CommerceRechargeSettingsUpdateRequest) -> Result<RechargesSettingsUpdateResult, SdkworkError> {
+        let path = backend_path(&"/recharges/settings".to_string());
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// Refunds List

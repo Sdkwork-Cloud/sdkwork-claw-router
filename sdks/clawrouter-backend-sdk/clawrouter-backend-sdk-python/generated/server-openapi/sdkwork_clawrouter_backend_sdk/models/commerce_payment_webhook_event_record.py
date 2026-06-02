@@ -17,6 +17,7 @@ class CommercePaymentWebhookEventRecord:
     status: str
     tenant_id: str
     updated_at: str
+    id: Optional[str] = None
     message: Optional[str] = None
     organization_id: Optional[str] = None
     processed_at: Optional[str] = None

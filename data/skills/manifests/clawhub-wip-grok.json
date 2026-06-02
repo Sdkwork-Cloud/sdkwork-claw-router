@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wip-grok@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-wip-grok-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wip-grok-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d3fa14e5c4b0c144ed57778381ac86d3eb4a5387949a019167e281d944224d85",

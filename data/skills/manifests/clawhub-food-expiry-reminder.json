@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/food-expiry-reminder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-food-expiry-reminder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-food-expiry-reminder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3bf7118cdf4e4676dcba8fa34aeca1d1795d94ebf06b29fa9966b2e874127943",

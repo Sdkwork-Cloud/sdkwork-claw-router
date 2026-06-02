@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cisco-webex@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-cisco-webex-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cisco-webex-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e46bbcd8708dbf6a178a39d6436fb53b9183ebb3b6eeeffceff17686c66e6466",

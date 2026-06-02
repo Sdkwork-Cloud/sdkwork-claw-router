@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/server-watchdog@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-server-watchdog-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-server-watchdog-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a175d56afc559dbe52b8fc4f2c011401df366ee3fac7165ff159d99c151f2989",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lm-studio-subagents@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-lm-studio-subagents-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lm-studio-subagents-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:dd4881464a4ebff01174abba75c204062e399481b7872c6b74d2acb1ddb1d882",

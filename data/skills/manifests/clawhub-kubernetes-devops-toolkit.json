@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kubernetes-devops-toolkit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kubernetes-devops-toolkit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kubernetes-devops-toolkit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7b2bf6d96f3ad04c0e3b9ccde654961b0bd53052d233611bc8b23ce0f76122a",

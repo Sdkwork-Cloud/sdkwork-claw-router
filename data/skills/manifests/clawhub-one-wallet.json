@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/one-wallet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-one-wallet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-one-wallet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6290b213e0cad400a2fb9422331a2eaff545b2605ef6348dc3cb17c1937a4e3b",

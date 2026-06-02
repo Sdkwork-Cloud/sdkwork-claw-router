@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-migration-linter@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-migration-linter-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-migration-linter-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2d8e8d36bdda3c8445995fb8a7bb02804b5d36c279b11abc3aecd6b8bc46ddec",

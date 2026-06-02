@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/call-gemini-2-5-pro-llm@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-call-gemini-2-5-pro-llm-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-call-gemini-2-5-pro-llm-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7e2ee7ffba577c2b9be2411fbdcfcd64b5cdaa3b2779943de46a55bf33a7a5e5",

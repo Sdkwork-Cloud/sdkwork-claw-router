@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ops-hygiene@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ops-hygiene-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ops-hygiene-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6be7fcd41de7c2b80b4d750e96d73df8dbe5277e2de3359017acaf4d09a22bfd",

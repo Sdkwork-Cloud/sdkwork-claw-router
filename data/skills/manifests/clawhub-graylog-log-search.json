@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/graylog-log-search@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-graylog-log-search-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-graylog-log-search-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:db204b1d89c26ba779badbf3fd2c14bd19e83a0576dc9592c8f8cc30094d7a4b",

@@ -5,6 +5,7 @@ data class CommerceProductSkuRecord(
     val defaultCurrencyCode: String? = null,
     val defaultPriceAmount: String? = null,
     val fulfillmentType: String? = null,
+    val id: String? = null,
     val organizationId: String? = null,
     val publishedAt: String? = null,
     val salesUnit: String? = null,

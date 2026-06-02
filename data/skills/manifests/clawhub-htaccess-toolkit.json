@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/htaccess-toolkit@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-htaccess-toolkit-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-htaccess-toolkit-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fa9df743041726743f1a86c40002c3086085e198432e0e5656114542905d4794",

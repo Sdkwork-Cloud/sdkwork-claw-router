@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1328ea14e0735432b1d9784cbbccc8c1b5837b8471195b3e93a12830b94a5d24",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wallet-skills@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-wallet-skills-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wallet-skills-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:66beb00e0176ce99ce51deca6b7dbc468bc99458f975096c0de0db5e6e42236f",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/realtime-finance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-realtime-finance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-realtime-finance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70df729c25481a9d4f6881adc1eea933673ff7524113e42b64432aa0d4ff8f5b",

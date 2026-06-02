@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-setup-qmd@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-setup-qmd-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-setup-qmd-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:463950ee219512c8304638a0e4d1f78f7b3d0b8890da9f88bcb5dd9cafb5a808",

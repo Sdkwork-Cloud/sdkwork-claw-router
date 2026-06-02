@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/awesome-geelark-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-awesome-geelark-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-awesome-geelark-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bef62cedcd67032ecaab25107c131c665c74b831791bb018777a0eb94f874bb7",

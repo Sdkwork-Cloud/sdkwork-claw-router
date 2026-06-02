@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smartcar@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-smartcar-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smartcar-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:068a1362441acb4696a3c06a2744eb50396f601eab80e47808e13031a61d81e0",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/poyo-gpt-4o-image@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-poyo-gpt-4o-image-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-poyo-gpt-4o-image-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a385b58f7fb4926f7813ac8e98548306cf809e6aaff60fa715c9d8d5b242a93",

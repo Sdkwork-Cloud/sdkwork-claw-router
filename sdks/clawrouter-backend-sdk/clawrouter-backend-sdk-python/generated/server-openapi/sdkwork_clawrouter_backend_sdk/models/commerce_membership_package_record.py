@@ -13,10 +13,12 @@ class CommerceMembershipPackageRecord:
     plan_id: str
     price_amount: str
     sku_id: str
+    sort_order: str
     status: str
     tenant_id: str
     updated_at: str
     ends_at: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     package_group_id: Optional[str] = None
     recurrence_cycle: Optional[str] = None

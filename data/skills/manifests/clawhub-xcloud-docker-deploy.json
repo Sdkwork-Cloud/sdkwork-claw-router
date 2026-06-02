@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xcloud-docker-deploy@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-xcloud-docker-deploy-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xcloud-docker-deploy-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f074c416ba71b2a7a3f7004a8e8099b43cb301dc5c9c580a3e25c2e5815e56a8",

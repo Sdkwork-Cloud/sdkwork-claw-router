@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sinkron@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-sinkron-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sinkron-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:602765c8d367da6bd18908b5bd788c627fb213c2a27a713ef9bcd61604763e40",

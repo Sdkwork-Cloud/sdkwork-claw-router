@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tjweather@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-tjweather-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tjweather-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:2cd8692bdb9bc77bb4a5413c450038dc69d8a86e9e135cb53ae8823aceda1990",

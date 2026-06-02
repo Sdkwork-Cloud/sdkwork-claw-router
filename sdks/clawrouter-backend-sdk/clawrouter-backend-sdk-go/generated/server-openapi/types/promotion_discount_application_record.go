@@ -7,8 +7,10 @@ type PromotionDiscountApplicationRecord struct {
 	BudgetAccountId string `json:"budget_account_id"`
 	CreatedAt string `json:"created_at"`
 	CurrencyCode string `json:"currency_code"`
+	DiscountAmountMinor string `json:"discount_amount_minor"`
 	FailureCode string `json:"failure_code"`
 	FailureMessage string `json:"failure_message"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	OfferId string `json:"offer_id"`
 	OfferVersionId string `json:"offer_version_id"`

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/talebook@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-talebook-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-talebook-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:1dba5972bdc23394cde6859395d491202b07cea51c5eb93ec655e32791de2c75",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tekan-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tekan-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tekan-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3f1c407b1219315f5adde130a09bb334e1e89cec198ea6135f0c5a83ce1093b",

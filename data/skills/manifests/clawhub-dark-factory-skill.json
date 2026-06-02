@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dark-factory-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dark-factory-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dark-factory-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b800912a72a81a5a4c293f1aeff84c3d858e976fc85568ea1243b8f47e0685cd",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-voice@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-voice-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-voice-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d651ef07b50a8e00c0d8c6b5500a1b0ca17b361194d08a7395301485471b22ab",

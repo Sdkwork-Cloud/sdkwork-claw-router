@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class IamUserResponse {
-    private String avatarUrl;
+    private MediaResource avatar;
     private String displayName;
     private String email;
     private String id;
@@ -18,12 +18,12 @@ public class IamUserResponse {
     private Boolean twoFactorEnabled;
     private String username;
 
-    public String getAvatarUrl() {
-        return this.avatarUrl;
+    public MediaResource getAvatar() {
+        return this.avatar;
     }
 
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
+    public void setAvatar(MediaResource avatar) {
+        this.avatar = avatar;
     }
 
     public String getDisplayName() {

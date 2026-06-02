@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tubeify@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tubeify-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tubeify-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8bd103b8703019a9390aefecc88699b91c78dbbd2570fae135acfc491041173",

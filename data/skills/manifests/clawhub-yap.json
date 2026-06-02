@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yap@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-yap-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yap-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b92c75300e0d9d4b1c071e60af756e665e9eaf7cf7a3daf9543af07200d62243",

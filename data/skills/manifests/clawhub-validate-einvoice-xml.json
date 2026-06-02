@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/validate-einvoice-xml@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-validate-einvoice-xml-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-validate-einvoice-xml-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48973ca1215e64da73a8d964919ad98eba4b4df9c1e9e12a2ff432dd3e2cbb81",

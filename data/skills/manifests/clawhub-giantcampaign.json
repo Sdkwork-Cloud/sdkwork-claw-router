@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/giantcampaign@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-giantcampaign-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-giantcampaign-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0e047311072ec98a819fc095e7768c8b85e488b237e5bc2a07221c524aa1692f",

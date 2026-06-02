@@ -46,6 +46,7 @@ class AiRuntimeInvocationRecord:
     sandbox_policy: Optional[str] = None
     started_at: Optional[str] = None
     status: Optional[str] = None
+    streaming: Optional[bool] = None
     tenant_id: Optional[str] = None
     tool_call_id: Optional[str] = None
     tool_name: Optional[str] = None

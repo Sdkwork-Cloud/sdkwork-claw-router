@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marketing-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marketing-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marketing-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8a1df81e27fb038506171ccd1b44f5ded6ee1ae3c6d2f2f50fe8e7a0dc618a5",

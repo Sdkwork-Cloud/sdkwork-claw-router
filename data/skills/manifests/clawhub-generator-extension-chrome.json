@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generator-extension-chrome@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-generator-extension-chrome-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generator-extension-chrome-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bfecd3348666509db1416bd359494e8384b56b62bb530041aa2f7039b95ecf0a",

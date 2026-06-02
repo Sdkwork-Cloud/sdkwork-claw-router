@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.app
 
 data class AppReleaseItem(
-    val downloadUrl: String? = null,
+    val artifact: MediaResource? = null,
     val id: String? = null,
     val os: String? = null,
     val platformType: String? = null,

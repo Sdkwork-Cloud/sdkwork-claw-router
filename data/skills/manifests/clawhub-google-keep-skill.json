@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-keep-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-keep-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-keep-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c45ff5db54d089372dbb2454d518a8fc5ee8cc81468fd642f4e1b0d2032a023f",

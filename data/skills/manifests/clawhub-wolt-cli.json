@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wolt-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wolt-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wolt-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:961067cde044a5e23849b4af46f4e5a3ac71bb85ddcb515179d819c01baa17eb",

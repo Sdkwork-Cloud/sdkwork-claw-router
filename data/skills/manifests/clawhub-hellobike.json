@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hellobike@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hellobike-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hellobike-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:82c696b71544973d3a7a385dbe0a66a20f237e051b906b00335e62a11636843c",

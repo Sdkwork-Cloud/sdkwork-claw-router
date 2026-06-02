@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/leader-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-leader-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-leader-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fd57c9afe6c2882c6f0043702423b56acd680420783bdd10f5e4a15588936603",

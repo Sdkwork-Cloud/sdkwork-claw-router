@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/free-text-maker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-free-text-maker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-free-text-maker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:43c63bf17d995d1ddacdf6ac48c60bfde587afe7b4a7058c65c7e642d3318955",

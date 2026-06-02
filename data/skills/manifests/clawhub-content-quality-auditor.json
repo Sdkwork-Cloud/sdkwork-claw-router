@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/content-quality-auditor@9.9.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-content-quality-auditor-9.9.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-content-quality-auditor-9.9.5.json"
+      },
       "version": "9.9.5",
       "runtime": "metadata",
       "checksumHash": "sha256:d542c9d8d58123a2e8f1e17fe4f2f518083d33ca77d5e7a59dc262c3f68a65be",

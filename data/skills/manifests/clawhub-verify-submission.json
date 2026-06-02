@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/verify-submission@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-verify-submission-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-verify-submission-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57fdc5e796edb881e7af3c38285d05ea0dcafe68cbe38f646e37e75151898f56",

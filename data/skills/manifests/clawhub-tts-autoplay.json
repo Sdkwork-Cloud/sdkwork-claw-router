@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tts-autoplay@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tts-autoplay-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tts-autoplay-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e3633cb9d7935816351311ccb5d710b1890c522d281c42d6df8b7e4fbed692c9",

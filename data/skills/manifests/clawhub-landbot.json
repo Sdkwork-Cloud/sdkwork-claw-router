@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/landbot@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-landbot-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-landbot-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e79256295ca9be0aa631a612fad74ae0ebb5b5a7571dc296cb6582ffc22d4b38",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/community-mod-pack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-community-mod-pack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-community-mod-pack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:accb0165aec480ffd13544db16e7781b0a4e191d4052cdf54af71bf50391da0f",

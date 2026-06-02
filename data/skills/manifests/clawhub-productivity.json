@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/productivity@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-productivity-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-productivity-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:f53960485ef06829f9c266a6434b2453571ad0290333eb752407b7a04fbe848f",

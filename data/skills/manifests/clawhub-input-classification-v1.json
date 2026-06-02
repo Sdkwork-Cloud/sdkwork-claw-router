@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/input-classification-v1@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-input-classification-v1-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-input-classification-v1-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5b241fd22d33aa92fc62313b2dab20c86e743399b07f3817796067629a0c9b32",

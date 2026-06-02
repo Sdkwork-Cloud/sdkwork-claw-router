@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-video-discord@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-video-discord-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-video-discord-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d2c1374635fd8df768e0833a91b8d2c71e02a9f4d9d515197246b203ce7ae56",

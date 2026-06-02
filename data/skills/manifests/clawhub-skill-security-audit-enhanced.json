@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-security-audit-enhanced@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-security-audit-enhanced-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-security-audit-enhanced-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:02b9ef16ce1a5b15a266f546324daeec5789d79e87bdc836588e4c0476ed5f0a",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fondy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-fondy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fondy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0072d20af40c59cae750c909f8f1814795cf98789211a1909770cebf5a24ed5b",

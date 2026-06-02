@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-voice-local@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-voice-local-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-voice-local-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cd98afc305c3cb70c27f2ea6313d446ab893014f3f16f79a904f6c70aa7915ab",

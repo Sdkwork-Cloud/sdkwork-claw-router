@@ -19,8 +19,11 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? MessageType { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? OrganizationId { get; set; }
+        public int? Priority { get; set; }
         public string? PublishedAt { get; set; }
+        public string? ScopeType { get; set; }
         public string? Severity { get; set; }
+        public bool? ShowAsPopup { get; set; }
         public string? Status { get; set; }
         public string? Summary { get; set; }
         public string? TenantId { get; set; }

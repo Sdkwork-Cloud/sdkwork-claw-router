@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-survey-corpus@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-survey-corpus-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-survey-corpus-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f86c05d208f1c750f5aa488db197c10800f2f6c2b660d605ea8b51a4fec1b124",

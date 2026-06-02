@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linode@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linode-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linode-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbd4f298d77495cfd2a07d2dc61e443f7a878b4479d10671f659a5b23adc5343",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-evolution@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-evolution-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-evolution-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62fb7b2d5c2e377219911f643082149c82487c9a8b8f2f54d8a6b8721c0d730d",

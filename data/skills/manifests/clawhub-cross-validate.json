@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cross-validate@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cross-validate-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cross-validate-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e437b06aa2ba6081b664a96483556864de15d52ddc8801a41031b1b4a16bc0ad",

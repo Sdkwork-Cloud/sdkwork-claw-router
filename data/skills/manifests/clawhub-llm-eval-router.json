@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-eval-router@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-eval-router-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-eval-router-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0d69d9fff9ba0597b990c6253c45d543cc9d7844eeaad7f557d3f61a8e2ae5de",

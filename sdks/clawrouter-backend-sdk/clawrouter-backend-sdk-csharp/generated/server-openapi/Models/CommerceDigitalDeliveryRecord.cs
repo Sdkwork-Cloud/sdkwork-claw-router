@@ -12,6 +12,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? DeliveryRef { get; set; }
         public string? DeliveryType { get; set; }
         public string? FulfillmentId { get; set; }
+        public string? Id { get; set; }
         public string? OrderItemId { get; set; }
         public string? OrganizationId { get; set; }
         public string? Status { get; set; }

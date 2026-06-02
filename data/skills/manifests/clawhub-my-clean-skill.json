@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-clean-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-clean-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-clean-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:98a49c4d0b68fcdc53e2d7b15edaaf283988e8404dc627122f64ceaefb2461a3",

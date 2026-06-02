@@ -2,6 +2,9 @@ use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::sql_admin_product_center::{
+    empty_media_resource, media_resource_object_blob_id, media_resource_stable_id,
+};
 use crate::ports::{
     AdminSkillArtifactItem, AdminSkillAssetItem, AdminSkillCategoryItem, AdminSkillCommandFuture,
     AdminSkillItem, AdminSkillPackageItem, AdminSkillStore, CreateAdminSkillArtifactCommand,
@@ -757,7 +760,8 @@ impl AdminSkillStore for PostgresAdminSkillStore {
                     "action": "create_skill_asset",
                     "skillId": command.skill_id,
                     "assetId": id,
-                    "assetType": command.asset_type
+                    "assetType": command.asset_type,
+                    "asset": &command.asset
                 }),
             )
             .await?;
@@ -936,6 +940,8 @@ impl AdminSkillStore for PostgresAdminSkillStore {
                     "action": "create_skill_artifact",
                     "skillId": command.skill_id,
                     "artifactId": id,
+                    "artifactRef": &command.artifact_ref,
+                    "artifact": &command.artifact,
                     "version": &command.version
                 }),
             )
@@ -1059,7 +1065,8 @@ async fn list_categories(
 ) -> DomainResult<Vec<AdminSkillCategoryItem>> {
     let rows = sqlx::query(
         r#"
-        SELECT id, uuid, tenant_id, organization_id, name, description, code, icon,
+        SELECT id, uuid, tenant_id, organization_id, name, description, code,
+               icon_resource_snapshot,
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, true) AS visible,
                COALESCE(status, 1) AS status, type AS category_type
@@ -1104,12 +1111,18 @@ async fn insert_category(
         &command.category_uuid,
     )
     .await?;
+    let icon = command.icon.as_ref();
+    let icon_media_resource_id = icon.map(media_resource_stable_id);
+    let icon_object_blob_id = icon.and_then(media_resource_object_blob_id);
+    let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
         INSERT INTO plus_category
-            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, code, icon, sort_weight, parent_id, path, visible, status, created_at, updated_at)
+            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, code,
+             icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
+             sort_weight, parent_id, path, visible, status, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15::timestamptz, $16::timestamptz)
+            ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9, $10, $11::jsonb, $12, $13, $14, $15, $16, $17::timestamptz, $18::timestamptz)
         "#,
     )
     .bind(id)
@@ -1120,7 +1133,9 @@ async fn insert_category(
     .bind(command.description.as_deref())
     .bind(command.category_type)
     .bind(command.code.as_deref())
-    .bind(command.icon.as_deref())
+    .bind(icon_media_resource_id)
+    .bind(icon_object_blob_id)
+    .bind(icon_resource_snapshot)
     .bind(command.sort_weight)
     .bind(command.parent_id)
     .bind(command.path.as_deref())
@@ -1142,7 +1157,8 @@ async fn load_category_by_id(
 ) -> DomainResult<Option<AdminSkillCategoryItem>> {
     let row = sqlx::query(
         r#"
-        SELECT id, uuid, tenant_id, organization_id, name, description, code, icon,
+        SELECT id, uuid, tenant_id, organization_id, name, description, code,
+               icon_resource_snapshot,
                COALESCE(sort_weight, 0) AS sort_weight,
                parent_id, path, COALESCE(visible, true) AS visible,
                COALESCE(status, 1) AS status, type AS category_type
@@ -1174,25 +1190,32 @@ async fn update_category(
             "skill category parent cannot reference itself",
         ));
     }
+    let icon_changed = command.icon.is_some();
+    let icon = command.icon.as_ref().and_then(|value| value.as_ref());
+    let icon_media_resource_id = icon.map(media_resource_stable_id);
+    let icon_object_blob_id = icon.and_then(media_resource_object_blob_id);
+    let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     let result = sqlx::query(
         r#"
         UPDATE plus_category
         SET name = COALESCE($1, name),
             description = CASE WHEN $2 THEN $3 ELSE description END,
             code = CASE WHEN $4 THEN $5 ELSE code END,
-            icon = CASE WHEN $6 THEN $7 ELSE icon END,
-            sort_weight = COALESCE($8, sort_weight),
-            parent_id = CASE WHEN $9 THEN $10 ELSE parent_id END,
-            path = CASE WHEN $11 THEN $12 ELSE path END,
-            visible = COALESCE($13, visible),
-            status = COALESCE($14, status),
-            type = COALESCE($15, type),
-            updated_at = $16::timestamptz,
+            icon_media_resource_id = CASE WHEN $6 THEN $7 ELSE icon_media_resource_id END,
+            icon_object_blob_id = CASE WHEN $8 THEN $9 ELSE icon_object_blob_id END,
+            icon_resource_snapshot = CASE WHEN $10 THEN $11::jsonb ELSE icon_resource_snapshot END,
+            sort_weight = COALESCE($12, sort_weight),
+            parent_id = CASE WHEN $13 THEN $14 ELSE parent_id END,
+            path = CASE WHEN $15 THEN $16 ELSE path END,
+            visible = COALESCE($17, visible),
+            status = COALESCE($18, status),
+            type = COALESCE($19, type),
+            updated_at = $20::timestamptz,
             v = COALESCE(v, 0) + 1
-        WHERE id = $17
-          AND tenant_id = $18
-          AND organization_id = $19
-          AND type IN ($20, $21)
+        WHERE id = $21
+          AND tenant_id = $22
+          AND organization_id = $23
+          AND type IN ($24, $25)
         "#,
     )
     .bind(command.name.as_deref())
@@ -1210,13 +1233,12 @@ async fn update_category(
             .as_ref()
             .and_then(|value: &Option<String>| value.as_deref()),
     )
-    .bind(command.icon.is_some())
-    .bind(
-        command
-            .icon
-            .as_ref()
-            .and_then(|value: &Option<String>| value.as_deref()),
-    )
+    .bind(icon_changed)
+    .bind(icon_media_resource_id)
+    .bind(icon_changed)
+    .bind(icon_object_blob_id)
+    .bind(icon_changed)
+    .bind(icon_resource_snapshot)
     .bind(command.sort_weight)
     .bind(command.parent_id.is_some())
     .bind(command.parent_id.flatten())
@@ -1286,7 +1308,7 @@ async fn list_packages(
     let rows = sqlx::query(
         r#"
         SELECT id, uuid, tenant_id, organization_id, user_id, package_key, name,
-               summary, description, icon, cover_image, category_id,
+               summary, description, icon_resource_snapshot, cover_resource_snapshot, category_id,
                COALESCE(enabled, false) AS enabled,
                COALESCE(featured, false) AS featured,
                COALESCE(sort_weight, 0) AS sort_weight,
@@ -1344,15 +1366,25 @@ async fn insert_package(
         &command.package_uuid,
     )
     .await?;
+    let cover = command.cover.as_ref();
+    let cover_media_resource_id = cover.map(media_resource_stable_id);
+    let cover_object_blob_id = cover.and_then(media_resource_object_blob_id);
+    let cover_resource_snapshot = cover.map(serde_json::Value::to_string);
+    let icon = command.icon.as_ref();
+    let icon_media_resource_id = icon.map(media_resource_stable_id);
+    let icon_object_blob_id = icon.and_then(media_resource_object_blob_id);
+    let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
         INSERT INTO plus_agent_skill_package
             (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name,
-             summary, description, icon, cover_image, category_id, enabled, featured,
+             summary, description, icon_media_resource_id, icon_object_blob_id,
+             icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id,
+             cover_resource_snapshot, category_id, enabled, featured,
              sort_weight, tags, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15,
-             $16::jsonb, $17::timestamptz, $18::timestamptz)
+            ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14,
+             $15::jsonb, $16, $17, $18, $19, $20::jsonb, $21::timestamptz, $22::timestamptz)
         "#,
     )
     .bind(id)
@@ -1364,8 +1396,12 @@ async fn insert_package(
     .bind(&command.name)
     .bind(command.summary.as_deref())
     .bind(command.description.as_deref())
-    .bind(command.icon.as_deref())
-    .bind(command.cover_image.as_deref())
+    .bind(icon_media_resource_id)
+    .bind(icon_object_blob_id)
+    .bind(icon_resource_snapshot)
+    .bind(cover_media_resource_id)
+    .bind(cover_object_blob_id)
+    .bind(cover_resource_snapshot)
     .bind(command.category_id)
     .bind(command.enabled)
     .bind(command.featured)
@@ -1383,6 +1419,16 @@ async fn update_package(
     tx: &mut Transaction<'_, Postgres>,
     command: &UpdateAdminSkillPackageCommand,
 ) -> DomainResult<bool> {
+    let cover_changed = command.cover.is_some();
+    let cover = command.cover.as_ref().and_then(|value| value.as_ref());
+    let cover_media_resource_id = cover.map(media_resource_stable_id);
+    let cover_object_blob_id = cover.and_then(media_resource_object_blob_id);
+    let cover_resource_snapshot = cover.map(serde_json::Value::to_string);
+    let icon_changed = command.icon.is_some();
+    let icon = command.icon.as_ref().and_then(|value| value.as_ref());
+    let icon_media_resource_id = icon.map(media_resource_stable_id);
+    let icon_object_blob_id = icon.and_then(media_resource_object_blob_id);
+    let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     let result = sqlx::query(
         r#"
         UPDATE plus_agent_skill_package
@@ -1390,18 +1436,22 @@ async fn update_package(
             name = COALESCE($2, name),
             summary = COALESCE($3, summary),
             description = CASE WHEN $4 THEN $5 ELSE description END,
-            icon = CASE WHEN $6 THEN $7 ELSE icon END,
-            cover_image = CASE WHEN $8 THEN $9 ELSE cover_image END,
-            category_id = CASE WHEN $10 THEN $11 ELSE category_id END,
-            enabled = COALESCE($12, enabled),
-            featured = COALESCE($13, featured),
-            sort_weight = COALESCE($14, sort_weight),
-            tags = COALESCE($15::jsonb, tags),
-            updated_at = $16::timestamptz,
+            icon_media_resource_id = CASE WHEN $6 THEN $7 ELSE icon_media_resource_id END,
+            icon_object_blob_id = CASE WHEN $8 THEN $9 ELSE icon_object_blob_id END,
+            icon_resource_snapshot = CASE WHEN $10 THEN $11::jsonb ELSE icon_resource_snapshot END,
+            cover_media_resource_id = CASE WHEN $12 THEN $13 ELSE cover_media_resource_id END,
+            cover_object_blob_id = CASE WHEN $14 THEN $15 ELSE cover_object_blob_id END,
+            cover_resource_snapshot = CASE WHEN $16 THEN $17::jsonb ELSE cover_resource_snapshot END,
+            category_id = CASE WHEN $18 THEN $19 ELSE category_id END,
+            enabled = COALESCE($20, enabled),
+            featured = COALESCE($21, featured),
+            sort_weight = COALESCE($22, sort_weight),
+            tags = COALESCE($23::jsonb, tags),
+            updated_at = $24::timestamptz,
             v = COALESCE(v, 0) + 1
-        WHERE id = $17
-          AND tenant_id = $18
-          AND organization_id = $19
+        WHERE id = $25
+          AND tenant_id = $26
+          AND organization_id = $27
         "#,
     )
     .bind(command.package_key.as_deref())
@@ -1414,15 +1464,18 @@ async fn update_package(
             .as_ref()
             .and_then(|value| value.as_deref()),
     )
-    .bind(command.icon.is_some())
-    .bind(command.icon.as_ref().and_then(|value| value.as_deref()))
-    .bind(command.cover_image.is_some())
-    .bind(
-        command
-            .cover_image
-            .as_ref()
-            .and_then(|value| value.as_deref()),
-    )
+    .bind(icon_changed)
+    .bind(icon_media_resource_id)
+    .bind(icon_changed)
+    .bind(icon_object_blob_id)
+    .bind(icon_changed)
+    .bind(icon_resource_snapshot)
+    .bind(cover_changed)
+    .bind(cover_media_resource_id)
+    .bind(cover_changed)
+    .bind(cover_object_blob_id)
+    .bind(cover_changed)
+    .bind(cover_resource_snapshot)
     .bind(command.category_id.is_some())
     .bind(command.category_id.flatten())
     .bind(command.enabled)
@@ -1520,7 +1573,7 @@ async fn load_package_by_id(
     let row = sqlx::query(
         r#"
         SELECT id, uuid, tenant_id, organization_id, user_id, package_key, name,
-               summary, description, icon, cover_image, category_id,
+               summary, description, icon_resource_snapshot, cover_resource_snapshot, category_id,
                COALESCE(enabled, false) AS enabled,
                COALESCE(featured, false) AS featured,
                COALESCE(sort_weight, 0) AS sort_weight,
@@ -1559,7 +1612,8 @@ async fn list_skills(
         r#"
         SELECT
             id, uuid, tenant_id, organization_id, COALESCE(user_id, 0) AS user_id,
-            skill_key, name, summary, description, icon, cover_image, category_id, package_id,
+            skill_key, name, summary, description, icon_resource_snapshot, cover_resource_snapshot,
+            category_id, package_id,
             provider, version, version_name, runtime, entrypoint, manifest_url,
             repository_url, homepage_url, documentation_url, license_name, source_type,
             market_status, visibility, review_status, review_comment, reviewed_by,
@@ -1640,21 +1694,31 @@ async fn insert_skill(
         &command.skill_uuid,
     )
     .await?;
+    let cover = command.cover.as_ref();
+    let cover_media_resource_id = cover.map(media_resource_stable_id);
+    let cover_object_blob_id = cover.and_then(media_resource_object_blob_id);
+    let cover_resource_snapshot = cover.map(serde_json::Value::to_string);
+    let icon = command.icon.as_ref();
+    let icon_media_resource_id = icon.map(media_resource_stable_id);
+    let icon_object_blob_id = icon.and_then(media_resource_object_blob_id);
+    let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
         INSERT INTO plus_agent_skill
             (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary,
-             description, icon, cover_image, category_id, package_id, provider, version,
+             description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
+             cover_media_resource_id, cover_object_blob_id,
+             cover_resource_snapshot, category_id, package_id, provider, version,
              version_name, runtime, entrypoint, manifest_url, repository_url, homepage_url,
              documentation_url, license_name, source_type, market_status, visibility,
              review_status, builtin, is_builtin, enabled, featured, recommend_weight, price,
              currency, install_count, rating_avg, rating_count, tags, capabilities,
              config_schema, default_config, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17,
-             $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32,
-             $33::numeric, $34, 0, 0, 0, $35::jsonb, $36::jsonb, $37::jsonb, $38::jsonb,
-             $39::timestamptz, $40::timestamptz)
+            ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14,
+             $15::jsonb, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27,
+             $28, $29, $30, $31, $32, $33, $34, $35, $36, $37::numeric, $38, 0, 0, 0,
+             $39::jsonb, $40::jsonb, $41::jsonb, $42::jsonb, $43::timestamptz, $44::timestamptz)
         "#,
     )
     .bind(id)
@@ -1666,8 +1730,12 @@ async fn insert_skill(
     .bind(&command.name)
     .bind(command.summary.as_deref())
     .bind(command.description.as_deref())
-    .bind(command.icon.as_deref())
-    .bind(command.cover_image.as_deref())
+    .bind(icon_media_resource_id)
+    .bind(icon_object_blob_id)
+    .bind(icon_resource_snapshot)
+    .bind(cover_media_resource_id)
+    .bind(cover_object_blob_id)
+    .bind(cover_resource_snapshot)
     .bind(command.category_id)
     .bind(command.package_id)
     .bind(command.provider.as_deref())
@@ -1707,6 +1775,16 @@ async fn update_skill(
     tx: &mut Transaction<'_, Postgres>,
     command: &UpdateAdminSkillCommand,
 ) -> DomainResult<bool> {
+    let cover_changed = command.cover.is_some();
+    let cover = command.cover.as_ref().and_then(|value| value.as_ref());
+    let cover_media_resource_id = cover.map(media_resource_stable_id);
+    let cover_object_blob_id = cover.and_then(media_resource_object_blob_id);
+    let cover_resource_snapshot = cover.map(serde_json::Value::to_string);
+    let icon_changed = command.icon.is_some();
+    let icon = command.icon.as_ref().and_then(|value| value.as_ref());
+    let icon_media_resource_id = icon.map(media_resource_stable_id);
+    let icon_object_blob_id = icon.and_then(media_resource_object_blob_id);
+    let icon_resource_snapshot = icon.map(serde_json::Value::to_string);
     let result = sqlx::query(
         r#"
         UPDATE plus_agent_skill
@@ -1714,37 +1792,41 @@ async fn update_skill(
             name = COALESCE($2, name),
             summary = COALESCE($3, summary),
             description = CASE WHEN $4 THEN $5 ELSE description END,
-            icon = CASE WHEN $6 THEN $7 ELSE icon END,
-            cover_image = CASE WHEN $8 THEN $9 ELSE cover_image END,
-            category_id = CASE WHEN $10 THEN $11 ELSE category_id END,
-            package_id = CASE WHEN $12 THEN $13 ELSE package_id END,
-            provider = CASE WHEN $14 THEN $15 ELSE provider END,
-            version = COALESCE($16, version),
-            version_name = CASE WHEN $17 THEN $18 ELSE version_name END,
-            runtime = CASE WHEN $19 THEN $20 ELSE runtime END,
-            entrypoint = CASE WHEN $21 THEN $22 ELSE entrypoint END,
-            manifest_url = CASE WHEN $23 THEN $24 ELSE manifest_url END,
-            repository_url = CASE WHEN $25 THEN $26 ELSE repository_url END,
-            homepage_url = CASE WHEN $27 THEN $28 ELSE homepage_url END,
-            documentation_url = CASE WHEN $29 THEN $30 ELSE documentation_url END,
-            license_name = CASE WHEN $31 THEN $32 ELSE license_name END,
-            source_type = COALESCE($33, source_type),
-            visibility = COALESCE($34, visibility),
-            builtin = COALESCE($35, builtin),
-            is_builtin = COALESCE($36, is_builtin),
-            featured = COALESCE($37, featured),
-            recommend_weight = COALESCE($38, recommend_weight),
-            price = CASE WHEN $39 THEN $40::numeric ELSE price END,
-            currency = COALESCE($41, currency),
-            tags = COALESCE($42::jsonb, tags),
-            capabilities = COALESCE($43::jsonb, capabilities),
-            config_schema = COALESCE($44::jsonb, config_schema),
-            default_config = COALESCE($45::jsonb, default_config),
-            updated_at = $46::timestamptz,
+            icon_media_resource_id = CASE WHEN $6 THEN $7 ELSE icon_media_resource_id END,
+            icon_object_blob_id = CASE WHEN $8 THEN $9 ELSE icon_object_blob_id END,
+            icon_resource_snapshot = CASE WHEN $10 THEN $11::jsonb ELSE icon_resource_snapshot END,
+            cover_media_resource_id = CASE WHEN $12 THEN $13 ELSE cover_media_resource_id END,
+            cover_object_blob_id = CASE WHEN $14 THEN $15 ELSE cover_object_blob_id END,
+            cover_resource_snapshot = CASE WHEN $16 THEN $17::jsonb ELSE cover_resource_snapshot END,
+            category_id = CASE WHEN $18 THEN $19 ELSE category_id END,
+            package_id = CASE WHEN $20 THEN $21 ELSE package_id END,
+            provider = CASE WHEN $22 THEN $23 ELSE provider END,
+            version = COALESCE($24, version),
+            version_name = CASE WHEN $25 THEN $26 ELSE version_name END,
+            runtime = CASE WHEN $27 THEN $28 ELSE runtime END,
+            entrypoint = CASE WHEN $29 THEN $30 ELSE entrypoint END,
+            manifest_url = CASE WHEN $31 THEN $32 ELSE manifest_url END,
+            repository_url = CASE WHEN $33 THEN $34 ELSE repository_url END,
+            homepage_url = CASE WHEN $35 THEN $36 ELSE homepage_url END,
+            documentation_url = CASE WHEN $37 THEN $38 ELSE documentation_url END,
+            license_name = CASE WHEN $39 THEN $40 ELSE license_name END,
+            source_type = COALESCE($41, source_type),
+            visibility = COALESCE($42, visibility),
+            builtin = COALESCE($43, builtin),
+            is_builtin = COALESCE($44, is_builtin),
+            featured = COALESCE($45, featured),
+            recommend_weight = COALESCE($46, recommend_weight),
+            price = CASE WHEN $47 THEN $48::numeric ELSE price END,
+            currency = COALESCE($49, currency),
+            tags = COALESCE($50::jsonb, tags),
+            capabilities = COALESCE($51::jsonb, capabilities),
+            config_schema = COALESCE($52::jsonb, config_schema),
+            default_config = COALESCE($53::jsonb, default_config),
+            updated_at = $54::timestamptz,
             v = COALESCE(v, 0) + 1
-        WHERE id = $47
-          AND tenant_id = $48
-          AND organization_id = $49
+        WHERE id = $55
+          AND tenant_id = $56
+          AND organization_id = $57
         "#,
     )
     .bind(command.skill_key.as_deref())
@@ -1757,15 +1839,18 @@ async fn update_skill(
             .as_ref()
             .and_then(|value| value.as_deref()),
     )
-    .bind(command.icon.is_some())
-    .bind(command.icon.as_ref().and_then(|value| value.as_deref()))
-    .bind(command.cover_image.is_some())
-    .bind(
-        command
-            .cover_image
-            .as_ref()
-            .and_then(|value| value.as_deref()),
-    )
+    .bind(icon_changed)
+    .bind(icon_media_resource_id)
+    .bind(icon_changed)
+    .bind(icon_object_blob_id)
+    .bind(icon_changed)
+    .bind(icon_resource_snapshot)
+    .bind(cover_changed)
+    .bind(cover_media_resource_id)
+    .bind(cover_changed)
+    .bind(cover_object_blob_id)
+    .bind(cover_changed)
+    .bind(cover_resource_snapshot)
     .bind(command.category_id.is_some())
     .bind(command.category_id.flatten())
     .bind(command.package_id.is_some())
@@ -2010,7 +2095,8 @@ async fn load_skill_by_id(
         r#"
         SELECT
             id, uuid, tenant_id, organization_id, COALESCE(user_id, 0) AS user_id,
-            skill_key, name, summary, description, icon, cover_image, category_id, package_id,
+            skill_key, name, summary, description, icon_resource_snapshot, cover_resource_snapshot,
+            category_id, package_id,
             provider, version, version_name, runtime, entrypoint, manifest_url,
             repository_url, homepage_url, documentation_url, license_name, source_type,
             market_status, visibility, review_status, review_comment, reviewed_by,
@@ -2056,8 +2142,9 @@ async fn list_assets(
         r#"
         SELECT id, uuid, tenant_id, organization_id, COALESCE(status, 1) AS status,
                COALESCE(target_type, 0) AS target_type, COALESCE(target_id, 0) AS target_id,
-               artifact_id, COALESCE(asset_type, 0) AS asset_type, COALESCE(asset_url, '') AS asset_url,
-               thumbnail_url, title, alt_text, mime_type, width, height,
+               artifact_id, COALESCE(asset_type, 0) AS asset_type,
+               asset_resource_snapshot, thumbnail_resource_snapshot,
+               title, alt_text, mime_type, width, height,
                CAST(duration_seconds AS TEXT) AS duration_seconds, file_size,
                COALESCE(sort_order, 0) AS sort_order,
                CAST(published_at AS TEXT) AS published_at,
@@ -2103,15 +2190,25 @@ async fn insert_asset(
         &command.asset_uuid,
     )
     .await?;
+    let asset_media_resource_id = media_resource_stable_id(&command.asset);
+    let asset_object_blob_id = media_resource_object_blob_id(&command.asset);
+    let thumbnail_media_resource_id = command.thumbnail.as_ref().map(media_resource_stable_id);
+    let thumbnail_object_blob_id = command
+        .thumbnail
+        .as_ref()
+        .and_then(media_resource_object_blob_id);
     sqlx::query(
         r#"
         INSERT INTO studio_catalog_asset
             (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id,
-             artifact_id, asset_type, asset_url, thumbnail_url, title, alt_text, mime_type,
-             width, height, duration_seconds, file_size, sort_order, published_at, created_at, updated_at)
+             artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id,
+             asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id,
+             thumbnail_resource_snapshot, title, alt_text, mime_type, width, height,
+             duration_seconds, file_size, sort_order, published_at, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14,
-             $15, $16, $17, $18, $19, $20::timestamptz, $21::timestamptz, $22::timestamptz)
+            ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14,
+             $15::jsonb, $16, $17, $18, $19, $20, $21, $22, $23::timestamptz,
+             $24::timestamptz, $25::timestamptz)
         "#,
     )
     .bind(id)
@@ -2123,8 +2220,12 @@ async fn insert_asset(
     .bind(command.skill_id)
     .bind(command.artifact_id)
     .bind(command.asset_type)
-    .bind(&command.asset_url)
-    .bind(command.thumbnail_url.as_deref())
+    .bind(asset_media_resource_id)
+    .bind(asset_object_blob_id)
+    .bind(command.asset.to_string())
+    .bind(thumbnail_media_resource_id)
+    .bind(thumbnail_object_blob_id)
+    .bind(command.thumbnail.as_ref().map(serde_json::Value::to_string))
     .bind(command.title.as_deref())
     .bind(command.alt_text.as_deref())
     .bind(command.mime_type.as_deref())
@@ -2146,43 +2247,61 @@ async fn update_asset(
     tx: &mut Transaction<'_, Postgres>,
     command: &UpdateAdminSkillAssetCommand,
 ) -> DomainResult<bool> {
+    let asset_media_resource_id = command.asset.as_ref().map(media_resource_stable_id);
+    let asset_object_blob_id = command
+        .asset
+        .as_ref()
+        .and_then(media_resource_object_blob_id);
+    let asset_resource_snapshot = command.asset.as_ref().map(serde_json::Value::to_string);
+    let thumbnail = command.thumbnail.as_ref().and_then(|value| value.as_ref());
+    let thumbnail_media_resource_id = thumbnail.map(media_resource_stable_id);
+    let thumbnail_object_blob_id = thumbnail.and_then(media_resource_object_blob_id);
+    let thumbnail_resource_snapshot = thumbnail.map(serde_json::Value::to_string);
     let result = sqlx::query(
         r#"
         UPDATE studio_catalog_asset
         SET artifact_id = CASE WHEN $1 THEN $2 ELSE artifact_id END,
             asset_type = COALESCE($3, asset_type),
-            asset_url = COALESCE($4, asset_url),
-            thumbnail_url = CASE WHEN $5 THEN $6 ELSE thumbnail_url END,
-            title = CASE WHEN $7 THEN $8 ELSE title END,
-            alt_text = CASE WHEN $9 THEN $10 ELSE alt_text END,
-            mime_type = CASE WHEN $11 THEN $12 ELSE mime_type END,
-            width = CASE WHEN $13 THEN $14 ELSE width END,
-            height = CASE WHEN $15 THEN $16 ELSE height END,
-            duration_seconds = CASE WHEN $17 THEN $18 ELSE duration_seconds END,
-            file_size = CASE WHEN $19 THEN $20 ELSE file_size END,
-            sort_order = COALESCE($21, sort_order),
-            status = COALESCE($22, status),
-            published_at = CASE WHEN $23 THEN $24::timestamptz ELSE published_at END,
-            updated_at = $25::timestamptz,
+            asset_media_resource_id = CASE WHEN $4 THEN $5 ELSE asset_media_resource_id END,
+            asset_object_blob_id = CASE WHEN $6 THEN $7 ELSE asset_object_blob_id END,
+            asset_resource_snapshot = CASE WHEN $8 THEN $9::jsonb ELSE asset_resource_snapshot END,
+            thumbnail_media_resource_id = CASE WHEN $10 THEN $11 ELSE thumbnail_media_resource_id END,
+            thumbnail_object_blob_id = CASE WHEN $12 THEN $13 ELSE thumbnail_object_blob_id END,
+            thumbnail_resource_snapshot = CASE WHEN $14 THEN $15::jsonb ELSE thumbnail_resource_snapshot END,
+            title = CASE WHEN $16 THEN $17 ELSE title END,
+            alt_text = CASE WHEN $18 THEN $19 ELSE alt_text END,
+            mime_type = CASE WHEN $20 THEN $21 ELSE mime_type END,
+            width = CASE WHEN $22 THEN $23 ELSE width END,
+            height = CASE WHEN $24 THEN $25 ELSE height END,
+            duration_seconds = CASE WHEN $26 THEN $27 ELSE duration_seconds END,
+            file_size = CASE WHEN $28 THEN $29 ELSE file_size END,
+            sort_order = COALESCE($30, sort_order),
+            status = COALESCE($31, status),
+            published_at = CASE WHEN $32 THEN $33::timestamptz ELSE published_at END,
+            updated_at = $34::timestamptz,
             version = COALESCE(version, 0) + 1
-        WHERE id = $26
-          AND tenant_id = $27
-          AND organization_id = $28
-          AND target_type = $29
-          AND target_id = $30
+        WHERE id = $35
+          AND tenant_id = $36
+          AND organization_id = $37
+          AND target_type = $38
+          AND target_id = $39
         "#,
     )
     .bind(command.artifact_id.is_some())
     .bind(command.artifact_id.flatten())
     .bind(command.asset_type)
-    .bind(command.asset_url.as_deref())
-    .bind(command.thumbnail_url.is_some())
-    .bind(
-        command
-            .thumbnail_url
-            .as_ref()
-            .and_then(|value| value.as_deref()),
-    )
+    .bind(command.asset.is_some())
+    .bind(asset_media_resource_id)
+    .bind(command.asset.is_some())
+    .bind(asset_object_blob_id)
+    .bind(command.asset.is_some())
+    .bind(asset_resource_snapshot)
+    .bind(command.thumbnail.is_some())
+    .bind(thumbnail_media_resource_id)
+    .bind(command.thumbnail.is_some())
+    .bind(thumbnail_object_blob_id)
+    .bind(command.thumbnail.is_some())
+    .bind(thumbnail_resource_snapshot)
     .bind(command.title.is_some())
     .bind(command.title.as_ref().and_then(|value| value.as_deref()))
     .bind(command.alt_text.is_some())
@@ -2264,8 +2383,9 @@ async fn load_asset_by_id(
         r#"
         SELECT id, uuid, tenant_id, organization_id, COALESCE(status, 1) AS status,
                COALESCE(target_type, 0) AS target_type, COALESCE(target_id, 0) AS target_id,
-               artifact_id, COALESCE(asset_type, 0) AS asset_type, COALESCE(asset_url, '') AS asset_url,
-               thumbnail_url, title, alt_text, mime_type, width, height,
+               artifact_id, COALESCE(asset_type, 0) AS asset_type,
+               asset_resource_snapshot, thumbnail_resource_snapshot,
+               title, alt_text, mime_type, width, height,
                CAST(duration_seconds AS TEXT) AS duration_seconds, file_size,
                COALESCE(sort_order, 0) AS sort_order,
                CAST(published_at AS TEXT) AS published_at,
@@ -2301,7 +2421,8 @@ async fn list_artifacts(
                COALESCE(target_type, 0) AS target_type, COALESCE(target_id, 0) AS target_id,
                COALESCE(artifact_type, 0) AS artifact_type, COALESCE(version, '') AS version,
                COALESCE(platform_type, '') AS platform_type, COALESCE(os_name, '') AS os_name,
-               artifact_ref, artifact_url, COALESCE(artifact_size_bytes, 0) AS artifact_size_bytes,
+               artifact_ref, artifact_resource_snapshot,
+               COALESCE(artifact_size_bytes, 0) AS artifact_size_bytes,
                runtime, COALESCE(frameworks::text, '[]') AS frameworks,
                license_name, checksum_hash, release_notes,
                CAST(published_at AS TEXT) AS published_at,
@@ -2348,17 +2469,22 @@ async fn insert_artifact(
         &command.artifact_uuid,
     )
     .await?;
+    let artifact = command.artifact.as_ref();
+    let artifact_media_resource_id = artifact.map(media_resource_stable_id);
+    let artifact_object_blob_id = artifact.and_then(media_resource_object_blob_id);
+    let artifact_resource_snapshot = artifact.map(serde_json::Value::to_string);
     sqlx::query(
         r#"
         INSERT INTO studio_catalog_artifact
             (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id,
-             artifact_type, version, platform_type, os_name, artifact_ref, artifact_url,
+             artifact_type, version, platform_type, os_name, artifact_ref,
+             artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot,
              artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes,
              published_at, deprecated_at, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9, $10, $11, $12, $13,
-             $14, $15, $16::jsonb, $17, $18, $19, $20::timestamptz, $21::timestamptz,
-             $22::timestamptz, $23::timestamptz)
+            ($1, $2, $3, $4, 1, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14,
+             $15::jsonb, $16, $17, $18::jsonb, $19, $20, $21, $22::timestamptz,
+             $23::timestamptz, $24::timestamptz, $25::timestamptz)
         "#,
     )
     .bind(id)
@@ -2373,7 +2499,9 @@ async fn insert_artifact(
     .bind(&command.platform_type)
     .bind(&command.os_name)
     .bind(command.artifact_ref.as_deref())
-    .bind(command.artifact_url.as_deref())
+    .bind(artifact_media_resource_id)
+    .bind(artifact_object_blob_id)
+    .bind(artifact_resource_snapshot)
     .bind(command.artifact_size_bytes)
     .bind(command.runtime.as_deref())
     .bind(json_text_array(&command.frameworks)?)
@@ -2394,6 +2522,11 @@ async fn update_artifact(
     tx: &mut Transaction<'_, Postgres>,
     command: &UpdateAdminSkillArtifactCommand,
 ) -> DomainResult<bool> {
+    let artifact_changed = command.artifact.is_some();
+    let artifact = command.artifact.as_ref().and_then(|value| value.as_ref());
+    let artifact_media_resource_id = artifact.map(media_resource_stable_id);
+    let artifact_object_blob_id = artifact.and_then(media_resource_object_blob_id);
+    let artifact_resource_snapshot = artifact.map(serde_json::Value::to_string);
     let result = sqlx::query(
         r#"
         UPDATE studio_catalog_artifact
@@ -2402,22 +2535,24 @@ async fn update_artifact(
             platform_type = COALESCE($3, platform_type),
             os_name = COALESCE($4, os_name),
             artifact_ref = CASE WHEN $5 THEN $6 ELSE artifact_ref END,
-            artifact_url = CASE WHEN $7 THEN $8 ELSE artifact_url END,
-            artifact_size_bytes = COALESCE($9, artifact_size_bytes),
-            runtime = CASE WHEN $10 THEN $11 ELSE runtime END,
-            license_name = CASE WHEN $12 THEN $13 ELSE license_name END,
-            frameworks = COALESCE($14::jsonb, frameworks),
-            checksum_hash = CASE WHEN $15 THEN $16 ELSE checksum_hash END,
-            release_notes = CASE WHEN $17 THEN $18 ELSE release_notes END,
-            status = COALESCE($19, status),
-            published_at = CASE WHEN $20 THEN $21::timestamptz ELSE published_at END,
-            deprecated_at = CASE WHEN $22 THEN $23::timestamptz ELSE deprecated_at END,
-            updated_at = $24::timestamptz
-        WHERE id = $25
-          AND tenant_id = $26
-          AND organization_id = $27
-          AND target_type = $28
-          AND target_id = $29
+            artifact_media_resource_id = CASE WHEN $7 THEN $8 ELSE artifact_media_resource_id END,
+            artifact_object_blob_id = CASE WHEN $9 THEN $10 ELSE artifact_object_blob_id END,
+            artifact_resource_snapshot = CASE WHEN $11 THEN $12::jsonb ELSE artifact_resource_snapshot END,
+            artifact_size_bytes = COALESCE($13, artifact_size_bytes),
+            runtime = CASE WHEN $14 THEN $15 ELSE runtime END,
+            license_name = CASE WHEN $16 THEN $17 ELSE license_name END,
+            frameworks = COALESCE($18::jsonb, frameworks),
+            checksum_hash = CASE WHEN $19 THEN $20 ELSE checksum_hash END,
+            release_notes = CASE WHEN $21 THEN $22 ELSE release_notes END,
+            status = COALESCE($23, status),
+            published_at = CASE WHEN $24 THEN $25::timestamptz ELSE published_at END,
+            deprecated_at = CASE WHEN $26 THEN $27::timestamptz ELSE deprecated_at END,
+            updated_at = $28::timestamptz
+        WHERE id = $29
+          AND tenant_id = $30
+          AND organization_id = $31
+          AND target_type = $32
+          AND target_id = $33
         "#,
     )
     .bind(command.artifact_type)
@@ -2431,13 +2566,12 @@ async fn update_artifact(
             .as_ref()
             .and_then(|value| value.as_deref()),
     )
-    .bind(command.artifact_url.is_some())
-    .bind(
-        command
-            .artifact_url
-            .as_ref()
-            .and_then(|value| value.as_deref()),
-    )
+    .bind(artifact_changed)
+    .bind(artifact_media_resource_id)
+    .bind(artifact_changed)
+    .bind(artifact_object_blob_id)
+    .bind(artifact_changed)
+    .bind(artifact_resource_snapshot)
     .bind(command.artifact_size_bytes)
     .bind(command.runtime.is_some())
     .bind(command.runtime.as_ref().and_then(|value| value.as_deref()))
@@ -2599,7 +2733,8 @@ async fn load_artifact_by_id(
                COALESCE(target_type, 0) AS target_type, COALESCE(target_id, 0) AS target_id,
                COALESCE(artifact_type, 0) AS artifact_type, COALESCE(version, '') AS version,
                COALESCE(platform_type, '') AS platform_type, COALESCE(os_name, '') AS os_name,
-               artifact_ref, artifact_url, COALESCE(artifact_size_bytes, 0) AS artifact_size_bytes,
+               artifact_ref, artifact_resource_snapshot,
+               COALESCE(artifact_size_bytes, 0) AS artifact_size_bytes,
                runtime, COALESCE(frameworks::text, '[]') AS frameworks,
                license_name, checksum_hash, release_notes,
                CAST(published_at AS TEXT) AS published_at,
@@ -2900,7 +3035,7 @@ fn category_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminSkillCateg
         name: row.try_get("name").map_err(row_error)?,
         description: row.try_get("description").ok().flatten(),
         code: row.try_get("code").ok().flatten(),
-        icon: row.try_get("icon").ok().flatten(),
+        icon: optional_media_resource_from_row(&row, "icon_resource_snapshot"),
         sort_weight: integer_cell(&row, "sort_weight") as i32,
         parent_id: row.try_get("parent_id").ok().flatten(),
         path: row.try_get("path").ok().flatten(),
@@ -2921,8 +3056,8 @@ fn package_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminSkillPackag
         name: row.try_get("name").map_err(row_error)?,
         summary: row.try_get("summary").ok().flatten(),
         description: row.try_get("description").ok().flatten(),
-        icon: row.try_get("icon").ok().flatten(),
-        cover_image: row.try_get("cover_image").ok().flatten(),
+        icon: optional_media_resource_from_row(&row, "icon_resource_snapshot"),
+        cover: optional_media_resource_from_row(&row, "cover_resource_snapshot"),
         category_id: row.try_get("category_id").ok().flatten(),
         enabled: bool_cell(&row, "enabled"),
         featured: bool_cell(&row, "featured"),
@@ -2949,8 +3084,8 @@ fn skill_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminSkillItem> {
         name: row.try_get("name").map_err(row_error)?,
         summary: row.try_get("summary").ok().flatten(),
         description: row.try_get("description").ok().flatten(),
-        icon: row.try_get("icon").ok().flatten(),
-        cover_image: row.try_get("cover_image").ok().flatten(),
+        icon: optional_media_resource_from_row(&row, "icon_resource_snapshot"),
+        cover: optional_media_resource_from_row(&row, "cover_resource_snapshot"),
         category_id: row.try_get("category_id").ok().flatten(),
         package_id: row.try_get("package_id").ok().flatten(),
         provider: row.try_get("provider").ok().flatten(),
@@ -3008,6 +3143,7 @@ fn skill_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminSkillItem> {
 }
 
 fn asset_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminSkillAssetItem> {
+    let asset_type = integer_cell(&row, "asset_type") as i32;
     Ok(AdminSkillAssetItem {
         id: row.try_get("id").map_err(row_error)?,
         uuid: row.try_get("uuid").map_err(row_error)?,
@@ -3017,9 +3153,13 @@ fn asset_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminSkillAssetIte
         target_type: integer_cell(&row, "target_type") as i32,
         target_id: integer_cell(&row, "target_id"),
         artifact_id: row.try_get("artifact_id").ok().flatten(),
-        asset_type: integer_cell(&row, "asset_type") as i32,
-        asset_url: row.try_get("asset_url").map_err(row_error)?,
-        thumbnail_url: row.try_get("thumbnail_url").ok().flatten(),
+        asset_type,
+        asset: media_resource_from_row(
+            &row,
+            "asset_resource_snapshot",
+            skill_asset_kind(asset_type),
+        ),
+        thumbnail: optional_media_resource_from_row(&row, "thumbnail_resource_snapshot"),
         title: row.try_get("title").ok().flatten(),
         alt_text: row.try_get("alt_text").ok().flatten(),
         mime_type: row.try_get("mime_type").ok().flatten(),
@@ -3048,7 +3188,7 @@ fn artifact_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminSkillArtif
         platform_type: row.try_get("platform_type").map_err(row_error)?,
         os_name: row.try_get("os_name").map_err(row_error)?,
         artifact_ref: row.try_get("artifact_ref").ok().flatten(),
-        artifact_url: row.try_get("artifact_url").ok().flatten(),
+        artifact: optional_media_resource_from_row(&row, "artifact_resource_snapshot"),
         artifact_size_bytes: integer_cell(&row, "artifact_size_bytes"),
         runtime: row.try_get("runtime").ok().flatten(),
         frameworks: parse_string_array(
@@ -3088,6 +3228,45 @@ fn parse_object(value: &str) -> DomainResult<serde_json::Value> {
         Ok(value)
     } else {
         Ok(serde_json::json!({}))
+    }
+}
+
+fn media_resource_from_row(
+    row: &sqlx::postgres::PgRow,
+    column: &str,
+    kind: &str,
+) -> serde_json::Value {
+    let raw = row
+        .try_get::<Option<serde_json::Value>, _>(column)
+        .ok()
+        .flatten();
+    parse_media_resource(raw, kind)
+}
+
+fn optional_media_resource_from_row(
+    row: &sqlx::postgres::PgRow,
+    column: &str,
+) -> Option<serde_json::Value> {
+    let raw = row
+        .try_get::<Option<serde_json::Value>, _>(column)
+        .ok()
+        .flatten()?;
+    Some(parse_media_resource(Some(raw), "image"))
+}
+
+fn parse_media_resource(raw: Option<serde_json::Value>, kind: &str) -> serde_json::Value {
+    match raw {
+        Some(value) if value.is_object() => value,
+        _ => empty_media_resource(kind),
+    }
+}
+
+fn skill_asset_kind(asset_type: i32) -> &'static str {
+    match asset_type {
+        1 => "image",
+        2 => "video",
+        3 => "document",
+        _ => "other",
     }
 }
 

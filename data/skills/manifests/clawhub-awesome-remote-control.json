@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/awesome-remote-control@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-awesome-remote-control-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-awesome-remote-control-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:09df776b09029340d77994597c11be0a660dc931b738af37cd80cb7a2ec1bc2d",

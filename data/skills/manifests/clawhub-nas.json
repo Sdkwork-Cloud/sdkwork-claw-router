@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nas@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nas-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nas-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c770067bf93e1cefbad4c7eb1169d03e2f4c2348299a1fe3eff138091563cda",

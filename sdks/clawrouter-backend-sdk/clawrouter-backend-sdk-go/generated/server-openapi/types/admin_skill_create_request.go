@@ -6,7 +6,7 @@ type AdminSkillCreateRequest struct {
 	Capabilities []string `json:"capabilities"`
 	CategoryId string `json:"categoryId"`
 	ConfigSchema map[string]JsonValue `json:"configSchema"`
-	CoverImage string `json:"coverImage"`
+	Cover MediaResource `json:"cover"`
 	Currency string `json:"currency"`
 	DefaultConfig map[string]JsonValue `json:"defaultConfig"`
 	Description string `json:"description"`
@@ -15,7 +15,7 @@ type AdminSkillCreateRequest struct {
 	Entrypoint string `json:"entrypoint"`
 	Featured bool `json:"featured"`
 	HomepageUrl string `json:"homepageUrl"`
-	Icon string `json:"icon"`
+	Icon MediaResource `json:"icon"`
 	IsBuiltin bool `json:"isBuiltin"`
 	LicenseName string `json:"licenseName"`
 	ManifestUrl string `json:"manifestUrl"`

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/expertai@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-expertai-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-expertai-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:17bfd98ece2f3d3de2d3a11e9162af5124823ec335c780d235b3564ccf6e991e",

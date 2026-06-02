@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/leapfin@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-leapfin-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-leapfin-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:727112b1303f533e28316929e8d4a8b3000ac57ab9d0f216421359869ac0ec07",

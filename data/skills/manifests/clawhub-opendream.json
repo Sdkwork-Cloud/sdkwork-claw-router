@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opendream@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-opendream-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opendream-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b3d2e95e93df3b0127663d66d860e7e9ce81eb62876e947afa082e02e6245fbf",

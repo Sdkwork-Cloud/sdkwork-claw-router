@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spend-pulse@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-spend-pulse-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spend-pulse-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8ded40ff7f360f483053fcbc0ebbfde605d86eed48afacbe51306ae977569a36",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skittles@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skittles-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skittles-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e219dd10a80b3245a383f796c6480e7f17cee0982a6863d1d85fe01830c9c14",

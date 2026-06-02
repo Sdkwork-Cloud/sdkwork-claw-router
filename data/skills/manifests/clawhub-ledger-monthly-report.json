@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ledger-monthly-report@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ledger-monthly-report-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ledger-monthly-report-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fabf684d53cd9adc44a5cc5708afff0278803116bfc0c2dcc8d5e1b0b1e5df36",

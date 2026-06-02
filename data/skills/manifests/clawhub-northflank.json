@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/northflank@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-northflank-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-northflank-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e728edf9bee9c16337c9762d5bf32b54fc8d20a36df183612314cc224e352fd3",

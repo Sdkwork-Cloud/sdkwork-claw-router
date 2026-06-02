@@ -2,7 +2,7 @@ use std::collections::{BTreeMap, BTreeSet};
 
 use crate::application::{PricingResolver, ResolveModelPriceQuery};
 use crate::domain::{
-    AiModel, ApiKeyGroup, BillingMeter, DomainResult, ModelPrice, ModelVendor, PriceSide,
+    AiModel, BillingMeter, ChannelGroup, DomainResult, ModelPrice, ModelVendor, PriceSide,
     ProviderChannelGroupBinding,
 };
 use crate::ports::PricingCatalog;
@@ -321,7 +321,7 @@ fn configured_model_group_catalog<C: PricingCatalog>(
     }
 
     let mut groups = catalog
-        .list_api_key_groups()
+        .list_channel_groups()
         .into_iter()
         .filter_map(|group| {
             let key = configured_group_code(&group)?;
@@ -358,7 +358,7 @@ fn group_has_models_sort_key(group: &ModelCatalogGroup) -> usize {
 
 fn configured_model_groups<C: PricingCatalog>(catalog: &C, model: &AiModel) -> Vec<String> {
     let groups_by_id = catalog
-        .list_api_key_groups()
+        .list_channel_groups()
         .into_iter()
         .filter_map(|group| configured_group_code(&group).map(|code| (group.id, code)))
         .collect::<BTreeMap<_, _>>();
@@ -402,7 +402,7 @@ fn configured_model_groups<C: PricingCatalog>(catalog: &C, model: &AiModel) -> V
     groups
 }
 
-fn configured_group_code(group: &ApiKeyGroup) -> Option<String> {
+fn configured_group_code(group: &ChannelGroup) -> Option<String> {
     let code = group.code.trim();
     if !code.is_empty() {
         return Some(code.to_owned());

@@ -2,7 +2,7 @@ use sdkwork_claw_product::application::{
     PricingResolver, ResolveModelPriceQuery, ResolvedPriceSource,
 };
 use sdkwork_claw_product::domain::{
-    AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
     ProviderChannelRoute,
 };
@@ -34,7 +34,7 @@ fn catalog_with_openai_model() -> InMemoryPricingCatalog {
         DecimalValue::parse("1.200000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
@@ -67,7 +67,7 @@ fn catalog_with_openai_model() -> InMemoryPricingCatalog {
 }
 
 #[test]
-fn resolves_customer_price_from_api_key_group_plan_and_official_reference() {
+fn resolves_customer_price_from_channel_group_plan_and_official_reference() {
     let catalog = catalog_with_openai_model();
     let resolver = PricingResolver::new(&catalog);
 
@@ -181,7 +181,7 @@ fn base_catalog_key_resolves_selected_channel_region_price_stack() {
         DecimalValue::parse("1.000000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
@@ -348,7 +348,7 @@ fn channel_route_resolves_price_stack_with_its_explicit_region() {
         DecimalValue::parse("1.000000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",

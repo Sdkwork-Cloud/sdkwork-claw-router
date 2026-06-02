@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dvsa-tc-audit-readiness-operator-licence-uk@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dvsa-tc-audit-readiness-operator-licence-uk-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dvsa-tc-audit-readiness-operator-licence-uk-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cec8cd180f7ab5c4397880185876ee661d8a33b777694751019f92c49c736368",

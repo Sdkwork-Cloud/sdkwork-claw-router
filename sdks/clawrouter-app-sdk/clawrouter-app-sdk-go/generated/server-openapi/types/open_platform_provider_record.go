@@ -8,7 +8,7 @@ type OpenPlatformProviderRecord struct {
 	DeletedAt string `json:"deleted_at"`
 	DeletedBy string `json:"deleted_by"`
 	DocsUrl string `json:"docs_url"`
-	IconUrl string `json:"icon_url"`
+	Icon MediaResource `json:"icon"`
 	Id string `json:"id"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	Name string `json:"name"`

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/polyfly@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-polyfly-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-polyfly-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3768bfcc3a887c66bb56b5be75da4a28e5e7749819bc3002937e2f41d8e181a7",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qlik-cloud-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qlik-cloud-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qlik-cloud-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:61abadb5f8a32df9b6e7d098533fcf651b91fb3fe5ef0803ee549ea6b4f2295a",

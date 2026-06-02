@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sales-engineer@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sales-engineer-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sales-engineer-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0e8674cb56b04b8c0aedb5b1a26ba10fdb64afb9f58d3c623a4c778d16a53079",

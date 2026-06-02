@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/first-solar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-first-solar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-first-solar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d6186c90aeecc7891f9a72266ed507764c9e3363571c59fa86545fb36c354b6",

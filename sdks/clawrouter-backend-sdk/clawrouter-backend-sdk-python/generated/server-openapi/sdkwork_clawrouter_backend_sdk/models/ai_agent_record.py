@@ -2,12 +2,15 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class AiAgentRecord:
     """Ai agent record schema exposed by Claw Router."""
     agent_code: Optional[str] = None
-    avatar_url: Optional[str] = None
+    avatar: Optional[MediaResource] = None
     created_at: Optional[str] = None
     data_scope: Optional[str] = None
     default_version_id: Optional[str] = None

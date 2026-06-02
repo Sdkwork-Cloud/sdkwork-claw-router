@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bioflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bioflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bioflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ebb70f7a5e44f3d492a5fabf9a3ec399faa4dc4bb127ee66972c5ebcbfd4a8ad",

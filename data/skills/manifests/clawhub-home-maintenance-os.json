@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/home-maintenance-os@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-home-maintenance-os-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-home-maintenance-os-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:83f6b377778535fb0ffcab31bd88faf8d5dedd4e7ff12765ec09b0378861ccb7",

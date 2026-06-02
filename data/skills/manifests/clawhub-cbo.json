@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cbo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cbo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cbo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ad71d3a55d8c14e111f212616a2fbf309e5b6e34a241afdd3c9fc598dd6fdfca",

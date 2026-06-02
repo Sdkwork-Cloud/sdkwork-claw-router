@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/best-buy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-best-buy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-best-buy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f0875b2b84798fa352a00d68d1debfcb55c768f7bd19bdba269b21f85fe5a2e",

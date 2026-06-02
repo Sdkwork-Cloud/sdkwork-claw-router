@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-video-llm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-video-llm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-video-llm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0fbe96c44a73789896db43a7551d4ade471fc4414fdc5b4874b750429af22576",

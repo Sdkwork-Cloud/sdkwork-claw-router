@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/squid-pipeline@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-squid-pipeline-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-squid-pipeline-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f48f22f170c72a769bf9b1c9d6f05d7474f35a4cc0aabc2ea300097b2bf4d961",

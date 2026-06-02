@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/freshness-judge@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-freshness-judge-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-freshness-judge-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e23343da2e8d75d01b5efcbe80f4ca5caf93d5079bffe5e6e829337e5c0de76",

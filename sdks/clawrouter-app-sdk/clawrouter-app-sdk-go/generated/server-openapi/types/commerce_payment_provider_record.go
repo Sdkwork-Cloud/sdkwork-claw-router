@@ -4,9 +4,11 @@ package types
 type CommercePaymentProviderRecord struct {
 	CreatedAt string `json:"created_at"`
 	DisplayName string `json:"display_name"`
+	Id string `json:"id"`
 	OrganizationId string `json:"organization_id"`
 	ProviderCode string `json:"provider_code"`
 	ProviderType string `json:"provider_type"`
+	SortOrder string `json:"sort_order"`
 	Status string `json:"status"`
 	SupportedCountries map[string]JsonValue `json:"supported_countries"`
 	SupportedCurrencies map[string]JsonValue `json:"supported_currencies"`

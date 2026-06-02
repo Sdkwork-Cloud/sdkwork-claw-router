@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nascar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nascar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nascar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f2796ff2f375f89ef1722da32df5a4bb372948e8b5ddfc15af555c0123c923dc",

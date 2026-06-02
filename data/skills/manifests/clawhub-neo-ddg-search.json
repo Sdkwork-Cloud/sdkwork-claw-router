@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/neo-ddg-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-neo-ddg-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-neo-ddg-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:766b1cb080feaf6261b16e93497382e3105285cce17de253dca2805a6a30c3ab",

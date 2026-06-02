@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audible@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-audible-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audible-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:80f60aa10a9af1b0a24f085792be995da853999db2964c81fabb1080fbd39f9c",

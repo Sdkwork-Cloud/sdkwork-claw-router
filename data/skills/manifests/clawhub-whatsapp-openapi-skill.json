@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whatsapp-openapi-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-openapi-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whatsapp-openapi-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9532e7c9e95a868cb1b687d22f2302f52f2cb8ae4482c004ea51a9bbbc6cb676",

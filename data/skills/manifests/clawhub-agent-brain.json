@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-brain@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-brain-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-brain-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:61408c0ba95cd73df0a10e444f724a1ab2b551f457522f3634f1748f57f603aa",

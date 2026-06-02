@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/global-customer-agent@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-global-customer-agent-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-global-customer-agent-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1533b49fe05f7f035f40c34b03849c5d3f9cc4e029d48b9ac2555da8ed4ceb3b",

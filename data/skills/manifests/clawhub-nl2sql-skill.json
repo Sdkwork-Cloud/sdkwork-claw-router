@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nl2sql-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nl2sql-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nl2sql-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d9e4628cf3ab4ec4a9e3e9bbebc4040d04b497da580fe019477c38029dbbf5e8",

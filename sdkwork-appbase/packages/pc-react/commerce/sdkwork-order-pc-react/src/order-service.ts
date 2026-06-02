@@ -9,6 +9,10 @@ import {
   type SdkworkCommerceService,
 } from "@sdkwork/commerce-service";
 import {
+  readSdkworkMediaResource,
+  type SdkworkMediaResource,
+} from "@sdkwork/appbase-pc-react";
+import {
   createSdkworkOrderMessages,
   type SdkworkOrderMessages,
   type SdkworkOrderMessagesOverrides,
@@ -34,7 +38,7 @@ export interface SdkworkOrderSummary {
   payTime?: string;
   paymentMethod?: string;
   paymentProvider?: string;
-  productImage?: string;
+  productImage?: SdkworkMediaResource;
   quantity: number;
   remark?: string;
   status: SdkworkOrderStatus;
@@ -54,7 +58,7 @@ export interface SdkworkOrderStatistics {
 
 export interface SdkworkOrderItem {
   id: string;
-  image?: string;
+  image?: SdkworkMediaResource;
   name: string;
   quantity: number;
   totalAmountCny: number | null;
@@ -76,7 +80,7 @@ export interface SdkworkOrderDetail {
   paidAmountCny: number | null;
   payTime?: string;
   paymentMethod?: string;
-  productImage?: string;
+  productImage?: SdkworkMediaResource;
   quantity: number;
   remark?: string;
   status: SdkworkOrderStatus;
@@ -142,7 +146,7 @@ interface RemoteOrder {
   payTime?: string;
   paymentMethod?: string;
   paymentProvider?: string;
-  productImage?: string;
+  productImage?: unknown;
   quantity?: number | string;
   remark?: string;
   status?: string;
@@ -153,7 +157,7 @@ interface RemoteOrder {
 
 interface RemoteOrderItem {
   id?: string;
-  productImage?: string;
+  productImage?: unknown;
   productName?: string;
   quantity?: number | string;
   totalAmount?: number | string;
@@ -297,7 +301,7 @@ function mapOrderSummary(
     payTime: toSdkworkCommerceOptionalString(order.payTime),
     paymentMethod: toSdkworkCommerceOptionalString(order.paymentMethod),
     paymentProvider: toSdkworkCommerceOptionalString(order.paymentProvider),
-    productImage: toSdkworkCommerceOptionalString(order.productImage),
+    productImage: readSdkworkMediaResource(order.productImage),
     quantity: toSdkworkCommerceNumber(order.quantity, 1),
     remark: toSdkworkCommerceOptionalString(order.remark),
     status,
@@ -321,7 +325,7 @@ function mapStatistics(statistics: RemoteOrderStatistics | null | undefined): Sd
 function mapItems(items: RemoteOrderItem[] | undefined, copy: SdkworkOrderServiceCopy): SdkworkOrderItem[] {
   return (items ?? []).map((item, index) => ({
     id: toSdkworkCommerceOptionalString(item.id) || `order-item-${index + 1}`,
-    image: toSdkworkCommerceOptionalString(item.productImage),
+    image: readSdkworkMediaResource(item.productImage),
     name: toSdkworkCommerceOptionalString(item.productName) || copy.itemFallbackName,
     quantity: toSdkworkCommerceNumber(item.quantity, 1),
     totalAmountCny: toNullableSdkworkCommerceNumber(item.totalAmount),

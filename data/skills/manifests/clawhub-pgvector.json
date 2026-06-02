@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pgvector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pgvector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pgvector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b1619e5a79b6e22fbbcdf717150fb4a5852ca7d01d11c1d1f2970860b2b50310",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/microsoft-cn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-cn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-microsoft-cn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97c6b0f84191da58509bdc963c365a8566ecac7a654d28f795971387fd7f9efb",

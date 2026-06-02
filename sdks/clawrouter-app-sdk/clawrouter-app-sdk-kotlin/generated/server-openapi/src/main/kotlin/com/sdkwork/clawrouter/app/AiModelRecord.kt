@@ -19,7 +19,7 @@ data class AiModelRecord(
     val docsUrl: String? = null,
     val familyCode: String? = null,
     val familyId: String? = null,
-    val iconUrl: String? = null,
+    val icon: MediaResource? = null,
     val id: String? = null,
     val inputModalities: Map<String, String>? = null,
     val licenseType: String? = null,

@@ -1,6 +1,7 @@
 import {
   createSdkworkAppCapabilityManifest,
   type CreateSdkworkAppCapabilityManifestOptions,
+  type SdkworkMediaResource,
   type SdkworkAppCapabilityManifest,
 } from "@sdkwork/appbase-pc-react";
 import {
@@ -39,7 +40,7 @@ export interface SdkworkPaymentProductTypeOption {
 export interface SdkworkPaymentMethod {
   available: boolean;
   code: string;
-  icon?: string;
+  icon?: SdkworkMediaResource;
   id: string;
   label: string;
   productTypes: SdkworkPaymentProductTypeOption[];
@@ -73,7 +74,8 @@ export interface SdkworkPaymentDetail extends SdkworkPaymentSummary {
   paymentOrderId?: string;
   paymentParams: Record<string, unknown>;
   paymentUrl?: string;
-  qrCode?: string;
+  qrContent?: string;
+  qrImage?: SdkworkMediaResource;
   queryIntervalSeconds?: number;
   remark?: string;
   subject?: string;

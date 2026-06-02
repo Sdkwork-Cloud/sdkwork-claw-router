@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/orchestrator-v4@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-orchestrator-v4-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-orchestrator-v4-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:084e12084025e25a731c99c827b9e7f9073293431dd74e357d9b18f4c48c7a7a",

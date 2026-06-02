@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwen-tts-lan@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwen-tts-lan-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwen-tts-lan-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b687b18f1e9d9f355dd6cdb715ad62c85b398f3f96888dbae17522b5b4fca4ef",

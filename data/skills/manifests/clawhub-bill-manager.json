@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bill-manager@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-bill-manager-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bill-manager-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:83055299f99487325bebe8caede5159d5ce5af67e6347a17d3d98dc1acb2aa62",

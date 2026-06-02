@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goodreads-full@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-goodreads-full-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goodreads-full-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:11a932a6df4c8f38a600d7f13f362ebb97130814af22909407f27f08441287e7",

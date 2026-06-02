@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-task-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-task-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-task-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c94938e3d38ea1de39ba705df820729ad34c3ee646de9dcab38bdb3c8d43796a",

@@ -1,11 +1,11 @@
 /** Create api key request schema exposed by Claw Router. */
 export interface CreateApiKeyRequest {
+  /** API key channel group code. */
+  channelGroup: string;
   /** Create this key as the default backend runtime API key. */
   defaultForRuntime?: boolean;
   /** Expiration timestamp in YYYY-MM-DDTHH:mm format, or never. */
   expires?: string;
-  /** API key group code. */
-  group: string;
   /** Comma-separated IP or CIDR allowlist, or unrestricted. */
   ipLimit?: string;
   /** Whether the quota is unlimited. */

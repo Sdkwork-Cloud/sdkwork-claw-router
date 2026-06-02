@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sonoff@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sonoff-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sonoff-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:601cf4f51f10b63b625a62a0e87f36e0efd5b02f8d514da46d62af32e8639b62",

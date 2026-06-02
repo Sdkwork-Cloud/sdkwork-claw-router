@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/polymarket-executor-skill@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-executor-skill-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-polymarket-executor-skill-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:588d238e94ad9c09064b9dc67d2234fb4e647ecf292bde5d3ca5c3b9b6cee980",

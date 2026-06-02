@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/social-media-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-social-media-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-social-media-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cd5d54c4561aef6bfaf1ad0a2262276cb3e905d7394280d413b0bbd25672fc9d",

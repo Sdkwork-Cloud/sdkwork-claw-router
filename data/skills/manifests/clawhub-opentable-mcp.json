@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opentable-mcp@0.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-opentable-mcp-0.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opentable-mcp-0.8.0.json"
+      },
       "version": "0.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:11f37a78dd4040d49fc0b58bbe896afa0f39f5ecdccc07f3d5f16735c62f64c4",

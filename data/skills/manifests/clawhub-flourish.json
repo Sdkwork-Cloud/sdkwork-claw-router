@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flourish@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-flourish-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flourish-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:707e0579628487016d8642d81419d4286c60deaa2067ea6464946f4f94ae6d76",

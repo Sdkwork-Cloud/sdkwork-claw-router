@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/expense-tracker-daily@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-expense-tracker-daily-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-expense-tracker-daily-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:9b542bb3da6d4e1db09cada1bc72072908d26ac7be47137d753fca9e68c67f1a",

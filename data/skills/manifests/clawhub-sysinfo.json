@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sysinfo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sysinfo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sysinfo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52f62ed8e87aa941c4bb844f022d04db52b0f1ca6659da361b49f30401b4ec32",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/csp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-csp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-csp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:748fedb099c9375b9ca62f2c7858cd58fa2e311eb3a698bbdc65b6d8a805401b",

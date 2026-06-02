@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/esignature-workflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-esignature-workflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-esignature-workflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b88b1fc452b130ddd8327eeb05b94e15b061c069bf63285506c3bf8b2d8796f3",

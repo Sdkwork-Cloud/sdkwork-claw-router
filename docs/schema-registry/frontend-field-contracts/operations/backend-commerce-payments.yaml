@@ -208,6 +208,12 @@ frontend_operations:
               maxLength: 128
               pattern: ^[A-Za-z0-9_-]+$
             providerCode: *paymentProviderCodeSchema
+            accountRole: &paymentProviderAccountRoleSchema
+              type: string
+              nullable: true
+              enum:
+              - merchant
+              - service_provider
             merchantId: &merchantIdSchema
               type: string
               minLength: 1
@@ -261,7 +267,7 @@ frontend_operations:
   write_tables:
   - commerce_payment_provider_account
   - ops_audit_log
-  request_schema:
+  request_schema: &commercePaymentProviderAccountMutationRequest
     name: CommercePaymentProviderAccountMutationRequest
     type: object
     additionalProperties: false
@@ -277,6 +283,7 @@ frontend_operations:
     properties:
       accountNo: *accountNoSchema
       providerCode: *paymentProviderCodeSchema
+      accountRole: *paymentProviderAccountRoleSchema
       merchantId: *merchantIdSchema
       environment: *paymentEnvironmentSchema
       countryCode: *countryCodeSchema
@@ -303,7 +310,7 @@ frontend_operations:
         type: string
         nullable: true
         maxLength: 512
-  response_schema:
+  response_schema: &commercePaymentProviderAccountMutationResponse
     name: CommercePaymentProviderAccountMutationResponse
     type: object
     additionalProperties: false
@@ -311,6 +318,85 @@ frontend_operations:
     - item
     properties:
       item: *commercePaymentProviderAccountItem
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsProviderAccountsUpdate
+  operation_id: payments.providerAccounts.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/payments/provider_accounts/{providerAccountId}
+  sdk_domain: commerce
+  summary: Payments Provider Accounts Update
+  description: Standard appbase commerce API for payments.providerAccounts.update; no legacy billing compatibility route is exposed.
+  read_sources: *paymentReadSources
+  idempotency_required: true
+  write_tables:
+  - commerce_payment_provider_account
+  - ops_audit_log
+  request_schema: *commercePaymentProviderAccountMutationRequest
+  response_schema: *commercePaymentProviderAccountMutationResponse
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsProviderAccountsDelete
+  operation_id: payments.providerAccounts.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/payments/provider_accounts/{providerAccountId}
+  sdk_domain: commerce
+  summary: Payments Provider Accounts Delete
+  description: Standard appbase commerce API for payments.providerAccounts.delete; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_payment_provider_account
+  - commerce_payment_channel
+  write_tables:
+  - commerce_payment_provider_account
+  - ops_audit_log
+  response_schema:
+    name: CommercePaymentProviderAccountDeleteResponse
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+- route: /admin/payments
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
+  operation: backendPaymentsProviderAccountsStatusUpdate
+  operation_id: payments.providerAccounts.status.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/payments/provider_accounts/{providerAccountId}/status
+  sdk_domain: commerce
+  summary: Payments Provider Accounts Status Update
+  description: Standard appbase commerce API for payments.providerAccounts.status.update; no legacy billing compatibility route is exposed.
+  read_sources:
+  - commerce_payment_provider_account
+  - commerce_payment_channel
+  idempotency_required: true
+  write_tables:
+  - commerce_payment_provider_account
+  - ops_audit_log
+  request_schema:
+    name: CommercePaymentProviderAccountStatusUpdateRequest
+    type: object
+    additionalProperties: false
+    required:
+    - status
+    properties:
+      status: *paymentConfigStatusSchema
+      clientRequestNo:
+        type: string
+        minLength: 1
+        maxLength: 128
+      note:
+        type: string
+        nullable: true
+        maxLength: 512
+  response_schema: *commercePaymentProviderAccountMutationResponse
 - route: /admin/payments
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   operation: backendPaymentsRuntimeSnapshotRetrieve

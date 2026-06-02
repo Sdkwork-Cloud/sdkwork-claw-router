@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwen-audio@0.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwen-audio-0.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwen-audio-0.0.6.json"
+      },
       "version": "0.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:54378724b55af0119d2a36969f1b34356836a4074c23f7dfcd9486afd3cb6b63",

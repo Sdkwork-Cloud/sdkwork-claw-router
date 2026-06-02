@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stdio-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stdio-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stdio-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f740c6d9ed23ba586cdbef0cebdcb70007684c10d0e4ffe9090bcad74fc6b93",

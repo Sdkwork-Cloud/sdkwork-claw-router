@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/astra-docker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-astra-docker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-astra-docker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee3d50344dcee7c84dda18b63489bf3d1141d9520c1234a99745c9fbb424a33b",

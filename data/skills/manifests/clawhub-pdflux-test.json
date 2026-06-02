@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdflux-test@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdflux-test-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdflux-test-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:a8396353cf6686d7841f2f71ab801de4b9c1924d4202b57bf201626109d09543",

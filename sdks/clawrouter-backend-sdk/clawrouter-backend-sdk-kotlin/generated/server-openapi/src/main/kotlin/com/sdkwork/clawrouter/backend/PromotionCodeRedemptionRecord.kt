@@ -6,6 +6,7 @@ data class PromotionCodeRedemptionRecord(
     val currencyCode: String? = null,
     val failureCode: String? = null,
     val failureMessage: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val occurredAt: String? = null,
     val offerId: String? = null,

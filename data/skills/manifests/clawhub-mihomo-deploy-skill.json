@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mihomo-deploy-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-mihomo-deploy-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mihomo-deploy-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:bbb0017e37993fc6c876c380389d0101db020ac259300ba2d073001f4c997512",

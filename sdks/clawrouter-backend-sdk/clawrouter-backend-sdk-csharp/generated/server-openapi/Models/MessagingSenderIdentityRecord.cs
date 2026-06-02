@@ -6,6 +6,9 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class MessagingSenderIdentityRecord
     {
+        public Dictionary<string, string>? ApprovalPayload { get; set; }
+        public string? ApprovalStatus { get; set; }
+        public string? Channel { get; set; }
         public string? CountryCode { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }
@@ -16,8 +19,11 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? FromEmail { get; set; }
         public string? FromName { get; set; }
         public string? Id { get; set; }
+        public string? IdentityCode { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? OrganizationId { get; set; }
+        public string? ProviderAccountId { get; set; }
+        public string? ProviderCode { get; set; }
         public string? RejectionReason { get; set; }
         public string? ReplyTo { get; set; }
         public string? SenderId { get; set; }

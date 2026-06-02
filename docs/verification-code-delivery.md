@@ -1,4 +1,4 @@
-﻿# Verification Code Delivery Standard
+# Verification Code Delivery Standard
 
 ## Runtime Behavior
 

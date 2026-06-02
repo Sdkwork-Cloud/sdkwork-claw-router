@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sap-successfactors@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sap-successfactors-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sap-successfactors-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3e16455511c71ff7091f71400bf1f7d5cb80cc8222962be502aaa1e5503e2e76",

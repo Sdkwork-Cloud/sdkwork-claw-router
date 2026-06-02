@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linux-kernel-crash-debug@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-linux-kernel-crash-debug-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linux-kernel-crash-debug-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:86c876b00a350d805cea54c6c2d7259ae85d0b711986eb9b4a77bf863cbb0e11",

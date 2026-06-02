@@ -47,6 +47,10 @@ pub struct StorageQuotaReservationRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub reservation_no: Option<String>,
 
+    /// Reserved bytes field on storage quota reservation record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub reserved_bytes: Option<String>,
+
     /// Scope id field on storage quota reservation record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub scope_id: Option<String>,

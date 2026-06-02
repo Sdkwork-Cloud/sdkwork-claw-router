@@ -56,7 +56,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flyclaw@0.4.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-flyclaw-0.4.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flyclaw-0.4.4.json"
+      },
       "version": "0.4.4",
       "runtime": "metadata",
       "checksumHash": "sha256:997595072e08885341af8a8701d37f98ad48a5548908db7e5a16e0437b8a0180",

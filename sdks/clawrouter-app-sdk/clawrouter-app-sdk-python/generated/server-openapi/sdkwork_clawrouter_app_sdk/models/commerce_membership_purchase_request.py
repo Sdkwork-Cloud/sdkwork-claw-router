@@ -8,4 +8,3 @@ class CommerceMembershipPurchaseRequest:
     """Commerce membership purchase request schema exposed by Claw Router."""
     package_id: int
     coupon_id: Optional[str] = None
-    payment_method: Optional[str] = None

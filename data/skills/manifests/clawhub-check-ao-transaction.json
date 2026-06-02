@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/check-ao-transaction@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-check-ao-transaction-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-check-ao-transaction-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2695e3ab93575ebbdbaf84fe0ee3958978ab9ae8095eff102c03c8fa508629a7",

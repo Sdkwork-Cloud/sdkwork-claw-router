@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drawthings-agent@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-drawthings-agent-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drawthings-agent-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cd6de9897313071386a2391b2b5c4628b8a0670cb875b055ff2f3cc9031eb303",

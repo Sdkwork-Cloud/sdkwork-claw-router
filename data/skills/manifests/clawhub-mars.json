@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mars@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mars-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mars-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2fa20254cf767ba5209d51fd269f079c70f0d6b9a22ba970bd69deb2d394760",

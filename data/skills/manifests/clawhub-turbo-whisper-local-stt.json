@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/turbo-whisper-local-stt@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-turbo-whisper-local-stt-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-turbo-whisper-local-stt-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:88cba18f93d72ea65f89b055d30cf9112d0a70b24e9fbed28ee0f4c1776d3ba5",

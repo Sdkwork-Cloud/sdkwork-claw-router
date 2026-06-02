@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/serial-server-mqtt@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-serial-server-mqtt-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-serial-server-mqtt-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6044e9fb96777282e19b8888677faa8055788c81b1c58fae529fa590b1c5a780",

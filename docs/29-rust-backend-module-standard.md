@@ -17,7 +17,7 @@ The runtime is split into small Rust packages with explicit boundaries:
 - `sdkwork-claw-admin-api`: `/backend/v3/api` admin/backend API surface.
 - `sdkwork-claw-product`: product composition and deployable runtime assembly.
 
-Product implementation starts in `sdkwork-claw-product` and must keep `domain`, `application`, `ports`, and `infrastructure` as first-class submodules. Model catalog, provider route, pricing plan, API key group, and billing meter behavior belongs behind these boundaries before HTTP handlers replace manifest 501 responses.
+Product implementation starts in `sdkwork-claw-product` and must keep `domain`, `application`, `ports`, and `infrastructure` as first-class submodules. Model catalog, provider route, pricing plan, channel group, and billing meter behavior belongs behind these boundaries before HTTP handlers replace manifest 501 responses.
 
 ## 2. Module Shape
 
@@ -60,7 +60,7 @@ bootstrap/*.rs       dependency assembly and router registration
 The first product slice uses the same shape:
 
 ```text
-domain          ModelVendor, BillingMeter, model catalog, prices, API key groups, money values
+domain          ModelVendor, BillingMeter, model catalog, prices, channel groups, money values
 application     pricing resolver and future catalog/admin use cases
 ports           pricing catalog and future repository/provider traits
 infrastructure  in-memory test adapters first, infrastructure/sql query and row boundaries, sqlx/cache adapters later

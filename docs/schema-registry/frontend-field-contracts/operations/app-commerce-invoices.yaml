@@ -197,8 +197,5 @@ frontend_operations:
         nullable: true
         minLength: 1
         maxLength: 2048
-      qrCodeImageUrl:
-        type: string
-        nullable: true
-        minLength: 1
-        maxLength: 2048
+      qrCode:
+        $ref: '#/components/schemas/MediaResource'

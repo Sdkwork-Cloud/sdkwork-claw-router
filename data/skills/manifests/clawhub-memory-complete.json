@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-complete@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-complete-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-complete-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6fee70d210450c624588d569d57534ab037567c06b1f5803c8cf1bbc92d0ccf0",

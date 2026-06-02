@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tender-search@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tender-search-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tender-search-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b7eeda334596a302aa4906fc02b5db9b7f07a909b845fc24c48f6120eab8761f",

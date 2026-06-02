@@ -16,7 +16,7 @@ export interface UsageLogItem {
   errorMessage: string;
   /** Error type field on usage log item. */
   errorType: string;
-  /** Maintained API key group display name. Falls back to the recorded group snapshot when the group has been removed or renamed outside the read model. */
+  /** Maintained channel group display name. Falls back to the recorded group snapshot when the group has been removed or renamed outside the read model. */
   group: string;
   /** Http status field on usage log item. */
   httpStatus: number;

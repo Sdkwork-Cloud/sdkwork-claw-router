@@ -1,0 +1,30 @@
+package com.sdkwork.clawrouter.app
+
+data class CommercePaymentWebhookDeliveryRecord(
+    val createdAt: String? = null,
+    val deliveryNo: String? = null,
+    val deliveryStatus: String? = null,
+    val eventId: String? = null,
+    val failureCode: String? = null,
+    val failureMessage: String? = null,
+    val headersJson: Map<String, String>? = null,
+    val id: String? = null,
+    val nonce: String? = null,
+    val normalizedEventId: String? = null,
+    val organizationId: String? = null,
+    val payloadDigest: String? = null,
+    val payloadRef: String? = null,
+    val processedAt: String? = null,
+    val providerAccountId: String? = null,
+    val providerCode: String? = null,
+    val receivedAt: String? = null,
+    val requestTimestamp: String? = null,
+    val signature: String? = null,
+    val signatureAlgorithm: String? = null,
+    val sourceIp: String? = null,
+    val tenantId: String? = null,
+    val updatedAt: String? = null,
+    val userAgent: String? = null,
+    val verificationStatus: String? = null,
+    val verifiedAt: String? = null
+)

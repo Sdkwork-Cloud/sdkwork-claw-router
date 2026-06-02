@@ -6,6 +6,7 @@ public class CommerceMembershipPackageRecord {
     private String currencyCode;
     private String durationDays;
     private String endsAt;
+    private String id;
     private String organizationId;
     private String packageGroupId;
     private String packageNo;
@@ -13,6 +14,7 @@ public class CommerceMembershipPackageRecord {
     private String priceAmount;
     private String recurrenceCycle;
     private String skuId;
+    private String sortOrder;
     private String startsAt;
     private String status;
     private String tenantId;
@@ -48,6 +50,14 @@ public class CommerceMembershipPackageRecord {
 
     public void setEndsAt(String endsAt) {
         this.endsAt = endsAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrganizationId() {
@@ -104,6 +114,14 @@ public class CommerceMembershipPackageRecord {
 
     public void setSkuId(String skuId) {
         this.skuId = skuId;
+    }
+
+    public String getSortOrder() {
+        return this.sortOrder;
+    }
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
     }
 
     public String getStartsAt() {

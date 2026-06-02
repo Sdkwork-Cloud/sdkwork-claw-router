@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pls-agent-tools@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pls-agent-tools-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pls-agent-tools-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ac9f8d3f1f883612ba00e8602d30b761375cd172673514bfd9ff0952668518b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slack-channel-context@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slack-channel-context-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slack-channel-context-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc1fdc8e0b982019e5cb53eed8b66730f80ff067dce04f16ea043489f963f3f4",

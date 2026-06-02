@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-checker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-checker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-checker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de10dca37ec17e3eab9f1ee4fa5e81768d0da3743e595edbdbde5b938d345cf6",

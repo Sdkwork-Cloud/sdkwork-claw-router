@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linear-agent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-linear-agent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linear-agent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:89d8e6e2675b8c1987be93d309f01db2a669f1150e78419b36a79c126ebf2d91",

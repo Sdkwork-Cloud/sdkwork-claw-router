@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/news-gameinfomer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-news-gameinfomer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-news-gameinfomer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62aebed13345fb90a3f178190ba12b654e7f9bdc47124d994ebd08511a81706d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-prediction-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-prediction-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-prediction-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf852abf7c949e8d44acf48243b474de075931c4b8ec3c7202e001fd4955d0f8",

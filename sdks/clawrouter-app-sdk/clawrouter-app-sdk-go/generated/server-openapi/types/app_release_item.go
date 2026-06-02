@@ -2,7 +2,7 @@ package types
 
 // App release item schema exposed by Claw Router.
 type AppReleaseItem struct {
-	DownloadUrl string `json:"downloadUrl"`
+	Artifact MediaResource `json:"artifact"`
 	Id string `json:"id"`
 	Os string `json:"os"`
 	PlatformType string `json:"platformType"`

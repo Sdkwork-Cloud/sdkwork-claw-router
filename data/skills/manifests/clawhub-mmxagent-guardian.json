@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mmxagent-guardian@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-mmxagent-guardian-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mmxagent-guardian-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:77aad9884c1d2496466978a3120c49b0acf6930e6d24df89c76817d858707711",

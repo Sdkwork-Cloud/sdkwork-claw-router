@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cups-printer@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cups-printer-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cups-printer-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:671b389b59bbe6bf0290b66ffe95cfa2a950a1b7ce31cc089ceb13787b257e24",

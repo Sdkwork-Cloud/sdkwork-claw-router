@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-search-serper@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-search-serper-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-search-serper-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:f542e30083b24228e6479f54ff9c33987cc5371f8b46a24990717b274dea54b4",

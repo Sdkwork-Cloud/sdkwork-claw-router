@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawdos@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawdos-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawdos-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ab30e25a6e688269a747876be090d87ef49ff344fba5f0a794fd6cb8efa8545f",

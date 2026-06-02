@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clean-my-house@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clean-my-house-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clean-my-house-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbf84a4985805288f3038c47d0a04b4412fb60094c025ceb68190d8c799b2be7",

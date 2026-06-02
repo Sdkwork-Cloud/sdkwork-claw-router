@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/checkpoint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-checkpoint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-checkpoint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dad8cb229a2be18c43deba4fcbe8efe20d45d0c878295dd3b3706a44be434fef",

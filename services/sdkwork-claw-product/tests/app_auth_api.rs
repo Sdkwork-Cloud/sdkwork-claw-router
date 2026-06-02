@@ -56,7 +56,7 @@ async fn app_auth_sessions_create_issues_dual_token_context_for_active_iam_user_
     assert_eq!("Alice Router", payload["data"]["user"]["displayName"]);
     assert_eq!(
         "https://cdn.example.com/avatar.png",
-        payload["data"]["user"]["avatarUrl"]
+        payload["data"]["user"]["avatar"]["publicUrl"]
     );
     assert_eq!("active", payload["data"]["user"]["status"]);
     assert_eq!("sdkwork-claw-router", payload["data"]["context"]["appId"]);
@@ -2028,7 +2028,9 @@ async fn create_minimal_auth_schema(pool: &SqlitePool) {
             display_name TEXT NOT NULL,
             email TEXT,
             phone TEXT,
-            avatar_url TEXT,
+            avatar_media_resource_id TEXT,
+            avatar_object_blob_id INTEGER,
+            avatar_resource_snapshot TEXT,
             status TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL
@@ -2373,9 +2375,9 @@ async fn seed_user(
     sqlx::query(
         r#"
         INSERT INTO iam_user
-            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
+            (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
         VALUES
-            (?, '10', ?, ?, ?, '+15550000030', 'https://cdn.example.com/avatar.png', ?, '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
+            (?, '10', ?, ?, ?, '+15550000030', 'media-avatar-test', NULL, '{"kind":"image","source":"external_url","url":"https://cdn.example.com/avatar.png","publicUrl":"https://cdn.example.com/avatar.png"}', ?, '2026-05-01T00:00:00Z', '2026-05-01T00:00:00Z')
         "#,
     )
     .bind(user_id.to_string())

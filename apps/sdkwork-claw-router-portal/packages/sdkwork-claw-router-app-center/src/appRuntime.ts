@@ -1,3 +1,10 @@
+import {
+  readMediaResource,
+  readMediaResourceUrl,
+  toExternalUrlMediaResource,
+  type ClawRouterMediaResource,
+} from 'sdkwork-claw-router-commons/runtime';
+
 export type PlatformType = 'Desktop' | 'Mobile' | 'Web' | 'Mini Program';
 export type OS =
   | 'Windows'
@@ -21,7 +28,7 @@ export type AppRelease = {
   version: string;
   size: string;
   releaseDate: string;
-  downloadUrl: string;
+  artifact?: ClawRouterMediaResource;
   whatsNew?: string;
 };
 
@@ -30,22 +37,13 @@ export type App = {
   name: string;
   developer: string;
   category: string;
-  image: string;
+  image: ClawRouterMediaResource;
   rating: number;
   description: string;
   downloads: string;
-  screenshots: string[];
+  screenshots: ClawRouterMediaResource[];
   features: string[];
-  releases: {
-    id: string;
-    platformType: PlatformType;
-    os: OS;
-    version: string;
-    size: string;
-    releaseDate: string;
-    downloadUrl: string;
-    whatsNew?: string;
-  }[];
+  releases: AppRelease[];
 };
 
 export type ApiRecord = Record<string, unknown>;
@@ -77,7 +75,7 @@ export type AppCatalogCardView = {
   developer: string;
   descriptionPreview: string;
   category: string;
-  image: string;
+  image: ClawRouterMediaResource;
   ratingLabel: string;
   downloadsLabel: string;
   displayOSes: OS[];
@@ -99,11 +97,10 @@ export type AppDetailViewModel = {
   selectedRelease: AppRelease;
   availablePlatformReleases: AppRelease[];
   releaseDateLabel: string;
-  downloadUrl: string;
   canDownload: boolean;
 };
 
-const DEFAULT_APP_IMAGE = 'https://picsum.photos/seed/app-center/800/600';
+const DEFAULT_APP_IMAGE = toExternalUrlMediaResource('https://picsum.photos/seed/app-center/800/600', 'image')!;
 const SORT_OPTIONS: AppSortKey[] = ['Most Popular', 'Highest Rated', 'Newest'];
 const PLATFORM_OPTIONS: { id: PlatformType; label: string }[] = [
   { id: 'Desktop', label: 'Desktop' },
@@ -138,18 +135,18 @@ export function normalizeAppApiRecord(value: unknown): App {
     : readRequiredRecordArray(item, 'artifacts', 'App release record is required');
   const ratingCount = readNumber(item, 'ratingCount') || readNumber(item, 'rating_count');
   const installCount = readNumber(item, 'installCount') || readNumber(item, 'install_count') || readNumber(item, 'downloads');
-  const screenshotUrls = normalizeAppStrings(readStringArray(item, 'screenshots'));
+  const screenshots = readMediaResourceArray(item, 'screenshots');
 
   return {
     id: readRequiredFirstString(item, ['id', 'appId', 'app_id', 'code'], 'App id is required'),
     name: readRequiredFirstString(item, ['name'], 'App name is required'),
     developer: readRequiredFirstString(item, ['developer', 'provider', 'publisher'], 'App developer is required'),
     category: normalizeWhitespace(readString(item, 'category') || readString(item, 'categoryName') || readString(item, 'category_name')) || 'Uncategorized',
-    image: readString(item, 'image') || readString(item, 'iconUrl') || readString(item, 'icon_url') || firstAssetUrl(assets, ['cover', 'icon']) || DEFAULT_APP_IMAGE,
+    image: readMediaResource(item.image) || firstAssetResource(assets, ['cover', 'icon']) || DEFAULT_APP_IMAGE,
     rating: readNumber(item, 'rating') || readNumber(item, 'ratingAvg') || readNumber(item, 'rating_avg') || readNumber(item, 'ratingScore') || ratingCount,
     description: normalizeWhitespace(readString(item, 'description')),
     downloads: normalizeWhitespace(readString(item, 'downloads')) || formatAppCount(installCount),
-    screenshots: screenshotUrls.length > 0 ? screenshotUrls : collectAssetUrls(assets, ['screenshot']),
+    screenshots: screenshots.length > 0 ? screenshots : collectAssetResources(assets, ['screenshot']),
     features: normalizeAppStrings(readStringArray(item, 'features').length > 0
       ? readStringArray(item, 'features')
       : readStringArray(item, 'resource_list').length > 0
@@ -165,6 +162,10 @@ export function normalizeAppReleaseApiRecord(value: unknown): AppRelease {
   const os = readOperatingSystem(item, platformType);
   const id = normalizeWhitespace(readString(item, 'id') || readString(item, 'artifactId') || readString(item, 'artifact_id') || `${platformType}-${os}`);
   const sizeBytes = readNumber(item, 'artifactSizeBytes') || readNumber(item, 'artifact_size_bytes') || readNumber(item, 'sizeBytes');
+  const artifact = readMediaResource(item.artifact)
+    || readMediaResource(item.resource)
+    || readMediaResource(item.artifactResourceSnapshot)
+    || readMediaResource(item.artifact_resource_snapshot);
 
   return {
     id,
@@ -173,7 +174,7 @@ export function normalizeAppReleaseApiRecord(value: unknown): AppRelease {
     version: normalizeWhitespace(readString(item, 'version')) || 'Latest',
     size: normalizeWhitespace(readString(item, 'size')) || formatAppSize(sizeBytes),
     releaseDate: normalizeAppDate(readString(item, 'releaseDate') || readString(item, 'publishedAt') || readString(item, 'published_at')),
-    downloadUrl: readString(item, 'downloadUrl') || readString(item, 'download_url') || readString(item, 'artifactUrl') || readString(item, 'artifact_url'),
+    artifact,
     whatsNew: normalizeWhitespace(readString(item, 'whatsNew') || readString(item, 'releaseNotes') || readString(item, 'release_notes')),
   };
 }
@@ -240,18 +241,17 @@ export function deriveAppDetailView(
     selectedRelease,
     availablePlatformReleases: app.releases.filter((release) => release.id !== selectedRelease.id),
     releaseDateLabel: formatAppDateLabel(selectedRelease.releaseDate),
-    downloadUrl: getReleaseDownloadUrl(selectedRelease),
     canDownload: isReleaseDownloadable(selectedRelease),
   };
 }
 
-export function getReleaseDownloadUrl(release: AppRelease | null | undefined): string {
-  return release?.downloadUrl.trim() ?? '';
+export function getReleaseDownloadHref(release: AppRelease | null | undefined): string {
+  return readMediaResourceUrl(release?.artifact);
 }
 
 export function isReleaseDownloadable(release: AppRelease | null | undefined): boolean {
-  const downloadUrl = getReleaseDownloadUrl(release);
-  return downloadUrl.length > 0 && downloadUrl !== '#';
+  const downloadHref = getReleaseDownloadHref(release);
+  return downloadHref.length > 0 && downloadHref !== '#';
 }
 
 export function formatAppDateLabel(value: string): string {
@@ -356,16 +356,15 @@ function readOperatingSystem(item: ApiRecord, platformType: PlatformType): OS {
   throw new Error(os ? `Unsupported app operating system: ${os}` : `App operating system is required for ${platformType}`);
 }
 
-function collectAssetUrls(assets: readonly ApiRecord[], acceptedTypes: readonly string[]): string[] {
+function collectAssetResources(assets: readonly ApiRecord[], acceptedTypes: readonly string[]): ClawRouterMediaResource[] {
   return assets
     .filter((asset) => acceptedTypes.includes(normalizeSearchText(readString(asset, 'assetType') || readString(asset, 'asset_type') || readString(asset, 'type'))))
-    .map((asset) => readString(asset, 'assetUrl') || readString(asset, 'asset_url') || readString(asset, 'url'))
-    .map(normalizeWhitespace)
-    .filter(Boolean);
+    .map((asset) => readMediaResource(asset.asset) || readMediaResource(asset.resource) || readMediaResource(asset.assetResourceSnapshot))
+    .filter((value): value is ClawRouterMediaResource => value !== undefined);
 }
 
-function firstAssetUrl(assets: readonly ApiRecord[], acceptedTypes: readonly string[]): string {
-  return collectAssetUrls(assets, acceptedTypes)[0] ?? '';
+function firstAssetResource(assets: readonly ApiRecord[], acceptedTypes: readonly string[]): ClawRouterMediaResource | undefined {
+  return collectAssetResources(assets, acceptedTypes)[0];
 }
 
 function firstDescriptionLine(value: string): string {
@@ -472,6 +471,16 @@ function readStringArray(record: ApiRecord | undefined, key: string, fallback: s
     })
     .filter((item): item is string => item !== null);
   return items.length > 0 ? items : [...fallback];
+}
+
+function readMediaResourceArray(record: ApiRecord | undefined, key: string): ClawRouterMediaResource[] {
+  const value = record?.[key];
+  if (!Array.isArray(value)) {
+    return [];
+  }
+  return value
+    .map(readMediaResource)
+    .filter((item): item is ClawRouterMediaResource => item !== undefined);
 }
 
 function readRequiredRecord(value: unknown, message: string): ApiRecord {

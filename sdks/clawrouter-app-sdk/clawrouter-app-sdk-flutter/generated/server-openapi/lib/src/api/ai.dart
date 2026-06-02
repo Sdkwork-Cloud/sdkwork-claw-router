@@ -11,6 +11,15 @@ class AiApi {
 
   AiApi(this._client);
 
+  /// List groups
+  Future<ChannelGroupsListResult?> channelGroupsList() async {
+    final response = await _client.get(ApiPaths.appPath('/ai/channel_groups'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ChannelGroupsListResult.fromJson(map);
+    })();
+  }
+
   /// List dashboard overview
   Future<DashboardOverviewRetrieveResult?> dashboardOverviewRetrieve([String? timeRange, String? startTime, String? endTime]) async {
     final query = buildQueryString([

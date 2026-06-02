@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dungeons-and-lobsters@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dungeons-and-lobsters-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dungeons-and-lobsters-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7cf6d8bfc782fb54f09146870b3eb3a2370b45130e6c7bb300c9b7f701828d82",

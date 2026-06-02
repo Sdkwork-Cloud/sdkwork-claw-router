@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/what-to-eat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-what-to-eat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-what-to-eat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8bd3a1b053ad3458e0fa10de7d8e8ad7ca1d5a19c72c76c5fcc466167df34699",

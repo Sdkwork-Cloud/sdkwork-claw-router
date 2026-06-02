@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-checkout@2.9.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-checkout-2.9.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-checkout-2.9.5.json"
+      },
       "version": "2.9.5",
       "runtime": "metadata",
       "checksumHash": "sha256:68544b949c851db87aff422ffa0c79f16184d5a2fddd7556d981e52654de30ba",

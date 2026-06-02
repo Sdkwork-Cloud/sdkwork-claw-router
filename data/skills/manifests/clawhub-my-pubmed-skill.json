@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-pubmed-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-pubmed-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-pubmed-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d6b0195f4dad600e85883ed3bc7a4f576a1602ba1403c27476096dad4971e0ab",

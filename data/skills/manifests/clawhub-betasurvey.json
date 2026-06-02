@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/betasurvey@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-betasurvey-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-betasurvey-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:450c8963fee86dbd615b446c983bb31c9ed61bec5108984b9b7351c35b38a64d",

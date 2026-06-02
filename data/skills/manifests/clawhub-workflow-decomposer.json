@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workflow-decomposer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workflow-decomposer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workflow-decomposer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:04d823a6bc4f98dbc2701046fa2967479af9e6948153ed197974013f3eaa1119",

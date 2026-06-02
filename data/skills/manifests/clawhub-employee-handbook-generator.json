@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/employee-handbook-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-employee-handbook-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-employee-handbook-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7b958ea60de5642e9b4078ffc294de2b51da86ed55014b920c672ddee55583cc",

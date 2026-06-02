@@ -20,16 +20,14 @@ SELECT
     COALESCE(NULLIF(a.description, ''), '') AS description,
     COALESCE(NULLIF(a.version, ''), '') AS version,
     COALESCE(a.icon::text, '') AS icon,
-    COALESCE(NULLIF(a.icon_url, ''), '') AS icon_url,
+    COALESCE(a.icon_resource_snapshot::text, '') AS icon_resource_snapshot,
     COALESCE(a.resource_list::text, '') AS resource_list,
     COALESCE(a.config::text, '') AS config,
     COALESCE(CAST(a.app_type AS TEXT), '') AS app_type,
     COALESCE(a.install_skill::text, '') AS install_skill,
     COALESCE(a.install_config::text, '') AS install_config,
     COALESCE(a.release_notes::text, '') AS release_notes,
-    COALESCE(NULLIF(a.access_url, ''), '') AS access_url,
-    COALESCE(NULLIF(a.store_url, ''), '') AS store_url,
-    COALESCE(NULLIF(a.download_url, ''), '') AS download_url,
+    COALESCE(a.artifact_resource_snapshot::text, '') AS artifact_resource_snapshot,
     COALESCE((
         SELECT AVG(sa.rating_score)::float8
         FROM studio_catalog_action sa
@@ -115,16 +113,14 @@ SELECT
     COALESCE(NULLIF(a.description, ''), '') AS description,
     COALESCE(NULLIF(a.version, ''), '') AS version,
     COALESCE(a.icon::text, '') AS icon,
-    COALESCE(NULLIF(a.icon_url, ''), '') AS icon_url,
+    COALESCE(a.icon_resource_snapshot::text, '') AS icon_resource_snapshot,
     COALESCE(a.resource_list::text, '') AS resource_list,
     COALESCE(a.config::text, '') AS config,
     COALESCE(CAST(a.app_type AS TEXT), '') AS app_type,
     COALESCE(a.install_skill::text, '') AS install_skill,
     COALESCE(a.install_config::text, '') AS install_config,
     COALESCE(a.release_notes::text, '') AS release_notes,
-    COALESCE(NULLIF(a.access_url, ''), '') AS access_url,
-    COALESCE(NULLIF(a.store_url, ''), '') AS store_url,
-    COALESCE(NULLIF(a.download_url, ''), '') AS download_url,
+    COALESCE(a.artifact_resource_snapshot::text, '') AS artifact_resource_snapshot,
     COALESCE((
         SELECT AVG(sa.rating_score)::float8
         FROM studio_catalog_action sa
@@ -195,8 +191,8 @@ ORDER BY COALESCE(c.sort_weight, 0), c.id
 const LOAD_ASSETS: &str = r#"
 SELECT
     COALESCE(CAST(asset_type AS TEXT), '') AS asset_type,
-    COALESCE(NULLIF(asset_url, ''), '') AS asset_url,
-    COALESCE(NULLIF(thumbnail_url, ''), '') AS thumbnail_url
+    COALESCE(asset_resource_snapshot::text, '') AS asset_resource_snapshot,
+    COALESCE(thumbnail_resource_snapshot::text, '') AS thumbnail_resource_snapshot
 FROM studio_catalog_asset
 WHERE tenant_id = $1
   AND organization_id = $2
@@ -215,7 +211,7 @@ SELECT
     COALESCE(NULLIF(os_name, ''), '') AS os_name,
     COALESCE(NULLIF(version, ''), '') AS version,
     COALESCE(NULLIF(artifact_ref, ''), '') AS artifact_ref,
-    COALESCE(NULLIF(artifact_url, ''), '') AS artifact_url,
+    COALESCE(artifact_resource_snapshot::text, '') AS artifact_resource_snapshot,
     COALESCE(artifact_size_bytes, 0) AS artifact_size_bytes,
     COALESCE(frameworks::text, '') AS frameworks,
     COALESCE(NULLIF(license_name, ''), '') AS license_name,
@@ -451,16 +447,14 @@ fn row_to_raw_app(row: &sqlx::postgres::PgRow) -> RawAppStoreRecord {
         description: string_cell(row, "description"),
         version: string_cell(row, "version"),
         icon: string_cell(row, "icon"),
-        icon_url: string_cell(row, "icon_url"),
+        icon_resource_snapshot: string_cell(row, "icon_resource_snapshot"),
         resource_list: string_cell(row, "resource_list"),
         config: string_cell(row, "config"),
         app_type: string_cell(row, "app_type"),
         install_skill: string_cell(row, "install_skill"),
         install_config: string_cell(row, "install_config"),
         release_notes: string_cell(row, "release_notes"),
-        access_url: string_cell(row, "access_url"),
-        store_url: string_cell(row, "store_url"),
-        download_url: string_cell(row, "download_url"),
+        artifact_resource_snapshot: string_cell(row, "artifact_resource_snapshot"),
         rating: decimal_cell(row, "rating"),
         download_count: integer_cell(row, "download_count"),
     }
@@ -469,8 +463,8 @@ fn row_to_raw_app(row: &sqlx::postgres::PgRow) -> RawAppStoreRecord {
 fn row_to_asset(row: &sqlx::postgres::PgRow) -> RawCatalogAsset {
     RawCatalogAsset {
         asset_type: string_cell(row, "asset_type"),
-        asset_url: string_cell(row, "asset_url"),
-        thumbnail_url: string_cell(row, "thumbnail_url"),
+        asset_resource_snapshot: string_cell(row, "asset_resource_snapshot"),
+        thumbnail_resource_snapshot: string_cell(row, "thumbnail_resource_snapshot"),
     }
 }
 
@@ -481,7 +475,7 @@ fn row_to_artifact(row: &sqlx::postgres::PgRow) -> RawCatalogArtifact {
         os_name: string_cell(row, "os_name"),
         version: string_cell(row, "version"),
         artifact_ref: string_cell(row, "artifact_ref"),
-        artifact_url: string_cell(row, "artifact_url"),
+        artifact_resource_snapshot: string_cell(row, "artifact_resource_snapshot"),
         artifact_size_bytes: integer_cell(row, "artifact_size_bytes"),
         frameworks: string_cell(row, "frameworks"),
         license_name: string_cell(row, "license_name"),

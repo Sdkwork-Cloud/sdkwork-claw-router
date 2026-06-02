@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-ecs-monitor@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-ecs-monitor-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-ecs-monitor-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6207870fd9dd38c386fce961a45ffd32aa9bece1e933916d28978ae74270eba7",

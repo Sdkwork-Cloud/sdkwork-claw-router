@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vt-sentinel-installer@1.10.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vt-sentinel-installer-1.10.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vt-sentinel-installer-1.10.0.json"
+      },
       "version": "1.10.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5c7105b1a54ec674d0f85ab3730416a09885426394c3c7b31884024e1ae24601",

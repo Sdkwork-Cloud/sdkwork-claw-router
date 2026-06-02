@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-mp-reader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-mp-reader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-mp-reader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3bf9de0537be9fa32a26472998b261cd886e266b7010a13ddfe843405b7c0658",

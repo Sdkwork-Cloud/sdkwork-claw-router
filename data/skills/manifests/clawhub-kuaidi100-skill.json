@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kuaidi100-skill@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-kuaidi100-skill-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kuaidi100-skill-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7c62debd4d43616a542964e72cb84c37e318c430dcc72a4eb310ef69c6cb2990",

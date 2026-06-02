@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexus-orchestrator@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexus-orchestrator-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexus-orchestrator-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:424ed17f1fecbd6e837e3d3d60694bec822af8880ae4f2cb7cf07601ad1d170a",

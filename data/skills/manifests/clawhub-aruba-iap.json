@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aruba-iap@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aruba-iap-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aruba-iap-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b14b32e7d035ba944fa6bc74247428f54870205c3ecedef113d60e7b582237a",

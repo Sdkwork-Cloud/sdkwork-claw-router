@@ -2,18 +2,18 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class AdminModelLimitCreateRequest {
-    private String group;
+    private String channelGroup;
     private String model;
     private Integer rpm;
     private String status;
     private Integer tpm;
 
-    public String getGroup() {
-        return this.group;
+    public String getChannelGroup() {
+        return this.channelGroup;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setChannelGroup(String channelGroup) {
+        this.channelGroup = channelGroup;
     }
 
     public String getModel() {

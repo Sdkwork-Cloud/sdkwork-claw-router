@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/miniest-validate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-miniest-validate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-miniest-validate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b972bdf35b997e1631850a83afa8158957f613e23d7411338a102a6fb2c2f676",

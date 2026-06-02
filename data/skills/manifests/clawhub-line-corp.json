@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/line-corp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-line-corp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-line-corp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42543f1927cfe72f7cc3b8cdc3dbdf295812495dff1165ff089550c441192f6f",

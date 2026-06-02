@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mlb@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mlb-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mlb-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d192e9303082d8f9ce883aa092d617caa8d49f18c0cc9c1b03fd914be0eadcec",

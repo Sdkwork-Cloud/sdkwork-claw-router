@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-git-oracle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-git-oracle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-git-oracle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b67ab1af406bf7b8ff13d6fea592ad9c4fc6cd312d3309843bef3b24cea19f22",

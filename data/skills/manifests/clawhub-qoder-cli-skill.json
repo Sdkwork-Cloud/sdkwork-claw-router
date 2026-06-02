@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qoder-cli-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qoder-cli-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qoder-cli-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:60c33ebded64fe7687f27d1aa5271ae685d23aff29a69ab46b3ff7d9f42086c2",

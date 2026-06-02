@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/20-agent-security-questions@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-20-agent-security-questions-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-20-agent-security-questions-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:80a2b6c6e989e1374f020d2736d365210f0d4183650e51ffdb9528054fb42c21",

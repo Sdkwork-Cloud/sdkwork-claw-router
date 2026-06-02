@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baidu-search-v2@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-baidu-search-v2-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baidu-search-v2-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b35bc99c2ebb0b3b752a891553cff72709453dce5d095a2354546d2ab3d24a12",

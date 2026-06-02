@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/matchmaker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-matchmaker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-matchmaker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9137d069dc0cd8ae16001187ad462fb3fe758cf8be2aa011dd69c80c86d84e6a",

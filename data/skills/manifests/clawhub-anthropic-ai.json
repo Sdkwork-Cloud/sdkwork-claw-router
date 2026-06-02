@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anthropic-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-anthropic-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anthropic-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d48a1ddf78d89a8ebf6e907a70fa84c52e73439e8ac46e14084e2684e2de85a4",

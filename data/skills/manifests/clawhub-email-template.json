@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-template@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-template-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-template-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1657d1cd7a9c7a8e3b1737d659f7e7858bde2b33e740c4e36835e39ee7dc6770",

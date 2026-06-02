@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/encharge@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-encharge-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-encharge-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e1a2ecba57fc340ddeb2737c7bcadc2d4cfaf5856b2c28468e69b131377816ad",

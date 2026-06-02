@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gate-mcp-openclaw-installer@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-gate-mcp-openclaw-installer-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gate-mcp-openclaw-installer-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:cc19c46ac495dfab93496a17028c55d53180adddd632c9f9c3b16371b89d2f5d",

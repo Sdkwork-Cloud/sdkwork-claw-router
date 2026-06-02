@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-exporter-archive-governance-workbench@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-exporter-archive-governance-workbench-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-exporter-archive-governance-workbench-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2ddaa10b8d5a7319319406c7bf3e54687c321b8d33a6e03b23588a5d45a295d",

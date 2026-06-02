@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/humanize@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-humanize-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-humanize-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc5834bfe05eb0c3237d8ffd60f216ab528619300c7d396f452fd6d0f42d84da",

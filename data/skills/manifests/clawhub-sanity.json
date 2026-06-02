@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sanity@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sanity-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sanity-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1e071a987d96a3d8cfe110b16d06517846d8eda06834a4bdffcefecee074e1a8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-regex-engine@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-regex-engine-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-regex-engine-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c344e72a3a1416e2a025ba58effccf789dee536d866b321c9cc61a4f97d70e19",

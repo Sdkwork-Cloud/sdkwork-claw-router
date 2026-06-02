@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icd10-cpt-coding-assistant@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icd10-cpt-coding-assistant-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icd10-cpt-coding-assistant-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31300ac53754c93362ca3b12aa73746e5a6cea960ba0a07c05edd5a9e5d84c7c",

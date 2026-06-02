@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-otp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-otp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-otp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:587640587024f847eb026197d0c0b747fa66b1f858e68df0a5e133e939a0f4b5",

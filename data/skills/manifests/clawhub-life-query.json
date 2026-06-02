@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/life-query@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-life-query-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-life-query-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:368a4226ef174b1269b994214ba36a83c89c60912a7bf94e336ac73b467ac93a",

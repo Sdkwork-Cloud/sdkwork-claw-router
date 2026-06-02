@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/powershell-sandbox@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-powershell-sandbox-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-powershell-sandbox-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:161f729a26ae43c50710efb9bcc4e9de6a03be78a3ee0b3e395db9f38f7afe40",

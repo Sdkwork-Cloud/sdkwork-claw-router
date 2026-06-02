@@ -3,6 +3,9 @@ use serde::{Deserialize, Serialize};
 /// Commerce inventory ledger record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CommerceInventoryLedgerRecord {
+    /// Balance after field on commerce inventory ledger record.
+    pub balance_after: String,
+
     /// Business type field on commerce inventory ledger record.
     pub business_type: String,
 
@@ -11,6 +14,10 @@ pub struct CommerceInventoryLedgerRecord {
 
     /// Direction field on commerce inventory ledger record.
     pub direction: String,
+
+    /// Id field on commerce inventory ledger record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
 
     /// Idempotency key field on commerce inventory ledger record.
     pub idempotency_key: String,
@@ -21,6 +28,9 @@ pub struct CommerceInventoryLedgerRecord {
     /// Organization id field on commerce inventory ledger record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Quantity field on commerce inventory ledger record.
+    pub quantity: String,
 
     /// Sku id field on commerce inventory ledger record.
     pub sku_id: String,

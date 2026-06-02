@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/authenticate-wallet@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-authenticate-wallet-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-authenticate-wallet-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15a0209df0625c6a7926366ddef43b753be8bd617becfd0b85f8f28be36335e2",

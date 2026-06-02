@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/psychology@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-psychology-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-psychology-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d2cabba4cd2b69876d49063351596badadca6799efd54c767a4041613fc022c",

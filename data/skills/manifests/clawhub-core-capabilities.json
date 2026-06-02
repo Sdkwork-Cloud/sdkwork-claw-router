@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/core-capabilities@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-core-capabilities-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-core-capabilities-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cbc9f5324208cebfc7999a55ac3a586ef5c14845dc61dbc273b10809dcad4a64",

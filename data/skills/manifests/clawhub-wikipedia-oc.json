@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wikipedia-oc@0.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-wikipedia-oc-0.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wikipedia-oc-0.1.4.json"
+      },
       "version": "0.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c5f07b275d174d536617561aacab4d28d547de78b14d6727b977324271393545",

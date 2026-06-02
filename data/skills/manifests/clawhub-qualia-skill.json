@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qualia-skill@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qualia-skill-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qualia-skill-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd87e56104f74ec41482877faea5e2e4c304903e84c5366a064622811f14f132",

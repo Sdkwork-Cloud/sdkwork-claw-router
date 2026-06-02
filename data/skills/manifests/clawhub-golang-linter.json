@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golang-linter@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-golang-linter-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golang-linter-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3a17c67c7e904d2557f67fb10db049834ffff97ef117e8366fb12fb9a53ade86",

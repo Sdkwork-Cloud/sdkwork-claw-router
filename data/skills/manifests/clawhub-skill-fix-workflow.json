@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-fix-workflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-fix-workflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-fix-workflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8008bb9dc9b1f492b0bd324222db5688f4245e299811cb47cad8204e4869be5d",

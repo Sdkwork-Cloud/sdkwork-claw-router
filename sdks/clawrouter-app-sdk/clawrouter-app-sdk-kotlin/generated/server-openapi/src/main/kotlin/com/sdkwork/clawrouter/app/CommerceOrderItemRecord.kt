@@ -2,6 +2,7 @@ package com.sdkwork.clawrouter.app
 
 data class CommerceOrderItemRecord(
     val createdAt: String? = null,
+    val id: String? = null,
     val orderId: String? = null,
     val quantity: String? = null,
     val skuId: String? = null,

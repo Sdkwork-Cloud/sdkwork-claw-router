@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-acquisition-master@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-acquisition-master-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-acquisition-master-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d330a38bdb824518d30abc2f930aba293860d7818ce754d0c44c60d36294bacb",

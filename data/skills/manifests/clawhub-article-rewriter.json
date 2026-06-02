@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/article-rewriter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-article-rewriter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-article-rewriter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:83a056ea7b28634f1e6e01d5322867fb79aa69ab7ab980bc755428db8f600d7a",

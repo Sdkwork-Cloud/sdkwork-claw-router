@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-edit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-edit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-edit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14a145240be504931cf89b12cade0b72a3c4cf8c6930db9f635052509eccab47",

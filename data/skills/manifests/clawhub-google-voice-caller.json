@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-voice-caller@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-voice-caller-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-voice-caller-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5aaa8c9a5fc254e938df65d233834d28f95c5d8867090204edff0ab4c0af8616",

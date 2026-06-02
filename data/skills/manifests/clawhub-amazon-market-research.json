@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-market-research@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-market-research-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-market-research-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:59f4a5dd1e149f087138b07b6ad2dcfe0079331b9e35203107224c2bc8447953",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snailmail@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-snailmail-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snailmail-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e6671d41d55e8aa7b97dca5cdbccec240291eb3a6236bd9cb0d324a4345f2da1",

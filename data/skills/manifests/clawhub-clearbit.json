@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clearbit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clearbit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clearbit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:40446da03d40a1c084e6e4149abce7ac6b0bc64b1fefc129f675be03045ac409",

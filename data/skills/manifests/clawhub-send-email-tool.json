@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/send-email-tool@2.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-send-email-tool-2.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-send-email-tool-2.5.0.json"
+      },
       "version": "2.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c4dd2ca3d24b9111785edb6ab5306e0ed20917939c2d720dcb7f44075019c798",

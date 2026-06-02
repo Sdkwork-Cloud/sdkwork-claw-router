@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scoredetect@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-scoredetect-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scoredetect-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d22e3532ea44dc87d4481c5f1558697a7ad224bb41dc2acec50545c3fc0790b4",

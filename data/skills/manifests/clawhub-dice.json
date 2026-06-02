@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dice@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-dice-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dice-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a4217e72caa18cf4d314262bd6795bbd9b0cd17d2701873ff0b8918fc5c807a2",

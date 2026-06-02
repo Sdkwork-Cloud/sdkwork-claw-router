@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customer-success-manager@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-customer-success-manager-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customer-success-manager-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:45c752590ea4ce227786528a7641cb4612dcf8c81b5dea0786bc5ac96f935b37",

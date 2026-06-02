@@ -14,19 +14,21 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? ItemId { get; set; }
         public Dictionary<string, string>? JsonContent { get; set; }
         public bool? LegalHold { get; set; }
+        public string? MediaResourceId { get; set; }
         public string? MessageId { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? MimeType { get; set; }
+        public string? ObjectBlobId { get; set; }
         public string? OrganizationId { get; set; }
         public int? PartNo { get; set; }
         public string? PartType { get; set; }
         public string? PayloadHash { get; set; }
         public string? ProviderPartId { get; set; }
         public string? RequestId { get; set; }
+        public Dictionary<string, string>? ResourceSnapshot { get; set; }
         public string? RetentionUntil { get; set; }
         public string? Sha256 { get; set; }
         public string? Status { get; set; }
-        public string? StorageUrl { get; set; }
         public string? TenantId { get; set; }
         public string? TextContent { get; set; }
         public string? TraceId { get; set; }

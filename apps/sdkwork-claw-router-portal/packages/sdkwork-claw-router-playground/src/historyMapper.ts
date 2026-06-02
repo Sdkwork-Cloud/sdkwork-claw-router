@@ -1,8 +1,11 @@
 import {
   isRecord,
   readRequiredString,
-  readStringArray,
   type ApiRecord,
+} from 'sdkwork-claw-router-commons/runtime';
+import {
+  readMediaResource,
+  type ClawRouterMediaResource,
 } from 'sdkwork-claw-router-commons/runtime';
 import { normalizeSdkworkGenerationHistoryType } from '@sdkwork/generation-pc-react/generation-history';
 import type { PlaygroundHistoryItem, PlaygroundMedia } from './playgroundTypes.ts';
@@ -28,11 +31,11 @@ function mapGenerationHistoryItem(value: unknown): PlaygroundHistoryItem {
     date,
     prompt: readRequiredString(item, 'prompt', 'Playground history prompt is required'),
     type: itemType,
+    asset: normalizeOptionalMediaResource(item.asset),
     modelInfo: normalizeOptionalString(item.modelInfo),
     modelCatalogKey: normalizeOptionalString(item.modelCatalogKey),
-    url: normalizeOptionalString(item.url),
-    images: normalizeStringArray(item.images),
-    videos: normalizeVideoArray(item.videos),
+    images: normalizeMediaResourceArray(item.images),
+    videos: normalizeMediaResourceArray(item.videos),
     aspectRatio: normalizeAspectRatio(item.aspectRatio),
     durationSeconds: normalizeDurationSeconds(item.durationSeconds),
     status: normalizeOptionalString(item.status),
@@ -62,26 +65,20 @@ function normalizeDurationSeconds(value: unknown): number | undefined {
   return Number.isFinite(duration) && duration >= 0 ? duration : undefined;
 }
 
-function normalizeStringArray(values: unknown): string[] | undefined {
-  const result = readStringArray({ values }, 'values')
-    .map((value) => value.trim())
-    .filter((value) => value.length > 0);
-  return result.length > 0 ? result : undefined;
+function normalizeOptionalMediaResource(value: unknown): ClawRouterMediaResource | undefined {
+  return readMediaResource(value);
 }
 
-function normalizeVideoArray(values: unknown): PlaygroundMedia[] | undefined {
+function normalizeMediaResourceArray(values: unknown): PlaygroundMedia[] | undefined {
   if (values === undefined) {
     return undefined;
   }
   if (!Array.isArray(values)) {
-    throw new Error('Playground history videos must be an array');
+    throw new Error('Playground history media must be an array');
   }
-  const result = values.map((value): PlaygroundMedia => {
-    const item = readRequiredRecord(value, 'Playground history video record is required');
-    const url = readRequiredString(item, 'url', 'Playground history video URL is required');
-    const thumb = normalizeOptionalString(item.thumb);
-    return thumb ? { url, thumb } : { url };
-  });
+  const result = values
+    .map(readMediaResource)
+    .filter((value): value is ClawRouterMediaResource => value !== undefined);
   return result.length > 0 ? result : undefined;
 }
 

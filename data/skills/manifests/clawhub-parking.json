@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/parking@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-parking-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-parking-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9537f140bee7d74c5fdf7ef201b30b431398e5b2d5dd593c0a374cd8958096a9",

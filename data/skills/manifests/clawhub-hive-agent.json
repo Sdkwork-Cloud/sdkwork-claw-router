@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hive-agent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-hive-agent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hive-agent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8e2fc4c35fde4a09e743c7b8bd100850f27970f7f4609cc2e9d5849f3d1c608e",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mux@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mux-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mux-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2433e210a56a0b79d1fa88c4775fbba17e73b0d621068c52f730f550b45dc015",

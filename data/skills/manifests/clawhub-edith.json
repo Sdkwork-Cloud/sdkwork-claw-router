@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edith@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-edith-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edith-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eddea3853c906f134733aea8b55184d22da58461b6eb982a814629cea0d1f69c",

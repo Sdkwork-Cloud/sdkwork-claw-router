@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/plane@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-plane-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-plane-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5bee570b01128e3adb88fcce4a1f51d3f623880f9ff386c33b7b8493c7a0f311",

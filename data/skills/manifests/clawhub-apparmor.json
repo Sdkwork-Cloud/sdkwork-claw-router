@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apparmor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apparmor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apparmor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:37fd4611e2324e2049e72dc3d5389d9593a43f1ed0b6792a69f6471936432c4e",

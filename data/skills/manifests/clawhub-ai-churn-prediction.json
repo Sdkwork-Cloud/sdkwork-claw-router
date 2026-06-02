@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-churn-prediction@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-churn-prediction-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-churn-prediction-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f95452eefc66bffa92c45a7070dce87a3e15fcce7bc286a772ea3b199b85d4a",

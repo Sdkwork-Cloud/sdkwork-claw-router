@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/netmap@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-netmap-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-netmap-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a9589b508f43261a96e0c67f0b3f51211ba570e3458e2eea393c95b3dc6af87d",

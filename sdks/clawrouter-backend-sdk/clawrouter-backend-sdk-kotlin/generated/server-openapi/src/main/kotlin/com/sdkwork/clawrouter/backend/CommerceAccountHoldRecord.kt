@@ -6,6 +6,7 @@ data class CommerceAccountHoldRecord(
     val assetType: String? = null,
     val createdAt: String? = null,
     val expiresAt: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val organizationId: String? = null,
     val ownerUserId: String? = null,

@@ -1,5 +1,9 @@
 /** Updated API key metadata. Authenticated owner management responses include copyableKey for console copy actions. */
 export interface AppApiKeyItem {
+  /** Channel group field on app api key item. */
+  channelGroup: string;
+  /** Display name snapshot for the bound channel group so the list view does not need to preload selectable groups. */
+  channelGroupName?: string;
   /** Full plaintext API key returned only by authenticated owner management responses; public catalog responses omit this field. */
   copyableKey?: string;
   /** Created field on app api key item. */
@@ -8,10 +12,6 @@ export interface AppApiKeyItem {
   defaultForRuntime: boolean;
   /** Expires field on app api key item. */
   expires: string;
-  /** Group field on app api key item. */
-  group: string;
-  /** Display name snapshot for the bound API key group so the list view does not need to preload selectable groups. */
-  groupName?: string;
   /** Id field on app api key item. */
   id: string;
   /** Ip limit field on app api key item. */

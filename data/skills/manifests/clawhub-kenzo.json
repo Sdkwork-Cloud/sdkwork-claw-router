@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kenzo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kenzo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kenzo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5786a48ce5bb98128fe05bfd39ef4db040baa098b91d6002ab06e763be0a8f99",

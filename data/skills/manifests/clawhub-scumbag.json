@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scumbag@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scumbag-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scumbag-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dfc645aefb9027ad3fe187b20c7d9ba7c0488c7d7bd8ecc2a5fe99c71b8d8d62",

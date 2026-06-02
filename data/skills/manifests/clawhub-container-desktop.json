@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/container-desktop@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-container-desktop-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-container-desktop-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9f6dd701d8d62ba66209eb483decaf7cfae57c61b0e0533788e97bdff892ea35",

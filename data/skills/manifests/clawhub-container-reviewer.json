@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/container-reviewer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-container-reviewer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-container-reviewer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d56563a66ffdc01ef72cada0a96bcf4c1ae7e533de57589897ede8d3198df51e",

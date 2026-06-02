@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memddc-ai-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-memddc-ai-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memddc-ai-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d38353a54d8f4259330597f26151b3894892f699d768cb0f8226bfa10a39eae9",

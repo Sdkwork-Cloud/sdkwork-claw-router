@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shlink-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shlink-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shlink-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1659ef567bb9d2dffe5d41d12a844992cd88ac6d7990df6d75a58bd9cfbe1bae",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/etsy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-etsy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-etsy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a3b8fb5343c2afdb0ea64be2b82199e9c28048645bee7f6ee5f709b6cde9e0d",

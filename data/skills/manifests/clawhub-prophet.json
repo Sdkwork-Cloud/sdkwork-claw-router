@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prophet@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-prophet-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prophet-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0006a4f3f208d50726354a9d13cdfa540100c1fab3f93c95b503c81ab00323c8",

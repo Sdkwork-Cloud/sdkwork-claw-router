@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lookupmark-local-rag@1.9.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lookupmark-local-rag-1.9.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lookupmark-local-rag-1.9.1.json"
+      },
       "version": "1.9.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ea1a0fcde1da5a9f34641b4ae456a90dd5869703dfac9fe7e7c25fd653531d34",

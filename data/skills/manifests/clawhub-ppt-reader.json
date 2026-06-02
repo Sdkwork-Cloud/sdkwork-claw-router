@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ppt-reader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ppt-reader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ppt-reader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0131922883bcb814fa02d95db3414db477b8fc41f32712470e55cf3cb79cf13",

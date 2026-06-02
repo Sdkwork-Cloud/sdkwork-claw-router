@@ -15,6 +15,15 @@ import {
   updateAppCategoryInputFromForm,
 } from "./packages/sdkwork-claw-router-app-center/src/services/adminAppService.ts";
 
+function mediaResource(url: string, kind: "image" | "video" | "archive" = "image") {
+  return {
+    kind,
+    source: url.startsWith("data:") ? "data_url" : "external_url",
+    url,
+    publicUrl: url,
+  };
+}
+
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
 
@@ -80,8 +89,7 @@ function sampleApp(overrides: Record<string, unknown> = {}) {
     name: "Browser Smoke Admin App",
     description: "Production smoke validates backend SDK app management rendering.",
     version: "1.0.0",
-    icon: { source: "browser-smoke" },
-    iconUrl: "/apps/browser-smoke.svg",
+    icon: mediaResource("/apps/browser-smoke.svg"),
     resourceList: { assets: ["artifact://apps/browser-smoke/app.zip"] },
     projectId: "1001",
     accessUrl: "https://apps.example.test/browser-smoke",
@@ -98,7 +106,7 @@ function sampleApp(overrides: Record<string, unknown> = {}) {
     packageName: "com.sdkwork.browser.smoke",
     bundleId: "com.sdkwork.browser.smoke.web",
     storeUrl: "https://store.example.test/browser-smoke",
-    downloadUrl: "https://cdn.example.test/browser-smoke/app.zip",
+    artifact: mediaResource("https://cdn.example.test/browser-smoke/app.zip", "archive"),
     createdAt: "2026-05-09T00:00:00Z",
     updatedAt: "2026-05-09T00:00:00Z",
     ...overrides,
@@ -111,7 +119,7 @@ function sampleCategory(overrides: Record<string, unknown> = {}) {
     name: "Productivity",
     description: "Apps for productivity workflows",
     code: "productivity",
-    icon: "/icons/productivity.svg",
+    icon: mediaResource("/icons/productivity.svg"),
     sortWeight: 10,
     parentId: null,
     path: "/productivity",
@@ -136,8 +144,8 @@ function sampleTemplate(overrides: Record<string, unknown> = {}) {
     runtime: "web",
     framework: "react",
     language: "typescript",
-    iconUrl: "/templates/browser-smoke.svg",
-    coverUrl: "/templates/browser-smoke-cover.png",
+    icon: mediaResource("/templates/browser-smoke.svg"),
+    cover: mediaResource("/templates/browser-smoke-cover.png"),
     visibility: "TENANT",
     publishStatus: "DRAFT",
     featured: true,
@@ -169,7 +177,8 @@ test("admin app form helpers create normalized backend DTOs", () => {
   createForm.set("packageName", " com.sdkwork.browser.smoke ");
   createForm.set("bundleId", " com.sdkwork.browser.smoke.web ");
   createForm.set("accessUrl", " /apps/browser-smoke ");
-  createForm.set("icon", '{"source":"portal","name":"browser-smoke"}');
+  createForm.set("artifact", " https://cdn.example.test/browser-smoke/app.zip ");
+  createForm.set("icon", "/apps/browser-smoke.svg");
   createForm.set("resourceList", '{"assets":["artifact://apps/browser-smoke/app.zip"]}');
   createForm.set("appKey", " app-browser-smoke ");
   createForm.set("config", '{"portal":{"featured":true}}');
@@ -191,7 +200,8 @@ test("admin app form helpers create normalized backend DTOs", () => {
     packageName: "com.sdkwork.browser.smoke",
     bundleId: "com.sdkwork.browser.smoke.web",
     accessUrl: "/apps/browser-smoke",
-    icon: { source: "portal", name: "browser-smoke" },
+    artifact: mediaResource("https://cdn.example.test/browser-smoke/app.zip", "archive"),
+    icon: mediaResource("/apps/browser-smoke.svg"),
     resourceList: { assets: ["artifact://apps/browser-smoke/app.zip"] },
     config: { portal: { featured: true }, standard: { appKey: "app-browser-smoke" } },
     platforms: { web: true },
@@ -206,7 +216,8 @@ test("admin app form helpers create normalized backend DTOs", () => {
   const updateForm = new FormData();
   updateForm.set("name", " ");
   updateForm.set("description", " Browser Smoke Admin App Pro ");
-  updateForm.set("icon", '{"source":"portal","name":"browser-smoke-pro"}');
+  updateForm.set("artifact", " https://cdn.example.test/browser-smoke/pro.zip ");
+  updateForm.set("icon", "/apps/browser-smoke-pro.svg");
   updateForm.set("resourceList", '{"assets":["artifact://apps/browser-smoke/pro.zip"]}');
   updateForm.set("appKey", " app-browser-smoke-pro ");
   updateForm.set("config", '{"standard":{"theme":"dark"},"portal":{"featured":true}}');
@@ -216,7 +227,8 @@ test("admin app form helpers create normalized backend DTOs", () => {
 
   assert.deepEqual(updateAdminAppInputFromForm(updateForm), {
     description: "Browser Smoke Admin App Pro",
-    icon: { source: "portal", name: "browser-smoke-pro" },
+    artifact: mediaResource("https://cdn.example.test/browser-smoke/pro.zip", "archive"),
+    icon: mediaResource("/apps/browser-smoke-pro.svg"),
     resourceList: { assets: ["artifact://apps/browser-smoke/pro.zip"] },
     config: { standard: { theme: "dark", appKey: "app-browser-smoke-pro" }, portal: { featured: true } },
     installPlatforms: { desktop: true },
@@ -241,7 +253,7 @@ test("admin app category form helpers create normalized backend DTOs", () => {
     name: "Productivity",
     description: "Workflow apps",
     code: "productivity_tools",
-    icon: "/icons/productivity.svg",
+    icon: mediaResource("/icons/productivity.svg"),
     parentId: "2000",
     path: "/productivity",
     sortWeight: -10,
@@ -264,7 +276,6 @@ test("admin app category form helpers create normalized backend DTOs", () => {
     name: "Productivity Pro",
     description: null,
     code: null,
-    icon: null,
     parentId: null,
     path: null,
     sortWeight: 25,
@@ -284,8 +295,8 @@ test("admin app template form helpers create normalized backend DTOs", () => {
   createForm.set("runtime", " web ");
   createForm.set("framework", " react ");
   createForm.set("language", " typescript ");
-  createForm.set("iconUrl", " /templates/browser-smoke.svg ");
-  createForm.set("coverUrl", " /templates/browser-smoke-cover.png ");
+  createForm.set("icon", " /templates/browser-smoke.svg ");
+  createForm.set("cover", " /templates/browser-smoke-cover.png ");
   createForm.set("visibility", "TENANT");
   createForm.set("publishStatus", "DRAFT");
   createForm.set("featured", "true");
@@ -310,8 +321,8 @@ test("admin app template form helpers create normalized backend DTOs", () => {
     runtime: "web",
     framework: "react",
     language: "typescript",
-    iconUrl: "/templates/browser-smoke.svg",
-    coverUrl: "/templates/browser-smoke-cover.png",
+    icon: mediaResource("/templates/browser-smoke.svg"),
+    cover: mediaResource("/templates/browser-smoke-cover.png"),
     visibility: "TENANT",
     publishStatus: "DRAFT",
     featured: true,
@@ -400,8 +411,7 @@ test("admin app management page localizes visible copy", () => {
     "admin.app.fields.bundleId",
     "admin.app.fields.accessUrl",
     "admin.app.fields.storeUrl",
-    "admin.app.fields.downloadUrl",
-    "admin.app.fields.iconUrl",
+    "admin.app.fields.artifact",
     "admin.app.fields.projectId",
     "admin.app.fields.runtimeStatus",
     "admin.app.fields.marketStatus",
@@ -433,7 +443,7 @@ test("admin app management page localizes visible copy", () => {
     "admin.app.fields.gitRepoUrl",
     "admin.app.fields.gitRef",
     "admin.app.fields.gitSubPath",
-    "admin.app.fields.coverUrl",
+    "admin.app.fields.cover",
     "admin.app.fields.appConfigSchema",
     "admin.app.fields.defaultAppConfig",
     "admin.app.fields.variableSchema",
@@ -721,27 +731,25 @@ test("admin app form helpers clear nullable update fields when submitted blank",
   const updateForm = new FormData();
   updateForm.set("description", " ");
   updateForm.set("version", " ");
-  updateForm.set("iconUrl", " ");
   updateForm.set("projectId", " ");
   updateForm.set("accessUrl", " ");
   updateForm.set("appType", " ");
   updateForm.set("packageName", " ");
   updateForm.set("bundleId", " ");
   updateForm.set("storeUrl", " ");
-  updateForm.set("downloadUrl", " ");
+  updateForm.set("artifact", " ");
   updateForm.set("userId", " ");
 
   assert.deepEqual(updateAdminAppInputFromForm(updateForm), {
     description: null,
     version: null,
-    iconUrl: null,
     projectId: null,
     accessUrl: null,
     appType: null,
     packageName: null,
     bundleId: null,
     storeUrl: null,
-    downloadUrl: null,
+    artifact: null,
     userId: null,
   });
 });
@@ -868,7 +876,6 @@ test("admin app service calls generated backend SDK paths and normalizes lifecyc
       assert.equal(captured[0].body, "");
       assert.deepEqual(JSON.parse(captured[2].body), {
         name: "Draft App",
-        icon: {},
         resourceList: {},
         config: { standard: { appKey: "draft-app" } },
         status: "ACTIVE",

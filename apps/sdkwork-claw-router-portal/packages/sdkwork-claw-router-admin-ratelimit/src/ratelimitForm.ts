@@ -28,7 +28,7 @@ export function createTokenLimitInputFromForm(formData: FormData): TokenLimitCre
 export function createModelLimitInputFromForm(formData: FormData): ModelLimitCreateInput {
   return {
     model: readFormText(formData, 'model'),
-    group: readFormText(formData, 'group'),
+    channelGroup: readFormText(formData, 'channelGroup'),
     rpm: readPositiveInteger(formData, 'rpm'),
     tpm: readPositiveInteger(formData, 'tpm'),
   };

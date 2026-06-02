@@ -10,6 +10,7 @@ class CommerceUserAddressRecord:
     city: str
     country_code: str
     created_at: str
+    is_default: bool
     owner_user_id: str
     phone_country_code: str
     phone_number_encrypted: str
@@ -19,6 +20,7 @@ class CommerceUserAddressRecord:
     updated_at: str
     address_line2_encrypted: Optional[str] = None
     district: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     phone_masked: Optional[str] = None
     postal_code: Optional[str] = None

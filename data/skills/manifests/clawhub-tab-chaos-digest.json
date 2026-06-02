@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tab-chaos-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tab-chaos-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tab-chaos-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cf654be60502891bf4281bd4a10edd92f21d10a675bb011d39f36845c101746e",

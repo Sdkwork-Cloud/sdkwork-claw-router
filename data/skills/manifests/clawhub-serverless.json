@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/serverless@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-serverless-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-serverless-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d9bfc2ad07546084e0355c40e813b5caaf29e5ad89477e3a2247368e2de68ad7",

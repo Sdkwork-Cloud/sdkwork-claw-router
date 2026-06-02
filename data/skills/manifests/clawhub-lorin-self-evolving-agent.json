@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lorin-self-evolving-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lorin-self-evolving-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lorin-self-evolving-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f55249a8795e2f63d9dc74437ed78974b832a5853ee20a7d69c541d3033a5746",

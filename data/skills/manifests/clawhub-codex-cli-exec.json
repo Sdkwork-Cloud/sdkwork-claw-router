@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-cli-exec@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-cli-exec-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-cli-exec-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce83b0e0c631db5e9a4f56a5a299b4663a301b383f8906d2e598186bcc4ce686",

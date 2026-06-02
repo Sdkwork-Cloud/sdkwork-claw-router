@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mikrotik-routeros-isp@2.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-mikrotik-routeros-isp-2.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mikrotik-routeros-isp-2.0.5.json"
+      },
       "version": "2.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:bad15165ca74ce7a725b1a212da147708b2681c3b24e1947c988caa52045d85e",

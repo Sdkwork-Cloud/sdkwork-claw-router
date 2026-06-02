@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wachai-mandates@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-wachai-mandates-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wachai-mandates-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:048a354ad02a94939858ea9178089303053d6775660a928918c1514cf67a4ef3",

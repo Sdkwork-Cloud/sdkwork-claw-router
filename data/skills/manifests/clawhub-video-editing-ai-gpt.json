@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-editing-ai-gpt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-editing-ai-gpt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-editing-ai-gpt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:45b709ad16541f8b5e663efbbbbc91559e79425a704efc8c5466cab48ef87c79",

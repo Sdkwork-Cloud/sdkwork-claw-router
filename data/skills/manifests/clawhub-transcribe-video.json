@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/transcribe-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-transcribe-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-transcribe-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:60ffbbef68746ddabafbcdb82fad27c6f13a98a706aa9286cad27fe7250ac4f7",

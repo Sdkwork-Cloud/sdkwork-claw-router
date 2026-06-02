@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-hook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-hook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-hook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15843c6b573d650f544fe447456405b38a311ab646259aa2ea39e928d284309e",

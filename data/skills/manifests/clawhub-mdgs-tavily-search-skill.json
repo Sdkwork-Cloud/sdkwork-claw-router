@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mdgs-tavily-search-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mdgs-tavily-search-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mdgs-tavily-search-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8f6ac9e3e3dcc1573d307bdbe4611d0917c8f0291ebb8c8d6f99ad576ac73151",

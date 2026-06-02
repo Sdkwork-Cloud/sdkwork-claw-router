@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/defuddle-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-defuddle-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-defuddle-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e6a7c9a16455242b2d4cc14caae640f90f93c3f6c21bf6b5c99457885c4a9aba",

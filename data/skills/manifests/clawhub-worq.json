@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/worq@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-worq-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-worq-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a86db116fe82fd9f9ea8aa9e1a257d2d37947679e5cb71015c7f14692273d0cf",

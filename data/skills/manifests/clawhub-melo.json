@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/melo@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-melo-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-melo-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d137df9109c8adf78615e747ff25ad47d5928c76a0ba3cf18f185449e4d4c7cc",

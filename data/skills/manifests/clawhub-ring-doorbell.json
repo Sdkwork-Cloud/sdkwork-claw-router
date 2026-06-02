@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ring-doorbell@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ring-doorbell-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ring-doorbell-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:762902a4e826c13c59ea70a27c3fe429269eb36f4464494949a8774fc3137641",

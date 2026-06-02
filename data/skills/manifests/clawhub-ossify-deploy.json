@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ossify-deploy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ossify-deploy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ossify-deploy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:68a6f90fca47aa9d36996630775953ce9de0425361dd07029348aa847b4d27ba",

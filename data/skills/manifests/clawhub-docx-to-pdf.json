@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docx-to-pdf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docx-to-pdf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docx-to-pdf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1aa31dfba5c3c339ff00603f549ec803b0fa02103f7e09636137b4241db818f8",

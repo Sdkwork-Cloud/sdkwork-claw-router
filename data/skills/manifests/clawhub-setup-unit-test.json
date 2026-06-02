@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/setup-unit-test@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-setup-unit-test-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-setup-unit-test-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:70c383fa7a8c0f15f68fcca29f282609a21fff5481c264b5eb0f55511642f325",

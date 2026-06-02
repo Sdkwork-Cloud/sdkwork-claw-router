@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-usage-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-usage-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-usage-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:256e516b38a4e19cd042d869b2c58c644eea08bd721ecfe75a49a85e63c6e7a8",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gsd-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gsd-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gsd-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:88b7fc8309f2b72822385e8399a45c6fce0c0ac2052049ea9953e6c0acb69cf6",

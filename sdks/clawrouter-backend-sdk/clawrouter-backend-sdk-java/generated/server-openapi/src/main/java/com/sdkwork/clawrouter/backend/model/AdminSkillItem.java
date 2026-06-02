@@ -8,7 +8,7 @@ public class AdminSkillItem {
     private List<String> capabilities;
     private String categoryId;
     private Map<String, String> configSchema;
-    private String coverImage;
+    private MediaResource cover;
     private String createdAt;
     private String currency;
     private Map<String, String> defaultConfig;
@@ -18,7 +18,7 @@ public class AdminSkillItem {
     private String entrypoint;
     private Boolean featured;
     private String homepageUrl;
-    private String icon;
+    private MediaResource icon;
     private String id;
     private String installCount;
     private Boolean isBuiltin;
@@ -80,12 +80,12 @@ public class AdminSkillItem {
         this.configSchema = configSchema;
     }
 
-    public String getCoverImage() {
-        return this.coverImage;
+    public MediaResource getCover() {
+        return this.cover;
     }
 
-    public void setCoverImage(String coverImage) {
-        this.coverImage = coverImage;
+    public void setCover(MediaResource cover) {
+        this.cover = cover;
     }
 
     public String getCreatedAt() {
@@ -160,11 +160,11 @@ public class AdminSkillItem {
         this.homepageUrl = homepageUrl;
     }
 
-    public String getIcon() {
+    public MediaResource getIcon() {
         return this.icon;
     }
 
-    public void setIcon(String icon) {
+    public void setIcon(MediaResource icon) {
         this.icon = icon;
     }
 

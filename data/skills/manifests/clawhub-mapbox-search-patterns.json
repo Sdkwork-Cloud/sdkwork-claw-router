@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mapbox-search-patterns@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mapbox-search-patterns-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mapbox-search-patterns-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b404c04fa91adc1b8dba79df927d16ab00346fc84baef1388d555457c47f8f10",

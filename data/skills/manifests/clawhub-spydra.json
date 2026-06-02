@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spydra@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-spydra-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spydra-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e148e65dd00cc8a59aa523e72fd7d1ed74f852bd1bf908bea77db321db920f7a",

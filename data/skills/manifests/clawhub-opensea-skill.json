@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opensea-skill@2.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-opensea-skill-2.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opensea-skill-2.2.3.json"
+      },
       "version": "2.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e4a77574ed5a05d9bac957dd3b3b00edda485dacd0c00b5ec4d8197e18564a7f",

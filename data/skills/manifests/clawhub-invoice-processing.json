@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoice-processing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoice-processing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoice-processing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9a268a9067cf87310e1aa854049dbd780906f849afbb501d9903b334c3daf97e",

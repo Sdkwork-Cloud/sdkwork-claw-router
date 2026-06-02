@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claws-nft@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claws-nft-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claws-nft-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d769a118d0a9513b0e2b76bfcab8cd87ee3bbf07fd447b15f452b2fcfe8459d",

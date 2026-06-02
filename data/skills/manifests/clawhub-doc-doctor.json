@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/doc-doctor@4.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-doc-doctor-4.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-doc-doctor-4.0.1.json"
+      },
       "version": "4.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1cc18497129284fab4d36477247591ce49487201a32c958f073da796e81d2fb9",

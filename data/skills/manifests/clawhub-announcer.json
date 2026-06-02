@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/announcer@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-announcer-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-announcer-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:095b5b19d24e5f7f68b5a07750dc5dd08e28fcd107aaf6a851bbf7470bf71ac4",

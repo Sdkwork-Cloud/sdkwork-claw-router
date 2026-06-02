@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tesco@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tesco-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tesco-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3b08c62b789c36ad350f7f0d65be7c2ae99e7e61de517ae0509a73e14324f1f0",

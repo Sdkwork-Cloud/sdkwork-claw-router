@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whatsapp-group-admin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-group-admin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whatsapp-group-admin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0e9f11ebbd40e4e4820474817eeb1eb1cd35fe8c0f95538b905029609d2d969",

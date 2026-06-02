@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ec-sample-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ec-sample-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ec-sample-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:224bdede07aa7bf6eca93509dd845c204eec5bce142b06d25c9a098ad7e90499",

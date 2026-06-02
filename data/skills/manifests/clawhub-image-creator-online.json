@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-creator-online@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-creator-online-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-creator-online-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10f79516a0e39470f6619be95bf040a01b12cca5e1f6d978d7f71122a7d70139",

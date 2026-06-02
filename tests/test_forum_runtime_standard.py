@@ -248,7 +248,7 @@ class ForumRuntimeStandardTest(unittest.TestCase):
                 "title",
                 "content",
                 "summary",
-                "coverImage",
+                "cover",
                 "contentType",
                 "categoryId",
                 "tags",
@@ -268,6 +268,12 @@ class ForumRuntimeStandardTest(unittest.TestCase):
             set(feed_item["properties"]),
             "ForumFeedItem response fields must stay consumer-facing and must not expose PlusFeeds persistence-only fields",
         )
+        self.assertEqual(
+            [{"$ref": "#/components/schemas/MediaResource"}],
+            feed_item["properties"]["cover"]["allOf"],
+            "ForumFeedItem.cover must remain a MediaResource object until UI display extracts a concrete URL",
+        )
+        self.assertNotIn("coverImage", feed_item["properties"])
         self.assertNotIn("contentId", feed_item["properties"])
         self.assertNotIn("favoriteCount", feed_item["properties"])
 
@@ -341,7 +347,11 @@ class ForumRuntimeStandardTest(unittest.TestCase):
             {"type": "integer", "format": "int64", "minimum": 0},
         )
         assert_schema_includes(create_feed["properties"]["images"], {"type": "array", "maxItems": 20})
-        assert_schema_includes(create_feed["properties"]["images"]["items"], {"type": "string", "maxLength": 2048})
+        self.assertEqual(
+            {"$ref": "#/components/schemas/MediaResource"},
+            create_feed["properties"]["images"]["items"],
+            "Forum create-feed images must preserve MediaResource objects instead of bare URL strings",
+        )
         assert_schema_includes(create_feed["properties"]["tags"], {"type": "array", "maxItems": 20})
         assert_schema_includes(
             create_feed["properties"]["tags"]["items"],
@@ -360,11 +370,11 @@ class ForumRuntimeStandardTest(unittest.TestCase):
         self.assertIn("optionalNonNegativeInteger(input.categoryId, 'categoryId')", service_source)
         self.assertIn("optionalPositiveInteger(input.contentId, 'contentId')", service_source)
         self.assertIn("MAX_FEED_IMAGE_COUNT = 20", service_source)
-        self.assertIn("MAX_FEED_IMAGE_LENGTH = 2048", service_source)
         self.assertIn("MAX_FEED_TAG_COUNT = 20", service_source)
         self.assertIn("MAX_FEED_TAG_LENGTH = 64", service_source)
+        self.assertIn("images?: ClawRouterMediaResource[];", service_source)
         self.assertIn(
-            "normalizeStringList(input.images, 'images', MAX_FEED_IMAGE_COUNT, MAX_FEED_IMAGE_LENGTH)",
+            "normalizeMediaResourceList(input.images, 'images', MAX_FEED_IMAGE_COUNT)",
             service_source,
         )
         self.assertIn(
@@ -380,7 +390,7 @@ class ForumRuntimeStandardTest(unittest.TestCase):
         for expected_case in [
             "categoryId must be greater than or equal to 0",
             "images must contain at most 20 items",
-            "images item must be at most 2048 characters",
+            "images item must be a MediaResource",
             "tags must contain at most 20 items",
             "tags item must be at most 64 characters",
             "contentId must be a positive integer",
@@ -467,9 +477,23 @@ class ForumRuntimeStandardTest(unittest.TestCase):
         struct_source = port_source[start:end]
 
         self.assertIn("pub id: i64", struct_source)
+        self.assertIn("pub cover: Value", struct_source)
         self.assertIn("pub is_collected: bool", struct_source)
+        self.assertNotIn("cover_image", struct_source)
         self.assertNotIn("pub content_id", struct_source)
         self.assertNotIn("pub favorite_count", struct_source)
+
+    def test_rust_forum_media_persistence_rejects_legacy_url_field_fallbacks(self) -> None:
+        for store_path in [
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "forum_store.rs",
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "forum_store.rs",
+        ]:
+            with self.subTest(store_path=store_path):
+                store_source = store_path.read_text(encoding="utf-8")
+                self.assertIn("cover_resources", store_source)
+                self.assertIn("value_to_media_resource", store_source)
+                self.assertNotIn('object.get("assetUrl")', store_source)
+                self.assertNotIn("coverImage", store_source)
 
     def test_rust_forum_api_uses_only_generated_pagination_parameter_names(self) -> None:
         api_source = (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_forum.rs").read_text(

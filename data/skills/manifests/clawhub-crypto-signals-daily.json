@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-signals-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-signals-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-signals-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb3fd23dc68aef4f5f53a5ef45056e56f2990dd5ce17db5911c7fa29b8cbc064",

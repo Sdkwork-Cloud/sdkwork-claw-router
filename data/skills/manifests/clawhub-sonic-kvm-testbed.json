@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sonic-kvm-testbed@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sonic-kvm-testbed-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sonic-kvm-testbed-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3ee1528a1c95994b1314439c284758ee8185e6367693856d9a5d21cbe6086d1",

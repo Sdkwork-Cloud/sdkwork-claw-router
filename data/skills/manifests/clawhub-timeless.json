@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/timeless@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-timeless-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-timeless-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:9bead56972dadba0299ee419a12eba1e6957643f05cd593d6cc3c7ef0309f56d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ciso-agent-security@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ciso-agent-security-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ciso-agent-security-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d427afddeb4d71137bb5a146bb1a423fe37756639f56caf955843790fc6b5eb",

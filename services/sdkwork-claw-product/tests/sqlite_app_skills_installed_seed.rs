@@ -33,12 +33,14 @@ async fn sqlite_app_skills_reads_installed_seed_assets_artifacts_and_user_instal
     assert_eq!("2026-05-08", skill.last_updated);
     assert_eq!(
         "https://cdn.sdkwork.example/skills/prompt-optimizer/cover.png",
-        skill.image
+        skill.image["publicUrl"]
     );
     assert!(
-        skill.screenshots.iter().any(
-            |url| url == "https://cdn.sdkwork.example/skills/prompt-optimizer/screenshot-1.png"
-        ),
+        skill
+            .screenshots
+            .iter()
+            .any(|resource| resource["publicUrl"]
+                == "https://cdn.sdkwork.example/skills/prompt-optimizer/screenshot-1.png"),
         "skills hub seed read model must expose marketplace screenshots"
     );
     assert!(

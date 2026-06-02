@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/family-finances@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-family-finances-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-family-finances-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7846ab1eab9370bc769b762ae9e0c95465e67c06678b27e61932a68503e04b20",

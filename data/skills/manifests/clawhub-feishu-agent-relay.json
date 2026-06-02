@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-agent-relay@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-agent-relay-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-agent-relay-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e54d28d92d02654c340a9b53a8e5f6db4a5f09cc9f49eed7147bfb0705eb9c37",

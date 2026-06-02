@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/forgerock@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-forgerock-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-forgerock-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f59add6c4b72b788f69934ea84e60f47ef3ef8114f3325f2cb89a6934934bffc",

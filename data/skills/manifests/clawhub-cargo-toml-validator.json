@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cargo-toml-validator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cargo-toml-validator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cargo-toml-validator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:aa52ee93046283c05d354b3ad1add424114124d66086591081ccc325690ea049",

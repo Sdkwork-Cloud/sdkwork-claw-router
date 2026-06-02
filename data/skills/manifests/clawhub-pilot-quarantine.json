@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-quarantine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-quarantine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-quarantine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31ac1286dd52cd9e59ad88bda90ee7aeaf067cbcd0c229e75e05b48451009385",

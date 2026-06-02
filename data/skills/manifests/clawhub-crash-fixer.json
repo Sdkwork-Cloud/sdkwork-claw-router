@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crash-fixer@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crash-fixer-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crash-fixer-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de15d786f7c7af16c08a98946271a2e0828f982cc40c0465e6b86e41422a2dd8",

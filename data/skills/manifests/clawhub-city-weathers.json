@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/city-weathers@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-city-weathers-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-city-weathers-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:75b5064a7ff2b45c15fd963d4a6b2d74204fa859f66fea3ce526dd3e6a922c7f",

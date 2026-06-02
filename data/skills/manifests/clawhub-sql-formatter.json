@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-formatter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-formatter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-formatter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b57a474cfd96be9d875880fbc35e6a98b8f3f2368733bcb93c6b0bdc66e5e39",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-assistant-cp3d@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-assistant-cp3d-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-assistant-cp3d-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:829b8cf3171a923eb7b69df79f51456dd4a7d5fd43c98b96c7d5f28952baa394",

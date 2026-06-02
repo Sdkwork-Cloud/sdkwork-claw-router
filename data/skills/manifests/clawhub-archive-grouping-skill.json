@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/archive-grouping-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-archive-grouping-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-archive-grouping-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fff0f3e587843824e8c4856d9bf3e5ec94f324191b5b231ec0d8e88070309fa6",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/statsfm@2.6.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-statsfm-2.6.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-statsfm-2.6.1.json"
+      },
       "version": "2.6.1",
       "runtime": "metadata",
       "checksumHash": "sha256:252c5dd501ad7d73b87ea327b8993005a8221a8517cc8ab620129ffd4e67e319",

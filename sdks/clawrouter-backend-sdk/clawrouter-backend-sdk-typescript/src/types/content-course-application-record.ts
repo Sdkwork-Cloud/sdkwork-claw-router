@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Content course application record schema exposed by Claw Router. */
 export interface ContentCourseApplicationRecord {
@@ -54,6 +55,6 @@ export interface ContentCourseApplicationRecord {
   uuid?: string;
   /** Version field on content course application record. */
   version?: string;
-  /** Video url field on content course application record. */
-  video_url?: string;
+  /** Video field on content course application record. */
+  video?: MediaResource;
 }

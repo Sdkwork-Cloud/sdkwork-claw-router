@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/simple-memory-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-simple-memory-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-simple-memory-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8938b7a32c919ba8e77f12a81ad51d25231075f426c9fc3510e7d489065db8c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bom-sop-check@2.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-bom-sop-check-2.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bom-sop-check-2.1.2.json"
+      },
       "version": "2.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d2a53bbd2f53d4cca150edd40381a4e435180301bb81657d66b5254a496b488d",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/x-tweet-speedread-skill@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-x-tweet-speedread-skill-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-x-tweet-speedread-skill-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:92c20460c7078791f222edc106e401569932e82e686d04a357f1f2ab7d52fd06",

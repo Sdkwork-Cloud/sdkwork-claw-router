@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ocr-locally@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ocr-locally-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ocr-locally-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e352dfad23447f17690884ec8dfcc812c856ba98a8fc510f0abf601474841c23",

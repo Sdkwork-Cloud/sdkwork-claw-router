@@ -5,6 +5,7 @@ data class CommerceOrderCancellationRecord(
     val cancellationNo: String? = null,
     val completedAt: String? = null,
     val createdAt: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val orderId: String? = null,
     val organizationId: String? = null,

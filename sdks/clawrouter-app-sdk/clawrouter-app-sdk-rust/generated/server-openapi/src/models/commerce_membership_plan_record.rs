@@ -10,6 +10,10 @@ pub struct CommerceMembershipPlanRecord {
     /// Created at field on commerce membership plan record.
     pub created_at: String,
 
+    /// Id field on commerce membership plan record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Level code field on commerce membership plan record.
     pub level_code: String,
 
@@ -22,6 +26,9 @@ pub struct CommerceMembershipPlanRecord {
 
     /// Plan no field on commerce membership plan record.
     pub plan_no: String,
+
+    /// Sort order field on commerce membership plan record.
+    pub sort_order: String,
 
     /// Status field on commerce membership plan record.
     pub status: String,

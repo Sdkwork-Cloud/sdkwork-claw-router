@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/virtual-companion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-virtual-companion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-virtual-companion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4b936b365f9ff517f7bc546af1290e4c219c592d1cd2477a477642658a8ebbb8",

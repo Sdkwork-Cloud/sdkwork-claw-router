@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{CommerceProductSkuAttributeItem};
+use crate::models::{CommerceProductSkuAttributeItem, MediaResource};
 
 /// Commerce product sku item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -8,6 +8,10 @@ pub struct CommerceProductSkuItem {
     /// Attributes field on commerce product sku item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub attributes: Option<Vec<CommerceProductSkuAttributeItem>>,
+
+    /// Barcode field on commerce product sku item.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub barcode: Option<String>,
 
     /// Created at field on commerce product sku item.
     #[serde(rename = "createdAt")]
@@ -29,6 +33,10 @@ pub struct CommerceProductSkuItem {
 
     /// Id field on commerce product sku item.
     pub id: String,
+
+    /// Image field on commerce product sku item.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub image: Option<MediaResource>,
 
     /// Product id field on commerce product sku item.
     #[serde(rename = "productId")]

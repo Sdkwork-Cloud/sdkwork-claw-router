@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class AdminSkillArtifactItem:
@@ -19,8 +22,8 @@ class AdminSkillArtifactItem:
     target_type: int
     updated_at: str
     version: str
+    artifact: Optional[MediaResource] = None
     artifact_ref: Optional[str] = None
-    artifact_url: Optional[str] = None
     checksum_hash: Optional[str] = None
     deprecated_at: Optional[str] = None
     license_name: Optional[str] = None

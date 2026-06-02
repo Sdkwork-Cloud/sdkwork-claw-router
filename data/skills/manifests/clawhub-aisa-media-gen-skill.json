@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aisa-media-gen-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-aisa-media-gen-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aisa-media-gen-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fdd183e74d358d1cb7129f98c1242be9d9dccc8d45501c36926b652f340503a6",

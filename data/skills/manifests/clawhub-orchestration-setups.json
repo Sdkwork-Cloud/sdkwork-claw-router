@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/orchestration-setups@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-orchestration-setups-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-orchestration-setups-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a7b96f5ae95af2013ec3eb8e46325ae73fe846fe88c03f299e8333f633534bdb",

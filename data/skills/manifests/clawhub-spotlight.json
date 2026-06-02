@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spotlight@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spotlight-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spotlight-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05cac09623bb3cbb3201076112be701b262198b51e1225a034b9cdc38cafad02",

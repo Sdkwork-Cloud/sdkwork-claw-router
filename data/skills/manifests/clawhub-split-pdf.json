@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/split-pdf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-split-pdf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-split-pdf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6ed05b41d0524afe08e972d6e97840e28d1a286d718e010180504486568b4451",

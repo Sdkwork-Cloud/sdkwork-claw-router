@@ -4,10 +4,12 @@ import { MembershipPackageGroupsPage } from './pages/MembershipPackageGroupsPage
 import { MembershipPackagesPage } from './pages/MembershipPackagesPage';
 import { MembershipPlansPage } from './pages/MembershipPlansPage';
 import { MembershipRechargePackagesPage } from './pages/MembershipRechargePackagesPage';
+import { MembershipVipPackagesPage } from './pages/MembershipVipPackagesPage';
 import { fetchMembershipAdminEntitlements } from './membershipsService';
 
 export type MembershipsAdminSectionId =
   | 'packages'
+  | 'vipPackages'
   | 'packageGroups'
   | 'plans'
   | 'members'
@@ -21,6 +23,7 @@ type MembershipsAdminProps = {
 function resolveMembershipSectionId(sectionId?: string): MembershipsAdminSectionId {
   if (
     sectionId === 'packages'
+    || sectionId === 'vipPackages'
     || sectionId === 'packageGroups'
     || sectionId === 'plans'
     || sectionId === 'members'
@@ -39,6 +42,8 @@ export function MembershipsAdmin({ sectionId }: MembershipsAdminProps = {}) {
     <div className="flex flex-col gap-4">
       {activeSection === 'packages' ? (
         <MembershipPackagesPage />
+      ) : activeSection === 'vipPackages' ? (
+        <MembershipVipPackagesPage />
       ) : activeSection === 'packageGroups' ? (
         <MembershipPackageGroupsPage />
       ) : activeSection === 'plans' ? (

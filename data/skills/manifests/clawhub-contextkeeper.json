@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/contextkeeper@0.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-contextkeeper-0.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-contextkeeper-0.2.3.json"
+      },
       "version": "0.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:73de78acdbb27e1ff09e323058aa646a26ee0ae632d3b95bfe528ed29fc09e5a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trump-sentiment@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-trump-sentiment-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trump-sentiment-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7488e04f006472d2d5298ddebb4365c1f3d5e09dd55952d4b65fa3571e2659c8",

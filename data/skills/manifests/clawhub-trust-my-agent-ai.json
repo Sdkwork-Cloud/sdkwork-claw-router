@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trust-my-agent-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trust-my-agent-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trust-my-agent-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a0b76ea1018adf4a879dd9e5b6ee65ade6ecd1900c34d7e7f0e840bf1c329518",

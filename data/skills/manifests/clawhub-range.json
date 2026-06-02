@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/range@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-range-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-range-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c83e9a9cdbf972811eb1e887ff801d088d0f43d1165861be94749ff5644be859",

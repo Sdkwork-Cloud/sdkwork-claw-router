@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oxford-dictionaries@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-oxford-dictionaries-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oxford-dictionaries-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:7b3bad230f2b983f31638e07fc5912330a36a8a9bb03bcf264281852e47cb46d",

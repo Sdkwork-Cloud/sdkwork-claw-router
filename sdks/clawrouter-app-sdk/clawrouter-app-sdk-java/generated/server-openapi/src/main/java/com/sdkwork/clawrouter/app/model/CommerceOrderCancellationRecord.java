@@ -6,6 +6,7 @@ public class CommerceOrderCancellationRecord {
     private String cancellationNo;
     private String completedAt;
     private String createdAt;
+    private String id;
     private String idempotencyKey;
     private String orderId;
     private String organizationId;
@@ -45,6 +46,14 @@ public class CommerceOrderCancellationRecord {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

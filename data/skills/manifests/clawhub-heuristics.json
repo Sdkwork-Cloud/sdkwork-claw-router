@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heuristics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-heuristics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heuristics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7acf70dbfa2190e370866ecaa067a0bca4ff2171e3c031027858c87366c81835",

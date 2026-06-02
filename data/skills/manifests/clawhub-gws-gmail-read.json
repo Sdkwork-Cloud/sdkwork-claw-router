@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gws-gmail-read@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-gws-gmail-read-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gws-gmail-read-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:3d9606fda48a5ff863564c42028e76616b45701ce889fb89fb7077e6595aa8c7",

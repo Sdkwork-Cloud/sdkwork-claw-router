@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ah-repair-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ah-repair-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ah-repair-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a72e93df1be078e2860aa16f3ef6866cd30b834c884171aee14c941e88e679fe",

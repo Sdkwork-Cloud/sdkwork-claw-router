@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-log@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-log-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-log-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:c4365fe6c214254360d3e26bec100718a41db7ad8dafb84916cfc1d801fa4940",

@@ -1,4 +1,4 @@
-﻿# Schema Guardian 标准质量门禁
+# Schema Guardian 标准质量门禁
 
 ## 目标
 

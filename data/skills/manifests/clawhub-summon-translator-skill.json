@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/summon-translator-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-summon-translator-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-summon-translator-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8dc0c3b7cac3d7d4a0ddbc125bcf0e508a29bc776a716fcaab627d166205c101",

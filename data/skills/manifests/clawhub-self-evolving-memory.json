@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-evolving-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-evolving-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-evolving-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96bbf36ae65749fe61a0ea95295d17891212e2687c5c761ff30110b9e5784987",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nse-orchestrator@0.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-nse-orchestrator-0.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nse-orchestrator-0.2.2.json"
+      },
       "version": "0.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ac325ab250daf89519dcb95a870092b572755be159d67cb4eaccb0d8d657f98c",

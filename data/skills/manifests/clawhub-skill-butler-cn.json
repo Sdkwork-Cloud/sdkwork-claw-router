@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-butler-cn@4.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-butler-cn-4.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-butler-cn-4.1.1.json"
+      },
       "version": "4.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:66d60fe8678d9d62a7ebd9c08eb8f45edfae24b57bc15dba535ebc47f650832d",

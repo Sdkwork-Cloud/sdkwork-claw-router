@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/internal-comms-anthropic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-internal-comms-anthropic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-internal-comms-anthropic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7aef3a15c89faaa8d7530fc80bd162a7a584f3d2b4fb964488e4d7a0aa66305a",

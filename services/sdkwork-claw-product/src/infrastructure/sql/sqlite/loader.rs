@@ -74,7 +74,7 @@ impl SqlitePricingCatalogLoader {
                 .await?,
             pricing_plans: row_mapping::load_pricing_plans(&self.pool, queries::LOAD_PRICING_PLANS)
                 .await?,
-            api_key_groups: row_mapping::load_api_key_groups(
+            channel_groups: row_mapping::load_channel_groups(
                 &self.pool,
                 queries::LOAD_API_KEY_GROUPS,
             )
@@ -90,7 +90,7 @@ impl SqlitePricingCatalogLoader {
                 queries::LOAD_QUOTA_POLICIES,
             )
             .await?,
-            api_key_group_metric_snapshots: row_mapping::load_api_key_group_metric_snapshots(
+            channel_group_metric_snapshots: row_mapping::load_channel_group_metric_snapshots(
                 &self.pool,
                 queries::LOAD_API_KEY_GROUP_METRIC_SNAPSHOTS,
             )

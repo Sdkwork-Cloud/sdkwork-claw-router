@@ -44,7 +44,9 @@ tables:
     display_name: string(128)
     description: string(512)
     docs_url: string(512)
-    icon_url: string(512)
+    icon_media_resource_id: string(128)
+    icon_object_blob_id: int64
+    icon_resource_snapshot: json
     color_token: string(64)
     family_type: enum_int32
     primary_modality: enum_int32
@@ -130,7 +132,9 @@ tables:
     modalities: json
     input_modalities: json
     output_modalities: json
-    icon_url: string(1024)
+    icon_media_resource_id: string(128)
+    icon_object_blob_id: int64
+    icon_resource_snapshot: json
     color_token: string(64)
     docs_url: string(1024)
     license_type: enum_int32
@@ -2320,7 +2324,9 @@ tables:
     description: string(1024)
     visibility: enum_int32
     default_version_id: int64
-    avatar_url: string(512)
+    avatar_media_resource_id: string(128)
+    avatar_object_blob_id: int64
+    avatar_resource_snapshot: json
     template_source: string(128)
     governance_status: enum_int32
     published_at: instant
@@ -3026,7 +3032,9 @@ tables:
     json_content: json
     mime_type: string(128)
     asset_id: string(128)
-    storage_url: text
+    media_resource_id: string(128)
+    object_blob_id: int64
+    resource_snapshot: json
     file_name: string(512)
     file_size: int64
     sha256: string(128)
@@ -3904,8 +3912,9 @@ tables:
     mime_type: string(128)
     content_text: text
     content_json: json
-    storage_key: text
-    storage_url: text
+    media_resource_id: string(128)
+    object_blob_id: int64
+    resource_snapshot: json
     sha256: string(128)
     size_bytes: int64
   indexes:
@@ -4215,10 +4224,14 @@ tables:
   columns:
     job_id: int64
     asset_type: enum_int32
-    asset_url: string(1024)
-    thumbnail_url: string(1024)
+    asset_media_resource_id: string(128)
+    asset_object_blob_id: int64
+    asset_resource_snapshot: json
+    thumbnail_media_resource_id: string(128)
+    thumbnail_object_blob_id: int64
+    thumbnail_resource_snapshot: json
     storage_provider: string(64)
-    storage_key: string(512)
+    object_key: string(1024)
     mime_type: string(128)
     file_size: int64
     duration_seconds: decimal

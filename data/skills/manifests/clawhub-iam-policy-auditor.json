@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/iam-policy-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-iam-policy-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-iam-policy-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0bad56d499b6d7689252179c8e4f6473ed526df8459f87fa2ecb12027769ba72",

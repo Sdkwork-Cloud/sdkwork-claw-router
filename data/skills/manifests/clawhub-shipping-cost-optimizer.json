@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shipping-cost-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shipping-cost-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shipping-cost-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:17f998896fab1178ce49f39f594a0f061a005592c9e048b99b70fe84fe73a44f",

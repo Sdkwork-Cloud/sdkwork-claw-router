@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whisper-mlx-local@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whisper-mlx-local-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whisper-mlx-local-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52c5cf6e1c5331a7c92817ba583a7c173a07731367f14b55f7014668c0e13ffa",

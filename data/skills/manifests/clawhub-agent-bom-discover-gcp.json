@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bom-discover-gcp@0.86.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-discover-gcp-0.86.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bom-discover-gcp-0.86.2.json"
+      },
       "version": "0.86.2",
       "runtime": "metadata",
       "checksumHash": "sha256:72095b9f472ed64d023091f08caefd384739da6b3e84e17acc3fef41ce8b0361",

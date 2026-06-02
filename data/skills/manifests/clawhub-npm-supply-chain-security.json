@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/npm-supply-chain-security@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-npm-supply-chain-security-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-npm-supply-chain-security-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:04e7d1bb23ed3131a577dffabb7a8e3ca454e8b2224131ee03da159b4c87b310",

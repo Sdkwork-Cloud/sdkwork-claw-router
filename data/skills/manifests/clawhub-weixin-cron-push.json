@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weixin-cron-push@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weixin-cron-push-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weixin-cron-push-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3e69de3ebb3fbbd4db548dfcacc8025b02e74fdebf46ad1ce5b4ac8ac38a305b",

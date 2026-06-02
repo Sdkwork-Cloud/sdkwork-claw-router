@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blinko-api@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blinko-api-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blinko-api-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bce37e87de992eb82d032a539ebb8278c1d112336c05d1258edb4001c479d0ec",

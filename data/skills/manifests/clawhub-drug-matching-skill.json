@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drug-matching-skill@2.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-drug-matching-skill-2.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drug-matching-skill-2.3.0.json"
+      },
       "version": "2.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d265a51a918eaf2f07936cfe8d9d5ffee644acba2bbc90c542d86f7014c4100",

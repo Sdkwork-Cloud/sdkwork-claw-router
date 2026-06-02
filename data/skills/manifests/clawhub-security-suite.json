@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-suite@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-suite-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-suite-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cebb092abb0e588ce661b28847a476e68d70a550de7dcd151700d54193d2b836",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llmcom@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-llmcom-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llmcom-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:33b24ce6b53ad897605f1ae4d1e19bab4a8e6f15be64bfe3ca87002a95d6977c",

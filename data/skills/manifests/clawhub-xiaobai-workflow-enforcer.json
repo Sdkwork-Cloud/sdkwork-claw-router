@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiaobai-workflow-enforcer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiaobai-workflow-enforcer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiaobai-workflow-enforcer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cfb492c00d35f98c432b286e19e875654b197683afbb8fd730b2ae4911d7cc54",

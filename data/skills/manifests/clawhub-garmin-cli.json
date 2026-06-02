@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/garmin-cli@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-garmin-cli-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-garmin-cli-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:c9ae1988e7feafb6ee224cdc302043fcd4c16e4137e0d53a1c290f6a4f4303f2",

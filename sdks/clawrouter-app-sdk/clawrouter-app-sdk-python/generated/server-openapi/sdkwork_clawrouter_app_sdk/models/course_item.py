@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 if TYPE_CHECKING:
     from .course_engagement import CourseEngagement
     from .course_instructor import CourseInstructor
+    from .media_resource import MediaResource
 
 
 @dataclass
@@ -31,6 +32,6 @@ class CourseItem:
     rating_score: float
     students_count: int
     tags: List[str]
-    thumbnail_url: str
+    thumbnail: MediaResource
     title: str
     price_amount: Optional[str] = None

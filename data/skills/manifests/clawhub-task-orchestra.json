@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-orchestra@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-orchestra-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-orchestra-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d1a883307d80d08f59f1519570080b1854f7ffe78f1f21c28d863f2409f53501",

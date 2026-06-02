@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whale-alert@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whale-alert-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whale-alert-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89f0f14874257dba629fc58950546bae6293f97820e558f63a136a186a744896",

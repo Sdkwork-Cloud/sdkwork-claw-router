@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kirk-ai-ocr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kirk-ai-ocr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kirk-ai-ocr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:097f0b8faf98ab0d680903a8c1cdedd75b98df627721b42be912764d478a0dc6",

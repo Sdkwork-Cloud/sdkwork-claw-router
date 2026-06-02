@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/langchain-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-langchain-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-langchain-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c1b6b11a935091333e07d38e755375bb63149671e31ab9ef9ca5f956e7ae5fb2",

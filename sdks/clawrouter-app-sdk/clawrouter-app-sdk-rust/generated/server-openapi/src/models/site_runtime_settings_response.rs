@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Site runtime settings response schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct SiteRuntimeSettingsResponse {
@@ -22,17 +24,15 @@ pub struct SiteRuntimeSettingsResponse {
     #[serde(rename = "docsUrl")]
     pub docs_url: String,
 
-    /// Favicon url field on site runtime settings response.
-    #[serde(rename = "faviconUrl")]
-    pub favicon_url: String,
+    /// Favicon field on site runtime settings response.
+    pub favicon: MediaResource,
 
     /// Footer copyright field on site runtime settings response.
     #[serde(rename = "footerCopyright")]
     pub footer_copyright: String,
 
-    /// Icon url field on site runtime settings response.
-    #[serde(rename = "iconUrl")]
-    pub icon_url: String,
+    /// Icon field on site runtime settings response.
+    pub icon: MediaResource,
 
     /// Icp record number field on site runtime settings response.
     #[serde(rename = "icpRecordNumber")]
@@ -42,9 +42,8 @@ pub struct SiteRuntimeSettingsResponse {
     #[serde(rename = "icpRecordUrl")]
     pub icp_record_url: String,
 
-    /// Logo url field on site runtime settings response.
-    #[serde(rename = "logoUrl")]
-    pub logo_url: String,
+    /// Logo field on site runtime settings response.
+    pub logo: MediaResource,
 
     /// Police record number field on site runtime settings response.
     #[serde(rename = "policeRecordNumber")]

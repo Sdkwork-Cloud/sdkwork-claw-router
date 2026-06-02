@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/terraform-reviewer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-terraform-reviewer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-terraform-reviewer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1cb59c2ed0c49b855604e3c0cc11e567f69a56fd39fc6e59760b01939994c11",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mooteam@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mooteam-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mooteam-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fe721b1691db06d7488187f1a52b34197f62d4ab2db8150e3e333c465e4ac958",

@@ -48,7 +48,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypt@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypt-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypt-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1b4827b24fa849aece8bb2f2cd0c583ae159e632edf6f1a7596ede400977658f",

@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class CourseLessonItem:
@@ -19,4 +22,4 @@ class CourseLessonItem:
     sort_order: int
     source_provider: str
     title: str
-    video_url: str
+    video: MediaResource

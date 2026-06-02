@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yugioh-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yugioh-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yugioh-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:53ca6311aa6e715731839786f5b8114fc1613308c7e599f644c9ae8e3bc31097",

@@ -12,4 +12,5 @@ class CommerceInvoiceTitleRecord:
     tenant_id: str
     title_type: str
     updated_at: str
+    id: Optional[str] = None
     tax_no: Optional[str] = None

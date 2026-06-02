@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/runtime-verifier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-runtime-verifier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-runtime-verifier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9dc802c8af1f30504c8758e949eaea004bdf44b1808aa6d0f04a6e9261d834ef",

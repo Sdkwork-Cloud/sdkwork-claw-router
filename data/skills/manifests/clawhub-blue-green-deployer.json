@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blue-green-deployer@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blue-green-deployer-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blue-green-deployer-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b4bd06dd1cb3051d132e0adbb88596c9badbd72c2f940f5e55278611f1f064b",

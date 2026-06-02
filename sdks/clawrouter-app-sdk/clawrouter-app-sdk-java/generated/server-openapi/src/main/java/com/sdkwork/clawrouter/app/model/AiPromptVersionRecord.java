@@ -11,19 +11,24 @@ public class AiPromptVersionRecord {
     private String deletedAt;
     private String deletedBy;
     private String deprecatedAt;
+    private Map<String, String> examplesJson;
     private String id;
     private String lifecycleStatus;
     private Map<String, String> metadata;
+    private Map<String, String> modelConstraints;
     private String organizationId;
+    private Map<String, String> outputSchema;
     private String promptId;
     private String publishedAt;
     private String reviewComment;
     private String reviewStatus;
+    private Map<String, String> safetyPolicy;
     private String status;
     private String tenantId;
     private String title;
     private String updatedAt;
     private String uuid;
+    private Map<String, String> variableSchema;
     private String version;
     private String versionNo;
 
@@ -91,6 +96,14 @@ public class AiPromptVersionRecord {
         this.deprecatedAt = deprecatedAt;
     }
 
+    public Map<String, String> getExamplesJson() {
+        return this.examplesJson;
+    }
+
+    public void setExamplesJson(Map<String, String> examplesJson) {
+        this.examplesJson = examplesJson;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -115,12 +128,28 @@ public class AiPromptVersionRecord {
         this.metadata = metadata;
     }
 
+    public Map<String, String> getModelConstraints() {
+        return this.modelConstraints;
+    }
+
+    public void setModelConstraints(Map<String, String> modelConstraints) {
+        this.modelConstraints = modelConstraints;
+    }
+
     public String getOrganizationId() {
         return this.organizationId;
     }
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public Map<String, String> getOutputSchema() {
+        return this.outputSchema;
+    }
+
+    public void setOutputSchema(Map<String, String> outputSchema) {
+        this.outputSchema = outputSchema;
     }
 
     public String getPromptId() {
@@ -153,6 +182,14 @@ public class AiPromptVersionRecord {
 
     public void setReviewStatus(String reviewStatus) {
         this.reviewStatus = reviewStatus;
+    }
+
+    public Map<String, String> getSafetyPolicy() {
+        return this.safetyPolicy;
+    }
+
+    public void setSafetyPolicy(Map<String, String> safetyPolicy) {
+        this.safetyPolicy = safetyPolicy;
     }
 
     public String getStatus() {
@@ -193,6 +230,14 @@ public class AiPromptVersionRecord {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public Map<String, String> getVariableSchema() {
+        return this.variableSchema;
+    }
+
+    public void setVariableSchema(Map<String, String> variableSchema) {
+        this.variableSchema = variableSchema;
     }
 
     public String getVersion() {

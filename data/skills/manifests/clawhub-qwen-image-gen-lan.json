@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwen-image-gen-lan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwen-image-gen-lan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwen-image-gen-lan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5190aefcf32a132e742c4a262808dbb879bd635a969148c220eba11369fcf2f6",

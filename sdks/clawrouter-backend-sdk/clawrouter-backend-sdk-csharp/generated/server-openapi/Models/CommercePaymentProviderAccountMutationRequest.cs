@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class CommercePaymentProviderAccountMutationRequest
     {
-        public string? AccountNo { get; set; }
+        public string? AccountRole { get; set; }
         public string? CertificateRef { get; set; }
         public string? ClientRequestNo { get; set; }
         public string? CountryCode { get; set; }

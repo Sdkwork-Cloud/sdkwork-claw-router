@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-patents@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-patents-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-patents-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d953d77880fb9765a157015348f596f4d8a1509d03901f40aa582eb29d5dc90c",

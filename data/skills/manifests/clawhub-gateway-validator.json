@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gateway-validator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gateway-validator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gateway-validator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0178da3e11bebaac6606d0b83a267d0f0b080c98417995395e8a57e9406f0d2",

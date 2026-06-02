@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw1-skill-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw1-skill-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw1-skill-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:afb7e9972495b0cd6d202c63905ab048e00e17eabd25ffb1b99a7892dbb9e541",

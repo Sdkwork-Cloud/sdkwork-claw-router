@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rightister-qwen-asr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rightister-qwen-asr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rightister-qwen-asr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bfe450db4ab70ec2eeee322e1c5712c12effe617fbcca318d4b64bf363e2f4ed",

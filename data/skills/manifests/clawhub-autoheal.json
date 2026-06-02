@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/autoheal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-autoheal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-autoheal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f4958ac82bf6ff4c189cea5caaaeebd24d9bd63911e992e426c285b68478e86",

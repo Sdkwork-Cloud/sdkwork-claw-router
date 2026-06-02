@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/metacognition-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-metacognition-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-metacognition-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b2173631597315e21e9b6679a90b081181262d3e67d1e1cf3817ee426daa5b91",

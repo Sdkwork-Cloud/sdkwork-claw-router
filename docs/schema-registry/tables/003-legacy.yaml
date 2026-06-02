@@ -15,10 +15,10 @@ tables:
   compatibility_rule: keep_physical_structure_identical
 - table: plus_app
   domain: legacy
-  profile: java_compatible_owned
+  profile: router_owned_standard
   compliance_level: L0
   system_of_record: true
-  write_owner: spring-ai-plus-business-entity
+  write_owner: sdkwork-claw-product
   generated_by_this_project: true
   frontend_routes:
   - /
@@ -28,38 +28,23 @@ tables:
   api_surfaces:
   - app
   - backend
-  compatibility_rule: keep_physical_structure_identical
-  java_contract:
-    entity: com.sdkwork.spring.ai.plus.entity.app.PlusApp
-    app_api:
-      store_base_path: /app/v3/api/app/store
-      manage_base_path: /app/v3/api/app/manage
-      list_store_apps: GET /app/v3/api/app/store
-      list_store_categories: GET /app/v3/api/app/store/categories
-      retrieve_store_app: GET /app/v3/api/app/store/{appId}
-    backend_api:
-      base_path: /backend/v3/api/app
-      aggregate_admin_base_path: /backend/v3/api/app/admin
-    vo:
-      app_list: com.sdkwork.ai.gateway.api.app.v3.app.vo.AppVO
-      app_detail: com.sdkwork.ai.gateway.api.app.v3.app.vo.AppDetailVO
-      backend: com.sdkwork.spring.ai.plus.vo.app.PlusAppVO
+  compatibility_rule: canonical_media_resource_contract
   frontend_contract:
     list_component: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/pages/AppCenter.tsx
     detail_component: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-app-center/src/pages/AppDetails.tsx
     source_of_truth: plus_app
-    adapter_rule: map AppVO/AppDetailVO to existing portal App/AppRelease view model without changing UI
+    adapter_rule: map app API DTOs to portal App/AppRelease view models while preserving MediaResource objects until concrete display or download boundaries
     field_mapping:
       id: id/appId
       name: name
       developer: AppVO.developer resolved from iam_user display_name/username or installSkill.name
       category: plus_category.name from type 999999 / group_name app-store; plus_app.app_type is not a category source of truth
-      image: iconUrl or icon.url or resourceList cover asset
+      image: icon_resource_snapshot MediaResource or resourceList cover asset
       rating: studio_catalog_action aggregate projection
       downloads: studio_catalog_action download aggregate projection
       screenshots: resourceList assets filtered by media type screenshot/cover
       features: config.features or installConfig.metadata.features
-      releases: releaseNotes + installConfig.packages resolved by AppDetailVO.releases/currentRelease
+      releases: releaseNotes + installConfig.packages resolved by AppDetailVO.releases/currentRelease; artifacts use artifact_resource_snapshot MediaResource
   physical_columns:
     inherited: PlusUserBaseEntity columns
     own:
@@ -69,7 +54,9 @@ tables:
     - project_id
     - description
     - version
-    - icon_url
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
     - access_url
     - config
     - status
@@ -82,7 +69,9 @@ tables:
     - package_name
     - bundle_id
     - store_url
-    - download_url
+    - artifact_media_resource_id
+    - artifact_object_blob_id
+    - artifact_resource_snapshot
   columns:
     id:
       type: int64
@@ -117,7 +106,9 @@ tables:
     project_id: int64
     description: text
     version: string(64)
-    icon_url: string(512)
+    icon_media_resource_id: string(128)
+    icon_object_blob_id: int64
+    icon_resource_snapshot: json
     access_url: string(512)
     config:
       type: json
@@ -134,7 +125,9 @@ tables:
     package_name: string(255)
     bundle_id: string(255)
     store_url: string(512)
-    download_url: string(512)
+    artifact_media_resource_id: string(128)
+    artifact_object_blob_id: int64
+    artifact_resource_snapshot: json
   indexes:
   - name: idx_app_user_id
     columns:
@@ -159,6 +152,7 @@ tables:
   - /skills-hub/:id
   - /courses
   - /courses/:id
+  - /admin/catalog
   - /admin/app
   - /admin/open-platform
   - /admin/skill
@@ -207,7 +201,7 @@ tables:
       category: name
       categoryId: id
       categoryCode: code
-      icon: icon
+      icon: icon_resource_snapshot MediaResource
   physical_columns:
     inherited: PlusBaseTreeEntity columns
     own:
@@ -218,7 +212,9 @@ tables:
     - group_name
     - code
     - tags
-    - icon
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
     - sort_weight
     - parent_id
     - path
@@ -262,7 +258,9 @@ tables:
     tags:
       type: json
       constraints: NOT NULL DEFAULT '[]'::jsonb
-    icon: string(255)
+    icon_media_resource_id: string(128)
+    icon_object_blob_id: int64
+    icon_resource_snapshot: json
     sort_weight:
       type: int32
       constraints: NOT NULL DEFAULT 0
@@ -325,7 +323,7 @@ tables:
       packageKey: package_key
       packageName: name
       category: plus_category.name via category_id
-      image: cover_image or icon
+      image: cover MediaResource or icon MediaResource
       downloads: installCount aggregate over package skills
       rating: ratingAvg aggregate over package skills
       version: latest included plus_agent_skill.version when package detail is rendered
@@ -337,8 +335,12 @@ tables:
     - name
     - summary
     - description
-    - icon
-    - cover_image
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
+    - cover_media_resource_id
+    - cover_object_blob_id
+    - cover_resource_snapshot
     - category_id
     - enabled
     - featured
@@ -379,8 +381,12 @@ tables:
       constraints: NOT NULL
     summary: string(512)
     description: string(4000)
-    icon: string(255)
-    cover_image: string(255)
+    icon_media_resource_id: string(128)
+    icon_object_blob_id: int64
+    icon_resource_snapshot: json
+    cover_media_resource_id: string(128)
+    cover_object_blob_id: int64
+    cover_resource_snapshot: json
     category_id: int64
     enabled:
       type: bool
@@ -494,7 +500,7 @@ tables:
       developer: authorName/provider resolved from iam_user or provider
       description: description
       category: categoryName from plus_category
-      image: coverImage or icon
+      image: cover or icon MediaResource
       rating: ratingAvg
       downloads: installCount formatted for display
       features: capabilities
@@ -504,7 +510,7 @@ tables:
       size: defaultConfig.portal.sizeText
       license: licenseName
       frameworks: defaultConfig.portal.frameworks or tags filtered by framework namespace
-      screenshots: defaultConfig.portal.screenshots or coverImage fallback
+      screenshots: defaultConfig.portal.screenshots or cover fallback
     required_market_filter:
       enabled: true
       visibility: PUBLIC
@@ -517,8 +523,12 @@ tables:
     - name
     - summary
     - description
-    - icon
-    - cover_image
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
+    - cover_media_resource_id
+    - cover_object_blob_id
+    - cover_resource_snapshot
     - category_id
     - package_id
     - provider
@@ -585,8 +595,12 @@ tables:
       constraints: NOT NULL
     summary: string(512)
     description: string(4000)
-    icon: string(255)
-    cover_image: string(255)
+    icon_media_resource_id: string(128)
+    icon_object_blob_id: int64
+    icon_resource_snapshot: json
+    cover_media_resource_id: string(128)
+    cover_object_blob_id: int64
+    cover_resource_snapshot: json
     category_id: int64
     package_id: int64
     provider: string(128)
@@ -873,7 +887,7 @@ tables:
     - category_id
     - content_type
     - content_id
-    - cover_images
+    - cover_resources
     - resource_list
     - author
     - source
@@ -929,7 +943,7 @@ tables:
     content_id:
       type: int64
       constraints: NOT NULL
-    cover_images: json
+    cover_resources: json
     resource_list: json
     author: json
     source: string(100)

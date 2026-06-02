@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eaton@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eaton-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eaton-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:669393e533a46e9217d43d69f580a4f58b600b75570c8316f245992013e67ca0",

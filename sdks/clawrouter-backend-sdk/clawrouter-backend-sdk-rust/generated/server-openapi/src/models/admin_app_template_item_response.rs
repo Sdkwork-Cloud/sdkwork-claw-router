@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Persisted app template snapshot returned by the backend.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminAppTemplateItemResponse {
@@ -21,10 +23,9 @@ pub struct AdminAppTemplateItemResponse {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub category_id: Option<String>,
 
-    /// Cover url field on admin app template item response.
-    #[serde(rename = "coverUrl")]
+    /// Cover field on admin app template item response.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cover_url: Option<String>,
+    pub cover: Option<MediaResource>,
 
     /// Created at field on admin app template item response.
     #[serde(rename = "createdAt")]
@@ -69,10 +70,9 @@ pub struct AdminAppTemplateItemResponse {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub git_sub_path: Option<String>,
 
-    /// Icon url field on admin app template item response.
-    #[serde(rename = "iconUrl")]
+    /// Icon field on admin app template item response.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon_url: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Id field on admin app template item response.
     pub id: String,

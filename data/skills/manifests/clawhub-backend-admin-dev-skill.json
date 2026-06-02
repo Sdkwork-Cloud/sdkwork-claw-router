@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/backend-admin-dev-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-backend-admin-dev-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-backend-admin-dev-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:609fc1085637fbd800d4a7a084280ac34e0fb0dafcf53c620cc501ff92fbcee1",

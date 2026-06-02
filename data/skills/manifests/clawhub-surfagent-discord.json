@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/surfagent-discord@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-surfagent-discord-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-surfagent-discord-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b50fd8e87f809e62dbcdc62edadd6d076e0d9e3fd1e6ecf70ae39d946bfc767e",

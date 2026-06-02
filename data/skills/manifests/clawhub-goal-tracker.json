@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goal-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-goal-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goal-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f836bb853a985f0775fb75fe3fb2f344274a251eb13fc23cbccdd59ab0c5026",

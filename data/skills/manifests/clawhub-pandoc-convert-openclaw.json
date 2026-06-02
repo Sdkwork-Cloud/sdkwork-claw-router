@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pandoc-convert-openclaw@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pandoc-convert-openclaw-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pandoc-convert-openclaw-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8ccb8cf4a4af76d8bbf88b9f67a61763658417c7259f99ef9064018aeeca74d",

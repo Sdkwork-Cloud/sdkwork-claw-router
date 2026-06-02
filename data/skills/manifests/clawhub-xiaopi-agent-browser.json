@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiaopi-agent-browser@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiaopi-agent-browser-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiaopi-agent-browser-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:02e3f166abbd6f964ba199e430ec13ac64b6bd2b6458fc2cb3be8b290d100959",

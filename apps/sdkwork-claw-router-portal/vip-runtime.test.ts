@@ -170,7 +170,7 @@ test("VIP service preserves product purchase APIs while using generated app SDK 
     "bg-[#24282d]",
     "grid-cols-[minmax(0,1.05fr)_auto_minmax(280px,0.9fr)]",
     "qrCodePayload",
-    "qrCodeImageUrl",
+    "readMediaResourceUrl(paymentDialog.qrCode)",
     "toDataURL(paymentDialog.qrCodePayload",
     "handlePurchase(pkg)",
     "onPurchased?.()",
@@ -334,7 +334,6 @@ test("VIP points purchase modal creates in-dialog recharge checkout QR instead o
   for (const marker of [
     "RechargePackageSelector",
     "RechargeService.submitRecharge",
-    "RechargeService.cancelRechargeOrder",
     "CheckoutService.fetchCheckoutStatus",
     "toDataURL(pointsCheckoutStatus.qrCodePayload",
     "selectedRechargeOptionId",
@@ -365,13 +364,16 @@ test("VIP points purchase modal creates in-dialog recharge checkout QR instead o
   assert.match(vipPackageJson, /"sdkwork-claw-router-console-checkout": "workspace:\*"/);
 });
 
-test("VIP points purchase modal automatically updates the payment code on package selection and cancels superseded pending orders", () => {
+test("VIP points purchase modal automatically updates the payment code on package selection and reuses pending unpaid orders without cancellation", () => {
   const viewSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/VipView.tsx");
 
-  assert.match(viewSource, /RechargeService\.cancelRechargeOrder/);
+  assert.match(viewSource, /RechargeService\.submitRecharge/);
   assert.match(viewSource, /activeCheckoutOrderRef/);
+  assert.match(viewSource, /const canReuseActiveOrder =/);
   assert.match(viewSource, /void createPointsCheckout\(option/);
   assert.match(viewSource, /setTimeout\(/);
+  assert.doesNotMatch(viewSource, /cancelRechargeOrderSilently/);
+  assert.doesNotMatch(viewSource, /cancelActiveCheckoutOrder/);
   assert.doesNotMatch(viewSource, /handleCheckoutAction/);
   assert.doesNotMatch(viewSource, /vip\.pointsPurchase\.checkoutAction/);
   assert.doesNotMatch(viewSource, /vip\.pointsPurchase\.refreshAction/);
@@ -398,6 +400,8 @@ test("VIP points purchase modal uses current user avatar with localized fallback
 
   assert.match(viewSource, /<img[\s\S]*src=\{currentUserAvatarUrl\}/);
   assert.match(viewSource, /<User[\s\S]*aria-hidden="true"/);
+  assert.match(viewSource, /readMediaResourceUrl\(currentUser\?\.avatar\)/);
+  assert.doesNotMatch(viewSource, /currentUser\?\.avatar\?\.trim\(\)/);
   assert.doesNotMatch(viewSource, />\s*Z\s*</);
   assert.doesNotMatch(viewSource, /vip\.pointsPurchase\.brand/);
   assert.match(vipPackageJson, /"sdkwork-claw-router-console-user": "workspace:\*"/);
@@ -422,6 +426,35 @@ test("VIP points purchase modal uses current user avatar with localized fallback
     " 积分规则",
   ]) {
     assert.doesNotMatch(i18nSource, new RegExp(escapeRegExp(staleCopy)));
+  }
+});
+
+test("VIP points purchase agreement copy uses configurable site branding instead of a fixed brand", () => {
+  const viewSource = readPortalFile("./packages/sdkwork-claw-router-vip/src/VipView.tsx");
+  const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin-commerce/vip.ts");
+
+  for (const marker of [
+    "useSiteBranding",
+    "agreementBrandName",
+    "brandName: agreementBrandName",
+    "{{brandName}} Paid Service Agreement (including auto-renewal terms)",
+  ]) {
+    assert.match(viewSource, new RegExp(escapeRegExp(marker)));
+  }
+
+  for (const marker of [
+    '"vip.pointsPurchase.agreement": "{{brandName}} Paid Service Agreement (including auto-renewal terms)"',
+    '"vip.pointsPurchase.agreement": "《{{brandName}}付费服务协议（含自动续费条款）》"',
+  ]) {
+    assert.match(i18nSource, new RegExp(escapeRegExp(marker)));
+  }
+
+  for (const retiredBrandName of [
+    "Bangzhao",
+    "榜招",
+    "vip.pointsPurchase.brand",
+  ]) {
+    assert.doesNotMatch(i18nSource, new RegExp(escapeRegExp(retiredBrandName)));
   }
 });
 
@@ -755,6 +788,13 @@ test("VIP catalog falls back to preview packages when membership groups cannot b
 });
 
 test("VIP purchase uses idempotent generated app SDK membership purchase path", async () => {
+  const qrCode = {
+    kind: "image",
+    publicUrl: "https://im.sdkwork.com/pay/qrcode/payment-vip-1.png",
+    source: "external_url",
+    url: "https://im.sdkwork.com/pay/qrcode/payment-vip-1.png",
+  };
+
   await withMembershipSdkResponse(
     {
       code: "2000",
@@ -765,7 +805,7 @@ test("VIP purchase uses idempotent generated app SDK membership purchase path", 
         paymentMethod: "wechat",
         paymentProduct: "wechat_native",
         providerCode: "wechat_pay",
-        qrCodeImageUrl: "https://im.sdkwork.com/pay/qrcode/payment-vip-1.png",
+        qrCode,
         qrCodePayload: "https://im.sdkwork.com/cashier?scene=membership&orderId=vip-request-1&paymentId=payment-vip-1",
         requestNo: "vip-request-1",
         status: "accepted",
@@ -782,7 +822,7 @@ test("VIP purchase uses idempotent generated app SDK membership purchase path", 
         paymentMethod: "wechat",
         paymentProduct: "wechat_native",
         providerCode: "wechat_pay",
-        qrCodeImageUrl: "https://im.sdkwork.com/pay/qrcode/payment-vip-1.png",
+        qrCode,
         qrCodePayload: "https://im.sdkwork.com/cashier?scene=membership&orderId=vip-request-1&paymentId=payment-vip-1",
         requestNo: "vip-request-1",
         status: "accepted",
@@ -1108,7 +1148,7 @@ test("OpenAPI and generated SDK expose standard membership APIs and reject billi
   for (const marker of [
     '"paymentId"',
     '"qrCodePayload"',
-    '"qrCodeImageUrl"',
+    '"qrCode"',
   ]) {
     assert.match(appOpenapi, new RegExp(escapeRegExp(marker)));
   }
@@ -1118,12 +1158,14 @@ test("OpenAPI and generated SDK expose standard membership APIs and reject billi
 
   const commerceOperationResponseSource = readPortalFile("../../sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript/src/types/commerce-operation-response.ts");
   for (const marker of [
+    "import type { MediaResource } from './media-resource';",
     "paymentId?: string | null",
+    "qrCode?: MediaResource",
     "qrCodePayload?: string | null",
-    "qrCodeImageUrl?: string | null",
   ]) {
     assert.match(commerceOperationResponseSource, new RegExp(escapeRegExp(marker)));
   }
+  assert.doesNotMatch(commerceOperationResponseSource, /qrCodeImageUrl/);
 
   for (const marker of [
     "class CommerceMembershipsEntitlementsApi",

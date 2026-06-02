@@ -6,8 +6,10 @@ public class CommercePaymentChannelRecord {
     private String countryCode;
     private String createdAt;
     private String currencyCode;
+    private String id;
     private String methodId;
     private String organizationId;
+    private String priority;
     private String providerAccountId;
     private String sceneCode;
     private String status;
@@ -46,6 +48,14 @@ public class CommercePaymentChannelRecord {
         this.currencyCode = currencyCode;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getMethodId() {
         return this.methodId;
     }
@@ -60,6 +70,14 @@ public class CommercePaymentChannelRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
     }
 
     public String getProviderAccountId() {

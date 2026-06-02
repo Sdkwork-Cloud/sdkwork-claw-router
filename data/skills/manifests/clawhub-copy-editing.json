@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/copy-editing@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-copy-editing-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-copy-editing-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3c1091e0ea1db1139994a9ed12a034b6182e9f2e487eb56f7ea961155f812e69",

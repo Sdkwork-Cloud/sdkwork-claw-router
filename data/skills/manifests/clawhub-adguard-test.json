@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adguard-test@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-adguard-test-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adguard-test-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:efc2ec01ed37501c8b4861661c6dfecdbbed773326db4b14b9db434aed39562a",

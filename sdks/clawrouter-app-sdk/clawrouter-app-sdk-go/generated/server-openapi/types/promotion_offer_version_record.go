@@ -9,14 +9,17 @@ type PromotionOfferVersionRecord struct {
 	CreatedAt string `json:"created_at"`
 	CreatedBy string `json:"created_by"`
 	CurrencyCode string `json:"currency_code"`
+	CustomerVisible bool `json:"customer_visible"`
 	DiscountAmountMinor string `json:"discount_amount_minor"`
 	DiscountPercentBps int `json:"discount_percent_bps"`
 	DiscountType string `json:"discount_type"`
 	FaceValueMinor string `json:"face_value_minor"`
 	FixedPriceMinor string `json:"fixed_price_minor"`
+	Id string `json:"id"`
 	LiabilityPolicy string `json:"liability_policy"`
 	LifecycleStatus string `json:"lifecycle_status"`
 	MaximumDiscountAmountMinor string `json:"maximum_discount_amount_minor"`
+	MinimumOrderAmountMinor string `json:"minimum_order_amount_minor"`
 	OfferId string `json:"offer_id"`
 	OrganizationId string `json:"organization_id"`
 	PublishedAt string `json:"published_at"`

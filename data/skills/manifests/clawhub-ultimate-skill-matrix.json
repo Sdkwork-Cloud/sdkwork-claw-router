@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ultimate-skill-matrix@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ultimate-skill-matrix-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ultimate-skill-matrix-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d821fba0378e2687bfc6bde270828a72087489446cbbf6e5e616dcd2fcd0e7f6",

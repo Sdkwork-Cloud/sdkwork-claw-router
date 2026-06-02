@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-belief-discoverer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-belief-discoverer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-belief-discoverer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:626d2cc2038c470cb111646d52b5daca2400ff47393e849bc9a68b5c51c52075",

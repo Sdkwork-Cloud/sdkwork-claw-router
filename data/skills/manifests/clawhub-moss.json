@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moss@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-moss-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moss-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:76fb76db7ad3f91ad2dcc60582f9e351fa98eaae1478f4e563b3fc7b1040a465",

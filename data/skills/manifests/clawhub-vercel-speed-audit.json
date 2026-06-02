@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vercel-speed-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vercel-speed-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vercel-speed-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:523cbc3cc7ed88c15b8296c6f9975ebd016a679bd2bd90cea4bf7c42e0444a16",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/freqtrade-deploy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-freqtrade-deploy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-freqtrade-deploy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9c8e0aa2bf79be3f89bf94105ce86ed92afcceec467ee61c13833d60bffd6d34",

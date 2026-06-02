@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-infographic@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-infographic-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-infographic-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3b90b63abcaca03d51d99efc2e191e6abf5651cc5f0dfe24533d6ceec58c1823",

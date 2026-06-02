@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/microsoft-todo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-todo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-microsoft-todo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:80dc6c07edc9dc1abba523cebe44251cb7eb38537fdaf92f1c85dc3ee6e601ed",

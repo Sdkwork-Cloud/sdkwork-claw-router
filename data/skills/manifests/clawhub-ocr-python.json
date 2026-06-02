@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ocr-python@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ocr-python-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ocr-python-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:54bf8f651d0e5051f73cc2d94d979fdc6123d32948308c73e1df1906c8b30a07",

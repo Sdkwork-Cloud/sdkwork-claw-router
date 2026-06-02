@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eli5@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eli5-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eli5-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8fba636bf4d9aa3cdada7f7b973cf513ed016464f69ba5012a811987e5d6ccf1",

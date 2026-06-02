@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zhihu-assistant-skill@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-zhihu-assistant-skill-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zhihu-assistant-skill-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:111f73a8284e1a4fb3f95f5ba5fbe600ed695987c4177215892771045b469049",

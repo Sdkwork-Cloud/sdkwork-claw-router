@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skillgrep@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skillgrep-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skillgrep-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a7a367ca4f627aeb1edb37dd82d59f6788958a032eeaa604ce17f7da1989b6bf",

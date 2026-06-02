@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f49f673658dea4225cd1e914e605d38adadd73726b7278ed97a313c531e7fbef",

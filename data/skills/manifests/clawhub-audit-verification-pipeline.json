@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audit-verification-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audit-verification-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audit-verification-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff30f1c95210af1f25cc1c85e8ab55f470af1df42c0d050c14ad0707cf8b4d94",

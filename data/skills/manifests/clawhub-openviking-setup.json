@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openviking-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openviking-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openviking-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8f21d2bb92ab0a40ff1f65568b37a6efeddf2d48845be6665971e0de6c8f860e",

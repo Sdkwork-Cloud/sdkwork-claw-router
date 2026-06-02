@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cdp-browser@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cdp-browser-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cdp-browser-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f05c4d24deff574f3845abd868e8e0d00d2429a64e3d970a813b0284f10a086f",

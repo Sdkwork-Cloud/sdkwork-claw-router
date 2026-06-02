@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-workflow-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-workflow-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-workflow-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e384a57e22846ddec99bc2df53d30df21c5ccfd2c49e98adc5cff11b9e9ec4a3",

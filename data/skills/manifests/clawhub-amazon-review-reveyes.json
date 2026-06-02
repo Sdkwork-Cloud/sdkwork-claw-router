@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-review-reveyes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-review-reveyes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-review-reveyes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0c154346e4bb9fce59b0a3eb7b90037dd37cd252dce379fc763f554efc622ffc",

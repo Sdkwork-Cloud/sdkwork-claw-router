@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/content-security-policy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-content-security-policy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-content-security-policy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:820f99aba9058137b22e44bd9b3f7577b17529c1ebcab207c0239c48350b03d4",

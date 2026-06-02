@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-summerizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-summerizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-summerizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4abdf89c67f4e64d6cba4b18750043a833ef1d93ebe2be5ff039d74fc1f32fc1",

@@ -64,7 +64,7 @@ export const adminServiceProviderMessages = {
     "admin.serviceProvider.members.title": "Members & Roles",
     "admin.serviceProvider.members.desc": "Provider-scoped owner, admin, finance, operator, and viewer assignments.",
     "admin.serviceProvider.bindings.title": "Access Bindings",
-    "admin.serviceProvider.bindings.desc": "API key, API key group, user, organization, and tenant ownership resolution.",
+    "admin.serviceProvider.bindings.desc": "API key, channel group, user, organization, and tenant ownership resolution.",
     "admin.serviceProvider.contracts.title": "Contracts & Settlement Rules",
     "admin.serviceProvider.contracts.desc": "Bilateral contracts, versions, finance profile, payment terms, and settlement modes.",
     "admin.serviceProvider.pricing.title": "Rates & Billable Points",

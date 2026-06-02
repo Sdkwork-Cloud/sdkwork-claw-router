@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alibaba@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alibaba-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alibaba-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cb99e2c8ff9a8ee11db1a9e7e0eb005a4b35270ce8f393b917f2166c6d5b31a6",

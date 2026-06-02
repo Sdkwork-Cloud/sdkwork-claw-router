@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fapi-twitter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fapi-twitter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fapi-twitter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7e256677b78e42a88b4b63270cf44d6808af79d6d887674501ff4e1ccffc9b43",

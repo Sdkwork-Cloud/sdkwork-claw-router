@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-presence@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-presence-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-presence-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2b8bf1fa885c477fc89685efd7000e5c93cc8cc035ff7b8aaf5df5e78c159ed",

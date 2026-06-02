@@ -9,12 +9,19 @@ pub struct CommerceInvoiceItemRecord {
     /// Created at field on commerce invoice item record.
     pub created_at: String,
 
+    /// Id field on commerce invoice item record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Invoice id field on commerce invoice item record.
     pub invoice_id: String,
 
     /// Order item id field on commerce invoice item record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub order_item_id: Option<String>,
+
+    /// Tax amount field on commerce invoice item record.
+    pub tax_amount: String,
 
     /// Tenant id field on commerce invoice item record.
     pub tenant_id: String,

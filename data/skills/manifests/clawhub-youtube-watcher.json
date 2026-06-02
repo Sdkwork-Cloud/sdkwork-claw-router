@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-watcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-watcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-watcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0bb24d61930ce3141960b6af8734ac9baed6f3df69f4b20f29db53deba247fb3",

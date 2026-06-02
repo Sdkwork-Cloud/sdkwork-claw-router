@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-meeting-notes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-meeting-notes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-meeting-notes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5f17fd2840997c58c92e4d32ff545546ddbd5a948a8ea0a53388fd9d2fa7bc3b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-pages-auto-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-pages-auto-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-pages-auto-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:91d4580447a29ee705e9d6f1e4569f781bca62d3880e759e2d9da0a68e4c2658",

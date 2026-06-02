@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chrome-relay-browser@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-chrome-relay-browser-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chrome-relay-browser-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d2c79e68e8ab68ff646c4912201eac944fa664a655695dbde6a8e612477eef0b",

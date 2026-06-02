@@ -7,8 +7,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AiGenerationAssetRecord
     {
         public int? ActiveIndex { get; set; }
+        public MediaResource? Asset { get; set; }
         public string? AssetType { get; set; }
-        public string? AssetUrl { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }
         public string? DeletedAt { get; set; }
@@ -25,6 +25,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public Dictionary<string, string>? Metadata { get; set; }
         public string? MimeType { get; set; }
         public string? ModelSnapshot { get; set; }
+        public string? ObjectKey { get; set; }
         public string? OrganizationId { get; set; }
         public string? OwnerId { get; set; }
         public string? OwnerType { get; set; }
@@ -33,10 +34,9 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? ShareTokenHash { get; set; }
         public bool? Shared { get; set; }
         public string? Status { get; set; }
-        public string? StorageKey { get; set; }
         public string? StorageProvider { get; set; }
         public string? TenantId { get; set; }
-        public string? ThumbnailUrl { get; set; }
+        public MediaResource? Thumbnail { get; set; }
         public string? UpdatedAt { get; set; }
         public string? UserId { get; set; }
         public string? Uuid { get; set; }

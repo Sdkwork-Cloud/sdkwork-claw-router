@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-report-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-report-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-report-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98f861e62c15ea9c05d632227f5dc71b586ea48a06ad0f29ac21451689bea98e",

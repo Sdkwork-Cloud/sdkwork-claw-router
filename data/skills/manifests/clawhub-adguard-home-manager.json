@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adguard-home-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-adguard-home-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adguard-home-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c36850b900c2d533eb54a76281925130847502aee529350b4b8f2a4054933745",

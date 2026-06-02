@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-doc-formatter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-doc-formatter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-doc-formatter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:621953687401e14bf43231f3859167f2555af2e241f85577822f87fbdc86b7fa",

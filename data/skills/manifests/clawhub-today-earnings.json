@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/today-earnings@4.3.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-today-earnings-4.3.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-today-earnings-4.3.4.json"
+      },
       "version": "4.3.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e86564162b39dac742424ee180de7fd6d86428c7ee22f73cb7440b1adaa4e1c8",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rectify-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-rectify-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rectify-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ef503777f4bad1e9b1305c48d9b63f9771c946ac256857c12971d471d8aeca69",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/banker-memo@0.9.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-banker-memo-0.9.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-banker-memo-0.9.6.json"
+      },
       "version": "0.9.6",
       "runtime": "metadata",
       "checksumHash": "sha256:23dc4432eeb9764053c75768f23af005ed6d4fa0066ef381ed972fde5183aa1b",

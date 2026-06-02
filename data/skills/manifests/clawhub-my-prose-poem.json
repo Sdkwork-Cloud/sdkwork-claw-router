@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-prose-poem@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-prose-poem-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-prose-poem-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ddb3c6ed738cb30a349fe1e2e2a32590e0e97d9a6dd5933e78d40ad3398e22bf",

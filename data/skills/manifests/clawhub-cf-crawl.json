@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cf-crawl@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cf-crawl-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cf-crawl-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5769cb41ccb84cbee265b69d629f247aff84250c4ec05a6945e2f6ec6be7d4e4",

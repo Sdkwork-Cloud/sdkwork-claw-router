@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adopt-a-parrot@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-adopt-a-parrot-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adopt-a-parrot-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:db8017f4b8a2c17955a58c51d5031aafdb0a8e52242c05643dd7b0ce40b6dd52",

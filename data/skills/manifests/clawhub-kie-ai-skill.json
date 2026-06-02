@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kie-ai-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-kie-ai-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kie-ai-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:29e1ba2a19e37c944f084021a6bd18c6682e6a37434f0ae5d3142d848475454b",

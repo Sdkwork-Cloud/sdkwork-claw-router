@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-omni-expert@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-omni-expert-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-omni-expert-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:804fee506a007b30ec09db923964dfd652496c7fec6a5bb6df50167074ff6544",

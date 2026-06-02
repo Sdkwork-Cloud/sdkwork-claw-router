@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minimax-websearch@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-minimax-websearch-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minimax-websearch-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:14503ed9e9191f26955b890196380d8b8e2eec78b0dc5a1fbe06dc555dbe62ad",

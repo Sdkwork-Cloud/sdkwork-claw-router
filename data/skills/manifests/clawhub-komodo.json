@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/komodo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-komodo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-komodo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0a7997772083c16a30f7a99a3887f0d0781027e55ebe1d8b88e806ee73437d1",

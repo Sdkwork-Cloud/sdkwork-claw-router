@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/logfmt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-logfmt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-logfmt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:636717b9920b543c175db56fd6e007b5d471dae631efd2b9dc4a13eb0b2a9f0a",

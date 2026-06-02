@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cardnews@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cardnews-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cardnews-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16b7b54ae31de4162aa0912a10e99aadb09842e1ea7d548a2b2ff094e4d0575f",

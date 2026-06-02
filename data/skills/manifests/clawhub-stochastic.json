@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stochastic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stochastic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stochastic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c6040a0a30e022cdaed45937434b65bd704e276b1b7388e8f94d7702f8841aed",

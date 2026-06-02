@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kuruma@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-kuruma-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kuruma-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:20f5eb57dcc29dbca06824cda7eb4aef2ee1dfcc51d35b6f5c055495ba394010",

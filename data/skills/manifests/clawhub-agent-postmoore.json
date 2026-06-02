@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-postmoore@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-postmoore-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-postmoore-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:76d3dd3c21fac9646d0297e449cca1ba8ade32dfedcf28b2c346c72fc5f734f4",

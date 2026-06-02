@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltmail@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltmail-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltmail-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26a8c30d8368fd8092e05042978c6c7d2faf9a14aaf221259d6446870bc51827",

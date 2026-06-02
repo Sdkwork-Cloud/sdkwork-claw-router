@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cmbc@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cmbc-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cmbc-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b68ed3725cd20419b3505c2e08a991a58386a176638e5bdc34dfec690e5fd9a9",

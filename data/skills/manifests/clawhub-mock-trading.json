@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mock-trading@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mock-trading-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mock-trading-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f82ff2708512a868cac986e27c683d6ecc70b6a1dab74c0617dddf59cf9579ec",

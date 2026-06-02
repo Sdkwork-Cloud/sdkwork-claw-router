@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vitals-log@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vitals-log-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vitals-log-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdaa9447b515ba8105f251423dc32d0ebbd0654b87321f3640776af4d3e9fdba",

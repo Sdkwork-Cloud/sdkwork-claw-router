@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-wsl2-install@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-wsl2-install-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-wsl2-install-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4697e86ab090e46ef509e5ca121545ded8315d4c07711ead4c2eba3f865359cf",

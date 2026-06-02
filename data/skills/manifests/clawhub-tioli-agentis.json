@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tioli-agentis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tioli-agentis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tioli-agentis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:03bf34a07c71db8212e2d3dabb4434365ebc7939964817d036795ac804a40d37",

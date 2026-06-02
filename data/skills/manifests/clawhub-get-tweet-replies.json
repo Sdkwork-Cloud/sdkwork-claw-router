@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/get-tweet-replies@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-get-tweet-replies-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-get-tweet-replies-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ed003cfc9ef406b0293a791983b8dbad67b04d6ef3f279bbd339d2b8e656a425",

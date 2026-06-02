@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/doc-accurate-codegen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-doc-accurate-codegen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-doc-accurate-codegen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d10a3b0135f54832cfc0d38f80c014750b658987ab018e2d159044bc4d041768",

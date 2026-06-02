@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pinecone-memory@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pinecone-memory-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pinecone-memory-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9bb5fe6ccf618173f9d090459d59dee5d1ef7562c3bcc11bb494166760603742",

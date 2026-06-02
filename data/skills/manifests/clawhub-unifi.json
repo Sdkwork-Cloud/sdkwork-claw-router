@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unifi@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-unifi-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unifi-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d21a37f89b6b623446186a286be63f0a5f5bd49aefafe2249f0b7baa3031b355",

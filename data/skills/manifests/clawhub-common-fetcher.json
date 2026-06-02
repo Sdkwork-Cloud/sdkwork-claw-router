@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/common-fetcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-common-fetcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-common-fetcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de686b435741dd8f15435ee3ae65dcac4038285f8da316b5fb6dfe10a600cca9",

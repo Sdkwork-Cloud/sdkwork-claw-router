@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/airbus-group@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-airbus-group-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-airbus-group-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:103632d252ba355a4c096ed59f12d36de80eb5d8afbc64097d9b9241836081b1",

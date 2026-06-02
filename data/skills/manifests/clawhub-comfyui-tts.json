@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comfyui-tts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-tts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comfyui-tts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f07ca62c5cea1816fdf19130a0347ad272bb2b177fedc297474770169b76f143",

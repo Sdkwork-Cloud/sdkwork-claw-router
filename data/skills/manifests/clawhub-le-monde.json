@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/le-monde@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-le-monde-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-le-monde-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2cba3a380c12681ce2b9d47d093da159086f9e6d306ce657ccf4be154f38300b",

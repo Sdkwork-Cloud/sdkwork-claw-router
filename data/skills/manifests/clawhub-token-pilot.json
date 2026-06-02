@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/token-pilot@3.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-token-pilot-3.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-token-pilot-3.8.0.json"
+      },
       "version": "3.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:837a8d436b6274ecaaff7bcdc544e53fd89f0a607a8f1fbfc9b80e3d509a157e",

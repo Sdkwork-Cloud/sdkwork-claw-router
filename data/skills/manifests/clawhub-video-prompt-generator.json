@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-prompt-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-prompt-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-prompt-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10886d7797a4c7da398d39350cf1dcd84e2913da6929582ba89425d111429023",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/erp@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-erp-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-erp-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fcaa0adc6520b855675918273718735d4b8bae79ba88911f79f4529bf49c45ad",

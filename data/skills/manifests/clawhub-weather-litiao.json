@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-litiao@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-litiao-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-litiao-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7b7e7323611ed8a1619e0aeca049304cc0f035512082fb11766d3ae996c8a14d",

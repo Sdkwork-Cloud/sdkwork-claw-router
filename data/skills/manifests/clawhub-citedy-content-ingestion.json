@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/citedy-content-ingestion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-citedy-content-ingestion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-citedy-content-ingestion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d68668306ead9d885dfdb3510c4f57e76087051b5bfbdf8c40e0ab4c1a1f7471",

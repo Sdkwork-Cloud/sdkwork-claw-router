@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-ollama-gradio@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-ollama-gradio-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-ollama-gradio-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:72dd03b4bf05e27cc7cb7539e8552a2c94d97c808a0bff2010e6d6342ae2d297",

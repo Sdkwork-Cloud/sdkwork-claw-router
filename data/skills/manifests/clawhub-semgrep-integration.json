@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/semgrep-integration@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-semgrep-integration-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-semgrep-integration-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:72f33a10b55df0665d0bc42c3c0c69e442c7f1315ce3d2875a7ff09bd5737b23",

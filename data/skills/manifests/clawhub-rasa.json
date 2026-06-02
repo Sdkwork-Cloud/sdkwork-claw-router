@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rasa@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-rasa-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rasa-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d9f03e86b80b3ed10c796fac11e6c123a8cf3f327d5651172d8ec6f5674bc361",

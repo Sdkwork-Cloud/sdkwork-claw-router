@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-create-pip@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-create-pip-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-create-pip-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:59bca4c29a1b5c8768b9255e2307f381fde1e4a2919fed1b53e32219d8fc5a52",

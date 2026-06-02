@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mxy-web-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mxy-web-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mxy-web-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4114673b2696b2063e6685856f9a74fac8027d9f4f1dd30331c032a8b58d8165",

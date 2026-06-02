@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sysguard@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sysguard-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sysguard-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2be7d319c4e8bc596cdb9906d108c72255e2025f54945201ff0cf88f03e95638",

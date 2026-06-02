@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-leak-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-leak-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-leak-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a9e1f8cb12eef3b7c83e86fbc791c6e044d6a9a4377e97e116fe469b6fa70104",

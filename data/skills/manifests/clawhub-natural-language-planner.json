@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/natural-language-planner@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-natural-language-planner-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-natural-language-planner-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a64567fa2a820e468f3159fcc8a624d3e0eb8197346dd138e48db26bd06ccceb",

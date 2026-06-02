@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-batching-blueprint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-batching-blueprint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-batching-blueprint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a7a0ab58b4d0a2b675c66162332e30c27ab70221b577372c1ed218b9403d5a6",

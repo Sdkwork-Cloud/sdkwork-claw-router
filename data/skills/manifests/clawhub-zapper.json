@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zapper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zapper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zapper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e6b5324a8b35fce278f4e527e54fe8d619ce573af2879d4a49cd516f9fc25e04",

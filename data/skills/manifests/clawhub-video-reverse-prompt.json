@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-reverse-prompt@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-reverse-prompt-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-reverse-prompt-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:596c162cab675f5ec9ab17b05e8b0514beccf4602ffcb9f41958740cc36643c1",

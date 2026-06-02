@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitlab-mr-review-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-mr-review-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitlab-mr-review-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ffb7bc3eaab6a04cfd96b4335c6c0362c00003cb0db673fb1171b5efa4b80c99",

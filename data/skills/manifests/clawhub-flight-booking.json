@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flight-booking@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flight-booking-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flight-booking-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2863dc45d3c50f19de5a95b8fce351f609bf18b095a45ce45a86e7f874f9cb96",

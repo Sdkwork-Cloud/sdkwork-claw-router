@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/imap-smtp-email-disabled@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-imap-smtp-email-disabled-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-imap-smtp-email-disabled-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c23262efde7366cb6dc152c4507838932f04a98a5073b2d1413a54692c9b6344",

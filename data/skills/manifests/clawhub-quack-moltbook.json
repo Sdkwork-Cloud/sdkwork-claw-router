@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quack-moltbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quack-moltbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quack-moltbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a831d7bb1b693be8c24ca693a589501bbd2fc80ba4a73abfcd5b182ddb89da8",

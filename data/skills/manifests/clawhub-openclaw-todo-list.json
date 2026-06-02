@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-todo-list@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-todo-list-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-todo-list-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:902d4e7230469645e069194f840957e2dac5df3184f90b8969270e11acd5cf52",

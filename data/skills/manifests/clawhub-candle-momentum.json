@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/candle-momentum@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-candle-momentum-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-candle-momentum-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1fdfac184d446a7215e2576e2fa7579c52906b978db658ba0cdf00e4164cc977",

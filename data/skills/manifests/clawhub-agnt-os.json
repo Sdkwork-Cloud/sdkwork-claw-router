@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agnt-os@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agnt-os-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agnt-os-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:0ecbfd4a5228ddb881785329ca69df5554b719d94620ee0d1de902a63f2ebdaa",

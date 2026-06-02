@@ -7,8 +7,10 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class PromotionOfferAudienceRuleRecord
     {
         public string? CreatedAt { get; set; }
+        public string? Id { get; set; }
         public string? OfferVersionId { get; set; }
         public string? OrganizationId { get; set; }
+        public int? Priority { get; set; }
         public string? RuleOperator { get; set; }
         public string? RuleType { get; set; }
         public string? RuleValue { get; set; }

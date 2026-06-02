@@ -3,6 +3,10 @@ use serde::{Deserialize, Serialize};
 /// Messaging suppression record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct MessagingSuppressionRecord {
+    /// Channel field on messaging suppression record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel: Option<String>,
+
     /// Created at field on messaging suppression record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -39,9 +43,33 @@ pub struct MessagingSuppressionRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
 
+    /// Reason code field on messaging suppression record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub reason_code: Option<String>,
+
+    /// Scope id field on messaging suppression record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub scope_id: Option<String>,
+
+    /// Scope type field on messaging suppression record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub scope_type: Option<String>,
+
+    /// Source field on messaging suppression record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub source: Option<String>,
+
+    /// Starts at field on messaging suppression record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub starts_at: Option<String>,
+
     /// Status field on messaging suppression record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
+
+    /// Target hash field on messaging suppression record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub target_hash: Option<String>,
 
     /// Target masked field on messaging suppression record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

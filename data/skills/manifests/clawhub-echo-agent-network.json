@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/echo-agent-network@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-echo-agent-network-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-echo-agent-network-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:397888a810e75baa1c0f24464208933cbbb52a090f56b3a80ea873d919a03e85",

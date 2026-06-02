@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stable-diffusion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stable-diffusion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stable-diffusion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:089759f8e1a863678a993ebb4e678793d140e9c8c98015ac88ed2d4c853bf24e",

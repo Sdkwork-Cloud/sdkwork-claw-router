@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-burner@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-burner-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-burner-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:28df594cb677d791e56fec271f7017211abe3ed6697c9f6304b469912599be03",

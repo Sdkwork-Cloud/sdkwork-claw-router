@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nix-mode@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nix-mode-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nix-mode-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0f09872d581104a7c545f973810559363181a969372f86ffc6251aeaf415506",

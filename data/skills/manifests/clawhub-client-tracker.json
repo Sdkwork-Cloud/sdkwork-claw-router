@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/client-tracker@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-client-tracker-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-client-tracker-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d3cafc1d84e55e4c7ca7234dca17dc59bc0e32ce78ecc83d87ac4bc9ae3320cd",

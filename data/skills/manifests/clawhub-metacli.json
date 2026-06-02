@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/metacli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-metacli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-metacli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c27e625d3eeeaf218f86031906e95023ca31c44688512fd97bec7cae2680b9f",

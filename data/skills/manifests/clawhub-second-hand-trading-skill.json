@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/second-hand-trading-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-second-hand-trading-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-second-hand-trading-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c8d3757ffdec70ec38d5420f66072230e503bcfec58a44e067e5b2de8210270e",

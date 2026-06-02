@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bcg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bcg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bcg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a20790ac48bf0591cdc60b818d0ab57cab844940a6dbed9227e027aa1b04c093",

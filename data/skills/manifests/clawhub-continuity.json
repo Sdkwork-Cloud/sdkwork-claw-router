@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/continuity@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-continuity-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-continuity-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:679d0406ecfe81b00d7c7bed7c49e04f3f8358dbc15f3870f0dd5b95a69173c5",

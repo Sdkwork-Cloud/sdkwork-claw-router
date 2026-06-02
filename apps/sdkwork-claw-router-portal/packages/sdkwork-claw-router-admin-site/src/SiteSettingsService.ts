@@ -3,9 +3,15 @@ import {
   ensureSdkworkApiSuccess,
   getClawRouterBackendSdkClient,
   readApiRecord,
+  readMediaResource,
+  type ClawRouterMediaResource,
 } from 'sdkwork-claw-router-commons/runtime';
 
-export type SiteSettingsForm = AdminSiteSettingsResponse;
+export type SiteSettingsForm = Omit<AdminSiteSettingsResponse, 'logo' | 'icon' | 'favicon'> & {
+  logo?: ClawRouterMediaResource;
+  icon?: ClawRouterMediaResource;
+  favicon?: ClawRouterMediaResource;
+};
 
 const DEFAULT_ICP_RECORD_NUMBER = `${String.fromCharCode(0x4eac)}ICP${String.fromCharCode(0x5907)}2026000000${String.fromCharCode(0x53f7)}-1`;
 const DEFAULT_POLICE_RECORD_NUMBER = `${String.fromCharCode(0x4eac)}${String.fromCharCode(0x516c)}${String.fromCharCode(0x7f51)}${String.fromCharCode(0x5b89)}${String.fromCharCode(0x5907)}11010502000000${String.fromCharCode(0x53f7)}`;
@@ -14,9 +20,9 @@ export const DEFAULT_SITE_SETTINGS: SiteSettingsForm = {
   siteName: 'Claw Router',
   shortName: 'Claw Router',
   description: 'Unified AI gateway and model routing platform.',
-  logoUrl: '',
-  iconUrl: '',
-  faviconUrl: '',
+  logo: undefined,
+  icon: undefined,
+  favicon: undefined,
   brandColor: '#0f172a',
   accentColor: '#e9583f',
   footerCopyright: 'Claw Router. All rights reserved.',
@@ -40,8 +46,8 @@ export const SiteSettingsService = {
     return toSiteSettings(readApiRecord(result));
   },
 
-  async updateSettings(input: AdminSiteSettingsUpdateRequest): Promise<SiteSettingsForm> {
-    const result = await getClawRouterBackendSdkClient().system.site.settings.update(input);
+  async updateSettings(input: SiteSettingsForm): Promise<SiteSettingsForm> {
+    const result = await getClawRouterBackendSdkClient().system.site.settings.update(toSiteSettingsUpdateRequest(input));
     ensureSdkworkApiSuccess(result, 'Unable to update site settings');
     return toSiteSettings(readApiRecord(result));
   },
@@ -52,9 +58,9 @@ export function toSiteSettings(record: Record<string, unknown>): SiteSettingsFor
     siteName: readString(record, 'siteName', DEFAULT_SITE_SETTINGS.siteName),
     shortName: readString(record, 'shortName', DEFAULT_SITE_SETTINGS.shortName),
     description: readString(record, 'description', DEFAULT_SITE_SETTINGS.description),
-    logoUrl: readString(record, 'logoUrl', DEFAULT_SITE_SETTINGS.logoUrl),
-    iconUrl: readString(record, 'iconUrl', DEFAULT_SITE_SETTINGS.iconUrl),
-    faviconUrl: readString(record, 'faviconUrl', DEFAULT_SITE_SETTINGS.faviconUrl),
+    logo: readMediaResource(record.logo),
+    icon: readMediaResource(record.icon),
+    favicon: readMediaResource(record.favicon),
     brandColor: readString(record, 'brandColor', DEFAULT_SITE_SETTINGS.brandColor),
     accentColor: readString(record, 'accentColor', DEFAULT_SITE_SETTINGS.accentColor),
     footerCopyright: readString(record, 'footerCopyright', DEFAULT_SITE_SETTINGS.footerCopyright),
@@ -82,4 +88,29 @@ function readString(record: Record<string, unknown>, key: keyof SiteSettingsForm
     return String(value);
   }
   return fallback;
+}
+
+function toSiteSettingsUpdateRequest(form: SiteSettingsForm): AdminSiteSettingsUpdateRequest {
+  return {
+    siteName: form.siteName,
+    shortName: form.shortName,
+    description: form.description,
+    logo: form.logo,
+    icon: form.icon,
+    favicon: form.favicon,
+    brandColor: form.brandColor,
+    accentColor: form.accentColor,
+    footerCopyright: form.footerCopyright,
+    icpRecordNumber: form.icpRecordNumber,
+    icpRecordUrl: form.icpRecordUrl,
+    policeRecordNumber: form.policeRecordNumber,
+    policeRecordUrl: form.policeRecordUrl,
+    seoTitle: form.seoTitle,
+    seoDescription: form.seoDescription,
+    supportUrl: form.supportUrl,
+    docsUrl: form.docsUrl,
+    privacyUrl: form.privacyUrl,
+    termsUrl: form.termsUrl,
+    customCss: form.customCss,
+  };
 }

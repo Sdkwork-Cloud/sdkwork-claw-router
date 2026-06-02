@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unep@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-unep-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unep-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:264b3e38f46c46c9c058702edc64ac41441c4a2db97d915883a14e804d7eab57",

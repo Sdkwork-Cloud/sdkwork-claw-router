@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ironclaw-security-guard@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ironclaw-security-guard-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ironclaw-security-guard-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f13e50e416aeb2dfd69ede633f20272365c37681ad4193c9f8a32ec084ed24ed",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/application-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-application-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-application-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8756a02e1a6cfce3e9d60cb3a0e50dcea2cc107965fc445899d1fc707d67a098",

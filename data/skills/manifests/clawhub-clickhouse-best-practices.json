@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clickhouse-best-practices@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clickhouse-best-practices-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clickhouse-best-practices-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:40eead071fcdf8d5f2c7467d4d6ab8045bbccf241174d2d10423f171ab87d693",

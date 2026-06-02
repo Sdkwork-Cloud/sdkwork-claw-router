@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lambda-lang@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lambda-lang-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lambda-lang-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd265c1326d04b0cb36ba95e562aeb9f537ea86ab7205ef7fd833c5934633719",

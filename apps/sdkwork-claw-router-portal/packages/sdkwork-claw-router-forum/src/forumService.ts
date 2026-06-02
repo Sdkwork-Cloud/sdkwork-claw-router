@@ -16,13 +16,17 @@ import {
   optionalText,
   readApiData,
   readBoolean,
+  readMediaResource,
   readNumber,
   readApiRecord,
   readRequiredApiItem,
   readRequiredApiItems,
+  readMediaResourceUrl,
   readString,
   readStringArray,
   requiredSafePathSegment,
+  toExternalUrlMediaResource,
+  type ClawRouterMediaResource,
 } from 'sdkwork-claw-router-commons/runtime';
 import {
   filterForumPostsForCatalog,
@@ -74,7 +78,7 @@ export interface ForumFeedInput {
   title?: string;
   content: string;
   categoryId?: number;
-  images?: string[];
+  images?: ClawRouterMediaResource[];
   tags?: string[];
   source?: string;
   sourceUrl?: string;
@@ -450,7 +454,7 @@ async function normalizeForumCommunityLink(value: unknown): Promise<ForumCommuni
     id,
     label,
     tone: normalizeCommunityTone(readString(value, 'tone')),
-    qrCodeUrl: await normalizeCommunityQrCodeUrl(readString(value, 'qrCodeUrl'), url),
+    qrCode: await normalizeCommunityQrCode(value.qrCode, url),
   };
 }
 
@@ -536,7 +540,7 @@ function normalizeCreateFeedRequest(input: ForumFeedInput): SdkForumCreateFeedRe
     content,
     title: optionalText(input.title, 'title', 255),
     categoryId: optionalNonNegativeInteger(input.categoryId, 'categoryId'),
-    images: normalizeStringList(input.images, 'images', MAX_FEED_IMAGE_COUNT, MAX_FEED_IMAGE_LENGTH),
+    images: normalizeMediaResourceList(input.images, 'images', MAX_FEED_IMAGE_COUNT),
     tags: normalizeStringList(input.tags, 'tags', MAX_FEED_TAG_COUNT, MAX_FEED_TAG_LENGTH),
     source: optionalText(input.source, 'source', 100),
     sourceUrl: optionalText(input.sourceUrl, 'sourceUrl', 500),
@@ -665,16 +669,21 @@ function isIpAddressHost(host: string): boolean {
   return host.includes(':');
 }
 
-async function normalizeCommunityQrCodeUrl(value: string, communityUrl: string): Promise<string> {
-  const qrCodeUrl = value.trim();
-  if (qrCodeUrl && isPublicUrl(qrCodeUrl)) {
-    return qrCodeUrl;
+async function normalizeCommunityQrCode(value: unknown, communityUrl: string): Promise<ClawRouterMediaResource> {
+  const resource = readMediaResource(value);
+  const resourceUrl = readMediaResourceUrl(resource);
+  if (resource && isDisplayableCommunityQrCodeResourceUrl(resourceUrl)) {
+    return resource;
   }
-  return createCommunityQrCodeUrl(communityUrl);
+  return createCommunityQrCodeResource(communityUrl);
 }
 
-async function createCommunityQrCodeUrl(value: string): Promise<string> {
-  return toDataURL(value, {
+function isDisplayableCommunityQrCodeResourceUrl(value: string): boolean {
+  return value.startsWith('data:image/') || isPublicUrl(value);
+}
+
+async function createCommunityQrCodeResource(value: string): Promise<ClawRouterMediaResource> {
+  const url = await toDataURL(value, {
     errorCorrectionLevel: 'M',
     margin: 1,
     width: 180,
@@ -683,6 +692,11 @@ async function createCommunityQrCodeUrl(value: string): Promise<string> {
       light: '#ffffff',
     },
   });
+  const resource = toExternalUrlMediaResource(url, 'image');
+  if (!resource) {
+    throw new Error('Community QR code media resource could not be created');
+  }
+  return resource;
 }
 
 type NormalizedForumComment = ForumComment & {
@@ -776,7 +790,7 @@ function normalizeForumAuthor(value: unknown): ForumAuthor {
   const name = readString(record, 'name').trim() || `User-${readNumber(record, 'id', 0)}`;
   return {
     name,
-    avatar: readString(record, 'avatar') || avatarForAuthor(name),
+    avatar: readMediaResource(record.avatar) || avatarForAuthor(name),
     role: readBoolean(record, 'isFollowing', false) ? 'Following' : undefined,
   };
 }
@@ -838,11 +852,36 @@ function normalizeStringList(
   return normalized.length > 0 ? normalized : undefined;
 }
 
-function avatarForAuthor(name: string): string {
+function normalizeMediaResourceList(
+  values: readonly ClawRouterMediaResource[] | undefined,
+  fieldName: string,
+  maxItems: number,
+): ClawRouterMediaResource[] | undefined {
+  if (values === undefined || values === null) {
+    return undefined;
+  }
+  if (!Array.isArray(values)) {
+    throw new Error(`${fieldName} must be an array`);
+  }
+  if (values.length > maxItems) {
+    throw new Error(`${fieldName} must contain at most ${maxItems} items`);
+  }
+  const normalized: ClawRouterMediaResource[] = [];
+  for (const value of values) {
+    const resource = readMediaResource(value);
+    if (!resource) {
+      throw new Error(`${fieldName} item must be a MediaResource`);
+    }
+    normalized.push(resource);
+  }
+  return normalized.length > 0 ? normalized : undefined;
+}
+
+function avatarForAuthor(name: string): ClawRouterMediaResource {
   const label = authorInitials(name);
   const palette = avatarPalette(name);
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><rect width="96" height="96" rx="48" fill="${palette.background}"/><text x="48" y="56" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" fill="${palette.foreground}">${escapeSvgText(label)}</text></svg>`;
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+  return toExternalUrlMediaResource(`data:image/svg+xml;utf8,${encodeURIComponent(svg)}`, 'image')!;
 }
 
 function authorInitials(name: string): string {

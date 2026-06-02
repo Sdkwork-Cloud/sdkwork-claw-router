@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wahoo@4.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wahoo-4.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wahoo-4.0.1.json"
+      },
       "version": "4.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0715e6e8d37617f3989bbbe86327fb58575243a245316b1c018253ecdf43dd6d",

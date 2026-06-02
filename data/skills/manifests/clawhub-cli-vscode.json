@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cli-vscode@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cli-vscode-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cli-vscode-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1ddcd90f3cbc600365a08afba2dc99b83864fb0679a65cba7222c330e1d7f489",

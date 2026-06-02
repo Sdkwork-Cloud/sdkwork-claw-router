@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fis@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-fis-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fis-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:740c1dc97b4a83a9414205a3117c25a61322901d25ae523d6a56dd8b745ef37b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hap-upgrade@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-hap-upgrade-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hap-upgrade-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:07e82e0df6a2e9efaa93a7605ed402669a7ea4523f6834ce4ea9847d6f7d0988",

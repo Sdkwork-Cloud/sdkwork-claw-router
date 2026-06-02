@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pyproject-toml-validator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pyproject-toml-validator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pyproject-toml-validator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a4c6b93f78dc5c3e78e33a3a9b5d93aa06b9a6a4725e2caaced7ea9c9951f6d7",

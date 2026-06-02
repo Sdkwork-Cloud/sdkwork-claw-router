@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-docs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-docs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-docs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:68e5f6cb48b2e4eb8e602c02903123c781dac39fc7a1386d0c1c5069ebd5cca8",

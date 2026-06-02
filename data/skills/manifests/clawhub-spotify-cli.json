@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spotify-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spotify-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spotify-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5e5ba8fca7b1278df9784303152bb0a61fcdb947b0b60ba06105cf3ee24aa16",

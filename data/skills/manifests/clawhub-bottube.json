@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bottube@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bottube-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bottube-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3dcd178907cab2de94d64fe382763c474fecaeadf75377b6b6e2262267edd07d",

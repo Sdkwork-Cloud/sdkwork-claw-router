@@ -17,6 +17,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Status { get; set; }
         public string? SubmittedAt { get; set; }
         public string? Title { get; set; }
-        public string? VideoUrl { get; set; }
+        public MediaResource? Video { get; set; }
     }
 }

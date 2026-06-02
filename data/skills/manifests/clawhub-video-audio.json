@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-audio@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-audio-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-audio-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:03058ca908c18dbfbf1749caa558d070024b3623d0391afd4977fc77c8af829a",

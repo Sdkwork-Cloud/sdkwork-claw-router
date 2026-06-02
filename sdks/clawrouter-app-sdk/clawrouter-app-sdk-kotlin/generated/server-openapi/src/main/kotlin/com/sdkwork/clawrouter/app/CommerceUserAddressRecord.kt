@@ -7,6 +7,8 @@ data class CommerceUserAddressRecord(
     val countryCode: String? = null,
     val createdAt: String? = null,
     val district: String? = null,
+    val id: String? = null,
+    val isDefault: Boolean? = null,
     val organizationId: String? = null,
     val ownerUserId: String? = null,
     val phoneCountryCode: String? = null,

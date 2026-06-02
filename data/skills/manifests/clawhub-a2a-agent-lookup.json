@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/a2a-agent-lookup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-a2a-agent-lookup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-a2a-agent-lookup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f6c0e1fd673a578f8270bce120b59f228c7d34560990e5640bf1121adc7c3a72",

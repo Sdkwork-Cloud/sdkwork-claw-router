@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-readme-rebuilder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-readme-rebuilder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-readme-rebuilder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29af408ea9225adab3752e837fd0622e92e9221f8b556a7595d80611e52d991e",

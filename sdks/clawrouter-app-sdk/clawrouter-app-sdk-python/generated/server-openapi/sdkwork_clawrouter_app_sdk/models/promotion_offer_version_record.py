@@ -10,10 +10,12 @@ class PromotionOfferVersionRecord:
     breakage_policy: str
     created_at: str
     currency_code: str
+    customer_visible: bool
     discount_type: str
     face_value_minor: str
     liability_policy: str
     lifecycle_status: str
+    minimum_order_amount_minor: str
     offer_id: str
     return_policy: str
     rule_snapshot_json: Dict[str, str]
@@ -30,6 +32,7 @@ class PromotionOfferVersionRecord:
     discount_amount_minor: Optional[str] = None
     discount_percent_bps: Optional[int] = None
     fixed_price_minor: Optional[str] = None
+    id: Optional[str] = None
     maximum_discount_amount_minor: Optional[str] = None
     organization_id: Optional[str] = None
     published_at: Optional[str] = None

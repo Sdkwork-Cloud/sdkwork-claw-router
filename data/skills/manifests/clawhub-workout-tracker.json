@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workout-tracker@1.3.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-workout-tracker-1.3.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workout-tracker-1.3.7.json"
+      },
       "version": "1.3.7",
       "runtime": "metadata",
       "checksumHash": "sha256:f38cfd67a5b2453359127142629f955d2afb0ff3024c8c3b191abe87abd51690",

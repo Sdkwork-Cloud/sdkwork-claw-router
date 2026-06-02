@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moov@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-moov-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moov-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:03819b844f19d1fe5d1ee5a73e0c8b846284ab4b20f8c7a66caa06d0bc47c937",

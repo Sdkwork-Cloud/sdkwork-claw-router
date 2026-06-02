@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/theme-factory-anthropic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-theme-factory-anthropic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-theme-factory-anthropic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16d1ec921b51669906c8f8eab435276d629b61b932df526bba04e1a5c0b00de2",

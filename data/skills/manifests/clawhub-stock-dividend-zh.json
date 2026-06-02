@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-dividend-zh@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-dividend-zh-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-dividend-zh-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4eda8bf72495df19fcfd7d48ec0c528cef239f18270e8079321bbc383cfeebaf",

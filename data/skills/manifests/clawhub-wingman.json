@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wingman@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-wingman-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wingman-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:f6a80f80bb398a9a9ec95ce48ee03a8a9b3cbbafeea03884ede5ace14e62b5e9",

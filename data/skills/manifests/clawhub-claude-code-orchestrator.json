@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-orchestrator@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-orchestrator-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-orchestrator-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cdacc49c0a2ec502400a8580f0e6c625387700d627cda35875e076fa42ec200c",

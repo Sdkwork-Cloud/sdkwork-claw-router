@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/porkbun-skill@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-porkbun-skill-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-porkbun-skill-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:07073842787acc435d750740d8783d24ff7fc5bbbf8b06ab1c0eb2d5cff30c19",

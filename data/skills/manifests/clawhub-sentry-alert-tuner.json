@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentry-alert-tuner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentry-alert-tuner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentry-alert-tuner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:335b5306a33923e2c9ee55aea4ef367ab34dbaab192ce17571c829e6163d6bbd",

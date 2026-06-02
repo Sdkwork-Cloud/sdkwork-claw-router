@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jeftest@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-jeftest-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jeftest-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5554f284cc7e1aec9d43fc8e8525476baf496591eee4043942d8ef097f34fb44",

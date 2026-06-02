@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/versace@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-versace-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-versace-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:bb104ab6d805f959654942444cfb8472c041b2681e99ae739f1ef7eb95e92169",

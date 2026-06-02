@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/avito@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-avito-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-avito-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:daa282bf12e08fda92aabc19ab2223b9e9916061522f3694bbc5bb7322f18103",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencent-edgeone-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencent-edgeone-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencent-edgeone-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dc67e96078f794c80c68db315d6e89fc27b8c75915b596f18470fe7944e253a8",

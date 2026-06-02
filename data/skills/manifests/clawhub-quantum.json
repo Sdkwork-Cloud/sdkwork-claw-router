@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quantum@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-quantum-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quantum-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d4fca106ff219eb0ed41dd2184bf18c1981cabb229200bfe61bc0949bb1cbabc",

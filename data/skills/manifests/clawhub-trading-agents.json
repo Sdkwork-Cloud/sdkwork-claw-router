@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trading-agents@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-trading-agents-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trading-agents-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:2f26b7ce39d275981c9042c7c26316a513fbef2c5a37afbee24065cf75cf417c",

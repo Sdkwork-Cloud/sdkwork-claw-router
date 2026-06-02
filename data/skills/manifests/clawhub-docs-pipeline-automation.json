@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docs-pipeline-automation@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docs-pipeline-automation-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docs-pipeline-automation-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55e557bf3906b4ece146461c19ad540a9872977be3bfd8f2e1631e9e5980cd77",

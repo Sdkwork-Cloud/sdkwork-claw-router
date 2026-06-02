@@ -6,8 +6,8 @@ export interface CourseCategoryItem {
   courseCount: number;
   /** Description field on course category item. */
   description: string;
-  /** Icon field on course category item. */
-  icon: string;
+  /** Icon key field on course category item. */
+  iconKey: string;
   /** Id field on course category item. */
   id: string;
   /** Label field on course category item. */

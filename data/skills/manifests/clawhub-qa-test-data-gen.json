@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qa-test-data-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qa-test-data-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qa-test-data-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:24301996c933a2d53d814e81bf26ceff8b051f84d57f8bf4385d1e2f8409dacd",

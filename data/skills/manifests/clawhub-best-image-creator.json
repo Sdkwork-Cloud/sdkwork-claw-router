@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/best-image-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-best-image-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-best-image-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:81bc94570841572ea3225944d864ba212523f5cb86cee41614b976f5005e1e97",

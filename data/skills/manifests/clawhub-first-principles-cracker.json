@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/first-principles-cracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-first-principles-cracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-first-principles-cracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:90061062a6de03346d3b1cdfe65d1bad867859a22667120cd1cf21b369b0de8d",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-skill-sync@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-skill-sync-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-skill-sync-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2789866334a3635f7a810226966261ad52b2bc6a5c2f6c8412507c1d8bd8e3cf",

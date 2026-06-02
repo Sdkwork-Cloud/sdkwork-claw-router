@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/genentech@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-genentech-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-genentech-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a31bc5d3a4b56c0ffe75609eb163536a76abf6bbd4e1458843342c323dda0002",

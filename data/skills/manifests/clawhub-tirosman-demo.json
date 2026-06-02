@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tirosman-demo@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tirosman-demo-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tirosman-demo-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18f640d83113cdca4f96ca670fe397b5758bcba037298352c98954a03268a554",

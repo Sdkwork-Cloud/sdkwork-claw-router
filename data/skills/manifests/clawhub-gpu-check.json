@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gpu-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gpu-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gpu-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d68dec4e4348eeaad45407e9a07378e986f016bdb98f6dbefe64fba1a669ad4",

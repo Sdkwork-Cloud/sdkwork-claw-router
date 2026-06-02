@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/soul-backup-skill@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-soul-backup-skill-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-soul-backup-skill-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:da863a502e1ba6d6252bfc6b6602e8821af3fe3fbc15d4e98d161ff059271349",

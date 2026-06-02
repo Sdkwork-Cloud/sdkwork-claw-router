@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/api-gateway-disabled@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-api-gateway-disabled-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-api-gateway-disabled-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e6fa1f794362fcb4e0889c7fa21d7181c33d88cb18e42a3c769fbc8cf0056eb",

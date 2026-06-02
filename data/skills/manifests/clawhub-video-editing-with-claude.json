@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-editing-with-claude@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-editing-with-claude-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-editing-with-claude-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db19c561735532b048648c95e863a5b17b2d8026389f7d67f3a2287a6b2b3656",

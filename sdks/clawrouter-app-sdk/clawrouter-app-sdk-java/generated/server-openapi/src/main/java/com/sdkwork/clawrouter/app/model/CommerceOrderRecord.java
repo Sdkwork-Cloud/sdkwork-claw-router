@@ -6,6 +6,7 @@ public class CommerceOrderRecord {
     private String createdAt;
     private String currencyCode;
     private String expiredAt;
+    private String id;
     private String idempotencyKey;
     private String orderNo;
     private String organizationId;
@@ -47,6 +48,14 @@ public class CommerceOrderRecord {
 
     public void setExpiredAt(String expiredAt) {
         this.expiredAt = expiredAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

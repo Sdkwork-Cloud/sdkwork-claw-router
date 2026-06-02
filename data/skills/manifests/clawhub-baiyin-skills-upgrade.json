@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baiyin-skills-upgrade@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-baiyin-skills-upgrade-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baiyin-skills-upgrade-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b91c6bfa725cf3ca44a8d0a366daf2f68aaa603b97f15b58b2c11c79058ec78d",

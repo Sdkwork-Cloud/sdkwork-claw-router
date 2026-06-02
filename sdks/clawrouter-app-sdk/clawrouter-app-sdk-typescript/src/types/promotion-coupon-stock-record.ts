@@ -2,6 +2,8 @@
 export interface PromotionCouponStockRecord {
   /** Activation status field on promotion coupon stock record. */
   activation_status: string;
+  /** Available quantity field on promotion coupon stock record. */
+  available_quantity: string;
   /** Budget account id field on promotion coupon stock record. */
   budget_account_id?: string;
   /** Budget stop threshold bps field on promotion coupon stock record. */
@@ -12,6 +14,8 @@ export interface PromotionCouponStockRecord {
   can_resend: boolean;
   /** Cancel until field on promotion coupon stock record. */
   cancel_until?: string;
+  /** Claimed quantity field on promotion coupon stock record. */
+  claimed_quantity: string;
   /** Code mode field on promotion coupon stock record. */
   code_mode: string;
   /** Code prefix field on promotion coupon stock record. */
@@ -22,10 +26,18 @@ export interface PromotionCouponStockRecord {
   created_by?: string;
   /** Currency code field on promotion coupon stock record. */
   currency_code: string;
+  /** Disabled quantity field on promotion coupon stock record. */
+  disabled_quantity: string;
   /** Expires at field on promotion coupon stock record. */
   expires_at?: string;
+  /** Generated quantity field on promotion coupon stock record. */
+  generated_quantity: string;
+  /** Id field on promotion coupon stock record. */
+  id?: string;
   /** Issue channel field on promotion coupon stock record. */
   issue_channel: string;
+  /** Locked quantity field on promotion coupon stock record. */
+  locked_quantity: string;
   /** Max claims per natural person field on promotion coupon stock record. */
   max_claims_per_natural_person?: number;
   /** Max claims per subject field on promotion coupon stock record. */
@@ -42,6 +54,12 @@ export interface PromotionCouponStockRecord {
   overspend_policy: string;
   /** Per subject limit field on promotion coupon stock record. */
   per_subject_limit?: string;
+  /** Redeemed quantity field on promotion coupon stock record. */
+  redeemed_quantity: string;
+  /** Requested quantity field on promotion coupon stock record. */
+  requested_quantity: string;
+  /** Returned quantity field on promotion coupon stock record. */
+  returned_quantity: string;
   /** Starts at field on promotion coupon stock record. */
   starts_at?: string;
   /** Status field on promotion coupon stock record. */

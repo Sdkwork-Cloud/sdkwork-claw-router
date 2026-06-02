@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltsheet@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltsheet-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltsheet-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:19db24a4bf678ef692e6415804e53139632e6929a6cb20fb32d1c3c080b34505",

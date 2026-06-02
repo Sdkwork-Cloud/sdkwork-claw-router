@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spotify-agent@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-spotify-agent-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spotify-agent-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3864e6902be7f1b7c2ee7f1e2dcc8e0d194d4603e2e607f58063008406e6f24e",

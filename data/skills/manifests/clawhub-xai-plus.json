@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xai-plus@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-xai-plus-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xai-plus-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5137ce79dd2154971c67b78230ec9848558a0a89513787a04f131de17191ebd2",

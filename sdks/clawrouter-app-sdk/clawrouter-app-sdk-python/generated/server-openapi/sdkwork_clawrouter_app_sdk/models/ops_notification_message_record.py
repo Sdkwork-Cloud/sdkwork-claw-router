@@ -19,8 +19,11 @@ class OpsNotificationMessageRecord:
     message_type: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
     organization_id: Optional[str] = None
+    priority: Optional[int] = None
     published_at: Optional[str] = None
+    scope_type: Optional[str] = None
     severity: Optional[str] = None
+    show_as_popup: Optional[bool] = None
     status: Optional[str] = None
     summary: Optional[str] = None
     tenant_id: Optional[str] = None

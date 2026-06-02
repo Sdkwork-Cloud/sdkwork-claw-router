@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mail-imap-sync@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-mail-imap-sync-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mail-imap-sync-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:1b93e943de38bf991aca3c02f3244a69bee6f9070cc4c13847e5099c85c70480",

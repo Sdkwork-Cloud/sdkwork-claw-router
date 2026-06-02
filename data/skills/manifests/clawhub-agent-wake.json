@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-wake@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-wake-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-wake-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c7cff04e4bdaf71576a0d09caa06d7655eeba580adf3e64b204193d00a68fd8a",

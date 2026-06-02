@@ -9,11 +9,13 @@ public class PromotionOfferRecord {
     private String currentOfferVersionId;
     private String description;
     private String endsAt;
+    private String id;
     private String name;
     private String offerCode;
     private String offerNo;
     private String offerType;
     private String organizationId;
+    private Integer priority;
     private String startsAt;
     private String status;
     private String tenantId;
@@ -76,6 +78,14 @@ public class PromotionOfferRecord {
         this.endsAt = endsAt;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -114,6 +124,14 @@ public class PromotionOfferRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     public String getStartsAt() {

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-persistence@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-persistence-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-persistence-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2dc80b7d392a141371367bd06247ab0e0e7aaa9be21d0c2bca52618f1c6f2a4",

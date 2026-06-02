@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/startup-helper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-startup-helper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-startup-helper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:885874f11d345e33d862b9632017369fc35d02830ed040e1e9fe12979e3e9a44",

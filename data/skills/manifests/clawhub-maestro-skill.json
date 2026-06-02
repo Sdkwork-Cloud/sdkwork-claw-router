@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maestro-skill@0.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-maestro-skill-0.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maestro-skill-0.2.4.json"
+      },
       "version": "0.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:98b11183a12d783158c13194d542c9c84a8923d2b471a54400e0f6d9aa762922",

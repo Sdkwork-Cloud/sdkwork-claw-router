@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/e2e-test-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-e2e-test-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-e2e-test-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:127526cd6e526ce660974e6a6bec0434a73b4e12d0e4e81360306cdf4fb95bb8",

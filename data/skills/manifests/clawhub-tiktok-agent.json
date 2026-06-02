@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tiktok-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tiktok-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:991ec32fcf24f6a1d5c46da36fdd04df3a3b4b35305bb98574ec537cd714ec5c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stacking@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stacking-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stacking-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e71dfac01802f00053e58866c18ea01cb63f6dc1865dfca4c01e6ffbb20b37fb",

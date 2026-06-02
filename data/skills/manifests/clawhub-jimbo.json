@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jimbo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jimbo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jimbo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e31edb2b3cd64e54bd97b36e758a5df0027129b04c7489b4bdeed82f91dc28df",

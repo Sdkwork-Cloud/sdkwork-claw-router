@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mediwise-health-suite@2.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-mediwise-health-suite-2.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mediwise-health-suite-2.0.8.json"
+      },
       "version": "2.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:c59f542ff9c0f24acb3c8c903df9d0e960575ac4ca85dc6372e0eb42e295571f",

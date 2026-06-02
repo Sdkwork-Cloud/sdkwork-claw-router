@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96a19c1c6156c8a2ecedd0feb524f5f1fe4f1cd44b962597f9f59e39eb1abf93",

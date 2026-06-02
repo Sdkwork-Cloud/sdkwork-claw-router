@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pr-generator@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pr-generator-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pr-generator-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e737b567b6a8b7b439e5f6e83bdda8e9ef47abda16246efaa8fa660ea4b3b1de",

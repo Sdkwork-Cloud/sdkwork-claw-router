@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-prompt-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-prompt-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-prompt-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e160606a5bd950a758eb622c9a55ab6c676e48da520e741c519eee54189a7104",

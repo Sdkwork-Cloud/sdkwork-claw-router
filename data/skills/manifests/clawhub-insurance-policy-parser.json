@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/insurance-policy-parser@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-insurance-policy-parser-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-insurance-policy-parser-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f16a13631bc168df9b90a2b0d38ee50caad53eeffb4ce1c6da54f5427b852ec0",

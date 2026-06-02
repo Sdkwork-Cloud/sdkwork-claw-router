@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-price-alerter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-price-alerter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-price-alerter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e4e6351aea791d64cdf0fb0b92c238921b030e6127ca465fb045eccec682be01",

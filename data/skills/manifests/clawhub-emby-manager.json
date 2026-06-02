@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/emby-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-emby-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-emby-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31372183251f0d15a0a83620144e5a1aa2c5974642af400ed5fe1a8baf0ed258",

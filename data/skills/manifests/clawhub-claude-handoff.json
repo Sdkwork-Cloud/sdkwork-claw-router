@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-handoff@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-handoff-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-handoff-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:397092ed3348ec90157ddab60596f2d324bd8750200cd5c240fd339dee9a1df4",

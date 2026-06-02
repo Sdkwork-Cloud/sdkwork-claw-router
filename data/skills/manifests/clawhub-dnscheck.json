@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dnscheck@2.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-dnscheck-2.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dnscheck-2.0.5.json"
+      },
       "version": "2.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:402c4c3f60a55943873df3ad753066a5cde634ce1c9719ecb80447008608dc22",

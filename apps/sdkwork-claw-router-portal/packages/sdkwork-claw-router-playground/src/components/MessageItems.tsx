@@ -1,6 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { AlertCircle, Clock, Loader2, PlaySquare, Play } from 'lucide-react';
-import { readSdkworkGenerationMediaThumb } from '@sdkwork/generation-pc-react/react';
+import {
+  readSdkworkGenerationMediaThumb,
+  readSdkworkGenerationMediaUrl,
+} from '@sdkwork/generation-pc-react/react';
 import { getDeterministicWaveBarStyle } from './waveform';
 import type { PlaygroundHistoryItem, PlaygroundMedia, PlaygroundPreviewSetter } from '../playgroundTypes';
 
@@ -15,7 +18,7 @@ const getGridColsClass = (length: number) => {
 
 export function VideoMessageItem({ item, setPreviewItem }: { item: PlaygroundHistoryItem, setPreviewItem: PlaygroundPreviewSetter }) {
   const { t } = useTranslation();
-  const videos = item.videos || (item.url ? [item.url] : []);
+  const videos = item.videos || (item.asset?.kind === 'video' ? [item.asset] : []);
   const gridClass = getGridColsClass(videos.length);
 
   if (videos.length === 0) return <GenerationAssetPlaceholder item={item} />;
@@ -38,7 +41,8 @@ export function VideoMessageItem({ item, setPreviewItem }: { item: PlaygroundHis
 }
 
 export function MusicMessageItem({ item, setPreviewItem }: { item: PlaygroundHistoryItem, setPreviewItem: PlaygroundPreviewSetter }) {
-  if (!item.url) {
+  const assetSrc = readSdkworkGenerationMediaUrl(item.asset);
+  if (!assetSrc) {
     return <GenerationAssetPlaceholder item={item} />;
   }
 
@@ -66,18 +70,25 @@ export function ImagesMessageItem({ item, setPreviewItem }: { item: PlaygroundHi
 
   return (
     <div className={`grid ${gridClass} gap-3 w-full`}>
-       {images.map((img: string, i: number) => (
+       {images.map((img: PlaygroundMedia, i: number) => {
+         const imageSrc = readSdkworkGenerationMediaUrl(img);
+         if (!imageSrc) {
+           return null;
+         }
+         return (
          <div key={i} className={`${aspectClass} relative rounded-xl overflow-hidden border border-white/5 shadow-sm cursor-pointer group`} onClick={() => setPreviewItem({ ...item, type: 'image', activeIndex: i })}>
-            <img src={img} alt={t('playground.generation.imageAlt')} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+            <img src={imageSrc} alt={t('playground.generation.imageAlt')} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
          </div>
-       ))}
+         );
+       })}
     </div>
   );
 }
 
 export function AudioMessageItem({ item, setPreviewItem }: { item: PlaygroundHistoryItem, setPreviewItem: PlaygroundPreviewSetter }) {
-  if (!item.url) {
+  const assetSrc = readSdkworkGenerationMediaUrl(item.asset);
+  if (!assetSrc) {
     return <GenerationAssetPlaceholder item={item} />;
   }
 

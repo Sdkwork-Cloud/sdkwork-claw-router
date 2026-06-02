@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-x-sear@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-x-sear-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-x-sear-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:21069a126cbbd8e0cdfc5645d50dee7b42b4552f83856bec08b077c812caed53",

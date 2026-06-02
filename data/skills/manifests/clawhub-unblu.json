@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unblu@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-unblu-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unblu-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:35fdd784aa30ef9d89312b303e79f6d0799b14151fdb180115e3b9ef54e83395",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yfinance@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-yfinance-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yfinance-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2afc2fecab0477025c8857c935eb9723541bf91c4b7a63396468343ecb9ba97d",

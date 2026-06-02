@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/remote-skill-engine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-remote-skill-engine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-remote-skill-engine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2083a47626e2e7fe48c2155c0b39658d1390f7fb4a1208550c8cb1e2b31aad7",

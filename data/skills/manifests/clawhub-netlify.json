@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/netlify@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-netlify-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-netlify-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b90b4cde7bbf95ebb792d3557ac92714028e8533ca5e94f2d2e4bc78f8f7f51a",

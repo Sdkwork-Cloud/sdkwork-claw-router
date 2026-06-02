@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scraper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scraper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scraper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09cb7b8803879021e1da15880a58515cd1d31e6740d722f6a0f262c49e130729",

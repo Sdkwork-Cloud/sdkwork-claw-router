@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lapse-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lapse-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lapse-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6038f0a193aeb381ab2da589c5122f218b1e68f383966503dcce19f76780c473",

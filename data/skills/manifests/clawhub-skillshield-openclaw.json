@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skillshield-openclaw@2.1.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-skillshield-openclaw-2.1.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skillshield-openclaw-2.1.8.json"
+      },
       "version": "2.1.8",
       "runtime": "metadata",
       "checksumHash": "sha256:34f2cef68ec0b90d2bd09f88aebd6646c39e0ab17086c46cc62a51421149bfb5",

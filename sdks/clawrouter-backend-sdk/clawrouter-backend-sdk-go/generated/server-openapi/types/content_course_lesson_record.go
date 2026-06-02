@@ -26,5 +26,5 @@ type ContentCourseLessonRecord struct {
 	UpdatedAt string `json:"updated_at"`
 	Uuid string `json:"uuid"`
 	Version string `json:"version"`
-	VideoUrl string `json:"video_url"`
+	Video MediaResource `json:"video"`
 }

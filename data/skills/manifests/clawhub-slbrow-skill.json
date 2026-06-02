@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slbrow-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slbrow-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slbrow-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d33fa07a43cdf1040037455949cae34f28f7882b45df8352807d916336734c90",

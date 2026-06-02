@@ -7,13 +7,12 @@ public class AdminAppItemResponse {
     private String accessUrl;
     private String appKey;
     private String appType;
+    private MediaResource artifact;
     private String bundleId;
     private AdminAppConfig config;
     private String createdAt;
     private String description;
-    private String downloadUrl;
-    private Map<String, String> icon;
-    private String iconUrl;
+    private MediaResource icon;
     private String id;
     private Map<String, String> installConfig;
     private Map<String, String> installPlatforms;
@@ -56,6 +55,14 @@ public class AdminAppItemResponse {
         this.appType = appType;
     }
 
+    public MediaResource getArtifact() {
+        return this.artifact;
+    }
+
+    public void setArtifact(MediaResource artifact) {
+        this.artifact = artifact;
+    }
+
     public String getBundleId() {
         return this.bundleId;
     }
@@ -88,28 +95,12 @@ public class AdminAppItemResponse {
         this.description = description;
     }
 
-    public String getDownloadUrl() {
-        return this.downloadUrl;
-    }
-
-    public void setDownloadUrl(String downloadUrl) {
-        this.downloadUrl = downloadUrl;
-    }
-
-    public Map<String, String> getIcon() {
+    public MediaResource getIcon() {
         return this.icon;
     }
 
-    public void setIcon(Map<String, String> icon) {
+    public void setIcon(MediaResource icon) {
         this.icon = icon;
-    }
-
-    public String getIconUrl() {
-        return this.iconUrl;
-    }
-
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
     }
 
     public String getId() {

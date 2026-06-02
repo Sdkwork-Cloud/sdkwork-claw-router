@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personal-accounting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-personal-accounting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personal-accounting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31108f566fa215ab1b15266ddf14cfe90449dcb348a336751612a6b104ddd399",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customer-service-escalation-kit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-customer-service-escalation-kit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customer-service-escalation-kit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:54978f7557c9c6c5493f816d82c3ea11d52fb535383ac49ddd204a8f80d39c78",

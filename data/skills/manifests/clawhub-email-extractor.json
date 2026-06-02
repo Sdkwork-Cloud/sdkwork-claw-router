@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f88174db76ca0ff4a83cb264b90814999f7a46762e3665868b6a5904ec876614",

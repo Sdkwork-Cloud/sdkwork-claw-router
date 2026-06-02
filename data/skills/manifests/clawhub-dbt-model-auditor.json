@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dbt-model-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dbt-model-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dbt-model-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14c55eaa76d16deef598dd814210760fbfb70b0d88250e1d1c4d399887a63499",

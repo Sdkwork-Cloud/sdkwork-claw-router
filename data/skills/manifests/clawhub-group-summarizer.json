@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/group-summarizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-group-summarizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-group-summarizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d8d0a3b51cca9e3892657bf35a8c06dbe3d57df2791ca5a984c880fe6c284b13",

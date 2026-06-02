@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shift-scheduler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shift-scheduler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shift-scheduler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:30f64bf4ba335b0d16ae769acfae043bb2b193e83b5a682aa58db16ba3de4038",

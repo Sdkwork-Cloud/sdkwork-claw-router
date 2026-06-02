@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/furnace@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-furnace-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-furnace-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:36a4dc2e673e575786761e9f2369ec8f0cb3fa012e35db81940d6fbb5c524bf4",

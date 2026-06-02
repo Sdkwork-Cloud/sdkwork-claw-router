@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inventory-forecast@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-inventory-forecast-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inventory-forecast-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e4ed25136e1937ec937b452b407b4732a1fd836dae69d3ab77366c74dc853070",

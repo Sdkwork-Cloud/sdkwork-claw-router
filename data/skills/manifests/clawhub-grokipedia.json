@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grokipedia@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grokipedia-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grokipedia-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1fa72001bc0dea00eda08d779f3667d776ec26580b97bc5e4a9a189a6126b8c",

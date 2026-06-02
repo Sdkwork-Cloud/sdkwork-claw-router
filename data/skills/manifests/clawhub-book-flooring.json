@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-flooring@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-flooring-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-flooring-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c7bb8f6f65e5b802759382d831419e2bd329ab1a20aff941994efa2f76240a09",

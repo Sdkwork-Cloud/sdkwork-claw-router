@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hostcheck@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hostcheck-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hostcheck-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2ba6d2011ec29d2064946c100532dd0a8fd27f818306ff5a7145de17599a7011",

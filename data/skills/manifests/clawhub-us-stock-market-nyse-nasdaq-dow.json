@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/us-stock-market-nyse-nasdaq-dow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-us-stock-market-nyse-nasdaq-dow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-us-stock-market-nyse-nasdaq-dow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7a5c8a2dfaf59654c814e0db9894554d676f1694ea395a6e90d05db3e45a84f",

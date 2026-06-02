@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multi-agent-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multi-agent-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1e132c0d34851ed1e218b3488c5ea719922334ce9946e5c67d7093804604454",

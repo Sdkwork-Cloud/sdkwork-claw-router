@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/more-agent-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-more-agent-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-more-agent-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6805ec944843c98f856b4f72e28c11fdaace8b7733215c67858ab054bef968c7",

@@ -183,11 +183,8 @@ frontend_operations:
         nullable: true
         minLength: 1
         maxLength: 2048
-      qrCodeImageUrl:
-        type: string
-        nullable: true
-        minLength: 1
-        maxLength: 2048
+      qrCode:
+        $ref: '#/components/schemas/MediaResource'
 - route: /admin/wallet
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-wallet/src/walletService.ts
   operation: backendWalletExchangeRulesList

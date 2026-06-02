@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-summarize@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-summarize-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-summarize-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:90c25ed63ef9d9da954607de34819bc4c13b8e9b77ed7e3d1f8daf5572d1c327",

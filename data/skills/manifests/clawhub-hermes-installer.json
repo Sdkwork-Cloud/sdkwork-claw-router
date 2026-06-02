@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hermes-installer@1.1.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-hermes-installer-1.1.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hermes-installer-1.1.7.json"
+      },
       "version": "1.1.7",
       "runtime": "metadata",
       "checksumHash": "sha256:ea7465d0bf805b38bb4b42b3de8cfd0ab3c5ca629b668f9929d6ab89c47a5ae6",

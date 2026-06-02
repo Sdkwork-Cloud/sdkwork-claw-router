@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-md@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-md-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-md-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df73bf3e1d3ef22b940c1ba95dd81e8a318d1724b7364b6dd43dd2c4a5f1030c",

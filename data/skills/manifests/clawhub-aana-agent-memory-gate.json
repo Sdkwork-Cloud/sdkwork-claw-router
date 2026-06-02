@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aana-agent-memory-gate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aana-agent-memory-gate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aana-agent-memory-gate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:322bc50731774b326bbf372fc78919307085290e13e6d17e0577c20f8aaac866",

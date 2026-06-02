@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/role-configurator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-role-configurator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-role-configurator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8bb6d62ffaa805d32708ebd195df81c81af07aa69b50cb2f5323862e47d50465",

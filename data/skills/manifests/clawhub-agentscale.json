@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentscale@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentscale-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentscale-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:9dd89a8f863881f6f2c23c90f6a82cd094493056415b12b815a9c4be79f49003",

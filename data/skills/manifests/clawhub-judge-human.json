@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/judge-human@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-judge-human-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-judge-human-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:417c0115fe3c0f86207f834b92824a3a900f860ca7e9bd491851a33f8cb58866",

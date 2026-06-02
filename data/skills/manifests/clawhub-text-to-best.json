@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-best@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-best-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-best-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c9265881543aabae917d50de4fabd0d633d2431ea65038d320f20942046682e",

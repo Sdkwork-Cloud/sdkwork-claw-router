@@ -6,6 +6,7 @@ public class CommerceCheckoutSessionRecord {
     private String createdAt;
     private String currencyCode;
     private String expiresAt;
+    private String id;
     private String idempotencyKey;
     private String organizationId;
     private String ownerUserId;
@@ -46,6 +47,14 @@ public class CommerceCheckoutSessionRecord {
 
     public void setExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

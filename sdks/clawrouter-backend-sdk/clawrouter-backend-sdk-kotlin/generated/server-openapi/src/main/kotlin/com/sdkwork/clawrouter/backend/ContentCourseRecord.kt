@@ -26,7 +26,7 @@ data class ContentCourseRecord(
     val studentsCount: String? = null,
     val tags: Map<String, String>? = null,
     val tenantId: String? = null,
-    val thumbnailUrl: String? = null,
+    val thumbnail: MediaResource? = null,
     val title: String? = null,
     val updatedAt: String? = null,
     val uuid: String? = null,

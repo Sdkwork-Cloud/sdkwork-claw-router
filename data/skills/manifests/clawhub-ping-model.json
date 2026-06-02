@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ping-model@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ping-model-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ping-model-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:82fcc24370c2b15e1625581665e0f4f4c5992684cbc1455ba444614f0b077ab0",

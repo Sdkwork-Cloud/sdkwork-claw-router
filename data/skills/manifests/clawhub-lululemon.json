@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lululemon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lululemon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lululemon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f55d49aab4836825e66c26c89a7ea029be580da4129f372c3992733ee1c00a71",

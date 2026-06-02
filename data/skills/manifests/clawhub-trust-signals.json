@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trust-signals@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trust-signals-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trust-signals-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc482eb512aaa6a1522c63943ba467af46c594c48999d7054c2714e611091544",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wordpress-selfhosted@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-selfhosted-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wordpress-selfhosted-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e85ca9bddcbb24db15c00418ea0a380cce50bb66183d389049a00a70ab991136",

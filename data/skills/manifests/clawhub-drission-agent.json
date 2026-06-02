@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drission-agent@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-drission-agent-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drission-agent-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec1389106aab584e0c0597c70cfbe6664f12a7a324261e75869addf20bf7d96d",

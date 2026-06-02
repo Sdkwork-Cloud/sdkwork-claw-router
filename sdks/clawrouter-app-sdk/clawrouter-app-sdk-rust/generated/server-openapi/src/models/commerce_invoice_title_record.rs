@@ -6,6 +6,10 @@ pub struct CommerceInvoiceTitleRecord {
     /// Created at field on commerce invoice title record.
     pub created_at: String,
 
+    /// Id field on commerce invoice title record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Name field on commerce invoice title record.
     pub name: String,
 

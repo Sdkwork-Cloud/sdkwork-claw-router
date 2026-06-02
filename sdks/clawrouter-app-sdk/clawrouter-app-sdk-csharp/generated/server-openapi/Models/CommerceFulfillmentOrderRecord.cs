@@ -11,6 +11,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? CreatedAt { get; set; }
         public string? FulfillmentNo { get; set; }
         public string? FulfillmentType { get; set; }
+        public string? Id { get; set; }
         public string? OrderId { get; set; }
         public string? OrganizationId { get; set; }
         public string? ProviderCode { get; set; }

@@ -5,12 +5,14 @@ public class CommerceProductCategoryRecord {
     private String categoryNo;
     private String createdAt;
     private String description;
-    private String iconUrl;
+    private MediaResource icon;
+    private String id;
     private Integer levelNo;
     private String name;
     private String organizationId;
     private String parentId;
     private String path;
+    private String sortOrder;
     private String status;
     private String tenantId;
     private String updatedAt;
@@ -39,12 +41,20 @@ public class CommerceProductCategoryRecord {
         this.description = description;
     }
 
-    public String getIconUrl() {
-        return this.iconUrl;
+    public MediaResource getIcon() {
+        return this.icon;
     }
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+    public void setIcon(MediaResource icon) {
+        this.icon = icon;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Integer getLevelNo() {
@@ -85,6 +95,14 @@ public class CommerceProductCategoryRecord {
 
     public void setPath(String path) {
         this.path = path;
+    }
+
+    public String getSortOrder() {
+        return this.sortOrder;
+    }
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
     }
 
     public String getStatus() {

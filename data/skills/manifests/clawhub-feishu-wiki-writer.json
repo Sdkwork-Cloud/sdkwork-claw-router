@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-wiki-writer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-wiki-writer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-wiki-writer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7cf50602242b48ee8caee288b031f9ad6e382b38833330f1f83f97ad0c60744f",

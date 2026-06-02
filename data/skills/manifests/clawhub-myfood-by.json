@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/myfood-by@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-myfood-by-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-myfood-by-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e7b507773396b2e5a0bf33ed4ea86324db8f1b320a1dff30838cdeb4fde311b",

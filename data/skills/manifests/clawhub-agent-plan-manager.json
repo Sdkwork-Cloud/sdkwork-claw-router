@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-plan-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-plan-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-plan-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:58a2e3071d42dc8ba398b87ed720a551a22c1301b197a270bff753d4d0a6df77",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mysql-to-oracle-sql@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mysql-to-oracle-sql-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mysql-to-oracle-sql-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb842433b3e6d9b0d4553e57dcab956d7b084fcc16502ebcf5f88702f50cc09a",

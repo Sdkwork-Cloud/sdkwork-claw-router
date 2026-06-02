@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-agent@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-agent-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-agent-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d3018153676a59cf42c31f79f02abd99c2974fafe87e30ba834a35f095da0a61",

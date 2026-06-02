@@ -6,6 +6,7 @@ type CommerceOrderRecord struct {
 	CreatedAt string `json:"created_at"`
 	CurrencyCode string `json:"currency_code"`
 	ExpiredAt string `json:"expired_at"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	OrderNo string `json:"order_no"`
 	OrganizationId string `json:"organization_id"`

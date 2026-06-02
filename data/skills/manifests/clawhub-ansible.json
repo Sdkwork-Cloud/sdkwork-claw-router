@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ansible@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ansible-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ansible-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6cd1373314f8b213eb3c2c295c648579a1aac8c1ca13d7ffd0c97b992493a402",

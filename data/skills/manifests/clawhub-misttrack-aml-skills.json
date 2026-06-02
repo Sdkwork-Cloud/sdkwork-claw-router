@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/misttrack-aml-skills@0.2.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-misttrack-aml-skills-0.2.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-misttrack-aml-skills-0.2.12.json"
+      },
       "version": "0.2.12",
       "runtime": "metadata",
       "checksumHash": "sha256:6e5da21ac488b6ad97ef747c33f16db874a490779f260162947cd280932314db",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/neuron@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-neuron-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-neuron-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3153acd2021dbbd75f27e22bfba4373043ce5349d5bd35ec6a7742148d5e2325",

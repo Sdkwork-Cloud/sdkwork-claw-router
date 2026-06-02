@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-dev-setup@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-dev-setup-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-dev-setup-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:38bb01069d8a313657f3972a68fe1848a4e155036781d320cacb077b5df8a44d",

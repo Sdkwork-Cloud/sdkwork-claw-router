@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-receipt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-receipt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-receipt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35722b31d040dd30140a8fa352ad383a464851af82a8a24597f7a6a55ec09e6c",

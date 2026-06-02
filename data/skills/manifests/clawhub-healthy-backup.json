@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/healthy-backup@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-healthy-backup-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-healthy-backup-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:a20959de277fa7c76214cb979227644c2dcd63f01bcb9fe21483e9305049a87b",

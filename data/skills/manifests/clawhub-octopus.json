@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/octopus@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-octopus-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-octopus-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a987e56ee348ddf8aaad3fb2f9c0c580dfb5c614ce9f31566bfd1b2fa3d354f0",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/limited-info-subagent-skill-verify@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-limited-info-subagent-skill-verify-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-limited-info-subagent-skill-verify-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3510820def471c7af42c6d0de13737d355fac8a6f7a4e350c8c703a9ea2a40c5",

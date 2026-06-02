@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc41a0a9714791b6f1229de46af61f923487f180bcccb48cdb9d9fd0b3527480",

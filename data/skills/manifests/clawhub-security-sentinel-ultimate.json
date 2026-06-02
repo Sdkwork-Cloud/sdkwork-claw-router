@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-sentinel-ultimate@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-sentinel-ultimate-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-sentinel-ultimate-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:087f7998c6f25f9d23af5b79cf282c18a0e6c7885e6d31a8b4a1d9549f3ba23c",

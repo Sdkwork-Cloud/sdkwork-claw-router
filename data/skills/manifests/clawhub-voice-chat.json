@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-chat@2.3.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-chat-2.3.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-chat-2.3.5.json"
+      },
       "version": "2.3.5",
       "runtime": "metadata",
       "checksumHash": "sha256:6ff6c2eb627117ca2bb104aef0ff14d0c7a0380d1675df047639289ca009478f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/romania@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-romania-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-romania-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67a074b9c22e855abad1a8b36b675096f2bea798c4dfde68aa033a0ea257ca63",

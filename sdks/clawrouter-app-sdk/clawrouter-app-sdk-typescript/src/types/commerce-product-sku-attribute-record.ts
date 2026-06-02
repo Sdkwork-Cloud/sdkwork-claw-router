@@ -8,6 +8,8 @@ export interface CommerceProductSkuAttributeRecord {
   created_at: string;
   /** Custom value field on commerce product sku attribute record. */
   custom_value?: string;
+  /** Id field on commerce product sku attribute record. */
+  id?: string;
   /** Organization id field on commerce product sku attribute record. */
   organization_id?: string;
   /** Sku id field on commerce product sku attribute record. */

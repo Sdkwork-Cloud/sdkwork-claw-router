@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beancount-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-beancount-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beancount-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2d25357a3358417ebb218e9de1c63f74d606a6359a362452603b650516b7cafc",

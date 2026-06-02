@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/headless-browser@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-headless-browser-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-headless-browser-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ae94b29d13c600bd864dd21d00c38edcd567877b458079d07516283735f83cb1",

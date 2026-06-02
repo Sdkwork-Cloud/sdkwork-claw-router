@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/turn-any-book-into-a-working-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-turn-any-book-into-a-working-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-turn-any-book-into-a-working-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9dff976bdc6e09bbf636743f4df824c1a408de3f2202de2d9f91deb5c75927ee",

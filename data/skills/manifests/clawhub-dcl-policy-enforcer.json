@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dcl-policy-enforcer@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-dcl-policy-enforcer-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dcl-policy-enforcer-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:b66e829864e2e644037c8bd51fcccee6c5a6c821dd0bf557b63543f90f491e7d",

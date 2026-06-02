@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/media-cli-local@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-media-cli-local-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-media-cli-local-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55b5ae5bf923d32c95a3f725a71baa9f5ec654a3cd5535c47884b77adc20e461",

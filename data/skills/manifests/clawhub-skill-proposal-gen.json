@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-proposal-gen@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-proposal-gen-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-proposal-gen-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ca578daf2bcc1cf1e0bdc49f52553d5ca04dbab91617e86cf6b630bcee5d84ab",

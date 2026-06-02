@@ -6,6 +6,9 @@ pub struct PromotionCouponStockRecord {
     /// Activation status field on promotion coupon stock record.
     pub activation_status: String,
 
+    /// Available quantity field on promotion coupon stock record.
+    pub available_quantity: String,
+
     /// Budget account id field on promotion coupon stock record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub budget_account_id: Option<String>,
@@ -25,6 +28,9 @@ pub struct PromotionCouponStockRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub cancel_until: Option<String>,
 
+    /// Claimed quantity field on promotion coupon stock record.
+    pub claimed_quantity: String,
+
     /// Code mode field on promotion coupon stock record.
     pub code_mode: String,
 
@@ -42,12 +48,25 @@ pub struct PromotionCouponStockRecord {
     /// Currency code field on promotion coupon stock record.
     pub currency_code: String,
 
+    /// Disabled quantity field on promotion coupon stock record.
+    pub disabled_quantity: String,
+
     /// Expires at field on promotion coupon stock record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub expires_at: Option<String>,
 
+    /// Generated quantity field on promotion coupon stock record.
+    pub generated_quantity: String,
+
+    /// Id field on promotion coupon stock record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Issue channel field on promotion coupon stock record.
     pub issue_channel: String,
+
+    /// Locked quantity field on promotion coupon stock record.
+    pub locked_quantity: String,
 
     /// Max claims per natural person field on promotion coupon stock record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -76,6 +95,15 @@ pub struct PromotionCouponStockRecord {
     /// Per subject limit field on promotion coupon stock record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub per_subject_limit: Option<String>,
+
+    /// Redeemed quantity field on promotion coupon stock record.
+    pub redeemed_quantity: String,
+
+    /// Requested quantity field on promotion coupon stock record.
+    pub requested_quantity: String,
+
+    /// Returned quantity field on promotion coupon stock record.
+    pub returned_quantity: String,
 
     /// Starts at field on promotion coupon stock record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

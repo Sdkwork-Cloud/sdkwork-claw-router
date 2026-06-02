@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/free-quota-image-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-free-quota-image-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-free-quota-image-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:08bc33802cbb551333dd2e2647f7435a7ab1363d468b365e5c7c6a10fda0e9db",

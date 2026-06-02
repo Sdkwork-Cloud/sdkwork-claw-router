@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apollo-enrichment@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apollo-enrichment-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apollo-enrichment-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb1dfada698de22ebcd4e4ffc6c6c38adceeed879fff99acc7a776564211bb80",

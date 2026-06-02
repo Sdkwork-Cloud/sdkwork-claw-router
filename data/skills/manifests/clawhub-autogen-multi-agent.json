@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/autogen-multi-agent@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-autogen-multi-agent-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-autogen-multi-agent-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f5d3ec6f59fff4335256db44524030f5dd99a0d6c2654ff5d0d5342cd049c712",

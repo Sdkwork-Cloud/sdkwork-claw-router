@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fundreport-scrape@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fundreport-scrape-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fundreport-scrape-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e17a103502f77183c0232014b57dc1ff7ec334a64cc7e2d4b13f40ded8662b85",

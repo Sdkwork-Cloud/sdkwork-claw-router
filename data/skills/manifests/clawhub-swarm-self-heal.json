@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swarm-self-heal@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-swarm-self-heal-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swarm-self-heal-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0c7dc242d8dce5fd2167a812e5562fcbd136328f89559dfb84aad22a3d7bdcee",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/microsoft-calendar@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-calendar-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-microsoft-calendar-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bc5f540da2be5c21521a942741f22faa6b6b9c1d0fc93cb022f5b75a08a0746c",

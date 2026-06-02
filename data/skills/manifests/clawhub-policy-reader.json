@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/policy-reader@4.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-policy-reader-4.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-policy-reader-4.0.1.json"
+      },
       "version": "4.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5ba59bfbe7a5f1c0d3ca44ef77464f8a3e704eead0d1cc973b8cd1c345dffe37",

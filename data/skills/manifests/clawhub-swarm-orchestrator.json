@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swarm-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swarm-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swarm-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b830fcaf2b1f9f34139c52533e5c68255b0907b1c49c7dc706cb1cdf95de5035",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slack-reader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slack-reader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slack-reader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98c6059d6f31d0156846409ad06cc8b7fe8e68e76e0824ac503cfae818403653",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/file-integrity-monitoring@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-file-integrity-monitoring-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-file-integrity-monitoring-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b88c77df3ad4b0989e5d3131d50d70e470f2776514ba3c87a98bf90c53890af",

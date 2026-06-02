@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/country-info@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-country-info-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-country-info-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66a72c0259459e4f157c9f028820381392d773ba0ee611074f74d402be7b58fa",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subtitle-downloader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subtitle-downloader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subtitle-downloader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:39084a16619224dd85df5b7121252976215b09e91610e0f81e7a64040e30ef3c",

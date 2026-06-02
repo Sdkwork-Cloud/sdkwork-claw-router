@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-investment-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-investment-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-investment-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e253dc6c3b88c29f2462d48582ada546ab382e3ea33e2a07e9435a74d5e82311",

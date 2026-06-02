@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/action-figure-skill@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-action-figure-skill-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-action-figure-skill-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0751dafebb407b5e88661f0aa424f4d102968570d31a04cbe176f4442dd2fb2e",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-updater-gateway-cron@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-updater-gateway-cron-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-updater-gateway-cron-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:021f2dca9a789103f2a9943885e1818f984531e788a194d62d2e99a7d04666ce",

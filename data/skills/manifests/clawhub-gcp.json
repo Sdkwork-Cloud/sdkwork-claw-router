@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0c13d760c2c69e39128ddcc75cec12fa0f76b6785e10e2723f0d6841f0298700",

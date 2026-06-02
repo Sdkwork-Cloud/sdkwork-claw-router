@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gate-news-briefing-staging@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gate-news-briefing-staging-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gate-news-briefing-staging-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bf930db3eb03808458a6f6a6010526fd48586930fd14765caa6b10b3a03f4f8f",

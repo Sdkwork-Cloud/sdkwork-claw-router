@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kirk-marketing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kirk-marketing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kirk-marketing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:39abaea20f71e78c0375272defb678f181de0582ff0738bdc03ceb9ed3095e18",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bom@0.76.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-0.76.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bom-0.76.4.json"
+      },
       "version": "0.76.4",
       "runtime": "metadata",
       "checksumHash": "sha256:eb9b5a4e90acf27c1b1fd734451b42a0b6b53c7a6cf9b230ad1bff141c2156a4",

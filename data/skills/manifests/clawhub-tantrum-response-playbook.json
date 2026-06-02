@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tantrum-response-playbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tantrum-response-playbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tantrum-response-playbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5dd20614a36ba3f4c43870fb92154cba6317882ddee65be4855f3b14a5fa91dc",

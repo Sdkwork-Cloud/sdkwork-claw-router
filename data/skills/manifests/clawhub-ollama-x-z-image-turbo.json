@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ollama-x-z-image-turbo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ollama-x-z-image-turbo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ollama-x-z-image-turbo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bfd9d98502b52b27d964414a294806cea46267f15bc04f79e52f648381ba1b6d",

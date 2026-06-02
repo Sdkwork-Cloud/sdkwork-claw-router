@@ -9,6 +9,7 @@ type CommerceAccountLedgerEntryRecord struct {
 	BusinessType string `json:"business_type"`
 	CreatedAt string `json:"created_at"`
 	Direction string `json:"direction"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	OrganizationId string `json:"organization_id"`
 	OwnerUserId string `json:"owner_user_id"`

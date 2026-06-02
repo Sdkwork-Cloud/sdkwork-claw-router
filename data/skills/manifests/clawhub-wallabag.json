@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wallabag@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wallabag-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wallabag-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3f310a781a5665d3a278ce329b8b9780ce217fd180e147f684ddb0229513b58f",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tally@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tally-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tally-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d04f0882f38a40f4d7b975072c91bac4dc3951d9b650375abf2633e709bb115e",

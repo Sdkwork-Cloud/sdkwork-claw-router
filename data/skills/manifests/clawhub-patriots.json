@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/patriots@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-patriots-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-patriots-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:310cf2955e22a09641eaccabb2307902254fd690e1fdfcac2a769d6d12195f6f",

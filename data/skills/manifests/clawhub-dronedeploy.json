@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dronedeploy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-dronedeploy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dronedeploy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:698c60460a9c43bd69fbe28b94880845e11aa30fa02780aa89deb669da44ca9a",

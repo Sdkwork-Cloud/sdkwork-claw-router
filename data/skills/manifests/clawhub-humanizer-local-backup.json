@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/humanizer-local-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-humanizer-local-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-humanizer-local-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b6935e403971554bae6c6a09be499e70597d253777619af3567e1e73d2368d9",

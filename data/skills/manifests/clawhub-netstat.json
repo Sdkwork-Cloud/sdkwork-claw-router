@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/netstat@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-netstat-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-netstat-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af2c17f211abb100b40774757c4ee9c0b2e1f4d79c4cba8f29692a43cae87332",

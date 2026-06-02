@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-production-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-production-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-production-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d06c127da9b9ac87662e4cf84de40965efbde1357bbf39ca501303c04ca59cea",

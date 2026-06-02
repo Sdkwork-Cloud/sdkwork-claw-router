@@ -24,6 +24,10 @@ pub struct CommerceRefundAttemptRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub failure_message: Option<String>,
 
+    /// Id field on commerce refund attempt record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Organization id field on commerce refund attempt record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,

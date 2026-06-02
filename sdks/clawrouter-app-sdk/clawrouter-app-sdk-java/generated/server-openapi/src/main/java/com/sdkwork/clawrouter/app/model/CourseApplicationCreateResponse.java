@@ -13,7 +13,7 @@ public class CourseApplicationCreateResponse {
     private String status;
     private String submittedAt;
     private String title;
-    private String videoUrl;
+    private MediaResource video;
 
     public Integer getApplicationId() {
         return this.applicationId;
@@ -103,11 +103,11 @@ public class CourseApplicationCreateResponse {
         this.title = title;
     }
 
-    public String getVideoUrl() {
-        return this.videoUrl;
+    public MediaResource getVideo() {
+        return this.video;
     }
 
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
+    public void setVideo(MediaResource video) {
+        this.video = video;
     }
 }

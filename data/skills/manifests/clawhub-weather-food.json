@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-food@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-food-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-food-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0a34f57cdd532fa0a7c242a21e0048626c4ab578b81f9198638e301b4c342053",

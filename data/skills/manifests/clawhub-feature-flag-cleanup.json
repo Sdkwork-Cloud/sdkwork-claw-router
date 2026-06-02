@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feature-flag-cleanup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feature-flag-cleanup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feature-flag-cleanup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:07beb429ae803864b96bd46136b15c80fafa1149cca98817568b39d328c8cbf5",

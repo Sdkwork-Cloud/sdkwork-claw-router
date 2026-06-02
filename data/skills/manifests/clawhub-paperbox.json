@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paperbox@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-paperbox-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paperbox-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f12eea1c2cf5bc2a0858b01805545bff8c04e52799ced4d6781eb18f9583d033",

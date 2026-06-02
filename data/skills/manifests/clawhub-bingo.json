@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bingo@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bingo-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bingo-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a324c2a76e5e0eda4616360420c41be3a06f2d37ef1003986ac034be664b309b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mongolian-llm@1.0.20",
-      "artifactUrl": "data/skills/artifacts/clawhub-mongolian-llm-1.0.20.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mongolian-llm-1.0.20.json"
+      },
       "version": "1.0.20",
       "runtime": "metadata",
       "checksumHash": "sha256:7558971c8a9ff03525c489aa623c731a161a69a04fad70a37668ef25ba29ef2c",

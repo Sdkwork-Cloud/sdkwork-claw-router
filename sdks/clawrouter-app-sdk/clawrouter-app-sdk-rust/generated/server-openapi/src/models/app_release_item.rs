@@ -1,11 +1,12 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// App release item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AppReleaseItem {
-    /// Download url field on app release item.
-    #[serde(rename = "downloadUrl")]
-    pub download_url: String,
+    /// Artifact field on app release item.
+    pub artifact: MediaResource,
 
     /// Id field on app release item.
     pub id: String,

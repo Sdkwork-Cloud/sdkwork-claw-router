@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bug-fixer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bug-fixer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bug-fixer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ba75c0b80166ef5f524c3de7012bae7c775f8dc3f40a861baa20d44a0807903",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/traefik@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-traefik-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-traefik-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1980eebc71e73a0bc1f8fd595bb47fafee7ebd531e399b08e03272cbba65556",

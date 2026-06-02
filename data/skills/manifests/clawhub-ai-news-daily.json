@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-news-daily@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-daily-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-news-daily-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:eb1cb90835b15056047bbfb4422e32262b18dd4d0222b2f2d4dae6d1b66a5bc6",

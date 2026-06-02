@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gecko-terminal@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gecko-terminal-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gecko-terminal-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7c951b5db8515228c141f26255a8fc3a01a100fae8fff80fc5c892738522714d",

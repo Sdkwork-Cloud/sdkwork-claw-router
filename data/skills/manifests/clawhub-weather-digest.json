@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7c72cc7b0ca13ba0b32f2d10a41bdabf75516b903380f4120b3a900a76440af",

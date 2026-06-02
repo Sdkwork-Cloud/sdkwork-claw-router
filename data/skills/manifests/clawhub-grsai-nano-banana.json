@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grsai-nano-banana@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grsai-nano-banana-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grsai-nano-banana-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3785ad428ced61e55849964e00e1462712e7dbc1b972044af4533679cec24320",

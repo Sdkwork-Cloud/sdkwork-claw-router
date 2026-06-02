@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weibo-cli@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-weibo-cli-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weibo-cli-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b8d43e5af17706e4efaec2723bef88346837c3a9bb3ee5092dd55d54fbded9d8",

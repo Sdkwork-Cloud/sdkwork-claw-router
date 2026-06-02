@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amcards@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-amcards-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amcards-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a167e9458485d7fbf2fbb97495de5d14286692bc64185cba8b683ebf9fd7e32f",

@@ -16,8 +16,11 @@ public class OpsNotificationMessageRecord {
     private String messageType;
     private Map<String, String> metadata;
     private String organizationId;
+    private Integer priority;
     private String publishedAt;
+    private String scopeType;
     private String severity;
+    private Boolean showAsPopup;
     private String status;
     private String summary;
     private String tenantId;
@@ -130,6 +133,14 @@ public class OpsNotificationMessageRecord {
         this.organizationId = organizationId;
     }
 
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
     public String getPublishedAt() {
         return this.publishedAt;
     }
@@ -138,12 +149,28 @@ public class OpsNotificationMessageRecord {
         this.publishedAt = publishedAt;
     }
 
+    public String getScopeType() {
+        return this.scopeType;
+    }
+
+    public void setScopeType(String scopeType) {
+        this.scopeType = scopeType;
+    }
+
     public String getSeverity() {
         return this.severity;
     }
 
     public void setSeverity(String severity) {
         this.severity = severity;
+    }
+
+    public Boolean getShowAsPopup() {
+        return this.showAsPopup;
+    }
+
+    public void setShowAsPopup(Boolean showAsPopup) {
+        this.showAsPopup = showAsPopup;
     }
 
     public String getStatus() {

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/veritier-fact-checking@2.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-veritier-fact-checking-2.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-veritier-fact-checking-2.1.2.json"
+      },
       "version": "2.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0c44defaf143d161c31f31bec2c48a094a517a1eea9e28f8cc8f8aeefd464226",

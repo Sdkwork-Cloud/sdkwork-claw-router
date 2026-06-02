@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/transmissionbot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-transmissionbot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-transmissionbot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e27090e0a268aebbcd1c5629c494a7a1235aa994c4130e73c6d819ded20fcd43",

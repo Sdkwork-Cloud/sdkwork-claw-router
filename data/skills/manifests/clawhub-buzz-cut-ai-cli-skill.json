@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buzz-cut-ai-cli-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-buzz-cut-ai-cli-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buzz-cut-ai-cli-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2728307f4ecc37e875090c628a8ca12fdedb951e7ed3eae9a4654febed1bf12f",

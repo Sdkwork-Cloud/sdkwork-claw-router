@@ -18,4 +18,5 @@ class CommerceMembershipEntitlementUsageRecord:
     usage_no: str
     used_amount: str
     balance_after: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None

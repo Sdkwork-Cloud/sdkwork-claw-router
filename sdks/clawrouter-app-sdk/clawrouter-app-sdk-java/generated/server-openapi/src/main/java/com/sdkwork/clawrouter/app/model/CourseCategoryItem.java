@@ -5,7 +5,7 @@ public class CourseCategoryItem {
     private String code;
     private Integer courseCount;
     private String description;
-    private String icon;
+    private String iconKey;
     private String id;
     private String label;
     private String name;
@@ -35,12 +35,12 @@ public class CourseCategoryItem {
         this.description = description;
     }
 
-    public String getIcon() {
-        return this.icon;
+    public String getIconKey() {
+        return this.iconKey;
     }
 
-    public void setIcon(String icon) {
-        this.icon = icon;
+    public void setIconKey(String iconKey) {
+        this.iconKey = iconKey;
     }
 
     public String getId() {

@@ -2,7 +2,7 @@ use std::future::Future;
 use std::pin::Pin;
 
 use crate::domain::{
-    ApiKeyGroup, ApiKeyGroupMetricSnapshot, DomainResult, GatewayAccessPolicy, GatewayApiKey,
+    ChannelGroup, ChannelGroupMetricSnapshot, DomainResult, GatewayAccessPolicy, GatewayApiKey,
     QuotaPolicy,
 };
 use crate::ports::PricingCatalog;
@@ -13,10 +13,10 @@ pub type ApiKeyManagementReadFuture<'a, T> =
 #[derive(Debug, Clone, Default, PartialEq, Eq)]
 pub struct GatewayApiKeyManagementSnapshot {
     pub api_keys: Vec<GatewayApiKey>,
-    pub api_key_groups: Vec<ApiKeyGroup>,
+    pub channel_groups: Vec<ChannelGroup>,
     pub access_policies: Vec<GatewayAccessPolicy>,
     pub quota_policies: Vec<QuotaPolicy>,
-    pub api_key_group_metric_snapshots: Vec<ApiKeyGroupMetricSnapshot>,
+    pub channel_group_metric_snapshots: Vec<ChannelGroupMetricSnapshot>,
 }
 
 impl GatewayApiKeyManagementSnapshot {
@@ -25,23 +25,23 @@ impl GatewayApiKeyManagementSnapshot {
         C: PricingCatalog + ?Sized,
     {
         let api_keys = catalog.list_api_keys();
-        let api_key_groups = catalog.list_api_key_groups();
+        let channel_groups = catalog.list_channel_groups();
         let access_policies = collect_access_policies(catalog, &api_keys);
         let quota_policies = collect_quota_policies(catalog, &api_keys);
-        let api_key_group_metric_snapshots =
-            collect_api_key_group_metric_snapshots(catalog, &api_key_groups);
+        let channel_group_metric_snapshots =
+            collect_channel_group_metric_snapshots(catalog, &channel_groups);
 
         Self {
             api_keys,
-            api_key_groups,
+            channel_groups,
             access_policies,
             quota_policies,
-            api_key_group_metric_snapshots,
+            channel_group_metric_snapshots,
         }
     }
 
-    pub fn find_api_key_group(&self, group_id: i64) -> Option<ApiKeyGroup> {
-        self.api_key_groups
+    pub fn find_channel_group(&self, group_id: i64) -> Option<ChannelGroup> {
+        self.channel_groups
             .iter()
             .find(|group| group.id == group_id)
             .cloned()
@@ -65,13 +65,13 @@ impl GatewayApiKeyManagementSnapshot {
             .cloned()
     }
 
-    pub fn find_api_key_group_for_subject(
+    pub fn find_channel_group_for_subject(
         &self,
         group_id: i64,
         tenant_id: i64,
         organization_id: i64,
-    ) -> Option<ApiKeyGroup> {
-        self.api_key_groups
+    ) -> Option<ChannelGroup> {
+        self.channel_groups
             .iter()
             .find(|group| {
                 group.id == group_id && group_matches_subject(group, tenant_id, organization_id)
@@ -79,13 +79,13 @@ impl GatewayApiKeyManagementSnapshot {
             .cloned()
     }
 
-    pub fn find_api_key_group_by_code_for_subject(
+    pub fn find_channel_group_by_code_for_subject(
         &self,
         code: &str,
         tenant_id: i64,
         organization_id: i64,
-    ) -> Option<ApiKeyGroup> {
-        self.api_key_groups
+    ) -> Option<ChannelGroup> {
+        self.channel_groups
             .iter()
             .find(|group| {
                 group.code == code && group_matches_subject(group, tenant_id, organization_id)
@@ -93,13 +93,13 @@ impl GatewayApiKeyManagementSnapshot {
             .cloned()
     }
 
-    pub fn single_api_key_group_for_subject(
+    pub fn single_channel_group_for_subject(
         &self,
         tenant_id: i64,
         organization_id: i64,
-    ) -> Option<ApiKeyGroup> {
+    ) -> Option<ChannelGroup> {
         let mut groups = self
-            .api_key_groups
+            .channel_groups
             .iter()
             .filter(|group| group_matches_subject(group, tenant_id, organization_id));
         let group = groups.next()?.clone();
@@ -124,11 +124,11 @@ impl GatewayApiKeyManagementSnapshot {
             .cloned()
     }
 
-    pub fn find_latest_api_key_group_metric_snapshot(
+    pub fn find_latest_channel_group_metric_snapshot(
         &self,
         group_id: i64,
-    ) -> Option<ApiKeyGroupMetricSnapshot> {
-        self.api_key_group_metric_snapshots
+    ) -> Option<ChannelGroupMetricSnapshot> {
+        self.channel_group_metric_snapshots
             .iter()
             .find(|snapshot| snapshot.group_id == group_id)
             .cloned()
@@ -148,17 +148,17 @@ impl GatewayApiKeyManagementSnapshot {
             .collect();
         let access_policies = collect_snapshot_access_policies(self, &api_keys);
         let quota_policies = collect_snapshot_quota_policies(self, &api_keys);
-        let api_key_groups: Vec<ApiKeyGroup> = self
-            .api_key_groups
+        let channel_groups: Vec<ChannelGroup> = self
+            .channel_groups
             .iter()
             .filter(|group| group_matches_subject(group, tenant_id, organization_id))
             .cloned()
             .collect();
-        let api_key_group_metric_snapshots = self
-            .api_key_group_metric_snapshots
+        let channel_group_metric_snapshots = self
+            .channel_group_metric_snapshots
             .iter()
             .filter(|snapshot| {
-                api_key_groups
+                channel_groups
                     .iter()
                     .any(|group| group.id == snapshot.group_id)
             })
@@ -167,10 +167,10 @@ impl GatewayApiKeyManagementSnapshot {
 
         Self {
             api_keys,
-            api_key_groups,
+            channel_groups,
             access_policies,
             quota_policies,
-            api_key_group_metric_snapshots,
+            channel_group_metric_snapshots,
         }
     }
 
@@ -216,7 +216,7 @@ impl GatewayApiKeyManagementSnapshot {
     }
 }
 
-fn group_matches_subject(group: &ApiKeyGroup, tenant_id: i64, organization_id: i64) -> bool {
+fn group_matches_subject(group: &ChannelGroup, tenant_id: i64, organization_id: i64) -> bool {
     (group.tenant_id == 0 || group.tenant_id == tenant_id)
         && (group.organization_id == 0 || group.organization_id == organization_id)
 }
@@ -268,16 +268,16 @@ where
     policies
 }
 
-fn collect_api_key_group_metric_snapshots<C>(
+fn collect_channel_group_metric_snapshots<C>(
     catalog: &C,
-    groups: &[ApiKeyGroup],
-) -> Vec<ApiKeyGroupMetricSnapshot>
+    groups: &[ChannelGroup],
+) -> Vec<ChannelGroupMetricSnapshot>
 where
     C: PricingCatalog + ?Sized,
 {
     let mut snapshots = Vec::new();
     for group in groups {
-        if let Some(snapshot) = catalog.find_latest_api_key_group_metric_snapshot(group.id) {
+        if let Some(snapshot) = catalog.find_latest_channel_group_metric_snapshot(group.id) {
             snapshots.push(snapshot);
         }
     }

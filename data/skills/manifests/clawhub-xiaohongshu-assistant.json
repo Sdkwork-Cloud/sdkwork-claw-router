@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiaohongshu-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiaohongshu-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ab4402a1dd12f83fcc083606124bdc554d6ba7661429841f7a62feb112a4301f",

@@ -184,6 +184,14 @@ class PlaygroundRuntimeStandardTest(unittest.TestCase):
         )
         self.assertIsNotNone(runtime_invocation_create_body)
         self.assertNotIn("requestId", runtime_invocation_create_body.group("body"))
+        runtime_artifact_create_body = re.search(
+            r"export interface RuntimeArtifactCreateBody \{(?P<body>.*?)\n\}",
+            runtime_operations_source,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(runtime_artifact_create_body)
+        self.assertIn("resource?: ClawRouterMediaResource", runtime_artifact_create_body.group("body"))
+        self.assertNotIn("storageUrl?: string", runtime_artifact_create_body.group("body"))
 
         service_contracts = {
             entry["operation"]: entry

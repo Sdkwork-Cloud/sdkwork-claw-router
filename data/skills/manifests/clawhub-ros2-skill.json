@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ros2-skill@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-ros2-skill-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ros2-skill-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:b88afd7206b934f939b38099f35c3694d4d86ff9c18767600c564a12df23f1fd",

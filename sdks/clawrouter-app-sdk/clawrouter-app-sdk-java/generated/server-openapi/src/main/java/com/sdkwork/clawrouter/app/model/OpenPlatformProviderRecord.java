@@ -9,7 +9,7 @@ public class OpenPlatformProviderRecord {
     private String deletedAt;
     private String deletedBy;
     private String docsUrl;
-    private String iconUrl;
+    private MediaResource icon;
     private String id;
     private Map<String, String> metadata;
     private String name;
@@ -71,12 +71,12 @@ public class OpenPlatformProviderRecord {
         this.docsUrl = docsUrl;
     }
 
-    public String getIconUrl() {
-        return this.iconUrl;
+    public MediaResource getIcon() {
+        return this.icon;
     }
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+    public void setIcon(MediaResource icon) {
+        this.icon = icon;
     }
 
     public String getId() {

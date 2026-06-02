@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Course application create response schema exposed by Claw Router. */
 export interface CourseApplicationCreateResponse {
   /** Application id field on course application create response. */
@@ -22,6 +24,6 @@ export interface CourseApplicationCreateResponse {
   submittedAt: string;
   /** Title field on course application create response. */
   title: string;
-  /** Video url field on course application create response. */
-  videoUrl?: string;
+  /** Video field on course application create response. */
+  video?: MediaResource;
 }

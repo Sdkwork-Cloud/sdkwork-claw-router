@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/legiscan-bill-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-legiscan-bill-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-legiscan-bill-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:175ad06afc07d900dcabed9a4155ec551481a63b0ab30fa54d895304c26b5177",

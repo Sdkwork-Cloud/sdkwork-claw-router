@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/felo@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-felo-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-felo-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c1512ed206ce71e41e49ba8084136c98bb896b943099875fc4b920793fce429",

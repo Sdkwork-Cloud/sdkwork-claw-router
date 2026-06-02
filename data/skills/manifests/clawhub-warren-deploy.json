@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/warren-deploy@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-warren-deploy-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-warren-deploy-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4ecf4055a4b31e96db725a98c3928d51bd9f9e6c208149eb6a8631b33f1573a0",

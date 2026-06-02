@@ -1,15 +1,16 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Studio catalog artifact record schema exposed by Claw Router. */
 export interface StudioCatalogArtifactRecord {
+  /** Artifact field on studio catalog artifact record. */
+  artifact?: MediaResource;
   /** Artifact ref field on studio catalog artifact record. */
   artifact_ref?: string;
   /** Artifact size bytes field on studio catalog artifact record. */
   artifact_size_bytes?: string;
   /** Artifact type field on studio catalog artifact record. */
   artifact_type?: string;
-  /** Artifact url field on studio catalog artifact record. */
-  artifact_url?: string;
   /** Checksum hash field on studio catalog artifact record. */
   checksum_hash?: string;
   /** Created at field on studio catalog artifact record. */

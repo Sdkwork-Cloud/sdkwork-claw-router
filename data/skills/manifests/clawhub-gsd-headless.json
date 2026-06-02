@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gsd-headless@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gsd-headless-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gsd-headless-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9368f0ba445b21b169cd9b5053499e3f07c0bc169fb099c0510c59378cb42028",

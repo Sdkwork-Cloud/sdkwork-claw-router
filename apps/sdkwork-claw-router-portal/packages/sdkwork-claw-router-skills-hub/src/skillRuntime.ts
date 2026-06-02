@@ -1,10 +1,16 @@
+import {
+  readMediaResource,
+  toExternalUrlMediaResource,
+  type ClawRouterMediaResource,
+} from 'sdkwork-claw-router-commons/runtime';
+
 export type Skill = {
   id: string;
   name: string;
   developer: string;
   description: string;
   category: string;
-  image: string;
+  image: ClawRouterMediaResource;
   rating: number;
   downloads: string;
   features: string[];
@@ -14,7 +20,7 @@ export type Skill = {
   size: string;
   license: string;
   frameworks: string[];
-  screenshots: string[];
+  screenshots: ClawRouterMediaResource[];
   packages?: SkillPackage[];
 };
 
@@ -103,7 +109,7 @@ export type SkillInstallCommandInput = {
   registry: SkillRegistry;
 };
 
-const DEFAULT_SKILL_IMAGE = 'https://picsum.photos/seed/skill/800/600';
+const DEFAULT_SKILL_IMAGE = toExternalUrlMediaResource('https://picsum.photos/seed/skill/800/600', 'image')!;
 const DEFAULT_REGISTRY_URL = 'https://registry.clawhub.io';
 const CHINA_REGISTRY_URL = 'https://cn.clawhub-mirror.com';
 const SORT_OPTIONS: SkillSortKey[] = ['Most Popular', 'Highest Rated', 'Newest'];
@@ -129,7 +135,7 @@ export function normalizeSkillApiRecord(value: unknown): Skill {
     developer,
     description: normalizeWhitespace(readString(item, 'description')),
     category,
-    image: readString(item, 'image') || readString(item, 'coverImage') || readString(item, 'cover_image') || DEFAULT_SKILL_IMAGE,
+    image: readMediaResource(item.image) || DEFAULT_SKILL_IMAGE,
     rating: readNumber(item, 'rating') || readNumber(item, 'ratingAvg') || readNumber(item, 'rating_avg'),
     downloads: normalizeWhitespace(readString(item, 'downloads')) || formatSkillCount(installCount),
     features: normalizeSkillStrings(readStringArray(item, 'features').length > 0 ? readStringArray(item, 'features') : readStringArray(item, 'capabilities')),
@@ -145,7 +151,7 @@ export function normalizeSkillApiRecord(value: unknown): Skill {
     size: normalizeWhitespace(readString(item, 'size')) || formatSkillSize(artifactSizeBytes || readNumber(artifact, 'artifactSizeBytes') || readNumber(artifact, 'artifact_size_bytes')),
     license: normalizeWhitespace(readString(item, 'license') || readString(item, 'licenseName') || readString(item, 'license_name') || readString(artifact, 'licenseName') || readString(artifact, 'license_name')) || 'Proprietary',
     frameworks: normalizeSkillStrings(readStringArray(item, 'frameworks').length > 0 ? readStringArray(item, 'frameworks') : readStringArray(artifact, 'frameworks')),
-    screenshots: normalizeSkillStrings(readStringArray(item, 'screenshots')),
+    screenshots: readMediaResourceArray(item, 'screenshots'),
     packages: normalizeSkillPackages(item),
   };
 }
@@ -638,6 +644,16 @@ function readStringArray(record: ApiRecord | undefined, key: string, fallback: s
     })
     .filter((item): item is string => item !== null);
   return items.length > 0 ? items : [...fallback];
+}
+
+function readMediaResourceArray(record: ApiRecord | undefined, key: string): ClawRouterMediaResource[] {
+  const value = record?.[key];
+  if (!Array.isArray(value)) {
+    return [];
+  }
+  return value
+    .map(readMediaResource)
+    .filter((item): item is ClawRouterMediaResource => item !== undefined);
 }
 
 function readRecordArray(record: ApiRecord, key: string): ApiRecord[] {

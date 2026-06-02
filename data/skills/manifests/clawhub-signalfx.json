@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/signalfx@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-signalfx-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-signalfx-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:87d183af9d15827ebcd5a151d2ecb191b4950e8e32febd4c4f69588ec2de1003",

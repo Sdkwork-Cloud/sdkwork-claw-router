@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/florence@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-florence-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-florence-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:36fad17f2b66e221a39a342fe5d6055422f3c4ec13b705a2e92a630acbda9363",

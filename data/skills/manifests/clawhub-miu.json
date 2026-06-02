@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/miu@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-miu-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-miu-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14937eae1e8873c2a40c67b67e5ed65337af517b8fe909b1e7a3657bbea7f0e0",

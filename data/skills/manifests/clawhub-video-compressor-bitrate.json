@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-compressor-bitrate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-compressor-bitrate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-compressor-bitrate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbfa100cbe30d0e5865727b61ff26de31764d7f3601ec80af532f0c8858956e8",

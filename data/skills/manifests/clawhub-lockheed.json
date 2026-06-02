@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lockheed@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lockheed-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lockheed-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a0b1a12910b3f7126c2570500c2c8b8d93f85ab7ed3eb1c89ed0537f238a13d3",

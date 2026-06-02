@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/temporal-agent-plugin@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-temporal-agent-plugin-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-temporal-agent-plugin-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:95025fe0d80674f13e0b40220f6a937decddb5083202f726beaab78c1261939a",

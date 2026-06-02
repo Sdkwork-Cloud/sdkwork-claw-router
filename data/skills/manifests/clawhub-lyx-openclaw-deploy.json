@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lyx-openclaw-deploy@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lyx-openclaw-deploy-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lyx-openclaw-deploy-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0e462ef7538d8766fdb56de9e9ba1bf0b3198ed8ea37d4030f72ca89d915a299",

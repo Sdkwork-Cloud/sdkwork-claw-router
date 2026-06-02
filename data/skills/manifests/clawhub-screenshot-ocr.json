@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/screenshot-ocr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-screenshot-ocr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-screenshot-ocr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:423d67392d2e3c2aae51ce7e983a839acf8e8a836e4c296c6d1594e4d039af7c",

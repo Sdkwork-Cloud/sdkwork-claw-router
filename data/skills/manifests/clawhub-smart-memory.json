@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-memory@3.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-memory-3.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-memory-3.1.0.json"
+      },
       "version": "3.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aec9b803d37327203e837845b72b697a70b8a32001ba7bf169fc2235b23075e2",

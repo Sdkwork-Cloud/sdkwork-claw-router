@@ -1,8 +1,11 @@
 package com.sdkwork.clawrouter.backend
 
 data class MessagingProviderAccountRecord(
+    val accountCode: String? = null,
+    val accountName: String? = null,
     val authType: String? = null,
     val baseUrl: String? = null,
+    val channel: String? = null,
     val createdAt: String? = null,
     val credentialHash: String? = null,
     val credentialRef: String? = null,
@@ -11,12 +14,14 @@ data class MessagingProviderAccountRecord(
     val deletedAt: String? = null,
     val deletedBy: String? = null,
     val deliveryPurpose: String? = null,
+    val healthStatus: String? = null,
     val id: String? = null,
     val lastUsedAt: String? = null,
     val lastVerifiedAt: String? = null,
     val maskedLabel: String? = null,
     val metadata: Map<String, String>? = null,
     val organizationId: String? = null,
+    val providerCode: String? = null,
     val providerId: String? = null,
     val status: String? = null,
     val tenantId: String? = null,

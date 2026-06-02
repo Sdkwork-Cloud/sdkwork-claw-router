@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-trending@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-trending-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-trending-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7b77ce944fc1d5cd13b1188a518b90482f36ff1b15b773a72d85b5ce18a82437",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nxp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nxp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nxp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a20e2af3a2eecda9220117a57bec0a2fb54676758a77992fccf24c031959cadf",

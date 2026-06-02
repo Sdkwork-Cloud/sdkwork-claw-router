@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-video-editor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-video-editor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-video-editor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e4b23d4eb94aae414e9178db16cd062b8c8c4e268f55c565ea9b64b8898a9fb5",

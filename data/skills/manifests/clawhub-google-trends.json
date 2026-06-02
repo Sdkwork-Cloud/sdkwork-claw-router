@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-trends@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-trends-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-trends-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fbac4129dbd1bdba8ff2e61ae115aa67a3503ed4d7743a6364899ac2f6d24a88",

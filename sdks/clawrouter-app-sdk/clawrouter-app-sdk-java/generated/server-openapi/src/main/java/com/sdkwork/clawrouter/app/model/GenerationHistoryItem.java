@@ -4,11 +4,12 @@ import java.util.List;
 
 public class GenerationHistoryItem {
     private String aspectRatio;
+    private MediaResource asset;
     private String createdAt;
     private String date;
     private Integer durationSeconds;
     private String id;
-    private List<String> images;
+    private List<MediaResource> images;
     private String modelCatalogKey;
     private String modelInfo;
     private String outputText;
@@ -16,8 +17,7 @@ public class GenerationHistoryItem {
     private String status;
     private String type;
     private String updatedAt;
-    private String url;
-    private List<GenerationHistoryMediaItem> videos;
+    private List<MediaResource> videos;
 
     public String getAspectRatio() {
         return this.aspectRatio;
@@ -25,6 +25,14 @@ public class GenerationHistoryItem {
 
     public void setAspectRatio(String aspectRatio) {
         this.aspectRatio = aspectRatio;
+    }
+
+    public MediaResource getAsset() {
+        return this.asset;
+    }
+
+    public void setAsset(MediaResource asset) {
+        this.asset = asset;
     }
 
     public String getCreatedAt() {
@@ -59,11 +67,11 @@ public class GenerationHistoryItem {
         this.id = id;
     }
 
-    public List<String> getImages() {
+    public List<MediaResource> getImages() {
         return this.images;
     }
 
-    public void setImages(List<String> images) {
+    public void setImages(List<MediaResource> images) {
         this.images = images;
     }
 
@@ -123,19 +131,11 @@ public class GenerationHistoryItem {
         this.updatedAt = updatedAt;
     }
 
-    public String getUrl() {
-        return this.url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public List<GenerationHistoryMediaItem> getVideos() {
+    public List<MediaResource> getVideos() {
         return this.videos;
     }
 
-    public void setVideos(List<GenerationHistoryMediaItem> videos) {
+    public void setVideos(List<MediaResource> videos) {
         this.videos = videos;
     }
 }

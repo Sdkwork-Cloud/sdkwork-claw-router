@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spf-test-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spf-test-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spf-test-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b181ca5c7cd0a06e5e7b18ef400d734e9c383a400d63f962c9604786958c292b",

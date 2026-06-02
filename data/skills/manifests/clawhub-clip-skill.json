@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clip-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clip-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clip-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52ac22f6a30680944f22ca3511537758aa773c7de84a474a6d998edcffe0fd34",

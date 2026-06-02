@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/exam-paper@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-exam-paper-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-exam-paper-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c5293fddb212259161a81764a1e69581b7e8ea4a28fad4968bf3b17c815de45d",

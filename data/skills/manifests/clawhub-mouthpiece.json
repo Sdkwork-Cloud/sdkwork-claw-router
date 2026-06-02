@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mouthpiece@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mouthpiece-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mouthpiece-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8e079468524dfe3a89cad51e455e7c0baf201b9ab0d4188a5796ee88b0f63a85",

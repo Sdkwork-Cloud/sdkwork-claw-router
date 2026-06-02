@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentguard-tech@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentguard-tech-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentguard-tech-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0bebe26e2521460fed5d73c9119974f32bd24f7a7dde496fa49d29f0dbca9009",

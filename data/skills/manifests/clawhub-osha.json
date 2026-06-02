@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/osha@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-osha-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-osha-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:612a3b67166b13f71ea05163593d8b4eb026bed4411b2b6ff234501ef016f6a5",

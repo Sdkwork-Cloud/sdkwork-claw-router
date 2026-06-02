@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/code-executor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-code-executor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-code-executor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a796b019281e5b44401fa41c8f2bf57c523b79bc89bd1728c5031d3da745bb01",

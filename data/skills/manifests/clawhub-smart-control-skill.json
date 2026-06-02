@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-control-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-control-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-control-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:9b7c750309d2c80b3b6488f21f3a0cd9d49425b84f50684de4fe9adfa2abafb4",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bcc@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bcc-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bcc-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e5b2bed430e76323e3cef0f4af8d167a9f016b4db02dd5ece0e4a3e7b8193c9",

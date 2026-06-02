@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/world-news-aggregator-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-world-news-aggregator-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-world-news-aggregator-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b9a265a32e87df5d9b6c122e06f1a0e72fd7d03739df64f0809685dcf0ab11be",

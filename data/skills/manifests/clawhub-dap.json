@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dap@0.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dap-0.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dap-0.5.0.json"
+      },
       "version": "0.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c80a999c1f9791700ea79fabcf5460dc3def0977b5c3e3f26417a583d0a8007d",

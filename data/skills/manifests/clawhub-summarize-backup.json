@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/summarize-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-summarize-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-summarize-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2de31f20acc7dd76b70d171a832d9bbc93e4010cb27be9dbf80370af834bca0a",

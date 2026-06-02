@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentiment-bot@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentiment-bot-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentiment-bot-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1857fce3a9856fca37680afb82b09230014179c5c7f63574c9a5322a9849c2e4",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vision-ocr@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-vision-ocr-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vision-ocr-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:04498d9f1b52d51b1732f2b32a460a74e395414c96bdc304368e16cf0432655f",

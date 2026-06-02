@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThumbsDown, ThumbsUp, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { readMediaResourceUrl } from 'sdkwork-claw-router-commons';
 import type { CourseCommentsView } from '../../data';
 
 export function CommentSection({ comments }: { comments: CourseCommentsView }) {
@@ -28,10 +29,12 @@ export function CommentSection({ comments }: { comments: CourseCommentsView }) {
       </div>
 
       <div className="space-y-6">
-        {comments.items.map((comment) => (
+        {comments.items.map((comment) => {
+          const avatarSrc = readMediaResourceUrl(comment.avatar) || '/assets/courses/avatars/learner.svg';
+          return (
           <div key={comment.id} className="flex gap-4 border-b border-slate-100 dark:border-white/5 pb-6 last:border-0 last:pb-0">
             <div className="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex-shrink-0 overflow-hidden">
-              <img src={comment.avatarUrl} alt={comment.author} className="w-full h-full object-cover" />
+              <img src={avatarSrc} alt={comment.author} className="w-full h-full object-cover" />
             </div>
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
@@ -47,7 +50,8 @@ export function CommentSection({ comments }: { comments: CourseCommentsView }) {
               </div>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

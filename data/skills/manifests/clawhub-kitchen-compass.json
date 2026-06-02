@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kitchen-compass@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-kitchen-compass-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kitchen-compass-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a0ccaf59f76540e63a317fc3fd5496cce1613dee82589e445ca8e560ea4d68ca",

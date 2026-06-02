@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gripper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gripper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gripper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ea5e8e643b44a71080f2a6ead27649134fb1fc889b6dcf6322aeae30b2b98316",

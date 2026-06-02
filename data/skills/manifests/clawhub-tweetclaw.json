@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tweetclaw@1.1.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-tweetclaw-1.1.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tweetclaw-1.1.9.json"
+      },
       "version": "1.1.9",
       "runtime": "metadata",
       "checksumHash": "sha256:5df2fd0059f0b0001c45f4f187706e68c458f8d28107c425f83eeefe7df4dd99",

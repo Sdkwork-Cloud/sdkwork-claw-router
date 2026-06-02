@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/twitter-hot-topics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-twitter-hot-topics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-twitter-hot-topics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:827166cafa2359e24fd14c874d62e31e1eb091396ad344ae29c2d60c730d9b5f",

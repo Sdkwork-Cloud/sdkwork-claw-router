@@ -8,6 +8,7 @@ type CommerceRefundAttemptRecord struct {
 	FailedAt string `json:"failed_at"`
 	FailureCode string `json:"failure_code"`
 	FailureMessage string `json:"failure_message"`
+	Id string `json:"id"`
 	OrganizationId string `json:"organization_id"`
 	OutRefundNo string `json:"out_refund_no"`
 	ProviderAccountId string `json:"provider_account_id"`

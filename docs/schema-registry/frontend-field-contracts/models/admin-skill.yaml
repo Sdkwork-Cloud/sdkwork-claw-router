@@ -59,12 +59,12 @@ frontend_models:
   - summary
   - description
   - icon
-  - coverImage
   - categoryId
   - enabled
   - featured
   - sortWeight
   - tags
+  - cover
   - latestPublishedAt
   - createdAt
   - updatedAt
@@ -92,12 +92,12 @@ frontend_models:
   - summary
   - description
   - icon
-  - coverImage
   - categoryId
   - enabled
   - featured
   - sortWeight
   - tags
+  - cover
   data_sources:
   - plus_agent_skill_package
   - plus_category
@@ -110,12 +110,12 @@ frontend_models:
   - summary
   - description
   - icon
-  - coverImage
   - categoryId
   - enabled
   - featured
   - sortWeight
   - tags
+  - cover
   data_sources:
   - plus_agent_skill_package
   - plus_category
@@ -129,7 +129,7 @@ frontend_models:
   - summary
   - description
   - icon
-  - coverImage
+  - cover
   - categoryId
   - packageId
   - provider
@@ -195,7 +195,7 @@ frontend_models:
   - summary
   - description
   - icon
-  - coverImage
+  - cover
   - categoryId
   - packageId
   - provider
@@ -236,7 +236,7 @@ frontend_models:
   - summary
   - description
   - icon
-  - coverImage
+  - cover
   - categoryId
   - packageId
   - provider
@@ -275,8 +275,8 @@ frontend_models:
   - targetId
   - artifactId
   - assetType
-  - assetUrl
-  - thumbnailUrl
+  - asset
+  - thumbnail
   - title
   - altText
   - mimeType
@@ -299,8 +299,8 @@ frontend_models:
   fields:
   - artifactId
   - assetType
-  - assetUrl
-  - thumbnailUrl
+  - asset
+  - thumbnail
   - title
   - altText
   - mimeType
@@ -321,8 +321,8 @@ frontend_models:
   fields:
   - artifactId
   - assetType
-  - assetUrl
-  - thumbnailUrl
+  - asset
+  - thumbnail
   - title
   - altText
   - mimeType
@@ -350,7 +350,7 @@ frontend_models:
   - platformType
   - osName
   - artifactRef
-  - artifactUrl
+  - artifact
   - artifactSizeBytes
   - runtime
   - frameworks
@@ -375,7 +375,7 @@ frontend_models:
   - platformType
   - osName
   - artifactRef
-  - artifactUrl
+  - artifact
   - artifactSizeBytes
   - runtime
   - frameworks
@@ -398,7 +398,7 @@ frontend_models:
   - platformType
   - osName
   - artifactRef
-  - artifactUrl
+  - artifact
   - artifactSizeBytes
   - runtime
   - frameworks

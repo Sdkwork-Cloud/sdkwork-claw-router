@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trade-executor@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trade-executor-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trade-executor-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92858ab941fa913a16a996bef898579bbdb9e9151ece30f08f3b99448be611b4",

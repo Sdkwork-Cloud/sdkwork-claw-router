@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ops-pm-bridge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ops-pm-bridge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ops-pm-bridge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05f271850c6a0531a324e2f5dc2b1ab4e218c58ad133d05016cdd4da17cdcd1f",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/perftest@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-perftest-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-perftest-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8290f268c9122212b92faee9b7065abf84a15c7bfcbd37a4f12ac0dbebb6b0b1",

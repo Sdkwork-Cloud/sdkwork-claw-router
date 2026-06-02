@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/air-ticket-helper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-air-ticket-helper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-air-ticket-helper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ab6c954d6d75c21c83ff4cd15c9284adc7eae9956c62e64cb5be04dd27b1bb76",

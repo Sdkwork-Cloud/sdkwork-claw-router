@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/puma@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-puma-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-puma-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9c3852b41db2573c91c952b897b45bd4a80ab6433d42b00edf8341ce4857b46f",

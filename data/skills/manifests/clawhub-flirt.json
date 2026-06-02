@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flirt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flirt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flirt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1471682b258522e1ede6bc92561bef6ceedfa63aea57b7c154d9a13f7ae9bafd",

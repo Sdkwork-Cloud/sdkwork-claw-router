@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/control-d@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-control-d-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-control-d-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:eb095d2f0534684d6ab2f075a41ee83eeff3e38921467082e517ea20507e7777",

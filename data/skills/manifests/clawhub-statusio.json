@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/statusio@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-statusio-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-statusio-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a41624e7043c95cca94031a4d704a2388bab6e7c142a663c71c16205dc54ef3d",

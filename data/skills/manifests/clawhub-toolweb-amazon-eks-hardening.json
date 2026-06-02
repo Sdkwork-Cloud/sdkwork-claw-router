@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toolweb-amazon-eks-hardening@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-amazon-eks-hardening-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toolweb-amazon-eks-hardening-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a4c62e6de8f49daba52d47151206b733453772b9f91efde0d2966ae28b919419",

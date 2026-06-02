@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/newpaper-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-newpaper-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-newpaper-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2ef7fac76ea5fa4b74b4c571f464f0f26ddd0d3c897fe887b94545a4dce56011",

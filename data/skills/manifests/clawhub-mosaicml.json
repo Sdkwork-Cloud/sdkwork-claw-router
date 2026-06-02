@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mosaicml@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-mosaicml-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mosaicml-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:cbdcef9ff14ddc4d8208ac99dc846e25ccb585f24d67b3ab6f71930f957453c1",

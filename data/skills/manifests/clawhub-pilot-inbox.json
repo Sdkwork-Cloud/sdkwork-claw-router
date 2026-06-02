@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-inbox@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-inbox-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-inbox-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d2d484a66f55908ff6c5637bc3f3078a446373393a67217dca5ffff21e04a89",

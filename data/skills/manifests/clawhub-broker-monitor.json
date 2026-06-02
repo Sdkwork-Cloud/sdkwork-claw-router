@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/broker-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-broker-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-broker-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a4a44ceb94f810be37a7c75cc2e6c9dd78a00c419e3bb0eb164890f611293ca",

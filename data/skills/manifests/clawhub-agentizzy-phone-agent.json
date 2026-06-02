@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentizzy-phone-agent@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentizzy-phone-agent-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentizzy-phone-agent-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:205da44fe0ae8ac011e6725a1754d79aa3cdbbee90097d995d64602e74a2472f",

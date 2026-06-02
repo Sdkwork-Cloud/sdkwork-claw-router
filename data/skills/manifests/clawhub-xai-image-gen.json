@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xai-image-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xai-image-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xai-image-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:45d16f347227dcc3a90186f9b512a7a70c62611748ff5ac97a276be731652d67",

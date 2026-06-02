@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-diagnosis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-diagnosis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-diagnosis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23b7623cdf8de802787fb480ea720dea7e347f4bead21ae01b13ed6bcf63dd9a",

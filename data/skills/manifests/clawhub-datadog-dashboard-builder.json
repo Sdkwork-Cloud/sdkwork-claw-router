@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/datadog-dashboard-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-datadog-dashboard-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-datadog-dashboard-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8b07901f6af5583bcb0d0b352c2f693001d71f6efab5670ae52f2a72f229dd0",

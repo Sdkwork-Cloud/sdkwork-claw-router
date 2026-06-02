@@ -12,6 +12,10 @@ pub struct CommerceOrderAmountBreakdownRecord {
     /// Discount amount field on commerce order amount breakdown record.
     pub discount_amount: String,
 
+    /// Id field on commerce order amount breakdown record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Order id field on commerce order amount breakdown record.
     pub order_id: String,
 

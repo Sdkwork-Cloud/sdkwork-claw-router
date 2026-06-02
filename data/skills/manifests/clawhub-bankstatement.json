@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bankstatement@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-bankstatement-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bankstatement-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:050db3592b837aea743e706047001aab73848c2af2652cbb6528418ac938370c",

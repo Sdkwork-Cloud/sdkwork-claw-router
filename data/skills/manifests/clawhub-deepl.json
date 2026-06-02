@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deepl@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-deepl-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deepl-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:86f2d3c0ff0610ca12d671df047c72e880bc5f4a5498fc283d8267fc635e270d",

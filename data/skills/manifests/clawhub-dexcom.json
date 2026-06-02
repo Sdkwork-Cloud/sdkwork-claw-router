@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dexcom@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-dexcom-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dexcom-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:188e745e3f9916fbe5064fca90275ec20d1ed84e49121f0677326e4c4cf2a2a7",

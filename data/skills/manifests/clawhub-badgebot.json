@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/badgebot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-badgebot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-badgebot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0472d6fc393f6429a0dae6808119a75e410ed5797962ae341f0d41df372a2475",

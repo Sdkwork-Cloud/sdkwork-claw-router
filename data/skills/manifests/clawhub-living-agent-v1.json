@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/living-agent-v1@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-living-agent-v1-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-living-agent-v1-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4b23ef7d33bbf5cc4a89c5af0f2d9bcf75f4ab404f814b1d63649635e3a8ccec",

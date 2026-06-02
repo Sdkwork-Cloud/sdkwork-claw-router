@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scotiabank@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scotiabank-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scotiabank-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cf3162d6a76f50862167dd4a0c74d83953b9d291e5fb8dc228dbc05d94c3f241",

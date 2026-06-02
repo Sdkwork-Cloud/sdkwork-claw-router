@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chain-audit-deploy-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chain-audit-deploy-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chain-audit-deploy-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:064eb54f1e0111aa8f55fc466b62cbdbee765bbf6e171c909014f8fd6dd2cef4",

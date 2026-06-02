@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/macos-local-voice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-macos-local-voice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-macos-local-voice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6ce0edfc2f5ecf3fcf39c7a8c811591fdc4f9bfbb8ffc0404147f3ffb762b943",

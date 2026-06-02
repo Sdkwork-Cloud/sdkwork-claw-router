@@ -4,7 +4,9 @@ package types
 type AdminRateLimitItem struct {
 	BlockDuration string `json:"blockDuration"`
 	Burst int `json:"burst"`
-	Group string `json:"group"`
+	ChannelGroup string `json:"channelGroup"`
+	ChannelGroupId string `json:"channelGroupId"`
+	ChannelGroupName string `json:"channelGroupName"`
 	Id string `json:"id"`
 	KeyPrefix string `json:"keyPrefix"`
 	Model string `json:"model"`

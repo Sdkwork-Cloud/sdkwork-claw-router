@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-regex-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-regex-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-regex-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a469bc0518686f9303183f2cc37654fa7cebfc59df1e06b17208451b79fcb12e",

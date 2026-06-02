@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Admin skill create request schema exposed by Claw Router. */
 export interface AdminSkillCreateRequest {
@@ -10,8 +11,8 @@ export interface AdminSkillCreateRequest {
   categoryId?: string | null;
   /** Config schema field on admin skill create request. */
   configSchema?: Record<string, JsonValue>;
-  /** Cover image field on admin skill create request. */
-  coverImage?: string;
+  /** Cover field on admin skill create request. */
+  cover?: MediaResource;
   /** Currency field on admin skill create request. */
   currency?: string;
   /** Default config field on admin skill create request. */
@@ -29,7 +30,7 @@ export interface AdminSkillCreateRequest {
   /** Homepage url field on admin skill create request. */
   homepageUrl?: string;
   /** Icon field on admin skill create request. */
-  icon?: string;
+  icon?: MediaResource;
   /** Is builtin field on admin skill create request. */
   isBuiltin?: boolean;
   /** License name field on admin skill create request. */

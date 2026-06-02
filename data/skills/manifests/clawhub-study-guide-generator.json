@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/study-guide-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-study-guide-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-study-guide-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:452bf7a0d05de9c43eceb743f0703c2fbd58d6772fcfcc7aa8158713f95f8988",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/timesheet@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-timesheet-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-timesheet-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5f3e4dcffcf3b8629ea793de86f2c6bfd641c481ac03c20db8727b2ef2e832e7",

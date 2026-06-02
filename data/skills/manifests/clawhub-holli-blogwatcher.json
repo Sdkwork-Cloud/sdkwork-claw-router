@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/holli-blogwatcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-holli-blogwatcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-holli-blogwatcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b80aa2bacf848f75bfc6727539a9755ca76672ad2545d67a855ff4a89907626",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/newsscraper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-newsscraper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-newsscraper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16e1ce9a189519099f247f70a28f1458c0ac0e351bd44c2e275593751358b39f",

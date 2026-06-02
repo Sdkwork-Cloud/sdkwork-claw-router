@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medrates-fyi@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-medrates-fyi-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medrates-fyi-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bf241aa0542a34cbe2ea6ce4a8e7db79fd7b614cc2f153725ae508cc18ecf8b4",

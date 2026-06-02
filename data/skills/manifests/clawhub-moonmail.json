@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moonmail@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-moonmail-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moonmail-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9c1a9bfe752141e75c7bc342951e070e5188ec59b0452ed88b44d55daa5d97d1",

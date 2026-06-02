@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hana-image-gen-macos@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hana-image-gen-macos-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hana-image-gen-macos-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2dc80286c73c37c3767a7e763d31ebe3ca3332432ab5a14ded057b7ea65a610f",

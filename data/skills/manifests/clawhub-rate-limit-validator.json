@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rate-limit-validator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rate-limit-validator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rate-limit-validator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f61c3cd8feca7ea3b633e19709dfcdf6558c32464985f1977c8753f0a660b17",

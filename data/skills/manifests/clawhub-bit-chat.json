@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bit-chat@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-bit-chat-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bit-chat-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:fcfb437cf56079c934d1c35548cd4ad444145dfa3b66469b2f646e5e792410a7",

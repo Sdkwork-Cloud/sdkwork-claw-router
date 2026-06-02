@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/airbnb-agent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-airbnb-agent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-airbnb-agent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:da18d06d624372e2fd3e940ada7d0fb5640cd2f59618c86087ddd6cdde2fad0a",

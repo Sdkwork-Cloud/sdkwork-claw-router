@@ -1196,6 +1196,45 @@ CREATE TABLE iam_dictionary (
 - 高频 JSON 字段拆列时 MUST 经过双写和一致性校验。
 - 敏感数据不应混入通用 `metadata`，否则脱敏和访问控制难以执行。
 
+## Media Resource Persistence
+
+Business tables MUST NOT store naked media URL columns for images, videos,
+audio, voices, files, archives, app artifacts, SKU pictures, QR images, logos,
+icons, avatars, covers, thumbnails, or generated assets. Forbidden business
+columns include patterns such as `cover_image`, `cover_url`, `thumbnail_url`,
+`asset_url`, `video_url`, `image_url`, `avatar_url`, `logo_url`, `icon_url`,
+`file_url`, and `media_url`.
+
+Business media fields use the same logical names as the API contract:
+`cover`, `thumbnail`, `asset`, `artifact`, `video`, `audio`, `avatar`, `icon`,
+`logo`, `favicon`, and `qrCode`. The database representation is one of the
+following canonical forms:
+
+- dedicated relation table for repeatable or role-based media, with columns
+  such as `owner_type`, `owner_id`, `media_role`, `sort_order`, and a resource
+  snapshot;
+- inline stable-reference column group for single media fields:
+  `<field>_media_resource_id`, `<field>_object_blob_id`,
+  `<field>_resource_snapshot`;
+- immutable append-only media/history table when audit, moderation, or publish
+  state is part of the domain.
+
+`<field>_media_resource_id` stores the stable logical media resource identity.
+`<field>_object_blob_id` references the binary/object metadata table when the
+asset is owned by SDKWork storage. `<field>_resource_snapshot` stores the JSON
+`MediaResource` object that was visible to the business record at write time.
+MediaResource snapshots are immutable historical views; updating a file,
+transcoding output, CDN URL, or signed delivery URL must create a new resource
+version or update the media metadata source, not mutate old business snapshots
+silently.
+
+The `media_` domain remains the system of record for binary/object metadata.
+It must model S3, OSS, MinIO, local disk, CDN, and future AI-generated media providers through provider, bucket/container, object key, content hash, size,
+MIME type, owner, lifecycle, storage class, encryption, and audit fields. A
+business JSON payload may embed a `MediaResource` snapshot, but object keys and
+provider-specific locators must not be scattered as ad hoc strings outside the
+media metadata contract.
+
 ## 14. 金额、计量和精度
 
 ### 14.1 金额

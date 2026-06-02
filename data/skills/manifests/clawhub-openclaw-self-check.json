@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-self-check@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-self-check-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-self-check-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b74ffef9d2f9551d7dd37d729b28b9412d587c51d1b5e49c25bb9379f8f54783",

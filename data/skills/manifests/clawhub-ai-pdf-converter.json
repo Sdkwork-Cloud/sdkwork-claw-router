@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-pdf-converter@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-pdf-converter-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-pdf-converter-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1ab67031e1779f01f919cf50da9652c00510369f486870b73c7ba78999a463d4",

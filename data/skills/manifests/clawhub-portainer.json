@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/portainer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-portainer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-portainer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e48c99a12f5d89c6761fe02da654ed87f97ff45cf98b24652bcc957e2bd4089",

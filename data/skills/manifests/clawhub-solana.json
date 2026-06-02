@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solana@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solana-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solana-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bbeec20c5705f9351e87c3c9515aa92901165cc3b61ea927155d5f46808ca6da",

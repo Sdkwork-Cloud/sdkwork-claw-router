@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ssa-pdf-catalog@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ssa-pdf-catalog-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ssa-pdf-catalog-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:132c524f2efa88f83609672da38077c1abe812eda8994f89c3f2a546bbec62ba",

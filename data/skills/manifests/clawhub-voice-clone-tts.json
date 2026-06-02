@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-clone-tts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-clone-tts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-clone-tts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7854f9412d14da00ad70397f3fb84fc75e7fc6b642048d72d48d6b391e28fc67",

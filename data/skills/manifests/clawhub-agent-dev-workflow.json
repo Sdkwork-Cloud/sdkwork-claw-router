@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-dev-workflow@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-dev-workflow-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-dev-workflow-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c9c74b564c489b35ed64927e7143f0ef3fe49546bcd5fb4cf1305bf4c1e3b61f",

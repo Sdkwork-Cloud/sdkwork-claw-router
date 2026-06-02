@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitee-create-release@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitee-create-release-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitee-create-release-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97cb146f100da36845d6d2f87c70091acfbc6ff96df9e2700621b72b7ebd4aa1",

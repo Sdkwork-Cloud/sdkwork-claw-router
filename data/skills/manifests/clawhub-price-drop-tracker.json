@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/price-drop-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-price-drop-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-price-drop-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9660cd636daccdd142d3c68af27e83f11b05f3a79352064a39dc85719a8e0d88",

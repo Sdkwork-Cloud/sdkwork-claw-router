@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-sync@0.3.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-sync-0.3.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-sync-0.3.5.json"
+      },
       "version": "0.3.5",
       "runtime": "metadata",
       "checksumHash": "sha256:588936b96407978a5f98d4cd0a1ec15661ea43998c0f3476071f0309279f3f0f",

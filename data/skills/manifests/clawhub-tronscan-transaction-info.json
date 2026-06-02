@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tronscan-transaction-info@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-tronscan-transaction-info-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tronscan-transaction-info-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:8dc843a4e61d1148af4c2ca2178b03d46c949e767fa392dca7eec695455481f0",

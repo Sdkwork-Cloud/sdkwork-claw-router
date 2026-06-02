@@ -8,6 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? CreatedAt { get; set; }
         public string? EndsAt { get; set; }
+        public string? Id { get; set; }
         public string? LocalEndTime { get; set; }
         public string? LocalStartTime { get; set; }
         public string? OfferVersionId { get; set; }

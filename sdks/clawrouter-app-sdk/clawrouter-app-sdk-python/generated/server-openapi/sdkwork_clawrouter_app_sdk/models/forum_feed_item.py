@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
     from .forum_author import ForumAuthor
+    from .media_resource import MediaResource
 
 
 @dataclass
@@ -14,7 +15,7 @@ class ForumFeedItem:
     comment_count: int
     content: str
     content_type: str
-    cover_image: str
+    cover: MediaResource
     created_at: str
     id: int
     is_collected: bool

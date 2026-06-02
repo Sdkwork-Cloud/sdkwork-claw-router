@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/doge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-doge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-doge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d448316c40a21daf125cb2a93df8d7016bd88667b4f6eb2283b5e79bd8d569cd",

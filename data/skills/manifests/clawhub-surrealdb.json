@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/surrealdb@1.6.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-surrealdb-1.6.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-surrealdb-1.6.4.json"
+      },
       "version": "1.6.4",
       "runtime": "metadata",
       "checksumHash": "sha256:fa0252fad8fff6da1524e048eb8e584063286d06244082047099b9a2a1bdd244",

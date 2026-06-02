@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sleep-quality-improver@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sleep-quality-improver-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sleep-quality-improver-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a454b1f6b531f09448da5fd334baa32b27068b4fcaf95417e13ac85a3e896d8",

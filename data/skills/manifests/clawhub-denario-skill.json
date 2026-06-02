@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/denario-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-denario-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-denario-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28f2a29791718afb5298c55a92c7ede13cdc91de0c0995adf73b69eddb3b3d96",

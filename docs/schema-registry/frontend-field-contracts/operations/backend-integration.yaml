@@ -190,6 +190,33 @@ frontend_operations:
               type: integer
               format: int64
               minimum: 0
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: fetchAssignableChannels
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/integration/channels
+  read_sources:
+  - ai_provider
+  - ai_channel
+  - ai_channel_model
+  - ai_channel
+  query_parameters: []
+  openapi_exposed: false
+  response_schema:
+    name: AdminAssignableChannelsResponse
+    type: object
+    additionalProperties: false
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminAssignableChannelItem
+          type: object
+          additionalProperties: true
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: addChannel

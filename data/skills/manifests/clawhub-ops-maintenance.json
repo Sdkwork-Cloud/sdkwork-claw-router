@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ops-maintenance@2.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ops-maintenance-2.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ops-maintenance-2.1.2.json"
+      },
       "version": "2.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1c4f74f34b6a46f2b4503aa65cad41a25844f1d83095b9114cb1e22e3ed34dc9",

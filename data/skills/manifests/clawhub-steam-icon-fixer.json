@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/steam-icon-fixer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-steam-icon-fixer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-steam-icon-fixer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2eb3b1d5cde6040ee814d48b0dcda753a6e99eced167f694e596a62f140d9b37",

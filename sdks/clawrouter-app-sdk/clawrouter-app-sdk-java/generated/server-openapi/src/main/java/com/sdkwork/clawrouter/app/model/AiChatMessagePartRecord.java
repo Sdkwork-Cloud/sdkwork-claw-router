@@ -11,19 +11,21 @@ public class AiChatMessagePartRecord {
     private String itemId;
     private Map<String, String> jsonContent;
     private Boolean legalHold;
+    private String mediaResourceId;
     private String messageId;
     private Map<String, String> metadata;
     private String mimeType;
+    private String objectBlobId;
     private String organizationId;
     private Integer partNo;
     private String partType;
     private String payloadHash;
     private String providerPartId;
     private String requestId;
+    private Map<String, String> resourceSnapshot;
     private String retentionUntil;
     private String sha256;
     private String status;
-    private String storageUrl;
     private String tenantId;
     private String textContent;
     private String traceId;
@@ -94,6 +96,14 @@ public class AiChatMessagePartRecord {
         this.legalHold = legalHold;
     }
 
+    public String getMediaResourceId() {
+        return this.mediaResourceId;
+    }
+
+    public void setMediaResourceId(String mediaResourceId) {
+        this.mediaResourceId = mediaResourceId;
+    }
+
     public String getMessageId() {
         return this.messageId;
     }
@@ -116,6 +126,14 @@ public class AiChatMessagePartRecord {
 
     public void setMimeType(String mimeType) {
         this.mimeType = mimeType;
+    }
+
+    public String getObjectBlobId() {
+        return this.objectBlobId;
+    }
+
+    public void setObjectBlobId(String objectBlobId) {
+        this.objectBlobId = objectBlobId;
     }
 
     public String getOrganizationId() {
@@ -166,6 +184,14 @@ public class AiChatMessagePartRecord {
         this.requestId = requestId;
     }
 
+    public Map<String, String> getResourceSnapshot() {
+        return this.resourceSnapshot;
+    }
+
+    public void setResourceSnapshot(Map<String, String> resourceSnapshot) {
+        this.resourceSnapshot = resourceSnapshot;
+    }
+
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
@@ -188,14 +214,6 @@ public class AiChatMessagePartRecord {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public String getStorageUrl() {
-        return this.storageUrl;
-    }
-
-    public void setStorageUrl(String storageUrl) {
-        this.storageUrl = storageUrl;
     }
 
     public String getTenantId() {

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/orbit@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-orbit-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-orbit-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4cc29de20ab35322cea04ca5b87f9399e975e04f8296507a19e6075bbe6cbced",

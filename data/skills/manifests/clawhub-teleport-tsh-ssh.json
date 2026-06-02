@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/teleport-tsh-ssh@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-teleport-tsh-ssh-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-teleport-tsh-ssh-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:814d84dbe79044740a2b6878f67d30c53e3a304084cbe4fdba6b4cf02fca5351",

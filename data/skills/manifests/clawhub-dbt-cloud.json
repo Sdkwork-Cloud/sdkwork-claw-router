@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dbt-cloud@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-dbt-cloud-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dbt-cloud-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c9950af1a6fc4ff1362f186413b827b4e5cb6f2df1b6dccf135db3b0a3704451",

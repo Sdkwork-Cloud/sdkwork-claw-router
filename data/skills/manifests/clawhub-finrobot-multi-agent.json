@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finrobot-multi-agent@0.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-finrobot-multi-agent-0.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finrobot-multi-agent-0.3.3.json"
+      },
       "version": "0.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:763e42f4dda0d721e5de6133b213c4f9c99dc7c527b17f169a664acba981a257",

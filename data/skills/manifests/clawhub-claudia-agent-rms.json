@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claudia-agent-rms@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claudia-agent-rms-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claudia-agent-rms-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5aa734efad7b1817dba5c3a2d76eee4bdd87e0f1cffc269385199f513d45097d",

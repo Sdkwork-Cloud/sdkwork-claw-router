@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kiro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kiro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kiro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92916d6db1177dc25abbb5e53f8d03e9db1c23a9c705422259372b32bb012075",

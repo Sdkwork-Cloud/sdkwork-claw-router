@@ -5,6 +5,7 @@ data class CommercePaymentAttemptRecord(
     val callbackPayload: String? = null,
     val createdAt: String? = null,
     val currencyCode: String? = null,
+    val id: String? = null,
     val orderId: String? = null,
     val organizationId: String? = null,
     val outTradeNo: String? = null,

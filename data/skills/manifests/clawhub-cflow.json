@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cflow@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-cflow-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cflow-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6c13907899d4ebfcd334cd5e53c460db160b108c7d621d966de95b4b7a956080",

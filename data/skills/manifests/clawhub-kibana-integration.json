@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kibana-integration@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-kibana-integration-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kibana-integration-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1a5cc350abb8ae3136d1b5d306084a4e40eb2b839e26b98354d5d6fd56131b17",

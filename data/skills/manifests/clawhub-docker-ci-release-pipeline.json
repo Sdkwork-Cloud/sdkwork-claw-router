@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-ci-release-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-ci-release-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-ci-release-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2dc74551c998086e877230ece5011603d40f71c9a18510957437219d03be768f",

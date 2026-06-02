@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llmcities@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llmcities-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llmcities-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c14978dcead43513978ed9b08e7764deadd5449e6cffcb2933d3afa6f61d1653",

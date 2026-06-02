@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/easybuy-amazon-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-easybuy-amazon-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-easybuy-amazon-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:efc86c4bb0b169e7d1bcf7050b5089900e6c9f070c054d2829dea361c0778a23",

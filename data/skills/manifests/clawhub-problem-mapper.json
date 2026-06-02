@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/problem-mapper@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-problem-mapper-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-problem-mapper-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67635cc81fa251f8edad6a8d86f04185d631b934f38b44c480335ec500713062",

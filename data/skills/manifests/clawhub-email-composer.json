@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-composer@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-composer-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-composer-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a523d219c0185db746502e894f7d6ebb54532a8a1fecc35d45dc3f2a91d45b2f",

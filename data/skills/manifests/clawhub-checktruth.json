@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/checktruth@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-checktruth-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-checktruth-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f1806cb387eb70ce7c9c25f81e556c62128c59b7004551ee08080ef27778b03c",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-recall@3.3.27",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-recall-3.3.27.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-recall-3.3.27.json"
+      },
       "version": "3.3.27",
       "runtime": "metadata",
       "checksumHash": "sha256:bb407a48e0c37b0a5f9a26cf370125347131de498e1a8781c35385895c7acde6",

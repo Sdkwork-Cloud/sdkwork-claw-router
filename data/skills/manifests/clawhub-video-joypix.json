@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-joypix@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-joypix-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-joypix-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cf1326d4dd86920302e4926d35f350349f671c557f855a23732a07b9431fd814",

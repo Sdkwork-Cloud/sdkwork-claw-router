@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ipcam@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ipcam-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ipcam-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:91b19d9aa0871f5b126d0a5d25cfbb8f7eb5092c645dcdc8e3c79316985783e5",

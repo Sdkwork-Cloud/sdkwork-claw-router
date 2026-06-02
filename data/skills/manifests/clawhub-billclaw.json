@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/billclaw@0.5.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-billclaw-0.5.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-billclaw-0.5.5.json"
+      },
       "version": "0.5.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7ee1745fffef98d21d3976374709844a03bf7306e332c70d453cf627f857ee62",

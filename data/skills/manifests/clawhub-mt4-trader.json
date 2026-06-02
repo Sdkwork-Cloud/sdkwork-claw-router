@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mt4-trader@1.1.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-mt4-trader-1.1.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mt4-trader-1.1.12.json"
+      },
       "version": "1.1.12",
       "runtime": "metadata",
       "checksumHash": "sha256:d46c62e936cc7d4d52c108ab94a50042d12bb9f681cc00cee97734e36ad9550f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linde@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linde-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linde-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b228d22970947a06a534308f75f92bd0e8bd3c45bc39c74f68869bacf6eb081c",

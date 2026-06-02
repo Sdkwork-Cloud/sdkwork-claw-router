@@ -1,7 +1,9 @@
 import {
   createSdkworkAppCapabilityManifest,
+  getSdkworkMediaDeliveryUrl,
   type CreateSdkworkAppCapabilityManifestOptions,
   type SdkworkAppCapabilityManifest,
+  type SdkworkMediaResource,
 } from "@sdkwork/appbase-pc-react";
 
 export type SdkworkImConnectionStatus =
@@ -31,9 +33,10 @@ export type SdkworkImMessageStatus =
   | "read"
   | "sending"
   | "sent";
+export type SdkworkImMediaResource = SdkworkMediaResource;
 
 export interface SdkworkImParticipant {
-  avatarUrl?: string;
+  avatar?: SdkworkImMediaResource;
   id: string;
   isBot?: boolean;
   name: string;
@@ -58,11 +61,12 @@ export interface SdkworkImConversation {
 
 export interface SdkworkImAttachment {
   id: string;
-  mimeType?: string;
-  name?: string;
-  sizeBytes?: number;
-  type: Extract<SdkworkImMessageKind, "audio" | "file" | "image" | "video">;
-  url: string;
+  encoding?: string;
+  mediaAssetId?: string;
+  mediaRole?: string;
+  payload?: string;
+  resource: SdkworkImMediaResource;
+  schemaRef?: string;
 }
 
 export interface SdkworkImMessage {
@@ -159,11 +163,26 @@ export interface SdkworkImSendDraft {
   text?: string;
 }
 
+export type SdkworkImSendContentPart =
+  | {
+      kind: "media";
+      encoding?: string;
+      mediaAssetId?: string;
+      payload?: string;
+      resource: SdkworkImMediaResource;
+      schemaRef?: string;
+    }
+  | {
+      kind: "text";
+      text: string;
+    };
+
 export type SdkworkImSendIssue = "archived" | "degraded-connection" | "empty-draft" | "offline" | "read-only";
 
 export interface SdkworkImSendPayload {
   attachmentCount: number;
   attachments: readonly SdkworkImAttachment[];
+  contentParts: readonly SdkworkImSendContentPart[];
   conversationId: string;
   hasAttachments: boolean;
   hasText: boolean;
@@ -540,6 +559,32 @@ export function resolveImComposerCapabilities(
   };
 }
 
+export function getImAttachmentDeliveryUrl(
+  attachment: Pick<SdkworkImAttachment, "resource"> | null | undefined,
+): string | undefined {
+  return getSdkworkMediaDeliveryUrl(attachment?.resource);
+}
+
+export function createImContentPartsFromDraft(
+  draft: SdkworkImSendDraft = {},
+): SdkworkImSendContentPart[] {
+  const text = draft.text?.trim() ?? "";
+  const parts: SdkworkImSendContentPart[] = text.length > 0 ? [{ kind: "text", text }] : [];
+
+  for (const attachment of draft.attachments ?? []) {
+    parts.push({
+      kind: "media",
+      ...(attachment.encoding ? { encoding: attachment.encoding } : {}),
+      ...(attachment.mediaAssetId ? { mediaAssetId: attachment.mediaAssetId } : {}),
+      ...(attachment.payload ? { payload: attachment.payload } : {}),
+      resource: attachment.resource,
+      ...(attachment.schemaRef ? { schemaRef: attachment.schemaRef } : {}),
+    });
+  }
+
+  return parts;
+}
+
 export function evaluateImSendReadiness(
   conversation: SdkworkImConversation,
   draft: SdkworkImSendDraft = {},
@@ -548,9 +593,11 @@ export function evaluateImSendReadiness(
   const capabilities = resolveImComposerCapabilities(conversation, options);
   const text = draft.text?.trim() ?? "";
   const attachments = draft.attachments ?? [];
+  const contentParts = createImContentPartsFromDraft({ attachments, text });
   const payload: SdkworkImSendPayload = {
     attachmentCount: attachments.length,
     attachments,
+    contentParts,
     conversationId: conversation.id,
     hasAttachments: attachments.length > 0,
     hasText: text.length > 0,

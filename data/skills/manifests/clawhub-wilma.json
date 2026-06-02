@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wilma@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wilma-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wilma-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc9884b1cef94ad07d943819f9bb066af3707d0d02164257a4bd1965ecd6fbb3",

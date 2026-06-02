@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/berkeley@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-berkeley-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-berkeley-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5064346954bd9afdc05c96c26b01460d6dee2a9a444e5f1725a0a1e24ef900a7",

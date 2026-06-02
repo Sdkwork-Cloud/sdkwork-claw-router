@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heineken@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-heineken-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heineken-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3bff4dde4183cde9fdbfdde1d45538555cffe59f1602d84f66021ac1c85ebb2f",

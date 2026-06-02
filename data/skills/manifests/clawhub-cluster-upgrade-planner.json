@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cluster-upgrade-planner@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cluster-upgrade-planner-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cluster-upgrade-planner-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:941451f4bc849716f72f338ae0bbed6b687b69db51b073c0596bfea7f9bd019f",

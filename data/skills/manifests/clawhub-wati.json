@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wati@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-wati-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wati-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4694d67cf4911f82571eaeeed8987aff9514ef5bd403b46932c43e846ecdbe51",

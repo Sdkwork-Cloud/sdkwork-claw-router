@@ -5,10 +5,11 @@ use axum::body::Bytes;
 use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
-use axum::routing::get;
+use axum::routing::{get, patch};
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
+use sha2::{Digest, Sha256};
 
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
@@ -17,8 +18,9 @@ use crate::domain::DomainError;
 use crate::ports::{
     AdminTransactionCenterStore, AdminTransactionCenterSubject, AdminTransactionCollection,
     AdminTransactionJsonRecord, CreateAdminPaymentProviderAccountCommand,
-    ListAdminTransactionChildRecordsQuery, ListAdminTransactionRecordsQuery,
-    LoadAdminTransactionRecordQuery,
+    DeleteAdminPaymentProviderAccountCommand, ListAdminTransactionChildRecordsQuery,
+    ListAdminTransactionRecordsQuery, LoadAdminTransactionRecordQuery,
+    UpdateAdminPaymentProviderAccountCommand, UpdateAdminPaymentProviderAccountStatusCommand,
 };
 
 const DEFAULT_PAGE_NO: i64 = 1;
@@ -54,6 +56,7 @@ const PAYMENT_METHOD_CODES: &[&str] = &[
 ];
 const PAYMENT_PROVIDER_ENVIRONMENTS: &[&str] = &["sandbox", "production"];
 const PAYMENT_CONFIG_STATUSES: &[&str] = &["active", "inactive", "disabled"];
+const PAYMENT_PROVIDER_ACCOUNT_ROLES: &[&str] = &["merchant", "service_provider"];
 
 #[derive(Clone)]
 struct AdminTransactionCenterState {
@@ -78,8 +81,32 @@ struct TransactionCenterListQueryRequest {
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
 struct PaymentProviderAccountMutationRequest {
-    account_no: String,
     provider_code: String,
+    account_role: Option<String>,
+    merchant_id: String,
+    environment: String,
+    country_code: String,
+    settlement_currency: String,
+    secret_ref: String,
+    webhook_secret_ref: Option<String>,
+    certificate_ref: Option<String>,
+    rotated_at: Option<String>,
+    client_request_no: Option<String>,
+    note: Option<String>,
+    status: String,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+struct PaymentProviderAccountStatusUpdateRequest {
+    status: String,
+    client_request_no: Option<String>,
+    note: Option<String>,
+}
+
+struct NormalizedPaymentProviderAccountMutation {
+    provider_code: String,
+    account_role: Option<String>,
     merchant_id: String,
     environment: String,
     country_code: String,
@@ -108,6 +135,12 @@ struct TransactionCenterResourceResponse {
     item: AdminTransactionJsonRecord,
 }
 
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct TransactionCenterDeleteResponse {
+    deleted: bool,
+}
+
 pub fn admin_transaction_center_router_with_store(
     store: Arc<dyn AdminTransactionCenterStore + Send + Sync>,
 ) -> Router {
@@ -133,6 +166,14 @@ pub fn admin_transaction_center_router_with_store(
         .route(
             "/backend/v3/api/payments/provider_accounts",
             get(list_payment_provider_accounts).post(create_payment_provider_account),
+        )
+        .route(
+            "/backend/v3/api/payments/provider_accounts/{provider_account_id}",
+            patch(update_payment_provider_account).delete(delete_payment_provider_account),
+        )
+        .route(
+            "/backend/v3/api/payments/provider_accounts/{provider_account_id}/status",
+            patch(update_payment_provider_account_status),
         )
         .route(
             "/backend/v3/api/payments/methods",
@@ -286,6 +327,102 @@ async fn create_payment_provider_account(
             item,
         }))
         .into_response(),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => transaction_center_system_response(
+            "payment provider account command store is unavailable",
+            error,
+        ),
+    }
+}
+
+async fn update_payment_provider_account(
+    State(state): State<AdminTransactionCenterState>,
+    headers: HeaderMap,
+    Path(provider_account_id): Path<String>,
+    body: Bytes,
+) -> Response {
+    let request = match parse_json_body::<PaymentProviderAccountMutationRequest>(
+        &body,
+        "payment provider account",
+    ) {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command =
+        match build_update_payment_provider_account_command(&headers, provider_account_id, request)
+        {
+            Ok(command) => command,
+            Err(response) => return response,
+        };
+    match state.store.update_payment_provider_account(command).await {
+        Ok(item) => Json(PlusApiResult::success(TransactionCenterResourceResponse {
+            item,
+        }))
+        .into_response(),
+        Err(error) if error.is_not_found() => not_found_response(error.to_string()),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => transaction_center_system_response(
+            "payment provider account command store is unavailable",
+            error,
+        ),
+    }
+}
+
+async fn update_payment_provider_account_status(
+    State(state): State<AdminTransactionCenterState>,
+    headers: HeaderMap,
+    Path(provider_account_id): Path<String>,
+    body: Bytes,
+) -> Response {
+    let request = match parse_json_body::<PaymentProviderAccountStatusUpdateRequest>(
+        &body,
+        "payment provider account status",
+    ) {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command = match build_update_payment_provider_account_status_command(
+        &headers,
+        provider_account_id,
+        request,
+    ) {
+        Ok(command) => command,
+        Err(response) => return response,
+    };
+    match state
+        .store
+        .update_payment_provider_account_status(command)
+        .await
+    {
+        Ok(item) => Json(PlusApiResult::success(TransactionCenterResourceResponse {
+            item,
+        }))
+        .into_response(),
+        Err(error) if error.is_not_found() => not_found_response(error.to_string()),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => transaction_center_system_response(
+            "payment provider account command store is unavailable",
+            error,
+        ),
+    }
+}
+
+async fn delete_payment_provider_account(
+    State(state): State<AdminTransactionCenterState>,
+    headers: HeaderMap,
+    Path(provider_account_id): Path<String>,
+) -> Response {
+    let command = match build_delete_payment_provider_account_command(&headers, provider_account_id)
+    {
+        Ok(command) => command,
+        Err(response) => return response,
+    };
+    match state.store.delete_payment_provider_account(command).await {
+        Ok(deleted) => Json(PlusApiResult::success(TransactionCenterDeleteResponse {
+            deleted,
+        }))
+        .into_response(),
+        Err(error) if error.is_not_found() => not_found_response(error.to_string()),
         Err(error) if error.is_conflict() => conflict_response(error),
         Err(error) => transaction_center_system_response(
             "payment provider account command store is unavailable",
@@ -556,15 +693,126 @@ fn build_create_payment_provider_account_command(
     request: PaymentProviderAccountMutationRequest,
 ) -> Result<CreateAdminPaymentProviderAccountCommand, Response> {
     let subject = resolve_subject(headers)?;
-    let account_no = normalize_required_text(request.account_no, "accountNo", MAX_ID_LEN)?;
-    if !is_ascii_identifier(&account_no) {
-        return Err(bad_request("accountNo must match ^[A-Za-z0-9_-]+$"));
-    }
+    let normalized = normalize_payment_provider_account_mutation(request)?;
+    let idempotency_key = required_header(headers, IDEMPOTENCY_KEY_HEADER)?;
+    let account_no = generate_payment_provider_account_no(&subject, &idempotency_key);
+
+    Ok(CreateAdminPaymentProviderAccountCommand {
+        subject,
+        account_no,
+        provider_code: normalized.provider_code,
+        account_role: normalized.account_role,
+        merchant_id: normalized.merchant_id,
+        environment: normalized.environment,
+        country_code: normalized.country_code,
+        settlement_currency: normalized.settlement_currency,
+        secret_ref: normalized.secret_ref,
+        webhook_secret_ref: normalized.webhook_secret_ref,
+        certificate_ref: normalized.certificate_ref,
+        rotated_at: normalized.rotated_at,
+        client_request_no: normalized.client_request_no,
+        note: normalized.note,
+        status: normalized.status,
+        idempotency_key,
+        request_id: Some(server_request_id()?),
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_update_payment_provider_account_command(
+    headers: &HeaderMap,
+    provider_account_id: String,
+    request: PaymentProviderAccountMutationRequest,
+) -> Result<UpdateAdminPaymentProviderAccountCommand, Response> {
+    let subject = resolve_subject(headers)?;
+    let provider_account_id =
+        normalize_required_text(provider_account_id, "providerAccountId", MAX_ID_LEN)?;
+    let normalized = normalize_payment_provider_account_mutation(request)?;
+
+    Ok(UpdateAdminPaymentProviderAccountCommand {
+        subject,
+        provider_account_id,
+        provider_code: normalized.provider_code,
+        account_role: normalized.account_role,
+        merchant_id: normalized.merchant_id,
+        environment: normalized.environment,
+        country_code: normalized.country_code,
+        settlement_currency: normalized.settlement_currency,
+        secret_ref: normalized.secret_ref,
+        webhook_secret_ref: normalized.webhook_secret_ref,
+        certificate_ref: normalized.certificate_ref,
+        rotated_at: normalized.rotated_at,
+        client_request_no: normalized.client_request_no,
+        note: normalized.note,
+        status: normalized.status,
+        idempotency_key: required_header(headers, IDEMPOTENCY_KEY_HEADER)?,
+        request_id: Some(server_request_id()?),
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_update_payment_provider_account_status_command(
+    headers: &HeaderMap,
+    provider_account_id: String,
+    request: PaymentProviderAccountStatusUpdateRequest,
+) -> Result<UpdateAdminPaymentProviderAccountStatusCommand, Response> {
+    let subject = resolve_subject(headers)?;
+    let provider_account_id =
+        normalize_required_text(provider_account_id, "providerAccountId", MAX_ID_LEN)?;
+    let status = normalize_enum(
+        request.status,
+        "status",
+        MAX_MUTATION_STATUS_LEN,
+        PAYMENT_CONFIG_STATUSES,
+        AsciiCase::Lower,
+    )?;
+    Ok(UpdateAdminPaymentProviderAccountStatusCommand {
+        subject,
+        provider_account_id,
+        status,
+        client_request_no: normalize_optional_text(
+            request.client_request_no,
+            "clientRequestNo",
+            MAX_ID_LEN,
+        )?,
+        note: normalize_optional_text(request.note, "note", MAX_TEXT_LEN)?,
+        idempotency_key: required_header(headers, IDEMPOTENCY_KEY_HEADER)?,
+        request_id: Some(server_request_id()?),
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_delete_payment_provider_account_command(
+    headers: &HeaderMap,
+    provider_account_id: String,
+) -> Result<DeleteAdminPaymentProviderAccountCommand, Response> {
+    Ok(DeleteAdminPaymentProviderAccountCommand {
+        subject: resolve_subject(headers)?,
+        provider_account_id: normalize_required_text(
+            provider_account_id,
+            "providerAccountId",
+            MAX_ID_LEN,
+        )?,
+        request_id: Some(server_request_id()?),
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn normalize_payment_provider_account_mutation(
+    request: PaymentProviderAccountMutationRequest,
+) -> Result<NormalizedPaymentProviderAccountMutation, Response> {
     let provider_code = normalize_enum(
         request.provider_code,
         "providerCode",
         MAX_CODE_LEN,
         PAYMENT_PROVIDER_CODES,
+        AsciiCase::Lower,
+    )?;
+    let account_role = normalize_optional_enum(
+        request.account_role,
+        "accountRole",
+        MAX_CODE_LEN,
+        PAYMENT_PROVIDER_ACCOUNT_ROLES,
         AsciiCase::Lower,
     )?;
     let environment = normalize_enum(
@@ -588,9 +836,6 @@ fn build_create_payment_provider_account_command(
         PAYMENT_CONFIG_STATUSES,
         AsciiCase::Lower,
     )?;
-    let client_request_no =
-        normalize_optional_text(request.client_request_no, "clientRequestNo", MAX_ID_LEN)?;
-    let note = normalize_optional_text(request.note, "note", MAX_TEXT_LEN)?;
     let secret_ref = normalize_required_text(request.secret_ref, "secretRef", MAX_SECRET_REF_LEN)?;
     validate_secret_ref(&provider_code, &secret_ref)?;
     let webhook_secret_ref = normalize_optional_text(
@@ -609,11 +854,9 @@ fn build_create_payment_provider_account_command(
     if let Some(secret_ref) = certificate_ref.as_deref() {
         validate_secret_ref(&provider_code, secret_ref)?;
     }
-
-    Ok(CreateAdminPaymentProviderAccountCommand {
-        subject,
-        account_no,
+    Ok(NormalizedPaymentProviderAccountMutation {
         provider_code,
+        account_role,
         merchant_id: normalize_required_text(
             request.merchant_id,
             "merchantId",
@@ -626,13 +869,32 @@ fn build_create_payment_provider_account_command(
         webhook_secret_ref,
         certificate_ref,
         rotated_at: normalize_optional_text(request.rotated_at, "rotatedAt", MAX_CODE_LEN)?,
-        client_request_no,
-        note,
+        client_request_no: normalize_optional_text(
+            request.client_request_no,
+            "clientRequestNo",
+            MAX_ID_LEN,
+        )?,
+        note: normalize_optional_text(request.note, "note", MAX_TEXT_LEN)?,
         status,
-        idempotency_key: required_header(headers, IDEMPOTENCY_KEY_HEADER)?,
-        request_id: Some(server_request_id()?),
-        requested_at: current_timestamp_string(),
     })
+}
+
+fn generate_payment_provider_account_no(
+    subject: &AdminTransactionCenterSubject,
+    idempotency_key: &str,
+) -> String {
+    let mut hasher = Sha256::new();
+    hasher.update(b"payment-provider-account-no:v1");
+    for part in [
+        subject.tenant_id.to_string(),
+        subject.organization_id.to_string(),
+        idempotency_key.to_owned(),
+    ] {
+        hasher.update([0]);
+        hasher.update(part.as_bytes());
+    }
+    let digest = hasher.finalize();
+    format!("pacc-{}", hex::encode(&digest[..16]))
 }
 
 fn validate_secret_ref(provider_code: &str, value: &str) -> Result<(), Response> {
@@ -794,12 +1056,6 @@ fn normalize_optional_ascii_code(
         return Ok(None);
     };
     normalize_ascii_code(value, field_name, exact_len, pattern).map(Some)
-}
-
-fn is_ascii_identifier(value: &str) -> bool {
-    value
-        .bytes()
-        .all(|byte| byte.is_ascii_alphanumeric() || byte == b'_' || byte == b'-')
 }
 
 fn bad_request(message: impl Into<String>) -> Response {

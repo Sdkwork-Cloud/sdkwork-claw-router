@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-sift@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-sift-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-sift-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df44a74952218838ce0ec8da0f0f77ba5ee8e92648f03e7436515e96e8df4876",

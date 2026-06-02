@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ardupilot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ardupilot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ardupilot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f6075dfa538af6257bdf9de5d8bdd8484153a8b27ed26b69eee3c6b6a83f1e6",

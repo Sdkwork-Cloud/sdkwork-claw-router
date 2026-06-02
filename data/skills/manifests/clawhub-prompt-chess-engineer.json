@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-chess-engineer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-chess-engineer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-chess-engineer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bedac5c839bad80444ba9fe4cbfe814a2c9f9bb7178bd991306a99703babb7df",

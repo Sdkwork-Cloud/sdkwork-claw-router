@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/saa-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-saa-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-saa-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e379d780e2969341d258b91db8a7a1f6cb9b7b42ff1aa42ad5257ca3c1b1f251",

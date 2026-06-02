@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-fda@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-fda-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-fda-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77742a721d926523d5ae0b0fcd48863cf633a80981dae840c74cfe62ca6a9720",

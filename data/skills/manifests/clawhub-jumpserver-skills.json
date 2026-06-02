@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jumpserver-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jumpserver-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jumpserver-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77d1d3c2f5beb2e2d1e1c9cd1d482e4056bdace7ce50371fd8bf392762cf1247",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/delta-air@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-delta-air-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-delta-air-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d002a94badbee6be592eb80d9bbe88b5cac0801ac97f039f3ea2275571c63e74",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/domain-email-forwarding@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-domain-email-forwarding-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-domain-email-forwarding-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c49aedea6e6d4032a36feabb7567b39a4a494d155941dd2bd615ae50a63788c4",

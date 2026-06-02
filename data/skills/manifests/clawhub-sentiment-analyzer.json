@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentiment-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentiment-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentiment-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4144a7139d842458ace448995f86f594a23268b8627599df0ed44af0fefbf1f2",

@@ -4,6 +4,8 @@ export interface CommerceIdempotencyKeyRecord {
   created_at: string;
   /** Expires at field on commerce idempotency key record. */
   expires_at: string;
+  /** Id field on commerce idempotency key record. */
+  id?: string;
   /** Idempotency key field on commerce idempotency key record. */
   idempotency_key: string;
   /** Locked until field on commerce idempotency key record. */

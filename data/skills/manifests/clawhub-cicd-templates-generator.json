@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cicd-templates-generator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cicd-templates-generator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cicd-templates-generator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4113d8047c134d8df5126623a0efea6ee0a4bed454593e239fe448edb1ffec89",

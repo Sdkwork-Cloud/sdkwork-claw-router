@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/frankfurt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-frankfurt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-frankfurt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cea01a1ab3caaab5cd8c00a4ce73efa4826a2a64e8d309a236baf7c6c628cf45",

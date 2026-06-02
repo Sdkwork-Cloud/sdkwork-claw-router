@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.backend.model;
 
 public class CommerceOrderItemRecord {
     private String createdAt;
+    private String id;
     private String orderId;
     private String quantity;
     private String skuId;
@@ -17,6 +18,14 @@ public class CommerceOrderItemRecord {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrderId() {

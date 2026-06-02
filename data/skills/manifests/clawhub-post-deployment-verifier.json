@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/post-deployment-verifier@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-post-deployment-verifier-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-post-deployment-verifier-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b8e0bb9a6e71eab002440549102be83b3d46783cc4d86d416cddee7dcfe3f9fc",

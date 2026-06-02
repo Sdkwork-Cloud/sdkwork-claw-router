@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/android-dev-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-android-dev-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-android-dev-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b7f8ec499734ba963db44d00ad4ed941fc57de54458b37049e39275da19b9e1b",

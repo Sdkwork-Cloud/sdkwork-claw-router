@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/insurance-claims-intelligence@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-insurance-claims-intelligence-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-insurance-claims-intelligence-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:224b823abeeb4c1f83349df83ebd020202a0584da8579a67730b104cb7fb3210",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generic-drug@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-generic-drug-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generic-drug-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b67d15271f6c77ccec2296372281de892a1f5fbbbbc6361dfdd0a2ced25fcf5d",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llmconclave@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llmconclave-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llmconclave-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86801c62a5f3140f0165b42b9bcd5afbb00a10f3798344fd0f196eb6140ea129",

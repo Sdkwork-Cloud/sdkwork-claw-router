@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/readme-craft@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-readme-craft-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-readme-craft-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8da9513753bb68f0a7b921794e64a97af64e7daaff02b3683ce54ae2b22639b2",

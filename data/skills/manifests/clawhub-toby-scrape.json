@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-scrape@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-scrape-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-scrape-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b37b77ffa7533b3c93ca979148f6c7d6444f7ababdadaf0ff7fe9d229b265370",

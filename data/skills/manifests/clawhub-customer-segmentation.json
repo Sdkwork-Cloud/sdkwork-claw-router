@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customer-segmentation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-customer-segmentation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customer-segmentation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdf0d07e82d8e6a8648ec8c8b3418ce401e009b5fd3c0dc96b6251df7e42d721",

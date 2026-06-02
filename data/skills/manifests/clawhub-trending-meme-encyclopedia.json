@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trending-meme-encyclopedia@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trending-meme-encyclopedia-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trending-meme-encyclopedia-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:123d58d61de86ac85040ea7ca944e00acfc78168bc8c91c6358882368b70dda0",

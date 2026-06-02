@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weixin-sender@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-weixin-sender-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weixin-sender-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b98bbe04801e73089216f90a84b2ac57e078cb1e72e67d60b549adb177dcb43b",

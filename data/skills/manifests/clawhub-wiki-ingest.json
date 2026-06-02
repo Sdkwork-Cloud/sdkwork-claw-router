@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wiki-ingest@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wiki-ingest-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wiki-ingest-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:37be4eb090a5ec34a8e7efc753ccd2336dc355c36ec7a7174d89c932a31c7274",

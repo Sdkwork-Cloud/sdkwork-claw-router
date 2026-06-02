@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-management@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-management-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-management-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28ca860c4d1a2e367a95846723c56884ecb8ce20bf2b95c813dd59acdcc100df",

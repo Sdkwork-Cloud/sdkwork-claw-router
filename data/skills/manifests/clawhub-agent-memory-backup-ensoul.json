@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-backup-ensoul@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-backup-ensoul-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-backup-ensoul-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a6e0767d49ee56b40e00844bc7c0d5476a1e745a6062d72574f63d6f973f2a96",

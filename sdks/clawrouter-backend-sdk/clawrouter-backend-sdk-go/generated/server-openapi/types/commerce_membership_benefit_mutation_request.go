@@ -5,7 +5,7 @@ type CommerceMembershipBenefitMutationRequest struct {
 	BenefitKey string `json:"benefitKey"`
 	Claimed bool `json:"claimed"`
 	Description string `json:"description"`
-	Icon string `json:"icon"`
+	Icon MediaResource `json:"icon"`
 	Id int `json:"id"`
 	Name string `json:"name"`
 	Type string `json:"type"`

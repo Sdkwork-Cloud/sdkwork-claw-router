@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/helium@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-helium-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-helium-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:af963837589f75ebabfa5e0b3219074af5c25df89b2582c3316f8670d0139c01",

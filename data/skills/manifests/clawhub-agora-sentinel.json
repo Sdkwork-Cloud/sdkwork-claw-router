@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agora-sentinel@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agora-sentinel-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agora-sentinel-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca9b3b72084301452f8a213052c76f337c1cfd7630c40ec917dacc056c70ce9e",

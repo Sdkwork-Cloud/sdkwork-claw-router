@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slang@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slang-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slang-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9bf4887a992b7a1204d49e20768ea6eb34811762e00c2d903bb7f6e7b885772b",

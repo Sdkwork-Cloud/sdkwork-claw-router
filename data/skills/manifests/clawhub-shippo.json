@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shippo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shippo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shippo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:53da7c6c0ea6441ef5a7e3083c920be98cbaa848628e3bff65354bc58b74b5c0",

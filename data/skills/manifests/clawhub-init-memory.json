@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/init-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-init-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-init-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8b1e545a497716437939d2a4a9533cceb7a8c6c4fdfbff9aeb492c6425ae5443",

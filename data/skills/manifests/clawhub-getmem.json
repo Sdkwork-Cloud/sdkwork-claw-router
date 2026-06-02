@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/getmem@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-getmem-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-getmem-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3ed275316991a804353f777a0e2eaab8d794cb971405ce10c53038980fc1de8c",

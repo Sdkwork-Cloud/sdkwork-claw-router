@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oil-price@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-oil-price-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oil-price-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75c4a8eefb0a45d7128c8ead4a040c42d10aa1a76da9b069831fab64c39e93a5",

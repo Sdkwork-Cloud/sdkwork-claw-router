@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paper-repro-triage@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paper-repro-triage-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paper-repro-triage-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f277db31bec7117a9aa09e0616511f69c62ae620f38a1c334f4fa09b4cc2fa99",

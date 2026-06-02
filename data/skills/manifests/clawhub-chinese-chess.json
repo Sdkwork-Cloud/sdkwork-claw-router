@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-chess@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-chess-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-chess-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a281da89b9c4559f9d625c858ae5677a3ff987fc12e8d93baad10ab2e32456b",

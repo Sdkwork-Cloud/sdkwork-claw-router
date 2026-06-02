@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fund-advisor-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fund-advisor-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fund-advisor-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a54f54b6ab53374ba5c7d4045d3841af10cd8f55ad34d41d1822fcf8b8907578",

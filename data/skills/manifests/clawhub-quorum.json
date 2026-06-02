@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quorum@0.7.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-quorum-0.7.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quorum-0.7.3.json"
+      },
       "version": "0.7.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d43743a1e6db9679c9a30637f52aa4607cfdcbfb9f8454b9cb2f0f0339aa87cf",

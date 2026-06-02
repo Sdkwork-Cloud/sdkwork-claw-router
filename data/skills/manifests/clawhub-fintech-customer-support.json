@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fintech-customer-support@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fintech-customer-support-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fintech-customer-support-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a45d2ed0cd8e9531bf280359a082a4c303940df11d59962e9f551498e087499",

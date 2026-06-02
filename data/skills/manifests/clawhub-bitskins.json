@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bitskins@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bitskins-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bitskins-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:538aa7bc58c4e1b01b74d033a6f80f7ecc4974f73749cc46c4c2363625d34903",

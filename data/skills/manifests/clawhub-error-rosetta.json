@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/error-rosetta@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-error-rosetta-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-error-rosetta-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cb520e4d94e347f336ae27f034ebc13e322ea3800275e7970c9ff9cbcbbdf793",

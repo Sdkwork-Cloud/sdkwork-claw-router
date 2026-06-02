@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lovart-skill@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-lovart-skill-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lovart-skill-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:66176c16babeda8a18252e101e64777658aec3383349b775ae95aee2e98fc66f",

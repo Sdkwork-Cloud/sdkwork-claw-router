@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/exec-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-exec-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-exec-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f9e35695164a5e6c915a7a4f5661280e5c25236eb6af218ecc426bc642481ba",

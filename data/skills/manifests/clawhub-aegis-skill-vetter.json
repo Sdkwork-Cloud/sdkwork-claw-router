@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aegis-skill-vetter@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aegis-skill-vetter-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aegis-skill-vetter-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb5b662773cfeabc07b6dcf86c793d7dda21a73dc39780486fdfc771f8f8d313",

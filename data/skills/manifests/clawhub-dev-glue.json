@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dev-glue@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dev-glue-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dev-glue-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac41fd68d3284b95acf3a3441e35a7d4d5cfdb26d7e9a6664ad174cbc8c943b0",

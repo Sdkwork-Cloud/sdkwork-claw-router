@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/birdweather-puc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-birdweather-puc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-birdweather-puc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b70b92456bca8590d2edf5aa358ccd85c42afccae9a31406bb3d766f12df923",

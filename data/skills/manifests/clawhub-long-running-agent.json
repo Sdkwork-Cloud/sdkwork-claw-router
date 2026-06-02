@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/long-running-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-long-running-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-long-running-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31a782d2d0a6c9baefda6ab8388a3ae3f081701af909cdb193131d1beaa77d06",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/neonomics@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-neonomics-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-neonomics-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8fabe0cceb895ea07605bc7942e058322719789b75f2b187907e58de3048e931",

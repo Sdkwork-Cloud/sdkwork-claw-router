@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meta-tags-optimizer@9.9.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-meta-tags-optimizer-9.9.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meta-tags-optimizer-9.9.5.json"
+      },
       "version": "9.9.5",
       "runtime": "metadata",
       "checksumHash": "sha256:fd7ef5a3b7a338c59adb29604c557097795059e5c4ffb598f2c86124985af3ce",

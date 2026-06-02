@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-actions-pr-gate-health-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-pr-gate-health-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-actions-pr-gate-health-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0d176daa1e93a2c8f4445b38a733e72f27270e5324024b51e337eb0925894de",

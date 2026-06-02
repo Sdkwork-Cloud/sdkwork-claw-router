@@ -6,6 +6,8 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class MessagingSendAttemptRecord:
     """Messaging send attempt record schema exposed by Claw Router."""
+    attempt_no: Optional[int] = None
+    attempted_at: Optional[str] = None
     created_at: Optional[str] = None
     failure_code: Optional[str] = None
     failure_message_masked: Optional[str] = None
@@ -16,12 +18,15 @@ class MessagingSendAttemptRecord:
     metadata: Optional[Dict[str, str]] = None
     organization_id: Optional[str] = None
     payload_hash: Optional[str] = None
+    provider_account_id: Optional[str] = None
+    provider_code: Optional[str] = None
     provider_message_id: Optional[str] = None
     provider_request_id: Optional[str] = None
     provider_status: Optional[str] = None
     request_id: Optional[str] = None
     retention_until: Optional[str] = None
     retry_after_at: Optional[str] = None
+    send_request_id: Optional[str] = None
     status: Optional[str] = None
     tenant_id: Optional[str] = None
     trace_id: Optional[str] = None

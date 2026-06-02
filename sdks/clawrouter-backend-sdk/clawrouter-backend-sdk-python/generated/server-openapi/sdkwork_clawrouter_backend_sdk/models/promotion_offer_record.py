@@ -13,6 +13,7 @@ class PromotionOfferRecord:
     offer_code: str
     offer_no: str
     offer_type: str
+    priority: int
     status: str
     tenant_id: str
     updated_at: str
@@ -20,6 +21,7 @@ class PromotionOfferRecord:
     current_offer_version_id: Optional[str] = None
     description: Optional[str] = None
     ends_at: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     starts_at: Optional[str] = None
     updated_by: Optional[str] = None

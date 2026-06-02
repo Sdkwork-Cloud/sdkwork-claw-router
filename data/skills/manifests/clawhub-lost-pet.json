@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lost-pet@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lost-pet-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lost-pet-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7fb767f3ba2046eaa761a4afa89f63ad55619d3ee1c40a2218f65a5583ec603f",

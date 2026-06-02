@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/usdc-escrow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-usdc-escrow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-usdc-escrow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a249eb33aa57e43bb3c895c375fe91029f8f2f95cf49b9993064b1d07b46f71",

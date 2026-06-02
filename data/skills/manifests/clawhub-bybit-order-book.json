@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bybit-order-book@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bybit-order-book-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bybit-order-book-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93c84176cc63de519b630019f4eb2a1795e8bf94e6bd7497c821a492ab325dd5",

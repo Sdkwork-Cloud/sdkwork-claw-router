@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sbti-fun-test@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sbti-fun-test-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sbti-fun-test-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:73fd249fb594bc3a782b3e2f445c1f709e611c7c35decc306c2e37055a0f62d2",

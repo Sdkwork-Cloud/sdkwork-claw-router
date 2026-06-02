@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcp-marine-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcp-marine-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcp-marine-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:95fb07f395318091644cb23a83f1435a626c985e678e41f90deff218f978221b",

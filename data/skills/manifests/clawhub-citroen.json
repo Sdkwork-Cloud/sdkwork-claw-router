@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/citroen@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-citroen-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-citroen-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:60809fe0d73935e97b3c1578f491bd9f10994d478fba7764a0b9e868b4415595",

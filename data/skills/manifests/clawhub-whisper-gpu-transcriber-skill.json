@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whisper-gpu-transcriber-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-whisper-gpu-transcriber-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whisper-gpu-transcriber-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:53f509919444312b30fa7fe2f7a636efdc01fd6c66ab82cb54f36608b85f52e4",

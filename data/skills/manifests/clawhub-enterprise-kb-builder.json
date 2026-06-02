@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/enterprise-kb-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-kb-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-enterprise-kb-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:180183881dcedaa09834547a156070d492d086542909840e3959e9bb2395edb0",

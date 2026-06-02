@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hostname-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hostname-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hostname-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b990b6536dfdcfdbb2ea5a8649a4fe958003ee0ed4d6bbdeb72e2366a82820ed",

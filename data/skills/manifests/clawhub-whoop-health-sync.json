@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whoop-health-sync@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whoop-health-sync-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whoop-health-sync-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0124005c005a749621d404ac150c028ea8ce6065e391268c567045ef97d6c52",

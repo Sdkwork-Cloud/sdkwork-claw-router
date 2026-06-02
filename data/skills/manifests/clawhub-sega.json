@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sega@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sega-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sega-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:99f5b06db3c137d8eb6a6664c24e15112850cdad51c50a0ef3a4452bbab27fe4",

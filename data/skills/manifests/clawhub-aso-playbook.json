@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aso-playbook@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-aso-playbook-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aso-playbook-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:70fa79f127d635ce016bdea80f7d52884efde0f7882ed83aa6f0fcf223c41af6",

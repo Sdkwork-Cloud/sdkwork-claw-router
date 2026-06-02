@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cat-therapy@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cat-therapy-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cat-therapy-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cfcd0d623248560c63a4c2c4fadcf85ed4b02c3903e8191722ff55b7cf43c342",

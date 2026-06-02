@@ -23,7 +23,7 @@ const MAX_MODEL_LEN: usize = 128;
 const MAX_GROUP_LEN: usize = 128;
 const MIN_LIMIT_VALUE: i64 = 1;
 const MAX_LIMIT_VALUE: i64 = 1_000_000_000;
-const ACCESS_GROUP_NOT_FOUND: &str = "access group was not found";
+const CHANNEL_GROUP_NOT_FOUND: &str = "channel group was not found";
 
 #[derive(Clone)]
 struct AdminModelRateLimitState {
@@ -35,7 +35,7 @@ struct AdminModelRateLimitState {
 #[serde(rename_all = "camelCase")]
 struct AdminModelRateLimitCreateRequest {
     model: Option<String>,
-    group: Option<String>,
+    channel_group: Option<String>,
     rpm: Option<i64>,
     tpm: Option<i64>,
 }
@@ -43,7 +43,7 @@ struct AdminModelRateLimitCreateRequest {
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct NormalizedCreateRequest {
     model: String,
-    group: String,
+    channel_group: String,
     rpm: i64,
     tpm: i64,
 }
@@ -70,7 +70,9 @@ struct AdminModelRateLimitItemEnvelope {
 struct AdminModelRateLimitItemResponse {
     id: String,
     model: String,
-    group: String,
+    channel_group: String,
+    channel_group_id: String,
+    channel_group_name: String,
     rpm: i64,
     tpm: i64,
     status: String,
@@ -81,10 +83,6 @@ pub fn admin_model_rate_limit_router_with_store(
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
 ) -> Router {
     Router::new()
-        .route(
-            "/backend/v3/api/router/rate_limits/models",
-            get(fetch_model_rate_limits).post(create_model_rate_limit),
-        )
         .route(
             "/backend/v3/api/system/rate_limits/models",
             get(fetch_model_rate_limits).post(create_model_rate_limit),
@@ -148,8 +146,8 @@ async fn create_model_rate_limit(
         }))
         .into_response(),
         Err(error) if error.is_conflict() => conflict_response(error),
-        Err(error) if error.to_string().contains(ACCESS_GROUP_NOT_FOUND) => {
-            bad_request("group must identify an existing access group".to_owned())
+        Err(error) if error.to_string().contains(CHANNEL_GROUP_NOT_FOUND) => {
+            bad_request("channelGroup must identify an existing ai channel group".to_owned())
         }
         Err(error) => {
             model_rate_limit_system_response("model rate limit command store is unavailable", error)
@@ -190,7 +188,7 @@ fn normalize_create_request(
 ) -> Result<NormalizedCreateRequest, String> {
     Ok(NormalizedCreateRequest {
         model: normalize_model(request.model.as_deref())?,
-        group: normalize_group(request.group.as_deref())?,
+        channel_group: normalize_group(request.channel_group.as_deref())?,
         rpm: normalize_limit_value(request.rpm, "rpm")?,
         tpm: normalize_limit_value(request.tpm, "tpm")?,
     })
@@ -218,13 +216,15 @@ fn normalize_model(value: Option<&str>) -> Result<String, String> {
 fn normalize_group(value: Option<&str>) -> Result<String, String> {
     let value = value.unwrap_or("").trim();
     if value.is_empty() {
-        return Err("group is required".to_owned());
+        return Err("channelGroup is required".to_owned());
     }
     if value.chars().count() > MAX_GROUP_LEN {
-        return Err(format!("group must be at most {MAX_GROUP_LEN} characters"));
+        return Err(format!(
+            "channelGroup must be at most {MAX_GROUP_LEN} characters"
+        ));
     }
     if value.chars().any(char::is_control) {
-        return Err("group must not contain control characters".to_owned());
+        return Err("channelGroup must not contain control characters".to_owned());
     }
     Ok(value.to_owned())
 }
@@ -254,7 +254,7 @@ fn build_create_command(
         config_snapshot_uuid: generate_entity_uuid(&state)?,
         policy_code,
         model: request.model,
-        group: request.group,
+        channel_group: request.channel_group,
         rpm: request.rpm,
         tpm: request.tpm,
         request_id: generate_server_request_id().map_err(request_id_error)?,
@@ -284,7 +284,9 @@ fn to_item_response(item: AdminModelRateLimitItem) -> AdminModelRateLimitItemRes
     AdminModelRateLimitItemResponse {
         id: item.id.to_string(),
         model: item.model,
-        group: item.group,
+        channel_group: item.channel_group,
+        channel_group_id: item.channel_group_id.to_string(),
+        channel_group_name: item.channel_group_name,
         rpm: item.rpm,
         tpm: item.tpm,
         status: item.status,

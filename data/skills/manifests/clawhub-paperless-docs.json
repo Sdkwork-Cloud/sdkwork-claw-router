@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paperless-docs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paperless-docs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paperless-docs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:84e2ac4bf8627a018bd3f67787241b5cc09d64906b1817ec12c55ec7c1e2b07b",

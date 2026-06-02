@@ -3,6 +3,7 @@ use std::ops::Deref;
 use std::pin::Pin;
 
 use serde::Serialize;
+use serde_json::Value;
 
 use crate::domain::DomainResult;
 
@@ -100,11 +101,11 @@ pub struct AppStoreItem {
     pub name: String,
     pub developer: String,
     pub category: String,
-    pub image: String,
+    pub image: Value,
     pub rating: f64,
     pub description: String,
     pub downloads: String,
-    pub screenshots: Vec<String>,
+    pub screenshots: Vec<Value>,
     pub features: Vec<String>,
     pub releases: Vec<AppStoreReleaseItem>,
 }
@@ -118,7 +119,7 @@ pub struct AppStoreReleaseItem {
     pub version: String,
     pub size: String,
     pub release_date: String,
-    pub download_url: String,
+    pub artifact: Value,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub whats_new: Option<String>,
 }

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-photo-pro@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-photo-pro-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-photo-pro-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f78ba8d0e40f0142c1b9108b1452d64f08db4fb95758c981bbdf42287b5bfd9",

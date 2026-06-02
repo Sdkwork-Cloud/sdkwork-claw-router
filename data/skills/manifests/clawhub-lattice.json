@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lattice@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lattice-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lattice-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ed21676e3ede605e2c2ccca92cea0cf9fbae7b434303cc21555e8456a70eb012",

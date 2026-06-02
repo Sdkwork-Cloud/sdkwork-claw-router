@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-telegram-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-telegram-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-telegram-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4deeec33abd6c9265fc8041d89a627579f46141aecd42c5209f761059ff8fa8a",

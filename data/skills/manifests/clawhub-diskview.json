@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/diskview@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-diskview-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-diskview-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:49f7ab2a04d8e50e19dac4a4901d8877a9c77cde3e4e25cd4fc84dd7bb5500bc",

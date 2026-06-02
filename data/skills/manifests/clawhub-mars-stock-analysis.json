@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mars-stock-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mars-stock-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mars-stock-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:54df8c72c1e85cd1a445addd17da20c7b3b64a9c301fe8251f75174dcc3e0160",

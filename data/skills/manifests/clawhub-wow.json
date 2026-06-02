@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aea8a90945913195f60c57ffd9a3ad3aff2cc27749121aa3a6596975e6fa8c0f",

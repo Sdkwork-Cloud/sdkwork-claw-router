@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pwnclaw-security-scan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pwnclaw-security-scan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pwnclaw-security-scan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b4f17a9bf35b4fe3de4b1a4f50880330c778a97d320d000588093ff5f3209e5b",

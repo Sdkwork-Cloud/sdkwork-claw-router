@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/helm-chart-builder@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-helm-chart-builder-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-helm-chart-builder-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2880fb28920624d3716adae76a9c0c17a87bc04dcc73daaeb27b146ff1d7b128",

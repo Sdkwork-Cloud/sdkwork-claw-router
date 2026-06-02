@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fidel@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-fidel-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fidel-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:910a10a676bf65c8daa973cbcca067de4058de925f356715b16f16e13c5c1748",

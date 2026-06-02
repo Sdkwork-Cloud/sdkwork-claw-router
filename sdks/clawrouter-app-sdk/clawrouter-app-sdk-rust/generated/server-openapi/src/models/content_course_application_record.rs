@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Content course application record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct ContentCourseApplicationRecord {
@@ -107,7 +109,7 @@ pub struct ContentCourseApplicationRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub version: Option<String>,
 
-    /// Video url field on content course application record.
+    /// Video field on content course application record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub video_url: Option<String>,
+    pub video: Option<MediaResource>,
 }

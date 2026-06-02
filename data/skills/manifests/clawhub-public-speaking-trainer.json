@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/public-speaking-trainer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-public-speaking-trainer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-public-speaking-trainer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28fb3cded421542a583b88b7698317127885794f887d99f07841cd3e3bebf478",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/azure-bicep-deploy@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-azure-bicep-deploy-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-azure-bicep-deploy-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ad342b5f67edbc881d3dff4fffb9d78f7a25107a6844e2299ded43750ab8174",

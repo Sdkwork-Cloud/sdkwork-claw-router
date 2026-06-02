@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencent-survey@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencent-survey-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencent-survey-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc5b1204e0db4e0b21de2160e73af8c9f35b0b9d28b67fc73bf09bdda8361f58",

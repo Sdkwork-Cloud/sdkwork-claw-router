@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/presage@1.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-presage-1.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-presage-1.3.1.json"
+      },
       "version": "1.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:427fa8627a7b23cd1ce39d8cccac64c796f3a831e47787777387e91138aa0319",

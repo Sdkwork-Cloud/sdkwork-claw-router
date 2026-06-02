@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aastock-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aastock-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aastock-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be7985ae445ea6f179a1dce4ac2f833f453d97e9ed533fe5e8f9371800dc5dc9",

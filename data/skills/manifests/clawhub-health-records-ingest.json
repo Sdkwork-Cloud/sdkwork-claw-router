@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-records-ingest@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-records-ingest-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-records-ingest-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:369ec709d80ad4fac262ff23a6a705a93fd48b903a2da4c0c95ed78c27ac52fb",

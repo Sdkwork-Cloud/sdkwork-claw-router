@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/radon-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-radon-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-radon-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1da5c7eaad2b4e4f620fde7221a35b297a99d081603d7feebec5a4a48b9b6a90",

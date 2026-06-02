@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rm-safety@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-rm-safety-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rm-safety-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a825553f516870a27cc72a21a632c77bab400b74d8252ad3ac5f46540d5821e3",

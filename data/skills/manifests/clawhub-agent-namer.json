@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-namer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-namer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-namer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac06714f620cb3202562f0d812df866f9d610492d8236884487b3abf5308f19a",

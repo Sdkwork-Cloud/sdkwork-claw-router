@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opencortex@3.6.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-opencortex-3.6.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opencortex-3.6.7.json"
+      },
       "version": "3.6.7",
       "runtime": "metadata",
       "checksumHash": "sha256:4893a4094aa4f25475fd6a52efc3dc05943bc5c58c482b8fad80e58fe847b364",

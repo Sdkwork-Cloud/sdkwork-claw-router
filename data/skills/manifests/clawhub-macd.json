@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/macd@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-macd-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-macd-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:477e36241613c5618a93416db0a46da28fd4ef4a6ff5abef7774716e28edf6cf",

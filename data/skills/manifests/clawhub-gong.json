@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gong@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gong-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gong-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:671e8d5b663b3df43781cefefc768398c23983534da92cbe89cb256b20612eb9",

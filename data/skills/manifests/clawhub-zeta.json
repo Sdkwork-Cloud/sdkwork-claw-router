@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zeta@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-zeta-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zeta-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5f00337cd16dc95f8773927580430ed53809ae087719a104a31fdff4c2867e3b",

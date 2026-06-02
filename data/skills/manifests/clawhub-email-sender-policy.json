@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-sender-policy@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-sender-policy-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-sender-policy-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cd891d0323414adcc7f6266d4bd3226604b3181ec9eb11706ae758162ed44889",

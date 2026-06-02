@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-portability-checker@1.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-portability-checker-1.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-portability-checker-1.1.3.json"
+      },
       "version": "1.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:bf116694bcab27483dfb9fb6f09ec94b4b4049dc18b421fd6a1129ea8b124595",

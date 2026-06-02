@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/immortal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-immortal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-immortal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:365ac4fbb529cd05b326d339d97c99cad18ae0348a4e33dcb16c9886881e4c88",

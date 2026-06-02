@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/document-format-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-document-format-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-document-format-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:51980be2efbba0aba891250414218fe94d9d129a7e3b0b29bd493f29e9233a11",

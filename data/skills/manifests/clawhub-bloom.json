@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bloom@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bloom-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bloom-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9ab8cd160c623d3d3d273bdacfb3c243935ea44ca0edffb43f07d2ed2f0ebb3d",

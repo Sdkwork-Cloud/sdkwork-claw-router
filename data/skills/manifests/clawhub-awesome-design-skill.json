@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/awesome-design-skill@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-awesome-design-skill-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-awesome-design-skill-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c92fca545c03132bc27d5245797b1362259a7c5467f65e205083ec8a959e6e09",

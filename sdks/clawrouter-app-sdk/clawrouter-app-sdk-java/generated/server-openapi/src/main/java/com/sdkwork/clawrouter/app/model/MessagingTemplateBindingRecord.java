@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.Map;
 
 public class MessagingTemplateBindingRecord {
+    private String approvalStatus;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
@@ -11,14 +12,27 @@ public class MessagingTemplateBindingRecord {
     private String lastSyncedAt;
     private Map<String, String> metadata;
     private String organizationId;
+    private String providerAccountId;
+    private String providerCode;
+    private Map<String, String> providerPayload;
+    private String providerTemplateCode;
     private String providerTemplateVersion;
     private String rejectionReason;
     private String status;
     private String syncPayloadHash;
+    private String templateVariantId;
     private String tenantId;
     private String updatedAt;
     private String uuid;
     private String version;
+
+    public String getApprovalStatus() {
+        return this.approvalStatus;
+    }
+
+    public void setApprovalStatus(String approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -84,6 +98,38 @@ public class MessagingTemplateBindingRecord {
         this.organizationId = organizationId;
     }
 
+    public String getProviderAccountId() {
+        return this.providerAccountId;
+    }
+
+    public void setProviderAccountId(String providerAccountId) {
+        this.providerAccountId = providerAccountId;
+    }
+
+    public String getProviderCode() {
+        return this.providerCode;
+    }
+
+    public void setProviderCode(String providerCode) {
+        this.providerCode = providerCode;
+    }
+
+    public Map<String, String> getProviderPayload() {
+        return this.providerPayload;
+    }
+
+    public void setProviderPayload(Map<String, String> providerPayload) {
+        this.providerPayload = providerPayload;
+    }
+
+    public String getProviderTemplateCode() {
+        return this.providerTemplateCode;
+    }
+
+    public void setProviderTemplateCode(String providerTemplateCode) {
+        this.providerTemplateCode = providerTemplateCode;
+    }
+
     public String getProviderTemplateVersion() {
         return this.providerTemplateVersion;
     }
@@ -114,6 +160,14 @@ public class MessagingTemplateBindingRecord {
 
     public void setSyncPayloadHash(String syncPayloadHash) {
         this.syncPayloadHash = syncPayloadHash;
+    }
+
+    public String getTemplateVariantId() {
+        return this.templateVariantId;
+    }
+
+    public void setTemplateVariantId(String templateVariantId) {
+        this.templateVariantId = templateVariantId;
     }
 
     public String getTenantId() {

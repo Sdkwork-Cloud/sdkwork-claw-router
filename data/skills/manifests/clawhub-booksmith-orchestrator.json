@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/booksmith-orchestrator@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-booksmith-orchestrator-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-booksmith-orchestrator-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8a1419254711f70b79e2b085a217a75ed02cf1656009fc97f554f96ef17aaaf3",

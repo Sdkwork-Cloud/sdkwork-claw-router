@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/better-skill@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-better-skill-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-better-skill-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e889a2938e015654c0f33ac021d9c974b25fdd2a79387e3ec57026e26685e312",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quick-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quick-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quick-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b07a38f09cef027fe7982fc59e4eaabe86d4377b8bb0cc480673d195664eaab0",

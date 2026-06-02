@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/raytheon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-raytheon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-raytheon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ced74fd1fc90b110ab07dcaf9e05dae6701aa58f2ef49b7b017f44c559f52051",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/watch-my-money@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-watch-my-money-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-watch-my-money-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d61c95f0d0576b8bfc114adae31846a5a6cdfc68c5b58698442d490daa254a2",

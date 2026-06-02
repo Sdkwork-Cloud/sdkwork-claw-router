@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/compose@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-compose-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-compose-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ce50539766eb1f9402f9430a9dab3847a1017b510e78012d29bdd9bf5b485a9a",

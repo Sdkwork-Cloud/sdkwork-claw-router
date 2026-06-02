@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whisper-piper-voice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whisper-piper-voice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whisper-piper-voice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8a862b37769db5f0b00946fa89ff867d38ed9e942ece11626d1a565d280ec553",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtrack@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtrack-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtrack-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:edb7642b8751b7b353ea6bc5f9ec26e984a527a41a6202dceb2edea6e195d9e9",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-yt-video-transcript@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-yt-video-transcript-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-yt-video-transcript-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:3e21e2d91c50057aef0f5f68637c82bbece7db80d77e86a823c906363ce5e89b",

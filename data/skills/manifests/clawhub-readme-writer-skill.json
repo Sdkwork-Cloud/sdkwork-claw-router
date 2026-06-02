@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/readme-writer-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-readme-writer-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-readme-writer-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e8ca0612f183630d5345651529a6d187b2c5b5150f867f004f00c93041ad2ae9",

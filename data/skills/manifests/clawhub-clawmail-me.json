@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawmail-me@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawmail-me-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawmail-me-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:5575f6bf1757dd5b5ebb5f76544d399c5ad456f5f7a74ffe0c7a51ca6434db0b",

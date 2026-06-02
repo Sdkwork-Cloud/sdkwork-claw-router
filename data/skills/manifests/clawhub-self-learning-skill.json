@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-learning-skill@3.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-learning-skill-3.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-learning-skill-3.0.2.json"
+      },
       "version": "3.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4499627de6e26860334974fedb3a1bb2fff8579ae803c8626c1be0e489c0c303",

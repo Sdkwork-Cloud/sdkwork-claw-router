@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-disk-cleaner@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-disk-cleaner-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-disk-cleaner-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14e23ae055f2595152b64c04441324e0220d148067e3574a63ff8490fa1f9911",

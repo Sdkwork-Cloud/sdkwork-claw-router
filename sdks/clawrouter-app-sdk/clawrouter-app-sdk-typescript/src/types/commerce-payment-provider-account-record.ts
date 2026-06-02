@@ -10,6 +10,8 @@ export interface CommercePaymentProviderAccountRecord {
   created_at: string;
   /** Environment field on commerce payment provider account record. */
   environment: string;
+  /** Id field on commerce payment provider account record. */
+  id?: string;
   /** Merchant id field on commerce payment provider account record. */
   merchant_id: string;
   /** Organization id field on commerce payment provider account record. */

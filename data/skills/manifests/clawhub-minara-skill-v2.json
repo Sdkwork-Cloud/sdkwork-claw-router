@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minara-skill-v2@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-minara-skill-v2-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minara-skill-v2-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57f79dce7e797ff8cb7a45e166ee0d90b8d0a4055d2f02dcc017584577872ba0",

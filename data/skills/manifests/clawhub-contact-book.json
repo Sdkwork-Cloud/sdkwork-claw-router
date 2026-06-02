@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/contact-book@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-contact-book-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-contact-book-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a9b64c7af0b99378389adb106fa94153e35d80af40b0685ec6b23ff2b974cc10",

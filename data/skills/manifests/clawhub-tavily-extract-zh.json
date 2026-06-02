@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tavily-extract-zh@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tavily-extract-zh-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tavily-extract-zh-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e5822e36b55921b57ad9681b8c7e2e9c468b10d3bb5de0c485a4afeb5fc12c4e",

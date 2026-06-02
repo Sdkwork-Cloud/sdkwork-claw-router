@@ -28,6 +28,7 @@ data class AiChatMessageRecord(
     val tokenCount: String? = null,
     val traceId: String? = null,
     val turnId: String? = null,
+    val updatedAt: String? = null,
     val usageLinkId: String? = null,
     val userId: String? = null,
     val uuid: String? = null

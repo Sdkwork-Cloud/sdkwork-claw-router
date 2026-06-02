@@ -19,11 +19,13 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? DeletedBy { get; set; }
         public string? EffectiveFrom { get; set; }
         public string? EffectiveTo { get; set; }
+        public string? HealthStatus { get; set; }
         public string? Id { get; set; }
         public int? LastLatencyMs { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? OrganizationId { get; set; }
         public string? PathPrefix { get; set; }
+        public int? Priority { get; set; }
         public string? ProviderCode { get; set; }
         public string? RegionCode { get; set; }
         public Dictionary<string, string>? RetryPolicy { get; set; }
@@ -35,5 +37,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? VendorCode { get; set; }
         public string? VendorId { get; set; }
         public string? Version { get; set; }
+        public int? Weight { get; set; }
     }
 }

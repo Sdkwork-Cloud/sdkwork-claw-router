@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/the-pool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-the-pool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-the-pool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7b0e45cab5fd55eff36a2ce37292437b4f38d3b8e36ad81d3079abc05cd9276",

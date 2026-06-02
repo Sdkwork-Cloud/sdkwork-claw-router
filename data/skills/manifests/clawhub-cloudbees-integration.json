@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloudbees-integration@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloudbees-integration-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloudbees-integration-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:637c6fe09a56e0b3d226151ea4c72850a936bada03dd51f695bc1553e094a5cd",

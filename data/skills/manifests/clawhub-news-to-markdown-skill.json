@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/news-to-markdown-skill@3.1.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-news-to-markdown-skill-3.1.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-news-to-markdown-skill-3.1.7.json"
+      },
       "version": "3.1.7",
       "runtime": "metadata",
       "checksumHash": "sha256:8a7a832ab3a6c5b860ea03e93e381c1a58533c4fe95294a1c0c22ad707056bb2",

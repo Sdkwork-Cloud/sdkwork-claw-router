@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finance-news-brief@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-finance-news-brief-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finance-news-brief-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3914aa5ecb3cdea30970347514732d15466c9a519f6396de69c0600d877367b8",

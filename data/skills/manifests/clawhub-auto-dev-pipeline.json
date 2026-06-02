@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-dev-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-dev-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-dev-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:569a1d2f7e24def25b11219cd95c8bed3ad0a96a2ab24e29e3d1c79ac78807cf",

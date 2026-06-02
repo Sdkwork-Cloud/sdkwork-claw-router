@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amd-inc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amd-inc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amd-inc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f6874b3c1bc05f2a82c2c905e6a913a773a903aee9b47ca1328359fc179bd348",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/release-integration@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-release-integration-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-release-integration-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2e11ec2d307123de43cb7fa46126057c6850a972fa99b64046b65b9a98608ee2",

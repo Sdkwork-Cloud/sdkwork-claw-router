@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cosmetic-detect@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cosmetic-detect-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cosmetic-detect-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2922047923f3e32af56c6839b59b2284de3b0f77254f27007de8ed6bcd1f4286",

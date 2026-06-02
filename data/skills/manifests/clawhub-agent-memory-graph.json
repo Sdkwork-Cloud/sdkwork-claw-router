@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-graph@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-graph-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-graph-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b58d34f2e8351b4a2dcf633c3b3fca7ea84372d489276712e4bf2a0ccea938c7",

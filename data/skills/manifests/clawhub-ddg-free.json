@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ddg-free@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ddg-free-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ddg-free-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0a0c5645dc5cf9174216e87fcd0aeb055b1b9de84e57dc3bebe1e3735f24c1ac",

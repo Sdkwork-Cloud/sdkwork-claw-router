@@ -8,6 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? AgentRunId { get; set; }
         public string? AgentRunStepId { get; set; }
+        public string? AgentRunStepIdKey { get; set; }
         public string? AgentSessionId { get; set; }
         public string? CachedTokens { get; set; }
         public string? ChatItemId { get; set; }

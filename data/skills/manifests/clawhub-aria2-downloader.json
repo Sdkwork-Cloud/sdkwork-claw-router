@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aria2-downloader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aria2-downloader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aria2-downloader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1bdf75d5c23ff76c36126bdb00381ccf2fe5d8325d0dcbb40ab9728f69ddc27e",

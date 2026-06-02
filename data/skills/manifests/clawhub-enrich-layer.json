@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/enrich-layer@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-enrich-layer-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-enrich-layer-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e00eb617cad34ed00daa4c3b4aa9a38a3d95debe6c328f9681a54d12f481797d",

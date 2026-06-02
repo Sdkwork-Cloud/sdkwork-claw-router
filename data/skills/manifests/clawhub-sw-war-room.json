@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sw-war-room@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sw-war-room-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sw-war-room-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:332d304cd08c7572771ab3efb1fafcfb87c6fac625a490c2336ea81624f7bcbc",

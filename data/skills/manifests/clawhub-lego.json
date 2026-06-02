@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lego@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lego-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lego-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6291886d16cba48438bc647efc5d6402bdc9e813e02932bebf83d0a2d3bb4720",

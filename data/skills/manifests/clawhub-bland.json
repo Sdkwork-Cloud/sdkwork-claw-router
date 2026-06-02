@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bland@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bland-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bland-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:51849563a2efd15a7842865a8441effad4ad2a219c05a7b1ee4faa1c3b2671ee",

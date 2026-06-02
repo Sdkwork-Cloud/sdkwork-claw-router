@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workflow-skillify@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workflow-skillify-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workflow-skillify-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7190540ff93b0879c16dcc23688c076676fa2c3a8cf3e90cc2ace40e37ff5cd3",

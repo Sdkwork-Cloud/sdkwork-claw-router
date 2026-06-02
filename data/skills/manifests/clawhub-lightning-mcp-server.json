@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lightning-mcp-server@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lightning-mcp-server-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lightning-mcp-server-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d724a2a0771e6790ddc8527293109e1a47c5898dcd5379abd2293a99543a0e31",

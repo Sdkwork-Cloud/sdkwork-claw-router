@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dfcf-stock-intraday@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-dfcf-stock-intraday-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dfcf-stock-intraday-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e80e3378b4ac4629b5f31ae5d3d157ad9290b97834953cb62b8621bea79e046f",

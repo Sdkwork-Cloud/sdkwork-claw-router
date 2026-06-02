@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/acmesh@4.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-acmesh-4.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-acmesh-4.0.1.json"
+      },
       "version": "4.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5ecfe7d4d2749bc7c27dc398724a0c014c304f70a3a1e4c5888ca11c64e36992",

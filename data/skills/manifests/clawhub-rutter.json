@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rutter@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-rutter-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rutter-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:69e2769b8b2388f327907bd35091bd00b1cc69cfd640a9a5c191fd6c0ce25377",

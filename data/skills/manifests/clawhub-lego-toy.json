@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lego-toy@99.99.99",
-      "artifactUrl": "data/skills/artifacts/clawhub-lego-toy-99.99.99.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lego-toy-99.99.99.json"
+      },
       "version": "99.99.99",
       "runtime": "metadata",
       "checksumHash": "sha256:0326a56e65b2af9452f64c7d52afdb46984577b9eea79973ef5ffe50138294f6",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-cloud@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-cloud-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-cloud-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:236c5f3bf57a39b3b575093e456f46b4388ac33c1198a0a7e36b5eafdec6a019",

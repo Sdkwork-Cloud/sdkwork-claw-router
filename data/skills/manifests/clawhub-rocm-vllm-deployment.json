@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rocm-vllm-deployment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rocm-vllm-deployment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rocm-vllm-deployment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:68a53a9681e5823fff986d2d601a4b7e4ff448ea7d62d53f851dcbf3887206b4",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/matchmaking@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-matchmaking-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-matchmaking-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2713abdab57da26fd379a903a842e3148f274fb97c1d7ee62b8f3f805701fac2",

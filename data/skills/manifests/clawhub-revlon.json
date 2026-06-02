@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/revlon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-revlon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-revlon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f989a24e2648918a5028a3935b44e06db11b84fd1e6ed1a67b7744ee6614d5e",

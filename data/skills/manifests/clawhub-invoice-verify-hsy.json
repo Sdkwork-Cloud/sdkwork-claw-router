@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoice-verify-hsy@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoice-verify-hsy-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoice-verify-hsy-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a84c2607eb9b90d71f6917ee02e4b1fd4720bcaf6b9c7cb187f0d2d002e6f809",

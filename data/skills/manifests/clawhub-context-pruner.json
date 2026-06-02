@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/context-pruner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-context-pruner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-context-pruner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b086dd38470ad00584e830dfab54770d29a646221a7a9a25f9803791405edf5",

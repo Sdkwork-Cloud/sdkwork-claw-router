@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hr-cloud@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-hr-cloud-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hr-cloud-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:ebfdabecd5f40d43761c44ee01122bf887bbd531318a1eb193a9916f16ab886e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kimi-websearch@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-kimi-websearch-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kimi-websearch-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:e148b4e92c4f2aeae36cbad5b690907b96dfe4220b5c458e27a63dd4f74bc2ed",

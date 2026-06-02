@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-token-counter@1.0.11",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-token-counter-1.0.11.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-token-counter-1.0.11.json"
+      },
       "version": "1.0.11",
       "runtime": "metadata",
       "checksumHash": "sha256:c974fb47df97902e622566cc13fabda7befd1cd4020e77e183852608eae66f1c",

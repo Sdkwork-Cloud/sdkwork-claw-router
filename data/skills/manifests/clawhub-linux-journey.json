@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linux-journey@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-linux-journey-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linux-journey-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:26a4a75b259a6a0746d202a7dacf250e29cf1254af44247455f204cf430b88f1",

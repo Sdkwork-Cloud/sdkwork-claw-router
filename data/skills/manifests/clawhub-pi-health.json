@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pi-health@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pi-health-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pi-health-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:32a60e882a0d4995e4cda3556e6106a679c30fc111c4fae8b7af5a1c598daac2",

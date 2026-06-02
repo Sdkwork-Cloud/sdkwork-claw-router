@@ -1,5 +1,7 @@
 /** Promotion discount allocation record schema exposed by Claw Router. */
 export interface PromotionDiscountAllocationRecord {
+  /** Allocation amount minor field on promotion discount allocation record. */
+  allocation_amount_minor: string;
   /** Allocation ratio bps field on promotion discount allocation record. */
   allocation_ratio_bps?: number;
   /** Application id field on promotion discount allocation record. */
@@ -8,6 +10,8 @@ export interface PromotionDiscountAllocationRecord {
   created_at: string;
   /** Currency code field on promotion discount allocation record. */
   currency_code: string;
+  /** Id field on promotion discount allocation record. */
+  id?: string;
   /** Order id field on promotion discount allocation record. */
   order_id: string;
   /** Order item id field on promotion discount allocation record. */

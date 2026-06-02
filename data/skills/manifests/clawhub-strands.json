@@ -56,7 +56,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/strands@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-strands-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-strands-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d73b6868a5162a069fd96ad8aed1babc3918d6359d8f35660172416c6f6dd18e",

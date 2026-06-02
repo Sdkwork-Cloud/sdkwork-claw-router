@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deep-scraper-amazon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deep-scraper-amazon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deep-scraper-amazon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:450a65bcd8516ae52a132435f581497d69b8379951052ee6968280771b40e37d",

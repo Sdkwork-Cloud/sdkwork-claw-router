@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aimine@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-aimine-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aimine-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:fea3b44f17c2ac414145d3593012b8b4b099db3c2c8553d162ebf77c46dcec17",

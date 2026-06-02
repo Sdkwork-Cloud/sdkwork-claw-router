@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cardano-transactions@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cardano-transactions-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cardano-transactions-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15a31eb6bc9eea6d6318362458b6dca40aec4a13335ff7b3bf0af62edc43a8d3",

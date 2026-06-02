@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-analysis-10d@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-analysis-10d-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-analysis-10d-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4de780d036c00ffdc5e2fdf4882857e60810c349371a9f51dc90d0607d589932",

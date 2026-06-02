@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bank-analysis@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bank-analysis-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bank-analysis-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7504323e1ef42bd2f0332a874e4104ca83c0c36068409ad69085903fa2027fb1",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-cutter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-cutter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-cutter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f79816172aac55f4f37d325fc4d1f20b24844ef35d554775b67ced929e79637",

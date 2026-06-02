@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/norwegian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-norwegian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-norwegian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64cc81ecf271cb28a4289a9472dd79618d3d41323fe1e9535749592bf351aa68",

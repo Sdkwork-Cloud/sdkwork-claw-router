@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-runner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-runner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-runner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23ce8ec734d767598874b3fbc928862030e446ac7dc041c79595050e0853fe1b",

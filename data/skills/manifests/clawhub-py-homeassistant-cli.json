@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/py-homeassistant-cli@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-py-homeassistant-cli-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-py-homeassistant-cli-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:07ef40b5ea1c3e1c435c2ffa8e011ba0985ada601d466ac3a63961f704252698",

@@ -6,7 +6,7 @@ type AdminAppTemplateUpdateRequest struct {
 	CapabilityManifest []map[string]JsonValue `json:"capabilityManifest"`
 	CategoryCode string `json:"categoryCode"`
 	CategoryId string `json:"categoryId"`
-	CoverUrl string `json:"coverUrl"`
+	Cover MediaResource `json:"cover"`
 	DefaultAppConfig map[string]JsonValue `json:"defaultAppConfig"`
 	DependencyManifest []map[string]JsonValue `json:"dependencyManifest"`
 	Description string `json:"description"`
@@ -15,7 +15,7 @@ type AdminAppTemplateUpdateRequest struct {
 	GitRef string `json:"gitRef"`
 	GitRepoUrl string `json:"gitRepoUrl"`
 	GitSubPath string `json:"gitSubPath"`
-	IconUrl string `json:"iconUrl"`
+	Icon MediaResource `json:"icon"`
 	Language string `json:"language"`
 	PublishStatus string `json:"publishStatus"`
 	Runtime string `json:"runtime"`

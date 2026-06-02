@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kilo-ssl@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-kilo-ssl-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kilo-ssl-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c637ce73479a6655cc49ee2904366c720de01292afb5f30ec3dd5a21e4b07cec",

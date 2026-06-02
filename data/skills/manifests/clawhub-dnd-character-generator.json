@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dnd-character-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dnd-character-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dnd-character-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d700d8b66270a55b75285e575266d47db5ac0529345921116ebbb91e6072fbc4",

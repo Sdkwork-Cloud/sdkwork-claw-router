@@ -5,11 +5,13 @@ public class CommerceCartRecord {
     private String cartNo;
     private String createdAt;
     private String currencyCode;
+    private String id;
     private String organizationId;
     private String ownerUserId;
     private String status;
     private String tenantId;
     private String updatedAt;
+    private String version;
 
     public String getCartNo() {
         return this.cartNo;
@@ -33,6 +35,14 @@ public class CommerceCartRecord {
 
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrganizationId() {
@@ -73,5 +83,13 @@ public class CommerceCartRecord {
 
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 }

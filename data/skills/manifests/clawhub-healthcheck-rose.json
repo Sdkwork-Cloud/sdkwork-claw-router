@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/healthcheck-rose@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-healthcheck-rose-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-healthcheck-rose-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e81e9f236d29e04983090f9e69b9fc80deef004fd66ae9e446c3fa395c5bb7c5",

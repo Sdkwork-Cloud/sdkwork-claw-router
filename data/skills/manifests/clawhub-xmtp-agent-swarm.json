@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xmtp-agent-swarm@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xmtp-agent-swarm-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xmtp-agent-swarm-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:526e67f4cec45b970a26d4576992cede97936223b555afa939fb3f7da5a89222",

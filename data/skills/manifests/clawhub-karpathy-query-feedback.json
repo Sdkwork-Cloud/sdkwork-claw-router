@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/karpathy-query-feedback@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-query-feedback-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-karpathy-query-feedback-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9088cc57a7daa2636096dea11205bd278be0d83fc8d1e9d1fa588cc6f6684b7f",

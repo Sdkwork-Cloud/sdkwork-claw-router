@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/custom-garment-ops@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-custom-garment-ops-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-custom-garment-ops-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e97e1c65d7fddbe1931a7362d8bddf99c1c36e06a09d644e36434f88add127cc",

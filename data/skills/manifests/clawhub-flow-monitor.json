@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flow-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flow-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flow-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5db4303d1d8c489f364458781792549065505e596d62bdc775b81ca4a70014c1",

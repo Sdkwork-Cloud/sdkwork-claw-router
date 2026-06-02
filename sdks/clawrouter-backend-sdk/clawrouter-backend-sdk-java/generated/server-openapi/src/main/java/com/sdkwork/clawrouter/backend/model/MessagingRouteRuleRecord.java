@@ -4,20 +4,31 @@ import java.util.Map;
 
 public class MessagingRouteRuleRecord {
     private String appId;
+    private String channel;
+    private String countryCode;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
     private String deletedBy;
+    private String deliveryPurpose;
     private String effectiveFrom;
     private String effectiveTo;
+    private Map<String, String> failoverPolicy;
     private String id;
+    private String locale;
     private Map<String, String> metadata;
     private String organizationId;
+    private Integer priority;
+    private String ruleCode;
+    private String sceneCode;
+    private Map<String, String> selectionPolicy;
     private String status;
     private String tenantId;
     private String updatedAt;
+    private String userSegment;
     private String uuid;
     private String version;
+    private Integer weight;
 
     public String getAppId() {
         return this.appId;
@@ -25,6 +36,22 @@ public class MessagingRouteRuleRecord {
 
     public void setAppId(String appId) {
         this.appId = appId;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public String getCountryCode() {
+        return this.countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
     public String getCreatedAt() {
@@ -59,6 +86,14 @@ public class MessagingRouteRuleRecord {
         this.deletedBy = deletedBy;
     }
 
+    public String getDeliveryPurpose() {
+        return this.deliveryPurpose;
+    }
+
+    public void setDeliveryPurpose(String deliveryPurpose) {
+        this.deliveryPurpose = deliveryPurpose;
+    }
+
     public String getEffectiveFrom() {
         return this.effectiveFrom;
     }
@@ -75,12 +110,28 @@ public class MessagingRouteRuleRecord {
         this.effectiveTo = effectiveTo;
     }
 
+    public Map<String, String> getFailoverPolicy() {
+        return this.failoverPolicy;
+    }
+
+    public void setFailoverPolicy(Map<String, String> failoverPolicy) {
+        this.failoverPolicy = failoverPolicy;
+    }
+
     public String getId() {
         return this.id;
     }
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getLocale() {
+        return this.locale;
+    }
+
+    public void setLocale(String locale) {
+        this.locale = locale;
     }
 
     public Map<String, String> getMetadata() {
@@ -97,6 +148,38 @@ public class MessagingRouteRuleRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    public String getRuleCode() {
+        return this.ruleCode;
+    }
+
+    public void setRuleCode(String ruleCode) {
+        this.ruleCode = ruleCode;
+    }
+
+    public String getSceneCode() {
+        return this.sceneCode;
+    }
+
+    public void setSceneCode(String sceneCode) {
+        this.sceneCode = sceneCode;
+    }
+
+    public Map<String, String> getSelectionPolicy() {
+        return this.selectionPolicy;
+    }
+
+    public void setSelectionPolicy(Map<String, String> selectionPolicy) {
+        this.selectionPolicy = selectionPolicy;
     }
 
     public String getStatus() {
@@ -123,6 +206,14 @@ public class MessagingRouteRuleRecord {
         this.updatedAt = updatedAt;
     }
 
+    public String getUserSegment() {
+        return this.userSegment;
+    }
+
+    public void setUserSegment(String userSegment) {
+        this.userSegment = userSegment;
+    }
+
     public String getUuid() {
         return this.uuid;
     }
@@ -137,5 +228,13 @@ public class MessagingRouteRuleRecord {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Integer getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
     }
 }

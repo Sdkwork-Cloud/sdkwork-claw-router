@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yoga@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yoga-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yoga-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f18a8054e38d4fef1707ca3474baa970944b4572d428c08a6d6052a0237a75b",

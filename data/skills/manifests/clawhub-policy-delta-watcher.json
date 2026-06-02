@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/policy-delta-watcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-policy-delta-watcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-policy-delta-watcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b7ebb71f3ab34208824f8aba644dea22d01585283553775286321e10e269012d",

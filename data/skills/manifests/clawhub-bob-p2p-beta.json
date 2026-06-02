@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bob-p2p-beta@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bob-p2p-beta-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bob-p2p-beta-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b8fd09b89cafbbbb56d72e51db155f0dbbc2c2ad48c750585aa6302b9c9e4f84",

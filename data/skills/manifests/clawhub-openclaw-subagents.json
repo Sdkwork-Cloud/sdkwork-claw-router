@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-subagents@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-subagents-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-subagents-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89cd4da871be7d4d50c10f70d295b49a43f7dd96dfcdcd6dce3671ac91487eb0",

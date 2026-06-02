@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tts-cleanup-checklist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tts-cleanup-checklist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tts-cleanup-checklist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d4c2a21b321d889ce6442f9472172c6cf635f078aca061b92cdc732d76b4210d",

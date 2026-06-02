@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/code-reputation@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-code-reputation-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-code-reputation-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0a7efd48bb0c5507fd0a1f90457090074a0d6fa1ec81e730594e75bc3614ebbf",

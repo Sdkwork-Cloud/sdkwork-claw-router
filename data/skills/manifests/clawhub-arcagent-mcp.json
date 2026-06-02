@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arcagent-mcp@0.1.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-arcagent-mcp-0.1.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arcagent-mcp-0.1.12.json"
+      },
       "version": "0.1.12",
       "runtime": "metadata",
       "checksumHash": "sha256:45f799848f2457a4adf6fbe68b72cd49a502626ae28dbd9f3f34cd660b88c507",

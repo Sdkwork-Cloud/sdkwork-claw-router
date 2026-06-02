@@ -7,6 +7,11 @@ public class AiApi {
         self.client = client
     }
 
+    /// List groups
+    public func channelGroupsList() async throws -> ChannelGroupsListResult? {
+        return try await client.get(ApiPaths.appPath("/ai/channel_groups"), responseType: ChannelGroupsListResult.self)
+    }
+
     /// List dashboard overview
     public func dashboardOverviewRetrieve(timeRange: String? = nil, startTime: String? = nil, endTime: String? = nil) async throws -> DashboardOverviewRetrieveResult? {
         let query = buildQueryString([

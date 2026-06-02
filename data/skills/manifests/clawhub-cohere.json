@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cohere@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-cohere-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cohere-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:896185762b75134b878dec64ec3268bb05d4b5e3c3567d15be4e4d990b267f3f",

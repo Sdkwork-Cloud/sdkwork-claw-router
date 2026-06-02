@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sorbonne@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sorbonne-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sorbonne-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89979d01e150fd813e18683f5f710f952de8e9f8091fb58be9f77e9692922816",

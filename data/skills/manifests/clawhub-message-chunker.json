@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/message-chunker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-message-chunker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-message-chunker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3b7c616a86c5b72ec0505e2f55c2245ad30217106fbbffd4bd421283d653ae1",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hk-stock-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hk-stock-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hk-stock-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fb8fc27f2a57e96c4b1b7c49d03a688863e431c9485c4602159df7678513696e",

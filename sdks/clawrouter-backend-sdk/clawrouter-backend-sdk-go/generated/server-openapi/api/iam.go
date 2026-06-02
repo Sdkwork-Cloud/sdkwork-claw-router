@@ -17,66 +17,6 @@ func NewIamApi(client *sdkhttp.Client) *IamApi {
     return &IamApi{client: client}
 }
 
-// List groups
-func (a *IamApi) AccessGroupsList() (sdktypes.AccessGroupsListResult, error) {
-    raw, err := a.client.Get(BackendApiPath("/iam/access_groups"), nil, nil)
-    if err != nil {
-        var zero sdktypes.AccessGroupsListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.AccessGroupsListResult](raw)
-}
-
-// Create group
-func (a *IamApi) AccessGroupsCreate(body sdktypes.AdminAccessGroupCreateRequest) (sdktypes.AccessGroupsCreateResult, error) {
-    raw, err := a.client.Post(BackendApiPath("/iam/access_groups"), body, nil, nil, "application/json")
-    if err != nil {
-        var zero sdktypes.AccessGroupsCreateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.AccessGroupsCreateResult](raw)
-}
-
-// Delete group
-func (a *IamApi) AccessGroupsDelete(groupId string) (sdktypes.AccessGroupsDeleteResult, error) {
-    raw, err := a.client.Delete(BackendApiPath(fmt.Sprintf("/iam/access_groups/%s", SerializePathParameter(groupId, PathParameterSpec{Name: "groupId", Style: "simple", Explode: false}))), nil, nil)
-    if err != nil {
-        var zero sdktypes.AccessGroupsDeleteResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.AccessGroupsDeleteResult](raw)
-}
-
-// Update group
-func (a *IamApi) AccessGroupsUpdate(groupId string, body sdktypes.AdminAccessGroupUpdateRequest) (sdktypes.AccessGroupsUpdateResult, error) {
-    raw, err := a.client.Patch(BackendApiPath(fmt.Sprintf("/iam/access_groups/%s", SerializePathParameter(groupId, PathParameterSpec{Name: "groupId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
-    if err != nil {
-        var zero sdktypes.AccessGroupsUpdateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.AccessGroupsUpdateResult](raw)
-}
-
-// List group channel bindings
-func (a *IamApi) AccessGroupsChannelBindingsList(groupId string) (sdktypes.AccessGroupsChannelBindingsListResult, error) {
-    raw, err := a.client.Get(BackendApiPath(fmt.Sprintf("/iam/access_groups/%s/channel_bindings", SerializePathParameter(groupId, PathParameterSpec{Name: "groupId", Style: "simple", Explode: false}))), nil, nil)
-    if err != nil {
-        var zero sdktypes.AccessGroupsChannelBindingsListResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.AccessGroupsChannelBindingsListResult](raw)
-}
-
-// Replace group channel bindings
-func (a *IamApi) AccessGroupsChannelBindingsUpdate(groupId string, body sdktypes.AdminAccessGroupChannelBindingsReplaceRequest) (sdktypes.AccessGroupsChannelBindingsUpdateResult, error) {
-    raw, err := a.client.Put(BackendApiPath(fmt.Sprintf("/iam/access_groups/%s/channel_bindings", SerializePathParameter(groupId, PathParameterSpec{Name: "groupId", Style: "simple", Explode: false}))), body, nil, nil, "application/json")
-    if err != nil {
-        var zero sdktypes.AccessGroupsChannelBindingsUpdateResult
-        return zero, err
-    }
-    return decodeResult[sdktypes.AccessGroupsChannelBindingsUpdateResult](raw)
-}
-
 // List API key map
 func (a *IamApi) ApiKeysList() (sdktypes.ApiKeysListResult, error) {
     raw, err := a.client.Get(BackendApiPath("/iam/api_keys"), nil, nil)

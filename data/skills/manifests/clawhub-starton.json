@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/starton@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-starton-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-starton-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:86b8540c9bbc85e9c30e295442c0f0e7b0ca85dcad798d70a7fd046d0a342c83",

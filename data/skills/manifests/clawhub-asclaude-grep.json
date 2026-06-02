@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/asclaude-grep@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-asclaude-grep-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-asclaude-grep-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7be9ccf33a4184b0635d12a637950cc74891572caa1403174bdcd0c62bdaf08",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bungie@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bungie-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bungie-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f05d5bac0b804fa9d10c9a0081f6a461b5116ed05ec1ae80350d3884a5e74e80",

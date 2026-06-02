@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-to-latex@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-to-latex-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-to-latex-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d889b90cc861938c4bd566d78163f3a86b635c5c0ab1cafa80174b90ddb3bfd",

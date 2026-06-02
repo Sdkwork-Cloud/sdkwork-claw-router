@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-analyzer-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-analyzer-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-analyzer-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:85a6abbc87971a0c5651f9c0ee6c78beb1fdc8212d9978269deaae00cda6b7cf",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-openapi-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-openapi-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-openapi-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ecd2a90d739a25552710b606bb63bea7993d8bd57e5a572d1c1037f4228dd7f0",

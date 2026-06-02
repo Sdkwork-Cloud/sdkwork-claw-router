@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cognite@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-cognite-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cognite-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:7cb399055456b7c320f573218ee27d47efbbbb3898357d9e8e1d1904344ba808",

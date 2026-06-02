@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/using-harness@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-using-harness-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-using-harness-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a657e16e3d335284e3f1f2dafa6642f0dd0dc5205aa19b62e87c00518db7877",

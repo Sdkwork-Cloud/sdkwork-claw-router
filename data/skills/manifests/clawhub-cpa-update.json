@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cpa-update@2.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cpa-update-2.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cpa-update-2.2.1.json"
+      },
       "version": "2.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e20699ea57093e47694eb93729af1583cd3e84b761511db982bc6370eb683dc5",

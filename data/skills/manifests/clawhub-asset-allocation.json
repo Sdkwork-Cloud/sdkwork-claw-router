@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/asset-allocation@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-asset-allocation-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-asset-allocation-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:831d935717084d6ee9c7f09c8f76797747c476f0ad69b232e00920ad38f4eae5",

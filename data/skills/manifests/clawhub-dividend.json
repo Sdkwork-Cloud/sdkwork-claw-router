@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dividend@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dividend-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dividend-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92c96e8bbf3a31d820999cf11965f4ac9594692c0ab6876dae27d9685e3af50e",

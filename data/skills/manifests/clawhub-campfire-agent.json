@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/campfire-agent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-campfire-agent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-campfire-agent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e7f78a8666580d303e16c939405b0b230c160878b7c9acf5ff0d374350931010",

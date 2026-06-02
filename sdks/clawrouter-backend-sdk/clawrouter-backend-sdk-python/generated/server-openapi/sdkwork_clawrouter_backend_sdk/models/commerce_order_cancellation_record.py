@@ -16,5 +16,6 @@ class CommerceOrderCancellationRecord:
     tenant_id: str
     approved_by: Optional[str] = None
     completed_at: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     reason_message: Optional[str] = None

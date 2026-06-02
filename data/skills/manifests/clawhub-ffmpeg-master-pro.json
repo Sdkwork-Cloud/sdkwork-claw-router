@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ffmpeg-master-pro@2.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ffmpeg-master-pro-2.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ffmpeg-master-pro-2.3.1.json"
+      },
       "version": "2.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a3fec9fc3064714ea4ef97efa9a41e6a70f0de75ebdebb0a5601c43301d23107",

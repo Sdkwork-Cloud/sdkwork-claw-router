@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/super-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-super-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-super-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:974e4156439eada118d6e9f69e494ebca39642855527c15e810a0602de070d71",

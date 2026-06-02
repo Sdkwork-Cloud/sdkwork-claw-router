@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jarvis-stock-price@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jarvis-stock-price-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jarvis-stock-price-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14a43045675cdda187f79497c920e7c38af028fb7f2ec3c93d71f05080a350b9",

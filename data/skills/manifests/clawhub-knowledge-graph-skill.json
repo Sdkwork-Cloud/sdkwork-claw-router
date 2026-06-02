@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-graph-skill@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-graph-skill-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-graph-skill-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:689d635b12133cd373800b2dce31354884ae396d2801e3500ccf3c021809a71b",

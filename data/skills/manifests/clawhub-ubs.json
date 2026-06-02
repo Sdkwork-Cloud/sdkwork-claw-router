@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ubs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ubs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ubs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df8f96fd2982a711eccee6c7cba9fa0c2794d52e16a18582a6062de41e59616b",

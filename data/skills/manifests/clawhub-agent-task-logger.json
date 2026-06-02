@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-task-logger@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-task-logger-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-task-logger-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b179d8cb9d95d98826657f93c4dcacd3f9ca670fd00b26e72d16362dac6a84f3",

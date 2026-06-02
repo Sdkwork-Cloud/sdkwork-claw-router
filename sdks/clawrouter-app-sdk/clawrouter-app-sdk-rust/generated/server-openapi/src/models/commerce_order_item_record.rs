@@ -6,6 +6,10 @@ pub struct CommerceOrderItemRecord {
     /// Created at field on commerce order item record.
     pub created_at: String,
 
+    /// Id field on commerce order item record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Order id field on commerce order item record.
     pub order_id: String,
 

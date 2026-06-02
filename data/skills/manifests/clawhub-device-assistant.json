@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/device-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-device-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-device-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:33218b400b258f204f85a1999fc8ba740b5fb77a8a57caaa977cf377c0308580",

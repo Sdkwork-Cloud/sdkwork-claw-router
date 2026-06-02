@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cortex-xsoar@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cortex-xsoar-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cortex-xsoar-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0945615c3165063b6b1d19c24295684a2b75b713012801829d0720e62851bbc3",

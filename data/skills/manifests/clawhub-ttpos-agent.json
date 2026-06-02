@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ttpos-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ttpos-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ttpos-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:977a1e384f7737b51624d063aad0538066b3a9e043e9dc7d8667dd4a3902d7fb",

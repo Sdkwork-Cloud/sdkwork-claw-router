@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/symphony@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-symphony-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-symphony-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7ed1c23bdde04bebdeb45a33323b308f7a008497d3ab2890f8e3c11220ffb32",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/emory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-emory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-emory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:69530326655bf496752b2fb8ef1ab77387a79154a21b5ccdfcdb6290c78c440c",

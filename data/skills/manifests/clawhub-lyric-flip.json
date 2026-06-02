@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lyric-flip@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lyric-flip-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lyric-flip-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:867cb5f6c96bc9755ecd199dd41ae1aa77c5387a14b3ff516569b2b13e542b37",

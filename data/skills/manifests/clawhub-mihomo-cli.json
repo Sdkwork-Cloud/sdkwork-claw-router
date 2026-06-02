@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mihomo-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mihomo-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mihomo-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:874554783afe1339246ceeb7462518e016f0996e75420643085b4868ad63dd5e",

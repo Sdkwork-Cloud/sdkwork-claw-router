@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/steam@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-steam-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-steam-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:260242b2fd5941deeec4497c8928c8e97fefaef898634de0fb802d186c5b67b2",

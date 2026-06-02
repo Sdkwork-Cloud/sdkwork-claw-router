@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ramp@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ramp-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ramp-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:590e53cfddb2c7048fb68458c0cd7c0720917058082c728bf52ec271a84320e4",

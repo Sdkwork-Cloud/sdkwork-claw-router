@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/touchbridge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-touchbridge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-touchbridge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ecd4abc98f640fb0208d58df15b2dd9165002e8974711f9e58feff272c827fb2",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentmemory@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentmemory-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentmemory-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf8b53a6e4c0a5942c6a8f28278e41b8e0d5dba7ebae8b991b58abfa0f295247",

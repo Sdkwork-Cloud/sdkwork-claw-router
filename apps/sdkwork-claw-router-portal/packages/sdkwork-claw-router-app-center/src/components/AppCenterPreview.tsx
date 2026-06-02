@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { LayoutGrid, Star, Download, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
-import { getLoadErrorMessage } from 'sdkwork-claw-router-commons/runtime';
+import { getLoadErrorMessage, readMediaResourceUrl } from 'sdkwork-claw-router-commons/runtime';
 import { appService } from '../services/appService';
 import { deriveAppCatalogViewModel, type App } from '../appRuntime';
 
@@ -90,7 +90,7 @@ export function AppCenterPreview() {
                 <div className="h-48 overflow-hidden relative flex-shrink-0 border-b border-slate-100 dark:border-white/5">
                   <div className="absolute inset-0 bg-slate-900/10 dark:bg-slate-900/20 group-hover:bg-transparent transition-colors z-10" />
                   <img
-                    src={app.image}
+                    src={readMediaResourceUrl(app.image)}
                     alt={app.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"

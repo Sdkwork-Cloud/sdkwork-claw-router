@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-protocol@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-protocol-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-protocol-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:23f277858c634d3e24be4e1ee929fc1a9a17e61fc263ca2453859d1e7ece6738",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/timeblock@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-timeblock-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-timeblock-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42b28a22e8a810a4b1d3d830fe8384779d3996c5fe2b649de4e609b322b8975b",

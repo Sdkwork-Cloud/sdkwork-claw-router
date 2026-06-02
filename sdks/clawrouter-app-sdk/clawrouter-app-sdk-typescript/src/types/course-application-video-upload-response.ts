@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Course application video upload response schema exposed by Claw Router. */
 export interface CourseApplicationVideoUploadResponse {
   /** Content type field on course application video upload response. */
@@ -10,6 +12,6 @@ export interface CourseApplicationVideoUploadResponse {
   sizeBytes: number;
   /** Uploaded at field on course application video upload response. */
   uploadedAt: string;
-  /** Video url field on course application video upload response. */
-  videoUrl: string;
+  /** Video field on course application video upload response. */
+  video: MediaResource;
 }

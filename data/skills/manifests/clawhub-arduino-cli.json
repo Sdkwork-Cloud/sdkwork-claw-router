@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arduino-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arduino-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arduino-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7786727a9a283ba2c7ea4254d84ce11992affb000c33c77d578ed5f0fdb7779b",

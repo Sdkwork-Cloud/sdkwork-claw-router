@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/examine-sandbox@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-examine-sandbox-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-examine-sandbox-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3701ab3c955d2211d434b0e16cda182f2f24cd324025d4a5af303beb081ac095",

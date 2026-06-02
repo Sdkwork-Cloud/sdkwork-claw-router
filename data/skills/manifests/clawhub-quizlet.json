@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quizlet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quizlet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quizlet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77c6b83f1589833962e40b8a4cf3d0ed95c62dd5582af2dde986093b3db8942e",

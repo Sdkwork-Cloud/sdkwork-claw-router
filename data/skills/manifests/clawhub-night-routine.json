@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/night-routine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-night-routine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-night-routine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2ca9f20dfdad813c968bcc15537682397d07734170d52057dc797cdedc16c6da",

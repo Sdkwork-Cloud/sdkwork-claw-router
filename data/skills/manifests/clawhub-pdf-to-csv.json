@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-to-csv@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-to-csv-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-to-csv-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8af80263bb0718f1db5d12b257a74031a08384aaa010afc4ed4c51e27311ebb7",

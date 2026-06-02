@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/myxz-image-translator-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-myxz-image-translator-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-myxz-image-translator-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c4e05f21e18f4bf1a81feb57b120bc35315c3bd8d0f267ac490c28ae22c31eba",

@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Commerce product category record schema exposed by Claw Router. */
 export interface CommerceProductCategoryRecord {
   /** Category no field on commerce product category record. */
@@ -6,8 +8,10 @@ export interface CommerceProductCategoryRecord {
   created_at: string;
   /** Description field on commerce product category record. */
   description?: string;
-  /** Icon url field on commerce product category record. */
-  icon_url?: string;
+  /** Icon field on commerce product category record. */
+  icon?: MediaResource;
+  /** Id field on commerce product category record. */
+  id?: string;
   /** Level no field on commerce product category record. */
   level_no: number;
   /** Name field on commerce product category record. */
@@ -18,6 +22,8 @@ export interface CommerceProductCategoryRecord {
   parent_id?: string;
   /** Path field on commerce product category record. */
   path: string;
+  /** Sort order field on commerce product category record. */
+  sort_order: string;
   /** Status field on commerce product category record. */
   status: string;
   /** Tenant id field on commerce product category record. */

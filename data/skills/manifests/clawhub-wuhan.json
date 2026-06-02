@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wuhan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wuhan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wuhan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8aad484558acf1e72f9347187ec179d90df994849b2330b650f83beb5e1a4ee",

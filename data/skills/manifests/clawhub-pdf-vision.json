@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-vision@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-vision-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-vision-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4fc80aa6d624572a557c146c1be89a4670c5dab72488be7b9ec355fd3c680c69",

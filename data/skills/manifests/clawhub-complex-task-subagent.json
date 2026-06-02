@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/complex-task-subagent@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-complex-task-subagent-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-complex-task-subagent-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:346024139bd0d34bc5db8b917674ad54524845a647b828093edbbaaac7eceabe",

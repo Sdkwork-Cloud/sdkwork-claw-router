@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/calorie@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-calorie-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-calorie-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0121d5304707d8ce9bde34ee69e01a1807a090d8ca0ba539b563ecc17f4c4c5",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencent-exmail@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencent-exmail-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencent-exmail-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:caf579ac0ba3e76a3e3db017ab95d1cf56422d63945e3b8dc848b3c322ed022f",

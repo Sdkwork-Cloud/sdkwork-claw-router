@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sim-trade@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sim-trade-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sim-trade-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f337fde28aba3cf19160248d2c85bbc7211127c6732f0876c1b65849c8502461",

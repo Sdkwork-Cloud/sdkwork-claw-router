@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/singularity-hermes-skill@2.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-singularity-hermes-skill-2.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-singularity-hermes-skill-2.8.0.json"
+      },
       "version": "2.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec5df21fecba5e1682c6d0222df712ab6925b994641a0a49703f889d2a2e0a9b",

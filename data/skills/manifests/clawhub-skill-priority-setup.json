@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-priority-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-priority-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-priority-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7dc77ea3e179dc84d3daa978a6896abfc4b296a1b22ff814d04557441b025577",

@@ -285,6 +285,66 @@ async fn sqlite_installer_imports_bundled_ai_routing_seed_catalog() {
         0, duplicate_item_key_count,
         "AI routing resource group items must stay idempotent across repeated installer repairs"
     );
+
+    let default_channel_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_channel
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND channel_code = 'openai-default'
+          AND provider_code = 'openai'
+          AND channel_type = 'official'
+          AND status = 0
+          AND deleted_at IS NULL
+          AND json_extract(metadata, '$.catalogCode') = 'sdkwork-ai-routing'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        1, default_channel_count,
+        "AI routing seed must create a disabled default admin channel for configuring provider endpoints"
+    );
+
+    let default_channel_endpoint_codes = sqlx::query_scalar::<_, String>(
+        r#"
+        SELECT e.api_code
+        FROM ai_channel_endpoint e
+        INNER JOIN ai_channel c
+          ON c.id = e.channel_id
+         AND c.tenant_id = e.tenant_id
+         AND c.organization_id = e.organization_id
+        WHERE e.tenant_id = 10
+          AND e.organization_id = 20
+          AND e.vendor_code = 'openai'
+          AND e.region_code = 'global'
+          AND e.base_url = 'https://api.openai.com/v1'
+          AND e.status = 0
+          AND e.deleted_at IS NULL
+          AND c.channel_code = 'openai-default'
+          AND c.deleted_at IS NULL
+          AND json_extract(e.metadata, '$.catalogCode') = 'sdkwork-ai-routing'
+        ORDER BY e.api_code ASC
+        "#,
+    )
+    .fetch_all(&pool)
+    .await
+    .unwrap()
+    .into_iter()
+    .collect::<BTreeSet<_>>();
+
+    for expected in [
+        "openai.responses",
+        "openai.chat_completions",
+        "openai.embeddings",
+    ] {
+        assert!(
+            default_channel_endpoint_codes.contains(expected),
+            "default admin channel endpoint seed must include {expected}"
+        );
+    }
 }
 
 fn installer(pool: SqlitePool) -> DatabaseInstaller {

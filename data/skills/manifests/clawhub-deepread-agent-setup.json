@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deepread-agent-setup@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deepread-agent-setup-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deepread-agent-setup-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74e1e743fbebbc3a955f1c563af00ed109f9bb56177235979d1134a9af9b2036",

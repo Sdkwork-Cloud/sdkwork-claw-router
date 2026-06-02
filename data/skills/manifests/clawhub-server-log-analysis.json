@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/server-log-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-server-log-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-server-log-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7b0c7a5dbccdeb4220f99cad41ea62ad2aa70390068b8b0a238e02ea377b170",

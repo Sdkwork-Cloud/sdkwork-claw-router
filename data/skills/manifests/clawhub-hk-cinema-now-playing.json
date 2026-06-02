@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hk-cinema-now-playing@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-hk-cinema-now-playing-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hk-cinema-now-playing-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:24b8b0f7fc83c16cd88b3c086c02e573ecd41104bcfe2f35dab437d893238425",

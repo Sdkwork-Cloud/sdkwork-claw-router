@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-checkup-recommender@4.6.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-checkup-recommender-4.6.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-checkup-recommender-4.6.1.json"
+      },
       "version": "4.6.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0d5ad2c57e13d9caa1a9345207c83af18c64c0ec5ef6ea911a71f38e713e7f48",

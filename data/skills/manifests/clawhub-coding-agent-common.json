@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coding-agent-common@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coding-agent-common-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coding-agent-common-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc1019f44394a821651f4f2b8d3a872571d688eb6aaafd1c689f1aa735025981",

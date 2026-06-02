@@ -2,6 +2,7 @@ import {
   createSdkworkAppCapabilityManifest,
   type CreateSdkworkAppCapabilityManifestOptions,
   type SdkworkAppCapabilityManifest,
+  type SdkworkMediaResource,
 } from "@sdkwork/appbase-pc-react";
 
 export type SdkworkCommunityEntryKind =
@@ -19,7 +20,7 @@ export type SdkworkCommunityReviewState =
   | "rejected";
 
 export interface SdkworkCommunityAuthor {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   id: string;
   name: string;
 }
@@ -96,6 +97,7 @@ export interface CreateCommunityEntryDigestOptions {
 }
 
 export interface SdkworkCommunityEntryDigest {
+  authorAvatar?: SdkworkMediaResource;
   authorName: string;
   categoryId: string;
   categoryLabel?: string;
@@ -508,6 +510,7 @@ export function createCommunityEntryDigest(
   options: CreateCommunityEntryDigestOptions = {},
 ): SdkworkCommunityEntryDigest {
   return {
+    ...(entry.author.avatar ? { authorAvatar: entry.author.avatar } : {}),
     authorName: entry.author.name,
     categoryId: entry.categoryId,
     ...(entry.categoryLabel ? { categoryLabel: entry.categoryLabel } : {}),

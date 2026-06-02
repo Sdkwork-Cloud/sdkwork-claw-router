@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-firewall-v2@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-firewall-v2-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-firewall-v2-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cf8bbf229db286a27ecc721c4ffc145b45461ef1530b89f22d71261225ad4be8",

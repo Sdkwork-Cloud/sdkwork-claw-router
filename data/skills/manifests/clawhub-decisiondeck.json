@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/decisiondeck@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-decisiondeck-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-decisiondeck-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48807cea4b5c9db76247ffb97bcab4b2433fd307a03823acfcaaea63161a7808",

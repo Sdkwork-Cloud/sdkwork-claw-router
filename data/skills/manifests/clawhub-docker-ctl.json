@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-ctl@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-ctl-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-ctl-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a3ecc9ada4f21795e0b36b7a2cf94b44e5a6d0c921fbac0550c899049621a0c",

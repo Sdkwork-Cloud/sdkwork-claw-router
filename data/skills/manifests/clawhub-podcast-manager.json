@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podcast-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-podcast-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podcast-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cb99217f9c1b2274e8852d22c34838212ef6e21c51a0056d9c34b9ed42b36af3",

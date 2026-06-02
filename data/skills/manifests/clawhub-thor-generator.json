@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thor-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-thor-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thor-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:90f1cbe1d25578d3978f0f233df9a7a90cf2bf0908741bc08890030d4950fab1",

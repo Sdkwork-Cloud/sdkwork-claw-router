@@ -8,6 +8,7 @@ data class CommerceAccountLedgerEntryRecord(
     val businessType: String? = null,
     val createdAt: String? = null,
     val direction: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val organizationId: String? = null,
     val ownerUserId: String? = null,

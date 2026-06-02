@@ -126,10 +126,10 @@ impl<'a, C: PricingCatalog> PricingResolver<'a, C> {
             .ok_or_else(|| DomainError::new(format!("api key not found: {api_key_id}")))
     }
 
-    fn find_group(&self, group_id: i64) -> DomainResult<crate::domain::ApiKeyGroup> {
+    fn find_group(&self, group_id: i64) -> DomainResult<crate::domain::ChannelGroup> {
         self.catalog
-            .find_api_key_group(group_id)
-            .ok_or_else(|| DomainError::new(format!("api key group not found: {group_id}")))
+            .find_channel_group(group_id)
+            .ok_or_else(|| DomainError::new(format!("channel group not found: {group_id}")))
     }
 
     fn find_plan(&self, plan_code: &str) -> DomainResult<crate::domain::PricingPlan> {

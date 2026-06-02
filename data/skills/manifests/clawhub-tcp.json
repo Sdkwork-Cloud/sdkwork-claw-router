@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97777af7072da00cfd694595b5e5cecd78afdd25d5c793d3fa57de178aae59d8",

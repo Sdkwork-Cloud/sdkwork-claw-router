@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-studio@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-studio-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-studio-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7b324b8f937c85413ecc77541c125257a7ea8f27c4c1084f7f5657f573c00ba1",

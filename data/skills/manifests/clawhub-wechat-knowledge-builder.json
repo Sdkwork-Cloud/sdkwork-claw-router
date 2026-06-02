@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-knowledge-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-knowledge-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-knowledge-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:558f7f9cdb41bfa55c4a6bed7cc5e5a467a6fa93d087e2f5ab4efbbcf58cb757",

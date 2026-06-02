@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-update@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-update-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-update-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e8d631eab891b7650e55334dbf78504f71c6fab63e90fd3949851ebe6e3e1f9a",

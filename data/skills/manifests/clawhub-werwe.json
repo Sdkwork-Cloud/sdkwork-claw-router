@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/werwe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-werwe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-werwe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e8892293728054ad3bd74dc65201c9a00d1577a14bfbe77b5567a9c4272068c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/e2e-testing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-e2e-testing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-e2e-testing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4da11cade1032a63f6661a5cbc14d39fa9f01c2c6d2ed1de8c3bca65bd829956",

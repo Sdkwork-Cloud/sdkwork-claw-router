@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-templates@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-templates-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-templates-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25637fd71fd082fe4159fce9e3e57973156bff107326519039bd9a65d72bd38d",

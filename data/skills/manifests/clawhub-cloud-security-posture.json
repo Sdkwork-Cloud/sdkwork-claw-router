@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloud-security-posture@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloud-security-posture-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloud-security-posture-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18881d426401bf83e85a037b3843ace804e1e40641927f9d43f3f11b8980ecbf",

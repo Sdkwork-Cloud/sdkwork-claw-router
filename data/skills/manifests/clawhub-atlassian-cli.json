@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/atlassian-cli@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-atlassian-cli-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-atlassian-cli-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf420c90e3671fc4422813dc93565f3485e5983b1b1f72d276948479b504fd88",

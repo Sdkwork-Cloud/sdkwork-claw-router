@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sailing-skill@1.0.19",
-      "artifactUrl": "data/skills/artifacts/clawhub-sailing-skill-1.0.19.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sailing-skill-1.0.19.json"
+      },
       "version": "1.0.19",
       "runtime": "metadata",
       "checksumHash": "sha256:2bd08f317a80c3d6612fe01d23b79c866e068b354eb5e061f236e868288740f9",

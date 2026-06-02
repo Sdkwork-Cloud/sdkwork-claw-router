@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openmeteo-sh-weather-advanced@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-openmeteo-sh-weather-advanced-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openmeteo-sh-weather-advanced-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0138c7dfbd55c8b3b01ae5691cb9ce6aedb38dbbcc0ca48ddc0c451adb9eed59",

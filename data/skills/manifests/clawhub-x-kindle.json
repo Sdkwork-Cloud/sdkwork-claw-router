@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/x-kindle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-x-kindle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-x-kindle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b82819f4d79ff253c5e3606da5984c82ee18802126449afe62bfa5710b574a6",

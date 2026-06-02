@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buy-coffee@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-buy-coffee-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buy-coffee-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:558ec65ecbe5fefadd1bf797d95eba4921caa1b2dcf476d083f0fe9e91d30df7",

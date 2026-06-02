@@ -123,10 +123,9 @@ x_response_entities:
         enum:
         - active
         - disabled
-      avatarUrl:
-        type: string
+      avatar:
+        $ref: '#/components/schemas/MediaResource'
         nullable: true
-        maxLength: 2048
       templateSource:
         type: string
         nullable: true

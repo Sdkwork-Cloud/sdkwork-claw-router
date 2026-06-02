@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/duckdb-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-duckdb-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-duckdb-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f32dd1f34c669d2744423c92710e0402d9bbfe8f79078afb99eac972f615e6c",

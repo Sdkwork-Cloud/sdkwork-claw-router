@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/birth-medical-cert-ocr@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-birth-medical-cert-ocr-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-birth-medical-cert-ocr-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:cc351a1ef79afdba50b8f3cec5f8fd0c3117e2a3972718d55ce16eeda7dedc23",

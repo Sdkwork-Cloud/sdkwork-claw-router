@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gstack-orchestrate@1.6.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gstack-orchestrate-1.6.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gstack-orchestrate-1.6.0.json"
+      },
       "version": "1.6.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e39b5585ce8dc173c1b0071ff7bd6b0fa4742532317ee4aca5d08146c6d0782e",

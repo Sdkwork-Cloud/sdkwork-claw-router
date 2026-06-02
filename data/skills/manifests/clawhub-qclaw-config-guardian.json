@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qclaw-config-guardian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qclaw-config-guardian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qclaw-config-guardian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e895cf00cbdb0baa2284cd528d199e593a12e7cd0f44dbd0cf5102bcd95511bc",

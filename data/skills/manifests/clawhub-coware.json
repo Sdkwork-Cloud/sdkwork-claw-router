@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coware@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coware-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coware-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:afc2986cce4babf4faa84ed66f56e552849b47be9eebbb69de3df96311ca7de3",

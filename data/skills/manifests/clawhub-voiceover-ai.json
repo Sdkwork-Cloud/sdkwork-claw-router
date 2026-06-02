@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voiceover-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voiceover-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voiceover-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a4cb286bb73ebe21f0b969361c99d0111a878878f8de1e8cf7a55681db91c02",

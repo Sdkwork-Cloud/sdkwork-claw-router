@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-whisper@1.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-whisper-1.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-whisper-1.4.1.json"
+      },
       "version": "1.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3671da109d4730cc587b4a2bc7570c8f2a265503f29fa46ad9c5eac5ce40c69e",

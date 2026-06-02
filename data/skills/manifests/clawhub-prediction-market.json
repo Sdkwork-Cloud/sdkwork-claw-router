@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prediction-market@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-prediction-market-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prediction-market-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ef4feaf90498a7fc51e6ca10847c8e287b3b632b68da58309b0f676b3b67e2e2",

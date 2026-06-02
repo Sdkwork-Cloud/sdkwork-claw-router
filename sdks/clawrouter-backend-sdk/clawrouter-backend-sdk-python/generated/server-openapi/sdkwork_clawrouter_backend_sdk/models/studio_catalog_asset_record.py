@@ -2,14 +2,17 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class StudioCatalogAssetRecord:
     """Studio catalog asset record schema exposed by Claw Router."""
     alt_text: Optional[str] = None
     artifact_id: Optional[str] = None
+    asset: Optional[MediaResource] = None
     asset_type: Optional[str] = None
-    asset_url: Optional[str] = None
     created_at: Optional[str] = None
     data_scope: Optional[str] = None
     deleted_at: Optional[str] = None
@@ -27,7 +30,7 @@ class StudioCatalogAssetRecord:
     target_id: Optional[str] = None
     target_type: Optional[str] = None
     tenant_id: Optional[str] = None
-    thumbnail_url: Optional[str] = None
+    thumbnail: Optional[MediaResource] = None
     title: Optional[str] = None
     updated_at: Optional[str] = None
     uuid: Optional[str] = None

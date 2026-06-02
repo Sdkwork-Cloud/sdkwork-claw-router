@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/context-engine@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-context-engine-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-context-engine-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e9d6b0884953a966de14bec8cb5560482c0f584cd9086bfb60a469619d1deada",

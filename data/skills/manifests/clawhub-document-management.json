@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/document-management@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-document-management-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-document-management-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f402664f14fe8e2e295ccf43cc61b85451a8d5a431affad52123f36f5b83da59",

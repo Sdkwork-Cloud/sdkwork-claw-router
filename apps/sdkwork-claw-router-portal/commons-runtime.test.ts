@@ -36,6 +36,11 @@ import {
   SDK_SYSTEM_CONFIG,
 } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import {
+  readMediaResource,
+  readMediaResourceUrl,
+  toExternalUrlMediaResource,
+} from "./packages/sdkwork-claw-router-commons/src/media-resource.ts";
+import {
   optionalBoundedPositiveInteger,
   optionalInteger,
   optionalPositiveInteger,
@@ -219,6 +224,20 @@ test("normalizeGeneratedSdkBaseUrl preserves raw origins and unrelated root-rela
   assert.equal(normalizeGeneratedSdkBaseUrl("https://tenant.example.com", "/app/v3/api"), "https://tenant.example.com");
   assert.equal(normalizeGeneratedSdkBaseUrl("/tenant-a", "/app/v3/api"), "/tenant-a");
   assert.equal(normalizeGeneratedSdkBaseUrl("", "/app/v3/api"), "");
+});
+
+test("media resource helpers keep structural media as objects", () => {
+  const resource = toExternalUrlMediaResource("https://cdn.example.test/media.png", "image");
+
+  assert.deepEqual(resource, {
+    kind: "image",
+    source: "external_url",
+    url: "https://cdn.example.test/media.png",
+    publicUrl: "https://cdn.example.test/media.png",
+  });
+  assert.equal(readMediaResourceUrl(resource), "https://cdn.example.test/media.png");
+  assert.equal(readMediaResourceUrl("https://cdn.example.test/media.png"), "");
+  assert.equal(readMediaResource("https://cdn.example.test/media.png"), undefined);
 });
 
 test("reference sidebar group collapse state defaults expanded and toggles by system category key", () => {
@@ -414,7 +433,7 @@ test("navbar localizes notification unread counter and uses runtime site brandin
     "useSiteBranding()",
     "siteBranding.siteName",
     "siteBranding.shortName",
-    "siteBranding.logoUrl",
+    "siteBranding.logo",
     "unreadCount: t('commons.navbar.unreadCount'",
     "0 ? t('commons.navbar.unreadCountZero'",
     "applySiteBrandingToDocument",
@@ -435,7 +454,7 @@ test("footer renders configurable site branding and copyright", () => {
     "useSiteBranding()",
     "siteBranding.siteName",
     "siteBranding.footerCopyright",
-    "siteBranding.logoUrl",
+    "siteBranding.logo",
     "siteBranding.icpRecordNumber",
     "siteBranding.icpRecordUrl",
     "siteBranding.policeRecordNumber",

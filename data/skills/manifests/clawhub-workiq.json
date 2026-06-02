@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workiq@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workiq-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workiq-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4d302b4aa678ca9c429cfcf34b1accaabebf96dc285936abc75f121ce6c0a225",

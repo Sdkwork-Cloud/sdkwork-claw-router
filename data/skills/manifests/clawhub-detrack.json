@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/detrack@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-detrack-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-detrack-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e97509dac3af3c1109caf427011eb60c7c3cdbddcf2b3cbbd1a63dec706ed6bd",

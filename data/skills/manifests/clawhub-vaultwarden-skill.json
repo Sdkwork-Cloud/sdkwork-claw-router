@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vaultwarden-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-vaultwarden-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vaultwarden-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:315d9a4e9bd54ff9a210b3e065627d22366e45520b9673e6bd83bb21c9b33598",

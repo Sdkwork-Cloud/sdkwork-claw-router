@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/griffin@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-griffin-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-griffin-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:42e5ba10f8f7bee94ff16e0648f234464003891e131b71b47a69969d6dee3708",

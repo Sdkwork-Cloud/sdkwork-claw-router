@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-fm@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-fm-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-fm-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:039f5c237425c83e49b215bebbd2ef37a7d7acdd2ccb405617b413ada1acfb08",

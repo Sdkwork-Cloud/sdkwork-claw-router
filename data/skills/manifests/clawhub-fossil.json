@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fossil@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fossil-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fossil-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6bf9044581a88fd98b2198543d643af65e89e3ed168399b11ec3b9861ebb362d",

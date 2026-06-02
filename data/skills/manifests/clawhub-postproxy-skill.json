@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/postproxy-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-postproxy-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-postproxy-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:722965cad1c22c59ed38035d7731b28ce3b97996f5f6f17200b471db0dc4c518",

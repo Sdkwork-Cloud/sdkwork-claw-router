@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qgis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qgis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qgis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a10ad066bff9baa32e606f6825102381f2efab6b20ebc653a2f4cc7e7a2df24",

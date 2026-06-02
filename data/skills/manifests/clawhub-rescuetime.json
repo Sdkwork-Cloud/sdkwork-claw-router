@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rescuetime@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rescuetime-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rescuetime-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de3b8c037bb757d2a2571cc233fc42d26b7e9e7d9b1fb906b3332fed5c269a47",

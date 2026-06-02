@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/uncle-bob@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-uncle-bob-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-uncle-bob-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e4386c807220810e268704f1082a63a9d386551dad45ccbae7829dd98db4d9f",

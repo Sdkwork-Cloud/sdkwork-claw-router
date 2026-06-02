@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-improving-agent@1.0.0-alpha",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-improving-agent-1.0.0-alpha.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-improving-agent-1.0.0-alpha.json"
+      },
       "version": "1.0.0-alpha",
       "runtime": "metadata",
       "checksumHash": "sha256:93342c75a44b3c823fce28323d19259b5b6a1b7f91adb77ad8fdfacdf0f108d4",

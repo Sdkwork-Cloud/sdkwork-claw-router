@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-voice-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-voice-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-voice-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1303b1756ff6d386559d264d833dfcd955dd2b3c766a847cc7e2aa47c2778200",

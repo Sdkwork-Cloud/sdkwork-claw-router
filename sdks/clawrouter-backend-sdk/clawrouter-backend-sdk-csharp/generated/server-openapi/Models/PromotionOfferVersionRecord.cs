@@ -13,14 +13,17 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? CreatedAt { get; set; }
         public string? CreatedBy { get; set; }
         public string? CurrencyCode { get; set; }
+        public bool? CustomerVisible { get; set; }
         public string? DiscountAmountMinor { get; set; }
         public int? DiscountPercentBps { get; set; }
         public string? DiscountType { get; set; }
         public string? FaceValueMinor { get; set; }
         public string? FixedPriceMinor { get; set; }
+        public string? Id { get; set; }
         public string? LiabilityPolicy { get; set; }
         public string? LifecycleStatus { get; set; }
         public string? MaximumDiscountAmountMinor { get; set; }
+        public string? MinimumOrderAmountMinor { get; set; }
         public string? OfferId { get; set; }
         public string? OrganizationId { get; set; }
         public string? PublishedAt { get; set; }

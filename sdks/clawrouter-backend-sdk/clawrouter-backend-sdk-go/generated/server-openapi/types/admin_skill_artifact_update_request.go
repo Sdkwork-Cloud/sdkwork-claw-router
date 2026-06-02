@@ -2,10 +2,10 @@ package types
 
 // Admin skill artifact update request schema exposed by Claw Router.
 type AdminSkillArtifactUpdateRequest struct {
+	Artifact MediaResource `json:"artifact"`
 	ArtifactRef string `json:"artifactRef"`
 	ArtifactSizeBytes int `json:"artifactSizeBytes"`
 	ArtifactType int `json:"artifactType"`
-	ArtifactUrl string `json:"artifactUrl"`
 	ChecksumHash string `json:"checksumHash"`
 	DeprecatedAt string `json:"deprecatedAt"`
 	Frameworks []string `json:"frameworks"`

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gosquared@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-gosquared-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gosquared-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:f46405273f1d980ea77333f3463c37e548208d5a69969acd62b803805e920420",

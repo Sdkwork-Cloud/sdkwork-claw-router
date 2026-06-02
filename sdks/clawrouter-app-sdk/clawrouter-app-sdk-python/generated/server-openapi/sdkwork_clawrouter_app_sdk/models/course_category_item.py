@@ -9,7 +9,7 @@ class CourseCategoryItem:
     code: str
     course_count: int
     description: str
-    icon: str
+    icon_key: str
     id: str
     label: str
     name: str

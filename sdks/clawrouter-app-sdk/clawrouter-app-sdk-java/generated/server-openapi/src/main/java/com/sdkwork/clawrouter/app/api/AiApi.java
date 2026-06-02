@@ -13,6 +13,12 @@ public class AiApi {
         this.client = client;
     }
 
+    /** List groups */
+    public ChannelGroupsListResult channelGroupsList() throws Exception {
+        Object raw = client.get(ApiPaths.appPath("/ai/channel_groups"));
+        return client.convertValue(raw, new TypeReference<ChannelGroupsListResult>() {});
+    }
+
     /** List dashboard overview */
     public DashboardOverviewRetrieveResult dashboardOverviewRetrieve(String timeRange, String startTime, String endTime) throws Exception {
         String query = buildQueryString(List.of(

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/42crunch@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-42crunch-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-42crunch-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:67214197c9d51ed6f568c3f6ba12c72bb6ab82ebcc368a6ede10dc5c856435cf",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mj-windows-faster-whisper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mj-windows-faster-whisper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mj-windows-faster-whisper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7090dbc6fb544bf16395d74eba501a7a6be7abb651fa1273537a8edeed4fba44",

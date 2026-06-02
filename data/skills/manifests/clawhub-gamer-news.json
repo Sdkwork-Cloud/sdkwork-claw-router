@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gamer-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gamer-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gamer-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2e56f845cb03652dd14f30109117144d82b12da89b3ced39dbb747048dd75b3",

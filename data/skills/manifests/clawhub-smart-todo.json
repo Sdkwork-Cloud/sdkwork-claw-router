@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-todo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-todo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-todo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9039eab504d8f812ab2aaae95fc1b0a1cfc468110732ec8f3eab5ff448149d4f",

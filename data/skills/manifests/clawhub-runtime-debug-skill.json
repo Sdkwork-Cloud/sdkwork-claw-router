@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/runtime-debug-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-runtime-debug-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-runtime-debug-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aa01c69739151ef75aab502869b399fde2aee1abb702641bfd6bcb758a5131fb",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/failover-gateway-pub@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-failover-gateway-pub-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-failover-gateway-pub-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f683b4dd3bbbc149f469c4b1861913a2b7eb2eb012de5b70ad69d25c68a415f",

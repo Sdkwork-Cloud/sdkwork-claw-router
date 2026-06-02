@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lorax@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lorax-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lorax-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ec7e64a848c07bbcb5d95d19394ced7ec559846059d48b89d260b525fb715f0b",

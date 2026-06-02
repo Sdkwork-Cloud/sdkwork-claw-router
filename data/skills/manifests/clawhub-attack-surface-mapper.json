@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/attack-surface-mapper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-attack-surface-mapper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-attack-surface-mapper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:768603f4add8b68238678b0fbec5616757f3dbc2b3cca99e1905c53cfea12cb1",

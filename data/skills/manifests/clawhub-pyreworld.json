@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pyreworld@10.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pyreworld-10.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pyreworld-10.2.0.json"
+      },
       "version": "10.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5580e46f44672ff4a5625cfa53db847039ae8b94d4be31eb401b203b92724b8a",

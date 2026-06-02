@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smtp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smtp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smtp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7562c7d3aa95911c5b64f15c7766163fa0c88437b3d1a620775544d2a56d2808",

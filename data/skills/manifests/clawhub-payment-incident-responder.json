@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/payment-incident-responder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-payment-incident-responder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-payment-incident-responder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:07dc66ecfd2b700f03abeb02c24f1b0aa1366f8db67e77acb764e4053d41e83f",

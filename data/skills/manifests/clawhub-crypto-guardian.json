@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-guardian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-guardian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-guardian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b825a590a0aa3c57ce75f5bd73da11d70f6eac726db9559b5b201b95ec3569a1",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pantene@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pantene-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pantene-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3bd66284eaf9fd1ec023b77300785dfd97993ed9a300e9b70f1528ec19f627d9",

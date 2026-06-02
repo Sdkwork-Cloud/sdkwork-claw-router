@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inventory-health-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-inventory-health-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inventory-health-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42950c0e7f5fcdf4c00fe9ed1c43cf06dcf4a2f5371360aef94edb525f026007",

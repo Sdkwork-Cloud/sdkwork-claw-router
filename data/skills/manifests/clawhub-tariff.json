@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tariff@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tariff-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tariff-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:17aff2258c26bc20115d45acffb544d5ef3aa908983e3f04bb843bcd6641d712",

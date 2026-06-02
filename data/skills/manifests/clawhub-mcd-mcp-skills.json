@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcd-mcp-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcd-mcp-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcd-mcp-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0942ce097cce861edd8b7f12738a06c5e6db9a7961642cf6f02adf0ae07795f3",

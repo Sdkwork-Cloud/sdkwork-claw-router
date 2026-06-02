@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/s3-memory-forensics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-s3-memory-forensics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-s3-memory-forensics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a727d66240177b75bc33aa68333dc38bca6917994107006bc4e1c2c287bdc106",

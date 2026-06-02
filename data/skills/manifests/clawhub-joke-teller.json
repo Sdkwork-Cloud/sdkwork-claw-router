@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/joke-teller@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-joke-teller-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-joke-teller-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b918531b162da3c674733893e820d1ee0edf56641e59e87c93171d49e7cd288",

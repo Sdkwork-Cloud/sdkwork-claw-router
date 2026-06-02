@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-sif-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-sif-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-sif-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5bd5e85f52aa604c68777fe2b513a7dd1e79804f105aa4058502d46351a522b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/technews@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-technews-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-technews-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b19ed2480fd464723b2807bc60d8ea364e3ca6feb1b9cc5a51dd8367d31ad84c",

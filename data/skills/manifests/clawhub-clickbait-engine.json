@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clickbait-engine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clickbait-engine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clickbait-engine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:630db5fda6293b2e221fe5d0e52bef0d648370cf8f6a1b6b31d31ba6dfa4d434",

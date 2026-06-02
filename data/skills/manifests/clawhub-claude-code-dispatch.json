@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-dispatch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-dispatch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-dispatch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:773b9ea64b77061afc50d4b9b89dca561ccbce5960bb3ddce3f0a12ef1fac6b7",

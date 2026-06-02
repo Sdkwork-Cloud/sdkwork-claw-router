@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Admin site settings update request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminSiteSettingsUpdateRequest {
@@ -27,20 +29,18 @@ pub struct AdminSiteSettingsUpdateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub docs_url: Option<String>,
 
-    /// Favicon url field on admin site settings update request.
-    #[serde(rename = "faviconUrl")]
+    /// Favicon field on admin site settings update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub favicon_url: Option<String>,
+    pub favicon: Option<MediaResource>,
 
     /// Footer copyright field on admin site settings update request.
     #[serde(rename = "footerCopyright")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub footer_copyright: Option<String>,
 
-    /// Icon url field on admin site settings update request.
-    #[serde(rename = "iconUrl")]
+    /// Icon field on admin site settings update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon_url: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Icp record number field on admin site settings update request.
     #[serde(rename = "icpRecordNumber")]
@@ -52,10 +52,9 @@ pub struct AdminSiteSettingsUpdateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub icp_record_url: Option<String>,
 
-    /// Logo url field on admin site settings update request.
-    #[serde(rename = "logoUrl")]
+    /// Logo field on admin site settings update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub logo_url: Option<String>,
+    pub logo: Option<MediaResource>,
 
     /// Police record number field on admin site settings update request.
     #[serde(rename = "policeRecordNumber")]

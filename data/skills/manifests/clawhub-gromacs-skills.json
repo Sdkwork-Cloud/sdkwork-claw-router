@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gromacs-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gromacs-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gromacs-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5dcdf285b5d3c994c3175b1832fb1b65283af8e02f054dedb47f5f40decc7bc5",

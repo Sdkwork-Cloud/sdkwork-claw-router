@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pm2-gateway-restart@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pm2-gateway-restart-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pm2-gateway-restart-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9f9dcf320c3bcb966d7a0bd10659fff6965a32729bb6eb1bef77681bb9a58e45",

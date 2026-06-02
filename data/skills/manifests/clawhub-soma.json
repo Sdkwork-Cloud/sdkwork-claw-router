@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/soma@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-soma-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-soma-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d64ba2af9bbe35579b1f2cfb40f91dede2c54c791fafda53d5e8d78594d315e4",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meshtastic-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meshtastic-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meshtastic-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a55522b7e2f773d1d51a1b6ecf43d247a8be2f2d5d8f1b59603752393671092d",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-home@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-home-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-home-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd9188269ea6dadfe157a5a977f3f5ff1b66cc6f220f1b0b7d6d84779605395c",

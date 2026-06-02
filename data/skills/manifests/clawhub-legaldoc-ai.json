@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/legaldoc-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-legaldoc-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-legaldoc-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a99fb782ae35c4ec065f7303e1418321600924b41e226b0dc73d2cab822d902",

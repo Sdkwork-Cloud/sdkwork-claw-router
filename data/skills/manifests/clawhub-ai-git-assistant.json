@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-git-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-git-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-git-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8366771f274e7414ad9481dcba0e5e36012a39fc180eb94cfd0346de5219f485",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/duck@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-duck-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-duck-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:013c5f077efa5580000b78f1f4658891c4eba23e06f86051348af2b0c9c4759e",

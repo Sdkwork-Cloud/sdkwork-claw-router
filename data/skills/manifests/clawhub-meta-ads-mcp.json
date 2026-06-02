@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meta-ads-mcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meta-ads-mcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meta-ads-mcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:525c165eb7ce925bbb179e79148e02b669228a8a3521a45247d8078b77be1f3f",

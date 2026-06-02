@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sharpening@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sharpening-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sharpening-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:130d69fb94a4695ef1cfefdf0f6dab31a29aed4b8c5f48a880abff38879c2fe3",

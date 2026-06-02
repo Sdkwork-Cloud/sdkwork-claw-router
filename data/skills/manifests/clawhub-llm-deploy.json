@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb0c7bb5235d8bdfff4ef9d59281be56bac22dc48ad99a08cb963c446f8d86ff",

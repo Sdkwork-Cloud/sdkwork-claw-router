@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AppReleaseItem
     {
-        public string? DownloadUrl { get; set; }
+        public MediaResource? Artifact { get; set; }
         public string? Id { get; set; }
         public string? Os { get; set; }
         public string? PlatformType { get; set; }

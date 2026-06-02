@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chicago@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-chicago-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chicago-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:80fbe4b8eb0974347a96c9441e6668bbf7b6a89345ee27cab7227d69489cebb3",

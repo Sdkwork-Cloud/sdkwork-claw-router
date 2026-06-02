@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nginx-explorer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nginx-explorer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nginx-explorer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:06a7f43cbcd15e6496e0459d2dfcc4e9f46ba4bfbea5597793d414005c556551",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-opc-wiki@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-opc-wiki-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-opc-wiki-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:89697455b5c1687582ad28463401c12b4e52444870e32b702227f26110a44050",

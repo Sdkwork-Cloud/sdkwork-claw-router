@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clerk@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-clerk-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clerk-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:56cfc49c9af46ed1830545c4b59317d463762e20f5932e0bba3853e8a62f4372",

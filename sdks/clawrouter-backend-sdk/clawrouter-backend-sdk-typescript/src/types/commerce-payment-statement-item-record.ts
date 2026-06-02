@@ -10,6 +10,8 @@ export interface CommercePaymentStatementItemRecord {
   fee_amount: string;
   /** Gross amount field on commerce payment statement item record. */
   gross_amount: string;
+  /** Id field on commerce payment statement item record. */
+  id?: string;
   /** Metadata json field on commerce payment statement item record. */
   metadata_json?: Record<string, JsonValue>;
   /** Native order no field on commerce payment statement item record. */

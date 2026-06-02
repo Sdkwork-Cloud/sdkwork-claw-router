@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/upbit-market-data-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-upbit-market-data-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-upbit-market-data-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:29cc7a3cc1bfcbffaea96d9cd22281d5b63fe198bef6692f7663a3f12457eb60",

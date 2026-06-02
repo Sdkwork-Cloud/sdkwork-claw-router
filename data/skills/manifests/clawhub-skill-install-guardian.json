@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-install-guardian@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-install-guardian-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-install-guardian-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:404163de9d2086a2f815df0e85e457771e7c3764f65a7652a7f30fb613cf8ac9",

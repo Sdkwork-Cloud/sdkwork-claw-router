@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solo-swarm@1.6.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solo-swarm-1.6.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solo-swarm-1.6.0.json"
+      },
       "version": "1.6.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b673a99aaf5b17d9aff576f32ba553ad728439d2982d998e1ab74716ca2a394b",

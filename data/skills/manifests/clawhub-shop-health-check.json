@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shop-health-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shop-health-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shop-health-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15cae116675edd52fa2d9509ce9d28c14711d2726632526e2b4b350ae7fa0c49",

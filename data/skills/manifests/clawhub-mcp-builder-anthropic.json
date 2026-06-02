@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcp-builder-anthropic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcp-builder-anthropic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcp-builder-anthropic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d64527f6068fbb86678ef3ff47632c71ded9293f4959557ddd994e5b6acca610",

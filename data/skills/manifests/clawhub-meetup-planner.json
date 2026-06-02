@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meetup-planner@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-meetup-planner-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meetup-planner-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:87cde00988390c6302ec8bc4fc2d27d6770c808a864601d2d3dbe02d5396e81b",

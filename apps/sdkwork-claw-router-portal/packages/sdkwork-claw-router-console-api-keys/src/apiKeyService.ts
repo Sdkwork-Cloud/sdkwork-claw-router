@@ -12,11 +12,8 @@ import {
   readString,
 } from 'sdkwork-claw-router-commons/api-result';
 import type { CreateApiKeyRequest, UpdateApiKeyRequest } from '@sdkwork/clawrouter-app-sdk';
-import type {
-  AppApiKeyGroupListResponse as SdkAppApiKeyGroupListResponse,
-  AppApiKeyListResponse as SdkAppApiKeyListResponse,
-} from '@sdkwork/clawrouter-app-sdk';
-import { DEFAULT_API_KEY_GROUP } from './apiKeyForm.ts';
+import type { AppApiKeyListResponse as SdkAppApiKeyListResponse } from '@sdkwork/clawrouter-app-sdk';
+import { DEFAULT_CHANNEL_GROUP } from './apiKeyForm.ts';
 
 type SdkAppApiKeyItem = SdkAppApiKeyListResponse['items'][number];
 
@@ -26,8 +23,8 @@ export interface ApiKey {
   displayName: string;
   maskedKey: string & SdkAppApiKeyItem['maskedKey'];
   copyableKey: string | null;
-  group: SdkAppApiKeyItem['group'];
-  groupName: SdkAppApiKeyItem['groupName'] | null;
+  channelGroup: string;
+  channelGroupName: string | null;
   rate: SdkAppApiKeyItem['rate'];
   quota: SdkAppApiKeyItem['quota'];
   usedQuota: SdkAppApiKeyItem['usedQuota'];
@@ -39,16 +36,16 @@ export interface ApiKey {
   defaultForRuntime: SdkAppApiKeyItem['defaultForRuntime'];
 }
 
-export interface ApiKeyGroup {
-  id: SdkAppApiKeyGroupListResponse['items'][number]['id'];
-  code: SdkAppApiKeyGroupListResponse['items'][number]['code'];
-  name: SdkAppApiKeyGroupListResponse['items'][number]['name'];
-  rate: SdkAppApiKeyGroupListResponse['items'][number]['rate'];
+export interface ChannelGroup {
+  id: string;
+  code: string;
+  name: string;
+  rate: string | null;
 }
 
 export interface CreateApiKeyInput {
   name: string;
-  group: string;
+  channelGroup: string;
   quota: string;
   isUnlimitedQuota: boolean;
   modalities: string[];
@@ -72,20 +69,18 @@ export class ApiKeyService {
       const result = await getClawRouterAppSdkClient().iam.apiKeys.list();
       ensureSdkworkApiSuccess(result, 'console.apiKeys.errors.loadFallback');
       const items = readRequiredApiItems(result, 'console.apiKeys.errors.loadFallback');
-
       return items.map(normalizeApiKey);
     } catch (error) {
       throw new Error(readSdkErrorMessage(error, 'console.apiKeys.errors.loadFallback'));
     }
   }
 
-  static async fetchGroups(): Promise<ApiKeyGroup[]> {
+  static async fetchGroups(): Promise<ChannelGroup[]> {
     try {
-      const result = await getClawRouterAppSdkClient().iam.apiKeyGroups.list();
+      const result = await getClawRouterAppSdkClient().ai.channelGroups.list();
       ensureSdkworkApiSuccess(result, 'console.apiKeys.errors.loadGroupsFallback');
       const items = readRequiredApiItems(result, 'console.apiKeys.errors.loadGroupsFallback');
-
-      return items.map(normalizeApiKeyGroup);
+      return items.map(normalizeChannelGroup);
     } catch (error) {
       throw new Error(readSdkErrorMessage(error, 'console.apiKeys.errors.loadGroupsFallback'));
     }
@@ -120,8 +115,7 @@ export class ApiKeyService {
         requiredText(keyId, 'apiKeyId'),
         toUpdateApiKeyRequest(input),
       );
-      const key = normalizeApiKey(readRequiredApiItem(result, 'API key update response is missing key data', ['item']));
-      return key;
+      return normalizeApiKey(readRequiredApiItem(result, 'API key update response is missing key data', ['item']));
     } catch (error) {
       throw new Error(readSdkErrorMessage(error, 'console.apiKeys.errors.updateFallback'));
     }
@@ -148,28 +142,28 @@ function readSdkErrorMessage(error: unknown, fallback: string): string {
 }
 
 function toCreateApiKeyRequest(input: CreateApiKeyInput): CreateApiKeyRequest {
-  const request: CreateApiKeyRequest = {
+  const request = {
     name: requiredText(input.name, 'name'),
-    group: optionalText(input.group) ?? DEFAULT_API_KEY_GROUP,
+    channelGroup: optionalText(input.channelGroup) ?? DEFAULT_CHANNEL_GROUP,
     quota: decimalQuota(input.quota),
     isUnlimitedQuota: Boolean(input.isUnlimitedQuota),
     modalities: toApiKeyModalities(input.modalities),
     ipLimit: optionalText(input.ipLimit) ?? 'unrestricted',
     expires: optionalText(input.expires) ?? 'never',
-  };
+  } as CreateApiKeyRequest & Record<string, unknown>;
   if (input.defaultForRuntime !== undefined) {
     request.defaultForRuntime = Boolean(input.defaultForRuntime);
   }
-  return request;
+  return request as CreateApiKeyRequest;
 }
 
 function toUpdateApiKeyRequest(input: UpdateApiKeyInput): UpdateApiKeyRequest {
-  const request: UpdateApiKeyRequest = {};
+  const request = {} as UpdateApiKeyRequest & Record<string, unknown>;
   if (input.name !== undefined) {
     request.name = requiredText(input.name, 'name');
   }
-  if (input.group !== undefined) {
-    request.group = optionalText(input.group) ?? DEFAULT_API_KEY_GROUP;
+  if (input.channelGroup !== undefined) {
+    request.channelGroup = optionalText(input.channelGroup) ?? DEFAULT_CHANNEL_GROUP;
   }
   if (input.quota !== undefined) {
     request.quota = decimalQuota(input.quota);
@@ -189,7 +183,7 @@ function toUpdateApiKeyRequest(input: UpdateApiKeyInput): UpdateApiKeyRequest {
   if (input.defaultForRuntime !== undefined) {
     request.defaultForRuntime = Boolean(input.defaultForRuntime);
   }
-  return request;
+  return request as UpdateApiKeyRequest;
 }
 
 function requiredText(value: string, fieldName: string): string {
@@ -221,15 +215,14 @@ function normalizeApiKey(value: unknown): ApiKey {
   const id = readRequiredString(value, 'id', 'API key id is required');
   const name = readRequiredString(value, 'name', 'API key name is required');
   const maskedKey = readRequiredString(value, 'maskedKey', 'API key masked value is required');
-
   return {
     id,
     name,
     displayName: readApiKeyDisplayName(id, name),
     maskedKey,
     copyableKey: readNullableString(value, 'copyableKey'),
-    group: readRequiredString(value, 'group', 'API key group is required'),
-    groupName: readNullableString(value, 'groupName'),
+    channelGroup: readRequiredString(value, 'channelGroup', 'API key channel group is required'),
+    channelGroupName: readNullableString(value, 'channelGroupName'),
     rate: readNullableString(value, 'rate'),
     quota: readRequiredString(value, 'quota', 'API key quota is required'),
     usedQuota: readRequiredString(value, 'usedQuota', 'API key used quota is required'),
@@ -268,15 +261,15 @@ function normalizeCreatedApiKey(value: unknown, rawKey: string): ApiKey {
   }
 }
 
-function normalizeApiKeyGroup(value: unknown): ApiKeyGroup {
+function normalizeChannelGroup(value: unknown): ChannelGroup {
   if (!isRecord(value)) {
-    throw new Error('API key group record is required');
+    throw new Error('Channel group record is required');
   }
 
   return {
-    id: readRequiredString(value, 'id', 'API key group id is required'),
-    code: readRequiredString(value, 'code', 'API key group code is required'),
-    name: readRequiredString(value, 'name', 'API key group name is required'),
+    id: readRequiredString(value, 'id', 'Channel group id is required'),
+    code: readRequiredString(value, 'code', 'Channel group code is required'),
+    name: readRequiredString(value, 'name', 'Channel group name is required'),
     rate: readNullableString(value, 'rate'),
   };
 }

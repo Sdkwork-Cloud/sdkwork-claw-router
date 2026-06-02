@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/msw-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-msw-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-msw-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c15af0513594f8a8e797f2a860183ea27859be1be04a422c9c9f2a59aa441bee",

@@ -7,6 +7,7 @@ public class CommerceShipmentTrackingEventRecord {
     private String description;
     private String eventCode;
     private String eventTime;
+    private String id;
     private String location;
     private String organizationId;
     private Map<String, String> rawPayloadJson;
@@ -43,6 +44,14 @@ public class CommerceShipmentTrackingEventRecord {
 
     public void setEventTime(String eventTime) {
         this.eventTime = eventTime;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getLocation() {

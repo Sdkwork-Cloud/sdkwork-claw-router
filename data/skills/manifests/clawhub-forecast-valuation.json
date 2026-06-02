@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/forecast-valuation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-forecast-valuation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-forecast-valuation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a60519ae6d8c72e575f905324c6378b750b613040c3928b98c1ac03fe447c651",

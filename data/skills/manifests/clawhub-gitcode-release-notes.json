@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitcode-release-notes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitcode-release-notes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitcode-release-notes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aeb5299693fa650765659bc7f029beea3dd83dcfaab602e08fa02171567779ea",

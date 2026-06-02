@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llc-name-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llc-name-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llc-name-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e33ce83418f5e67918e5036a67622d22ad4d75881b138260c2b9652f27c1cf2f",

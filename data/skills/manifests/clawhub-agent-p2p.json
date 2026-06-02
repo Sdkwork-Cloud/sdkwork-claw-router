@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-p2p@0.9.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-p2p-0.9.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-p2p-0.9.3.json"
+      },
       "version": "0.9.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d1444c2ed4bd313c298ffa587d232737c1d1fd6ee85efecda7ae8ad6061662ec",

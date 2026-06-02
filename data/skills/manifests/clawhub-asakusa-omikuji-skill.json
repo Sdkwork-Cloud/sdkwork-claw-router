@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/asakusa-omikuji-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-asakusa-omikuji-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-asakusa-omikuji-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8ccb926643570965df71f248a9e3ae16959f7ff9306736fde229c1891adb5a1c",

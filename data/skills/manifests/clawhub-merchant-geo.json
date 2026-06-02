@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/merchant-geo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-merchant-geo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-merchant-geo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00ab22770846a078377aaec4f22a3cb8c9fb9a44d49bfb0fd1bd2fe2a06a9456",

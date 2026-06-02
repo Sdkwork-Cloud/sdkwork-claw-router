@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/overnight-flights@3.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-overnight-flights-3.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-overnight-flights-3.2.1.json"
+      },
       "version": "3.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:78431a7bcc2fd389778ef5de35e78a215068f473a04e0f9b6f4f36747708839d",

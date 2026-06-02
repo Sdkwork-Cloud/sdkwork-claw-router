@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modesty-embedding-api@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-modesty-embedding-api-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modesty-embedding-api-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f90c6637159172dae5681937e81376ac8931ebbf861f542810f0199987eefd16",

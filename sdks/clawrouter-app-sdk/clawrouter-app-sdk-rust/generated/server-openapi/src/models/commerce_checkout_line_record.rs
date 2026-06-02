@@ -12,6 +12,10 @@ pub struct CommerceCheckoutLineRecord {
     /// Fulfillment type field on commerce checkout line record.
     pub fulfillment_type: String,
 
+    /// Id field on commerce checkout line record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Inventory reservation id field on commerce checkout line record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub inventory_reservation_id: Option<String>,
@@ -30,6 +34,9 @@ pub struct CommerceCheckoutLineRecord {
 
     /// Purchase type field on commerce checkout line record.
     pub purchase_type: String,
+
+    /// Quantity field on commerce checkout line record.
+    pub quantity: String,
 
     /// Sku id field on commerce checkout line record.
     pub sku_id: String,

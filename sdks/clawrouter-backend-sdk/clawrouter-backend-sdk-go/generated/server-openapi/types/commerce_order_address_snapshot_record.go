@@ -7,12 +7,14 @@ type CommerceOrderAddressSnapshotRecord struct {
 	City string `json:"city"`
 	CountryCode string `json:"country_code"`
 	District string `json:"district"`
+	Id string `json:"id"`
 	OrderId string `json:"order_id"`
 	OrganizationId string `json:"organization_id"`
 	PhoneMasked string `json:"phone_masked"`
 	PostalCode string `json:"postal_code"`
 	RecipientNameSnapshot string `json:"recipient_name_snapshot"`
 	RegionCode string `json:"region_code"`
+	SnapshotVersion string `json:"snapshot_version"`
 	SourceAddressId string `json:"source_address_id"`
 	TenantId string `json:"tenant_id"`
 }

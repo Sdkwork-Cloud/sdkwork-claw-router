@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/osint-api@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-osint-api-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-osint-api-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:8e03831708929b99dc5157ff8f7e868258668713277c50203003e4b932944b6a",

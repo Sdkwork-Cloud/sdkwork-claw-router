@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-s3@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-s3-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-s3-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:1e0d0576a61e1eb70751397aa1a679f0d75ae035c44c36985bda14c345b7bfa5",

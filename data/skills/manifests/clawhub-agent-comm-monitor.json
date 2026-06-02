@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-comm-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-comm-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-comm-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e707719b8287b428408e396f4b65c2639533731c54a335e9c3a9eec30965a57",

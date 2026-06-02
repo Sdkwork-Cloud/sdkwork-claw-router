@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/household-book-ocr@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-household-book-ocr-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-household-book-ocr-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:6c4ebdbb860fb38b004f5d33597335eeb8875e90876f118b5d765670a8420a54",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gov-financial-intel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gov-financial-intel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gov-financial-intel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee553d5a4fcff4a42bb818005fa610a75052e108cde98c87a4f85b7e3bd56f1c",

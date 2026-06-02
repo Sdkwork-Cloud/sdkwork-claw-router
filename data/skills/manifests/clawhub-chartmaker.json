@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chartmaker@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chartmaker-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chartmaker-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:20d21d9577dfaf525aaa77cb5ed9e588af622ecad7696ddc0a6088f6ea336209",

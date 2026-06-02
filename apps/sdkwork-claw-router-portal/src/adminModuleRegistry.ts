@@ -1,4 +1,4 @@
-﻿import {
+import {
   Activity,
   BadgePercent,
   BarChart3,
@@ -304,6 +304,7 @@ export const ADMIN_MODULE_MENUS: AdminModuleMenu[] = [
     groups: [
       groupBlock('admin.menu.memberCenter.memberships', [
         itemBlock({ path: '/admin/memberships/packages', labelKey: 'admin.menu.membershipPackages', icon: Package, iconColor: 'text-amber-500' }),
+        itemBlock({ path: '/admin/memberships/vip-packages', labelKey: 'admin.menu.membershipVipPackages', icon: Crown, iconColor: 'text-lobster-500' }),
         itemBlock({ path: '/admin/memberships/plans', labelKey: 'admin.menu.membershipPlans', icon: Crown, iconColor: 'text-violet-500' }),
         itemBlock({ path: '/admin/memberships/members', labelKey: 'admin.menu.membershipMembers', icon: Users, iconColor: 'text-blue-500' }),
         itemBlock({ path: '/admin/memberships/entitlements', labelKey: 'admin.menu.membershipEntitlements', icon: ShieldCheck, iconColor: 'text-emerald-500' }),

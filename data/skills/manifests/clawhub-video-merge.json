@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-merge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-merge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-merge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75aebe1a3eb86f32cc3b87bb55d0ce7787535ea077a442323f7c710430017b2e",

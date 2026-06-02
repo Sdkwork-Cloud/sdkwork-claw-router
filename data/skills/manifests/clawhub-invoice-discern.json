@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoice-discern@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoice-discern-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoice-discern-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0f95821df8625ede60b93a60843130d0b2c5ac36b22e5c14974c57219fa5358e",

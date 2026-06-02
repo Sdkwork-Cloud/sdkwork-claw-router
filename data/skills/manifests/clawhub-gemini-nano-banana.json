@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-nano-banana@0.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-nano-banana-0.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-nano-banana-0.1.4.json"
+      },
       "version": "0.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0cee6d0651bd03ac45e91904d09a0188a43fcc15e9d7c2338bec727d7e7bf528",

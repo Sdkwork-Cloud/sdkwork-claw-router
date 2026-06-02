@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pringles@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pringles-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pringles-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bccf2876a35350112f49b1e666d4b8a0d951c92eb6d1494ceaa45c15133cc210",

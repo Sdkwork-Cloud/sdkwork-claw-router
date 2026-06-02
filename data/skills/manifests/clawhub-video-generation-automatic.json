@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-generation-automatic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-generation-automatic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-generation-automatic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ea6e97cfb05550c64185620c551af43299d784b4e14c05bc4e7c30c2d5c5675f",

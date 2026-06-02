@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blog-image-enricher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blog-image-enricher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blog-image-enricher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da981626c950eeb58eb333c76a89cb9e0c34519e8f7f47f56857305cb150ea8a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/party-planning-center@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-party-planning-center-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-party-planning-center-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f51a75b2a1260b07dd6005f5c22bb0083ebcae0aa601599b36c224a9cc4b7c0",

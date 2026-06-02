@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcd-order-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcd-order-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcd-order-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0d40733e35f244d1cb7bf89e736ed79fac8a6ab09bbd4d4540ab063e582d265",

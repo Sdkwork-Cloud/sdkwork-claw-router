@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/compass@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-compass-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-compass-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:adaa6e14ed68ae7eb2144997941604beef44eff607d642d524701501406f86a3",

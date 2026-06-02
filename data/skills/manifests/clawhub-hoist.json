@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hoist@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-hoist-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hoist-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:c57db2e5df26d36b2d55fa967800a9bb5df5daff384172bbfd42832495a924ef",

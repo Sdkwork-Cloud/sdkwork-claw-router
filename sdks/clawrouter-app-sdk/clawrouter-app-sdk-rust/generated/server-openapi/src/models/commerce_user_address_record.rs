@@ -23,6 +23,13 @@ pub struct CommerceUserAddressRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub district: Option<String>,
 
+    /// Id field on commerce user address record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
+    /// Is default field on commerce user address record.
+    pub is_default: bool,
+
     /// Organization id field on commerce user address record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,

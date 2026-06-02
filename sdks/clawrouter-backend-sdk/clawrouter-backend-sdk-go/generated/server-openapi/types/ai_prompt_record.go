@@ -21,6 +21,7 @@ type AiPromptRecord struct {
 	PublishedAt string `json:"published_at"`
 	PublishedVersionId string `json:"published_version_id"`
 	Status string `json:"status"`
+	Tags map[string]JsonValue `json:"tags"`
 	TenantId string `json:"tenant_id"`
 	UpdatedAt string `json:"updated_at"`
 	Uuid string `json:"uuid"`

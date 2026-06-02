@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/data-pipeline-agent@98.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-data-pipeline-agent-98.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-data-pipeline-agent-98.0.1.json"
+      },
       "version": "98.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9708a10dba176594940cc45adadf7f3db8f1f8eea46bb8b15fbb6353c500b55e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cli-anything-gimp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cli-anything-gimp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cli-anything-gimp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e38bfba2db2c6543e8faafa666a8fc2ce821a6e5e455502e9a40660ea097b821",

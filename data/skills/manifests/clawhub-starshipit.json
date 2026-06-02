@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/starshipit@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-starshipit-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-starshipit-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:247a47bde0e872217ced1c045f7e171b26b4ce08fd6aa6100e6afc15d13a30c8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hikaru-ai-prompt-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hikaru-ai-prompt-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hikaru-ai-prompt-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0175b3d1ab32dea008956eb5ba05ceb2053a578a58ab2084f659b2f643bcc538",

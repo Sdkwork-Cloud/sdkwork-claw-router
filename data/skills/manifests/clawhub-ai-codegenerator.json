@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-codegenerator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-codegenerator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-codegenerator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f5edd5de388eb383ef6889b53338feac55034b37e1c88a85cdfbd4593a6d2e55",

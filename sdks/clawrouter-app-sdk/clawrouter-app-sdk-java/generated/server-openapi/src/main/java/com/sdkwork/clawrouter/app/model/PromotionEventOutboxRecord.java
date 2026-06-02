@@ -9,11 +9,13 @@ public class PromotionEventOutboxRecord {
     private String eventNo;
     private String eventType;
     private Integer eventVersion;
+    private String id;
     private String nextRetryAt;
     private String occurredAt;
     private String organizationId;
     private String payloadHash;
     private Map<String, String> payloadJson;
+    private Integer publishAttempts;
     private String publishedAt;
     private String status;
     private String tenantId;
@@ -66,6 +68,14 @@ public class PromotionEventOutboxRecord {
         this.eventVersion = eventVersion;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getNextRetryAt() {
         return this.nextRetryAt;
     }
@@ -104,6 +114,14 @@ public class PromotionEventOutboxRecord {
 
     public void setPayloadJson(Map<String, String> payloadJson) {
         this.payloadJson = payloadJson;
+    }
+
+    public Integer getPublishAttempts() {
+        return this.publishAttempts;
+    }
+
+    public void setPublishAttempts(Integer publishAttempts) {
+        this.publishAttempts = publishAttempts;
     }
 
     public String getPublishedAt() {

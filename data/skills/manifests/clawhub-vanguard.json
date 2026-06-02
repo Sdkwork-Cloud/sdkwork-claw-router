@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vanguard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vanguard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vanguard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bad6f45642b54e9ab0cab32dbcc18801da4880627862ff3e5732b1738d0cce45",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pptx-extract@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pptx-extract-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pptx-extract-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:048f21ebc236a563e2456a9958abbf2d8f5eb7d1405d4250557e035433d40bd9",

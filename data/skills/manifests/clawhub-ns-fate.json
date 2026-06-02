@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ns-fate@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ns-fate-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ns-fate-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:490536cfc7f754b21908e1b226942ef312f3d423932fa4aba9f426ddcad76917",

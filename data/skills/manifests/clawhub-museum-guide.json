@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/museum-guide@1.4.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-museum-guide-1.4.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-museum-guide-1.4.6.json"
+      },
       "version": "1.4.6",
       "runtime": "metadata",
       "checksumHash": "sha256:9cd609a69b2bc3e9bde202eab6aa90cfc599f2a96a62b75e48563c3c913280a9",

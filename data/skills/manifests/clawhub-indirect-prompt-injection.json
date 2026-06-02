@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/indirect-prompt-injection@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-indirect-prompt-injection-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-indirect-prompt-injection-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6e8dcb380c4063e1562f2addf891933ea7c2dd8cf28026945984bbd7614d5ac7",

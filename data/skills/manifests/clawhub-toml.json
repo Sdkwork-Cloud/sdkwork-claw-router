@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toml@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toml-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toml-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7709131ba1ff0c79359e17e62b831b59b5d2b3eff8b36ee651c7c2b44ac96a4e",

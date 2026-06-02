@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-credit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-credit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-credit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2ef2fd528007f04e34a37dfa164775f8f41fbf7ba65a0aaf2b7ed42bddc16e4a",

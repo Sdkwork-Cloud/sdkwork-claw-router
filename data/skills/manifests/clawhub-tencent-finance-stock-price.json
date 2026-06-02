@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencent-finance-stock-price@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencent-finance-stock-price-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencent-finance-stock-price-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a27c50923bf0244f74b3d12b28a3c318931b5c05b7ba9ddaa2728f105e5f371",

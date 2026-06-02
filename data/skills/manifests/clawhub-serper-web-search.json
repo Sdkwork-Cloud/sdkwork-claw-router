@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/serper-web-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-serper-web-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-serper-web-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbcf61036ef929f682c6190e3103d2face5ec7ae93c884ac24117b09b5d0a3f7",

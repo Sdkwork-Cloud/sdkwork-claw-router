@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/appmachine@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-appmachine-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-appmachine-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9d0ed7568be8469583e64f70ba85f06a5e6f10d75cfec194a992dbf20eb8a5ca",

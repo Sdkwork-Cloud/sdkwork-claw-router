@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sanofi-group@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sanofi-group-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sanofi-group-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75db608350ff1f45500dd24c1f9ee4b60716d87181b2c8e417a66008431942a4",

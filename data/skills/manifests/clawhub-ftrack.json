@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ftrack@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ftrack-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ftrack-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9495dbffdadf303c6760eea77f6542df976f7785383711a4426890c0c95d7bb1",

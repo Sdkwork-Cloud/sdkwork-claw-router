@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hr-ai-assistant@2.5.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-hr-ai-assistant-2.5.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hr-ai-assistant-2.5.9.json"
+      },
       "version": "2.5.9",
       "runtime": "metadata",
       "checksumHash": "sha256:070030b7347db68e4002ab7d514b9606f175bdadea202a9f5bb8805b428756fc",

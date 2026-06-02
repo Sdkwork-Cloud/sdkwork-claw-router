@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dnsfilter@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-dnsfilter-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dnsfilter-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a91d8eead0a84ec99e85ec179236055ebe126b9d3551a057e0ed72416ff0ae7b",

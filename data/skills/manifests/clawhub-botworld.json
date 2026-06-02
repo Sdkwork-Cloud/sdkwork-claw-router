@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/botworld@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-botworld-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-botworld-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:00a9a81b6764156a935e2a3e97ea09849f6e38c43abba3d4dd3303692fabb81c",

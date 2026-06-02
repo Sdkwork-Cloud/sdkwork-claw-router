@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snap@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-snap-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snap-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4d4e9c03bb8bf60a2f95de666b5f5b72af1e9a63022718542a9037e676a619bc",

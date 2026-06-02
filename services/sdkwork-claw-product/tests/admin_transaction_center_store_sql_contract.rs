@@ -250,6 +250,10 @@ fn transaction_center_provider_account_create_writes_ops_audit_log() {
             "{label} store must name the provider account audit action"
         );
         assert!(
+            !source.contains("PAYMENT_PROVIDER_ACCOUNT_CREATE_AUDIT_ACTION"),
+            "{label} store must use the canonical provider account audit action name directly"
+        );
+        assert!(
             source.contains("payments.provider_account.create"),
             "{label} store must use the standard provider account create audit action"
         );

@@ -2,22 +2,47 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class PromotionBudgetAccountRecord {
+    private String availableAmountMinor;
+    private String availableQuantity;
     private String budgetNo;
     private String budgetType;
+    private String consumedAmountMinor;
+    private String consumedQuantity;
     private String createdAt;
     private String createdBy;
     private String currencyCode;
+    private String id;
     private String lockMode;
     private String offerId;
     private String offerVersionId;
     private String organizationId;
     private String overrunAmountMinor;
     private String plannedAmountMinor;
+    private String reservedAmountMinor;
+    private String reservedQuantity;
     private String status;
     private String stockId;
     private String tenantId;
+    private String totalAmountMinor;
+    private String totalQuantity;
     private String updatedAt;
     private String updatedBy;
+
+    public String getAvailableAmountMinor() {
+        return this.availableAmountMinor;
+    }
+
+    public void setAvailableAmountMinor(String availableAmountMinor) {
+        this.availableAmountMinor = availableAmountMinor;
+    }
+
+    public String getAvailableQuantity() {
+        return this.availableQuantity;
+    }
+
+    public void setAvailableQuantity(String availableQuantity) {
+        this.availableQuantity = availableQuantity;
+    }
 
     public String getBudgetNo() {
         return this.budgetNo;
@@ -33,6 +58,22 @@ public class PromotionBudgetAccountRecord {
 
     public void setBudgetType(String budgetType) {
         this.budgetType = budgetType;
+    }
+
+    public String getConsumedAmountMinor() {
+        return this.consumedAmountMinor;
+    }
+
+    public void setConsumedAmountMinor(String consumedAmountMinor) {
+        this.consumedAmountMinor = consumedAmountMinor;
+    }
+
+    public String getConsumedQuantity() {
+        return this.consumedQuantity;
+    }
+
+    public void setConsumedQuantity(String consumedQuantity) {
+        this.consumedQuantity = consumedQuantity;
     }
 
     public String getCreatedAt() {
@@ -57,6 +98,14 @@ public class PromotionBudgetAccountRecord {
 
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getLockMode() {
@@ -107,6 +156,22 @@ public class PromotionBudgetAccountRecord {
         this.plannedAmountMinor = plannedAmountMinor;
     }
 
+    public String getReservedAmountMinor() {
+        return this.reservedAmountMinor;
+    }
+
+    public void setReservedAmountMinor(String reservedAmountMinor) {
+        this.reservedAmountMinor = reservedAmountMinor;
+    }
+
+    public String getReservedQuantity() {
+        return this.reservedQuantity;
+    }
+
+    public void setReservedQuantity(String reservedQuantity) {
+        this.reservedQuantity = reservedQuantity;
+    }
+
     public String getStatus() {
         return this.status;
     }
@@ -129,6 +194,22 @@ public class PromotionBudgetAccountRecord {
 
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
+    }
+
+    public String getTotalAmountMinor() {
+        return this.totalAmountMinor;
+    }
+
+    public void setTotalAmountMinor(String totalAmountMinor) {
+        this.totalAmountMinor = totalAmountMinor;
+    }
+
+    public String getTotalQuantity() {
+        return this.totalQuantity;
+    }
+
+    public void setTotalQuantity(String totalQuantity) {
+        this.totalQuantity = totalQuantity;
     }
 
     public String getUpdatedAt() {

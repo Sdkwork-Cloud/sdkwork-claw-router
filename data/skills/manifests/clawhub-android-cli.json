@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/android-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-android-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-android-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e00c0f201311adeb4a68681fe99c63c79497a822f086fa8be92d64004204c2f",

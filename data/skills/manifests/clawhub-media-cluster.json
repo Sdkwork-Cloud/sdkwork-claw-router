@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/media-cluster@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-media-cluster-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-media-cluster-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9faf6d3d40a5f8ea62ed0de25a69d968a99c09c42f386ae7cd0bce40853e14ac",

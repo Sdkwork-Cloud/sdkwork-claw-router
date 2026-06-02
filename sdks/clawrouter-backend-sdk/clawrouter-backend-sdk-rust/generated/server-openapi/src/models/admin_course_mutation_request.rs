@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Admin course mutation request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminCourseMutationRequest {
@@ -33,10 +35,9 @@ pub struct AdminCourseMutationRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
 
-    /// Thumbnail url field on admin course mutation request.
-    #[serde(rename = "thumbnailUrl")]
+    /// Thumbnail field on admin course mutation request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub thumbnail_url: Option<String>,
+    pub thumbnail: Option<MediaResource>,
 
     /// Title field on admin course mutation request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

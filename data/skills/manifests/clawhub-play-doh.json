@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/play-doh@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-play-doh-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-play-doh-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:30d6bb2c5fa1decd13b7314dd526c4a364cb7441b0b116b0437e2ddb7a9f8cd4",

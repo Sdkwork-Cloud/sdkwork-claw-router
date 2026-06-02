@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reddapi@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reddapi-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reddapi-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2739a60485dda65497a6dd2cadc9aa1d0db490cf9d888b00f312f292365e1a90",

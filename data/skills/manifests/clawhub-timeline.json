@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/timeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-timeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-timeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ea72193070b22328e52d8a0263c508f35ac3d3033708cb6e76e1f1a1dd592d4",

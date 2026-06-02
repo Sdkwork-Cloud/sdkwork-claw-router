@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-architect@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-architect-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-architect-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2fd042f84bc16759f7ab23213f54e3d760dcab6467bcab0d70f026cb4cea963a",

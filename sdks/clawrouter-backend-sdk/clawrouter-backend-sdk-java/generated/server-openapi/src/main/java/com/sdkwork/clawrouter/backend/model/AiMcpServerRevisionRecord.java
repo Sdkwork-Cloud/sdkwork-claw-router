@@ -3,6 +3,8 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.Map;
 
 public class AiMcpServerRevisionRecord {
+    private Map<String, String> argsJson;
+    private String authType;
     private String command;
     private String configHash;
     private String createdAt;
@@ -12,20 +14,39 @@ public class AiMcpServerRevisionRecord {
     private String deletedBy;
     private String deprecatedAt;
     private String endpointUrl;
+    private Map<String, String> envSchema;
     private String id;
     private String lifecycleStatus;
     private Map<String, String> metadata;
     private String organizationId;
     private String publishedAt;
+    private Map<String, String> retryPolicy;
     private String revisionNo;
     private String secretRef;
     private String serverId;
     private String status;
     private String tenantId;
+    private Integer timeoutMs;
     private String transport;
     private String updatedAt;
     private String uuid;
     private String version;
+
+    public Map<String, String> getArgsJson() {
+        return this.argsJson;
+    }
+
+    public void setArgsJson(Map<String, String> argsJson) {
+        this.argsJson = argsJson;
+    }
+
+    public String getAuthType() {
+        return this.authType;
+    }
+
+    public void setAuthType(String authType) {
+        this.authType = authType;
+    }
 
     public String getCommand() {
         return this.command;
@@ -99,6 +120,14 @@ public class AiMcpServerRevisionRecord {
         this.endpointUrl = endpointUrl;
     }
 
+    public Map<String, String> getEnvSchema() {
+        return this.envSchema;
+    }
+
+    public void setEnvSchema(Map<String, String> envSchema) {
+        this.envSchema = envSchema;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -139,6 +168,14 @@ public class AiMcpServerRevisionRecord {
         this.publishedAt = publishedAt;
     }
 
+    public Map<String, String> getRetryPolicy() {
+        return this.retryPolicy;
+    }
+
+    public void setRetryPolicy(Map<String, String> retryPolicy) {
+        this.retryPolicy = retryPolicy;
+    }
+
     public String getRevisionNo() {
         return this.revisionNo;
     }
@@ -177,6 +214,14 @@ public class AiMcpServerRevisionRecord {
 
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
+    }
+
+    public Integer getTimeoutMs() {
+        return this.timeoutMs;
+    }
+
+    public void setTimeoutMs(Integer timeoutMs) {
+        this.timeoutMs = timeoutMs;
     }
 
     public String getTransport() {

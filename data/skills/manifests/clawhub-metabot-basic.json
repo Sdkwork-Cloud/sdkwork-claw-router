@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/metabot-basic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-metabot-basic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-metabot-basic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:245cb44e74c48a33d64143db8100b373ffd4491c115424fa10556fa9e6d85a0f",

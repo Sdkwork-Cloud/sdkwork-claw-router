@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linecount@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-linecount-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linecount-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:14db91a18f4cb26baf81283b78b174aca55fe8692f31478d29b60dacd81565b0",

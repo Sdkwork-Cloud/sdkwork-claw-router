@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shazam@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shazam-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shazam-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b6d083f7807eda0b3216b066d78ec0120ca6c0aca710c70a61f03cc27415715",

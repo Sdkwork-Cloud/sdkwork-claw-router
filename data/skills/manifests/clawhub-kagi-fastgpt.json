@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kagi-fastgpt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kagi-fastgpt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kagi-fastgpt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:660d767e251ac01f81c4583a7101c325a77dd67fe48c9c8233576276b5673b61",

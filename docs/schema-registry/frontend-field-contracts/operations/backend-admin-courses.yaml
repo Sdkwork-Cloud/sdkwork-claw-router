@@ -19,7 +19,7 @@ frontend_operations:
   - content_forum_comment
   - content_reaction
   query_parameters: []
-  response_schema: &adminCourseDashboardResponse
+  response_schema:
     name: AdminCourseDashboardResponse
     type: object
     additionalProperties: false
@@ -111,7 +111,7 @@ frontend_operations:
     schema:
       type: string
       maxLength: 32
-  response_schema: &adminCourseCollectionResponse
+  response_schema:
     name: AdminCourseCollectionResponse
     type: object
     additionalProperties: false
@@ -210,9 +210,8 @@ frontend_operations:
       status:
         type: string
         maxLength: 64
-      thumbnailUrl:
-        type: string
-        maxLength: 2048
+      thumbnail:
+        $ref: '#/components/schemas/MediaResource'
       instructorSnapshot:
         type: object
         additionalProperties: true
@@ -309,7 +308,7 @@ frontend_operations:
   read_sources:
   - content_course_section
   query_parameters: *adminCourseListQuery
-  response_schema: &adminCourseSectionCollectionResponse
+  response_schema:
     name: AdminCourseSectionCollectionResponse
     type: object
     additionalProperties: false
@@ -481,7 +480,7 @@ frontend_operations:
   read_sources:
   - content_course_lesson
   query_parameters: *adminCourseListQuery
-  response_schema: &adminCourseLessonCollectionResponse
+  response_schema:
     name: AdminCourseLessonCollectionResponse
     type: object
     additionalProperties: false
@@ -568,9 +567,8 @@ frontend_operations:
       description:
         type: string
         maxLength: 4000
-      videoUrl:
-        type: string
-        maxLength: 2048
+      video:
+        $ref: '#/components/schemas/MediaResource'
       externalBvid:
         type: string
         maxLength: 128
@@ -770,7 +768,7 @@ frontend_operations:
   read_sources:
   - content_course_application
   query_parameters: *adminCourseListQuery
-  response_schema: &adminCourseApplicationCollectionResponse
+  response_schema:
     name: AdminCourseApplicationCollectionResponse
     type: object
     additionalProperties: false

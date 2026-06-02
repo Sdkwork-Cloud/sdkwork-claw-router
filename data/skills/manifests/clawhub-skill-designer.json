@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-designer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-designer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-designer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e8f4d425d59b75ebe09017c1d528530953d3d5ceb2d007345f2fc0e5bb0fc8c9",

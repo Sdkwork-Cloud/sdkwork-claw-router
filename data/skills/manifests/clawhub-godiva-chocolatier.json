@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/godiva-chocolatier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-godiva-chocolatier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-godiva-chocolatier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a6ac55ceade3b8800f5b8cc423e5e4396cae1157eb8d65b0ed2845009ee75d42",

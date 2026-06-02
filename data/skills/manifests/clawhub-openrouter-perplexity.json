@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openrouter-perplexity@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openrouter-perplexity-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openrouter-perplexity-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6caa816fc7e4f046628a107bbba078e838b1c5ddb82cbd8a547dc96ceaa11ed5",

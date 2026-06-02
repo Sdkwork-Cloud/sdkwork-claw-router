@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-voice@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-voice-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-voice-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d0559809c4f071be25843421accb3f31235c3ed3e760952f4441c8946d1838df",

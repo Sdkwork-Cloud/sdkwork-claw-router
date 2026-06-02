@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toast@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toast-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toast-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ee573c0f013721bf4f11cf0861111e9e6013ca217aee1749cb00c8a3cb9f449",

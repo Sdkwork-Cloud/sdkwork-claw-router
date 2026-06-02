@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/godman-pact@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-godman-pact-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-godman-pact-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3482831f04382af5bcf779f554fc38b4d1e01876e973ef626d188820868aceb",

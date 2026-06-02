@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-hardening@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-hardening-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-hardening-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:65067fec19da0a6eb9534a5683d24434efdeee3f1de865d0789af853e9c9a87f",

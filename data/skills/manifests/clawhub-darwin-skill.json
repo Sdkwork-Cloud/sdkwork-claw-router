@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/darwin-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-darwin-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-darwin-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b2446256fee68800fb118f54ea7ee167f49ae5121632d15c5330fd98f803479",

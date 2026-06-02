@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eat-what-today-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eat-what-today-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eat-what-today-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:47dc2e746e7ab22c3a364ea2e46e3ac26418d9c910219572bbc7699981c3a33a",

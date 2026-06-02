@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yahoo-finance-bist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yahoo-finance-bist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yahoo-finance-bist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de19f200cff11856f9c69ce26efa24d1d6b8c2544b003916febc65390a923bd4",

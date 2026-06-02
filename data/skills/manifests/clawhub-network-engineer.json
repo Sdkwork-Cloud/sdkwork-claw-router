@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/network-engineer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-network-engineer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-network-engineer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:95ea0f49c0f987398caefdac9b48c70915ee1fe54ca102e490fe8f600ed47630",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rugcheck@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rugcheck-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rugcheck-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:83051f4ac62fd7384995b8ad5250026dd747374201045237a562e6afb469c0d7",

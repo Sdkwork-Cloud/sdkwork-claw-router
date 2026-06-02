@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tbd-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tbd-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tbd-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b137c6d23b585b8410fba78c638837604cb0e1d33f7af6868d83f1f7e567fd44",

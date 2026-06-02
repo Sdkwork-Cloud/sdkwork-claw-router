@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-daily-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-daily-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-daily-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92981bc27947c4773a61b826d602eb454c2473afb1e273fa654c99e029eb8e5b",

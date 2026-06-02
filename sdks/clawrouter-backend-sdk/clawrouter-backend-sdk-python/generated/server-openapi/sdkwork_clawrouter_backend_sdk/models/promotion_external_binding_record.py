@@ -20,6 +20,7 @@ class PromotionExternalBindingRecord:
     code_id: Optional[str] = None
     created_by: Optional[str] = None
     external_merchant_id: Optional[str] = None
+    id: Optional[str] = None
     last_error_code: Optional[str] = None
     last_error_message: Optional[str] = None
     last_sync_at: Optional[str] = None

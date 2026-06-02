@@ -19,7 +19,7 @@ import {
   XCircle,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { AdminTableShell, BottomPagination, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
+import { AdminTableShell, BottomPagination, BusinessStateTableRow, ConfirmDialog, readMediaResourceUrl } from 'sdkwork-claw-router-commons';
 import {
   AdminSkillService,
   createSkillCategoryInputFromForm,
@@ -1234,8 +1234,8 @@ function SkillModal({
             <Field label={t('admin.skill.fields.version')} name="version" defaultValue={skill?.version || '1.0.0'} />
             <Field label={t('admin.skill.fields.runtime')} name="runtime" defaultValue={skill?.runtime || 'agent-skill'} />
             <Field label={t('admin.skill.fields.entrypoint')} name="entrypoint" defaultValue={skill?.entrypoint || 'skill.json'} />
-            <Field label={t('admin.skill.fields.icon')} name="icon" defaultValue={skill?.icon} />
-            <Field label={t('admin.skill.fields.coverImage')} name="coverImage" defaultValue={skill?.coverImage} />
+            <Field label={t('admin.skill.fields.icon')} name="icon" defaultValue={readMediaResourceUrl(skill?.icon)} />
+            <Field label={t('admin.skill.fields.cover')} name="cover" defaultValue={readMediaResourceUrl(skill?.cover)} />
             <Field label={t('admin.skill.fields.manifestUrl')} name="manifestUrl" defaultValue={skill?.manifestUrl} />
             <Field label={t('admin.skill.fields.documentationUrl')} name="documentationUrl" defaultValue={skill?.documentationUrl} />
             <Field label={t('admin.skill.fields.license')} name="licenseName" defaultValue={skill?.licenseName || 'MIT'} />
@@ -1323,8 +1323,8 @@ function PackageModal({
               <option value="">{t('admin.skill.empty.noCategory')}</option>
               {categories.map((category) => <option key={category.id} value={category.id}>{category.name}</option>)}
             </SelectField>
-            <Field label={t('admin.skill.fields.icon')} name="icon" defaultValue={skillPackage?.icon} />
-            <Field label={t('admin.skill.fields.coverImage')} name="coverImage" defaultValue={skillPackage?.coverImage} />
+            <Field label={t('admin.skill.fields.icon')} name="icon" defaultValue={readMediaResourceUrl(skillPackage?.icon)} />
+            <Field label={t('admin.skill.fields.cover')} name="cover" defaultValue={readMediaResourceUrl(skillPackage?.cover)} />
             <Field label={t('admin.skill.fields.sortWeight')} name="sortWeight" type="number" defaultValue={String(skillPackage?.sortWeight ?? 0)} />
             <Field label={t('admin.skill.fields.tags')} name="tags" defaultValue={skillPackage?.tags.join(', ')} />
             <SelectField label={t('admin.skill.fields.enabled')} name="enabled" defaultValue={String(skillPackage?.enabled ?? true)}>
@@ -1414,7 +1414,7 @@ function CategoryModal({
               <option value="false">{t('admin.skill.boolean.no')}</option>
             </SelectField>
             <Field label={t('admin.skill.fields.status')} name="status" type="number" defaultValue={String(category?.status ?? 1)} />
-            <Field label={t('admin.skill.fields.icon')} name="icon" defaultValue={category?.icon ?? ''} />
+            <Field label={t('admin.skill.fields.icon')} name="icon" defaultValue={readMediaResourceUrl(category?.icon)} />
             <Field label={t('admin.skill.fields.path')} name="path" defaultValue={category?.path ?? ''} />
           </div>
           <TextArea label={t('admin.skill.fields.description')} name="description" defaultValue={category?.description ?? ''} rows={4} />
@@ -1636,7 +1636,7 @@ function SkillResourcesModal({ skill, onClose }: { skill: AdminSkill; onClose: (
                         <tr key={asset.id} className="align-top">
                           <td className="px-4 py-3">
                             <div className="font-medium text-slate-900 dark:text-white">{asset.title || `Asset #${asset.id}`}</div>
-                            <div className="mt-1 max-w-[260px] truncate font-mono text-xs text-slate-500">{asset.assetUrl}</div>
+                            <div className="mt-1 max-w-[260px] truncate font-mono text-xs text-slate-500">{readMediaResourceUrl(asset.asset)}</div>
                             <div className="mt-1 text-xs text-slate-500">{t('admin.skill.resources.artifactRef', { value: asset.artifactId || '-' })}</div>
                           </td>
                           <td className="px-4 py-3 text-slate-600 dark:text-slate-300">
@@ -1692,7 +1692,7 @@ function SkillResourcesModal({ skill, onClose }: { skill: AdminSkill; onClose: (
                         <tr key={artifact.id} className="align-top">
                           <td className="px-4 py-3">
                             <div className="font-medium text-slate-900 dark:text-white">{artifact.version}</div>
-                            <div className="mt-1 max-w-[260px] truncate font-mono text-xs text-slate-500">{artifact.artifactRef || artifact.artifactUrl || '-'}</div>
+                            <div className="mt-1 max-w-[260px] truncate font-mono text-xs text-slate-500">{artifact.artifactRef || readMediaResourceUrl(artifact.artifact) || '-'}</div>
                             <div className="mt-1 text-xs text-slate-500">{formatBytes(artifact.artifactSizeBytes)}</div>
                           </td>
                           <td className="px-4 py-3 text-slate-600 dark:text-slate-300">
@@ -1734,8 +1734,8 @@ function SkillResourcesModal({ skill, onClose }: { skill: AdminSkill; onClose: (
                 </SelectField>
                 <Field label={t('admin.skill.fields.artifactId')} name="artifactId" defaultValue={editingAsset?.artifactId ?? ''} />
                 <Field label={t('admin.skill.fields.sortOrder')} name="sortOrder" type="number" defaultValue={String(editingAsset?.sortOrder ?? 0)} />
-                <Field label={t('admin.skill.fields.assetUrl')} name="assetUrl" defaultValue={editingAsset?.assetUrl ?? ''} required={assetMode === 'create'} />
-                <Field label={t('admin.skill.fields.thumbnailUrl')} name="thumbnailUrl" defaultValue={editingAsset?.thumbnailUrl ?? ''} />
+                <Field label={t('admin.skill.fields.asset')} name="asset" defaultValue={readMediaResourceUrl(editingAsset?.asset)} required={assetMode === 'create'} />
+                <Field label={t('admin.skill.fields.thumbnail')} name="thumbnail" defaultValue={readMediaResourceUrl(editingAsset?.thumbnail)} />
                 <Field label={t('admin.skill.fields.title')} name="title" defaultValue={editingAsset?.title ?? ''} />
                 <Field label={t('admin.skill.fields.altText')} name="altText" defaultValue={editingAsset?.altText ?? ''} />
                 <Field label={t('admin.skill.fields.mimeType')} name="mimeType" defaultValue={editingAsset?.mimeType ?? ''} />
@@ -1775,7 +1775,7 @@ function SkillResourcesModal({ skill, onClose }: { skill: AdminSkill; onClose: (
                 <Field label={t('admin.skill.fields.osName')} name="osName" defaultValue={editingArtifact?.osName ?? 'runtime'} />
                 <Field label={t('admin.skill.fields.artifactSizeBytes')} name="artifactSizeBytes" type="number" defaultValue={String(editingArtifact?.artifactSizeBytes ?? '')} />
                 <Field label={t('admin.skill.fields.artifactRef')} name="artifactRef" defaultValue={editingArtifact?.artifactRef ?? ''} />
-                <Field label={t('admin.skill.fields.artifactUrl')} name="artifactUrl" defaultValue={editingArtifact?.artifactUrl ?? ''} />
+                <Field label={t('admin.skill.fields.artifact')} name="artifact" defaultValue={readMediaResourceUrl(editingArtifact?.artifact)} />
                 <Field label={t('admin.skill.fields.frameworks')} name="frameworks" defaultValue={editingArtifact?.frameworks.join(', ') ?? ''} />
                 <Field label={t('admin.skill.fields.license')} name="licenseName" defaultValue={editingArtifact?.licenseName ?? ''} />
                 <Field label={t('admin.skill.fields.checksumHash')} name="checksumHash" defaultValue={editingArtifact?.checksumHash ?? ''} />
@@ -1800,7 +1800,7 @@ function SkillResourcesModal({ skill, onClose }: { skill: AdminSkill; onClose: (
       {deleteAssetTarget ? (
         <ConfirmDialog
           title={t('admin.skill.confirm.deleteAsset.title')}
-          description={t('admin.skill.confirm.deleteAsset.description', { name: deleteAssetTarget.title || deleteAssetTarget.assetUrl })}
+          description={t('admin.skill.confirm.deleteAsset.description', { name: deleteAssetTarget.title || readMediaResourceUrl(deleteAssetTarget.asset) })}
           confirmLabel={t('common.actions.delete')}
           tone="danger"
           isBusy={saving === `asset:${deleteAssetTarget.id}`}

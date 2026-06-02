@@ -2,6 +2,8 @@ export type SdkworkDeploymentMode = "saas" | "private" | "local" | "test";
 export type SdkworkRuntimeEnvironment = "dev" | "test" | "prod" | "production";
 export type SdkworkApiKind = keyof typeof SDKWORK_API_PREFIXES;
 
+export * from "./media.ts";
+
 export interface SdkworkTokenSnapshot {
   accessToken?: string;
   authToken?: string;

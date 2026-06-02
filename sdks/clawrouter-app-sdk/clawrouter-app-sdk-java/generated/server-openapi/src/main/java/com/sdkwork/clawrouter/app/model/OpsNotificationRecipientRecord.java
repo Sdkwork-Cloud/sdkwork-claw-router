@@ -9,9 +9,11 @@ public class OpsNotificationRecipientRecord {
     private String deletedAt;
     private String deletedBy;
     private String id;
+    private String messageId;
     private Map<String, String> metadata;
     private String organizationId;
     private String recipientRoleCode;
+    private String recipientType;
     private String recipientUserId;
     private String recipientValue;
     private String status;
@@ -68,6 +70,14 @@ public class OpsNotificationRecipientRecord {
         this.id = id;
     }
 
+    public String getMessageId() {
+        return this.messageId;
+    }
+
+    public void setMessageId(String messageId) {
+        this.messageId = messageId;
+    }
+
     public Map<String, String> getMetadata() {
         return this.metadata;
     }
@@ -90,6 +100,14 @@ public class OpsNotificationRecipientRecord {
 
     public void setRecipientRoleCode(String recipientRoleCode) {
         this.recipientRoleCode = recipientRoleCode;
+    }
+
+    public String getRecipientType() {
+        return this.recipientType;
+    }
+
+    public void setRecipientType(String recipientType) {
+        this.recipientType = recipientType;
     }
 
     public String getRecipientUserId() {

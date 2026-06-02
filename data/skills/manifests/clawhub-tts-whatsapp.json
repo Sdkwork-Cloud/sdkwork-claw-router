@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tts-whatsapp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tts-whatsapp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tts-whatsapp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89b03a939d2ff3dde6ed890f4a3ab4a5ea31429c2f750ae9f482e80955d00f74",

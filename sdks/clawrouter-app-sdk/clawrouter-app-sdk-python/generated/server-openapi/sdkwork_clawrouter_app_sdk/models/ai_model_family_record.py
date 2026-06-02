@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class AiModelFamilyRecord:
@@ -23,7 +26,7 @@ class AiModelFamilyRecord:
     description: Optional[str] = None
     docs_url: Optional[str] = None
     family_type: Optional[str] = None
-    icon_url: Optional[str] = None
+    icon: Optional[MediaResource] = None
     id: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
     model_count: Optional[str] = None

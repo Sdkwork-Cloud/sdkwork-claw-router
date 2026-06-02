@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/registry-sync@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-registry-sync-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-registry-sync-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb3875f98540c924f0ebe2efdb5f822df1bbe8434f4a0bb7732b34863eac0170",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/processplan@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-processplan-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-processplan-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9cbe237be5030269b41b952e0cb43ffe5751144352ec2f6437f2a6267fab132c",

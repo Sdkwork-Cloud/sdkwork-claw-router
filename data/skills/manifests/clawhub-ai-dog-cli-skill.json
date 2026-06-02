@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-dog-cli-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-dog-cli-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-dog-cli-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:967995f781eacbd340a69b4dc5aecfe93fdaec4704c5598343932860161c48e0",

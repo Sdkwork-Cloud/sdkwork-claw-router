@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-translator@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-translator-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-translator-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25521d3b9867dddfc3a008c1cd75f44395684e3d6c8e328f830d68ab3d188130",

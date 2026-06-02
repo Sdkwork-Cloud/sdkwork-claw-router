@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finance-ocr-pro@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-finance-ocr-pro-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finance-ocr-pro-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:ced201f1e7e02b7e3ac484b1967566e87d4036038adba2a38ea5c48dc8681a6f",

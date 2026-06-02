@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-coding-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-coding-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-coding-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:598f00d7031b87a7841d64bcc2a7fb501e5f7b35deedce7469d143cb958217b6",

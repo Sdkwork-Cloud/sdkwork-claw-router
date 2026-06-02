@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cli-neon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cli-neon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cli-neon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ada1f577efb966e85cbb7b495d259c98db2e32d8527c537a04df1d7e777b34e",

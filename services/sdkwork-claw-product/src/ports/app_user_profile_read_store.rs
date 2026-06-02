@@ -2,6 +2,7 @@ use std::future::Future;
 use std::pin::Pin;
 
 use serde::Serialize;
+use serde_json::{json, Value};
 
 use crate::domain::DomainResult;
 
@@ -22,7 +23,7 @@ pub struct AppUserProfileSnapshot {
     pub username: String,
     pub display_name: String,
     pub email: String,
-    pub avatar_url: String,
+    pub avatar: Value,
     pub phone: String,
     pub language: String,
     pub is_verified: bool,
@@ -42,7 +43,7 @@ impl Default for AppUserProfileSnapshot {
             username: String::new(),
             display_name: String::new(),
             email: String::new(),
-            avatar_url: String::new(),
+            avatar: empty_avatar_resource(),
             phone: String::new(),
             language: "en-US".to_owned(),
             is_verified: false,
@@ -55,6 +56,13 @@ impl Default for AppUserProfileSnapshot {
             third_party_bound: "0".to_owned(),
         }
     }
+}
+
+fn empty_avatar_resource() -> Value {
+    json!({
+        "kind": "image",
+        "source": "external_url"
+    })
 }
 
 pub trait AppUserProfileReadStore {

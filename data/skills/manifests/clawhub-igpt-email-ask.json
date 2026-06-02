@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/igpt-email-ask@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-igpt-email-ask-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-igpt-email-ask-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c22214266f89d822efb0430fa74ebcf3f73a694098cd99d01831c4b88148d476",

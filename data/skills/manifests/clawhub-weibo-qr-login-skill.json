@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weibo-qr-login-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-weibo-qr-login-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weibo-qr-login-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8ff74eafdfc8a970821692670bc954965fd596d02184df5d1222867e131c9229",

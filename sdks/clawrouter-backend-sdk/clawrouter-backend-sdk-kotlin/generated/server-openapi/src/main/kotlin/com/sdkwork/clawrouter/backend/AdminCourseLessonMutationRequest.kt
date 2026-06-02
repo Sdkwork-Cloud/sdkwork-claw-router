@@ -10,5 +10,5 @@ data class AdminCourseLessonMutationRequest(
     val sectionId: String? = null,
     val status: String? = null,
     val title: String? = null,
-    val videoUrl: String? = null
+    val video: MediaResource? = null
 )

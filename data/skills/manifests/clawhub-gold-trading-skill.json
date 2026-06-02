@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gold-trading-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gold-trading-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gold-trading-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:835b95a87b5b0e4e42e20d48cc30d73177c359acdefd00d848f7b4d492c635b2",

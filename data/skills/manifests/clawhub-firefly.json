@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/firefly@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-firefly-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-firefly-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a0e172c344b32c05ff26ba8fd4c4f88ceb2c13fcd2ef4f3344dd367d7be1f1f5",

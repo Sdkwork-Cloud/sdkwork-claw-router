@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/easter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-easter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-easter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2dc06edfa8f236a7e6c01ef571f50958365a3603a5a174d8ae61cda58b870efa",

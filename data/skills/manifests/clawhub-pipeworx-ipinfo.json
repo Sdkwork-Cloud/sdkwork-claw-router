@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-ipinfo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-ipinfo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-ipinfo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da79a097e38ffa5b6707d3bc4bd972c059f9666c3427a32e4f7df6b5344f16f3",

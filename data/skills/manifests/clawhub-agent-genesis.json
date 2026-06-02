@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-genesis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-genesis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-genesis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b8eb6eefbef4945ff740266ad23b09f2f1ac732a43d60d18860762c1178a317",

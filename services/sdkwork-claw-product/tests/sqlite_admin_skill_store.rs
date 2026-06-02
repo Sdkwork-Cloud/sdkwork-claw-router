@@ -19,6 +19,23 @@ const ORGANIZATION_ID: i64 = 84;
 const OPERATOR_ID: i64 = 9001;
 const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
 
+fn external_image(url: &str) -> serde_json::Value {
+    json!({
+        "kind": "image",
+        "source": "external_url",
+        "url": url,
+        "publicUrl": url
+    })
+}
+
+fn object_icon(object_key: &str) -> serde_json::Value {
+    json!({
+        "kind": "image",
+        "source": "object_storage",
+        "objectKey": object_key
+    })
+}
+
 #[tokio::test]
 async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_lifecycle() {
     let pool = schema_sqlite_pool().await;
@@ -34,7 +51,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
             name: "Workflow Automation".to_owned(),
             description: Some("Admin managed workflow skills".to_owned()),
             code: Some("workflow-automation".to_owned()),
-            icon: Some("workflow".to_owned()),
+            icon: Some(object_icon("workflow")),
             sort_weight: 77,
             parent_id: None,
             path: Some("/skills/workflow-automation".to_owned()),
@@ -69,10 +86,15 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
             name: "Workflow Package".to_owned(),
             summary: Some("Workflow skill bundle".to_owned()),
             description: Some("Curated workflow skills".to_owned()),
-            icon: Some("https://cdn.example.test/skills/packages/workflow/icon.png".to_owned()),
-            cover_image: Some(
-                "https://cdn.example.test/skills/packages/workflow/cover.png".to_owned(),
-            ),
+            icon: Some(external_image(
+                "https://cdn.example.test/skills/packages/workflow/icon.png",
+            )),
+            cover: Some(json!({
+                "kind": "image",
+                "source": "external_url",
+                "url": "https://cdn.example.test/skills/packages/workflow/cover.png",
+                "publicUrl": "https://cdn.example.test/skills/packages/workflow/cover.png"
+            })),
             category_id: Some(category.id),
             enabled: true,
             featured: true,
@@ -122,7 +144,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
             summary: Some("Updated workflow skill bundle".to_owned()),
             description: None,
             icon: None,
-            cover_image: None,
+            cover: None,
             category_id: None,
             enabled: None,
             featured: Some(false),
@@ -179,8 +201,15 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
             name: "Workflow Planner Pro".to_owned(),
             summary: Some("Plans agent delivery workflows".to_owned()),
             description: Some("Turns broad goals into executable plans.".to_owned()),
-            icon: Some("https://cdn.example.test/skills/workflow/icon.png".to_owned()),
-            cover_image: Some("https://cdn.example.test/skills/workflow/cover.png".to_owned()),
+            icon: Some(external_image(
+                "https://cdn.example.test/skills/workflow/icon.png",
+            )),
+            cover: Some(json!({
+                "kind": "image",
+                "source": "external_url",
+                "url": "https://cdn.example.test/skills/workflow/cover.png",
+                "publicUrl": "https://cdn.example.test/skills/workflow/cover.png"
+            })),
             category_id: Some(category.id),
             package_id: Some(package.id),
             provider: Some("SDKWork".to_owned()),
@@ -240,6 +269,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
     let stored_skill = sqlx::query(
         r#"
         SELECT id, tenant_id, organization_id, category_id, tags, capabilities,
+               CAST(cover_resource_snapshot AS TEXT) AS cover_resource_snapshot,
                config_schema, default_config
         FROM plus_agent_skill
         WHERE id = ?
@@ -260,6 +290,16 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
         vec!["agent".to_owned(), "workflow".to_owned()],
         serde_json::from_str::<Vec<String>>(stored_skill.get::<String, _>("tags").as_str())
             .unwrap()
+    );
+    let stored_cover: serde_json::Value = serde_json::from_str(
+        stored_skill
+            .get::<String, _>("cover_resource_snapshot")
+            .as_str(),
+    )
+    .unwrap();
+    assert_eq!(
+        "https://cdn.example.test/skills/workflow/cover.png",
+        stored_cover["url"]
     );
     assert_eq!(
         vec!["workflow.plan".to_owned(), "task.decompose".to_owned()],
@@ -284,7 +324,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
             summary: Some("Polishes agent implementation plans".to_owned()),
             description: None,
             icon: None,
-            cover_image: None,
+            cover: None,
             category_id: None,
             package_id: None,
             provider: None,
@@ -529,7 +569,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
             summary: None,
             description: None,
             icon: None,
-            cover_image: None,
+            cover: None,
             category_id: Some(ASSIGNED_ID_FLOOR + 123),
             package_id: None,
             provider: None,
@@ -577,7 +617,7 @@ async fn sqlite_admin_skill_store_generates_assigned_ids_and_manages_market_life
             summary: None,
             description: None,
             icon: None,
-            cover_image: None,
+            cover: None,
             category_id: None,
             package_id: Some(ASSIGNED_ID_FLOOR + 456),
             provider: None,
@@ -722,7 +762,7 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
             summary: Some("Skill with managed assets and artifacts".to_owned()),
             description: None,
             icon: None,
-            cover_image: None,
+            cover: None,
             category_id: None,
             package_id: None,
             provider: Some("SDKWork".to_owned()),
@@ -764,10 +804,18 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
             audit_log_uuid: "audit-create-admin-skill-asset-cover".to_owned(),
             artifact_id: None,
             asset_type: 1,
-            asset_url: "https://cdn.example.test/skills/asset-artifact/cover.png".to_owned(),
-            thumbnail_url: Some(
-                "https://cdn.example.test/skills/asset-artifact/thumb.png".to_owned(),
-            ),
+            asset: json!({
+                "kind": "image",
+                "source": "external_url",
+                "url": "https://cdn.example.test/skills/asset-artifact/cover.png",
+                "publicUrl": "https://cdn.example.test/skills/asset-artifact/cover.png"
+            }),
+            thumbnail: Some(json!({
+                "kind": "image",
+                "source": "external_url",
+                "url": "https://cdn.example.test/skills/asset-artifact/thumb.png",
+                "publicUrl": "https://cdn.example.test/skills/asset-artifact/thumb.png"
+            })),
             title: Some("Asset cover".to_owned()),
             alt_text: Some("Skill marketplace cover".to_owned()),
             mime_type: Some("image/png".to_owned()),
@@ -791,11 +839,19 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
     assert_eq!(35, asset.target_type);
     assert_eq!(skill.id, asset.target_id);
     assert_eq!(1, asset.asset_type);
+    assert_eq!(
+        "https://cdn.example.test/skills/asset-artifact/cover.png",
+        asset.asset["url"]
+    );
+    assert_eq!(
+        "https://cdn.example.test/skills/asset-artifact/thumb.png",
+        asset.thumbnail.as_ref().unwrap()["url"]
+    );
 
     let asset_row = sqlx::query(
         r#"
         SELECT id, tenant_id, organization_id, target_type, target_id, asset_type,
-               asset_url, thumbnail_url, title, width, height, file_size, sort_order, status
+               asset_resource_snapshot, thumbnail_resource_snapshot, title, width, height, file_size, sort_order, status
         FROM studio_catalog_asset
         WHERE id = ?
         "#,
@@ -810,6 +866,18 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
     assert_eq!(35, asset_row.get::<i64, _>("target_type"));
     assert_eq!(skill.id, asset_row.get::<i64, _>("target_id"));
     assert_eq!(1, asset_row.get::<i64, _>("asset_type"));
+    let stored_asset: serde_json::Value =
+        serde_json::from_str(&asset_row.get::<String, _>("asset_resource_snapshot")).unwrap();
+    let stored_thumbnail: serde_json::Value =
+        serde_json::from_str(&asset_row.get::<String, _>("thumbnail_resource_snapshot")).unwrap();
+    assert_eq!(
+        "https://cdn.example.test/skills/asset-artifact/cover.png",
+        stored_asset["url"]
+    );
+    assert_eq!(
+        "https://cdn.example.test/skills/asset-artifact/thumb.png",
+        stored_thumbnail["url"]
+    );
     assert_eq!("Asset cover", asset_row.get::<String, _>("title"));
     assert_eq!(1200, asset_row.get::<i64, _>("width"));
     assert_eq!(720, asset_row.get::<i64, _>("height"));
@@ -825,8 +893,8 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
             audit_log_uuid: "audit-update-admin-skill-asset-cover".to_owned(),
             artifact_id: None,
             asset_type: Some(2),
-            asset_url: None,
-            thumbnail_url: Some(None),
+            asset: None,
+            thumbnail: Some(None),
             title: Some(Some("Updated asset cover".to_owned())),
             alt_text: None,
             mime_type: None,
@@ -845,7 +913,7 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
         .unwrap();
     assert_eq!(2, updated_asset.asset_type);
     assert_eq!("Updated asset cover", updated_asset.title.unwrap());
-    assert_eq!(None, updated_asset.thumbnail_url);
+    assert_eq!(None, updated_asset.thumbnail);
     assert_eq!(Some(1280), updated_asset.width);
     assert_eq!(Some(190000), updated_asset.file_size);
     assert_eq!(20, updated_asset.sort_order);
@@ -873,7 +941,12 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
             platform_type: "agent".to_owned(),
             os_name: "runtime".to_owned(),
             artifact_ref: Some("builtin://sdkwork.skills.asset_artifact@1.0.0".to_owned()),
-            artifact_url: Some("data/skills/artifacts/asset-artifact-1.0.0.json".to_owned()),
+            artifact: Some(json!({
+                "kind": "document",
+                "source": "external_url",
+                "url": "data/skills/artifacts/asset-artifact-1.0.0.json",
+                "publicUrl": "data/skills/artifacts/asset-artifact-1.0.0.json"
+            })),
             artifact_size_bytes: 2048,
             runtime: Some("builtin".to_owned()),
             frameworks: vec!["Rust service".to_owned(), "OpenAI-compatible".to_owned()],
@@ -907,7 +980,8 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
     let artifact_row = sqlx::query(
         r#"
         SELECT id, tenant_id, organization_id, target_type, target_id, artifact_type,
-               version, platform_type, os_name, artifact_ref, artifact_url,
+               version, platform_type, os_name, artifact_ref,
+               CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
                artifact_size_bytes, runtime, CAST(frameworks AS TEXT) AS frameworks,
                license_name, checksum_hash, release_notes, status
         FROM studio_catalog_artifact
@@ -933,6 +1007,16 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
         "builtin://sdkwork.skills.asset_artifact@1.0.0",
         artifact_row.get::<String, _>("artifact_ref")
     );
+    let artifact_snapshot: serde_json::Value = serde_json::from_str(
+        artifact_row
+            .get::<String, _>("artifact_resource_snapshot")
+            .as_str(),
+    )
+    .unwrap();
+    assert_eq!(
+        "data/skills/artifacts/asset-artifact-1.0.0.json",
+        artifact_snapshot["url"]
+    );
     assert_eq!(2048, artifact_row.get::<i64, _>("artifact_size_bytes"));
     assert_eq!(
         vec!["Rust service".to_owned(), "OpenAI-compatible".to_owned()],
@@ -951,7 +1035,7 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
             platform_type: None,
             os_name: None,
             artifact_ref: None,
-            artifact_url: None,
+            artifact: None,
             artifact_size_bytes: Some(4096),
             runtime: None,
             frameworks: Some(vec!["Rust service".to_owned(), "React portal".to_owned()]),
@@ -998,8 +1082,13 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
             audit_log_uuid: "audit-create-admin-skill-asset-missing-skill".to_owned(),
             artifact_id: None,
             asset_type: 1,
-            asset_url: "https://cdn.example.test/skills/missing/cover.png".to_owned(),
-            thumbnail_url: None,
+            asset: json!({
+                "kind": "image",
+                "source": "external_url",
+                "url": "https://cdn.example.test/skills/missing/cover.png",
+                "publicUrl": "https://cdn.example.test/skills/missing/cover.png"
+            }),
+            thumbnail: None,
             title: None,
             alt_text: None,
             mime_type: None,
@@ -1031,7 +1120,7 @@ async fn sqlite_admin_skill_store_manages_assets_and_artifacts_as_skill_catalog_
             platform_type: "agent".to_owned(),
             os_name: "runtime".to_owned(),
             artifact_ref: Some("builtin://sdkwork.skills.missing@1.0.0".to_owned()),
-            artifact_url: None,
+            artifact: None,
             artifact_size_bytes: 1,
             runtime: Some("builtin".to_owned()),
             frameworks: Vec::new(),
@@ -1258,12 +1347,23 @@ async fn insert_admin_visible_skill_catalog(
     name: &str,
     skill_key: &str,
 ) {
+    let category_icon = external_image(&format!(
+        "https://cdn.example.test/skills/{skill_key}/category-icon.png"
+    ));
+    let package_icon = external_image(&format!(
+        "https://cdn.example.test/skills/{skill_key}/package-icon.png"
+    ));
+    let skill_icon = external_image(&format!(
+        "https://cdn.example.test/skills/{skill_key}/icon.png"
+    ));
     sqlx::query(
         r#"
         INSERT INTO plus_category
-            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, code, icon, sort_weight, parent_id, path, visible, status, created_at, updated_at)
+            (id, uuid, tenant_id, organization_id, data_scope, name, description, type, code,
+             icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
+             sort_weight, parent_id, path, visible, status, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 0, ?, ?, 19, ?, 'boxes', 10, NULL, ?, 1, 1, '2026-05-09 11:00:00', '2026-05-09 11:00:00')
+            (?, ?, ?, ?, 0, ?, ?, 19, ?, ?, NULL, ?, 10, NULL, ?, 1, 1, '2026-05-09 11:00:00', '2026-05-09 11:00:00')
         "#,
     )
     .bind(category_id)
@@ -1273,6 +1373,10 @@ async fn insert_admin_visible_skill_catalog(
     .bind(name)
     .bind(format!("{name} category"))
     .bind(format!("{skill_key}-category"))
+    .bind(format!(
+        "admin-visible-skill-category-icon-media-{category_id}"
+    ))
+    .bind(category_icon.to_string())
     .bind(format!("/skills/{skill_key}"))
     .execute(pool)
     .await
@@ -1281,9 +1385,12 @@ async fn insert_admin_visible_skill_catalog(
     sqlx::query(
         r#"
         INSERT INTO plus_agent_skill_package
-            (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, summary, description, icon, cover_image, category_id, enabled, featured, sort_weight, tags, latest_published_at, created_at, updated_at)
+            (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, summary, description,
+             icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
+             cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot,
+             category_id, enabled, featured, sort_weight, tags, latest_published_at, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 0, 0, ?, ?, ?, ?, ?, ?, ?, 1, 1, 20, ?, '2026-05-09 11:01:00', '2026-05-09 11:00:00', '2026-05-09 11:01:00')
+            (?, ?, ?, ?, 0, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1, 20, ?, '2026-05-09 11:01:00', '2026-05-09 11:00:00', '2026-05-09 11:01:00')
         "#,
     )
     .bind(package_id)
@@ -1294,8 +1401,24 @@ async fn insert_admin_visible_skill_catalog(
     .bind(format!("{name} Package"))
     .bind(format!("{name} package summary"))
     .bind(format!("{name} package description"))
-    .bind(format!("https://cdn.example.test/skills/{skill_key}/package-icon.png"))
-    .bind(format!("https://cdn.example.test/skills/{skill_key}/package-cover.png"))
+    .bind(format!(
+        "admin-visible-skill-package-icon-media-{package_id}"
+    ))
+    .bind(None::<i64>)
+    .bind(package_icon.to_string())
+    .bind(format!(
+        "admin-visible-skill-package-cover-media-{package_id}"
+    ))
+    .bind(None::<i64>)
+    .bind(
+        json!({
+            "kind": "image",
+            "source": "external_url",
+            "url": format!("https://cdn.example.test/skills/{skill_key}/package-cover.png"),
+            "publicUrl": format!("https://cdn.example.test/skills/{skill_key}/package-cover.png")
+        })
+        .to_string(),
+    )
     .bind(category_id)
     .bind(json!(["catalog", "skill"]).to_string())
     .execute(pool)
@@ -1306,7 +1429,9 @@ async fn insert_admin_visible_skill_catalog(
         r#"
         INSERT INTO plus_agent_skill
             (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary,
-             description, icon, cover_image, category_id, package_id, provider, version,
+             description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
+             cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot,
+             category_id, package_id, provider, version,
              version_name, runtime, entrypoint, manifest_url, repository_url, homepage_url,
              documentation_url, license_name, source_type, market_status, visibility,
              review_status, review_comment, reviewed_by, reviewed_at, builtin, is_builtin,
@@ -1314,7 +1439,7 @@ async fn insert_admin_visible_skill_catalog(
              rating_count, tags, capabilities, config_schema, default_config,
              latest_published_at, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 0, 0, ?, ?, ?, ?, ?, ?, ?, ?, 'SDKWork', '1.0.0',
+            (?, ?, ?, ?, 0, 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'SDKWork', '1.0.0',
              '1.0.0', 'builtin', 'skill.json', ?, NULL, NULL, NULL,
              'SDKWork Commercial', 'OFFICIAL', 'PUBLISHED', 'PUBLIC', 'APPROVED',
              NULL, NULL, NULL, 1, 1, 1, 1, 30, '0', 'CNY', 10, '5.0', 1,
@@ -1330,12 +1455,20 @@ async fn insert_admin_visible_skill_catalog(
     .bind(name)
     .bind(format!("{name} summary"))
     .bind(format!("{name} description"))
-    .bind(format!(
-        "https://cdn.example.test/skills/{skill_key}/icon.png"
-    ))
-    .bind(format!(
-        "https://cdn.example.test/skills/{skill_key}/cover.png"
-    ))
+    .bind(format!("admin-visible-skill-icon-media-{skill_id}"))
+    .bind(None::<i64>)
+    .bind(skill_icon.to_string())
+    .bind(format!("admin-visible-skill-cover-media-{skill_id}"))
+    .bind(None::<i64>)
+    .bind(
+        json!({
+            "kind": "image",
+            "source": "external_url",
+            "url": format!("https://cdn.example.test/skills/{skill_key}/cover.png"),
+            "publicUrl": format!("https://cdn.example.test/skills/{skill_key}/cover.png")
+        })
+        .to_string(),
+    )
     .bind(category_id)
     .bind(package_id)
     .bind(format!(
@@ -1359,9 +1492,9 @@ async fn insert_admin_visible_skill_asset(
     sqlx::query(
         r#"
         INSERT INTO studio_catalog_asset
-            (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id, artifact_id, asset_type, asset_url, thumbnail_url, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at, created_at, updated_at)
+            (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 0, 1, 35, ?, NULL, 1, ?, NULL, ?, ?, 'image/png', 1200, 720, NULL, 128000, 1, '2026-05-09 11:03:00', '2026-05-09 11:03:00', '2026-05-09 11:03:00')
+            (?, ?, ?, ?, 0, 1, 35, ?, NULL, 1, ?, ?, ?, ?, 'image/png', 1200, 720, NULL, 128000, 1, '2026-05-09 11:03:00', '2026-05-09 11:03:00', '2026-05-09 11:03:00')
         "#,
     )
     .bind(asset_id)
@@ -1369,7 +1502,16 @@ async fn insert_admin_visible_skill_asset(
     .bind(tenant_id)
     .bind(organization_id)
     .bind(skill_id)
-    .bind(format!("https://cdn.example.test/skills/{name}/cover.png"))
+    .bind(format!("admin-visible-skill-asset-media-{asset_id}"))
+    .bind(
+        json!({
+            "kind": "image",
+            "source": "external_url",
+            "url": format!("https://cdn.example.test/skills/{name}/cover.png"),
+            "publicUrl": format!("https://cdn.example.test/skills/{name}/cover.png")
+        })
+        .to_string(),
+    )
     .bind(format!("{name} cover"))
     .bind(format!("{name} skill cover"))
     .execute(pool)
@@ -1388,9 +1530,9 @@ async fn insert_admin_visible_skill_artifact(
     sqlx::query(
         r#"
         INSERT INTO studio_catalog_artifact
-            (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_url, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at, created_at, updated_at)
+            (id, uuid, tenant_id, organization_id, data_scope, status, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 0, 1, 35, ?, 1, '1.0.0', 'agent', 'runtime', ?, ?, 4096, 'builtin', ?, 'SDKWork Commercial', NULL, 'Initial release', '2026-05-09 11:04:00', NULL, '2026-05-09 11:04:00', '2026-05-09 11:04:00')
+            (?, ?, ?, ?, 0, 1, 35, ?, 1, '1.0.0', 'agent', 'runtime', ?, ?, ?, ?, 4096, 'builtin', ?, 'SDKWork Commercial', NULL, 'Initial release', '2026-05-09 11:04:00', NULL, '2026-05-09 11:04:00', '2026-05-09 11:04:00')
         "#,
     )
     .bind(artifact_id)
@@ -1399,7 +1541,17 @@ async fn insert_admin_visible_skill_artifact(
     .bind(organization_id)
     .bind(skill_id)
     .bind(format!("builtin://sdkwork.skills.{name}@1.0.0"))
-    .bind(format!("data/skills/{name}/artifact.json"))
+    .bind(format!("artifact:external_url:data/skills/{name}/artifact.json"))
+    .bind(None::<i64>)
+    .bind(
+        json!({
+            "kind": "document",
+            "source": "external_url",
+            "url": format!("data/skills/{name}/artifact.json"),
+            "publicUrl": format!("data/skills/{name}/artifact.json")
+        })
+        .to_string(),
+    )
     .bind(json!(["builtin"]).to_string())
     .execute(pool)
     .await

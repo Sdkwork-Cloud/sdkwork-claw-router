@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reading-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reading-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reading-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:293abd6f29a95738c9a4174a8086ab6da1890a6c5c95ef180d81acc380106073",

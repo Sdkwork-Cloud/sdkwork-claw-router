@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentcloud-ocr-idcard@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-ocr-idcard-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentcloud-ocr-idcard-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:fac9bd4bb567ccb0f20fbb3a468eac21ea4e5020a7aeac4095104476803f87e9",

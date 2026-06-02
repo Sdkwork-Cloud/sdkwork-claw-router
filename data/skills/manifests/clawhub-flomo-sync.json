@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flomo-sync@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flomo-sync-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flomo-sync-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a83cb1fce850f402522700e6e4fa51d3dd549ab15b51a6ca5445a3b391292ea",

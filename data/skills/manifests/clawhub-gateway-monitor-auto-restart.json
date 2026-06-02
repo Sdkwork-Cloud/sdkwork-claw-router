@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gateway-monitor-auto-restart@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gateway-monitor-auto-restart-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gateway-monitor-auto-restart-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4d8f2fb2c476bc8cd299382bc77437e77209b3779ebb9fe7589394c72415eeb9",

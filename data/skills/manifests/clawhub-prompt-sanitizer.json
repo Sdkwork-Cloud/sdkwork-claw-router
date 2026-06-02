@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-sanitizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-sanitizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-sanitizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a67d574ba9cccf65fac1746163bd07f9f0034b718d8fd89a42c6db899158555b",

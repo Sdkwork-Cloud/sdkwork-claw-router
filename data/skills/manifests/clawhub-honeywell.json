@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/honeywell@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-honeywell-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-honeywell-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f253c073f1601eb0bfa7f4fa0908525c3f62ae59d0672916bd923c382186917a",

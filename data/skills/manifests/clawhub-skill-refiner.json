@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-refiner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-refiner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-refiner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:722b6ebc3ab6818577b78d3233dc4b955ccae1f0670e484ca1b1499bb463df16",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kontentai@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-kontentai-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kontentai-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:76af3977485fcfb58fa1631dd07d3b956bb79dc7d93380007a11572a36eafaa5",

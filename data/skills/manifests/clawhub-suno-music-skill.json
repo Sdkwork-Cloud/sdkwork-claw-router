@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/suno-music-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-suno-music-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-suno-music-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1c3708b69a503be0d7d81033e89421e6cf398e1fee1d81c457c8fc9a00d70b3e",

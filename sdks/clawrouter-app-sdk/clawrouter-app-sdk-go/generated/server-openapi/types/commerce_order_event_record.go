@@ -8,6 +8,7 @@ type CommerceOrderEventRecord struct {
 	EventNo string `json:"event_no"`
 	EventType string `json:"event_type"`
 	FromStatus string `json:"from_status"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	Message string `json:"message"`
 	OrderId string `json:"order_id"`

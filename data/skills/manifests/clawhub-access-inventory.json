@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/access-inventory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-access-inventory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-access-inventory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:637b2bfde6a79509ee56f2b3becb0cc93f04bdecc99aa9a62abdb3fa5db1cbf7",

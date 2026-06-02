@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/observability-lgtm@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-observability-lgtm-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-observability-lgtm-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ec18bd9cb4c4d9ba984e233f90ea724305010389f4bb07ac76fdafa904a552b",

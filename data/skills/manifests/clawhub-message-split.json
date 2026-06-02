@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/message-split@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-message-split-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-message-split-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:40f73348151987c3f169bfc2c111bfd2f1f658ae5df78c166c3caf1918551523",

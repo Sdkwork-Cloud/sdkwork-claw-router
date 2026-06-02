@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/desktop-operator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-desktop-operator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-desktop-operator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d14f8887ea7c50a00e26fe9db9faea4ad4dddab995bce893603a958e5f38ef6c",

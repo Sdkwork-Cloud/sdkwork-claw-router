@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/twinify@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-twinify-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-twinify-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ad485ff996274c2f3d9572184d31112e90220cf36ad3b689598535f170d12c97",

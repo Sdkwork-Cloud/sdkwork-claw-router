@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-qdrant@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-qdrant-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-qdrant-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:6e22e9e696ea43f1ed5ae5bf24fcad51d69538c944a177fe15d28bd05c4f050e",

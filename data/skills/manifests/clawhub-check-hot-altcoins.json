@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/check-hot-altcoins@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-check-hot-altcoins-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-check-hot-altcoins-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db8aaa898f8dc3ffe6b782ef82b378bbf046a2586835f319549254c973bf353b",

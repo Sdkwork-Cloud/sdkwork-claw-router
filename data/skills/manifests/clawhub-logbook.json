@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/logbook@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-logbook-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-logbook-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:53c5cd1b293d253f4c5ed0bae80f8e39c7f20f06f96a47fc21f4cb4b659db7de",

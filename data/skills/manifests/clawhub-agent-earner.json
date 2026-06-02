@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-earner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-earner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-earner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4fc46565f81bd3868dd938f00fb306853c881a57ae7993baa307acd49a20b5c3",

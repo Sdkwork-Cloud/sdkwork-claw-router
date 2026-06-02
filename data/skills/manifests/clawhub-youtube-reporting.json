@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-reporting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-reporting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-reporting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7de75b03e253d82fd04e6aa725907cf0ff2ebb5f3fc99c3264615e293dd13ffe",

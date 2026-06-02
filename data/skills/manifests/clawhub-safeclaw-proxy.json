@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/safeclaw-proxy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-safeclaw-proxy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-safeclaw-proxy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c98a7967f2514a7a7075df66eb97edab31e8fb7a9e88b1e63a6d35067b946f03",

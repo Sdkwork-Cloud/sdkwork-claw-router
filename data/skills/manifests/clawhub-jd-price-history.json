@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jd-price-history@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jd-price-history-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jd-price-history-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6649e4f6d8ccef3cdb79eadd30ad56816d560f3b9e9880360157371bb5d2db78",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/diskmon@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-diskmon-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-diskmon-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0934339108a790edd9ca63697802195950bbeff18796b7c2fd51dcd8075ffb68",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/appm@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-appm-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-appm-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a00808ab909fa6465c8d20e141e952df14cbcff6a01dcaf2203a2e9acd26dc15",

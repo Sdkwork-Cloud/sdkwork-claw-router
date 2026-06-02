@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, Star, Download, ShieldCheck, ChevronDown, Check } from 'lucide-react';
 import { BusinessStatePanel, CopyButton } from 'sdkwork-claw-router-commons';
-import { buildPortalShareUrl, getLoadErrorMessage } from 'sdkwork-claw-router-commons/runtime';
+import { buildPortalShareUrl, getLoadErrorMessage, readMediaResourceUrl } from 'sdkwork-claw-router-commons/runtime';
 import { appService } from '../services/appService';
 import { PlatformIcon } from '../components/PlatformIcon';
 import {
   deriveAppDetailView,
-  getReleaseDownloadUrl,
+  getReleaseDownloadHref,
   isReleaseDownloadable,
   type App,
   type AppRelease,
@@ -124,7 +124,7 @@ export function AppDetails() {
 
   const { app: detailApp } = detail;
   const activeRelease = detail.selectedRelease;
-  const downloadUrl = getReleaseDownloadUrl(activeRelease);
+  const downloadHref = getReleaseDownloadHref(activeRelease);
   const canDownload = isReleaseDownloadable(activeRelease);
 
   return (
@@ -145,7 +145,7 @@ export function AppDetails() {
             animate={{ opacity: 1, scale: 1 }}
             className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-white/10"
           >
-            <img src={detailApp.image} alt={detailApp.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <img src={readMediaResourceUrl(detailApp.image)} alt={detailApp.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           </motion.div>
 
           {/* App Info */}
@@ -176,7 +176,7 @@ export function AppDetails() {
                 <div className="flex">
                   {canDownload ? (
                     <a
-                      href={downloadUrl}
+                      href={downloadHref}
                       target="_blank"
                       rel="noreferrer"
                       className="w-full md:w-auto px-6 py-3 bg-lobster-500 hover:bg-lobster-600 text-white rounded-l-xl font-bold transition-colors shadow-sm shadow-lobster-500/20 flex items-center justify-center gap-2 relative overflow-hidden"
@@ -277,7 +277,7 @@ export function AppDetails() {
             >
               {detailApp.screenshots.map((screenshot, index) => (
                 <div key={index} className="flex-shrink-0 w-[280px] md:w-[400px] h-[500px] md:h-[600px] rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 snap-center shadow-sm">
-                  <img src={screenshot} alt={`Screenshot ${index + 1}`} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img src={readMediaResourceUrl(screenshot)} alt={`Screenshot ${index + 1}`} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
               ))}
             </div>

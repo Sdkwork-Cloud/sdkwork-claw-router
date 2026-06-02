@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pet-health-companion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pet-health-companion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pet-health-companion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18eabff3a42d46ce904cff7e0dd36e2dcd152282ba6f096dd3f6affba1c69270",

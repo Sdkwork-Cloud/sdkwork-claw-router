@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/redis-tools@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-redis-tools-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-redis-tools-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:941a909779560698072aedc8212b46f7ea9d89973a1b830b48d45265b29ae224",

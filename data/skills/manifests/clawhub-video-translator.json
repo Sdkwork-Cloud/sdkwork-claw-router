@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-translator@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-translator-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-translator-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:caecdf81479f1c62dd8d64dfd85b5f5a84d66c4b7bedc11fd8b20093b78689f8",

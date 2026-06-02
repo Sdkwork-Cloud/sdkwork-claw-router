@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-compose@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-compose-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-compose-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0c556135abdc9fd6b1d0826d1f2b78b2c17c371fc5445944ba3784f32c7a705f",

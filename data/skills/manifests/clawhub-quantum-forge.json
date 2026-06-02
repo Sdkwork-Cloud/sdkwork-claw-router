@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quantum-forge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quantum-forge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quantum-forge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70902f16e1729ee57f72204d243a998b3eff3089402d2e722c2cc9c287a8b528",

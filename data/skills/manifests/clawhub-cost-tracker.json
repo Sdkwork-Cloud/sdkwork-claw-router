@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cost-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cost-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cost-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:266e60874de2561ab0c4bda219e9421dbd62e3814a62f68c17e852f920c6dd21",

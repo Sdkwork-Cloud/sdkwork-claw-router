@@ -233,6 +233,279 @@ class SchemaGuardianTest(unittest.TestCase):
                 result.messages,
             )
 
+    def test_rejects_bare_media_url_columns_in_schema_registry(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  legacy_compatibility_guardrails:
+                    forbidden_synonym_tables: []
+                tables:
+                  - table: commerce_product_media
+                    domain: commerce
+                    columns:
+                      owner_type: string(64)
+                      owner_id: string(512)
+                      url: string(2048)
+                      callback_url: string(2048)
+                  - table: commerce_product_spu
+                    domain: commerce
+                    columns:
+                      cover_image: string(1024)
+                  - table: object_provider
+                    domain: content
+                    columns:
+                      endpoint_url: string(512)
+                """,
+            )
+
+            result = SchemaGuardian(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "commerce_product_media.url is a bare media URL column; use MediaResource stable reference fields",
+                result.messages,
+            )
+            self.assertIn(
+                "commerce_product_spu.cover_image is a bare media URL column; use MediaResource stable reference fields",
+                result.messages,
+            )
+            self.assertNotIn(
+                "commerce_product_media.callback_url is a bare media URL column; use MediaResource stable reference fields",
+                result.messages,
+            )
+            self.assertNotIn(
+                "object_provider.endpoint_url is a bare media URL column; use MediaResource stable reference fields",
+                result.messages,
+            )
+
+    def test_rejects_bare_media_url_fields_in_frontend_contract_fragments(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  legacy_compatibility_guardrails:
+                    forbidden_synonym_tables: []
+                tables:
+                  - table: commerce_product_spu
+                    domain: commerce
+                """,
+            )
+            fragment = root / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "commerce.yaml"
+            fragment.parent.mkdir(parents=True, exist_ok=True)
+            fragment.write_text(
+                "frontend_operations:\n"
+                "  - route: /admin/catalog\n"
+                "    response_schema:\n"
+                "      name: ProductResponse\n"
+                "      type: object\n"
+                "    fields:\n"
+                "    - thumbnailUrl\n"
+                "    required_columns:\n"
+                "      commerce_product_spu:\n"
+                "      - cover_image\n"
+                "      properties:\n"
+                "        coverImage:\n"
+                "          type: string\n"
+                "          maxLength: 2048\n"
+                "        callbackUrl:\n"
+                "          type: string\n"
+                "          maxLength: 2048\n"
+                "        media:\n"
+                "          type: array\n"
+                "          items:\n"
+                "            type: object\n"
+                "            properties:\n"
+                "              url:\n"
+                "                type: string\n",
+                encoding="utf-8",
+            )
+            index = root / "docs" / "schema-registry" / "frontend-field-contracts" / "index.yaml"
+            index.write_text("fragments:\n  - operations/commerce.yaml\n", encoding="utf-8")
+
+            result = SchemaGuardian(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\commerce.yaml field coverImage is a bare media URL field; use MediaResource",
+                result.messages,
+            )
+            self.assertIn(
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\commerce.yaml field media.url is a bare media URL field; use MediaResource",
+                result.messages,
+            )
+            self.assertIn(
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\commerce.yaml field thumbnailUrl is a bare media URL field; use MediaResource",
+                result.messages,
+            )
+            self.assertIn(
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\commerce.yaml required column commerce_product_spu.cover_image is a bare media URL column; use MediaResource stable reference fields",
+                result.messages,
+            )
+            self.assertNotIn(
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\commerce.yaml field callbackUrl is a bare media URL field; use MediaResource",
+                result.messages,
+            )
+
+    def test_rejects_bare_media_url_fields_in_frontend_contract_derived_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  legacy_compatibility_guardrails:
+                    forbidden_synonym_tables: []
+                tables:
+                  - table: commerce_product_spu
+                    domain: commerce
+                """,
+            )
+            fragment = root / "docs" / "schema-registry" / "frontend-field-contracts" / "models" / "commerce.yaml"
+            fragment.parent.mkdir(parents=True, exist_ok=True)
+            fragment.write_text(
+                "frontend_models:\n"
+                "  - route: /admin/catalog\n"
+                "    interface: ProductItem\n"
+                "    fields:\n"
+                "    - id\n"
+                "    - title\n"
+                "    derived_fields:\n"
+                "    - coverImage\n"
+                "    - media.assetUrl\n",
+                encoding="utf-8",
+            )
+            index = root / "docs" / "schema-registry" / "frontend-field-contracts" / "index.yaml"
+            index.write_text("fragments:\n  - models/commerce.yaml\n", encoding="utf-8")
+
+            result = SchemaGuardian(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "docs\\schema-registry\\frontend-field-contracts\\models\\commerce.yaml field coverImage is a bare media URL field; use MediaResource",
+                result.messages,
+            )
+            self.assertIn(
+                "docs\\schema-registry\\frontend-field-contracts\\models\\commerce.yaml field media.assetUrl is a bare media URL field; use MediaResource",
+                result.messages,
+            )
+
+    def test_rejects_natural_media_fields_that_remain_plain_strings(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  legacy_compatibility_guardrails:
+                    forbidden_synonym_tables: []
+                tables:
+                  - table: commerce_product_spu
+                    domain: commerce
+                """,
+            )
+            fragment = root / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "commerce.yaml"
+            fragment.parent.mkdir(parents=True, exist_ok=True)
+            fragment.write_text(
+                "frontend_operations:\n"
+                "  - route: /admin/catalog\n"
+                "    response_schema:\n"
+                "      name: ProductResponse\n"
+                "      type: object\n"
+                "      properties:\n"
+                "        cover:\n"
+                "          type: string\n"
+                "          maxLength: 2048\n"
+                "        icon:\n"
+                "          type: string\n"
+                "          maxLength: 128\n"
+                "        upload:\n"
+                "          type: object\n"
+                "          properties:\n"
+                "            file:\n"
+                "              type: string\n"
+                "              format: binary\n",
+                encoding="utf-8",
+            )
+            index = root / "docs" / "schema-registry" / "frontend-field-contracts" / "index.yaml"
+            index.write_text("fragments:\n  - operations/commerce.yaml\n", encoding="utf-8")
+
+            result = SchemaGuardian(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\commerce.yaml field cover must use MediaResource schema",
+                result.messages,
+            )
+            self.assertNotIn(
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\commerce.yaml field icon must use MediaResource schema",
+                result.messages,
+            )
+            self.assertNotIn(
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\commerce.yaml field upload.file must use MediaResource schema",
+                result.messages,
+            )
+
+    def test_rejects_media_collections_that_remain_string_arrays(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                schema_registry:
+                  legacy_compatibility_guardrails:
+                    forbidden_synonym_tables: []
+                tables:
+                  - table: commerce_product_spu
+                    domain: commerce
+                """,
+            )
+            fragment = root / "docs" / "schema-registry" / "frontend-field-contracts" / "operations" / "commerce.yaml"
+            fragment.parent.mkdir(parents=True, exist_ok=True)
+            fragment.write_text(
+                "frontend_operations:\n"
+                "  - route: /admin/catalog\n"
+                "    response_schema:\n"
+                "      name: ProductResponse\n"
+                "      type: object\n"
+                "      properties:\n"
+                "        images:\n"
+                "          type: array\n"
+                "          items:\n"
+                "            type: string\n"
+                "            maxLength: 2048\n"
+                "        modelGroups:\n"
+                "          type: object\n"
+                "          properties:\n"
+                "            images:\n"
+                "              type: array\n"
+                "              items:\n"
+                "                name: ImageModelOption\n"
+                "                type: object\n"
+                "                properties:\n"
+                "                  model:\n"
+                "                    type: string\n",
+                encoding="utf-8",
+            )
+            index = root / "docs" / "schema-registry" / "frontend-field-contracts" / "index.yaml"
+            index.write_text("fragments:\n  - operations/commerce.yaml\n", encoding="utf-8")
+
+            result = SchemaGuardian(root=root, registry_path=registry).run()
+
+            self.assertFalse(result.ok)
+            self.assertIn(
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\commerce.yaml field images must use MediaResource schema",
+                result.messages,
+            )
+            self.assertNotIn(
+                "docs\\schema-registry\\frontend-field-contracts\\operations\\commerce.yaml field modelGroups.images must use MediaResource schema",
+                result.messages,
+            )
+
     def test_rejects_external_delivery_tables_under_notification_domain(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -436,7 +709,7 @@ class SchemaGuardianTest(unittest.TestCase):
             self.assertIn("model_vendor type_bindings.rust is required", result.messages)
             self.assertIn("model_vendor builtin_values must include unknown", result.messages)
 
-    def test_requires_pricing_plan_and_api_key_group_bindings(self) -> None:
+    def test_requires_pricing_plan_and_channel_group_bindings(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             registry = self.write_registry(

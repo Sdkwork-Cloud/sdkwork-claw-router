@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-educational-subagent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-educational-subagent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-educational-subagent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:27c99ab4af09850c376a1a9027a704cade955013f4146160f9c1217fe6f51469",

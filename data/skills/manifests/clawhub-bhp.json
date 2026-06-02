@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bhp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bhp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bhp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:59c42fc1d89f82929238d5390b94635eb6d0d0df7a4cae858bc27eece645dc80",

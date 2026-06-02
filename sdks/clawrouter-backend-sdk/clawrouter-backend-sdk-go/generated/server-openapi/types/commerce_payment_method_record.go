@@ -4,11 +4,13 @@ package types
 type CommercePaymentMethodRecord struct {
 	CreatedAt string `json:"created_at"`
 	DisplayName string `json:"display_name"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	MethodKey string `json:"method_key"`
 	OrganizationId string `json:"organization_id"`
 	Provider string `json:"provider"`
 	RequestNo string `json:"request_no"`
+	SortWeight string `json:"sort_weight"`
 	Status string `json:"status"`
 	TenantId string `json:"tenant_id"`
 	UpdatedAt string `json:"updated_at"`

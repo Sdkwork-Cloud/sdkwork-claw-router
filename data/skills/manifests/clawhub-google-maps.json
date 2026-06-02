@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-maps@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-maps-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-maps-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66acd660afc8698e0398d5c87c16b79f48776572c5c18be2b87bf1890b4a4063",

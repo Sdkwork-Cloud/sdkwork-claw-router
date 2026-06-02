@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/game-market-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-game-market-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-game-market-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:53d652058e6b690b66947ed2532b22dfab8ee391e097a9f01ec5e6b632eb642b",

@@ -8,6 +8,42 @@ import com.sdkwork.clawrouter.backend.http.HttpClient
 
 class AiApi(private val client: HttpClient) {
 
+    /** List groups */
+    suspend fun channelGroupsList(): ChannelGroupsListResult? {
+        val raw = client.get(ApiPaths.backendPath("/ai/channel_groups"))
+        return client.convertValue(raw, object : TypeReference<ChannelGroupsListResult>() {})
+    }
+
+    /** Create group */
+    suspend fun channelGroupsCreate(body: AdminChannelGroupCreateRequest): ChannelGroupsCreateResult? {
+        val raw = client.post(ApiPaths.backendPath("/ai/channel_groups"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<ChannelGroupsCreateResult>() {})
+    }
+
+    /** Delete group */
+    suspend fun channelGroupsDelete(channelGroupId: String): ChannelGroupsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/ai/channel_groups/${serializePathParameter(channelGroupId, PathParameterSpec("channelGroupId", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<ChannelGroupsDeleteResult>() {})
+    }
+
+    /** Update group */
+    suspend fun channelGroupsUpdate(channelGroupId: String, body: AdminChannelGroupUpdateRequest): ChannelGroupsUpdateResult? {
+        val raw = client.patch(ApiPaths.backendPath("/ai/channel_groups/${serializePathParameter(channelGroupId, PathParameterSpec("channelGroupId", "simple", false))}"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<ChannelGroupsUpdateResult>() {})
+    }
+
+    /** List group channel bindings */
+    suspend fun channelGroupsBindingsList(channelGroupId: String): ChannelGroupsChannelBindingsListResult? {
+        val raw = client.get(ApiPaths.backendPath("/ai/channel_groups/${serializePathParameter(channelGroupId, PathParameterSpec("channelGroupId", "simple", false))}/channel_bindings"))
+        return client.convertValue(raw, object : TypeReference<ChannelGroupsChannelBindingsListResult>() {})
+    }
+
+    /** Replace group channel bindings */
+    suspend fun channelGroupsBindingsUpdate(channelGroupId: String, body: AdminChannelGroupChannelBindingsReplaceRequest): ChannelGroupsChannelBindingsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/ai/channel_groups/${serializePathParameter(channelGroupId, PathParameterSpec("channelGroupId", "simple", false))}/channel_bindings"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<ChannelGroupsChannelBindingsUpdateResult>() {})
+    }
+
     /** List model rankings */
     suspend fun modelRankingsList(rankScope: String? = null, vendorCode: String? = null, modality: String? = null, q: String? = null, limit: Int? = null): ModelRankingsListResult? {
         val query = buildQueryString(listOf(

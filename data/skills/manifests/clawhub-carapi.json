@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/carapi@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-carapi-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-carapi-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:09d0d67cf343a825d9ee1e3ac5ba395cabedb7ce4294976a577352e3e3b4628e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/protein-phylogeny@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-protein-phylogeny-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-protein-phylogeny-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29a9fbf0dfa4c472ea025af1f5ec855e1b469e7c6031ba1196e46f23bac2c308",

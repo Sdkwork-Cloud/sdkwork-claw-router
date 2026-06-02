@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flow-swarm@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-flow-swarm-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flow-swarm-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ed60a7f4f2218521b674f62d7a097cb368a5425bf55eb2c95bb754a73b9874b8",

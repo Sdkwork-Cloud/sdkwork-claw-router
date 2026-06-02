@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/steam-lowest-price-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-steam-lowest-price-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-steam-lowest-price-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a7df18cda9e59af1d43167371d2929f7723997ee86f8bd9b3e3baeb5bf40fe0",

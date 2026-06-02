@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-health-monitor@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-health-monitor-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-health-monitor-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f4a51385f066b59049b73aed4bf3fd110b71358fafe0f4cd71452afea182a682",

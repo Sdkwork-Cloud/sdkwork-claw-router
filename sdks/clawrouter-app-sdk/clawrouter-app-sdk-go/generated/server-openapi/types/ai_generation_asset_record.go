@@ -3,8 +3,8 @@ package types
 // Ai generation asset record schema exposed by Claw Router.
 type AiGenerationAssetRecord struct {
 	ActiveIndex int `json:"active_index"`
+	Asset MediaResource `json:"asset"`
 	AssetType string `json:"asset_type"`
-	AssetUrl string `json:"asset_url"`
 	CreatedAt string `json:"created_at"`
 	DataScope string `json:"data_scope"`
 	DeletedAt string `json:"deleted_at"`
@@ -21,6 +21,7 @@ type AiGenerationAssetRecord struct {
 	Metadata map[string]JsonValue `json:"metadata"`
 	MimeType string `json:"mime_type"`
 	ModelSnapshot string `json:"model_snapshot"`
+	ObjectKey string `json:"object_key"`
 	OrganizationId string `json:"organization_id"`
 	OwnerId string `json:"owner_id"`
 	OwnerType string `json:"owner_type"`
@@ -29,10 +30,9 @@ type AiGenerationAssetRecord struct {
 	ShareTokenHash string `json:"share_token_hash"`
 	Shared bool `json:"shared"`
 	Status string `json:"status"`
-	StorageKey string `json:"storage_key"`
 	StorageProvider string `json:"storage_provider"`
 	TenantId string `json:"tenant_id"`
-	ThumbnailUrl string `json:"thumbnail_url"`
+	Thumbnail MediaResource `json:"thumbnail"`
 	UpdatedAt string `json:"updated_at"`
 	UserId string `json:"user_id"`
 	Uuid string `json:"uuid"`

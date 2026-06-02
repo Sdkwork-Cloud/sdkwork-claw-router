@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf2word-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf2word-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf2word-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25d15be6db2695fc26330cea7d3130892c10a2edc6900920b229f0c2f2d0247a",

@@ -19,6 +19,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public int? SortOrder { get; set; }
         public string? SourceProvider { get; set; }
         public string? Title { get; set; }
-        public string? VideoUrl { get; set; }
+        public MediaResource? Video { get; set; }
     }
 }

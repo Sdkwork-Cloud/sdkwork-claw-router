@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-wiki-obsidian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-wiki-obsidian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-wiki-obsidian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2f3aaa553081d6b7af1f29b1b35d588a5cb7e655b4240f62437decffe4926db",

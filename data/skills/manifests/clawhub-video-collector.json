@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-collector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-collector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-collector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0c40cf18b9a24a4f13b450062c5127a23575c762d97004bff6596a9441bfb42",

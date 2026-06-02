@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-weather@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-weather-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-weather-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7fbfcd49309680954c36f8fa30987d2852842956ce8c570e3e4f272bb8778be8",

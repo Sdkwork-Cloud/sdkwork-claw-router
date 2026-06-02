@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sbom-explainer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sbom-explainer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sbom-explainer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c228d5fb223d9852b6f91b009c59d5ea0f49e39c2e8ff7d1ff88bf3cb07b5292",

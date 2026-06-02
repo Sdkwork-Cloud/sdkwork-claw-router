@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lnd-macaroon-bakery@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lnd-macaroon-bakery-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lnd-macaroon-bakery-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:763a1160d4fae344007467b9499023c4f1ed3a5e49fd73aec8070e08413892a1",

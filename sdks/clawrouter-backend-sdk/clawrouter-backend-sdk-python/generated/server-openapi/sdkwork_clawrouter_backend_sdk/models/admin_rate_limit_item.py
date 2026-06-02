@@ -9,7 +9,9 @@ class AdminRateLimitItem:
     id: str
     block_duration: Optional[str] = None
     burst: Optional[int] = None
-    group: Optional[str] = None
+    channel_group: Optional[str] = None
+    channel_group_id: Optional[str] = None
+    channel_group_name: Optional[str] = None
     key_prefix: Optional[str] = None
     model: Optional[str] = None
     rpd: Optional[int] = None

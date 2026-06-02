@@ -13,6 +13,7 @@ public class PromotionExternalBindingRecord {
     private String externalMerchantId;
     private String externalObjectId;
     private String externalObjectType;
+    private String id;
     private String lastErrorCode;
     private String lastErrorMessage;
     private String lastSyncAt;
@@ -110,6 +111,14 @@ public class PromotionExternalBindingRecord {
 
     public void setExternalObjectType(String externalObjectType) {
         this.externalObjectType = externalObjectType;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getLastErrorCode() {

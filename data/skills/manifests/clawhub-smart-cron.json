@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-cron@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-cron-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-cron-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1de71a82ccd12315a8c53fe7789a3b904f3484f72ec07d2c335e32051042f9e1",

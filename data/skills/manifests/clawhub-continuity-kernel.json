@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/continuity-kernel@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-continuity-kernel-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-continuity-kernel-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ded890a15a19e99048f2f61ee14d262cd7c27a9e657f45e3b6cc6edab1a6ce04",

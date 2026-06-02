@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jira@1.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-jira-1.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jira-1.3.3.json"
+      },
       "version": "1.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:ce1c17d0558a517aa44950889ef813316160235a7ba34b7c22ed3bd8cfa00c7b",

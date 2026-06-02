@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hono@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hono-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hono-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aafd4269956feecf7411b8347ed2f43b01ad3174a5627fc0f1389a62d03a9415",

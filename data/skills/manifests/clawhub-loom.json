@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/loom@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-loom-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-loom-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3cef883f45c88062472c4154cadab84e41d49537af08306eb6575b3a621adbb",

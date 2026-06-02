@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-handoff@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-handoff-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-handoff-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:deaafba325fead8f23c98e52f5aabc5bc7c690c3f44a69c648f9dc32963502c7",

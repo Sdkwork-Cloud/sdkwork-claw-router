@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitlab-integration@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-integration-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitlab-integration-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:8ce88641c501a7c4067039e7c86f56d534fc8da4abd10a9ee2a9ff5be8f0d039",

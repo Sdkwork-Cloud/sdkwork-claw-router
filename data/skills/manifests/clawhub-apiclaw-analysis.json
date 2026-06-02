@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apiclaw-analysis@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-apiclaw-analysis-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apiclaw-analysis-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5ebab435295dc79028ec595aa625048e6c4389537030037efac310011654cc20",

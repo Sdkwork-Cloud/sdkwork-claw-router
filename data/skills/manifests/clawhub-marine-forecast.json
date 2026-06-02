@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marine-forecast@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marine-forecast-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marine-forecast-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d70a85a4c39d826eeb0e71f620dffef0d6e051a39519df3eb732b4c842f86f2d",

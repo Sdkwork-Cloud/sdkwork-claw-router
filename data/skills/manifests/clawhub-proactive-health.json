@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proactive-health@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-proactive-health-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proactive-health-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:274080ea662d536b1f1ab1fa97e4e5f97401e4414eb9c3cbb651ee615b40c2fb",

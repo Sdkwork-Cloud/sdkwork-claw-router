@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/employee-skills-importer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-employee-skills-importer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-employee-skills-importer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d077e4620a857b7f9163a20cf8a160e0976a58421baf37112e6688c1b6732c06",

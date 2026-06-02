@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/irecruiter-skill@1.0.23",
-      "artifactUrl": "data/skills/artifacts/clawhub-irecruiter-skill-1.0.23.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-irecruiter-skill-1.0.23.json"
+      },
       "version": "1.0.23",
       "runtime": "metadata",
       "checksumHash": "sha256:e96a7dabfefca912188d321eeb7f68e5841b70180b070298a03a0cb11bdcf24e",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bom-discover-snowflake@0.86.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-discover-snowflake-0.86.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bom-discover-snowflake-0.86.2.json"
+      },
       "version": "0.86.2",
       "runtime": "metadata",
       "checksumHash": "sha256:bb67c5e8961cacacc3c714342971be9bb0c61921d282503e8ea6cf16f3f823b7",

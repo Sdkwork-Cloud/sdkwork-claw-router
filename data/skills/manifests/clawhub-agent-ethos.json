@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-ethos@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-ethos-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-ethos-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:47031a8ddaea474ec44e9f560bdaddfe328916f01ea5f4dc0f5536d3948f8545",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yt-dlp-download-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-yt-dlp-download-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yt-dlp-download-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3845e0006696d06d19c6db1395ccf7b239ec8e3c9b44ce8bc41bfac1b2812f5a",

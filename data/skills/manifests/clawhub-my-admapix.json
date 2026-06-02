@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-admapix@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-admapix-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-admapix-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66778f18e5d2fbafe52d2f136082518d9dffc0e642c64349f3eda95ffe3c212b",

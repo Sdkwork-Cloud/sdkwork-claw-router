@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/post-tweets@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-post-tweets-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-post-tweets-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:17e2161d580bde7b80cf0dc32ba7967ec41a5a021e4425949450d5ef13024427",

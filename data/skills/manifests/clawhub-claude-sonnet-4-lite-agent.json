@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-sonnet-4-lite-agent@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-sonnet-4-lite-agent-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-sonnet-4-lite-agent-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b94775a9ea89c8b3676b37a814d923443027af8534af1e4f47cadc85d70056e",

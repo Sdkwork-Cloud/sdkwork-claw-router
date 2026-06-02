@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/input-file-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-input-file-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-input-file-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7b2dc1890c9d6aa7fc74a8d0a79f1ac1675a5d25d9a138ed7d02902230bf78b8",

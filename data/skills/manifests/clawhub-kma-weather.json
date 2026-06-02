@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kma-weather@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-kma-weather-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kma-weather-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d0dba8054da9f89720085efb5b7feb45f6e0ec0f60e52cdcf8d269bfdbbf373c",

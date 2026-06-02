@@ -108,8 +108,8 @@ print(result)
 ### ai
 
 ```swift
-// List traces
-let result = try await client.ai.gatewayTracesList()
+// List groups
+let result = try await client.ai.channelGroupsList()
 print(result)
 ```
 
@@ -152,8 +152,8 @@ print(result)
 ### iam
 
 ```swift
-// List groups
-let result = try await client.iam.apiKeyGroupsList()
+// List keys
+let result = try await client.iam.apiKeysList()
 print(result)
 ```
 

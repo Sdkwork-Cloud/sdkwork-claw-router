@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tagclaw@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-tagclaw-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tagclaw-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:d387f6633fdb477cf2185a21507d746ec57d580744ab977575a430dcca88646d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/motorola@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-motorola-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-motorola-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f19c7b36f3be9b11b6558a326e719ee7c6e2dd464c21ebaa8e725faf05d72ecf",

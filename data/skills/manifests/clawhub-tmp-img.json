@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tmp-img@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tmp-img-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tmp-img-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3b7ff67d902cb077ba74cf7e596471fd000bbae065714f2b31c98ccc9c2be60",

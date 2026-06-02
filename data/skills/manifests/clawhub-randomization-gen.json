@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/randomization-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-randomization-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-randomization-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:688b9508e3d1429b53ceb2db644172808feacd1058307e051db195d6dc60f181",

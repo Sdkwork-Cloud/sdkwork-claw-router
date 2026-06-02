@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-mesh@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-mesh-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-mesh-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d601f30269c6f30ed367add544a5e00c947f0b00236b99e92d1bbf8a0834a1a5",

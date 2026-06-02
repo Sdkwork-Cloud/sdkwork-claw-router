@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/attestation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-attestation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-attestation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e0075c996e62bcd3e690bdf72d304eb1d88d3d1d4e593a126bd198e9d38998aa",

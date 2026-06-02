@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ubuntu-ai@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ubuntu-ai-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ubuntu-ai-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f9318605b3c3ee122247f1f8322493299990edf217a5f02f8b2970bac1e3a322",

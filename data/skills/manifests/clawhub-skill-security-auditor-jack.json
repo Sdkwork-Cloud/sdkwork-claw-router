@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-security-auditor-jack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-security-auditor-jack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-security-auditor-jack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:22c780172093aadc065eaf57e6ba1d3f77bac404131734de05ddb6bd7ada6742",

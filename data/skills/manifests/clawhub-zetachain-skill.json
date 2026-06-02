@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zetachain-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zetachain-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zetachain-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:efd729934a47a0a43ad8b0a598d99208b49d127ee4031c5a7f0a8cfe07739894",

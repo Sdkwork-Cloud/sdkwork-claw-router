@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-ppc@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-ppc-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-ppc-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16180590ea370163cf35644e2bdab40c728decfd936dc50be43bd08fd1f5daf3",

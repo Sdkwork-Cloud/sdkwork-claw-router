@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, UsageLogsListResult
+from ..models import ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, UsageLogsListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -128,6 +128,7 @@ class AiApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.channel_groups = AiChannelGroupsApi(client)
         self.dashboard = AiDashboardApi(client)
         self.gateway = AiGatewayApi(client)
         self.generation = AiGenerationApi(client)
@@ -136,6 +137,17 @@ class AiApi:
         self.models = AiModelsApi(client)
         self.usage = AiUsageApi(client)
 
+
+class AiChannelGroupsApi:
+    """ai ai.channel_groups API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self) -> ChannelGroupsListResult:
+        """List groups"""
+        return self._client.get(f"/app/v3/api/ai/channel_groups")
 
 class AiDashboardApi:
     """ai ai.dashboard API client."""

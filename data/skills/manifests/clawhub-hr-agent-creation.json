@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hr-agent-creation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hr-agent-creation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hr-agent-creation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:090c6477562af52e3ed09dc38fb687c3b2d2c2017f7b08e534d7fad61467d3dd",

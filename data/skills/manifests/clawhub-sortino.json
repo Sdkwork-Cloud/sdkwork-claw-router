@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sortino@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sortino-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sortino-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8a5d5c185d55e12a3e958057e6710fc779d68868e2218ab5ce5360b3f4dcb4ee",

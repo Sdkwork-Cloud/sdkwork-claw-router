@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-router-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-router-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-router-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77d18f34a15703fba525de58748eba5938cee321f1533d102cbb2b582bf7b6a4",

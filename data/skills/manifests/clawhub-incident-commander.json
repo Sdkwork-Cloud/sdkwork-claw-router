@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/incident-commander@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-incident-commander-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-incident-commander-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7cd902d8881eee7f63320f16fdc13b35a22c5921381cd051d7c8a27e353e5979",

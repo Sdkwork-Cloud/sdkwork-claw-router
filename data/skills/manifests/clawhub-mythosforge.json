@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mythosforge@0.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mythosforge-0.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mythosforge-0.5.0.json"
+      },
       "version": "0.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:51f7e4995f278d41b2be63d63f758778283fff290a11dd596266393224405d77",

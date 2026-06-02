@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/plausible-analytics-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-plausible-analytics-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-plausible-analytics-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc929481c2000cffc7ec0ff405dfe67c10f5edcbba6db131d098659ebb03eb65",

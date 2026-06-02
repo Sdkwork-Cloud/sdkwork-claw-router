@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/install@3.5.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-install-3.5.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-install-3.5.8.json"
+      },
       "version": "3.5.8",
       "runtime": "metadata",
       "checksumHash": "sha256:9a62417971ddfa4f151eb49855035a1f41943da40445508702793f51cfb168ff",

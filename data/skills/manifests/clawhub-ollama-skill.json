@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ollama-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ollama-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ollama-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:65099397880f2e613d67bfebd5707c1ce196697a2f23c10500a3e8cbb38a5102",

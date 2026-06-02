@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-to-drawio@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-to-drawio-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-to-drawio-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cedd683d69729331347880f588478e7e2e7fd469ca11811e7471bcaead7ff805",

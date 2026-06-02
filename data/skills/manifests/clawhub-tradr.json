@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tradr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tradr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tradr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af667e7874ddb5901914ff1e17a9f88bef3673a1f7b60643a27410f68e8ac876",

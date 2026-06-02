@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/find-souls@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-find-souls-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-find-souls-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:dbff0adea1cb6e5660626310ee5224a66249a9b1e845624aebae75be3ad70b2d",

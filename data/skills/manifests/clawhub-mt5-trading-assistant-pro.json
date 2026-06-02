@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mt5-trading-assistant-pro@4.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mt5-trading-assistant-pro-4.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mt5-trading-assistant-pro-4.0.1.json"
+      },
       "version": "4.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0c0ec1ee03c2881cb345ea40997a6b0d75a214dedc22e40162dc30260aba237c",

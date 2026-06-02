@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minnow-writing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-minnow-writing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minnow-writing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:967d9c4b41c4d1bc4bb9d9a08e5e76f172adb7b17b29420cc7d9833bd93980db",

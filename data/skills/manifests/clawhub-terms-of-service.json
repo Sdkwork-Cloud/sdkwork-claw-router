@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/terms-of-service@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-terms-of-service-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-terms-of-service-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9fe20248aa6bdf3506d306b1a6255308d050b4767078f2775465d402afa043b5",

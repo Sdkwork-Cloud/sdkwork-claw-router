@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multi-agent-teams@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-teams-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multi-agent-teams-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:387b84b637aa91724c4056d8e6bb4f43327305dbb3643fbc6e4017fcda8a01e1",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/decision-logger@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-decision-logger-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-decision-logger-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6c0fc5cb1f96683bb26797cd83ba67706e476e70fe630c2bd4502040c408f7dd",

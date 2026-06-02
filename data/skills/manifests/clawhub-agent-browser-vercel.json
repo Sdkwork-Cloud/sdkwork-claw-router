@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-browser-vercel@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-browser-vercel-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-browser-vercel-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4d19f05f5fb39202bbf7cdbb7750214029ac5c678e902407086fe78e7208592a",

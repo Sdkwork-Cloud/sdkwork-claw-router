@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/omni-x@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-omni-x-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-omni-x-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5abb2dc778c5c7f4a9c144d58f76df7e41ed0656b839a821cb681f274077e1dc",

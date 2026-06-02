@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goai-video-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-goai-video-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goai-video-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1e652d6539a3753310551a17ade73aed861d0152572aaa69892bb0c32519511c",

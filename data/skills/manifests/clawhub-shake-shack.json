@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shake-shack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shake-shack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shake-shack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7637a47096aeb956c52ed2aa8a1931f6cd7503d03675834c495e1a1706d919ac",

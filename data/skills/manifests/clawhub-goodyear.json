@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goodyear@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-goodyear-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goodyear-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e16979e1d1149d35e0ea379f671d8127047305c2cfdc49baa48c041c5f12c54",

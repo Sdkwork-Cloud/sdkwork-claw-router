@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/token-tracker-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-token-tracker-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-token-tracker-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c9d3e040ff55b9cd3c43f43286e208374f1a89c2387e304a6e49655542369c3",

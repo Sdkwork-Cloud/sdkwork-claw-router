@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawagent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawagent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawagent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8fd0fa5a94104ee2a485d034f4b64a19ecd7e7cdd61691c865e7706b789ff334",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-translator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-translator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-translator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:01beea490dabc0dbd7bdb6c52c33df7c9f862095e220f20a6a0b52c979729184",

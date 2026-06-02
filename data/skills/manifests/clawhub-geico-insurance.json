@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geico-insurance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-geico-insurance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geico-insurance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:138ad3ab6761163f179c13b2605883d7174da84e66e93aa41b4b33450a15455a",

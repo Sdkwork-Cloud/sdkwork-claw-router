@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dnsrobot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dnsrobot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dnsrobot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff56d304b29efc769da63582e42a4d8fabc6d812395ebf7cd8c6b6f451fbf059",

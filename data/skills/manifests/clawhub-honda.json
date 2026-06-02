@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/honda@0.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-honda-0.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-honda-0.1.3.json"
+      },
       "version": "0.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d3f5bae9746722b1acf6ca11bbbed379f08f45693a0f157f541caa886b999a0a",

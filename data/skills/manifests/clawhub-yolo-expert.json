@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yolo-expert@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-yolo-expert-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yolo-expert-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d104d7aec50c265c64818208505195131fb6584b3ab923539d9091fc60533f02",

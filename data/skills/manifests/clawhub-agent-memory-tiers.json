@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-tiers@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-tiers-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-tiers-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8cb77f261c57c5c9083e5926570b383f34ce3680539ee1a918f9eb803c90167c",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/selenium@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-selenium-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-selenium-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e20990a2ba3d121307ca98c3f02b4b2dd176c8ffcc51282e7fba059a8f0f5aef",

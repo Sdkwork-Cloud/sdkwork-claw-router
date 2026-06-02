@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-event-planner@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-event-planner-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-event-planner-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d13a9036250cb8a1b4a09e0c18a4c8c31e852d549681ae8d68279a4f59295823",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-security-guard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-security-guard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-security-guard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f8792c25453bb35ce3697e53b2909beba254f014b0d1008b98a50caa5deff5f3",

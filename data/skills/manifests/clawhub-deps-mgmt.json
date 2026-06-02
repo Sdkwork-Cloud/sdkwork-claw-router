@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deps-mgmt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deps-mgmt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deps-mgmt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ad40cf3317987013b5edd3f2ce87af6332c9d1d508ca015aa5ac7cf0afd29c6",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-supervisor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-supervisor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-supervisor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56abef4261340807a0e551736540e58816491b3e0375ab6ee7160850a3a4a889",

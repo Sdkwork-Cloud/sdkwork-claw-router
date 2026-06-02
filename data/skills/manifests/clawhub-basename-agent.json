@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/basename-agent@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-basename-agent-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-basename-agent-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:44f1d3d898b191227b98f8736aab6a1a5f9b62f914fe0b4a899f9f49830d955b",

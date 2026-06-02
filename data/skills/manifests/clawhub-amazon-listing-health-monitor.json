@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-listing-health-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-listing-health-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-listing-health-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:06cd286722e81fee1e17f80c4a7aa61e888148441fab93982e5cd476cbfa2a73",

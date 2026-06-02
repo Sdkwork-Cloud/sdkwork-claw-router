@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jetblue-airways@99.99.99",
-      "artifactUrl": "data/skills/artifacts/clawhub-jetblue-airways-99.99.99.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jetblue-airways-99.99.99.json"
+      },
       "version": "99.99.99",
       "runtime": "metadata",
       "checksumHash": "sha256:3b71b8e572b3341fc1afc8e57af6eca1f6ad3b827b983119e6471befecf25d01",

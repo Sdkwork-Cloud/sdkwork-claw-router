@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scrapling@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-scrapling-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scrapling-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:19d8def06f2259077e902916c1029aada91725a2fbafd7d03740ac1af789fcea",

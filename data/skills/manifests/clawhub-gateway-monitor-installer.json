@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gateway-monitor-installer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gateway-monitor-installer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gateway-monitor-installer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f1bec1fc4480fa3f4ca327c2f1b16a88c0f46dfe8e957becf1a5cfe654a144dd",

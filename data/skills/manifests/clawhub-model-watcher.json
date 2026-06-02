@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-watcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-watcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-watcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:def149f27057a2e4cab61986d3deda32c3ff0bbfd8fdc7b925237554d5b7dc16",

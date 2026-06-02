@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/general-ocr-struct@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-general-ocr-struct-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-general-ocr-struct-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:30785bda5e728f7a4751e461aaf1e836114431fd3e4220a23103eb4b604410f1",

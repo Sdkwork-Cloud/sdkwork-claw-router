@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-auditor@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-auditor-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-auditor-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7de395198c1a6502cfa85621c2374481d595b7af2668ea198ed816663bcbd401",

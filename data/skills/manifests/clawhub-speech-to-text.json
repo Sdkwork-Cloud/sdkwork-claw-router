@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/speech-to-text@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-speech-to-text-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-speech-to-text-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7e1b4ec41a596bf01b1d418ae8833203d1bf703bd8dbffb31a44521a1e6e1497",

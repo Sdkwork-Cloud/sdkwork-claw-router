@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/soul-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-soul-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-soul-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1819989f028944823d65de97c2e21cec0609434c203700ca8928f62678b433c6",

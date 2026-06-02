@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/metricool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-metricool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-metricool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:216b4e605af254662ecfc10b5d8a557755a7cc2014c031aa3da45e028903e711",

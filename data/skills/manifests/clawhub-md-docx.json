@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/md-docx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-md-docx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-md-docx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:54dfe9992f857e81c286b1a1e45ff360fc2bc4238fb2b1f7ff8b727d42f72b48",

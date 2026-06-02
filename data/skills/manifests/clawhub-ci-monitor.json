@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ci-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ci-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ci-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6d2a8615fe3152ca38cf8c24551bda05ce7f77c62a766b040920c77fb39361e4",

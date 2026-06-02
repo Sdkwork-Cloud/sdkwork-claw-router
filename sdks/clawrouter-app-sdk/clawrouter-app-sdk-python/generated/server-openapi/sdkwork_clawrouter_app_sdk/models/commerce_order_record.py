@@ -18,5 +18,6 @@ class CommerceOrderRecord:
     updated_at: str
     cancelled_at: Optional[str] = None
     expired_at: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     paid_at: Optional[str] = None

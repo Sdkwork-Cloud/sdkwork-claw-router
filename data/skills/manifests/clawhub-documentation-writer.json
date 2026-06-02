@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/documentation-writer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-documentation-writer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-documentation-writer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a8c67d4261c54d028731fa256f43e455005d94e78e0d19947441e14cfa73652",

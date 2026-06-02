@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kyc-vault@0.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-kyc-vault-0.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kyc-vault-0.2.2.json"
+      },
       "version": "0.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:166a633142968765bd720a0ee390e5266932908334fc76339099ee8eee1acdea",

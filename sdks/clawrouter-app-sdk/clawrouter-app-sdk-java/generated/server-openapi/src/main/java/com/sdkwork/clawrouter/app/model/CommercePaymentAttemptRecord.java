@@ -6,6 +6,7 @@ public class CommercePaymentAttemptRecord {
     private String callbackPayload;
     private String createdAt;
     private String currencyCode;
+    private String id;
     private String orderId;
     private String organizationId;
     private String outTradeNo;
@@ -47,6 +48,14 @@ public class CommercePaymentAttemptRecord {
 
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrderId() {

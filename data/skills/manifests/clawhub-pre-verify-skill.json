@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pre-verify-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pre-verify-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pre-verify-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:24f24a98f35dc2fe0b2d78a585959184b905d0762112637e0f2b354b092dbe54",

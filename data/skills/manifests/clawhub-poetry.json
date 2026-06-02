@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/poetry@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-poetry-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-poetry-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fe2a214a15faebb42a45699296f373a0db6773e0e86d174d589e931083bb1fa8",

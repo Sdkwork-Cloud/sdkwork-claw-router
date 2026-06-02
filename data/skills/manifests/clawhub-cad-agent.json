@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cad-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cad-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cad-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:173be3f315e23c224e60c57738c49044779d884c6dd8cccf5da418de9dce16ea",

@@ -12,9 +12,20 @@ pub struct AdminRateLimitItem {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub burst: Option<i64>,
 
-    /// Group field on admin rate limit item.
+    /// Channel group field on admin rate limit item.
+    #[serde(rename = "channelGroup")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub group: Option<String>,
+    pub channel_group: Option<String>,
+
+    /// Channel group id field on admin rate limit item.
+    #[serde(rename = "channelGroupId")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel_group_id: Option<String>,
+
+    /// Channel group name field on admin rate limit item.
+    #[serde(rename = "channelGroupName")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel_group_name: Option<String>,
 
     /// Id field on admin rate limit item.
     pub id: String,

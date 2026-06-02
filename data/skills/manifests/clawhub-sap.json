@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ab2198c0486ed3b4e928ea81099fb804630b8990af9913f7eadf368a1503c34",

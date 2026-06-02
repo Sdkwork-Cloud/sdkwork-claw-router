@@ -6,6 +6,7 @@ type CommercePriceListRecord struct {
 	CurrencyCode string `json:"currency_code"`
 	CustomerSegment string `json:"customer_segment"`
 	EndsAt string `json:"ends_at"`
+	Id string `json:"id"`
 	MarketCode string `json:"market_code"`
 	OrganizationId string `json:"organization_id"`
 	PriceListNo string `json:"price_list_no"`

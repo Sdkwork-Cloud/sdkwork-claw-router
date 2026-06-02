@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/disk-space-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-disk-space-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-disk-space-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:53c0cabc524705c85616b596d61176aa295846a6b1406832d46f5ac8fae9b900",

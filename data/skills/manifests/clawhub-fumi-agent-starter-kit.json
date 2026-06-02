@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fumi-agent-starter-kit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fumi-agent-starter-kit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fumi-agent-starter-kit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd02549ccfd79861e4f9ff887fab67258473dfc9378549636bbb08eec3a448e0",

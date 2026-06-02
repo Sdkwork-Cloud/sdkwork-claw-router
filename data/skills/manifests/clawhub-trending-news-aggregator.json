@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trending-news-aggregator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trending-news-aggregator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trending-news-aggregator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3fb67ba69beee5726320afd13900b0e595c1a6e8b7ba925a62ab0b010e17c2fd",

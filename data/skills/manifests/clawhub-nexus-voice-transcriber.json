@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexus-voice-transcriber@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexus-voice-transcriber-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexus-voice-transcriber-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:30757292a7b58ccb19bf3947e7fdc662e920084189118c88e1b355f40ef1ea81",

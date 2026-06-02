@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/billionverify-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-billionverify-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-billionverify-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ccfc705b4b23bb17c90a0b6b54aa352cc74a1027a37e99730554927522795a08",

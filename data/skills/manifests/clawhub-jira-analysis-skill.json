@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jira-analysis-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jira-analysis-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jira-analysis-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71b239ba4a87d2587b5bf32b999cc5bccd16edd3678227440ce46a5f204dec47",

@@ -5,7 +5,7 @@ import java.util.List;
 public class ForumCreateFeedRequest {
     private Integer categoryId;
     private String content;
-    private List<String> images;
+    private List<MediaResource> images;
     private String source;
     private String sourceUrl;
     private List<String> tags;
@@ -27,11 +27,11 @@ public class ForumCreateFeedRequest {
         this.content = content;
     }
 
-    public List<String> getImages() {
+    public List<MediaResource> getImages() {
         return this.images;
     }
 
-    public void setImages(List<String> images) {
+    public void setImages(List<MediaResource> images) {
         this.images = images;
     }
 

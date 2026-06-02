@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/microsoft-365-people@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-365-people-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-microsoft-365-people-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6143861c86586aba9caa2a963593b1d37e73d5d2f5a0df64c95b8a60141c4309",

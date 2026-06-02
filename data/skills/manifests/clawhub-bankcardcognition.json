@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bankcardcognition@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-bankcardcognition-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bankcardcognition-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:22ef51ee46e2165a0c03aec618ba13d604dd47f44a53d182b677bd5f61f468e0",

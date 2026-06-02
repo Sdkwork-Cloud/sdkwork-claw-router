@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/simplify@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-simplify-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-simplify-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:257afcf0ed26d384caf2ca01e016ed232fbe7556508fa7eadaaf3f5ec5c03250",

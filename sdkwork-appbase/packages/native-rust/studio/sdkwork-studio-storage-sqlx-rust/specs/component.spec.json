@@ -7,9 +7,9 @@
     "version": "0.1.0",
     "type": "rust-crate",
     "root": "sdkwork-appbase/packages/native-rust/studio/sdkwork-studio-storage-sqlx-rust",
-    "domain": "studio",
-    "declaredDomain": "studio",
-    "capability": "app-template-storage",
+    "domain": "platform",
+    "declaredDomain": null,
+    "capability": "app",
     "status": "standardizing",
     "languages": [
       "rust"
@@ -30,11 +30,6 @@
       "file": "CONFIG_SPEC.md",
       "path": "../../../../../../../specs/CONFIG_SPEC.md",
       "purpose": "Runtime configuration, environment, SDK bootstrap, and feature flag rules."
-    },
-    {
-      "file": "DATABASE_SPEC.md",
-      "path": "../../../../../../../specs/DATABASE_SPEC.md",
-      "purpose": "Studio table contract, tenant scope, indexes, and schema evolution rules."
     },
     {
       "file": "DEPLOYMENT_SPEC.md",
@@ -72,36 +67,18 @@
       "purpose": "Latency, pagination, bundle, scalability, and retry budget rules."
     },
     {
-      "file": "PRIVACY_SPEC.md",
-      "path": "../../../../../../../specs/PRIVACY_SPEC.md",
-      "purpose": "Personal, tenant, sensitive, and regulated data rules."
-    },
-    {
       "file": "README.md",
       "path": "../../../../../../../specs/README.md",
       "purpose": "SDKWork root standards entrypoint."
     },
     {
-      "file": "SECURITY_SPEC.md",
-      "path": "../../../../../../../specs/SECURITY_SPEC.md",
-      "purpose": "Secure auth, token, secrets, CORS, validation, and logging rules."
-    },
-    {
       "file": "TEST_SPEC.md",
       "path": "../../../../../../../specs/TEST_SPEC.md",
-      "purpose": "Contract, database, security, parity, and documentation verification rules."
+      "purpose": "Contract, frontend, SDK, security, parity, and documentation verification rules."
     }
   ],
   "contracts": {
-    "publicExports": [
-      "studio_database_tables",
-      "studio_shared_catalog_tables",
-      "studio_app_template_tables",
-      "studio_prompt_tables",
-      "studio_mcp_tables",
-      "studio_initial_migration_sql",
-      "studio_storage_capability_manifest"
-    ],
+    "publicExports": [],
     "runtimeEntrypoints": [
       "Cargo.toml"
     ],
@@ -112,7 +89,7 @@
   "integration": {
     "authority": "Root SDKWork specs remain authoritative. Local specs may extend but must not contradict them.",
     "dependencyPolicy": "Consumers integrate through public package exports, declared runtime entrypoints, generated SDK clients, or documented adapters only.",
-    "sdkPolicy": "Generated SDK clients are injected through service/runtime boundaries; reusable modules must not create raw HTTP clients or manual auth headers.",
+    "sdkPolicy": "Generated SDK clients are injected through service/runtime boundaries; reusable UI must not create raw HTTP clients or manual auth headers.",
     "languagePolicy": "Language-specific packages follow their native manifest and build tools while preserving the same component contract."
   },
   "verification": {

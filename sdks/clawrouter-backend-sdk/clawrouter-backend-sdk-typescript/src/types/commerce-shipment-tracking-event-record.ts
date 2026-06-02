@@ -10,6 +10,8 @@ export interface CommerceShipmentTrackingEventRecord {
   event_code: string;
   /** Event time field on commerce shipment tracking event record. */
   event_time: string;
+  /** Id field on commerce shipment tracking event record. */
+  id?: string;
   /** Location field on commerce shipment tracking event record. */
   location?: string;
   /** Organization id field on commerce shipment tracking event record. */

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/log-tail@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-log-tail-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-log-tail-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd87be89203768ec9cb7e8cfb2a59dde5c1fccb4295bca9fd97c09496dac1fa5",

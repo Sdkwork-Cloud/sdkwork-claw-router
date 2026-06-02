@@ -3,6 +3,18 @@ use serde::{Deserialize, Serialize};
 /// Messaging template variant record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct MessagingTemplateVariantRecord {
+    /// Body template field on messaging template variant record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub body_template: Option<String>,
+
+    /// Channel field on messaging template variant record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel: Option<String>,
+
+    /// Content format field on messaging template variant record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub content_format: Option<String>,
+
     /// Created at field on messaging template variant record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -27,6 +39,10 @@ pub struct MessagingTemplateVariantRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub length_limit: Option<i64>,
 
+    /// Locale field on messaging template variant record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub locale: Option<String>,
+
     /// Metadata field on messaging template variant record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub metadata: Option<std::collections::HashMap<String, String>>,
@@ -35,9 +51,21 @@ pub struct MessagingTemplateVariantRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
 
+    /// Provider payload schema field on messaging template variant record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_payload_schema: Option<std::collections::HashMap<String, String>>,
+
+    /// Render options field on messaging template variant record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub render_options: Option<std::collections::HashMap<String, String>>,
+
     /// Status field on messaging template variant record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
+
+    /// Template version id field on messaging template variant record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub template_version_id: Option<String>,
 
     /// Tenant id field on messaging template variant record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

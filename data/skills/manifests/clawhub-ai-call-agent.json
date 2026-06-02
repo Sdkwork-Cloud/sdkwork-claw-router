@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-call-agent@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-call-agent-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-call-agent-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:092e7955378b7495d3b69adb42400940594c815a797b371f1458c9a276daba5b",

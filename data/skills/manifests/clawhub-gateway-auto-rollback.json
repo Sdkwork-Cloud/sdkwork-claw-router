@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gateway-auto-rollback@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gateway-auto-rollback-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gateway-auto-rollback-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9cfb29fab238fe7fee13b524fb837a99dbe1a6a981794c2f077fc5acbad9ce69",

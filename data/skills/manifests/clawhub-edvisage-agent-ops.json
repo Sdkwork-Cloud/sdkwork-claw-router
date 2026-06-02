@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edvisage-agent-ops@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-edvisage-agent-ops-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edvisage-agent-ops-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed3e14d937de2fd75a50ff883e22c34e0cb191b528bbb7608522843429172c16",

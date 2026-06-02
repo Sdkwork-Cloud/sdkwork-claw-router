@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inbox-monitoring@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-inbox-monitoring-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inbox-monitoring-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:30ac96017e590c42776ca7be8f2db6c7450ce04688a666e476cc63f7c1bd2513",

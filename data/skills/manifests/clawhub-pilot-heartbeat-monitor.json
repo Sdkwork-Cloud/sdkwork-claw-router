@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-heartbeat-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-heartbeat-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-heartbeat-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b252474ab983c66f639e933fe89a6436b14a0ed5e631f91e705228a7981ac980",

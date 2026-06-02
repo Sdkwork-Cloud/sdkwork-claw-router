@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-composer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-composer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-composer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1856c41fdd6b1c8aba1c9974500b3a84b10c8b51e5e458e1553b8faebab88fbb",

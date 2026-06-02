@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kemi-heartbeat-plugin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kemi-heartbeat-plugin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kemi-heartbeat-plugin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4dc1d0ddba6cd67971765eb55f2d737b86fa059195c26f9abe24bcf102b9f1d0",

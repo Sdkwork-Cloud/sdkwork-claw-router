@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/awesome-demo-web-build@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-awesome-demo-web-build-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-awesome-demo-web-build-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:de76542013753b5df4d66b1fb1e735c83632d763d690924475522fc333c85104",

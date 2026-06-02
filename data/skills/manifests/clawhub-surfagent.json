@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/surfagent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-surfagent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-surfagent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a3ed55a7cef829a623093bd0725f98bd027f1d681f9687f1387a1f08a38ae4e0",

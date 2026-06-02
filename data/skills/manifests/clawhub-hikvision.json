@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hikvision@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-hikvision-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hikvision-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8beb024a5cefa6759baee4eb6de73414848e94047d168a88bf08d061c3e92607",

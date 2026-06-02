@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/read-only-workspace-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-read-only-workspace-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-read-only-workspace-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c19976735b8861437fe241daa1f6009c5db9c43f4f8cf4483f65e11d0d660880",

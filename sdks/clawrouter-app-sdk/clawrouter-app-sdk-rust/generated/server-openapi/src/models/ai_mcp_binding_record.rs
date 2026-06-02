@@ -3,6 +3,10 @@ use serde::{Deserialize, Serialize};
 /// Ai mcp binding record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AiMcpBindingRecord {
+    /// Allowed tools field on ai mcp binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub allowed_tools: Option<std::collections::HashMap<String, String>>,
+
     /// Created at field on ai mcp binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -18,6 +22,14 @@ pub struct AiMcpBindingRecord {
     /// Deleted by field on ai mcp binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub deleted_by: Option<String>,
+
+    /// Denied tools field on ai mcp binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub denied_tools: Option<std::collections::HashMap<String, String>>,
+
+    /// Enabled field on ai mcp binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub enabled: Option<bool>,
 
     /// Id field on ai mcp binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -39,6 +51,14 @@ pub struct AiMcpBindingRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub owner_type: Option<String>,
 
+    /// Policy json field on ai mcp binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub policy_json: Option<std::collections::HashMap<String, String>>,
+
+    /// Priority field on ai mcp binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub priority: Option<i64>,
+
     /// Server id field on ai mcp binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub server_id: Option<String>,
@@ -46,6 +66,10 @@ pub struct AiMcpBindingRecord {
     /// Server revision id field on ai mcp binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub server_revision_id: Option<String>,
+
+    /// Snapshot json field on ai mcp binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub snapshot_json: Option<std::collections::HashMap<String, String>>,
 
     /// Status field on ai mcp binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

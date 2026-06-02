@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawhub-skill-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawhub-skill-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db2970d50b5b0efd6c24a8b7ed3a4b07390a9cddcbe356a1a6be61c75df193d0",

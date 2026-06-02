@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/static-site-cloner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-static-site-cloner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-static-site-cloner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9b6b536ce97359fd2babb0267b8da516cab8f0693c27a2bb2d4af1ae6b632182",

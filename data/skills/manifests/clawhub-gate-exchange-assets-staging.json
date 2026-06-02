@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gate-exchange-assets-staging@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-assets-staging-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gate-exchange-assets-staging-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1403cd4f731fc30236ef5f71978333ca0501f1f01f59ba5d259bfd459b260f48",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hydrate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hydrate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hydrate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d3cc3d808744604a3df41d22fbcb57e7e70bf3fd74bc2bc1dea888fd5234b08",

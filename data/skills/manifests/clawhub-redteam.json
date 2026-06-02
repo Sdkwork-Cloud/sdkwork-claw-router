@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/redteam@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-redteam-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-redteam-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7034143ee81addf7b50d73530eba0fea389cf271e498ff85544dd9d21646f27a",

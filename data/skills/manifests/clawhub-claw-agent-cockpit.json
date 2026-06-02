@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-agent-cockpit@1.2.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-agent-cockpit-1.2.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-agent-cockpit-1.2.7.json"
+      },
       "version": "1.2.7",
       "runtime": "metadata",
       "checksumHash": "sha256:c112dacdee5ecf8db178576b11ee1510a78b99ee172e6e6a9578a551b0d0d47c",

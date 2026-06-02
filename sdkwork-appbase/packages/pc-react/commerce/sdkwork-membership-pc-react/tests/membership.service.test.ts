@@ -6,6 +6,13 @@ import {
 } from "../../test-utils/commerce-service-mock";
 import { createSdkworkMembershipService } from "../src";
 
+const proLevelIcon = {
+  kind: "image",
+  publicUrl: "https://cdn.sdkwork.ai/memberships/pro.png",
+  source: "external_url",
+  url: "https://cdn.sdkwork.ai/memberships/pro.png",
+} as const;
+
 describe("sdkwork-membership-pc-react service", () => {
   beforeEach(() => {
     configureCommerceServiceMockSession({ authToken: "membership-auth-token" });
@@ -84,6 +91,7 @@ describe("sdkwork-membership-pc-react service", () => {
               },
               {
                 description: "Professional tier",
+                icon: proLevelIcon,
                 id: 3,
                 levelValue: 3,
                 name: "Pro",
@@ -159,6 +167,7 @@ describe("sdkwork-membership-pc-react service", () => {
       { isCurrent: false, name: "Plus" },
       { isCurrent: true, name: "Pro" },
     ]);
+    expect(dashboard.levels[2].icon).toEqual(proLevelIcon);
     expect(dashboard.benefits[0]).toMatchObject({
       claimed: true,
       id: "membership-benefit-2",

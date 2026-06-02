@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proxymock@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-proxymock-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proxymock-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a6821aa26f334c940a1aa4bd2487433d1939c09935c12a8d21553a76f618c074",

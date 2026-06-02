@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mend@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-mend-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mend-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:3afaff52af458928f91d18f016c3a8fd065ff55421cc3002191e0ebb1028c255",

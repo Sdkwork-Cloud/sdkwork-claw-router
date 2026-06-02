@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chess-coach@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chess-coach-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chess-coach-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a4b0fbed70db344d4fc085e1b5ffbf497a7c75e1ab70cdf97f42ccf6476c41dc",

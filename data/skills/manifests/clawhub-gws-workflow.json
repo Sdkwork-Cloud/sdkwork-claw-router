@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gws-workflow@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-gws-workflow-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gws-workflow-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:75396d5a16274893b8d7831dc7667c2fa75175d7d7f0d437f74b022e29c27fae",

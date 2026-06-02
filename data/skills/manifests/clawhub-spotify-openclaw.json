@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spotify-openclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spotify-openclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spotify-openclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10f48aa478cefae9d1b8210d890016f9756c0cb2678649cedb42676680e7ed57",

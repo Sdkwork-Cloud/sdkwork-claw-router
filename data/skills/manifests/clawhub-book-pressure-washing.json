@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-pressure-washing@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-pressure-washing-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-pressure-washing-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f4db2b0d232bcd2dee5548f923b3ebd1747c6e39ba8e695f71ba45d3c13b197b",

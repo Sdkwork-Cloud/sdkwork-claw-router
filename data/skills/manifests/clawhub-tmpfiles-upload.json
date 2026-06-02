@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tmpfiles-upload@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tmpfiles-upload-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tmpfiles-upload-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9cdf7c92b81c2f895bc0270c7e65e2a960caea1e9aaf21c5fb7547e743fb0720",

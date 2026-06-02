@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/easyjet-airline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-easyjet-airline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-easyjet-airline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2446c8e4fef723feff569673071418ba15ebab52c60023087b2ea46ac51562c4",

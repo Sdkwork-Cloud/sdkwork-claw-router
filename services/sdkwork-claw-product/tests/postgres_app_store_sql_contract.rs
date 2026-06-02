@@ -1,5 +1,6 @@
 const POSTGRES_APP_STORE: &str =
     include_str!("../src/infrastructure/sql/postgres/app_store_read_store.rs");
+const APP_CATALOG_MAPPING: &str = include_str!("../src/infrastructure/sql/app_catalog_mapping.rs");
 
 fn compact_sql(value: &str) -> String {
     value.split_whitespace().collect::<Vec<_>>().join(" ")
@@ -87,15 +88,35 @@ fn app_store_sql_returns_contract_projection_fields() {
         "AS id",
         "AS name",
         "AS description",
-        "AS icon_url",
+        "AS icon_resource_snapshot",
         "AS app_type",
         "AS rating",
         "AS download_count",
-        "AS asset_url",
-        "AS artifact_url",
+        "AS asset_resource_snapshot",
+        "AS thumbnail_resource_snapshot",
+        "AS artifact_resource_snapshot",
         "AS artifact_size_bytes",
     ] {
         assert_sql_contains(POSTGRES_APP_STORE, expected);
+    }
+
+    assert!(
+        !POSTGRES_APP_STORE.contains("AS artifact_url"),
+        "Postgres app store SQL must read canonical artifact_resource_snapshot instead of legacy artifact_url"
+    );
+    assert!(
+        !POSTGRES_APP_STORE.contains("download_url"),
+        "Postgres app store SQL must not read plus_app.download_url; app artifacts must be MediaResource objects from artifact_resource_snapshot"
+    );
+}
+
+#[test]
+fn app_catalog_mapping_does_not_fallback_to_legacy_media_url_fields() {
+    for forbidden in ["artifactUrl", "\"assetUrl\"", "download_url"] {
+        assert!(
+            !APP_CATALOG_MAPPING.contains(forbidden),
+            "App catalog mapping must not fallback to legacy media field `{forbidden}`"
+        );
     }
 }
 

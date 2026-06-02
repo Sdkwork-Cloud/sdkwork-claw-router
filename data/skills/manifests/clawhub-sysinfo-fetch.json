@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sysinfo-fetch@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sysinfo-fetch-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sysinfo-fetch-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a80c1aae8e05f4e603b3efb52507219649924301ab34349c8eace2a3660b8b0c",

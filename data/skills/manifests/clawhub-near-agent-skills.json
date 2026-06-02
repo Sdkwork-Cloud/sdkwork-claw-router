@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/near-agent-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-near-agent-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-near-agent-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:473ef223b1e57dbcde5cd85c737f3f30b8c9a836f0cd7cd1261909fe33075fba",

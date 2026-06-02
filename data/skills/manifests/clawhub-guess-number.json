@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/guess-number@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-guess-number-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-guess-number-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:878192129f97700ff5d930179a4bfd4bea8cf398f41cd4b52b11880000e1f81b",

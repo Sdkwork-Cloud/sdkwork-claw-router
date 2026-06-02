@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/car-negotiator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-car-negotiator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-car-negotiator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f034c8776ef65a206daf4ebba162e3f826fbb41543d03bb75ff9f073d94fee4",

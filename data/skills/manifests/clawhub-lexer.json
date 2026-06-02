@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lexer@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-lexer-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lexer-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:088f3764d7cc454483243e5b2494e51e1a6048dfdfd3cf2a3697461fbaf70f5b",

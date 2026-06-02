@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/magento-admin@5.6.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-magento-admin-5.6.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-magento-admin-5.6.1.json"
+      },
       "version": "5.6.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6ba41b2f61efb6db9a1334bf04c7c15a613ddf5c8edd54dec61d446fd24627a4",

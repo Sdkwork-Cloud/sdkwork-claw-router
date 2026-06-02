@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gov-disaster-intel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gov-disaster-intel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gov-disaster-intel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1e9713e2b5ffe76254af03927cd2eb57ca05bc99be09d00b5c4492234dc13098",

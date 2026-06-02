@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-lens@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-lens-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-lens-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ff73209ebd5e7691f8566fe028ecf9685164fdcd0c0c6aeb80bbfdafac97f371",

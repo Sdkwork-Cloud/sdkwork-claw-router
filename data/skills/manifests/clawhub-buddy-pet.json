@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buddy-pet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-buddy-pet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buddy-pet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdc6942ac392f231e2a21054febd22511651ee9f9b84675c9d3369c9f8ef564c",

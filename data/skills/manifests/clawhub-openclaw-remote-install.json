@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-remote-install@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-remote-install-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-remote-install-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7d4ab63b67f8bb68e4b114d2eac907847de249ecef0f7d67e7db225d3aa12769",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sinopec-oil-price@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sinopec-oil-price-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sinopec-oil-price-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ad78b364ab223633d2d6ec76c3808c196a99c9c4eed770ab9e67b1ecb3c817de",

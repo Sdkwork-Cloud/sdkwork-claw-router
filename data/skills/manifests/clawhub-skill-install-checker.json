@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-install-checker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-install-checker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-install-checker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16bc827d6343ea4e08ff2df24c16d540556aaff192ef5a6dcca3c316d77c39df",

@@ -9,14 +9,21 @@ public class AiMcpToolRecord {
     private String deletedBy;
     private String description;
     private String discoveredAt;
+    private Boolean enabled;
     private String id;
+    private Map<String, String> inputSchema;
     private String lastInvokedAt;
     private Map<String, String> metadata;
     private String name;
     private String organizationId;
+    private Map<String, String> outputSchema;
+    private Map<String, String> rateLimitPolicy;
+    private Boolean requiresApproval;
+    private String riskLevel;
     private String schemaHash;
     private String serverId;
     private String serverRevisionId;
+    private Integer sortWeight;
     private String status;
     private String tenantId;
     private String toolKey;
@@ -72,12 +79,28 @@ public class AiMcpToolRecord {
         this.discoveredAt = discoveredAt;
     }
 
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
     public String getId() {
         return this.id;
     }
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Map<String, String> getInputSchema() {
+        return this.inputSchema;
+    }
+
+    public void setInputSchema(Map<String, String> inputSchema) {
+        this.inputSchema = inputSchema;
     }
 
     public String getLastInvokedAt() {
@@ -112,6 +135,38 @@ public class AiMcpToolRecord {
         this.organizationId = organizationId;
     }
 
+    public Map<String, String> getOutputSchema() {
+        return this.outputSchema;
+    }
+
+    public void setOutputSchema(Map<String, String> outputSchema) {
+        this.outputSchema = outputSchema;
+    }
+
+    public Map<String, String> getRateLimitPolicy() {
+        return this.rateLimitPolicy;
+    }
+
+    public void setRateLimitPolicy(Map<String, String> rateLimitPolicy) {
+        this.rateLimitPolicy = rateLimitPolicy;
+    }
+
+    public Boolean getRequiresApproval() {
+        return this.requiresApproval;
+    }
+
+    public void setRequiresApproval(Boolean requiresApproval) {
+        this.requiresApproval = requiresApproval;
+    }
+
+    public String getRiskLevel() {
+        return this.riskLevel;
+    }
+
+    public void setRiskLevel(String riskLevel) {
+        this.riskLevel = riskLevel;
+    }
+
     public String getSchemaHash() {
         return this.schemaHash;
     }
@@ -134,6 +189,14 @@ public class AiMcpToolRecord {
 
     public void setServerRevisionId(String serverRevisionId) {
         this.serverRevisionId = serverRevisionId;
+    }
+
+    public Integer getSortWeight() {
+        return this.sortWeight;
+    }
+
+    public void setSortWeight(Integer sortWeight) {
+        this.sortWeight = sortWeight;
     }
 
     public String getStatus() {

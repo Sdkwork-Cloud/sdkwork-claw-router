@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawlancer@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawlancer-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawlancer-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ce366810a857043b55cb4ab0cf4cf93ace134baccb9fcf85d336083e90246f81",

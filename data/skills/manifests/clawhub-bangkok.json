@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bangkok@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bangkok-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bangkok-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0eda3427a242eff86b047679f8d4684a2a5e313b20c17a687a4ac0616dd9fc0d",

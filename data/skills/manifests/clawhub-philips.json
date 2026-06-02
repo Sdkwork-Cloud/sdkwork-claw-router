@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/philips@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-philips-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-philips-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f992611ed945c256268c169c39f5a1510b9df411d3403b392d77b6954ef7d392",

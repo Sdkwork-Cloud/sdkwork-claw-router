@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-collaboration@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-collaboration-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-collaboration-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e5df30f84b64bf1d5b45c6830c2da69d842fe8ecd0ca1bd508bc2bc08adfe2d5",

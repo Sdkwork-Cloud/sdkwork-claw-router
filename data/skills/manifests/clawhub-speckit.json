@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/speckit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-speckit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-speckit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df516e9c5dca4aaceab66cee744cb73ec168cb5f16a4f81034dd210d6279d0d7",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-evolution@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-evolution-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-evolution-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1460452091fe761c5796da0e6ed3e5005472ed58cd2515216610787267df9d7a",

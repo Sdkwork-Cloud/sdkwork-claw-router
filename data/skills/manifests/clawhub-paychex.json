@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paychex@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-paychex-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paychex-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1b246d1c772e0f56621c335cd4f24b13e14b21a21a980bb0212d0cca72ade9ea",

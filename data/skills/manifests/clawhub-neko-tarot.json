@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/neko-tarot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-neko-tarot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-neko-tarot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c29ffaf203a05e5ac89aea72bfed25f13b743e31ecf5bc3cbcd0a60f6d9c8db",

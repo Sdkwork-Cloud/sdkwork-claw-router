@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-security-policy-check@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-security-policy-check-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-security-policy-check-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f7be8adc519dfe59a6ef29ad5ed2082e4b289bde1587076bc28a26f3fb17ec71",

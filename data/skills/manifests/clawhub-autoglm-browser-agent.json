@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/autoglm-browser-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-autoglm-browser-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-autoglm-browser-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4659b31f6a363b410c2dd35a46edf0d2a75d9e4ca6e915bb8ec9498d54454116",

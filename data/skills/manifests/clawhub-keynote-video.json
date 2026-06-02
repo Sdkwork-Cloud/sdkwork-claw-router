@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/keynote-video@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-keynote-video-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-keynote-video-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0c7e63808407ba9de12613246b51078c12cdbdf8f566f905c924a1af4276fb37",

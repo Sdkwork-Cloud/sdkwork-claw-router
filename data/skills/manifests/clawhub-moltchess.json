@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltchess@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltchess-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltchess-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:20ebade0fa8c048ae69e1fa9b8795b188ef304e6537e52d016ab9bad799583d8",

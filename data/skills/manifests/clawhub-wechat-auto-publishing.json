@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-auto-publishing@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-auto-publishing-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-auto-publishing-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:50c46d3cf06b86c93c9cb39f048c7cc02f883100d58d3884ae6cce5511e5678a",

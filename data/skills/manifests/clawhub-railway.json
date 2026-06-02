@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/railway@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-railway-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-railway-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d812c7b81ccb94ad31558bcfe77e0f4781f2ae846a01eaedc94cabaa25608e6",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-quote-overlay@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-quote-overlay-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-quote-overlay-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d139458ae1fda69cf2f52d71c7abe738f9d03ff4dad0d9a1302b87b5f2cb8349",

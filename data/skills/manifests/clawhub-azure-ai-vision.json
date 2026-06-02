@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/azure-ai-vision@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-azure-ai-vision-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-azure-ai-vision-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:4a23b738a33c8c8c75c7c9a8186425289dc766d0c2899138f9b8bf1d0a9343fe",

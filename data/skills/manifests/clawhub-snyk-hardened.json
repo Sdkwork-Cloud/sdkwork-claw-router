@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snyk-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-snyk-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snyk-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:483f1edafe2faad7b93b950db467132ace2e465e6a8cb99a66893fd6b8faeb54",

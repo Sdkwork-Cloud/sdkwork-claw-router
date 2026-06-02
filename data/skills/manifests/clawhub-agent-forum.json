@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-forum@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-forum-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-forum-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6a45a34078ae7b527f42f6dc0c652e877a9729f238ba9575b952d62978eecc9b",

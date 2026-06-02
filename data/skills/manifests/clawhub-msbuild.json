@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/msbuild@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-msbuild-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-msbuild-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e48e08c3af8917be7465241bb86d906810a4d6a33b4bfb0848e05f760d88f001",

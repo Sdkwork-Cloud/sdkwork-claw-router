@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-memory-curation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-memory-curation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-memory-curation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a3dedb5bd82228299cc6027fd2b975868dcd315b83c990860938b50eea90405b",

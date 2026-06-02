@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weaviate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weaviate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weaviate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f64be6a302e7b11b0f77f8ba8042fbac2b1e204ef93e23bb4be4060002425391",

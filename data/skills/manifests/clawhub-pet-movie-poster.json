@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pet-movie-poster@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-pet-movie-poster-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pet-movie-poster-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:584843e635ba0da61f227eadd191ed13084ba155506e192222e463521a739c66",

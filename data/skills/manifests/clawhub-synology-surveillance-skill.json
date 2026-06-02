@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/synology-surveillance-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-synology-surveillance-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-synology-surveillance-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1125563489d6ead136e1cf0bbb3754bc2d8f0feff828127650248c0bb82edb99",

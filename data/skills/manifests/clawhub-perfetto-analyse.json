@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/perfetto-analyse@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-perfetto-analyse-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-perfetto-analyse-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a873b8cb9fb804c21e920c42737910ec978b1f189ebac67148ef8b266db273b3",

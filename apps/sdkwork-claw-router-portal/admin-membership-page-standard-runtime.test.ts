@@ -11,6 +11,7 @@ test("admin membership pages share standardized table and action controls", () =
   const shellSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/components/MembershipAdminPageShell.tsx");
   const tablePages = [
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackagesPage.tsx",
+    "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipVipPackagesPage.tsx",
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackageGroupsPage.tsx",
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPlansPage.tsx",
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipMembersPage.tsx",
@@ -19,6 +20,7 @@ test("admin membership pages share standardized table and action controls", () =
   ];
   const mutationPages = [
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackagesPage.tsx",
+    "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipVipPackagesPage.tsx",
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackageGroupsPage.tsx",
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPlansPage.tsx",
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipMembersPage.tsx",
@@ -26,6 +28,7 @@ test("admin membership pages share standardized table and action controls", () =
   ];
   const destructivePages = [
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackagesPage.tsx",
+    "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipVipPackagesPage.tsx",
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackageGroupsPage.tsx",
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPlansPage.tsx",
     "./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipRechargePackagesPage.tsx",
@@ -68,3 +71,163 @@ test("admin membership pages share standardized table and action controls", () =
     assert.doesNotMatch(source, /window\.confirm\(/, `${pageFile} must not call window.confirm directly`);
   }
 });
+
+test("admin membership package sidebar exposes package group CRUD controls", () => {
+  const packagesPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackagesPage.tsx");
+  const dialogSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/components/MembershipDialog.tsx");
+
+  for (const expectedImport of [
+    "MembershipDialog",
+    "MembershipPackageGroupDrawerForm",
+    "createMembershipAdminPackageGroup",
+    "updateMembershipAdminPackageGroup",
+    "deleteMembershipAdminPackageGroup",
+  ]) {
+    assert.ok(packagesPageSource.includes(expectedImport), `packages page must use ${expectedImport}`);
+  }
+
+  for (const expectedMarker of [
+    "data-admin-membership-package-groups-header",
+    "data-admin-membership-package-group-add",
+    "data-admin-membership-package-group-edit",
+    "data-admin-membership-package-group-delete",
+    "isGroupDialogOpen",
+    "openCreateGroupDialog",
+    "openEditGroupDialog",
+    "handleSaveGroup",
+    "handleDeleteGroup",
+  ]) {
+    assert.ok(packagesPageSource.includes(expectedMarker), `missing package group sidebar CRUD marker: ${expectedMarker}`);
+  }
+
+  assert.match(packagesPageSource, /confirmMembershipAction\(/);
+  assert.doesNotMatch(packagesPageSource, /window\.confirm\(/);
+  assert.match(packagesPageSource, /<MembershipDialog[\s\S]*<MembershipPackageGroupDrawerForm/);
+  assert.match(dialogSource, /export function MembershipDialog\b/);
+  assert.match(dialogSource, /role="dialog"/);
+  assert.match(dialogSource, /aria-modal="true"/);
+});
+
+test("admin membership center exposes VIP package CRUD management", () => {
+  const appSource = readPortalFile("./src/App.tsx");
+  const registrySource = readPortalFile("./src/adminModuleRegistry.ts");
+  const membershipsIndexSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/index.tsx");
+  const vipPackagesPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipVipPackagesPage.tsx");
+  const navigationMessagesSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/core-navigation.ts");
+  const membershipMessagesSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin-commerce/memberships.ts");
+
+  assert.match(appSource, /path="memberships\/vip-packages"/, "admin router must register VIP packages route");
+  assert.match(appSource, /<MembershipsAdmin sectionId="vipPackages" \/>/, "VIP packages route must render membership admin vipPackages section");
+  assert.match(registrySource, /path: '\/admin\/memberships\/vip-packages'/, "admin menu must expose VIP packages entry");
+  assert.match(registrySource, /labelKey: 'admin\.menu\.membershipVipPackages'/, "admin menu must use VIP packages navigation label");
+
+  assert.match(membershipsIndexSource, /\|\s+'vipPackages'/, "membership section id must include vipPackages");
+  assert.match(membershipsIndexSource, /sectionId === 'vipPackages'/, "membership admin must resolve vipPackages section");
+  assert.match(membershipsIndexSource, /<MembershipVipPackagesPage \/>/, "membership admin must render VIP packages page");
+
+  for (const expectedImport of [
+    "fetchMembershipAdminPackageCatalog",
+    "createMembershipAdminPackage",
+    "updateMembershipAdminPackage",
+    "deleteMembershipAdminPackage",
+    "MembershipPackageDrawerForm",
+    "MembershipDrawer",
+    "MembershipTablePanel",
+    "MembershipIconActionButton",
+    "confirmMembershipAction",
+  ]) {
+    assert.ok(vipPackagesPageSource.includes(expectedImport), `VIP packages page must use ${expectedImport}`);
+  }
+
+  for (const expectedMarker of [
+    "data-admin-membership-vip-packages-page",
+    "data-admin-membership-vip-package-add",
+    "data-admin-membership-vip-package-edit",
+    "data-admin-membership-vip-package-delete",
+    "handleSavePackage",
+    "handleDeletePackage",
+  ]) {
+    assert.ok(vipPackagesPageSource.includes(expectedMarker), `missing VIP package CRUD marker: ${expectedMarker}`);
+  }
+
+  assert.match(vipPackagesPageSource, /createMembershipAdminPackage\(input\)/);
+  assert.match(vipPackagesPageSource, /updateMembershipAdminPackage\(editingPackage\.id,\s*input\)/);
+  assert.match(vipPackagesPageSource, /deleteMembershipAdminPackage\(item\.id\)/);
+  assert.match(vipPackagesPageSource, /translationKeyPrefix="admin\.commerce\.memberships\.vipPackages"/);
+  assert.match(vipPackagesPageSource, /confirmMembershipAction\(/);
+  assert.doesNotMatch(vipPackagesPageSource, /window\.confirm\(/);
+  assert.doesNotMatch(vipPackagesPageSource, /\bfetch\(/);
+  assert.doesNotMatch(vipPackagesPageSource, /\baxios\b/);
+
+  assert.match(navigationMessagesSource, /"admin\.menu\.membershipVipPackages"/);
+  assert.match(membershipMessagesSource, /"admin\.commerce\.memberships\.vipPackages\.title"/);
+  assert.match(membershipMessagesSource, /"admin\.commerce\.memberships\.vipPackages\.form\.submit"/);
+  assert.match(membershipMessagesSource, /"admin\.commerce\.memberships\.vipPackages\.form\.updateSubmit"/);
+});
+
+test("admin membership package groups are sort-weight ordered and movable", async () => {
+  const packagesPageSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/pages/MembershipPackagesPage.tsx");
+  const membershipsServiceSource = readPortalFile("./packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts");
+  const membershipsService = await import("./packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts");
+
+  assert.match(membershipsServiceSource, /export function sortMembershipAdminPackageGroups\b/);
+  assert.match(membershipsServiceSource, /export function moveMembershipAdminPackageGroup\b/);
+  assert.match(membershipsServiceSource, /sortMembershipAdminPackageGroups\(Array\.from\(groupMap\.values\(\)\)\)/);
+  assert.match(membershipsServiceSource, /sortMembershipAdminPackageGroups\(groups\.map\(\(group\) => \(\{/);
+
+  for (const expectedMarker of [
+    "ArrowUp",
+    "ArrowDown",
+    "handleMoveGroup",
+    "moveMembershipPackageGroup",
+    "buildPackageGroupMutationInput",
+    "data-admin-membership-package-group-move-up",
+    "data-admin-membership-package-group-move-down",
+  ]) {
+    assert.ok(packagesPageSource.includes(expectedMarker), `missing package group move marker: ${expectedMarker}`);
+  }
+
+  assert.match(packagesPageSource, /moveMembershipPackageGroup\(groups, group\.id, direction\)/);
+  assert.match(packagesPageSource, /updateMembershipAdminPackageGroup\(group\.id,\s*buildPackageGroupMutationInput\(group\)\)/);
+  assert.match(packagesPageSource, /disabled=\{index === 0 \|\| movingGroupId === group\.id\}/);
+  assert.match(packagesPageSource, /disabled=\{index === groups\.length - 1 \|\| movingGroupId === group\.id\}/);
+
+  const groups = [
+    membershipPackageGroup({ id: "year", code: "year", name: "Yearly", sortWeight: 30 }),
+    membershipPackageGroup({ id: "month-b", code: "month-b", name: "Monthly B", sortWeight: 10 }),
+    membershipPackageGroup({ id: "month-a", code: "month-a", name: "Monthly A", sortWeight: 10 }),
+  ];
+
+  const sorted = membershipsService.sortMembershipAdminPackageGroups(groups);
+
+  assert.deepEqual(sorted.map((group) => group.id), ["month-a", "month-b", "year"]);
+  assert.deepEqual(groups.map((group) => group.id), ["year", "month-b", "month-a"]);
+
+  const movedDown = membershipsService.moveMembershipAdminPackageGroup(groups, "month-a", "down");
+  assert.deepEqual(movedDown.map((group) => [group.id, group.sortWeight]), [
+    ["month-b", 10],
+    ["month-a", 20],
+    ["year", 30],
+  ]);
+
+  const movedUp = membershipsService.moveMembershipAdminPackageGroup(groups, "year", "up");
+  assert.deepEqual(movedUp.map((group) => [group.id, group.sortWeight]), [
+    ["month-a", 10],
+    ["year", 20],
+    ["month-b", 30],
+  ]);
+});
+
+function membershipPackageGroup(overrides: Record<string, unknown>) {
+  return {
+    id: "",
+    code: "",
+    name: "",
+    billingCycle: "month",
+    durationDays: 30,
+    sortWeight: 0,
+    status: "active",
+    packageCount: 0,
+    ...overrides,
+  };
+}

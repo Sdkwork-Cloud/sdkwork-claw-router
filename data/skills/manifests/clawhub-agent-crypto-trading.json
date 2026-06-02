@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-crypto-trading@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-crypto-trading-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-crypto-trading-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e91140e3eb4487ec3f81a1cbcaed2384bfdd4774c4348f6d24953e7be2246444",

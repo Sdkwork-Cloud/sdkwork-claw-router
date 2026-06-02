@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opennews-mcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-opennews-mcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opennews-mcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98d662ffb0048c6f74d85e50a9352d746107f5e3a80e156b07bc7ac57c8140f0",

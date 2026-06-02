@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clean-desktop@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clean-desktop-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clean-desktop-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75c539403b906f5a721165d4c91bce03084f1f11ca74b29ff855b8e6d0e603e3",

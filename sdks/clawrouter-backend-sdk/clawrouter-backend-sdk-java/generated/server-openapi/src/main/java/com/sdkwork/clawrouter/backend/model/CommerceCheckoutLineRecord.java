@@ -6,11 +6,13 @@ public class CommerceCheckoutLineRecord {
     private String checkoutSessionId;
     private String createdAt;
     private String fulfillmentType;
+    private String id;
     private String inventoryReservationId;
     private String organizationId;
     private Map<String, String> priceSnapshotJson;
     private Map<String, String> promotionSnapshotJson;
     private String purchaseType;
+    private String quantity;
     private String skuId;
     private String tenantId;
 
@@ -36,6 +38,14 @@ public class CommerceCheckoutLineRecord {
 
     public void setFulfillmentType(String fulfillmentType) {
         this.fulfillmentType = fulfillmentType;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getInventoryReservationId() {
@@ -76,6 +86,14 @@ public class CommerceCheckoutLineRecord {
 
     public void setPurchaseType(String purchaseType) {
         this.purchaseType = purchaseType;
+    }
+
+    public String getQuantity() {
+        return this.quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
     public String getSkuId() {

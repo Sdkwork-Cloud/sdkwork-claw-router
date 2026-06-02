@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jules-cli@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-jules-cli-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jules-cli-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a18826800c64ddf2e1e54a53560bf148fc61923282a28a13f4d89429ded7c293",

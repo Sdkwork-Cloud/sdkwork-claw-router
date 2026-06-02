@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/upwave@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-upwave-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-upwave-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:9f8afdfd800eaa16990f7c94d267fd37989868af15fd373c296e1949b77be9f5",

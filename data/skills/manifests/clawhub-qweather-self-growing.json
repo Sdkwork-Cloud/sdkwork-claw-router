@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qweather-self-growing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qweather-self-growing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qweather-self-growing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:189aa8f33299f85a1f61f58354beaf30f262b88e90ed5a0f00a0643e8f4b0330",

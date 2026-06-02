@@ -10,7 +10,7 @@ use sdkwork_claw_product::infrastructure::sql::catalog::{
     PricingCatalogRows, RefreshableSqlPricingCatalog, SqlPricingCatalogSnapshot,
 };
 use sdkwork_claw_product::infrastructure::sql::rows::{
-    AiModelRow, ApiKeyGroupMetricSnapshotRow, ApiKeyGroupRow, GatewayAccessPolicyRow,
+    AiModelRow, ChannelGroupMetricSnapshotRow, ChannelGroupRow, GatewayAccessPolicyRow,
     GatewayApiKeyRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow, PricingPlanRow,
     ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
 };
@@ -219,18 +219,18 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "API key snapshot query must bind gateway keys to ai_channel_group through channel_group_id"
     );
     assert!(
-        PricingCatalogSql::load_api_key_groups().contains("ai_channel_group"),
-        "API key group snapshot query must load reusable AI channel groups"
+        PricingCatalogSql::load_channel_groups().contains("ai_channel_group"),
+        "channel group snapshot query must load reusable AI channel groups"
     );
     assert!(
-        PricingCatalogSql::load_api_key_group_metric_snapshots()
+        PricingCatalogSql::load_channel_group_metric_snapshots()
             .contains("ai_channel_group_metric_snapshot"),
-        "API key group metric snapshot query must load AI channel group metric projections"
+        "channel group metric snapshot query must load AI channel group metric projections"
     );
     assert!(
-        PricingCatalogSql::load_api_key_groups().contains("NULLIF(BTRIM(pricing_plan_code), '')")
-            && PricingCatalogSql::load_api_key_groups().contains("'standard'"),
-        "API key group snapshot query must default empty pricing_plan_code before runtime billing subject validation"
+        PricingCatalogSql::load_channel_groups().contains("NULLIF(BTRIM(pricing_plan_code), '')")
+            && PricingCatalogSql::load_channel_groups().contains("'standard'"),
+        "channel group snapshot query must default empty pricing_plan_code before runtime billing subject validation"
     );
     assert!(
         PricingCatalogSql::load_api_keys().contains("key_display_masked"),
@@ -647,7 +647,7 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
         quota_policy.quota_limit.unwrap().to_fixed_string(6)
     );
 
-    let metric_snapshot = ApiKeyGroupMetricSnapshotRow {
+    let metric_snapshot = ChannelGroupMetricSnapshotRow {
         group_id: 10,
         capacity_used: Some("37.500000".to_owned()),
         capacity_limit: Some("1000.000000".to_owned()),
@@ -664,7 +664,7 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
             .to_fixed_string(6)
     );
 
-    let group = ApiKeyGroupRow {
+    let group = ChannelGroupRow {
         id: 10,
         tenant_id: 10,
         organization_id: 20,
@@ -724,7 +724,10 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
     }
     .try_into_domain()
     .unwrap();
-    assert_eq!(RoutingPolicyScope::ApiKeyGroup, routing_policy.policy_scope);
+    assert_eq!(
+        RoutingPolicyScope::ChannelGroup,
+        routing_policy.policy_scope
+    );
     assert_eq!(Some(RoutingCapability::Chat), routing_policy.capability);
     assert_eq!(
         Some(RoutingFallbackMode::None),
@@ -761,7 +764,7 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
 
 #[test]
 fn row_mappers_reject_invalid_decimal_and_unknown_price_side() {
-    let invalid_group = ApiKeyGroupRow {
+    let invalid_group = ChannelGroupRow {
         id: 10,
         tenant_id: 10,
         organization_id: 20,
@@ -921,7 +924,7 @@ fn sql_catalog_snapshot_implements_pricing_catalog_from_database_rows() {
 
     let policies = snapshot.list_routing_policies();
     assert_eq!(1, policies.len());
-    assert_eq!(RoutingPolicyScope::ApiKeyGroup, policies[0].policy_scope);
+    assert_eq!(RoutingPolicyScope::ChannelGroup, policies[0].policy_scope);
     assert_eq!(Some(10), policies[0].subject_id);
 
     let rules = snapshot.list_routing_rules(9101);
@@ -1236,7 +1239,7 @@ fn priced_catalog_rows() -> PricingCatalogRows {
             default_markup_amount: "0.000000".to_owned(),
             currency: "USD".to_owned(),
         }],
-        api_key_groups: vec![ApiKeyGroupRow {
+        channel_groups: vec![ChannelGroupRow {
             id: 10,
             tenant_id: 10,
             organization_id: 20,
@@ -1273,7 +1276,7 @@ fn priced_catalog_rows() -> PricingCatalogRows {
             id: 900,
             quota_limit: Some("1000.000000".to_owned()),
         }],
-        api_key_group_metric_snapshots: vec![ApiKeyGroupMetricSnapshotRow {
+        channel_group_metric_snapshots: vec![ChannelGroupMetricSnapshotRow {
             group_id: 10,
             capacity_used: Some("37.500000".to_owned()),
             capacity_limit: Some("1000.000000".to_owned()),

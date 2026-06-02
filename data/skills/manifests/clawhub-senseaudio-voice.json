@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/senseaudio-voice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-senseaudio-voice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-senseaudio-voice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cd90a628f4c2a06098ba5d7acf1d0bd5e12748383f244e3deb9c91006c5ee224",

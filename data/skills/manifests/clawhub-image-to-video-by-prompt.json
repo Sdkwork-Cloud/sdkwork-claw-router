@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-to-video-by-prompt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-to-video-by-prompt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-to-video-by-prompt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d4c49c124345ba0c18601bec3cb4749ca2922a19a7b1de90e2bb22cf89468d82",

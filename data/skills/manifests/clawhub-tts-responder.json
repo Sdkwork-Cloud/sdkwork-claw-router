@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tts-responder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tts-responder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tts-responder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b08600f52793111080e20ada843ca8050133b84f5def2f73b16483d9838c17f",

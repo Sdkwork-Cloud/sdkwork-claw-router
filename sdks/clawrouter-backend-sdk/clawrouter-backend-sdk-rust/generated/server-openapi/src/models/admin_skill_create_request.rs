@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Admin skill create request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminSkillCreateRequest {
@@ -21,10 +23,9 @@ pub struct AdminSkillCreateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub config_schema: Option<std::collections::HashMap<String, String>>,
 
-    /// Cover image field on admin skill create request.
-    #[serde(rename = "coverImage")]
+    /// Cover field on admin skill create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cover_image: Option<String>,
+    pub cover: Option<MediaResource>,
 
     /// Currency field on admin skill create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -63,7 +64,7 @@ pub struct AdminSkillCreateRequest {
 
     /// Icon field on admin skill create request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Is builtin field on admin skill create request.
     #[serde(rename = "isBuiltin")]

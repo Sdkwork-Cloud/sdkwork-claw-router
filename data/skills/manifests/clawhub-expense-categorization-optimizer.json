@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/expense-categorization-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-expense-categorization-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-expense-categorization-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff6ee4e511f651d28773e16563fb9508cdabfb916f4837a562f41f2b517aecd1",

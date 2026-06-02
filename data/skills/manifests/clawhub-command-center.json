@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/command-center@1.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-command-center-1.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-command-center-1.4.1.json"
+      },
       "version": "1.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a9e9c6d4c731dfd31049a5bfe1fa9e3e3274f2dbc102c9170061768938b5da28",

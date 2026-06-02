@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rd-cost-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rd-cost-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rd-cost-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aca1b1068f3ad29c6be99dc5bcacc5b957ea7d3c8123ad471ad5d0f553cd811a",

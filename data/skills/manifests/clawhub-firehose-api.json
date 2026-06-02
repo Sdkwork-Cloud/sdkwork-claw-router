@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/firehose-api@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-firehose-api-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-firehose-api-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7522beb0c8cf91c90f7920ee87ad1800b48b744228db69d21dd72e7a6dd69e18",

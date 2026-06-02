@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boss-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boss-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boss-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdf287cc828c74a2f1663abb012528b55e308bd471f58847f8c7d332389450d6",

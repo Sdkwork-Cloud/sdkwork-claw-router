@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grist@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-grist-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grist-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:f951cad7639cbd6188cd9e80594359a4eca4febdd341a36dec5d670223de8a03",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/event-planner-os@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-event-planner-os-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-event-planner-os-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9081f4c91697f565c7a58d659fdd65a2cc9dc0f2de06363c7730f12ebc6da701",

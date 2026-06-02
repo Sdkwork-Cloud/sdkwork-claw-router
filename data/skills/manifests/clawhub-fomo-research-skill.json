@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fomo-research-skill@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fomo-research-skill-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fomo-research-skill-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5bf9628ebad9b5344bf826468e624cae7d78bc9e97e95698da4abbab16e4734",

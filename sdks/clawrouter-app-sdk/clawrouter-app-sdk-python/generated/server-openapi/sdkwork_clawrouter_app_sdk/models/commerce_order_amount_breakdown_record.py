@@ -13,3 +13,4 @@ class CommerceOrderAmountBreakdownRecord:
     original_amount: str
     payable_amount: str
     tenant_id: str
+    id: Optional[str] = None

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-history@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-history-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-history-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:86dcdc66acfbe20fb75059c7b226d0624b0fd5ba201a5eb394bde1180f7974a7",

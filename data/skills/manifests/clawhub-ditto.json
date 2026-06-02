@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ditto@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ditto-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ditto-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6edf58f8136ac75fab2b906926d7c4d2f8e7b6db32ef4dbd96cad2b90c6abed4",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audiopod@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-audiopod-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audiopod-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:80eb750f162cb1ff6659a9ebf843c06ec1c23c4d64a8eb95bc6f86600a2b1079",

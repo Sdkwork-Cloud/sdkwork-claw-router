@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pinecone@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pinecone-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pinecone-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b9d34c66181d23795b29d5f452e7975eb3ce81641820b4ccfddaa588ad96ee2b",

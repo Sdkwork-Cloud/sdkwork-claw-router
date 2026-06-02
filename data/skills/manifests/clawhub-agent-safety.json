@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-safety@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-safety-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-safety-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ae9a23ed6dc60e9ec425fefa87512d783f3670ac79ef53ee43f159de00e7a6b",

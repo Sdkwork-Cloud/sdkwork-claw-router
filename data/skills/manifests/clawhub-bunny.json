@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bunny@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bunny-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bunny-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9561870a7290bda16256f138384fc1b28f3ca219f5ee62c0fb3ba6852ca1c3c",

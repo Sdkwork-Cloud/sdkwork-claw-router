@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dosbox@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dosbox-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dosbox-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8fce0443274c1c36432806be3b29d24b685817adb44dfcb71f397d55d43eba0e",

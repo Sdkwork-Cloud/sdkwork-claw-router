@@ -2,8 +2,8 @@
 export interface CommerceProductSpuMutationRequest {
   /** Brand field on commerce product spu mutation request. */
   brand?: string | null;
-  /** Category id field on commerce product spu mutation request. */
-  categoryId?: string | null;
+  /** Category ids field on commerce product spu mutation request. */
+  categoryIds?: string[];
   /** Description field on commerce product spu mutation request. */
   description?: string | null;
   /** Product type field on commerce product spu mutation request. */

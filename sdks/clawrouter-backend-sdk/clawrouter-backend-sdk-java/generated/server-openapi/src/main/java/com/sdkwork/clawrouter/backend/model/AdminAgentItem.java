@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class AdminAgentItem {
-    private String avatarUrl;
+    private MediaResource avatar;
     private AdminAgentCapabilities capabilities;
     private String code;
     private String createdAt;
@@ -16,12 +16,12 @@ public class AdminAgentItem {
     private String updatedAt;
     private String visibility;
 
-    public String getAvatarUrl() {
-        return this.avatarUrl;
+    public MediaResource getAvatar() {
+        return this.avatar;
     }
 
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
+    public void setAvatar(MediaResource avatar) {
+        this.avatar = avatar;
     }
 
     public AdminAgentCapabilities getCapabilities() {

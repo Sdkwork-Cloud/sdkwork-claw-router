@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pricing-calc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pricing-calc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pricing-calc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de00588aea078dd0394b45a505c20db18dbae0866d14a9913dd0562b2775d0d0",

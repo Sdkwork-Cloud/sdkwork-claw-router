@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-favorites@1.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-favorites-1.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-favorites-1.1.4.json"
+      },
       "version": "1.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:285167246e637061c2873c6db9401e4332e24d1f587e8ca9d29c9d0055eb2e08",

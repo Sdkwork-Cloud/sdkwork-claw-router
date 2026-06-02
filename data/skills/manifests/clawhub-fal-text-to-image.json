@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fal-text-to-image@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fal-text-to-image-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fal-text-to-image-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a88e1f68028347bdb7b06d0f0744e438cfec5c461569de0fa64e8531c436a7a",

@@ -13,6 +13,10 @@ import {
 } from './api-result.ts';
 import { requiredSafePathSegment } from './sdk-request-boundary.ts';
 import { getClawRouterBackendSdkClient } from './sdk-clients.ts';
+import {
+  readMediaResource,
+  type ClawRouterMediaResource,
+} from './media-resource.ts';
 import type {
   AdminSkillCategoryCreateRequest,
   AdminSkillCategoryUpdateRequest,
@@ -23,7 +27,7 @@ export interface AdminCategoryOption {
   name: string;
   code: string;
   description: string;
-  icon: string;
+  icon?: ClawRouterMediaResource;
   parentId: string | null;
   path: string;
   sortWeight: number;
@@ -32,11 +36,31 @@ export interface AdminCategoryOption {
   visible: boolean;
 }
 
-export interface AdminAiCategoryCreateInput extends AdminSkillCategoryCreateRequest {
+export interface AdminAiCategoryCreateInput {
   name: string;
+  code?: string;
+  description?: string;
+  icon?: ClawRouterMediaResource;
+  parentId?: string | null;
+  path?: string;
+  sortWeight?: number;
+  status?: number;
+  type?: number;
+  visible?: boolean;
 }
 
-export interface AdminAiCategoryUpdateInput extends AdminSkillCategoryUpdateRequest {}
+export interface AdminAiCategoryUpdateInput {
+  name?: string;
+  code?: string | null;
+  description?: string | null;
+  icon?: ClawRouterMediaResource;
+  parentId?: string | null;
+  path?: string | null;
+  sortWeight?: number;
+  status?: number;
+  type?: number;
+  visible?: boolean;
+}
 
 export async function listAdminAiCategoryOptions(): Promise<AdminCategoryOption[]> {
   const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.list();
@@ -137,7 +161,7 @@ function readAdminCategoryOption(value: unknown): AdminCategoryOption {
     name: readRequiredString(value, 'name', 'plus_category name is required'),
     code: readString(value, 'code'),
     description: readString(value, 'description'),
-    icon: readString(value, 'icon'),
+    icon: readMediaResource(value.icon),
     parentId: readNullableString(value, 'parentId'),
     path: readString(value, 'path'),
     sortWeight: readNonNegativeInteger(value, 'sortWeight'),
@@ -153,7 +177,7 @@ function normalizeAdminAiCategoryCreateInput(input: AdminAiCategoryCreateInput):
     name: requiredText(input.name, 'name', 255),
     code: optionalText(input.code, 'code', 128),
     description: optionalText(input.description, 'description', 512),
-    icon: optionalText(input.icon, 'icon', 255),
+    icon: input.icon,
     parentId: normalizeNullableText(input.parentId, 'parentId', 128),
     path: optionalText(input.path, 'path', 1024),
     sortWeight: optionalNonNegativeInteger(input.sortWeight, 'sortWeight'),
@@ -169,7 +193,7 @@ function normalizeAdminAiCategoryUpdateInput(input: AdminAiCategoryUpdateInput):
     name: optionalText(input.name, 'name', 255),
     code: normalizeNullableText(input.code, 'code', 128),
     description: normalizeNullableText(input.description, 'description', 512),
-    icon: normalizeNullableText(input.icon, 'icon', 255),
+    icon: input.icon,
     parentId: normalizeNullableText(input.parentId, 'parentId', 128),
     path: normalizeNullableText(input.path, 'path', 1024),
     sortWeight: optionalNonNegativeInteger(input.sortWeight, 'sortWeight'),

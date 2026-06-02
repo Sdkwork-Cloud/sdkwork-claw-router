@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drawio-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-drawio-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drawio-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7f71059bd95e734f6e6d32684ac63f05b2e15ee0a7a8b78003021375d85f4065",

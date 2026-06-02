@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vibes-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-vibes-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vibes-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f78c4b69aa52aff42223bdb7d59b81e73eef961cb025defb30c18b6094b56bea",

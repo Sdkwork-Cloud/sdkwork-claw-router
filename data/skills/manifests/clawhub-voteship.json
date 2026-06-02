@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voteship@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voteship-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voteship-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:652f40436ac7db5f1cfd9b52a1b72babb1295e23ebb6d50563b41bb3d3f9905b",

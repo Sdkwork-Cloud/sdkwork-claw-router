@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/raspberry-pi-gpio@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-raspberry-pi-gpio-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-raspberry-pi-gpio-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31ef6b50065e8393a3fed07e437003b0a02ba312e1de4d5739c8d070c271eb1e",

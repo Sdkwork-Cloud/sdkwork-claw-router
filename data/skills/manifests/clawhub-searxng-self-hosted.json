@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/searxng-self-hosted@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-searxng-self-hosted-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-searxng-self-hosted-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:781c737d9931ce614029ae2238c923f6929dcbbe08b9ec1cf703373015d948ff",

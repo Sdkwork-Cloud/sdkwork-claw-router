@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-dictionary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-dictionary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-dictionary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:81019e79c4fca453b2c1e722be513264791eaf3f2a14a8408d5db779c3761c50",

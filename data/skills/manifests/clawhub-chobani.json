@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chobani@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chobani-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chobani-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:32d7032a9f1a77d6af0bd1bc83ee255ccddaf9a15ce2832a18082954a37c3c84",

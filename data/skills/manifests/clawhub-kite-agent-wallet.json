@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kite-agent-wallet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kite-agent-wallet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kite-agent-wallet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:773220b8189ab3a896daf7179d2547c6c5edaf4ba2a7510f0e7773100534b005",

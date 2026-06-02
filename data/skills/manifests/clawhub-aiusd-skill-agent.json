@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aiusd-skill-agent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-aiusd-skill-agent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aiusd-skill-agent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c1ee9e1ece1ac2a11431f34f12a88824662ac2da1b9224a04eb6ffcd5d4baf09",

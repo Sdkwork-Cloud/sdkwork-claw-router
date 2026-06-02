@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/myvibe-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-myvibe-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-myvibe-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a2137f8c1237729377884e4b4cf85c3c8612565a3ba8659d2691dfa75f0fe58",

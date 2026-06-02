@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-compress@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-compress-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-compress-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca0152e32bf7b323625c437a2144fcfc401dce7ba7cb5e10b6905e3b8060ae4d",

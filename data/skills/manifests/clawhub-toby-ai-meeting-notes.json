@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-ai-meeting-notes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-ai-meeting-notes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-ai-meeting-notes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dfd25611feba59adcc8854bf4d7d29df7d79db9534fccad248bcf1539e473464",

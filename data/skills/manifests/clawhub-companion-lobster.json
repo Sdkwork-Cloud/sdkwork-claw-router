@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/companion-lobster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-companion-lobster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-companion-lobster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:accf097f266563c18ee90e949294b2a51ca4b2175532780dd3f99d23e60f4ab6",

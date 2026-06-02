@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/autoclaw-browser@6.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-autoclaw-browser-6.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-autoclaw-browser-6.1.2.json"
+      },
       "version": "6.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7664029558bb4332292e5b819e487ec327781cfca63a8198ec2e841f326c10c0",

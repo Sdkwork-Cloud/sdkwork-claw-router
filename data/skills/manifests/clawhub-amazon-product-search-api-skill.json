@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-product-search-api-skill@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-product-search-api-skill-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-product-search-api-skill-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4ba82ab1c6bba2d994ea5f8d7c44f1ad6ed22bfdc3083b2d6d9250942b818a0f",

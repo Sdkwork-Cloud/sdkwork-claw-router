@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/peloton-stats@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-peloton-stats-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-peloton-stats-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f532b08ec61dbc4e21d539e296f18a78809c628f0a1f26532ad32df2d5f9aff9",

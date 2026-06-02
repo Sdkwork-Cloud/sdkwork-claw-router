@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bcrypt-generate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bcrypt-generate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bcrypt-generate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9671edd8929508b23d63c92751689a06e82b77c9671a0bd60bff05e81caf9a8f",

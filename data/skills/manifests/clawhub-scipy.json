@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scipy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scipy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scipy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89763e501ae38d80c8eb942c90ed1e3c2b5dbbdc577cdc5b6bef32ba7343ce50",

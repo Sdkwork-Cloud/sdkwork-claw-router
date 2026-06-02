@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-correct@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-correct-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-correct-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0e2dcf66d9ed6d02996a0aa15bef935997106c90e49ca4d24ff7fb6b6cb66bf",

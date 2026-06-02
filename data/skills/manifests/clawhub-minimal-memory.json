@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minimal-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-minimal-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minimal-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2da6c08bee58a147a6ac8885f30b0317681ab103997ba7326f75fed869e0a4cc",

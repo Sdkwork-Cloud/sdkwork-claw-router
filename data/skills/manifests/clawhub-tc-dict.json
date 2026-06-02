@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tc-dict@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tc-dict-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tc-dict-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fe5c1b5c9f928f6c8e8ec048a8539a98e926bfac5fc2ecb38da152f511c8cf96",

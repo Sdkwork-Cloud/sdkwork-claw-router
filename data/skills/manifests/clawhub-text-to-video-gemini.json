@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-video-gemini@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-video-gemini-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-video-gemini-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0a6e2828103f2e084262efbe86a480a7539d2460a073b4c840f09005a21cda5",

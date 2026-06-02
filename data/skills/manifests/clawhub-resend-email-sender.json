@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resend-email-sender@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resend-email-sender-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resend-email-sender-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3a259863dd5823118d60197ba448e9ac2202162f94ba968cd29980fb059c5c1",

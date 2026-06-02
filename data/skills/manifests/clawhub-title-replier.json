@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/title-replier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-title-replier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-title-replier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f4350e9bf357aef0ec51f374a6867d538ca199d353e1203fdff2eb34b3ae2703",

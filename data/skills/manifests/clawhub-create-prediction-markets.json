@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-prediction-markets@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-prediction-markets-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-prediction-markets-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:627f44ad1449886487e2993389d812dacb4b0a740b2be20d2c9a8462af91206b",

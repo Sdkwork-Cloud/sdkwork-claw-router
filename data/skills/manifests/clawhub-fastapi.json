@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fastapi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fastapi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fastapi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d594a6a04bb9690181d6dde5de2c2519fa6549aa992fc9ea3265e58a110b98f0",

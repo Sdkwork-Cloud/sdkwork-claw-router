@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lobster-subagent-dev@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lobster-subagent-dev-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lobster-subagent-dev-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86f12cc08db3df63d1fa317e8ca6d5ee6fd92eba7bd4bc6ec7bb2bb05aac4774",

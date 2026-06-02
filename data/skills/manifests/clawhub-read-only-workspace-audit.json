@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/read-only-workspace-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-read-only-workspace-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-read-only-workspace-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:699962f3c948f0f86377e1746da58286ce702cb9d5095b60160b419e20fde77e",

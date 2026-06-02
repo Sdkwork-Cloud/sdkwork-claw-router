@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/autogen-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-autogen-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-autogen-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7fb02d5866c2ed58e32e501fcd80a5c4ce14e91d80e61c91b481601aba3da036",

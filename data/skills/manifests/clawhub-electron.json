@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/electron@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-electron-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-electron-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1222d838c75c535d4190607247a7499e57aae47f5e3a3973ab55f5fbaa35ef5f",

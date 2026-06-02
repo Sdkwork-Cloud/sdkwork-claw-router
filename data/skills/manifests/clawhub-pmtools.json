@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pmtools@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pmtools-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pmtools-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c9da70c93cced8395ed181f5bf2274599eb021fc5454342dec612a91604b4c4d",

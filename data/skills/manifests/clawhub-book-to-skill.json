@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-to-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-to-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-to-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b4053410c435abce667f9df55def318a952a18cb22b9cb1424220c8ed335946",

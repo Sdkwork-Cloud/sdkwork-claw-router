@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mercedes-benz-cars@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mercedes-benz-cars-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mercedes-benz-cars-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3baa4566c67be1f273c4bc9148bca432f2fd1d5e233d558363cfa842fd72a73",

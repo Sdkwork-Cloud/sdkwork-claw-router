@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/waifu-generator-skill@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-waifu-generator-skill-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-waifu-generator-skill-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5fdf1c292e05b7c04895939d9f4bf8e20c5554a82b3eb62f2d43e660e4c4e25c",

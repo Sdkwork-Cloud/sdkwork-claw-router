@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boss-geek@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-boss-geek-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boss-geek-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6017630d83f28ffc3a82fa9b26f1bee5859a4a3bb511b446e351c39688cc98fc",

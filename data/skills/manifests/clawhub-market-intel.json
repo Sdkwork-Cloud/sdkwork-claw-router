@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/market-intel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-market-intel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-market-intel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:339f4d66a66a6cd0d7df9a6b40e008951059bc7408abce3ac5406fb9ba292b99",

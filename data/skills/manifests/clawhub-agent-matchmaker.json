@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-matchmaker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-matchmaker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-matchmaker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3eeb0a04252c41960ae47d6bc0fdeedd0de76eb4e49ff8e3b274d1eb86c65c6c",

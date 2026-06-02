@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ck-rag-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ck-rag-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ck-rag-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6707d2f715b028366e3aa0908f4413ce7962fde5cf543be48f108f56a4093d51",

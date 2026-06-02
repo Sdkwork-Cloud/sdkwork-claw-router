@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ticket-tailor@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ticket-tailor-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ticket-tailor-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1e5c8c2faed9bfd17f2957282c6af92aa91b6822cdc29d14438d40ed899068d7",

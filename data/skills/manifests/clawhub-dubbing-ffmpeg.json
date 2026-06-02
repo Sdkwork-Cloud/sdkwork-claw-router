@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dubbing-ffmpeg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dubbing-ffmpeg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dubbing-ffmpeg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f7fdf8ad86617fc0c56ac872cbe6f2699a7be155317d7195156db1b44985ab0b",

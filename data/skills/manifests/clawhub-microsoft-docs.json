@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/microsoft-docs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-docs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-microsoft-docs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a51eb0d1e284b01d43d1f6f3aa4b46634e843cd1a9965c3e15cec7c7d58358e",

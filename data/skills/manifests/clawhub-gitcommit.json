@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitcommit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitcommit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitcommit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52e560267c111be2d6a9f7e6fd6e8a9ae1a761270c48c2f801401493e31718ca",

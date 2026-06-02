@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vps-agent-migration@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vps-agent-migration-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vps-agent-migration-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:95870feee54b0b0b09db7fea43f8ffb9046f5df2c3fcbe433be79c13246553fd",

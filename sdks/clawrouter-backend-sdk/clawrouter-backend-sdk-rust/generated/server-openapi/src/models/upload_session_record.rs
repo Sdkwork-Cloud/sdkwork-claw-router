@@ -15,6 +15,14 @@ pub struct UploadSessionRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub completed_at: Option<String>,
 
+    /// Completed bytes field on upload session record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub completed_bytes: Option<String>,
+
+    /// Completed part count field on upload session record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub completed_part_count: Option<i64>,
+
     /// Content type field on upload session record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub content_type: Option<String>,
@@ -38,6 +46,10 @@ pub struct UploadSessionRecord {
     /// Expected sha 256 field on upload session record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub expected_sha256: Option<String>,
+
+    /// Expected size bytes field on upload session record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub expected_size_bytes: Option<String>,
 
     /// Expires at field on upload session record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -78,6 +90,14 @@ pub struct UploadSessionRecord {
     /// Owner type field on upload session record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub owner_type: Option<String>,
+
+    /// Part count field on upload session record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub part_count: Option<i64>,
+
+    /// Part size bytes field on upload session record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub part_size_bytes: Option<String>,
 
     /// Provider id field on upload session record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kube-medic@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-kube-medic-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kube-medic-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:af79a14b851824f961d9fec2b7b3e56868b08d5248cadd1375ca07d0e6a65982",

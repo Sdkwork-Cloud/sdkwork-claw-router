@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pluribus@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pluribus-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pluribus-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b4ee1fe875fbe4070b8dcb8bac11fb5591bf9e08e72e6367cfac71b6784b561",

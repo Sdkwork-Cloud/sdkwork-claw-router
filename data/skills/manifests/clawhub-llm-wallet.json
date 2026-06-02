@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-wallet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-wallet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-wallet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bfda0974cd375c8785b04e4fa6161f9221dafa51a601853ae7845ac656b00c64",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-fraud-detect@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-fraud-detect-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-fraud-detect-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a00c72b458d433be2f49098075f1644c80b0ae0a99dd0eddb25a17083b66dca2",

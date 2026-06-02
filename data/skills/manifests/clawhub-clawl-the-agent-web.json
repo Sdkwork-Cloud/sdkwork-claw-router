@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawl-the-agent-web@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawl-the-agent-web-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawl-the-agent-web-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aa84d417864d28bc67b4bf366d18c14bc8c0e286f45eb189f666ba6eb1e97706",

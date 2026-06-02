@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fabletics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fabletics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fabletics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e88a79f4c00670d91e6d3dec2d57d5636b74302df891f916a5080ec98a144bcc",

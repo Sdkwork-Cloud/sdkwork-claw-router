@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-comm-protocol@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-comm-protocol-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-comm-protocol-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00f66ce639965b91d5895ac4d1c3cfab0c2c2db844b5549e47fd4f58d6db33b5",

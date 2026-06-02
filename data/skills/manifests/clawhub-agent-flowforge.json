@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-flowforge@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-flowforge-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-flowforge-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:87b071b7974d564367d300ef79fe3e0a1b7a51566c0642a0b2bcccc054ab180e",

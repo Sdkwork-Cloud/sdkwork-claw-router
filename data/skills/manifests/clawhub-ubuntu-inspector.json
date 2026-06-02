@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ubuntu-inspector@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ubuntu-inspector-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ubuntu-inspector-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4c7409ecdcb883d4870960ee3c1f68d34368b32d9ec45b0758081911e301bba2",

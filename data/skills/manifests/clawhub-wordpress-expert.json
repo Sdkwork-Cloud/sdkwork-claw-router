@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wordpress-expert@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-expert-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wordpress-expert-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:ab89c8db7009deb43825bf9be483ddc27d10a7b993305815d478ed7933dbd1d2",

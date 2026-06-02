@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multi-agent-roles@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-roles-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multi-agent-roles-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:592e76006b0c51c83d9fb57d42a5c67a42fecd9b0af7f5ea7805e5af3a73899c",

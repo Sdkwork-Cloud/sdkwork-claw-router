@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dealmoon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dealmoon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dealmoon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a32bc3cfaf264987e5dda9756e36e29ae80bf58d6f272565c77fe16bf273134",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-workflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-workflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-workflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:529a3ba35ab31471b3d1d981de21f4f391edd794da0885ec03b22c546cc274db",

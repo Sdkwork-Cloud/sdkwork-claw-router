@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subagent-dashboard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subagent-dashboard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subagent-dashboard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bc9cbeff60503b22f93afec9bc134a01a0df44afc1ca2f8dabd7bf5fb31654dc",

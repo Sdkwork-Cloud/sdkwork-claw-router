@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/showmethemoney-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-showmethemoney-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-showmethemoney-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e51f4a09c635ddd1f331cc9bb5797e081fe18c30ee6cb0a92e0615e971f5658",

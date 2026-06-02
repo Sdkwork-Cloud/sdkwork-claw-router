@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boss-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boss-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boss-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f8500a74ef0c167af1a26ec0d300bf6c814fdaab11c27773c02cd360bbbf5ed",

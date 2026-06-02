@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/imap-email@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-imap-email-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-imap-email-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c0096c6a88068eb8dc3138524adcb714224ddb39143066514efe3336fb4662bf",

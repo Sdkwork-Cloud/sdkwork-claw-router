@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/study-plan@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-study-plan-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-study-plan-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fa3b872d7b477935dd4bd070f55e9e58504ac85ce0313d2709e89ecd1a3ab4d7",

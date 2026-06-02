@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-ai-usage-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-ai-usage-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-ai-usage-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:157e88b07274c1bb83934b307afac747e23c3e4f2e15ada6103eda8bae35abf1",

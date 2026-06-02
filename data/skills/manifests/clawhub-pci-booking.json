@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pci-booking@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pci-booking-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pci-booking-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:169c2863ed7e99d1460f47172f0f91f80cd906a2b6a85545a586ad91a2a1e983",

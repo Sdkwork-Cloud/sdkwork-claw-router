@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-browser-tekken@0.8.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-browser-tekken-0.8.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-browser-tekken-0.8.6.json"
+      },
       "version": "0.8.6",
       "runtime": "metadata",
       "checksumHash": "sha256:59d4f5ff3e5e6e464fc478cd498dc23e950ca474dad8c47a6c7d81897839ebe1",

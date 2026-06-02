@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentmail-mcp-cli@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentmail-mcp-cli-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentmail-mcp-cli-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:053573b282b8cb3515c8ab4d2c73bb7703cb6e32fbae3546a6f12170bcc9b5ab",

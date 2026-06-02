@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/captcha-login-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-captcha-login-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-captcha-login-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3607b64298f8fae84c1560cadf55854d0f9ed124f5e86fdd0410908d8f142d81",

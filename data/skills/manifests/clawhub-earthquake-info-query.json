@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/earthquake-info-query@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-earthquake-info-query-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-earthquake-info-query-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b66c120c9f2356a714cfbdf044eabe33a66fb467764d1428d1651314474a7dc9",

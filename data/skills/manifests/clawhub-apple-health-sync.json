@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-health-sync@0.8.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-health-sync-0.8.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-health-sync-0.8.1.json"
+      },
       "version": "0.8.1",
       "runtime": "metadata",
       "checksumHash": "sha256:19df2c29c7601d01e0abe7f41c221238050f47e31352a5be2eee33a5d8eb40cd",

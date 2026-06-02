@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-gemini-web@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-gemini-web-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-gemini-web-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:b9e9e910e183d2bddb39cf545a68fafb4d347b394bf750b6dfedd3a0d54363f4",

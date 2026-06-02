@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dunkin-donuts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dunkin-donuts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dunkin-donuts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:700a7d05dcc9688696eb4da5327cfb823658847c11121aee3d5873c0d5b890e6",

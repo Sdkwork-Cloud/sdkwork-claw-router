@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chrysler-stellantis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chrysler-stellantis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chrysler-stellantis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35d28156462ed10afb0f50de653ca4c5d2d04103791c6e0addd6c49841e8081a",

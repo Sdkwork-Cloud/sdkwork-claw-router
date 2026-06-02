@@ -14,6 +14,8 @@ export interface CommerceOrderEventRecord {
   event_type: string;
   /** From status field on commerce order event record. */
   from_status?: string;
+  /** Id field on commerce order event record. */
+  id?: string;
   /** Idempotency key field on commerce order event record. */
   idempotency_key: string;
   /** Message field on commerce order event record. */

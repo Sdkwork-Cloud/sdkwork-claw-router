@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mtg-wiki-en@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mtg-wiki-en-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mtg-wiki-en-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:301beab68d5caa132f22695528bcf895044237df0a457bdd9e7f7136650b4bd8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/betty-crocker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-betty-crocker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-betty-crocker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:12cbfd6e89129b245ad661dd98a7956288bc5479ecc3ae6dcf01a1d522d25a1d",

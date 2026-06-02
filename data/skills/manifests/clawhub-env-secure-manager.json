@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/env-secure-manager@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-env-secure-manager-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-env-secure-manager-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1a09d58cc9e58e05fa3668ec684aa7a749701b7c333576772a0574b7da026c3d",

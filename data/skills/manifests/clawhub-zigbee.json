@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zigbee@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zigbee-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zigbee-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89cb12bf82379195869b24bf6b174ebbb9fc0848810bc074a1a71f95579bd60c",

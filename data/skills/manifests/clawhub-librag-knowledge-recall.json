@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/librag-knowledge-recall@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-librag-knowledge-recall-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-librag-knowledge-recall-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cbfdef0c3c45803012e853000a211ac513fc8a34c26054c8ce46236be2a19c44",

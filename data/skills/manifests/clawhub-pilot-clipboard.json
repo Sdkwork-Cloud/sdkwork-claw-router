@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-clipboard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-clipboard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-clipboard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd18ff914456a0255e9194c01b69389d5ca7e0031a75e21318af80029d7882d5",

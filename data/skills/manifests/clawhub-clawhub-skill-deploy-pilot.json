@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawhub-skill-deploy-pilot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-deploy-pilot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawhub-skill-deploy-pilot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:981a7f5e4efb24d14b5b466ccf2899ba4a7c60a928303ab9f30e1c902cea47ee",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/restart-safe-workflow@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-restart-safe-workflow-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-restart-safe-workflow-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:0328cb46368ff0111b41dd363d5c2813c4346bd20e24379c31a56b5cc57b0adb",

@@ -8,7 +8,7 @@ public class ForumFeedItem {
     private Integer commentCount;
     private String content;
     private String contentType;
-    private String coverImage;
+    private MediaResource cover;
     private String createdAt;
     private Integer id;
     private Boolean isCollected;
@@ -64,12 +64,12 @@ public class ForumFeedItem {
         this.contentType = contentType;
     }
 
-    public String getCoverImage() {
-        return this.coverImage;
+    public MediaResource getCover() {
+        return this.cover;
     }
 
-    public void setCoverImage(String coverImage) {
-        this.coverImage = coverImage;
+    public void setCover(MediaResource cover) {
+        this.cover = cover;
     }
 
     public String getCreatedAt() {

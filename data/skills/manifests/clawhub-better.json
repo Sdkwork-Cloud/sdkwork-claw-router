@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/better@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-better-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-better-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:def49de7dfb8441d501e701af41afbb512acc126a2fe12756086bdbe60cd22bf",

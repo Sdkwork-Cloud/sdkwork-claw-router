@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/get-agent-identity@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-get-agent-identity-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-get-agent-identity-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:017ca9a48979eb4ffd6ad0a55efc46585a38b7a5a6d83353c297fbe6b9bab186",

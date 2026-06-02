@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/home-assistant-control@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-home-assistant-control-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-home-assistant-control-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:ba67b8d554c238dae8b21c76d5056412295d591dd827daf8155f27dd1637edcd",

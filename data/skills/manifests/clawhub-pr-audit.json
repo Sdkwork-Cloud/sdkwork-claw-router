@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pr-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pr-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pr-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05baf87439b770e037af02226e45ca2b948cb30e9ca4aa154f499a5689e6d1e6",

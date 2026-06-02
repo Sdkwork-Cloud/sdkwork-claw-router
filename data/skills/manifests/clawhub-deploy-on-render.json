@@ -56,7 +56,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deploy-on-render@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deploy-on-render-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deploy-on-render-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f0e79c20dd9cd6cd27dba4aec9a9229bb41f49c57da2a8e92aadb08df2a3ccf",

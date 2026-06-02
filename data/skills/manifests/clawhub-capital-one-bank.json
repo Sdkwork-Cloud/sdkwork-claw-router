@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/capital-one-bank@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-capital-one-bank-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-capital-one-bank-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:76c8786d56621eaf55751e702ae9aa0a357a3e51cafe09513a8d328f36fecfae",

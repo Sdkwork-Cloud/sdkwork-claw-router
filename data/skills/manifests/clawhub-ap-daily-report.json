@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ap-daily-report@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ap-daily-report-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ap-daily-report-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e4ebe2daf33e97d0e012e4c4749782e3db51aa30e8edb79aed4ab78bb25179b",

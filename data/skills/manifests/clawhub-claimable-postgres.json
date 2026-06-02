@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claimable-postgres@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-claimable-postgres-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claimable-postgres-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:cdbe8d331533aa81c8f09ea05e5cc90c237839e17a38aa0fa1179223a6db4146",

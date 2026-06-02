@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aethercore@3.3.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-aethercore-3.3.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aethercore-3.3.4.json"
+      },
       "version": "3.3.4",
       "runtime": "metadata",
       "checksumHash": "sha256:58ac7e31dd2c301282209a43ccac8601072963342d073a6c95b49ac6c0c276fe",

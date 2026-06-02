@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-daily-report-en@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-daily-report-en-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-daily-report-en-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:257d67c4f1edc798ad402b9bd5aad34fe89bfb994a693cee36aabcd44f4421f7",

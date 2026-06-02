@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/forecast-simulation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-forecast-simulation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-forecast-simulation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f6b56d2219bcf01d3c1e9b1c5ece9534e4875f91ad9e43076fd3e2f10fcf1731",

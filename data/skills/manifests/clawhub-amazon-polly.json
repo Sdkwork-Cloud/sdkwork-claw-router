@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-polly@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-polly-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-polly-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:7fe60ab04e6ffd37aa34b9ef2b96f094c1401ebd0e291246bce2825c11b90375",

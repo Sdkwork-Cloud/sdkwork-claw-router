@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ip-locator-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ip-locator-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ip-locator-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9a12150c6f58df1eafc7ea351be32d2736afb1b2e37f7e84d791c141d5738c82",

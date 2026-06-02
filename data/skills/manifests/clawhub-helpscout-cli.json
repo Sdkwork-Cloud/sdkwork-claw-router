@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/helpscout-cli@0.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-helpscout-cli-0.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-helpscout-cli-0.0.2.json"
+      },
       "version": "0.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7f1a901a0f5500514af255b2867d42fa7f727714a613a75b501e50e3b75944de",

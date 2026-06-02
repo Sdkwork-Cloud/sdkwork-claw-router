@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/db-readonly@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-db-readonly-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-db-readonly-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:742409c5ef0e0d3cf16a0dc33d30165768260e4801473bff6670b97f87f8206a",

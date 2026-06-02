@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/recipe-bulk-download-folder@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-recipe-bulk-download-folder-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-recipe-bulk-download-folder-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:318bd34f1e876d0c38043ab44392e46c8481698dec40f8b3088d3475173938ec",

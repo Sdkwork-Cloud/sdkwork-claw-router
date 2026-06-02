@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/transcribee@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-transcribee-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-transcribee-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:db91ce0ead53dd0f4cf5055f41b04e4f48d161904210891c7e08e20e4c0d43b7",

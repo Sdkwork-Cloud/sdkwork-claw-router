@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abc-network@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abc-network-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abc-network-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ab986fa56fc676fd62b310fb04000b608ec80dd75cf3d1ebc8a00c9c8001cc6c",

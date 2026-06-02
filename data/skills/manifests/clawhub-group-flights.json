@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/group-flights@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-group-flights-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-group-flights-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:042fd0b94ff50d63983c2878882ff496647f6af57cef50a7ceef36e62455a050",

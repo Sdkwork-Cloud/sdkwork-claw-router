@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/copilot-studio-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-copilot-studio-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-copilot-studio-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8775d46f490af7cd3bf6a54a68e388c8babc86fc2f94e57c195f34485e3b7ddd",

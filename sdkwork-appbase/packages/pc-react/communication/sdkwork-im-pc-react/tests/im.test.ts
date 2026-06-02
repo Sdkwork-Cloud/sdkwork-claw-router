@@ -3,9 +3,11 @@ import {
   buildImMessageTimeline,
   createImConversationDigest,
   createImDesktopNotificationIntent,
+  createImContentPartsFromDraft,
   createImWorkspaceManifest,
   evaluateImSendReadiness,
   filterImConversations,
+  getImAttachmentDeliveryUrl,
   resolveImComposerCapabilities,
   sortImConversations,
   summarizeImConversationDigests,
@@ -60,11 +62,20 @@ const conversations: SdkworkImConversation[] = [
 
 const sendAttachment = {
   id: "att-1",
-  mimeType: "image/png",
-  name: "shell-polish.png",
-  sizeBytes: 2_048,
-  type: "image",
-  url: "https://example.com/shell-polish.png",
+  mediaAssetId: "media-asset-1",
+  mediaRole: "attachment",
+  resource: {
+    bucketId: "im-media",
+    fileName: "shell-polish.png",
+    id: "media-resource-1",
+    kind: "image",
+    mimeType: "image/png",
+    objectKey: "conversations/design/shell-polish.png",
+    publicUrl: "https://cdn.sdkwork.ai/im/shell-polish.png",
+    sizeBytes: "2048",
+    source: "object_storage",
+    url: "https://signed.sdkwork.ai/im/shell-polish.png",
+  },
 } as const;
 
 const messages: SdkworkImMessage[] = [
@@ -220,6 +231,24 @@ describe("sdkwork-im-pc-react", () => {
   });
 
   it("evaluates send readiness from conversation state, draft content, and connection health", () => {
+    expect(getImAttachmentDeliveryUrl(sendAttachment)).toBe("https://cdn.sdkwork.ai/im/shell-polish.png");
+    expect(
+      createImContentPartsFromDraft({
+        attachments: [sendAttachment],
+        text: "  Ship the shell polish tonight.  ",
+      }),
+    ).toEqual([
+      {
+        kind: "text",
+        text: "Ship the shell polish tonight.",
+      },
+      {
+        kind: "media",
+        mediaAssetId: "media-asset-1",
+        resource: sendAttachment.resource,
+      },
+    ]);
+
     expect(
       evaluateImSendReadiness(
         conversations[1],
@@ -244,6 +273,17 @@ describe("sdkwork-im-pc-react", () => {
       payload: {
         attachmentCount: 1,
         attachments: [sendAttachment],
+        contentParts: [
+          {
+            kind: "text",
+            text: "Ship the shell polish tonight.",
+          },
+          {
+            kind: "media",
+            mediaAssetId: "media-asset-1",
+            resource: sendAttachment.resource,
+          },
+        ],
         conversationId: "design",
         hasAttachments: true,
         hasText: true,
@@ -298,6 +338,7 @@ describe("sdkwork-im-pc-react", () => {
       payload: {
         attachmentCount: 0,
         attachments: [],
+        contentParts: [],
         conversationId: "assistant",
         hasAttachments: false,
         hasText: false,

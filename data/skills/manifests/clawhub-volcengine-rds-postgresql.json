@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/volcengine-rds-postgresql@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-rds-postgresql-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-volcengine-rds-postgresql-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:afe1f1dbde5475b05096996b36f3cbc8a10d419039118da421093022ef35b452",

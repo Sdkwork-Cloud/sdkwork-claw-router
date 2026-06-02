@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auditcore-network-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auditcore-network-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auditcore-network-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6bc961a0131f3bb52f299a74a75655f04e64dbcf14a85e7f42d8868392a5a4af",

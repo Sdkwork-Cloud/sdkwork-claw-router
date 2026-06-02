@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/symptom-checker-triage@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-symptom-checker-triage-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-symptom-checker-triage-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:04006b39d2d51532f8df0061439dc4dff476161e1b357aa501c050f215c1bf0e",

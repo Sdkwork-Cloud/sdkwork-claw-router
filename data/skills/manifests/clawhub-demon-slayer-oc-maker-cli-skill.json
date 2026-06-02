@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/demon-slayer-oc-maker-cli-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-demon-slayer-oc-maker-cli-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-demon-slayer-oc-maker-cli-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dcfdaaea6c400ce259a21c7ed2d3ff82e87375ba26724ce90fe6390019ac60d9",

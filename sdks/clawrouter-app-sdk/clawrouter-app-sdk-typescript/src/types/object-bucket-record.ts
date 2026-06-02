@@ -12,6 +12,10 @@ export interface ObjectBucketRecord {
   data_residency_region?: string;
   /** Data scope field on object bucket record. */
   data_scope?: string;
+  /** Default encryption mode field on object bucket record. */
+  default_encryption_mode?: string;
+  /** Default storage class field on object bucket record. */
+  default_storage_class?: string;
   /** Deleted at field on object bucket record. */
   deleted_at?: string;
   /** Deleted by field on object bucket record. */
@@ -22,14 +26,22 @@ export interface ObjectBucketRecord {
   idempotency_key?: string;
   /** Kms key ref field on object bucket record. */
   kms_key_ref?: string;
+  /** Lifecycle enabled field on object bucket record. */
+  lifecycle_enabled?: boolean;
   /** Logical scope field on object bucket record. */
   logical_scope?: string;
   /** Metadata field on object bucket record. */
   metadata?: Record<string, JsonValue>;
+  /** Object key prefix field on object bucket record. */
+  object_key_prefix?: string;
+  /** Object lock enabled field on object bucket record. */
+  object_lock_enabled?: boolean;
   /** Organization id field on object bucket record. */
   organization_id?: string;
   /** Provider id field on object bucket record. */
   provider_id?: string;
+  /** Public access blocked field on object bucket record. */
+  public_access_blocked?: boolean;
   /** Request id field on object bucket record. */
   request_id?: string;
   /** Status field on object bucket record. */
@@ -42,4 +54,6 @@ export interface ObjectBucketRecord {
   uuid?: string;
   /** Version field on object bucket record. */
   version?: string;
+  /** Versioning enabled field on object bucket record. */
+  versioning_enabled?: boolean;
 }

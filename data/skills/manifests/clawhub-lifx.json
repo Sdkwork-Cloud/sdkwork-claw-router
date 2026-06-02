@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lifx@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lifx-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lifx-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0ee24be41283ac2e2fc57ba47a2265ce81ad505b523027491447e3cafefd01b6",

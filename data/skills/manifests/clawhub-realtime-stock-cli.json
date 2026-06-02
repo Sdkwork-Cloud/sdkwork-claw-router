@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/realtime-stock-cli@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-realtime-stock-cli-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-realtime-stock-cli-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:01156a1dff0202af25b7cfcc9e26ad101826761808f82544c9b52c8020a8a562",

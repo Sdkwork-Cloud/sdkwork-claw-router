@@ -141,65 +141,77 @@ class ClawRouterSkillGuardian:
             if not isinstance(package, dict):
                 messages.append("skill seed package entries must be objects")
                 continue
+            package_key = package.get("packageKey")
+            self._reject_legacy_media_fields(package, f"package {package_key}", messages)
+            self._require_media_resource(package.get("icon"), "image", f"skill seed package {package_key} icon", messages)
+            self._require_media_resource(package.get("cover"), "image", f"skill seed package {package_key} cover", messages)
             category_id = package.get("categoryId")
             if category_id not in category_ids:
-                messages.append(f"skill seed package {package.get('packageKey')} references missing categoryId: {category_id}")
+                messages.append(f"skill seed package {package_key} references missing categoryId: {category_id}")
             if package.get("enabled") is not True:
-                messages.append(f"skill seed package {package.get('packageKey')} must be enabled")
+                messages.append(f"skill seed package {package_key} must be enabled")
 
         artifacts_by_skill: dict[Any, list[dict[str, Any]]] = {}
         for artifact in artifacts:
             if not isinstance(artifact, dict):
                 messages.append("skill seed artifact entries must be objects")
                 continue
+            artifact_uuid = artifact.get("uuid")
+            self._reject_legacy_media_fields(artifact, f"artifact {artifact_uuid}", messages)
             target_id = artifact.get("targetId")
             if artifact.get("targetType") != 35:
-                messages.append(f"skill seed artifact {artifact.get('uuid')} targetType must be 35")
+                messages.append(f"skill seed artifact {artifact_uuid} targetType must be 35")
             if target_id not in skill_ids:
-                messages.append(f"skill seed artifact {artifact.get('uuid')} references missing targetId: {target_id}")
+                messages.append(f"skill seed artifact {artifact_uuid} references missing targetId: {target_id}")
             artifact_ref = artifact.get("artifactRef")
             target_skill = skill_by_id.get(target_id)
             if isinstance(target_skill, dict) and self._is_clawhub_community_skill(target_skill):
                 if not isinstance(artifact_ref, str) or not artifact_ref.startswith("clawhub://skills/"):
-                    messages.append(f"skill seed artifact {artifact.get('uuid')} must use clawhub artifactRef")
+                    messages.append(f"skill seed artifact {artifact_uuid} must use clawhub artifactRef")
                 if artifact.get("runtime") != "metadata":
-                    messages.append(f"skill seed artifact {artifact.get('uuid')} must use metadata runtime for ClawHub")
+                    messages.append(f"skill seed artifact {artifact_uuid} must use metadata runtime for ClawHub")
             else:
                 if not isinstance(artifact_ref, str) or not artifact_ref.startswith("builtin://sdkwork.skills."):
-                    messages.append(f"skill seed artifact {artifact.get('uuid')} must use builtin artifactRef")
+                    messages.append(f"skill seed artifact {artifact_uuid} must use builtin artifactRef")
             checksum_hash = artifact.get("checksumHash")
             if not isinstance(checksum_hash, str) or not self._is_sha256_hash(checksum_hash):
-                messages.append(f"skill seed artifact {artifact.get('uuid')} checksumHash must be sha256:<64 lowercase hex>")
-            artifact_url = artifact.get("artifactUrl")
-            artifact_path = self._local_seed_path(artifact_url, messages)
+                messages.append(f"skill seed artifact {artifact_uuid} checksumHash must be sha256:<64 lowercase hex>")
+            artifact_resource = self._require_media_resource(
+                artifact.get("artifact"),
+                "document",
+                f"skill seed artifact {artifact_uuid} artifact",
+                messages,
+            )
+            artifact_locator = self._media_resource_url(artifact_resource)
+            artifact_path = self._local_seed_path(artifact_locator, messages) if artifact_locator else None
             if artifact_path is not None:
                 if not artifact_path.exists():
-                    messages.append(f"skill seed artifactUrl must exist: {artifact_url}")
+                    messages.append(f"skill seed artifact must exist: {artifact_locator}")
                 else:
                     if artifact.get("artifactSizeBytes") != artifact_path.stat().st_size:
                         messages.append(
-                            f"skill seed artifact {artifact.get('uuid')} artifactSizeBytes must match payload size: {artifact_url}"
+                            f"skill seed artifact {artifact_uuid} artifactSizeBytes must match payload size: {artifact_locator}"
                         )
                     payload = self._read_seed_json(artifact_path, messages)
                     if isinstance(payload, dict):
                         if payload.get("artifactRef") != artifact_ref:
-                            messages.append(f"skill seed artifact payload artifactRef mismatch: {artifact_url}")
+                            messages.append(f"skill seed artifact payload artifactRef mismatch: {artifact_locator}")
                         if payload.get("version") != artifact.get("version"):
-                            messages.append(f"skill seed artifact payload version mismatch: {artifact_url}")
+                            messages.append(f"skill seed artifact payload version mismatch: {artifact_locator}")
                         if payload.get("runtime") != artifact.get("runtime"):
-                            messages.append(f"skill seed artifact payload runtime mismatch: {artifact_url}")
+                            messages.append(f"skill seed artifact payload runtime mismatch: {artifact_locator}")
                         if payload.get("checksumHash") != checksum_hash:
-                            messages.append(f"skill seed artifact payload checksumHash mismatch: {artifact_url}")
+                            messages.append(f"skill seed artifact payload checksumHash mismatch: {artifact_locator}")
                         if self._artifact_payload_checksum(payload) != checksum_hash:
-                            messages.append(f"skill seed artifact checksumHash does not match payload: {artifact_url}")
+                            messages.append(f"skill seed artifact checksumHash does not match payload: {artifact_locator}")
                         if payload.get("skill", {}).get("id") != target_id:
-                            messages.append(f"skill seed artifact payload skill id mismatch: {artifact_url}")
+                            messages.append(f"skill seed artifact payload skill id mismatch: {artifact_locator}")
                         if not isinstance(payload.get("instructions"), list) or not payload.get("instructions"):
-                            messages.append(f"skill seed artifact payload instructions must be non-empty: {artifact_url}")
+                            messages.append(f"skill seed artifact payload instructions must be non-empty: {artifact_locator}")
                         if not isinstance(payload.get("inputSchema"), dict):
-                            messages.append(f"skill seed artifact payload inputSchema must be an object: {artifact_url}")
+                            messages.append(f"skill seed artifact payload inputSchema must be an object: {artifact_locator}")
                         if not isinstance(payload.get("outputSchema"), dict):
-                            messages.append(f"skill seed artifact payload outputSchema must be an object: {artifact_url}")
+                            messages.append(f"skill seed artifact payload outputSchema must be an object: {artifact_locator}")
             artifacts_by_skill.setdefault(target_id, []).append(artifact)
 
         assets_by_skill: dict[Any, list[dict[str, Any]]] = {}
@@ -207,11 +219,16 @@ class ClawRouterSkillGuardian:
             if not isinstance(asset, dict):
                 messages.append("skill seed asset entries must be objects")
                 continue
+            asset_uuid = asset.get("uuid")
+            self._reject_legacy_media_fields(asset, f"asset {asset_uuid}", messages)
             target_id = asset.get("targetId")
             if asset.get("targetType") != 35:
-                messages.append(f"skill seed asset {asset.get('uuid')} targetType must be 35")
+                messages.append(f"skill seed asset {asset_uuid} targetType must be 35")
             if target_id not in skill_ids:
-                messages.append(f"skill seed asset {asset.get('uuid')} references missing targetId: {target_id}")
+                messages.append(f"skill seed asset {asset_uuid} references missing targetId: {target_id}")
+            self._require_media_resource(asset.get("asset"), "image", f"skill seed asset {asset_uuid} asset", messages)
+            if asset.get("thumbnail") is not None:
+                self._require_media_resource(asset.get("thumbnail"), "image", f"skill seed asset {asset_uuid} thumbnail", messages)
             assets_by_skill.setdefault(target_id, []).append(asset)
 
         for skill in skills:
@@ -220,6 +237,9 @@ class ClawRouterSkillGuardian:
                 continue
             skill_id = skill.get("id")
             skill_key = skill.get("skillKey")
+            self._reject_legacy_media_fields(skill, f"skill {skill_key}", messages)
+            self._require_media_resource(skill.get("icon"), "image", f"skill seed skill {skill_key} icon", messages)
+            self._require_media_resource(skill.get("cover"), "image", f"skill seed skill {skill_key} cover", messages)
             if skill.get("categoryId") not in category_ids:
                 messages.append(f"skill seed skill {skill_key} references missing categoryId: {skill.get('categoryId')}")
             if skill.get("packageId") not in package_ids:
@@ -354,6 +374,41 @@ class ClawRouterSkillGuardian:
             return None
         return self.root / normalized
 
+    def _reject_legacy_media_fields(self, item: dict[str, Any], label: str, messages: list[str]) -> None:
+        for field in ("coverImage", "assetUrl", "thumbnailUrl", "artifactUrl"):
+            if field in item:
+                messages.append(f"skill seed {label} must not use legacy media field {field}")
+
+    def _require_media_resource(
+        self,
+        value: Any,
+        kind: str,
+        label: str,
+        messages: list[str],
+    ) -> dict[str, Any] | None:
+        if not isinstance(value, dict):
+            messages.append(f"{label} must be a MediaResource object")
+            return None
+        if value.get("kind") != kind:
+            messages.append(f"{label} kind must be {kind}")
+        source = value.get("source")
+        if not isinstance(source, str) or not source.strip():
+            messages.append(f"{label} source must be a non-empty string")
+        if not self._media_resource_url(value):
+            messages.append(f"{label} must include a stable locator")
+        return value
+
+    def _media_resource_url(self, value: Any) -> str:
+        if not isinstance(value, dict):
+            return ""
+        for key in ("publicUrl", "url", "uri", "objectKey", "objectBlobId", "id"):
+            raw = value.get(key)
+            if isinstance(raw, str) and raw.strip():
+                return raw.strip()
+            if isinstance(raw, int) and raw > 0:
+                return str(raw)
+        return ""
+
     def _id_set(self, items: list[Any], label: str, messages: list[str]) -> set[Any]:
         values = [item.get("id") for item in items if isinstance(item, dict)]
         self._unique_values(values, f"{label} id", messages)
@@ -382,7 +437,7 @@ class ClawRouterSkillGuardian:
     def _manifest_artifact_metadata(self, artifact: dict[str, Any]) -> dict[str, Any]:
         return {
             "artifactRef": artifact.get("artifactRef"),
-            "artifactUrl": artifact.get("artifactUrl"),
+            "artifact": artifact.get("artifact"),
             "version": artifact.get("version"),
             "runtime": artifact.get("runtime"),
             "checksumHash": artifact.get("checksumHash"),

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weathercli@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weathercli-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weathercli-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7567b418d524afb725c9c9556a42e81ef8f7475721c2a1454d4befaf5af48684",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/travel-planning@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-travel-planning-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-travel-planning-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7523f09f15527d695658d4e703fc6f79c55b31d2caf5f318e438563668386565",

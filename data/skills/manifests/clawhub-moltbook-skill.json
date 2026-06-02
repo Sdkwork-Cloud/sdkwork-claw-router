@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltbook-skill@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltbook-skill-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltbook-skill-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f5f1cea233c8036ae952eafe605f9f05709fdb39c5c4d897bbdfc5608b45bc69",

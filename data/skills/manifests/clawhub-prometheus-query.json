@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prometheus-query@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prometheus-query-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prometheus-query-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e447dd2a6856638e8b6bba21463474b794fb262d66e3922c9fd6119744cbe8c",

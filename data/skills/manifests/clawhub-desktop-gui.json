@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/desktop-gui@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-desktop-gui-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-desktop-gui-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1e1c0d6ddc7b98d61b462eced0c72625e8aa0f91896a9314c1807e79f7933640",

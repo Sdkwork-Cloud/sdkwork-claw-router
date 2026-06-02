@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import {
   buildPortalAuthLoginRedirect,
   hasStoredPortalSession,
+  readMediaResourceUrl,
 } from 'sdkwork-claw-router-commons/runtime';
 import * as courseService from '../courseService';
 import {
@@ -93,6 +94,7 @@ export function CoursesView() {
     searchQuery,
   }), [activeCategory, activeLevel, categories, courses, searchQuery, source, totalElements]);
   const heroCourse = courses[0];
+  const heroThumbnailSrc = readMediaResourceUrl(heroCourse?.thumbnail) || '/assets/courses/covers/ai-coding.svg';
 
   const openCourseApplicationDialog = () => {
     if (!hasStoredPortalSession()) {
@@ -151,7 +153,7 @@ export function CoursesView() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-slate-100 to-white dark:from-[#161b22] dark:to-slate-800 rounded-2xl shadow-2xl -rotate-3 border border-slate-200 dark:border-white/10 flex flex-col overflow-hidden">
                   <div className="h-40 bg-slate-800 relative overflow-hidden">
                     <img
-                      src={heroCourse?.thumbnail ?? '/assets/courses/covers/ai-coding.svg'}
+                      src={heroThumbnailSrc}
                       className="w-full h-full object-cover opacity-80 mix-blend-overlay"
                       alt=""
                     />
@@ -314,7 +316,10 @@ export function CoursesView() {
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              {view.filteredCourses.map((course) => (
+              {view.filteredCourses.map((course) => {
+                const thumbnailSrc = readMediaResourceUrl(course.thumbnail) || '/assets/courses/covers/ai-coding.svg';
+                const instructorAvatarSrc = readMediaResourceUrl(course.instructor.avatar) || '/assets/courses/avatars/learner.svg';
+                return (
                 <motion.button
                   key={course.id}
                   type="button"
@@ -326,7 +331,7 @@ export function CoursesView() {
                 >
                   <div className="h-48 relative overflow-hidden bg-slate-100 dark:bg-slate-800">
                     <img
-                      src={course.thumbnail}
+                      src={thumbnailSrc}
                       alt={course.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
@@ -372,7 +377,7 @@ export function CoursesView() {
 
                     <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-white/5 mt-auto">
                       <div className="flex items-center gap-2">
-                        <img src={course.instructor.avatar} alt={course.instructor.name} className="w-8 h-8 rounded-full" />
+                        <img src={instructorAvatarSrc} alt={course.instructor.name} className="w-8 h-8 rounded-full" />
                         <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{course.instructor.name}</span>
                       </div>
                       <span className="text-blue-600 dark:text-blue-400 font-medium text-sm flex items-center">
@@ -381,7 +386,8 @@ export function CoursesView() {
                     </div>
                   </div>
                 </motion.button>
-              ))}
+                );
+              })}
             </div>
           </main>
         </div>

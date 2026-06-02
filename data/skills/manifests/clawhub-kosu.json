@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kosu@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kosu-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kosu-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e590934160c31ec4bc186ee3c4f4f1ffd95e891731b919716dc3dcae2cfce822",

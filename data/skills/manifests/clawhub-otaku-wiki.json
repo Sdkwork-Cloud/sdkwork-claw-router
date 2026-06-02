@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/otaku-wiki@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-otaku-wiki-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-otaku-wiki-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f04b176e139e63cf1753901040802c1cc935cd7acc76e5915647b65f8684a498",

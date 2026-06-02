@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coach@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coach-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coach-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1bd49855dde406d8eff4183889003402e98e6ee34bf44dd8eec338e6322eb2e4",

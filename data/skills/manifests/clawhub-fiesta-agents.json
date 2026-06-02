@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fiesta-agents@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fiesta-agents-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fiesta-agents-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3f2d681a251f084039baca7a558f97bc032bbb64bfbbe722b46438583c4eb57e",

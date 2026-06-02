@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/devrel-playbook@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-devrel-playbook-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-devrel-playbook-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:569fe4b02405b54d7791c6d06e96b3b2a3c801d3beca7e6d2197a30f84c4090b",

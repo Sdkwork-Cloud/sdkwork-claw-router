@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lead-enrichment@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lead-enrichment-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lead-enrichment-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:868a28350a9aa055401b9c6848e0a10de710a20dd4efc9641a2a594d5a791292",

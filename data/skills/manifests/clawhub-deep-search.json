@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deep-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deep-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deep-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:91d51ba762c1561bf37d191eaa32373d0d4d25b1fa300f40e8a3735304163622",

@@ -31,7 +31,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? StudentsCount { get; set; }
         public Dictionary<string, string>? Tags { get; set; }
         public string? TenantId { get; set; }
-        public string? ThumbnailUrl { get; set; }
+        public MediaResource? Thumbnail { get; set; }
         public string? Title { get; set; }
         public string? UpdatedAt { get; set; }
         public string? Uuid { get; set; }

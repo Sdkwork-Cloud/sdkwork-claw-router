@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/universal-watermarker@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-universal-watermarker-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-universal-watermarker-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92f0f218d345a2d9532dd3047c65869d10204bed03d4a6ccb18ceae4b1184725",

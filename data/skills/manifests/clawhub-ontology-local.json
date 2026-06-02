@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ontology-local@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ontology-local-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ontology-local-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d826d93b9f0cd6f3f005c83c684317552096442dc297df19ad14cbb2a33637a6",

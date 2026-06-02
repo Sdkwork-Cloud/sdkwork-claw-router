@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-captcha-solver@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-captcha-solver-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-captcha-solver-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d3d86b631539503b99d3732c99c17143c715421fb747228dbbbd5df5692fce2a",

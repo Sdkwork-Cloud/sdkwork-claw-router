@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abn-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abn-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abn-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:85acf4e9a8be71c81be2f8daa6858cbddcf15b577783f5a2e14af924a1098c83",

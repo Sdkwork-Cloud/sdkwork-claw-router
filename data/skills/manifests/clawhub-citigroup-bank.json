@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/citigroup-bank@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-citigroup-bank-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-citigroup-bank-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3eec0525d1c6307b245b7eed066411e55fa5f8a5cba51e3c0ef8b043a6902f7c",

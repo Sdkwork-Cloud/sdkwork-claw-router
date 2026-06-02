@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eastmoney-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eastmoney-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eastmoney-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5cbadab7f80c3b43223b54ba23314b3d75613b97827751af8b00f4636b77709b",

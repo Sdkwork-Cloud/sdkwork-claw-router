@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-player@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-player-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-player-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6079797ca60e289bc0bbe3c4591dc5b5a704e29f93c9833fe2cd732b1d38398d",

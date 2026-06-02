@@ -12,6 +12,7 @@ class CommerceShipmentTrackingEventRecord:
     shipment_id: str
     tenant_id: str
     description: Optional[str] = None
+    id: Optional[str] = None
     location: Optional[str] = None
     organization_id: Optional[str] = None
     raw_payload_json: Optional[Dict[str, str]] = None

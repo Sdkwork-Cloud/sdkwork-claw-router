@@ -1,17 +1,20 @@
 package com.sdkwork.clawrouter.app
 
 data class CommerceBillingHistoryRecord(
+    val amount: String? = null,
     val assetType: String? = null,
     val createdAt: String? = null,
     val currencyCode: String? = null,
     val direction: String? = null,
     val historyNo: String? = null,
     val historyType: String? = null,
+    val id: String? = null,
     val metadataJson: Map<String, String>? = null,
     val occurredAt: String? = null,
     val organizationId: String? = null,
     val ownerUserId: String? = null,
     val paymentMethod: String? = null,
+    val pointsDelta: String? = null,
     val referenceNo: String? = null,
     val relatedOrderId: String? = null,
     val relatedOrderNo: String? = null,

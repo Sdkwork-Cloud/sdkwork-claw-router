@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-trading-suite@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-trading-suite-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-trading-suite-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c9c9394c82632bbd6b043e4686ae8c56d6882fa88959c54acef0538039ee9ce9",

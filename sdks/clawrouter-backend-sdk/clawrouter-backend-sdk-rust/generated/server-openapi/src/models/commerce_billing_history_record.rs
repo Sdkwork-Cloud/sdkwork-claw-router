@@ -3,6 +3,9 @@ use serde::{Deserialize, Serialize};
 /// Commerce billing history record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CommerceBillingHistoryRecord {
+    /// Amount field on commerce billing history record.
+    pub amount: String,
+
     /// Asset type field on commerce billing history record.
     pub asset_type: String,
 
@@ -22,6 +25,10 @@ pub struct CommerceBillingHistoryRecord {
     /// History type field on commerce billing history record.
     pub history_type: String,
 
+    /// Id field on commerce billing history record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Metadata json field on commerce billing history record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub metadata_json: Option<std::collections::HashMap<String, String>>,
@@ -39,6 +46,9 @@ pub struct CommerceBillingHistoryRecord {
     /// Payment method field on commerce billing history record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub payment_method: Option<String>,
+
+    /// Points delta field on commerce billing history record.
+    pub points_delta: String,
 
     /// Reference no field on commerce billing history record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

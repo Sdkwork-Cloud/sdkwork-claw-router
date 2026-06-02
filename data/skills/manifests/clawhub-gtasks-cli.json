@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gtasks-cli@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-gtasks-cli-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gtasks-cli-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0ef8dae791b763368e94f6c55a13c752e0feb71138396d3f86bb5cb6b8405817",

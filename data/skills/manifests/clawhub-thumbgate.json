@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thumbgate@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-thumbgate-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thumbgate-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ab626361cc6563c591b5a2564dbc23c3ef5f696812e5e64575b4a42f4b488e9d",

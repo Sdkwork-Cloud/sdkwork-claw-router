@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawbio-orchestrator@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawbio-orchestrator-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawbio-orchestrator-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:72eac7740e56fe836534d52a3366222c854c55ddc90b919466f625c25055599a",

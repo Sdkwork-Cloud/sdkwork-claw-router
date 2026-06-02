@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/uk-stock-market-lse@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-uk-stock-market-lse-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-uk-stock-market-lse-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0ff672c522d7be7f2173811a1d1860ef6324618c0c4140dc0a3b144a0557a9e",

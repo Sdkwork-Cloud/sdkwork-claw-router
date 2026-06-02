@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-supergraph@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-supergraph-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-supergraph-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f2346090d8d1b2d63fc66d51608989b58d6b105ee8278c556213c1df662eb5a",

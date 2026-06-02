@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/esr-openclaw-checklist@3.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-esr-openclaw-checklist-3.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-esr-openclaw-checklist-3.2.1.json"
+      },
       "version": "3.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fd678f850ed2ff4fe0ad71e420649aa93ca4ed36abff4e54a79472c97d373184",

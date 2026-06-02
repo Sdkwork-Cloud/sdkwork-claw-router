@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/philadelphia@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-philadelphia-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-philadelphia-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:200ff303a650bd319af33f582244f8b5e5cdde4aa546db367e364516b055a5e1",

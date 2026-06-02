@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ghibli-style-skill@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ghibli-style-skill-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ghibli-style-skill-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:667b3df32779f6f2138bb083c0dca5356182a97e139a117420beefacbc2b3641",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/run-command-safety-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-run-command-safety-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-run-command-safety-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:403d9c0b69a440d2f50b558a54d238f30bfba93ab76ae637d27fd7f8706f2ce6",

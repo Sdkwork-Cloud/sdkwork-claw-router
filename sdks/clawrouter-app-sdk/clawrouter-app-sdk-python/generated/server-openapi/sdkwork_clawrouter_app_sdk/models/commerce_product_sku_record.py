@@ -16,6 +16,7 @@ class CommerceProductSkuRecord:
     updated_at: str
     default_currency_code: Optional[str] = None
     default_price_amount: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     published_at: Optional[str] = None
     sales_unit: Optional[str] = None

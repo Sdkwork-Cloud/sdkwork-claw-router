@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/client-retention@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-client-retention-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-client-retention-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b329e3904e9ea512c55f58408f0e8e99bdbf0d1f63f03d4fd883ac9765888975",

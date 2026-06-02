@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/receipt-ocr-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-receipt-ocr-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-receipt-ocr-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc7069c078aca668b1b1f2fb49614779ad9aa713fa30a5b49a65fb0d14d8774d",

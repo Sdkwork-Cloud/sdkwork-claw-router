@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/farcaster-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-farcaster-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-farcaster-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:52e808f498decad06d6efeac0146e0dd4bc084bf67011db20dbd34628e957f5e",

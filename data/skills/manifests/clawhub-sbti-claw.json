@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sbti-claw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sbti-claw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sbti-claw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a458c025b65a5c8443df55ae39fe3c7c4568d067c0161eaaf3f69caf6d419fa9",

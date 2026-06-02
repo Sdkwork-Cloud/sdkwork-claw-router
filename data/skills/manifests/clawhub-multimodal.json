@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multimodal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-multimodal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multimodal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:935ca4ad930a1cbf4bcb068efe4f7d017c114270f00aa4ca34397ff0d43e5b20",

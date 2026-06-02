@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/looker@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-looker-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-looker-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9d577e56560f420e5b2e1278de6a9c0736537963a2662f419feb1e99ecbe7f10",

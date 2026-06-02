@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swap-api@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swap-api-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swap-api-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48d650364bcc90301bd01ea08b9135d4176f975537a4e27ebba51f6c23a4ba07",

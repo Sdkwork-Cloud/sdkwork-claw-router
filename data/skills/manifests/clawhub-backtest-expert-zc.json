@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/backtest-expert-zc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-backtest-expert-zc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-backtest-expert-zc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5fdbe945817998a270debcaa2a4b653f173188a6a1724afa7580d0eea50e5156",

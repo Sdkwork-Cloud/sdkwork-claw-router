@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-release-management-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-release-management-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-release-management-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:626c16da90be63cd176c07034ccd2bb21a766d3f0497604d853012bcb43e8e84",

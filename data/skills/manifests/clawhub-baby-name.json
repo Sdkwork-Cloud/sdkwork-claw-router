@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baby-name@1.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-baby-name-1.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baby-name-1.2.4.json"
+      },
       "version": "1.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:dc989892500bbf14c8c70ff4fa6d05a3ee58a47d67a53839c984d05e158f8a8e",

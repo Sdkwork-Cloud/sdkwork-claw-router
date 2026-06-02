@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/permanent-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-permanent-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-permanent-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3de27cdda537ad95be673d1db94d2f1758c8da933e69ad3207fec97d86bff502",

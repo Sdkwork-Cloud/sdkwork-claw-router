@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nomura@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nomura-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nomura-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f440c1641ccb4c37527a51317530131d20cafc86f2e8fab8bea0f2523e7b65a",

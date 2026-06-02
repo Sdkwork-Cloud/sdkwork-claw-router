@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-title-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-title-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-title-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0375d0d25456f070f41430ede79d5e11a3227425db9ed8617a8066dcf393e4df",

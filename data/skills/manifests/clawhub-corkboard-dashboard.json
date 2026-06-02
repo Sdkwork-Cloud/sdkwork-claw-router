@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/corkboard-dashboard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-corkboard-dashboard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-corkboard-dashboard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:371eef2471079bc1f3badd67f6b3c62ef26d97ca65a67352297bf33a217b435b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/super-bowl@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-super-bowl-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-super-bowl-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:219ccccedfb81f52b1728fec73721af57d560dd073b681a0b2a63eaedd964d8b",

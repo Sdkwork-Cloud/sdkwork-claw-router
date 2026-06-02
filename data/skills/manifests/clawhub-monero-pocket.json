@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/monero-pocket@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-monero-pocket-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-monero-pocket-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b705542b92784d0e1fb61d2a32842ea790a8bd33098739ed52c4cc84f8c97041",

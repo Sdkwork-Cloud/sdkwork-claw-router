@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-qwen3-asr-aipc@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-qwen3-asr-aipc-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-qwen3-asr-aipc-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:f80eeb9e640d090c2ed1a7e8422e2513dc1a3755511f34e56bb4b3027bc26b13",

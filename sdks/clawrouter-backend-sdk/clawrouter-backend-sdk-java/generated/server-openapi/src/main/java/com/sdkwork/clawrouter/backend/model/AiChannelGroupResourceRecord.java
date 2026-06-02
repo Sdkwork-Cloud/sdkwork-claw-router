@@ -10,9 +10,11 @@ public class AiChannelGroupResourceRecord {
     private String deletedBy;
     private String effectiveFrom;
     private String effectiveTo;
+    private String grantType;
     private String id;
     private Map<String, String> metadata;
     private String organizationId;
+    private Integer priority;
     private String resourceCode;
     private String resourceGroupCode;
     private String resourceGroupId;
@@ -79,6 +81,14 @@ public class AiChannelGroupResourceRecord {
         this.effectiveTo = effectiveTo;
     }
 
+    public String getGrantType() {
+        return this.grantType;
+    }
+
+    public void setGrantType(String grantType) {
+        this.grantType = grantType;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -101,6 +111,14 @@ public class AiChannelGroupResourceRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     public String getResourceCode() {

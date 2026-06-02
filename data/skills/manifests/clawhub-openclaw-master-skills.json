@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-master-skills@0.13.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-master-skills-0.13.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-master-skills-0.13.0.json"
+      },
       "version": "0.13.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55d778dbbbaa2aca3445e3526327e29c0460141c8eb237df31b00bbcb1aa29fd",

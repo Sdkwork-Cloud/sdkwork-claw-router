@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/onna@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-onna-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-onna-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:41d25badd0950e635f18977d7b4407ff438817da4db6a910967dcf64b7d46686",

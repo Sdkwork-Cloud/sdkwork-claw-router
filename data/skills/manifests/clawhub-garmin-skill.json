@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/garmin-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-garmin-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-garmin-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:697da1ad70518b4cc7eaec545f6b11f85b058df0ce4ecbe4b4f6afd7f8f36620",

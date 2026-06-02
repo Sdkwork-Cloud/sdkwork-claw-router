@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tp-hello-world@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tp-hello-world-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tp-hello-world-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:171a4a24e0093ff71e4a5b458ba4d07b9b1ed865048819cdded88009d423e03a",

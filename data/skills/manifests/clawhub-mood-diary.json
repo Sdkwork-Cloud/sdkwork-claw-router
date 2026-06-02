@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mood-diary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mood-diary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mood-diary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e03a5614031d086ff1002f8ac92d00c91842a43de708c44fb55df561a6b7e83",

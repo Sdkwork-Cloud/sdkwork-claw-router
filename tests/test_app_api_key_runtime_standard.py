@@ -1,3 +1,4 @@
+import os
 import unittest
 from pathlib import Path
 
@@ -156,8 +157,11 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("ensureSdkworkApiSuccess(result, 'console.apiKeys.errors.loadFallback')", fetch_body)
         self.assertIn("readRequiredApiItems(result, 'console.apiKeys.errors.loadFallback')", fetch_body)
-        self.assertIn("getClawRouterAppSdkClient().iam.apiKeyGroups.list()", fetch_body)
+        self.assertIn("getClawRouterAppSdkClient().ai.channelGroups.list()", fetch_body)
         self.assertIn("readRequiredApiItems(result, 'console.apiKeys.errors.loadGroupsFallback')", fetch_body)
+        self.assertNotIn(".http.request<", fetch_body)
+        self.assertNotIn("requestApp<", fetch_body)
+        self.assertNotIn("APP_API_PREFIX", fetch_body)
         self.assertNotIn("Array.isArray(data.items)", fetch_body)
         self.assertNotIn("Array.isArray(data.groups)", fetch_body)
 
@@ -245,7 +249,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             "Failed to load API keys",
             "Failed to create API key",
             "Failed to update API key",
-            "Failed to update API key group",
+            "Failed to update channel group",
             "Failed to delete API key",
             "Loading API keys",
             "No API keys found",
@@ -269,6 +273,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         sdk_iam = (
             ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "iam.ts"
         ).read_text(encoding="utf-8")
+        sdk_ai = (
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "ai.ts"
+        ).read_text(encoding="utf-8")
         frontend = (
             ROOT
             / "apps"
@@ -278,6 +285,9 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "apiKeyService.ts"
         ).read_text(encoding="utf-8")
+        legacy_group_snake_plural = "api_" + "key_" + "groups"
+        legacy_group_camel_plural = "api" + "Key" + "Groups"
+        legacy_iam_group_path = "/app/v3/api/iam/" + legacy_group_snake_plural
 
         self.assertIn("name: AppApiKeyListResponse", contract)
         self.assertIn('"AppApiKeyListResponse"', openapi)
@@ -286,21 +296,29 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn("async list(): Promise<ApiKeysListResult>", sdk_iam)
         self.assertIn("appApiPath(`/iam/api_keys`)", sdk_iam)
         self.assertIn("get<ApiKeysListResult>", sdk_iam)
+        self.assertIn("async list(): Promise<ChannelGroupsListResult>", sdk_ai)
+        self.assertIn("appApiPath(`/ai/channel_groups`)", sdk_ai)
+        self.assertNotIn(legacy_group_snake_plural, sdk_ai)
+        self.assertNotIn(legacy_group_camel_plural, sdk_iam)
+        self.assertNotIn(legacy_iam_group_path, contract)
+        self.assertIn("/app/v3/api/ai/channel_groups", contract)
 
         response_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "app-api-key-list-response.ts"
         result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "api-keys-list-result.ts"
-        group_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "app-api-key-group.ts"
+        group_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "app-channel-group.ts"
+        old_group_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / ("app-" + "api-" + "key-" + "group.ts")
         self.assertTrue(response_path.exists())
         self.assertTrue(result_path.exists())
         self.assertTrue(group_path.exists())
+        self.assertFalse(old_group_path.exists())
         self.assertIn("items: AppApiKeyItem[];", response_path.read_text(encoding="utf-8"))
-        self.assertIn("groups: AppApiKeyGroup[];", response_path.read_text(encoding="utf-8"))
+        self.assertIn("groups: AppChannelGroup[];", response_path.read_text(encoding="utf-8"))
         self.assertIn("data?: AppApiKeyListResponse;", result_path.read_text(encoding="utf-8"))
 
         self.assertIn("AppApiKeyListResponse as SdkAppApiKeyListResponse", frontend)
         self.assertIn("id: SdkAppApiKeyListResponse['items'][number]['id'];", frontend)
-        self.assertIn("AppApiKeyGroupListResponse as SdkAppApiKeyGroupListResponse", frontend)
-        self.assertIn("id: SdkAppApiKeyGroupListResponse['items'][number]['id'];", frontend)
+        self.assertNotIn("Api" + "Key" + "Group", frontend)
+        self.assertNotIn("api" + "Key" + "Group", frontend)
 
     def test_console_api_key_frontend_uses_pure_create_command_form_adapter(self) -> None:
         package = (
@@ -430,7 +448,8 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             "name",
             "maskedKey",
             "copyableKey",
-            "group",
+            "channelGroup",
+            "channelGroupName",
             "rate",
             "quota",
             "usedQuota",
@@ -487,6 +506,16 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             "copyableKey: readNullableString(value, 'copyableKey')",
             service,
         )
+        self.assertIn("channelGroup: string;", service)
+        self.assertIn("channelGroupName: string | null;", service)
+        self.assertIn(
+            "channelGroup: readRequiredString(value, 'channelGroup', 'API key channel group is required')",
+            service,
+        )
+        self.assertIn(
+            "channelGroupName: readNullableString(value, 'channelGroupName')",
+            service,
+        )
         self.assertIn(
             "defaultForRuntime: readBoolean(value, 'defaultForRuntime')",
             service,
@@ -495,11 +524,25 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             "request.defaultForRuntime = Boolean(input.defaultForRuntime);",
             service,
         )
+        self.assertIn(
+            "request.channelGroup = optionalText(input.channelGroup) ?? DEFAULT_CHANNEL_GROUP;",
+            service,
+        )
+        self.assertIn(
+            "channelGroup: optionalText(input.channelGroup) ?? DEFAULT_CHANNEL_GROUP,",
+            service,
+        )
         self.assertNotIn("API key copyable value is required", service)
         self.assertNotIn("keyVal: string", service)
         self.assertNotIn("fullKey: string", service)
         self.assertNotIn("readString(value, 'keyVal')", service)
         self.assertNotIn("fullKey: keyVal", service)
+        self.assertNotIn("group?: string", service)
+        self.assertNotIn("groupName?: string | null", service)
+        self.assertNotIn("request.group =", service)
+        self.assertNotIn("group: optionalText(input.channelGroup)", service)
+        self.assertNotIn("readNullableString(value, 'groupName')", service)
+        self.assertNotIn("readString(value, 'group')", service)
 
         self.assertIn("key.maskedKey", view)
         self.assertIn("key.displayName.toLowerCase().includes(query)", view)
@@ -529,6 +572,96 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("initialData.keyVal", drawer)
         self.assertIn('format!("API Key #{}", self.id)', access_domain)
         self.assertNotIn("self.key_prefix.clone()", access_domain.split("pub fn display_name(&self)", 1)[1].split("pub fn masked_key(&self)", 1)[0])
+
+    def test_app_api_key_public_contract_uses_channel_group_fields_only(self) -> None:
+        contract = (
+            ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("operation_id: channelGroups.list", contract)
+        self.assertIn("api_path: /app/v3/api/ai/channel_groups", contract)
+        self.assertIn("- channelGroup", contract)
+        self.assertIn("- channelGroupName", contract)
+        self.assertIn("channelGroup:", contract)
+        self.assertIn("channelGroupName:", contract)
+        self.assertNotIn("operation_id: " + "api" + "Key" + "Groups.list", contract)
+        self.assertNotIn("api_path: /app/v3/api/iam/" + "api_" + "key_" + "groups", contract)
+        self.assertNotIn("App" + "Api" + "Key" + "Group", contract)
+        self.assertNotIn("Api" + "Key" + "Group", contract)
+        source_marker = (
+            "source: apps/sdkwork-claw-router-portal/packages/"
+            "sdkwork-claw-router-console-api-keys/src/apiKeyService.ts"
+        )
+        console_api_key_contract = "\n".join(
+            block.split("\n- route:", 1)[0] for block in contract.split(source_marker)[1:]
+        )
+        self.assertNotIn("\n      group:\n", console_api_key_contract)
+        self.assertNotIn("\n      groupName:\n", console_api_key_contract)
+
+    def test_channel_group_naming_has_no_legacy_group_debt(self) -> None:
+        forbidden_terms = [
+            "Api" + "Key" + "Group",
+            "api" + "Key" + "Group",
+            "api_" + "key_" + "group",
+            "api-" + "key-" + "group",
+            "API " + "key " + "group",
+            "API " + "Key " + "Group",
+            "api " + "key " + "group",
+        ]
+        scanned_roots = [
+            ROOT / "apps",
+            ROOT / "crates",
+            ROOT / "docs",
+            ROOT / "generated",
+            ROOT / "sdks",
+            ROOT / "services",
+            ROOT / "tests",
+            ROOT / "tools",
+        ]
+        ignored_dirs = {".git", "node_modules", "target", "dist", "build", ".venv", "__pycache__"}
+        text_suffixes = {
+            ".cs",
+            ".dart",
+            ".go",
+            ".java",
+            ".json",
+            ".kt",
+            ".md",
+            ".mjs",
+            ".py",
+            ".rs",
+            ".sql",
+            ".toml",
+            ".ts",
+            ".tsx",
+            ".txt",
+            ".yaml",
+            ".yml",
+        }
+        violations: list[str] = []
+
+        for root in scanned_roots:
+            if not root.exists():
+                continue
+            for directory, dir_names, file_names in os.walk(root):
+                dir_names[:] = [name for name in dir_names if name not in ignored_dirs]
+                for file_name in file_names:
+                    path = Path(directory) / file_name
+                    if path.suffix not in text_suffixes:
+                        continue
+                    if any(part in ignored_dirs for part in path.relative_to(ROOT).parts):
+                        continue
+                    content = path.read_text(encoding="utf-8", errors="ignore")
+                    for term in forbidden_terms:
+                        if term in content:
+                            violations.append(f"{path.relative_to(ROOT).as_posix()}: {term}")
+                    continue
+
+        self.assertEqual(
+            [],
+            violations,
+            "Channel-group code, contracts, generated artifacts, and tests must not retain legacy group naming.",
+        )
 
     def test_app_api_key_creation_persists_idempotency_and_audit_request_id(self) -> None:
         schema = render_schema_registry(

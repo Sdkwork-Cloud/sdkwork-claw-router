@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marrow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marrow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marrow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:17f044a990c83fd540458c7319bebe670c4c1bf7b4d3bc50864c5ee7e5d0a5b6",

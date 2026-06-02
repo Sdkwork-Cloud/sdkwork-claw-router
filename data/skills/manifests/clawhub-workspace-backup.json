@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workspace-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workspace-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workspace-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0cbd93beafc27a0fbf620e4eab537b67e66d1202c41c5c98f22df887ef54bb22",

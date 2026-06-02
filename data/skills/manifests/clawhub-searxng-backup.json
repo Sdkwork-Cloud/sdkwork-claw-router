@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/searxng-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-searxng-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-searxng-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:80e61cbacaf993c9782374bed764c9446cdf2628bc03790f5e5f7169a8656331",

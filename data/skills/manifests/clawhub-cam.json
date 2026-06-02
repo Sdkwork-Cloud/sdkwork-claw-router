@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cam@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cam-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cam-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:562af3e14de55d0dc1b4dc97c25d4f7cc1724f8f49c9f8d3ea7bf0a6e111fa3f",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docling@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-docling-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docling-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:89e2dd6f1a0f0ad5f4746c6075ca532642908f7c616198239403ae9d62bddb30",

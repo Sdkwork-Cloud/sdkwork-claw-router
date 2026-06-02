@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/circleci-integration@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-circleci-integration-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-circleci-integration-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:4b222c9d032ad444ef00e813663d07beddef947a50bfe9779b9752d9f7a0f710",

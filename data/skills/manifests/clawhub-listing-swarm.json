@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/listing-swarm@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-listing-swarm-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-listing-swarm-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6db75d8298018526ed0cd530b9fcb94e279ae24fdd0b7cd6e608775576fa1539",

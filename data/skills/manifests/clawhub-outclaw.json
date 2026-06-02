@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/outclaw@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-outclaw-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-outclaw-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:c841753491a2fa06b1755f317f8a07bc44624e9285754fae071300faa3e6b994",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-code-debugger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-code-debugger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-code-debugger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:817fb6ac7b102ff88d12865c59125c8e956096138995d2a65f70279be0c0d194",

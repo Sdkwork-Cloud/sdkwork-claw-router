@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-extractor@1.8.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-extractor-1.8.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-extractor-1.8.1.json"
+      },
       "version": "1.8.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9dcab7be0192cc116d770a5401ce4fdaccc2a85ddf883d8122529c37246c2605",

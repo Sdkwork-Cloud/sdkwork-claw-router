@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/peer-review@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-peer-review-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-peer-review-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c130f3f2cb5cecd902da61def8728f9cf8316bfa975413a063c78a42bfc07ef",

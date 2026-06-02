@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/biolims-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-biolims-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-biolims-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc675aadaeb0765d8f05ad880671c1904e0815c82d87ca5da72f0886fb870cab",

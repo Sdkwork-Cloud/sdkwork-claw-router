@@ -16,6 +16,8 @@ export interface PromotionOfferPresentationRecord {
   display_name: string;
   /** Field schema json field on promotion offer presentation record. */
   field_schema_json: Record<string, JsonValue>;
+  /** Id field on promotion offer presentation record. */
+  id?: string;
   /** Locale field on promotion offer presentation record. */
   locale: string;
   /** Logo asset id field on promotion offer presentation record. */

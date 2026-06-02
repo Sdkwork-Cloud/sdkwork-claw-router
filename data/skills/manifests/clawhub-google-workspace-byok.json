@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-workspace-byok@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-workspace-byok-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-workspace-byok-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1592736c6e6d13b3519fae83616d3a7c54a6f91b1efda12cc8ee286f84562da",

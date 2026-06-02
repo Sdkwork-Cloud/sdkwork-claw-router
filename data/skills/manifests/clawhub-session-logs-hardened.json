@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/session-logs-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-session-logs-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-session-logs-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:182028b8c53dfc6954227bcd1657ae09b1503764dc102fca812287e0e3c508bf",

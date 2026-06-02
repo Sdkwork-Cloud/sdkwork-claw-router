@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-hosts-windows@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-hosts-windows-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-hosts-windows-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d086466430f5c1504eab5ff307d9b20b96c0c57cd62de4cc6807c1826061ad74",

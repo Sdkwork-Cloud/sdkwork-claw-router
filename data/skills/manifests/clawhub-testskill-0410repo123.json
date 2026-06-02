@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/testskill-0410repo123@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-testskill-0410repo123-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-testskill-0410repo123-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:42f2ee0088d8f776deed349547de3f8e9ef232aa5d25ca2bd3fc8f8074c8d5fa",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-conductor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-conductor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-conductor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8d70a7a4771581810b2fd44f6046231920b3dd5dd7000e4430616aef38ecdad8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentsquared-official-skills@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentsquared-official-skills-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentsquared-official-skills-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:765d6014be92a3c0d910d75fcd31081ddb4f0d166103f7e6325a5fe5f7b74503",

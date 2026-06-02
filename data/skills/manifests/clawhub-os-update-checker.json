@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/os-update-checker@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-os-update-checker-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-os-update-checker-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:214b44ed28f2acf19a2c88147d84ba42c2117f2b10cee87d5d8a0f82116fcd9d",

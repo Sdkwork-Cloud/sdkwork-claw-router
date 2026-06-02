@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bbc-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bbc-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bbc-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e76acbea82c72454ac78bbefc4b1bc663662830d2a51373386a53857fc3038b1",

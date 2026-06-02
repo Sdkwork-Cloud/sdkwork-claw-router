@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/photo-captions@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-photo-captions-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-photo-captions-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:6fca282114e8dd1793743ec63d06dc2400271749caf1ff9cb10a19e138936437",

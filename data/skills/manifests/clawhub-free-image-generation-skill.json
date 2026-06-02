@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/free-image-generation-skill@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-free-image-generation-skill-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-free-image-generation-skill-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:794c2b1c7c25c207d3dddc5562b7f2f5308b17ad3c93274ea91be1187e9f09be",

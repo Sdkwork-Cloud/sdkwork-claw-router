@@ -18,6 +18,8 @@ export interface AiMcpServerRecord {
   deprecated_at?: string;
   /** Description field on ai mcp server record. */
   description?: string;
+  /** Health status field on ai mcp server record. */
+  health_status?: string;
   /** Id field on ai mcp server record. */
   id?: string;
   /** Last checked at field on ai mcp server record. */
@@ -42,6 +44,8 @@ export interface AiMcpServerRecord {
   server_key?: string;
   /** Status field on ai mcp server record. */
   status?: string;
+  /** Tags field on ai mcp server record. */
+  tags?: Record<string, JsonValue>;
   /** Tenant id field on ai mcp server record. */
   tenant_id?: string;
   /** Transport field on ai mcp server record. */

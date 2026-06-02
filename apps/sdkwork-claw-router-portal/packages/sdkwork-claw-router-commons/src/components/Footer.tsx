@@ -2,12 +2,14 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Terminal } from 'lucide-react';
 import { useSiteBranding } from '../siteBranding';
+import { readMediaResourceUrl } from '../media-resource';
 
 export function Footer() {
   const { t } = useTranslation();
   const siteBranding = useSiteBranding();
   const displaySiteName = siteBranding.shortName || siteBranding.siteName;
   const description = siteBranding.description || t('footer.desc');
+  const logoSource = readMediaResourceUrl(siteBranding.logo);
   const filingLinks = [
     {
       label: t('footer.icpRecordLabel'),
@@ -28,9 +30,9 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="w-8 h-8 rounded-lg bg-slate-900 dark:bg-white flex items-center justify-center">
-                {siteBranding.logoUrl ? (
+                {logoSource ? (
                   <img
-                    src={siteBranding.logoUrl}
+                    src={logoSource}
                     alt={siteBranding.siteName}
                     className="w-5 h-5 object-contain"
                   />

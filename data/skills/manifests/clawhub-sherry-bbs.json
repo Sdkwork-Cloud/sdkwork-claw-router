@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sherry-bbs@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sherry-bbs-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sherry-bbs-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:724b5bfe56122ba46a9e1697bb43e4bf8088cc9bba6c106693ccda0584c42570",

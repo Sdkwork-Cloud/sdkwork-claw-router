@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/terraform-cost-estimator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-terraform-cost-estimator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-terraform-cost-estimator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bce87b6dd2625c7060dd905c238cee73697b5210bed81ab85ac4d5a6d4ee0572",

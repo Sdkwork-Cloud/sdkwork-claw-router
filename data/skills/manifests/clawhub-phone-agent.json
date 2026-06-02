@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/phone-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-phone-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-phone-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1adf2185f7eb9e4ccdde63ff145a0b75d9337de2173f02132c3990dac3699543",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-browser-automation-skill@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-browser-automation-skill-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-browser-automation-skill-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e5293eefddcda4b141b27dff51accc9cb69584c0515daa261dfd943bae3a305a",

@@ -1,5 +1,310 @@
 fragment: operations/backend-system
 frontend_operations:
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: fetchIpLimits
+  operation_id: rateLimits.ip.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/system/rate_limits/ip
+  read_sources:
+  - iam_gateway_risk_rule
+  query_parameters: []
+  response_schema:
+    name: AdminIpLimitsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: &adminRateLimitItem
+          name: AdminRateLimitItem
+          type: object
+          additionalProperties: false
+          required: &adminRateLimitItemRequired
+          - id
+          properties: &adminRateLimitItemProperties
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            ruleName:
+              type: string
+              maxLength: 128
+            targetIp:
+              type: string
+              maxLength: 256
+            keyPrefix:
+              type: string
+              maxLength: 128
+            user:
+              type: string
+              maxLength: 128
+            model:
+              type: string
+              maxLength: 128
+            channelGroup:
+              type: string
+              maxLength: 128
+            channelGroupId:
+              type: string
+              maxLength: 128
+            channelGroupName:
+              type: string
+              maxLength: 128
+            rps:
+              type: integer
+              minimum: 0
+            rpm:
+              type: integer
+              minimum: 0
+            rpd:
+              type: integer
+              minimum: 0
+            tpm:
+              type: integer
+              minimum: 0
+            burst:
+              type: integer
+              minimum: 0
+            blockDuration:
+              type: string
+              maxLength: 64
+            status:
+              type: string
+              enum:
+              - active
+              - inactive
+              - exhausted
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: addIpLimit
+  operation_id: rateLimits.ip.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/system/rate_limits/ip
+  read_sources:
+  - iam_gateway_risk_rule
+  write_tables:
+  - iam_gateway_risk_rule
+  - ops_audit_log
+  request_schema:
+    name: AdminIpLimitCreateRequest
+    required:
+    - ruleName
+    - targetIp
+    - rps
+    - rpm
+    - blockDuration
+    properties:
+      ruleName:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Human-readable IP rate limit rule name.
+      targetIp:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: IP address, CIDR block, or gateway-recognized IP target expression.
+      rps:
+        type: integer
+        minimum: 1
+        maximum: 1000000
+        description: Maximum requests per second for the target.
+      rpm:
+        type: integer
+        minimum: 1
+        maximum: 60000000
+        description: Maximum requests per minute for the target.
+      blockDuration:
+        type: string
+        minLength: 1
+        maxLength: 64
+        description: Gateway block duration label or duration expression.
+      status:
+        type: string
+        enum:
+        - active
+        - inactive
+  response_schema:
+    name: AdminRateLimitMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminRateLimitItem
+        type: object
+        additionalProperties: false
+        required: *adminRateLimitItemRequired
+        properties: *adminRateLimitItemProperties
+        description: Persisted rate limit rule snapshot returned by the backend.
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: fetchTokenLimits
+  operation_id: rateLimits.apiKeys.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/system/rate_limits/api_keys
+  read_sources:
+  - ai_quota_policy
+  - iam_gateway_api_key
+  query_parameters: []
+  response_schema:
+    name: AdminTokenLimitsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: *adminRateLimitItem
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: addTokenLimit
+  operation_id: rateLimits.apiKeys.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/system/rate_limits/api_keys
+  read_sources:
+  - ai_quota_policy
+  - iam_gateway_api_key
+  write_tables:
+  - ai_quota_policy
+  - ops_audit_log
+  request_schema:
+    name: AdminTokenLimitCreateRequest
+    required:
+    - keyPrefix
+    - user
+    - rps
+    - rpd
+    - burst
+    properties:
+      keyPrefix:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: Masked API key prefix or gateway key selector.
+      user:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: User identifier or display name attached to the token limit rule.
+      rps:
+        type: integer
+        minimum: 1
+        maximum: 1000000
+        description: Maximum requests per second for the API key.
+      rpd:
+        type: integer
+        minimum: 1
+        maximum: 1000000000
+        description: Maximum requests per day for the API key.
+      burst:
+        type: integer
+        minimum: 1
+        maximum: 1000000
+        description: Allowed short-term burst capacity.
+      status:
+        type: string
+        enum:
+        - active
+        - exhausted
+  response_schema:
+    name: AdminRateLimitMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminRateLimitItem
+        type: object
+        additionalProperties: false
+        required: *adminRateLimitItemRequired
+        properties: *adminRateLimitItemProperties
+        description: Persisted rate limit rule snapshot returned by the backend.
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: fetchModelLimits
+  operation_id: rateLimits.models.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/system/rate_limits/models
+  read_sources:
+  - ai_quota_policy
+  - ai_channel_group
+  query_parameters: []
+  response_schema:
+    name: AdminModelLimitsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items: *adminRateLimitItem
+- route: /admin/ratelimit
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-ratelimit/src/ratelimitService.ts
+  operation: addModelLimit
+  operation_id: rateLimits.models.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/system/rate_limits/models
+  read_sources:
+  - ai_quota_policy
+  - ai_channel_group
+  write_tables:
+  - ai_quota_policy
+  - ops_audit_log
+  request_schema:
+    name: AdminModelLimitCreateRequest
+    required:
+    - model
+    - channelGroup
+    - rpm
+    - tpm
+    properties:
+      model:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: AI model identifier.
+      channelGroup:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: AI channel group code or identifier.
+      rpm:
+        type: integer
+        minimum: 1
+        maximum: 60000000
+        description: Maximum requests per minute for the model and group.
+      tpm:
+        type: integer
+        minimum: 1
+        maximum: 1000000000
+        description: Maximum tokens per minute for the model and group.
+      status:
+        type: string
+        enum:
+        - active
+        - inactive
+  response_schema:
+    name: AdminRateLimitMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminRateLimitItem
+        type: object
+        additionalProperties: false
+        required: *adminRateLimitItemRequired
+        properties: *adminRateLimitItemProperties
+        description: Persisted rate limit rule snapshot returned by the backend.
 - route: /admin/settings
   source: apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthSettingsService.ts
   operation: fetchClawRouterAuthSettings
@@ -351,9 +656,9 @@ frontend_operations:
     - siteName
     - shortName
     - description
-    - logoUrl
-    - iconUrl
-    - faviconUrl
+    - logo
+    - icon
+    - favicon
     - brandColor
     - accentColor
     - footerCopyright
@@ -379,15 +684,12 @@ frontend_operations:
       description:
         type: string
         maxLength: 4096
-      logoUrl:
-        type: string
-        maxLength: 2048
-      iconUrl:
-        type: string
-        maxLength: 2048
-      faviconUrl:
-        type: string
-        maxLength: 2048
+      logo:
+        $ref: '#/components/schemas/MediaResource'
+      icon:
+        $ref: '#/components/schemas/MediaResource'
+      favicon:
+        $ref: '#/components/schemas/MediaResource'
       brandColor:
         type: string
         pattern: ^#[0-9A-Fa-f]{3}(?:[0-9A-Fa-f]{3})?$
@@ -461,15 +763,12 @@ frontend_operations:
       description:
         type: string
         maxLength: 4096
-      logoUrl:
-        type: string
-        maxLength: 2048
-      iconUrl:
-        type: string
-        maxLength: 2048
-      faviconUrl:
-        type: string
-        maxLength: 2048
+      logo:
+        $ref: '#/components/schemas/MediaResource'
+      icon:
+        $ref: '#/components/schemas/MediaResource'
+      favicon:
+        $ref: '#/components/schemas/MediaResource'
       brandColor:
         type: string
         pattern: ^#[0-9A-Fa-f]{3}(?:[0-9A-Fa-f]{3})?$

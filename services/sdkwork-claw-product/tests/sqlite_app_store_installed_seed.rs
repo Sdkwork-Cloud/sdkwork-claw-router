@@ -18,16 +18,16 @@ async fn sqlite_app_store_reads_installed_seed_media_and_release_artifacts_by_ap
     assert_eq!("HTML", item.category);
     assert_eq!(
         "https://cdn.sdkwork.com/apps/sdkwork-claw-router/assets/icon-1024.png",
-        item.image
+        item.image["publicUrl"]
     );
     assert!(
         item.screenshots
             .iter()
-            .any(|url| url == "https://cdn.sdkwork.com/apps/sdkwork-claw-router/media/desktop_windows-screenshot.png"),
+            .any(|resource| resource["publicUrl"] == "https://cdn.sdkwork.com/apps/sdkwork-claw-router/media/desktop_windows-screenshot.png"),
         "installed AppCenter read model must consume studio_catalog_asset screenshots"
     );
     assert!(
-        item.releases.iter().any(|release| release.download_url
+        item.releases.iter().any(|release| release.artifact["publicUrl"]
             == "https://cdn.sdkwork.com/apps/sdkwork-claw-router/STABLE/0.1.0/web.zip"
             && release.platform_type == "Web"
             && release.os == "PC Web"

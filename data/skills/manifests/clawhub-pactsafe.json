@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pactsafe@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-pactsafe-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pactsafe-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9995cbd73ba1625999bf34a8eb1bd4835c625ecfcd0025dd20e89727e95a5bf7",

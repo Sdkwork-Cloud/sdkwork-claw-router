@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/liverpool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-liverpool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-liverpool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5586979bc1b53ab924dbbe49db1aacf030b8d9d33ebb764687f516da3c255826",

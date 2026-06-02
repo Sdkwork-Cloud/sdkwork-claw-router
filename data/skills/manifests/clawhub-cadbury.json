@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cadbury@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cadbury-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cadbury-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:014bfd0153caa381e4c640c5ea8aa7a1d7a052ec143548caca521f2d89b61fae",

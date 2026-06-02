@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workflow-checkpoint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workflow-checkpoint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workflow-checkpoint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5dc6eb33cca3e4c524dbd350abaf2cb8239dda1f189558d4d8ab4e5ad0b2a4fc",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentsec@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentsec-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentsec-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a45b47acf9c2aa6eaebf940a8fc3ae8ab4ff0b66ef812d0da70fef682bf75d66",

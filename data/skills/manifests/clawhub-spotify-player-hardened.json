@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spotify-player-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spotify-player-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spotify-player-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9f34a92ad2570ddd955a7147230cf74635c0e381d5438273152fc3c56fcb1a0c",

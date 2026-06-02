@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/massat-security-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-massat-security-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-massat-security-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e17f590ee550dfb118137009cbc8f4a665b8af23bdfbe39d3962b128b539bb7",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-imggen@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-imggen-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-imggen-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96ecd1b65abf25410529dbd280cbe1d353f07739fa8093931fd8d496e225bf5c",

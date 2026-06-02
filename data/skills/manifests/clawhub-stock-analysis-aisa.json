@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-analysis-aisa@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-analysis-aisa-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-analysis-aisa-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:881f23f1fb60f87080eb2c9aaf189891ee24493313d6f2a34fbb4f45ab8b61a8",

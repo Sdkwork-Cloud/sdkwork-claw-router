@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/free-cash-flow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-free-cash-flow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-free-cash-flow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d03cebfcf7c7a4810b5d624324ea68bcd0fbba276fa785462811b50d779736fb",

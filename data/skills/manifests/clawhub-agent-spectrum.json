@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-spectrum@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-spectrum-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-spectrum-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c732c84c191e7769d975a166e4ffe4642c76ae284de208fb18fdd3ee30d2c26",

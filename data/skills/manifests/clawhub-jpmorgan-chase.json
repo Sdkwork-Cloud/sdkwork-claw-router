@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jpmorgan-chase@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jpmorgan-chase-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jpmorgan-chase-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:704ed3d6536c3692ab9fe03e332141aa5a08856d70c1fd5669984cded3237788",

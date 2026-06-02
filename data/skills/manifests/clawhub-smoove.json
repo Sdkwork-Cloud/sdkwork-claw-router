@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smoove@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-smoove-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smoove-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:019e120d1c05811ef100a7ed4121751e5a9b160dda299b9277909908d14b1628",

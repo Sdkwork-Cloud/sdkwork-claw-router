@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/time-management@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-time-management-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-time-management-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f296de1dee05463573ec999c7170603831c8da4ca02abb1a53fc39aa5c2a9f79",

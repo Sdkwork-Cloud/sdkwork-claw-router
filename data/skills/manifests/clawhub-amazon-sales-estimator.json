@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-sales-estimator@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-sales-estimator-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-sales-estimator-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7c25cb28927370cf169f7335d7c5c4993e3b4ddb1fdf75a8a357faaa63f17a4",

@@ -7,12 +7,14 @@ public class CommerceOrderAddressSnapshotRecord {
     private String city;
     private String countryCode;
     private String district;
+    private String id;
     private String orderId;
     private String organizationId;
     private String phoneMasked;
     private String postalCode;
     private String recipientNameSnapshot;
     private String regionCode;
+    private String snapshotVersion;
     private String sourceAddressId;
     private String tenantId;
 
@@ -54,6 +56,14 @@ public class CommerceOrderAddressSnapshotRecord {
 
     public void setDistrict(String district) {
         this.district = district;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrderId() {
@@ -102,6 +112,14 @@ public class CommerceOrderAddressSnapshotRecord {
 
     public void setRegionCode(String regionCode) {
         this.regionCode = regionCode;
+    }
+
+    public String getSnapshotVersion() {
+        return this.snapshotVersion;
+    }
+
+    public void setSnapshotVersion(String snapshotVersion) {
+        this.snapshotVersion = snapshotVersion;
     }
 
     public String getSourceAddressId() {

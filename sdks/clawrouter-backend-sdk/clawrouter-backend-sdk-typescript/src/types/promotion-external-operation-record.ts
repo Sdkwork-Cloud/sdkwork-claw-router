@@ -28,6 +28,8 @@ export interface PromotionExternalOperationRecord {
   external_request_no?: string;
   /** External status field on promotion external operation record. */
   external_status?: string;
+  /** Id field on promotion external operation record. */
+  id?: string;
   /** Idempotency key field on promotion external operation record. */
   idempotency_key: string;
   /** Next retry at field on promotion external operation record. */
@@ -52,6 +54,8 @@ export interface PromotionExternalOperationRecord {
   request_hash?: string;
   /** Response hash field on promotion external operation record. */
   response_hash?: string;
+  /** Retry count field on promotion external operation record. */
+  retry_count: number;
   /** Sanitized request json field on promotion external operation record. */
   sanitized_request_json: Record<string, JsonValue>;
   /** Sanitized response json field on promotion external operation record. */

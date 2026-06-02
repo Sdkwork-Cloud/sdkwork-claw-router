@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ah-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ah-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ah-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e6b5b930be041028e74e425a77192c457dc8b93a300ea7dc82292c6b24bf85d5",

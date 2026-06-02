@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baidu-doc-pipeline-parser@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-baidu-doc-pipeline-parser-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baidu-doc-pipeline-parser-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:9c785658a80c2b3ef074b2d6d9205719d08b316439b5fbc891dfb46c81e83df5",

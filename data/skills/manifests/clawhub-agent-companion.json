@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-companion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-companion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-companion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8365f01bca750d263b295409835f27f7a65a1eb4771c5d9aa167eb6b5f6ead68",

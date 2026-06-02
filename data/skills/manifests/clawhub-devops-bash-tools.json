@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/devops-bash-tools@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-devops-bash-tools-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-devops-bash-tools-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1429a6bf0fe78b8b9baeefaf7c3aaba971eaa6aabf820defddcae1ad8504989c",

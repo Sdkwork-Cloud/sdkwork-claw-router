@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/readme-template@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-readme-template-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-readme-template-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8931d44898dae23b303a9435128a86668cdc973a2566eda065e7fb33b2c558f6",

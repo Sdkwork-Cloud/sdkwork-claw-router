@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sensevoice-transcribe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sensevoice-transcribe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sensevoice-transcribe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0feb43ce6f291e0252bbd02cbbc98af0372551b8368aeab82816bce881ab5ac",

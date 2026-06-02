@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/movie-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-movie-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-movie-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd312e97dd14396a97d930d9acba714c7f1a56e0ad10158cdd1f162c789ad473",

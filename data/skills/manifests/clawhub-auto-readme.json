@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-readme@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-readme-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-readme-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d001f08e322bd94f9d672fcb923664e93440661767a56ba546f898e02f6f813a",

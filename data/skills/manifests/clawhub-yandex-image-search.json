@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yandex-image-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yandex-image-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yandex-image-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec01649e87025f4b3b35ade8f3d406bb15e113f99c96a19b42875c267fb1cfb6",

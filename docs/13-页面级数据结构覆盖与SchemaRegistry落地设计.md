@@ -1,4 +1,4 @@
-﻿# 页面级数据结构覆盖与 Schema Registry 落地设计
+# 页面级数据结构覆盖与 Schema Registry 落地设计
 
 > 版本：v0.1
 > 日期：2026-04-28

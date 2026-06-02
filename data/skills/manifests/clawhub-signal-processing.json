@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/signal-processing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-signal-processing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-signal-processing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c430352976ad61694ad2c08ee411cd217c515ed4ee07692cc4fbd2ed5c928e10",

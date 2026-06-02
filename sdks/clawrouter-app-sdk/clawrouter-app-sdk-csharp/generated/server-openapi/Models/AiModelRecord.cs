@@ -24,7 +24,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? DocsUrl { get; set; }
         public string? FamilyCode { get; set; }
         public string? FamilyId { get; set; }
-        public string? IconUrl { get; set; }
+        public MediaResource? Icon { get; set; }
         public string? Id { get; set; }
         public Dictionary<string, string>? InputModalities { get; set; }
         public string? LicenseType { get; set; }

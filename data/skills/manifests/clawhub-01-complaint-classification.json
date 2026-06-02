@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/01-complaint-classification@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-01-complaint-classification-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-01-complaint-classification-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce3dc76ad80ff7d5a42db6a40d198b7fcfa7da340671e07e8d100790eabe3441",

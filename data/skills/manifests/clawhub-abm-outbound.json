@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abm-outbound@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abm-outbound-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abm-outbound-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c7d191bb4e3fe9023fbaf8ccb05cd581b315fe7aedbf0fedac3f57f66e914d4",

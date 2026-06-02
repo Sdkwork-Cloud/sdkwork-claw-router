@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/card-renderer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-card-renderer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-card-renderer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b55e8f35cb5100296c35a16eace185474352bfc94fbf710f29c1d74334ef0ba",

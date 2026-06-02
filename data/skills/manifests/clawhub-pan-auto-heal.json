@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pan-auto-heal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pan-auto-heal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pan-auto-heal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:827633865e04c01dab91bc0dc5fd92758773daab23da51eaf7ab254aed16ba38",

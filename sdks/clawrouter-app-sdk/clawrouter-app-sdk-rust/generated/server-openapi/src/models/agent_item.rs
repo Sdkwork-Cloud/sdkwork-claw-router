@@ -1,14 +1,13 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{AgentCapabilities, AgentVersionItem};
+use crate::models::{AgentCapabilities, AgentVersionItem, MediaResource};
 
 /// Agent item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AgentItem {
-    /// Avatar url field on agent item.
-    #[serde(rename = "avatarUrl")]
+    /// Avatar field on agent item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub avatar_url: Option<String>,
+    pub avatar: Option<MediaResource>,
 
     /// Capabilities field on agent item.
     pub capabilities: AgentCapabilities,

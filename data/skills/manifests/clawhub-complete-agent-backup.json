@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/complete-agent-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-complete-agent-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-complete-agent-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:11a86ad63d523a0c3e47d6f6d037b54c62bac38099150da4659d5c1ec9e2c000",

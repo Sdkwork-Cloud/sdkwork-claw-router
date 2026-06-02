@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hiskill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hiskill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hiskill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf45b705f1eee3fc9002c0bd4b3b64b3a94dd681907c734dcf241308bb6ec986",

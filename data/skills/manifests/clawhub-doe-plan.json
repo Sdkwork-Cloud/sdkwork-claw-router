@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/doe-plan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-doe-plan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-doe-plan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:791c367889eaaa855f39b41e2b711553dc0622714defdb8f2f1dc3380cb1ccdb",

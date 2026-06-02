@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/safety-checks@1.5.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-safety-checks-1.5.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-safety-checks-1.5.2.json"
+      },
       "version": "1.5.2",
       "runtime": "metadata",
       "checksumHash": "sha256:365c16f8b7d7b9e001415f843bf2d39be66c8ceb2dd79d7444ffcf6171b39041",

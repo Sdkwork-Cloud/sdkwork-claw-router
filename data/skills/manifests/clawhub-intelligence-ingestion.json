@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/intelligence-ingestion@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-intelligence-ingestion-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-intelligence-ingestion-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c8e523441a33190e5f7ee6997c26732480a4d455cfc2849fec2743d3662f4c2d",

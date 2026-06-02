@@ -9,6 +9,10 @@ pub struct CommercePaymentProviderRecord {
     /// Display name field on commerce payment provider record.
     pub display_name: String,
 
+    /// Id field on commerce payment provider record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Organization id field on commerce payment provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
@@ -18,6 +22,9 @@ pub struct CommercePaymentProviderRecord {
 
     /// Provider type field on commerce payment provider record.
     pub provider_type: String,
+
+    /// Sort order field on commerce payment provider record.
+    pub sort_order: String,
 
     /// Status field on commerce payment provider record.
     pub status: String,

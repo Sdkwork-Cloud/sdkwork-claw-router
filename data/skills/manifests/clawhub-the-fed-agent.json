@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/the-fed-agent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-the-fed-agent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-the-fed-agent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5cd7f4f001e9cbed6c0fc038a92118c23a784eb9b68945e398a341fb69816b4d",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workfront@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-workfront-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workfront-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8980d9b44563e4ab5c0b52fdbba009ec5e32f810bbc75ab8f634352643605722",

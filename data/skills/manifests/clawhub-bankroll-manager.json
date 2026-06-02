@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bankroll-manager@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bankroll-manager-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bankroll-manager-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:37795d9403423db6bf7618c7199f178bd50ef7d30467048f3e19408d71c40062",

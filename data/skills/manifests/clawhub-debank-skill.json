@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/debank-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-debank-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-debank-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:88d7b5e39165f37ede27ab2387228b5c956de8f27413cb61474c8c3699e2edb6",

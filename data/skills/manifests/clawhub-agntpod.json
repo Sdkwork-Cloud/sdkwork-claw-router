@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agntpod@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agntpod-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agntpod-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6ba64ac3fc0e6691b40ffb2d8ef0e54570dc22b9b1d5ff070613111e5a1adef1",

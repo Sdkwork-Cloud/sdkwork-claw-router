@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stability-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stability-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stability-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0f105686bb72158486448ddaefed0f016c1f54d510d19f1d976c91b6a88be1b",

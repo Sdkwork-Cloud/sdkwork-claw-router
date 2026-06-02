@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tmux-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tmux-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tmux-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:471dea3a743204a9dba92d6f194f67aff7f0c4fe8c2111d6c34f111729a238f6",

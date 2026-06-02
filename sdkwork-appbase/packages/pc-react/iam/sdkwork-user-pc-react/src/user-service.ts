@@ -1,12 +1,16 @@
 import { getAppClientWithSession } from "@sdkwork/core-pc-react";
 import {
+  readSdkworkMediaResource,
+  type SdkworkMediaResource,
+} from "@sdkwork/appbase-pc-react";
+import {
   createSdkworkUserMessages,
   type SdkworkUserMessagesOverrides,
 } from "./user-copy.ts";
 import { getDefaultSdkworkUserStorage } from "./user-preferences.ts";
 
 export interface SdkworkUserProfile {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   email: string;
   firstName: string;
   lastName: string;
@@ -36,7 +40,7 @@ export interface SdkworkUserPreferences {
 }
 
 export interface SdkworkUserProfileCapabilities {
-  avatarUrlEditable: boolean;
+  avatarEditable: boolean;
   emailEditable: boolean;
 }
 
@@ -133,7 +137,7 @@ const DEFAULT_SECURITY_PREFERENCES: SdkworkUserPreferences["security"] = {
 
 const DEFAULT_USER_SERVICE_CAPABILITIES: SdkworkUserServiceCapabilities = {
   profile: {
-    avatarUrlEditable: true,
+    avatarEditable: true,
     emailEditable: true,
   },
   security: {
@@ -321,7 +325,7 @@ function buildNotificationTypeSettingsUpdates(
 }
 
 function toUserProfile(profile: {
-  avatar?: string;
+  avatar?: unknown;
   email?: string;
   nickname?: string;
 }): SdkworkUserProfile {
@@ -331,7 +335,7 @@ function toUserProfile(profile: {
     .filter(Boolean);
 
   return {
-    avatarUrl: normalizeOptionalString(profile.avatar),
+    avatar: readSdkworkMediaResource(profile.avatar),
     email: normalizeOptionalString(profile.email) || "",
     firstName,
     lastName: rest.join(" "),
@@ -360,7 +364,7 @@ export function createSdkworkUserService(
     async getProfile() {
       const client = getClient();
       const profile = unwrapAppSdkResponse<{
-        avatar?: string;
+        avatar?: unknown;
         email?: string;
         nickname?: string;
       }>(
@@ -421,10 +425,11 @@ export function createSdkworkUserService(
     async updateProfile(profile) {
       const client = getClient();
       const updated = unwrapAppSdkResponse<{
-        avatar?: string;
+        avatar?: unknown;
         email?: string;
       }>(
         await client.user.updateUserProfile?.({
+          avatar: profile.avatar,
           email: profile.email,
           nickname: [profile.firstName, profile.lastName].filter(Boolean).join(" ").trim() || undefined,
         }),
@@ -432,7 +437,7 @@ export function createSdkworkUserService(
       ) || {};
 
       return {
-        avatarUrl: normalizeOptionalString(updated.avatar) || profile.avatarUrl,
+        avatar: readSdkworkMediaResource(updated.avatar) || profile.avatar,
         email: normalizeOptionalString(updated.email) || profile.email,
         firstName: profile.firstName,
         lastName: profile.lastName,

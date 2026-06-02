@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/python-code-test@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-python-code-test-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-python-code-test-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:f32f4424b0f534522cc8968fc61020b64d0bcae03ef5a0d284d569cc80493d39",

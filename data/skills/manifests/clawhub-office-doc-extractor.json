@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/office-doc-extractor@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-office-doc-extractor-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-office-doc-extractor-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3c4d5b85d264c3ce029b7e8bd3cbcf09fe5590f2df0d26d628f63246d353e84b",

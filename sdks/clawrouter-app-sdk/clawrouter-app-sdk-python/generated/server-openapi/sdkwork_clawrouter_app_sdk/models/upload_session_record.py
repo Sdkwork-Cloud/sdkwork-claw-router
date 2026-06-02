@@ -9,12 +9,15 @@ class UploadSessionRecord:
     aborted_at: Optional[str] = None
     bucket_id: Optional[str] = None
     completed_at: Optional[str] = None
+    completed_bytes: Optional[str] = None
+    completed_part_count: Optional[int] = None
     content_type: Optional[str] = None
     created_at: Optional[str] = None
     data_scope: Optional[str] = None
     deleted_at: Optional[str] = None
     deleted_by: Optional[str] = None
     expected_sha256: Optional[str] = None
+    expected_size_bytes: Optional[str] = None
     expires_at: Optional[str] = None
     id: Optional[str] = None
     idempotency_key: Optional[str] = None
@@ -25,6 +28,8 @@ class UploadSessionRecord:
     original_filename: Optional[str] = None
     owner_id: Optional[str] = None
     owner_type: Optional[str] = None
+    part_count: Optional[int] = None
+    part_size_bytes: Optional[str] = None
     provider_id: Optional[str] = None
     request_id: Optional[str] = None
     s3_upload_id: Optional[str] = None

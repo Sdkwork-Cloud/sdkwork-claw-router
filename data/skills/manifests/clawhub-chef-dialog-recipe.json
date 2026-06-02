@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chef-dialog-recipe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chef-dialog-recipe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chef-dialog-recipe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf1917a66fbbaafa8cdc56b8f76d3e3b183fcd070b72652badae99a49dbb0002",

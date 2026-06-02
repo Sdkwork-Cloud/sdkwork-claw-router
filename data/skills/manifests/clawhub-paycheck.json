@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paycheck@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-paycheck-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paycheck-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1b7a1405340613a03874c3a5d07ebb44c5d06b62918f33d1c559145fb5b84f79",

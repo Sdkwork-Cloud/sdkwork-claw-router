@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-trending-scraper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-trending-scraper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-trending-scraper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b09eda0f27ff85888c636379966e17c7e6c36b2eae386716b1ece7213519228",

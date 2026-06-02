@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/datagate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-datagate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-datagate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1e6b7d103d9470ee76317905398b83590fc47f0dc9bcc8bef4fe7c7c1ba4df31",

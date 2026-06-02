@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/custom-bikini-openapi-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-custom-bikini-openapi-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-custom-bikini-openapi-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1055b4126d6993017233d80651f0c1f57e2d02224fcf826922821a58be4638c6",

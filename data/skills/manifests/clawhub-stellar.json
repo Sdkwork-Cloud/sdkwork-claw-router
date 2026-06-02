@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stellar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stellar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stellar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:526490718ccb7b8c2428569540bef411965a865b37ddc13f185e8b9695ff1679",

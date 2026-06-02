@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ship-my-token@1.5.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-ship-my-token-1.5.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ship-my-token-1.5.3.json"
+      },
       "version": "1.5.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6e1787202afc434f898ecb484274ed3e84d9e4f307f1e824cba47133faf848ac",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-chat-nostr@0.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-chat-nostr-0.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-chat-nostr-0.0.5.json"
+      },
       "version": "0.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:9de4539a5123f3be4c62a57c40ec84028d61a2e3ed7c69b55f6dabad4c9188a3",

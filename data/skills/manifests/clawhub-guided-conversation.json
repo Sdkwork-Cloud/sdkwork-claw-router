@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/guided-conversation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-guided-conversation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-guided-conversation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2e886fe26c5df882413db862e04501ecf07f5f1ca40ad4e543c5074d4adc3a8",

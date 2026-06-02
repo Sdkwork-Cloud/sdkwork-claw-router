@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-autopilot@1.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-autopilot-1.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-autopilot-1.4.1.json"
+      },
       "version": "1.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:83cc20b6a3aff06dba8648b211e3b93e9a6431fb823a9770b42490a8615d6bd0",

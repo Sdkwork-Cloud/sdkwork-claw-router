@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-wellness@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-wellness-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-wellness-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de6cc48b2854ac790a8944609f44807d383afcda8f21d724d425ed28c2fb0856",

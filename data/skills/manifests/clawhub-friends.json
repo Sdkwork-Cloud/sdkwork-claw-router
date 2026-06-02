@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/friends@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-friends-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-friends-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:47cff2ce3e13a381fc57d4c4975f99a2842f8559b1b3d6ad51b011eb08778b42",

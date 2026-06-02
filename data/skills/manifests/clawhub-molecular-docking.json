@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/molecular-docking@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-molecular-docking-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-molecular-docking-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0661f37f163711732eb6939f005d17b5f20e0ea4a43fc3f79cf2619550db4e9b",

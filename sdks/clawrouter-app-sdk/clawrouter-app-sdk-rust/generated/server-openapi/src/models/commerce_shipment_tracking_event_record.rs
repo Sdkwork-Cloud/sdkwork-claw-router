@@ -16,6 +16,10 @@ pub struct CommerceShipmentTrackingEventRecord {
     /// Event time field on commerce shipment tracking event record.
     pub event_time: String,
 
+    /// Id field on commerce shipment tracking event record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Location field on commerce shipment tracking event record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub location: Option<String>,

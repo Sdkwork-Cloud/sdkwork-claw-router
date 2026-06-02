@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-engine@0.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-engine-0.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-engine-0.3.2.json"
+      },
       "version": "0.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:93870038eb9a35d0e1f769497e592607f81fef4ad6391ce17c4c82afbc7975aa",

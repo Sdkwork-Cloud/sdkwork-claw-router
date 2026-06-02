@@ -7,9 +7,9 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class CommerceProductSpuRecord
     {
         public string? Brand { get; set; }
-        public string? CategoryId { get; set; }
         public string? CreatedAt { get; set; }
         public string? Description { get; set; }
+        public string? Id { get; set; }
         public string? OrganizationId { get; set; }
         public string? ProductType { get; set; }
         public string? PublishedAt { get; set; }

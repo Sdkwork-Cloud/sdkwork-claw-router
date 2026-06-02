@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/roleplay-agent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-roleplay-agent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-roleplay-agent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a40b95a0892ab245320d48800aa7c67ca9c93ca4672d9763dfa4f3dba131be8b",

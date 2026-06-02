@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shell-scripting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shell-scripting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shell-scripting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:494f026f973b0825126d11abdfcfe05e0b2c8a69214207063fc10fe080ffd86c",

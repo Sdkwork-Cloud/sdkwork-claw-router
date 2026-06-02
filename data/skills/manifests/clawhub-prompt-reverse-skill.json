@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-reverse-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-reverse-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-reverse-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f46ee5a28c8b01f07a0313e6d24321e15e07a48003b7696e45d9abe5aa67ff3",

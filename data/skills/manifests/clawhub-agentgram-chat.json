@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentgram-chat@2.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentgram-chat-2.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentgram-chat-2.4.0.json"
+      },
       "version": "2.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6e6775598a1d972cbc6b297025962f9b8b7763d05cf14e2adf0b89e00d48f6fb",

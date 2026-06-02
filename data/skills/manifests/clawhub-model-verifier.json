@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-verifier@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-verifier-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-verifier-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f01c6feaef7ff6fb3e771284258fa338a3606ee725119cef6542211d3ecd40c3",

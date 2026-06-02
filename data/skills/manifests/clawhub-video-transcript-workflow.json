@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-transcript-workflow@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-transcript-workflow-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-transcript-workflow-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c962aee4cd44ec91cb118c3f284e1eee759e2ef245b48d180250b8b0ab0b4a09",

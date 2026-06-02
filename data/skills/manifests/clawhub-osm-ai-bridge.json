@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/osm-ai-bridge@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-osm-ai-bridge-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-osm-ai-bridge-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:efab4df387e06a9149d2c9c1e647dbf20d43b7d952a3de78fd01137548f780cc",

@@ -197,11 +197,8 @@ frontend_operations:
         nullable: true
         minLength: 1
         maxLength: 2048
-      qrCodeImageUrl:
-        type: string
-        nullable: true
-        minLength: 1
-        maxLength: 2048
+      qrCode:
+        $ref: '#/components/schemas/MediaResource'
 - route: /console/wallet
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-wallet/src/walletService.ts
   operation: appPromotionCodeRedemptionsCreate

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/miraix-agent-arena@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-miraix-agent-arena-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-miraix-agent-arena-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:80c14ad62b57f4d804569b7e4454caec19ba3511a0703445a0a1939019846bf3",

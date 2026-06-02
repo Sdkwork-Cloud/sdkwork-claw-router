@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/system-selfcheck@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-system-selfcheck-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-system-selfcheck-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98155d1a5164c412a78eb5c8591e7c8dfcf0f350df6b83ba871d3ebf9731a2ab",

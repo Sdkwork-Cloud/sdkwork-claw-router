@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lead-gen-operator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lead-gen-operator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lead-gen-operator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:32784ae08d10c330cb0d50e1d85cfce05818f2269150d7fef6fdce8020db2fab",

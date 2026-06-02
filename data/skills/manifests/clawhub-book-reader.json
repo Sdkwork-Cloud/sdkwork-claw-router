@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-reader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-reader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-reader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8e821e89d025984beec7f469580e8b032290316b090db9c885603df2fdad17cd",

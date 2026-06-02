@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/recon-quick@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-recon-quick-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-recon-quick-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f1b8709919bcf1c961724b3c8054cec82d81bea506f54d6fb7c2dc5bc982873",

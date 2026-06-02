@@ -2,6 +2,8 @@ import type { JsonValue } from './json-value';
 
 /** Ops notification delivery record schema exposed by Claw Router. */
 export interface OpsNotificationDeliveryRecord {
+  /** App id field on ops notification delivery record. */
+  app_id?: string;
   /** Archived at field on ops notification delivery record. */
   archived_at?: string;
   /** Created at field on ops notification delivery record. */

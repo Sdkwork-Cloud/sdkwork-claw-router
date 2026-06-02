@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chelsea@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chelsea-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chelsea-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af1b068dfda19b5b9b3caca593410ce8dfb892d43bce312b1bb58132cb8e39b3",

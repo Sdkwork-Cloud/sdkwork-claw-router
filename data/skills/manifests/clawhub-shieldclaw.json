@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shieldclaw@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-shieldclaw-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shieldclaw-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2698d0c9a1d542dab89067c2c15015c850f7d408ccfc6f181298d142437f649a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zenodo-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zenodo-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zenodo-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca4aed2d2d6057ac978e845e1388309b98225deaff33d0b8a6ffba086af7f02c",

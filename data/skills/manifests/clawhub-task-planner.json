@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-planner@3.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-planner-3.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-planner-3.0.5.json"
+      },
       "version": "3.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:a8beb6fa9179e3380ac999075b922f4647821628802a1ab8950b9216144520d1",

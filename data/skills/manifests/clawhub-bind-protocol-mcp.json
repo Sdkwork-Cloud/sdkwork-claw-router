@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bind-protocol-mcp@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bind-protocol-mcp-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bind-protocol-mcp-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05271816dbe0c8cc0a49bbf54a919eba561646640ea040d83edb7ae54608666d",

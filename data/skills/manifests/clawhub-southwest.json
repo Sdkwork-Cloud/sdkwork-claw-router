@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/southwest@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-southwest-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-southwest-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2bc926fdcd2ed036dadc71df4a38631ebe7f0f3d98aae260c011c40079ad14e5",

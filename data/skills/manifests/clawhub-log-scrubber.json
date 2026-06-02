@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/log-scrubber@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-log-scrubber-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-log-scrubber-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:bece1039ba2793466991fca5bfd5401ae24f2065acfe4b6eff18e194d8c9fe6d",

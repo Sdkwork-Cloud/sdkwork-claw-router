@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hca-healthcare@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hca-healthcare-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hca-healthcare-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25b9e154e71bdee004bff96f7c5caa5a76e30c39503efc923b8eb5240fd74faa",

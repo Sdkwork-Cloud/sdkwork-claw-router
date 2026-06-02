@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hugme@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hugme-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hugme-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b00c56d9b1f89dde38c9d5bb2118de0ebbb9ca918d19143410732ba0a9d68d0c",

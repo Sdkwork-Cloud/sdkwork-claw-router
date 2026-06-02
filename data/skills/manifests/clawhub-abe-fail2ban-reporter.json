@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abe-fail2ban-reporter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abe-fail2ban-reporter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abe-fail2ban-reporter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbbfafde3ca2a643edb051360e3be7add16206dfea5e68702dca5310fc8aa20f",

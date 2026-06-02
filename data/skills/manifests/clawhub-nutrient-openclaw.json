@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nutrient-openclaw@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-nutrient-openclaw-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nutrient-openclaw-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:3b31d6045edacb861395183461bc0f7712f21079381b5d89ece5b4dfefe50b7c",

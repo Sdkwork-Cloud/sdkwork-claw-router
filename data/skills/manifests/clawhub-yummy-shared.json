@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yummy-shared@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yummy-shared-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yummy-shared-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1703213e863245bbeace001b47069b0ff6adb389058a6cddc18891c112fe8aa",

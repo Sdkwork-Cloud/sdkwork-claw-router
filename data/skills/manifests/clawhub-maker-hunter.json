@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maker-hunter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-maker-hunter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maker-hunter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:889005c4c3bcc7d73971624b79d39b79c4ddc5501472f78a3d80a3d31f577fd1",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/riskshield@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-riskshield-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-riskshield-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74c8454cbaf2cccaa4f5cd565e59741df7cc212af9203c865c14ce119e0c8115",

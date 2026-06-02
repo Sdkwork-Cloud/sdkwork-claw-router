@@ -13,4 +13,5 @@ class CommerceProductSkuAttributeRecord:
     updated_at: str
     attribute_value_id: Optional[str] = None
     custom_value: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None

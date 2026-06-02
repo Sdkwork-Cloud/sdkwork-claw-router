@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/restic-workstation-backup@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-restic-workstation-backup-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-restic-workstation-backup-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f140466afc7e1fad478fb9426aef05f6a961f180fab7f645c5116bcd61b03b4b",

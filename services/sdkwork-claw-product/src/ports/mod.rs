@@ -1,4 +1,3 @@
-mod admin_access_group_store;
 mod admin_agent_store;
 mod admin_ai_resource_store;
 mod admin_analytics_read_store;
@@ -6,11 +5,14 @@ mod admin_announcement_store;
 mod admin_api_key_rate_limit_store;
 mod admin_app_store;
 mod admin_auth_settings_store;
+mod admin_catalog_store;
 mod admin_channel_endpoint_store;
+mod admin_channel_group_store;
 mod admin_channel_store;
 mod admin_dashboard_read_store;
 mod admin_finance_store;
 mod admin_firewall_rule_store;
+mod admin_inventory_store;
 mod admin_ip_rate_limit_store;
 mod admin_marketing_store;
 mod admin_mcp_store;
@@ -72,13 +74,6 @@ mod usage_settlement_store;
 mod verification_code_sender;
 mod verification_delivery_config_store;
 
-pub use admin_access_group_store::{
-    AdminAccessGroupChannelBindingInput, AdminAccessGroupChannelBindingItem,
-    AdminAccessGroupCommandFuture, AdminAccessGroupItem, AdminAccessGroupStore,
-    AdminAccessGroupSubject, CreateAdminAccessGroupCommand, DeleteAdminAccessGroupCommand,
-    ListAdminAccessGroupChannelBindingsQuery, ListAdminAccessGroupsQuery,
-    ReplaceAdminAccessGroupChannelBindingsCommand, UpdateAdminAccessGroupCommand,
-};
 pub use admin_agent_store::{
     AdminAgentReadFuture, AdminAgentStore, AdminAgentSubject, GetAdminAgentQuery,
     ListAdminAgentsQuery,
@@ -118,10 +113,27 @@ pub use admin_auth_settings_store::{
     AdminAuthWechatSettings, GetAdminAuthSettingsQuery, GetAdminAuthSettingsScopeQuery,
     UpdateAdminAuthSettingsCommand,
 };
+pub use admin_catalog_store::{
+    AdminAttributeMutationCommand, AdminCatalogCollection, AdminCatalogFuture,
+    AdminCatalogJsonRecord, AdminCatalogStore, AdminCatalogSubject,
+    AdminCategoryAttributeMutationCommand, AdminCategoryMutationCommand, AdminCategorySeedBundle,
+    AdminCategorySeedInitializeCommand, AdminCategorySeedInitializeSummary,
+    AdminCategorySeedInstallPolicy, AdminCategorySeedItem, AdminPriceListMutationCommand,
+    AdminProductMutationCommand, AdminSkuAttributeInput, AdminSkuMutationCommand,
+    DeleteAdminCategoryAttributeCommand, DeleteAdminCategoryCommand, DeleteAdminProductCommand,
+    DeleteAdminSkuCommand, ListAdminCatalogRecordsQuery,
+};
 pub use admin_channel_endpoint_store::{
     AdminChannelEndpointFuture, AdminChannelEndpointItem, AdminChannelEndpointStore,
     AdminChannelEndpointSubject, CreateAdminChannelEndpointCommand, ListAdminChannelEndpointsQuery,
     UpdateAdminChannelEndpointCommand,
+};
+pub use admin_channel_group_store::{
+    AdminChannelGroupChannelBindingInput, AdminChannelGroupChannelBindingItem,
+    AdminChannelGroupCommandFuture, AdminChannelGroupItem, AdminChannelGroupStore,
+    AdminChannelGroupSubject, CreateAdminChannelGroupCommand, DeleteAdminChannelGroupCommand,
+    ListAdminChannelGroupChannelBindingsQuery, ListAdminChannelGroupsQuery,
+    ReplaceAdminChannelGroupChannelBindingsCommand, UpdateAdminChannelGroupCommand,
 };
 pub use admin_channel_store::{
     AdminChannelCommandFuture, AdminChannelItem, AdminChannelStore, AdminChannelSubject,
@@ -141,6 +153,10 @@ pub use admin_firewall_rule_store::{
     AdminFirewallRuleCommandFuture, AdminFirewallRuleItem, AdminFirewallRuleStore,
     AdminFirewallRuleSubject, CreateAdminFirewallRuleCommand, DeleteAdminFirewallRuleCommand,
     ListAdminFirewallRulesQuery,
+};
+pub use admin_inventory_store::{
+    AdminInventoryCollection, AdminInventoryFuture, AdminInventoryJsonRecord, AdminInventoryStore,
+    AdminInventorySubject, ListAdminInventoryRecordsQuery, UpdateAdminInventoryStockCommand,
 };
 pub use admin_ip_rate_limit_store::{
     AdminIpRateLimitCommandFuture, AdminIpRateLimitItem, AdminIpRateLimitStore,
@@ -264,8 +280,10 @@ pub use admin_storage_store::{
 pub use admin_transaction_center_store::{
     AdminTransactionCenterFuture, AdminTransactionCenterStore, AdminTransactionCenterSubject,
     AdminTransactionCollection, AdminTransactionJsonRecord,
-    CreateAdminPaymentProviderAccountCommand, ListAdminTransactionChildRecordsQuery,
-    ListAdminTransactionRecordsQuery, LoadAdminTransactionRecordQuery,
+    CreateAdminPaymentProviderAccountCommand, DeleteAdminPaymentProviderAccountCommand,
+    ListAdminTransactionChildRecordsQuery, ListAdminTransactionRecordsQuery,
+    LoadAdminTransactionRecordQuery, UpdateAdminPaymentProviderAccountCommand,
+    UpdateAdminPaymentProviderAccountStatusCommand,
 };
 pub use admin_user_store::{
     AdjustAdminUserBalanceCommand, AdminUserApiKeyItem, AdminUserCommandFuture, AdminUserItem,
@@ -275,7 +293,7 @@ pub use admin_user_store::{
 };
 pub use api_key_command_store::{
     ApiKeyCommandStoreFuture, CreateGatewayApiKeyCommand, CreatedGatewayApiKey,
-    DeleteGatewayApiKeyCommand, EnsureDefaultApiKeyGroupCommand, GatewayApiKeyCommandStore,
+    DeleteGatewayApiKeyCommand, EnsureDefaultChannelGroupCommand, GatewayApiKeyCommandStore,
     UpdateGatewayApiKeyCommand, UpdatedGatewayApiKey,
 };
 pub use api_key_management_read_store::{
@@ -311,7 +329,7 @@ pub use app_gateway_traces_read_store::{
 };
 pub use app_generation_history_read_store::{
     AppGenerationHistoryItem, AppGenerationHistoryItems, AppGenerationHistoryReadFuture,
-    AppGenerationHistoryReadStore, AppGenerationHistorySubject, AppGenerationMediaItem,
+    AppGenerationHistoryReadStore, AppGenerationHistorySubject,
 };
 pub use app_memory_store::{
     AppMemoryEntryItem, AppMemoryEntryList, AppMemoryFuture, AppMemorySpaceItem,

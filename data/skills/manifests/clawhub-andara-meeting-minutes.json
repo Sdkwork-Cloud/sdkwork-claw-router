@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/andara-meeting-minutes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-andara-meeting-minutes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-andara-meeting-minutes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dca97d81a2c803a119529f3984d37d62da2aac72b0af5fe00ce901d783ad5fff",

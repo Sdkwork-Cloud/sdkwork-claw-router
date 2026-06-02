@@ -4,8 +4,10 @@ import java.util.Map;
 
 public class PromotionOfferAudienceRuleRecord {
     private String createdAt;
+    private String id;
     private String offerVersionId;
     private String organizationId;
+    private Integer priority;
     private String ruleOperator;
     private String ruleType;
     private String ruleValue;
@@ -19,6 +21,14 @@ public class PromotionOfferAudienceRuleRecord {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOfferVersionId() {
@@ -35,6 +45,14 @@ public class PromotionOfferAudienceRuleRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     public String getRuleOperator() {

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-harness@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-harness-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-harness-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62569f7e79719191d1083e5c43fa687f62dff31d09cc73bbfb7fee6eb6dd83de",

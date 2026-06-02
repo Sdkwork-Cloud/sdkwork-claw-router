@@ -6,10 +6,10 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class AppApiKeyItem:
     """Updated API key metadata. Authenticated owner management responses include copyableKey for console copy actions."""
+    channel_group: str
     created: str
     default_for_runtime: bool
     expires: str
-    group: str
     id: str
     ip_limit: str
     masked_key: str
@@ -18,6 +18,6 @@ class AppApiKeyItem:
     quota: str
     status: str
     used_quota: str
+    channel_group_name: Optional[str] = None
     copyable_key: Optional[str] = None
-    group_name: Optional[str] = None
     rate: Optional[str] = None

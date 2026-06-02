@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lay-summary-gen-1@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lay-summary-gen-1-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lay-summary-gen-1-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f37a60307cc63c2d0b5801e6d2fe742fd29a2192039280678793db4df9930bcc",

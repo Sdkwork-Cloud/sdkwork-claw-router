@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/afrexai-auto-repair@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-auto-repair-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-afrexai-auto-repair-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a777fb4343a040ed8fc1bd77c39a17939d886f223258e6eeded20e721611d2af",

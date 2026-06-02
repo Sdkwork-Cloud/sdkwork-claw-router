@@ -13,6 +13,10 @@ pub struct CommerceInventoryReservationRecord {
     /// Expires at field on commerce inventory reservation record.
     pub expires_at: String,
 
+    /// Id field on commerce inventory reservation record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on commerce inventory reservation record.
     pub idempotency_key: String,
 
@@ -23,6 +27,9 @@ pub struct CommerceInventoryReservationRecord {
     /// Organization id field on commerce inventory reservation record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Quantity field on commerce inventory reservation record.
+    pub quantity: String,
 
     /// Reservation no field on commerce inventory reservation record.
     pub reservation_no: String,

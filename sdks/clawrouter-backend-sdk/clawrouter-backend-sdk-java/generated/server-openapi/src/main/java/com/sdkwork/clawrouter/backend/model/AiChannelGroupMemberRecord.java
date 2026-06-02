@@ -11,14 +11,17 @@ public class AiChannelGroupMemberRecord {
     private String deletedBy;
     private String effectiveFrom;
     private String effectiveTo;
+    private Boolean enabled;
     private String id;
     private Map<String, String> metadata;
     private String organizationId;
+    private Integer priority;
     private String status;
     private String tenantId;
     private String updatedAt;
     private String uuid;
     private String version;
+    private Integer weight;
 
     public String getChannelGroupId() {
         return this.channelGroupId;
@@ -84,6 +87,14 @@ public class AiChannelGroupMemberRecord {
         this.effectiveTo = effectiveTo;
     }
 
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -106,6 +117,14 @@ public class AiChannelGroupMemberRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     public String getStatus() {
@@ -146,5 +165,13 @@ public class AiChannelGroupMemberRecord {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Integer getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
     }
 }

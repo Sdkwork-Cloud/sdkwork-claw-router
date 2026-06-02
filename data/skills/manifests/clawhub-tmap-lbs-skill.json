@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tmap-lbs-skill@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tmap-lbs-skill-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tmap-lbs-skill-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c146989d24f1ce93ddf4936eb92e91ae03780282fe55609ceaf59f46262ed758",

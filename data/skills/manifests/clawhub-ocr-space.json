@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ocr-space@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ocr-space-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ocr-space-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ba375f95f7824714517e1430d42110d49da83d6c0b34e05f86da99d2d4ff7e30",

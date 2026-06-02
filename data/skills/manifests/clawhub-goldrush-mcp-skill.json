@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goldrush-mcp-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-goldrush-mcp-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goldrush-mcp-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ec4521154d573614fc8282a3f371e82a0f4b93d9a278ccd1f3373ffb65bf0d5",

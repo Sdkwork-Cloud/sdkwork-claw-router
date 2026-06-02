@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/luke-find-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-luke-find-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-luke-find-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3671e664d18aa988f8a973fa660f3bb96b588174a468e9d204a931142fb7ff52",

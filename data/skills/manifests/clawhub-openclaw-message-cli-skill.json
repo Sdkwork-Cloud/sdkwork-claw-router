@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-message-cli-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-message-cli-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-message-cli-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:58a13b880bf95ca4f73584de288893e573349d6beabccf4880a2237c24a732a0",

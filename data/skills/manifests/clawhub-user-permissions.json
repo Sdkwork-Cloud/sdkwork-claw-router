@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/user-permissions@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-user-permissions-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-user-permissions-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2d6f59de23e1c4696a16508d5e7112a144e14904373fa0247f3d14bc95c3eac",

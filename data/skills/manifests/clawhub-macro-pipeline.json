@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/macro-pipeline@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-macro-pipeline-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-macro-pipeline-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:919a62a490de9c62dfedc76fcc79bf4cf8ad95e9705b19ee84796c04ea822a18",

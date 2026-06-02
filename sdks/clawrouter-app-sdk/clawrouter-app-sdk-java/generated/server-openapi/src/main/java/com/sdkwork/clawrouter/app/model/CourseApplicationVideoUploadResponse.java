@@ -7,7 +7,7 @@ public class CourseApplicationVideoUploadResponse {
     private String sha256;
     private Integer sizeBytes;
     private String uploadedAt;
-    private String videoUrl;
+    private MediaResource video;
 
     public String getContentType() {
         return this.contentType;
@@ -49,11 +49,11 @@ public class CourseApplicationVideoUploadResponse {
         this.uploadedAt = uploadedAt;
     }
 
-    public String getVideoUrl() {
-        return this.videoUrl;
+    public MediaResource getVideo() {
+        return this.video;
     }
 
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
+    public void setVideo(MediaResource video) {
+        this.video = video;
     }
 }

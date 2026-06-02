@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-pilot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-pilot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-pilot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b636d0c75b55cd53d073089f5f98f798a45f9247740b6e8b0725498980d77ea6",

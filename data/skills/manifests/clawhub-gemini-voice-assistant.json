@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-voice-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-voice-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-voice-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c6f64f499a85e9f9a936ef442e628c27b3d3b55899a30e1e7aa8531a92763cc0",

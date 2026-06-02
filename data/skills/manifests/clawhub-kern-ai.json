@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kern-ai@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-kern-ai-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kern-ai-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:79a04a8d4c8a043bc1567570605150cea76c44340100ff86f55b6930b0f0e7ed",

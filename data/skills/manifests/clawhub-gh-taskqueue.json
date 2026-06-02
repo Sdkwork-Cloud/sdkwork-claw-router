@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gh-taskqueue@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gh-taskqueue-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gh-taskqueue-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ab0c3cbaff12a0f3c8c59887ea9dae91eef771a06efd33c9dbf6810f0e4caedb",

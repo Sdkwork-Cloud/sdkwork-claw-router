@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/truecaller@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-truecaller-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-truecaller-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df6639400d1f03b1682fdf23690f14f373de51177305febdbd6742bab570bd28",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flyai-packing-list@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-flyai-packing-list-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flyai-packing-list-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:41e428b53650c35d8131c7cea055c9fc37837adea04a1c42d4c7fe02b50e077f",

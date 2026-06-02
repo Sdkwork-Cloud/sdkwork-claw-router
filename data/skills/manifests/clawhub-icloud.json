@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icloud@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icloud-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icloud-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:49add60585509b70a8cb73b91ff08bde42fef42591de7622778a28d1a3447eb0",

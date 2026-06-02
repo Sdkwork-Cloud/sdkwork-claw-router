@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-vision-scraper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-vision-scraper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-vision-scraper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52615eb14a3db334eea503ffe6f3c7078d6d6fc5a6dde1eb783128e31a0f12c4",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/systemd-unit-generator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-systemd-unit-generator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-systemd-unit-generator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a03ddb9a51f65253a2530d3ce0b0c3f2b64e282ec6bac7c101949af85cf53512",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/phone-caller@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-phone-caller-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-phone-caller-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ad7ead81541ff0db3c312b4fa407a7d84e198cd10731b8ae7b36a051077bdb9f",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chatbot-engine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chatbot-engine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chatbot-engine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d96daa45453345bd735679c29df772ba9010191be942909eda9dc5532dddae44",

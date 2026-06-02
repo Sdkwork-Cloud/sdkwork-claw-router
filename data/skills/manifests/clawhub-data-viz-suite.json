@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/data-viz-suite@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-data-viz-suite-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-data-viz-suite-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9126f7bb77474d0eb46621b542c1613d485b53e44a715550e45a05de2ac89c78",

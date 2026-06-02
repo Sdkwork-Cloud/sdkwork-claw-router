@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nec@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nec-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nec-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f0a53711a7a8d48059e9f2b5a7b3015b571329b4237948fff3f861b85e4c042",

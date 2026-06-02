@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/outbound-prospecting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-outbound-prospecting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-outbound-prospecting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7c6c101912b861e1ed54333af7cdb0cc3594b173e78e5b9c6e4b178b71a554db",

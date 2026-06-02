@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fish@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fish-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fish-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10013157b6646c02189ec7c86e38bfadc032b51ce620430143bc4e16b42357c6",

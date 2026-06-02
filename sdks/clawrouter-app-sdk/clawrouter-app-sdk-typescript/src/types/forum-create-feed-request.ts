@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Forum create feed request schema exposed by Claw Router. */
 export interface ForumCreateFeedRequest {
   /** Category id field on forum create feed request. */
@@ -5,7 +7,7 @@ export interface ForumCreateFeedRequest {
   /** Content field on forum create feed request. */
   content: string;
   /** Images field on forum create feed request. */
-  images?: string[];
+  images?: MediaResource[];
   /** Source field on forum create feed request. */
   source?: string;
   /** Source url field on forum create feed request. */

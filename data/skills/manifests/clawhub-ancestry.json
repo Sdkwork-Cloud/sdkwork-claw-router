@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ancestry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ancestry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ancestry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:43a5671147a8ba02edea0a9cade281705c31fe3f633fde3007fd4d2094e7bbb8",

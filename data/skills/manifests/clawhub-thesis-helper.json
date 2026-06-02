@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thesis-helper@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-thesis-helper-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thesis-helper-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee8bf3c3a6509b467ed10e354e483bd37206f3651387bca7a6fd6080f0957448",

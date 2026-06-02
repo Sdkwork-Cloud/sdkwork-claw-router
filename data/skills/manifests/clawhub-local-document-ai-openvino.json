@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-document-ai-openvino@0.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-document-ai-openvino-0.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-document-ai-openvino-0.1.4.json"
+      },
       "version": "0.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:81a49fac98ee691f1efbab006a3ef7349ded7923894ef071ddd6343a82146a7a",

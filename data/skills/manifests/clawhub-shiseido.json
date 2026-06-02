@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shiseido@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shiseido-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shiseido-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c26333c714994f6295b3dab4007020e9b18a784d3498ec2613283a4374483d6",

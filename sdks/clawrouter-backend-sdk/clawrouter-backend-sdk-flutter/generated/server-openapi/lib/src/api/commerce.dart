@@ -112,6 +112,22 @@ class CommerceApi {
     })();
   }
 
+  /// Initialize admin category seed datasets
+  Future<CatalogCategorySeedsCreateResult?> catalogCategorySeedsCreate(CommerceCategorySeedInitializeRequest body, String idempotencyKey) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/catalog/category_seeds/initialize'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CatalogCategorySeedsCreateResult.fromJson(map);
+    })();
+  }
+
   /// List product price lists
   Future<CatalogPriceListsListResult?> catalogPriceLists([String? currencyCode, String? marketCode, String? status, int? page, int? pageSize]) async {
     final query = buildQueryString([
@@ -178,6 +194,15 @@ class CommerceApi {
     })();
   }
 
+  /// Delete product SPU
+  Future<CatalogProductsDeleteResult?> catalogProductsDelete(String productId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/catalog/products/${serializePathParameter(productId, const PathParameterSpec('productId', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CatalogProductsDeleteResult.fromJson(map);
+    })();
+  }
+
   /// Update product SPU
   Future<CatalogProductsUpdateResult?> catalogProductsUpdate(String productId, CommerceProductSpuMutationRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
@@ -223,6 +248,15 @@ class CommerceApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : CatalogSkusCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Delete product SKU
+  Future<CatalogSkusDeleteResult?> catalogSkusDelete(String skuId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/catalog/skus/${serializePathParameter(skuId, const PathParameterSpec('skuId', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : CatalogSkusDeleteResult.fromJson(map);
     })();
   }
 
@@ -742,6 +776,47 @@ class CommerceApi {
     })();
   }
 
+  /// Payments Provider Accounts Delete
+  Future<PaymentsProviderAccountsDeleteResult?> paymentsProviderAccountsDelete(String providerAccountId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/payments/provider_accounts/${serializePathParameter(providerAccountId, const PathParameterSpec('providerAccountId', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PaymentsProviderAccountsDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// Payments Provider Accounts Update
+  Future<PaymentsProviderAccountsUpdateResult?> paymentsProviderAccountsUpdate(String providerAccountId, CommercePaymentProviderAccountMutationRequest body, String idempotencyKey) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.patch(ApiPaths.backendPath('/payments/provider_accounts/${serializePathParameter(providerAccountId, const PathParameterSpec('providerAccountId', 'simple', false))}'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PaymentsProviderAccountsUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// Payments Provider Accounts Status Update
+  Future<PaymentsProviderAccountsStatusUpdateResult?> paymentsProviderAccountsStatusUpdate(String providerAccountId, CommercePaymentProviderAccountStatusUpdateRequest body, String idempotencyKey) async {
+    final requestHeaders = buildRequestHeaders(
+      <String, HeaderParameterSpec>{
+        'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
+      },
+      <String, HeaderParameterSpec>{},
+    );
+    final payload = body.toJson();
+    final response = await _client.patch(ApiPaths.backendPath('/payments/provider_accounts/${serializePathParameter(providerAccountId, const PathParameterSpec('providerAccountId', 'simple', false))}/status'), body: payload, headers: requestHeaders, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PaymentsProviderAccountsStatusUpdateResult.fromJson(map);
+    })();
+  }
+
   /// Payments Providers List
   Future<PaymentsProvidersListResult?> paymentsProvidersList([int? page, int? pageSize, String? status]) async {
     final query = buildQueryString([
@@ -786,6 +861,18 @@ class CommerceApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : PaymentsRouteRulesListResult.fromJson(map);
+    })();
+  }
+
+  /// Payments Runtime Snapshot Retrieve
+  Future<PaymentsRuntimeSnapshotRetrieveResult?> paymentsRuntimeSnapshotRetrieve([String? environment]) async {
+    final query = buildQueryString([
+      QueryParameterSpec('environment', environment, 'form', true, false, null)
+    ]);
+    final response = await _client.get(ApiPaths.appendQueryString(ApiPaths.backendPath('/payments/runtime/snapshot'), query));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : PaymentsRuntimeSnapshotRetrieveResult.fromJson(map);
     })();
   }
 
@@ -870,6 +957,25 @@ class CommerceApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RechargesPackagesUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// Recharges Settings Retrieve
+  Future<RechargesSettingsRetrieveResult?> rechargesSettingsRetrieve() async {
+    final response = await _client.get(ApiPaths.backendPath('/recharges/settings'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RechargesSettingsRetrieveResult.fromJson(map);
+    })();
+  }
+
+  /// Recharges Settings Update
+  Future<RechargesSettingsUpdateResult?> rechargesSettingsUpdate(CommerceRechargeSettingsUpdateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/recharges/settings'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RechargesSettingsUpdateResult.fromJson(map);
     })();
   }
 

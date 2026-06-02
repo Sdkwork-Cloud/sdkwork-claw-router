@@ -1,3 +1,4 @@
+import type { MediaResource } from './media-resource';
 import type { SkillPackageItem } from './skill-package-item';
 
 /** Skill catalog item schema exposed by Claw Router. */
@@ -19,7 +20,7 @@ export interface SkillCatalogItem {
   /** Id field on skill catalog item. */
   id: string;
   /** Image field on skill catalog item. */
-  image: string;
+  image: MediaResource;
   /** Last updated field on skill catalog item. */
   lastUpdated: string;
   /** License field on skill catalog item. */
@@ -31,7 +32,7 @@ export interface SkillCatalogItem {
   /** Rating field on skill catalog item. */
   rating: number;
   /** Screenshots field on skill catalog item. */
-  screenshots: string[];
+  screenshots: MediaResource[];
   /** Size field on skill catalog item. */
   size: string;
   /** Version field on skill catalog item. */

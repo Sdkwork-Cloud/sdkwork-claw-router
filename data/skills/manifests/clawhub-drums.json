@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drums@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-drums-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drums-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f00284360445585f01deb529289b54ce7b37263657acd52a61ab7ea96b0d7f4",

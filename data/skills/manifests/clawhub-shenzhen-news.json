@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shenzhen-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shenzhen-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shenzhen-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f5eb0ece8535b82ba0308cfa31ce575fea0512e0e4f6ecf9ce2eedc2afce804",

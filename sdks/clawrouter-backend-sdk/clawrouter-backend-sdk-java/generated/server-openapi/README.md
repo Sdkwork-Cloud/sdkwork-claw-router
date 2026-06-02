@@ -34,7 +34,7 @@ public class Main {
         client.setApiKey("your-api-key");
 
         // Use the SDK
-        ModelVendorsListResult result = client.getAi().modelVendorsList();
+        ChannelGroupsListResult result = client.getAi().channelGroupsList();
         System.out.println(result);
     }
 }
@@ -115,8 +115,8 @@ System.out.println(result);
 ### ai
 
 ```java
-// List vendors
-ModelVendorsListResult result = client.getAi().modelVendorsList();
+// List groups
+ChannelGroupsListResult result = client.getAi().channelGroupsList();
 System.out.println(result);
 ```
 
@@ -147,8 +147,8 @@ System.out.println(result);
 ### iam
 
 ```java
-// List groups
-AccessGroupsListResult result = client.getIam().accessGroupsList();
+// List API key map
+ApiKeysListResult result = client.getIam().apiKeysList();
 System.out.println(result);
 ```
 
@@ -261,7 +261,7 @@ System.out.println(result);
 
 ```java
 try {
-    ModelVendorsListResult result = client.getAi().modelVendorsList();
+    ChannelGroupsListResult result = client.getAi().channelGroupsList();
     System.out.println(result);
 } catch (Exception e) {
     System.err.println("Error: " + e.getMessage());

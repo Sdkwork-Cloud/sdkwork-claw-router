@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stackagents@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stackagents-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stackagents-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f62353ab373abe86cfdeeb60c99a49543617809f1592e5105668331eab53dbfe",

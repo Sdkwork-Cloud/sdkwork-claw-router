@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-evaluator-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-evaluator-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-evaluator-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7e5c0c6993cbfb52fbfcc10994ce4de6e1c2324cbf2ddb5b4cf84c3269cd6df",

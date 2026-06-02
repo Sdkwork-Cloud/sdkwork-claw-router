@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amis-json-skills@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-amis-json-skills-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amis-json-skills-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ec4ae6491e24a24a8477d897543a0f2d212f9ace1e292bf8a474fa28b445f74d",

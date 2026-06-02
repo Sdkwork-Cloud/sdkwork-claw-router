@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/longrunning-agent@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-longrunning-agent-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-longrunning-agent-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:afe08f797eb51d06eafb42dcd92fdf2da3ec70d8064a097b0e1ff1a4486e0cfa",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cron-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cron-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cron-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5450e9c38c08f96e815c845cbba491de7f7443ad38bf72f8e9373453a84300a6",

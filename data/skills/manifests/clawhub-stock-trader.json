@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-trader@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-trader-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-trader-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:360868f8945d0bb1a1c604d2523a5e64cb7ae031a8db86f1c52c71632afe34f3",

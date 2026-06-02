@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cognitive-bias-buster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cognitive-bias-buster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cognitive-bias-buster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d60fcaeeadf3dc1e2c49345157600051428bf42cab8a783c96c8b796d6736ac",

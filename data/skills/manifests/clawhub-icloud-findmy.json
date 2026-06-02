@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icloud-findmy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icloud-findmy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icloud-findmy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c704ffa0ce28e6e4675a3c3bc55f6a24e27f96ffd23f1ea271e9e452172d005",

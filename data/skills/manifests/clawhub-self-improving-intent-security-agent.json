@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-improving-intent-security-agent@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-intent-security-agent-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-improving-intent-security-agent-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:929c40ac68102f7414b0a71e62694b936c829984cad3c0df196268c7836dad45",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adelaide@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-adelaide-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adelaide-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cff0355b46e3d8b395b567286769b97317a68baa642833998871f73420f00024",

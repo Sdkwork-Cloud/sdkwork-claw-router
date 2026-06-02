@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shipping-price-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shipping-price-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shipping-price-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cb002a0d86a53b733421972593409ac239ae67b70ca2699950c128fb5df40c3b",

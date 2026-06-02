@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jupiter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jupiter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jupiter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7caf8f3b75cd3998fce63d7320600171435231693a1112afa0861110a2ea7062",

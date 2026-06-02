@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boston-dynamics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boston-dynamics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boston-dynamics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce00e31e316f6d6c8e4efa1bb81984dc6943f8f1c950e28c042377f71e8030e7",

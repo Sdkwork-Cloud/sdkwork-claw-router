@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vpn-proxy-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vpn-proxy-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vpn-proxy-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5b0a104cf545a3c4ce41be431deebbe9a2737063a6f5c0c8aeed108957c99947",

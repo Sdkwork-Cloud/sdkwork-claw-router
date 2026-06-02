@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/treasury-scenarios@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-treasury-scenarios-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-treasury-scenarios-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:609b21d70e4a6a2ce1fe74840a7402ac7098f459c8c46e7c944fa1d7dd23d6db",

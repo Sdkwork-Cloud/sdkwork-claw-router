@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/china-idcard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-china-idcard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-china-idcard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d34f871098d34209daff2d13bb2c3874be8b5ed5637675ac149986c8e643e6a",

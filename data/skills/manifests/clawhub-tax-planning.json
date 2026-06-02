@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tax-planning@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tax-planning-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tax-planning-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1c8ded70c3436c724705f6d3798a113efcc7abea77fe3564d18bd94a28340f6f",

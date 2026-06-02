@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-ab-lab@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-ab-lab-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-ab-lab-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1cf85977cfe0157847f828812b304af14470148614d2252a1ce9d29e8c958760",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/basf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-basf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-basf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ccd69f7a49982574dd0054947503dd67fa8a2171534db181ac6886b89ba072f1",

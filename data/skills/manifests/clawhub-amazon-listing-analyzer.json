@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-listing-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-listing-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-listing-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:07ae0879edab6165ceca014dfbf2c571f2794ffcab1dfa8eef583a35fa17bd0f",

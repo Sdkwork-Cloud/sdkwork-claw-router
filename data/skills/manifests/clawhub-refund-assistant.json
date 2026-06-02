@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/refund-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-refund-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-refund-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89bde43b297959e395f5aff289bf2457eee575c42c4345d915c8f699a932ec86",

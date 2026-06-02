@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kg-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kg-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kg-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e50881d269c63b21367bd261153d48f726d8ef2fc85c950014af4389b9f53704",

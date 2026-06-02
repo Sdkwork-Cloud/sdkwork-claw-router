@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/easycode-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-easycode-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-easycode-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:902f9a93d8176de8d75a75bc4a66c636a218f2accc2466db1084c99d8537d941",

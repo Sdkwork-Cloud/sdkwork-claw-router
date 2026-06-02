@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/expanso-json-to-yaml@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-expanso-json-to-yaml-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-expanso-json-to-yaml-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:51f383d9fac5432f0c2d7f163e2736093133e7f43eae89bef58ec843c7c17e81",

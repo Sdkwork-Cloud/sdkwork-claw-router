@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deeplake-skills@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-deeplake-skills-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deeplake-skills-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1b697b58fa30d735dd006dd1fc6e2112401b8f09e5f867b2935125271b3ac8f5",

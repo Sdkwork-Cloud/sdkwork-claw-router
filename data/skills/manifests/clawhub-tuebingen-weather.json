@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tuebingen-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tuebingen-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tuebingen-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c929cb720c4b9936769a13b50587096942df0708d187787f88ac6cdbbaf84fc",

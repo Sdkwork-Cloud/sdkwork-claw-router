@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/expense-progress@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-expense-progress-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-expense-progress-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce41072cf339858c482cdb19f5d1e6cafe8e0af0e235bf061409ccca14af6781",

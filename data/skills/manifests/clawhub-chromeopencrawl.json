@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chromeopencrawl@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-chromeopencrawl-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chromeopencrawl-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e73a594d41822b9ea7124486d19da721a15abd86a6138e93e4519a358d5c1f4a",

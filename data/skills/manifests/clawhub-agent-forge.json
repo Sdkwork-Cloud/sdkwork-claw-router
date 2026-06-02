@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-forge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-forge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-forge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c73920bdc5807c8bf8c3fcd238bcf05818e3bc557eb8e42b9a99f3950200f3ac",

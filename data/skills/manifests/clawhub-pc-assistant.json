@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pc-assistant@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-pc-assistant-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pc-assistant-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:41345296c35b70250dc5d9dc4a4a0a06ff1df890108f59c3e84de9e73dcaf9a5",

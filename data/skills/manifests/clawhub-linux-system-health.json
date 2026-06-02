@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linux-system-health@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-linux-system-health-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linux-system-health-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ec6c31c1111478384b8eabd93e7d55acacd17f369911809a9064951c6c589a3b",

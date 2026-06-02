@@ -436,7 +436,7 @@ public class CommerceApi {
     }
 
     /// Recharges Orders Create
-    public func rechargesOrdersCreate(body: CommerceStandardCommandRequest, idempotencyKey: String) async throws -> RechargesOrdersCreateResult? {
+    public func rechargesOrdersCreate(body: CommerceRechargeOrderCreateRequest, idempotencyKey: String) async throws -> RechargesOrdersCreateResult? {
         let requestHeaders = buildRequestHeaders(
             [
                 "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
@@ -459,6 +459,11 @@ public class CommerceApi {
             QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/recharges/packages"), query), responseType: RechargesPackagesListResult.self)
+    }
+
+    /// Recharges Settings Retrieve
+    public func rechargesSettingsRetrieve() async throws -> RechargesSettingsRetrieveResult? {
+        return try await client.get(ApiPaths.appPath("/recharges/settings"), responseType: RechargesSettingsRetrieveResult.self)
     }
 
     /// Refunds List

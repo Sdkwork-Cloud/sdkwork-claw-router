@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kirk-web-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kirk-web-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kirk-web-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:45806f2974fc91f6fd39fd31a244930843e17efe4c5a361fc62d92edb1c61be9",

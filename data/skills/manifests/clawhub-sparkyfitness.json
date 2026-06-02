@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sparkyfitness@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sparkyfitness-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sparkyfitness-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eab4ef04dd87d0bfcdff0c9e65d89a773929aff774fc0daa3565af878a28f84f",

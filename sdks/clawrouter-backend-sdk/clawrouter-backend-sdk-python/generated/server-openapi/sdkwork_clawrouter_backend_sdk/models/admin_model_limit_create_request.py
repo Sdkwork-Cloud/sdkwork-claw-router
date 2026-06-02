@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class AdminModelLimitCreateRequest:
     """Admin model limit create request schema exposed by Claw Router."""
-    group: str
+    channel_group: str
     model: str
     rpm: int
     tpm: int

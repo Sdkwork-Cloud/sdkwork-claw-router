@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/funasr-transcribe-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-funasr-transcribe-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-funasr-transcribe-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8b9be1c37ed75314112d0a1b9fc78f28144ae538481b7daa44df744551cb3a82",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aria-gbp-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aria-gbp-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aria-gbp-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c434250ea0f24948b11734c9787424b07a1e0c68d8b8d67751180714d750439b",

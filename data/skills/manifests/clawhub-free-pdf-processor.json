@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/free-pdf-processor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-free-pdf-processor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-free-pdf-processor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0aef65391696411d956e526997addadddd595c813664d1076078553e9191c035",

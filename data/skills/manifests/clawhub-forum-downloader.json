@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/forum-downloader@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-forum-downloader-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-forum-downloader-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3b045bd0e950ffb0f388cc5947107ee65bb059ec8c47a67abc9dd3fd2edb1776",

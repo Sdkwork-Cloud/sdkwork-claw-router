@@ -16,11 +16,13 @@ public class AiChannelEndpointRecord {
     private String deletedBy;
     private String effectiveFrom;
     private String effectiveTo;
+    private String healthStatus;
     private String id;
     private Integer lastLatencyMs;
     private Map<String, String> metadata;
     private String organizationId;
     private String pathPrefix;
+    private Integer priority;
     private String providerCode;
     private String regionCode;
     private Map<String, String> retryPolicy;
@@ -32,6 +34,7 @@ public class AiChannelEndpointRecord {
     private String vendorCode;
     private String vendorId;
     private String version;
+    private Integer weight;
 
     public String getApiCode() {
         return this.apiCode;
@@ -137,6 +140,14 @@ public class AiChannelEndpointRecord {
         this.effectiveTo = effectiveTo;
     }
 
+    public String getHealthStatus() {
+        return this.healthStatus;
+    }
+
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -175,6 +186,14 @@ public class AiChannelEndpointRecord {
 
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     public String getProviderCode() {
@@ -263,5 +282,13 @@ public class AiChannelEndpointRecord {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Integer getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
     }
 }

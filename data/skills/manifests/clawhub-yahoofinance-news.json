@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yahoofinance-news@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-yahoofinance-news-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yahoofinance-news-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c17d57af1f36048cc364f7d00242bbd2e270468383d9f2d545ab6c10b7395be1",

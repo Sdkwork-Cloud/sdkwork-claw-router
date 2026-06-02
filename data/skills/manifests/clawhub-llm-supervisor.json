@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-supervisor@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-supervisor-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-supervisor-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8d0cb534343c8497acb9da2f8a73e7c3e3f0096cc56d071ccce7e1f07257264d",

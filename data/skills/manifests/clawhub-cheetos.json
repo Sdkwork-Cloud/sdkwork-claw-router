@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cheetos@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cheetos-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cheetos-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b86a6c2dcbc81e485b7b2fa6b230f7f298da78aaf8a3cd358a02ee3b4a442e8b",

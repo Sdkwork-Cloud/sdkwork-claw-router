@@ -8,7 +8,7 @@ public class AdminAppTemplateCreateRequest {
     private List<Map<String, String>> capabilityManifest;
     private String categoryCode;
     private String categoryId;
-    private String coverUrl;
+    private MediaResource cover;
     private Map<String, String> defaultAppConfig;
     private List<Map<String, String>> dependencyManifest;
     private String description;
@@ -17,7 +17,7 @@ public class AdminAppTemplateCreateRequest {
     private String gitRef;
     private String gitRepoUrl;
     private String gitSubPath;
-    private String iconUrl;
+    private MediaResource icon;
     private String language;
     private String publishStatus;
     private String runtime;
@@ -62,12 +62,12 @@ public class AdminAppTemplateCreateRequest {
         this.categoryId = categoryId;
     }
 
-    public String getCoverUrl() {
-        return this.coverUrl;
+    public MediaResource getCover() {
+        return this.cover;
     }
 
-    public void setCoverUrl(String coverUrl) {
-        this.coverUrl = coverUrl;
+    public void setCover(MediaResource cover) {
+        this.cover = cover;
     }
 
     public Map<String, String> getDefaultAppConfig() {
@@ -134,12 +134,12 @@ public class AdminAppTemplateCreateRequest {
         this.gitSubPath = gitSubPath;
     }
 
-    public String getIconUrl() {
-        return this.iconUrl;
+    public MediaResource getIcon() {
+        return this.icon;
     }
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+    public void setIcon(MediaResource icon) {
+        this.icon = icon;
     }
 
     public String getLanguage() {

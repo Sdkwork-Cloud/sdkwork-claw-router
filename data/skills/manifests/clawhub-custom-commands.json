@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/custom-commands@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-custom-commands-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-custom-commands-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c4996948a74f756ae21810f84866a32b0b8c6757bc64e3bb29ca6a08db6d9e15",

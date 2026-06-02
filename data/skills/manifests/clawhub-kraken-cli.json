@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kraken-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kraken-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kraken-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce055916f165b1a46d92c77aa629d8ca51b9ed78c1897323e68d47197d7fae92",

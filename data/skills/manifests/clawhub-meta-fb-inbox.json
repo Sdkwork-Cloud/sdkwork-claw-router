@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meta-fb-inbox@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meta-fb-inbox-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meta-fb-inbox-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48553b6d013b8d25cb04e8cfee8060c3f79258a91eebf1b1375c59145cb197ff",

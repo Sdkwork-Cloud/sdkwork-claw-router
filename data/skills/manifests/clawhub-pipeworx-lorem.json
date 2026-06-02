@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-lorem@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-lorem-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-lorem-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c6569e058d9843489301b29fdffd280279c1f96a75a9f796bcf09241ea79a952",

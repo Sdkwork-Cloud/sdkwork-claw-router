@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/colgate@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-colgate-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-colgate-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:df1e715950226e65610f8989ec874fabf44139b1de671712a4bde07ed0942a9b",

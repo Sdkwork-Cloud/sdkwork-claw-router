@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-nextcloud@0.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-nextcloud-0.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-nextcloud-0.2.4.json"
+      },
       "version": "0.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5d99c40b56760d7a98444e07aa922d5f7d81a2234ae8144f218fd2238bbb50c2",

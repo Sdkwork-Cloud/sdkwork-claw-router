@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amity@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-amity-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amity-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cd2cb74598e826106b663da69219598c42072c0a379dfb0d6b28a931bdac6b1d",

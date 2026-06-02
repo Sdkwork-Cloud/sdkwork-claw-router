@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/awesome-paper-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-awesome-paper-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-awesome-paper-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c763ed36d3aff314824c14d2abb89a2c804d59421860fd20dfff9bc829c7079a",

@@ -2,6 +2,8 @@ import type { JsonValue } from './json-value';
 
 /** Commerce billing history record schema exposed by Claw Router. */
 export interface CommerceBillingHistoryRecord {
+  /** Amount field on commerce billing history record. */
+  amount: string;
   /** Asset type field on commerce billing history record. */
   asset_type: string;
   /** Created at field on commerce billing history record. */
@@ -14,6 +16,8 @@ export interface CommerceBillingHistoryRecord {
   history_no: string;
   /** History type field on commerce billing history record. */
   history_type: string;
+  /** Id field on commerce billing history record. */
+  id?: string;
   /** Metadata json field on commerce billing history record. */
   metadata_json?: Record<string, JsonValue>;
   /** Occurred at field on commerce billing history record. */
@@ -24,6 +28,8 @@ export interface CommerceBillingHistoryRecord {
   owner_user_id: string;
   /** Payment method field on commerce billing history record. */
   payment_method?: string;
+  /** Points delta field on commerce billing history record. */
+  points_delta: string;
   /** Reference no field on commerce billing history record. */
   reference_no?: string;
   /** Related order id field on commerce billing history record. */

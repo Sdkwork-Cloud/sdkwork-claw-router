@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zero-trust@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zero-trust-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zero-trust-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5192e7f9376215cd68392bd66440fe854d0b1fb07f6f92a1fa8febe66af30518",

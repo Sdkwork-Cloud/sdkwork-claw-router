@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/one-championship@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-one-championship-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-one-championship-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cea2a242738420db75be88db933f88e17b583dc9dff75909022a49200934341f",

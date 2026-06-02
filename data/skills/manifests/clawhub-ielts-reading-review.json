@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ielts-reading-review@4.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ielts-reading-review-4.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ielts-reading-review-4.0.1.json"
+      },
       "version": "4.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ab577831a3ae7ebcc9fb993e2a6042147a59b006254c0a308cf3d67f63c6ae43",

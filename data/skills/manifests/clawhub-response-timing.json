@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/response-timing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-response-timing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-response-timing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:07a7feded255ef872390627b6237db0af59d29fbc1b1905904f6a601635fedb9",

@@ -3,6 +3,7 @@ import type { CourseInstructor } from './course-instructor';
 import type { CourseItem } from './course-item';
 import type { CourseOverviewSource } from './course-overview-source';
 import type { CourseSectionItem } from './course-section-item';
+import type { MediaResource } from './media-resource';
 
 /** Course detail schema exposed by Claw Router. */
 export interface CourseDetail {
@@ -56,8 +57,8 @@ export interface CourseDetail {
   studentsCount: number;
   /** Tags field on course detail. */
   tags: string[];
-  /** Thumbnail url field on course detail. */
-  thumbnailUrl: string;
+  /** Thumbnail field on course detail. */
+  thumbnail: MediaResource;
   /** Title field on course detail. */
   title: string;
 }

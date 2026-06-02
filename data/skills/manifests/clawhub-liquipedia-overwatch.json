@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/liquipedia-overwatch@2.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-liquipedia-overwatch-2.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-liquipedia-overwatch-2.8.0.json"
+      },
       "version": "2.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8eae83b27da2f7857e005d0445f94d32eb423cc86c4e8a55d172010189cc2c33",

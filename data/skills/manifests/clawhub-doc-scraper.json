@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/doc-scraper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-doc-scraper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-doc-scraper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e05b13baa7e244b6035095daeae88d938a0e906d78f754e4b9f8b5d2f30b1c9",

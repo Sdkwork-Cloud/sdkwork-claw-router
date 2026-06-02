@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lucca@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-lucca-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lucca-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:3fb3d7e7996da85ee3ba3986af1203353c3f5ad29e82b0fceefb45f2608e12e1",

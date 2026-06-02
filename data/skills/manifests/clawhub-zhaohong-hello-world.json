@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zhaohong-hello-world@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zhaohong-hello-world-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zhaohong-hello-world-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2475b29c92b9763b6e9eb7e0845f12d4454767c0d114555b597f97fc17cefc97",

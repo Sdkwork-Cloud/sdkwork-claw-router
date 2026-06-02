@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/electrolux@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-electrolux-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-electrolux-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c944287c6c308572b08915d07502499f8a07a707a7874cdac7996549a56f1290",

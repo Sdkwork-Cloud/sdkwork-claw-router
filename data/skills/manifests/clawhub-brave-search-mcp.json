@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/brave-search-mcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-brave-search-mcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-brave-search-mcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:68e77cf6365580f2ff09317e87a0ffce87f58d483baca72cdbbc75aea2d9421b",

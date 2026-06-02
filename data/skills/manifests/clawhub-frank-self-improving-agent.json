@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/frank-self-improving-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-frank-self-improving-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-frank-self-improving-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2780465ae0d28e0ce65bc3ab8408d0ac529984f1022ebdbdc355e1a0c096370a",

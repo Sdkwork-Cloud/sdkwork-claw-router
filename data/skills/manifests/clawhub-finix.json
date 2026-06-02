@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finix@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-finix-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finix-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9e148e803a7c586cc0db3a8e12817933ee381170e92383bc26763dc3ab88745c",

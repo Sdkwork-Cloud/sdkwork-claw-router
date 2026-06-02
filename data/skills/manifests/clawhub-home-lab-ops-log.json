@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/home-lab-ops-log@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-home-lab-ops-log-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-home-lab-ops-log-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c434f4bdd91f40f6c7f7083db42b4d4c3dc5cc96320fc3baa000ef79805c1686",

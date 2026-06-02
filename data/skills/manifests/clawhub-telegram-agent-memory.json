@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-agent-memory@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-agent-memory-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-agent-memory-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d4e21c5dd87c29fe78529935343e9e63acc05cf84ac30d17885c3a955cb0ee91",

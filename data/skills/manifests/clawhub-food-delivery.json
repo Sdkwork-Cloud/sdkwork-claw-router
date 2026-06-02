@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/food-delivery@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-food-delivery-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-food-delivery-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:190a548a56c3504d65cd9f8a0d106acc2ba2608e25b781081223617fa10ffc26",

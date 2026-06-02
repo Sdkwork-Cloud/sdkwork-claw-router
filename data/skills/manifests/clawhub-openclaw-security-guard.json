@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-security-guard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-security-guard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-security-guard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2d3c663c8b02abba019ec2e7a25a229508d07b3d785900bdb4e6d1fb3b0058f3",

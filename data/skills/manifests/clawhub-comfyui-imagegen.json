@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comfyui-imagegen@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-imagegen-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comfyui-imagegen-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8549ba58068e8e877cd0f1eeff0f780e01932b1c741dcb71d0913a0e2e0f3599",

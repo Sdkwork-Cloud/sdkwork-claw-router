@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bugatti-cars@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bugatti-cars-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bugatti-cars-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:000cd8654b886f3fca6dab129d891a3ab54591722ad53c41a6c1ab59ed9a60b1",

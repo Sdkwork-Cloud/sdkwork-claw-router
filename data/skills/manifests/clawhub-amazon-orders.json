@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-orders@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-orders-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-orders-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3173530b2d701376471519be0f6e762314b3a23b5a69e54e601771b7f921b585",

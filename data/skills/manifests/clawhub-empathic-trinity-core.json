@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/empathic-trinity-core@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-empathic-trinity-core-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-empathic-trinity-core-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8abb1af548a2f63c74dfaf5046422b44a01656a163eaa970dc1e5ed62c6fcd30",

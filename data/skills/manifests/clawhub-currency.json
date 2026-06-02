@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/currency@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-currency-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-currency-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aa43f2e966136f122b87e091f2c659cd424d4b4cabf8c93d4511e9ad6e3acb3a",

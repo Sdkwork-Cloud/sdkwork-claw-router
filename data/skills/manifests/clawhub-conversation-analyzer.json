@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/conversation-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-conversation-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-conversation-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dcfe52296b3ec5f14cc23eb665e82b54f846cfba299b48c7844eb99798946d3a",

@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/searxng-bangs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-searxng-bangs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-searxng-bangs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0a82afc03d720a3d36125e6a34126db1ecaced3dce5d520b144c0da1e2edf381",

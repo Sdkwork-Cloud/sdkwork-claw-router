@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-meeting-notes@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-meeting-notes-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-meeting-notes-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:fce64ac7304981458f3ee5d0033f3acd2cc8573073616b86f5ee037efb5d739e",

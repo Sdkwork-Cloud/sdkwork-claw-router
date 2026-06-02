@@ -1,40 +1,73 @@
-import type { GroupCreateInput, GroupData, GroupUpdateInput } from './groupService';
+import type {
+  GroupCreateInput,
+  GroupData,
+  GroupPriceReferenceMode,
+  GroupUpdateInput,
+} from './groupService';
 
 export function createGroupInputFromForm(formData: FormData): GroupCreateInput {
   return {
-    name: readFormText(formData, 'name'),
-    platform: readFormText(formData, 'platform'),
-    billingType: readFormText(formData, 'billingType'),
-    rateMultiplier: readPositiveNumber(formData.get('rateMultiplier'), 'rateMultiplier'),
-    type: readGroupType(formData.get('type')),
+    groupName: readRequiredFormText(formData, 'groupName'),
+    groupCode: readRequiredFormText(formData, 'groupCode'),
+    priceReferenceMode: readPriceReferenceMode(formData.get('priceReferenceMode')),
+    ...readPricingFields(formData),
+    groupType: readGroupType(formData.get('groupType')),
     capacity: { total: readPositiveInteger(formData.get('capacityTotal'), 'capacityTotal') },
-    status: 'active',
+    status: readGroupStatus(formData.get('status')),
   };
 }
 
 export function createGroupUpdateInputFromForm(formData: FormData): GroupUpdateInput {
   return {
-    name: readFormText(formData, 'name'),
-    platform: readFormText(formData, 'platform'),
-    billingType: readFormText(formData, 'billingType'),
-    rateMultiplier: readPositiveNumber(formData.get('rateMultiplier'), 'rateMultiplier'),
-    type: readGroupType(formData.get('type')),
+    groupName: readRequiredFormText(formData, 'groupName'),
+    groupCode: readRequiredFormText(formData, 'groupCode'),
+    priceReferenceMode: readPriceReferenceMode(formData.get('priceReferenceMode')),
+    ...readPricingFields(formData),
+    groupType: readGroupType(formData.get('groupType')),
     capacity: { total: readPositiveInteger(formData.get('capacityTotal'), 'capacityTotal') },
-    status: 'active',
+    status: readGroupStatus(formData.get('status')),
   };
 }
 
-export function displayGroupType(type: GroupData['type']): string {
+export function displayGroupType(type: 'public' | 'dedicated'): string {
   return type === 'dedicated' ? 'dedicated' : 'public';
 }
 
-export function displayGroupStatus(status: GroupData['status']): string {
+export function displayGroupStatus(status: 'active' | 'disabled'): string {
   return status === 'disabled' ? 'disabled' : 'active';
+}
+
+function readPricingFields(formData: FormData): Pick<
+  GroupCreateInput,
+  'priceReferenceMode' | 'rateMultiplier' | 'officialPriceMultiplier'
+> {
+  const priceReferenceMode = readPriceReferenceMode(formData.get('priceReferenceMode'));
+  if (priceReferenceMode === 'official_price') {
+    return {
+      priceReferenceMode,
+      officialPriceMultiplier: readPositiveNumber(
+        formData.get('officialPriceMultiplier'),
+        'officialPriceMultiplier',
+      ),
+    };
+  }
+  return {
+    priceReferenceMode,
+    rateMultiplier: readPositiveNumber(formData.get('rateMultiplier'), 'rateMultiplier'),
+  };
 }
 
 function readFormText(formData: FormData, key: string): string {
   const value = formData.get(key);
   return typeof value === 'string' ? value.trim() : '';
+}
+
+function readRequiredFormText(formData: FormData, key: string): string {
+  const value = readFormText(formData, key);
+  if (!value) {
+    throw new Error(`${key} is required`);
+  }
+  return value;
 }
 
 function readPositiveNumber(value: FormDataEntryValue | null, fieldName: string): number {
@@ -59,13 +92,38 @@ function readPositiveInteger(value: FormDataEntryValue | null, fieldName: string
   return parsed;
 }
 
-function readGroupType(value: FormDataEntryValue | null): GroupCreateInput['type'] {
+function readPriceReferenceMode(value: FormDataEntryValue | null): GroupPriceReferenceMode {
   if (typeof value !== 'string') {
-    throw new Error('type must be public or dedicated');
+    throw new Error('priceReferenceMode must be multiplier or official_price');
+  }
+  const normalized = value.trim();
+  if (normalized === 'multiplier' || normalized === 'official_price') {
+    return normalized;
+  }
+  throw new Error('priceReferenceMode must be multiplier or official_price');
+}
+
+function readGroupType(value: FormDataEntryValue | null): GroupCreateInput['groupType'] {
+  if (typeof value !== 'string') {
+    throw new Error('groupType must be public or dedicated');
   }
   const normalized = value.trim();
   if (normalized === 'public' || normalized === 'dedicated') {
     return normalized;
   }
-  throw new Error('type must be public or dedicated');
+  throw new Error('groupType must be public or dedicated');
+}
+
+function readGroupStatus(value: FormDataEntryValue | null): GroupCreateInput['status'] {
+  if (typeof value !== 'string') {
+    return 'active';
+  }
+  const normalized = value.trim();
+  if (!normalized || normalized === 'active') {
+    return 'active';
+  }
+  if (normalized === 'disabled') {
+    return 'disabled';
+  }
+  throw new Error('status must be active or disabled');
 }

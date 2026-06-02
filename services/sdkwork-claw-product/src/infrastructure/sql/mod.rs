@@ -18,6 +18,7 @@ pub(crate) mod skills_seed;
 pub(crate) mod sql_admin_analytics;
 pub(crate) mod sql_admin_auth_settings;
 pub(crate) mod sql_admin_messaging;
+pub(crate) mod sql_admin_product_center;
 pub(crate) mod sql_admin_service_provider;
 pub(crate) mod sql_admin_storage;
 pub(crate) mod sql_hash;

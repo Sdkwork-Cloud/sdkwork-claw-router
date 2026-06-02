@@ -21,6 +21,7 @@ type AiChannelRecord struct {
 	DeletedBy string `json:"deleted_by"`
 	Environment string `json:"environment"`
 	ExternalChannelId string `json:"external_channel_id"`
+	HealthStatus string `json:"health_status"`
 	Id string `json:"id"`
 	LastBalanceCheckedAt string `json:"last_balance_checked_at"`
 	LastLatencyMs int `json:"last_latency_ms"`
@@ -31,6 +32,7 @@ type AiChannelRecord struct {
 	Metadata map[string]JsonValue `json:"metadata"`
 	NextRotateAt string `json:"next_rotate_at"`
 	OrganizationId string `json:"organization_id"`
+	Priority int `json:"priority"`
 	ProtocolCode string `json:"protocol_code"`
 	ProviderCode string `json:"provider_code"`
 	ProviderId string `json:"provider_id"`
@@ -50,4 +52,5 @@ type AiChannelRecord struct {
 	UpstreamBalanceCurrency string `json:"upstream_balance_currency"`
 	Uuid string `json:"uuid"`
 	Version string `json:"version"`
+	Weight int `json:"weight"`
 }

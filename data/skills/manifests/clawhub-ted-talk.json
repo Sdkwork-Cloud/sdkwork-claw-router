@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ted-talk@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ted-talk-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ted-talk-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1957b69dc25e0d464862ce92f984d6c2cc01988ccf2ead213acdc2a9b5a34766",

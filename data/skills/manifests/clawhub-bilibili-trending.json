@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bilibili-trending@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-trending-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bilibili-trending-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:fda9e888fff4de24a737a096b251916ec2d8443e1e66af8252f2f9ec3b236c6d",

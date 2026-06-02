@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dingtalk-bot-publish@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-bot-publish-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dingtalk-bot-publish-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:246706e5e79ca16ab1529b2030e9deb54598c61a5dfcdc037eb6eda3601e496c",

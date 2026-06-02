@@ -1,4 +1,5 @@
 import type { AppReleaseItem } from './app-release-item';
+import type { MediaResource } from './media-resource';
 
 /** App detail response schema exposed by Claw Router. */
 export interface AppDetailResponse {
@@ -15,7 +16,7 @@ export interface AppDetailResponse {
   /** Stable application identity from plus_app.config.standard.appKey when present; falls back to plus_app.id only when appKey is absent. */
   id: string;
   /** Image field on app detail response. */
-  image: string;
+  image: MediaResource;
   /** Name field on app detail response. */
   name: string;
   /** Rating field on app detail response. */
@@ -23,5 +24,5 @@ export interface AppDetailResponse {
   /** Releases field on app detail response. */
   releases: AppReleaseItem[];
   /** Screenshots field on app detail response. */
-  screenshots: string[];
+  screenshots: MediaResource[];
 }

@@ -4,7 +4,7 @@ package types
 type ForumCreateFeedRequest struct {
 	CategoryId int `json:"categoryId"`
 	Content string `json:"content"`
-	Images []string `json:"images"`
+	Images []MediaResource `json:"images"`
 	Source string `json:"source"`
 	SourceUrl string `json:"sourceUrl"`
 	Tags []string `json:"tags"`

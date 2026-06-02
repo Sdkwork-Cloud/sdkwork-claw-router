@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fireeye@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-fireeye-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fireeye-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1ac58bd4b116fca3c7cf2a88b6b08ad1c7c030a8ade2d8ef67c0a775ffff8ed1",

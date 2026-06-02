@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sharepoint@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sharepoint-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sharepoint-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:35ee451f139d70ab2cf11738c6d1d631c978f07aab547ac21228cc0235506ee7",

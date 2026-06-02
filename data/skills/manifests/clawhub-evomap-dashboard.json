@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/evomap-dashboard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-evomap-dashboard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-evomap-dashboard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e85b3508365e132e47bd68438c2646e9dd6ea441ecb4c3b6078b76280b58772",

@@ -11,6 +11,10 @@ pub struct StorageReconciliationRunRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub check_mode: Option<String>,
 
+    /// Checksum mismatch count field on storage reconciliation run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub checksum_mismatch_count: Option<String>,
+
     /// Completed at field on storage reconciliation run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub completed_at: Option<String>,
@@ -31,6 +35,10 @@ pub struct StorageReconciliationRunRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub deleted_by: Option<String>,
 
+    /// Dry run field on storage reconciliation run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub dry_run: Option<bool>,
+
     /// Id field on storage reconciliation run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -43,9 +51,17 @@ pub struct StorageReconciliationRunRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub metadata: Option<std::collections::HashMap<String, String>>,
 
+    /// Missing object count field on storage reconciliation run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub missing_object_count: Option<String>,
+
     /// Organization id field on storage reconciliation run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Orphan object count field on storage reconciliation run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub orphan_object_count: Option<String>,
 
     /// Provider id field on storage reconciliation run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -63,9 +79,21 @@ pub struct StorageReconciliationRunRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub run_type: Option<String>,
 
+    /// Scanned object count field on storage reconciliation run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub scanned_object_count: Option<String>,
+
+    /// Started at field on storage reconciliation run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub started_at: Option<String>,
+
     /// Status field on storage reconciliation run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
+
+    /// Summary json field on storage reconciliation run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub summary_json: Option<std::collections::HashMap<String, String>>,
 
     /// Tenant id field on storage reconciliation run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

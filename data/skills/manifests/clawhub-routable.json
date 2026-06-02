@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/routable@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-routable-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-routable-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:20a4a133b884009edf53cef2fbf7c958bfee4792515d69eeb5d575055ba44915",

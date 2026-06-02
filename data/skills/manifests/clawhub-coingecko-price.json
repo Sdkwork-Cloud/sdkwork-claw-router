@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coingecko-price@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coingecko-price-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coingecko-price-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97b0d53a597ef00194dec20af88305e60c40bfcdf4516c46961b9878f170704f",

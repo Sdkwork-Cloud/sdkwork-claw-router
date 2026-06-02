@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/captcha-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-captcha-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-captcha-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:21cbb64fe78caec18f08ec318b89887d07cd039e87322f7caa25ce7da604c8c8",

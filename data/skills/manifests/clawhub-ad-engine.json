@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ad-engine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ad-engine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ad-engine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:023b2c19264e1e0339295a1033490631c97cba295b533197871b45262a16627e",

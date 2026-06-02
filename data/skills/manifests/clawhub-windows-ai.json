@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6425d26ae3699921c86aadfe501115cbd12b436a013b14018a38731271a979b6",

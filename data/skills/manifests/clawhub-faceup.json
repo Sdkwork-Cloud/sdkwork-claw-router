@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/faceup@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-faceup-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-faceup-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:fbe9c17a34560b9edc98b740c54ed381dac769d11bd0aa06929eb48790623609",

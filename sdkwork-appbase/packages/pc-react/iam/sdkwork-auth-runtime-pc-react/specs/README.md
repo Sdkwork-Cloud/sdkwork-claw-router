@@ -26,6 +26,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 
 | Spec | Applies Because |
 | --- | --- |
+| [APP_PC_REACT_UI_SPEC.md](../../../../../../../specs/APP_PC_REACT_UI_SPEC.md) | App PC React package split, app SDK boundary, and desktop interaction rules. |
 | [COMPONENT_SPEC.md](../../../../../../../specs/COMPONENT_SPEC.md) | Local component specs directory and manifest rules. |
 | [CONFIG_SPEC.md](../../../../../../../specs/CONFIG_SPEC.md) | Runtime configuration, environment, SDK bootstrap, and feature flag rules. |
 | [DOCUMENTATION_SPEC.md](../../../../../../../specs/DOCUMENTATION_SPEC.md) | Module README, examples, ADR, changelog, and runbook rules. |
@@ -40,6 +41,7 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | [SDK_SPEC.md](../../../../../../../specs/SDK_SPEC.md) | SDK generation and SDK integration rules. |
 | [SECURITY_SPEC.md](../../../../../../../specs/SECURITY_SPEC.md) | Secure auth, token, secrets, CORS, validation, and logging rules. |
 | [TEST_SPEC.md](../../../../../../../specs/TEST_SPEC.md) | Contract, frontend, SDK, security, parity, and documentation verification rules. |
+| [UI_ARCHITECTURE_SPEC.md](../../../../../../../specs/UI_ARCHITECTURE_SPEC.md) | UI architecture selection, package-family ownership, and SDK boundary rules. |
 
 ## Public Exports
 

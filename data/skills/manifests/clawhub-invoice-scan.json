@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoice-scan@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoice-scan-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoice-scan-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:909de77336bd7b5749a99c6a47b9c895d6328cf0dd38246aeffb1f4e9b4ba517",

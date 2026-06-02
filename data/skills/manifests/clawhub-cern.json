@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cern@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cern-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cern-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9842ccdd6aae56c89a5540a164d94911deb88a0131e81dd33f903e603476d74b",

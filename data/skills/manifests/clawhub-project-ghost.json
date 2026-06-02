@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/project-ghost@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-project-ghost-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-project-ghost-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f1d9090bd32413b5bf547b498005da6029d0478c0f4902749ece19aa546bb49d",

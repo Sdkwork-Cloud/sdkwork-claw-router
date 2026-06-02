@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hewlett-packard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hewlett-packard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hewlett-packard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c47ad3e67d32893899489587221cd35ec9fb5086557e7d870313ae27006c8e5",

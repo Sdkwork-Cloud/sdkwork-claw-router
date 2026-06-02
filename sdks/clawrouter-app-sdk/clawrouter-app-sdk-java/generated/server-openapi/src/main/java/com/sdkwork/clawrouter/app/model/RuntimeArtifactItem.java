@@ -9,10 +9,10 @@ public class RuntimeArtifactItem {
     private String invocationId;
     private String mimeType;
     private String name;
+    private MediaResource resource;
     private String sha256;
     private Integer sizeBytes;
     private String storageKey;
-    private String storageUrl;
 
     public String getArtifactType() {
         return this.artifactType;
@@ -70,6 +70,14 @@ public class RuntimeArtifactItem {
         this.name = name;
     }
 
+    public MediaResource getResource() {
+        return this.resource;
+    }
+
+    public void setResource(MediaResource resource) {
+        this.resource = resource;
+    }
+
     public String getSha256() {
         return this.sha256;
     }
@@ -92,13 +100,5 @@ public class RuntimeArtifactItem {
 
     public void setStorageKey(String storageKey) {
         this.storageKey = storageKey;
-    }
-
-    public String getStorageUrl() {
-        return this.storageUrl;
-    }
-
-    public void setStorageUrl(String storageUrl) {
-        this.storageUrl = storageUrl;
     }
 }

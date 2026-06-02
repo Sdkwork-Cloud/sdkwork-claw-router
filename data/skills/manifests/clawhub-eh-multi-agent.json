@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eh-multi-agent@2.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eh-multi-agent-2.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eh-multi-agent-2.4.0.json"
+      },
       "version": "2.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7fb070fe56d209acfb325e7b6279cb3c89cabd710f6c066f755914458174d767",

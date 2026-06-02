@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podium@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-podium-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podium-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:51abcdf47b4c92e280e46bb1c421d6651cab6680b92e857558e94a258d24f019",

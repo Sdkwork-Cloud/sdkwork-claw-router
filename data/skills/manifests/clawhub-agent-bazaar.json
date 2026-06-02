@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bazaar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bazaar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bazaar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74353dde74aa3b7c6530de37cb06683501f6f9f94c396408a6f6e00b784ba8a7",

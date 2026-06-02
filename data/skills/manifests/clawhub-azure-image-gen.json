@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/azure-image-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-azure-image-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-azure-image-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0dec7e98bf2c8907f2a8e875e2b9170ee0b5f376a6fb8bd9bf14368865510631",

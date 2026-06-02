@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dex-aggregator@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dex-aggregator-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dex-aggregator-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26db6b20a4ae734c79dc06b91658456a8c7b36cd11853b89abd4a9f4e51375da",

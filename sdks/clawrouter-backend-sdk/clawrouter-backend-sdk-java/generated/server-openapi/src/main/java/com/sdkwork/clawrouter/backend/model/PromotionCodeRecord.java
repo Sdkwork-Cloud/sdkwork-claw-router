@@ -10,12 +10,15 @@ public class PromotionCodeRecord {
     private String channelCode;
     private String claimCodeHash;
     private String claimCodeSuffix;
+    private String claimedQuantity;
     private String codeNo;
     private String codeType;
     private String createdAt;
     private String createdBy;
     private String currencyCode;
     private String expiresAt;
+    private String id;
+    private String maxClaims;
     private String offerId;
     private String offerVersionId;
     private String organizationId;
@@ -92,6 +95,14 @@ public class PromotionCodeRecord {
         this.claimCodeSuffix = claimCodeSuffix;
     }
 
+    public String getClaimedQuantity() {
+        return this.claimedQuantity;
+    }
+
+    public void setClaimedQuantity(String claimedQuantity) {
+        this.claimedQuantity = claimedQuantity;
+    }
+
     public String getCodeNo() {
         return this.codeNo;
     }
@@ -138,6 +149,22 @@ public class PromotionCodeRecord {
 
     public void setExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getMaxClaims() {
+        return this.maxClaims;
+    }
+
+    public void setMaxClaims(String maxClaims) {
+        this.maxClaims = maxClaims;
     }
 
     public String getOfferId() {

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/song-creation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-song-creation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-song-creation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5af92ab16aa25d8a9fe323d9071c73df80de2e89bf002686f9c957153c72653d",

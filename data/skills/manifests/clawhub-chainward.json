@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chainward@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chainward-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chainward-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29c14f57042b25f7d8ff342731c6fcafaf1beac861a3a76caf49aeecda790f87",

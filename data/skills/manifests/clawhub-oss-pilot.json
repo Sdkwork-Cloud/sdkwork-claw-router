@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oss-pilot@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-oss-pilot-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oss-pilot-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1753e51af6089fd031cdb083a2d2a5de0ccfff891ed7165f6f258997270f1e20",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coding-agent-local@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coding-agent-local-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coding-agent-local-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f33b79a74f8ebcb4f4966aaa9f7af67f4ab21458c2e7ac2c20734ee5b4f934e3",

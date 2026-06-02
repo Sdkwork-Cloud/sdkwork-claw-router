@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prediction-market-sentinel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prediction-market-sentinel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prediction-market-sentinel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8fb79cfbae2931715bc194b04520a119dc5239488b46d578811ca0affea81a95",

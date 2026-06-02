@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adaptive-rag-engine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-adaptive-rag-engine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adaptive-rag-engine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2ac4c566f1873d985ad4b81abbc27054f4c567d09942432deda24bd5b56daf4",

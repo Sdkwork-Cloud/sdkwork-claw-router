@@ -1,10 +1,10 @@
 package com.sdkwork.clawrouter.app
 
 data class StudioCatalogArtifactRecord(
+    val artifact: MediaResource? = null,
     val artifactRef: String? = null,
     val artifactSizeBytes: String? = null,
     val artifactType: String? = null,
-    val artifactUrl: String? = null,
     val checksumHash: String? = null,
     val createdAt: String? = null,
     val dataScope: String? = null,

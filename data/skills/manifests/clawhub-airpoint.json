@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/airpoint@1.3.16",
-      "artifactUrl": "data/skills/artifacts/clawhub-airpoint-1.3.16.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-airpoint-1.3.16.json"
+      },
       "version": "1.3.16",
       "runtime": "metadata",
       "checksumHash": "sha256:f6ca579fa31563bb553f49b99fabed939102404e9af5df86a85c2f6f3ce3fb6c",

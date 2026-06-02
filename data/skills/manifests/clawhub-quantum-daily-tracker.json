@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quantum-daily-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quantum-daily-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quantum-daily-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f23b8b0864b30e6ac15902dae94e2c8d9fab82558e1e8ba17a41137bb699a919",

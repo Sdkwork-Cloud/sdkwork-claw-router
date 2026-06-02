@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tick-md@1.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-tick-md-1.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tick-md-1.3.3.json"
+      },
       "version": "1.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:4f3cd1bef90d217b93aee38a59c5b856d1aa56d09a7118795252031008852f94",

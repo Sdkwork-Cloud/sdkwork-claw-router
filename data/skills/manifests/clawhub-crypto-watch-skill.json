@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-watch-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-watch-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-watch-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ec52e7733928111e0f07033b5cd7c44d1a9fe0181685b6a66110dc50a3630618",

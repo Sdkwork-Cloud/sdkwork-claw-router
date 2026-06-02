@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jetson-info@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jetson-info-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jetson-info-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ef061e1dfd798f7c1fffd9f2bb3f809bef81bb1d3800a23f8a4da879223ec8e",

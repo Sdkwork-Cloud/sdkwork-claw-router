@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pay-bills@0.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-pay-bills-0.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pay-bills-0.0.5.json"
+      },
       "version": "0.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:a40c9ce06804ea1523493d008fbbddf3a7b864b8c1b8945f171602ede5580508",

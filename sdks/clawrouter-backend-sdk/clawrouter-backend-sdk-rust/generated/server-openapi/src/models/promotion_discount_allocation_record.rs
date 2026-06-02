@@ -3,6 +3,9 @@ use serde::{Deserialize, Serialize};
 /// Promotion discount allocation record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct PromotionDiscountAllocationRecord {
+    /// Allocation amount minor field on promotion discount allocation record.
+    pub allocation_amount_minor: String,
+
     /// Allocation ratio bps field on promotion discount allocation record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub allocation_ratio_bps: Option<i64>,
@@ -15,6 +18,10 @@ pub struct PromotionDiscountAllocationRecord {
 
     /// Currency code field on promotion discount allocation record.
     pub currency_code: String,
+
+    /// Id field on promotion discount allocation record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
 
     /// Order id field on promotion discount allocation record.
     pub order_id: String,

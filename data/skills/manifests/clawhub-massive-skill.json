@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/massive-skill@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-massive-skill-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-massive-skill-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:5f3ddae4522a74b1d559bd0083a74de1fe28ace772554c24a60d0b233e7623ba",

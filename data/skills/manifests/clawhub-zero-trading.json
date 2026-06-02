@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zero-trading@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zero-trading-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zero-trading-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f570d7ad06b42877bd1cb2b530a8336a26a3fe6d591d3621e7bcddeacccf82c",

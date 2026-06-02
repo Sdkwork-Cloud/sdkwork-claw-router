@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cpskilltest123456@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cpskilltest123456-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cpskilltest123456-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a19c92ec7981f9fd6b54648780f3bccf0cb766d3a482ef25f2e3e184776ef15f",

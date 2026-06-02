@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llava-vision@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-llava-vision-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llava-vision-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7d664b3713b53228aeae7e1098938b9ce0412a137952dcfd4fae73a869872d93",

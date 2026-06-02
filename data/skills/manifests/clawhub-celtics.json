@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/celtics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-celtics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-celtics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:17a88aa41740666902b83ba24f1039f439f5f140afa75a85424872c189d2a8bf",

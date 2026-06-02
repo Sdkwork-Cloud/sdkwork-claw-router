@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bytesagain-ci-cd-pipeline@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-bytesagain-ci-cd-pipeline-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bytesagain-ci-cd-pipeline-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:0b1b99fc0d6b8c946aea0dab44983ea1cab4bd13d16c975fb1c59933c05c8efb",

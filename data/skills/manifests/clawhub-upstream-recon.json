@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/upstream-recon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-upstream-recon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-upstream-recon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a1c4f4344f3e7f609fbf8538574379fa2db922880b4c1b4b611d2771af3b6272",

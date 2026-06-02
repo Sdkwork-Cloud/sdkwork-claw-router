@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-sub-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-sub-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-sub-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1aea0ea3eb6a451e3d024fadf023458f14349e8201da1a4d0b07a790dcecba74",

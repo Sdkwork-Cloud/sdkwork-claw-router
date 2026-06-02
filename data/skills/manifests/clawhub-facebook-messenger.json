@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/facebook-messenger@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-facebook-messenger-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-facebook-messenger-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b456270a658ee37e7a3eb1cf49731b5eacde8f33fb87543870a976194a5816e2",

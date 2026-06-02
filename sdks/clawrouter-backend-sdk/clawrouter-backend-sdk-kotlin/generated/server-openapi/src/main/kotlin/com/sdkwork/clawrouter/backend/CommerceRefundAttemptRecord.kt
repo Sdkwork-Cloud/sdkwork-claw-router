@@ -7,6 +7,7 @@ data class CommerceRefundAttemptRecord(
     val failedAt: String? = null,
     val failureCode: String? = null,
     val failureMessage: String? = null,
+    val id: String? = null,
     val organizationId: String? = null,
     val outRefundNo: String? = null,
     val providerAccountId: String? = null,

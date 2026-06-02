@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-watch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-watch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-watch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:188a43f90692260b22f7524a06ebe5ddcbc74b280faa7c705c99b2c955ea0caf",

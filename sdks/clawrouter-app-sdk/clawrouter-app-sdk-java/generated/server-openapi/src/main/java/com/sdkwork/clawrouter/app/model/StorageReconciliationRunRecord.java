@@ -5,20 +5,27 @@ import java.util.Map;
 public class StorageReconciliationRunRecord {
     private String bucketId;
     private String checkMode;
+    private String checksumMismatchCount;
     private String completedAt;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
     private String deletedBy;
+    private Boolean dryRun;
     private String id;
     private String idempotencyKey;
     private Map<String, String> metadata;
+    private String missingObjectCount;
     private String organizationId;
+    private String orphanObjectCount;
     private String providerId;
     private String requestId;
     private String requestedBy;
     private String runType;
+    private String scannedObjectCount;
+    private String startedAt;
     private String status;
+    private Map<String, String> summaryJson;
     private String tenantId;
     private String updatedAt;
     private String uuid;
@@ -38,6 +45,14 @@ public class StorageReconciliationRunRecord {
 
     public void setCheckMode(String checkMode) {
         this.checkMode = checkMode;
+    }
+
+    public String getChecksumMismatchCount() {
+        return this.checksumMismatchCount;
+    }
+
+    public void setChecksumMismatchCount(String checksumMismatchCount) {
+        this.checksumMismatchCount = checksumMismatchCount;
     }
 
     public String getCompletedAt() {
@@ -80,6 +95,14 @@ public class StorageReconciliationRunRecord {
         this.deletedBy = deletedBy;
     }
 
+    public Boolean getDryRun() {
+        return this.dryRun;
+    }
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -104,12 +127,28 @@ public class StorageReconciliationRunRecord {
         this.metadata = metadata;
     }
 
+    public String getMissingObjectCount() {
+        return this.missingObjectCount;
+    }
+
+    public void setMissingObjectCount(String missingObjectCount) {
+        this.missingObjectCount = missingObjectCount;
+    }
+
     public String getOrganizationId() {
         return this.organizationId;
     }
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getOrphanObjectCount() {
+        return this.orphanObjectCount;
+    }
+
+    public void setOrphanObjectCount(String orphanObjectCount) {
+        this.orphanObjectCount = orphanObjectCount;
     }
 
     public String getProviderId() {
@@ -144,12 +183,36 @@ public class StorageReconciliationRunRecord {
         this.runType = runType;
     }
 
+    public String getScannedObjectCount() {
+        return this.scannedObjectCount;
+    }
+
+    public void setScannedObjectCount(String scannedObjectCount) {
+        this.scannedObjectCount = scannedObjectCount;
+    }
+
+    public String getStartedAt() {
+        return this.startedAt;
+    }
+
+    public void setStartedAt(String startedAt) {
+        this.startedAt = startedAt;
+    }
+
     public String getStatus() {
         return this.status;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Map<String, String> getSummaryJson() {
+        return this.summaryJson;
+    }
+
+    public void setSummaryJson(Map<String, String> summaryJson) {
+        this.summaryJson = summaryJson;
     }
 
     public String getTenantId() {

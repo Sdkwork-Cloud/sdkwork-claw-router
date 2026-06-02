@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hydrogen@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-hydrogen-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hydrogen-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8e2811c8f9ac167c443791d7ed1968a46f28bcd2f466f2b0f439a8b8658a9fb8",

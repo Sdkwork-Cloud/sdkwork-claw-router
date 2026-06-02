@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/matrix-detection@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-matrix-detection-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-matrix-detection-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ad5883a7edfda93cbe8db055abe26395fed560923db877f7ae8817e1adb1c797",

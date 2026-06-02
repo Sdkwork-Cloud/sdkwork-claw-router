@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mabl@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-mabl-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mabl-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c0d479e9dab271eaa0736ef27604307aef0dfea53b6b90a382973dc6b24fddba",

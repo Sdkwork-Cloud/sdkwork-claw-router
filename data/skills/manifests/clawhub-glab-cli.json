@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glab-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-glab-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glab-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2423b18ca5ff9fd78ff1d986cfc4d9f263aa6b36d4433930ea896e922027c68",

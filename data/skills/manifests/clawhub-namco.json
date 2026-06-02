@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/namco@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-namco-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-namco-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d9cf5ac5fd25c4a7fb9bede63771e48a91289c5096fe9bd88e98f64a4a49aa82",

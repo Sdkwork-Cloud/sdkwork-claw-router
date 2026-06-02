@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/large-document-reader@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-large-document-reader-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-large-document-reader-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:469074a7389048d87e1dae47ad89c20ee7bbb05da32b1d0d7789349a70c51ba6",

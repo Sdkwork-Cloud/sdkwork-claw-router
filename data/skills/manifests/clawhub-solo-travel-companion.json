@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solo-travel-companion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solo-travel-companion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solo-travel-companion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:018cf00b6db23db4bf6bb7b49ccbc9c893365f9d5cbc0333219a5f94582448ef",

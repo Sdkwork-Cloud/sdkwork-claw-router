@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/theta-edgecloud-skill@0.1.21",
-      "artifactUrl": "data/skills/artifacts/clawhub-theta-edgecloud-skill-0.1.21.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-theta-edgecloud-skill-0.1.21.json"
+      },
       "version": "0.1.21",
       "runtime": "metadata",
       "checksumHash": "sha256:e99d95c349dc8864c8a5cdfe761e93ae3a245eb606d753f2342e86cdc1a42fe5",

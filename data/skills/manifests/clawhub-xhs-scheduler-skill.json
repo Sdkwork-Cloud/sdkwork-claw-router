@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xhs-scheduler-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xhs-scheduler-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xhs-scheduler-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1412354ea8a507b7f61b47d05d424833955a67a61499dfa938c2f96061d1ff49",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reading-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reading-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reading-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fede4180c4e2a6d6afc4f428558fa8ff1d678d1fde4dc89af6eec04a13c96984",

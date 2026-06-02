@@ -31,6 +31,7 @@ import {
   DEFAULT_SDKWORK_AUTH_VERIFICATION_POLICY,
   type SdkworkAuthResolvedVerificationPolicy,
 } from "./auth-runtime-config.ts";
+import { readSdkworkMediaResource } from "@sdkwork/appbase-pc-react";
 
 export interface SdkworkIamRuntimeAuthStoredSessionLike {
   accessToken?: string;
@@ -40,7 +41,6 @@ export interface SdkworkIamRuntimeAuthStoredSessionLike {
 
 export interface SdkworkIamRuntimeAuthUserLike {
   avatar?: unknown;
-  avatarUrl?: unknown;
   displayName?: unknown;
   email?: unknown;
   firstName?: unknown;
@@ -68,11 +68,8 @@ export interface SdkworkIamRuntimeQrAuthSessionLike extends SdkworkAuthLoginQrCo
   expireTime?: unknown;
   expiresAt?: unknown;
   fallbackUrl?: unknown;
-  imageUrl?: unknown;
-  qrCodeUrl?: unknown;
+  qrCode?: unknown;
   qrContent?: SdkworkIamRuntimeQrContentLike | unknown;
-  qrImageUrl?: unknown;
-  qrUrl?: unknown;
   sessionKey?: unknown;
   title?: unknown;
   token?: SdkworkIamRuntimeAuthSessionLike;
@@ -588,7 +585,7 @@ function toAuthSession(session: SdkworkIamRuntimeAuthSessionLike): SdkworkAuthSe
 
 function toAuthUser(user: SdkworkIamRuntimeAuthUserLike): SdkworkAuthUser {
   return createSdkworkAuthUserFromIdentity({
-    avatarUrl: normalizeOptionalScalar(user.avatarUrl) || normalizeOptionalScalar(user.avatar),
+    avatar: readSdkworkMediaResource(user.avatar),
     displayName:
       normalizeOptionalScalar(user.displayName)
       || normalizeOptionalScalar(user.name)
@@ -692,8 +689,8 @@ function toPlatformLoginQrCode(value: unknown): SdkworkAuthLoginQrCode {
   return {
     description: normalizeOptionalScalar(record.description),
     expireTime: resolveQrExpireTime(record),
+    qrCode: readSdkworkMediaResource(record.qrCode),
     qrContent: resolvePlatformQrContent(record),
-    qrUrl: resolveQrImageUrl(record),
     sessionKey,
     title: normalizeOptionalScalar(record.title),
     type: resolvePlatformQrContentMode(record),
@@ -733,25 +730,6 @@ function resolveQrExpireTime(record: Record<string, unknown>): number | undefine
 
   const timestamp = Date.parse(expiresAt);
   return Number.isFinite(timestamp) ? timestamp : undefined;
-}
-
-function resolveQrImageUrl(record: Record<string, unknown>): string | undefined {
-  return normalizeOptionalQrImageUrl(record.qrUrl)
-    || normalizeOptionalQrImageUrl(record.qrCodeUrl)
-    || normalizeOptionalQrImageUrl(record.qrImageUrl)
-    || normalizeOptionalQrImageUrl(record.imageUrl);
-}
-
-function normalizeOptionalQrImageUrl(value: unknown): string | undefined {
-  const normalized = normalizeOptionalScalar(value);
-  if (!normalized) {
-    return undefined;
-  }
-
-  return normalized.startsWith("data:image/")
-    || /\.(?:apng|avif|bmp|gif|jpe?g|png|svg|webp)(?:[?#].*)?$/iu.test(normalized)
-    ? normalized
-    : undefined;
 }
 
 function toPlatformLoginQrCodeStatus(

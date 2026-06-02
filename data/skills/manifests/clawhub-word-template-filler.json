@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/word-template-filler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-word-template-filler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-word-template-filler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:59e6174c2b2e16a995bc2c83fb604904517d1cd1ff137f0b765ce627ddfe7838",

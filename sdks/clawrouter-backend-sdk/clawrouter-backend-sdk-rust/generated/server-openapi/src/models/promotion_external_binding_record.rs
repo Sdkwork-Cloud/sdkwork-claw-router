@@ -38,6 +38,10 @@ pub struct PromotionExternalBindingRecord {
     /// External object type field on promotion external binding record.
     pub external_object_type: String,
 
+    /// Id field on promotion external binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Last error code field on promotion external binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub last_error_code: Option<String>,

@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class PromotionOperationResponse:
@@ -10,5 +13,5 @@ class PromotionOperationResponse:
     status: str
     success: bool
     payment_id: Optional[str] = None
-    qr_code_image_url: Optional[str] = None
+    qr_code: Optional[MediaResource] = None
     qr_code_payload: Optional[str] = None

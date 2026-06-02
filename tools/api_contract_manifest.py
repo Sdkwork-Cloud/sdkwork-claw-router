@@ -227,7 +227,7 @@ class ApiContractManifestGenerator:
         "ops": "system",
     }
     TOP_LEVEL_TAGS = set(STANDARD_TAG_DOMAINS)
-    ROUTER_IAM_SEGMENTS = {"api_keys", "api-keys", "access_groups", "access-groups"}
+    ROUTER_IAM_SEGMENTS = {"api_keys", "api-keys"}
     ROUTER_AI_SEGMENTS = {
         "dashboard",
         "gateway",
@@ -266,8 +266,6 @@ class ApiContractManifestGenerator:
         "apikey": "api_keys",
         "api-key": "api_keys",
         "api-keys": "api_keys",
-        "access-group": "access_groups",
-        "access-groups": "access_groups",
         "announcement": "announcements",
         "app": "apps",
         "agent": "agents",

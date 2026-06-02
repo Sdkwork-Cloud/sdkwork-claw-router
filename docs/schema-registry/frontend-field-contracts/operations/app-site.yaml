@@ -31,9 +31,9 @@ frontend_operations:
     - siteName
     - shortName
     - description
-    - logoUrl
-    - iconUrl
-    - faviconUrl
+    - logo
+    - icon
+    - favicon
     - brandColor
     - accentColor
     - footerCopyright
@@ -59,15 +59,12 @@ frontend_operations:
       description:
         type: string
         maxLength: 4096
-      logoUrl:
-        type: string
-        maxLength: 2048
-      iconUrl:
-        type: string
-        maxLength: 2048
-      faviconUrl:
-        type: string
-        maxLength: 2048
+      logo:
+        $ref: '#/components/schemas/MediaResource'
+      icon:
+        $ref: '#/components/schemas/MediaResource'
+      favicon:
+        $ref: '#/components/schemas/MediaResource'
       brandColor:
         type: string
         pattern: ^#[0-9A-Fa-f]{3}(?:[0-9A-Fa-f]{3})?$

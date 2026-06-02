@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/veo-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-veo-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-veo-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98b3f442a326671e33ca49519bba74b5dd2806a863f11edf1d933c8405dd241b",

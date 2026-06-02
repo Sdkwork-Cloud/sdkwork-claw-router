@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ws-charts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ws-charts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ws-charts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c6bb5a96244e3ae90978a599bebca48b140712508cd494d54a2e67b91b8cbf9",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/news-telegram-push@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-news-telegram-push-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-news-telegram-push-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:979bd2ac24dbc3ec26bbd0860978297ae8f1aa0ab496855f30d8f66479829fa1",

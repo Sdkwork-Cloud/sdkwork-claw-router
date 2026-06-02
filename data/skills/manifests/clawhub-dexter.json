@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dexter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dexter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dexter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:465f702f300e269594aacdcee3a937bc5517e97d29e8177c6eff8c45df251039",

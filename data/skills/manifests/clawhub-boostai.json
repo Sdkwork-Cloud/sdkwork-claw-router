@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boostai@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-boostai-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boostai-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ad2253e1371a0cc59d4f6a6d8aa0e6616e8d07b8fcae9292adf872f650fe06e7",

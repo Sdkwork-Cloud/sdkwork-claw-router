@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/appveyor@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-appveyor-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-appveyor-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:839707e6d8aa4ea8c9bc9477a712b2aeac0775ade875efd5c0629b8c07201c98",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agi-evolution-model@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agi-evolution-model-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agi-evolution-model-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:9198096891ab394877da30fe4d9fdd981792efcb132b119ab7462b7b4990965e",

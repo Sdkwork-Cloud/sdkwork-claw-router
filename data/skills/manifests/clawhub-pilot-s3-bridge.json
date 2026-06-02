@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-s3-bridge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-s3-bridge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-s3-bridge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd8d099c9d150805918254ee0ccd67e323d14af91f3bc7d2d14a0e2caf54d5ba",

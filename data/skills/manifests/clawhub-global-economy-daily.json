@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/global-economy-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-global-economy-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-global-economy-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:686d292e5295c6fd163a3e66c9546d2988ddcc76c0781adc24984b4c45bbc937",

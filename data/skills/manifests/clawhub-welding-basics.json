@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/welding-basics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-welding-basics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-welding-basics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ba0bcf68b8c55a654c2a2b94690618a9793cc2b59482e01e44dd3654d058dede",

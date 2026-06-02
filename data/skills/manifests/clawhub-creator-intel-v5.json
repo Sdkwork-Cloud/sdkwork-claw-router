@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/creator-intel-v5@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-creator-intel-v5-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-creator-intel-v5-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:598fd099fdc2a24d305489bc3fc2351e955ecbb50a45e5faafa35ed103f1104a",

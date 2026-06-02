@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workout-logger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workout-logger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workout-logger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc8d54d3d4a1f538498fa8dd0b91b9ff0784f68deafe15729258ae64f8b34d84",

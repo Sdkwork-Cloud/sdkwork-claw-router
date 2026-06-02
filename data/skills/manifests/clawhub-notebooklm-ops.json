@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/notebooklm-ops@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-ops-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-notebooklm-ops-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:85c4dbcc66707e0234f668fd64040fa6db3acace7ef287e9e4c3c5bd6cbc3dda",

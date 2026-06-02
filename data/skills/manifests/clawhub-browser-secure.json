@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/browser-secure@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-browser-secure-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-browser-secure-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e182cbbce6cd50d8b87b3500d29f22ce1e747792e1cfbcdf4bae8fe740e11c08",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-actions-optimizer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-optimizer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-actions-optimizer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:db79cc9aec7bdc0eb8989210779cc837195babb15531582469a573bd661bb7f6",

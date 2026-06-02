@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mkts-market-data@1.0.11",
-      "artifactUrl": "data/skills/artifacts/clawhub-mkts-market-data-1.0.11.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mkts-market-data-1.0.11.json"
+      },
       "version": "1.0.11",
       "runtime": "metadata",
       "checksumHash": "sha256:64767f6abd254a39c29297050c13b1be5b8ebc686abc955b74f452f3041f915d",

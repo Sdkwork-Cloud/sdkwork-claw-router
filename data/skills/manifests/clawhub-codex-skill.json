@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:308c3f0ef3d5ca0bd452d9cd4671590886c8427e09d44e39732250eb44fdacc2",

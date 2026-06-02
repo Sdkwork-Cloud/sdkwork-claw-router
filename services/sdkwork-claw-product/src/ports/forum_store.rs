@@ -2,6 +2,7 @@ use std::future::Future;
 use std::pin::Pin;
 
 use serde::Serialize;
+use serde_json::Value;
 
 use crate::domain::DomainResult;
 
@@ -33,7 +34,7 @@ pub struct ForumAuthor {
     pub id: i64,
     pub name: String,
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub avatar: Option<String>,
+    pub avatar: Option<Value>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub bio: Option<String>,
     pub is_following: bool,
@@ -46,7 +47,7 @@ pub struct ForumFeedItem {
     pub title: String,
     pub content: String,
     pub summary: String,
-    pub cover_image: String,
+    pub cover: Value,
     pub content_type: String,
     pub category_id: i64,
     pub tags: Vec<String>,
@@ -136,7 +137,7 @@ pub struct ForumCommunityLink {
     pub label: String,
     pub url: String,
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub qr_code_url: Option<String>,
+    pub qr_code: Option<Value>,
     pub tone: String,
 }
 
@@ -163,7 +164,7 @@ pub struct CreateForumFeedCommand {
     pub title: Option<String>,
     pub content: String,
     pub category_id: Option<i64>,
-    pub images: Vec<String>,
+    pub images: Vec<Value>,
     pub tags: Vec<String>,
     pub source: Option<String>,
     pub source_url: Option<String>,

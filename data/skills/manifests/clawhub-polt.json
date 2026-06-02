@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/polt@2.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-polt-2.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-polt-2.2.1.json"
+      },
       "version": "2.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1084d466c4c93669863aef4c6d73ad08ff75ed76ad801928aba55ccd5c89cf33",

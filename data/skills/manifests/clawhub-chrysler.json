@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chrysler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chrysler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chrysler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14bfc2f9113f7dd6e7b83cfbf036bc65e7845f6256e2902591aac0081d70ebdd",

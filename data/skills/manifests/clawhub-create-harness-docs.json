@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-harness-docs@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-harness-docs-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-harness-docs-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:08470553f25fe2830c26a1a1e047d43b0b0d40b984eacfd2618aadc59489a382",

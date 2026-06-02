@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/roll@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-roll-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-roll-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8420d75411254dfe1bca6b67e2dbc761118da97f237857eb047f3ef27b4a8073",

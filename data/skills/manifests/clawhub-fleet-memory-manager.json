@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fleet-memory-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fleet-memory-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fleet-memory-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:724cb7e953feb5bda2971d2a7504873dc66d12ce9b78391a29c8f7675e5e7b32",

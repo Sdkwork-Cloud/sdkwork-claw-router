@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comfyui-agent-skill-mie@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-agent-skill-mie-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comfyui-agent-skill-mie-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16bf4f2b43fd2a6a107bc3dfe2a07d0e39457944a932db6cd82f0d2ffd42b53b",

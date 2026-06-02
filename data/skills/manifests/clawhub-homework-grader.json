@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/homework-grader@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-homework-grader-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-homework-grader-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:afd69b5449ffd4489f1ff12125cf4fa96ac612af2086739f65142bd754b60a72",

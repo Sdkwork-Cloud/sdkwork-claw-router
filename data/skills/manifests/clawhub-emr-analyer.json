@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/emr-analyer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-emr-analyer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-emr-analyer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3be698b2d3bacb0438ecf6f057a275c0a5b5012cb4d2045c81b96d375fe7be12",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maimai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-maimai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maimai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86a7aff73ae538166a7b0b76bb59d1c356d72f6814fa45d7cfb8ded62ef4ad22",

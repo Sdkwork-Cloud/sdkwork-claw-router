@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/confidant@1.5.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-confidant-1.5.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-confidant-1.5.3.json"
+      },
       "version": "1.5.3",
       "runtime": "metadata",
       "checksumHash": "sha256:5159efe7512cab10974d85d64d04a2e6bcd4d76f0163017944431cf5765cec30",

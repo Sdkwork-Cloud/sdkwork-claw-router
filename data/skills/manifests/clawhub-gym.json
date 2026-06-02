@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gym@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gym-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gym-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4eec2061b517a7e790495945e33ebad1014e15f9f322e869f26d2ef039a72862",

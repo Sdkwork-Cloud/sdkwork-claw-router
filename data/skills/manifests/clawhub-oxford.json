@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oxford@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-oxford-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oxford-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:6cd94d593bddc4f78850f0a3eb3b4532034094f9008c2f6713312dfb9fea2cb3",

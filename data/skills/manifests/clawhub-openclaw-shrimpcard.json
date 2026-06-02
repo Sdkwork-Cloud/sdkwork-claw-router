@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-shrimpcard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-shrimpcard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-shrimpcard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5806f4da3c3e7ded1a4efabc6c6ec1a2526bd21e701944ac98733718c5d9a643",

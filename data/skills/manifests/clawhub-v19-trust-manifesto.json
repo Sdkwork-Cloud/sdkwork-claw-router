@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/v19-trust-manifesto@1.2.90",
-      "artifactUrl": "data/skills/artifacts/clawhub-v19-trust-manifesto-1.2.90.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-v19-trust-manifesto-1.2.90.json"
+      },
       "version": "1.2.90",
       "runtime": "metadata",
       "checksumHash": "sha256:160192c75c967809c74ecf0736b64a12a1c18149bfe4e89706871ec9c2a329e1",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltbot-arena@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltbot-arena-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltbot-arena-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b25ac5c8a7d52fe08e5025c4d775c1ee85d873692e18159add956027cf9f8cef",

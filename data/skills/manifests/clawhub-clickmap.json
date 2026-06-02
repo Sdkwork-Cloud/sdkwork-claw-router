@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clickmap@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-clickmap-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clickmap-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a07167c1ad0b6620e1b270cc612d2b59c1437447f870beffbdcfc9f09bb0c5da",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipelinelint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipelinelint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipelinelint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cec647e5a4ce989f23ee8ee4f08fac51cd8df4c109954cfd41c005a99254fd5d",

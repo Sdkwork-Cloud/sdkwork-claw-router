@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/movie-review@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-movie-review-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-movie-review-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3c904e0d11060a1916c9f6a38e6167eb24c33705f35f3d32712153ad83359c4e",

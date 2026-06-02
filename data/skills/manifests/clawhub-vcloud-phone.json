@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vcloud-phone@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vcloud-phone-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vcloud-phone-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0c34698295e0e0cb30934e2c34a73680094075277a853ebd22f03943d79b66d",

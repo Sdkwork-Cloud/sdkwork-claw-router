@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cpbox-web-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cpbox-web-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cpbox-web-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5cab9145498b26ea4316b56cbb421edd4de216b090185c08a4cc4ea45b55cf85",

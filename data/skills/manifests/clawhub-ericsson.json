@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ericsson@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ericsson-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ericsson-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5fae213b44c84787356016d3dd7d3b41d71a5557cc1e7febe59517f3dd4b5c2b",

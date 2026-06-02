@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auditclaw-gcp@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-auditclaw-gcp-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auditclaw-gcp-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:465005a0166823fc7947ee7b090bb9f2fea00c90acc0d1c5f54f01b9c6489f65",

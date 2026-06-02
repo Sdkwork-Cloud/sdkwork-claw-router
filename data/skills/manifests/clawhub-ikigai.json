@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ikigai@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ikigai-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ikigai-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a204bf8f194ff3f77738cf2ac03786434608616c00ec73bb034a7a81dd45ca44",

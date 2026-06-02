@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/train-ticket-ocr@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-train-ticket-ocr-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-train-ticket-ocr-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:81f03350c21111841d77776a230269f8350cba8466e2755f3774be9bd84a8a83",

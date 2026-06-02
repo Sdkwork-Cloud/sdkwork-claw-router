@@ -2,6 +2,7 @@ package types
 
 // Messaging template binding record schema exposed by Claw Router.
 type MessagingTemplateBindingRecord struct {
+	ApprovalStatus string `json:"approval_status"`
 	CreatedAt string `json:"created_at"`
 	DataScope string `json:"data_scope"`
 	DeletedAt string `json:"deleted_at"`
@@ -10,10 +11,15 @@ type MessagingTemplateBindingRecord struct {
 	LastSyncedAt string `json:"last_synced_at"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	OrganizationId string `json:"organization_id"`
+	ProviderAccountId string `json:"provider_account_id"`
+	ProviderCode string `json:"provider_code"`
+	ProviderPayload map[string]JsonValue `json:"provider_payload"`
+	ProviderTemplateCode string `json:"provider_template_code"`
 	ProviderTemplateVersion string `json:"provider_template_version"`
 	RejectionReason string `json:"rejection_reason"`
 	Status string `json:"status"`
 	SyncPayloadHash string `json:"sync_payload_hash"`
+	TemplateVariantId string `json:"template_variant_id"`
 	TenantId string `json:"tenant_id"`
 	UpdatedAt string `json:"updated_at"`
 	Uuid string `json:"uuid"`

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rust-rebuilder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rust-rebuilder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rust-rebuilder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:723ab19d29b62e936192a89e1d958998a2c0bf3d776f91361779916ead1843dc",

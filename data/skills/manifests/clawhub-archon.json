@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/archon@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-archon-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-archon-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fb6af6fdd04fc142e877331822a1127a74a98042511aaf82b7f4ac84e4b001c3",

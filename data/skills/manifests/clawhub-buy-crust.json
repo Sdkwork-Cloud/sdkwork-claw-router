@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buy-crust@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-buy-crust-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buy-crust-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f18fbf223330457b301260e081add9ac8fc74c3580c87258b5c4a04f7e7ac500",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwen-omni-multimodal@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwen-omni-multimodal-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwen-omni-multimodal-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a713a5b6746bb5b754698b716a5d1c5e43767978c4b25306971e6738c5fe54e0",

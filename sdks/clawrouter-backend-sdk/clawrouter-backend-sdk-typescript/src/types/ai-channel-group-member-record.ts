@@ -18,12 +18,16 @@ export interface AiChannelGroupMemberRecord {
   effective_from?: string;
   /** Effective to field on ai channel group member record. */
   effective_to?: string;
+  /** Enabled field on ai channel group member record. */
+  enabled?: boolean;
   /** Id field on ai channel group member record. */
   id?: string;
   /** Metadata field on ai channel group member record. */
   metadata?: Record<string, JsonValue>;
   /** Organization id field on ai channel group member record. */
   organization_id: string;
+  /** Priority field on ai channel group member record. */
+  priority?: number;
   /** Status field on ai channel group member record. */
   status: string;
   /** Tenant id field on ai channel group member record. */
@@ -34,4 +38,6 @@ export interface AiChannelGroupMemberRecord {
   uuid: string;
   /** Version field on ai channel group member record. */
   version?: string;
+  /** Weight field on ai channel group member record. */
+  weight?: number;
 }

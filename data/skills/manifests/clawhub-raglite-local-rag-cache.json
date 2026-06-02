@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/raglite-local-rag-cache@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-raglite-local-rag-cache-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-raglite-local-rag-cache-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6554469f8518c16a63715a07494018eea619e01e0d0e1eec5fc7f0e98ca8fe77",

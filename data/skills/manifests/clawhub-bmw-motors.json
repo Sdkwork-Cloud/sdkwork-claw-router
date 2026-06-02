@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bmw-motors@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bmw-motors-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bmw-motors-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ba523d85c5d237d7cdc9f83f011cd5058a0ea85312b2abd12311d36a8c2756a6",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kering@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kering-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kering-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:815dc4624446c0698f27ec4d7fa77454131cb9a9b7f9f007253f472270208c20",

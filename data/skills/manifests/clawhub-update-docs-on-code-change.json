@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/update-docs-on-code-change@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-update-docs-on-code-change-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-update-docs-on-code-change-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67df9c38303252474d6751dfd642a14ef629aa74f37f94cfd68671872c165bec",

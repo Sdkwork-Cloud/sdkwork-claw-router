@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heycube-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-heycube-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heycube-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:464f3ebf29964825dcc423f37f4b0def9388735f5d6bee781a00d17ff2efd383",

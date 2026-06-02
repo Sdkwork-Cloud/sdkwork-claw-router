@@ -1,6 +1,6 @@
 /** Admin user update request schema exposed by Claw Router. */
 export interface AdminUserUpdateRequest {
-  /** Optional access group update. */
+  /** Optional user group label update. */
   group?: string;
   /** User identifier. */
   id: number;

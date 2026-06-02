@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yuki@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-yuki-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yuki-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9e04af106d91b52840fd94d5cd7efcb807c02879169404cf28d0ad461bf0a0ba",

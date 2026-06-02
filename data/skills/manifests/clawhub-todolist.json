@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/todolist@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-todolist-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-todolist-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:f23b03b83b7ae6e8ceab2d9caeb6b5669c59f17b58406b6397a10dc0a6e73405",

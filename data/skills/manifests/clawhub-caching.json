@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/caching@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-caching-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-caching-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f40b2f9c38e8360b62f2548acb37fbecfb5c402560cceccae275f5c53a57a7dc",

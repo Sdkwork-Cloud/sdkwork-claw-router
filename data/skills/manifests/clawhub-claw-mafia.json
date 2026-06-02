@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-mafia@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-mafia-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-mafia-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:186a32981a9a2a9f07063b4187219dcec349850983fa8d8f0047addd3c0fbe89",

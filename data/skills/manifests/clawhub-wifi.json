@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wifi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wifi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wifi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b4af824fb0a6c8caa623141e2a631dafc5b72e8f5b9279dd753d8b4ff3440b3b",

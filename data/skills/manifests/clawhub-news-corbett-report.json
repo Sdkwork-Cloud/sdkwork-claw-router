@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/news-corbett-report@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-news-corbett-report-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-news-corbett-report-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d21014f6e6dfd92e563ac1b208ba1ac1cb8df0665fda350fa8c3bcdf426d262",

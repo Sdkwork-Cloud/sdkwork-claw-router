@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-slimmer@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-slimmer-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-slimmer-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f79b8ff83b8cf090a0890c7a395e774e8f29cb6f1f6909dec77c6da7e146d1c",

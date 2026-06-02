@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llama-index-rag@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llama-index-rag-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llama-index-rag-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1336ea50a5806185cf0a2bd001de364bb7a9fb330c9038afe2f14e276b59dd2d",

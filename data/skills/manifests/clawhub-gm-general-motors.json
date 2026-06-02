@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gm-general-motors@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gm-general-motors-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gm-general-motors-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e27a9214094cddb4aa9e4d45720924892a50544a79a814ed1fab9edc469dcdc",

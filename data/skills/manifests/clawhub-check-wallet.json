@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/check-wallet@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-check-wallet-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-check-wallet-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf1e3e6b508bdbeecdddc5eb5cbb231bdb9d0b7bb4e318a4aadd6063e20acd36",

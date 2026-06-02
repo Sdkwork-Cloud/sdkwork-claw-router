@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-security-scan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-security-scan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-security-scan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5088146a64fa81dd8b95d7f86a0b33e8e903ae9abe3cb7c827bfa2c4bf27639e",

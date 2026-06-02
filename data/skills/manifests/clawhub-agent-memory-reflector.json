@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-reflector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-reflector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-reflector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b73e8bb4ba32678ce6cfeb6c70e936f291d7e98fe5ac851246fdeee2fe41029",

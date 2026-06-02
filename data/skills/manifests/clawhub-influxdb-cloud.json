@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/influxdb-cloud@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-influxdb-cloud-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-influxdb-cloud-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5c222eebf1f556dcdc92cd99c247aac9ae546ad062975c69020c4f8d3c1987eb",

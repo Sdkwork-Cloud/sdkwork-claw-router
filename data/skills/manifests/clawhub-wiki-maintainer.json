@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wiki-maintainer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wiki-maintainer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wiki-maintainer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0eb0a3201053a5ce46485d7499d6c982ca05430d45fa8c0fe9797b9eadd56837",

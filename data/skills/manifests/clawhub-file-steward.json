@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/file-steward@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-file-steward-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-file-steward-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc948e1568a7c9510b500f6cbd26248feb3d32819a324d1ba454f80d5e597f81",

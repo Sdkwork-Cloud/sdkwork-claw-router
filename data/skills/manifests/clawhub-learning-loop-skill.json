@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/learning-loop-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-learning-loop-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-learning-loop-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:339858ae4d7ab63f2b3072e4ebee0d19a0b75315bfa32237af23dac22173aa9d",

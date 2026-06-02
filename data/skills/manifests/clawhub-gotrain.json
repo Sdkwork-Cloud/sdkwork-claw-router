@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gotrain@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gotrain-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gotrain-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a1d916fcce322330e265f986dc90dbb50680166f5db1389c95fe20ec62fb1415",

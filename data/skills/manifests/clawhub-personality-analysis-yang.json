@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personality-analysis-yang@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-personality-analysis-yang-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personality-analysis-yang-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be9dcd27cf2012873ceeb8f3b9e75d406e667feea0a9a24fa6f2508737b0e70e",

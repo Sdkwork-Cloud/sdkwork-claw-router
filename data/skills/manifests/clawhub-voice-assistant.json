@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-assistant@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-assistant-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-assistant-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7665d5e8f2b088c5be0fe18d4479c51c252ef2d24945a2fe20687b6a61cbf3f",

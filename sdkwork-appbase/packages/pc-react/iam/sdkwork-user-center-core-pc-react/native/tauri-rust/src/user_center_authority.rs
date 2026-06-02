@@ -106,7 +106,9 @@ CREATE TABLE IF NOT EXISTS iam_organization (
     contact_email TEXT NULL,
     address TEXT NULL,
     website TEXT NULL,
-    logo_url TEXT NULL,
+    logo_media_resource_id TEXT NULL,
+    logo_object_blob_id INTEGER NULL,
+    logo_resource_snapshot TEXT NULL,
     created_at TEXT NOT NULL,
     updated_at TEXT NOT NULL,
     version INTEGER NOT NULL DEFAULT 0,
@@ -281,7 +283,7 @@ CREATE TABLE IF NOT EXISTS iam_user (
     oauth_user_info TEXT NULL,
     metadata TEXT NULL,
     social_info_list TEXT NULL,
-    avatar_url TEXT NULL,
+    avatar_resource_snapshot TEXT NULL,
     provider_key TEXT NOT NULL,
     external_subject TEXT NULL,
     metadata_json TEXT NULL,
@@ -553,9 +555,22 @@ struct UserCenterSeedPolicy {
     fixed_verification_code_enabled: bool,
 }
 
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
+pub struct UserCenterMediaResource {
+    pub kind: String,
+    pub source: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub public_url: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub uri: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub url: Option<String>,
+}
+
 #[derive(Clone)]
 struct UserRecord {
-    avatar_url: Option<String>,
+    avatar: Option<UserCenterMediaResource>,
     created_at: String,
     display_name: String,
     email: String,
@@ -574,7 +589,7 @@ struct UserRecord {
 #[derive(Clone, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 struct LocalOAuthAuthorizationCodeClaims {
-    avatar_url: Option<String>,
+    avatar: Option<UserCenterMediaResource>,
     email: String,
     expires_at: i64,
     issued_at: i64,
@@ -586,7 +601,7 @@ struct LocalOAuthAuthorizationCodeClaims {
 
 #[derive(Clone)]
 struct LocalOAuthProviderProfile {
-    avatar_url: Option<String>,
+    avatar: Option<UserCenterMediaResource>,
     email: String,
     name: String,
     phone: Option<String>,
@@ -757,7 +772,7 @@ pub struct UserCenterOAuthLoginRequest {
 #[derive(Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct UserCenterSessionExchangeRequest {
-    pub avatar_url: Option<String>,
+    pub avatar: Option<UserCenterMediaResource>,
     pub email: String,
     pub user_id: Option<String>,
     pub name: Option<String>,
@@ -774,7 +789,7 @@ pub struct UserCenterLoginQrConfirmRequest {
 #[derive(Clone, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct UpdateUserCenterProfileRequest {
-    pub avatar_url: Option<String>,
+    pub avatar: Option<UserCenterMediaResource>,
     pub bio: Option<String>,
     pub company: Option<String>,
     pub display_name: Option<String>,
@@ -803,7 +818,7 @@ pub struct UserCenterUserPayload {
     pub organization_id: Option<String>,
     pub created_at: String,
     pub updated_at: String,
-    pub avatar_url: Option<String>,
+    pub avatar: Option<UserCenterMediaResource>,
     pub email: String,
     pub id: String,
     pub name: String,
@@ -892,7 +907,7 @@ pub struct UserCenterProfilePayload {
     pub organization_id: Option<String>,
     pub created_at: String,
     pub updated_at: String,
-    pub avatar_url: Option<String>,
+    pub avatar: Option<UserCenterMediaResource>,
     pub bio: String,
     pub company: String,
     pub display_name: String,
@@ -1414,7 +1429,7 @@ impl UserCenterState {
         user_id: Option<&str>,
         email: Option<&str>,
         name: Option<&str>,
-        avatar_url: Option<&str>,
+        avatar: Option<UserCenterMediaResource>,
     ) -> Result<UserCenterUserPayload, String> {
         let normalized_user_id = normalize_optional_text(user_id);
         let normalized_email = normalize_optional_text(email).map(|value| normalize_email(&value));
@@ -1449,7 +1464,7 @@ impl UserCenterState {
             &preferred_user_id,
             &normalized_email,
             &resolved_display_name,
-            avatar_url,
+            avatar.as_ref(),
             &metadata.provider_key,
             None,
         )?;
@@ -1714,14 +1729,14 @@ pub fn ensure_sqlite_user_center_bootstrap_user(connection: &mut Connection) -> 
     let bootstrap_email = bootstrap_email_value.as_str();
     let bootstrap_phone = resolve_local_bootstrap_phone();
     let bootstrap_name = "SDKWork User Center Local Owner";
-    let bootstrap_avatar = Some(build_avatar_url(bootstrap_email));
+    let bootstrap_avatar = build_avatar_resource(bootstrap_email);
     let bootstrap_user = upsert_user_shadow_with_phone(
         connection,
         crate::USER_CENTER_DEFAULT_LOCAL_OWNER_USER_ID,
         bootstrap_email,
         bootstrap_phone.as_deref(),
         bootstrap_name,
-        bootstrap_avatar.as_deref(),
+        Some(&bootstrap_avatar),
         "local",
         None,
     )?;
@@ -2235,11 +2250,57 @@ fn build_external_user_id(provider_key: &str, subject: Option<&str>, email: &str
     crate::create_identifier("user")
 }
 
-fn build_avatar_url(seed: &str) -> String {
-    format!(
+fn build_avatar_resource(seed: &str) -> UserCenterMediaResource {
+    let url = format!(
         "https://api.dicebear.com/7.x/avataaars/svg?seed={}",
         seed.replace(' ', "%20")
-    )
+    );
+    external_url_media_resource(&url, "image").unwrap_or_else(empty_avatar_resource)
+}
+
+fn empty_avatar_resource() -> UserCenterMediaResource {
+    UserCenterMediaResource {
+        kind: "image".to_owned(),
+        public_url: None,
+        source: "external_url".to_owned(),
+        uri: None,
+        url: None,
+    }
+}
+
+fn external_url_media_resource(value: &str, kind: &str) -> Option<UserCenterMediaResource> {
+    let url = normalize_optional_text(Some(value))?;
+    Some(UserCenterMediaResource {
+        kind: kind.to_owned(),
+        public_url: Some(url.clone()),
+        source: if url.starts_with("data:") {
+            "data_url".to_owned()
+        } else {
+            "external_url".to_owned()
+        },
+        uri: None,
+        url: Some(url),
+    })
+}
+
+fn media_resource_from_snapshot(value: Option<String>) -> Option<UserCenterMediaResource> {
+    let snapshot = normalize_optional_text(value.as_deref())?;
+    let resource = serde_json::from_str::<UserCenterMediaResource>(&snapshot).ok()?;
+    if resource.kind.trim().is_empty() || resource.source.trim().is_empty() {
+        return None;
+    }
+    Some(resource)
+}
+
+fn media_resource_to_snapshot(resource: &UserCenterMediaResource) -> Result<String, String> {
+    serde_json::to_string(resource)
+        .map_err(|error| format!("serialize user center media resource failed: {error}"))
+}
+
+fn media_resource_delivery_url(resource: &UserCenterMediaResource) -> Option<String> {
+    normalize_optional_text(resource.public_url.as_deref())
+        .or_else(|| normalize_optional_text(resource.url.as_deref()))
+        .or_else(|| normalize_optional_text(resource.uri.as_deref()))
 }
 
 fn normalize_phone(phone: &str) -> String {
@@ -2495,11 +2556,12 @@ fn read_local_oauth_provider_profile(provider: &str) -> Result<LocalOAuthProvide
             format_local_oauth_provider_name(&normalized_provider)
         )
     });
-    let avatar_url =
-        read_env_trimmed(&avatar_env).or_else(|| Some(build_avatar_url(email.as_str())));
+    let avatar = read_env_trimmed(&avatar_env)
+        .and_then(|value| external_url_media_resource(&value, "image"))
+        .or_else(|| Some(build_avatar_resource(email.as_str())));
 
     Ok(LocalOAuthProviderProfile {
-        avatar_url,
+        avatar,
         email,
         name,
         phone,
@@ -2608,7 +2670,7 @@ impl LocalOAuthAuthority {
         sign_local_oauth_authorization_code(
             &self.code_secret,
             &LocalOAuthAuthorizationCodeClaims {
-                avatar_url: profile.avatar_url.clone(),
+                avatar: profile.avatar.clone(),
                 email: profile.email.clone(),
                 expires_at,
                 issued_at,
@@ -2681,7 +2743,7 @@ fn map_user_record_to_user_payload(user: UserRecord) -> UserCenterUserPayload {
         organization_id: user.organization_id,
         created_at: user.created_at,
         updated_at: user.updated_at,
-        avatar_url: user.avatar_url,
+        avatar: user.avatar,
         email: resolve_user_public_identity(&user.email, user.phone.as_deref()),
         id: user.id,
         name: user.display_name,
@@ -2758,7 +2820,7 @@ fn load_user_by_id(connection: &Connection, user_id: &str) -> Result<Option<User
                 email,
                 phone,
                 nickname,
-                avatar_url,
+                avatar_resource_snapshot,
                 provider_key,
                 external_subject,
                 status,
@@ -2783,7 +2845,7 @@ fn load_user_by_id(connection: &Connection, user_id: &str) -> Result<Option<User
                     email: row.get(6)?,
                     phone: row.get(7)?,
                     display_name: row.get(8)?,
-                    avatar_url: row.get(9)?,
+                    avatar: media_resource_from_snapshot(row.get(9)?),
                     provider_key: row.get(10)?,
                     external_subject: row.get(11)?,
                     status: row.get(12)?,
@@ -2809,7 +2871,7 @@ fn load_user_by_email(connection: &Connection, email: &str) -> Result<Option<Use
                 email,
                 phone,
                 nickname,
-                avatar_url,
+                avatar_resource_snapshot,
                 provider_key,
                 external_subject,
                 status,
@@ -2834,7 +2896,7 @@ fn load_user_by_email(connection: &Connection, email: &str) -> Result<Option<Use
                     email: row.get(6)?,
                     phone: row.get(7)?,
                     display_name: row.get(8)?,
-                    avatar_url: row.get(9)?,
+                    avatar: media_resource_from_snapshot(row.get(9)?),
                     provider_key: row.get(10)?,
                     external_subject: row.get(11)?,
                     status: row.get(12)?,
@@ -2860,7 +2922,7 @@ fn load_user_by_phone(connection: &Connection, phone: &str) -> Result<Option<Use
                 email,
                 phone,
                 nickname,
-                avatar_url,
+                avatar_resource_snapshot,
                 provider_key,
                 external_subject,
                 status,
@@ -2885,7 +2947,7 @@ fn load_user_by_phone(connection: &Connection, phone: &str) -> Result<Option<Use
                     email: row.get(6)?,
                     phone: row.get(7)?,
                     display_name: row.get(8)?,
-                    avatar_url: row.get(9)?,
+                    avatar: media_resource_from_snapshot(row.get(9)?),
                     provider_key: row.get(10)?,
                     external_subject: row.get(11)?,
                     status: row.get(12)?,
@@ -2915,7 +2977,7 @@ fn load_user_by_oauth_account(
                 iam_user.email,
                 iam_user.phone,
                 iam_user.nickname,
-                iam_user.avatar_url,
+                iam_user.avatar_resource_snapshot,
                 iam_user.provider_key,
                 iam_user.external_subject,
                 iam_user.status,
@@ -2944,7 +3006,7 @@ fn load_user_by_oauth_account(
                     email: row.get(6)?,
                     phone: row.get(7)?,
                     display_name: row.get(8)?,
-                    avatar_url: row.get(9)?,
+                    avatar: media_resource_from_snapshot(row.get(9)?),
                     provider_key: row.get(10)?,
                     external_subject: row.get(11)?,
                     status: row.get(12)?,
@@ -3135,7 +3197,7 @@ fn upsert_user_shadow(
     preferred_user_id: &str,
     email: &str,
     display_name: &str,
-    avatar_url: Option<&str>,
+    avatar: Option<&UserCenterMediaResource>,
     provider_key: &str,
     external_subject: Option<&str>,
 ) -> Result<UserRecord, String> {
@@ -3145,7 +3207,7 @@ fn upsert_user_shadow(
         email,
         None,
         display_name,
-        avatar_url,
+        avatar,
         provider_key,
         external_subject,
     )
@@ -3157,7 +3219,7 @@ fn upsert_user_shadow_with_phone(
     email: &str,
     phone: Option<&str>,
     display_name: &str,
-    avatar_url: Option<&str>,
+    avatar: Option<&UserCenterMediaResource>,
     provider_key: &str,
     external_subject: Option<&str>,
 ) -> Result<UserRecord, String> {
@@ -3194,8 +3256,11 @@ fn upsert_user_shadow_with_phone(
     } else {
         display_name.trim().to_owned()
     };
-    let resolved_avatar_url =
-        normalize_optional_text(avatar_url).unwrap_or_else(|| build_avatar_url(&normalized_email));
+    let resolved_avatar = avatar
+        .cloned()
+        .or_else(|| existing_user.as_ref().and_then(|user| user.avatar.clone()))
+        .unwrap_or_else(|| build_avatar_resource(&normalized_email));
+    let resolved_avatar_snapshot = media_resource_to_snapshot(&resolved_avatar)?;
     let resolved_provider_key = existing_user
         .as_ref()
         .and_then(|user| normalize_optional_text(Some(user.provider_key.as_str())))
@@ -3215,7 +3280,7 @@ fn upsert_user_shadow_with_phone(
             INSERT INTO iam_user (
                 id, uuid, tenant_id, organization_id, username, nickname, salt,
                 platform, type, scene, email, phone, country_code, province_code, city_code,
-                district_code, address, bio, avatar_url, provider_key, external_subject,
+                district_code, address, bio, avatar_resource_snapshot, provider_key, external_subject,
                 metadata_json, status, created_at, updated_at, version, is_deleted
             )
             VALUES (
@@ -3232,7 +3297,7 @@ fn upsert_user_shadow_with_phone(
                 email = excluded.email,
                 phone = COALESCE(excluded.phone, iam_user.phone),
                 nickname = excluded.nickname,
-                avatar_url = excluded.avatar_url,
+                avatar_resource_snapshot = excluded.avatar_resource_snapshot,
                 provider_key = COALESCE(NULLIF(iam_user.provider_key, ''), excluded.provider_key),
                 external_subject = COALESCE(excluded.external_subject, iam_user.external_subject),
                 metadata_json = COALESCE(iam_user.metadata_json, excluded.metadata_json),
@@ -3247,7 +3312,7 @@ fn upsert_user_shadow_with_phone(
                 &resolved_display_name,
                 &normalized_email,
                 &normalized_phone,
-                &resolved_avatar_url,
+                &resolved_avatar_snapshot,
                 &resolved_provider_key,
                 &normalize_optional_text(external_subject),
                 existing_user
@@ -4129,7 +4194,7 @@ fn build_profile_payload_from_user(
         organization_id: user.organization_id.clone(),
         created_at: user.created_at.clone(),
         updated_at: user.updated_at.clone(),
-        avatar_url: user.avatar_url.clone(),
+        avatar: user.avatar.clone(),
         bio: profile
             .as_ref()
             .and_then(|record| record.bio.clone())
@@ -4460,7 +4525,7 @@ fn build_profile_payload(
         organization_id: session.user.organization_id.clone(),
         created_at: session.user.created_at.clone(),
         updated_at: session.user.updated_at.clone(),
-        avatar_url: session.user.avatar_url.clone(),
+        avatar: session.user.avatar.clone(),
         bio: profile
             .as_ref()
             .and_then(|record| record.bio.clone())
@@ -4548,18 +4613,21 @@ fn upsert_profile_record(
     let now = crate::current_storage_timestamp();
     let display_name = normalize_optional_text(request.display_name.as_deref())
         .unwrap_or_else(|| session.user.name.clone());
-    let avatar_url = normalize_optional_text(request.avatar_url.as_deref())
-        .or_else(|| session.user.avatar_url.clone())
-        .unwrap_or_else(|| build_avatar_url(&session.user.email));
+    let avatar = request
+        .avatar
+        .clone()
+        .or_else(|| session.user.avatar.clone())
+        .unwrap_or_else(|| build_avatar_resource(&session.user.email));
+    let avatar_snapshot = media_resource_to_snapshot(&avatar)?;
 
     connection
         .execute(
             r#"
             UPDATE iam_user
-            SET updated_at = ?2, nickname = ?3, avatar_url = ?4, is_deleted = 0, status = 'active'
+            SET updated_at = ?2, nickname = ?3, avatar_resource_snapshot = ?4, is_deleted = 0, status = 'active'
             WHERE id = ?1
             "#,
-            params![&session.user.id, &now, &display_name, &avatar_url],
+            params![&session.user.id, &now, &display_name, &avatar_snapshot],
         )
         .map_err(|error| {
             format!(
@@ -4591,7 +4659,7 @@ fn upsert_profile_record(
             organization_id: session.user.organization_id.clone(),
             created_at: session.user.created_at.clone(),
             updated_at: session.user.updated_at.clone(),
-            avatar_url: Some(avatar_url),
+            avatar: Some(avatar),
             email: session.user.email.clone(),
             id: session.user.id.clone(),
             name: display_name,
@@ -4847,13 +4915,13 @@ impl LocalUserCenterProvider {
             .map(|user| user.id)
             .unwrap_or_else(|| build_local_user_id(&normalized_email));
         let display_name = resolve_display_name(&normalized_email, explicit_name);
-        let avatar_url = build_avatar_url(&normalized_email);
+        let avatar = build_avatar_resource(&normalized_email);
         let user = upsert_user_shadow(
             connection,
             &preferred_user_id,
             &normalized_email,
             &display_name,
-            Some(avatar_url.as_str()),
+            Some(&avatar),
             &self.provider_key,
             None,
         )?;
@@ -4893,14 +4961,14 @@ impl LocalUserCenterProvider {
             .map(|user| user.email.clone())
             .unwrap_or_else(|| build_local_phone_shadow_email(&normalized_phone));
         let display_name = resolve_phone_display_name(&normalized_phone, explicit_name);
-        let avatar_url = build_avatar_url(&normalized_phone);
+        let avatar = build_avatar_resource(&normalized_phone);
         let user = upsert_user_shadow_with_phone(
             connection,
             &preferred_user_id,
             &resolved_email,
             Some(&normalized_phone),
             &display_name,
-            Some(avatar_url.as_str()),
+            Some(&avatar),
             &self.provider_key,
             None,
         )?;
@@ -4971,7 +5039,7 @@ impl LocalUserCenterProvider {
             normalized_email.as_str(),
             normalized_phone.as_deref(),
             &display_name,
-            claims.avatar_url.as_deref(),
+            claims.avatar.as_ref(),
             &self.provider_key,
             None,
         )?;
@@ -5404,7 +5472,8 @@ impl HeaderExternalUserCenterProvider {
             .unwrap_or_else(|| build_external_user_id(&self.provider_key, None, &email));
         let name = read_header_value(headers, &self.external_headers.name_header)
             .unwrap_or_else(|| resolve_display_name(&email, None));
-        let avatar_url = read_header_value(headers, &self.external_headers.avatar_header);
+        let avatar = read_header_value(headers, &self.external_headers.avatar_header)
+            .and_then(|value| external_url_media_resource(&value, "image"));
         let now = crate::current_storage_timestamp();
         let user_timestamp = now.clone();
 
@@ -5426,7 +5495,7 @@ impl HeaderExternalUserCenterProvider {
                 organization_id: Some(DEFAULT_LOCAL_ORGANIZATION_ID.to_owned()),
                 created_at: user_timestamp.clone(),
                 updated_at: user_timestamp,
-                avatar_url,
+                avatar,
                 email,
                 id: user_id,
                 name,
@@ -5444,7 +5513,7 @@ impl HeaderExternalUserCenterProvider {
             &session.user.id,
             &session.user.email,
             &session.user.name,
-            session.user.avatar_url.as_deref(),
+            session.user.avatar.as_ref(),
             &self.provider_key,
             None,
         )?;
@@ -5476,7 +5545,7 @@ impl UserCenterProvider for HeaderExternalUserCenterProvider {
             &preferred_user_id,
             &normalized_email,
             &display_name,
-            request.avatar_url.as_deref(),
+            request.avatar.as_ref(),
             provider_key.as_str(),
             request.subject.as_deref(),
         )?;
@@ -6042,7 +6111,7 @@ impl SdkworkCloudAppApiExternalUserCenterProvider {
             &headers,
             Some(
                 serde_json::to_value(UpstreamAppApiUpdateProfileRequestPayload {
-                    avatar: normalize_optional_text(request.avatar_url.as_deref()),
+                    avatar: request.avatar.as_ref().and_then(media_resource_delivery_url),
                     bio: normalize_optional_text(request.bio.as_deref()),
                     email: None,
                     nickname: normalize_optional_text(request.display_name.as_deref()),
@@ -6097,14 +6166,16 @@ impl SdkworkCloudAppApiExternalUserCenterProvider {
                     .or(display_name_hint),
             ),
         };
-        let avatar_url = user_info.and_then(|payload| payload.avatar.as_deref());
+        let avatar = user_info
+            .and_then(|payload| payload.avatar.as_deref())
+            .and_then(|value| external_url_media_resource(value, "image"));
         let user = upsert_user_shadow_with_phone(
             connection,
             &preferred_user_id,
             &resolved_email,
             resolved_phone.as_deref(),
             &display_name,
-            avatar_url,
+            avatar.as_ref(),
             &self.provider_key,
             resolved_subject.as_deref(),
         )?;
@@ -6177,16 +6248,18 @@ impl SdkworkCloudAppApiExternalUserCenterProvider {
                     .or(Some(existing_user.display_name.as_str())),
             ),
         };
+        let avatar = profile_payload
+            .avatar
+            .as_deref()
+            .and_then(|value| external_url_media_resource(value, "image"))
+            .or_else(|| existing_user.avatar.clone());
         let user = upsert_user_shadow_with_phone(
             connection,
             &existing_user.id,
             &resolved_email,
             resolved_phone.as_deref(),
             &display_name,
-            profile_payload
-                .avatar
-                .as_deref()
-                .or(existing_user.avatar_url.as_deref()),
+            avatar.as_ref(),
             &self.provider_key,
             upstream_state
                 .user_id

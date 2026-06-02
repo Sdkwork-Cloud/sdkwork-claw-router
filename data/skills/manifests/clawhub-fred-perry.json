@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fred-perry@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fred-perry-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fred-perry-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5006916c14235ad089b712578fe0964128f2323a2865ec8bc536991a5b35aa20",

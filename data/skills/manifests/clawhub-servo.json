@@ -48,7 +48,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/servo@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-servo-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-servo-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4615f501bc1c300856d7117cfb70c7ba8690af38b605efc5111fd1de4d1ac723",

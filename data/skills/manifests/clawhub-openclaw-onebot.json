@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-onebot@1.2.13",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-onebot-1.2.13.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-onebot-1.2.13.json"
+      },
       "version": "1.2.13",
       "runtime": "metadata",
       "checksumHash": "sha256:e953b6ed3b1260ff5c72a146c93d1faca33837cb699c73e8acfcfcdf9bc9aaf6",

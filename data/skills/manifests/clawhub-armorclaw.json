@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/armorclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-armorclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-armorclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c59d1150a974dfe8402d6e29f3bfc8b08b3b5cf0679def46e49e90c60488136a",

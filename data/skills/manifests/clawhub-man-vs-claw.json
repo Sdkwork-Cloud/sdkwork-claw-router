@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/man-vs-claw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-man-vs-claw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-man-vs-claw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5c509c4eb60ed57f2dbba61f9416ac624158b49acf0943383aae258576f4012f",

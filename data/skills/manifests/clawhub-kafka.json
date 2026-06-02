@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kafka@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-kafka-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kafka-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b7577a8adfdb18f5789d623870d2032c8eeab800b6561dc829cb54cc833f3bce",

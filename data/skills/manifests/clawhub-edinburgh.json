@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edinburgh@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-edinburgh-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edinburgh-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b91fc5f464c78cbb9c2cf37b73c26d77ee9ebc75791ba1a1aabc06393c54987",

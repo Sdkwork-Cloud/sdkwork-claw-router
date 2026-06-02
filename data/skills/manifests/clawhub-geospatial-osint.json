@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geospatial-osint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-geospatial-osint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geospatial-osint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ea33a3ef7de823f2d0bdd725282b1b6f1aa14e8bdc42bd0ad103041a7621a8bc",

@@ -13,10 +13,10 @@ public class AiModelVendorRecord {
     private String description;
     private String displayName;
     private String docsUrl;
-    private String iconUrl;
+    private MediaResource icon;
     private String id;
     private String legalName;
-    private String logoUrl;
+    private MediaResource logo;
     private Map<String, String> metadata;
     private Map<String, String> modelFamilies;
     private Boolean openSource;
@@ -111,12 +111,12 @@ public class AiModelVendorRecord {
         this.docsUrl = docsUrl;
     }
 
-    public String getIconUrl() {
-        return this.iconUrl;
+    public MediaResource getIcon() {
+        return this.icon;
     }
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+    public void setIcon(MediaResource icon) {
+        this.icon = icon;
     }
 
     public String getId() {
@@ -135,12 +135,12 @@ public class AiModelVendorRecord {
         this.legalName = legalName;
     }
 
-    public String getLogoUrl() {
-        return this.logoUrl;
+    public MediaResource getLogo() {
+        return this.logo;
     }
 
-    public void setLogoUrl(String logoUrl) {
-        this.logoUrl = logoUrl;
+    public void setLogo(MediaResource logo) {
+        this.logo = logo;
     }
 
     public Map<String, String> getMetadata() {

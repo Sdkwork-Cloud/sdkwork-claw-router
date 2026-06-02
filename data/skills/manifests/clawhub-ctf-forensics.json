@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ctf-forensics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ctf-forensics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ctf-forensics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f5d96a94ffd14d4fced899d235fe602d597d0bfd5fe57ec7c5f87ce15d5b3ab",

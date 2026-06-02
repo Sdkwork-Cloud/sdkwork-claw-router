@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-alert-handler@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-alert-handler-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-alert-handler-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:64c600992da48fe453c76a6476ca4d2fb8c5f12253c8fc29d4bd631a471920d4",

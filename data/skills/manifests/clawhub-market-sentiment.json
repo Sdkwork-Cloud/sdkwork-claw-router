@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/market-sentiment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-market-sentiment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-market-sentiment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b840d24d015bad3588a1a6524c60ef6c715d2e4d3b300957170e5f4fd8dd11e",

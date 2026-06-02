@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-skill-scanner@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-skill-scanner-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-skill-scanner-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c41ddbcfade9b44ce89759c5f14e83165d325efcda34a6d6179f0d263a49ed09",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unleash@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-unleash-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unleash-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b1cffed98491e95687701fbccd639c2532f215e888dc98c1d516b809d64ee016",

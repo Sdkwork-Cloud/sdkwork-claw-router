@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mailparser@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mailparser-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mailparser-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0deb586a2fff4f07adca7b93aa246ee9513d6f4e0eb53e5cc51828c7a25ed9de",

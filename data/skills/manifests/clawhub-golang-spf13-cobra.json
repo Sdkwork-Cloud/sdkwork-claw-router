@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golang-spf13-cobra@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-golang-spf13-cobra-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golang-spf13-cobra-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec18a398e3ad8afc979bdd403c0d5009828fda97b494fb1ec174fa4e71ba74c6",

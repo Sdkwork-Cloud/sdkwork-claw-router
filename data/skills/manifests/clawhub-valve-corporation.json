@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/valve-corporation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-valve-corporation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-valve-corporation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f21c03596828653471128a4cd28f7b17e9abefbb94f26b134bf34378c10fc6b5",

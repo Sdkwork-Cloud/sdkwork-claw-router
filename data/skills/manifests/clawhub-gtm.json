@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gtm@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-gtm-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gtm-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:764665607455141c02e4a2744eaa368f4d987cd92dca0fb9345e668016d11143",

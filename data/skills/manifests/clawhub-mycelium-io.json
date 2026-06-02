@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mycelium-io@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-mycelium-io-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mycelium-io-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:945453a89233724b25452bc95b9cf809c4ac3d60ab46e448a838e7c3817e88f4",

@@ -6,6 +6,8 @@ export interface CommerceRefundRecord {
   created_at: string;
   /** Currency code field on commerce refund record. */
   currency_code?: string;
+  /** Id field on commerce refund record. */
+  id?: string;
   /** Idempotency key field on commerce refund record. */
   idempotency_key: string;
   /** Organization id field on commerce refund record. */

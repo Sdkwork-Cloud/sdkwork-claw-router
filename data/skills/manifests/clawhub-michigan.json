@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/michigan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-michigan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-michigan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16c4ac54d323374178d3c86a92f6addf5561eec66a97063eccb9448fb942e904",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pony-image@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pony-image-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pony-image-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd320894f098335ca41f2c47510f1e0ac5fa4ff210bf227d96ddd917513f1e0a",

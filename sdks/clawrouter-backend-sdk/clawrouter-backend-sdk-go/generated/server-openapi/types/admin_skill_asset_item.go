@@ -4,8 +4,8 @@ package types
 type AdminSkillAssetItem struct {
 	AltText string `json:"altText"`
 	ArtifactId string `json:"artifactId"`
+	Asset MediaResource `json:"asset"`
 	AssetType int `json:"assetType"`
-	AssetUrl string `json:"assetUrl"`
 	CreatedAt string `json:"createdAt"`
 	DurationSeconds string `json:"durationSeconds"`
 	FileSize int `json:"fileSize"`
@@ -18,7 +18,7 @@ type AdminSkillAssetItem struct {
 	Status int `json:"status"`
 	TargetId string `json:"targetId"`
 	TargetType int `json:"targetType"`
-	ThumbnailUrl string `json:"thumbnailUrl"`
+	Thumbnail MediaResource `json:"thumbnail"`
 	Title string `json:"title"`
 	UpdatedAt string `json:"updatedAt"`
 	Width int `json:"width"`

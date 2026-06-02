@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/campaign-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-campaign-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-campaign-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e5e034c04295163db8a155d20f18f53ffea7e4a0e6264c2ca48d38b78df5930",

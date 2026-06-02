@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/caprover-ci-deploys@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-caprover-ci-deploys-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-caprover-ci-deploys-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9c98b35a56f4b06b3dfb8036b06e0d1f4fa8f421c76c6d62d6e6d74e14683331",

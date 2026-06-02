@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-processing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-processing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-processing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0b9db95797869abe6f7d68044c328ceba5cad719683690426f2bd35559fdb19",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fortclaw@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fortclaw-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fortclaw-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89a5f42abb5d2f0db1965660850730b6c250ef28c43816eb3bb7b27f565a049c",

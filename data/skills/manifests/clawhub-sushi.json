@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sushi@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sushi-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sushi-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35a52c431fd6ff6fbed020ab77c90d135b364c0f000ce076d72ab0935998df3b",

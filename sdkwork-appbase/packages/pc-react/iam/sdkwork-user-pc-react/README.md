@@ -89,14 +89,14 @@ const service = createSdkworkCanonicalUserService({
     read: () => readProfileSnapshot(),
     resolveIdentity(user, snapshot) {
       return {
-        avatarUrl: user.avatarUrl,
+        avatar: user.avatar,
         displayName: snapshot.displayName || user.name || user.email,
         email: user.email,
       };
     },
     toUserProfile(snapshot, user) {
       return createSdkworkUserProfileFromCanonicalIdentity({
-        avatarUrl: user.avatarUrl,
+        avatar: user.avatar,
         displayName: snapshot.displayName || user.name || user.email,
         email: user.email,
       });

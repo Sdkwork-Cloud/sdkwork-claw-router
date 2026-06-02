@@ -19,9 +19,13 @@ public class PromotionUserCouponRecord {
     private String disabledAt;
     private Integer discountPercentBps;
     private String expiresAt;
+    private String faceValueMinor;
+    private String id;
     private String idempotencyKey;
     private String lockExpiresAt;
     private String lockedAt;
+    private String maximumDiscountAmountMinor;
+    private String minimumOrderAmountMinor;
     private String offerId;
     private String offerVersionId;
     private String organizationId;
@@ -176,6 +180,22 @@ public class PromotionUserCouponRecord {
         this.expiresAt = expiresAt;
     }
 
+    public String getFaceValueMinor() {
+        return this.faceValueMinor;
+    }
+
+    public void setFaceValueMinor(String faceValueMinor) {
+        this.faceValueMinor = faceValueMinor;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getIdempotencyKey() {
         return this.idempotencyKey;
     }
@@ -198,6 +218,22 @@ public class PromotionUserCouponRecord {
 
     public void setLockedAt(String lockedAt) {
         this.lockedAt = lockedAt;
+    }
+
+    public String getMaximumDiscountAmountMinor() {
+        return this.maximumDiscountAmountMinor;
+    }
+
+    public void setMaximumDiscountAmountMinor(String maximumDiscountAmountMinor) {
+        this.maximumDiscountAmountMinor = maximumDiscountAmountMinor;
+    }
+
+    public String getMinimumOrderAmountMinor() {
+        return this.minimumOrderAmountMinor;
+    }
+
+    public void setMinimumOrderAmountMinor(String minimumOrderAmountMinor) {
+        this.minimumOrderAmountMinor = minimumOrderAmountMinor;
     }
 
     public String getOfferId() {

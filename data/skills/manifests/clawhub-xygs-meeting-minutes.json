@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xygs-meeting-minutes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xygs-meeting-minutes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xygs-meeting-minutes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25bb1f0151adc3785e4a929fdbce6a78d8eaa0344918e60439edf8a928339bbb",

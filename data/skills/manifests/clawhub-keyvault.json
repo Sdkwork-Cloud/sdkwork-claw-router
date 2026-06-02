@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/keyvault@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-keyvault-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-keyvault-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:541c3f95b4d2b0199f278a82b43e95476c9ec5eaee6c50144a3cb5727b45d2a0",

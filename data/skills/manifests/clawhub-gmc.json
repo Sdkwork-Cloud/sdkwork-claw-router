@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gmc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gmc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gmc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1c9b51b8d7a0859d86440d5ef09d7492fc086c3cb2e2c08872ac8636e034bcf",

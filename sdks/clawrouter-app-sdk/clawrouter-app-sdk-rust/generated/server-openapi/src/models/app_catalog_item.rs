@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{AppReleaseItem};
+use crate::models::{AppReleaseItem, MediaResource};
 
 /// App catalog item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -24,7 +24,7 @@ pub struct AppCatalogItem {
     pub id: String,
 
     /// Image field on app catalog item.
-    pub image: String,
+    pub image: MediaResource,
 
     /// Name field on app catalog item.
     pub name: String,
@@ -36,5 +36,5 @@ pub struct AppCatalogItem {
     pub releases: Vec<AppReleaseItem>,
 
     /// Screenshots field on app catalog item.
-    pub screenshots: Vec<String>,
+    pub screenshots: Vec<MediaResource>,
 }

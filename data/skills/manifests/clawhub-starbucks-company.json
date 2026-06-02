@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/starbucks-company@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-starbucks-company-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-starbucks-company-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4245cee47a4e59b48dcb5b7bc5e3be7f7444c0dcb062279c3498f151ea12253f",

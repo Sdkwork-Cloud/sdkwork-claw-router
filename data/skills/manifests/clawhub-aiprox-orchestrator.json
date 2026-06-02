@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aiprox-orchestrator@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aiprox-orchestrator-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aiprox-orchestrator-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d953de0792823c8be7640d8a90ac014cca3b2db60ea5e26eb5cc7e1e4468c14b",

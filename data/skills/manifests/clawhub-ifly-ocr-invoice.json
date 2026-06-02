@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ifly-ocr-invoice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ifly-ocr-invoice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ifly-ocr-invoice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67741bb8a6e899a2400c4574746e8059431ce9b321ccd821bd1152cbd055f125",

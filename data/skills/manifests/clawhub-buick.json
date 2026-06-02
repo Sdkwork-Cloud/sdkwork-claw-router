@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buick@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-buick-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buick-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:50e1547d966b61d411ceea0d543b7921ec1270ce44853731f7db47690b564ee0",

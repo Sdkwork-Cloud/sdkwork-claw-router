@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/duanzj-hello-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-duanzj-hello-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-duanzj-hello-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7abd1fcbd58d22b67ca16b581dfd595448daea09b244d714f962159a4f308c67",

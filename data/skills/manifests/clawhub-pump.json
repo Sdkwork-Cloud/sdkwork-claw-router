@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pump@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pump-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pump-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:506652ee8ed6adad1c524bf774e190928d87f96d614f61294cd2ca318c8c3c1b",

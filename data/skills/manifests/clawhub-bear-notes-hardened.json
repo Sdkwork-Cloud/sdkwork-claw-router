@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bear-notes-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bear-notes-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bear-notes-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00f1d4f6c12e3cddd490b3d568eb4e58aa3d3444a234a75d265327baef2db92c",

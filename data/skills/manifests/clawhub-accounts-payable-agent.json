@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/accounts-payable-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-accounts-payable-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-accounts-payable-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:085962d3e8148708fb4edf122b53869fc1421a8fe7989ebd62a8046e64a5cd4d",

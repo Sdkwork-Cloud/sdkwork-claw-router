@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tappi@3.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tappi-3.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tappi-3.5.0.json"
+      },
       "version": "3.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8039b163c043269845016b2e9edc1c51e01e39b368ebcd3451b6fb62300b55ab",

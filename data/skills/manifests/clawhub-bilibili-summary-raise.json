@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bilibili-summary-raise@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-summary-raise-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bilibili-summary-raise-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a1bb86c682daf1f6c702e6188219f3b10de00e3abd1c2b0dc2e22fe92ae62a4",

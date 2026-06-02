@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/microsoft-azure-sql-database@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-azure-sql-database-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-microsoft-azure-sql-database-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1af820e96c95728f708e595131cd9ec1a15f5e9fc3efe72c757ad0b31c0f1c93",

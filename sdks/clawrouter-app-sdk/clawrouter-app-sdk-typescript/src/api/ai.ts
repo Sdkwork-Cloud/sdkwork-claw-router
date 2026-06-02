@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, UsageLogsListResult } from '../types';
+import type { ChannelGroupsListResult, DashboardOverviewRetrieveResult, GatewayTracesListResult, GenerationListResult, ModelRankingsListResult, ModelsListResult, ModelVendorsListResult, UsageLogsListResult } from '../types';
 
 
 export interface AiUsageLogsListParams {
@@ -201,8 +201,23 @@ export class AiDashboardApi {
 
 }
 
+export class AiChannelGroupsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List groups */
+  async list(): Promise<ChannelGroupsListResult> {
+    return this.client.get<ChannelGroupsListResult>(appApiPath(`/ai/channel_groups`));
+  }
+}
+
 export class AiApi {
   private client: HttpClient;
+  public readonly channelGroups: AiChannelGroupsApi;
   public readonly dashboard: AiDashboardApi;
   public readonly gateway: AiGatewayApi;
   public readonly generation: AiGenerationApi;
@@ -213,6 +228,7 @@ export class AiApi {
 
   constructor(client: HttpClient) {
     this.client = client;
+    this.channelGroups = new AiChannelGroupsApi(client);
     this.dashboard = new AiDashboardApi(client);
     this.gateway = new AiGatewayApi(client);
     this.generation = new AiGenerationApi(client);

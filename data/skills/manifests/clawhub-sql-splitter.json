@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-splitter@2.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-splitter-2.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-splitter-2.2.2.json"
+      },
       "version": "2.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:13f6bb19bb4995d441d13c923b9793763c5cb4b112c4a246dea1d4526086953a",

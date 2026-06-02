@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eagerbots-stock-quote@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eagerbots-stock-quote-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eagerbots-stock-quote-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cdab7d0018c1ef6a785902129eefa8750c0e0fb9acd02222bf79721294de7d99",

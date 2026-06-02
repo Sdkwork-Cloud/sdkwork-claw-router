@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/expense-tracker-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-expense-tracker-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-expense-tracker-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4777921ff8aba8006ae66ed98b750bd7d93d2110add364698144d0d3335747f3",

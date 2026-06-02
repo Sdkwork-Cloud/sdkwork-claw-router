@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gravitational-wave-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gravitational-wave-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gravitational-wave-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67e8f590aa18fe43aaa3d87a2214d245ed27eccfb91cfdd1c7814ad6b460d07f",

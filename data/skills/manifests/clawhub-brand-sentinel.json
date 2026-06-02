@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/brand-sentinel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-brand-sentinel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-brand-sentinel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b1ead0c9acb2bfe5a50ddc4e3ccf0ba0822d79d21d52376683074877c16b839",

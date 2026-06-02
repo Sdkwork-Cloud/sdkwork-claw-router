@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-todo@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-todo-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-todo-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7bab8dc5434245ba8b5376f635e6e93e2eab4990c9a5d8144c207a7569c19861",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mistral-mcp-openclaw@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mistral-mcp-openclaw-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mistral-mcp-openclaw-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:682d8499e23bfa8cc68729a57008654744d5a127ef9c62e5262883b68305e940",

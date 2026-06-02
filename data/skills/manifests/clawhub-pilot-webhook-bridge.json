@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-webhook-bridge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-webhook-bridge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-webhook-bridge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:882d31b945a3c682d6b0b516d64c2b88de313a28e3d9b1b5aeee847ae424c760",

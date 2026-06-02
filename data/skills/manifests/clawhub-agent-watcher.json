@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-watcher@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-watcher-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-watcher-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:367b4cef830087d995e3f9f860ab12031730579140e46604c29885a0ed018408",

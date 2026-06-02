@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taizi-knowledge-base@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-taizi-knowledge-base-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taizi-knowledge-base-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8b1e7b242b41d0ff14ba1feb66aaa2889aa9c3f7fa34be583a3f252df9c20a51",

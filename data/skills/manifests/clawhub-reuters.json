@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reuters@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-reuters-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reuters-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ab1d59568dc9394001244c740abea4e49fb6fe9c53d655b5b5c180b409598176",

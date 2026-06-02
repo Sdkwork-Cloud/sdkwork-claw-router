@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentry-error-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentry-error-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentry-error-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9c7acdc95ea638d6f7f01e5812fb36511e0be08bcbd99ba92fa36f81a3c8da2",

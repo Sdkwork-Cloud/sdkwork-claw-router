@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-remote@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-remote-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-remote-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a4806d05024bc3385e3cf2a9e5943f243a1fac567ac61593eaf1706b684373d",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alpaca@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alpaca-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alpaca-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:51bad64891e07acbaf27807d50b05badc8d7721730ed0d16bb5ef72b75852681",

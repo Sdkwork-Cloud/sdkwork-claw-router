@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/safe-update@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-safe-update-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-safe-update-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:9dc31274348d6fa249bbdfd2102a96dcef477e55e2c06810cf2feee18228948b",

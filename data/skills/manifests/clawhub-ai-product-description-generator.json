@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-product-description-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-product-description-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-product-description-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bbaef72ca8277b1001ddd370375c153a18edc04c757413eccee0a2c03ba0a214",

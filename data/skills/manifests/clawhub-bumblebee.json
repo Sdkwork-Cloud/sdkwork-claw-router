@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bumblebee@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-bumblebee-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bumblebee-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a8695de6dee98068c16c90e0c42148d530802d6965a479cb888dd3288d879071",

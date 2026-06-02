@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bloomberg@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-bloomberg-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bloomberg-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6c4f020f991c311986849d0e562731e02361ca7ba6d4c03e0dc662e5151f387a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dallas@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-dallas-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dallas-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:a0c4bd3aa592b428ea795cb65d3759cda46f3a6c8dddd49e0a88e22669f0bd55",

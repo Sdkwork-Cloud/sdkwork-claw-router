@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crm-manager-skill@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crm-manager-skill-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crm-manager-skill-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f25b69f6cd70c6dbff36d2ef6044f15a220329bef9fe5fa663c025e0acf35511",

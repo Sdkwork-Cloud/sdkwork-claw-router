@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kaito@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kaito-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kaito-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aa5b8ce970568e743092df0a464df3934c08a205c18f5e81f771d0b2edcc3906",

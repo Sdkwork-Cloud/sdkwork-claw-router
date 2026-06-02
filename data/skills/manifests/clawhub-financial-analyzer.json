@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/financial-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-financial-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-financial-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:72557d3588406171d5d4688863aae11f519c5d6fcdbb8392820e96c28837cc9e",

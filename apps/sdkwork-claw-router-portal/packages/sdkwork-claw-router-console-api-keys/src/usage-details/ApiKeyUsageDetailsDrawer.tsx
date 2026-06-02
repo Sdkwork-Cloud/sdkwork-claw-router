@@ -71,7 +71,7 @@ export function ApiKeyUsageDetailsDrawer({
                 className="h-7 w-7 border border-slate-200 bg-white dark:border-white/10 dark:bg-[#1e1e1e]"
                 iconClassName="h-3.5 w-3.5"
               />
-              <span>{apiKey.groupName ?? apiKey.group}</span>
+              <span>{apiKey.channelGroupName ?? apiKey.channelGroup}</span>
             </div>
           </div>
           <button

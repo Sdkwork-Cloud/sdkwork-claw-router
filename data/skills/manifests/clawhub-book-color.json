@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-color@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-color-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-color-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d08cec6a511f09de9a2622f70b5ff204eb38340898abb5ca7f25c10481662f0e",

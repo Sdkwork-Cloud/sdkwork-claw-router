@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/devloop-agent-pack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-devloop-agent-pack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-devloop-agent-pack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:551da77741619d335439453f2e231c0626b9087869b93fa1c121a30051a2e342",

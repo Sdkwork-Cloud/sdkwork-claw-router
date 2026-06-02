@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flower@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-flower-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flower-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0f840ee66fb067c0067d66d5a756c799ff9f7e4412a270c7b3696fc2f3dd5112",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fox-skill-vetter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fox-skill-vetter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fox-skill-vetter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b2565ca108fd5b6c8eff37fae92f2a72d127308170464d7f3a5d7e4bb249805",

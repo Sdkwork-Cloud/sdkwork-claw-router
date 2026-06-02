@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hk-stock-market-hkex@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hk-stock-market-hkex-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hk-stock-market-hkex-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:91bc5524059eac58e35e7ba82e104f2e6c21fdf2f249b35a675edbe6a56c7466",

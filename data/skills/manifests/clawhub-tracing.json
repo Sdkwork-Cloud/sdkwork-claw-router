@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tracing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tracing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tracing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:72fc8135609d55d8fa26dc9e16ab0325e3fdbe3a07743a0707c25e1f069ead39",

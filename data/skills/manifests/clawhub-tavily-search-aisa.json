@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tavily-search-aisa@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tavily-search-aisa-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tavily-search-aisa-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:87ccf0beda621289e3299737df96047446da088b57ae749cc101ccc0bf4a2c0f",

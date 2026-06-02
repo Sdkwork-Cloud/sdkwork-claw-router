@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-hardening-v2@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-hardening-v2-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-hardening-v2-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3bbdde4099e1b4929b123724035defe0705dd031020266d395e3b566e4625416",

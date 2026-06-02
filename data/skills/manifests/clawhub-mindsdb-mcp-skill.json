@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mindsdb-mcp-skill@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mindsdb-mcp-skill-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mindsdb-mcp-skill-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:138e4dde4f6da526f6ca56098ce42ff362780ac91639cfe015b97c36d9e6e1de",

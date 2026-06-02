@@ -13,6 +13,7 @@ type UploadPartRecord struct {
 	PartNumber int `json:"part_number"`
 	PartSha256 string `json:"part_sha256"`
 	PresignedUrlExpiresAt string `json:"presigned_url_expires_at"`
+	SizeBytes string `json:"size_bytes"`
 	Status string `json:"status"`
 	TenantId string `json:"tenant_id"`
 	UpdatedAt string `json:"updated_at"`

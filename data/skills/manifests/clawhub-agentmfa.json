@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentmfa@1.0.14",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentmfa-1.0.14.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentmfa-1.0.14.json"
+      },
       "version": "1.0.14",
       "runtime": "metadata",
       "checksumHash": "sha256:1c9cf29e2c73d7e0a4e0773b552e383afdc16271edcf9f44bfc42f9ce31ecfe1",

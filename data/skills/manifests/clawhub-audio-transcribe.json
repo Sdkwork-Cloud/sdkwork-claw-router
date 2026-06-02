@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-transcribe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-transcribe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-transcribe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1ed7fbaac983a7ac4d2fcc511d998a40d787049056999022552ee966b17e418",

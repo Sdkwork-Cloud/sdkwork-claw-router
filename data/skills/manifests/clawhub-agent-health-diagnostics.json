@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-health-diagnostics@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-health-diagnostics-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-health-diagnostics-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:460fcdb6ef89f14002046260fcb1425b9ccb05524d76fbfb7cd90e739e9241ed",

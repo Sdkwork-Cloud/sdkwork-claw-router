@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/instagram@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-instagram-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-instagram-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fca047266136e4c5c51edb17520d4eb2cca101b9c3abd1e8a02de861ee73271e",

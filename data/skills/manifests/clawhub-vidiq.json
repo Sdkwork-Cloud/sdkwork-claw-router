@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vidiq@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vidiq-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vidiq-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d8441bd126c33241c7d1a15538d5478484a5795edc6ec3bb28db300795f659e",

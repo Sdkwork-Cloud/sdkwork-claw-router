@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/go-trader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-go-trader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-go-trader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b7efe0ba9ae903de107ed14bf2b30c85e20847979f0cef7c07656902f852c788",

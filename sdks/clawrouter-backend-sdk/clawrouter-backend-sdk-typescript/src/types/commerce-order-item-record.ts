@@ -2,6 +2,8 @@
 export interface CommerceOrderItemRecord {
   /** Created at field on commerce order item record. */
   created_at: string;
+  /** Id field on commerce order item record. */
+  id?: string;
   /** Order id field on commerce order item record. */
   order_id: string;
   /** Quantity field on commerce order item record. */

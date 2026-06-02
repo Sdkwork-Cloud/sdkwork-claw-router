@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arby@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-arby-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arby-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:53cdaf7de97afb577d7e08005e5ee796e8f73d98ac4f6f78c5368937ef0883f2",

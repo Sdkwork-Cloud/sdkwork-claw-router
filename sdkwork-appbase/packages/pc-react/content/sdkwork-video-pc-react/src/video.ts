@@ -1,9 +1,12 @@
+import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";
+
 export type SdkworkVideoJobStatus = "queued" | "ready" | "rendering";
 
 export interface SdkworkVideoAsset {
   durationLabel: string;
   id: string;
   presetId: string;
+  resource: SdkworkMediaResource;
   resolution: string;
   sceneCount: number;
   status: SdkworkVideoJobStatus;
@@ -95,6 +98,39 @@ function sortSdkworkVideos(videos: readonly SdkworkVideoAsset[]): SdkworkVideoAs
   );
 }
 
+function parseDurationSeconds(durationLabel: string): number | undefined {
+  const [minutes, seconds] = durationLabel.split(":").map((part) => Number.parseInt(part, 10));
+  if (!Number.isFinite(minutes) || !Number.isFinite(seconds)) {
+    return undefined;
+  }
+  return minutes * 60 + seconds;
+}
+
+function createGeneratedVideoResource(
+  id: string,
+  title: string,
+  resolution: string,
+  durationLabel: string,
+  sceneCount: number,
+): SdkworkMediaResource {
+  const [width, height] = resolution.split("x").map((part) => Number.parseInt(part, 10));
+  return {
+    ai: {
+      provenance: "generated",
+    },
+    durationSeconds: parseDurationSeconds(durationLabel),
+    id: `media-resource-${id}`,
+    kind: "video",
+    metadata: {
+      sceneCount,
+    },
+    source: "generated",
+    title,
+    ...(Number.isFinite(width) ? { width } : {}),
+    ...(Number.isFinite(height) ? { height } : {}),
+  };
+}
+
 export function createDefaultSdkworkVideoPresets(): SdkworkVideoPreset[] {
   return [
     { id: "launch-teaser", itemCount: 2, title: "Launch Teaser" },
@@ -104,12 +140,17 @@ export function createDefaultSdkworkVideoPresets(): SdkworkVideoPreset[] {
 }
 
 export function createDefaultSdkworkVideos(): SdkworkVideoAsset[] {
-  return [
+  const videos = [
     { durationLabel: "00:45", id: "video-launch-cut", presetId: "launch-teaser", resolution: "1920x1080", sceneCount: 12, status: "ready", title: "Launch Cut", updatedAt: "2026-04-03T04:20:00.000Z" },
     { durationLabel: "01:30", id: "video-product-demo", presetId: "product-demo", resolution: "1920x1080", sceneCount: 18, status: "rendering", title: "Product Demo", updatedAt: "2026-04-02T04:20:00.000Z" },
     { durationLabel: "00:12", id: "video-social-loop", presetId: "social-loop", resolution: "1080x1080", sceneCount: 6, status: "ready", title: "Social Loop", updatedAt: "2026-04-01T04:20:00.000Z" },
     { durationLabel: "00:20", id: "video-launch-bumper", presetId: "launch-teaser", resolution: "1080x1920", sceneCount: 4, status: "queued", title: "Launch Bumper", updatedAt: "2026-03-31T04:20:00.000Z" },
-  ];
+  ] as const;
+
+  return videos.map((video) => ({
+    ...video,
+    resource: createGeneratedVideoResource(video.id, video.title, video.resolution, video.durationLabel, video.sceneCount),
+  }));
 }
 
 export function summarizeSdkworkVideoWorkspace(

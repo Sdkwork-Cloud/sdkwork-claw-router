@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-workflow-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-workflow-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-workflow-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52e3786a5e7ff6f2daad6b720af1a11f656d4589e154c21a2abd11426e091be6",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ming@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ming-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ming-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:291e6b528af59edadcf588578d9c322c666b16acceea9f093a5eb28391cdb8e0",

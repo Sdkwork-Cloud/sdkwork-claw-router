@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medical-triage@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-medical-triage-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medical-triage-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ac1e2b512d57579b470d514dea25f1b6deabd3ca7b996059229b6d3cda71f5d",

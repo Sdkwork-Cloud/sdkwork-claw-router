@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ftai-market-data@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ftai-market-data-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ftai-market-data-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:27ca94dc4932dcbf4c4d91a1d253ce4c975c308604853e2221e21e5be0439874",

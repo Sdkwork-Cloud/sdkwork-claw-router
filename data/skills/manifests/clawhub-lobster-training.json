@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lobster-training@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lobster-training-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lobster-training-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0a6ecfe2f34322a6c6960d171b254daad24ac7fba2e54faadb20c80dae6b80d",

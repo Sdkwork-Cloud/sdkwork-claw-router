@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medical-advice@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-medical-advice-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medical-advice-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cf5daf1a34928e52f60adb9f87c2b7a949bd62c81691f2e5628ab68a874c3404",

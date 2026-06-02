@@ -14,6 +14,7 @@ export {
 import type {
   SdkworkCanonicalAuthMetadataLike,
 } from "./auth-runtime-metadata.ts";
+import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";
 import {
   createSdkworkAuthUserFromIdentity,
   createSdkworkSyntheticAuthSession,
@@ -82,7 +83,7 @@ export interface SdkworkCanonicalAuthPasswordResetRequest {
 }
 
 export interface SdkworkCanonicalAuthSessionExchangeRequest {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   email: string;
   name?: string;
   providerKey?: string;
@@ -288,7 +289,7 @@ export function createSdkworkCanonicalAuthController<
 }
 
 export function createSdkworkAuthUserFromCanonicalIdentity(input: {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   displayName?: string;
   email?: string;
   id?: string;
@@ -296,7 +297,7 @@ export function createSdkworkAuthUserFromCanonicalIdentity(input: {
   username?: string;
 }): SdkworkAuthUser {
   return createSdkworkAuthUserFromIdentity({
-    avatarUrl: input.avatarUrl,
+    avatar: input.avatar,
     displayName: input.displayName || input.name,
     email: input.email,
     id: input.id,

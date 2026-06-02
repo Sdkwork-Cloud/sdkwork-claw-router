@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modesty-agent-task-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-modesty-agent-task-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modesty-agent-task-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8dda54e7ddd96b35f76e11108a6a77bdfe566575500968680f686f62cdb82b7",

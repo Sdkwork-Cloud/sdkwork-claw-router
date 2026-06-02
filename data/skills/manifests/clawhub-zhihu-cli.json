@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zhihu-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zhihu-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zhihu-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb6075dfc0d8964ba63d021e65ee96d33969a2f2f5aa2b54fff0d04cdac076f0",

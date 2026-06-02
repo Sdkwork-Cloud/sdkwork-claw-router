@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/echoflow-banana@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-echoflow-banana-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-echoflow-banana-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:fbb184f1a729aa675f0ebaf43b63318bd7fac4031a04cfe8c6f5fbad0bc6eabc",

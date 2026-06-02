@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cli-qr-refiner@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cli-qr-refiner-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cli-qr-refiner-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd5b059425e1580c64020c423d617d589af90650d6eae6fe67374c7426250d70",

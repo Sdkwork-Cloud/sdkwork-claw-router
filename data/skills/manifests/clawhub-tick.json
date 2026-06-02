@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tick@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tick-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tick-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:398c54f88e308ecc5a53d933044cd344fc797c8458cffeb0f91ed526bbd96ec6",

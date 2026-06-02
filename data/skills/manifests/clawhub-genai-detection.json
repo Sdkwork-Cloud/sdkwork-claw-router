@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/genai-detection@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-genai-detection-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-genai-detection-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:2351e04ebbd9d408f6bcd6f8fb7a5b173f48478f9d8f14b740c02e88b1fd825a",

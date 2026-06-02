@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/error-prone@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-error-prone-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-error-prone-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be95751970678b418fe43499a0480813c068a3b979d0d98b2e31dbc721149f3b",

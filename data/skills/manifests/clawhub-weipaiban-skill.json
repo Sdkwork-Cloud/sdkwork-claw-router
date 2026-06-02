@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weipaiban-skill@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weipaiban-skill-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weipaiban-skill-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:511fc537c434ac6eb8ab104ccd138ecabfc0afc01e2672aba7e8d9b8a601d1a3",

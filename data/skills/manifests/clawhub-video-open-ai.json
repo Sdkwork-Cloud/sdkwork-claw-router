@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-open-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-open-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-open-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f3e7617836878dd700694fab122f70ae840012d28a74a80b7768dc3947335b3",

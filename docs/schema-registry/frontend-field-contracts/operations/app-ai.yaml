@@ -1,5 +1,51 @@
 fragment: operations/app-ai
 frontend_operations:
+- route: /console/api-keys
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
+  operation: fetchGroups
+  operation_id: channelGroups.list
+  kind: read
+  api_surface: app
+  api_method: GET
+  api_path: /app/v3/api/ai/channel_groups
+  read_sources:
+  - ai_channel_group
+  - ai_channel_group_metric_snapshot
+  - ai_pricing_plan
+  query_parameters: []
+  response_schema:
+    name: AppChannelGroupListResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AppChannelGroup
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - code
+          - name
+          - rate
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            code:
+              type: string
+              minLength: 1
+              maxLength: 128
+            name:
+              type: string
+              minLength: 1
+              maxLength: 128
+            rate:
+              type: string
+              nullable: true
+              maxLength: 64
 - route: /models
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-models/src/modelService.ts
   operation: fetchModels
@@ -326,7 +372,7 @@ frontend_operations:
       groups:
         type: array
         maxItems: 128
-        description: Complete admin-maintained API key group catalog for the model library sidebar. Groups are returned even when the current model filter result contains no matching model.
+        description: Complete admin-maintained channel group catalog for the model library sidebar. Groups are returned even when the current model filter result contains no matching model.
         items:
           name: AppModelCatalogGroupOption
           type: object
@@ -1082,7 +1128,7 @@ frontend_operations:
               type: string
             group:
               type: string
-              description: Maintained API key group display name. Falls back to the recorded group snapshot when the group has been removed or renamed outside the read model.
+              description: Maintained channel group display name. Falls back to the recorded group snapshot when the group has been removed or renamed outside the read model.
             type:
               type: string
             model:

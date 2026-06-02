@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/restaurant-crosscheck@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-restaurant-crosscheck-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-restaurant-crosscheck-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f78bb1375f58f1c8aeede223987ccc15e3f69cecadace0e7136f6857b8296963",

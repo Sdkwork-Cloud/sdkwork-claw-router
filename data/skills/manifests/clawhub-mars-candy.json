@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mars-candy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mars-candy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mars-candy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef78a17336ee4b4ff6cb6538f442090d72c89a2ff525db489f20138bf041bb1b",

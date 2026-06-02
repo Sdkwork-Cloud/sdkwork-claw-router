@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/check-transaction@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-check-transaction-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-check-transaction-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3d40bc72cd47ded2d1eba54896994bc0ae4344a05e7816a1614813e5c7de5862",

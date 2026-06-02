@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pcl-pharmacology-agent@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pcl-pharmacology-agent-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pcl-pharmacology-agent-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4c0625fed4bb80e0e0d3f1770b2cb79dd72ac3e9b08ce8ea7de6797f42e91d02",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-clawarena@5.8.13",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-clawarena-5.8.13.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-clawarena-5.8.13.json"
+      },
       "version": "5.8.13",
       "runtime": "metadata",
       "checksumHash": "sha256:52eb5e20141adffd3da98577dc8c838c9162b2391980561af50a5c614c05757f",

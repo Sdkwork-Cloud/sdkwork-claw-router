@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-deepseek@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-deepseek-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-deepseek-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:94e5c1b2efc003ef52f2da9f21dd9ef769605d9f3baf0f653d61bb3406969d96",

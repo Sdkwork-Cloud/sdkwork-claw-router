@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/confluent@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-confluent-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-confluent-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:3f6d1459e27ca6929df5963ada8a667363523f60309d88730a83d454f098e367",

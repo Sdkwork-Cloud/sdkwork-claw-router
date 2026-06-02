@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c4398e369a70da36da97e7f23197ee9e3d13d640846ba257bd6934849802f99",

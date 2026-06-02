@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clarity-vote@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clarity-vote-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clarity-vote-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0fa4aec2822575c68415653d3ac03f78ed20071cf8a68a6267f1ee61fb58d03d",

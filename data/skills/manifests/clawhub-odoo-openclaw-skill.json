@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/odoo-openclaw-skill@2.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-odoo-openclaw-skill-2.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-odoo-openclaw-skill-2.0.5.json"
+      },
       "version": "2.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7511be27e362b6b2a51fecb1d3e1d2b7c56ff4a2e0b856e1dd63ea5c8ddcf24b",

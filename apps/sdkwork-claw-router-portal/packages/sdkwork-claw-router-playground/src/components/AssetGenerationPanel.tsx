@@ -18,6 +18,7 @@ import {
   type SdkworkGenerationSfxModeConfig,
   type SdkworkGenerationSpeechModeConfig,
 } from '@sdkwork/generation-pc-react/react';
+import { toExternalUrlMediaResource, type ClawRouterMediaResource } from 'sdkwork-claw-router-commons/runtime';
 import type {
   PlaygroundGenerationSubmitInput,
   PlaygroundGenerationTargetType,
@@ -49,13 +50,13 @@ type AssetGenerationConfig = SdkworkGenerationAssetConfig;
 interface ReferenceImagePreview {
   id: string;
   metadata: PlaygroundReferenceImageInput;
-  url: string;
+  previewSrc: string;
 }
 
 interface ReferenceAssetPreview {
   id: string;
   metadata: PlaygroundReferenceAssetInput;
-  url: string;
+  previewSrc: string;
 }
 
 export function AssetGenerationPanel({
@@ -121,7 +122,7 @@ export function AssetGenerationPanel({
         return current;
       }
       revokeRemovedReferenceImageUrls(current, next);
-      referenceImageUrlsRef.current = next.map((referenceImage) => referenceImage.url);
+      referenceImageUrlsRef.current = next.map((referenceImage) => referenceImage.previewSrc);
       return next;
     });
     setReferenceUploadError(null);
@@ -140,7 +141,7 @@ export function AssetGenerationPanel({
         return current;
       }
       revokeRemovedReferenceAssetUrls(current, next);
-      referenceAssetUrlsRef.current = next.map((referenceAsset) => referenceAsset.url);
+      referenceAssetUrlsRef.current = next.map((referenceAsset) => referenceAsset.previewSrc);
       return next;
     });
     setReferenceAssetUploadError(null);
@@ -156,7 +157,7 @@ export function AssetGenerationPanel({
     setReferenceImages((current) => {
       const next = updater(current);
       revokeRemovedReferenceImageUrls(current, next);
-      referenceImageUrlsRef.current = next.map((referenceImage) => referenceImage.url);
+      referenceImageUrlsRef.current = next.map((referenceImage) => referenceImage.previewSrc);
       return next;
     });
   };
@@ -165,7 +166,7 @@ export function AssetGenerationPanel({
     setReferenceAssets((current) => {
       const next = updater(current);
       revokeRemovedReferenceAssetUrls(current, next);
-      referenceAssetUrlsRef.current = next.map((referenceAsset) => referenceAsset.url);
+      referenceAssetUrlsRef.current = next.map((referenceAsset) => referenceAsset.previewSrc);
       return next;
     });
   };
@@ -443,7 +444,7 @@ function ReferenceImageUploader({
           {referenceImages.map((referenceImage) => (
             <div key={referenceImage.id} className="group relative aspect-square overflow-hidden rounded-lg border border-white/5 bg-[#202020]">
               <img
-                src={referenceImage.url}
+                src={referenceImage.previewSrc}
                 alt={referenceImage.metadata.name || t('playground.referenceAssets')}
                 className="h-full w-full object-cover"
               />
@@ -619,10 +620,10 @@ function ReferenceImageFileInput({
               metadata: {
                 name: file.name,
                 mimeType: file.type,
+                resource: createUploadedReferenceMediaResource(referenceImageDataUrl, 'image', file.name, file.type, file.size),
                 sizeBytes: file.size,
-                dataUrl: referenceImageDataUrl,
               },
-              url: URL.createObjectURL(file),
+              previewSrc: URL.createObjectURL(file),
             };
           }))
             .then(onAddReferenceImages)
@@ -781,7 +782,7 @@ function VideoReferenceAssetTile({
     <div className="group relative aspect-square min-h-[104px] overflow-hidden rounded-lg border border-white/5 bg-[#202020]">
       {referenceAsset.metadata.kind === 'image' ? (
         <img
-          src={referenceAsset.url}
+          src={referenceAsset.previewSrc}
           alt={referenceAsset.metadata.name || t('playground.referenceAssets')}
           className="h-full w-full object-cover"
         />
@@ -881,7 +882,7 @@ function VideoReferenceAssetFileInput({
         }
         if (acceptedFiles.length > 0) {
           void Promise.all(acceptedFiles.map(async ({ file, kind, kindIndex }, index): Promise<ReferenceAssetPreview> => {
-            const dataUrl = await readReferenceAssetDataUrl(file);
+            const encodedReference = await readReferenceAssetDataUrl(file);
             return {
               id: createReferenceAssetPreviewId(file, index),
               metadata: {
@@ -889,10 +890,10 @@ function VideoReferenceAssetFileInput({
                 role: resolveVideoReferenceAssetRole(mode, kind, kindIndex),
                 name: file.name,
                 mimeType: file.type,
+                resource: createUploadedReferenceMediaResource(encodedReference, kind, file.name, file.type, file.size),
                 sizeBytes: file.size,
-                dataUrl,
               },
-              url: URL.createObjectURL(file),
+              previewSrc: URL.createObjectURL(file),
             };
           }))
             .then(onAddReferenceAssets)
@@ -1127,10 +1128,10 @@ function revokeRemovedReferenceImageUrls(
   previous: readonly ReferenceImagePreview[],
   next: readonly ReferenceImagePreview[],
 ): void {
-  const nextUrls = new Set(next.map((referenceImage) => referenceImage.url));
+  const nextUrls = new Set(next.map((referenceImage) => referenceImage.previewSrc));
   previous.forEach((referenceImage) => {
-    if (!nextUrls.has(referenceImage.url)) {
-      URL.revokeObjectURL(referenceImage.url);
+    if (!nextUrls.has(referenceImage.previewSrc)) {
+      URL.revokeObjectURL(referenceImage.previewSrc);
     }
   });
 }
@@ -1139,12 +1140,32 @@ function revokeRemovedReferenceAssetUrls(
   previous: readonly ReferenceAssetPreview[],
   next: readonly ReferenceAssetPreview[],
 ): void {
-  const nextUrls = new Set(next.map((referenceAsset) => referenceAsset.url));
+  const nextUrls = new Set(next.map((referenceAsset) => referenceAsset.previewSrc));
   previous.forEach((referenceAsset) => {
-    if (!nextUrls.has(referenceAsset.url)) {
-      URL.revokeObjectURL(referenceAsset.url);
+    if (!nextUrls.has(referenceAsset.previewSrc)) {
+      URL.revokeObjectURL(referenceAsset.previewSrc);
     }
   });
+}
+
+function createUploadedReferenceMediaResource(
+  encodedReference: string,
+  kind: PlaygroundReferenceAssetKind,
+  fileName: string,
+  mimeType: string,
+  sizeBytes: number,
+): ClawRouterMediaResource {
+  const resource = toExternalUrlMediaResource(encodedReference, kind);
+  if (!resource) {
+    throw new Error('playground.referenceAsset.readFailed');
+  }
+  return {
+    ...resource,
+    fileName,
+    mimeType: mimeType || undefined,
+    sizeBytes: String(sizeBytes),
+    title: fileName,
+  };
 }
 
 function normalizeReferenceAssetsForMode(

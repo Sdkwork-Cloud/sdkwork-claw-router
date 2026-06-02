@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/emoclaw@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-emoclaw-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-emoclaw-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:8d5959523c83b6e9c008071543bcc1e4b90607e2655811a30c2c867c3c85681d",

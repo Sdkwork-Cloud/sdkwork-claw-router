@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-backtest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-backtest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-backtest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:058297518b2217d440bbcce7a71e83a9e82989370d664e87f07981d707fc8a1d",

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{GenerationHistoryMediaItem};
+use crate::models::{MediaResource};
 
 /// Generation history item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -9,6 +9,10 @@ pub struct GenerationHistoryItem {
     #[serde(rename = "aspectRatio")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub aspect_ratio: Option<String>,
+
+    /// Asset field on generation history item.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub asset: Option<MediaResource>,
 
     /// Created at field on generation history item.
     #[serde(rename = "createdAt")]
@@ -27,7 +31,7 @@ pub struct GenerationHistoryItem {
     pub id: String,
 
     /// Images field on generation history item.
-    pub images: Vec<String>,
+    pub images: Vec<MediaResource>,
 
     /// Model catalog key field on generation history item.
     #[serde(rename = "modelCatalogKey")]
@@ -59,10 +63,6 @@ pub struct GenerationHistoryItem {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub updated_at: Option<String>,
 
-    /// Url field on generation history item.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub url: Option<String>,
-
     /// Videos field on generation history item.
-    pub videos: Vec<GenerationHistoryMediaItem>,
+    pub videos: Vec<MediaResource>,
 }

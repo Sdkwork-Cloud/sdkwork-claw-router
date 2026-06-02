@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glitch-homeassistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-glitch-homeassistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glitch-homeassistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce276954d1576772daa570d3ce0f80a6e76700e0c6122d1aad7eef67bb7cb47f",

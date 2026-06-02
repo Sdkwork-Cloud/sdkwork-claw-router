@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pinme-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pinme-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pinme-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be4fad595c6868b9b4b33596a0b00da1c99009da9dcf4855068e5741a8121d3a",

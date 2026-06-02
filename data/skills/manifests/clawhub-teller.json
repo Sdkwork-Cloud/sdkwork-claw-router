@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/teller@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-teller-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-teller-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3b19e897664c1b56199a5b9c377a8fa95f4abae4fb60c69b4c4a441c17911007",

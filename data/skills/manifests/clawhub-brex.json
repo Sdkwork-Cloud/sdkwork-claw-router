@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/brex@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-brex-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-brex-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:3acd3912e197b32da8265338d0d749a2b7b41fcaee9106dcf4b02cf94f061932",

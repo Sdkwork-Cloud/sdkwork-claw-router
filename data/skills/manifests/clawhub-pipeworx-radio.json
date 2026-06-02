@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-radio@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-radio-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-radio-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1d8106c2b52fa07501149248255cf414543aa47539eb435f2b3b99d8fe6a589a",

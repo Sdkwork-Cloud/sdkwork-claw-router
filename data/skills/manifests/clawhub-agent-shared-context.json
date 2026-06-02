@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-shared-context@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-shared-context-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-shared-context-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d51939f5f3cdd17ec8e0f63874c857de6626cbd2d307d45e756953dc31d14e7e",

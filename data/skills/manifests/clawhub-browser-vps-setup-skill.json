@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/browser-vps-setup-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-browser-vps-setup-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-browser-vps-setup-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc12af1b6c96ab9ce11a3dab5c45c0376bf3d0b67250e09a9820ac01fa7733c2",

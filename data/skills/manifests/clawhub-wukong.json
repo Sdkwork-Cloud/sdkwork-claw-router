@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wukong@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wukong-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wukong-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0683dac5262b61795569206ab875b71bc5cebb905613a3a5281b999a81862a8f",

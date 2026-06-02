@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grafana-inspector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grafana-inspector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grafana-inspector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:533e4fcdb4c17d9ff45dbce759dd233b7a5b62fb674902bb746597fbcc722833",

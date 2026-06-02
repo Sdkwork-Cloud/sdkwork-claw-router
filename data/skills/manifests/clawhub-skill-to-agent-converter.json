@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-to-agent-converter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-to-agent-converter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-to-agent-converter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b00dd818a0ee28ef3a28ae91c1d41a750f0609d97a5ff38adf8d47c853050880",

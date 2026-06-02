@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maven-central-publish@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-maven-central-publish-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maven-central-publish-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f708b4a1b4f79587703a0127e1efe24d750b462523d3486d12727ac93ea090b0",

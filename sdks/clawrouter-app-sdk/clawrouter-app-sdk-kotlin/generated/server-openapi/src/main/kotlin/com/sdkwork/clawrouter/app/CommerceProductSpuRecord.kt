@@ -2,9 +2,9 @@ package com.sdkwork.clawrouter.app
 
 data class CommerceProductSpuRecord(
     val brand: String? = null,
-    val categoryId: String? = null,
     val createdAt: String? = null,
     val description: String? = null,
+    val id: String? = null,
     val organizationId: String? = null,
     val productType: String? = null,
     val publishedAt: String? = null,

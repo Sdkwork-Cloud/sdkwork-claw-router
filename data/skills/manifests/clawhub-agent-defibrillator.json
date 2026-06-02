@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-defibrillator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-defibrillator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-defibrillator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ffa9065686d143e58baa4358459fc904f8aa9bb1ab8ccf121e0c947b86ea5c2e",

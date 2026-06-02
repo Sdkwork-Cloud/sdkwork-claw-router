@@ -5,10 +5,12 @@ import java.util.Map;
 public class CommerceMembershipPlanRecord {
     private Map<String, String> benefitsJson;
     private String createdAt;
+    private String id;
     private String levelCode;
     private String name;
     private String organizationId;
     private String planNo;
+    private String sortOrder;
     private String status;
     private String tenantId;
     private String updatedAt;
@@ -27,6 +29,14 @@ public class CommerceMembershipPlanRecord {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getLevelCode() {
@@ -59,6 +69,14 @@ public class CommerceMembershipPlanRecord {
 
     public void setPlanNo(String planNo) {
         this.planNo = planNo;
+    }
+
+    public String getSortOrder() {
+        return this.sortOrder;
+    }
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
     }
 
     public String getStatus() {

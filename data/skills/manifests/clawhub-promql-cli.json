@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/promql-cli@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-promql-cli-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-promql-cli-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d1ce26904f89c672ed881e00e5e030d57d8ddb0a75f4173eb81d2cba95d7aaaa",

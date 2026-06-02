@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-local-embedding@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-local-embedding-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-local-embedding-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:be8107af783c46539b1090198467b1221bb040082db07429be020599e95b8358",

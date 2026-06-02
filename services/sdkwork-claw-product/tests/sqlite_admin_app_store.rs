@@ -15,12 +15,23 @@ const OPERATOR_ID: i64 = 9001;
 const ASSIGNED_ID_FLOOR: i64 = 1_000_000_000_000;
 const PUBLIC_APP_STORE_TENANT_ID: i64 = 20_001;
 
+fn external_media_resource(locator: &str, kind: &str) -> serde_json::Value {
+    json!({
+        "kind": kind,
+        "source": "external_url",
+        "url": locator,
+        "publicUrl": locator
+    })
+}
+
 #[tokio::test]
 async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and_audit() {
     let pool = sqlite_pool().await;
 
     let store = SqliteAdminAppStore::new(pool.clone());
     let subject = admin_subject();
+    let workflow_artifact =
+        external_media_resource("https://cdn.example.test/apps/workflow.zip", "document");
 
     let created = store
         .create_app(CreateAdminAppCommand {
@@ -31,8 +42,12 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
             name: "Workflow Portal".to_owned(),
             description: Some("Runs workflow automation apps.".to_owned()),
             version: Some("1.0.0".to_owned()),
-            icon: json!({"url": "https://cdn.example.test/apps/workflow/icon.png"}),
-            icon_url: Some("https://cdn.example.test/apps/workflow/icon.png".to_owned()),
+            icon: json!({
+                "kind": "image",
+                "source": "external_url",
+                "url": "https://cdn.example.test/apps/workflow/icon.png",
+                "publicUrl": "https://cdn.example.test/apps/workflow/icon.png"
+            }),
             resource_list: json!({"screenshots": ["https://cdn.example.test/apps/workflow/s1.png"]}),
             project_id: Some(7001),
             access_url: Some("https://workflow.example.test".to_owned()),
@@ -52,12 +67,12 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
             platforms: json!({"platforms": ["web"]}),
             install_platforms: json!({"platforms": ["web"]}),
             install_skill: json!({"name": "Workflow Installer"}),
-            install_config: json!({"packages": [{"version": "1.0.0", "downloadUrl": "https://cdn.example.test/apps/workflow.zip"}]}),
+            install_config: json!({"packages": [{"version": "1.0.0", "artifact": workflow_artifact.clone()}]}),
             release_notes: json!([{"version": "1.0.0", "summary": "Initial release"}]),
             package_name: Some("com.sdkwork.workflow.portal".to_owned()),
             bundle_id: Some("com.sdkwork.workflow.portal".to_owned()),
             store_url: Some("https://store.example.test/workflow".to_owned()),
-            download_url: Some("https://cdn.example.test/apps/workflow.zip".to_owned()),
+            artifact: Some(workflow_artifact),
             request_id: "req-create-admin-app".to_owned(),
             requested_at: "2026-05-09 09:00:00".to_owned(),
         })
@@ -93,7 +108,6 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
             description: Some(Some("Runs production workflow automation apps.".to_owned())),
             version: Some(Some("1.1.0".to_owned())),
             icon: None,
-            icon_url: None,
             resource_list: None,
             project_id: None,
             access_url: None,
@@ -116,7 +130,7 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
             package_name: None,
             bundle_id: None,
             store_url: None,
-            download_url: None,
+            artifact: None,
             request_id: "req-update-admin-app".to_owned(),
             requested_at: "2026-05-09 09:01:00".to_owned(),
         })
@@ -199,9 +213,9 @@ async fn sqlite_admin_app_store_manages_plus_app_lifecycle_with_market_state_and
     sqlx::query(
         r#"
         INSERT INTO studio_catalog_asset
-            (uuid, tenant_id, organization_id, target_type, target_id, asset_type, asset_url)
+            (uuid, tenant_id, organization_id, target_type, target_id, asset_type, asset_resource_snapshot)
         VALUES
-            ('admin-app-asset-workflow-portal', ?, ?, 15, ?, 1, 'https://cdn.example.test/apps/workflow/icon.png')
+            ('admin-app-asset-workflow-portal', ?, ?, 15, ?, 1, '{"kind":"image","source":"external_url","url":"https://cdn.example.test/apps/workflow/icon.png","publicUrl":"https://cdn.example.test/apps/workflow/icon.png"}')
         "#,
     )
     .bind(TENANT_ID)
@@ -303,8 +317,18 @@ async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
             runtime: Some("web".to_owned()),
             framework: Some("react".to_owned()),
             language: Some("typescript".to_owned()),
-            icon_url: Some("https://cdn.example.test/templates/agent.svg".to_owned()),
-            cover_url: Some("https://cdn.example.test/templates/agent.png".to_owned()),
+            icon: Some(json!({
+                "kind": "image",
+                "source": "external_url",
+                "url": "https://cdn.example.test/templates/agent.svg",
+                "publicUrl": "https://cdn.example.test/templates/agent.svg"
+            })),
+            cover: Some(json!({
+                "kind": "image",
+                "source": "external_url",
+                "url": "https://cdn.example.test/templates/agent.png",
+                "publicUrl": "https://cdn.example.test/templates/agent.png"
+            })),
             visibility: "TENANT".to_owned(),
             publish_status: "DRAFT".to_owned(),
             featured: true,
@@ -372,8 +396,8 @@ async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
             runtime: None,
             framework: Some(Some("react-router".to_owned())),
             language: None,
-            icon_url: None,
-            cover_url: None,
+            icon: None,
+            cover: None,
             visibility: None,
             publish_status: None,
             featured: Some(false),
@@ -457,9 +481,9 @@ async fn sqlite_admin_app_store_manages_app_template_lifecycle_with_audit() {
     sqlx::query(
         r#"
         INSERT INTO studio_catalog_asset
-            (uuid, tenant_id, organization_id, target_type, target_id, asset_type, asset_url)
+            (uuid, tenant_id, organization_id, target_type, target_id, asset_type, asset_resource_snapshot)
         VALUES
-            ('admin-app-template-asset-agent-dashboard', ?, ?, 16, ?, 1, 'https://cdn.example.test/templates/agent.svg')
+            ('admin-app-template-asset-agent-dashboard', ?, ?, 16, ?, 1, '{"kind":"image","source":"external_url","url":"https://cdn.example.test/templates/agent.svg","publicUrl":"https://cdn.example.test/templates/agent.svg"}')
         "#,
     )
     .bind(TENANT_ID)
@@ -554,7 +578,6 @@ async fn sqlite_admin_app_store_rejects_market_state_aliases_as_runtime_status()
                 description: None,
                 version: Some("1.0.0".to_owned()),
                 icon: json!({}),
-                icon_url: None,
                 resource_list: json!({}),
                 project_id: None,
                 access_url: None,
@@ -571,7 +594,7 @@ async fn sqlite_admin_app_store_rejects_market_state_aliases_as_runtime_status()
                 package_name: None,
                 bundle_id: None,
                 store_url: None,
-                download_url: None,
+                artifact: None,
                 request_id: format!("req-invalid-runtime-status-{status}"),
                 requested_at: "2026-05-09 10:00:00".to_owned(),
             })
@@ -617,7 +640,6 @@ async fn sqlite_admin_app_store_rejects_invalid_market_status_values() {
                 description: None,
                 version: Some("1.0.0".to_owned()),
                 icon: json!({}),
-                icon_url: None,
                 resource_list: json!({}),
                 project_id: None,
                 access_url: None,
@@ -634,7 +656,7 @@ async fn sqlite_admin_app_store_rejects_invalid_market_status_values() {
                 package_name: None,
                 bundle_id: None,
                 store_url: None,
-                download_url: None,
+                artifact: None,
                 request_id: format!("req-invalid-market-status-{market_status}"),
                 requested_at: "2026-05-09 10:10:00".to_owned(),
             })
@@ -657,7 +679,6 @@ async fn sqlite_admin_app_store_rejects_invalid_market_status_values() {
             description: None,
             version: Some("1.0.0".to_owned()),
             icon: json!({}),
-            icon_url: None,
             resource_list: json!({}),
             project_id: None,
             access_url: None,
@@ -674,7 +695,7 @@ async fn sqlite_admin_app_store_rejects_invalid_market_status_values() {
             package_name: None,
             bundle_id: None,
             store_url: None,
-            download_url: None,
+            artifact: None,
             request_id: "req-valid-market-status".to_owned(),
             requested_at: "2026-05-09 10:11:00".to_owned(),
         })
@@ -716,7 +737,6 @@ async fn sqlite_admin_app_store_publishes_without_changing_runtime_status() {
             description: None,
             version: Some("1.0.0".to_owned()),
             icon: json!({}),
-            icon_url: None,
             resource_list: json!({}),
             project_id: None,
             access_url: None,
@@ -733,7 +753,7 @@ async fn sqlite_admin_app_store_publishes_without_changing_runtime_status() {
             package_name: None,
             bundle_id: None,
             store_url: None,
-            download_url: None,
+            artifact: None,
             request_id: "req-create-inactive-draft-app".to_owned(),
             requested_at: "2026-05-09 10:20:00".to_owned(),
         })
@@ -894,7 +914,9 @@ async fn create_admin_app_store_tables(pool: &SqlitePool) {
             project_id INTEGER,
             description TEXT,
             version TEXT,
-            icon_url TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
             access_url TEXT,
             config TEXT,
             status INTEGER,
@@ -907,7 +929,9 @@ async fn create_admin_app_store_tables(pool: &SqlitePool) {
             package_name TEXT,
             bundle_id TEXT,
             store_url TEXT,
-            download_url TEXT,
+            artifact_media_resource_id TEXT,
+            artifact_object_blob_id INTEGER,
+            artifact_resource_snapshot TEXT,
             created_at TEXT,
             updated_at TEXT,
             v INTEGER
@@ -925,7 +949,9 @@ async fn create_admin_app_store_tables(pool: &SqlitePool) {
             type INTEGER NOT NULL,
             group_name TEXT,
             code TEXT,
-            icon TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
             sort_weight INTEGER,
             parent_id INTEGER,
             path TEXT,
@@ -955,7 +981,12 @@ async fn create_admin_app_store_tables(pool: &SqlitePool) {
             target_id INTEGER NOT NULL,
             artifact_id INTEGER,
             asset_type INTEGER,
-            asset_url TEXT
+            asset_media_resource_id TEXT,
+            asset_object_blob_id INTEGER,
+            asset_resource_snapshot TEXT,
+            thumbnail_media_resource_id TEXT,
+            thumbnail_object_blob_id INTEGER,
+            thumbnail_resource_snapshot TEXT
         )
         "#,
         r#"
@@ -995,8 +1026,12 @@ async fn create_admin_app_store_tables(pool: &SqlitePool) {
             runtime TEXT,
             framework TEXT,
             language TEXT,
-            icon_url TEXT,
-            cover_url TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
+            cover_media_resource_id TEXT,
+            cover_object_blob_id INTEGER,
+            cover_resource_snapshot TEXT,
             visibility INTEGER NOT NULL DEFAULT 1,
             publish_status INTEGER NOT NULL DEFAULT 1,
             featured INTEGER NOT NULL DEFAULT 0,
@@ -1049,9 +1084,9 @@ async fn insert_admin_visible_app(
     sqlx::query(
         r#"
         INSERT INTO plus_app
-            (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_url, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, download_url, created_at, updated_at)
+            (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, 0, 0, ?, '{}', '{}', 0, ?, '1.0.0', NULL, ?, ?, 1, 'web', '{"platforms":["web"]}', '{"platforms":["web"]}', '{}', '{"packages":[]}', '[]', NULL, NULL, NULL, ?, '2026-05-09 11:00:00', '2026-05-09 11:00:00')
+            (?, ?, ?, ?, 0, 0, ?, '{}', '{}', 0, ?, '1.0.0', ?, ?, 1, 'web', '{"platforms":["web"]}', '{"platforms":["web"]}', '{}', '{"packages":[]}', '[]', NULL, NULL, NULL, ?, NULL, ?, '2026-05-09 11:00:00', '2026-05-09 11:00:00')
         "#,
     )
     .bind(id)
@@ -1071,7 +1106,12 @@ async fn insert_admin_visible_app(
         }
     })
     .to_string())
-    .bind(format!("https://cdn.example.test/apps/{app_key}.zip"))
+    .bind(format!("test-admin-app-artifact-{id}"))
+    .bind(external_media_resource(
+        &format!("https://cdn.example.test/apps/{app_key}.zip"),
+        "archive",
+    )
+    .to_string())
     .execute(pool)
     .await
     .unwrap();

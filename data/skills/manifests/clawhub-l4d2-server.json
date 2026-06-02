@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/l4d2-server@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-l4d2-server-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-l4d2-server-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a5276357cfb73a16e9c6c8242d4d742438f41bc8f3c3134fa9b2f0f92f84ed03",

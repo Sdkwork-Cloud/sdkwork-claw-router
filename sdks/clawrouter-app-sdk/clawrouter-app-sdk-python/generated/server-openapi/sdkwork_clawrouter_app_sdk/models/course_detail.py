@@ -8,6 +8,7 @@ if TYPE_CHECKING:
     from .course_item import CourseItem
     from .course_overview_source import CourseOverviewSource
     from .course_section_item import CourseSectionItem
+    from .media_resource import MediaResource
 
 
 @dataclass
@@ -37,6 +38,6 @@ class CourseDetail:
     source: CourseOverviewSource
     students_count: int
     tags: List[str]
-    thumbnail_url: str
+    thumbnail: MediaResource
     title: str
     price_amount: Optional[str] = None

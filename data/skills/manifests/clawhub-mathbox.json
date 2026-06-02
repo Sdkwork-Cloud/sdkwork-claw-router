@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mathbox@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-mathbox-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mathbox-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:10b475aeefc40ad4d0118ddb106c8a50f39502affc5233f7b894108de7550ef5",

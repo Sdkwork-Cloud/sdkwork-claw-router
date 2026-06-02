@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-prescan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-prescan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-prescan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a57a13273e01f6b54d699c025780ffb06a2c688ce7c77b10b3860f8448abf5aa",

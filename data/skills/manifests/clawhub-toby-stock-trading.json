@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-stock-trading@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-stock-trading-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-stock-trading-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:63c339fc398ffabaf00a25b9b2de3e97ffe8bd03959efd9e067a76d71bc98f0c",

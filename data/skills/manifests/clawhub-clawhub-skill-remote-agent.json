@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawhub-skill-remote-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-remote-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawhub-skill-remote-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9deda6824598ebadbe83de4576f74da9d9a3148c8b72451d52f4ebc1de41cee5",

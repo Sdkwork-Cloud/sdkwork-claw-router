@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/walmart@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-walmart-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-walmart-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:171aad3a38dc24f03cd9ea20cfa9f1912973e7320d705f191d2c25a3aaf73b34",

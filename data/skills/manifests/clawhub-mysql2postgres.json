@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mysql2postgres@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mysql2postgres-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mysql2postgres-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9d51a58430c3b7c367f86282a6801e929b6734eaa404f2d6423a67bfdcdd1529",

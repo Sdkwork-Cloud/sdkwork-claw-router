@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-workspace-ops@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-workspace-ops-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-workspace-ops-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1abfc635b8b933171a5f62c053102e829f50ffd5ea6adec1e8308f023114b130",

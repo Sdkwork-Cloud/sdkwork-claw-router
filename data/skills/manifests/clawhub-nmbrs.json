@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nmbrs@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-nmbrs-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nmbrs-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ba3fd8bd617ee8e2ee49652a3312f10602097da2d0816632c8ea6cbbc15c0a67",

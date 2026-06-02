@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nostrkey@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nostrkey-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nostrkey-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:47871b5180cc1b1711cda0a44f9dbac22cfdf155e3675b96805f9663cd8b755e",

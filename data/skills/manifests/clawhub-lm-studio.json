@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lm-studio@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lm-studio-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lm-studio-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2fdc8da2166d08b29040597c81a08069c6ee0cf36caf16ce1cb43d35400e8d9",

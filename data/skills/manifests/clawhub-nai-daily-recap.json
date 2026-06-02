@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nai-daily-recap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nai-daily-recap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nai-daily-recap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:908e5766e407cb2e0c1d6bec885cbf2af52f6e05331d697148a45702bda17e42",

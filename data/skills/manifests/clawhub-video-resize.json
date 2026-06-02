@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-resize@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-resize-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-resize-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:821c06180eadab2eaa6bfe6686ab3e45c457e4d5a6ca61839ac85d2b82ba31be",

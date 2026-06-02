@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lunchtable-tcg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lunchtable-tcg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lunchtable-tcg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0fc95a4104759281f726de65afaa5e3d5962ab1c7a8c2baf5176b4fb636bde35",

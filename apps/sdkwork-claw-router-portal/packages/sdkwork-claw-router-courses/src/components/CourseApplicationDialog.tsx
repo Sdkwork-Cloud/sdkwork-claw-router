@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { AlertCircle, CheckCircle, Loader2, Send, Upload, X } from 'lucide-react';
+import { readMediaResourceUrl } from 'sdkwork-claw-router-commons';
 import type {
   CourseApplicationInput,
   CourseApplicationResult,
@@ -68,12 +69,12 @@ export function CourseApplicationDialog({
       description: formText(form, 'description'),
       sourceProvider,
       externalBvid: sourceProvider === 'bilibili' ? formText(form, 'externalBvid') : undefined,
-      videoUrl: sourceProvider === 'local' ? uploadedVideo?.videoUrl : undefined,
+      video: sourceProvider === 'local' ? uploadedVideo?.video : undefined,
       contactName: formText(form, 'contactName'),
       contactEmail: formText(form, 'contactEmail'),
       notes: formText(form, 'notes'),
     };
-    if (sourceProvider === 'local' && !application.videoUrl) {
+    if (sourceProvider === 'local' && !application.video) {
       setError('请先上传本地视频教程');
       setIsSubmitting(false);
       return;
@@ -231,7 +232,7 @@ export function CourseApplicationDialog({
                       <CheckCircle className="h-4 w-4 shrink-0" />
                       <span>{uploadedVideo.fileName}</span>
                     </div>
-                    <input name="videoUrl" type="hidden" value={uploadedVideo.videoUrl} readOnly />
+                    <input name="video" type="hidden" value={readMediaResourceUrl(uploadedVideo.video)} readOnly />
                   </div>
                 )}
                 {uploadError && (

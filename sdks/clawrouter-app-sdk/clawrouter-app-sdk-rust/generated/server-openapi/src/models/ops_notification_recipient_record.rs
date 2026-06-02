@@ -27,6 +27,10 @@ pub struct OpsNotificationRecipientRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
 
+    /// Message id field on ops notification recipient record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub message_id: Option<String>,
+
     /// Metadata field on ops notification recipient record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub metadata: Option<std::collections::HashMap<String, String>>,
@@ -38,6 +42,10 @@ pub struct OpsNotificationRecipientRecord {
     /// Recipient role code field on ops notification recipient record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub recipient_role_code: Option<String>,
+
+    /// Recipient type field on ops notification recipient record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub recipient_type: Option<String>,
 
     /// Recipient user id field on ops notification recipient record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

@@ -31,7 +31,9 @@ describe("sdkwork-audio-pc-react domain contract", () => {
       voiceId: "voice-brand-female",
     });
 
-    expect(createEmptySdkworkAudioWorkspace()).toMatchObject({
+    const workspace = createEmptySdkworkAudioWorkspace();
+
+    expect(workspace).toMatchObject({
       digest: {
         totalAudio: 4,
         voiceCount: 3,
@@ -40,6 +42,12 @@ describe("sdkwork-audio-pc-react domain contract", () => {
       voices: expect.arrayContaining([
         expect.objectContaining({ id: "voice-brand-female" }),
       ]),
+    });
+    expect(workspace.items[0]).toMatchObject({
+      resource: {
+        kind: "audio",
+        source: "generated",
+      },
     });
   });
 });

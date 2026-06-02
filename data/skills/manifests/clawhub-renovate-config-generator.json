@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/renovate-config-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-renovate-config-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-renovate-config-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23bf8cb64ce7e9af3dd475be4fa174b53d8baac58c89f6e85baa88dbcb042998",

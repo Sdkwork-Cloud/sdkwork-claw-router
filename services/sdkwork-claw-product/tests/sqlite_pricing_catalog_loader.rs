@@ -118,7 +118,7 @@ async fn sqlite_loader_builds_pricing_catalog_snapshot_from_schema_tables() {
         .unwrap();
     assert_eq!("1000.000000", quota.quota_limit.unwrap().to_fixed_string(6));
     let metric = snapshot
-        .find_latest_api_key_group_metric_snapshot(api_key.group_id)
+        .find_latest_channel_group_metric_snapshot(api_key.group_id)
         .unwrap();
     assert_eq!(
         "37.500000",
@@ -435,7 +435,7 @@ async fn sqlite_loader_redacts_copyable_key_material_when_secret_codec_is_absent
 }
 
 #[tokio::test]
-async fn sqlite_loader_defaults_empty_api_key_group_pricing_plan_for_runtime_billing_subject() {
+async fn sqlite_loader_defaults_empty_channel_group_pricing_plan_for_runtime_billing_subject() {
     let pool = SqlitePoolOptions::new()
         .max_connections(1)
         .connect("sqlite::memory:")
@@ -454,7 +454,7 @@ async fn sqlite_loader_defaults_empty_api_key_group_pricing_plan_for_runtime_bil
         .await
         .unwrap();
 
-    let group = snapshot.find_api_key_group(10).unwrap();
+    let group = snapshot.find_channel_group(10).unwrap();
     assert_eq!("standard", group.pricing_plan_code);
 }
 
@@ -480,7 +480,7 @@ async fn sqlite_loader_supplies_standard_pricing_plan_when_runtime_plan_table_is
 
     assert!(
         snapshot.find_pricing_plan("standard").is_some(),
-        "runtime catalog must provide a standard pricing plan fallback for seeded/default API key groups"
+        "runtime catalog must provide a standard pricing plan fallback for seeded/default channel groups"
     );
 
     let price = PricingResolver::new(&snapshot)

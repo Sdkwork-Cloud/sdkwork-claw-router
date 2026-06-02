@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-server-toolkit@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-server-toolkit-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-server-toolkit-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b433c3a28553f45341a1fa26ba845ef4dbab3794bd977d63fff19cf29ad42d36",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/verify-claims@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-verify-claims-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-verify-claims-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7e0995057f2b60c448b95bfb1be6d5c98b5243b0f590085520c9887adbeda112",

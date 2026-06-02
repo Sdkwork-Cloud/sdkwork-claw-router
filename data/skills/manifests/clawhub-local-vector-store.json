@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-vector-store@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-vector-store-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-vector-store-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac690a542b634f730f316041603a3f0253292d9b845f22f57f3d373664c03351",

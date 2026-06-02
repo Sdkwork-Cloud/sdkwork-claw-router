@@ -6,5 +6,5 @@ data class CourseApplicationVideoUploadResponse(
     val sha256: String? = null,
     val sizeBytes: Int? = null,
     val uploadedAt: String? = null,
-    val videoUrl: String? = null
+    val video: MediaResource? = null
 )

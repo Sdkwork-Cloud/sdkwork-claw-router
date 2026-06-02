@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/breathe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-breathe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-breathe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e356b06f46a89350813364c21f3a59b6e98331ab1c958a4ebd90a842f21b605",

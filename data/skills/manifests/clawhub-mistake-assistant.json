@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mistake-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mistake-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mistake-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16f3d8255a499f541fe5ef4cd10420335610205777e2a54c8062f7d9b468eb64",

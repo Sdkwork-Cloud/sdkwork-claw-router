@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-shopping@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-shopping-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-shopping-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5bc4a8d63ebfb322d8a71f3e87420c518b1c8b26c46137fb657dc8d722bc718f",

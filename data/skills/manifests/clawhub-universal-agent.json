@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/universal-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-universal-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-universal-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:34d34fc16b54919e7a43e564105b958ff606db47331137a5174f4ee766290b00",

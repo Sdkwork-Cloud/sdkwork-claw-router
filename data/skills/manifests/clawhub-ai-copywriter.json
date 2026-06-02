@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-copywriter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-copywriter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-copywriter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2ed2e1fdcde6087cad3669a2285cb4c76a06a05b19cb1319ba5d925fcb52aac0",

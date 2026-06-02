@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/infrastructure-drift-detector@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-infrastructure-drift-detector-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-infrastructure-drift-detector-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:441a80cd78016cb7f877740dfeddf7e4ed0d55cfa7696f71b6ec0891e3961c59",

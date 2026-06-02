@@ -2,6 +2,10 @@ use serde_json::Value;
 use sqlx::{PgPool, Row};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::sql_admin_product_center::{
+    empty_media_resource, media_resource_from_snapshot, media_resource_locator,
+    media_resource_object_blob_id, media_resource_stable_id,
+};
 use crate::ports::{
     CourseApplicationCommandStore, CourseApplicationItem, CourseCategoryItem, CourseCommandFuture,
     CourseDetail, CourseEngagement, CourseInstructor, CourseItem, CourseLessonItem, CourseOverview,
@@ -96,12 +100,16 @@ async fn create_course_application(
         "notes": command.notes,
     })
     .to_string();
+    let video = command.video.as_ref();
+    let video_media_resource_id = video.map(media_resource_stable_id);
+    let video_object_blob_id = video.and_then(media_resource_object_blob_id);
+    let video_resource_snapshot = video.map(serde_json::Value::to_string);
     let row = sqlx::query(
         r#"
         INSERT INTO content_course_application
-            (uuid, tenant_id, organization_id, user_id, owner_type, owner_id, data_scope, status, metadata, title, category, description, source_provider, external_bvid, video_url, contact_name, contact_email, submitted_at)
+            (uuid, tenant_id, organization_id, user_id, owner_type, owner_id, data_scope, status, metadata, title, category, description, source_provider, external_bvid, video_media_resource_id, video_object_blob_id, video_resource_snapshot, contact_name, contact_email, submitted_at)
         VALUES
-            ($1, $2, $3, $4, 1, $5, 0, $6, $7::jsonb, $8, $9, $10, $11, $12, $13, $14, $15, $16::timestamptz)
+            ($1, $2, $3, $4, 1, $5, 0, $6, $7::jsonb, $8, $9, $10, $11, $12, $13, $14, $15::jsonb, $16, $17, $18::timestamptz)
         RETURNING
             id,
             uuid,
@@ -110,7 +118,7 @@ async fn create_course_application(
             description,
             source_provider,
             COALESCE(external_bvid, '') AS external_bvid,
-            COALESCE(video_url, '') AS video_url,
+            COALESCE(video_resource_snapshot::text, '') AS video_resource_snapshot,
             COALESCE(contact_name, '') AS contact_name,
             COALESCE(contact_email, '') AS contact_email,
             status,
@@ -129,7 +137,9 @@ async fn create_course_application(
     .bind(&command.description)
     .bind(&command.source_provider)
     .bind(command.external_bvid.as_deref())
-    .bind(command.video_url.as_deref())
+    .bind(video_media_resource_id)
+    .bind(video_object_blob_id)
+    .bind(video_resource_snapshot)
     .bind(command.contact_name.as_deref())
     .bind(command.contact_email.as_deref())
     .bind(&command.submitted_at)
@@ -309,7 +319,7 @@ async fn load_lessons(
             COALESCE(lesson_no, 0) AS lesson_no,
             COALESCE(title, '') AS title,
             COALESCE(description, '') AS description,
-            COALESCE(video_url, '') AS video_url,
+            COALESCE(video_resource_snapshot::text, '') AS video_resource_snapshot,
             COALESCE(external_bvid, '') AS external_bvid,
             COALESCE(source_provider, '') AS source_provider,
             COALESCE(duration_seconds, 0) AS duration_seconds,
@@ -343,7 +353,7 @@ async fn load_lessons(
                 number: lesson_no,
                 title: string_cell(row, "title"),
                 description: string_cell(row, "description"),
-                video_url: string_cell(row, "video_url"),
+                video: media_resource_from_row(row, "video_resource_snapshot", "video"),
                 external_bvid: string_cell(row, "external_bvid"),
                 source_provider: string_cell(row, "source_provider"),
                 duration_seconds: integer_cell(row, "duration_seconds"),
@@ -368,7 +378,7 @@ async fn load_categories(
             COALESCE(cat.code, '') AS code,
             COALESCE(cat.name, '') AS name,
             COALESCE(cat.description, '') AS description,
-            COALESCE(cat.icon, '') AS icon,
+            COALESCE(cat.icon_resource_snapshot::text, '') AS icon_resource_snapshot,
             COALESCE(cat.sort_weight, 0) AS sort_weight,
             (
                 SELECT COUNT(1)
@@ -409,7 +419,7 @@ async fn load_categories(
                 label: name.clone(),
                 name,
                 description: string_cell(row, "description"),
-                icon: string_cell(row, "icon"),
+                icon_key: media_resource_locator_from_row(row, "icon_resource_snapshot", "image"),
                 sort_weight: integer_cell(row, "sort_weight"),
                 course_count: integer_cell(row, "course_count"),
             }
@@ -460,7 +470,7 @@ const COURSE_SELECT_COLUMNS: &str = r#"
         COALESCE(c.course_code, '') AS course_code,
         COALESCE(c.title, '') AS title,
         COALESCE(c.description, '') AS description,
-        COALESCE(c.thumbnail_url, '') AS thumbnail_url,
+        COALESCE(c.thumbnail_resource_snapshot::text, '') AS thumbnail_resource_snapshot,
         COALESCE(c.instructor_snapshot::text, '') AS instructor_snapshot,
         COALESCE(c.duration_text, '') AS duration_text,
         COALESCE(c.lessons_count, 0) AS lessons_count,
@@ -591,7 +601,7 @@ fn course_from_row(row: &sqlx::postgres::PgRow) -> CourseItem {
         course_code,
         title: string_cell(row, "title"),
         description: string_cell(row, "description"),
-        thumbnail_url: string_cell(row, "thumbnail_url"),
+        thumbnail: media_resource_from_row(row, "thumbnail_resource_snapshot", "image"),
         instructor: parse_instructor(&string_cell(row, "instructor_snapshot")),
         duration_text: string_cell(row, "duration_text"),
         lessons_count: integer_cell(row, "lessons_count"),
@@ -631,7 +641,7 @@ fn course_application_from_row(row: &sqlx::postgres::PgRow) -> CourseApplication
         description: string_cell(row, "description"),
         source_provider: string_cell(row, "source_provider"),
         external_bvid: string_cell(row, "external_bvid"),
-        video_url: string_cell(row, "video_url"),
+        video: optional_media_resource_from_row(row, "video_resource_snapshot", "video"),
         contact_name: string_cell(row, "contact_name"),
         contact_email: string_cell(row, "contact_email"),
         status: course_application_status_label(integer_cell(row, "status")).to_owned(),
@@ -676,6 +686,65 @@ fn postgres_scope_filter(alias: &str) -> String {
     )
 }
 
+fn media_resource_from_locator_value(locator: &str, kind: &str) -> serde_json::Value {
+    serde_json::json!({
+        "kind": kind,
+        "source": "external_url",
+        "url": locator,
+        "publicUrl": locator
+    })
+}
+
+fn media_resource_from_row(row: &sqlx::postgres::PgRow, column: &str, kind: &str) -> Value {
+    media_resource_from_snapshot(&string_cell(row, column), kind)
+}
+
+fn optional_media_resource_from_row(
+    row: &sqlx::postgres::PgRow,
+    column: &str,
+    kind: &str,
+) -> Option<Value> {
+    let snapshot = string_cell(row, column);
+    if snapshot.trim().is_empty() {
+        return None;
+    }
+    let resource = media_resource_from_snapshot(&snapshot, kind);
+    media_resource_locator(&resource).map(|_| resource)
+}
+
+fn media_resource_locator_from_row(
+    row: &sqlx::postgres::PgRow,
+    column: &str,
+    kind: &str,
+) -> String {
+    media_resource_locator(&media_resource_from_row(row, column, kind)).unwrap_or_default()
+}
+
+fn media_resource_from_value(value: &Value, kind: &str) -> Option<Value> {
+    if let Some(text) = value
+        .as_str()
+        .map(str::trim)
+        .filter(|value| !value.is_empty())
+    {
+        return Some(media_resource_from_locator_value(text, kind));
+    }
+    let locator = media_resource_locator(value)?;
+    let mut object = value.as_object().cloned().unwrap_or_default();
+    object
+        .entry("kind".to_owned())
+        .or_insert_with(|| Value::String(kind.to_owned()));
+    object
+        .entry("source".to_owned())
+        .or_insert_with(|| Value::String("external_url".to_owned()));
+    if !object.contains_key("url") {
+        object.insert("url".to_owned(), Value::String(locator.clone()));
+    }
+    if !object.contains_key("publicUrl") {
+        object.insert("publicUrl".to_owned(), Value::String(locator));
+    }
+    Some(Value::Object(object))
+}
+
 fn parse_instructor(raw: &str) -> CourseInstructor {
     let value = serde_json::from_str::<Value>(raw).unwrap_or(Value::Null);
     let object = value.as_object();
@@ -689,11 +758,8 @@ fn parse_instructor(raw: &str) -> CourseInstructor {
             .unwrap_or_else(|| "SDKWork Academy".to_owned()),
         avatar: object
             .and_then(|object| object.get("avatar"))
-            .and_then(Value::as_str)
-            .map(str::trim)
-            .filter(|value| !value.is_empty())
-            .map(str::to_owned)
-            .unwrap_or_default(),
+            .and_then(|value| media_resource_from_value(value, "image"))
+            .unwrap_or_else(|| empty_media_resource("image")),
         title: object
             .and_then(|object| object.get("title"))
             .and_then(Value::as_str)

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitlab-ci-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-ci-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitlab-ci-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9bacee879ccdda197015ea4139ab17f73062c31fbc2daaf21d78c95a08cac3bf",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-dashboard@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-dashboard-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-dashboard-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6502809461b449d0d0a6d8fa85ab3d84060dedfb74dbbd98f1520af9d43a7a20",

@@ -7,6 +7,11 @@ pub struct CommercePaymentProviderAccountItem {
     #[serde(rename = "accountNo")]
     pub account_no: String,
 
+    /// Account role field on commerce payment provider account item.
+    #[serde(rename = "accountRole")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub account_role: Option<String>,
+
     /// Certificate ref field on commerce payment provider account item.
     #[serde(rename = "certificateRef")]
     #[serde(default, skip_serializing_if = "Option::is_none")]

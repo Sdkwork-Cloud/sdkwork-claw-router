@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-music-play@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-music-play-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-music-play-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e5763f669a4c6fda5453e8c28096df286b7ed92cc0c0a153999be02514f639b7",

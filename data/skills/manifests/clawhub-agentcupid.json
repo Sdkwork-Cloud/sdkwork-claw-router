@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentcupid@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentcupid-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentcupid-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0477c3c6f53551c908ec16c78a0a7bfc5a29239758fdecdb6aa2bbecf7e7fac5",

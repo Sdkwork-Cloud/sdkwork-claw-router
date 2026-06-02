@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mlx-local-ai@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mlx-local-ai-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mlx-local-ai-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a36adfbb42aa272e71aa027eb7f0cd6734f9ff85472dd6b4dc379eeea6378c86",

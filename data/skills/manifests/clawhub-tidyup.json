@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tidyup@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tidyup-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tidyup-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a199f410efad12c48716e75ac6f5f9fdaaf9a9cff5d2da011711548a80faae6d",

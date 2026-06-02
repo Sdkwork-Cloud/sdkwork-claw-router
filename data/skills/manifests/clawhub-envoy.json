@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/envoy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-envoy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-envoy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:bbc272ca41e601c2e72fb809a402af66e52aeaaac1b00814434ed6b449cb851e",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/android-sms-gateway@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-android-sms-gateway-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-android-sms-gateway-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0e99e03bb34102b9fcdcd782a78cfa8aa4d7b973642e881bf3b9221fd91dc2a",

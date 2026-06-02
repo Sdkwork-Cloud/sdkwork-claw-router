@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/name-of-video-editing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-name-of-video-editing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-name-of-video-editing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bbebf3cc94fd652181bd8b0eea2817bde6dbfd7912ef426192d207366fcc4d70",

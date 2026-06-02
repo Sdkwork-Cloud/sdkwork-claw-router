@@ -6,7 +6,7 @@ type AdminSkillItem struct {
 	Capabilities []string `json:"capabilities"`
 	CategoryId string `json:"categoryId"`
 	ConfigSchema map[string]JsonValue `json:"configSchema"`
-	CoverImage string `json:"coverImage"`
+	Cover MediaResource `json:"cover"`
 	CreatedAt string `json:"createdAt"`
 	Currency string `json:"currency"`
 	DefaultConfig map[string]JsonValue `json:"defaultConfig"`
@@ -16,7 +16,7 @@ type AdminSkillItem struct {
 	Entrypoint string `json:"entrypoint"`
 	Featured bool `json:"featured"`
 	HomepageUrl string `json:"homepageUrl"`
-	Icon string `json:"icon"`
+	Icon MediaResource `json:"icon"`
 	Id string `json:"id"`
 	InstallCount string `json:"installCount"`
 	IsBuiltin bool `json:"isBuiltin"`

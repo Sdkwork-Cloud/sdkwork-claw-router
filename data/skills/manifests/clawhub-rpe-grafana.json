@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rpe-grafana@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-rpe-grafana-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rpe-grafana-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1e656c91ab635b264c0cebd15ceddac33268c8b27e97fe6310e54660673eb0ad",

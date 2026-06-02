@@ -20,6 +20,7 @@ data class AiPromptRecord(
     val publishedAt: String? = null,
     val publishedVersionId: String? = null,
     val status: String? = null,
+    val tags: Map<String, String>? = null,
     val tenantId: String? = null,
     val updatedAt: String? = null,
     val uuid: String? = null,

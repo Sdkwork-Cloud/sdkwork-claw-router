@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/system-watchdog@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-system-watchdog-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-system-watchdog-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8be63dfd2eb0e1741acd6344fdc3b857efc3a87b5b7f076497a8db8a7cbcce3",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/a-stock-trading-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-trading-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-a-stock-trading-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ca72a6b8c94cb49adda8e8c59fe136b7d0827b828b0e83c5929e68e4ac749a1",

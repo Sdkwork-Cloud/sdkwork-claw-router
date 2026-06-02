@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/red-hat@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-red-hat-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-red-hat-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:98e0be54c4a6bb2ed95c3925916e3e4e9494784af4e46df3c4217593aef268cc",

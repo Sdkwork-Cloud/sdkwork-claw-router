@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-engine@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-engine-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-engine-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:06c4ddecee518708a64bc7322c92cebdaa3db3554747cabfcc7fa83b6980ea57",

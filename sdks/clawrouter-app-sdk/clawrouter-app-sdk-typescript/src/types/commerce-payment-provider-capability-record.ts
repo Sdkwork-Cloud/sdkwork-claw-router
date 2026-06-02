@@ -14,6 +14,8 @@ export interface CommercePaymentProviderCapabilityRecord {
   effective_from?: string;
   /** Effective to field on commerce payment provider capability record. */
   effective_to?: string;
+  /** Id field on commerce payment provider capability record. */
+  id?: string;
   /** Max amount field on commerce payment provider capability record. */
   max_amount?: string;
   /** Metadata json field on commerce payment provider capability record. */

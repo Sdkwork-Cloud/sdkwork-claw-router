@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spotify-safe-play@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spotify-safe-play-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spotify-safe-play-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a4d83066df414d6508ee31a24586f754a31f57acc455862fcb34d17166d4c340",

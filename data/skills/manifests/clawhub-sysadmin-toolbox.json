@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sysadmin-toolbox@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sysadmin-toolbox-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sysadmin-toolbox-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:175cbacf7bec1c07796f2be97e38df50effc7c88f2522a026f401d086cbe57c6",

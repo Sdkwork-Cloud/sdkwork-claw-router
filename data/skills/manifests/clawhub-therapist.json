@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/therapist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-therapist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-therapist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f8613d1bf0e2e7bfa554ac25b8daa6b05f3d6e6348b895f8cf9d7d7988326108",

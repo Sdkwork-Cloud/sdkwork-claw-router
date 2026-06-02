@@ -1,5 +1,5 @@
 use crate::domain::{
-    AiModel, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter, GatewayAccessPolicy,
+    AiModel, BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, GatewayAccessPolicy,
     GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition, PriceSide, PricingPlan,
     ProviderChannelRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
 };
@@ -14,11 +14,11 @@ pub struct InMemoryPricingCatalog {
     routing_policies: Vec<RoutingPolicy>,
     routing_rules: Vec<RoutingRule>,
     plans: Vec<PricingPlan>,
-    api_key_groups: Vec<ApiKeyGroup>,
+    channel_groups: Vec<ChannelGroup>,
     api_keys: Vec<GatewayApiKey>,
     access_policies: Vec<GatewayAccessPolicy>,
     quota_policies: Vec<QuotaPolicy>,
-    api_key_group_metric_snapshots: Vec<ApiKeyGroupMetricSnapshot>,
+    channel_group_metric_snapshots: Vec<ChannelGroupMetricSnapshot>,
     prices: Vec<ModelPrice>,
 }
 
@@ -53,8 +53,8 @@ impl InMemoryPricingCatalog {
         self.plans.push(plan);
     }
 
-    pub fn add_api_key_group(&mut self, group: ApiKeyGroup) {
-        self.api_key_groups.push(group);
+    pub fn add_channel_group(&mut self, group: ChannelGroup) {
+        self.channel_groups.push(group);
     }
 
     pub fn update_group_rate_multiplier(
@@ -63,7 +63,7 @@ impl InMemoryPricingCatalog {
         multiplier: crate::domain::DecimalValue,
     ) {
         if let Some(group) = self
-            .api_key_groups
+            .channel_groups
             .iter_mut()
             .find(|group| group.id == group_id)
         {
@@ -84,8 +84,8 @@ impl InMemoryPricingCatalog {
         self.quota_policies.push(policy);
     }
 
-    pub fn add_api_key_group_metric_snapshot(&mut self, snapshot: ApiKeyGroupMetricSnapshot) {
-        self.api_key_group_metric_snapshots.push(snapshot);
+    pub fn add_channel_group_metric_snapshot(&mut self, snapshot: ChannelGroupMetricSnapshot) {
+        self.channel_group_metric_snapshots.push(snapshot);
     }
 
     pub fn add_price(&mut self, price: ModelPrice) {
@@ -134,8 +134,8 @@ impl PricingCatalog for InMemoryPricingCatalog {
         self.api_keys.clone()
     }
 
-    fn list_api_key_groups(&self) -> Vec<ApiKeyGroup> {
-        self.api_key_groups.clone()
+    fn list_channel_groups(&self) -> Vec<ChannelGroup> {
+        self.channel_groups.clone()
     }
 
     fn list_model_prices(
@@ -180,8 +180,8 @@ impl PricingCatalog for InMemoryPricingCatalog {
             .cloned()
     }
 
-    fn find_api_key_group(&self, group_id: i64) -> Option<ApiKeyGroup> {
-        self.api_key_groups
+    fn find_channel_group(&self, group_id: i64) -> Option<ChannelGroup> {
+        self.channel_groups
             .iter()
             .find(|group| group.id == group_id)
             .cloned()
@@ -201,11 +201,11 @@ impl PricingCatalog for InMemoryPricingCatalog {
             .cloned()
     }
 
-    fn find_latest_api_key_group_metric_snapshot(
+    fn find_latest_channel_group_metric_snapshot(
         &self,
         group_id: i64,
-    ) -> Option<ApiKeyGroupMetricSnapshot> {
-        self.api_key_group_metric_snapshots
+    ) -> Option<ChannelGroupMetricSnapshot> {
+        self.channel_group_metric_snapshots
             .iter()
             .find(|snapshot| snapshot.group_id == group_id)
             .cloned()

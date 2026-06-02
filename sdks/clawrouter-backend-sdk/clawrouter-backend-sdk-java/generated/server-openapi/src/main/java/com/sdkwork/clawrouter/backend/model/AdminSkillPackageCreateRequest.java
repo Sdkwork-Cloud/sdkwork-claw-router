@@ -4,11 +4,11 @@ import java.util.List;
 
 public class AdminSkillPackageCreateRequest {
     private String categoryId;
-    private String coverImage;
+    private MediaResource cover;
     private String description;
     private Boolean enabled;
     private Boolean featured;
-    private String icon;
+    private MediaResource icon;
     private String name;
     private String packageKey;
     private Integer sortWeight;
@@ -23,12 +23,12 @@ public class AdminSkillPackageCreateRequest {
         this.categoryId = categoryId;
     }
 
-    public String getCoverImage() {
-        return this.coverImage;
+    public MediaResource getCover() {
+        return this.cover;
     }
 
-    public void setCoverImage(String coverImage) {
-        this.coverImage = coverImage;
+    public void setCover(MediaResource cover) {
+        this.cover = cover;
     }
 
     public String getDescription() {
@@ -55,11 +55,11 @@ public class AdminSkillPackageCreateRequest {
         this.featured = featured;
     }
 
-    public String getIcon() {
+    public MediaResource getIcon() {
         return this.icon;
     }
 
-    public void setIcon(String icon) {
+    public void setIcon(MediaResource icon) {
         this.icon = icon;
     }
 

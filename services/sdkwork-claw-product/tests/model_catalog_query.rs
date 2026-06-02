@@ -2,7 +2,7 @@ use sdkwork_claw_product::application::{
     ListModelCatalogQuery, ModelCatalogQueryService, PriceAvailability,
 };
 use sdkwork_claw_product::domain::{
-    AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
     ProviderChannelRoute,
 };
@@ -52,15 +52,15 @@ fn catalog_for_model_list() -> InMemoryPricingCatalog {
         DecimalValue::parse("1.200000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
         DecimalValue::parse("1.000000").unwrap(),
         DecimalValue::parse("1.100000").unwrap(),
     ));
-    catalog.add_api_key_group(
-        ApiKeyGroup::new(
+    catalog.add_channel_group(
+        ChannelGroup::new(
             11,
             "premium-lab",
             "standard",
@@ -309,8 +309,8 @@ fn list_models_matches_vendor_scoped_group_binding_against_base_catalog_keys() {
 #[test]
 fn list_models_returns_complete_admin_group_catalog_independent_of_item_filters() {
     let mut catalog = catalog_for_model_list();
-    catalog.add_api_key_group(
-        ApiKeyGroup::new(
+    catalog.add_channel_group(
+        ChannelGroup::new(
             12,
             "empty-admin-group",
             "standard",

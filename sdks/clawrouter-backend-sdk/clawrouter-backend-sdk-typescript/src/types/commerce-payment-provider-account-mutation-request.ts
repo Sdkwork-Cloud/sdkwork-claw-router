@@ -2,6 +2,8 @@
 export interface CommercePaymentProviderAccountMutationRequest {
   /** Account no field on commerce payment provider account mutation request. */
   accountNo: string;
+  /** Account role field on commerce payment provider account mutation request. */
+  accountRole?: 'merchant' | 'service_provider' | null;
   /** Certificate ref field on commerce payment provider account mutation request. */
   certificateRef?: string | null;
   /** Client request no field on commerce payment provider account mutation request. */

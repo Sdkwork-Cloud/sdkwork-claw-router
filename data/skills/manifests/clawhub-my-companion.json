@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-companion@2.7.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-companion-2.7.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-companion-2.7.1.json"
+      },
       "version": "2.7.1",
       "runtime": "metadata",
       "checksumHash": "sha256:36e9c68b1e0b986feba656f1e873ae33ac4c5070151d94cb23876a943417d990",

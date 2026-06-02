@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mud@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mud-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mud-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cff8920ef746a94d0d8028a435c682016cd658d5221efc6456ad9d65ca302c6b",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/n8n-operator@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-n8n-operator-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-n8n-operator-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9abcfa3c6753e4cba74b6210b4c97c40a5f7b0aa936a5eb3e85a3c365f0a3c61",

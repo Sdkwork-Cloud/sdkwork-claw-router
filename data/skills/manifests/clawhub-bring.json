@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bring@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bring-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bring-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70c60fd95d2ea24e5503baaf943f206e555109c3ac95927d860fb8ab06c03530",

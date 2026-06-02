@@ -7,7 +7,7 @@ type ForumFeedItem struct {
 	CommentCount int `json:"commentCount"`
 	Content string `json:"content"`
 	ContentType string `json:"contentType"`
-	CoverImage string `json:"coverImage"`
+	Cover MediaResource `json:"cover"`
 	CreatedAt string `json:"createdAt"`
 	Id int `json:"id"`
 	IsCollected bool `json:"isCollected"`

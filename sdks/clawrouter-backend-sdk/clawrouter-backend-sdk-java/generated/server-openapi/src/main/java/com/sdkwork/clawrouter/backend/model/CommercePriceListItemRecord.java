@@ -4,7 +4,9 @@ package com.sdkwork.clawrouter.backend.model;
 public class CommercePriceListItemRecord {
     private String compareAtAmount;
     private String createdAt;
+    private String id;
     private String maxQuantity;
+    private String minQuantity;
     private String organizationId;
     private String priceAmount;
     private String priceListId;
@@ -28,12 +30,28 @@ public class CommercePriceListItemRecord {
         this.createdAt = createdAt;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getMaxQuantity() {
         return this.maxQuantity;
     }
 
     public void setMaxQuantity(String maxQuantity) {
         this.maxQuantity = maxQuantity;
+    }
+
+    public String getMinQuantity() {
+        return this.minQuantity;
+    }
+
+    public void setMinQuantity(String minQuantity) {
+        this.minQuantity = minQuantity;
     }
 
     public String getOrganizationId() {

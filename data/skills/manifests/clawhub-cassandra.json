@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cassandra@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cassandra-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cassandra-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:19a8c88b20390ba13dec193d96f86331b575eb3b7fbda6ee3dcabf35fbd33339",

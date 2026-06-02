@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/protein-sequence-qc-pro@5.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-protein-sequence-qc-pro-5.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-protein-sequence-qc-pro-5.0.0.json"
+      },
       "version": "5.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5719966daa3b6f5823c041956f693cce8d73a5e7083c8c0b1f6196f3a6805ba5",

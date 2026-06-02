@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/velora@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-velora-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-velora-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ff75a2352c8cd51124c64e874ada1a90786885b0467970c9391fb7b03e46a26",

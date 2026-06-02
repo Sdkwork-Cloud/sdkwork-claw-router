@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beijing-morning-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-beijing-morning-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beijing-morning-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:59bb3b8e2dfef3edb59931939c51a7b1820c3b230facdb3b494401265bb792e3",

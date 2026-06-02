@@ -475,7 +475,7 @@ mod tests {
     }
 
     #[test]
-    fn usage_logs_query_uses_api_key_group_name_for_display_and_search() {
+    fn usage_logs_query_uses_channel_group_name_for_display_and_search() {
         for sql in [LOAD_USAGE_LOGS, LOAD_USAGE_LOGS_TOTAL] {
             assert!(
                 sql.contains("LEFT JOIN ai_channel_group g"),

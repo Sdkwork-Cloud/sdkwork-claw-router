@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/casper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-casper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-casper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:473c3365a5b177f4ffca287043aef9266901130bcbf1c802ce680c46b4a15670",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/brawlnet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-brawlnet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-brawlnet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e93318b36bdfd888e116ead1a98a0c7ea51afd2e28022e824ef527befd9c59a3",

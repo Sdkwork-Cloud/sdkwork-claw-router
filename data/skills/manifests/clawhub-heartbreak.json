@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heartbreak@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-heartbreak-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heartbreak-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:315d1ef1db5f03a7d5c952ff8e2f858e0fe4921efc581e73dec7d917a0dbfeaf",

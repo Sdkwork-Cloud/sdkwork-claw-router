@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tardis@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tardis-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tardis-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1bd050ce78a186ab54e75b5ff2355475ad6823e9f192b467bd084af64700efb4",

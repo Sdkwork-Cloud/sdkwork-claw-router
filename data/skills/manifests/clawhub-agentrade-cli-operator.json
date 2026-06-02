@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentrade-cli-operator@1.0.13",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentrade-cli-operator-1.0.13.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentrade-cli-operator-1.0.13.json"
+      },
       "version": "1.0.13",
       "runtime": "metadata",
       "checksumHash": "sha256:297fc2ec01abb4a238eab27c591b331ad0f0f5b90773806acf19339e7239e3da",

@@ -2,10 +2,10 @@ package types
 
 // Studio catalog artifact record schema exposed by Claw Router.
 type StudioCatalogArtifactRecord struct {
+	Artifact MediaResource `json:"artifact"`
 	ArtifactRef string `json:"artifact_ref"`
 	ArtifactSizeBytes string `json:"artifact_size_bytes"`
 	ArtifactType string `json:"artifact_type"`
-	ArtifactUrl string `json:"artifact_url"`
 	ChecksumHash string `json:"checksum_hash"`
 	CreatedAt string `json:"created_at"`
 	DataScope string `json:"data_scope"`

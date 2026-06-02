@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skills-auto-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skills-auto-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skills-auto-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:edeec20789be2df9001b1576f32622c1a558507dffb0c7cf922535b0084b6d56",

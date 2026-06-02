@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lifegoals@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lifegoals-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lifegoals-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8c445404127ae977b709c6bd92706bf795ba5255e6e17a2230f86bdd90f28e98",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dockerlabs@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dockerlabs-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dockerlabs-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f10256c5f3f6db365ee7c8cb0ee2927be1e1f9cddf87ecfe67cf976f6ba20bd",

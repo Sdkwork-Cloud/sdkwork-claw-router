@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawdbot-filesystem@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-filesystem-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawdbot-filesystem-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:773935e49d7cd1a966ef3ad8acb685c2ca8d8197c289a2d5394a24da003f4f7c",

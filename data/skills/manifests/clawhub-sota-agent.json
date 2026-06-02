@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sota-agent@1.4.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-sota-agent-1.4.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sota-agent-1.4.4.json"
+      },
       "version": "1.4.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d7f69710936bb70e937631ae2792f5832eaa646377dce56d7c32007c8072561f",

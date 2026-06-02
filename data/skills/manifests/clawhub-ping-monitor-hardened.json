@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ping-monitor-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ping-monitor-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ping-monitor-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48af058224d6166f9b05aec2985ec5e39c1a28e9ed97afbbef4d561d295440ad",

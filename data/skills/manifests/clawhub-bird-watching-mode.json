@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bird-watching-mode@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bird-watching-mode-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bird-watching-mode-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3e00674482646cc463b37ad7f52f115bd01b8df5f0aca75fb1881c19e65e605f",

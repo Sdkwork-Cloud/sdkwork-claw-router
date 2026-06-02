@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/primer@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-primer-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-primer-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4c148fa4d2b669d6743b0857d49307b2a1df0d5063d8a8321ade469870a5bb49",

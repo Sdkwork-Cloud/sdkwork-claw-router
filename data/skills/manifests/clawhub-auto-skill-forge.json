@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-skill-forge@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-skill-forge-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-skill-forge-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3390554233c77995b5553bf0360013c16e0871bbfdd86acd70e670c4bd29ee52",

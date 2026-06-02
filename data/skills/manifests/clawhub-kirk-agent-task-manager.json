@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kirk-agent-task-manager@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-kirk-agent-task-manager-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kirk-agent-task-manager-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0c3a74c06f84a70d97384ca49c85156c8ddf19d96729ca17a40909f5b3243a46",

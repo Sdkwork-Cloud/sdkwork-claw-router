@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ms365@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ms365-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ms365-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b5e4b3dcd29ee11d2ec9c84d9f25f3f2175358c930f0d36ea57322cd81d3eda8",

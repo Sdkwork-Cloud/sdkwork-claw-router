@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prd-workflow@5.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prd-workflow-5.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prd-workflow-5.1.0.json"
+      },
       "version": "5.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af3e8813f2704d27b0cbc8b6e176ced8b459157b3550d1162e9572b2f16810a7",

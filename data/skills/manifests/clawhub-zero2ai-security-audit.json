@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zero2ai-security-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zero2ai-security-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zero2ai-security-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70a6f39f1a6f759bc13e14dbd2de5c2457d487933e8590ea8b3e5f30a43daa05",

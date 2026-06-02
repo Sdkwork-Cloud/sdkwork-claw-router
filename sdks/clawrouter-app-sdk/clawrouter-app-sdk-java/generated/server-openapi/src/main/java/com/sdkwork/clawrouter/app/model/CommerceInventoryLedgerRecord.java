@@ -2,17 +2,28 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class CommerceInventoryLedgerRecord {
+    private String balanceAfter;
     private String businessType;
     private String createdAt;
     private String direction;
+    private String id;
     private String idempotencyKey;
     private String movementNo;
     private String organizationId;
+    private String quantity;
     private String skuId;
     private String sourceId;
     private String sourceType;
     private String tenantId;
     private String warehouseId;
+
+    public String getBalanceAfter() {
+        return this.balanceAfter;
+    }
+
+    public void setBalanceAfter(String balanceAfter) {
+        this.balanceAfter = balanceAfter;
+    }
 
     public String getBusinessType() {
         return this.businessType;
@@ -38,6 +49,14 @@ public class CommerceInventoryLedgerRecord {
         this.direction = direction;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getIdempotencyKey() {
         return this.idempotencyKey;
     }
@@ -60,6 +79,14 @@ public class CommerceInventoryLedgerRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getQuantity() {
+        return this.quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
     public String getSkuId() {

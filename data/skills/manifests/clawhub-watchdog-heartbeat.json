@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/watchdog-heartbeat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-watchdog-heartbeat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-watchdog-heartbeat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:73f04c94e2d5848374a2dea6566c727d2cca1d9d32187d9739a6142125549a3c",

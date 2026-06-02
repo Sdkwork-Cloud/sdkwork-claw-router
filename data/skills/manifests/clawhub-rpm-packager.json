@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rpm-packager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rpm-packager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rpm-packager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f680951b02b7f784dc6addd5a94d8da612e21ac138c346128b25058e60e7659d",

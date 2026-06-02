@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/simp-dog-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-simp-dog-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-simp-dog-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd7a926d9c7455c964a8e640c1a15f19a780a0c998b5dca72c94faa855246a65",

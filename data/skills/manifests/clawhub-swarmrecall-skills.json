@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swarmrecall-skills@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swarmrecall-skills-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swarmrecall-skills-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e4a1fe48fc614fc41f2be90d19f1df82c67356e916a841c71c6c8439c0d8c0a1",

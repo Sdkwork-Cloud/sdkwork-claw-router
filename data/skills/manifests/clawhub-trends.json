@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trends@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-trends-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trends-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9e48f939095cda06c3f6aca4f84eb0a3df1ebee61af3f333676f2acdf17649ee",

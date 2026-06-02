@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/krea@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-krea-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-krea-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6bb6efba8d551ee4ea3c500d64af5a025ea0fcd5060c89db63e6994e4907b77f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/step3-vl-finetune@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-step3-vl-finetune-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-step3-vl-finetune-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:78f54315c30c021e5de70658ce8151340fa86c49b1719e3e7bce7962f7ba5241",

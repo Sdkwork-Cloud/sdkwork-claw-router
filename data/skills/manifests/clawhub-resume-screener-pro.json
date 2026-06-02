@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-screener-pro@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-screener-pro-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-screener-pro-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3d0f7d3eb8557d82ba51af405e0e388db49ce39d645693ee10f8a9da0fbb4edf",

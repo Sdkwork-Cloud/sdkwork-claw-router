@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-invoice-parser@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-invoice-parser-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-invoice-parser-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eba428be6474cde9ca6925c851fbe208d658eb0ca9279f11b0518cf32d854124",

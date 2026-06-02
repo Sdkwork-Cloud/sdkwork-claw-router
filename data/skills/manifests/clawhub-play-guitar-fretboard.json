@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/play-guitar-fretboard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-play-guitar-fretboard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-play-guitar-fretboard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:760cdc0bb6d4359d898caa5334ffd5ef26d8dfd25308b28ae8835f69dac16ef1",

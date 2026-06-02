@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/best-minds@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-best-minds-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-best-minds-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f10fe2657a56847a42c811e97ef94e5925fd8b67e0c415a1849151e2df107bb",

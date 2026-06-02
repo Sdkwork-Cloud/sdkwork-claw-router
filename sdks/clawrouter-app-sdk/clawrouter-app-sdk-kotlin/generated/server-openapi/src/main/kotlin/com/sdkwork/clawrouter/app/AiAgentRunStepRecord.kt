@@ -29,6 +29,7 @@ data class AiAgentRunStepRecord(
     val startedAt: String? = null,
     val status: String? = null,
     val stepIndex: Int? = null,
+    val stepStatus: String? = null,
     val stepType: String? = null,
     val tenantId: String? = null,
     val title: String? = null,

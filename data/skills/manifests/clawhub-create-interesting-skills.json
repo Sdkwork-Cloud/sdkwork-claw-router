@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-interesting-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-interesting-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-interesting-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a324639814182d4a18fce15f1a1a916deeedbef10e5da74ee65249d91f5dfc1e",

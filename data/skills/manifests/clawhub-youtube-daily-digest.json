@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-daily-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-daily-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-daily-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00ba5783a089190600936a52dc3c19f0fe5b85f75e4e6b962cebf33160502d75",

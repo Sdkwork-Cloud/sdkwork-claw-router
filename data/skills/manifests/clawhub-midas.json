@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/midas@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-midas-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-midas-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:609930aa716b5dff53a16837f8fd7bc9ae8fadc2f43f2450ff6757c6135f6b0d",

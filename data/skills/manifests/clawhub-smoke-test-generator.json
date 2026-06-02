@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smoke-test-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smoke-test-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smoke-test-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3e9e83bd36942235fe989d7d152012a8de498a112a824ee88ea84d9727046cc0",

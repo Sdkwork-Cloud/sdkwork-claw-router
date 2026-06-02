@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/portkey-guardrails@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-portkey-guardrails-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-portkey-guardrails-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9afa7907e29270ee62484db29bd17da5686359ddb5ad564b3a44a8047f9a855",

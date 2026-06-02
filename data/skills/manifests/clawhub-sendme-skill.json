@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sendme-skill@0.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-sendme-skill-0.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sendme-skill-0.1.4.json"
+      },
       "version": "0.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:dc2fc91f649921162826edff0e14cd18cbb9eaefe77b551beefa84a0b8527149",

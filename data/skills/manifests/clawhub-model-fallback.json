@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-fallback@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-fallback-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-fallback-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ba69c1d8ef137942a47acf0b189d6fc5e98ca8212aaa5fb01f139b61aa8f6caf",

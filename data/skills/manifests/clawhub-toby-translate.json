@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-translate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-translate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-translate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a5f63e527acd1b0dc56832288724f70987c7f253946e291b344cd364cf47baeb",

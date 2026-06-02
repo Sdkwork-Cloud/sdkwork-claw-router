@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shipstatic@0.7.20",
-      "artifactUrl": "data/skills/artifacts/clawhub-shipstatic-0.7.20.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shipstatic-0.7.20.json"
+      },
       "version": "0.7.20",
       "runtime": "metadata",
       "checksumHash": "sha256:db57825088482fc0846cb760ec0e0072f94bd9716418a0c89f45da95dd9d08ba",

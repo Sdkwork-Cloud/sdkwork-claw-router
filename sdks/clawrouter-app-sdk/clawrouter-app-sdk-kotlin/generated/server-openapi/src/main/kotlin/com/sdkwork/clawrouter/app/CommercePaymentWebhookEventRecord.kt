@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.app
 data class CommercePaymentWebhookEventRecord(
     val createdAt: String? = null,
     val eventId: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val message: String? = null,
     val nonce: String? = null,

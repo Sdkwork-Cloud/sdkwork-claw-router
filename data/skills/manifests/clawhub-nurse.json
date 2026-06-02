@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nurse@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nurse-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nurse-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:daf305d034b4980b50fa620a68a06ca2a1f450fe2af5b70e88b36a001883ed16",

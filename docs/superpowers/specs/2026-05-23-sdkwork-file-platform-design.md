@@ -613,7 +613,7 @@ Slot examples:
 - `user.identity_document`
 - `organization.logo`
 - `app.icon`
-- `app.cover_image`
+- `app.cover`
 - `course.video`
 - `course.attachment`
 - `product.main_image`

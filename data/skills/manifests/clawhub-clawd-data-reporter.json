@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawd-data-reporter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawd-data-reporter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawd-data-reporter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42f0360421c14a495c4e39e6fc973ef888a6c447e18d81a3cbab2dcc478996d1",

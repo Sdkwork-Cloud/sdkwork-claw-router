@@ -48,6 +48,9 @@ import {
   createSdkworkWalletService,
   type SdkworkWalletService,
 } from "@sdkwork/wallet-pc-react";
+import type {
+  SdkworkMediaResource,
+} from "@sdkwork/appbase-pc-react";
 import {
   buildSdkworkCheckoutSession,
   createEmptySdkworkCheckoutCatalog,
@@ -76,7 +79,8 @@ export interface SdkworkCheckoutSubmitResult {
   nextRoute?: string;
   orderId?: string;
   paymentId?: string;
-  qrCode?: string;
+  qrContent?: string;
+  qrImage?: SdkworkMediaResource;
   status: "completed" | "failed" | "pending" | "requires-payment";
 }
 
@@ -601,7 +605,8 @@ export function createSdkworkCheckoutService(
         let nextRoute = createOrderRouteIntent({
           orderId: result.orderId,
         }).route;
-        let qrCode: string | undefined;
+        let qrContent: string | undefined;
+        let qrImage: SdkworkMediaResource | undefined;
 
         if (result.orderId && selectedPaymentMethodCode) {
           const payment = await paymentService.createPayment({
@@ -611,7 +616,8 @@ export function createSdkworkCheckoutService(
             paymentMethod: selectedPaymentMethodCode,
           });
           paymentId = payment.id;
-          qrCode = payment.qrCode;
+          qrContent = payment.qrContent;
+          qrImage = payment.qrImage;
           nextRoute = mapPaymentResultToRoute(payment);
         }
 
@@ -630,7 +636,8 @@ export function createSdkworkCheckoutService(
           ...(resolvedStatus !== "failed" ? { nextRoute } : {}),
           ...(result.orderId ? { orderId: result.orderId } : {}),
           ...(paymentId ? { paymentId } : {}),
-          ...(qrCode ? { qrCode } : {}),
+          ...(qrContent ? { qrContent } : {}),
+          ...(qrImage ? { qrImage } : {}),
           status: resolvedStatus,
         };
       }

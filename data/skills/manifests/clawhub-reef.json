@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reef@0.2.15",
-      "artifactUrl": "data/skills/artifacts/clawhub-reef-0.2.15.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reef-0.2.15.json"
+      },
       "version": "0.2.15",
       "runtime": "metadata",
       "checksumHash": "sha256:4733f940d3f5aa7cdf9e07718df7bcefb214a580e566fd5aad3325b10763a7d8",

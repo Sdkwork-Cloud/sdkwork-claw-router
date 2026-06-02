@@ -6,6 +6,7 @@ data class CommercePaymentProviderAccountRecord(
     val countryCode: String? = null,
     val createdAt: String? = null,
     val environment: String? = null,
+    val id: String? = null,
     val merchantId: String? = null,
     val organizationId: String? = null,
     val providerCode: String? = null,

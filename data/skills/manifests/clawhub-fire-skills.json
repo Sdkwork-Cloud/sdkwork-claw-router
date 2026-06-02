@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fire-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fire-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fire-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0010e900311e5acbb6ca4b2378436ef6a9579ec6354631546690101f95b922c8",

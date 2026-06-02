@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lightrag-knowledge-base@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lightrag-knowledge-base-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lightrag-knowledge-base-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:07effa72ef032f1d30996abe0a68147e52898e31f556be8c8763a11da3f50282",

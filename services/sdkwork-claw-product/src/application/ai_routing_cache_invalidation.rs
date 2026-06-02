@@ -2,19 +2,20 @@ use std::sync::Arc;
 
 use crate::domain::DomainResult;
 use crate::ports::{
-    AdminAccessGroupChannelBindingItem, AdminAccessGroupCommandFuture, AdminAccessGroupItem,
-    AdminAccessGroupStore, AdminAiResourceItem, AdminAiResourceReadFuture, AdminAiResourceStore,
+    AdminAiResourceItem, AdminAiResourceReadFuture, AdminAiResourceStore,
     AdminChannelCommandFuture, AdminChannelEndpointFuture, AdminChannelEndpointItem,
-    AdminChannelEndpointStore, AdminChannelItem, AdminChannelStore, AdminChannelTestOutcome,
-    AdminProviderSecretCommandFuture, AdminProviderSecretItem, AdminProviderSecretStore,
-    CreateAdminAccessGroupCommand, CreateAdminAiResourceCommand, CreateAdminChannelCommand,
-    CreateAdminChannelEndpointCommand, CreateAdminProviderSecretCommand,
-    DeleteAdminAccessGroupCommand, DeleteAdminChannelCommand, DeleteAdminProviderSecretCommand,
-    ListAdminAccessGroupChannelBindingsQuery, ListAdminAccessGroupsQuery,
-    ListAdminAiResourcesQuery, ListAdminChannelEndpointsQuery, ListAdminChannelsQuery,
-    ListAdminProviderSecretsQuery, ReplaceAdminAccessGroupChannelBindingsCommand,
-    TestAdminChannelCommand, UpdateAdminAccessGroupCommand, UpdateAdminAiResourceCommand,
-    UpdateAdminChannelCommand, UpdateAdminChannelEndpointCommand, UpdateAdminProviderSecretCommand,
+    AdminChannelEndpointStore, AdminChannelGroupChannelBindingItem, AdminChannelGroupCommandFuture,
+    AdminChannelGroupItem, AdminChannelGroupStore, AdminChannelItem, AdminChannelStore,
+    AdminChannelTestOutcome, AdminProviderSecretCommandFuture, AdminProviderSecretItem,
+    AdminProviderSecretStore, CreateAdminAiResourceCommand, CreateAdminChannelCommand,
+    CreateAdminChannelEndpointCommand, CreateAdminChannelGroupCommand,
+    CreateAdminProviderSecretCommand, DeleteAdminChannelCommand, DeleteAdminChannelGroupCommand,
+    DeleteAdminProviderSecretCommand, ListAdminAiResourcesQuery, ListAdminChannelEndpointsQuery,
+    ListAdminChannelGroupChannelBindingsQuery, ListAdminChannelGroupsQuery, ListAdminChannelsQuery,
+    ListAdminProviderSecretsQuery, ReplaceAdminChannelGroupChannelBindingsCommand,
+    TestAdminChannelCommand, UpdateAdminAiResourceCommand, UpdateAdminChannelCommand,
+    UpdateAdminChannelEndpointCommand, UpdateAdminChannelGroupCommand,
+    UpdateAdminProviderSecretCommand,
 };
 
 use super::{
@@ -173,14 +174,14 @@ impl AdminAiResourceStore for AiRoutingCacheInvalidatingAdminAiResourceStore {
 }
 
 #[derive(Clone)]
-pub struct AiRoutingCacheInvalidatingAdminAccessGroupStore {
-    inner: Arc<dyn AdminAccessGroupStore + Send + Sync>,
+pub struct AiRoutingCacheInvalidatingAdminChannelGroupStore {
+    inner: Arc<dyn AdminChannelGroupStore + Send + Sync>,
     invalidator: AiRoutingCacheInvalidator,
 }
 
-impl AiRoutingCacheInvalidatingAdminAccessGroupStore {
+impl AiRoutingCacheInvalidatingAdminChannelGroupStore {
     pub fn new(
-        inner: Arc<dyn AdminAccessGroupStore + Send + Sync>,
+        inner: Arc<dyn AdminChannelGroupStore + Send + Sync>,
         manager: RuntimeCacheManager,
     ) -> Self {
         Self {
@@ -190,31 +191,31 @@ impl AiRoutingCacheInvalidatingAdminAccessGroupStore {
     }
 }
 
-impl AdminAccessGroupStore for AiRoutingCacheInvalidatingAdminAccessGroupStore {
-    fn list_access_groups<'a>(
+impl AdminChannelGroupStore for AiRoutingCacheInvalidatingAdminChannelGroupStore {
+    fn list_channel_groups<'a>(
         &'a self,
-        query: ListAdminAccessGroupsQuery,
-    ) -> AdminAccessGroupCommandFuture<'a, Vec<AdminAccessGroupItem>> {
-        self.inner.list_access_groups(query)
+        query: ListAdminChannelGroupsQuery,
+    ) -> AdminChannelGroupCommandFuture<'a, Vec<AdminChannelGroupItem>> {
+        self.inner.list_channel_groups(query)
     }
 
-    fn create_access_group<'a>(
+    fn create_channel_group<'a>(
         &'a self,
-        command: CreateAdminAccessGroupCommand,
-    ) -> AdminAccessGroupCommandFuture<'a, AdminAccessGroupItem> {
+        command: CreateAdminChannelGroupCommand,
+    ) -> AdminChannelGroupCommandFuture<'a, AdminChannelGroupItem> {
         Box::pin(async move {
-            let item = self.inner.create_access_group(command).await?;
+            let item = self.inner.create_channel_group(command).await?;
             self.invalidator.invalidate_routing_facts().await?;
             Ok(item)
         })
     }
 
-    fn update_access_group<'a>(
+    fn update_channel_group<'a>(
         &'a self,
-        command: UpdateAdminAccessGroupCommand,
-    ) -> AdminAccessGroupCommandFuture<'a, Option<AdminAccessGroupItem>> {
+        command: UpdateAdminChannelGroupCommand,
+    ) -> AdminChannelGroupCommandFuture<'a, Option<AdminChannelGroupItem>> {
         Box::pin(async move {
-            let item = self.inner.update_access_group(command).await?;
+            let item = self.inner.update_channel_group(command).await?;
             if item.is_some() {
                 self.invalidator.invalidate_routing_facts().await?;
             }
@@ -222,12 +223,12 @@ impl AdminAccessGroupStore for AiRoutingCacheInvalidatingAdminAccessGroupStore {
         })
     }
 
-    fn delete_access_group<'a>(
+    fn delete_channel_group<'a>(
         &'a self,
-        command: DeleteAdminAccessGroupCommand,
-    ) -> AdminAccessGroupCommandFuture<'a, bool> {
+        command: DeleteAdminChannelGroupCommand,
+    ) -> AdminChannelGroupCommandFuture<'a, bool> {
         Box::pin(async move {
-            let deleted = self.inner.delete_access_group(command).await?;
+            let deleted = self.inner.delete_channel_group(command).await?;
             if deleted {
                 self.invalidator.invalidate_routing_facts().await?;
             }
@@ -237,15 +238,15 @@ impl AdminAccessGroupStore for AiRoutingCacheInvalidatingAdminAccessGroupStore {
 
     fn list_channel_bindings<'a>(
         &'a self,
-        query: ListAdminAccessGroupChannelBindingsQuery,
-    ) -> AdminAccessGroupCommandFuture<'a, Vec<AdminAccessGroupChannelBindingItem>> {
+        query: ListAdminChannelGroupChannelBindingsQuery,
+    ) -> AdminChannelGroupCommandFuture<'a, Vec<AdminChannelGroupChannelBindingItem>> {
         self.inner.list_channel_bindings(query)
     }
 
     fn replace_channel_bindings<'a>(
         &'a self,
-        command: ReplaceAdminAccessGroupChannelBindingsCommand,
-    ) -> AdminAccessGroupCommandFuture<'a, Vec<AdminAccessGroupChannelBindingItem>> {
+        command: ReplaceAdminChannelGroupChannelBindingsCommand,
+    ) -> AdminChannelGroupCommandFuture<'a, Vec<AdminChannelGroupChannelBindingItem>> {
         Box::pin(async move {
             let items = self.inner.replace_channel_bindings(command).await?;
             self.invalidator.invalidate_routing_facts().await?;

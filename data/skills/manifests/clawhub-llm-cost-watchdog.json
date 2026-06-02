@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-cost-watchdog@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-cost-watchdog-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-cost-watchdog-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f5908082dc69cdaab85d006115f2f9fff94417030e1c60fbc3318b5aa4ad1df",

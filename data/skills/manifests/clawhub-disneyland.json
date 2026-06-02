@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/disneyland@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-disneyland-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-disneyland-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7398303dd10073ad4fa4c7225eacc6e6a2b9db0f884fdf4ec45df090b7ae9cbd",

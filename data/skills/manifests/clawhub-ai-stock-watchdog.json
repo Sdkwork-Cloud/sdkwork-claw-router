@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-stock-watchdog@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-stock-watchdog-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-stock-watchdog-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5b56c061e7e767c47329d8800219bab7a24500ee3f449552b793d14ce770271c",

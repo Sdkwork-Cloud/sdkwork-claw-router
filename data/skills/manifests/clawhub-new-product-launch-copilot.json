@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/new-product-launch-copilot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-new-product-launch-copilot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-new-product-launch-copilot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:198f75cb9f15b628d11ecc6ddddb0cb4556534a31380b9166d7901925e048d6c",

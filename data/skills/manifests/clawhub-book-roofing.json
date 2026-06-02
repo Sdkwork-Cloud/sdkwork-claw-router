@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-roofing@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-roofing-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-roofing-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:06621376baa8422bf24162f9dc080a2b3de1d629a69f5778e94318b98979bdda",

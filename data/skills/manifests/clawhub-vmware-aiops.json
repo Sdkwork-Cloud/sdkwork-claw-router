@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vmware-aiops@1.5.22",
-      "artifactUrl": "data/skills/artifacts/clawhub-vmware-aiops-1.5.22.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vmware-aiops-1.5.22.json"
+      },
       "version": "1.5.22",
       "runtime": "metadata",
       "checksumHash": "sha256:9f04a733b23b744d554651f8e076b015a8ee1eb483883d715136dfb292989b99",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agnic-agent-email@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agnic-agent-email-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agnic-agent-email-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c3b65e3fb762e7a135e2f7ddde391a784f41ae85d4fcf149a8526d7e7087b2dc",

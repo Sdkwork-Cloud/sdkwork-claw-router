@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sui-jsonrpc-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sui-jsonrpc-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sui-jsonrpc-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:94af02b69aefeb69b00081868f4044850383ff2935580e4ebb1964125b86c72c",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexapi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexapi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexapi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71eb9855bb91a184b4c041225aef9d107defeb5379529ac0e5bfdcf3a698fd36",

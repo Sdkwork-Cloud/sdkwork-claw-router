@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kb-manager@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kb-manager-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kb-manager-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:343f7c4530a810fc03d2d2950e9824d992b947f3bd63deda4bd2a6d70813b200",

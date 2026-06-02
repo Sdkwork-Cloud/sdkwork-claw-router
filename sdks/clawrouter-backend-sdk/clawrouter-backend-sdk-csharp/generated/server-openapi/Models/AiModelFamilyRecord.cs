@@ -18,7 +18,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? DocsUrl { get; set; }
         public string? FamilyCode { get; set; }
         public string? FamilyType { get; set; }
-        public string? IconUrl { get; set; }
+        public MediaResource? Icon { get; set; }
         public string? Id { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? ModelCount { get; set; }

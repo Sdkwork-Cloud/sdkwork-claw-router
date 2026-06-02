@@ -2,9 +2,12 @@ import {
   ensureSdkworkApiSuccess,
   hasStoredPortalSession,
   isRecord,
+  readMediaResource,
+  readMediaResourceUrl,
   readApiItem,
   readRequiredApiItems,
   type ApiRecord,
+  type ClawRouterMediaResource,
   type JsonValue,
   emptyRuntimeUsageSnapshot,
   mergeRuntimeUsageSnapshots,
@@ -601,7 +604,8 @@ function readGenerationArtifact(
   if (!isRecord(value)) {
     return null;
   }
-  const url = readFirstString(value, ['url', 'assetUrl', 'storageUrl', 'downloadUrl', 'publicUrl', 'mediaUrl', 'fileUrl', 'href', 'uri']);
+  const resource = readGenerationArtifactResource(value);
+  const url = readMediaResourceUrl(resource);
   if (!url) {
     return null;
   }
@@ -609,15 +613,17 @@ function readGenerationArtifact(
   if (!modality) {
     return null;
   }
-  const thumb = readFirstString(value, ['thumb', 'thumbnailUrl', 'thumbnail', 'posterUrl', 'coverUrl', 'previewUrl']);
-  const mimeType = readFirstString(value, ['mimeType', 'mime', 'contentType']);
-  const durationSeconds = readArtifactDurationSeconds(value);
+  const mimeType = readGenerationArtifactMimeType(value, resource);
+  const durationSeconds = readArtifactDurationSeconds(value, resource);
+  const thumbnail = readGenerationArtifactThumbnail(value, resource);
   return {
-    durationSeconds,
-    mimeType,
+    asset: createGenerationArtifactAsset({
+      durationSeconds,
+      mimeType,
+      resource,
+      thumbnail,
+    }),
     modality,
-    thumb,
-    url,
   };
 }
 
@@ -641,6 +647,43 @@ function readGenerationArtifactModality(
 
   const extensionModality = readGenerationTargetTypeFromUrl(url, targetType);
   return extensionModality ?? null;
+}
+
+function readGenerationArtifactResource(record: ApiRecord): ClawRouterMediaResource | undefined {
+  return readMediaResource(record.asset) ?? readMediaResource(record.resource);
+}
+
+function readGenerationArtifactThumbnail(
+  record: ApiRecord,
+  resource?: ClawRouterMediaResource,
+): ClawRouterMediaResource | undefined {
+  const poster = readMediaResource(resource?.poster);
+  if (poster) {
+    return cloneMediaResource(poster);
+  }
+  const thumbnails = Array.isArray(resource?.thumbnails) ? resource.thumbnails : [];
+  for (const thumbnail of thumbnails) {
+    const thumbnailResource = readMediaResource(thumbnail);
+    if (thumbnailResource) {
+      return cloneMediaResource(thumbnailResource);
+    }
+  }
+  const thumbnailResource = readMediaResource(record.thumbnail) ?? readMediaResource(record.poster);
+  if (thumbnailResource) {
+    return cloneMediaResource(thumbnailResource);
+  }
+  return undefined;
+}
+
+function readGenerationArtifactMimeType(
+  record: ApiRecord,
+  resource?: ClawRouterMediaResource,
+): string | undefined {
+  const mimeType = typeof resource?.mimeType === 'string' ? resource.mimeType.trim() : '';
+  if (mimeType) {
+    return mimeType;
+  }
+  return readFirstString(record, ['mimeType', 'mime', 'contentType']) || undefined;
 }
 
 function normalizeArtifactDescriptor(value: string): string {
@@ -717,7 +760,13 @@ function readOptionalPositiveNumber(value: unknown): number | undefined {
   return Number.isFinite(number) && number >= 0 ? number : undefined;
 }
 
-function readArtifactDurationSeconds(record: ApiRecord): number | undefined {
+function readArtifactDurationSeconds(
+  record: ApiRecord,
+  resource?: ClawRouterMediaResource,
+): number | undefined {
+  if (typeof resource?.durationSeconds === 'number' && Number.isFinite(resource.durationSeconds)) {
+    return resource.durationSeconds;
+  }
   const seconds = readOptionalPositiveNumber(record.durationSeconds ?? record.duration_secs ?? record.duration ?? record.seconds);
   if (seconds !== undefined) {
     return seconds;
@@ -726,11 +775,55 @@ function readArtifactDurationSeconds(record: ApiRecord): number | undefined {
   return milliseconds === undefined ? undefined : milliseconds / 1000;
 }
 
+function createGenerationArtifactAsset(
+  {
+    durationSeconds,
+    mimeType,
+    resource,
+    thumbnail,
+  }: {
+    durationSeconds?: number;
+    mimeType?: string;
+    resource: ClawRouterMediaResource;
+    thumbnail?: ClawRouterMediaResource;
+  },
+): ClawRouterMediaResource {
+  const asset = cloneMediaResource(resource);
+  if (mimeType && !asset.mimeType) {
+    asset.mimeType = mimeType;
+  }
+  if (durationSeconds !== undefined && asset.durationSeconds === undefined) {
+    asset.durationSeconds = durationSeconds;
+  }
+  if (thumbnail && !asset.poster) {
+    asset.poster = thumbnail;
+  }
+  if (thumbnail && (!Array.isArray(asset.thumbnails) || asset.thumbnails.length === 0)) {
+    asset.thumbnails = [cloneMediaResource(thumbnail)];
+  }
+  return asset;
+}
+
+function cloneMediaResource(resource: ClawRouterMediaResource): ClawRouterMediaResource {
+  const clone: ClawRouterMediaResource = { ...resource };
+  if (resource.poster) {
+    clone.poster = cloneMediaResource(resource.poster);
+  }
+  if (resource.thumbnails) {
+    clone.thumbnails = resource.thumbnails.map(cloneMediaResource);
+  }
+  return clone;
+}
+
 function hasGenerationArtifact(
   artifacts: readonly PlaygroundGenerationArtifact[],
   candidate: PlaygroundGenerationArtifact,
 ): boolean {
-  return artifacts.some((artifact) => artifact.modality === candidate.modality && artifact.url === candidate.url);
+  const candidateLocator = readMediaResourceUrl(candidate.asset);
+  return artifacts.some((artifact) => (
+    artifact.modality === candidate.modality
+    && readMediaResourceUrl(artifact.asset) === candidateLocator
+  ));
 }
 
 function resolveGenerationResultTargetType(
@@ -948,6 +1041,7 @@ function mapAgentRunToHistoryItem({
     durationSeconds: media.durationSeconds ?? generationConfig?.durationSeconds,
     generationConfig: generationConfig,
     id: run.id,
+    asset: media.asset,
     images: media.images,
     modelCatalogKey: model,
     modelInfo: model,
@@ -956,7 +1050,6 @@ function mapAgentRunToHistoryItem({
     status: mapPlaygroundGenerationStatus(run.status),
     type: mapSdkworkGenerationModalityToHistoryType(targetType),
     updatedAt: isoTimestamp,
-    url: media.url,
     videos: media.videos,
   };
 }
@@ -973,7 +1066,7 @@ function mapAgentUsageSummary(
     || promptTokens + cachedTokens + completionTokens;
   const videoSeconds = artifacts
     .filter((artifact) => artifact.modality === 'video')
-    .reduce((total, artifact) => total + (artifact.durationSeconds ?? 0), 0);
+    .reduce((total, artifact) => total + (artifact.asset.durationSeconds ?? 0), 0);
   return {
     cachedTokens,
     completionTokens,

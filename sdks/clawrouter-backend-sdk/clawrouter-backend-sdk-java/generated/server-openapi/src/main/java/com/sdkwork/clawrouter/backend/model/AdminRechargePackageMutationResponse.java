@@ -1,15 +1,14 @@
 package com.sdkwork.clawrouter.backend.model;
 
-import java.util.Map;
 
 public class AdminRechargePackageMutationResponse {
-    private Map<String, Object> item;
+    private AdminRechargePackageItem item;
 
-    public Map<String, Object> getItem() {
+    public AdminRechargePackageItem getItem() {
         return this.item;
     }
 
-    public void setItem(Map<String, Object> item) {
+    public void setItem(AdminRechargePackageItem item) {
         this.item = item;
     }
 }

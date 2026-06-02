@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/threat-radar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-threat-radar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-threat-radar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:518f0d3a7f57865014dd04fcd106a79f72c00434b219e9749b7a4b1c9a25c693",

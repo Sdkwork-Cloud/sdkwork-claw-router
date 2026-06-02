@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hydra-evolver@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hydra-evolver-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hydra-evolver-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed884f16ac40d18a85e4e42c4b49ad88b535e25d2f9fb3ebc15e367f0b10cda1",

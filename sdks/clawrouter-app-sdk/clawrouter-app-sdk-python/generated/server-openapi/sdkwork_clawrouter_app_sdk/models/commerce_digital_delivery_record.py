@@ -16,4 +16,5 @@ class CommerceDigitalDeliveryRecord:
     tenant_id: str
     updated_at: str
     delivered_at: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None

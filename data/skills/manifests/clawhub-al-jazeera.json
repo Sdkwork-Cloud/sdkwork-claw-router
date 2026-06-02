@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/al-jazeera@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-al-jazeera-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-al-jazeera-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:06aae2949f45cf603dcbe8895e874abb35c02654b420687d05009dc26a87372a",

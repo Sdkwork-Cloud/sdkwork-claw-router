@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/simplelogin-cli@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-simplelogin-cli-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-simplelogin-cli-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:92f244d0e7dd33aacb1b74b2c0ef1f71d844723cd0cb74f85e50578342ca7dbc",

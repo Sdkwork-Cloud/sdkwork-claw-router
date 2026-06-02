@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trimmer-linux@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trimmer-linux-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trimmer-linux-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f381750f30e4b339f5a7c4ac563c8ce7f9258dc5fd7c18752c3e2aeb48bc566e",

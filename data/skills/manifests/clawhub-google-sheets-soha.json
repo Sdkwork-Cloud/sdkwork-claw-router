@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-sheets-soha@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-sheets-soha-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-sheets-soha-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0b7f5779719cce692f16aee61b2db2b8f76edea1c213d8091f7b439875957ab3",

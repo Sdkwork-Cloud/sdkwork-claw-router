@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thoth-cli@0.2.27",
-      "artifactUrl": "data/skills/artifacts/clawhub-thoth-cli-0.2.27.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thoth-cli-0.2.27.json"
+      },
       "version": "0.2.27",
       "runtime": "metadata",
       "checksumHash": "sha256:f5f6894942e39dac3810ab82c0734fb9379cd3d44c2875e0287b295d52be02ec",

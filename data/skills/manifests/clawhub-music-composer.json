@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-composer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-composer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-composer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4deb89650340c53cd74403fe1cdbdf5b1466e76d645f85c377e605136de0b160",

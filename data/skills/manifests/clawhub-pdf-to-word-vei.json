@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-to-word-vei@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-to-word-vei-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-to-word-vei-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:325579dff211e16d03b72881849bd34495975c9e2cb2db370c988c590fe8d34f",

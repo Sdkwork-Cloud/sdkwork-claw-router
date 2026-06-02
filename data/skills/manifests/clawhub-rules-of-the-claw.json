@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rules-of-the-claw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rules-of-the-claw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rules-of-the-claw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a39ed3a580e37ebecb5505547b518dee0a0017e123b2c0d89cdd9a8e5d927bb8",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mh-openai-whisper-api@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mh-openai-whisper-api-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mh-openai-whisper-api-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:adb4e61125159a51493072e1e8738d60fd8944fe1b9be82661bd2a21312ea782",

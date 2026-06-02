@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-launch-playbook@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-launch-playbook-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-launch-playbook-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:fa562728b1e9c2b4fc5b05eb6123dd182f24f2e91dda44c605725f41b2c0ae8f",

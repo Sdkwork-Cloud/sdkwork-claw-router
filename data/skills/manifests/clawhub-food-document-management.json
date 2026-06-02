@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/food-document-management@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-food-document-management-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-food-document-management-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8086eef8457069a1fe7d5080577e94a89e773208944e96a92471e68366c12e85",

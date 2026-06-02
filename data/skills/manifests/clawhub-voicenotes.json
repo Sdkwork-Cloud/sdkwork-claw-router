@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voicenotes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voicenotes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voicenotes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fccc482178fce6980f0cbf680ca3730ce36e8e74b82546db5108056d06bd9d95",

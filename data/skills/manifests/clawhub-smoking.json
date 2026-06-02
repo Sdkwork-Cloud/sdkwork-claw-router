@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smoking@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smoking-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smoking-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:04c20be42bb053bef937d433d126d8898dce90fac79eae5226d59429c0f2e4cb",

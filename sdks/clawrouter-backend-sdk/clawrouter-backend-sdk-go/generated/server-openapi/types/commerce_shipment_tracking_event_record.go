@@ -6,6 +6,7 @@ type CommerceShipmentTrackingEventRecord struct {
 	Description string `json:"description"`
 	EventCode string `json:"event_code"`
 	EventTime string `json:"event_time"`
+	Id string `json:"id"`
 	Location string `json:"location"`
 	OrganizationId string `json:"organization_id"`
 	RawPayloadJson map[string]JsonValue `json:"raw_payload_json"`

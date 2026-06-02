@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zillow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zillow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zillow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b962a60087e3d53a7fb720dfb482f4315ba9dbe7955500d027e532510b6d8697",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nex-skillmon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nex-skillmon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nex-skillmon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8b043df36170df1bf934b6da35111d0bdd2a39e390e189bf656608f1da8066cb",

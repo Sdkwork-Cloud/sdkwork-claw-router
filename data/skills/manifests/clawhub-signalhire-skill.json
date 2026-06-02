@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/signalhire-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-signalhire-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-signalhire-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b545a29d7a4c3928675cd621686c7def0530aee392278b53b1611cf3758e460e",

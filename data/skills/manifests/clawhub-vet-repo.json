@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vet-repo@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-vet-repo-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vet-repo-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:54d903b5cbd7361f8016fa038ec53c6e41f4a46c83ff99567808f3fa7fa28bc7",

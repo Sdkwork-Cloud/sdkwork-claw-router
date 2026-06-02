@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sms-gateway@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sms-gateway-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sms-gateway-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:445bd0e4fdd7a9892ccbe15163324091083147283039c56830eb024b5c954ba5",

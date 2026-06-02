@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/redbook-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-redbook-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-redbook-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9ffa01b9beb9a0492b469bf74f323d9780043b1ff8f5eb71fac4021ff4e1b7a",

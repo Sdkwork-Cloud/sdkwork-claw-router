@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class CommerceInvoiceRecord:
@@ -14,7 +17,8 @@ class CommerceInvoiceRecord:
     tenant_id: str
     title_id: str
     updated_at: str
-    document_url: Optional[str] = None
+    document: Optional[MediaResource] = None
+    id: Optional[str] = None
     invoice_code: Optional[str] = None
     invoice_no: Optional[str] = None
     issued_at: Optional[str] = None

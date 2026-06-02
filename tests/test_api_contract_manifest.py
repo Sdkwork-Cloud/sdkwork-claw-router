@@ -1,4 +1,4 @@
-﻿import tempfile
+import tempfile
 import textwrap
 import unittest
 from pathlib import Path
@@ -127,6 +127,48 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
             self.assertEqual("login", operation["operation"])
             self.assertEqual("sessions.create", operation["operation_id"])
             self.assertEqual("iam", operation["sdk_domain"])
+
+    def test_payload_schema_preserves_component_refs_inside_properties(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            contract = self.write_contract(
+                root,
+                """
+                frontend_operations:
+                  - route: /admin/catalog
+                    source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+                    operation: getProduct
+                    operation_id: catalog.products.retrieve
+                    kind: read
+                    api_surface: backend
+                    api_method: GET
+                    api_path: /backend/v3/api/commerce/catalog/products/{productId}
+                    sdk_domain: catalog
+                    read_sources: [commerce_product_spu]
+                    response_schema:
+                      name: ProductResponse
+                      required: [cover, media]
+                      properties:
+                        cover:
+                          $ref: '#/components/schemas/MediaResource'
+                        media:
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/MediaResource'
+                """,
+            )
+
+            manifest = ApiContractManifestGenerator(root=root, contract_path=contract).generate()
+            schema = manifest["operations"][0]["response_schema"]["schema"]
+
+            self.assertEqual(
+                {"$ref": "#/components/schemas/MediaResource"},
+                schema["properties"]["cover"],
+            )
+            self.assertEqual(
+                {"$ref": "#/components/schemas/MediaResource"},
+                schema["properties"]["media"]["items"],
+            )
 
     def test_open_platform_paths_compile_to_open_platform_sdk_namespace(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -453,9 +495,10 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
                     response_schema:
                       name: CourseApplicationVideoUploadResponse
                       type: object
-                      required: [videoUrl]
+                      required: [video]
                       properties:
-                        videoUrl: { type: string }
+                        video:
+                          $ref: '#/components/schemas/MediaResource'
                 """,
             )
 
@@ -842,7 +885,7 @@ class ApiContractManifestGeneratorTest(unittest.TestCase):
         self.assertIn("iam_gateway_api_key", operation["write_tables"])
         self.assertIn("ops_audit_log", operation["write_tables"])
         self.assertEqual("CreateApiKeyRequest", operation["request_schema"]["name"])
-        self.assertEqual(["name", "group"], operation["request_schema"]["schema"]["required"])
+        self.assertEqual(["name", "channelGroup"], operation["request_schema"]["schema"]["required"])
         self.assertEqual("CreateApiKeyResponse", operation["response_schema"]["name"])
         self.assertEqual(["item", "rawKey"], operation["response_schema"]["schema"]["required"])
 

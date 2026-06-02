@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Ai model vendor record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AiModelVendorRecord {
@@ -42,9 +44,9 @@ pub struct AiModelVendorRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub docs_url: Option<String>,
 
-    /// Icon url field on ai model vendor record.
+    /// Icon field on ai model vendor record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon_url: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Id field on ai model vendor record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -54,9 +56,9 @@ pub struct AiModelVendorRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub legal_name: Option<String>,
 
-    /// Logo url field on ai model vendor record.
+    /// Logo field on ai model vendor record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub logo_url: Option<String>,
+    pub logo: Option<MediaResource>,
 
     /// Metadata field on ai model vendor record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

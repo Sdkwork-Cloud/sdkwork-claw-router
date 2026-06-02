@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/update-advisor@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-update-advisor-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-update-advisor-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d01cc7c750d8a2128fdf0fd0cfbae10b0409104a3aaaf83b40db580a287c09d8",

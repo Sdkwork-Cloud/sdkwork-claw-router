@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ghost-publisher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ghost-publisher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ghost-publisher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c4f75f334606a5041c4b7379cfcea5ca32692ec78a7c211fce108a480ec9038b",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vend@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-vend-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vend-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0b1dad36ad7f277510d1b46a8821792d3122f1885e1e6e21272f93c8cf262109",

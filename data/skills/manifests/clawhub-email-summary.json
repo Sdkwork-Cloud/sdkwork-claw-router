@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-summary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-summary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-summary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:efa4dc4a354ede594289184cfa102394f3ea4bb7ec3f54d938f3162279b050a3",

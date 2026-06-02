@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-recommender@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-recommender-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-recommender-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7f5e3ea3583007f1d35da5a71633f0fffcc60ac6be5994f840e26a7b3de74954",

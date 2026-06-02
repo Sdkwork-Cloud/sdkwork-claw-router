@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prism-scanner@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-prism-scanner-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prism-scanner-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:89884799a1fec2fd202bca0792096c0381551b87cba5788d5a0b9f657a8ed1ab",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cmux@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cmux-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cmux-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bcf38cd9e05db3b55c488c77b91c9b1805c848120ce15d162f9fa4cc9f0648ed",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/peacock@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-peacock-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-peacock-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9c04279733de7df009e56f7ee5b55deddc393d77fe2b0a5d829592ede1799de2",

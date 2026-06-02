@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-authenticator-local@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-authenticator-local-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-authenticator-local-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2aec60148c7dd9a618830edc10dccaa5807111cab51f82b36b54632c6871193f",

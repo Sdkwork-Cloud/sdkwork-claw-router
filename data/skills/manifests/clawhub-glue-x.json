@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glue-x@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-glue-x-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glue-x-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:79f20daccc7aae54bdd7b4b66e4822886d729fc7ca320d4c604c9d37b13a2004",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openexec-skill@0.1.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-openexec-skill-0.1.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openexec-skill-0.1.10.json"
+      },
       "version": "0.1.10",
       "runtime": "metadata",
       "checksumHash": "sha256:f7bc22f7dc4dfa0d671437735523782086f7988cc94ee2a61c860538d3ce0f0a",

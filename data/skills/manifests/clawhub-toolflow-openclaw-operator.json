@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toolflow-openclaw-operator@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toolflow-openclaw-operator-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toolflow-openclaw-operator-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c9409539f41958de17caf4440ed0b7f4b6cff451929bfb03fbe476ff32bf4a55",

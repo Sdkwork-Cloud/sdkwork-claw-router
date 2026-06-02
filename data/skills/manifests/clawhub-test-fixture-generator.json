@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-fixture-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-fixture-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-fixture-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ae4ffc49869141bb528cf25619d1037ef47faa48bab35ee173381fdb97a537ff",

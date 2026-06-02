@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/guard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-guard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-guard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26a51153e2c22189849cfd70a1a4f358c37d0cba3770ee9467cc29c1caaf9d09",

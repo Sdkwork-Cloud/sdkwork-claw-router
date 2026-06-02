@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/matz-swarm@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-matz-swarm-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-matz-swarm-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3dd125172b1cc6779608367add19f5aae6659089202119c56c7a416dbcac814a",

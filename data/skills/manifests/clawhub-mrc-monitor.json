@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mrc-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mrc-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mrc-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7d3ce0daad2945b2c049eb3db1b080622739364d9b299b5fed9dc17eae80a9a",

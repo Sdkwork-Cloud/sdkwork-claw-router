@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mlops@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mlops-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mlops-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f885e71b35e42e3daaf0f1846fed7c7746d57abc621009412219f13804ea4db5",

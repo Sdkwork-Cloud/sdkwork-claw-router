@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-trending-project@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-trending-project-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-trending-project-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67de6c7868301320214bcc42794014d5d37907b37972b85a014930baa9a1ef6c",

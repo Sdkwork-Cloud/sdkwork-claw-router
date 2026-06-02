@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shadow-traffic-tester@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shadow-traffic-tester-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shadow-traffic-tester-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:85bdf653101af1b57f0c7bb154baed2815173d910dd704df550155f6f9114820",

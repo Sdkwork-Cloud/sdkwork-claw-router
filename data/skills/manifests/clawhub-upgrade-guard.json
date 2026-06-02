@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/upgrade-guard@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-upgrade-guard-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-upgrade-guard-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be3fb1e2b3b651d7552aa8a5c89912635ac436981a5bd6d5490719a27b758ab4",

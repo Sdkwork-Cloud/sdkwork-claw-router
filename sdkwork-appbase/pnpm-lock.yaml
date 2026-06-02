@@ -453,6 +453,9 @@ importers:
       '@sdkwork/iam-sdk-ports':
         specifier: workspace:*
         version: link:../sdkwork-iam-sdk-ports
+      '@sdkwork/runtime-bootstrap':
+        specifier: workspace:*
+        version: link:../../foundation/sdkwork-runtime-bootstrap
     devDependencies:
       typescript:
         specifier: ^6.0.2
@@ -491,9 +494,17 @@ importers:
 
   packages/pc-react/commerce/sdkwork-offer-pc-react: {}
 
-  packages/pc-react/commerce/sdkwork-order-pc-react: {}
+  packages/pc-react/commerce/sdkwork-order-pc-react:
+    dependencies:
+      '@sdkwork/appbase-pc-react':
+        specifier: workspace:*
+        version: link:../../foundation/sdkwork-appbase-pc-react
 
-  packages/pc-react/commerce/sdkwork-payment-pc-react: {}
+  packages/pc-react/commerce/sdkwork-payment-pc-react:
+    dependencies:
+      '@sdkwork/appbase-pc-react':
+        specifier: workspace:*
+        version: link:../../foundation/sdkwork-appbase-pc-react
 
   packages/pc-react/commerce/sdkwork-points-pc-react: {}
 
@@ -566,6 +577,10 @@ importers:
         version: link:../../foundation/sdkwork-appbase-pc-react
 
   packages/pc-react/foundation/sdkwork-appbase-pc-react:
+    dependencies:
+      '@sdkwork/runtime-bootstrap':
+        specifier: workspace:*
+        version: link:../../../common/foundation/sdkwork-runtime-bootstrap
     devDependencies:
       '@sdkwork/core-pc-react':
         specifier: workspace:*

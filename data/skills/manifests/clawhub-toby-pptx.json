@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-pptx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-pptx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-pptx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a52701124b063ede1db1831a338cd63ee58e0ffa36c60d60c087fa238fb4605f",

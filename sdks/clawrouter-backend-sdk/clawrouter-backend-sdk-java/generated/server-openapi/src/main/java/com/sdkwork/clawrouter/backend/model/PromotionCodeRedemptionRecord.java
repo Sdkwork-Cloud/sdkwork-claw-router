@@ -7,6 +7,7 @@ public class PromotionCodeRedemptionRecord {
     private String currencyCode;
     private String failureCode;
     private String failureMessage;
+    private String id;
     private String idempotencyKey;
     private String occurredAt;
     private String offerId;
@@ -64,6 +65,14 @@ public class PromotionCodeRedemptionRecord {
 
     public void setFailureMessage(String failureMessage) {
         this.failureMessage = failureMessage;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

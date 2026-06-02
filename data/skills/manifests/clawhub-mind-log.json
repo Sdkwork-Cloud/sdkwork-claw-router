@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mind-log@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mind-log-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mind-log-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7103a038d24fcf90042174b44466e0d01a0e2f4de3d5a0ce160fb11a4103ef16",

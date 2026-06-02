@@ -147,12 +147,16 @@ routes:
     plus_app:
     - name
     - description
-    - icon_url
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
     - resource_list
     - platforms
     - install_config
     - release_notes
-    - download_url
+    - artifact_media_resource_id
+    - artifact_object_blob_id
+    - artifact_resource_snapshot
     studio_catalog_action:
     - target_type
     - target_id
@@ -162,7 +166,9 @@ routes:
     - target_type
     - target_id
     - asset_type
-    - asset_url
+    - asset_media_resource_id
+    - asset_object_blob_id
+    - asset_resource_snapshot
     - sort_order
     studio_catalog_artifact:
     - target_type
@@ -171,7 +177,9 @@ routes:
     - version
     - platform_type
     - os_name
-    - artifact_url
+    - artifact_media_resource_id
+    - artifact_object_blob_id
+    - artifact_resource_snapshot
     - release_notes
 - route: /apps/:id
   required_tables:
@@ -184,23 +192,31 @@ routes:
     plus_app:
     - name
     - description
-    - icon_url
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
     - resource_list
     - platforms
     - install_config
     - release_notes
-    - download_url
+    - artifact_media_resource_id
+    - artifact_object_blob_id
+    - artifact_resource_snapshot
     studio_catalog_asset:
     - target_type
     - target_id
     - asset_type
-    - asset_url
+    - asset_media_resource_id
+    - asset_object_blob_id
+    - asset_resource_snapshot
     studio_catalog_artifact:
     - target_type
     - target_id
     - version
     - artifact_size_bytes
-    - artifact_url
+    - artifact_media_resource_id
+    - artifact_object_blob_id
+    - artifact_resource_snapshot
     - published_at
 - route: /auth/login
   required_tables:
@@ -227,7 +243,9 @@ routes:
     - display_name
     - email
     - phone
-    - avatar_url
+    - avatar_media_resource_id
+    - avatar_object_blob_id
+    - avatar_resource_snapshot
     - status
     iam_user_identity:
     - tenant_id
@@ -386,7 +404,9 @@ routes:
     - username
     - display_name
     - email
-    - avatar_url
+    - avatar_media_resource_id
+    - avatar_object_blob_id
+    - avatar_resource_snapshot
     - status
     iam_user_identity:
     - tenant_id
@@ -431,7 +451,9 @@ routes:
     - name
     - provider
     - description
-    - cover_image
+    - cover_media_resource_id
+    - cover_object_blob_id
+    - cover_resource_snapshot
     - version
     - license_name
     - capabilities
@@ -442,13 +464,17 @@ routes:
     - name
     - code
     - type
-    - icon
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
     - sort_weight
     studio_catalog_asset:
     - target_type
     - target_id
     - asset_type
-    - asset_url
+    - asset_media_resource_id
+    - asset_object_blob_id
+    - asset_resource_snapshot
     - sort_order
     studio_catalog_artifact:
     - target_type
@@ -664,7 +690,9 @@ routes:
     - course_code
     - title
     - description
-    - thumbnail_url
+    - thumbnail_media_resource_id
+    - thumbnail_object_blob_id
+    - thumbnail_resource_snapshot
     - instructor_snapshot
     - duration_text
     - lessons_count
@@ -679,7 +707,9 @@ routes:
     - description
     - source_provider
     - external_bvid
-    - video_url
+    - video_media_resource_id
+    - video_object_blob_id
+    - video_resource_snapshot
     - contact_name
     - contact_email
     - status
@@ -722,7 +752,9 @@ routes:
     - course_code
     - title
     - description
-    - thumbnail_url
+    - thumbnail_media_resource_id
+    - thumbnail_object_blob_id
+    - thumbnail_resource_snapshot
     - instructor_snapshot
     - duration_text
     - lessons_count
@@ -748,7 +780,9 @@ routes:
     - lesson_no
     - title
     - description
-    - video_url
+    - video_media_resource_id
+    - video_object_blob_id
+    - video_resource_snapshot
     - external_bvid
     - duration_seconds
     - duration_text
@@ -921,7 +955,9 @@ routes:
     - display_name
     - email
     - phone
-    - avatar_url
+    - avatar_media_resource_id
+    - avatar_object_blob_id
+    - avatar_resource_snapshot
     - status
     iam_user_identity:
     - tenant_id
@@ -1167,7 +1203,9 @@ routes:
     - name
     - code
     - type
-    - icon
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
     - sort_weight
     - parent_id
     - path
@@ -1280,7 +1318,9 @@ routes:
     - name
     - code
     - type
-    - icon
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
     - sort_weight
     - parent_id
     - path
@@ -1382,8 +1422,9 @@ routes:
     - name
     - description
     - version
-    - icon
-    - icon_url
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
     - resource_list
     - project_id
     - access_url
@@ -1398,7 +1439,9 @@ routes:
     - package_name
     - bundle_id
     - store_url
-    - download_url
+    - artifact_media_resource_id
+    - artifact_object_blob_id
+    - artifact_resource_snapshot
     - created_at
     - updated_at
     plus_category:
@@ -1406,7 +1449,9 @@ routes:
     - description
     - code
     - type
-    - icon
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
     - sort_weight
     - parent_id
     - path
@@ -1424,8 +1469,12 @@ routes:
     - runtime
     - framework
     - language
-    - icon_url
-    - cover_url
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
+    - cover_media_resource_id
+    - cover_object_blob_id
+    - cover_resource_snapshot
     - visibility
     - publish_status
     - featured
@@ -1452,7 +1501,9 @@ routes:
     - target_type
     - target_id
     - asset_type
-    - asset_url
+    - asset_media_resource_id
+    - asset_object_blob_id
+    - asset_resource_snapshot
     - sort_order
     studio_catalog_artifact:
     - target_type
@@ -1461,10 +1512,12 @@ routes:
     - version
     - platform_type
     - os_name
-    - artifact_url
+    - artifact_media_resource_id
+    - artifact_object_blob_id
+    - artifact_resource_snapshot
     - release_notes
 - route: /admin/courses
-  required_tables: &adminCourseRequiredTables
+  required_tables:
   - content_course
   - content_course_section
   - content_course_lesson
@@ -1576,8 +1629,12 @@ routes:
     - name
     - summary
     - description
-    - icon
-    - cover_image
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
+    - cover_media_resource_id
+    - cover_object_blob_id
+    - cover_resource_snapshot
     - category_id
     - package_id
     - provider
@@ -1619,8 +1676,12 @@ routes:
     - name
     - summary
     - description
-    - icon
-    - cover_image
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
+    - cover_media_resource_id
+    - cover_object_blob_id
+    - cover_resource_snapshot
     - category_id
     - enabled
     - featured
@@ -1634,7 +1695,9 @@ routes:
     - description
     - code
     - type
-    - icon
+    - icon_media_resource_id
+    - icon_object_blob_id
+    - icon_resource_snapshot
     - sort_weight
     - parent_id
     - path
@@ -1650,8 +1713,12 @@ routes:
     - target_id
     - artifact_id
     - asset_type
-    - asset_url
-    - thumbnail_url
+    - asset_media_resource_id
+    - asset_object_blob_id
+    - asset_resource_snapshot
+    - thumbnail_media_resource_id
+    - thumbnail_object_blob_id
+    - thumbnail_resource_snapshot
     - title
     - alt_text
     - mime_type
@@ -1672,7 +1739,9 @@ routes:
     - platform_type
     - os_name
     - artifact_ref
-    - artifact_url
+    - artifact_media_resource_id
+    - artifact_object_blob_id
+    - artifact_resource_snapshot
     - artifact_size_bytes
     - runtime
     - frameworks
@@ -1951,6 +2020,7 @@ routes:
   - commerce_payment_intent
   - commerce_payment_attempt
   - commerce_product_spu
+  - commerce_product_spu_category
   - commerce_product_sku
   - commerce_product_category
   - commerce_product_media
@@ -2050,9 +2120,12 @@ routes:
 - route: /admin/catalog
   required_tables:
   - commerce_product_category
+  - plus_category
   - commerce_product_spu
+  - commerce_product_spu_category
   - commerce_product_sku
   - commerce_product_attribute
+  - commerce_product_category_attribute
   - commerce_product_attribute_value
   - commerce_product_sku_attribute
   - commerce_product_media
@@ -2169,6 +2242,33 @@ routes:
   - commerce_product_spu
   - commerce_product_sku
   - commerce_product_attribute
+  - commerce_product_category_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  - ops_audit_log
+- route: /admin/catalog/products/new
+  required_tables:
+  - commerce_product_category
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  - ops_audit_log
+- route: /admin/catalog/products/:productId/edit
+  required_tables:
+  - commerce_product_category
+  - commerce_product_spu
+  - commerce_product_spu_category
+  - commerce_product_sku
+  - commerce_product_attribute
+  - commerce_product_category_attribute
   - commerce_product_attribute_value
   - commerce_product_sku_attribute
   - commerce_product_media
@@ -2179,8 +2279,10 @@ routes:
   required_tables:
   - commerce_product_category
   - commerce_product_spu
+  - commerce_product_spu_category
   - commerce_product_sku
   - commerce_product_attribute
+  - commerce_product_category_attribute
   - commerce_product_attribute_value
   - commerce_product_sku_attribute
   - commerce_product_media
@@ -2191,8 +2293,10 @@ routes:
   required_tables:
   - commerce_product_category
   - commerce_product_spu
+  - commerce_product_spu_category
   - commerce_product_sku
   - commerce_product_attribute
+  - commerce_product_category_attribute
   - commerce_product_attribute_value
   - commerce_product_sku_attribute
   - commerce_product_media
@@ -2203,8 +2307,10 @@ routes:
   required_tables:
   - commerce_product_category
   - commerce_product_spu
+  - commerce_product_spu_category
   - commerce_product_sku
   - commerce_product_attribute
+  - commerce_product_category_attribute
   - commerce_product_attribute_value
   - commerce_product_sku_attribute
   - commerce_product_media
@@ -2427,6 +2533,20 @@ routes:
   - commerce_payment_reconciliation_run
   - ops_audit_log
 - route: /admin/memberships/packages
+  required_tables:
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_membership
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+  - commerce_product_spu
+  - commerce_product_sku
+  - ops_audit_log
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_order_item
+- route: /admin/memberships/vip-packages
   required_tables:
   - commerce_membership_plan
   - commerce_membership_package

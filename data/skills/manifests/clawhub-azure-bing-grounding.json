@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/azure-bing-grounding@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-azure-bing-grounding-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-azure-bing-grounding-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57798feb94e45bbe700db278f8a7c34ee46430c703e4120ba258749628531b1a",

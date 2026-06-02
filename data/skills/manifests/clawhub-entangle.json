@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/entangle@1.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-entangle-1.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-entangle-1.8.0.json"
+      },
       "version": "1.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:51030de30caea9822dc37b051e76b48d031ac347208045f812cad2d89428907b",

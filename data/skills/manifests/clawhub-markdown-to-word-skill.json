@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/markdown-to-word-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-markdown-to-word-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-markdown-to-word-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e14736cb642f423c1418bc380efd1995551a0567b25613bf8e49ccfb851bdedb",

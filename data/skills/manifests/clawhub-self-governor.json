@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-governor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-governor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-governor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:02d84b8967e19da4e504ffa0193d1b06dbb2150337ef0305916d3e86161d1cf7",

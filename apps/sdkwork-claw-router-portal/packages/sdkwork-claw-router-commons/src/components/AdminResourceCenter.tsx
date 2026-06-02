@@ -55,6 +55,7 @@ export type AdminResourceRowAction<TSectionId extends string = string, TGroup ex
   tone?: 'default' | 'danger';
   title?: string | ((record: AdminResourceRecord) => string);
   isDisabled?: (record: AdminResourceRecord) => boolean;
+  isVisible?: (record: AdminResourceRecord) => boolean;
   onClick: (record: AdminResourceRecord, section: AdminResourceSection<TSectionId, TGroup>) => void;
 };
 
@@ -410,7 +411,7 @@ export function AdminResourceCenter<TSectionId extends string = string, TGroup e
                               {recordOpenLabel}
                             </button>
                           ) : null}
-                          {recordRowActions.map((action, actionIndex) => {
+                          {recordRowActions.filter((action) => action.isVisible?.(record) ?? true).map((action, actionIndex) => {
                             const actionDisabled = action.isDisabled?.(record) ?? false;
                             const actionTitle = typeof action.title === 'function' ? action.title(record) : action.title;
                             return (

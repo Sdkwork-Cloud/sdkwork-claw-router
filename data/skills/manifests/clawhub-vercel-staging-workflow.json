@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vercel-staging-workflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vercel-staging-workflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vercel-staging-workflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8fdad3e866b12dec629c051cd61e3fccddf58864833b236b05bd6408752fb59",

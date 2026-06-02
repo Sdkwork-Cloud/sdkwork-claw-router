@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/domain-registration@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-domain-registration-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-domain-registration-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29d0131f1b72251659c7acfe16a93f09f06e751756baef27f69752fa6bc20a69",

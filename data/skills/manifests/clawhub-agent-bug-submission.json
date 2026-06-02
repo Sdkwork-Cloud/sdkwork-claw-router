@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bug-submission@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bug-submission-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bug-submission-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d85b2711167905d963a4c7147970a0bc99ace40f87c806de26a5f06c0c07c0d",

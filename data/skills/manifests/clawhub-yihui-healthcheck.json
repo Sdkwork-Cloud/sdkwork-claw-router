@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yihui-healthcheck@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-yihui-healthcheck-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yihui-healthcheck-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:637e9869c573b30b7d86d233e566afe0921172bf49a23cfa36be22f06f052aad",

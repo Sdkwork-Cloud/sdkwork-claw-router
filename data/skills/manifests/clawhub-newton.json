@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/newton@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-newton-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-newton-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a1dd375bd0ef07f8fe933a9293bd75be4e11e4584d97ca1ec474501fd4e061d1",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bigin@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bigin-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bigin-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:95427ea1a49ecf93ff4103c4fc1bcbd7f3ebbcf43262dcec0929e34e8fc0d71a",

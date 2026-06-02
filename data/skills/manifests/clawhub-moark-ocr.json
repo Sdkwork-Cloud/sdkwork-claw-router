@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moark-ocr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moark-ocr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moark-ocr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cefabb2cde6e531dd1ff98e2ae7b4969ae2966ae40a0a08b9db1859920371285",

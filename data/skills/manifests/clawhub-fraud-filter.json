@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fraud-filter@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fraud-filter-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fraud-filter-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d3b2c2bcc09c576e73a93bd017bea3f56ecf4c149455a34bad52a1e2022a6bf6",

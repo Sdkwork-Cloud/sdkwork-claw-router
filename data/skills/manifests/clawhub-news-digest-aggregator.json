@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/news-digest-aggregator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-news-digest-aggregator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-news-digest-aggregator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7c9a63c40d70ddc62af60a95025067a002947749a19e0e483d6d524f90366744",

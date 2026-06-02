@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-backup-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-backup-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-backup-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:f7f8366ed434185a479a0af6129643d4c3462f9d6e2960e1e8604e7321070c0e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/brew-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-brew-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-brew-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cda577e65446db01a79e81c9bed76c8ba6a36807a39f672f51f3d066d0bfa05b",

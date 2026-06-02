@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nokia@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nokia-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nokia-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0105beeb3b6304ffe34bec844f14208729a6bb0ee74b8988c5e2bb683088b95",

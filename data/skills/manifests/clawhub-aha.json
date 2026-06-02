@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aha@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-aha-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aha-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a89f33d73e9d8a89281a7e74e272808ec5e4ad689df1ae5fd3a188fb0919abf0",

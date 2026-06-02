@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/braun@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-braun-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-braun-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:024fc1e34bb412bdc0b32a2c0deb3b562c9bf625967d2e58499b085aada9bc79",

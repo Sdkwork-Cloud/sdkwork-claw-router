@@ -1,6 +1,9 @@
 use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::sql_admin_product_center::{
+    media_resource_from_snapshot, media_resource_locator,
+};
 use crate::ports::{
     AdminAgentReadFuture, AdminAgentStore, AppAgentCapabilities, AppAgentItem,
     AppAgentRegistryFuture, AppAgentRegistryQuery, AppAgentRegistryStore, AppAgentRegistrySubject,
@@ -466,7 +469,7 @@ fn agent_select_sql(extra: &str) -> String {
             COALESCE(a.description, '') AS description,
             a.visibility,
             a.status AS agent_status,
-            a.avatar_url,
+            COALESCE(CAST(a.avatar_resource_snapshot AS TEXT), '') AS avatar_resource_snapshot,
             a.template_source,
             a.created_at AS agent_created_at,
             a.updated_at AS agent_updated_at,
@@ -510,7 +513,7 @@ fn admin_agent_select_sql(extra: &str) -> String {
             COALESCE(a.description, '') AS description,
             a.visibility,
             a.status AS agent_status,
-            a.avatar_url,
+            COALESCE(CAST(a.avatar_resource_snapshot AS TEXT), '') AS avatar_resource_snapshot,
             a.template_source,
             a.created_at AS agent_created_at,
             a.updated_at AS agent_updated_at,
@@ -570,7 +573,7 @@ fn row_to_agent(row: sqlx::sqlite::SqliteRow) -> DomainResult<AppAgentItem> {
         description: string_cell(&row, "description"),
         visibility: visibility_label(integer_cell(&row, "visibility")).to_owned(),
         status: status_label(integer_cell(&row, "agent_status")).to_owned(),
-        avatar_url: optional_string_cell(&row, "avatar_url"),
+        avatar: optional_media_resource_from_row(&row, "avatar_resource_snapshot"),
         template_source: optional_string_cell(&row, "template_source"),
         created_at: string_cell(&row, "agent_created_at"),
         updated_at: string_cell(&row, "agent_updated_at"),
@@ -686,6 +689,18 @@ fn json_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> DomainResult<serde_
 
 fn string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> String {
     optional_string_cell(row, column).unwrap_or_else(String::new)
+}
+
+fn optional_media_resource_from_row(
+    row: &sqlx::sqlite::SqliteRow,
+    column: &str,
+) -> Option<serde_json::Value> {
+    let snapshot = string_cell(row, column);
+    if snapshot.trim().is_empty() {
+        return None;
+    }
+    let resource = media_resource_from_snapshot(&snapshot, "image");
+    media_resource_locator(&resource).map(|_| resource)
 }
 
 fn optional_string_cell(row: &sqlx::sqlite::SqliteRow, column: &str) -> Option<String> {

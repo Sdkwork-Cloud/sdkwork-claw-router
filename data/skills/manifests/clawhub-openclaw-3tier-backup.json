@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-3tier-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-3tier-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-3tier-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93842d2fd5abe08c63433baf06248466dcd88e99283d10129827bb23a4c79b1c",

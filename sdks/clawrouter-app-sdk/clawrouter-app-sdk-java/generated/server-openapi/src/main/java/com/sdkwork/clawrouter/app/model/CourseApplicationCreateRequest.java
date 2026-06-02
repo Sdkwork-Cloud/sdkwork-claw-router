@@ -10,7 +10,7 @@ public class CourseApplicationCreateRequest {
     private String notes;
     private String sourceProvider;
     private String title;
-    private String videoUrl;
+    private MediaResource video;
 
     public String getCategory() {
         return this.category;
@@ -76,11 +76,11 @@ public class CourseApplicationCreateRequest {
         this.title = title;
     }
 
-    public String getVideoUrl() {
-        return this.videoUrl;
+    public MediaResource getVideo() {
+        return this.video;
     }
 
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
+    public void setVideo(MediaResource video) {
+        this.video = video;
     }
 }

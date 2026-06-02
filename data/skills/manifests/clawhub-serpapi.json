@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/serpapi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-serpapi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-serpapi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:94827f9495b030b0588a7e5daedfd6201bb84c937d17ce2de2916067f05b40bb",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vmware-monitor@1.5.22",
-      "artifactUrl": "data/skills/artifacts/clawhub-vmware-monitor-1.5.22.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vmware-monitor-1.5.22.json"
+      },
       "version": "1.5.22",
       "runtime": "metadata",
       "checksumHash": "sha256:a81738730055a0e25c3f2797ce2aa8c2e0453b05d492548e0d9b74748fa35f46",

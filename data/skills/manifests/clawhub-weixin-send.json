@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weixin-send@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weixin-send-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weixin-send-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:51feeb6f744ca006269bdda7eea7cd10a118d99b9eee5ce5fd7ff3738a88c363",

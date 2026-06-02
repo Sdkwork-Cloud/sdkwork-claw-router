@@ -2,11 +2,14 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class AppReleaseItem:
     """App release item schema exposed by Claw Router."""
-    download_url: str
+    artifact: MediaResource
     id: str
     os: str
     platform_type: str

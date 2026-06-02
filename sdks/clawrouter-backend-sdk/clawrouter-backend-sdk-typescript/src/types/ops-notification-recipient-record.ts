@@ -14,12 +14,16 @@ export interface OpsNotificationRecipientRecord {
   deleted_by?: string;
   /** Id field on ops notification recipient record. */
   id?: string;
+  /** Message id field on ops notification recipient record. */
+  message_id?: string;
   /** Metadata field on ops notification recipient record. */
   metadata?: Record<string, JsonValue>;
   /** Organization id field on ops notification recipient record. */
   organization_id?: string;
   /** Recipient role code field on ops notification recipient record. */
   recipient_role_code?: string;
+  /** Recipient type field on ops notification recipient record. */
+  recipient_type?: string;
   /** Recipient user id field on ops notification recipient record. */
   recipient_user_id?: string;
   /** Recipient value field on ops notification recipient record. */

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generate-image-from-html@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-generate-image-from-html-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generate-image-from-html-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a0fe2f0970470e2dd364d42376068a9fc39076648eb171fb481cdea7eb72fa9",

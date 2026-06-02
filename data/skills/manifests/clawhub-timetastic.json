@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/timetastic@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-timetastic-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-timetastic-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d4604ef6c4815efa4ed081348ed19dfadbc2d171905a095d525de4658457215b",

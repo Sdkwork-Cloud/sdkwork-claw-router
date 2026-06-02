@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pacman-hedera@5.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pacman-hedera-5.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pacman-hedera-5.0.1.json"
+      },
       "version": "5.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:15917049b96f95a45122ed166be11aa3cc28e4e60fb10962dcede944496a21bb",

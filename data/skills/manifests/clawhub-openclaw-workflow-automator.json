@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-workflow-automator@2.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-workflow-automator-2.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-workflow-automator-2.0.6.json"
+      },
       "version": "2.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:10f526cf79260a43a77c4c711f370dabc4c1a58fa012e0ca7c2d5228af15d68f",

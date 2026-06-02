@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/web-dashboard-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-web-dashboard-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-web-dashboard-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:abf5d7bc3405a650e0cca81debe442d740359c2c81de947e65c45e6277663063",

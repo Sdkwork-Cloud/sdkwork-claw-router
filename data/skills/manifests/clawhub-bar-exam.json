@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bar-exam@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bar-exam-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bar-exam-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3e22b6e03386451816cb658dde757bee72a3264566c8dc072a9274c460346c25",

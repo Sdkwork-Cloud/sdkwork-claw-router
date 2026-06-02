@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-writer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-writer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-writer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc28dea03bc145a6946ffa5fd0c9f7d42d49626cdca652e270d67bbdb5e34192",

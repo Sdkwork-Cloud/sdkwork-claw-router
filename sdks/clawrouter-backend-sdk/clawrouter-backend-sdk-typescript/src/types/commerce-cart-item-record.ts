@@ -6,12 +6,18 @@ export interface CommerceCartItemRecord {
   cart_id: string;
   /** Created at field on commerce cart item record. */
   created_at: string;
+  /** Id field on commerce cart item record. */
+  id?: string;
   /** Metadata json field on commerce cart item record. */
   metadata_json?: Record<string, JsonValue>;
   /** Organization id field on commerce cart item record. */
   organization_id?: string;
   /** Price snapshot json field on commerce cart item record. */
   price_snapshot_json?: Record<string, JsonValue>;
+  /** Quantity field on commerce cart item record. */
+  quantity: string;
+  /** Selected field on commerce cart item record. */
+  selected: boolean;
   /** Sku id field on commerce cart item record. */
   sku_id: string;
   /** Tenant id field on commerce cart item record. */

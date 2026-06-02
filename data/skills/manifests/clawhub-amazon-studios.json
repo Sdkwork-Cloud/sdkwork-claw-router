@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-studios@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-studios-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-studios-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b244a9139808caa2abd469a9136f7cb696f7555114b7288cffedd026140cfd98",

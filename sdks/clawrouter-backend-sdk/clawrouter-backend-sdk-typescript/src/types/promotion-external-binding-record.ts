@@ -22,6 +22,8 @@ export interface PromotionExternalBindingRecord {
   external_object_id: string;
   /** External object type field on promotion external binding record. */
   external_object_type: string;
+  /** Id field on promotion external binding record. */
+  id?: string;
   /** Last error code field on promotion external binding record. */
   last_error_code?: string;
   /** Last error message field on promotion external binding record. */

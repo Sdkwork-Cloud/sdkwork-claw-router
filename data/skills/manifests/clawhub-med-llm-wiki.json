@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/med-llm-wiki@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-med-llm-wiki-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-med-llm-wiki-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3ab992d7dfbeb7bc709b117273ec88dd19d1104551d78b2e0922b288957fdff",

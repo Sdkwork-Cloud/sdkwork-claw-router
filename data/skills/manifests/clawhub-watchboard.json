@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/watchboard@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-watchboard-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-watchboard-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:beeede15f1f481b1709885c691dd6285a246d3913f076a052aa60b4549c07921",

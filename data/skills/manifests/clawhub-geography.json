@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geography@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-geography-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geography-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a1ea2ff5a4f1b6c32be531bbcbbd26095a243b53042e031d934ebc16a9359fc2",

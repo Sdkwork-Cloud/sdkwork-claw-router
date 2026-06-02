@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentcloud-aigc-recog-video@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-aigc-recog-video-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentcloud-aigc-recog-video-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:3a768ef888de51ef407316bffd428da08c842a9b78fedaa3a1d15e2d2f0d80af",

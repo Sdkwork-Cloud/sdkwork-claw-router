@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/achievement-unlocked@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-achievement-unlocked-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-achievement-unlocked-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3f80813eab4d8e260742edd85f53b0f739e576e1e5314bd55f21e863792d9c7",

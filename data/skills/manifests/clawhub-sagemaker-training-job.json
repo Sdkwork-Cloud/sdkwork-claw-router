@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sagemaker-training-job@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sagemaker-training-job-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sagemaker-training-job-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:49890b4de2dd2b5f7efa4a00a5ce6bacfa6eb7e5dbefd16630620c687ce49a42",

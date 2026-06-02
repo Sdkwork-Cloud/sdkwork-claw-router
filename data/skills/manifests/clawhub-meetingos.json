@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meetingos@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-meetingos-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meetingos-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:ddffc18400b5c6ea168dba89f2ac65a61398c7d76e19026308a713a3ebef0921",

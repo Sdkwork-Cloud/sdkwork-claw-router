@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/barcode2@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-barcode2-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-barcode2-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6e5bfa7f6ce5a994e14ca5ff9a172721cfbd79526a4765f86bf10a2045aa1359",

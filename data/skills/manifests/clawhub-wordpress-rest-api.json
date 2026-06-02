@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wordpress-rest-api@0.6.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-rest-api-0.6.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wordpress-rest-api-0.6.0.json"
+      },
       "version": "0.6.0",
       "runtime": "metadata",
       "checksumHash": "sha256:118dfe45a572a2bdad2e72064e9606e708c555449aba626b2f9ad8055d0f68cd",

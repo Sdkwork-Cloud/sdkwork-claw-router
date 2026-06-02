@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentrank@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentrank-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentrank-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c49a6567a19825a4955330dfc868b9577996716422aef74dd335db745686d7b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bid-document@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bid-document-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bid-document-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bfe434e987cdb5e50f6dabcf2c03c5538874de0833b680e73bea88fc7a336b97",

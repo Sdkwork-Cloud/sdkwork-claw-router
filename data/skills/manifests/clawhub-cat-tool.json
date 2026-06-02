@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cat-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cat-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cat-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bbf61398d0e0225ade720cc9031c474184e6f685878d701f3415e5ce68c6d484",

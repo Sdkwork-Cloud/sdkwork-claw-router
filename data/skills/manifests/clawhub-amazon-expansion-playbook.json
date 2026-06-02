@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-expansion-playbook@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-expansion-playbook-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-expansion-playbook-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c39c3af56ef3be04660df7c81727e5d6d41c80c2c3e8f0544f6f1ffed3ed44b",

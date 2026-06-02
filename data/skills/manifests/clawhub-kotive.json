@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kotive@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kotive-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kotive-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:685a3f7810a04d1da1a25642e63177a76ff56332643a792363930685dc4f5def",

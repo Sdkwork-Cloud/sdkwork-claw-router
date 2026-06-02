@@ -6,6 +6,7 @@ type CommercePaymentAttemptRecord struct {
 	CallbackPayload string `json:"callback_payload"`
 	CreatedAt string `json:"created_at"`
 	CurrencyCode string `json:"currency_code"`
+	Id string `json:"id"`
 	OrderId string `json:"order_id"`
 	OrganizationId string `json:"organization_id"`
 	OutTradeNo string `json:"out_trade_no"`

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-safe-install@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-safe-install-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-safe-install-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9ec3e66cf33b2c631343c1de4859d18fe203e3b3f0e7e9e53aea0aafb210e877",

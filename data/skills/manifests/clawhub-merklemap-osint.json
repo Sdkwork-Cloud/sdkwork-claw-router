@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/merklemap-osint@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-merklemap-osint-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-merklemap-osint-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:577e8dcba39f4711a210b4daa2dd7d108959fd0abe2b61d7d5d8f9d51c889c71",

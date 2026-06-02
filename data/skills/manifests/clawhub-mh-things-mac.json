@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mh-things-mac@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mh-things-mac-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mh-things-mac-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:505bff48e83a0db3c620608dd12d02353c89652284c9426925771d7bbf654b89",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/discourse@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-discourse-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-discourse-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:68faedda110d017ebe7b4588b11e1029e6d0d88d297fc0c9aa73be7b3ae81840",

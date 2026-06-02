@@ -10,7 +10,9 @@ type CommercePaymentRouteRuleRecord struct {
 	CreatedAt string `json:"created_at"`
 	CurrencyCode string `json:"currency_code"`
 	EndsAt string `json:"ends_at"`
+	Id string `json:"id"`
 	OrganizationId string `json:"organization_id"`
+	Priority string `json:"priority"`
 	PurchaseType string `json:"purchase_type"`
 	RiskLevel string `json:"risk_level"`
 	RuleNo string `json:"rule_no"`

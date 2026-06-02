@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bilibili-transcript@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-transcript-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bilibili-transcript-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c4c42b89b183fef322770f5b557b8f463cb162a7b52c0146d40921a0985b3f95",

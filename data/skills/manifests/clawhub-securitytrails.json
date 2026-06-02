@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/securitytrails@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-securitytrails-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-securitytrails-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c8a412e97b621d7f4fe966e34c5e04fff27bc89755879a6b488b5b59e6bdaa09",

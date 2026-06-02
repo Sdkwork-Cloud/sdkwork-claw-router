@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/karpathy-lint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-lint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-karpathy-lint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf5e453d4357e714e31df8b31777bdd239c5b167c3eed307c9c06f1aa364a3e9",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prove@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-prove-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prove-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e4b08ccba3288bccb62ddc1d44c2d255a0c964ac95e83d9b2881360ca9ad27ce",

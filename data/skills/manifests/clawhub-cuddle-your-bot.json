@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cuddle-your-bot@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cuddle-your-bot-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cuddle-your-bot-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:002b56fd687c0bd290f72d7c84cc3b657d88ec526e0d55da1487dd23fe566564",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sst-simple@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sst-simple-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sst-simple-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7209cccd53b054dc26b9ff3ac928bda625fe929826359c3d50c39e024a137dc9",

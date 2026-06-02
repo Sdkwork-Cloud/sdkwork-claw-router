@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/caid-multi-agent@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-caid-multi-agent-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-caid-multi-agent-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ceac86af141258ccda795bc275447eabc388095267bed66977eb29b67a76a0df",

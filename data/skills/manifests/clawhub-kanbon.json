@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kanbon@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kanbon-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kanbon-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75ce5f65583f99c5ea073583ec6978c7203cd7d8159c3c80f70cfb167791218b",

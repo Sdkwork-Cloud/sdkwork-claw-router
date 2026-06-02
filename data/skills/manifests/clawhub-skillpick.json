@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skillpick@6.9.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skillpick-6.9.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skillpick-6.9.1.json"
+      },
       "version": "6.9.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0678256be5ad3fb0a43b620930e626b5696522cf21a8af110a33f97cebdde79c",

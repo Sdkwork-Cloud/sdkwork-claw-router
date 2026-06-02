@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-persona-analyzer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-persona-analyzer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-persona-analyzer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4f68efff12b1fe50aa207088f4e8a0a9c063b9688b0e13ff925dd73cd7099ff6",

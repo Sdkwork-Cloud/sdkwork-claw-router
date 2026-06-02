@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/corust-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-corust-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-corust-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2f6c023cf989eaca96e719b2b193fe5fe5f6022cb798a71d8f48672197606bd",

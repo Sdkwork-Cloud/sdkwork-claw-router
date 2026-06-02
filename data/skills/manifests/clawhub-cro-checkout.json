@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cro-checkout@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cro-checkout-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cro-checkout-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d01af43660735f5f1ecdc6f11c9bc801e13bad89ceda0f7889636b89381c10a",

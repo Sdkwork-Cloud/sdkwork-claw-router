@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/k8s-fta-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-k8s-fta-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-k8s-fta-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:416540d21117bb4cc9b2a1df9ec47afd99c407bca61d9648890aa2b9d2b06e66",

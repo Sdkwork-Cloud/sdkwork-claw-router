@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snooker-skill@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-snooker-skill-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snooker-skill-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9755d1e0a7f27d24d92fe5fc0d58e846c64025a05b9f96cb51fc2f96ed585b15",

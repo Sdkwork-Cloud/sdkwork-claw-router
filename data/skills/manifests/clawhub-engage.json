@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/engage@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-engage-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-engage-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:cc2838fb0635312a7566fce09528e05512bb1e6ee2823fc15f5f9088af133581",

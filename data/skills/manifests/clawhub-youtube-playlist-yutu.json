@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-playlist-yutu@0.10.7-dev",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-playlist-yutu-0.10.7-dev.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-playlist-yutu-0.10.7-dev.json"
+      },
       "version": "0.10.7-dev",
       "runtime": "metadata",
       "checksumHash": "sha256:7d2a25003471870013c25d7761ca116906647a5f4e8978b623b9d68862419e93",

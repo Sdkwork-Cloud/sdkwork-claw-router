@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/utxo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-utxo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-utxo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c5dfad036aa986169c29613a33be2da186636a7a181039430a4b018d56285f02",

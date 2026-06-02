@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cicd-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cicd-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cicd-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:875d1f9c8edaffb49e2b2dd809de8e3b0f5f5cf21f52b91d52507b890e06e495",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-to-podcast@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-to-podcast-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-to-podcast-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:038eda88da83bba4a390a1b34e9c68e6092f10d694dd5fbcf1c5b6b64c97e031",

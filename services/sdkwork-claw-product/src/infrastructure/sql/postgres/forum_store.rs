@@ -74,7 +74,7 @@ impl ForumFeedReadStore for PostgresForumStore {
                     COALESCE(f.category_id, 0) AS category_id,
                     COALESCE(f.content_type, 0) AS content_type,
                     COALESCE(f.content_id, 0) AS content_id,
-                    COALESCE(f.cover_images::text, '') AS cover_images,
+                    COALESCE(f.cover_resources::text, '') AS cover_resources,
                     COALESCE(f.tags::text, '') AS tags,
                     COALESCE(f.author::text, '') AS author,
                     COALESCE(f.view_count, 0) AS view_count,
@@ -190,7 +190,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
             let feed_id = next_entity_id();
             let title = normalized_title(command.title.as_deref(), &command.content);
             let category_id = command.category_id.unwrap_or_default();
-            let cover_images = cover_images_json(&command.images);
+            let cover_resources = cover_resources_json(&command.images);
             let resource_list = resource_list_json(&command.images);
             let tags = tags_json(&command.tags);
             let author = author_json(subject);
@@ -199,7 +199,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
                 r#"
                 INSERT INTO plus_feeds
                     (id, uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id,
-                     title, summary, category_id, content_type, content_id, cover_images, resource_list,
+                     title, summary, category_id, content_type, content_id, cover_resources, resource_list,
                      author, source, source_url, publish_time, tags, status, view_count, like_count,
                      comment_count, share_count, favorite_count, is_top, is_hot, is_recommended, sort_order)
                 VALUES
@@ -219,7 +219,7 @@ impl ForumFeedCommandStore for PostgresForumStore {
             .bind(&command.content)
             .bind(category_id)
             .bind(CONTENT_TYPE_FEEDS)
-            .bind(cover_images.to_string())
+            .bind(cover_resources.to_string())
             .bind(resource_list.to_string())
             .bind(author.to_string())
             .bind(command.source.as_deref())
@@ -809,7 +809,7 @@ async fn load_feed_by_id(
                 COALESCE(f.category_id, 0) AS category_id,
                 COALESCE(f.content_type, 0) AS content_type,
                 COALESCE(f.content_id, 0) AS content_id,
-                COALESCE(f.cover_images::text, '') AS cover_images,
+                COALESCE(f.cover_resources::text, '') AS cover_resources,
                 COALESCE(f.tags::text, '') AS tags,
                 COALESCE(f.author::text, '') AS author,
                 COALESCE(f.view_count, 0) AS view_count,
@@ -1381,7 +1381,7 @@ fn feed_from_row(row: &sqlx::postgres::PgRow) -> ForumFeedItem {
         title: string_cell(row, "title"),
         content: string_cell(row, "summary"),
         summary: string_cell(row, "summary"),
-        cover_image: first_cover_image(&string_cell(row, "cover_images")),
+        cover: first_cover_media_resource(&string_cell(row, "cover_resources")),
         content_type: content_type_slug(integer_cell(row, "content_type")).to_owned(),
         category_id: integer_cell(row, "category_id"),
         tags: parse_tags(&string_cell(row, "tags")),
@@ -1634,34 +1634,22 @@ fn comment_status_name(value: i64) -> &'static str {
     }
 }
 
-fn cover_images_json(images: &[String]) -> Value {
+fn cover_resources_json(images: &[Value]) -> Value {
     json!({
         "images": images
             .iter()
-            .filter_map(|url| {
-                let url = url.trim();
-                if url.is_empty() {
-                    None
-                } else {
-                    Some(json!({ "url": url }))
-                }
-            })
+            .map(|value| value_to_media_resource(value, "image"))
+            .filter(media_resource_has_locator)
             .collect::<Vec<_>>()
     })
 }
 
-fn resource_list_json(images: &[String]) -> Value {
+fn resource_list_json(images: &[Value]) -> Value {
     json!({
         "resources": images
             .iter()
-            .filter_map(|url| {
-                let url = url.trim();
-                if url.is_empty() {
-                    None
-                } else {
-                    Some(json!({ "type": "image", "url": url }))
-                }
-            })
+            .map(|value| value_to_media_resource(value, "image"))
+            .filter(media_resource_has_locator)
             .collect::<Vec<_>>()
     })
 }
@@ -1695,30 +1683,25 @@ fn author_json(subject: ForumSubject) -> Value {
     })
 }
 
-fn first_cover_image(raw: &str) -> String {
+fn first_cover_media_resource(raw: &str) -> Value {
     let Ok(value) = serde_json::from_str::<Value>(raw) else {
-        return String::new();
+        return empty_media_resource("image");
     };
-    find_url_in_value(&value).unwrap_or_default()
+    find_media_resource_in_value(&value, "image").unwrap_or_else(|| empty_media_resource("image"))
 }
 
-fn find_url_in_value(value: &Value) -> Option<String> {
+fn find_media_resource_in_value(value: &Value, kind: &str) -> Option<Value> {
     match value {
         Value::String(value) => {
-            let value = value.trim();
-            if value.is_empty() {
-                None
-            } else {
-                Some(value.to_owned())
-            }
+            Some(media_resource_from_url(value, kind)).filter(media_resource_has_locator)
         }
-        Value::Array(items) => items.iter().find_map(find_url_in_value),
+        Value::Array(items) => items
+            .iter()
+            .find_map(|value| find_media_resource_in_value(value, kind)),
         Value::Object(object) => {
-            if let Some(Value::String(url)) = object.get("url") {
-                let url = url.trim();
-                if !url.is_empty() {
-                    return Some(url.to_owned());
-                }
+            let resource = value_to_media_resource(value, kind);
+            if media_resource_has_locator(&resource) {
+                return Some(resource);
             }
             for key in [
                 "images",
@@ -1728,12 +1711,82 @@ fn find_url_in_value(value: &Value) -> Option<String> {
                 "faceImage",
                 "avatar",
             ] {
-                if let Some(value) = object.get(key).and_then(find_url_in_value) {
+                if let Some(value) = object
+                    .get(key)
+                    .and_then(|value| find_media_resource_in_value(value, kind))
+                {
                     return Some(value);
                 }
             }
             None
         }
+        _ => None,
+    }
+}
+
+fn value_to_media_resource(value: &Value, kind: &str) -> Value {
+    if let Value::Object(object) = value {
+        if matches!(object.get("kind"), Some(Value::String(_)))
+            && matches!(object.get("source"), Some(Value::String(_)))
+        {
+            return value.clone();
+        }
+    }
+    media_resource_from_url(&value_to_media_url(value).unwrap_or_default(), kind)
+}
+
+fn media_resource_from_url(url: &str, kind: &str) -> Value {
+    let url = url.trim();
+    if url.is_empty() {
+        return empty_media_resource(kind);
+    }
+    let source = if url.starts_with("data:") {
+        "data_url"
+    } else if url.contains("://") && !url.starts_with("http://") && !url.starts_with("https://") {
+        "provider_asset"
+    } else {
+        "external_url"
+    };
+    json!({
+        "kind": kind,
+        "source": source,
+        "url": url,
+        "publicUrl": url,
+    })
+}
+
+fn empty_media_resource(kind: &str) -> Value {
+    json!({
+        "kind": kind,
+        "source": "external_url",
+    })
+}
+
+fn media_resource_has_locator(value: &Value) -> bool {
+    let Some(object) = value.as_object() else {
+        return false;
+    };
+    ["publicUrl", "url", "uri", "objectKey", "objectBlobId", "id"]
+        .iter()
+        .any(|key| {
+            object
+                .get(*key)
+                .and_then(Value::as_str)
+                .map(str::trim)
+                .is_some_and(|value| !value.is_empty())
+        })
+}
+
+fn value_to_media_url(value: &Value) -> Option<String> {
+    match value {
+        Value::String(value) => Some(value.clone()),
+        Value::Number(value) => Some(value.to_string()),
+        Value::Object(object) => object
+            .get("publicUrl")
+            .or_else(|| object.get("public_url"))
+            .or_else(|| object.get("url"))
+            .or_else(|| object.get("uri"))
+            .and_then(value_to_media_url),
         _ => None,
     }
 }
@@ -1780,7 +1833,7 @@ fn parse_author(raw: &str, fallback_user_id: i64) -> ForumAuthor {
         .unwrap_or_else(|| format!("User-{id}"));
     let avatar = object
         .and_then(|object| object.get("avatar").or_else(|| object.get("faceImage")))
-        .and_then(find_url_in_value);
+        .and_then(|value| find_media_resource_in_value(value, "image"));
     let bio = object
         .and_then(|object| object.get("bio"))
         .and_then(Value::as_str)

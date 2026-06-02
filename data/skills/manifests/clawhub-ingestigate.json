@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ingestigate@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-ingestigate-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ingestigate-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:3c29dd7fbf4be3afcba353f086a3d935caba51369664a7384ea2b9f64e104d4d",

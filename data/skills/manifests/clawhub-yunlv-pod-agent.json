@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yunlv-pod-agent@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yunlv-pod-agent-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yunlv-pod-agent-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9c56fce44f4a60192cd1046a1053392461ceaf19685c7c8ba7adc02750b2c4ba",

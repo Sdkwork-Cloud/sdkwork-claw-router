@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-inventory-forecast@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-inventory-forecast-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-inventory-forecast-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee92af533d77eeb1cdac97e39d9b300b1d96e6c2f6408519c7fc02115659491b",

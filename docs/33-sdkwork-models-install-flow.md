@@ -334,5 +334,5 @@ Portable catalog data includes public model facts, official/reference prices,
 meters, source evidence, and optional ranking snapshots.
 
 ClawRouter-local data includes providers, provider accounts, channels, route
-rules, API key groups, tenant plans, private discounts, secrets, health state,
+rules, channel groups, tenant plans, private discounts, secrets, health state,
 quota policies, and audit/runtime records.

@@ -3,6 +3,10 @@ use serde::{Deserialize, Serialize};
 /// Create api key request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CreateApiKeyRequest {
+    /// API key channel group code.
+    #[serde(rename = "channelGroup")]
+    pub channel_group: String,
+
     /// Create this key as the default backend runtime API key.
     #[serde(rename = "defaultForRuntime")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -11,9 +15,6 @@ pub struct CreateApiKeyRequest {
     /// Expiration timestamp in YYYY-MM-DDTHH:mm format, or never.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub expires: Option<String>,
-
-    /// API key group code.
-    pub group: String,
 
     /// Comma-separated IP or CIDR allowlist, or unrestricted.
     #[serde(rename = "ipLimit")]

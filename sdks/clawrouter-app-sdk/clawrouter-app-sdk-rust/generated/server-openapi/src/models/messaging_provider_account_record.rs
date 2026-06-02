@@ -3,6 +3,12 @@ use serde::{Deserialize, Serialize};
 /// Messaging provider account record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct MessagingProviderAccountRecord {
+    /// Account code field on messaging provider account record.
+    pub account_code: String,
+
+    /// Account name field on messaging provider account record.
+    pub account_name: String,
+
     /// Auth type field on messaging provider account record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub auth_type: Option<String>,
@@ -10,6 +16,9 @@ pub struct MessagingProviderAccountRecord {
     /// Base url field on messaging provider account record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub base_url: Option<String>,
+
+    /// Channel field on messaging provider account record.
+    pub channel: String,
 
     /// Created at field on messaging provider account record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -43,6 +52,10 @@ pub struct MessagingProviderAccountRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub delivery_purpose: Option<String>,
 
+    /// Health status field on messaging provider account record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub health_status: Option<String>,
+
     /// Id field on messaging provider account record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -65,6 +78,9 @@ pub struct MessagingProviderAccountRecord {
 
     /// Organization id field on messaging provider account record.
     pub organization_id: String,
+
+    /// Provider code field on messaging provider account record.
+    pub provider_code: String,
 
     /// Provider id field on messaging provider account record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

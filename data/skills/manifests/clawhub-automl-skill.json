@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/automl-skill@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-automl-skill-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-automl-skill-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc55c855cf3111daeaa57aa1bce71990f32e2e010f20c3d3d83f846b17277263",

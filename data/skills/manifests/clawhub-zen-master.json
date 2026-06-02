@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zen-master@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-zen-master-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zen-master-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:66620a30e9b167e638c4327ef76a2042e7ae818646e5a35c58efcf003f766701",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-slack-bridge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-slack-bridge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-slack-bridge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8bcf464d68e623054525c3c389f6582ff69a22a6201ca08e888019e315e78294",

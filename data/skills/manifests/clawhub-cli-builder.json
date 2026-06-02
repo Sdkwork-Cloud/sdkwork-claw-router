@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cli-builder@2.3.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-cli-builder-2.3.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cli-builder-2.3.5.json"
+      },
       "version": "2.3.5",
       "runtime": "metadata",
       "checksumHash": "sha256:0a480c0436624372d657420def3f22280dc7880d7e5d1dc9df9ed7cd81a17c13",

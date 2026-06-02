@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/juhe-train-tickets@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-juhe-train-tickets-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-juhe-train-tickets-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb0bd0c3551518e61d169a0876f935d76d517806ab3735ad6fc625134dd513ef",

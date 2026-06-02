@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/receipt-expense-reconciler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-receipt-expense-reconciler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-receipt-expense-reconciler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:43803f7293cb555404ec68eda9d32965f4b5b44c90873a5cf9d994c7436e3a41",

@@ -2,6 +2,7 @@ import {
   ensureSdkworkApiSuccess,
   getClawRouterAppSdkClient,
   readApiRecord,
+  readRequiredMediaResource,
   readRequiredString,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
@@ -12,7 +13,7 @@ export interface UserProfile {
   email: SdkUserProfileResponse['email'];
   phone: SdkUserProfileResponse['phone'];
   language: SdkUserProfileResponse['language'];
-  avatar: SdkUserProfileResponse['avatarUrl'];
+  avatar: SdkUserProfileResponse['avatar'];
   isVerified: SdkUserProfileResponse['isVerified'];
   status: SdkUserProfileResponse['status'];
   registeredAt: SdkUserProfileResponse['registeredAt'];
@@ -37,7 +38,7 @@ function normalizeUserProfile(data: ApiRecord): UserProfile {
     email: readRequiredString(data, 'email', 'User profile response missing data'),
     phone: readRequiredStringAllowEmpty(data, 'phone', 'User profile phone is required'),
     language: readRequiredString(data, 'language', 'User profile language is required'),
-    avatar: readRequiredStringAllowEmpty(data, 'avatarUrl', 'User profile avatar URL is required'),
+    avatar: readRequiredMediaResource(data.avatar, 'User profile avatar is required'),
     isVerified: readRequiredBoolean(data, 'isVerified', 'User profile verification status is required'),
     status: readRequiredString(data, 'status', 'User profile status is required'),
     registeredAt: readRequiredString(data, 'registeredAt', 'User profile registration time is required'),

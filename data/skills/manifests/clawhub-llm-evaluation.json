@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-evaluation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-evaluation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-evaluation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:37adaddaf27b2857f8a87dc0d62ba54a94f36bf4019e6711e522e9f1696c95e9",

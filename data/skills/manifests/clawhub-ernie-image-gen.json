@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ernie-image-gen@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ernie-image-gen-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ernie-image-gen-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2837cac0d128c2eebf42435de6727576ea0e38fac4e89b3ba7b6ff4944a8bd11",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tesla-smart-charge@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tesla-smart-charge-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tesla-smart-charge-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:df05fb6880e3bb035cc6ee63631a351a3a709b2bc774571689375b656177ccfc",

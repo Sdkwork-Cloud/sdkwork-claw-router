@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexus-data-profile@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexus-data-profile-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexus-data-profile-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e40bb246449ca28e031ab771cadfabe58ab8dbabde17ca6c74a8a786ee454d3e",

@@ -1,14 +1,13 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{AdminAgentCapabilities, AdminAgentVersionItem};
+use crate::models::{AdminAgentCapabilities, AdminAgentVersionItem, MediaResource};
 
 /// Admin agent item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminAgentItem {
-    /// Avatar url field on admin agent item.
-    #[serde(rename = "avatarUrl")]
+    /// Avatar field on admin agent item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub avatar_url: Option<String>,
+    pub avatar: Option<MediaResource>,
 
     /// Capabilities field on admin agent item.
     pub capabilities: AdminAgentCapabilities,

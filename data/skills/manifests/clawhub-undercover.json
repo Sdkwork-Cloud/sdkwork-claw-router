@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/undercover@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-undercover-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-undercover-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9f53d5795dd2a0eb7e41e385a2e4401b7107abcf0ebcfdcc52839e73225e97b5",

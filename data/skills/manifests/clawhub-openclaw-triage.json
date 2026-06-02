@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-triage@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-triage-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-triage-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:909b4cd8c0ca20d2e3c80ade9212bcf6ce15e905a85d9803897a4e122323b689",

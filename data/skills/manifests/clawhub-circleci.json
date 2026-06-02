@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/circleci@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-circleci-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-circleci-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ded05aaa3fb3626b0ca9ba079e28a29e2f82cbaf1cdd90c1590f35561045985",

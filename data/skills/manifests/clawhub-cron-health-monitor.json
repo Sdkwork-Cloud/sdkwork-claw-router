@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cron-health-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cron-health-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cron-health-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:685060d053ad973ef93db6a0b5e67c2b6bf45962f0cda51729d06223c6bc2331",

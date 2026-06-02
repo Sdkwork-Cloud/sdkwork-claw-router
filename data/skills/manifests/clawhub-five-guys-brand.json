@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/five-guys-brand@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-five-guys-brand-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-five-guys-brand-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbf80cf318a990d2f3404063f1336dbd8966c985195cfc8ca3e7753061c28dd2",

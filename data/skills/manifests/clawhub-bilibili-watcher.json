@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bilibili-watcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-watcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bilibili-watcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e050b1cc6038d60c5b402c31dc9f25b737382bf294ed5282e61a872de72519f6",

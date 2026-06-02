@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meme@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meme-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meme-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6cdfd18be2f15e65ce3df24646f967063837e52da81bdd1cd47e6958201eeb92",

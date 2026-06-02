@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tiki@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tiki-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tiki-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0ae0217dcb78300fb3a5c5ad9bc9f959a6e768192cc5821466006729667860d7",

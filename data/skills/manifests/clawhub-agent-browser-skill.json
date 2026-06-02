@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-browser-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-browser-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-browser-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:122d29a22472dc3b77d99f2b47627d36159834064bf3629cd4943488ea92a65c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/board-of-advisors@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-board-of-advisors-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-board-of-advisors-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cefe18e2b8a3f006a9502cc655d37c4e9c6713a7d18be92021d503d333610997",

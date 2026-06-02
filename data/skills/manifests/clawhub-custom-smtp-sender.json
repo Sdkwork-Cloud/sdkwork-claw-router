@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/custom-smtp-sender@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-custom-smtp-sender-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-custom-smtp-sender-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d3724e2739a65f02d8d387463218ca0c3f088d5b853fd5a4b3cc29144e454b3a",

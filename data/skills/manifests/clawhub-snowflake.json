@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snowflake@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-snowflake-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snowflake-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:170f8a44de12157a11a82a7316a725ffa4ce70b9bc701f85836f1d5a1918f390",

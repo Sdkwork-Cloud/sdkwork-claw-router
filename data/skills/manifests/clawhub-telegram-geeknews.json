@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-geeknews@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-geeknews-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-geeknews-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4bbaad590b8721089ade83437716b924a87388ff3494050ab994c3532c3e7a24",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/x-hacker-news@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-x-hacker-news-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-x-hacker-news-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1b9d64e4755958c8841c402f0aefbe2836ae1a014b92d700fa5da7ada23f53e8",

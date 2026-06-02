@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-everyday@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-everyday-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-everyday-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:971098a81ce594564b895c2c0b2106f24c7a6f5a5bf6c05612417545ea76c1b3",

@@ -5,6 +5,7 @@ data class CommerceOrderRecord(
     val createdAt: String? = null,
     val currencyCode: String? = null,
     val expiredAt: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val orderNo: String? = null,
     val organizationId: String? = null,

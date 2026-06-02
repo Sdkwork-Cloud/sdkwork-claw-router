@@ -1,10 +1,11 @@
 import type { AgentCapabilities } from './agent-capabilities';
 import type { AgentVersionItem } from './agent-version-item';
+import type { MediaResource } from './media-resource';
 
 /** Agent item schema exposed by Claw Router. */
 export interface AgentItem {
-  /** Avatar url field on agent item. */
-  avatarUrl?: string | null;
+  /** Avatar field on agent item. */
+  avatar?: MediaResource;
   /** Capabilities field on agent item. */
   capabilities: AgentCapabilities;
   /** Code field on agent item. */

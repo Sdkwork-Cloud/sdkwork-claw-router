@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/project-nirvana-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-project-nirvana-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-project-nirvana-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:796e3e2e5a1f7cf7eb530ae06b5a0027075261e2684903555426a843329efd19",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hintme@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hintme-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hintme-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09f296d545c8196b74460823a52eabdd7d5b74ed842c948fca6044a0cfeae00b",

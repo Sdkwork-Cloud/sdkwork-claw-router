@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vmware-harden@1.5.22",
-      "artifactUrl": "data/skills/artifacts/clawhub-vmware-harden-1.5.22.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vmware-harden-1.5.22.json"
+      },
       "version": "1.5.22",
       "runtime": "metadata",
       "checksumHash": "sha256:159b735f056cca076e53d981a152b5a8e8551c3c386015a8b120e9fca2660f0e",

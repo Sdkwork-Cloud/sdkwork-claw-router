@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/errand-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-errand-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-errand-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a3afebff3669671f31863243db2434be454bdbae14bb2970f795fa64fb428d7",

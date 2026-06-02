@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/payaclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-payaclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-payaclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2d1020acc72718329d82d62b8f45c296fc3178b69b5287adc63bcdd2f949538a",

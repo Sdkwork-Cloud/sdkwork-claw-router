@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class OpsNotificationDeliveryRecord:
     """Ops notification delivery record schema exposed by Claw Router."""
+    app_id: Optional[str] = None
     archived_at: Optional[str] = None
     created_at: Optional[str] = None
     data_scope: Optional[str] = None

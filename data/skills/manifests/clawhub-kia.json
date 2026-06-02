@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kia@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-kia-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kia-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4a2e4f53aceaecf234e756744b5a38592d8e1ecccf54d5cec451c81274627715",

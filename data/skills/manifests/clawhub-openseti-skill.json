@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openseti-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openseti-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openseti-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b700c6740a0fb5934a93b5018af74458a7a94aa4f50fcf27222f630692dbfd36",

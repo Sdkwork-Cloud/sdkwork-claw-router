@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/big-ai-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-big-ai-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-big-ai-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:804edf6eda60486ad4530a94afeb2b90db33d710490e460d7750823cbbcd8f83",

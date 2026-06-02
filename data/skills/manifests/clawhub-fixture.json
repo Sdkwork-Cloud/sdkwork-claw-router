@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fixture@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fixture-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fixture-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2d6e2db3a9d57b16778898d7dbc5210e7662e9fd3d74bae8d50852a252912cca",

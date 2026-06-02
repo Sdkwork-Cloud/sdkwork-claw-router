@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{SkillPackageItem};
+use crate::models::{MediaResource, SkillPackageItem};
 
 /// Skill detail response schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -31,7 +31,7 @@ pub struct SkillDetailResponse {
     pub id: String,
 
     /// Image field on skill detail response.
-    pub image: String,
+    pub image: MediaResource,
 
     /// Last updated field on skill detail response.
     #[serde(rename = "lastUpdated")]
@@ -51,7 +51,7 @@ pub struct SkillDetailResponse {
     pub rating: f64,
 
     /// Screenshots field on skill detail response.
-    pub screenshots: Vec<String>,
+    pub screenshots: Vec<MediaResource>,
 
     /// Size field on skill detail response.
     pub size: String,

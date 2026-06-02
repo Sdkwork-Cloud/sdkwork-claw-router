@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geepers-orchestrate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-geepers-orchestrate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geepers-orchestrate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3285bf5baf9bec3634c07f0f96d64e3c5b9ff32e341c38e085b312c621fd6997",

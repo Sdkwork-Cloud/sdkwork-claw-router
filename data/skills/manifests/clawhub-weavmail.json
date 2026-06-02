@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weavmail@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-weavmail-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weavmail-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:bef26e4b570909d8e61c831bca7d6aed976c4efd44d248369fb24973beea6e83",

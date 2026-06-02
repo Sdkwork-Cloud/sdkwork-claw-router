@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/helmet@0.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-helmet-0.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-helmet-0.3.1.json"
+      },
       "version": "0.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:83e5e5388a521b389f17c72d05280407039876f018454e006022a0900186edd6",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quiz-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quiz-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quiz-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:45c4403f75d27a2c6ebb74a0a349612a470320c8c61fe6794a5dccc73db3d7e9",

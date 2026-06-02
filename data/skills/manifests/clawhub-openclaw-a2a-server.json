@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-a2a-server@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-a2a-server-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-a2a-server-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:913d4ccb2d59d0bf2e0ea45a7b6aa933c0fd649a94c6c1f8de197848f49c771c",

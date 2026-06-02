@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gog-local@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gog-local-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gog-local-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:65bf670edf021d20dc9402db9d59c03edfce244157c764e941ac6c9e0b6753c9",

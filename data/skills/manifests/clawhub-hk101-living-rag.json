@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hk101-living-rag@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hk101-living-rag-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hk101-living-rag-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6fee9fa2d913e27a87364522b9adec6c8547a7b66cd003adfb678f8d91a03de3",

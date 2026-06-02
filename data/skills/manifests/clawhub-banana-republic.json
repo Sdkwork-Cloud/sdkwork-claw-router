@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/banana-republic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-banana-republic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-banana-republic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d4246bffbf06778ec813108c3c9b23300645f60618d9e4d64e7c07d376f51d37",

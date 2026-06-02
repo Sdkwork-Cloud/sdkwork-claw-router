@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/karpathy-principles@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-principles-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-karpathy-principles-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25d04a3569208b9999d11fe92b69d4b22172e510cdf714fc12f415c2dee8b83b",

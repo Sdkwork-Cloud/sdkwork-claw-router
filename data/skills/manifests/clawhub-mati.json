@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mati@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-mati-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mati-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5b1a1eda28398d9514557cce28cb95c39b98e3a749b6bb526347043262d805f5",

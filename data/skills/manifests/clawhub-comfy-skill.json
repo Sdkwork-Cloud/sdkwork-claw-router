@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comfy-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-comfy-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comfy-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f143963eae981f094dc5bda8efedb46b944609d8a56f21bc8f7aafe28dee1c5",

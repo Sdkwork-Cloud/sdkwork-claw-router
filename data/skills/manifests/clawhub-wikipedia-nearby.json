@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wikipedia-nearby@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wikipedia-nearby-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wikipedia-nearby-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66cb1157d1f86b2fe83c3c037ea7e8acdeffb0f0e6597502d9e45c298f5dbd5a",

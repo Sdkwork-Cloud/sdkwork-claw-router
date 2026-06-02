@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nfl@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-nfl-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nfl-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:efcbe5ed4a51ddfb7b43d4c2da6ed068b7c24c860e4fec2eca0e5d91abff1566",

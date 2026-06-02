@@ -3,6 +3,10 @@ use serde::{Deserialize, Serialize};
 /// Messaging template binding record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct MessagingTemplateBindingRecord {
+    /// Approval status field on messaging template binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub approval_status: Option<String>,
+
     /// Created at field on messaging template binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -35,6 +39,22 @@ pub struct MessagingTemplateBindingRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
 
+    /// Provider account id field on messaging template binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_account_id: Option<String>,
+
+    /// Provider code field on messaging template binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_code: Option<String>,
+
+    /// Provider payload field on messaging template binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_payload: Option<std::collections::HashMap<String, String>>,
+
+    /// Provider template code field on messaging template binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_template_code: Option<String>,
+
     /// Provider template version field on messaging template binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub provider_template_version: Option<String>,
@@ -50,6 +70,10 @@ pub struct MessagingTemplateBindingRecord {
     /// Sync payload hash field on messaging template binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub sync_payload_hash: Option<String>,
+
+    /// Template variant id field on messaging template binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub template_variant_id: Option<String>,
 
     /// Tenant id field on messaging template binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

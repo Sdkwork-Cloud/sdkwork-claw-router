@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tls-configuration-auditor@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tls-configuration-auditor-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tls-configuration-auditor-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5917ef81716527178e1fef8cb3920ef66c1b6c28d11990d412bb98ec186e7d9c",

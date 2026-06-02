@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dynatrace@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dynatrace-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dynatrace-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13ae9cbd3d5efa694afeed32c28427a89cb9cabc0482e828c6cd461708de71ff",

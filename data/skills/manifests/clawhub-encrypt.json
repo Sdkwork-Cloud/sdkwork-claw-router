@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/encrypt@2.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-encrypt-2.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-encrypt-2.0.5.json"
+      },
       "version": "2.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:14394f1ce2929ac84521e1f9ded807ee7f1f670548c7c4c50d78418545625c75",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/face-forge-cli-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-face-forge-cli-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-face-forge-cli-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52b34536ac7ae32466f81a32e1e1c4ac3134d56662ff60ac4b6d588709bb7dbc",

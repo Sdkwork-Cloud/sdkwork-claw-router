@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dota2-coach@1.1.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-dota2-coach-1.1.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dota2-coach-1.1.7.json"
+      },
       "version": "1.1.7",
       "runtime": "metadata",
       "checksumHash": "sha256:635e9aff9ed643b6e4a6b1ef7b83517c430d631d3ec993055bea5ffbaec1a59e",

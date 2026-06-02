@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proxy-detect@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-proxy-detect-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proxy-detect-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c80c5c38b9226c8ea1b732ac8f3af10cffc90a7f14eca98d3f09b38542f279e6",

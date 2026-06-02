@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/armani@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-armani-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-armani-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:31665791810673c3a80e89834a55808c8ca1c77b1396ab7a31217240f8fd1be0",

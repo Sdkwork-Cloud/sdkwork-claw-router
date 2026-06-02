@@ -1,8 +1,14 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Messaging provider record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct MessagingProviderRecord {
+    /// Channel field on messaging provider record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel: Option<String>,
+
     /// Created at field on messaging provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -19,13 +25,16 @@ pub struct MessagingProviderRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub deleted_by: Option<String>,
 
+    /// Display name field on messaging provider record.
+    pub display_name: String,
+
     /// Docs url field on messaging provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub docs_url: Option<String>,
 
-    /// Icon url field on messaging provider record.
+    /// Icon field on messaging provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon_url: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Id field on messaging provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -41,6 +50,9 @@ pub struct MessagingProviderRecord {
 
     /// Organization id field on messaging provider record.
     pub organization_id: String,
+
+    /// Provider code field on messaging provider record.
+    pub provider_code: String,
 
     /// Provider type field on messaging provider record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

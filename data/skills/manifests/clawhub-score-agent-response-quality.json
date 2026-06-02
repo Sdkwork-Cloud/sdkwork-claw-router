@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/score-agent-response-quality@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-score-agent-response-quality-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-score-agent-response-quality-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c7740394019dff7dab8e5024b903febbded59ba00a8e26efb60d2a126a523bb",

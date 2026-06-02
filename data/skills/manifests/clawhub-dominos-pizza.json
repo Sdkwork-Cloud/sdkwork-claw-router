@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dominos-pizza@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dominos-pizza-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dominos-pizza-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f75e898d0a37c1a01161b308ffab49e45cc410e594914db7280eb10600e7523e",

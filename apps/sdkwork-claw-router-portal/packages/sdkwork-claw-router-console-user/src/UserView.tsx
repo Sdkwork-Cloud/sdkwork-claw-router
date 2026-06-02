@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { User, Activity, Shield, CheckCircle } from 'lucide-react';
-import { BusinessStatePanel } from 'sdkwork-claw-router-commons';
+import { BusinessStatePanel, readMediaResourceUrl } from 'sdkwork-claw-router-commons';
 import { UserService, UserProfile } from './userService';
 
 import { useTranslation } from 'react-i18next';
@@ -90,6 +90,9 @@ export function UserView() {
     );
   }
 
+  const avatarSrc = readMediaResourceUrl(profile.avatar);
+  const avatarFallback = profile.name.trim().slice(0, 1).toUpperCase() || 'U';
+
   return (
     <div className="min-h-[calc(100vh-72px)] w-full max-w-6xl mx-auto space-y-6 bg-slate-50 p-[5px] animate-in fade-in duration-500 dark:bg-[#121212]">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -97,7 +100,9 @@ export function UserView() {
            <div className="bg-white dark:bg-[#252525] rounded-2xl border border-slate-200 dark:border-white/5 p-6 shadow-sm flex flex-col items-center text-center">
              <div className="relative group mb-4">
                 <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 flex items-center justify-center text-3xl font-bold text-white shadow-lg border-4 border-white dark:border-[#1e1e1e]">
-                  {profile.avatar}
+                  {avatarSrc ? (
+                    <img alt={profile.name} className="h-full w-full rounded-full object-cover" src={avatarSrc} />
+                  ) : avatarFallback}
                 </div>
              </div>
              <h2 className="text-lg font-bold text-slate-800 dark:text-white">{profile.name}</h2>

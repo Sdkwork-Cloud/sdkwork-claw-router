@@ -10,13 +10,13 @@ type SkillCatalogItem struct {
 	Features []string `json:"features"`
 	Frameworks []string `json:"frameworks"`
 	Id string `json:"id"`
-	Image string `json:"image"`
+	Image MediaResource `json:"image"`
 	LastUpdated string `json:"lastUpdated"`
 	License string `json:"license"`
 	Name string `json:"name"`
 	Packages []SkillPackageItem `json:"packages"`
 	Rating float64 `json:"rating"`
-	Screenshots []string `json:"screenshots"`
+	Screenshots []MediaResource `json:"screenshots"`
 	Size string `json:"size"`
 	Version string `json:"version"`
 }

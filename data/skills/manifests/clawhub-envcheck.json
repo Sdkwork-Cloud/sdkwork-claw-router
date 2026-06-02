@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/envcheck@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-envcheck-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-envcheck-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:838b3bee4972b5f16b4a0c2feab28e66433808f6688b81b73c3ea6535e384d91",

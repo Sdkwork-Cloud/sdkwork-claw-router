@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/streaming-buddy@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-streaming-buddy-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-streaming-buddy-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:03dc0be9e9b8c4ee3fcaa6341fed9ae4726555a39eee7ae31bf87c00ebf8e7b9",

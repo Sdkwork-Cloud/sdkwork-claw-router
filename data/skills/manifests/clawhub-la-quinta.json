@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/la-quinta@99.99.99",
-      "artifactUrl": "data/skills/artifacts/clawhub-la-quinta-99.99.99.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-la-quinta-99.99.99.json"
+      },
       "version": "99.99.99",
       "runtime": "metadata",
       "checksumHash": "sha256:9825eaa7a0d192a718659d0c2a7ba244a4d3fc870e404e6a7290f7b35c11e7dd",

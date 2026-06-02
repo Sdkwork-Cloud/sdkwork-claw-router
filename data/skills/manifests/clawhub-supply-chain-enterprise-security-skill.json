@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/supply-chain-enterprise-security-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-supply-chain-enterprise-security-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-supply-chain-enterprise-security-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bbbdf90a0482c9af5e9773d470e08d44c9d63bc036cc9cd670fb66411a4ae6fa",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-master@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-master-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-master-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:25c0a71ce62e99fcfdd96b8d9c4258b5b3b6f0a766be3ed198f35c8b737bf37d",

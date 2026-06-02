@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bing-image-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bing-image-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bing-image-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef3e27f5a4ba68a180f925c5de9f373235306fef00a66f2ac6b11a1abde94860",

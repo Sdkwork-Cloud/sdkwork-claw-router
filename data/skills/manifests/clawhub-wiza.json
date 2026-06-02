@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wiza@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-wiza-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wiza-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cae0da79e325592de58d3b15415596f37ba3b20b8ac8ef34420b49d33b6e1655",

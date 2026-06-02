@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memory-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memory-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8a0baf4be85dcddacbd78f84c3bff1af25398b934c40888a0d66c6464883c12c",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taskline@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-taskline-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taskline-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a6088a3d9db06681807f9ad7976f72d12d819055403908ff259a86945f3b0af7",

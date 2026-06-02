@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kunming@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kunming-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kunming-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df1d080dd36bd24aefb9b3d82852ca64a7311b9dfcc63f625b73b7f5213cadda",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fidelity-funds@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fidelity-funds-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fidelity-funds-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff8d857a883a79cf86d01060404d4fc0216b953981317cdcb9f470f45101e467",

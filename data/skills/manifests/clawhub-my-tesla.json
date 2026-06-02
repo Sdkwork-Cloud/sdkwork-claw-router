@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-tesla@0.1.64",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-tesla-0.1.64.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-tesla-0.1.64.json"
+      },
       "version": "0.1.64",
       "runtime": "metadata",
       "checksumHash": "sha256:d5b39de29b0f28e5bec9fd496df3474b8ef0f2697cd3c30821d4bb6a8241b7a8",

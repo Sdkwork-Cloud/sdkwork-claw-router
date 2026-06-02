@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sage-payroll@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sage-payroll-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sage-payroll-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdda9226680458110231ec969b98f3d45f98d012023f3d3eec94fb604336fbfc",

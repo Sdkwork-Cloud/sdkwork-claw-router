@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sonarqube-analyzer@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sonarqube-analyzer-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sonarqube-analyzer-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1a7d7134eeed1f01845eab1f49edaeda6610738ceab47a0c12b5dcb359f2c8d7",

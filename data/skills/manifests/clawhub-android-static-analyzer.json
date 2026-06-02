@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/android-static-analyzer@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-android-static-analyzer-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-android-static-analyzer-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5df8b0eefb5f7ed78fa4a7456b80cd2a273768ce7d8df467b06c4153c10d7897",

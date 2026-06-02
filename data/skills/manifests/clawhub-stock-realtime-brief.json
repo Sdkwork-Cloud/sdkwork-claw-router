@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-realtime-brief@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-realtime-brief-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-realtime-brief-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af7c77846e7133158bc6caa481e2a941015bc4a0df37984b6a8579afb09849bb",

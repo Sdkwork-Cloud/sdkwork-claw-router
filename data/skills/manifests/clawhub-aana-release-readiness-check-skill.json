@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aana-release-readiness-check-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aana-release-readiness-check-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aana-release-readiness-check-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aea60ecbb5bc99956cba25ddd6f67a6f79af8c8122fe8a2645f62c41784b437c",

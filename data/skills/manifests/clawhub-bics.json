@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bics@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-bics-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bics-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ea683d9108f7f82f608826697f3bb5b32ab707458dc854cc39d9549e5c7e8bbf",

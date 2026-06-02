@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sales-bot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sales-bot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sales-bot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ad643e12a8444dd86212187bad0cafc551acd8d0a4a851d3f17ecdcdef998488",

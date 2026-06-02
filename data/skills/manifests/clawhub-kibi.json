@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kibi@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-kibi-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kibi-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:325c7546b30da80e65d64b9234f245cd2297271b6a8194e98e4553818e531827",

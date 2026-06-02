@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sqlformat@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sqlformat-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sqlformat-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0901d52fa429527f3232a4eb774830f4c593a36034c9dba69fbba3df727fcb65",

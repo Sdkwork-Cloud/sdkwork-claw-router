@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workflow-chain@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workflow-chain-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workflow-chain-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:472a90b1a70f8493a2336bf82b68cfac7175513eaf1c60ed195aa4f1c8a4ff41",

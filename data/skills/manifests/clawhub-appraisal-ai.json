@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/appraisal-ai@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-appraisal-ai-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-appraisal-ai-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:52d5d4513fdd9ea55569aad7ea37ce444b477eb8a7f3ead0f035cf5e5721a6f5",

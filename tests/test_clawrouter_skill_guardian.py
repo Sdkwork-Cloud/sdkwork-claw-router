@@ -8,6 +8,19 @@ from pathlib import Path
 from tools.clawrouter_skill_guardian import ClawRouterSkillGuardian
 
 
+def media_resource(locator: str, kind: str = "image") -> dict:
+    source = (
+        "external_url"
+        if locator.startswith(("http://", "https://"))
+        else "data_url"
+        if locator.startswith("data:")
+        else "provider_asset"
+    )
+    if source == "provider_asset":
+        return {"kind": kind, "source": source, "uri": locator}
+    return {"kind": kind, "source": source, "url": locator, "publicUrl": locator}
+
+
 class ClawRouterSkillGuardianTest(unittest.TestCase):
     def write_skill(self, root: Path, name: str, body: str) -> None:
         skill = root / ".agents" / "skills" / name / "SKILL.md"
@@ -155,7 +168,10 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                         "targetType": 35,
                         "targetId": 8101,
                         "artifactRef": "builtin://sdkwork.skills.prompt_optimizer@1.0.0",
-                        "artifactUrl": "data/skills/artifacts/prompt-optimizer-1.0.0.json",
+                        "artifact": media_resource(
+                            "data/skills/artifacts/prompt-optimizer-1.0.0.json",
+                            "document",
+                        ),
                         "version": "1.0.0",
                         "runtime": "builtin",
                     }
@@ -167,7 +183,7 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertIn(
-                "skill seed artifactUrl must exist: data/skills/artifacts/prompt-optimizer-1.0.0.json",
+                "skill seed artifact must exist: data/skills/artifacts/prompt-optimizer-1.0.0.json",
                 result.messages,
             )
             self.assertIn(
@@ -277,6 +293,8 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                     "packageKey": "sdkwork-official-skills",
                     "categoryId": 1901,
                     "enabled": True,
+                    "icon": media_resource("https://cdn.example.test/packages/sdkwork-official/icon.png"),
+                    "cover": media_resource("https://cdn.example.test/packages/sdkwork-official/cover.png"),
                 },
                 *(
                     [
@@ -286,6 +304,8 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                             "packageKey": "clawhub-community-mirror",
                             "categoryId": 1902,
                             "enabled": True,
+                            "icon": media_resource("https://cdn.example.test/packages/clawhub/icon.png"),
+                            "cover": media_resource("https://cdn.example.test/packages/clawhub/cover.png"),
                         }
                     ]
                     if include_clawhub
@@ -315,6 +335,8 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                     "builtin": True,
                     "isBuiltin": True,
                     "enabled": True,
+                    "icon": media_resource("https://cdn.example.test/skills/prompt-optimizer/icon.png"),
+                    "cover": media_resource("https://cdn.example.test/skills/prompt-optimizer/cover.png"),
                     "capabilities": ["prompt.analysis"],
                     "configSchema": {"type": "object"},
                     "defaultConfig": {},
@@ -342,6 +364,8 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                     "builtin": False,
                     "isBuiltin": False,
                     "enabled": True,
+                    "icon": media_resource("https://cdn.example.test/skills/clawhub-mcp/icon.png"),
+                    "cover": media_resource("https://cdn.example.test/skills/clawhub-mcp/cover.png"),
                     "capabilities": ["mcp"],
                     "configSchema": {"type": "object"},
                     "defaultConfig": {"portal": {"frameworks": ["ClawHub"]}},
@@ -357,9 +381,25 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
             json.dumps(skills),
             encoding="utf-8",
         )
-        assets = [{"uuid": "asset", "targetType": 35, "targetId": 8101}]
+        assets = [
+            {
+                "uuid": "asset",
+                "targetType": 35,
+                "targetId": 8101,
+                "asset": media_resource("https://cdn.example.test/skills/prompt-optimizer/cover.png"),
+                "thumbnail": media_resource("https://cdn.example.test/skills/prompt-optimizer/thumb.png"),
+            }
+        ]
         if include_clawhub:
-            assets.append({"uuid": "asset-clawhub", "targetType": 35, "targetId": 8201})
+            assets.append(
+                {
+                    "uuid": "asset-clawhub",
+                    "targetType": 35,
+                    "targetId": 8201,
+                    "asset": media_resource("https://cdn.example.test/skills/clawhub-mcp/cover.png"),
+                    "thumbnail": media_resource("https://cdn.example.test/skills/clawhub-mcp/thumb.png"),
+                }
+            )
         (skills_root / "assets.json").write_text(
             json.dumps(assets),
             encoding="utf-8",
@@ -383,7 +423,7 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                 "targetType": 35,
                 "targetId": 8101,
                 "artifactRef": "builtin://sdkwork.skills.prompt_optimizer@1.0.0",
-                "artifactUrl": "data/skills/artifacts/prompt-optimizer-1.0.0.json",
+                "artifact": media_resource("data/skills/artifacts/prompt-optimizer-1.0.0.json", "document"),
                 "version": "1.0.0",
                 "runtime": "builtin",
                 "checksumHash": checksum_hash,
@@ -410,7 +450,7 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                     "targetType": 35,
                     "targetId": 8201,
                     "artifactRef": "clawhub://skills/mcp@1.0.0",
-                    "artifactUrl": "data/skills/artifacts/clawhub-mcp-1.0.0.json",
+                    "artifact": media_resource("data/skills/artifacts/clawhub-mcp-1.0.0.json", "document"),
                     "version": "1.0.0",
                     "runtime": "metadata",
                     "checksumHash": clawhub_checksum,
@@ -437,7 +477,7 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                 "artifacts": [
                     {
                         "artifactRef": "builtin://sdkwork.skills.prompt_optimizer@1.0.0",
-                        "artifactUrl": "data/skills/artifacts/prompt-optimizer-1.0.0.json",
+                        "artifact": media_resource("data/skills/artifacts/prompt-optimizer-1.0.0.json", "document"),
                         "version": "1.0.0",
                         "runtime": "builtin",
                         "checksumHash": checksum_hash,
@@ -466,7 +506,7 @@ class ClawRouterSkillGuardianTest(unittest.TestCase):
                     "artifacts": [
                         {
                             "artifactRef": "clawhub://skills/mcp@1.0.0",
-                            "artifactUrl": "data/skills/artifacts/clawhub-mcp-1.0.0.json",
+                            "artifact": media_resource("data/skills/artifacts/clawhub-mcp-1.0.0.json", "document"),
                             "version": "1.0.0",
                             "runtime": "metadata",
                             "checksumHash": clawhub_artifact_payload["checksumHash"],

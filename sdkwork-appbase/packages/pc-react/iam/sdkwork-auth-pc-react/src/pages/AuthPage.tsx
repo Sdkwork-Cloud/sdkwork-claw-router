@@ -28,6 +28,7 @@ import {
   SdkworkToaster,
   sdkToast,
 } from "@sdkwork/ui-pc-react";
+import { getSdkworkMediaDeliveryUrl } from "@sdkwork/appbase-pc-react";
 import {
   createSdkworkAuthDarkCardStyle,
   createSdkworkAuthDarkIconWellStyle,
@@ -89,7 +90,7 @@ import { SdkworkSessionBridgeLoginForm } from "../components/auth/SessionBridgeL
 import { SdkworkAuthPageShell } from "../components/auth-page-shell.tsx";
 import { SdkworkOAuthProviderGrid } from "../components/oauth-provider-grid.tsx";
 import { SdkworkQrLoginPanel } from "../components/qr-login-panel.tsx";
-import { type SdkworkAuthLoginQrCodeConfirmInput } from "../auth-service.ts";
+import { type SdkworkAuthLoginQrCode, type SdkworkAuthLoginQrCodeConfirmInput } from "../auth-service.ts";
 import {
   SdkworkAuthPageRouterContextBoundary,
   type SdkworkAuthPageRouterContextMode,
@@ -495,14 +496,7 @@ function SdkworkAuthPageContent({
   const oauthProviderSummary = oauthProviders.map((provider) => formatOAuthProviderName(provider)).join(" / ");
   const [loginMethod, setLoginMethod] = useState<SdkworkAuthLoginMethod>("password");
   const [activeOAuthProvider, setActiveOAuthProvider] = useState<string | null>(null);
-  const [qrCode, setQrCode] = useState<null | {
-    description?: string;
-    qrContent?: string;
-    qrUrl?: string;
-    sessionKey: string;
-    title?: string;
-    type?: string;
-  }>(null);
+  const [qrCode, setQrCode] = useState<SdkworkAuthLoginQrCode | null>(null);
   const [qrState, setQrState] = useState<SdkworkAuthQrPanelState>("idle");
   const [qrImageSrc, setQrImageSrc] = useState("");
   const [qrErrorMessage, setQrErrorMessage] = useState("");
@@ -789,9 +783,10 @@ function SdkworkAuthPageContent({
           return;
         }
 
+        const qrImageResourceSrc = getSdkworkMediaDeliveryUrl(nextQrCode.qrCode);
         let nextQrImageSrc = "";
-        if ((nextQrCode.qrUrl || "").trim()) {
-          nextQrImageSrc = nextQrCode.qrUrl!.trim();
+        if (qrImageResourceSrc) {
+          nextQrImageSrc = qrImageResourceSrc;
         } else if ((nextQrCode.qrContent || "").trim()) {
           nextQrImageSrc = await QRCode.toDataURL(nextQrCode.qrContent!.trim(), {
             color: {

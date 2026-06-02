@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ferrari@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ferrari-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ferrari-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0051b813155bb9c1539dc5dff1e139174816576f83a4d8959e1bead0c35d6ac5",

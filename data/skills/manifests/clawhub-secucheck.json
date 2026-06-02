@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/secucheck@2.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-secucheck-2.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-secucheck-2.8.0.json"
+      },
       "version": "2.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d3f3bce7b203da12e855c422793332fd07d89d5b012ed78c6b83f3e8993c43c",

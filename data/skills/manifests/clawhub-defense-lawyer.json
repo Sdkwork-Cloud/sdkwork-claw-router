@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/defense-lawyer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-defense-lawyer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-defense-lawyer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70a334522cf26e3271869e746b92ea62e1ac7709700868d419009eaffbf3a8a6",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taiyi-skill@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-taiyi-skill-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taiyi-skill-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed56aed96aa95153963de4e10c636218700bd11f1fbd24d3eb711e47756221e2",

@@ -10,7 +10,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public Dictionary<string, string>? CapabilityManifest { get; set; }
         public string? CategoryCode { get; set; }
         public string? CategoryId { get; set; }
-        public string? CoverUrl { get; set; }
+        public MediaResource? Cover { get; set; }
         public string? CreatedAt { get; set; }
         public string? CurrentVersionId { get; set; }
         public string? DataScope { get; set; }
@@ -25,7 +25,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? GitRef { get; set; }
         public string? GitRepoUrl { get; set; }
         public string? GitSubPath { get; set; }
-        public string? IconUrl { get; set; }
+        public MediaResource? Icon { get; set; }
         public string? Id { get; set; }
         public string? Language { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }

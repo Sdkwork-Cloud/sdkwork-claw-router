@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hermes-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hermes-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hermes-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a3d35031863de5bd08b51833f790fa3f51dc7cf6c9eb4b7545fd5f9aa76de17d",

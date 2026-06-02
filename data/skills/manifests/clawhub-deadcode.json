@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deadcode@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-deadcode-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deadcode-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:94f2ec4aac8293ec03a1be0ff36d913d630b1a19076917424bbe120cf2309935",

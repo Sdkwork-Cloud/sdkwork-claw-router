@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deckctl@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deckctl-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deckctl-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8c76cfc913cbaf1d9299f914d9951605d7b3975b617953fb6a57ac7e054f2ac2",

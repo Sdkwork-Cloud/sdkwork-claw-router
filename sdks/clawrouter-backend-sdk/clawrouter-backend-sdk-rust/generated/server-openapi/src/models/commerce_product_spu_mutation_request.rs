@@ -7,10 +7,10 @@ pub struct CommerceProductSpuMutationRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub brand: Option<String>,
 
-    /// Category id field on commerce product spu mutation request.
-    #[serde(rename = "categoryId")]
+    /// Category ids field on commerce product spu mutation request.
+    #[serde(rename = "categoryIds")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub category_id: Option<String>,
+    pub category_ids: Option<Vec<String>>,
 
     /// Description field on commerce product spu mutation request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

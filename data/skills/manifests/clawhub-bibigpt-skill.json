@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bibigpt-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bibigpt-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bibigpt-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8c5e3087a2415ccdcd821ba8ef9ca36e027847db8d525bb6f0567f09d249b66",

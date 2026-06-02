@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proxmox-ve@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-proxmox-ve-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proxmox-ve-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2f135a334583ab9f7dc0b9487e0ff7a91b657f9d14727fad6504f079b81025bd",

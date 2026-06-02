@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ebook-downloader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ebook-downloader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ebook-downloader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:01c9f415c7eaa5d179f2e98e8ec6bdea34ad3afdd2d5ce60cfc05b21724c986b",

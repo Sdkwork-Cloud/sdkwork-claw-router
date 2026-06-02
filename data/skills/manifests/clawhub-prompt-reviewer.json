@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-reviewer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-reviewer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-reviewer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ebc717a7fcbf638638c009104aca8f3de8c578b17116349a25fb104157cf6ad",

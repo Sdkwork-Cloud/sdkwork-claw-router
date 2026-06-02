@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/s2-habitat-swarm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-s2-habitat-swarm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-s2-habitat-swarm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:538fb25d541a2a19a9f4e8c27fbd576288ecc2a947135a9255c417d91913f8bc",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ghosting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ghosting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ghosting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:03171797ccf89a478cf864ca688dc2b1660b19705e29e08f913d7d0d0490c28f",

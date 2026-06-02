@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/homey-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-homey-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-homey-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f88904ce8f9702bff102580af545f3b8af31675eab78032305af40c3c60bd37",

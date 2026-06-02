@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memi@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memi-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memi-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fac7a4082ee82eb1ff46d79ba104710731fdf5764320db7ae729a537f214a2e4",

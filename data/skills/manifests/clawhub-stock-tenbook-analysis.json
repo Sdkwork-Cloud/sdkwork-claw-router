@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-tenbook-analysis@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-tenbook-analysis-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-tenbook-analysis-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a7e56f49d509cdab5f48a1f6978d0c761956650cef9c4b906c05f12cf390fe89",

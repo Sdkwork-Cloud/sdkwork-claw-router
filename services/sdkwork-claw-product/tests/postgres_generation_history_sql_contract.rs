@@ -140,6 +140,14 @@ fn generation_history_sql_projects_standard_agent_runtime_generation_fields() {
         "request_json #>> '{generationConfig,aspectRatio}'",
         "request_json #>> '{generationConfig,durationSeconds}'",
         "response_json ->> 'outputText'",
+        "(i.response_json #> '{media,0,asset}')::text",
+        "(i.response_json #> '{media,0,asset,poster}')::text",
+        "(i.response_json #> '{media,0,asset,thumbnails,0}')::text",
+        "response_json #>> '{media,0,asset,durationSeconds}'",
+        "ar.resource_snapshot::text",
+        "ar.resource_snapshot #> '{poster}'",
+        "ar.resource_snapshot #> '{thumbnails,0}'",
+        "resource_snapshot ->> 'durationSeconds'",
         "COALESCE(NULLIF(r.output_message, ''), NULLIF(i.response_json ->> 'outputText', ''), '') AS output_text",
         "WHEN target_modality IN (1, 2, 3, 4, 5, 6) THEN target_modality",
         "WHEN target_signal IN ('text', 'llm', 'chat', 'agent') OR target_signal LIKE '%text%' THEN 1",
@@ -147,10 +155,66 @@ fn generation_history_sql_projects_standard_agent_runtime_generation_fields() {
         "WHERE item_kind IN (1, 2, 3, 4, 5, 6)",
         "model_catalog_key: optional_string(string_cell(&row, \"model_catalog_key\"))",
         "aspect_ratio: optional_string(string_cell(&row, \"aspect_ratio\"))",
-        "duration_seconds: optional_integer_cell(&row, \"duration_seconds\")",
+        "let duration_seconds = optional_integer_cell(&row, \"duration_seconds\")",
+        "duration_seconds,",
         "output_text: optional_string(string_cell(&row, \"output_text\"))",
     ] {
         assert_sql_contains(POSTGRES_GENERATION_HISTORY_STORE, expected);
+    }
+    assert!(
+        !POSTGRES_GENERATION_HISTORY_STORE.contains("thumbnailUrl"),
+        "Postgres generation history runtime SQL must prefer canonical thumb fields instead of legacy thumbnailUrl fallbacks"
+    );
+    assert!(
+        !POSTGRES_GENERATION_HISTORY_STORE.contains("storage_url"),
+        "Postgres generation history runtime SQL must not depend on legacy storage_url columns"
+    );
+    for forbidden in [
+        "response_json #>> '{media,0,url}'",
+        "response_json #>> '{media,0,thumb}'",
+        "response_json #>> '{media,0,durationSeconds}'",
+        "content_json ->> 'url'",
+        "content_json ->> 'thumb'",
+    ] {
+        assert!(
+            !POSTGRES_GENERATION_HISTORY_STORE.contains(forbidden),
+            "Postgres generation history runtime SQL must read MediaResource objects instead of legacy `{forbidden}`"
+        );
+    }
+}
+
+#[test]
+fn generation_history_sql_uses_canonical_media_resource_snapshot_aliases() {
+    for expected in [
+        "AS asset_resource_snapshot",
+        "AS thumbnail_resource_snapshot",
+        "asset_resource_snapshot,",
+        "thumbnail_resource_snapshot,",
+        "string_cell(&row, \"asset_resource_snapshot\")",
+        "string_cell(&row, \"thumbnail_resource_snapshot\")",
+        "media_resource_from_snapshot(",
+    ] {
+        assert_sql_contains(POSTGRES_GENERATION_HISTORY_STORE, expected);
+    }
+    for forbidden in [
+        "AS asset_url",
+        "AS thumbnail_url",
+        "AS asset_locator",
+        "AS thumbnail_locator",
+        "asset_url,",
+        "thumbnail_url,",
+        "asset_locator,",
+        "thumbnail_locator,",
+        "string_cell(&row, \"asset_url\")",
+        "string_cell(&row, \"thumbnail_url\")",
+        "string_cell(&row, \"asset_locator\")",
+        "string_cell(&row, \"thumbnail_locator\")",
+        "media_resource_from_locator(",
+    ] {
+        assert!(
+            !POSTGRES_GENERATION_HISTORY_STORE.contains(forbidden),
+            "Postgres generation history must not keep legacy URL or locator alias `{forbidden}` for canonical MediaResource snapshots"
+        );
     }
 }
 

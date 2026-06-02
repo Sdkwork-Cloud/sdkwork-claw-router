@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-track@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-track-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-track-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e01dddbcd1508ccad2cee5e6cf2610a365d89a54a640371a3dcb64a2dd7f09ec",

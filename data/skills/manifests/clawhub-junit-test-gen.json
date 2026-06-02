@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/junit-test-gen@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-junit-test-gen-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-junit-test-gen-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c25db2d988ab7bb4c36680037fc1667bcd014708f31ab54fe2f20e8edf9613af",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-debate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-debate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-debate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:32b340527d2913e50745012840a2c90de2c192c331b2d33b945efda51e3f1c68",

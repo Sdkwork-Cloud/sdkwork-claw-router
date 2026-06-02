@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/one-skill-to-rule-them-all@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-one-skill-to-rule-them-all-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-one-skill-to-rule-them-all-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3747175fe2c052065ce9c48304f841b54601bc2791d08e000b5570ece2a442a6",

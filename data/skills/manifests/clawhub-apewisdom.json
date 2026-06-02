@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apewisdom@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apewisdom-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apewisdom-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f8db62908ee74219e7619acc8132075cebb3ef967bacc9baf09b3b41a4f97fc",

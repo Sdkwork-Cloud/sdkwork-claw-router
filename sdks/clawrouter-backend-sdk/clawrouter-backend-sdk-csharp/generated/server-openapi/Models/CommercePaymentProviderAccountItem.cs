@@ -7,6 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class CommercePaymentProviderAccountItem
     {
         public string? AccountNo { get; set; }
+        public string? AccountRole { get; set; }
         public string? CertificateRef { get; set; }
         public string? CountryCode { get; set; }
         public string? CreatedAt { get; set; }

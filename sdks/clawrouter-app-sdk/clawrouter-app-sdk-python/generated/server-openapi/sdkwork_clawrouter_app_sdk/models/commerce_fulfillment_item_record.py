@@ -9,8 +9,10 @@ class CommerceFulfillmentItemRecord:
     created_at: str
     fulfillment_id: str
     order_item_id: str
+    quantity: str
     sku_id: str
     status: str
     tenant_id: str
     updated_at: str
+    id: Optional[str] = None
     organization_id: Optional[str] = None

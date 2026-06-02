@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cosprompt@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cosprompt-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cosprompt-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8fd2e2800be30014e7b45ff8e6e7eb0fcd2a24f5a6fde593a9e2b8744854064",

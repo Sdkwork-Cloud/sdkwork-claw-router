@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/job-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-job-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-job-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c84b2f6fda6ecdabfb18c059d8b9fac6cc52bde848591683c36366d813c4fc4",

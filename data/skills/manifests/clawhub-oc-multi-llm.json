@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oc-multi-llm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-oc-multi-llm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oc-multi-llm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:44ac00f4b0ea1ea25d8d9850d1ff7263fbe2c68c6d9c74d00e84e1b9faf139b4",

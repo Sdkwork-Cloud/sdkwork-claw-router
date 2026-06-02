@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-duplication-detector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-duplication-detector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-duplication-detector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5fa9d6466f896fbdba8ca14d4f359f88a897dcf9e414114cf2d3152714157ec7",

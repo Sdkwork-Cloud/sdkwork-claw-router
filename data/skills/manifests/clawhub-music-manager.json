@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a1fe57f888439ae5a2e86045037e41bd7cd3ba540c4536c37f2bb3716232737",

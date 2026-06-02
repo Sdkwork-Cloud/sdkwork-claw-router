@@ -6,6 +6,7 @@ import type {
   SdkworkGenerationModelBucket,
   SdkworkGenerationSerializedAssetConfig,
 } from '@sdkwork/generation-pc-react/react';
+import type { ClawRouterMediaResource } from 'sdkwork-claw-router-commons/runtime';
 
 export type PlaygroundMedia = SdkworkGenerationMedia;
 
@@ -20,10 +21,8 @@ export type PlaygroundGenerationConfig = SdkworkGenerationSerializedAssetConfig;
 export interface PlaygroundReferenceImageInput {
   name: string;
   mimeType?: string;
+  resource: ClawRouterMediaResource;
   sizeBytes?: number;
-  dataUrl?: string;
-  url?: string;
-  assetId?: string;
 }
 
 export type PlaygroundReferenceAssetKind = 'image' | 'audio' | 'video';
@@ -47,10 +46,8 @@ export interface PlaygroundReferenceAssetInput {
   role: 'first_frame' | 'last_frame' | 'reference_image' | 'reference_audio' | 'reference_video';
   name: string;
   mimeType?: string;
+  resource: ClawRouterMediaResource;
   sizeBytes?: number;
-  dataUrl?: string;
-  url?: string;
-  assetId?: string;
 }
 
 export type PlaygroundGenerationArtifact = SdkworkGenerationArtifact;

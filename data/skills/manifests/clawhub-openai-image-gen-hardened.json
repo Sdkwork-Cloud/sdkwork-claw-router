@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openai-image-gen-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openai-image-gen-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openai-image-gen-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8767e7ed68e1d4e5618129ed925004ffb5b54c9c7e107d94d5742ee88fccaec6",

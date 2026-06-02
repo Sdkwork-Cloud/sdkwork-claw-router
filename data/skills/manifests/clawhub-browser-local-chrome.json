@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/browser-local-chrome@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-browser-local-chrome-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-browser-local-chrome-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:013667d15a669f422d9d6a1082fa2ff858cea28e72979ffec0ebcd4d43bf379b",

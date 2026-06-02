@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexus-code-reviewer@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexus-code-reviewer-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexus-code-reviewer-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3469d1598b6a113a55b4b9f3484e1855ed849269dbd65a4a27ae2877d7b14ece",

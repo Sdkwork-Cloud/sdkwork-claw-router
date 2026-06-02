@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dashpass@0.8.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-dashpass-0.8.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dashpass-0.8.1.json"
+      },
       "version": "0.8.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6774d07023e2c271be4707172e20a3fefb736bb8794096b92aa50c9dc56d6b4b",

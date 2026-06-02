@@ -5,6 +5,7 @@ type CommerceOrderAmountBreakdownRecord struct {
 	CreatedAt string `json:"created_at"`
 	CurrencyCode string `json:"currency_code"`
 	DiscountAmount string `json:"discount_amount"`
+	Id string `json:"id"`
 	OrderId string `json:"order_id"`
 	OriginalAmount string `json:"original_amount"`
 	PayableAmount string `json:"payable_amount"`

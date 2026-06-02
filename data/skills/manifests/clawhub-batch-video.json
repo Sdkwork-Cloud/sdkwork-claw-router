@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/batch-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-batch-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-batch-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0a82d72c64e693bc921e0942b9332909dc28d0423a6ffec67b2378ecce99fea",

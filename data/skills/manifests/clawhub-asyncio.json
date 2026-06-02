@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/asyncio@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-asyncio-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-asyncio-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:152e3a6545a2a9b7b866cfb149177137c464a885a1f0f68496a080283931e8c4",

@@ -8,11 +8,13 @@ type PromotionEventOutboxRecord struct {
 	EventNo string `json:"event_no"`
 	EventType string `json:"event_type"`
 	EventVersion int `json:"event_version"`
+	Id string `json:"id"`
 	NextRetryAt string `json:"next_retry_at"`
 	OccurredAt string `json:"occurred_at"`
 	OrganizationId string `json:"organization_id"`
 	PayloadHash string `json:"payload_hash"`
 	PayloadJson map[string]JsonValue `json:"payload_json"`
+	PublishAttempts int `json:"publish_attempts"`
 	PublishedAt string `json:"published_at"`
 	Status string `json:"status"`
 	TenantId string `json:"tenant_id"`

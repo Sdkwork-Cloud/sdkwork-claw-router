@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dockerps@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dockerps-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dockerps-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8eb9a44bc975976855822b98918127e53f8272730b4df390e963aa4b5914dcfb",

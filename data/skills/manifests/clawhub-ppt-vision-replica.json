@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ppt-vision-replica@1.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ppt-vision-replica-1.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ppt-vision-replica-1.4.1.json"
+      },
       "version": "1.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3a5c54a8090a2fcad73eb121f02a3c5addffe76361a66be9d13c35681a1d2d21",

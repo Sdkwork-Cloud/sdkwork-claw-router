@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/decathlon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-decathlon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-decathlon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da5d6b8a3ecdae52d258aedaf292b7065917c4a83b2fe3ee38fbccc47e66cc38",

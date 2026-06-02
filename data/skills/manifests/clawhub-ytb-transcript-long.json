@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ytb-transcript-long@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ytb-transcript-long-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ytb-transcript-long-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29295e55cdd11bbd05b827602358dd06ceed579d7c6baf8005ef913a3a3a7bb4",

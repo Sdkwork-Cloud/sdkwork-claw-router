@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-puzzles@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-puzzles-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-puzzles-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:f982cf3a5edbf430d0d5288f915394e42ad91f72c9654a607833a2c8b31e628d",

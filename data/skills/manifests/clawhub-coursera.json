@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coursera@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-coursera-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coursera-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cc71e41ab53bd4adb782d8ff0e274f4a6597d83b8e87c6c0c34759063362d8e4",

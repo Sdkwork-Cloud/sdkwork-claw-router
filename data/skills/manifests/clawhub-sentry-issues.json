@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentry-issues@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentry-issues-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentry-issues-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:060b0bf7a7947512548d56899526e8d73ba3ced1c1fa81b1c185db0a0305a383",

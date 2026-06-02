@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podcast-summarize@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-podcast-summarize-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podcast-summarize-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a5cc6c50f1dda6e2fb0f1525fb5b35cac5c72471c0a139bf6bdfe1ffd5325dc",

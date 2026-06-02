@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/milestone@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-milestone-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-milestone-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5aedf163cc6873a3b45f573ec148514582f31fcbc541fc72b071cb2917263a2c",

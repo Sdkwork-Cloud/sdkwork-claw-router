@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sendflare-skill@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-sendflare-skill-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sendflare-skill-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:a40e7bccb7477b39b7e94ccf20495c85fffc74c58c0449bd7e10e95b2718f253",

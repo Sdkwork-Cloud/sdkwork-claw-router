@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6ae37d674307c089cf76faf83f88c4c5f83ae34590a073c964355cf693317b07",

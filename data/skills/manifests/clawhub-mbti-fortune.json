@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mbti-fortune@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mbti-fortune-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mbti-fortune-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:697e596f7f1219ef20e293ab7b93f028b4cceb72f4107c7ac73cb25caef1bc1a",

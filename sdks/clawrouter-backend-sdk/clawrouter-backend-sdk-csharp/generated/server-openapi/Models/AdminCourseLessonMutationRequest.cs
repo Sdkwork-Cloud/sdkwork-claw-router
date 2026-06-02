@@ -15,6 +15,6 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? SectionId { get; set; }
         public string? Status { get; set; }
         public string? Title { get; set; }
-        public string? VideoUrl { get; set; }
+        public MediaResource? Video { get; set; }
     }
 }

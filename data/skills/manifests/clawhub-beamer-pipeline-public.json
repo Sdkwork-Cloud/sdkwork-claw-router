@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beamer-pipeline-public@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-beamer-pipeline-public-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beamer-pipeline-public-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c56dc35f7195320d3181ed534db08068a96d8f6da990a10afa369058aba2e6af",

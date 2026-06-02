@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/delivery-checklist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-delivery-checklist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-delivery-checklist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d22bea59439d2d41c041931ef775b9316aaa09326428bbfcce14909c746b333",

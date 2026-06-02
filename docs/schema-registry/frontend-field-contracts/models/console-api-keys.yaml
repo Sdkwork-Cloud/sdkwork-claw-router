@@ -8,7 +8,8 @@ frontend_models:
   - name
   - maskedKey
   - copyableKey
-  - group
+  - channelGroup
+  - channelGroupName
   - rate
   - quota
   - usedQuota
@@ -20,7 +21,7 @@ frontend_models:
   - defaultForRuntime
   derived_fields:
   - displayName
-  - groupName
+  - channelGroupName
   data_sources:
   - iam_gateway_api_key
   - ai_channel_group
@@ -31,7 +32,7 @@ frontend_models:
   - ai_pricing_plan
 - route: /console/api-keys
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
-  interface: ApiKeyGroup
+  interface: ChannelGroup
   fields:
   - id
   - code
@@ -51,7 +52,8 @@ frontend_models:
   - key.displayName
   - key.maskedKey
   - key.copyableKey
-  - key.group
+  - key.channelGroup
+  - key.channelGroupName
   - key.rate
   - key.quota
   - key.usedQuota
@@ -63,7 +65,7 @@ frontend_models:
   - key.defaultForRuntime
   - rawKey
   derived_fields:
-  - key.groupName
+  - key.channelGroupName
   data_sources:
   - iam_gateway_api_key
 - route: /console/api-keys
@@ -71,7 +73,7 @@ frontend_models:
   interface: CreateApiKeyInput
   fields:
   - name
-  - group
+  - channelGroup
   - quota
   - isUnlimitedQuota
   - modalities

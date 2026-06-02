@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ollama-manager@1.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ollama-manager-1.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ollama-manager-1.3.1.json"
+      },
       "version": "1.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:86a28304790db2a69188e5312821906d4e0b7e5e3babf4d7124e1a67cf77d6ba",

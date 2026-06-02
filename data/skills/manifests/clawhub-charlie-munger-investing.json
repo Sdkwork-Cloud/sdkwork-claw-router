@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/charlie-munger-investing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-charlie-munger-investing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-charlie-munger-investing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e51111e99bb4d10a0fa458aa772c8bdbced0fe09d65e46606d57e9e5b87c5646",

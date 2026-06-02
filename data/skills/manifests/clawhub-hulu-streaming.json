@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hulu-streaming@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hulu-streaming-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hulu-streaming-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:88fdc5ba8b971b944fe9d095d80e3827391f3a3ed8f4505670939a171ddf3f4c",

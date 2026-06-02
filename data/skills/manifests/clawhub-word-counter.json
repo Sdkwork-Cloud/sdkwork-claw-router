@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/word-counter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-word-counter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-word-counter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a1fcb6614c5918ec426a9657ceddeed0207b5efb63fe1cc2259455fedec04ed",

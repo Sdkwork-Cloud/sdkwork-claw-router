@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/micro-snowball@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-micro-snowball-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-micro-snowball-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1bbf4c8a955db5a62adac7f09ffbaafc3338d96cc24e9a04c4258886ec5868da",

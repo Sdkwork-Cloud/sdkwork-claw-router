@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-metrics-osiris@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-metrics-osiris-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-metrics-osiris-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7832caf9044456f76ca1462ba2bac8e2f963a06235764bcff4f9c4dcac9c08b3",

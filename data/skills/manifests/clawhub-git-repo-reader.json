@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-repo-reader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-repo-reader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-repo-reader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f68de5bd1c946821f3354ef90b39897c574cb0a840501c9753a9e6596d0854e1",

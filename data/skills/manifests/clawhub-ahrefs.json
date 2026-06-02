@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ahrefs@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ahrefs-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ahrefs-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc854c140ce9eece11e430404237e0d5b8b427e7536347ea4e174269260092b0",

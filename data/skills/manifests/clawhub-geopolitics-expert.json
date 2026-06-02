@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geopolitics-expert@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-geopolitics-expert-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geopolitics-expert-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f2f66cae129ac5328f71ca11999f5135619afbd012ab1dd069d58f9311d60560",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kfc@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-kfc-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kfc-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6b27aec035c879e1f89afd325b53d62feae9ad217010ee49e60353bc5164241d",

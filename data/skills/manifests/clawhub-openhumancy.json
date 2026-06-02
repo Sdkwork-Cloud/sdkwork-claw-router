@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openhumancy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openhumancy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openhumancy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:84797f95dc16714b0ccd75b53fc20022f2b38bae044bc5b722965aa33709587d",

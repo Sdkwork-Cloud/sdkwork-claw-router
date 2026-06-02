@@ -13,6 +13,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public Dictionary<string, string>? CustomerActionJson { get; set; }
         public string? DisplayName { get; set; }
         public Dictionary<string, string>? FieldSchemaJson { get; set; }
+        public string? Id { get; set; }
         public string? Locale { get; set; }
         public string? LogoAssetId { get; set; }
         public string? MerchantDisplayName { get; set; }

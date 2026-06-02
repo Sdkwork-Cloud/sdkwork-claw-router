@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{AdminAppConfig};
+use crate::models::{AdminAppConfig, MediaResource};
 
 /// Offline PlusApp snapshot returned by the backend.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -20,6 +20,10 @@ pub struct AdminAppItemResponse {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub app_type: Option<String>,
 
+    /// Artifact field on admin app item response.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub artifact: Option<MediaResource>,
+
     /// Bundle id field on admin app item response.
     #[serde(rename = "bundleId")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -36,18 +40,8 @@ pub struct AdminAppItemResponse {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
 
-    /// Download url field on admin app item response.
-    #[serde(rename = "downloadUrl")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub download_url: Option<String>,
-
     /// Icon field on admin app item response.
-    pub icon: std::collections::HashMap<String, String>,
-
-    /// Icon url field on admin app item response.
-    #[serde(rename = "iconUrl")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon_url: Option<String>,
+    pub icon: MediaResource,
 
     /// Id field on admin app item response.
     pub id: String,

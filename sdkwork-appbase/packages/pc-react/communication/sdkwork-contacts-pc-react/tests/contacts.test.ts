@@ -16,8 +16,21 @@ import {
   type SdkworkContactRecord,
 } from "../src";
 
+const contactAvatar = {
+  bucketId: "profile-media",
+  fileName: "ada.png",
+  id: "media-resource-avatar-ada",
+  kind: "image",
+  mimeType: "image/png",
+  objectKey: "contacts/ada/avatar.png",
+  publicUrl: "https://cdn.sdkwork.ai/contacts/ada/avatar.png",
+  sizeBytes: "4096",
+  source: "object_storage",
+} as const;
+
 const contacts: SdkworkContactRecord[] = [
   {
+    avatar: contactAvatar,
     displayName: "Ada Lovelace",
     id: "ada",
     initials: "A",
@@ -172,7 +185,7 @@ describe("sdkwork-contacts-pc-react", () => {
     });
 
     expect(toImParticipant(contacts[0])).toEqual({
-      avatarUrl: undefined,
+      avatar: contactAvatar,
       id: "ada",
       name: "Ada Lovelace",
       presence: "online",
@@ -188,7 +201,7 @@ describe("sdkwork-contacts-pc-react", () => {
         kind: "direct",
         participants: [
           {
-            avatarUrl: undefined,
+            avatar: contactAvatar,
             id: "ada",
             name: "Ada Lovelace",
             presence: "online",
@@ -197,7 +210,7 @@ describe("sdkwork-contacts-pc-react", () => {
         title: "Ada Lovelace",
       },
       participant: {
-        avatarUrl: undefined,
+        avatar: contactAvatar,
         id: "ada",
         name: "Ada Lovelace",
         presence: "online",
@@ -212,6 +225,7 @@ describe("sdkwork-contacts-pc-react", () => {
         activeContactId: "ada",
       }),
     ).toEqual({
+      avatar: contactAvatar,
       digestStatus: "available",
       displayName: "Ada Lovelace",
       id: "ada",

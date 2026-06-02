@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-deconstruct@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-deconstruct-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-deconstruct-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:581515bcfefc2ccc545c8a68c61ddbcb057c6d259c51691c9a4989d5a9194f73",

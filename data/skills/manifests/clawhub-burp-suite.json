@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/burp-suite@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-burp-suite-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-burp-suite-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3071702b9aba99594794808d219e2245c7898169451fba8b4d6b5141a53331cd",

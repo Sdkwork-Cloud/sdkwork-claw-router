@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/art-of-war@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-art-of-war-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-art-of-war-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:44ff113d3f6591f6835b1681d2908d0ed1bcf13028a9621678f8731003201d9d",

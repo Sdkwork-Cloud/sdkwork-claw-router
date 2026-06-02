@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oracle-cloud-hcm@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-oracle-cloud-hcm-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oracle-cloud-hcm-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e66ced42fb961011f27d504d611b388d2acd39070d3077ef21c4b4f20ce56d1d",

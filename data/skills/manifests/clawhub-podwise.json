@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podwise@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-podwise-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podwise-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8052eafd7b059e0252db91356ecd1b1e6d893f887872bf5cc188aa642dadf034",

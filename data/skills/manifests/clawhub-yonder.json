@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yonder@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-yonder-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yonder-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7c582913bda7b1c506f7d777a432d078ef5d7b9b844973c594e470ee90fd48e3",

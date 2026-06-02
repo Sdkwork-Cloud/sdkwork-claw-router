@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cadstack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cadstack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cadstack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0181261395594f6222fe662c9316bfe6922b373a1393c9a73eb6cb14256c1af",

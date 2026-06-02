@@ -298,7 +298,7 @@ describe("sdkwork-checkout-pc-react service", () => {
         paymentMethod: "WECHAT_PAY",
         paymentOrderId: "PAY-ORDER-9001",
         paymentParams: {},
-        qrCode: "wechat://qr/sdkwork-pay-9001",
+        qrContent: "wechat://qr/sdkwork-pay-9001",
         status: "pending",
         statusLabel: "Pending",
       }),

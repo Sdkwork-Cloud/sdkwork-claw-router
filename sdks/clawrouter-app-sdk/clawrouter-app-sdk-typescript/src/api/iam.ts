@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { ApiKeyGroupsListResult, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult } from '../types';
+import type { ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, ApiKeysUpdateResult, CreateApiKeyRequest, UpdateApiKeyRequest, UpdateSettingsRequest, UsersCurrentRetrieveResult, UsersSettingsRetrieveResult, UsersSettingsUpdateResult } from '../types';
 
 
 export class IamUsersSettingsApi {
@@ -89,29 +89,13 @@ export class IamApiKeysApi {
   }
 }
 
-export class IamApiKeyGroupsApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** List groups */
-  async list(): Promise<ApiKeyGroupsListResult> {
-    return this.client.get<ApiKeyGroupsListResult>(appApiPath(`/iam/api_key_groups`));
-  }
-}
-
 export class IamApi {
   private client: HttpClient;
-  public readonly apiKeyGroups: IamApiKeyGroupsApi;
   public readonly apiKeys: IamApiKeysApi;
   public readonly users: IamUsersApi;
 
   constructor(client: HttpClient) {
     this.client = client;
-    this.apiKeyGroups = new IamApiKeyGroupsApi(client);
     this.apiKeys = new IamApiKeysApi(client);
     this.users = new IamUsersApi(client);
   }

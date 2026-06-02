@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-pro@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-pro-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-pro-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c14341ebb0459ecba6bcf89ce90576011249344d243868a306c327ac9976314d",

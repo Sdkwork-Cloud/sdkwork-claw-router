@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clockwork@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-clockwork-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clockwork-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:85f9f13573d112613dd811e8067e08e68bf6521d9aa5c0cf1b147bdeb772e44b",

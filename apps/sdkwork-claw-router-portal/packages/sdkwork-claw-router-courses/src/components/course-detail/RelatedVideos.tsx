@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MessageSquare, PlayCircle } from 'lucide-react';
+import { readMediaResourceUrl } from 'sdkwork-claw-router-commons';
 import type { CourseRelatedCardView } from '../../data';
 
 export function RelatedVideos({ relatedCourses }: { relatedCourses: CourseRelatedCardView[] }) {
@@ -8,10 +9,12 @@ export function RelatedVideos({ relatedCourses }: { relatedCourses: CourseRelate
     <div className="bg-white dark:bg-[#0d1117] rounded-xl border border-slate-200 dark:border-white/10 p-4 shadow-sm w-full">
       <h3 className="font-bold text-slate-900 dark:text-white mb-4">Related courses</h3>
       <div className="space-y-3 max-h-[600px] overflow-y-auto pr-1 custom-scrollbar">
-        {relatedCourses.map((course) => (
+        {relatedCourses.map((course) => {
+          const thumbnailSrc = readMediaResourceUrl(course.thumbnail) || '/assets/courses/covers/ai-coding.svg';
+          return (
           <Link key={course.id} to={`/courses/${course.id}`} className="group flex gap-3 p-2 hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg transition-colors">
             <div className="relative w-32 h-20 flex-shrink-0 rounded-md overflow-hidden bg-slate-200 dark:bg-slate-800">
-              <img src={course.thumbnail} alt={course.title} className="w-full h-full object-cover" />
+              <img src={thumbnailSrc} alt={course.title} className="w-full h-full object-cover" />
               <div className="absolute bottom-1 right-1 bg-black/70 text-white text-[10px] px-1 rounded">
                 {course.duration}
               </div>
@@ -27,7 +30,8 @@ export function RelatedVideos({ relatedCourses }: { relatedCourses: CourseRelate
               </div>
             </div>
           </Link>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

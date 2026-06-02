@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slybroadcast-voicemail@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slybroadcast-voicemail-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slybroadcast-voicemail-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0c1ba68bda8c1fdc3be19b146ff27d95d21623aa6096b2d368276b3299331f5b",

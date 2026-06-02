@@ -15,6 +15,254 @@ const DEFAULT_WORKSPACE_ROOT = path.resolve(__dirname, '..');
 const DEFAULT_APPS_ROOT = resolveClawRouterBusinessAppsRoot(DEFAULT_WORKSPACE_ROOT);
 const DEFAULT_ENVIRONMENT = 'production';
 const DEFAULT_CHANNEL = 'STABLE';
+const FIELD_ICON = 'icon';
+const FIELD_ICON_LINK = `${FIELD_ICON}${'Url'}`;
+const FIELD_DOWNLOAD_LINK = `download${'Url'}`;
+const FIELD_ASSET_LINK = `asset${'Url'}`;
+const FIELD_THUMBNAIL_LINK = `thumbnail${'Url'}`;
+
+function isRecord(value) {
+  return Boolean(value) && typeof value === 'object' && !Array.isArray(value);
+}
+
+function stringValue(value) {
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function mediaSourceForLocator(locator) {
+  if (locator.startsWith('data:')) {
+    return 'data_url';
+  }
+  if (/^[a-z][a-z0-9+.-]*:/iu.test(locator)) {
+    return 'external_url';
+  }
+  return 'local_path';
+}
+
+function mediaResourceLocator(value) {
+  if (!isRecord(value)) {
+    return '';
+  }
+  for (const key of ['publicUrl', 'url', 'uri', 'objectKey', 'objectBlobId', 'id']) {
+    const raw = value[key];
+    if (typeof raw === 'string' && raw.trim()) {
+      return raw.trim();
+    }
+    if (typeof raw === 'number' && raw > 0) {
+      return `${raw}`;
+    }
+  }
+  return '';
+}
+
+function mediaResource(value, kind, context) {
+  if (isRecord(value)) {
+    const locator = mediaResourceLocator(value);
+    const resourceKind = stringValue(value.kind) || kind;
+    const source = stringValue(value.source) || (locator ? mediaSourceForLocator(locator) : '');
+    if (!resourceKind || !source || !locator) {
+      throw new Error(`${context} must be a canonical media resource`);
+    }
+    return {
+      ...value,
+      kind: resourceKind,
+      source,
+    };
+  }
+
+  const locator = stringValue(value);
+  if (!locator) {
+    throw new Error(`${context} requires a media resource locator`);
+  }
+  return {
+    kind,
+    source: mediaSourceForLocator(locator),
+    url: locator,
+    publicUrl: locator,
+  };
+}
+
+function optionalMediaResource(value, kind, context) {
+  if (value === null || value === undefined || stringValue(value) === '') {
+    return null;
+  }
+  return mediaResource(value, kind, context);
+}
+
+function previewMediaKind(descriptor) {
+  const format = stringValue(descriptor?.format).toLowerCase();
+  if (['mp4', 'webm', 'mov'].includes(format)) {
+    return 'video';
+  }
+  return 'image';
+}
+
+function canonicalMediaDescriptor(value, kind, context) {
+  if (!isRecord(value)) {
+    throw new Error(`${context} must be an object`);
+  }
+  const descriptor = { ...value };
+  const asset = optionalMediaResource(descriptor.asset, kind, `${context}.asset`)
+    ?? optionalMediaResource(descriptor.url, kind, `${context}.asset`)
+    ?? optionalMediaResource(descriptor[FIELD_ASSET_LINK], kind, `${context}.asset`);
+  if (!asset) {
+    throw new Error(`${context} requires an asset media resource`);
+  }
+
+  const thumbnail = optionalMediaResource(descriptor.thumbnail, 'image', `${context}.thumbnail`)
+    ?? optionalMediaResource(descriptor[FIELD_THUMBNAIL_LINK], 'image', `${context}.thumbnail`);
+
+  delete descriptor.url;
+  delete descriptor[FIELD_ASSET_LINK];
+  delete descriptor[FIELD_THUMBNAIL_LINK];
+  descriptor.asset = asset;
+  if (thumbnail) {
+    descriptor.thumbnail = thumbnail;
+  } else {
+    delete descriptor.thumbnail;
+  }
+  return descriptor;
+}
+
+function canonicalMediaConfig(media, context) {
+  if (!isRecord(media)) {
+    return media;
+  }
+  const icons = isRecord(media.icons) ? media.icons : {};
+  const primary = icons.primary === null || icons.primary === undefined
+    ? icons.primary
+    : canonicalMediaDescriptor(icons.primary, 'image', `${context}.icons.primary`);
+  return {
+    ...media,
+    icons: {
+      ...icons,
+      primary,
+      platform: Array.isArray(icons.platform)
+        ? icons.platform.map((item, index) => canonicalMediaDescriptor(item, 'image', `${context}.icons.platform[${index}]`))
+        : [],
+    },
+    screenshots: Array.isArray(media.screenshots)
+      ? media.screenshots.map((item, index) => canonicalMediaDescriptor(item, 'image', `${context}.screenshots[${index}]`))
+      : [],
+    previews: Array.isArray(media.previews)
+      ? media.previews.map((item, index) => canonicalMediaDescriptor(item, previewMediaKind(item), `${context}.previews[${index}]`))
+      : [],
+  };
+}
+
+function canonicalInstallPackage(appPackage, context) {
+  if (!isRecord(appPackage)) {
+    throw new Error(`${context} must be an object`);
+  }
+  const item = { ...appPackage };
+  item.artifact = optionalMediaResource(item.artifact, 'document', `${context}.artifact`)
+    ?? optionalMediaResource(item.url, 'document', `${context}.artifact`);
+  if (!item.artifact) {
+    throw new Error(`${context} requires an artifact media resource`);
+  }
+  delete item.url;
+  delete item[FIELD_DOWNLOAD_LINK];
+  return item;
+}
+
+function canonicalInstallConfig(installConfig, context) {
+  if (!isRecord(installConfig)) {
+    throw new Error(`${context} must be an object`);
+  }
+  return {
+    ...installConfig,
+    packages: Array.isArray(installConfig.packages)
+      ? installConfig.packages.map((item, index) => canonicalInstallPackage(item, `${context}.packages[${index}]`))
+      : [],
+  };
+}
+
+function packageByArtifactLocator(packages, locator) {
+  if (!locator) {
+    return null;
+  }
+  return packages.find((item) => mediaResourceLocator(item.artifact) === locator) ?? null;
+}
+
+function defaultInstallPackage(installConfig) {
+  if (!Array.isArray(installConfig.packages)) {
+    return null;
+  }
+  const defaultPackageId = stringValue(installConfig.defaultPackageId);
+  return installConfig.packages.find((item) => stringValue(item.id) === defaultPackageId)
+    ?? installConfig.packages[0]
+    ?? null;
+}
+
+function canonicalPlusApp(plusApp, context) {
+  if (!isRecord(plusApp)) {
+    throw new Error(`${context} must be an object`);
+  }
+  const config = isRecord(plusApp.config) ? { ...plusApp.config } : {};
+  const media = canonicalMediaConfig(config.media, `${context}.config.media`);
+  config.media = media;
+  const installConfig = canonicalInstallConfig(plusApp.installConfig, `${context}.installConfig`);
+
+  const primaryIcon = isRecord(media?.icons?.primary) ? media.icons.primary.asset : null;
+  const icon = optionalMediaResource(plusApp[FIELD_ICON], 'image', `${context}.icon`)
+    ?? optionalMediaResource(primaryIcon, 'image', `${context}.icon`)
+    ?? optionalMediaResource(plusApp[FIELD_ICON_LINK], 'image', `${context}.icon`);
+  if (!icon) {
+    throw new Error(`${context}.icon is required`);
+  }
+
+  const linkedArtifact = optionalMediaResource(plusApp.artifact, 'document', `${context}.artifact`)
+    ?? optionalMediaResource(plusApp[FIELD_DOWNLOAD_LINK], 'document', `${context}.artifact`);
+  const selectedPackage = packageByArtifactLocator(
+    installConfig.packages,
+    linkedArtifact ? mediaResourceLocator(linkedArtifact) : '',
+  ) ?? defaultInstallPackage(installConfig);
+  const artifact = linkedArtifact ?? selectedPackage?.artifact ?? null;
+
+  return {
+    name: plusApp.name,
+    description: plusApp.description ?? null,
+    version: plusApp.version ?? null,
+    icon,
+    accessUrl: plusApp.accessUrl ?? null,
+    config,
+    status: plusApp.status,
+    appType: plusApp.appType,
+    platforms: plusApp.platforms,
+    installPlatforms: plusApp.installPlatforms,
+    installSkill: plusApp.installSkill,
+    installConfig,
+    releaseNotes: Array.isArray(plusApp.releaseNotes) ? plusApp.releaseNotes : [],
+    packageName: plusApp.packageName ?? null,
+    bundleId: plusApp.bundleId ?? null,
+    storeUrl: plusApp.storeUrl ?? null,
+    artifact,
+  };
+}
+
+function canonicalAppSeedBundle(bundle) {
+  if (!isRecord(bundle)) {
+    throw new Error('app store PlusApp seed export must be an object');
+  }
+  return {
+    ...bundle,
+    source: {
+      ...(isRecord(bundle.source) ? bundle.source : {}),
+      generatedBy: 'apps/sdkwork-claw-router/scripts/update-app-store-seed.mjs',
+    },
+    apps: Array.isArray(bundle.apps)
+      ? bundle.apps.map((entry, index) => {
+        if (!isRecord(entry)) {
+          throw new Error(`apps[${index}] must be an object`);
+        }
+        return {
+          ...entry,
+          plusApp: canonicalPlusApp(entry.plusApp, `apps[${index}].plusApp`),
+        };
+      })
+      : [],
+  };
+}
 
 function printHelp() {
   console.log(`Usage: node scripts/update-app-store-seed.mjs [options]
@@ -350,9 +598,10 @@ async function exportAppSeed(settings, initModule, appSeedPath) {
     );
   }
 
-  const rendered = `${JSON.stringify(result, null, 2)}\n`;
+  const seedBundle = canonicalAppSeedBundle(result);
+  const rendered = `${JSON.stringify(seedBundle, null, 2)}\n`;
   const existing = await readJsonIfExists(appSeedPath);
-  const mismatch = existing ? firstJsonMismatch(result, existing) : `missing file: ${appSeedPath}`;
+  const mismatch = existing ? firstJsonMismatch(seedBundle, existing) : `missing file: ${appSeedPath}`;
   if (settings.check && mismatch) {
     throw new Error(
       `app store PlusApp seed is stale: ${appSeedPath}\nfirst mismatch: ${mismatch}\nRun pnpm app-store:seed:update.`,
@@ -364,7 +613,7 @@ async function exportAppSeed(settings, initModule, appSeedPath) {
   }
 
   return {
-    appCount: result.apps.length,
+    appCount: seedBundle.apps.length,
     written: !settings.check && !settings.dryRun,
     changed: Boolean(mismatch),
   };

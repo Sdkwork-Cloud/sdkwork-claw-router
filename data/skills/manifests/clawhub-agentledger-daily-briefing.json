@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentledger-daily-briefing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentledger-daily-briefing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentledger-daily-briefing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:549978b370366c059497d8b010d158dff70defc7e80ce6b307f0f80666ecd05a",

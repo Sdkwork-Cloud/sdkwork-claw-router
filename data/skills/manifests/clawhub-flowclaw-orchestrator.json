@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flowclaw-orchestrator@1.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-flowclaw-orchestrator-1.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flowclaw-orchestrator-1.1.3.json"
+      },
       "version": "1.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:08e076a082ca2b1dd3dff32481722b9f123845f1f3e772e48523637d62d2cf4c",

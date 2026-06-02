@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
     from .admin_app_config import AdminAppConfig
+    from .media_resource import MediaResource
 
 
 @dataclass
@@ -11,12 +12,11 @@ class AdminAppUpdateRequest:
     """Admin app update request schema exposed by Claw Router."""
     access_url: Optional[str] = None
     app_type: Optional[str] = None
+    artifact: Optional[MediaResource] = None
     bundle_id: Optional[str] = None
     config: Optional[AdminAppConfig] = None
     description: Optional[str] = None
-    download_url: Optional[str] = None
-    icon: Optional[Dict[str, str]] = None
-    icon_url: Optional[str] = None
+    icon: Optional[MediaResource] = None
     install_config: Optional[Dict[str, str]] = None
     install_platforms: Optional[Dict[str, str]] = None
     install_skill: Optional[Dict[str, str]] = None

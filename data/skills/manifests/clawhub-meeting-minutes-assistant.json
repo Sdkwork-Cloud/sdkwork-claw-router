@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-minutes-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-minutes-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-minutes-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f7bce049e3c0a44040078b9963e110f342f87f42988d72095f1055b459fa74e0",

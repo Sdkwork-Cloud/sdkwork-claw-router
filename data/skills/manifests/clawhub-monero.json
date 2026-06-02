@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/monero@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-monero-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-monero-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eef5176392ca36bfd2925c5180fe51478fb8368b441aaba48fc3de94fa41cb31",

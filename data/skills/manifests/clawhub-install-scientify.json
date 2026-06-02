@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/install-scientify@1.7.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-install-scientify-1.7.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-install-scientify-1.7.3.json"
+      },
       "version": "1.7.3",
       "runtime": "metadata",
       "checksumHash": "sha256:35d79087ff63a21bc46472376fff6a4821185cedb2fb3d0ce6aa00cebe86f7ca",

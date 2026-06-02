@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rubber-duck-deluxe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rubber-duck-deluxe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rubber-duck-deluxe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96f5e18ba72b844530131ccd5ed0fc7d1ea1930a712cd9e76926810497a01a2e",

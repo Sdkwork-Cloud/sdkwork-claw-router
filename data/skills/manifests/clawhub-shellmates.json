@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shellmates@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shellmates-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shellmates-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d98278b7778c7d1d404312e186657b9a0ddc73ceb3dbcc1b3d51fe19a7eabe43",

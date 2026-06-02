@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yuxing-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yuxing-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yuxing-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55659c397b84818ecbc4b9feee1368976446ef37067308b5f532ccf827e38bb1",

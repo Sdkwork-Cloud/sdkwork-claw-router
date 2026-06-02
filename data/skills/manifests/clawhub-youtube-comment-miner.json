@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-comment-miner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-comment-miner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-comment-miner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7e3be276be75fc2c47d7b33c4bcb9e56d294126882e36d6e6090122059af179b",

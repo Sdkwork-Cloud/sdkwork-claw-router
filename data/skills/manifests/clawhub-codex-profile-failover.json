@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-profile-failover@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-profile-failover-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-profile-failover-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:010138600a30963df89a4459dfbf8e226489f0bd7863421d5346904aabbc7e56",

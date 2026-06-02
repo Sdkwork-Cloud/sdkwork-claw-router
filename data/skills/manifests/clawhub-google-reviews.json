@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-reviews@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-reviews-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-reviews-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77e1c0caf8d320a3481fa8d7a9512503278a7d1a7912df8a06d439214c04c7e3",

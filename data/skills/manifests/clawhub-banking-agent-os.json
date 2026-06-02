@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/banking-agent-os@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-banking-agent-os-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-banking-agent-os-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0af961724b9f36e7f4d59c266f53bfefa791b3a933b5da190c834796ee551ed2",

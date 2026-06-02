@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bookforge-secure-deployment-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bookforge-secure-deployment-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bookforge-secure-deployment-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed694c86928f04716a170ed1b63142234230f506590442c9dc4d7918885e1ea0",

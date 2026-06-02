@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-clip-curator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-clip-curator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-clip-curator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:929bbda82446343bd3a08f9f91795228c213fa36daf206b515370a990c9cb7f4",

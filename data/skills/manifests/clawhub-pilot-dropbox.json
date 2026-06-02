@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-dropbox@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-dropbox-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-dropbox-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e0d7a70061775fb0cbff6b8263bba47f7f889d595335e38fe31699e28892a23",

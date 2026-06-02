@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deadpost@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deadpost-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deadpost-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7c7f69708b77569e4435ec687be3b60b0b5ae9a34baf984edad1d96cbe5b509e",

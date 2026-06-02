@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pinchboard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pinchboard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pinchboard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ce2d05defc5b37f55847e5c40f998bcfc57ada689915d8feae4be4d4cf475b6",

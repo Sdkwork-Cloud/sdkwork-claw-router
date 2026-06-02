@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/securityvitals@1.4.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-securityvitals-1.4.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-securityvitals-1.4.8.json"
+      },
       "version": "1.4.8",
       "runtime": "metadata",
       "checksumHash": "sha256:e5ad6c63b98e7aba337ba2313118adaa50235b37d68bfbd5595758fe86d9701a",

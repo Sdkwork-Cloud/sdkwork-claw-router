@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finnhub-skill@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-finnhub-skill-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finnhub-skill-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0658c384ad858b088891f1a5cdb48692f7b5a03448a290ad5532ac1f78796dcb",

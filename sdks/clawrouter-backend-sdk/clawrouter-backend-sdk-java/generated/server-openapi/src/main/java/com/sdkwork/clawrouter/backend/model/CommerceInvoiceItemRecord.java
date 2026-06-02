@@ -4,8 +4,10 @@ package com.sdkwork.clawrouter.backend.model;
 public class CommerceInvoiceItemRecord {
     private String amount;
     private String createdAt;
+    private String id;
     private String invoiceId;
     private String orderItemId;
+    private String taxAmount;
     private String tenantId;
     private String title;
 
@@ -25,6 +27,14 @@ public class CommerceInvoiceItemRecord {
         this.createdAt = createdAt;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getInvoiceId() {
         return this.invoiceId;
     }
@@ -39,6 +49,14 @@ public class CommerceInvoiceItemRecord {
 
     public void setOrderItemId(String orderItemId) {
         this.orderItemId = orderItemId;
+    }
+
+    public String getTaxAmount() {
+        return this.taxAmount;
+    }
+
+    public void setTaxAmount(String taxAmount) {
+        this.taxAmount = taxAmount;
     }
 
     public String getTenantId() {

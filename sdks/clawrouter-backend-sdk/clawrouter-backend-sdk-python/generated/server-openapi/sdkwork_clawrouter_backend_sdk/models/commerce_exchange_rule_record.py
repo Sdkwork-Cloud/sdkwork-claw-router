@@ -16,5 +16,6 @@ class CommerceExchangeRuleRecord:
     target_asset_type: str
     tenant_id: str
     updated_at: str
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     remark: Optional[str] = None

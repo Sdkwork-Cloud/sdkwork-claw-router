@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/server-maintenance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-server-maintenance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-server-maintenance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a0e2ba7a9c426a11e101fd3e56b8dbd1a0fecfb59ddcf897652c21ac300a1bef",

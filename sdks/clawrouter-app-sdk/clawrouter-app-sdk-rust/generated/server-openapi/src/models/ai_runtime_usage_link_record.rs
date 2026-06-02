@@ -11,6 +11,10 @@ pub struct AiRuntimeUsageLinkRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub agent_run_step_id: Option<String>,
 
+    /// Agent run step id key field on ai runtime usage link record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub agent_run_step_id_key: Option<String>,
+
     /// Agent session id field on ai runtime usage link record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub agent_session_id: Option<String>,

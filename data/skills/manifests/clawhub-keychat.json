@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/keychat@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-keychat-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-keychat-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a7971c299d8333c98a4600ab9271443a7e21818e24f623739409362294480580",

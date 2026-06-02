@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcp-skill-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcp-skill-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcp-skill-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1977f667f4c2933e0bd723941365596ab16faa0576681f63b47433851f63dd43",

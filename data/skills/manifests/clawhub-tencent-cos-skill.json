@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencent-cos-skill@1.1.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencent-cos-skill-1.1.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencent-cos-skill-1.1.7.json"
+      },
       "version": "1.1.7",
       "runtime": "metadata",
       "checksumHash": "sha256:e73b5ccc22ce825433f1093cb791101fae85fd49429fd9f23fbeb44831907d0c",

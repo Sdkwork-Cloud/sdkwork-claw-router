@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-notetaker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-notetaker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-notetaker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:88a5b9b6c0c1ec5b38b2d12850b53297750f19d125f09354f753b9f7313cbc5b",

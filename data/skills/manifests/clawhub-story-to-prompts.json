@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/story-to-prompts@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-story-to-prompts-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-story-to-prompts-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:78a583c76a794a8838de79d00c4ed5ad58b903541bc13e5d53d5cfe0772aa1de",

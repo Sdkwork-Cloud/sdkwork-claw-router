@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-backup@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-backup-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-backup-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d78fd2b2e48e828e6e142e431251e21882692c7f70dc2e92d16af3fbc7131983",

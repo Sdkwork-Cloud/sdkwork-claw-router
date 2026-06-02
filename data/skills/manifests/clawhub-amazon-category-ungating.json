@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-category-ungating@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-category-ungating-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-category-ungating-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77d297d782b9cc988e102bb80905d4449a9a3d3da590491aeddf2174bea32041",

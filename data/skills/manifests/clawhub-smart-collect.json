@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-collect@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-collect-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-collect-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c4ba5a8b6b50e1cd980a59239090bc29d8f3de6f64ef225c202ceb80f64345ba",

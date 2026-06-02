@@ -7,7 +7,7 @@ data class OpenPlatformProviderRecord(
     val deletedAt: String? = null,
     val deletedBy: String? = null,
     val docsUrl: String? = null,
-    val iconUrl: String? = null,
+    val icon: MediaResource? = null,
     val id: String? = null,
     val metadata: Map<String, String>? = null,
     val name: String? = null,

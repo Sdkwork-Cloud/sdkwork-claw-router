@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finloop-mktdata-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-finloop-mktdata-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finloop-mktdata-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c73226065fcd8f8b2aa5448d347f7f9c5654e1440ce143926eb96b14e5b99a58",

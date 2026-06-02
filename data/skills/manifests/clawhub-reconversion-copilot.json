@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reconversion-copilot@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reconversion-copilot-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reconversion-copilot-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0d43aa49684e9d072b3f2a541a31e42f77a22ec746507883de34c75908b123f",

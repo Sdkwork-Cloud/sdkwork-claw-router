@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aperol@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aperol-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aperol-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a22a122f33085541376b711e29f5de48a6652a7397815b4684aa9cbabac7a13",

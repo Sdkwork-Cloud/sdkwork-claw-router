@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/offline-llama@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-offline-llama-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-offline-llama-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d10416a153db9d477d3cbeca8cddfbbfb7c926e63180962d5cfb6e31f881e0f0",

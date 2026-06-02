@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nex-healthcheck@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nex-healthcheck-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nex-healthcheck-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e36e236deafb6856c5d4611b74df1695d3e2642ecb2c41796d846d6a30c21d18",

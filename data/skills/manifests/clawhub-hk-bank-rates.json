@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hk-bank-rates@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hk-bank-rates-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hk-bank-rates-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e15d3e10b02f5f8870646a34af6b68e60c0f919d6572e959efa3b0e242ea3f1",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/simple-verifier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-simple-verifier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-simple-verifier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:69c65a40238c818af1a0fb5445bf3654d0a7088cef15551d9c9aa06117da5e0d",

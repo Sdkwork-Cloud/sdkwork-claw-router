@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/houwei-hello-world@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-houwei-hello-world-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-houwei-hello-world-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bfa8364dac76c33873ea062704a4dddb708f52ade6ed325943f2a2799c3882b5",

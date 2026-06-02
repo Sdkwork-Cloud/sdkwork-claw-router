@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chainlink@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chainlink-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chainlink-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf375ee29c514201768ab561d34202fd1f01858ea8f0f88be21acf66dbc90e87",

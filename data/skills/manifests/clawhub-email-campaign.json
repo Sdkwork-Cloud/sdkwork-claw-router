@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-campaign@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-campaign-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-campaign-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c58b89fa68132491c93af5c3a096039b0a76266e09128ae6873db949d767a8e0",

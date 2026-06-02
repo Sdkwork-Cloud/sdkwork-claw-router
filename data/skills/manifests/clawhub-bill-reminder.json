@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bill-reminder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bill-reminder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bill-reminder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a731a8cb409e698c6acfd5f73c391b1c4b45f5837d467737579a0b249f9203b3",

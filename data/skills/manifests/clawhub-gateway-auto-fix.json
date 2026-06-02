@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gateway-auto-fix@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gateway-auto-fix-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gateway-auto-fix-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:745fe71374ac77e559198221c34cfbd7788ab85f93bba546554abc1b3202038d",

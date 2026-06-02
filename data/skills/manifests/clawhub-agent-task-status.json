@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-task-status@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-task-status-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-task-status-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6ccfe10e886bc59a752b889ea2f31921fdc120017fa3c4a4f4c240649198b62f",

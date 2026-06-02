@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/checkr@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-checkr-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-checkr-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2f9bebfc5195b52a0cff9bd3cb4da2114d4673440d24a119b1ee2632a3e31e40",

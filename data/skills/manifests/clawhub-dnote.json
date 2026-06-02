@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dnote@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dnote-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dnote-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c84604bf574f638b52fdd63c5de7bfe59d09bf894828dabad72e9f4aa31258a9",

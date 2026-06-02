@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/matlab@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-matlab-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-matlab-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c3abfeffe3ff91997761087936742441160b32289c43e2eaf825d1e964d61ce",

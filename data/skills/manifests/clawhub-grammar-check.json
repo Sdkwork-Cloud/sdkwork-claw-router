@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grammar-check@2.3.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-grammar-check-2.3.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grammar-check-2.3.5.json"
+      },
       "version": "2.3.5",
       "runtime": "metadata",
       "checksumHash": "sha256:29e65ba38ac24affe4d14cb8cde3b1097791a074a26e931785ae35202c7626bc",

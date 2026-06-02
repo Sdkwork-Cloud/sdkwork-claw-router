@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/transcribe-video-to-text@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-transcribe-video-to-text-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-transcribe-video-to-text-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ebdb457e71e5716d0329612a4dba69cb012157ab8e6d51f5f33ac249d80f39d5",

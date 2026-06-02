@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nyskill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nyskill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nyskill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:331122ed0febc1161683390957da330f2284238d6bd3d0e51a5e02bc8c1a7f4f",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chatdecode@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chatdecode-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chatdecode-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:311fd7fd30e411897213964919357df9bd699d0ef2654ca8f19ece41ced60bdf",

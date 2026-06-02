@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-watermark-remover-openapi-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-watermark-remover-openapi-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-watermark-remover-openapi-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:377fbc14c5f9c06a1a61b51d211acd5214a99eb03da38727c0ddc15a754cdf31",

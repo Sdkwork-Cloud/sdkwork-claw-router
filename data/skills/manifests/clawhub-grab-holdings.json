@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grab-holdings@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grab-holdings-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grab-holdings-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c18d53cda4f56a0856e0f5b326c237c1b2df86030f6ebd424d75125f5c1ba2e",

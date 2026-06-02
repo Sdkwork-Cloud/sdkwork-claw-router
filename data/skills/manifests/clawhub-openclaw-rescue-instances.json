@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-rescue-instances@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-rescue-instances-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-rescue-instances-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:376e46908da9929284f93477dfddbc3aa90d5b7be0645cda04c621b14c382472",

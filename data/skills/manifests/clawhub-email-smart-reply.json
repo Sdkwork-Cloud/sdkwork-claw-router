@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-smart-reply@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-smart-reply-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-smart-reply-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a0a2be83a0ea9338665fb69bdd676903a5cd6a704328872d8b001ebea2758eb",

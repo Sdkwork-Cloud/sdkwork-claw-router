@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/editor-ai-hd@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-editor-ai-hd-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-editor-ai-hd-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6731d0817ef7ec982cf3a14ca42266b0213d38a5282e768bcce0a0461248ced8",

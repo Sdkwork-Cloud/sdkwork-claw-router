@@ -11,9 +11,11 @@ class CommercePaymentChannelRecord:
     created_at: str
     currency_code: str
     method_id: str
+    priority: str
     provider_account_id: str
     scene_code: str
     status: str
     tenant_id: str
     updated_at: str
+    id: Optional[str] = None
     organization_id: Optional[str] = None

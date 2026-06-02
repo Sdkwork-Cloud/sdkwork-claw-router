@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xero@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-xero-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xero-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:3186c75105d0863d44c6242cb688cdd01ef002e096b61b779c1d8c707935fbb4",

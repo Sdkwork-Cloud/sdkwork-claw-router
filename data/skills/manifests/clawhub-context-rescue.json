@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/context-rescue@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-context-rescue-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-context-rescue-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:02b90bfe3c71d89ffeaafb726b59e199c77f524606fcb6b7beb154852921af30",

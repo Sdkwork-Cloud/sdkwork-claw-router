@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llms-txt-generator@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llms-txt-generator-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llms-txt-generator-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c4c0a873f445042f7844b6f98c05bf90d82dcef25b6b2dfaedbcf417b9125bff",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lunardate@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-lunardate-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lunardate-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1f008acb5e9a9624cdd191de042f89404a121150ce778eb48ca7a5ef42150e9c",

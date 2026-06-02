@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stocks-quant-assistant@3.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stocks-quant-assistant-3.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stocks-quant-assistant-3.1.0.json"
+      },
       "version": "3.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f163ba80eef18889c30ef9e4317c0d22c3de08cbc331d265a3442dea983f0a2",

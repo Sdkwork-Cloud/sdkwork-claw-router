@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ens-manager@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ens-manager-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ens-manager-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d30530dd93e4ecb83ef7ca883ea66cf9b22c73721a12e9985fa03172d1082178",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-state-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-state-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-state-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c115dd32c2a5522987cc4575c0bf8ac0a97b39d6a1811c9c33ae46547e5ca62",

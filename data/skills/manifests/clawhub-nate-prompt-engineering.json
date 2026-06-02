@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nate-prompt-engineering@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nate-prompt-engineering-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nate-prompt-engineering-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4981625dc5acc7bcdd88d5b0a52d160319e4a5414881cc2607b08cc9ecdb38cc",

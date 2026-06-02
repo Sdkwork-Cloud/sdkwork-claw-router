@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-installer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-installer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-installer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0333b102b9ce237e59479b323954117d2757a4d074fe1d1d3f8d01466fe11658",

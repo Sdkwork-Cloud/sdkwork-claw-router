@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-pdf-ocr@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-pdf-ocr-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-pdf-ocr-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b261921b678a3210a55bee2e889c89013b60c85793809b9dd81a862108013fab",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/neuropay@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-neuropay-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-neuropay-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:1db5765bf05a7d6ac2d90c06ad204bb7b1b02c49ec315b4fad79f0e10f34d070",

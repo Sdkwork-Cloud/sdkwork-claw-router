@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cashew@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cashew-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cashew-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:50f9ca2eb2790302c97cb8f35ad63bdcb6333c984dd64ccde1cd4f141dd54350",

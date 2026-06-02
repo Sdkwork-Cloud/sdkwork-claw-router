@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cargill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cargill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cargill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ee218952bebc2a5d2571e40ce08365a11a774bb52761fd96a6412a626cb5a68",

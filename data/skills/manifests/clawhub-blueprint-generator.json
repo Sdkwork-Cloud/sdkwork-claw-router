@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blueprint-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blueprint-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blueprint-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10e815a1c1d3f8667d7931df65f8beda83effc04b6f0166ba6bc07acc9df81b2",

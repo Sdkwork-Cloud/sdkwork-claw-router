@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deckcraft@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deckcraft-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deckcraft-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2036ed8a6bd60b20147a9a275f549d3207265b69ef981eade77fd73e04d44cf3",

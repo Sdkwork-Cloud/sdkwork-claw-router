@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-sonar@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-sonar-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-sonar-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3a942d1615fc6508f35311443804c5061da94804eac9d463d148b622186ae299",

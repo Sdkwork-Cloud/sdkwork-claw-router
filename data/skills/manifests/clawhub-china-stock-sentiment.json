@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/china-stock-sentiment@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-china-stock-sentiment-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-china-stock-sentiment-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:49d3a817ff5d2968a6e0bd9b4c92ba483357e9241a3b883095897f03cb4bd95a",

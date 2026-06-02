@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amnesty@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-amnesty-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amnesty-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:9206976f16d705e0b51ff4c1d839945d25440a967e66573103a863731a0bd409",

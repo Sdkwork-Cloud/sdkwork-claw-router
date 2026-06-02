@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/system-continuity-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-system-continuity-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-system-continuity-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:33def8324770a8017018a3b897a381ebe3d37028fc6ec06eda9c0a559525c611",

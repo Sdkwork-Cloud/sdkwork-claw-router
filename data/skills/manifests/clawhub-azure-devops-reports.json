@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/azure-devops-reports@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-azure-devops-reports-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-azure-devops-reports-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:1f07b67340779e2d51d650f1719aaef1ee9c3eef42f639643e94d8d00455ee79",

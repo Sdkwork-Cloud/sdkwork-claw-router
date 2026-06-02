@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{AppReleaseItem};
+use crate::models::{AppReleaseItem, MediaResource};
 
 /// App detail response schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -24,7 +24,7 @@ pub struct AppDetailResponse {
     pub id: String,
 
     /// Image field on app detail response.
-    pub image: String,
+    pub image: MediaResource,
 
     /// Name field on app detail response.
     pub name: String,
@@ -36,5 +36,5 @@ pub struct AppDetailResponse {
     pub releases: Vec<AppReleaseItem>,
 
     /// Screenshots field on app detail response.
-    pub screenshots: Vec<String>,
+    pub screenshots: Vec<MediaResource>,
 }

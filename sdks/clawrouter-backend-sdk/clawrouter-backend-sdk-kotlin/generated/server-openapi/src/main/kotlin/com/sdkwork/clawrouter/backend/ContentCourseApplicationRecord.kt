@@ -27,5 +27,5 @@ data class ContentCourseApplicationRecord(
     val userId: String? = null,
     val uuid: String? = null,
     val version: String? = null,
-    val videoUrl: String? = null
+    val video: MediaResource? = null
 )

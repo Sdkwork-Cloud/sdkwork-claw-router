@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitlab-batch-cloner@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-batch-cloner-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitlab-batch-cloner-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f1a75ec027f025bf85faaff98cada9832877268e543c33c20f93a5a8f1557c41",

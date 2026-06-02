@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-architect-p@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-architect-p-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-architect-p-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2380e6b8606bee0dd099df0d561ef6831ea49704a4159420a46a10caf2c5ccb4",

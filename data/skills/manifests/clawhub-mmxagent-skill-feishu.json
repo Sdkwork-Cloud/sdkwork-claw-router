@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mmxagent-skill-feishu@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mmxagent-skill-feishu-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mmxagent-skill-feishu-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b88f5d0acdfa0352d3137e765723f218e44566ccca0fdca6a0603d7c9231966",

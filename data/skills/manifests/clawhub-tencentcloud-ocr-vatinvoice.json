@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentcloud-ocr-vatinvoice@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-ocr-vatinvoice-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentcloud-ocr-vatinvoice-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d65bf5a59e8bf1ffde7f42f51f3607793545e68bc2b5215ae28b119d416b9a78",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/droidrun-agent@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-droidrun-agent-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-droidrun-agent-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bc02aa54c663951b717e1888339c481a6d6ec8f9ab9d3cc450e95620f462231d",

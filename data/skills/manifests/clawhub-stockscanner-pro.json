@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stockscanner-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stockscanner-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stockscanner-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56d460d422564a301b50226df637c8625c191e11f0e080d0c5e46a65b511379a",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawdbot-sync@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-sync-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawdbot-sync-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b1a46dffd2a7ac9f15bf3d33fe76b37f18b55a1220248f6db6954d1df0ff8a1e",

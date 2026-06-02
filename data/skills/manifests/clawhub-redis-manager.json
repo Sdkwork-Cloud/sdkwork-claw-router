@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/redis-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-redis-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-redis-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:871e63b7ad7b768ee467888e00f4fb82193bce1cc5d3b6aa62ee2fc5e2b23aaa",

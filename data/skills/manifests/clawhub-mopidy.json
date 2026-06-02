@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mopidy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-mopidy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mopidy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:52b0f45298393465503841cb72b38ba592c25d7c073269bb1aba9822d88ca6e3",

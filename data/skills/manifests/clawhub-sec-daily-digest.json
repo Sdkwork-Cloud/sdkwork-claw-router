@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sec-daily-digest@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sec-daily-digest-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sec-daily-digest-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7a2927dd8fb925704e2de080c888d9c5df12aa4f52fbfd1c6232d05e3f56f5b7",

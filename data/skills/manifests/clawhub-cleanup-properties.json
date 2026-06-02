@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cleanup-properties@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cleanup-properties-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cleanup-properties-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8acb3bc2ed34d585f64072ca59189c1e7ce96f0d891d00b1857b48b99d09676",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/config-preflight-validator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-config-preflight-validator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-config-preflight-validator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48c37aa003cb2d18eb65a577a5aa5967718d0b36cc11051240ba3cf8f30b6fcb",

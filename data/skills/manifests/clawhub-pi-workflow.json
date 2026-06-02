@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pi-workflow@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pi-workflow-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pi-workflow-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e011bd627af63d3dbe24b9dde923a412cedc6ce4b6534753a594fabb7f7d6950",

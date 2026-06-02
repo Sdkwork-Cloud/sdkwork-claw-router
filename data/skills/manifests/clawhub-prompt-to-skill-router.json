@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-to-skill-router@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-to-skill-router-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-to-skill-router-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ee2db09ca329e306d0846a82fc472c5d082b8f52b58fbfd84bf43105b8d7a50",

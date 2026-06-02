@@ -30,6 +30,7 @@ type AiAgentRunStepRecord struct {
 	StartedAt string `json:"started_at"`
 	Status string `json:"status"`
 	StepIndex int `json:"step_index"`
+	StepStatus string `json:"step_status"`
 	StepType string `json:"step_type"`
 	TenantId string `json:"tenant_id"`
 	Title string `json:"title"`

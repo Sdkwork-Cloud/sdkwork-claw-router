@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-madness@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-madness-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-madness-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:a6c9bb3cae20a7a02b054fa20765f86b4b2d12b26acd5e5cf82368a81846eb08",

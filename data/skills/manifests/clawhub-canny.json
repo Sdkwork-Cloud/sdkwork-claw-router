@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/canny@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-canny-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-canny-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c6211405332719ef61b4b37c942ad4cbcec191acb35acc289da5fbadda7f7203",

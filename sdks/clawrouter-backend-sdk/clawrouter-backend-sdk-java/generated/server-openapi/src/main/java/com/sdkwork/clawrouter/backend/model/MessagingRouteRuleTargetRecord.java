@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.Map;
 
 public class MessagingRouteRuleTargetRecord {
+    private Map<String, String> circuitBreakerPolicy;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
@@ -10,13 +11,26 @@ public class MessagingRouteRuleTargetRecord {
     private String id;
     private Map<String, String> metadata;
     private String organizationId;
+    private String providerAccountId;
+    private String providerCode;
+    private String routeRuleId;
     private String senderIdentityId;
     private String status;
+    private Integer targetOrder;
     private String templateBindingId;
     private String tenantId;
     private String updatedAt;
     private String uuid;
     private String version;
+    private Integer weight;
+
+    public Map<String, String> getCircuitBreakerPolicy() {
+        return this.circuitBreakerPolicy;
+    }
+
+    public void setCircuitBreakerPolicy(Map<String, String> circuitBreakerPolicy) {
+        this.circuitBreakerPolicy = circuitBreakerPolicy;
+    }
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -74,6 +88,30 @@ public class MessagingRouteRuleTargetRecord {
         this.organizationId = organizationId;
     }
 
+    public String getProviderAccountId() {
+        return this.providerAccountId;
+    }
+
+    public void setProviderAccountId(String providerAccountId) {
+        this.providerAccountId = providerAccountId;
+    }
+
+    public String getProviderCode() {
+        return this.providerCode;
+    }
+
+    public void setProviderCode(String providerCode) {
+        this.providerCode = providerCode;
+    }
+
+    public String getRouteRuleId() {
+        return this.routeRuleId;
+    }
+
+    public void setRouteRuleId(String routeRuleId) {
+        this.routeRuleId = routeRuleId;
+    }
+
     public String getSenderIdentityId() {
         return this.senderIdentityId;
     }
@@ -88,6 +126,14 @@ public class MessagingRouteRuleTargetRecord {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getTargetOrder() {
+        return this.targetOrder;
+    }
+
+    public void setTargetOrder(Integer targetOrder) {
+        this.targetOrder = targetOrder;
     }
 
     public String getTemplateBindingId() {
@@ -128,5 +174,13 @@ public class MessagingRouteRuleTargetRecord {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Integer getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
     }
 }

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/user-feedback-claw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-user-feedback-claw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-user-feedback-claw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4625223d3e621c83b26cee875d3ad202749238e842e50eda6dd9dd82c7a7daba",

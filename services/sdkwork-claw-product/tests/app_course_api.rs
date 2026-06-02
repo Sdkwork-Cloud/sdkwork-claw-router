@@ -174,7 +174,11 @@ async fn course_application_video_upload_stores_and_serves_local_tutorial_video(
     let payload = response_json(response).await;
     assert_eq!("2000", payload["code"]);
     let data = &payload["data"];
-    let video_url = data["videoUrl"].as_str().unwrap();
+    assert!(data.get("videoUrl").is_none());
+    let video = &data["video"];
+    assert_eq!("video", video["kind"]);
+    assert_eq!("external_url", video["source"]);
+    let video_url = video["publicUrl"].as_str().unwrap();
     assert!(
         video_url.starts_with("/uploads/courses/applications/"),
         "uploaded course tutorial video must be exposed under the course upload URL space"

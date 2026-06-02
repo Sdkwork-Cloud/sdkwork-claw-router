@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/query-main-board-stocks@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-query-main-board-stocks-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-query-main-board-stocks-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:47df83e833581991f28dbed9c22067653a401ba5b677311bc79461e6d3d06616",

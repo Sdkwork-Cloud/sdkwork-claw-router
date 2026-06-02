@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hot-news-aggregator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hot-news-aggregator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hot-news-aggregator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:770193782a35023e9109138e3aede4a673453654de0b26aa49e53c6e97560df3",

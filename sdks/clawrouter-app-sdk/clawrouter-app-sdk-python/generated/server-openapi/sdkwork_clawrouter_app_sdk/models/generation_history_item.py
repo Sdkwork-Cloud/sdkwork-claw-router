@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
 if TYPE_CHECKING:
-    from .generation_history_media_item import GenerationHistoryMediaItem
+    from .media_resource import MediaResource
 
 
 @dataclass
@@ -11,11 +11,12 @@ class GenerationHistoryItem:
     """Generation history item schema exposed by Claw Router."""
     date: str
     id: str
-    images: List[str]
+    images: List[MediaResource]
     prompt: str
     type: str
-    videos: List[GenerationHistoryMediaItem]
+    videos: List[MediaResource]
     aspect_ratio: Optional[str] = None
+    asset: Optional[MediaResource] = None
     created_at: Optional[str] = None
     duration_seconds: Optional[int] = None
     model_catalog_key: Optional[str] = None
@@ -23,4 +24,3 @@ class GenerationHistoryItem:
     output_text: Optional[str] = None
     status: Optional[str] = None
     updated_at: Optional[str] = None
-    url: Optional[str] = None

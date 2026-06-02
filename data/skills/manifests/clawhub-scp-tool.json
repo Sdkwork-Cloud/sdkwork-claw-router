@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scp-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scp-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scp-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a30cc6fadd853ba729448894cc6acd01e8a3b69b095faa54974d30e7555a5c61",

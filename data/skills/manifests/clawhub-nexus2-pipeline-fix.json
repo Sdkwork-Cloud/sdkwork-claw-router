@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexus2-pipeline-fix@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexus2-pipeline-fix-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexus2-pipeline-fix-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8bfdf9023be4468858ba360ee5305816e14d11d9edbdb6b0322e1ae0d1b9876",

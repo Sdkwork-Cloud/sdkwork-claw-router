@@ -10,9 +10,14 @@ import {
   readNumber,
   readRequiredApiItem,
   readRequiredApiItems,
+  readMediaResource,
+  readMediaResourceUrl,
   readString,
   readStringArray,
+  readRequiredMediaResource,
   requiredSafePathSegment,
+  toExternalUrlMediaResource,
+  type ClawRouterMediaResource,
 } from 'sdkwork-claw-router-commons/runtime';
 import type {
   Course,
@@ -46,7 +51,7 @@ export type CourseCategory = {
   label: string;
   name: string;
   description: string;
-  icon: string;
+  iconKey: string;
   sortWeight: number;
   courseCount: number;
 };
@@ -92,7 +97,7 @@ export interface CourseApplicationInput {
   description?: string;
   sourceProvider?: 'bilibili' | 'local';
   externalBvid?: string;
-  videoUrl?: string;
+  video?: ClawRouterMediaResource;
   contactName?: string;
   contactEmail?: string;
   notes?: string;
@@ -105,7 +110,7 @@ export interface CourseApplicationResult {
   category: string;
   sourceProvider: string;
   externalBvid?: string;
-  videoUrl?: string;
+  video?: ClawRouterMediaResource;
   contactName: string;
   contactEmail: string;
   status: string;
@@ -118,7 +123,7 @@ export interface CourseApplicationVideoUploadInput {
 }
 
 export interface CourseApplicationVideoUploadResult {
-  videoUrl: string;
+  video: ClawRouterMediaResource;
   fileName: string;
   contentType: string;
   sizeBytes: number;
@@ -372,7 +377,7 @@ function normalizeCourseItem(value: unknown): Course | null {
     courseCode: readString(value, 'courseCode').trim() || id,
     title,
     description: readString(value, 'description'),
-    thumbnail: readString(value, 'thumbnailUrl'),
+    thumbnail: readRequiredMediaResource(value.thumbnail, 'Course thumbnail is required'),
     instructor,
     duration: readString(value, 'durationText'),
     lessonsCount: readNonNegativeInteger(value, 'lessonsCount'),
@@ -399,7 +404,7 @@ function normalizeCourseInstructor(value: unknown): Course['instructor'] {
   const record = isRecord(value) ? value : {};
   return {
     name: readString(record, 'name').trim() || 'SDKWork Academy',
-    avatar: readString(record, 'avatar'),
+    avatar: readRequiredMediaResource(record.avatar, 'Course instructor avatar is required'),
     title: readString(record, 'title'),
     bio: readString(record, 'bio'),
   };
@@ -435,7 +440,7 @@ function normalizeCourseCategory(value: unknown): CourseCategory | null {
     label,
     name: readString(value, 'name').trim() || label,
     description: readString(value, 'description'),
-    icon: readString(value, 'icon'),
+    iconKey: readString(value, 'iconKey'),
     sortWeight: readNumber(value, 'sortWeight', 0),
     courseCount: readNonNegativeInteger(value, 'courseCount'),
   };
@@ -482,7 +487,7 @@ function normalizeCourseSections(value: unknown): CourseChapterView[] {
         description: readString(lesson, 'description'),
         duration: readString(lesson, 'durationText') || formatDuration(readNonNegativeInteger(lesson, 'durationSeconds')),
         active: sectionIndex === 0 && lessonIndex === 0,
-        videoUrl: readString(lesson, 'videoUrl'),
+        video: readMediaResource(lesson.video),
         externalBvid: readString(lesson, 'externalBvid'),
         sourceProvider: readString(lesson, 'sourceProvider'),
         content: readString(lesson, 'content'),
@@ -576,13 +581,14 @@ function getActiveLesson(playlist: CoursePlaylistView): CourseLessonView | null 
 }
 
 function buildCourseLessonEmbedUrl(lesson: CourseLessonView): string | null {
-  if (!lesson.videoUrl && lesson.sourceProvider !== 'bilibili') {
+  const videoPlaybackSrc = readMediaResourceUrl(lesson.video);
+  if (!videoPlaybackSrc && lesson.sourceProvider !== 'bilibili') {
     return buildBilibiliEmbedUrl(lesson.externalBvid);
   }
-  if (lesson.videoUrl) {
-    const safeVideoUrl = buildSafeVideoUrl(lesson.videoUrl);
-    if (safeVideoUrl) {
-      return safeVideoUrl;
+  if (videoPlaybackSrc) {
+    const safeVideoSrc = buildSafeVideoUrl(videoPlaybackSrc);
+    if (safeVideoSrc) {
+      return safeVideoSrc;
     }
   }
   return buildBilibiliEmbedUrl(lesson.externalBvid);
@@ -611,7 +617,7 @@ function normalizeCourseApplicationInput(input: CourseApplicationInput) {
     description: optionalText(input.description, 'description', 2048) ?? '',
     sourceProvider: normalizeCourseApplicationSourceProvider(input.sourceProvider),
     externalBvid: optionalText(input.externalBvid, 'externalBvid', 128),
-    videoUrl: optionalText(input.videoUrl, 'videoUrl', 2048),
+    video: input.video,
     contactName: optionalText(input.contactName, 'contactName', 128),
     contactEmail: optionalText(input.contactEmail, 'contactEmail', 256),
     notes: optionalText(input.notes, 'notes', 2000),
@@ -635,7 +641,7 @@ function normalizeCourseApplicationResult(value: unknown): CourseApplicationResu
     category: readString(record, 'category').trim(),
     sourceProvider: readString(record, 'sourceProvider').trim(),
     externalBvid: readString(record, 'externalBvid') || undefined,
-    videoUrl: readString(record, 'videoUrl') || undefined,
+    video: readMediaResource(record.video),
     contactName: readString(record, 'contactName').trim(),
     contactEmail: readString(record, 'contactEmail').trim(),
     status: readString(record, 'status').trim(),
@@ -658,7 +664,7 @@ function normalizeUploadFileName(input: CourseApplicationVideoUploadInput): stri
 function normalizeCourseApplicationVideoUploadResult(value: unknown): CourseApplicationVideoUploadResult {
   const record = isRecord(value) ? value : {};
   return {
-    videoUrl: readString(record, 'videoUrl').trim(),
+    video: readRequiredMediaResource(record.video, 'Course application uploaded video is required'),
     fileName: readString(record, 'fileName').trim(),
     contentType: readString(record, 'contentType').trim(),
     sizeBytes: readNonNegativeInteger(record, 'sizeBytes'),
@@ -686,7 +692,7 @@ function createCourseComments(course: Course): CourseCommentsView {
     ? [{
       id: `${course.id}-discussion-summary`,
       author: 'SDKWork Academy',
-      avatarUrl: course.instructor.avatar || avatarForName('SDKWork Academy'),
+      avatar: course.instructor.avatar || avatarForName('SDKWork Academy'),
       level: 5,
       body: `${formatCourseCount(totalCount)} discussion entries are available for this course.`,
       createdAt: course.publishedAt ?? '',
@@ -713,7 +719,7 @@ function deriveCategoriesFromCourses(courses: Course[]): CourseCategory[] {
       label: item.label,
       name: item.label,
       description: '',
-      icon: '',
+      iconKey: '',
       sortWeight: index,
       courseCount: item.count,
     }))
@@ -803,8 +809,14 @@ function formatDuration(seconds: number): string {
   return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`;
 }
 
-function avatarForName(name: string): string {
-  return '/assets/courses/avatars/learner.svg';
+function avatarForName(name: string): ClawRouterMediaResource {
+  return {
+    kind: 'image',
+    source: 'external_url',
+    url: '/assets/courses/avatars/learner.svg',
+    publicUrl: '/assets/courses/avatars/learner.svg',
+    title: name,
+  };
 }
 
 export type {

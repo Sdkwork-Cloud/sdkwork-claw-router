@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pre-commit-config-validator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pre-commit-config-validator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pre-commit-config-validator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5de73829b884e41763b6e8a32a3a453408049c57fc244fcd4bc0d050f8e91ae6",

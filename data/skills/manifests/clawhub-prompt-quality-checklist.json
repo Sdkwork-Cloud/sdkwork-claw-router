@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-quality-checklist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-quality-checklist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-quality-checklist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:671b0618e3d6de9ffb0ca56f0e673d7472796efa767709f51cd7b41fd6dbf47c",

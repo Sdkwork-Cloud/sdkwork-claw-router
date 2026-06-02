@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/semantic-grep@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-semantic-grep-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-semantic-grep-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c57459d50bacf8bf7df2dd527f56a1d724a2ef5ce316256b454f530361cfe76b",

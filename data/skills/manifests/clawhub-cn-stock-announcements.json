@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cn-stock-announcements@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cn-stock-announcements-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cn-stock-announcements-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dab76ac0d14f9d20a9cba0b1791577aa34f7debd727b7777863879c10a389fcd",

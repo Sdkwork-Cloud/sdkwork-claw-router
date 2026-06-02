@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/movie-poster-generator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-movie-poster-generator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-movie-poster-generator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7344fe4356e50cc4b1cca1d2acc56fec67a029b4ce1564cb9d653ec047406c19",

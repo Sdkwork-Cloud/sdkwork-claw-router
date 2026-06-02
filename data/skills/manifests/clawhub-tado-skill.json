@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tado-skill@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-tado-skill-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tado-skill-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:56672016409dd86264d98c08e6acc353a1ff2287825ac19ac45892db4b505588",

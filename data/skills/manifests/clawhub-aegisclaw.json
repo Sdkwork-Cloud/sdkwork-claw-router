@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aegisclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aegisclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aegisclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a53e6bb65f1ad03e2ff9caabc852a45a415ad43efb44c0892441dedab4b0f861",

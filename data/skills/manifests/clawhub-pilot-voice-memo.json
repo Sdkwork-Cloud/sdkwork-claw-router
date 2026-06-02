@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-voice-memo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-voice-memo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-voice-memo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7b917e108a397abe9967ec7eec156d522f8bdad0987bc34812f21dc1811d3caf",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ringg-voice-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ringg-voice-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ringg-voice-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:514d346d2b4943b7fd0be50593f4eea8a9e367008dfab8025e500e10c97e3c05",

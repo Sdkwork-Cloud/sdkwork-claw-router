@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-workflows@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-workflows-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-workflows-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e359ec654d42c2faf6275fb160bb6f8818cfbd52a137a1b1457b663257674e6",

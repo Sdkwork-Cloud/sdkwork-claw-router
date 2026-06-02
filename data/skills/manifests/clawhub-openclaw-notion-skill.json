@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-notion-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-notion-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-notion-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09d9c5f37876674cfda32eff35462028f5912358dd8dfbe0889e33012fb0dd64",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-lead-generator-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-lead-generator-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-lead-generator-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:271cb701554b8aac0c8b79c3e9a14d5881dcc6a43ea8a6b23686a4fd59b277e6",

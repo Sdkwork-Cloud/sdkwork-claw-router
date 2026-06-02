@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/movie-maker-chromebook-free@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-movie-maker-chromebook-free-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-movie-maker-chromebook-free-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:adf5b43bf3940cd8a101e34c6d52195a9eab4592516469193e88120acfbb0436",

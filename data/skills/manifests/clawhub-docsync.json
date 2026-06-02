@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docsync@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-docsync-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docsync-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:017a5c389935b032aa4e00fe04c8211590f1331ff4ebc25c319a3a3d5e326952",

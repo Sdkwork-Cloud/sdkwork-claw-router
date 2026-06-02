@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smux@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smux-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smux-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:54016e7104c562493670ab1e8c35381e1e9d084cdb325743a039a875fdde8b1c",

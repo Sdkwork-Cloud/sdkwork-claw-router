@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linkdapi-official@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linkdapi-official-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linkdapi-official-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35d70d3670a31d6a988a2e849158369fb858afe8a03d67a053080d80dd6202a5",

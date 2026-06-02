@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gold-price-query@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gold-price-query-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gold-price-query-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9619fd50e059cb6373a0b7bacba263e217446b5cc25fc916b2e358f02d1687d",

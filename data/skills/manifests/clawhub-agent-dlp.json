@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-dlp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-dlp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-dlp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dce78e20607b163e2cd3e84f45a45c36b15f6213b43a9aaa8b8e9bac42ee04ca",

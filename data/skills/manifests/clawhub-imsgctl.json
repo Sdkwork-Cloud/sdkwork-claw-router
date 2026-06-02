@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/imsgctl@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-imsgctl-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-imsgctl-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8be1b332aeefb8c26f7d16118763eb523d3b3fe59e5c24fa8abfafcb67b250ee",

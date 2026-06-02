@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tonic-system-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tonic-system-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tonic-system-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a888ad18d10ae6c0b0c5681f95a4d0ad6bfc6fe0d3b6b3b0daf92e001fcf1cf5",

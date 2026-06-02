@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beacon@2.16.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-beacon-2.16.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beacon-2.16.0.json"
+      },
       "version": "2.16.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cefe8f024f5b0bfc31c9f77090c1b9aec6fb836e9c205bedb3426f820ebd9dcc",

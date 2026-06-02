@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wordpal@3.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wordpal-3.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wordpal-3.1.0.json"
+      },
       "version": "3.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ce5d2e3621cb3bdbb80768a97f3381fba7cfc7b06d6e98e7fb16f4538aaee57",

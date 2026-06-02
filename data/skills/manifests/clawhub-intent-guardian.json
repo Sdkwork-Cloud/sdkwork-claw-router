@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/intent-guardian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-intent-guardian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-intent-guardian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:36e1c4f3e7eb85d6ef11fe521c160d669a1d512ecf2b0de16ccd272bf9f96c02",

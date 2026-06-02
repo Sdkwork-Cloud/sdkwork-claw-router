@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-worktree@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-worktree-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-worktree-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:73109a2cdaa8b0059f1a61f7bad15b53c84361032e10e4b072430020e84873f9",

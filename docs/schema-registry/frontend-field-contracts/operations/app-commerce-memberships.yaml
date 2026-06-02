@@ -384,11 +384,8 @@ frontend_operations:
         minLength: 1
         maxLength: 2048
         description: Standard QR payload field for membership purchase checkout. When the purchase requires PC qr scanning, this value must be an http or https payment page URL.
-      qrCodeImageUrl:
-        type: string
-        nullable: true
-        minLength: 1
-        maxLength: 2048
+      qrCode:
+        $ref: '#/components/schemas/MediaResource'
       requestPaymentPayload:
         type: object
         nullable: true

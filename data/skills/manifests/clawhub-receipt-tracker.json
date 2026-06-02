@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/receipt-tracker@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-receipt-tracker-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-receipt-tracker-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e139a9c106e854548a0e7086fba891006a07fea31686c23c6227c13430a4c886",

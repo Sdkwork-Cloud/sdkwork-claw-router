@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/redox@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-redox-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-redox-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e56a8f2b72993a6a75f1009c1c1a5c13740b1e306fef0158adb044328e43aedc",

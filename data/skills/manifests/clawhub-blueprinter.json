@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blueprinter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blueprinter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blueprinter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ad9f89ea70d789af821bd0cd4f290e63f9d0b407730ae4996bfcaac807d6491d",

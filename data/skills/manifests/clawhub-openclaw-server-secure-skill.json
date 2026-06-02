@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-server-secure-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-server-secure-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-server-secure-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df163e9c19fef52c760b0e5a84001401c3898e20beca4bdc2ff435cddbc11ed5",

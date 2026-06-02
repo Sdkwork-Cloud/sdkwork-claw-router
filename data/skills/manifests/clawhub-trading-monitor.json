@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trading-monitor@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trading-monitor-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trading-monitor-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:741732a5214b29583ac2054339b2ad08a7e7490892dafee23cd90de7237ee6b5",

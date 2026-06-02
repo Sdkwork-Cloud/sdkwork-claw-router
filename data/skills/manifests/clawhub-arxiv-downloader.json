@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arxiv-downloader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-downloader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arxiv-downloader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2faf8f67f5d05235d8034c03c32babdb5434d915aa8018a2135edbae00f7f77b",

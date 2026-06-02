@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/interpol@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-interpol-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-interpol-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:20c9e37ff8eb84699f5d04fd8e377bf3a9c0eadd766df10602f223f2b783d91d",

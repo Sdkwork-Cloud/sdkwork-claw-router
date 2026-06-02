@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lawsuit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lawsuit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lawsuit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb63e69bbdf81b6186d67454b6efaf8de428633dc6b8961f9e625c1382967fee",

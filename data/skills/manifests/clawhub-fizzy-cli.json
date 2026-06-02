@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fizzy-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fizzy-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fizzy-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:12afdf434f82580a6c736042469bbabfac14be26d4096a5aa73d2ea956a6294e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xlsx-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xlsx-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xlsx-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64dc9f0a949f822d789a6f632b72e1f8d0cf9ca31e25578532a5bbf51f31d924",

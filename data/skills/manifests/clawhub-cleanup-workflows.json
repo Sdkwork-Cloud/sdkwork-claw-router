@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cleanup-workflows@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cleanup-workflows-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cleanup-workflows-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bcf75eebf91f6a35f7a13fb77a4f3a94fe463114c9e6aae3830b67dfd3800efc",

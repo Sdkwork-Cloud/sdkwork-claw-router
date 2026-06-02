@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-for-safari@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-for-safari-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-for-safari-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:414905ea2249520e3c4becf740ca3e0d0ff1067c299f34047d99d91848340693",

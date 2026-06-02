@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cli-anything-wrapper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cli-anything-wrapper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cli-anything-wrapper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3cbc08c3e15e8f4301a30ada4cf83f5fb4fd92340d7cbfe204d03837b51dc269",

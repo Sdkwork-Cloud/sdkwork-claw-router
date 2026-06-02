@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/azuredatastudio@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-azuredatastudio-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-azuredatastudio-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:09f311be4496f991db656e239e907b3f54925790678d2e57caba274702e35395",

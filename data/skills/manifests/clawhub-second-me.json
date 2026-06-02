@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/second-me@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-second-me-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-second-me-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7390c220b53f535483b0d04dbaaa0b485acf096ba655860a3c701c04b99d598a",

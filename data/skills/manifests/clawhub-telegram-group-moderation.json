@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-group-moderation@0.9.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-group-moderation-0.9.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-group-moderation-0.9.0.json"
+      },
       "version": "0.9.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5108acc7e645811329110031c1f376862dff264071c3da186c8ebd9f1e130340",

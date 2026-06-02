@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hcp-data-process@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hcp-data-process-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hcp-data-process-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:803bfa17708898b063e061632c165658ada3f014220035ee066499f2b2cac376",

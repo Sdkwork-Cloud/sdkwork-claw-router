@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moodle-student-sync@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moodle-student-sync-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moodle-student-sync-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b60e1494e7d4d5e4793c354350126e3dbd526bf30306fbe65ce6c793eb68f913",

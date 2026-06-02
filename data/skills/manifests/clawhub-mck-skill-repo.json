@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mck-skill-repo@1.6.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mck-skill-repo-1.6.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mck-skill-repo-1.6.1.json"
+      },
       "version": "1.6.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1cdc7c8473fcb533172bfbc4a9b8ebbfa52e34622633125ed16ab07540f3b2a0",

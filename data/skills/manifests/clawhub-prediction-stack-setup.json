@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prediction-stack-setup@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-prediction-stack-setup-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prediction-stack-setup-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:956946fcb4c7949079adeb85dd5775188b4d6174132e074c1ddb00214cf87dd3",

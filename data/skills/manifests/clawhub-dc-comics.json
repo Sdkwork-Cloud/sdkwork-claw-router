@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dc-comics@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-dc-comics-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dc-comics-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:55c2b0f535e55d845f81dd12e9288aefad8225b88e743fe033add1e87d4e1fe1",

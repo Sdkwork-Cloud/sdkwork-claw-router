@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/makelog@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-makelog-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-makelog-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f9f32ad1736b62b5e51d0b2a4a4845ef61bb309dbe02895b5a9178949d934a10",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pr-doctor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pr-doctor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pr-doctor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13a4927da367d79fe7d2e5fd67ac826657f07576d579ef5426411f22e5f16fb5",

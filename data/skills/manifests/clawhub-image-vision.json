@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-vision@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-vision-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-vision-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e597996dfa4e091397228c3b4e05512b83cfe962193593c1373a44af763d212",

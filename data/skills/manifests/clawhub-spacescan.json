@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spacescan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spacescan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spacescan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a16e6f1121cb988ef5f4ba23791705e6b9bb2a52d0187b93bd4f0e31a6b85058",

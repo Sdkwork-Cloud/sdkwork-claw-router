@@ -9,6 +9,7 @@ use axum::routing::get;
 use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::{Deserialize, Serialize};
+use serde_json::Value;
 
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
 use crate::api::response::PlusApiResult;
@@ -44,9 +45,9 @@ struct SiteSettingsUpdateRequest {
     site_name: Option<String>,
     short_name: Option<String>,
     description: Option<String>,
-    logo_url: Option<String>,
-    icon_url: Option<String>,
-    favicon_url: Option<String>,
+    logo: Option<Value>,
+    icon: Option<Value>,
+    favicon: Option<Value>,
     brand_color: Option<String>,
     accent_color: Option<String>,
     footer_copyright: Option<String>,
@@ -76,9 +77,9 @@ struct SiteSettingsResponse {
     site_name: String,
     short_name: String,
     description: String,
-    logo_url: String,
-    icon_url: String,
-    favicon_url: String,
+    logo: Value,
+    icon: Value,
+    favicon: Value,
     brand_color: String,
     accent_color: String,
     footer_copyright: String,
@@ -278,14 +279,14 @@ fn merge_update_request(
         current.description =
             normalize_optional_field("description", Some(&value), MAX_LONG_TEXT_LEN)?;
     }
-    if let Some(value) = request.logo_url {
-        current.logo_url = normalize_url_field("logoUrl", &value)?;
+    if let Some(value) = request.logo {
+        current.logo = normalize_media_resource("logo", value)?;
     }
-    if let Some(value) = request.icon_url {
-        current.icon_url = normalize_url_field("iconUrl", &value)?;
+    if let Some(value) = request.icon {
+        current.icon = normalize_media_resource("icon", value)?;
     }
-    if let Some(value) = request.favicon_url {
-        current.favicon_url = normalize_url_field("faviconUrl", &value)?;
+    if let Some(value) = request.favicon {
+        current.favicon = normalize_media_resource("favicon", value)?;
     }
     if let Some(value) = request.brand_color {
         current.brand_color = normalize_color_field("brandColor", &value)?;
@@ -382,6 +383,46 @@ fn normalize_url_field(field_name: &str, value: &str) -> Result<String, String> 
     Ok(value)
 }
 
+fn normalize_media_resource(field_name: &str, value: Value) -> Result<Value, String> {
+    let mut object = value
+        .as_object()
+        .cloned()
+        .ok_or_else(|| format!("{field_name} must be a MediaResource object"))?;
+    let kind = normalize_required_media_text(field_name, object.get("kind"), "kind", 64)?;
+    let source = normalize_required_media_text(field_name, object.get("source"), "source", 64)?;
+    object.insert("kind".to_owned(), Value::String(kind));
+    object.insert("source".to_owned(), Value::String(source));
+
+    for key in ["id", "publicUrl", "url", "uri", "objectKey", "objectBlobId"] {
+        if let Some(value) = object.get_mut(key) {
+            let Some(text) = value.as_str() else {
+                return Err(format!("{field_name}.{key} must be a string"));
+            };
+            let normalized =
+                normalize_optional_field(&format!("{field_name}.{key}"), Some(text), MAX_URL_LEN)?;
+            *value = Value::String(normalized);
+        }
+    }
+
+    Ok(Value::Object(object))
+}
+
+fn normalize_required_media_text(
+    field_name: &str,
+    value: Option<&Value>,
+    key: &str,
+    max_len: usize,
+) -> Result<String, String> {
+    let Some(value) = value else {
+        return Err(format!("{field_name} must include MediaResource {key}"));
+    };
+    let Some(value) = value.as_str() else {
+        return Err(format!("{field_name}.{key} must be a string"));
+    };
+    let value = normalize_required_field(&format!("{field_name}.{key}"), value, max_len)?;
+    Ok(value)
+}
+
 fn normalize_color_field(field_name: &str, value: &str) -> Result<String, String> {
     let value = normalize_optional_field(field_name, Some(value), MAX_COLOR_LEN)?;
     if is_hex_color(&value) {
@@ -446,9 +487,9 @@ fn to_response(settings: SiteSettings) -> SiteSettingsResponse {
         site_name: settings.site_name,
         short_name: settings.short_name,
         description: settings.description,
-        logo_url: settings.logo_url,
-        icon_url: settings.icon_url,
-        favicon_url: settings.favicon_url,
+        logo: settings.logo,
+        icon: settings.icon,
+        favicon: settings.favicon,
         brand_color: settings.brand_color,
         accent_color: settings.accent_color,
         footer_copyright: settings.footer_copyright,

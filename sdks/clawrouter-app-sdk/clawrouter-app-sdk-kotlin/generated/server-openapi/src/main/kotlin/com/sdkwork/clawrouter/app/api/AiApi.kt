@@ -8,6 +8,12 @@ import com.sdkwork.clawrouter.app.http.HttpClient
 
 class AiApi(private val client: HttpClient) {
 
+    /** List groups */
+    suspend fun channelGroupsList(): ChannelGroupsListResult? {
+        val raw = client.get(ApiPaths.appPath("/ai/channel_groups"))
+        return client.convertValue(raw, object : TypeReference<ChannelGroupsListResult>() {})
+    }
+
     /** List dashboard overview */
     suspend fun dashboardOverviewRetrieve(timeRange: String? = null, startTime: String? = null, endTime: String? = null): DashboardOverviewRetrieveResult? {
         val query = buildQueryString(listOf(

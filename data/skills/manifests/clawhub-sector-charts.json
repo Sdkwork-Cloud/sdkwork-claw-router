@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sector-charts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sector-charts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sector-charts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97e0a7bc3a08373e94bcea28321880b4ae4f73df8ea61e44ca07632f07068f29",

@@ -12,6 +12,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? EventNo { get; set; }
         public string? EventType { get; set; }
         public string? FromStatus { get; set; }
+        public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
         public string? Message { get; set; }
         public string? OrganizationId { get; set; }

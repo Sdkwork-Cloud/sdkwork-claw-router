@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fudan@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-fudan-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fudan-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:63b74032007f093843a52fd6a70fca7fb414c86d761cc2710063f0c6f8b05e79",

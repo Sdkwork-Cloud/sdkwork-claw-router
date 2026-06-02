@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medtronic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-medtronic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medtronic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db44044450893c6f5843dbaf3bea942f4f8885c7447f3b1441b4c844b5879d5d",

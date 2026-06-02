@@ -20,16 +20,14 @@ SELECT
     COALESCE(NULLIF(a.description, ''), '') AS description,
     COALESCE(NULLIF(a.version, ''), '') AS version,
     COALESCE(CAST(a.icon AS TEXT), '') AS icon,
-    COALESCE(NULLIF(a.icon_url, ''), '') AS icon_url,
+    COALESCE(CAST(a.icon_resource_snapshot AS TEXT), '') AS icon_resource_snapshot,
     COALESCE(CAST(a.resource_list AS TEXT), '') AS resource_list,
     COALESCE(CAST(a.config AS TEXT), '') AS config,
     COALESCE(CAST(a.app_type AS TEXT), '') AS app_type,
     COALESCE(CAST(a.install_skill AS TEXT), '') AS install_skill,
     COALESCE(CAST(a.install_config AS TEXT), '') AS install_config,
     COALESCE(CAST(a.release_notes AS TEXT), '') AS release_notes,
-    COALESCE(NULLIF(a.access_url, ''), '') AS access_url,
-    COALESCE(NULLIF(a.store_url, ''), '') AS store_url,
-    COALESCE(NULLIF(a.download_url, ''), '') AS download_url,
+    COALESCE(CAST(a.artifact_resource_snapshot AS TEXT), '') AS artifact_resource_snapshot,
     COALESCE((
         SELECT AVG(sa.rating_score)
         FROM studio_catalog_action sa
@@ -118,16 +116,14 @@ SELECT
     COALESCE(NULLIF(a.description, ''), '') AS description,
     COALESCE(NULLIF(a.version, ''), '') AS version,
     COALESCE(CAST(a.icon AS TEXT), '') AS icon,
-    COALESCE(NULLIF(a.icon_url, ''), '') AS icon_url,
+    COALESCE(CAST(a.icon_resource_snapshot AS TEXT), '') AS icon_resource_snapshot,
     COALESCE(CAST(a.resource_list AS TEXT), '') AS resource_list,
     COALESCE(CAST(a.config AS TEXT), '') AS config,
     COALESCE(CAST(a.app_type AS TEXT), '') AS app_type,
     COALESCE(CAST(a.install_skill AS TEXT), '') AS install_skill,
     COALESCE(CAST(a.install_config AS TEXT), '') AS install_config,
     COALESCE(CAST(a.release_notes AS TEXT), '') AS release_notes,
-    COALESCE(NULLIF(a.access_url, ''), '') AS access_url,
-    COALESCE(NULLIF(a.store_url, ''), '') AS store_url,
-    COALESCE(NULLIF(a.download_url, ''), '') AS download_url,
+    COALESCE(CAST(a.artifact_resource_snapshot AS TEXT), '') AS artifact_resource_snapshot,
     COALESCE((
         SELECT AVG(sa.rating_score)
         FROM studio_catalog_action sa
@@ -201,8 +197,8 @@ ORDER BY COALESCE(c.sort_weight, 0), c.id
 const LOAD_ASSETS: &str = r#"
 SELECT
     COALESCE(CAST(asset_type AS TEXT), '') AS asset_type,
-    COALESCE(NULLIF(asset_url, ''), '') AS asset_url,
-    COALESCE(NULLIF(thumbnail_url, ''), '') AS thumbnail_url
+    COALESCE(CAST(asset_resource_snapshot AS TEXT), '') AS asset_resource_snapshot,
+    COALESCE(CAST(thumbnail_resource_snapshot AS TEXT), '') AS thumbnail_resource_snapshot
 FROM studio_catalog_asset
 WHERE tenant_id = ?1
   AND organization_id = ?2
@@ -221,7 +217,7 @@ SELECT
     COALESCE(NULLIF(os_name, ''), '') AS os_name,
     COALESCE(NULLIF(version, ''), '') AS version,
     COALESCE(NULLIF(artifact_ref, ''), '') AS artifact_ref,
-    COALESCE(NULLIF(artifact_url, ''), '') AS artifact_url,
+    COALESCE(CAST(artifact_resource_snapshot AS TEXT), '') AS artifact_resource_snapshot,
     COALESCE(artifact_size_bytes, 0) AS artifact_size_bytes,
     COALESCE(CAST(frameworks AS TEXT), '') AS frameworks,
     COALESCE(NULLIF(license_name, ''), '') AS license_name,
@@ -457,16 +453,14 @@ fn row_to_raw_app(row: &sqlx::sqlite::SqliteRow) -> RawAppStoreRecord {
         description: string_cell(row, "description"),
         version: string_cell(row, "version"),
         icon: string_cell(row, "icon"),
-        icon_url: string_cell(row, "icon_url"),
+        icon_resource_snapshot: string_cell(row, "icon_resource_snapshot"),
         resource_list: string_cell(row, "resource_list"),
         config: string_cell(row, "config"),
         app_type: string_cell(row, "app_type"),
         install_skill: string_cell(row, "install_skill"),
         install_config: string_cell(row, "install_config"),
         release_notes: string_cell(row, "release_notes"),
-        access_url: string_cell(row, "access_url"),
-        store_url: string_cell(row, "store_url"),
-        download_url: string_cell(row, "download_url"),
+        artifact_resource_snapshot: string_cell(row, "artifact_resource_snapshot"),
         rating: decimal_cell(row, "rating"),
         download_count: integer_cell(row, "download_count"),
     }
@@ -475,8 +469,8 @@ fn row_to_raw_app(row: &sqlx::sqlite::SqliteRow) -> RawAppStoreRecord {
 fn row_to_asset(row: &sqlx::sqlite::SqliteRow) -> RawCatalogAsset {
     RawCatalogAsset {
         asset_type: string_cell(row, "asset_type"),
-        asset_url: string_cell(row, "asset_url"),
-        thumbnail_url: string_cell(row, "thumbnail_url"),
+        asset_resource_snapshot: string_cell(row, "asset_resource_snapshot"),
+        thumbnail_resource_snapshot: string_cell(row, "thumbnail_resource_snapshot"),
     }
 }
 
@@ -487,7 +481,7 @@ fn row_to_artifact(row: &sqlx::sqlite::SqliteRow) -> RawCatalogArtifact {
         os_name: string_cell(row, "os_name"),
         version: string_cell(row, "version"),
         artifact_ref: string_cell(row, "artifact_ref"),
-        artifact_url: string_cell(row, "artifact_url"),
+        artifact_resource_snapshot: string_cell(row, "artifact_resource_snapshot"),
         artifact_size_bytes: integer_cell(row, "artifact_size_bytes"),
         frameworks: string_cell(row, "frameworks"),
         license_name: string_cell(row, "license_name"),

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mockup-gen-skill@1.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mockup-gen-skill-1.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mockup-gen-skill-1.8.0.json"
+      },
       "version": "1.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35f05426f6ba89793c34d80e542943262d8058208a4e1ba35933add70763150b",

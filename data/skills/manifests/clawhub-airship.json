@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/airship@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-airship-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-airship-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:41b1912d76e4efbcae5012d87cc67d7bab9b6154a4f59ab47b02e8b50a7c66b2",

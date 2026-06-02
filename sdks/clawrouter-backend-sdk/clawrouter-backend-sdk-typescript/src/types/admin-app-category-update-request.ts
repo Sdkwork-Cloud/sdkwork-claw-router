@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Admin app category update request schema exposed by Claw Router. */
 export interface AdminAppCategoryUpdateRequest {
   /** Code field on admin app category update request. */
@@ -5,7 +7,7 @@ export interface AdminAppCategoryUpdateRequest {
   /** Description field on admin app category update request. */
   description?: string | null;
   /** Icon field on admin app category update request. */
-  icon?: string | null;
+  icon?: MediaResource;
   /** App store category display name. */
   name?: string;
   /** Parent id field on admin app category update request. */

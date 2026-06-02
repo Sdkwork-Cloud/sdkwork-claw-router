@@ -9,9 +9,11 @@ class CommerceMembershipPackageGroupRecord:
     created_at: str
     group_no: str
     name: str
+    sort_order: str
     status: str
     tenant_id: str
     updated_at: str
     description: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     plan_id: Optional[str] = None

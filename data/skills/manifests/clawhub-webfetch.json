@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/webfetch@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-webfetch-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-webfetch-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:955a231d1005ac59d3e5cf527ecd7e72913fa2facd33476a9874d8cf7b300326",

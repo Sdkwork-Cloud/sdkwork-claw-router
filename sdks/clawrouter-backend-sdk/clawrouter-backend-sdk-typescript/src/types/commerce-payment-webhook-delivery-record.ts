@@ -16,6 +16,8 @@ export interface CommercePaymentWebhookDeliveryRecord {
   failure_message?: string;
   /** Headers json field on commerce payment webhook delivery record. */
   headers_json?: Record<string, JsonValue>;
+  /** Id field on commerce payment webhook delivery record. */
+  id?: string;
   /** Nonce field on commerce payment webhook delivery record. */
   nonce: string;
   /** Normalized event id field on commerce payment webhook delivery record. */

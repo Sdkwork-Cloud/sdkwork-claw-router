@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentgate@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentgate-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentgate-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a59a260faf5203ef0d2fbb7189fb467e6c507d72d54f32511be784d829359310",

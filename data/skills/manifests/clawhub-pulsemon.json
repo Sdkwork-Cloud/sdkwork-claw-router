@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pulsemon@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pulsemon-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pulsemon-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2704d71b699148a09682a0cd80085fa8813b6a254b34c837926c25e16f338ce6",

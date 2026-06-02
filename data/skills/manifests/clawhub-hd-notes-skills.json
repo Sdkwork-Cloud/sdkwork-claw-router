@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hd-notes-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hd-notes-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hd-notes-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a41dae7442aac16e039c3235bd3c97d6ea47d29ce530bac6b1542394f8f3c63",

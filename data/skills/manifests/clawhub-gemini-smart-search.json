@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-smart-search@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-smart-search-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-smart-search-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:29e3aaf3d855e07361b726004429017a303064ecc4b9e1ee1c7afedc1ce90a55",

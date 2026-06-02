@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kline-master@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kline-master-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kline-master-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:11b7f07e7d87747abc6b48e7a802135e87501953a19ce30ef30493bdfbafed9b",

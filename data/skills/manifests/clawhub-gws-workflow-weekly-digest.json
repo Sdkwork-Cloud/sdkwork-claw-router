@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gws-workflow-weekly-digest@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-gws-workflow-weekly-digest-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gws-workflow-weekly-digest-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:3be91fd626557147737ea47d7de789048ce16722ec6c88e50dbe5fdfa4a7b2ba",

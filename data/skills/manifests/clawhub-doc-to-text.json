@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/doc-to-text@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-doc-to-text-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-doc-to-text-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42b1ad8453af17f878832dfee4806c82ccd4934abf46e65ad67e70728a9fd929",

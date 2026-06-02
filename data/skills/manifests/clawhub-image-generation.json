@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-generation@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-generation-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-generation-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c7a0dbfccdaafd3048b7500f06e68bfc7e3ba07ff9633ce0e3b7f861365b4226",

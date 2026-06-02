@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lighthouse@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-lighthouse-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lighthouse-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2d082c1955bf07ea765d1fb8ac3539a844854da95a03ea884fec6db9461c2018",

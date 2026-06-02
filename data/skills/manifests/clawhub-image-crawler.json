@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-crawler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-crawler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-crawler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3f5bf1addb9ecbd6987922321eaa2f2d8d68099be7b31d7c5eccef602fc7a77",

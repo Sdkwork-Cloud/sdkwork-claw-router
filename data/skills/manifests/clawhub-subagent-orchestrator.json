@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subagent-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subagent-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subagent-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:351e5e0bd0f19b84d881efac236d2220b3642b2dfdec232db4f0c16a3f629134",

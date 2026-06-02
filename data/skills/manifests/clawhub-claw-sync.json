@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-sync@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-sync-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-sync-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:bea1ae0a138766a1d559cd446fbe9f7ebce1b3c60f0899ba748ae242073b5c10",

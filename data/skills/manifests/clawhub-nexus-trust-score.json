@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexus-trust-score@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexus-trust-score-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexus-trust-score-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aeda467a5631a9759a9915621aa216311eb3c15cc8b9e798f35b4cc95411c7c6",

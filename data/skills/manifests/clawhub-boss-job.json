@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boss-job@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boss-job-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boss-job-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c577ee36ac32949341223fec8cb959001da00e12f4ffa7dca59e7df81db511a9",

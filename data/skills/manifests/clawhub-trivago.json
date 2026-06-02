@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trivago@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trivago-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trivago-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2da4d18c0f9286b3991e7e54a5440504c7af09297adb53855cfabdc4ee2f62d2",

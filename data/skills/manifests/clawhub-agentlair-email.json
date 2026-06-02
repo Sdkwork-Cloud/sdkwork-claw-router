@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentlair-email@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentlair-email-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentlair-email-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92f66054445701d5cc25f103d2cc42dd56274624c7b015c9df246e7899196ffc",

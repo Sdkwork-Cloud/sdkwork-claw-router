@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/transaction-records-cn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-transaction-records-cn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-transaction-records-cn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7587a8a9ee3f484fa9bd60d51b4f176cfeb3caa483fa0bb021420993d7d06cdd",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/monitor-tasks@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-monitor-tasks-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-monitor-tasks-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74891d1ad081ab28d7fb5f45d35e5c23c050d0def886a45c166537a760e87525",

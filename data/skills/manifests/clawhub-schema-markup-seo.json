@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/schema-markup-seo@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-schema-markup-seo-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-schema-markup-seo-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4039737e2438068ae0e2b7c0d70a0f96a7a36d81066e70cd4df50b81b6d7ebca",

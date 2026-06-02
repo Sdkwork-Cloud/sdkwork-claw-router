@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zeiss@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zeiss-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zeiss-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13fca2f6e4ab49b19660ed2ec0363e3d9e4121284924c151d33b4b09b05bfe1d",

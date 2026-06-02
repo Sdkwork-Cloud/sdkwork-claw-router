@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-oauth-renewal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-oauth-renewal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-oauth-renewal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3d304ad7e32200458bc5ab253539cad0f793494768425f9429f39a7b84ea2baa",

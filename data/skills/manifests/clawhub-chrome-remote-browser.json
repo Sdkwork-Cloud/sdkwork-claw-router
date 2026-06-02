@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chrome-remote-browser@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chrome-remote-browser-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chrome-remote-browser-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fa2aabb7e6ca521b60eae8c5e1cad093eec6990d6eacf67c0b37f689b2fd56ae",

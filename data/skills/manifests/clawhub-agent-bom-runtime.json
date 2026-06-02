@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bom-runtime@0.86.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-runtime-0.86.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bom-runtime-0.86.2.json"
+      },
       "version": "0.86.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1e0c56be6c4e381729185171ccd7192cf66cda22894d8df5fbca56923589e281",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dingo@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-dingo-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dingo-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:03179aebd3598c6dd3585944b1481f94414459f0b1ecde0d6130187c76dcc1e4",

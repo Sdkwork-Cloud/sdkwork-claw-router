@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/superword@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-superword-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-superword-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cf568c8679e4418028008559a2726b1fc6232a0de94d9d8758ca494e6af09bb9",

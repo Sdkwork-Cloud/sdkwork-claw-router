@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-repair-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-repair-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-repair-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd23abb96b3f5c8083597958b2ba58e849fd7c74d3f6957456c00978bee4a3de",

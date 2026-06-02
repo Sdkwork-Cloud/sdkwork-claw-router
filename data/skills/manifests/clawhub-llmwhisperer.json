@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llmwhisperer@0.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-llmwhisperer-0.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llmwhisperer-0.0.7.json"
+      },
       "version": "0.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:289eb559fc12c334a5baef3258bd5de7ff8f9e322b4ff912cbe0425fabdd9c51",

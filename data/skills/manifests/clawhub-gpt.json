@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gpt@3.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gpt-3.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gpt-3.4.1.json"
+      },
       "version": "3.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:388b8ead40715671ea6599b2f7966ec4b59066faab7307902cb1eb5b3d89833c",

@@ -11,7 +11,7 @@ use sdkwork_claw_http::{
     sign_app_session_token, sign_trusted_request_subject, TrustedRequestSubject,
 };
 use sdkwork_claw_product::domain::{
-    AiModel, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter, DecimalValue, DomainError,
+    AiModel, BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, DecimalValue, DomainError,
     GatewayAccessPolicy, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendor,
     ModelVendorDefinition, Money, PriceSide, PricingPlan, QuotaPolicy,
 };
@@ -19,7 +19,7 @@ use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
 use sdkwork_claw_product::ports::{
     ApiKeyCommandStoreFuture, ApiKeyManagementReadFuture, AppSessionEventStore,
     AppSessionEventStoreFuture, CreateGatewayApiKeyCommand, CreatedGatewayApiKey,
-    DeleteGatewayApiKeyCommand, EnsureDefaultApiKeyGroupCommand, GatewayApiKeyCommandStore,
+    DeleteGatewayApiKeyCommand, EnsureDefaultChannelGroupCommand, GatewayApiKeyCommandStore,
     GatewayApiKeyManagementReadStore, GatewayApiKeyManagementSnapshot, PricingCatalog,
     RecordAppSessionIssuedEventCommand, UpdateGatewayApiKeyCommand, UpdatedGatewayApiKey,
 };
@@ -34,7 +34,7 @@ const INTERNAL_USER_HEADER: &str = concat!("x-sdkwork-", "user-id");
 
 fn catalog() -> InMemoryPricingCatalog {
     let mut catalog = InMemoryPricingCatalog::default();
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
@@ -63,7 +63,7 @@ fn catalog() -> InMemoryPricingCatalog {
         900,
         Some(DecimalValue::parse("1000.000000").unwrap()),
     ));
-    catalog.add_api_key_group_metric_snapshot(ApiKeyGroupMetricSnapshot::new(
+    catalog.add_channel_group_metric_snapshot(ChannelGroupMetricSnapshot::new(
         10,
         Some(DecimalValue::parse("37.500000").unwrap()),
         Some(DecimalValue::parse("1000.000000").unwrap()),
@@ -257,16 +257,16 @@ impl GatewayApiKeyManagementReadStore for TestGatewayApiKeyStore {
 }
 
 impl GatewayApiKeyCommandStore for TestGatewayApiKeyStore {
-    fn ensure_default_api_key_group<'a>(
+    fn ensure_default_channel_group<'a>(
         &'a self,
-        command: EnsureDefaultApiKeyGroupCommand,
-    ) -> ApiKeyCommandStoreFuture<'a, ApiKeyGroup> {
+        command: EnsureDefaultChannelGroupCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, ChannelGroup> {
         Box::pin(async move {
             let mut catalog = self
                 .catalog
                 .lock()
                 .map_err(|_| DomainError::new("test api key catalog lock poisoned"))?;
-            if let Some(group) = catalog.list_api_key_groups().into_iter().find(|group| {
+            if let Some(group) = catalog.list_channel_groups().into_iter().find(|group| {
                 group.code == command.code
                     && (group.tenant_id == 0 || group.tenant_id == command.tenant_id)
                     && (group.organization_id == 0
@@ -274,7 +274,7 @@ impl GatewayApiKeyCommandStore for TestGatewayApiKeyStore {
             }) {
                 return Ok(group);
             }
-            let group = ApiKeyGroup::new_scoped(
+            let group = ChannelGroup::new_scoped(
                 500,
                 command.tenant_id,
                 command.organization_id,
@@ -283,7 +283,7 @@ impl GatewayApiKeyCommandStore for TestGatewayApiKeyStore {
                 command.rate_multiplier,
                 command.official_price_multiplier,
             );
-            catalog.add_api_key_group(group.clone());
+            catalog.add_channel_group(group.clone());
             Ok(group)
         })
     }
@@ -443,7 +443,8 @@ async fn injected_product_catalog_serves_app_api_keys_without_secret_material() 
     assert!(item.get("copyableKey").is_none());
     assert!(item.get("keyVal").is_none());
     assert!(item.get("fullKey").is_none());
-    assert_eq!("standard-group", item["group"]);
+    assert_eq!("standard-group", item["channelGroup"]);
+    assert_eq!("standard-group", item["channelGroupName"]);
     assert_eq!("1.00x", item["rate"]);
     assert_eq!("1000.000000", item["quota"]);
     assert_eq!("37.500000", item["usedQuota"]);
@@ -517,7 +518,7 @@ async fn app_api_key_create_accepts_app_session_token_subject() {
             .body(Body::from(
                 serde_json::json!({
                     "name": "Search Service",
-                    "group": "standard-group",
+                    "channelGroup": "standard-group",
                     "quota": "250.000000",
                     "isUnlimitedQuota": false,
                     "modalities": ["text", "image"],
@@ -543,7 +544,11 @@ async fn app_api_key_create_accepts_app_session_token_subject() {
     assert!(raw_key.starts_with("sk-claw-"));
     assert_eq!(raw_key, payload["data"]["item"]["copyableKey"]);
     assert_eq!("Search Service", payload["data"]["item"]["name"]);
-    assert_eq!("standard-group", payload["data"]["item"]["group"]);
+    assert_eq!("standard-group", payload["data"]["item"]["channelGroup"]);
+    assert_eq!(
+        "standard-group",
+        payload["data"]["item"]["channelGroupName"]
+    );
     assert_eq!("250.000000", payload["data"]["item"]["quota"]);
     assert_eq!("0.000000", payload["data"]["item"]["usedQuota"]);
     assert_eq!("text", payload["data"]["item"]["modalities"][0]);
@@ -603,7 +608,7 @@ async fn app_api_key_create_accepts_signed_trusted_subject_boundary() {
             .body(Body::from(
                 serde_json::json!({
                     "name": "Signed Subject Service",
-                    "group": "standard-group",
+                    "channelGroup": "standard-group",
                     "quota": "250.000000",
                     "isUnlimitedQuota": false,
                     "modalities": ["text"],
@@ -652,7 +657,7 @@ async fn app_api_key_update_rebinds_owner_key_group_through_app_router() {
             .header("X-Request-Id", "00000000-0000-4000-8000-000000000003")
             .body(Body::from(
                 serde_json::json!({
-                    "group": "standard-group",
+                    "channelGroup": "standard-group",
                     "name": "Updated Production Key"
                 })
                 .to_string(),
@@ -672,7 +677,11 @@ async fn app_api_key_update_rebinds_owner_key_group_through_app_router() {
     assert_eq!("2000", payload["code"]);
     assert_eq!("100", payload["data"]["item"]["id"]);
     assert_eq!("Updated Production Key", payload["data"]["item"]["name"]);
-    assert_eq!("standard-group", payload["data"]["item"]["group"]);
+    assert_eq!("standard-group", payload["data"]["item"]["channelGroup"]);
+    assert_eq!(
+        "standard-group",
+        payload["data"]["item"]["channelGroupName"]
+    );
     assert_eq!("sk-test********ABCD", payload["data"]["item"]["maskedKey"]);
     assert_eq!("sk-live-secret", payload["data"]["item"]["copyableKey"]);
     assert!(!body_text.contains("hash:sk-live-secret"));
@@ -724,7 +733,7 @@ async fn app_api_key_create_requires_trusted_user_context() {
                 .body(Body::from(
                     serde_json::json!({
                         "name": "Search Service",
-                        "group": "standard-group",
+                        "channelGroup": "standard-group",
                         "quota": "250.000000",
                         "isUnlimitedQuota": false,
                         "modalities": ["text"],
@@ -767,7 +776,7 @@ async fn app_api_key_create_rejects_direct_trusted_subject_headers() {
                 .body(Body::from(
                     serde_json::json!({
                         "name": "Search Service",
-                        "group": "standard-group",
+                        "channelGroup": "standard-group",
                         "quota": "250.000000",
                         "isUnlimitedQuota": false,
                         "modalities": ["text"],
@@ -811,7 +820,7 @@ async fn app_api_key_create_requires_idempotency_key_header() {
             .body(Body::from(
                 serde_json::json!({
                     "name": "Search Service",
-                    "group": "standard-group",
+                    "channelGroup": "standard-group",
                     "quota": "250.000000",
                     "isUnlimitedQuota": false,
                     "modalities": ["text"],
@@ -842,7 +851,7 @@ async fn app_api_key_create_rejects_duplicate_idempotency_key_without_second_sec
     let router = secured_router();
     let request_body = serde_json::json!({
         "name": "Search Service",
-        "group": "standard-group",
+        "channelGroup": "standard-group",
         "quota": "250.000000",
         "isUnlimitedQuota": false,
         "modalities": ["text"],
@@ -907,7 +916,7 @@ async fn app_api_key_create_scopes_idempotency_key_by_tenant() {
     let router = secured_router();
     let request_body = serde_json::json!({
         "name": "Search Service",
-        "group": "standard-group",
+        "channelGroup": "standard-group",
         "quota": "250.000000",
         "isUnlimitedQuota": false,
         "modalities": ["text"],
@@ -987,7 +996,7 @@ async fn app_api_key_create_rejects_invalid_ip_allowlist_without_revealing_key()
             .body(Body::from(
                 serde_json::json!({
                     "name": "Search Service",
-                    "group": "standard-group",
+                    "channelGroup": "standard-group",
                     "quota": "250.000000",
                     "isUnlimitedQuota": false,
                     "modalities": ["text"],
@@ -1032,7 +1041,7 @@ async fn app_api_key_create_rejects_invalid_expiration_date() {
             .body(Body::from(
                 serde_json::json!({
                     "name": "Search Service",
-                    "group": "standard-group",
+                    "channelGroup": "standard-group",
                     "quota": "250.000000",
                     "isUnlimitedQuota": false,
                     "modalities": ["text"],
@@ -1076,7 +1085,7 @@ async fn app_api_key_create_rejects_non_positive_quota() {
             .body(Body::from(
                 serde_json::json!({
                     "name": "Search Service",
-                    "group": "standard-group",
+                    "channelGroup": "standard-group",
                     "quota": "0",
                     "isUnlimitedQuota": false,
                     "modalities": ["text"],

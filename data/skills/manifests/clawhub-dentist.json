@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dentist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dentist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dentist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d0da038ec423488fcf44313b6bd6823bd7bd35164906c77af24ee56621d1bb4",

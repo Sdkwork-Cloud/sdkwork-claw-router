@@ -1,6 +1,7 @@
 use std::collections::{BTreeMap, BTreeSet};
 use std::fmt::{Display, Formatter};
 
+use sdkwork_iam_storage_sqlx::{DEFAULT_IAM_ORGANIZATION_ID, DEFAULT_IAM_TENANT_ID};
 use serde::Deserialize;
 use serde_json::Value;
 use sha2::{Digest, Sha256};
@@ -25,9 +26,16 @@ const VENDOR_NATIVE_TEMPLATES_JSON: &str = include_str!(
 );
 
 const ACTIVE_STATUS: i32 = 1;
+const DISABLED_STATUS: i32 = 0;
+const HEALTHY_STATUS: i32 = 1;
 const SYSTEM_TENANT_ID: i64 = 0;
 const SYSTEM_ORGANIZATION_ID: i64 = 0;
 const SYSTEM_DATA_SCOPE: i32 = 1;
+const DEFAULT_ADMIN_DATA_SCOPE: i32 = 1;
+const DEFAULT_ADMIN_REGION_CODE: &str = "global";
+const DEFAULT_OPENAI_BASE_URL: &str = "https://api.openai.com/v1";
+const DEFAULT_ADMIN_CHANNEL_SEED_SOURCE: &str =
+    "default-admin-channel-seed.v1|openai-default|openai|official|openai_compatible|https://api.openai.com/v1";
 
 #[derive(Debug)]
 pub(crate) enum AiRoutingSeedLoadError {
@@ -156,6 +164,29 @@ struct EndpointSeedDefinition<'a> {
     template: Option<&'a ChannelEndpointTemplateSeed>,
 }
 
+#[derive(Debug, Clone, Copy)]
+struct DefaultAdminChannelSeed {
+    channel_code: &'static str,
+    channel_name: &'static str,
+    provider_code: &'static str,
+    channel_type: &'static str,
+    protocol_code: &'static str,
+    base_url: &'static str,
+    priority: i32,
+    weight: i32,
+}
+
+static DEFAULT_ADMIN_CHANNELS: [DefaultAdminChannelSeed; 1] = [DefaultAdminChannelSeed {
+    channel_code: "openai-default",
+    channel_name: "OpenAI Default",
+    provider_code: "openai",
+    channel_type: "official",
+    protocol_code: "openai_compatible",
+    base_url: DEFAULT_OPENAI_BASE_URL,
+    priority: 100,
+    weight: 100,
+}];
+
 impl EndpointSeedDefinition<'_> {
     fn api_code(&self) -> &str {
         self.resource.api_code.as_deref().unwrap_or_default()
@@ -206,6 +237,12 @@ impl EndpointSeedDefinition<'_> {
     }
 }
 
+impl DefaultAdminChannelSeed {
+    fn endpoint_base_url(&self) -> &'static str {
+        self.base_url
+    }
+}
+
 impl AiRoutingSeedCatalog {
     fn load() -> Result<Self, AiRoutingSeedLoadError> {
         let manifest = serde_json::from_str::<AiRoutingManifest>(MANIFEST_JSON)?;
@@ -239,6 +276,8 @@ impl AiRoutingSeedCatalog {
             "resourceCount": self.resources.len(),
             "resourceGroupCount": self.resource_groups.len(),
             "channelEndpointTemplateCount": self.channel_endpoint_templates.len(),
+            "defaultAdminChannelCount": default_admin_channels().len(),
+            "defaultAdminChannelEndpointCount": default_admin_channel_endpoint_definitions(self).len(),
             "sourceHash": source_hash(),
         })
         .to_string()
@@ -256,6 +295,8 @@ pub(crate) async fn import_sqlite_ai_routing_seed(pool: &SqlitePool) -> Result<(
     import_sqlite_resources(&mut tx, &catalog).await?;
     import_sqlite_resource_groups(&mut tx, &catalog).await?;
     import_sqlite_resource_group_items(&mut tx, &catalog).await?;
+    import_sqlite_default_admin_channels(&mut tx, &catalog).await?;
+    import_sqlite_default_admin_channel_endpoints(&mut tx, &catalog).await?;
     tx.commit().await?;
     Ok(())
 }
@@ -267,6 +308,8 @@ pub(crate) async fn import_postgres_ai_routing_seed(pool: &PgPool) -> Result<(),
     import_postgres_resources(&mut tx, &catalog).await?;
     import_postgres_resource_groups(&mut tx, &catalog).await?;
     import_postgres_resource_group_items(&mut tx, &catalog).await?;
+    import_postgres_default_admin_channels(&mut tx, &catalog).await?;
+    import_postgres_default_admin_channel_endpoints(&mut tx, &catalog).await?;
     tx.commit().await?;
     Ok(())
 }
@@ -290,10 +333,15 @@ pub(crate) async fn sqlite_ai_routing_seed_complete(
         "SELECT endpoint_code FROM ai_api_endpoint WHERE tenant_id = 0 AND organization_id = 0 AND status = 1 AND deleted_at IS NULL",
     )
     .await?;
+    let default_channel_codes = sqlite_default_admin_channel_codes(pool).await?;
+    let default_channel_endpoint_codes = sqlite_default_admin_channel_endpoint_codes(pool).await?;
 
     Ok(expected_resource_codes(&catalog).is_subset(&resource_codes)
         && expected_group_codes(&catalog).is_subset(&group_codes)
         && expected_endpoint_codes(&catalog).is_subset(&endpoint_codes)
+        && expected_default_admin_channel_codes().is_subset(&default_channel_codes)
+        && expected_default_admin_channel_endpoint_codes(&catalog)
+            .is_subset(&default_channel_endpoint_codes)
         && sqlite_resource_group_item_count(pool, &catalog).await?
             >= expected_resource_group_item_count(&catalog))
 }
@@ -315,10 +363,16 @@ pub(crate) async fn postgres_ai_routing_seed_complete(pool: &PgPool) -> Result<b
         "SELECT endpoint_code FROM ai_api_endpoint WHERE tenant_id = 0 AND organization_id = 0 AND status = 1 AND deleted_at IS NULL",
     )
     .await?;
+    let default_channel_codes = postgres_default_admin_channel_codes(pool).await?;
+    let default_channel_endpoint_codes =
+        postgres_default_admin_channel_endpoint_codes(pool).await?;
 
     Ok(expected_resource_codes(&catalog).is_subset(&resource_codes)
         && expected_group_codes(&catalog).is_subset(&group_codes)
         && expected_endpoint_codes(&catalog).is_subset(&endpoint_codes)
+        && expected_default_admin_channel_codes().is_subset(&default_channel_codes)
+        && expected_default_admin_channel_endpoint_codes(&catalog)
+            .is_subset(&default_channel_endpoint_codes)
         && postgres_resource_group_item_count(pool, &catalog).await?
             >= expected_resource_group_item_count(&catalog))
 }
@@ -667,6 +721,360 @@ async fn import_postgres_resource_group_items(
     Ok(())
 }
 
+async fn import_sqlite_default_admin_channels(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    catalog: &AiRoutingSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    for channel in default_admin_channels() {
+        sqlx::query(
+            r#"
+            INSERT INTO ai_channel
+                (uuid, tenant_id, organization_id, data_scope, status, metadata,
+                 provider_code, channel_code, channel_name, channel_type, protocol_code,
+                 auth_type, base_url, environment, priority, weight, health_status,
+                 consecutive_error_count)
+            VALUES
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?, 1, ?, ?, ?, 0)
+            ON CONFLICT(tenant_id, organization_id, channel_code) DO UPDATE SET
+                provider_code = excluded.provider_code,
+                channel_type = excluded.channel_type,
+                protocol_code = excluded.protocol_code,
+                metadata = excluded.metadata,
+                deleted_at = NULL,
+                deleted_by = NULL
+            "#,
+        )
+        .bind(stable_seed_uuid(
+            "sdk-ai-channel",
+            &[
+                &DEFAULT_IAM_TENANT_ID.to_string(),
+                &DEFAULT_IAM_ORGANIZATION_ID.to_string(),
+                channel.channel_code,
+            ],
+        ))
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(DEFAULT_ADMIN_DATA_SCOPE)
+        .bind(DISABLED_STATUS)
+        .bind(default_admin_channel_metadata(catalog, *channel))
+        .bind(channel.provider_code)
+        .bind(channel.channel_code)
+        .bind(channel.channel_name)
+        .bind(channel.channel_type)
+        .bind(channel.protocol_code)
+        .bind(channel.base_url)
+        .bind(channel.priority)
+        .bind(channel.weight)
+        .bind(HEALTHY_STATUS)
+        .execute(&mut **tx)
+        .await?;
+    }
+    Ok(())
+}
+
+async fn import_postgres_default_admin_channels(
+    tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
+    catalog: &AiRoutingSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    for channel in default_admin_channels() {
+        sqlx::query(
+            r#"
+            INSERT INTO ai_channel
+                (uuid, tenant_id, organization_id, data_scope, status, metadata,
+                 provider_code, channel_code, channel_name, channel_type, protocol_code,
+                 auth_type, base_url, environment, priority, weight, health_status,
+                 consecutive_error_count)
+            VALUES
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, 1, $12, 1, $13, $14, $15, 0)
+            ON CONFLICT(tenant_id, organization_id, channel_code) DO UPDATE SET
+                provider_code = excluded.provider_code,
+                channel_type = excluded.channel_type,
+                protocol_code = excluded.protocol_code,
+                metadata = excluded.metadata,
+                deleted_at = NULL,
+                deleted_by = NULL
+            "#,
+        )
+        .bind(stable_seed_uuid(
+            "sdk-ai-channel",
+            &[
+                &DEFAULT_IAM_TENANT_ID.to_string(),
+                &DEFAULT_IAM_ORGANIZATION_ID.to_string(),
+                channel.channel_code,
+            ],
+        ))
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(DEFAULT_ADMIN_DATA_SCOPE)
+        .bind(DISABLED_STATUS)
+        .bind(default_admin_channel_metadata(catalog, *channel))
+        .bind(channel.provider_code)
+        .bind(channel.channel_code)
+        .bind(channel.channel_name)
+        .bind(channel.channel_type)
+        .bind(channel.protocol_code)
+        .bind(channel.base_url)
+        .bind(channel.priority)
+        .bind(channel.weight)
+        .bind(HEALTHY_STATUS)
+        .execute(&mut **tx)
+        .await?;
+    }
+    Ok(())
+}
+
+async fn import_sqlite_default_admin_channel_endpoints(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    catalog: &AiRoutingSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    let channel = default_openai_admin_channel();
+    for endpoint in default_admin_channel_endpoint_definitions(catalog) {
+        let result = sqlx::query(
+            r#"
+            INSERT INTO ai_channel_endpoint
+                (uuid, tenant_id, organization_id, data_scope, status, metadata,
+                 channel_id, provider_code, channel_code, channel_type, vendor_id, vendor_code,
+                 region_code, api_endpoint_id, api_code, base_url, priority, weight, timeout_ms,
+                 health_status)
+            SELECT
+                ?, c.tenant_id, c.organization_id, ?, ?, ?,
+                c.id, c.provider_code, c.channel_code, c.channel_type,
+                (
+                    SELECT v.id
+                    FROM ai_model_vendor v
+                    WHERE (v.tenant_id = ? OR v.tenant_id = 0)
+                      AND (v.organization_id = ? OR v.organization_id = 0)
+                      AND v.vendor_code = ?
+                      AND v.deleted_at IS NULL
+                    ORDER BY CASE WHEN v.tenant_id = ? AND v.organization_id = ? THEN 0 ELSE 1 END,
+                             v.id ASC
+                    LIMIT 1
+                ),
+                ?,
+                ?,
+                (
+                    SELECT e.id
+                    FROM ai_api_endpoint e
+                    WHERE (e.tenant_id = ? OR e.tenant_id = 0)
+                      AND (e.organization_id = ? OR e.organization_id = 0)
+                      AND e.endpoint_code = ?
+                      AND e.deleted_at IS NULL
+                    ORDER BY CASE WHEN e.tenant_id = ? AND e.organization_id = ? THEN 0 ELSE 1 END,
+                             e.id ASC
+                    LIMIT 1
+                ),
+                ?, ?, ?, ?, ?, ?
+            FROM ai_channel c
+            WHERE c.tenant_id = ?
+              AND c.organization_id = ?
+              AND c.channel_code = ?
+              AND c.deleted_at IS NULL
+              AND EXISTS (
+                  SELECT 1
+                  FROM ai_model_vendor v
+                  WHERE (v.tenant_id = ? OR v.tenant_id = 0)
+                    AND (v.organization_id = ? OR v.organization_id = 0)
+                    AND v.vendor_code = ?
+                    AND v.deleted_at IS NULL
+              )
+              AND EXISTS (
+                  SELECT 1
+                  FROM ai_api_endpoint e
+                  WHERE (e.tenant_id = ? OR e.tenant_id = 0)
+                    AND (e.organization_id = ? OR e.organization_id = 0)
+                    AND e.endpoint_code = ?
+                    AND e.deleted_at IS NULL
+              )
+            ON CONFLICT(tenant_id, organization_id, channel_id, vendor_code, region_code, api_code)
+            DO UPDATE SET
+                provider_code = excluded.provider_code,
+                channel_code = excluded.channel_code,
+                channel_type = excluded.channel_type,
+                vendor_id = excluded.vendor_id,
+                api_endpoint_id = excluded.api_endpoint_id,
+                timeout_ms = excluded.timeout_ms,
+                metadata = excluded.metadata,
+                deleted_at = NULL,
+                deleted_by = NULL
+            "#,
+        )
+        .bind(stable_seed_uuid(
+            "sdk-ai-channel-endpoint",
+            &[
+                &DEFAULT_IAM_TENANT_ID.to_string(),
+                &DEFAULT_IAM_ORGANIZATION_ID.to_string(),
+                channel.channel_code,
+                endpoint.api_code(),
+            ],
+        ))
+        .bind(DEFAULT_ADMIN_DATA_SCOPE)
+        .bind(DISABLED_STATUS)
+        .bind(default_admin_channel_endpoint_metadata(
+            catalog, channel, &endpoint,
+        ))
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(channel.provider_code)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(channel.provider_code)
+        .bind(DEFAULT_ADMIN_REGION_CODE)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(endpoint.api_code())
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(endpoint.api_code())
+        .bind(channel.endpoint_base_url())
+        .bind(endpoint.sort_order())
+        .bind(channel.weight)
+        .bind(endpoint.template.map(|template| template.timeout_ms))
+        .bind(HEALTHY_STATUS)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(channel.channel_code)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(channel.provider_code)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(endpoint.api_code())
+        .execute(&mut **tx)
+        .await?;
+        if result.rows_affected() == 0 {
+            return Err(sqlx::Error::RowNotFound);
+        }
+    }
+    Ok(())
+}
+
+async fn import_postgres_default_admin_channel_endpoints(
+    tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
+    catalog: &AiRoutingSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    let channel = default_openai_admin_channel();
+    for endpoint in default_admin_channel_endpoint_definitions(catalog) {
+        let result = sqlx::query(
+            r#"
+            INSERT INTO ai_channel_endpoint
+                (uuid, tenant_id, organization_id, data_scope, status, metadata,
+                 channel_id, provider_code, channel_code, channel_type, vendor_id, vendor_code,
+                 region_code, api_endpoint_id, api_code, base_url, priority, weight, timeout_ms,
+                 health_status)
+            SELECT
+                $1, c.tenant_id, c.organization_id, $2, $3, $4::jsonb,
+                c.id, c.provider_code, c.channel_code, c.channel_type,
+                (
+                    SELECT v.id
+                    FROM ai_model_vendor v
+                    WHERE (v.tenant_id = $5 OR v.tenant_id = 0)
+                      AND (v.organization_id = $6 OR v.organization_id = 0)
+                      AND v.vendor_code = $7
+                      AND v.deleted_at IS NULL
+                    ORDER BY CASE WHEN v.tenant_id = $8 AND v.organization_id = $9 THEN 0 ELSE 1 END,
+                             v.id ASC
+                    LIMIT 1
+                ),
+                $10,
+                $11,
+                (
+                    SELECT e.id
+                    FROM ai_api_endpoint e
+                    WHERE (e.tenant_id = $12 OR e.tenant_id = 0)
+                      AND (e.organization_id = $13 OR e.organization_id = 0)
+                      AND e.endpoint_code = $14
+                      AND e.deleted_at IS NULL
+                    ORDER BY CASE WHEN e.tenant_id = $15 AND e.organization_id = $16 THEN 0 ELSE 1 END,
+                             e.id ASC
+                    LIMIT 1
+                ),
+                $17, $18, $19, $20, $21, $22
+            FROM ai_channel c
+            WHERE c.tenant_id = $23
+              AND c.organization_id = $24
+              AND c.channel_code = $25
+              AND c.deleted_at IS NULL
+              AND EXISTS (
+                  SELECT 1
+                  FROM ai_model_vendor v
+                  WHERE (v.tenant_id = $26 OR v.tenant_id = 0)
+                    AND (v.organization_id = $27 OR v.organization_id = 0)
+                    AND v.vendor_code = $28
+                    AND v.deleted_at IS NULL
+              )
+              AND EXISTS (
+                  SELECT 1
+                  FROM ai_api_endpoint e
+                  WHERE (e.tenant_id = $29 OR e.tenant_id = 0)
+                    AND (e.organization_id = $30 OR e.organization_id = 0)
+                    AND e.endpoint_code = $31
+                    AND e.deleted_at IS NULL
+              )
+            ON CONFLICT(tenant_id, organization_id, channel_id, vendor_code, region_code, api_code)
+            DO UPDATE SET
+                provider_code = excluded.provider_code,
+                channel_code = excluded.channel_code,
+                channel_type = excluded.channel_type,
+                vendor_id = excluded.vendor_id,
+                api_endpoint_id = excluded.api_endpoint_id,
+                timeout_ms = excluded.timeout_ms,
+                metadata = excluded.metadata,
+                deleted_at = NULL,
+                deleted_by = NULL
+            "#,
+        )
+        .bind(stable_seed_uuid(
+            "sdk-ai-channel-endpoint",
+            &[
+                &DEFAULT_IAM_TENANT_ID.to_string(),
+                &DEFAULT_IAM_ORGANIZATION_ID.to_string(),
+                channel.channel_code,
+                endpoint.api_code(),
+            ],
+        ))
+        .bind(DEFAULT_ADMIN_DATA_SCOPE)
+        .bind(DISABLED_STATUS)
+        .bind(default_admin_channel_endpoint_metadata(
+            catalog,
+            channel,
+            &endpoint,
+        ))
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(channel.provider_code)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(channel.provider_code)
+        .bind(DEFAULT_ADMIN_REGION_CODE)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(endpoint.api_code())
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(endpoint.api_code())
+        .bind(channel.endpoint_base_url())
+        .bind(endpoint.sort_order())
+        .bind(channel.weight)
+        .bind(endpoint.template.map(|template| template.timeout_ms))
+        .bind(HEALTHY_STATUS)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(channel.channel_code)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(channel.provider_code)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(endpoint.api_code())
+        .execute(&mut **tx)
+        .await?;
+        if result.rows_affected() == 0 {
+            return Err(sqlx::Error::RowNotFound);
+        }
+    }
+    Ok(())
+}
+
 fn resource_bundles() -> Result<Vec<ResourceBundle>, AiRoutingSeedLoadError> {
     [
         CORE_RESOURCES_JSON,
@@ -902,6 +1310,32 @@ fn endpoint_definitions(catalog: &AiRoutingSeedCatalog) -> Vec<EndpointSeedDefin
         .collect()
 }
 
+fn default_admin_channel_endpoint_definitions(
+    catalog: &AiRoutingSeedCatalog,
+) -> Vec<EndpointSeedDefinition<'_>> {
+    endpoint_definitions(catalog)
+        .into_iter()
+        .filter(|definition| {
+            !definition.api_code().is_empty()
+                && definition
+                    .resource
+                    .vendor_code
+                    .as_deref()
+                    .is_some_and(|vendor_code| {
+                        vendor_code == default_openai_admin_channel().provider_code
+                    })
+        })
+        .collect()
+}
+
+fn default_admin_channels() -> &'static [DefaultAdminChannelSeed] {
+    &DEFAULT_ADMIN_CHANNELS
+}
+
+fn default_openai_admin_channel() -> DefaultAdminChannelSeed {
+    DEFAULT_ADMIN_CHANNELS[0]
+}
+
 fn resource_upsert_sqlite() -> &'static str {
     r#"
     INSERT INTO ai_resource
@@ -1039,6 +1473,22 @@ fn expected_endpoint_codes(catalog: &AiRoutingSeedCatalog) -> BTreeSet<String> {
         .collect()
 }
 
+fn expected_default_admin_channel_codes() -> BTreeSet<String> {
+    default_admin_channels()
+        .iter()
+        .map(|channel| channel.channel_code.to_owned())
+        .collect()
+}
+
+fn expected_default_admin_channel_endpoint_codes(
+    catalog: &AiRoutingSeedCatalog,
+) -> BTreeSet<String> {
+    default_admin_channel_endpoint_definitions(catalog)
+        .into_iter()
+        .map(|item| item.api_code().to_owned())
+        .collect()
+}
+
 fn expected_resource_group_item_count(catalog: &AiRoutingSeedCatalog) -> i64 {
     catalog
         .resource_groups
@@ -1107,6 +1557,118 @@ async fn sqlite_string_set(
 
 async fn postgres_string_set(pool: &PgPool, query: &str) -> Result<BTreeSet<String>, sqlx::Error> {
     let rows = sqlx::query(query).fetch_all(pool).await?;
+    Ok(rows
+        .into_iter()
+        .filter_map(|row| row.try_get::<String, _>(0).ok())
+        .collect())
+}
+
+async fn sqlite_default_admin_channel_codes(
+    pool: &SqlitePool,
+) -> Result<BTreeSet<String>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT channel_code
+        FROM ai_channel
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .filter_map(|row| row.try_get::<String, _>(0).ok())
+        .collect())
+}
+
+async fn sqlite_default_admin_channel_endpoint_codes(
+    pool: &SqlitePool,
+) -> Result<BTreeSet<String>, sqlx::Error> {
+    let channel = default_openai_admin_channel();
+    let rows = sqlx::query(
+        r#"
+        SELECT e.api_code
+        FROM ai_channel_endpoint e
+        INNER JOIN ai_channel c
+          ON c.id = e.channel_id
+         AND c.tenant_id = e.tenant_id
+         AND c.organization_id = e.organization_id
+        WHERE e.tenant_id = ?
+          AND e.organization_id = ?
+          AND e.vendor_code = ?
+          AND e.region_code = ?
+          AND e.deleted_at IS NULL
+          AND c.channel_code = ?
+          AND c.deleted_at IS NULL
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .bind(channel.provider_code)
+    .bind(DEFAULT_ADMIN_REGION_CODE)
+    .bind(channel.channel_code)
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .filter_map(|row| row.try_get::<String, _>(0).ok())
+        .collect())
+}
+
+async fn postgres_default_admin_channel_codes(
+    pool: &PgPool,
+) -> Result<BTreeSet<String>, sqlx::Error> {
+    let rows = sqlx::query(
+        r#"
+        SELECT channel_code
+        FROM ai_channel
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .fetch_all(pool)
+    .await?;
+    Ok(rows
+        .into_iter()
+        .filter_map(|row| row.try_get::<String, _>(0).ok())
+        .collect())
+}
+
+async fn postgres_default_admin_channel_endpoint_codes(
+    pool: &PgPool,
+) -> Result<BTreeSet<String>, sqlx::Error> {
+    let channel = default_openai_admin_channel();
+    let rows = sqlx::query(
+        r#"
+        SELECT e.api_code
+        FROM ai_channel_endpoint e
+        INNER JOIN ai_channel c
+          ON c.id = e.channel_id
+         AND c.tenant_id = e.tenant_id
+         AND c.organization_id = e.organization_id
+        WHERE e.tenant_id = $1
+          AND e.organization_id = $2
+          AND e.vendor_code = $3
+          AND e.region_code = $4
+          AND e.deleted_at IS NULL
+          AND c.channel_code = $5
+          AND c.deleted_at IS NULL
+        "#,
+    )
+    .bind(DEFAULT_IAM_TENANT_ID)
+    .bind(DEFAULT_IAM_ORGANIZATION_ID)
+    .bind(channel.provider_code)
+    .bind(DEFAULT_ADMIN_REGION_CODE)
+    .bind(channel.channel_code)
+    .fetch_all(pool)
+    .await?;
     Ok(rows
         .into_iter()
         .filter_map(|row| row.try_get::<String, _>(0).ok())
@@ -1184,6 +1746,59 @@ fn endpoint_metadata(catalog: &AiRoutingSeedCatalog, item: &EndpointSeedDefiniti
     )
 }
 
+fn default_admin_channel_metadata(
+    catalog: &AiRoutingSeedCatalog,
+    channel: DefaultAdminChannelSeed,
+) -> String {
+    seed_metadata(
+        catalog,
+        "default_admin_channel",
+        channel.channel_code,
+        serde_json::json!({
+            "tenantId": DEFAULT_IAM_TENANT_ID,
+            "organizationId": DEFAULT_IAM_ORGANIZATION_ID,
+            "providerCode": channel.provider_code,
+            "channelType": channel.channel_type,
+            "protocolCode": channel.protocol_code,
+            "baseUrl": channel.base_url,
+            "initialStatus": "disabled",
+        }),
+    )
+}
+
+fn default_admin_channel_endpoint_metadata(
+    catalog: &AiRoutingSeedCatalog,
+    channel: DefaultAdminChannelSeed,
+    item: &EndpointSeedDefinition<'_>,
+) -> String {
+    let template_metadata = item.template.map(|template| {
+        serde_json::json!({
+            "templateCode": &template.template_code,
+            "pathTemplate": &template.path_template,
+            "timeoutMs": template.timeout_ms,
+        })
+    });
+    seed_metadata(
+        catalog,
+        "default_admin_channel_endpoint",
+        item.api_code(),
+        serde_json::json!({
+            "tenantId": DEFAULT_IAM_TENANT_ID,
+            "organizationId": DEFAULT_IAM_ORGANIZATION_ID,
+            "channelCode": channel.channel_code,
+            "providerCode": channel.provider_code,
+            "channelType": channel.channel_type,
+            "vendorCode": channel.provider_code,
+            "regionCode": DEFAULT_ADMIN_REGION_CODE,
+            "apiCode": item.api_code(),
+            "baseUrl": channel.endpoint_base_url(),
+            "initialStatus": "disabled",
+            "resourceCode": &item.resource.resource_code,
+            "template": template_metadata,
+        }),
+    )
+}
+
 fn default_protocol_code(item: &ResourceSeed) -> &'static str {
     match item.vendor_code.as_deref().unwrap_or_default() {
         "openai" | "openai_compatible" => "openai_compatible",
@@ -1247,6 +1862,7 @@ fn source_hash() -> String {
         RELAY_PROVIDER_GROUPS_JSON,
         OPENAI_COMPATIBLE_TEMPLATES_JSON,
         VENDOR_NATIVE_TEMPLATES_JSON,
+        DEFAULT_ADMIN_CHANNEL_SEED_SOURCE,
     ] {
         hasher.update(payload.as_bytes());
         hasher.update([0]);

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-compactor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-compactor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-compactor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7050af2384333608d8b7133e5cfcdf759b29d1e62f02f9688fa4be61e90c69ec",

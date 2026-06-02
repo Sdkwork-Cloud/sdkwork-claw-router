@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/everclaw-inference@0.10.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-everclaw-inference-0.10.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-everclaw-inference-0.10.0.json"
+      },
       "version": "0.10.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fafe2ec3288429e738238903dae59ab98927889dcc24c67b140c576b99fa8f7e",

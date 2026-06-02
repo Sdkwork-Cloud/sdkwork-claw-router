@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/digital-twin@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-digital-twin-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-digital-twin-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:dc69452a400b84c725fa073029d2ab851ec245733d449629f0f9b2395d4b25be",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nix-flake-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nix-flake-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nix-flake-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4cadd67c38f82a33fa392203a735a52c6ef614b820e38016f2140df2d2ac8309",

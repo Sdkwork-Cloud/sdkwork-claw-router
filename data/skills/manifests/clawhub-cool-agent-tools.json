@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cool-agent-tools@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cool-agent-tools-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cool-agent-tools-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b41ad254c7051187d04197ac1f61fa2145e1bcacb03464893ce5390f784e2014",

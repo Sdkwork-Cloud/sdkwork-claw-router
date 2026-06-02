@@ -12,6 +12,8 @@ export interface CommercePaymentDisputeRecord {
   dispute_no: string;
   /** Evidence due at field on commerce payment dispute record. */
   evidence_due_at?: string;
+  /** Id field on commerce payment dispute record. */
+  id?: string;
   /** Native dispute id field on commerce payment dispute record. */
   native_dispute_id: string;
   /** Opened at field on commerce payment dispute record. */

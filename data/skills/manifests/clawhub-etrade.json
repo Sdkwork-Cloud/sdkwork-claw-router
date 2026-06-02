@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/etrade@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-etrade-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-etrade-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ee480c9640324131444e6e02d5b3ea99efeb47a1ffd74077c224f30c9a20510",

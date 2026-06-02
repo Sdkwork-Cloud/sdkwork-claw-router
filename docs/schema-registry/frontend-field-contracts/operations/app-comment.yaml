@@ -133,8 +133,7 @@ frontend_operations:
                   minLength: 1
                   maxLength: 128
                 avatar:
-                  type: string
-                  maxLength: 2048
+                  $ref: '#/components/schemas/MediaResource'
                 bio:
                   type: string
                   maxLength: 512

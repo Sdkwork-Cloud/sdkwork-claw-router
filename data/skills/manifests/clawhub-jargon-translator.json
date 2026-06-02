@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jargon-translator@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-jargon-translator-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jargon-translator-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:49324b9a6868d1cf5b0c57d03d8db19b2faf34805f9179b6d481a54224bfc1f9",

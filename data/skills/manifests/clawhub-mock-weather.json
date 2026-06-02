@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mock-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mock-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mock-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e0d3b03916a720aaf58136c3c0b26d1f3a43099f937c1a9031650ac9040c2899",

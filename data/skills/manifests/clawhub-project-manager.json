@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/project-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-project-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-project-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:39960b5e0be22f165c8c80f7fad25e77fde166794b4367579e6084c13b4a4503",

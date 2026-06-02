@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golden-rule@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-golden-rule-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golden-rule-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:73cd279938cd8c778f6544c1e8ff232d84ee656d401003fdcbc930176d050f18",

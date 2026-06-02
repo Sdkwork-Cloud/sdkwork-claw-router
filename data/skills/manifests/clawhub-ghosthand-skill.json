@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ghosthand-skill@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-ghosthand-skill-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ghosthand-skill-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:65a51c5c1a91ebf6c4198d81262fba936f665ab35ec57797da2993be3a21111e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podman-browser@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-podman-browser-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podman-browser-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:769a3755f5f82799aa91e30e0005661627206317dc329035be3a0d7b343accee",

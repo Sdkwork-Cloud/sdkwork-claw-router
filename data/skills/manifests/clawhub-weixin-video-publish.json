@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weixin-video-publish@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weixin-video-publish-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weixin-video-publish-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:751a2b3f7bfb2938214025cafb751afc2f80264e2ea0815db693f9fb655ec839",

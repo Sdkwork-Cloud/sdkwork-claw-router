@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/odoo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-odoo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-odoo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1da5fa543b0551fff67f6db4db0298845544317939760f23f0e57880f427d6b",

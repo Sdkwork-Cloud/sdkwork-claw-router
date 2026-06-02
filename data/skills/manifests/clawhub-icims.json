@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icims@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-icims-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icims-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2afbf92253b941a9b607abac0e03c3270337977a440d51547ecf4348147f1a30",

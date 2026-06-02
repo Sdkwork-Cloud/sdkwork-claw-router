@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-downloader@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-downloader-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-downloader-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ea4deb832d2e842fa0bac4468148e17ef0b4321826107f87abf52cc00c2bfbca",

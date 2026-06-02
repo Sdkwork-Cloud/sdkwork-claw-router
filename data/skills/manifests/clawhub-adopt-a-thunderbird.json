@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adopt-a-thunderbird@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-adopt-a-thunderbird-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adopt-a-thunderbird-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:8df745e8ad2aca9a2154b31ddd63d52d13837933821d61af92b66ed966fec9f6",

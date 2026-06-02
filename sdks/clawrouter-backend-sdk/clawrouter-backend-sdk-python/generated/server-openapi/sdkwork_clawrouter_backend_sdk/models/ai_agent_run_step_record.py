@@ -34,6 +34,7 @@ class AiAgentRunStepRecord:
     started_at: Optional[str] = None
     status: Optional[str] = None
     step_index: Optional[int] = None
+    step_status: Optional[str] = None
     step_type: Optional[str] = None
     tenant_id: Optional[str] = None
     title: Optional[str] = None

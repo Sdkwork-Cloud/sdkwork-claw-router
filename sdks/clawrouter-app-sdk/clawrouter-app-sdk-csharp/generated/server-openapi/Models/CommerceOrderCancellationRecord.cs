@@ -10,6 +10,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? CancellationNo { get; set; }
         public string? CompletedAt { get; set; }
         public string? CreatedAt { get; set; }
+        public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
         public string? OrderId { get; set; }
         public string? OrganizationId { get; set; }

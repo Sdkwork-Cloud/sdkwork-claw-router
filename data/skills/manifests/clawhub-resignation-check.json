@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resignation-check@0.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resignation-check-0.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resignation-check-0.5.0.json"
+      },
       "version": "0.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6cdb57a42055dd41f24d412ede1946ff43af759af83b12d09bbdb19282bf02c6",

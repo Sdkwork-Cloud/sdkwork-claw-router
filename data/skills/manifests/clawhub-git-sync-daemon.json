@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-sync-daemon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-sync-daemon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-sync-daemon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b135735579dda8e29919298d4dc6b22368306655ba0cf114346d10118ae10d3",

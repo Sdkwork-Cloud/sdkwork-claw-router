@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linkfox-amazon-reviews@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-amazon-reviews-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linkfox-amazon-reviews-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:895b4c4e78da81536e30bef76e2fe9364ac9071a4e55491ec7dd4fe8bdfe8583",

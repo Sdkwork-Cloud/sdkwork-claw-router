@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/free-ocr-zc@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-free-ocr-zc-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-free-ocr-zc-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:b8cf8de8188d470239203e0b36e9dcc282fed6bcf7eb422e6832a7962bb0a0a2",

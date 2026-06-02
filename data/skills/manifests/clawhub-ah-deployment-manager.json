@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ah-deployment-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ah-deployment-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ah-deployment-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc2cbb2887f062790dd34d2ded5f39ec4f404f288212c7b0781f1c3476146ae3",

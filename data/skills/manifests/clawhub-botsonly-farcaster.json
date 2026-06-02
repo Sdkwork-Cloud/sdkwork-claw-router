@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/botsonly-farcaster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-botsonly-farcaster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-botsonly-farcaster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c30075da76c44e32c585feead1d8b464ca220568b737c5f5178cda9a1b8e1718",

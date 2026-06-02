@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ah-autonomous-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ah-autonomous-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ah-autonomous-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:880171a6a96491429d0ef077db1683def30cb59f85375e5255cca648437f0b46",

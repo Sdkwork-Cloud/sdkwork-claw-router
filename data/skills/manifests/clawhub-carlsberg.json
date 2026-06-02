@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/carlsberg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-carlsberg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-carlsberg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56612324e2cac4ef2abc68ee9c09806e3aa10fcf48c0334864f21f9d29a5b990",

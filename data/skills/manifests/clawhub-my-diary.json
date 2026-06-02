@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-diary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-diary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-diary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13cefd3aa6eaa18de6371e3572d548e052038b7b4da3c92eebdabc34aa0b334e",

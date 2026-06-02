@@ -142,18 +142,6 @@ export class RechargeService {
       ...(requestPaymentPayload !== undefined ? { requestPaymentPayload } : {}),
     };
   }
-
-  static async cancelRechargeOrder(orderNo: string, note = 'package-switch'): Promise<void> {
-    const result = await appRechargesOrdersCancel(requiredText(orderNo, 'orderNo'), {
-      clientRequestNo: createCommerceRequestNo('recharge-cancel'),
-      note: requiredText(note, 'note'),
-    });
-    const data = readApiRecord(result);
-    const success = readRequiredBoolean(data, 'success', 'Recharge cancellation success flag is required');
-    if (!success) {
-      throw new Error('Recharge cancellation was not accepted');
-    }
-  }
 }
 
 type AppCommerce = ReturnType<typeof getClawRouterAppSdkClient>['commerce'];
@@ -186,17 +174,6 @@ export async function appRechargesOrdersCreate(body: Parameters<AppCommerce['rec
   return getClawRouterAppSdkClient().commerce.recharges.orders.create(
     body,
     createIdempotencyParams('app-recharge-order-create'),
-  );
-}
-
-export async function appRechargesOrdersCancel(
-  orderId: string,
-  body: Parameters<AppCommerce['orders']['cancellations']['create']>[1],
-) {
-  return getClawRouterAppSdkClient().commerce.orders.cancellations.create(
-    orderId,
-    body,
-    createIdempotencyParams('app-order-cancellation-create'),
   );
 }
 

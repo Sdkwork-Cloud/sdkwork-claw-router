@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fanuc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fanuc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fanuc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:600372fd1f70a19c5fc284c46eab91f22806b0023562cdfb541671e8cb06fed8",

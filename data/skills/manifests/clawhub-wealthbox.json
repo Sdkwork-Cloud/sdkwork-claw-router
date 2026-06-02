@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wealthbox@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-wealthbox-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wealthbox-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2980cba8342fe8783cbf7c9b4b95181cbb74456cbf36c391923811cb28c43baf",

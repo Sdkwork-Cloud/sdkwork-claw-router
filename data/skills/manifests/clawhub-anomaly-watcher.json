@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anomaly-watcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-anomaly-watcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anomaly-watcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6fcbc514c246892a111264882f2b3343b41866305842bd17d730de1f11d8e95c",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gtm-skill-packs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gtm-skill-packs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gtm-skill-packs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9bbbed52179073d87b5a660554fee65bd8bcc4d6871c822d9f160481b2dddafe",

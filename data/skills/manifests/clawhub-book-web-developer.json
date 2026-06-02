@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-web-developer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-web-developer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-web-developer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a1e89621cd38a9bfcd4b029c5a540d1067dff5c63451e8bc8a089ead2f79495f",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-knowledge-base-rag-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-knowledge-base-rag-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-knowledge-base-rag-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5123cfa1c2569d3de18d31e179f8711552cea58c0e3695c8b6e36cf51d042a2f",

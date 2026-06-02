@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/genviral-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-genviral-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-genviral-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7cacdf58a1260fac6a14ec387cd8412dd8da3c8502ab564358d59a5223d209dc",

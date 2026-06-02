@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-command-handler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-command-handler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-command-handler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:19ead73eb572d05832002a228aa163b3910da7c60cec7cdbed8daace4437cc7a",

@@ -4,7 +4,7 @@ package types
 type AdminSkillCategoryItem struct {
 	Code string `json:"code"`
 	Description string `json:"description"`
-	Icon string `json:"icon"`
+	Icon MediaResource `json:"icon"`
 	Id string `json:"id"`
 	Name string `json:"name"`
 	ParentId string `json:"parentId"`

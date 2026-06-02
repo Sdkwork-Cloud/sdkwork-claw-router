@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ninebot-skill@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ninebot-skill-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ninebot-skill-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f6edf225b503db81cadc51cac94a8ec0b116c3aa36c4a553dcedfa6b6227b79c",

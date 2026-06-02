@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tinyfish-agent-run@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tinyfish-agent-run-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tinyfish-agent-run-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:819fe9b81d99c3dd50e3e35603a4c5cdc2ef87c0d3a1b9159d3e7dd114e98935",

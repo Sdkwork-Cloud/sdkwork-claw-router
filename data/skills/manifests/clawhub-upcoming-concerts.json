@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/upcoming-concerts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-upcoming-concerts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-upcoming-concerts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc8b2314d1fc62b25689ab3d5782eb9dfb011a0b386e84de480217298ad4641f",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-swapi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-swapi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-swapi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a85cf46f9b388d6925f9c09eaec82f5bea2809a3f3ddf21ef8ad60cfff358f1",

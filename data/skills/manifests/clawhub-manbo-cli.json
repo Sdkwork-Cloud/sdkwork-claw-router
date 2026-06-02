@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/manbo-cli@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-manbo-cli-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-manbo-cli-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:446cdb2c31f58f20360ddf1cce62ff82e6c79b2d6be17f326fd8bdca3e357e7a",

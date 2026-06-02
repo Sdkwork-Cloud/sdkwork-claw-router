@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/persistent-agent-memory@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-persistent-agent-memory-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-persistent-agent-memory-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:eebb7e0dfb30575531d3e986c8e0811cde12b8e91249ab2c20cc10e3d0cb4ba8",

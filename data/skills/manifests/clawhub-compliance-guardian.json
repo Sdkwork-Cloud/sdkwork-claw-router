@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/compliance-guardian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-compliance-guardian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-compliance-guardian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97ebbeb0d389ba0aefba9756bc11e800560490a3f8e2ea33fb09bea3a52741e9",

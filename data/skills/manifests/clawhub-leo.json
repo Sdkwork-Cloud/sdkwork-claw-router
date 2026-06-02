@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/leo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-leo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-leo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e12ce3027d5b0194237c931864ea7db11d72fc9d030caa633460cff05bb08d1d",

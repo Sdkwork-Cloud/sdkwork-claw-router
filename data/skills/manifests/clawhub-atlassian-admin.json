@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/atlassian-admin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-atlassian-admin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-atlassian-admin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e71a1d77cf29ec7eb6a1e9e9bc427c6271e7726863f1e1d4cded4cbad784e97",

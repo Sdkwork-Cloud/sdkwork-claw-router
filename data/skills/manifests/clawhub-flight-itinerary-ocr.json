@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flight-itinerary-ocr@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-flight-itinerary-ocr-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flight-itinerary-ocr-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:89c04870688896445d3e6121c387bc9d2689772d19277e36aad4154b6b96f176",

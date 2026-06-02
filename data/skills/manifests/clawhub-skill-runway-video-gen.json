@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-runway-video-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-runway-video-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-runway-video-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d2ebaa8667200647c575a3b76a11f6bbeb2d188f6c9dfe6d4745088498dc59b",

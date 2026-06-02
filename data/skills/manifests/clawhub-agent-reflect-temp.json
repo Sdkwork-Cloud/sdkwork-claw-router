@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-reflect-temp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-reflect-temp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-reflect-temp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5deb0c58dcfde7c999a47a27af7ebaf722b4a08cf3ef368fb314bc5af61aecc9",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mail-mate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mail-mate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mail-mate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3d716c0ef69549195f33218190c180515bfb053f00772691544252b76419bfed",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/steam-community-inventory@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-steam-community-inventory-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-steam-community-inventory-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:47ce704d937a73abeb7d69e931943c990e54edc2e2a9b66970493b7940d440c8",

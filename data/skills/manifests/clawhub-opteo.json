@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opteo@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-opteo-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opteo-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5daa100858afa2d357a7fca211534f7e17bf5803cddbea7575f0e0dc332c6338",

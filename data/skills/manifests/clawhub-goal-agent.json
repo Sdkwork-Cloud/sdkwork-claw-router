@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goal-agent@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-goal-agent-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goal-agent-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:175b1fc1e12bd4496ac81bda6bad77ed650875a717892e4f7f4769f9af65893a",

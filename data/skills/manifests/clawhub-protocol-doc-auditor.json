@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/protocol-doc-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-protocol-doc-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-protocol-doc-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed3a49e10d646ef722a244769dcc3a77073b802f94b324aaf8a3507679d5b45b",

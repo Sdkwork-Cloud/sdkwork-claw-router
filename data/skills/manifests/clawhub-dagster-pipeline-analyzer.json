@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dagster-pipeline-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dagster-pipeline-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dagster-pipeline-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f1e07b4fec5c0e95ebd66b054fd34ae40c9d45038b6390702c7d84840e3f093",

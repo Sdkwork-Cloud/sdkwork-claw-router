@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unixtime@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-unixtime-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unixtime-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:80ce3bac76e92c78942a4d84471d43b702fb8407443e247012e5cd367bb89c52",

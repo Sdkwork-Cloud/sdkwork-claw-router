@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inkjet@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-inkjet-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inkjet-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:08c529fcf395b83c5bb855d9474f67efd8e07955fbebf9cf4defbd68dbdd5675",

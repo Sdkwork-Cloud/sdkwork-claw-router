@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-dropship-product-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-dropship-product-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-dropship-product-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f1743e13b8fb57c7a32385c4ec9d188ebd800820d96bd4465ded65cf56205f4",

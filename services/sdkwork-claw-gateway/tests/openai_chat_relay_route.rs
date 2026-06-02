@@ -5,7 +5,7 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
-    AiModel, ApiKeyGroup, BillingMeter, DecimalValue, DomainResult, GatewayApiKey, ModelPrice,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, DomainResult, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
     ProviderChannelRoute, ProviderRetryPolicy, RouteCandidate, RoutingCapability, RoutingPolicy,
     RoutingPolicyScope, RoutingRule,
@@ -61,7 +61,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
         DecimalValue::parse("1.200000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
@@ -132,7 +132,7 @@ fn add_group_routing_policy(
             10,
             20,
             &format!("{rule_code}-policy"),
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(group_id),
             Some(profile_id),
         )

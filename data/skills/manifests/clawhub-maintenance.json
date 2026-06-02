@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maintenance@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-maintenance-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maintenance-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0f523a97165a1182180314e8e65d6d6c056481abbfcb67d7d515500865db7c8c",

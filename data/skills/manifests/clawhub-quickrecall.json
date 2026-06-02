@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quickrecall@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-quickrecall-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quickrecall-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:4734f2008faed8102691f768716a8da588bcb374b82722c91d138a1c99ba792c",

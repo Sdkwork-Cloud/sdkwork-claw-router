@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-arena-skill@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-arena-skill-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-arena-skill-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:319cbb09124f7adf5466558b2571a26d3eceb5abccc13f26477a776c6d3a37e5",

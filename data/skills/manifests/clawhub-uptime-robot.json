@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/uptime-robot@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-uptime-robot-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-uptime-robot-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:b351c03a0e26eba297c65102f7bf9d6c62fbd2f3e51f29b43a08e3bcae336c0f",

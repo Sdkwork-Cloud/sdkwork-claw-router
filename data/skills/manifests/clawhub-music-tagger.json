@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-tagger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-tagger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-tagger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:61b0d95de1468864b226d49fee46e44b65f147202d4b8b184e28e49f6abced21",

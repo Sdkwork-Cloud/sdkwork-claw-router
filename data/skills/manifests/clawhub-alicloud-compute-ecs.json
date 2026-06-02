@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alicloud-compute-ecs@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-compute-ecs-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alicloud-compute-ecs-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:0800812bba782879dd9bcc2474e9fc59b19dcf1760c97be046f7064e0aafdd05",

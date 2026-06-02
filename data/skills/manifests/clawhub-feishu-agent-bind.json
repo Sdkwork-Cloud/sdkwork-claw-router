@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-agent-bind@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-agent-bind-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-agent-bind-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:265fa42496840eb7104ba205717ad72aa126b26aad1178c58d61db58e9afd946",

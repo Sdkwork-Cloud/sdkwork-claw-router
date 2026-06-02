@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawquests-xyz@1.6.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawquests-xyz-1.6.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawquests-xyz-1.6.0.json"
+      },
       "version": "1.6.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2dba258f18fe6e058890eaf5e31b75ff02f213e470f2d5fdbcd460fe707368af",

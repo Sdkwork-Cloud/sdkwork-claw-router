@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-load-balancer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-load-balancer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-load-balancer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a4962bb0fc6a68c48746d18597058f9de133c9486d17fe38d2219b8622c943f",

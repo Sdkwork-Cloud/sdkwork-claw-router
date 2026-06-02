@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minimax-pdf-ocr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-minimax-pdf-ocr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minimax-pdf-ocr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26ef31411648f0bd1c7f7d4061c62de1f50399c6d85d6dfd2384caa86854c33b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hipaa-patient-comms@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hipaa-patient-comms-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hipaa-patient-comms-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2b7ebdc90956e4065299323f1bade47999fb01d958dfd45790aa32405694465",

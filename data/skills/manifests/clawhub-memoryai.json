@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memoryai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memoryai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memoryai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e40c4ccc22de773261cdc1c464c04b3b96dabd9f9576468487bf6405540580be",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modelscope-img@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-modelscope-img-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modelscope-img-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8c70b1d8506384a256ac62c1ad3d053c1863f8f99e92fb631cbf9fecb6d783e9",

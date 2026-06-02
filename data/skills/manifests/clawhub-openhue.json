@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openhue@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openhue-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openhue-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b43f7667b86bb1a0e3ec716aafab0eabd8e3c8221f7aff665bc88c0fc91e55a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/build-engineering@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-build-engineering-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-build-engineering-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be73244007010e6fe7dce9944a6885fc38e702f90985319a7464558e9af05ee2",

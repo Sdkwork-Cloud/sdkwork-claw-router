@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/miumiu@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-miumiu-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-miumiu-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee397e0740c87f044287122e2b105188edf09815196339f671a3facded0ea20c",

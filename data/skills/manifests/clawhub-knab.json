@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knab@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-knab-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knab-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92eb15aa04ad8860f65321fe038783434fc4df6bc5ef3f4f143e96e8d81fffb5",

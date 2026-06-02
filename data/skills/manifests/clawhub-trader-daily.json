@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trader-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trader-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trader-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fda870a93fe6cafcad63a7f5231d630bb96ed8c9ebc9f0440857ba6aecea781a",

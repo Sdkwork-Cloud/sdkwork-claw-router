@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-flomo-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-flomo-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-flomo-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13a9d34692e10d409775f9b5a86a5f7c0262fbce9bf64b46dbaf056382f5072f",

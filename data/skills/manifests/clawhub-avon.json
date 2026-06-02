@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/avon@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-avon-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-avon-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:4c0c50848662dd0bdffabf002ef5d259838cb8b6c72cfae362261ad926ae1211",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/forgejo@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-forgejo-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-forgejo-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d0c9d6c32a589037471fdca26488d73368c933c3d998c1fd14202df784be83b",

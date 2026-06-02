@@ -8,6 +8,8 @@ export interface CommercePaymentAttemptRecord {
   created_at: string;
   /** Currency code field on commerce payment attempt record. */
   currency_code: string;
+  /** Id field on commerce payment attempt record. */
+  id?: string;
   /** Order id field on commerce payment attempt record. */
   order_id: string;
   /** Organization id field on commerce payment attempt record. */

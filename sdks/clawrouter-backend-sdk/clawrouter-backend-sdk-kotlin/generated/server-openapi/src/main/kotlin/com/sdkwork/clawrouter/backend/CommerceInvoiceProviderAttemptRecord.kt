@@ -6,6 +6,7 @@ data class CommerceInvoiceProviderAttemptRecord(
     val failedAt: String? = null,
     val failureCode: String? = null,
     val failureMessage: String? = null,
+    val id: String? = null,
     val invoiceId: String? = null,
     val organizationId: String? = null,
     val providerAccountId: String? = null,

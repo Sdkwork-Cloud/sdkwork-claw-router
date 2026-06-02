@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/owncloudsync@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-owncloudsync-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-owncloudsync-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:646b4dd432d5d5f2638ad6fdda7924985bb061e98871772ace9e0a9a43fc0494",

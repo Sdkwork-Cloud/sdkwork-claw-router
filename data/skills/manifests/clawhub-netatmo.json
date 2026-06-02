@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/netatmo@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-netatmo-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-netatmo-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:20f0cac076f7fd7ecd420070223b25c7b9e846c2b13ed48da2d0057b389cdb3c",

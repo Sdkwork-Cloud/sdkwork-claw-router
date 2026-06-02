@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/archon-keymaster@0.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-archon-keymaster-0.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-archon-keymaster-0.1.4.json"
+      },
       "version": "0.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:30719958277bc1fb5a0b22baaf642dfb48184fb2d69daac974e6b4b83ca01118",

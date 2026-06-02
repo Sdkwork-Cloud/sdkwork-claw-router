@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kubeshop@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-kubeshop-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kubeshop-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f6db1b82d302c255f65f9c9cb8e6e6762ee0ff2321f12207104cc3ec39a4b037",

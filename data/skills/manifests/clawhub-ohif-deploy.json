@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ohif-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ohif-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ohif-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c5a0c27daf773bd0dda91a85983fd6303f03671552c0aa80f254fdb9d9cc45e8",

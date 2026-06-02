@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-chatbot-v2@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-chatbot-v2-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-chatbot-v2-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c244a6b973e843ec168bbb4455ca83c9c31405ed376f48338e884e3325b109a6",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/phyllo@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-phyllo-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-phyllo-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0dd8d4da95b7d86fd3da4e5d32d3b0dde11e9b7b54eda69ea70784119de77a02",

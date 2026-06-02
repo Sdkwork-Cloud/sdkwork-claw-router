@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gold-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gold-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gold-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:036180770cd29aa70fd2fa9ae02d758384e85829df4799ef2bc244a4379484fa",

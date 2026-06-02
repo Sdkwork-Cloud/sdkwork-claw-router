@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/six-agent-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-six-agent-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-six-agent-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4eff3123c44282d3187a06411ed6ab095fa7178efdcbe2c31ae97a3df6126848",

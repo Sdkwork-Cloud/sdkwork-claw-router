@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sales-powermap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sales-powermap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sales-powermap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be614917b970b7ffd3859254f580f19bba090e67457a18e9972d4dd80b2ff191",

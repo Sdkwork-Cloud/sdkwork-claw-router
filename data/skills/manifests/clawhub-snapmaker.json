@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snapmaker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-snapmaker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snapmaker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:008328620c019d1ff6cb9e2cada805e8c5ff2f919793e4fd9b14ffe160e053ab",

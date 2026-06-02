@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/food-order@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-food-order-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-food-order-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9bccdfe43327bc94425708fddeca921096da314eb28e34315bfce73411b59e5b",

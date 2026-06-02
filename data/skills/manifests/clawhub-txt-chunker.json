@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/txt-chunker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-txt-chunker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-txt-chunker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d65a5a03ca1811b8ff96396a6022f85b54d6190b872392ae41716e148ab4843e",

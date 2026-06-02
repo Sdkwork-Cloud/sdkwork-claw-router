@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/csi-stock-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-csi-stock-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-csi-stock-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10a30e897fbc5ddc4f9d130813cb4913f37f5f5286fc97ab50d68fe0fa3a3442",

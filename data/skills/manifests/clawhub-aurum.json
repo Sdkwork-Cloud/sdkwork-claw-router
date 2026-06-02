@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aurum@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aurum-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aurum-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c16904213e67c9a78a6ecef64bcd3328d95911c54a664d37ecb5b79e42e7315",

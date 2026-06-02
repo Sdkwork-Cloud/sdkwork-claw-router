@@ -125,8 +125,8 @@ const result = await client.agents.agentDefinitions.list(params);
 ### ai
 
 ```typescript
-// List traces
-const result = await client.ai.gateway.traces.list();
+// List groups
+const result = await client.ai.channelGroups.list();
 ```
 
 ### auth
@@ -179,8 +179,8 @@ const result = await client.ecosystem.skills.categories.list();
 ### iam
 
 ```typescript
-// List groups
-const result = await client.iam.apiKeyGroups.list();
+// List keys
+const result = await client.iam.apiKeys.list();
 ```
 
 ### memory

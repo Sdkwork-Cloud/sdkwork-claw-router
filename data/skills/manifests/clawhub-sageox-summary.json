@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sageox-summary@0.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sageox-summary-0.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sageox-summary-0.3.1.json"
+      },
       "version": "0.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:649608b7e82a067cfc2c069bea63ba1c8c7ff870d6d9258b1f07903e1833bcff",

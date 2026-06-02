@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/session-rename@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-session-rename-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-session-rename-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c5675cadd6001056142a6ce92f1148e5694dfaaeb96718b34d450f45ee3f8171",

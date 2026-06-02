@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mailjet@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-mailjet-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mailjet-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:78bcb3627285df6506d0138b9d367dae0ee1b320222a60b752f0f2ec053fdc0a",

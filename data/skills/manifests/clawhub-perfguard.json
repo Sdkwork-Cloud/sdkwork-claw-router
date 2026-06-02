@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/perfguard@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-perfguard-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-perfguard-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:99bb0668e7ba3607a145863b7430a32e49113d1f1965f1e66a3fd71b5bcf1a35",

@@ -11,7 +11,6 @@ frontend_models:
   - description
   - version
   - icon
-  - iconUrl
   - resourceList
   - projectId
   - accessUrl
@@ -28,7 +27,7 @@ frontend_models:
   - packageName
   - bundleId
   - storeUrl
-  - downloadUrl
+  - artifact
   - createdAt
   - updatedAt
   data_sources:
@@ -111,7 +110,6 @@ frontend_models:
   - items.description
   - items.version
   - items.icon
-  - items.iconUrl
   - items.resourceList
   - items.projectId
   - items.accessUrl
@@ -128,7 +126,7 @@ frontend_models:
   - items.packageName
   - items.bundleId
   - items.storeUrl
-  - items.downloadUrl
+  - items.artifact
   - items.createdAt
   - items.updatedAt
   - total
@@ -149,7 +147,6 @@ frontend_models:
   - description
   - version
   - icon
-  - iconUrl
   - resourceList
   - projectId
   - accessUrl
@@ -165,7 +162,7 @@ frontend_models:
   - packageName
   - bundleId
   - storeUrl
-  - downloadUrl
+  - artifact
   data_sources:
   - plus_app
   - plus_category
@@ -180,7 +177,6 @@ frontend_models:
   - description
   - version
   - icon
-  - iconUrl
   - resourceList
   - projectId
   - accessUrl
@@ -194,7 +190,7 @@ frontend_models:
   - packageName
   - bundleId
   - storeUrl
-  - downloadUrl
+  - artifact
   data_sources:
   - plus_app
   - plus_category
@@ -216,8 +212,8 @@ frontend_models:
   - runtime
   - framework
   - language
-  - iconUrl
-  - coverUrl
+  - icon
+  - cover
   - visibility
   - publishStatus
   - featured
@@ -250,8 +246,8 @@ frontend_models:
   - runtime
   - framework
   - language
-  - iconUrl
-  - coverUrl
+  - icon
+  - cover
   - visibility
   - publishStatus
   - featured
@@ -279,8 +275,8 @@ frontend_models:
   - runtime
   - framework
   - language
-  - iconUrl
-  - coverUrl
+  - icon
+  - cover
   - visibility
   - publishStatus
   - featured
@@ -326,8 +322,8 @@ frontend_models:
   - items.runtime
   - items.framework
   - items.language
-  - items.iconUrl
-  - items.coverUrl
+  - items.icon
+  - items.cover
   - items.visibility
   - items.publishStatus
   - items.featured
@@ -371,7 +367,7 @@ frontend_models:
   - releases.version
   - releases.size
   - releases.releaseDate
-  - releases.downloadUrl
+  - releases.artifact
   - releases.whatsNew
   data_sources:
   - plus_app
@@ -388,7 +384,7 @@ frontend_models:
   - version
   - size
   - releaseDate
-  - downloadUrl
+  - artifact
   - whatsNew
   data_sources:
   - studio_catalog_artifact

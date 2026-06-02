@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heroku@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-heroku-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heroku-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c67876ebd0ef5a2c71f870bdfaf2effaae9a79f37e683fdaee888f389267ab20",

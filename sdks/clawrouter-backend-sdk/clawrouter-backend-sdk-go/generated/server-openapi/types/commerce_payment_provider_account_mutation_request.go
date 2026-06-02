@@ -2,7 +2,7 @@ package types
 
 // Commerce payment provider account mutation request schema exposed by Claw Router.
 type CommercePaymentProviderAccountMutationRequest struct {
-	AccountNo string `json:"accountNo"`
+	AccountRole string `json:"accountRole"`
 	CertificateRef string `json:"certificateRef"`
 	ClientRequestNo string `json:"clientRequestNo"`
 	CountryCode string `json:"countryCode"`

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-shield@3.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-shield-3.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-shield-3.0.6.json"
+      },
       "version": "3.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:a030366cf0015ab4634787e1bd3cdb60bac40ce49a5359e2c6bae9699933d1bf",

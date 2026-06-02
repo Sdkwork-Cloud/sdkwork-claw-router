@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tonic-update-md@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tonic-update-md-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tonic-update-md-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2bbd54e2a6270fb2a40967708f558580f0d1c3cc1b6bf7b907bcbb27d74e1f3d",

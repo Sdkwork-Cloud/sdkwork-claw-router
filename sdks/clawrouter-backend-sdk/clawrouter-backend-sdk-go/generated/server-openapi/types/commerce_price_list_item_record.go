@@ -4,7 +4,9 @@ package types
 type CommercePriceListItemRecord struct {
 	CompareAtAmount string `json:"compare_at_amount"`
 	CreatedAt string `json:"created_at"`
+	Id string `json:"id"`
 	MaxQuantity string `json:"max_quantity"`
+	MinQuantity string `json:"min_quantity"`
 	OrganizationId string `json:"organization_id"`
 	PriceAmount string `json:"price_amount"`
 	PriceListId string `json:"price_list_id"`

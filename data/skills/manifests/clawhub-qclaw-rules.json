@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qclaw-rules@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qclaw-rules-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qclaw-rules-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a05f000c4b84054dae371a53b3141f6a712b46a16d255f56847a4f3fdba1a0ee",

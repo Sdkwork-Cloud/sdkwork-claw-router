@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/camping@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-camping-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-camping-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f2f83e4726474d86d9500cb2cc08de944d3add7e895434583fb5148887fa0a98",

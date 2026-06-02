@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-mp-writer-skill-mxx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-mp-writer-skill-mxx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-mp-writer-skill-mxx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3598840cd0ab64c8f431b68131bd18ccbb647add560e0bf543d0ef236e8e7c44",

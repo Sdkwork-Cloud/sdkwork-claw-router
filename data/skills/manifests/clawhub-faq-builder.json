@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/faq-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-faq-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-faq-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96d05cfccee59ad803e75205f1cd153a65c6ab25b03613fb366ceac3da2f4eca",

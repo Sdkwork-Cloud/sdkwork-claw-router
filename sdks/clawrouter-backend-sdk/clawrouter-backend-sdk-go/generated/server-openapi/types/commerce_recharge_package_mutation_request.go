@@ -2,7 +2,8 @@ package types
 
 // Commerce recharge package mutation request schema exposed by Claw Router.
 type CommerceRechargePackageMutationRequest struct {
-	Bonus int `json:"bonus"`
-	Rmb string `json:"rmb"`
+	BonusPoints int `json:"bonusPoints"`
+	CurrencyCode string `json:"currencyCode"`
+	PriceAmount string `json:"priceAmount"`
 	Status string `json:"status"`
 }

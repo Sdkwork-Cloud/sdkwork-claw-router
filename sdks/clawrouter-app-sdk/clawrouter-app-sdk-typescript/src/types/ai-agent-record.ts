@@ -1,11 +1,12 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Ai agent record schema exposed by Claw Router. */
 export interface AiAgentRecord {
   /** Agent code field on ai agent record. */
   agent_code?: string;
-  /** Avatar url field on ai agent record. */
-  avatar_url?: string;
+  /** Avatar field on ai agent record. */
+  avatar?: MediaResource;
   /** Created at field on ai agent record. */
   created_at?: string;
   /** Data scope field on ai agent record. */

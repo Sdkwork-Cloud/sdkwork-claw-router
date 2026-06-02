@@ -13,9 +13,22 @@ import {
   type SdkworkCommunityEntry,
 } from "../src";
 
+const teamAvatar = {
+  bucketId: "community-media",
+  fileName: "sdkwork-team.png",
+  id: "media-resource-community-team",
+  kind: "image",
+  mimeType: "image/png",
+  objectKey: "authors/sdkwork-team/avatar.png",
+  publicUrl: "https://cdn.sdkwork.ai/community/sdkwork-team.png",
+  sizeBytes: "6144",
+  source: "object_storage",
+} as const;
+
 const entries: SdkworkCommunityEntry[] = [
   {
     author: {
+      avatar: teamAvatar,
       id: "author-1",
       name: "Sdkwork Team",
     },
@@ -240,6 +253,7 @@ describe("sdkwork-community-pc-react", () => {
         activeEntryId: "assistant-release",
       }),
     ).toEqual({
+      authorAvatar: teamAvatar,
       authorName: "Sdkwork Team",
       categoryId: "product",
       commentCount: 18,

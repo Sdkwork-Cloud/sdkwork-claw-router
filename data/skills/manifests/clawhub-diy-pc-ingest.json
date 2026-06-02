@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/diy-pc-ingest@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-diy-pc-ingest-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-diy-pc-ingest-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a00a5f473e9865358e4fb3a30f6620a3f059cf51e1ceb6ca0483f8118b69c73f",

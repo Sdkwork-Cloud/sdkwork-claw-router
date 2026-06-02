@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/todo-sync@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-todo-sync-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-todo-sync-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:631cbc57471597e4fce190abdcfddebae878ac8b3e20d8ee1d029755fdbf09ad",

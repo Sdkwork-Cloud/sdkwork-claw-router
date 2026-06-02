@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lap-amazon-appstream@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lap-amazon-appstream-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lap-amazon-appstream-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d9d97dfcf2b1da03a7c1678f17d225068f6ee0a3bd23a861ea7e0912d46c1317",

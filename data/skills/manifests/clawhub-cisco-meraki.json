@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cisco-meraki@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-cisco-meraki-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cisco-meraki-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0e2cc74f9dc0af92bbfa954c5cf8e34830d80d62a5129df122bdc1a545805911",

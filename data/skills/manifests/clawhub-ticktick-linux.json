@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ticktick-linux@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ticktick-linux-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ticktick-linux-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:505d3ea933e680f73df91de2ea6fd42ded83f425148985952cfe7f8491151940",

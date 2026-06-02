@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-seatbelt@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-seatbelt-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-seatbelt-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:973e010053c439069ce507d7997f0718098d14c920ff00bfdc329b6cf07c82f5",

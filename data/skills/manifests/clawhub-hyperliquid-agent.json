@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hyperliquid-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-hyperliquid-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hyperliquid-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:df6e22e15eb29ece00c598d8f0a908ab518d08c6b0475cefad298d8b66a44012",

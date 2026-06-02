@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-reply@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-reply-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-reply-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26c67f0555d2271d5df16d8e0ee06d32155599ccb921b0c4549d31d0f11807d8",

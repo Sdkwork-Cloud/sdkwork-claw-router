@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ci-cd-compliance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ci-cd-compliance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ci-cd-compliance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3cf6b9f999ec39581cc16d373227c20f8eb4d24f027a641967f13e16de9fc691",

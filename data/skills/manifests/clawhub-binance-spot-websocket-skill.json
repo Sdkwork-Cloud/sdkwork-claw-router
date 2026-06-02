@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/binance-spot-websocket-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-binance-spot-websocket-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-binance-spot-websocket-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8aafd2e4d75750a6bd43a06d90d5bc78b485a41c23358c7ea0a6330cc0f5e978",

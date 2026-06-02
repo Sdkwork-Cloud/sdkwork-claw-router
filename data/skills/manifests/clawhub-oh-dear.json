@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oh-dear@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-oh-dear-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oh-dear-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:95d0f39bf33d7a45fae3e5a956fe293e98c58d9ee46e8ad01ad0ecfbb49ea77a",

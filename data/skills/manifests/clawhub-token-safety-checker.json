@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/token-safety-checker@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-token-safety-checker-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-token-safety-checker-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:82531475836cd335fcb9bc5b2bc60dcd29ab5bae20d8f089bcebe5305fc36e5a",

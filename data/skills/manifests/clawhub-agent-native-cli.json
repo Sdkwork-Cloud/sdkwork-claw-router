@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-native-cli@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-native-cli-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-native-cli-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:855128b8f671c58270e9717ae7562dd0bf325569dc0e2e15929e347a54fa8696",

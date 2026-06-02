@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smithnode@1.0.13",
-      "artifactUrl": "data/skills/artifacts/clawhub-smithnode-1.0.13.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smithnode-1.0.13.json"
+      },
       "version": "1.0.13",
       "runtime": "metadata",
       "checksumHash": "sha256:6d839290abc39a818bc840c440b400251cd22bd24aafab694956bd37ea0dffae",

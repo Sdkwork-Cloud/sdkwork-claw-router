@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cetus@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cetus-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cetus-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74d0af7a00d6f42f032887b604b16e3b4e89829ffeabe247570068827bce15fb",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-sandbox@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-sandbox-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-sandbox-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f372626a0c975ed1ac1c6b53494a21df7cb7c67649cdb129fc9b14dcf4c54865",

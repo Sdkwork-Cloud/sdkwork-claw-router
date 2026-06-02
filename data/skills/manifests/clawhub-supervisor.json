@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/supervisor@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-supervisor-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-supervisor-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8a858ee295690473782408eda857f9dcb317bd7e530796c034d5aced8b0ec56d",

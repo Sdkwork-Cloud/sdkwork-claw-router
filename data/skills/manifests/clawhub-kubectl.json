@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kubectl@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kubectl-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kubectl-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e5d17887aecae7b5a0c09aca8890bcece7a3fde3eb9f3764626a733862758f2d",

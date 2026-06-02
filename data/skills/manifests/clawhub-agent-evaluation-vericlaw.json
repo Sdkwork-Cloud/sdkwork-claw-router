@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-evaluation-vericlaw@0.1.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-evaluation-vericlaw-0.1.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-evaluation-vericlaw-0.1.6.json"
+      },
       "version": "0.1.6",
       "runtime": "metadata",
       "checksumHash": "sha256:208c3c6bebe14d0f024de23488f6baa166bdccd32583a45dbb086b8cfc8e298f",

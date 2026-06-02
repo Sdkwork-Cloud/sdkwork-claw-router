@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shiphero@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-shiphero-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shiphero-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:35798fa5e3b27223654191eef8791133f3b8a3ce7bb083d236ab162e407fb353",

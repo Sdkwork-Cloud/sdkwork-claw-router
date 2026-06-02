@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/session-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-session-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-session-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71dedab542c697d19377c62f3127e86250aeb4288ea345ebc3c5447afd410950",

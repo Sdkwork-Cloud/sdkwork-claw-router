@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jeep@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jeep-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jeep-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b6dc87cae52980f55d5b3dab3041e1abdd25598ad4a44d47029d9357ec73167a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cooler-master@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cooler-master-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cooler-master-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1786b95c657bf16ccad0243bf40e859f1990f2a21e948783b153232cb4651034",

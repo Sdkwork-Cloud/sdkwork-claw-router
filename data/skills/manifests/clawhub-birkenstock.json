@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/birkenstock@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-birkenstock-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-birkenstock-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55427d0899c8010a8ec9f59fd3b24cd711c40b48ef0f15c2678e7b854cfdd9d5",

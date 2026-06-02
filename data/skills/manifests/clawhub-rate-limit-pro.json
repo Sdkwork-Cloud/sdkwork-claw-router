@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rate-limit-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rate-limit-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rate-limit-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aca7a0bd1c439cfa0fd536b3b20137958a0382080fcf2d30c88986f97e9058fe",

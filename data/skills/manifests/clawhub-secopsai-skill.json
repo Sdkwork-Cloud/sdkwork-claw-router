@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/secopsai-skill@0.3.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-secopsai-skill-0.3.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-secopsai-skill-0.3.6.json"
+      },
       "version": "0.3.6",
       "runtime": "metadata",
       "checksumHash": "sha256:bd1d59bc5d6d9b7525e2ee433a65a17c006afa00c0d59284c2eb668c24860271",

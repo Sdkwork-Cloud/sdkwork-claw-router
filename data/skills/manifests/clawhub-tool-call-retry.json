@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tool-call-retry@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tool-call-retry-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tool-call-retry-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7beda436f156da81443dc75f061594a90cd87b809dcd57682503424f8b98e211",

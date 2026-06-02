@@ -16,12 +16,16 @@ export interface AiChannelGroupResourceRecord {
   effective_from?: string;
   /** Effective to field on ai channel group resource record. */
   effective_to?: string;
+  /** Grant type field on ai channel group resource record. */
+  grant_type: string;
   /** Id field on ai channel group resource record. */
   id?: string;
   /** Metadata field on ai channel group resource record. */
   metadata?: Record<string, JsonValue>;
   /** Organization id field on ai channel group resource record. */
   organization_id: string;
+  /** Priority field on ai channel group resource record. */
+  priority?: number;
   /** Resource code field on ai channel group resource record. */
   resource_code?: string;
   /** Resource group code field on ai channel group resource record. */

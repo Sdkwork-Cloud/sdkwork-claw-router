@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-skill-discovery@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-skill-discovery-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-skill-discovery-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:95158b833139ce8833215ea99f053685c4604e0e97fd9cc132f1adc24e03f030",

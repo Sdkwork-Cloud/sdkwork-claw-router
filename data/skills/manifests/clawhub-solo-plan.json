@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solo-plan@2.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-solo-plan-2.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solo-plan-2.2.1.json"
+      },
       "version": "2.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:99c863164896fa4385b1291d3fc445878e24586488302f3fe1dedc35b3e41351",

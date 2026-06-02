@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/caption-generator-srt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-caption-generator-srt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-caption-generator-srt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e5006f5008e5457206559d38795e212e6a2618c38920fe05ccdd4373841c636e",

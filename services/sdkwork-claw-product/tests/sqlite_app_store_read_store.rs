@@ -58,14 +58,29 @@ async fn sqlite_app_store_loads_active_apps_for_subject_with_public_contract_fie
     assert_eq!("Claw Desktop", app.name);
     assert_eq!("Portal Labs", app.developer);
     assert_eq!("HTML", app.category);
-    assert_eq!("https://cdn.example.test/apps/claw.png", app.image);
+    assert_eq!("image", app.image["kind"]);
+    assert_eq!("external_url", app.image["source"]);
+    assert_eq!(
+        "https://cdn.example.test/apps/claw.png",
+        app.image["publicUrl"]
+    );
     assert_eq!(4.8, app.rating);
     assert_eq!("Commercial desktop router console", app.description);
     assert_eq!("2", app.downloads);
     assert_eq!(
         vec![
-            "https://cdn.example.test/apps/claw-screen-1.png".to_owned(),
-            "https://cdn.example.test/apps/claw-screen-2.png".to_owned(),
+            serde_json::json!({
+                "kind": "image",
+                "source": "external_url",
+                "url": "https://cdn.example.test/apps/claw-screen-1.png",
+                "publicUrl": "https://cdn.example.test/apps/claw-screen-1.png"
+            }),
+            serde_json::json!({
+                "kind": "image",
+                "source": "external_url",
+                "url": "https://cdn.example.test/apps/claw-screen-2.png",
+                "publicUrl": "https://cdn.example.test/apps/claw-screen-2.png"
+            }),
         ],
         app.screenshots
     );
@@ -82,7 +97,7 @@ async fn sqlite_app_store_loads_active_apps_for_subject_with_public_contract_fie
     assert_eq!("2026-05-01", app.releases[0].release_date);
     assert_eq!(
         "https://cdn.example.test/apps/claw-2.1.0.exe",
-        app.releases[0].download_url
+        app.releases[0].artifact["publicUrl"]
     );
     assert_eq!(
         Some("Hardened routing policies"),
@@ -180,7 +195,7 @@ async fn sqlite_app_store_does_not_fallback_disabled_install_packages_to_public_
     sqlx::query(
         r#"
         UPDATE plus_app
-        SET install_config = '{"packages":[{"id":"blocked-msi","enabled":false,"version":"0.1.0","platform":"DESKTOP_WINDOWS","packageFormat":"MSI","url":"https://cdn.example.test/apps/blocked.msi"}]}'
+        SET install_config = '{"packages":[{"id":"blocked-msi","enabled":false,"version":"0.1.0","platform":"DESKTOP_WINDOWS","packageFormat":"MSI","artifact":{"kind":"archive","source":"external_url","url":"https://cdn.example.test/apps/blocked.msi","publicUrl":"https://cdn.example.test/apps/blocked.msi"}}]}'
         WHERE id = 1750
         "#,
     )
@@ -199,7 +214,8 @@ async fn sqlite_app_store_does_not_fallback_disabled_install_packages_to_public_
         detail
             .releases
             .iter()
-            .all(|release| release.download_url != "https://cdn.example.test/apps/blocked.msi"),
+            .all(|release| release.artifact["publicUrl"]
+                != "https://cdn.example.test/apps/blocked.msi"),
         "public App Store fallback releases must ignore disabled install packages"
     );
 }
@@ -293,13 +309,21 @@ async fn sqlite_app_store_falls_back_to_tenant_public_apps_for_authenticated_org
     );
     let public_app = &items[0];
     assert_eq!(
-        vec!["https://cdn.example.test/apps/public-screen.png".to_owned()],
+        vec![serde_json::json!({
+            "kind": "image",
+            "source": "external_url",
+            "url": "https://cdn.example.test/apps/public-screen.png",
+            "publicUrl": "https://cdn.example.test/apps/public-screen.png"
+        })],
         public_app.screenshots
     );
-    assert!(public_app
-        .releases
-        .iter()
-        .any(|release| release.download_url == "https://cdn.example.test/apps/public.zip"));
+    assert!(
+        public_app
+            .releases
+            .iter()
+            .any(|release| release.artifact["publicUrl"]
+                == "https://cdn.example.test/apps/public.zip")
+    );
 
     let detail = store
         .load_app_by_id("public-tenant-app".to_owned(), Some(owner_subject()))
@@ -737,7 +761,9 @@ async fn create_app_store_tables(pool: &SqlitePool) {
             project_id INTEGER,
             description TEXT,
             version TEXT,
-            icon_url TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
             access_url TEXT,
             config TEXT,
             status INTEGER,
@@ -750,7 +776,9 @@ async fn create_app_store_tables(pool: &SqlitePool) {
             package_name TEXT,
             bundle_id TEXT,
             store_url TEXT,
-            download_url TEXT
+            artifact_media_resource_id TEXT,
+            artifact_object_blob_id INTEGER,
+            artifact_resource_snapshot TEXT
         )
         "#,
         r#"
@@ -802,8 +830,12 @@ async fn create_app_store_tables(pool: &SqlitePool) {
             target_id INTEGER NOT NULL,
             artifact_id INTEGER,
             asset_type TEXT,
-            asset_url TEXT,
-            thumbnail_url TEXT,
+            asset_media_resource_id TEXT,
+            asset_object_blob_id INTEGER,
+            asset_resource_snapshot TEXT,
+            thumbnail_media_resource_id TEXT,
+            thumbnail_object_blob_id INTEGER,
+            thumbnail_resource_snapshot TEXT,
             title TEXT,
             sort_order INTEGER,
             published_at TEXT,
@@ -824,7 +856,9 @@ async fn create_app_store_tables(pool: &SqlitePool) {
             os_name TEXT,
             version TEXT,
             artifact_ref TEXT,
-            artifact_url TEXT,
+            artifact_media_resource_id TEXT,
+            artifact_object_blob_id INTEGER,
+            artifact_resource_snapshot TEXT,
             artifact_size_bytes INTEGER,
             runtime TEXT,
             frameworks TEXT,
@@ -1017,12 +1051,12 @@ async fn insert_app(
     name: &str,
     description: &str,
     version: &str,
-    icon_url: &str,
+    icon_public_url: &str,
     config: &str,
     status: i64,
     app_type: &str,
     install_skill: &str,
-    download_url: &str,
+    artifact_public_url: &str,
     access_url: &str,
     updated_at: &str,
 ) {
@@ -1030,17 +1064,19 @@ async fn insert_app(
         r#"
         INSERT INTO plus_app (
             id, uuid, created_at, updated_at, tenant_id, organization_id, user_id,
-            name, icon, resource_list, project_id, description, version, icon_url,
+            name, icon, resource_list, project_id, description, version,
+            icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot,
             access_url, config, status, app_type, platforms, install_platforms,
             install_skill, install_config, release_notes, package_name, bundle_id,
-            store_url, download_url
+            store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot
         )
         VALUES (
             ?1, ?2, '2026-05-01 09:30:00', ?3, ?4, ?5, ?6,
-            ?7, NULL, NULL, NULL, ?8, ?9, ?10,
-            ?11, ?12, ?13, ?14, NULL, NULL,
-            ?15, NULL, NULL, NULL, NULL,
-            NULL, ?16
+            ?7, NULL, NULL, NULL, ?8, ?9,
+            ?10, NULL, ?11,
+            ?12, ?13, ?14, ?15, NULL, NULL,
+            ?16, NULL, NULL, NULL, NULL,
+            NULL, ?17, NULL, ?18
         )
         "#,
     )
@@ -1053,13 +1089,15 @@ async fn insert_app(
     .bind(name)
     .bind(description)
     .bind(version)
-    .bind(icon_url)
+    .bind(format!("test-app-icon-{id}"))
+    .bind(media_resource_snapshot(icon_public_url, "image"))
     .bind(access_url)
     .bind(config)
     .bind(status)
     .bind(app_type)
     .bind(install_skill)
-    .bind(download_url)
+    .bind(optional_media_resource_id(id, artifact_public_url))
+    .bind(optional_media_resource_snapshot(artifact_public_url, "archive"))
     .execute(pool)
     .await
     .unwrap();
@@ -1070,11 +1108,18 @@ async fn insert_asset(
     id: i64,
     target_id: i64,
     asset_type: &str,
-    asset_url: &str,
+    asset_public_url: &str,
     sort_order: i64,
 ) {
     insert_asset_with_scope(
-        pool, id, 10, 20, target_id, asset_type, asset_url, sort_order,
+        pool,
+        id,
+        10,
+        20,
+        target_id,
+        asset_type,
+        asset_public_url,
+        sort_order,
     )
     .await;
 }
@@ -1086,17 +1131,19 @@ async fn insert_asset_with_scope(
     organization_id: i64,
     target_id: i64,
     asset_type: &str,
-    asset_url: &str,
+    asset_public_url: &str,
     sort_order: i64,
 ) {
     sqlx::query(
         r#"
         INSERT INTO studio_catalog_asset (
             id, tenant_id, organization_id, target_type, target_id, artifact_id,
-            asset_type, asset_url, thumbnail_url, title, sort_order, published_at,
+            asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot,
+            thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot,
+            title, sort_order, published_at,
             status, deleted_at, metadata
         )
-        VALUES (?1, ?2, ?3, 15, ?4, NULL, ?5, ?6, NULL, NULL, ?7, '2026-05-01 10:00:00', 1, NULL, 'raw-internal-metadata')
+        VALUES (?1, ?2, ?3, 15, ?4, NULL, ?5, ?6, NULL, ?7, NULL, NULL, NULL, NULL, ?8, '2026-05-01 10:00:00', 1, NULL, 'raw-internal-metadata')
         "#,
     )
     .bind(id)
@@ -1104,7 +1151,8 @@ async fn insert_asset_with_scope(
     .bind(organization_id)
     .bind(target_id)
     .bind(asset_type)
-    .bind(asset_url)
+    .bind(format!("test-app-asset-{id}"))
+    .bind(media_resource_snapshot(asset_public_url, "image"))
     .bind(sort_order)
     .execute(pool)
     .await
@@ -1137,7 +1185,7 @@ async fn insert_artifact_with_scope(
     platform_type: &str,
     os_name: &str,
     version: &str,
-    artifact_url: &str,
+    artifact_public_url: &str,
     artifact_size_bytes: i64,
     release_notes: &str,
 ) {
@@ -1145,13 +1193,16 @@ async fn insert_artifact_with_scope(
         r#"
         INSERT INTO studio_catalog_artifact (
             id, tenant_id, organization_id, target_type, target_id, artifact_type,
-            platform_type, os_name, version, artifact_ref, artifact_url,
+            platform_type, os_name, version, artifact_ref, artifact_media_resource_id,
+            artifact_object_blob_id, artifact_resource_snapshot,
             artifact_size_bytes, runtime, frameworks, license_name, release_notes,
             published_at, status, deleted_at, metadata
         )
         VALUES (
             ?1, ?2, ?3, 15, ?4, 'installer',
             ?5, ?6, ?7, 'artifact://internal/claw',
+            'media-resource-claw-release',
+            88001,
             ?8,
             ?9, NULL, NULL, NULL, ?10,
             '2026-05-01 08:00:00', 1, NULL, 'raw-internal-metadata'
@@ -1165,7 +1216,9 @@ async fn insert_artifact_with_scope(
     .bind(platform_type)
     .bind(os_name)
     .bind(version)
-    .bind(artifact_url)
+    .bind(format!(
+        r#"{{"kind":"binary","source":"external_url","url":"{artifact_public_url}","publicUrl":"{artifact_public_url}","objectBlobId":88001}}"#
+    ))
     .bind(artifact_size_bytes)
     .bind(release_notes)
     .execute(pool)
@@ -1199,4 +1252,22 @@ async fn insert_action(
     .execute(pool)
     .await
     .unwrap();
+}
+
+fn media_resource_snapshot(public_url: &str, kind: &str) -> String {
+    serde_json::json!({
+        "kind": kind,
+        "source": "external_url",
+        "url": public_url,
+        "publicUrl": public_url,
+    })
+    .to_string()
+}
+
+fn optional_media_resource_id(id: i64, public_url: &str) -> Option<String> {
+    (!public_url.is_empty()).then(|| format!("test-app-artifact-{id}"))
+}
+
+fn optional_media_resource_snapshot(public_url: &str, kind: &str) -> Option<String> {
+    (!public_url.is_empty()).then(|| media_resource_snapshot(public_url, kind))
 }

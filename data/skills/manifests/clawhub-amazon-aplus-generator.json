@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-aplus-generator@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-aplus-generator-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-aplus-generator-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5172a385f3deef39060d383d85dba8c278cca66b21d35eb4b2e394d92227a5d0",

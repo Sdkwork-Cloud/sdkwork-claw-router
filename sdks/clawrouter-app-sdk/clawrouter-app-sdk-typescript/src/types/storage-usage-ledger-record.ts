@@ -8,6 +8,14 @@ export interface StorageUsageLedgerRecord {
   business_domain?: string;
   /** Created at field on storage usage ledger record. */
   created_at?: string;
+  /** Delta file count field on storage usage ledger record. */
+  delta_file_count?: string;
+  /** Delta logical bytes field on storage usage ledger record. */
+  delta_logical_bytes?: string;
+  /** Delta physical bytes field on storage usage ledger record. */
+  delta_physical_bytes?: string;
+  /** Delta reserved bytes field on storage usage ledger record. */
+  delta_reserved_bytes?: string;
   /** Id field on storage usage ledger record. */
   id?: string;
   /** Idempotency key field on storage usage ledger record. */
@@ -16,6 +24,8 @@ export interface StorageUsageLedgerRecord {
   legal_hold?: boolean;
   /** Metadata field on storage usage ledger record. */
   metadata?: Record<string, JsonValue>;
+  /** Occurred at field on storage usage ledger record. */
+  occurred_at?: string;
   /** Organization id field on storage usage ledger record. */
   organization_id?: string;
   /** Payload hash field on storage usage ledger record. */

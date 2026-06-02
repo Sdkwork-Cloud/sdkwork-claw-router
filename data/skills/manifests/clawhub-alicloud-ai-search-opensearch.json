@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alicloud-ai-search-opensearch@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-ai-search-opensearch-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alicloud-ai-search-opensearch-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:34e4e38be3db8d18c07138e67587d3a56b1dddc7450357b3c24d8780e5311008",

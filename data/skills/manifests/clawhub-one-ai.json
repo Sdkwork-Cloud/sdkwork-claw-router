@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/one-ai@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-one-ai-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-one-ai-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c8421826120a85f0e2a96e06a28597d891988018018d4018307525169ee3e33b",

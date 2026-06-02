@@ -2,12 +2,12 @@ package types
 
 // Updated API key metadata. Authenticated owner management responses include copyableKey for console copy actions.
 type AppApiKeyItem struct {
+	ChannelGroup string `json:"channelGroup"`
+	ChannelGroupName string `json:"channelGroupName"`
 	CopyableKey string `json:"copyableKey"`
 	Created string `json:"created"`
 	DefaultForRuntime bool `json:"defaultForRuntime"`
 	Expires string `json:"expires"`
-	Group string `json:"group"`
-	GroupName string `json:"groupName"`
 	Id string `json:"id"`
 	IpLimit string `json:"ipLimit"`
 	MaskedKey string `json:"maskedKey"`

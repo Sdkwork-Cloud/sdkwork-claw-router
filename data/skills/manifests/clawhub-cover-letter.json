@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cover-letter@2.3.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-cover-letter-2.3.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cover-letter-2.3.6.json"
+      },
       "version": "2.3.6",
       "runtime": "metadata",
       "checksumHash": "sha256:f94ca0f408ebd42caa020c0fb61fdddbbef893c384539b931735ad0e36055739",

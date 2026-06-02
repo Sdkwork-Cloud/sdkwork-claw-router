@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloudflare-global@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-global-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloudflare-global-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28247267187489f25a61a5d152e9ddf3eb824251e5dabc5d881929bb18ea608a",

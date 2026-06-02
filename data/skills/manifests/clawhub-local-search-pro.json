@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-search-pro@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-search-pro-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-search-pro-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:3766c54ab1fae8f64074c00621888dcf113302317d338d9350a8ca537205050c",

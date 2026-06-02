@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-pushing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-pushing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-pushing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3f5a91526cbfeebac44debf96222b0c58d3b19ba169e071e67e0a0e0e100004",

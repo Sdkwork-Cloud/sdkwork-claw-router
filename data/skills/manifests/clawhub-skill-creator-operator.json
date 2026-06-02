@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-creator-operator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-creator-operator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-creator-operator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4d574543a4df928eda670f4d2595a3d421f3889af9831e3429535a9778bb0a49",

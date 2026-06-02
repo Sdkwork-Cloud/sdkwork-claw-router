@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pc-health-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pc-health-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pc-health-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aa2aa21877cfe2e96e22fedb97abad863ea9f540598e4684d2ced1367d7b29db",

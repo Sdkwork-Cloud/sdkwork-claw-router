@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gram@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gram-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gram-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b99a7de5892dc0261ddc516c580e65d8a4e75edbd8649aff9654c5fdd6e20fd6",

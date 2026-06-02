@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kanboard@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-kanboard-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kanboard-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a206a7b3daf59e96ae22dda44250b52e8415f1fffb327c188f7dd12e49fe4fce",

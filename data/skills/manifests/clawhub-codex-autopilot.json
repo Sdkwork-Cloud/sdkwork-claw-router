@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-autopilot@0.7.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-autopilot-0.7.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-autopilot-0.7.1.json"
+      },
       "version": "0.7.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5df3f54daffd586945972962535dd86165b18c88f68dcea2e6dc4c0805e53e18",

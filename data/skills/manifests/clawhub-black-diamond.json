@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/black-diamond@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-black-diamond-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-black-diamond-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:880e45466af4dd34ae4361ee77093f44113de026680edb1962fe3bdfe837b103",

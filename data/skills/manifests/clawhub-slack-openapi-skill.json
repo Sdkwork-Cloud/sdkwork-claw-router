@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slack-openapi-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slack-openapi-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slack-openapi-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66530b3681cfcf4b5bc0c28e17a3d9e5e730b560a42003ef771c7e3fa5fd7a91",

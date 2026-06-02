@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pinterest@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pinterest-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pinterest-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:09ef06f71eb08e127422e09c5997c1db36c21d2556576e0dbe130e159dde15f7",

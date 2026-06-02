@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-uninstaller@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-uninstaller-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-uninstaller-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f5d7ff0f9e3b951a1c6729a1f9821a8bc6ffda7b86a1a2e888f3521ec5e6bcc",

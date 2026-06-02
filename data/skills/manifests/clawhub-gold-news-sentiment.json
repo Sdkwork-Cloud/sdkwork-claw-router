@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gold-news-sentiment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gold-news-sentiment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gold-news-sentiment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:27a8bcb102710b5afd5869291b9b85ea5f4c98445d3262dc28964a086ae241e4",

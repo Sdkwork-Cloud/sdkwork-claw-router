@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-code-review-cicd@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-code-review-cicd-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-code-review-cicd-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9422c176871f2b05d0899101b6d0caebba1e0a1627ec116836741e921965ffa2",

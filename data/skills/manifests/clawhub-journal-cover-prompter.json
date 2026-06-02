@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/journal-cover-prompter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-journal-cover-prompter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-journal-cover-prompter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b717c9e8b1ec3ee66e91b5557e3f08d6c88d81e48946533c3b88873949a967a5",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tradeshift@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tradeshift-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tradeshift-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:21630fe6eae76ab1640f07f76244f0c6be4d2bd88675c50931e305cc8939565c",

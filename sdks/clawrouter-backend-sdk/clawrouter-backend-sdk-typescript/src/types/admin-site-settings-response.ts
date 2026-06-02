@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Admin site settings response schema exposed by Claw Router. */
 export interface AdminSiteSettingsResponse {
   /** Accent color field on admin site settings response. */
@@ -10,18 +12,18 @@ export interface AdminSiteSettingsResponse {
   description: string;
   /** Docs url field on admin site settings response. */
   docsUrl: string;
-  /** Favicon url field on admin site settings response. */
-  faviconUrl: string;
+  /** Favicon field on admin site settings response. */
+  favicon: MediaResource;
   /** Footer copyright field on admin site settings response. */
   footerCopyright: string;
-  /** Icon url field on admin site settings response. */
-  iconUrl: string;
+  /** Icon field on admin site settings response. */
+  icon: MediaResource;
   /** Icp record number field on admin site settings response. */
   icpRecordNumber: string;
   /** Icp record url field on admin site settings response. */
   icpRecordUrl: string;
-  /** Logo url field on admin site settings response. */
-  logoUrl: string;
+  /** Logo field on admin site settings response. */
+  logo: MediaResource;
   /** Police record number field on admin site settings response. */
   policeRecordNumber: string;
   /** Police record url field on admin site settings response. */

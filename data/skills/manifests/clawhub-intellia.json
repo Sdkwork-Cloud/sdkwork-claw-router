@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/intellia@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-intellia-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-intellia-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d35e0722d1b9b92dc21ea9dab289aec05a34050fed56018d5035f8edc935b187",

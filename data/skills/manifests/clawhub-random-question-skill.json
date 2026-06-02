@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/random-question-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-random-question-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-random-question-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8c3e9fdfec057eed4277906c9847bfed705b8d8da3316c5e98e258733909e23b",

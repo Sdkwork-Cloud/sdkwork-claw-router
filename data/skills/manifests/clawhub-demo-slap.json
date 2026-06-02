@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/demo-slap@0.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-demo-slap-0.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-demo-slap-0.1.4.json"
+      },
       "version": "0.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:21c9c9c78257cc7b97934cc249233f04805cff20992dd4b9d7430e0e8ef922d3",

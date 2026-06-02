@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rdk-x5-quickstart@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rdk-x5-quickstart-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rdk-x5-quickstart-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a23d6b94deef804092fbd6ae846e8e8dcae37b51e298d4df73fbbafda18786b7",

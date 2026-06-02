@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-registry-manager@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-registry-manager-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-registry-manager-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a442a324a696f4db1a70c847662256ea76e659d22d68347cc09092f070cea199",

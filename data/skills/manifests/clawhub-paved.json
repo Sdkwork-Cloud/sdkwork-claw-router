@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paved@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-paved-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paved-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:affd463cf40afee9ca38091a909286f21567b57be99de40769b2d9def13b6a77",

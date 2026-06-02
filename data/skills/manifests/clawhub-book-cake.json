@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-cake@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-cake-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-cake-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:45957693d773c9276d7df5c01b7090989ae2acf13253b56c2e85a11c350afc75",

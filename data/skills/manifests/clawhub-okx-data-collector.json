@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/okx-data-collector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-okx-data-collector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-okx-data-collector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db3ae145f2826d3947bc5793a41a56f29f8fd0bbe07963f0e3d7883184ec7e06",

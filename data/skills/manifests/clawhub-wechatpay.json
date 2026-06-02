@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechatpay@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechatpay-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechatpay-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d93ef2c24a3c1b8c4e6721065ffba0919709604b8137d57e43d0b8823bc9ac3",

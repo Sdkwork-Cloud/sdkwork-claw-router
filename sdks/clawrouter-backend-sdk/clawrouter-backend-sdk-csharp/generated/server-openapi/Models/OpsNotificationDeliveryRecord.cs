@@ -6,6 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class OpsNotificationDeliveryRecord
     {
+        public string? AppId { get; set; }
         public string? ArchivedAt { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }

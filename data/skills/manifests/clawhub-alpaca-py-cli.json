@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alpaca-py-cli@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alpaca-py-cli-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alpaca-py-cli-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:178e5286c9ca4e98c7754f8089c3292e87259f552c4f302d8ee8c1264b578fe9",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kingsmantestskill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kingsmantestskill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kingsmantestskill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c692db0f827bcece17e4fa534b2aa6884a7d5ccceb3861d30ac0cbc447e87433",

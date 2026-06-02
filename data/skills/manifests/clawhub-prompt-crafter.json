@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-crafter@3.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-crafter-3.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-crafter-3.1.0.json"
+      },
       "version": "3.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:253acf83985f7aa4bb2c72271bd45e68951f3eee0c2e7ea7dc25f8c40167e782",

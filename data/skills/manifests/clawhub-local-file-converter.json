@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-file-converter@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-file-converter-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-file-converter-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c467162020bd5cded5f007bdf3a85e7f56e283caa5e8684bec104f5ff0541aaf",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slack-thread-export@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slack-thread-export-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slack-thread-export-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15d9c105a3d2814c9a04481b317330820ead834fc99ec844952d8f28a0096582",

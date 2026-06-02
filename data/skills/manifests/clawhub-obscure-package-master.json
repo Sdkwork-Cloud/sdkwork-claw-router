@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/obscure-package-master@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-obscure-package-master-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-obscure-package-master-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:06fc3e7423308bb8c6c07b4bbeb9d2f797c48277a0aa8f31d9c61f81ebce20d5",

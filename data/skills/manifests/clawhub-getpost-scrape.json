@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/getpost-scrape@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-getpost-scrape-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-getpost-scrape-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:770182ad7ba0ca2aec9a0c466cec5090cb68f27e84a9d51712ad7989e30d5cc3",

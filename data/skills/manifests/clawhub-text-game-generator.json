@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-game-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-game-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-game-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c35ecbe8cb8e8a6ea579d7ca43053725f341768cc9ea29931df774f1c41e323",

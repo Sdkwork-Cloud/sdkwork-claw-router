@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/senado-federal@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-senado-federal-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-senado-federal-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:bd467199ea38e8aca22a02fd48a6868da234b0ade40d0af783f248f59db228c7",

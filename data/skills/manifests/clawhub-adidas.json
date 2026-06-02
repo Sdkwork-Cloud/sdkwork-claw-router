@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adidas@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-adidas-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adidas-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:53cc59233f3b357659d6244f18f55791aa907f9f7dc26727474ddddd4271d5d3",

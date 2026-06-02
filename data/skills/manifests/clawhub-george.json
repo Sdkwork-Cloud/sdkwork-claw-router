@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/george@1.5.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-george-1.5.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-george-1.5.4.json"
+      },
       "version": "1.5.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d7dbf5abfa0d2496edc1e61fd19daa733b83080e6537f00c189aba03c19e67a7",

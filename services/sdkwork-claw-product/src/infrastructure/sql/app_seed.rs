@@ -6,6 +6,10 @@ use serde_json::Value;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, Row, SqlitePool};
 
+use crate::infrastructure::sql::sql_admin_product_center::{
+    media_resource_locator, media_resource_object_blob_id, media_resource_stable_id,
+};
+
 const APP_SEED_JSON: &str = include_str!("../../../../../data/app/sdkwork-apps.json");
 const APP_CATEGORY_SEED_JSON: &str =
     include_str!("../../../../../data/app/sdkwork-app-categories.json");
@@ -46,7 +50,8 @@ struct PlusAppSeed {
     name: String,
     description: Option<String>,
     version: Option<String>,
-    icon_url: Option<String>,
+    #[serde(deserialize_with = "deserialize_required_media_resource")]
+    icon: Value,
     access_url: Option<String>,
     config: Value,
     status: String,
@@ -59,7 +64,8 @@ struct PlusAppSeed {
     package_name: Option<String>,
     bundle_id: Option<String>,
     store_url: Option<String>,
-    download_url: Option<String>,
+    #[serde(default, deserialize_with = "deserialize_optional_media_resource")]
+    artifact: Option<Value>,
 }
 
 #[derive(Debug)]
@@ -83,6 +89,48 @@ impl From<serde_json::Error> for AppSeedLoadError {
     fn from(error: serde_json::Error) -> Self {
         Self::Json(error)
     }
+}
+
+fn deserialize_required_media_resource<'de, D>(deserializer: D) -> Result<Value, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    let raw = Value::deserialize(deserializer)?;
+    validate_seed_media_resource(raw)
+}
+
+fn deserialize_optional_media_resource<'de, D>(deserializer: D) -> Result<Option<Value>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    let raw = Option::<Value>::deserialize(deserializer)?;
+    raw.map(validate_seed_media_resource).transpose()
+}
+
+fn validate_seed_media_resource<E>(value: Value) -> Result<Value, E>
+where
+    E: serde::de::Error,
+{
+    let object = value
+        .as_object()
+        .ok_or_else(|| E::custom("app seed media resource must be an object"))?;
+    let kind = object
+        .get("kind")
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty());
+    let source = object
+        .get("source")
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty());
+    let locator = media_resource_locator(&value);
+    if kind.is_none() || source.is_none() || locator.is_none() {
+        return Err(E::custom(
+            "app seed media resource must include kind, source, and a stable locator",
+        ));
+    }
+    Ok(value)
 }
 
 #[derive(Debug, Clone)]
@@ -145,7 +193,8 @@ struct AppCategorySeed {
     description: String,
     code: String,
     tags: Vec<String>,
-    icon: String,
+    #[serde(deserialize_with = "deserialize_required_media_resource")]
+    icon: Value,
     sort_weight: i32,
     path: String,
 }
@@ -157,8 +206,8 @@ struct AppAssetSeed {
     organization_id: i64,
     target_id: i64,
     asset_type: i32,
-    asset_url: String,
-    thumbnail_url: Option<String>,
+    asset: Value,
+    thumbnail: Option<Value>,
     title: Option<String>,
     alt_text: Option<String>,
     mime_type: Option<String>,
@@ -183,7 +232,7 @@ struct AppArtifactSeed {
     platform_type: String,
     os_name: String,
     artifact_ref: Option<String>,
-    artifact_url: Option<String>,
+    artifact: Option<Value>,
     artifact_size_bytes: i64,
     runtime: Option<String>,
     frameworks: Vec<String>,
@@ -375,12 +424,14 @@ async fn repair_sqlite_categories(
 ) -> Result<(), sqlx::Error> {
     retire_sqlite_stale_categories(tx, catalog).await?;
     for item in &catalog.categories {
+        let (icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot) =
+            app_category_icon_columns(item);
         sqlx::query(
             r#"
             INSERT INTO plus_category
-                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status)
+                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -393,7 +444,9 @@ async fn repair_sqlite_categories(
                 group_name = excluded.group_name,
                 code = excluded.code,
                 tags = excluded.tags,
-                icon = excluded.icon,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
                 sort_weight = excluded.sort_weight,
                 parent_id = excluded.parent_id,
                 path = excluded.path,
@@ -414,7 +467,9 @@ async fn repair_sqlite_categories(
         .bind("app-store")
         .bind(&item.code)
         .bind(json_string(&item.tags))
-        .bind(&item.icon)
+        .bind(icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(icon_resource_snapshot)
         .bind(item.sort_weight)
         .bind(Option::<i64>::None)
         .bind(&item.path)
@@ -439,12 +494,18 @@ async fn repair_sqlite_apps(
 ) -> Result<(), sqlx::Error> {
     retire_sqlite_stale_apps(tx, catalog).await?;
     for (index, entry) in catalog.bundle.apps.iter().enumerate() {
+        let icon = app_icon(entry);
+        let icon_media_resource_id = icon.as_ref().map(media_resource_stable_id);
+        let icon_object_blob_id = icon.as_ref().and_then(media_resource_object_blob_id);
+        let icon_resource_snapshot = icon.as_ref().map(Value::to_string);
+        let (artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot) =
+            app_artifact_columns(entry);
         sqlx::query(
             r#"
             INSERT INTO plus_app
-                (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_url, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, download_url)
+                (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(uuid) DO UPDATE SET
                 tenant_id = excluded.tenant_id,
                 organization_id = excluded.organization_id,
@@ -456,7 +517,9 @@ async fn repair_sqlite_apps(
                 project_id = excluded.project_id,
                 description = excluded.description,
                 version = excluded.version,
-                icon_url = excluded.icon_url,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
                 access_url = excluded.access_url,
                 config = excluded.config,
                 status = excluded.status,
@@ -469,7 +532,9 @@ async fn repair_sqlite_apps(
                 package_name = excluded.package_name,
                 bundle_id = excluded.bundle_id,
                 store_url = excluded.store_url,
-                download_url = excluded.download_url,
+                artifact_media_resource_id = excluded.artifact_media_resource_id,
+                artifact_object_blob_id = excluded.artifact_object_blob_id,
+                artifact_resource_snapshot = excluded.artifact_resource_snapshot,
                 updated_at = CURRENT_TIMESTAMP
             "#,
         )
@@ -485,7 +550,9 @@ async fn repair_sqlite_apps(
         .bind(0_i64)
         .bind(&entry.plus_app.description)
         .bind(&entry.plus_app.version)
-        .bind(&entry.plus_app.icon_url)
+        .bind(&icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(&icon_resource_snapshot)
         .bind(&entry.plus_app.access_url)
         .bind(entry.plus_app.config.to_string())
         .bind(app_status_code(&entry.plus_app.status)?)
@@ -498,7 +565,9 @@ async fn repair_sqlite_apps(
         .bind(&entry.plus_app.package_name)
         .bind(&entry.plus_app.bundle_id)
         .bind(&entry.plus_app.store_url)
-        .bind(&entry.plus_app.download_url)
+        .bind(&artifact_media_resource_id)
+        .bind(artifact_object_blob_id)
+        .bind(&artifact_resource_snapshot)
         .execute(&mut **tx)
         .await?;
     }
@@ -518,6 +587,15 @@ async fn repair_sqlite_assets(
 ) -> Result<(), sqlx::Error> {
     retire_sqlite_stale_assets(tx, catalog).await?;
     for item in &catalog.assets {
+        let asset_media_resource_id = media_resource_stable_id(&item.asset);
+        let asset_object_blob_id = media_resource_object_blob_id(&item.asset);
+        let asset_resource_snapshot = item.asset.to_string();
+        let thumbnail_media_resource_id = item.thumbnail.as_ref().map(media_resource_stable_id);
+        let thumbnail_object_blob_id = item
+            .thumbnail
+            .as_ref()
+            .and_then(media_resource_object_blob_id);
+        let thumbnail_resource_snapshot = item.thumbnail.as_ref().map(Value::to_string);
         let result = sqlx::query(
             r#"
             UPDATE studio_catalog_asset
@@ -526,8 +604,12 @@ async fn repair_sqlite_assets(
                 target_id = ?,
                 artifact_id = ?,
                 asset_type = ?,
-                asset_url = ?,
-                thumbnail_url = ?,
+                asset_media_resource_id = ?,
+                asset_object_blob_id = ?,
+                asset_resource_snapshot = ?,
+                thumbnail_media_resource_id = ?,
+                thumbnail_object_blob_id = ?,
+                thumbnail_resource_snapshot = ?,
                 title = ?,
                 alt_text = ?,
                 mime_type = ?,
@@ -551,8 +633,12 @@ async fn repair_sqlite_assets(
         .bind(item.target_id)
         .bind(Option::<i64>::None)
         .bind(item.asset_type)
-        .bind(&item.asset_url)
-        .bind(&item.thumbnail_url)
+        .bind(&asset_media_resource_id)
+        .bind(asset_object_blob_id)
+        .bind(&asset_resource_snapshot)
+        .bind(&thumbnail_media_resource_id)
+        .bind(thumbnail_object_blob_id)
+        .bind(&thumbnail_resource_snapshot)
         .bind(&item.title)
         .bind(&item.alt_text)
         .bind(&item.mime_type)
@@ -580,9 +666,9 @@ async fn repair_sqlite_assets(
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_asset
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_url, thumbnail_url, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             "#,
         )
         .bind(&item.uuid)
@@ -595,8 +681,12 @@ async fn repair_sqlite_assets(
         .bind(item.target_id)
         .bind(Option::<i64>::None)
         .bind(item.asset_type)
-        .bind(&item.asset_url)
-        .bind(&item.thumbnail_url)
+        .bind(&asset_media_resource_id)
+        .bind(asset_object_blob_id)
+        .bind(&asset_resource_snapshot)
+        .bind(&thumbnail_media_resource_id)
+        .bind(thumbnail_object_blob_id)
+        .bind(&thumbnail_resource_snapshot)
         .bind(&item.title)
         .bind(&item.alt_text)
         .bind(&item.mime_type)
@@ -625,16 +715,24 @@ async fn repair_sqlite_artifacts(
 ) -> Result<(), sqlx::Error> {
     retire_sqlite_stale_artifacts(tx, catalog).await?;
     for item in &catalog.artifacts {
+        let artifact_media_resource_id = item.artifact.as_ref().map(media_resource_stable_id);
+        let artifact_object_blob_id = item
+            .artifact
+            .as_ref()
+            .and_then(media_resource_object_blob_id);
+        let artifact_resource_snapshot = item.artifact.as_ref().map(Value::to_string);
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_artifact
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_url, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name) DO UPDATE SET
                 uuid = excluded.uuid,
                 artifact_ref = excluded.artifact_ref,
-                artifact_url = excluded.artifact_url,
+                artifact_media_resource_id = excluded.artifact_media_resource_id,
+                artifact_object_blob_id = excluded.artifact_object_blob_id,
+                artifact_resource_snapshot = excluded.artifact_resource_snapshot,
                 artifact_size_bytes = excluded.artifact_size_bytes,
                 runtime = excluded.runtime,
                 frameworks = excluded.frameworks,
@@ -668,7 +766,9 @@ async fn repair_sqlite_artifacts(
         .bind(&item.platform_type)
         .bind(&item.os_name)
         .bind(&item.artifact_ref)
-        .bind(&item.artifact_url)
+        .bind(&artifact_media_resource_id)
+        .bind(artifact_object_blob_id)
+        .bind(&artifact_resource_snapshot)
         .bind(item.artifact_size_bytes)
         .bind(&item.runtime)
         .bind(json_string(&item.frameworks))
@@ -689,12 +789,14 @@ async fn import_postgres_categories(
 ) -> Result<(), sqlx::Error> {
     retire_postgres_stale_categories(tx, catalog).await?;
     for item in &catalog.categories {
+        let (icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot) =
+            app_category_icon_columns(item);
         sqlx::query(
             r#"
             INSERT INTO plus_category
-                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status)
+                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15, $16, $17, $18)
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15::jsonb, $16, $17, $18, $19, $20)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -707,7 +809,9 @@ async fn import_postgres_categories(
                 group_name = excluded.group_name,
                 code = excluded.code,
                 tags = excluded.tags,
-                icon = excluded.icon,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
                 sort_weight = excluded.sort_weight,
                 parent_id = excluded.parent_id,
                 path = excluded.path,
@@ -728,7 +832,9 @@ async fn import_postgres_categories(
         .bind("app-store")
         .bind(&item.code)
         .bind(json_string(&item.tags))
-        .bind(&item.icon)
+        .bind(icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(icon_resource_snapshot)
         .bind(item.sort_weight)
         .bind(Option::<i64>::None)
         .bind(&item.path)
@@ -746,12 +852,18 @@ async fn import_postgres_apps(
 ) -> Result<(), sqlx::Error> {
     retire_postgres_stale_apps(tx, catalog).await?;
     for (index, entry) in catalog.bundle.apps.iter().enumerate() {
+        let icon = app_icon(entry);
+        let icon_media_resource_id = icon.as_ref().map(media_resource_stable_id);
+        let icon_object_blob_id = icon.as_ref().and_then(media_resource_object_blob_id);
+        let icon_resource_snapshot = icon.as_ref().map(Value::to_string);
+        let (artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot) =
+            app_artifact_columns(entry);
         sqlx::query(
             r#"
             INSERT INTO plus_app
-                (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_url, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, download_url)
+                (id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon, resource_list, project_id, description, version, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, access_url, config, status, app_type, platforms, install_platforms, install_skill, install_config, release_notes, package_name, bundle_id, store_url, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9::jsonb, $10, $11, $12, $13, $14, $15::jsonb, $16, $17, $18::jsonb, $19::jsonb, $20::jsonb, $21::jsonb, $22::jsonb, $23, $24, $25, $26)
+                ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9::jsonb, $10, $11, $12, $13, $14, $15::jsonb, $16, $17::jsonb, $18, $19, $20::jsonb, $21::jsonb, $22::jsonb, $23::jsonb, $24::jsonb, $25, $26, $27, $28, $29, $30::jsonb)
             ON CONFLICT(uuid) DO UPDATE SET
                 tenant_id = excluded.tenant_id,
                 organization_id = excluded.organization_id,
@@ -763,7 +875,9 @@ async fn import_postgres_apps(
                 project_id = excluded.project_id,
                 description = excluded.description,
                 version = excluded.version,
-                icon_url = excluded.icon_url,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
                 access_url = excluded.access_url,
                 config = excluded.config,
                 status = excluded.status,
@@ -776,7 +890,9 @@ async fn import_postgres_apps(
                 package_name = excluded.package_name,
                 bundle_id = excluded.bundle_id,
                 store_url = excluded.store_url,
-                download_url = excluded.download_url,
+                artifact_media_resource_id = excluded.artifact_media_resource_id,
+                artifact_object_blob_id = excluded.artifact_object_blob_id,
+                artifact_resource_snapshot = excluded.artifact_resource_snapshot,
                 updated_at = CURRENT_TIMESTAMP
             "#,
         )
@@ -792,7 +908,9 @@ async fn import_postgres_apps(
         .bind(0_i64)
         .bind(&entry.plus_app.description)
         .bind(&entry.plus_app.version)
-        .bind(&entry.plus_app.icon_url)
+        .bind(&icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(&icon_resource_snapshot)
         .bind(&entry.plus_app.access_url)
         .bind(entry.plus_app.config.to_string())
         .bind(app_status_code(&entry.plus_app.status)?)
@@ -805,7 +923,9 @@ async fn import_postgres_apps(
         .bind(&entry.plus_app.package_name)
         .bind(&entry.plus_app.bundle_id)
         .bind(&entry.plus_app.store_url)
-        .bind(&entry.plus_app.download_url)
+        .bind(&artifact_media_resource_id)
+        .bind(artifact_object_blob_id)
+        .bind(&artifact_resource_snapshot)
         .execute(&mut **tx)
         .await?;
     }
@@ -818,6 +938,15 @@ async fn import_postgres_assets(
 ) -> Result<(), sqlx::Error> {
     retire_postgres_stale_assets(tx, catalog).await?;
     for item in &catalog.assets {
+        let asset_media_resource_id = media_resource_stable_id(&item.asset);
+        let asset_object_blob_id = media_resource_object_blob_id(&item.asset);
+        let asset_resource_snapshot = item.asset.to_string();
+        let thumbnail_media_resource_id = item.thumbnail.as_ref().map(media_resource_stable_id);
+        let thumbnail_object_blob_id = item
+            .thumbnail
+            .as_ref()
+            .and_then(media_resource_object_blob_id);
+        let thumbnail_resource_snapshot = item.thumbnail.as_ref().map(Value::to_string);
         let result = sqlx::query(
             r#"
             UPDATE studio_catalog_asset
@@ -826,33 +955,41 @@ async fn import_postgres_assets(
                 target_id = $2,
                 artifact_id = $3,
                 asset_type = $4,
-                asset_url = $5,
-                thumbnail_url = $6,
-                title = $7,
-                alt_text = $8,
-                mime_type = $9,
-                width = $10,
-                height = $11,
-                duration_seconds = $12,
-                file_size = $13,
-                sort_order = $14,
-                published_at = $15,
-                metadata = $16::jsonb,
-                status = $17,
+                asset_media_resource_id = $5,
+                asset_object_blob_id = $6,
+                asset_resource_snapshot = $7::jsonb,
+                thumbnail_media_resource_id = $8,
+                thumbnail_object_blob_id = $9,
+                thumbnail_resource_snapshot = $10::jsonb,
+                title = $11,
+                alt_text = $12,
+                mime_type = $13,
+                width = $14,
+                height = $15,
+                duration_seconds = $16,
+                file_size = $17,
+                sort_order = $18,
+                published_at = $19,
+                metadata = $20::jsonb,
+                status = $21,
                 deleted_at = NULL,
                 deleted_by = NULL,
                 updated_at = CURRENT_TIMESTAMP
-            WHERE tenant_id = $18
-              AND organization_id = $19
-              AND uuid = $20
+            WHERE tenant_id = $22
+              AND organization_id = $23
+              AND uuid = $24
             "#,
         )
         .bind(APP_TARGET_TYPE)
         .bind(item.target_id)
         .bind(Option::<i64>::None)
         .bind(item.asset_type)
-        .bind(&item.asset_url)
-        .bind(&item.thumbnail_url)
+        .bind(&asset_media_resource_id)
+        .bind(asset_object_blob_id)
+        .bind(&asset_resource_snapshot)
+        .bind(&thumbnail_media_resource_id)
+        .bind(thumbnail_object_blob_id)
+        .bind(&thumbnail_resource_snapshot)
         .bind(&item.title)
         .bind(&item.alt_text)
         .bind(&item.mime_type)
@@ -880,9 +1017,9 @@ async fn import_postgres_assets(
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_asset
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_url, thumbnail_url, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, $22, $23, $24, $25)
             "#,
         )
         .bind(&item.uuid)
@@ -895,8 +1032,12 @@ async fn import_postgres_assets(
         .bind(item.target_id)
         .bind(Option::<i64>::None)
         .bind(item.asset_type)
-        .bind(&item.asset_url)
-        .bind(&item.thumbnail_url)
+        .bind(&asset_media_resource_id)
+        .bind(asset_object_blob_id)
+        .bind(&asset_resource_snapshot)
+        .bind(&thumbnail_media_resource_id)
+        .bind(thumbnail_object_blob_id)
+        .bind(&thumbnail_resource_snapshot)
         .bind(&item.title)
         .bind(&item.alt_text)
         .bind(&item.mime_type)
@@ -918,16 +1059,24 @@ async fn import_postgres_artifacts(
 ) -> Result<(), sqlx::Error> {
     retire_postgres_stale_artifacts(tx, catalog).await?;
     for item in &catalog.artifacts {
+        let artifact_media_resource_id = item.artifact.as_ref().map(media_resource_stable_id);
+        let artifact_object_blob_id = item
+            .artifact
+            .as_ref()
+            .and_then(media_resource_object_blob_id);
+        let artifact_resource_snapshot = item.artifact.as_ref().map(Value::to_string);
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_artifact
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_url, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17::jsonb, $18, $19, $20, $21, $22)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17, $18, $19::jsonb, $20, $21, $22, $23, $24)
             ON CONFLICT(tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name) DO UPDATE SET
                 uuid = excluded.uuid,
                 artifact_ref = excluded.artifact_ref,
-                artifact_url = excluded.artifact_url,
+                artifact_media_resource_id = excluded.artifact_media_resource_id,
+                artifact_object_blob_id = excluded.artifact_object_blob_id,
+                artifact_resource_snapshot = excluded.artifact_resource_snapshot,
                 artifact_size_bytes = excluded.artifact_size_bytes,
                 runtime = excluded.runtime,
                 frameworks = excluded.frameworks,
@@ -961,7 +1110,9 @@ async fn import_postgres_artifacts(
         .bind(&item.platform_type)
         .bind(&item.os_name)
         .bind(&item.artifact_ref)
-        .bind(&item.artifact_url)
+        .bind(&artifact_media_resource_id)
+        .bind(artifact_object_blob_id)
+        .bind(&artifact_resource_snapshot)
         .bind(item.artifact_size_bytes)
         .bind(&item.runtime)
         .bind(json_string(&item.frameworks))
@@ -1203,8 +1354,8 @@ async fn retire_sqlite_stale_assets(
         WHERE tenant_id = ?
           AND organization_id = ?
           AND target_type = ?
-          AND metadata ->> 'seedKind' = ?
-          AND metadata ->> 'itemType' = 'app_asset'
+          AND json_extract(metadata, '$.seedKind') = ?
+          AND json_extract(metadata, '$.itemType') = 'app_asset'
           AND deleted_at IS NULL
         "#,
     )
@@ -1317,8 +1468,8 @@ async fn retire_sqlite_stale_artifacts(
         WHERE tenant_id = ?
           AND organization_id = ?
           AND target_type = ?
-          AND metadata ->> 'seedKind' = ?
-          AND metadata ->> 'itemType' = 'app_artifact'
+          AND json_extract(metadata, '$.seedKind') = ?
+          AND json_extract(metadata, '$.itemType') = 'app_artifact'
           AND deleted_at IS NULL
         "#,
     )
@@ -1497,9 +1648,12 @@ fn derive_categories(bundle: &AppSeedBundle) -> Vec<AppCategorySeed> {
                 "sdkwork-app".to_owned(),
                 code.trim_start_matches("app-store-").to_owned(),
             ],
-            icon: format!(
-                "https://cdn.sdkwork.com/app-categories/{}.svg",
-                code.trim_start_matches("app-store-")
+            icon: external_url_media_resource(
+                &format!(
+                    "https://cdn.sdkwork.com/app-categories/{}.svg",
+                    code.trim_start_matches("app-store-")
+                ),
+                "image",
             ),
             sort_weight: (100 + index) as i32,
             path: format!("/app-store/{}", code.trim_start_matches("app-store-")),
@@ -1666,16 +1820,10 @@ fn derive_artifacts(bundle: &AppSeedBundle) -> Vec<AppArtifactSeed> {
                 format!("package-{}", package_index + 1),
             ])
             .unwrap_or_else(|| format!("package-{}", package_index + 1));
-            let artifact_url = first_non_empty(&[
-                json_text(package, "downloadUrl"),
-                json_text(package, "download_url"),
-                json_text(package, "artifactUrl"),
-                json_text(package, "artifact_url"),
-                json_text(package, "url"),
-                json_text(package, "repositoryUrl"),
-                json_text(package, "repository_url"),
-            ]);
-            if artifact_url.is_none() {
+            let artifact = package
+                .get("artifact")
+                .and_then(|value| media_resource_from_value(value, "document"));
+            if artifact.is_none() {
                 continue;
             }
             let release_note = release_note_for_package(entry, &package_id);
@@ -1713,7 +1861,7 @@ fn derive_artifacts(bundle: &AppSeedBundle) -> Vec<AppArtifactSeed> {
                 platform_type,
                 os_name,
                 artifact_ref: Some(package_id),
-                artifact_url,
+                artifact,
                 artifact_size_bytes: json_i64(package, "sizeBytes").unwrap_or(0),
                 runtime: first_non_empty(&[
                     json_text(package, "sourceType"),
@@ -1742,11 +1890,6 @@ fn media_asset(
     fallback_id: &str,
     fallback_sort_order: i32,
 ) -> Option<AppAssetSeed> {
-    let asset_url = first_non_empty(&[
-        json_text(media, "url"),
-        json_text(media, "assetUrl"),
-        json_text(media, "asset_url"),
-    ])?;
     let media_id = first_non_empty(&[json_text(media, "id"), fallback_id.to_owned()])
         .unwrap_or_else(|| fallback_id.to_owned());
     let title = first_non_empty(&[
@@ -1763,6 +1906,15 @@ fn media_asset(
     let sort_order = json_i64(media, "sortOrder")
         .and_then(|value| i32::try_from(value).ok())
         .unwrap_or(fallback_sort_order);
+    let mime_type = first_non_empty(&[
+        json_text(media, "mimeType"),
+        json_text(media, "mime_type"),
+        mime_type_from_format(&json_text(media, "format")),
+    ]);
+    let asset_kind = media_kind_for_asset(asset_type, mime_type.as_deref());
+    let asset = media
+        .get("asset")
+        .and_then(|value| media_resource_from_value(value, asset_kind))?;
     Some(AppAssetSeed {
         uuid: compact_seed_uuid(
             "sdkapp-asset",
@@ -1772,18 +1924,13 @@ fn media_asset(
         organization_id,
         target_id,
         asset_type,
-        asset_url,
-        thumbnail_url: first_non_empty(&[
-            json_text(media, "thumbnailUrl"),
-            json_text(media, "thumbnail_url"),
-        ]),
+        asset,
+        thumbnail: media
+            .get("thumbnail")
+            .and_then(|value| media_resource_from_value(value, "image")),
         title,
         alt_text,
-        mime_type: first_non_empty(&[
-            json_text(media, "mimeType"),
-            json_text(media, "mime_type"),
-            mime_type_from_format(&json_text(media, "format")),
-        ]),
+        mime_type,
         width: json_i64(media, "width").and_then(|value| i32::try_from(value).ok()),
         height: json_i64(media, "height").and_then(|value| i32::try_from(value).ok()),
         duration_seconds: json_text_optional(media, "durationSeconds"),
@@ -1802,9 +1949,14 @@ async fn sqlite_app_seed_standard_count(
     let rows = sqlx::query(
         r#"
         SELECT id, uuid, tenant_id, organization_id, data_scope, user_id, name, icon,
-               resource_list, project_id, description, version, icon_url, access_url,
+               resource_list, project_id, description, version,
+               icon_media_resource_id, icon_object_blob_id,
+               CAST(icon_resource_snapshot AS TEXT) AS icon_resource_snapshot,
+               access_url,
                config, status, app_type, platforms, install_platforms, install_skill,
-               install_config, release_notes, package_name, bundle_id, store_url, download_url
+               install_config, release_notes, package_name, bundle_id, store_url,
+               artifact_media_resource_id, artifact_object_blob_id,
+               CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot
         FROM plus_app
         WHERE uuid LIKE 'sdkwork-app-%'
         "#,
@@ -1827,7 +1979,9 @@ async fn sqlite_app_seed_standard_count(
                 row.get::<i64, _>("project_id"),
                 row.get::<Option<String>, _>("description"),
                 row.get::<Option<String>, _>("version"),
-                row.get::<Option<String>, _>("icon_url"),
+                row.get::<Option<String>, _>("icon_media_resource_id"),
+                row.get::<Option<i64>, _>("icon_object_blob_id"),
+                row.get::<Option<String>, _>("icon_resource_snapshot"),
                 row.get::<Option<String>, _>("access_url"),
                 row.get::<String, _>("config"),
                 row.get::<i64, _>("status"),
@@ -1840,7 +1994,9 @@ async fn sqlite_app_seed_standard_count(
                 row.get::<Option<String>, _>("package_name"),
                 row.get::<Option<String>, _>("bundle_id"),
                 row.get::<Option<String>, _>("store_url"),
-                row.get::<Option<String>, _>("download_url"),
+                row.get::<Option<String>, _>("artifact_media_resource_id"),
+                row.get::<Option<i64>, _>("artifact_object_blob_id"),
+                row.get::<Option<String>, _>("artifact_resource_snapshot"),
             ]))
         })
         .collect::<BTreeSet<_>>();
@@ -1855,7 +2011,8 @@ async fn sqlite_category_seed_standard_count(
     let rows = sqlx::query(
         r#"
         SELECT id, uuid, tenant_id, organization_id, data_scope, name, description,
-               shop_id, type, group_name, code, tags, icon, sort_weight, parent_id,
+               shop_id, type, group_name, code, tags, icon_media_resource_id,
+               icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id,
                path, visible, status
         FROM plus_category
         WHERE uuid LIKE 'sdkwork-app-category-%'
@@ -1879,7 +2036,9 @@ async fn sqlite_category_seed_standard_count(
                 row.get::<Option<String>, _>("group_name"),
                 row.get::<Option<String>, _>("code"),
                 row.get::<String, _>("tags"),
-                row.get::<Option<String>, _>("icon"),
+                row.get::<Option<String>, _>("icon_media_resource_id"),
+                row.get::<Option<i64>, _>("icon_object_blob_id"),
+                row.get::<Option<String>, _>("icon_resource_snapshot"),
                 row.get::<i64, _>("sort_weight"),
                 row.get::<Option<i64>, _>("parent_id"),
                 row.get::<Option<String>, _>("path"),
@@ -1967,7 +2126,12 @@ async fn sqlite_asset_seed_standard_count(
     let rows = sqlx::query(
         r#"
         SELECT uuid, tenant_id, organization_id, data_scope, status, target_type,
-               target_id, artifact_id, asset_type, asset_url, thumbnail_url, title,
+               target_id, artifact_id, asset_type,
+               asset_media_resource_id, asset_object_blob_id,
+               CAST(asset_resource_snapshot AS TEXT) AS asset_resource_snapshot,
+               thumbnail_media_resource_id, thumbnail_object_blob_id,
+               CAST(thumbnail_resource_snapshot AS TEXT) AS thumbnail_resource_snapshot,
+               title,
                alt_text, mime_type, width, height, CAST(duration_seconds AS TEXT) AS duration_seconds,
                file_size, sort_order, published_at, deleted_at
         FROM studio_catalog_asset
@@ -1989,8 +2153,12 @@ async fn sqlite_asset_seed_standard_count(
                 row.get::<i64, _>("target_id"),
                 row.get::<Option<i64>, _>("artifact_id"),
                 row.get::<i64, _>("asset_type"),
-                row.get::<String, _>("asset_url"),
-                row.get::<Option<String>, _>("thumbnail_url"),
+                row.get::<String, _>("asset_media_resource_id"),
+                row.get::<Option<i64>, _>("asset_object_blob_id"),
+                row.get::<String, _>("asset_resource_snapshot"),
+                row.get::<Option<String>, _>("thumbnail_media_resource_id"),
+                row.get::<Option<i64>, _>("thumbnail_object_blob_id"),
+                row.get::<Option<String>, _>("thumbnail_resource_snapshot"),
                 row.get::<Option<String>, _>("title"),
                 row.get::<Option<String>, _>("alt_text"),
                 row.get::<Option<String>, _>("mime_type"),
@@ -2016,7 +2184,8 @@ async fn sqlite_artifact_seed_standard_count(
         r#"
         SELECT uuid, tenant_id, organization_id, data_scope, status, target_type,
                target_id, artifact_type, version, platform_type, os_name, artifact_ref,
-               artifact_url, artifact_size_bytes, runtime, frameworks, license_name,
+               CAST(artifact_resource_snapshot AS TEXT) AS artifact_resource_snapshot,
+               artifact_size_bytes, runtime, frameworks, license_name,
                checksum_hash, release_notes, published_at, deprecated_at, deleted_at
         FROM studio_catalog_artifact
         WHERE metadata ->> 'itemType' = 'app_artifact'
@@ -2040,7 +2209,7 @@ async fn sqlite_artifact_seed_standard_count(
                 row.get::<String, _>("platform_type"),
                 row.get::<String, _>("os_name"),
                 row.get::<Option<String>, _>("artifact_ref"),
-                row.get::<Option<String>, _>("artifact_url"),
+                row.get::<Option<String>, _>("artifact_resource_snapshot"),
                 row.get::<i64, _>("artifact_size_bytes"),
                 row.get::<Option<String>, _>("runtime"),
                 row.get::<String, _>("frameworks"),
@@ -2065,6 +2234,8 @@ fn sqlite_expected_app_fingerprints(
         .iter()
         .enumerate()
         .map(|(index, entry)| {
+            let (artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot) =
+                app_artifact_columns(entry);
             Ok(seed_fingerprint(serde_json::json!([
                 stable_app_id(index),
                 app_uuid(&entry.app_key),
@@ -2078,7 +2249,11 @@ fn sqlite_expected_app_fingerprints(
                 0_i64,
                 entry.plus_app.description,
                 entry.plus_app.version,
-                entry.plus_app.icon_url,
+                app_icon(&entry).as_ref().map(media_resource_stable_id),
+                app_icon(&entry)
+                    .as_ref()
+                    .and_then(media_resource_object_blob_id),
+                app_icon(&entry).as_ref().map(Value::to_string),
                 entry.plus_app.access_url,
                 entry.plus_app.config.to_string(),
                 i64::from(app_status_code(&entry.plus_app.status)?),
@@ -2091,7 +2266,9 @@ fn sqlite_expected_app_fingerprints(
                 entry.plus_app.package_name,
                 entry.plus_app.bundle_id,
                 entry.plus_app.store_url,
-                entry.plus_app.download_url,
+                artifact_media_resource_id,
+                artifact_object_blob_id,
+                artifact_resource_snapshot,
             ])))
         })
         .collect()
@@ -2101,6 +2278,8 @@ fn sqlite_expected_category_fingerprints(categories: &[AppCategorySeed]) -> BTre
     categories
         .iter()
         .map(|item| {
+            let (icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot) =
+                app_category_icon_columns(item);
             seed_fingerprint(serde_json::json!([
                 item.id,
                 item.uuid,
@@ -2114,7 +2293,9 @@ fn sqlite_expected_category_fingerprints(categories: &[AppCategorySeed]) -> BTre
                 "app-store",
                 item.code,
                 json_string(&item.tags),
-                item.icon,
+                Some(icon_media_resource_id),
+                icon_object_blob_id,
+                Some(icon_resource_snapshot),
                 item.sort_weight,
                 Option::<i64>::None,
                 item.path,
@@ -2139,8 +2320,14 @@ fn sqlite_expected_asset_fingerprints(assets: &[AppAssetSeed]) -> BTreeSet<Strin
                 item.target_id,
                 Option::<i64>::None,
                 item.asset_type,
-                item.asset_url,
-                item.thumbnail_url,
+                media_resource_stable_id(&item.asset),
+                media_resource_object_blob_id(&item.asset),
+                item.asset.to_string(),
+                item.thumbnail.as_ref().map(media_resource_stable_id),
+                item.thumbnail
+                    .as_ref()
+                    .and_then(media_resource_object_blob_id),
+                item.thumbnail.as_ref().map(Value::to_string),
                 item.title,
                 item.alt_text,
                 item.mime_type,
@@ -2173,7 +2360,7 @@ fn sqlite_expected_artifact_fingerprints(artifacts: &[AppArtifactSeed]) -> BTree
                 item.platform_type,
                 item.os_name,
                 item.artifact_ref,
-                item.artifact_url,
+                item.artifact.as_ref().map(Value::to_string),
                 item.artifact_size_bytes,
                 item.runtime,
                 json_string(&item.frameworks),
@@ -2215,8 +2402,8 @@ async fn sqlite_stale_app_asset_count(
         WHERE tenant_id = ?
           AND organization_id = ?
           AND target_type = ?
-          AND metadata ->> 'seedKind' = ?
-          AND metadata ->> 'itemType' = 'app_asset'
+          AND json_extract(metadata, '$.seedKind') = ?
+          AND json_extract(metadata, '$.itemType') = 'app_asset'
           AND deleted_at IS NULL
         "#,
     )
@@ -2251,8 +2438,8 @@ async fn sqlite_stale_app_artifact_count(
         WHERE tenant_id = ?
           AND organization_id = ?
           AND target_type = ?
-          AND metadata ->> 'seedKind' = ?
-          AND metadata ->> 'itemType' = 'app_artifact'
+          AND json_extract(metadata, '$.seedKind') = ?
+          AND json_extract(metadata, '$.itemType') = 'app_artifact'
           AND deleted_at IS NULL
         "#,
     )
@@ -2293,20 +2480,24 @@ async fn postgres_app_seed_standard_count(
               AND project_id = $10
               AND description IS NOT DISTINCT FROM $11
               AND version IS NOT DISTINCT FROM $12
-              AND icon_url IS NOT DISTINCT FROM $13
-              AND access_url IS NOT DISTINCT FROM $14
-              AND config = $15::jsonb
-              AND status = $16
-              AND app_type IS NOT DISTINCT FROM $17
-              AND platforms = $18::jsonb
-              AND install_platforms = $19::jsonb
-              AND install_skill = $20::jsonb
-              AND install_config = $21::jsonb
-              AND release_notes = $22::jsonb
-              AND package_name IS NOT DISTINCT FROM $23
-              AND bundle_id IS NOT DISTINCT FROM $24
-              AND store_url IS NOT DISTINCT FROM $25
-              AND download_url IS NOT DISTINCT FROM $26
+              AND icon_media_resource_id IS NOT DISTINCT FROM $13
+              AND icon_object_blob_id IS NOT DISTINCT FROM $14
+              AND icon_resource_snapshot IS NOT DISTINCT FROM $15::jsonb
+              AND access_url IS NOT DISTINCT FROM $16
+              AND config = $17::jsonb
+              AND status = $18
+              AND app_type IS NOT DISTINCT FROM $19
+              AND platforms = $20::jsonb
+              AND install_platforms = $21::jsonb
+              AND install_skill = $22::jsonb
+              AND install_config = $23::jsonb
+              AND release_notes = $24::jsonb
+              AND package_name IS NOT DISTINCT FROM $25
+              AND bundle_id IS NOT DISTINCT FROM $26
+              AND store_url IS NOT DISTINCT FROM $27
+              AND artifact_media_resource_id IS NOT DISTINCT FROM $28
+              AND artifact_object_blob_id IS NOT DISTINCT FROM $29
+              AND artifact_resource_snapshot IS NOT DISTINCT FROM $30::jsonb
             "#,
         )
         .bind(stable_app_id(index))
@@ -2321,7 +2512,13 @@ async fn postgres_app_seed_standard_count(
         .bind(0_i64)
         .bind(&entry.plus_app.description)
         .bind(&entry.plus_app.version)
-        .bind(&entry.plus_app.icon_url)
+        .bind(app_icon(&entry).as_ref().map(media_resource_stable_id))
+        .bind(
+            app_icon(&entry)
+                .as_ref()
+                .and_then(media_resource_object_blob_id),
+        )
+        .bind(app_icon(&entry).as_ref().map(Value::to_string))
         .bind(&entry.plus_app.access_url)
         .bind(entry.plus_app.config.to_string())
         .bind(app_status_code(&entry.plus_app.status)?)
@@ -2334,7 +2531,9 @@ async fn postgres_app_seed_standard_count(
         .bind(&entry.plus_app.package_name)
         .bind(&entry.plus_app.bundle_id)
         .bind(&entry.plus_app.store_url)
-        .bind(&entry.plus_app.download_url)
+        .bind(app_artifact_columns(entry).0)
+        .bind(app_artifact_columns(entry).1)
+        .bind(app_artifact_columns(entry).2)
         .fetch_one(pool)
         .await?;
         count += row.get::<i64, _>("count");
@@ -2348,6 +2547,8 @@ async fn postgres_category_seed_standard_count(
 ) -> Result<i64, sqlx::Error> {
     let mut count = 0;
     for item in categories {
+        let (icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot) =
+            app_category_icon_columns(item);
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
@@ -2364,12 +2565,14 @@ async fn postgres_category_seed_standard_count(
               AND group_name = $10
               AND code = $11
               AND tags = $12::jsonb
-              AND icon = $13
-              AND sort_weight = $14
+              AND icon_media_resource_id = $13
+              AND icon_object_blob_id IS NOT DISTINCT FROM $14
+              AND icon_resource_snapshot = $15::jsonb
+              AND sort_weight = $16
               AND parent_id IS NULL
-              AND path = $15
-              AND visible = $16
-              AND status = $17
+              AND path = $17
+              AND visible = $18
+              AND status = $19
             "#,
         )
         .bind(item.id)
@@ -2384,7 +2587,9 @@ async fn postgres_category_seed_standard_count(
         .bind("app-store")
         .bind(&item.code)
         .bind(json_string(&item.tags))
-        .bind(&item.icon)
+        .bind(icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(icon_resource_snapshot)
         .bind(item.sort_weight)
         .bind(&item.path)
         .bind(true)
@@ -2483,17 +2688,21 @@ async fn postgres_asset_seed_standard_count(
               AND target_id = $7
               AND artifact_id IS NULL
               AND asset_type = $8
-              AND asset_url = $9
-              AND thumbnail_url IS NOT DISTINCT FROM $10
-              AND title IS NOT DISTINCT FROM $11
-              AND alt_text IS NOT DISTINCT FROM $12
-              AND mime_type IS NOT DISTINCT FROM $13
-              AND width IS NOT DISTINCT FROM $14
-              AND height IS NOT DISTINCT FROM $15
-              AND duration_seconds = $16
-              AND file_size IS NOT DISTINCT FROM $17
-              AND sort_order = $18
-              AND published_at IS NOT DISTINCT FROM $19::timestamptz
+              AND asset_media_resource_id = $9
+              AND asset_object_blob_id IS NOT DISTINCT FROM $10
+              AND asset_resource_snapshot = $11::jsonb
+              AND thumbnail_media_resource_id IS NOT DISTINCT FROM $12
+              AND thumbnail_object_blob_id IS NOT DISTINCT FROM $13
+              AND thumbnail_resource_snapshot IS NOT DISTINCT FROM $14::jsonb
+              AND title IS NOT DISTINCT FROM $15
+              AND alt_text IS NOT DISTINCT FROM $16
+              AND mime_type IS NOT DISTINCT FROM $17
+              AND width IS NOT DISTINCT FROM $18
+              AND height IS NOT DISTINCT FROM $19
+              AND duration_seconds = $20
+              AND file_size IS NOT DISTINCT FROM $21
+              AND sort_order = $22
+              AND published_at IS NOT DISTINCT FROM $23::timestamptz
               AND deleted_at IS NULL
             "#,
         )
@@ -2505,8 +2714,16 @@ async fn postgres_asset_seed_standard_count(
         .bind(APP_TARGET_TYPE)
         .bind(item.target_id)
         .bind(item.asset_type)
-        .bind(&item.asset_url)
-        .bind(&item.thumbnail_url)
+        .bind(media_resource_stable_id(&item.asset))
+        .bind(media_resource_object_blob_id(&item.asset))
+        .bind(item.asset.to_string())
+        .bind(item.thumbnail.as_ref().map(media_resource_stable_id))
+        .bind(
+            item.thumbnail
+                .as_ref()
+                .and_then(media_resource_object_blob_id),
+        )
+        .bind(item.thumbnail.as_ref().map(Value::to_string))
         .bind(&item.title)
         .bind(&item.alt_text)
         .bind(&item.mime_type)
@@ -2545,7 +2762,7 @@ async fn postgres_artifact_seed_standard_count(
               AND platform_type = $10
               AND os_name = $11
               AND artifact_ref IS NOT DISTINCT FROM $12
-              AND artifact_url IS NOT DISTINCT FROM $13
+              AND artifact_resource_snapshot IS NOT DISTINCT FROM $13::jsonb
               AND artifact_size_bytes = $14
               AND runtime IS NOT DISTINCT FROM $15
               AND frameworks = $16::jsonb
@@ -2569,7 +2786,7 @@ async fn postgres_artifact_seed_standard_count(
         .bind(&item.platform_type)
         .bind(&item.os_name)
         .bind(&item.artifact_ref)
-        .bind(&item.artifact_url)
+        .bind(item.artifact.as_ref().map(Value::to_string))
         .bind(item.artifact_size_bytes)
         .bind(&item.runtime)
         .bind(json_string(&item.frameworks))
@@ -2723,9 +2940,31 @@ fn app_category_id(code: &str) -> i64 {
     }
 }
 
+fn app_category_icon_columns(item: &AppCategorySeed) -> (String, Option<i64>, String) {
+    let icon = item.icon.clone();
+    (
+        media_resource_stable_id(&icon),
+        media_resource_object_blob_id(&icon),
+        icon.to_string(),
+    )
+}
+
+fn app_icon(entry: &AppSeedEntry) -> Option<Value> {
+    Some(entry.plus_app.icon.clone())
+}
+
+fn app_artifact_columns(entry: &AppSeedEntry) -> (Option<String>, Option<i64>, Option<String>) {
+    let artifact = entry.plus_app.artifact.as_ref();
+    (
+        artifact.map(media_resource_stable_id),
+        artifact.and_then(media_resource_object_blob_id),
+        artifact.map(Value::to_string),
+    )
+}
+
 fn icon_json(entry: &AppSeedEntry) -> String {
     serde_json::json!({
-        "url": entry.plus_app.icon_url,
+        "resource": app_icon(entry),
         "appKey": entry.app_key,
     })
     .to_string()
@@ -2747,7 +2986,7 @@ fn resource_list_json(entry: &AppSeedEntry) -> String {
     serde_json::json!({
         "screenshots": screenshots,
         "previews": previews,
-        "cover": entry.plus_app.icon_url,
+        "cover": app_icon(entry),
     })
     .to_string()
 }
@@ -2828,6 +3067,41 @@ fn package_checksum(package: &Value) -> Option<String> {
 
 fn media_enabled(media: &Value) -> bool {
     json_bool_default(media, "enabled", true)
+}
+
+fn media_resource_from_value(value: &Value, kind: &str) -> Option<Value> {
+    let object = value.as_object()?;
+    let resource_kind = object.get("kind").and_then(Value::as_str)?.trim();
+    let source = object.get("source").and_then(Value::as_str)?.trim();
+    if resource_kind != kind || source.is_empty() || media_resource_locator(value).is_none() {
+        return None;
+    }
+    Some(Value::Object(object.clone()))
+}
+
+fn external_url_media_resource(url: &str, kind: &str) -> Value {
+    let url = normalize_text(url);
+    serde_json::json!({
+        "kind": kind,
+        "source": "external_url",
+        "url": url,
+        "publicUrl": url,
+    })
+}
+
+fn media_kind_for_asset(asset_type: i32, mime_type: Option<&str>) -> &'static str {
+    let mime_type = mime_type.unwrap_or_default().trim().to_ascii_lowercase();
+    if mime_type.starts_with("video/") {
+        return "video";
+    }
+    if mime_type.starts_with("image/") {
+        return "image";
+    }
+    match asset_type {
+        APP_ASSET_TYPE_ICON | APP_ASSET_TYPE_SCREENSHOT => "image",
+        APP_ASSET_TYPE_PREVIEW => "video",
+        _ => "other",
+    }
 }
 
 fn seed_metadata(
@@ -2947,9 +3221,9 @@ fn value_to_string(value: &Value) -> Option<String> {
         Value::Number(value) => Some(value.to_string()),
         Value::Bool(value) => Some(value.to_string()),
         Value::Object(object) => object
-            .get("url")
-            .or_else(|| object.get("assetUrl"))
-            .or_else(|| object.get("asset_url"))
+            .get("publicUrl")
+            .or_else(|| object.get("url"))
+            .or_else(|| object.get("uri"))
             .or_else(|| object.get("name"))
             .or_else(|| object.get("label"))
             .and_then(value_to_string),

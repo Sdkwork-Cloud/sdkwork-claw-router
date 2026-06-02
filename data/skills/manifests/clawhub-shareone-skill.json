@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shareone-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-shareone-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shareone-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:9b398cfccbae329d8fd347568613895c8840838b02b8b38e73a66286cb7cddad",

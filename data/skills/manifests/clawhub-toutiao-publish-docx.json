@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toutiao-publish-docx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toutiao-publish-docx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toutiao-publish-docx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:22b2ea3f32ac8dbd5936b4d276376b4f3a541c256887924f18203e67e7434c93",

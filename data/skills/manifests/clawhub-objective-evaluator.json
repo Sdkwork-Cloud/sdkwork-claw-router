@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/objective-evaluator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-objective-evaluator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-objective-evaluator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35d43a51dacddf4a1e58c43c52cd61b221f16586759695295b2e20b64e7f0add",

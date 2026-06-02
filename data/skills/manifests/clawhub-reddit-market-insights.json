@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reddit-market-insights@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reddit-market-insights-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reddit-market-insights-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6931fa7fac260fa5da293d76f43d6a8ab054ed306cbe586726f6e978b0a12b56",

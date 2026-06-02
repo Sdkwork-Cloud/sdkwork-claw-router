@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mywyw-test-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mywyw-test-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mywyw-test-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de160342e723d22c088c9589871d405538c161e97d84518e647b7a6633a3ef55",

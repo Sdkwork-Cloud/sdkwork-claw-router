@@ -5,13 +5,12 @@ type AdminAppItemResponse struct {
 	AccessUrl string `json:"accessUrl"`
 	AppKey string `json:"appKey"`
 	AppType string `json:"appType"`
+	Artifact MediaResource `json:"artifact"`
 	BundleId string `json:"bundleId"`
 	Config AdminAppConfig `json:"config"`
 	CreatedAt string `json:"createdAt"`
 	Description string `json:"description"`
-	DownloadUrl string `json:"downloadUrl"`
-	Icon map[string]JsonValue `json:"icon"`
-	IconUrl string `json:"iconUrl"`
+	Icon MediaResource `json:"icon"`
 	Id string `json:"id"`
 	InstallConfig map[string]JsonValue `json:"installConfig"`
 	InstallPlatforms map[string]JsonValue `json:"installPlatforms"`

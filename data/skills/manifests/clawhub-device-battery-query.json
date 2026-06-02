@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/device-battery-query@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-device-battery-query-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-device-battery-query-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89a61024b0f1f483c034607dd527244385d276dbe78c74a3d1fa108d6efe5f10",

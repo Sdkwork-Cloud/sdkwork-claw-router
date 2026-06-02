@@ -2,6 +2,7 @@ use std::future::Future;
 use std::pin::Pin;
 
 use serde::Serialize;
+use serde_json::Value;
 
 use crate::domain::DomainResult;
 
@@ -29,14 +30,6 @@ impl<T> AppGenerationHistoryItems<T> {
 
 #[derive(Debug, Clone, Default, Serialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
-pub struct AppGenerationMediaItem {
-    pub url: String,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub thumb: Option<String>,
-}
-
-#[derive(Debug, Clone, Default, Serialize, PartialEq)]
-#[serde(rename_all = "camelCase")]
 pub struct AppGenerationHistoryItem {
     pub id: String,
     pub date: String,
@@ -48,9 +41,9 @@ pub struct AppGenerationHistoryItem {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub model_catalog_key: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub url: Option<String>,
-    pub images: Vec<String>,
-    pub videos: Vec<AppGenerationMediaItem>,
+    pub asset: Option<Value>,
+    pub images: Vec<Value>,
+    pub videos: Vec<Value>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub aspect_ratio: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]

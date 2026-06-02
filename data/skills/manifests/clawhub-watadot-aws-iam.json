@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/watadot-aws-iam@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-watadot-aws-iam-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-watadot-aws-iam-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9972d473758f1c55075d16886b78148e72609442d4f949ddcdbbd5ab1d7626af",

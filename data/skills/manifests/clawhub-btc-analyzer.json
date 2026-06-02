@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/btc-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-btc-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-btc-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ba906f0edf85465862499a620c34f6f0c42adb6d5b61f8590a678df1fae0092",

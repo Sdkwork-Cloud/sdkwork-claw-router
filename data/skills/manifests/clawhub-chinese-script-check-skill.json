@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-script-check-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-script-check-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-script-check-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e13119a411fa65cae2744fd5c11055a07fcfad0a8f1b5c91efbe81b0103ce952",

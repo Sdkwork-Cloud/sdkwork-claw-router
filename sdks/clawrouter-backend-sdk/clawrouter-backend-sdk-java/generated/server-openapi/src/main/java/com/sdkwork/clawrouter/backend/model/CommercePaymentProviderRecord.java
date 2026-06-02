@@ -5,9 +5,11 @@ import java.util.Map;
 public class CommercePaymentProviderRecord {
     private String createdAt;
     private String displayName;
+    private String id;
     private String organizationId;
     private String providerCode;
     private String providerType;
+    private String sortOrder;
     private String status;
     private Map<String, String> supportedCountries;
     private Map<String, String> supportedCurrencies;
@@ -29,6 +31,14 @@ public class CommercePaymentProviderRecord {
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrganizationId() {
@@ -53,6 +63,14 @@ public class CommercePaymentProviderRecord {
 
     public void setProviderType(String providerType) {
         this.providerType = providerType;
+    }
+
+    public String getSortOrder() {
+        return this.sortOrder;
+    }
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
     }
 
     public String getStatus() {

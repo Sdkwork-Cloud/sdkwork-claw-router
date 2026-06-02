@@ -16,6 +16,7 @@ class CommerceOrderEventRecord:
     to_status: str
     actor_id: Optional[str] = None
     from_status: Optional[str] = None
+    id: Optional[str] = None
     message: Optional[str] = None
     organization_id: Optional[str] = None
     payload_json: Optional[Dict[str, str]] = None

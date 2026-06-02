@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-auditor-tk@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-auditor-tk-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-auditor-tk-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2d6a9ebe1e812e9b56f850ad199728a0d011b24174ab193302452eacda249e3f",

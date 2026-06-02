@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zettelkasten@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zettelkasten-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zettelkasten-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2acfb226a700dc6221508327642ac8b54575f1473677f21f15f1d75cc3f562b",

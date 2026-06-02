@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ikea@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ikea-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ikea-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fdc08a715c85dab0848447663080d9fedaf72e739868fd2fa62fdc3a4bb463cf",

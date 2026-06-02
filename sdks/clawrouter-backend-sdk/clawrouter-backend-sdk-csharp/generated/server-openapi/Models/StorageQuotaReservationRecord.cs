@@ -17,6 +17,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? OrganizationId { get; set; }
         public string? ReleasedAt { get; set; }
         public string? ReservationNo { get; set; }
+        public string? ReservedBytes { get; set; }
         public string? ScopeId { get; set; }
         public string? ScopeType { get; set; }
         public string? Status { get; set; }

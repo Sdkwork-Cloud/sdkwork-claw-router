@@ -25,6 +25,7 @@ class AiPromptRecord:
     published_at: Optional[str] = None
     published_version_id: Optional[str] = None
     status: Optional[str] = None
+    tags: Optional[Dict[str, str]] = None
     tenant_id: Optional[str] = None
     updated_at: Optional[str] = None
     uuid: Optional[str] = None

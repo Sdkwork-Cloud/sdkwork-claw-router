@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mobilerun-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mobilerun-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mobilerun-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df0cb337ec5f406f3b8b3c91b40de55713cfeb1a074f3e8960a6bc240dbb19dc",

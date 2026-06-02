@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/noya-agent@1.0.13",
-      "artifactUrl": "data/skills/artifacts/clawhub-noya-agent-1.0.13.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-noya-agent-1.0.13.json"
+      },
       "version": "1.0.13",
       "runtime": "metadata",
       "checksumHash": "sha256:b6331a2782adbf381fd7b46203f5885b4b90a26acb63b9cfb16338e308201261",

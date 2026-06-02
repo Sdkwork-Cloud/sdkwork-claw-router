@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/team-meeting-summarize@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-team-meeting-summarize-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-team-meeting-summarize-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff013d2e37bc3d4b7d285808fe6a4300594bc8914b961025c93eaeab279c78cb",

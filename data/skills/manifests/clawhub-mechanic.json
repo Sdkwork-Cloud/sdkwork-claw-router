@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mechanic@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mechanic-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mechanic-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d07101f75c32f165ab1f501c380239dadd2966f1cc46596429bd8386675f94e9",

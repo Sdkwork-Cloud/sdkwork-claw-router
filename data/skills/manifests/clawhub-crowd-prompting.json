@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crowd-prompting@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-crowd-prompting-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crowd-prompting-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:f3d9775988ec5986d3fa9580cd6a1f0a02d75aa98266f2200bd1b238983e66a5",

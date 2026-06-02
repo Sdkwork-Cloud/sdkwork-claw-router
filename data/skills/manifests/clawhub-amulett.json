@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amulett@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amulett-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amulett-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:500574ff8dacf46a22bbc5861f33ac36f80d054d8c30cfac8579153bea913e99",

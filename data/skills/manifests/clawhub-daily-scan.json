@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-scan@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-scan-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-scan-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:bf58932d62e017b6b67830cb7be58446cc16e5d7710e666c607f1d2ba74a1063",

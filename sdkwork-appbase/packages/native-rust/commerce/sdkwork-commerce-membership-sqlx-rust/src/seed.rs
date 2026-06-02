@@ -13,7 +13,10 @@ use sqlx::{PgPool, SqlitePool};
 
 const SEED_TIMESTAMP: &str = "2026-05-19 00:00:00";
 const MEMBERSHIP_PRODUCT_ID: &str = "seed-product-membership";
-const RECHARGE_PRODUCT_ID: &str = "seed-product-points-recharge";
+const RECHARGE_PRODUCT_CNY_ID: &str = "seed-product-points-recharge-cny";
+const RECHARGE_PRODUCT_NON_CNY_ID: &str = "seed-product-points-recharge-non-cny";
+const RECHARGE_PRODUCT_CNY_SPU_NO: &str = "points-recharge-cny";
+const RECHARGE_PRODUCT_NON_CNY_SPU_NO: &str = "points-recharge-non-cny";
 const PAYMENT_METHOD_SEED_COUNT: i64 = 7;
 const PAYMENT_PROVIDER_SEED_COUNT: i64 = 6;
 const PAYMENT_PROVIDER_ACCOUNT_SEED_COUNT: i64 = 6;
@@ -208,11 +211,21 @@ async fn upsert_sqlite_seed_products(pool: &SqlitePool) -> Result<(), CommerceSe
     .await?;
     upsert_sqlite_seed_product(
         pool,
-        RECHARGE_PRODUCT_ID,
-        "points-recharge",
-        "Points recharge",
-        "SDKWork points recharge catalog",
-        "Reusable SDKWork commerce points recharge packages.",
+        RECHARGE_PRODUCT_CNY_ID,
+        RECHARGE_PRODUCT_CNY_SPU_NO,
+        "Points recharge (CNY)",
+        "SDKWork points recharge catalog (CNY)",
+        "Reusable SDKWork commerce points recharge packages for CNY.",
+        "commerce-recharge",
+    )
+    .await?;
+    upsert_sqlite_seed_product(
+        pool,
+        RECHARGE_PRODUCT_NON_CNY_ID,
+        RECHARGE_PRODUCT_NON_CNY_SPU_NO,
+        "Points recharge (Non-CNY)",
+        "SDKWork points recharge catalog (Non-CNY)",
+        "Reusable SDKWork commerce points recharge packages for non-CNY.",
         "commerce-recharge",
     )
     .await?;
@@ -232,11 +245,21 @@ async fn upsert_postgres_seed_products(pool: &PgPool) -> Result<(), CommerceServ
     .await?;
     upsert_postgres_seed_product(
         pool,
-        RECHARGE_PRODUCT_ID,
-        "points-recharge",
-        "Points recharge",
-        "SDKWork points recharge catalog",
-        "Reusable SDKWork commerce points recharge packages.",
+        RECHARGE_PRODUCT_CNY_ID,
+        RECHARGE_PRODUCT_CNY_SPU_NO,
+        "Points recharge (CNY)",
+        "SDKWork points recharge catalog (CNY)",
+        "Reusable SDKWork commerce points recharge packages for CNY.",
+        "commerce-recharge",
+    )
+    .await?;
+    upsert_postgres_seed_product(
+        pool,
+        RECHARGE_PRODUCT_NON_CNY_ID,
+        RECHARGE_PRODUCT_NON_CNY_SPU_NO,
+        "Points recharge (Non-CNY)",
+        "SDKWork points recharge catalog (Non-CNY)",
+        "Reusable SDKWork commerce points recharge packages for non-CNY.",
         "commerce-recharge",
     )
     .await?;
@@ -1100,7 +1123,7 @@ async fn upsert_sqlite_recharge_package_sku(
         "#,
     )
     .bind(package.sku_id)
-    .bind(RECHARGE_PRODUCT_ID)
+    .bind(recharge_product_id_for_currency(package.currency_code))
     .bind(package.sku_no)
     .bind(package.name)
     .bind(package.name)
@@ -1141,7 +1164,7 @@ async fn upsert_postgres_recharge_package_sku(
         "#,
     )
     .bind(package.sku_id)
-    .bind(RECHARGE_PRODUCT_ID)
+    .bind(recharge_product_id_for_currency(package.currency_code))
     .bind(package.sku_no)
     .bind(package.name)
     .bind(package.name)
@@ -1741,8 +1764,21 @@ fn payment_method_request_no(method: &CommercePaymentMethodSeed) -> String {
 fn seed_product_type(spu_no: &str) -> &'static str {
     match spu_no {
         "membership" => "membership",
-        "points-recharge" => "points_recharge",
+        RECHARGE_PRODUCT_CNY_SPU_NO | RECHARGE_PRODUCT_NON_CNY_SPU_NO => "points_recharge",
         _ => "virtual",
+    }
+}
+
+fn is_cny_currency(currency_code: &str) -> bool {
+    let normalized = currency_code.trim();
+    normalized.is_empty() || normalized.eq_ignore_ascii_case("CNY")
+}
+
+fn recharge_product_id_for_currency(currency_code: &str) -> &'static str {
+    if is_cny_currency(currency_code) {
+        RECHARGE_PRODUCT_CNY_ID
+    } else {
+        RECHARGE_PRODUCT_NON_CNY_ID
     }
 }
 
@@ -1781,8 +1817,8 @@ impl SeedIntegrityCheck {
 const COMMERCE_EXPERIENCE_SEED_INTEGRITY_CHECKS: &[SeedIntegrityCheck] = &[
     SeedIntegrityCheck {
         code: "missing_seed_product",
-        message: "expected active membership and points recharge seed products",
-        expected_count: 2,
+        message: "expected active membership and grouped points recharge seed products",
+        expected_count: 3,
         statement: COMPLETE_PRODUCT_COUNT_SQL,
     },
     SeedIntegrityCheck {
@@ -1907,7 +1943,7 @@ SELECT COUNT(1)
 FROM commerce_product_spu
 WHERE tenant_id = '0'
   AND organization_id = '0'
-  AND spu_no IN ('membership', 'points-recharge')
+  AND spu_no IN ('membership', 'points-recharge-cny', 'points-recharge-non-cny')
   AND sales_status = 'active'
 "#;
 
@@ -1977,7 +2013,7 @@ SELECT COUNT(1)
 FROM commerce_product_sku
 WHERE tenant_id = '0'
   AND organization_id = '0'
-  AND spu_id = 'seed-product-points-recharge'
+  AND spu_id IN ('seed-product-points-recharge-cny', 'seed-product-points-recharge-non-cny')
   AND sku_no LIKE 'points-recharge-%'
 "#;
 
@@ -2124,7 +2160,7 @@ WHERE package.tenant_id = '0'
   AND package.organization_id = '0'
   AND package.package_no LIKE 'points-%'
   AND package.status = 'active'
-  AND sku.spu_id <> 'seed-product-points-recharge'
+  AND sku.spu_id NOT IN ('seed-product-points-recharge-cny', 'seed-product-points-recharge-non-cny')
 "#;
 
 fn storage_error(context: &str, error: sqlx::Error) -> CommerceServiceError {

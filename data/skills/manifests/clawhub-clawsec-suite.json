@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawsec-suite@0.1.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawsec-suite-0.1.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawsec-suite-0.1.7.json"
+      },
       "version": "0.1.7",
       "runtime": "metadata",
       "checksumHash": "sha256:67b739b60d7d668a32d714ec17a965976b36c335051a24e97abfcd5f54bb5599",

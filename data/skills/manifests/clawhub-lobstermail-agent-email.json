@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lobstermail-agent-email@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lobstermail-agent-email-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lobstermail-agent-email-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1a34b0c979555cc29fb3b3675c2ed58d37f3dc97ad4976de5717d29d954a06ac",

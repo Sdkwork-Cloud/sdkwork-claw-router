@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pet-me-master@2.4.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-pet-me-master-2.4.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pet-me-master-2.4.4.json"
+      },
       "version": "2.4.4",
       "runtime": "metadata",
       "checksumHash": "sha256:bdc74ab3ae9602426b75fcb3664027b8b9b1678a711dacb42d8168d2a04e4c3d",

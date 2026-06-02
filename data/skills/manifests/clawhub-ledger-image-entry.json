@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ledger-image-entry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ledger-image-entry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ledger-image-entry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:95c46a1050ff54f1670dd79394726ce115988c6f3edbd43fd3a4005f7056253e",

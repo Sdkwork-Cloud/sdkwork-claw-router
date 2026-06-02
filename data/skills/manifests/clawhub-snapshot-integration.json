@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snapshot-integration@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-snapshot-integration-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snapshot-integration-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5cf766b7f1ece56d040db28a15bda9658d9351c58d3484429299c31049335d91",

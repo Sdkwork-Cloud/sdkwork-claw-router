@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kirk-content-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kirk-content-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kirk-content-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:49e78b8aa0a0919277917614136ec267bf0a546c1e7a112e159c1bce436a6a2c",

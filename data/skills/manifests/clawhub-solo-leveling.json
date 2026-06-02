@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solo-leveling@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solo-leveling-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solo-leveling-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f4824841c4a0f1b9338731f13274f2ebaed2d69d3ac70dfaf8f4e896b563b95b",

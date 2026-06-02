@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/privypad@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-privypad-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-privypad-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b7f1126d64d623244b906c5971161de7821e1de5633e022ec0172fea0cd6da08",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lyft@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lyft-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lyft-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:33fbe4c46996e9dc43dd14a579e87a1093d60e3476e44560ca5431caec419059",

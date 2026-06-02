@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/led-ctrl@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-led-ctrl-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-led-ctrl-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1cba6dad433ef13180b1caa567886358d813a15da93192601ea9800fa8831ea5",

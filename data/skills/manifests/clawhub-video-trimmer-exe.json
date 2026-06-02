@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-trimmer-exe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-trimmer-exe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-trimmer-exe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f245f2cc8a5860851d4a4676cbd7d9696a675c934b16b6b4d778ada7426ac89",

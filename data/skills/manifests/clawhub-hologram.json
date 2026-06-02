@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hologram@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-hologram-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hologram-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:f81a61f307c1827349fcaf725788ab5e0ecac7c85589155e6048b776f4f7aa96",

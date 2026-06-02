@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zoho-mail-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zoho-mail-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zoho-mail-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:efce360e75c32671347e562abaf4ba0d2a15839c1919472a092a53680d5aefaf",

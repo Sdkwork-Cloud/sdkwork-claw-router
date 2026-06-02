@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/appearance-score@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-appearance-score-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-appearance-score-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:11b772ad0f5540c48690bb46afa267317e4ac2a58f359dacbb5b76fa74f25cc1",

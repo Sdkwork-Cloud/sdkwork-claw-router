@@ -1,7 +1,9 @@
+import type { MediaResource } from './media-resource';
+
 /** Course instructor schema exposed by Claw Router. */
 export interface CourseInstructor {
   /** Avatar field on course instructor. */
-  avatar: string;
+  avatar: MediaResource;
   /** Bio field on course instructor. */
   bio: string;
   /** Name field on course instructor. */

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-injection-protection@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-injection-protection-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-injection-protection-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:841e6c41a1f2043b665f21737f1088c6f158b2fd195d2f7531f60cc865cd42de",

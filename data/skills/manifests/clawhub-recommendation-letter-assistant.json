@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/recommendation-letter-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-recommendation-letter-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-recommendation-letter-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:148da1d207d15840e4b2b188937be0b7b6b7e4f6f9b7babfde479c6867ab83bd",

@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.app
 data class CommerceIdempotencyKeyRecord(
     val createdAt: String? = null,
     val expiresAt: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val lockedUntil: String? = null,
     val organizationId: String? = null,

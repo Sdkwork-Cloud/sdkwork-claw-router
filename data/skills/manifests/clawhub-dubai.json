@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dubai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dubai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dubai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:608ee3bf11705271c213df79f4f53e8b567dc6b402ef1ce62c2ffa0a12e786dc",

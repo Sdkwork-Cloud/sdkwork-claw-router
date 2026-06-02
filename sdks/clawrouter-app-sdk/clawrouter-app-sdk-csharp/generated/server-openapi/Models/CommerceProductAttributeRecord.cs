@@ -9,6 +9,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? AttributeNo { get; set; }
         public string? CreatedAt { get; set; }
         public bool? Filterable { get; set; }
+        public string? Id { get; set; }
         public string? Name { get; set; }
         public string? OrganizationId { get; set; }
         public bool? Required { get; set; }

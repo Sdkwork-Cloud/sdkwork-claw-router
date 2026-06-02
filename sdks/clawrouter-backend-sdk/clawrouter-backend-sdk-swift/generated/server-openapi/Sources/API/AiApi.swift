@@ -7,6 +7,36 @@ public class AiApi {
         self.client = client
     }
 
+    /// List groups
+    public func channelGroupsList() async throws -> ChannelGroupsListResult? {
+        return try await client.get(ApiPaths.backendPath("/ai/channel_groups"), responseType: ChannelGroupsListResult.self)
+    }
+
+    /// Create group
+    public func channelGroupsCreate(body: AdminChannelGroupCreateRequest) async throws -> ChannelGroupsCreateResult? {
+        return try await client.post(ApiPaths.backendPath("/ai/channel_groups"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ChannelGroupsCreateResult.self)
+    }
+
+    /// Delete group
+    public func channelGroupsDelete(channelGroupId: String) async throws -> ChannelGroupsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/ai/channel_groups/\(serializePathParameter(channelGroupId, PathParameterSpec(name: "channelGroupId", style: "simple", explode: false)))"), responseType: ChannelGroupsDeleteResult.self)
+    }
+
+    /// Update group
+    public func channelGroupsUpdate(channelGroupId: String, body: AdminChannelGroupUpdateRequest) async throws -> ChannelGroupsUpdateResult? {
+        return try await client.patch(ApiPaths.backendPath("/ai/channel_groups/\(serializePathParameter(channelGroupId, PathParameterSpec(name: "channelGroupId", style: "simple", explode: false)))"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ChannelGroupsUpdateResult.self)
+    }
+
+    /// List group channel bindings
+    public func channelGroupsBindingsList(channelGroupId: String) async throws -> ChannelGroupsChannelBindingsListResult? {
+        return try await client.get(ApiPaths.backendPath("/ai/channel_groups/\(serializePathParameter(channelGroupId, PathParameterSpec(name: "channelGroupId", style: "simple", explode: false)))/channel_bindings"), responseType: ChannelGroupsChannelBindingsListResult.self)
+    }
+
+    /// Replace group channel bindings
+    public func channelGroupsBindingsUpdate(channelGroupId: String, body: AdminChannelGroupChannelBindingsReplaceRequest) async throws -> ChannelGroupsChannelBindingsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/ai/channel_groups/\(serializePathParameter(channelGroupId, PathParameterSpec(name: "channelGroupId", style: "simple", explode: false)))/channel_bindings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: ChannelGroupsChannelBindingsUpdateResult.self)
+    }
+
     /// List model rankings
     public func modelRankingsList(rankScope: String? = nil, vendorCode: String? = nil, modality: String? = nil, q: String? = nil, limit: Int? = nil) async throws -> ModelRankingsListResult? {
         let query = buildQueryString([

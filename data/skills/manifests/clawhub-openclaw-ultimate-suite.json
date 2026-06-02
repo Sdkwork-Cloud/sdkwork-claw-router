@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-ultimate-suite@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-ultimate-suite-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-ultimate-suite-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a199b0cd15e004e582c5f4cc4584b98b62eab24890bd7dbd2afab41c4d729e30",

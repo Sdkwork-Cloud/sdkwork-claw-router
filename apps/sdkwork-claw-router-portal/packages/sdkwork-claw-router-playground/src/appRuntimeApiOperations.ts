@@ -2,6 +2,7 @@ import {
   createClientOperationToken,
   getClawRouterAppSdkClient,
   streamRuntimeInvocationEvents,
+  type ClawRouterMediaResource,
   type ClawRouterAppSdkClient,
   type JsonValue,
   type RuntimeStreamEvent,
@@ -179,10 +180,10 @@ export interface RuntimeArtifactCreateBody {
   metadata?: JsonObject;
   mimeType?: string;
   name?: string;
+  resource?: ClawRouterMediaResource;
   sha256?: string;
   sizeBytes?: number;
   storageKey?: string;
-  storageUrl?: string;
 }
 
 interface ModelCatalogParams {

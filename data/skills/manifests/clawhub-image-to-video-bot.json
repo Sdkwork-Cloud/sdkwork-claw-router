@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-to-video-bot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-to-video-bot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-to-video-bot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:54ed2e03cbff36719ac124eb39a1c0903a904c63c29cd8085777a687e288eb9e",

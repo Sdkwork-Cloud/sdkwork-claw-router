@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/awesome-deck-pdf-check@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-awesome-deck-pdf-check-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-awesome-deck-pdf-check-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:e836d4e70d545bbf9d3093c87968adfa81ae078efd8cb4067db5b4ef764c1563",

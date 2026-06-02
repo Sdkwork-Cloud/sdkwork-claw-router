@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class CommercePaymentProviderAccountMutationRequest {
-    private String accountNo;
+    private String accountRole;
     private String certificateRef;
     private String clientRequestNo;
     private String countryCode;
@@ -16,12 +16,12 @@ public class CommercePaymentProviderAccountMutationRequest {
     private String status;
     private String webhookSecretRef;
 
-    public String getAccountNo() {
-        return this.accountNo;
+    public String getAccountRole() {
+        return this.accountRole;
     }
 
-    public void setAccountNo(String accountNo) {
-        this.accountNo = accountNo;
+    public void setAccountRole(String accountRole) {
+        this.accountRole = accountRole;
     }
 
     public String getCertificateRef() {

@@ -29,6 +29,7 @@ type AiChatMessageRecord struct {
 	TokenCount string `json:"token_count"`
 	TraceId string `json:"trace_id"`
 	TurnId string `json:"turn_id"`
+	UpdatedAt string `json:"updated_at"`
 	UsageLinkId string `json:"usage_link_id"`
 	UserId string `json:"user_id"`
 	Uuid string `json:"uuid"`

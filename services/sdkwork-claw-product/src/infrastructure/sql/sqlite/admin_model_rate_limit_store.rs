@@ -11,7 +11,7 @@ const MODEL_RATE_LIMIT_TARGET_TYPE: i32 = 45;
 const CONFIG_SCOPE_ROUTER: i32 = 10;
 const CONFIG_TYPE_MODEL_RATE_LIMIT: i32 = MODEL_RATE_LIMIT_TARGET_TYPE;
 const MODEL_RATE_LIMIT_SUBJECT_TYPE: i32 = 4;
-const API_KEY_GROUP_SCOPE_TYPE: i32 = 3;
+const CHANNEL_GROUP_SCOPE_TYPE: i32 = 3;
 const MINUTE_PERIOD: i32 = 2;
 const REQUEST_QUOTA_UNIT: i32 = 1;
 
@@ -49,7 +49,7 @@ impl AdminModelRateLimitStore for SqliteAdminModelRateLimitStore {
             let mut tx = self.pool.begin().await.map_err(|error| {
                 store_error("failed to begin model rate limit transaction", error)
             })?;
-            let group = find_access_group(&mut tx, &command).await?;
+            let group = find_channel_group(&mut tx, &command).await?;
             let policy_id = upsert_quota_policy(&mut tx, &command, &group).await?;
             insert_config_snapshot(
                 &mut tx,
@@ -63,7 +63,7 @@ impl AdminModelRateLimitStore for SqliteAdminModelRateLimitStore {
                     "action": "create_model_rate_limit",
                     "modelRateLimitId": policy_id,
                     "groupId": group.id,
-                    "group": group_label(&group),
+                    "channelGroup": group_label(&group),
                     "model": &command.model,
                     "rpm": command.rpm,
                     "tpm": command.tpm
@@ -84,7 +84,7 @@ impl AdminModelRateLimitStore for SqliteAdminModelRateLimitStore {
                     "action": "create_model_rate_limit",
                     "modelRateLimitId": policy_id,
                     "groupId": group.id,
-                    "group": group_label(&group),
+                    "channelGroup": group_label(&group),
                     "model": &command.model,
                     "rpm": command.rpm,
                     "tpm": command.tpm
@@ -133,7 +133,7 @@ async fn list_model_rate_limits(
     rows.into_iter().map(item_from_row).collect()
 }
 
-async fn find_access_group(
+async fn find_channel_group(
     tx: &mut Transaction<'_, Sqlite>,
     command: &CreateAdminModelRateLimitCommand,
 ) -> DomainResult<GroupIdentity> {
@@ -161,18 +161,18 @@ async fn find_access_group(
     )
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
-    .bind(&command.group)
-    .bind(&command.group)
+    .bind(&command.channel_group)
+    .bind(&command.channel_group)
     .bind(command.subject.tenant_id)
     .bind(command.subject.organization_id)
     .bind(command.subject.tenant_id)
-    .bind(&command.group)
+    .bind(&command.channel_group)
     .fetch_optional(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to find access group for model rate limit", error))?;
+    .map_err(|error| store_error("failed to find channel group for model rate limit", error))?;
 
     let Some(row) = row else {
-        return Err(DomainError::new("access group was not found"));
+        return Err(DomainError::new("channel group was not found"));
     };
     Ok(GroupIdentity {
         id: row.try_get("id").map_err(row_error)?,
@@ -255,7 +255,7 @@ async fn insert_quota_policy(
     .bind(subject_id)
     .bind(subject_ref_hash)
     .bind(subject_ref_masked(command, group))
-    .bind(API_KEY_GROUP_SCOPE_TYPE)
+    .bind(CHANNEL_GROUP_SCOPE_TYPE)
     .bind(group.id)
     .bind(group.id)
     .bind(&command.model)
@@ -324,7 +324,7 @@ async fn update_quota_policy(
     .bind(subject_id)
     .bind(subject_ref_hash)
     .bind(subject_ref_masked(command, group))
-    .bind(API_KEY_GROUP_SCOPE_TYPE)
+    .bind(CHANNEL_GROUP_SCOPE_TYPE)
     .bind(group.id)
     .bind(group.id)
     .bind(&command.model)
@@ -454,7 +454,8 @@ fn model_rate_limit_select_sql(predicate: &str) -> String {
             q.tenant_id,
             q.organization_id,
             COALESCE(q.model, '') AS model,
-            COALESCE(NULLIF(g.group_code, ''), NULLIF(g.group_name, ''), q.subject_ref_masked, '') AS group_name,
+            COALESCE(NULLIF(g.group_code, ''), NULLIF(g.group_name, ''), q.subject_ref_masked, '') AS channel_group,
+            COALESCE(g.group_name, '') AS channel_group_name,
             q.group_id,
             q.requests_per_minute AS rpm,
             q.tokens_per_minute AS tpm,
@@ -476,8 +477,9 @@ fn item_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminModelRateLim
         tenant_id: row.try_get("tenant_id").map_err(row_error)?,
         organization_id: row.try_get("organization_id").map_err(row_error)?,
         model: row.try_get("model").map_err(row_error)?,
-        group: row.try_get("group_name").map_err(row_error)?,
-        group_id: required_integer_cell(&row, "group_id")?,
+        channel_group: row.try_get("channel_group").map_err(row_error)?,
+        channel_group_id: required_integer_cell(&row, "group_id")?,
+        channel_group_name: row.try_get("channel_group_name").map_err(row_error)?,
         rpm: required_integer_cell(&row, "rpm")?,
         tpm: required_integer_cell(&row, "tpm")?,
         status: status_label(
@@ -504,7 +506,7 @@ fn policy_metadata(command: &CreateAdminModelRateLimitCommand, group: &GroupIden
         "managedBy": "admin_model_rate_limit",
         "policyCode": &command.policy_code,
         "groupId": group.id,
-        "group": group_label(group),
+        "channelGroup": group_label(group),
         "model": &command.model,
         "rpm": command.rpm,
         "tpm": command.tpm

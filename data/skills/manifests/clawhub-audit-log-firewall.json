@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audit-log-firewall@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audit-log-firewall-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audit-log-firewall-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7fdb97b258301b689021e2436205b5ab9d5994dc162558ec72a3822c0ed6fed",

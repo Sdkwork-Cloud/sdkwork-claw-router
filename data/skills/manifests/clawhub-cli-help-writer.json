@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cli-help-writer@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cli-help-writer-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cli-help-writer-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5b8cce6b511a9c751569589e16b8f3f659baf4a228860b789caf2e9fe8b5b2dd",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/guardrails@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-guardrails-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-guardrails-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3a32419fec8fd5818b3b5d29cea6320de68fd209ae3d64842c302d663832e88e",

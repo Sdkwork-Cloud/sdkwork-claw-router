@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a7a05146e16cb60dded81ef670ebb57308fde6f8c9f5836bcf6124913aaeb39",

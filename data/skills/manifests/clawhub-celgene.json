@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/celgene@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-celgene-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-celgene-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:61d4475de738233f0d73ac42becb5de5bb8ae7f5f909194ebd4882a5e5e726b4",

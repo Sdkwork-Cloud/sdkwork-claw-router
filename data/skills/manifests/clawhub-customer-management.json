@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customer-management@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-customer-management-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customer-management-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:409a0b02190ddafc105b4453bd834ab575d70972afa33c2992dde99694fad385",

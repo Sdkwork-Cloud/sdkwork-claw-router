@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fomo@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-fomo-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fomo-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:08c4831ef4ea432c157e5c7ad2bcee19fe1618441d973c22b97720d891f55c50",

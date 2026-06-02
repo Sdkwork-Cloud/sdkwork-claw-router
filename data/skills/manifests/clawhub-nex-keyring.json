@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nex-keyring@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nex-keyring-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nex-keyring-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:814deddfa6f1f1e88cbf17d09bc5ff6d9d1e9f5f1cab796562bd2f40762432b9",

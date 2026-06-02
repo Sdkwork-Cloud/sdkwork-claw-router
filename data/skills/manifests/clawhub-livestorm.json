@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/livestorm@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-livestorm-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-livestorm-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:618c9abc5e656317039d11394fe25bb5270a2d505be24322d8ba71f493e749db",

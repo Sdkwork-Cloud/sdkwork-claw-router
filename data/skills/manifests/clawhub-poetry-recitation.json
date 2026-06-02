@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/poetry-recitation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-poetry-recitation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-poetry-recitation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a01d8fe729a4f60677828f95d47c4930eb5912ca900135b0e026c6cc33dfff9",

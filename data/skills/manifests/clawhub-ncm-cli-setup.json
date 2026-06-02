@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ncm-cli-setup@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ncm-cli-setup-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ncm-cli-setup-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5f0d2ca55e5f253591836a0154c8d98a50c2b9ab0f18d426da4eb5bcf57de820",

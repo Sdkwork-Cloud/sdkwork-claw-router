@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cf-workers-logs@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cf-workers-logs-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cf-workers-logs-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:31d72dc1bc069f4ac5d0d579d5255b1ac6e9946b27877f1345fee261f8af92e3",

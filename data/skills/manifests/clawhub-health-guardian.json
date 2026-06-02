@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-guardian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-guardian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-guardian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:096cf96307edfe695a9ccd6e320e383e0e34d53c8ecd6ef9e4800a242403ad5d",

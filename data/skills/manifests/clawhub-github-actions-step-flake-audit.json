@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-actions-step-flake-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-step-flake-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-actions-step-flake-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74487c95348bd9c34e02fdc247c3265ca9dd5082f9704078c78c37a693e61082",

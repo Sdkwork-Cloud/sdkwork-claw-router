@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gif-maker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gif-maker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gif-maker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:195617e4fa755bff0399639dfd3683f9c19e68749ad040aa932068ae075d0aac",

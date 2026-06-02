@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/public-ip-skill-in-openclaw@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-public-ip-skill-in-openclaw-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-public-ip-skill-in-openclaw-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:53dff0688811225b5c3245a5cfbaaa36ec13f6ad77f92012789c57d0e5daeed6",

@@ -14,5 +14,5 @@ data class CourseLessonItem(
     val sortOrder: Int? = null,
     val sourceProvider: String? = null,
     val title: String? = null,
-    val videoUrl: String? = null
+    val video: MediaResource? = null
 )

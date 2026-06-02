@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/homeassistant-toolkit@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-homeassistant-toolkit-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-homeassistant-toolkit-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bb5690a497634257b01a1f94488a69cd9f55925cf5778ac36f3893759ecfb544",

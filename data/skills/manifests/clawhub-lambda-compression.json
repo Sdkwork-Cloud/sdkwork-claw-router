@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lambda-compression@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lambda-compression-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lambda-compression-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:978eb8f90799cb122e2f3ff34606932984367645faed9261846c209ab10f547f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ad-intelligence-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ad-intelligence-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ad-intelligence-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d40f2aa38e4195d22999b8e4ebbfb58406a12cc66abae300a67555fe5715521",

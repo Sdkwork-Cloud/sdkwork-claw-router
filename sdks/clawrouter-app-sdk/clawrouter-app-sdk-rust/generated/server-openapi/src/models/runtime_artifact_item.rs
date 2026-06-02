@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Runtime artifact item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct RuntimeArtifactItem {
@@ -32,6 +34,10 @@ pub struct RuntimeArtifactItem {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
 
+    /// Resource field on runtime artifact item.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub resource: Option<MediaResource>,
+
     /// Sha 256 field on runtime artifact item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub sha256: Option<String>,
@@ -45,9 +51,4 @@ pub struct RuntimeArtifactItem {
     #[serde(rename = "storageKey")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub storage_key: Option<String>,
-
-    /// Storage url field on runtime artifact item.
-    #[serde(rename = "storageUrl")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub storage_url: Option<String>,
 }

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snipeit-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-snipeit-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snipeit-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:413f63392bf83a7d55c3cbd3437bbcb8df2b806207c2161013c23a54797740df",

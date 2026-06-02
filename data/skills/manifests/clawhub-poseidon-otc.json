@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/poseidon-otc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-poseidon-otc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-poseidon-otc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70a582cc3dd2d22b125f789b9d6ccc794ebacb04d45a8c10906e1b206cb053a3",

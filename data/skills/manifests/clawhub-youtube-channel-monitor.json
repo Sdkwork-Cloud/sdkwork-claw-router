@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-channel-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-channel-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-channel-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d9df3cdc563f9619fcf9172d78982216ca47995e3aee30480fe5483422b654da",

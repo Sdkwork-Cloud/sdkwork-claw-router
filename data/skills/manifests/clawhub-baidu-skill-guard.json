@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baidu-skill-guard@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-baidu-skill-guard-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baidu-skill-guard-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:2f836f876eda119089de45b7079684c893efd026d4c8c8f90fe019557d853ee9",

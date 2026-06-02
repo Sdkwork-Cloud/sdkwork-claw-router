@@ -9,6 +9,7 @@ use sdkwork_claw_product::ports::{
     AppGenerationHistoryReadStore, AppGenerationHistorySubject, GatewayUsageRecordCommand,
     GatewayUsageRecorder, PaymentCallbackCommand, PaymentCallbackStatus, PaymentCallbackStore,
 };
+use serde_json::Value;
 use sqlx::postgres::PgPoolOptions;
 use sqlx::{PgPool, Row};
 
@@ -218,16 +219,16 @@ async fn postgres_generation_history_loads_visible_statuses_without_sensitive_fi
     assert_eq!("video", items[3].item_type);
     assert_eq!(
         "https://cdn.example.test/video-102.mp4",
-        items[3].videos[0].url
+        media_public_url(&items[3].videos[0])
     );
     assert_eq!(
-        Some("https://cdn.example.test/video-102.jpg"),
-        items[3].videos[0].thumb.as_deref()
+        "https://cdn.example.test/video-102.jpg",
+        media_public_url(&items[3].videos[0]["poster"])
     );
     assert_eq!("image", items[4].item_type);
     assert_eq!(
-        vec!["https://cdn.example.test/image-101.png".to_owned()],
-        items[4].images
+        "https://cdn.example.test/image-101.png",
+        media_public_url(&items[4].images[0])
     );
 
     let payload = serde_json::to_string(&items).unwrap();
@@ -246,6 +247,13 @@ async fn postgres_generation_history_loads_visible_statuses_without_sensitive_fi
     }
 
     ctx.cleanup().await;
+}
+
+fn media_public_url(value: &Value) -> &str {
+    value
+        .get("publicUrl")
+        .and_then(Value::as_str)
+        .expect("media resource publicUrl")
 }
 
 #[tokio::test]
@@ -624,8 +632,12 @@ async fn create_schema(pool: &PgPool) {
             prompt_snapshot TEXT,
             asset_type INTEGER,
             model_snapshot VARCHAR(128),
-            asset_url VARCHAR(1024),
-            thumbnail_url VARCHAR(1024),
+            asset_media_resource_id VARCHAR(128),
+            asset_object_blob_id BIGINT,
+            asset_resource_snapshot JSONB,
+            thumbnail_media_resource_id VARCHAR(128),
+            thumbnail_object_blob_id BIGINT,
+            thumbnail_resource_snapshot JSONB,
             status INTEGER NOT NULL,
             deleted_at TIMESTAMPTZ,
             storage_key VARCHAR(512),
@@ -1027,8 +1039,8 @@ async fn insert_generation_asset(
     prompt_snapshot: &str,
     asset_type: i32,
     model_snapshot: &str,
-    asset_url: &str,
-    thumbnail_url: &str,
+    asset_locator: &str,
+    thumbnail_locator: &str,
     status: i32,
     deleted_at: Option<&str>,
     storage_key: &str,
@@ -1048,8 +1060,8 @@ async fn insert_generation_asset(
             prompt_snapshot,
             asset_type,
             model_snapshot,
-            asset_url,
-            thumbnail_url,
+            asset_resource_snapshot,
+            thumbnail_resource_snapshot,
             status,
             deleted_at,
             storage_key,
@@ -1067,8 +1079,8 @@ async fn insert_generation_asset(
             $8,
             $9,
             $10,
-            $11,
-            $12,
+            $11::jsonb,
+            $12::jsonb,
             $13,
             $14::timestamp AT TIME ZONE 'UTC',
             $15,
@@ -1087,8 +1099,8 @@ async fn insert_generation_asset(
     .bind(prompt_snapshot)
     .bind(asset_type)
     .bind(model_snapshot)
-    .bind(asset_url)
-    .bind(thumbnail_url)
+    .bind(media_resource_snapshot(asset_locator))
+    .bind(media_resource_snapshot(thumbnail_locator))
     .bind(status)
     .bind(deleted_at)
     .bind(storage_key)
@@ -1097,6 +1109,22 @@ async fn insert_generation_asset(
     .execute(pool)
     .await
     .unwrap();
+}
+
+fn media_resource_snapshot(locator: &str) -> Option<String> {
+    let locator = locator.trim();
+    if locator.is_empty() {
+        return None;
+    }
+    Some(
+        serde_json::json!({
+            "kind": "asset",
+            "source": "external_url",
+            "url": locator,
+            "publicUrl": locator
+        })
+        .to_string(),
+    )
 }
 
 async fn insert_generation_job(

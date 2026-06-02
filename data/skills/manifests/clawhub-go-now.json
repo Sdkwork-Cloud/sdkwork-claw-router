@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/go-now@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-go-now-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-go-now-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5fe8235cdb9d132e8c51b9c2dd7e6c972dde6147c62bd82f7b2de4a6fdcb3003",

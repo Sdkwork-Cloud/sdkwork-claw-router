@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentmesh-governance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentmesh-governance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentmesh-governance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:595c24c5e279783e311ccf83f3cde5b0b6cb49159a6aac9f02ff76f9683869d5",

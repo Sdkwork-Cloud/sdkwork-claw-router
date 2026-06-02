@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-compile-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-compile-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-compile-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2c66b983d705f353e96b450257ef6153974bd2767b97742a0aff695de07b03fb",

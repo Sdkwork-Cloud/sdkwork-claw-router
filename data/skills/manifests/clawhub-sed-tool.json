@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sed-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sed-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sed-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2737c7eeab7df7a6f0568361775c36156341583d3c4a166d9c7f493423458cec",

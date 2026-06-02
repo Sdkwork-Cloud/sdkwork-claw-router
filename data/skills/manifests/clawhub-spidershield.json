@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spidershield@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spidershield-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spidershield-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:edeb265d4241e2ef01717f218118c834c8df2913afe300f1b92b7e6839e7f316",

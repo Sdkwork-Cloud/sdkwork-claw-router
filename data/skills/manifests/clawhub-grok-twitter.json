@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grok-twitter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grok-twitter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grok-twitter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57d405fb2a9e6c2d2c758665be0f9ae43ec04386d51f5ca62065419ab180bbeb",

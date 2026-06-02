@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apollo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apollo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apollo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26671ca95afaabc66bf333b8554b4dc42c1d2a3df1571f6931323768fcd985f9",

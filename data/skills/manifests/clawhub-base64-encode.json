@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/base64-encode@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-base64-encode-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-base64-encode-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57679be20a26854f642c1e1a82bfdd5509195eb331eda0f900b723260f059d48",

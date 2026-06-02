@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/new-agent-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-new-agent-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-new-agent-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:04b2b9d5ad0cf88454b8a39c5ecd4a012d07e509ea7596096214a2955a38b44e",

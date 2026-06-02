@@ -2,10 +2,10 @@ package types
 
 // Updated skill catalog artifact snapshot returned by the backend.
 type AdminSkillArtifactItem struct {
+	Artifact MediaResource `json:"artifact"`
 	ArtifactRef string `json:"artifactRef"`
 	ArtifactSizeBytes int `json:"artifactSizeBytes"`
 	ArtifactType int `json:"artifactType"`
-	ArtifactUrl string `json:"artifactUrl"`
 	ChecksumHash string `json:"checksumHash"`
 	CreatedAt string `json:"createdAt"`
 	DeprecatedAt string `json:"deprecatedAt"`

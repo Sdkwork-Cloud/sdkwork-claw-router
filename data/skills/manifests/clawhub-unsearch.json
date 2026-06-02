@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unsearch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-unsearch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unsearch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b02f448dda71f7a9664578940f033d7968d6811b9e16b26d7ea1e40464713b9",

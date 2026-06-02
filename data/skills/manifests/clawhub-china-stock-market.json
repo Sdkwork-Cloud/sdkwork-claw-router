@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/china-stock-market@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-china-stock-market-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-china-stock-market-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dafdc6d41e2b48e0747614bc1229ea33d25f2e82990bffd04ce3f8761628cc4e",

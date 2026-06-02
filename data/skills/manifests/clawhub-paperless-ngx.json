@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paperless-ngx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paperless-ngx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paperless-ngx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d57b72a6c4ff34df35cf16a41ffe33563032dc3979dd75c2feb4586266f00e19",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memu@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memu-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memu-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23e068854fd295a0e75b71584c515df12c212ec167aca7e7a85a161b8a2bf28f",

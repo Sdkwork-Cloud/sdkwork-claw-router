@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nist-compliance-assessment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nist-compliance-assessment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nist-compliance-assessment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:175f53758c08bc36989ea75c8dcf0ac0ec6cf2977719ac64c9a0cb40f5ea1344",

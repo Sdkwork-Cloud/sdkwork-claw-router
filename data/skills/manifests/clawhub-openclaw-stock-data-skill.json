@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-stock-data-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-stock-data-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-stock-data-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ddf843983a7855160602bfcb12436c89358af353fe5e05cc1f8d0bf96d18d79",

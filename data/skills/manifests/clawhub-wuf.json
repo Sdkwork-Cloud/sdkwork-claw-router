@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wuf@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-wuf-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wuf-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1a813dc44999ccfdcdb96636322d275024da865aad3ce83cb357a390c9709f3a",

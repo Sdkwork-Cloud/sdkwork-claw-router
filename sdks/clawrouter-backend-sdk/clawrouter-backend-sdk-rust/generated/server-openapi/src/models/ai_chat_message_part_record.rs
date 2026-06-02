@@ -35,6 +35,10 @@ pub struct AiChatMessagePartRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub legal_hold: Option<bool>,
 
+    /// Media resource id field on ai chat message part record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub media_resource_id: Option<String>,
+
     /// Message id field on ai chat message part record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub message_id: Option<String>,
@@ -46,6 +50,10 @@ pub struct AiChatMessagePartRecord {
     /// Mime type field on ai chat message part record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<String>,
+
+    /// Object blob id field on ai chat message part record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub object_blob_id: Option<String>,
 
     /// Organization id field on ai chat message part record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -71,6 +79,10 @@ pub struct AiChatMessagePartRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub request_id: Option<String>,
 
+    /// Resource snapshot field on ai chat message part record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub resource_snapshot: Option<std::collections::HashMap<String, String>>,
+
     /// Retention until field on ai chat message part record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub retention_until: Option<String>,
@@ -82,10 +94,6 @@ pub struct AiChatMessagePartRecord {
     /// Status field on ai chat message part record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
-
-    /// Storage url field on ai chat message part record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub storage_url: Option<String>,
 
     /// Tenant id field on ai chat message part record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

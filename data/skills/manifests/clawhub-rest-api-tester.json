@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rest-api-tester@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rest-api-tester-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rest-api-tester-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c696e7b004b1ceda8078f8bfef94f0263b83ac8e6d2d26acc1c77786546540fd",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/symptom-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-symptom-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-symptom-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:053f83f944d26eaf7e8c4df4840000d382188edfb0ab238c18be2dcc8131624b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitbuddy@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitbuddy-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitbuddy-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67ef7e599884e253fd2aab9a1226c1ca97f313d08273664913edca58e2599a73",

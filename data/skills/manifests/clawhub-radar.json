@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/radar@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-radar-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-radar-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e305811353fdab58340990ae34fc1119523b27985f38923385d83eb534ba85aa",

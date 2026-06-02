@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cn-news-brief@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-cn-news-brief-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cn-news-brief-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7be4b4abfe76b251523de29aa316829e8c97b8862448782fe51cd4b689cfce75",

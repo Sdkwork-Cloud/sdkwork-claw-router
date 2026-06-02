@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/humio@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-humio-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-humio-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:37c49d7dfb16edf0c841fce5192760c89ae19878ef1bd46bce9d31f3890c5544",

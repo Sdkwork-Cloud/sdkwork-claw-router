@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/addsearch@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-addsearch-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-addsearch-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:712275d45bbecf950aeaa95054324a7d0a82e6b113931b7f50544469b342dda3",

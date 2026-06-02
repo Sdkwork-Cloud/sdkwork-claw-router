@@ -5,8 +5,8 @@ import java.util.Map;
 public class StudioCatalogAssetRecord {
     private String altText;
     private String artifactId;
+    private MediaResource asset;
     private String assetType;
-    private String assetUrl;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
@@ -24,7 +24,7 @@ public class StudioCatalogAssetRecord {
     private String targetId;
     private String targetType;
     private String tenantId;
-    private String thumbnailUrl;
+    private MediaResource thumbnail;
     private String title;
     private String updatedAt;
     private String uuid;
@@ -47,20 +47,20 @@ public class StudioCatalogAssetRecord {
         this.artifactId = artifactId;
     }
 
+    public MediaResource getAsset() {
+        return this.asset;
+    }
+
+    public void setAsset(MediaResource asset) {
+        this.asset = asset;
+    }
+
     public String getAssetType() {
         return this.assetType;
     }
 
     public void setAssetType(String assetType) {
         this.assetType = assetType;
-    }
-
-    public String getAssetUrl() {
-        return this.assetUrl;
-    }
-
-    public void setAssetUrl(String assetUrl) {
-        this.assetUrl = assetUrl;
     }
 
     public String getCreatedAt() {
@@ -199,12 +199,12 @@ public class StudioCatalogAssetRecord {
         this.tenantId = tenantId;
     }
 
-    public String getThumbnailUrl() {
-        return this.thumbnailUrl;
+    public MediaResource getThumbnail() {
+        return this.thumbnail;
     }
 
-    public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+    public void setThumbnail(MediaResource thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     public String getTitle() {

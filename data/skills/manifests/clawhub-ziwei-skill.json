@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ziwei-skill@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ziwei-skill-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ziwei-skill-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b38c74d96289c9913df8f30c49428bd85088bcbcfbae9c5d655b709f282d611b",

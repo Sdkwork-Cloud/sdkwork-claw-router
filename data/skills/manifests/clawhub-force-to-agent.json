@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/force-to-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-force-to-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-force-to-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1bc1586d98318078fcb9ae9f14f4eaa9004357014286bc11407e93267866be7f",

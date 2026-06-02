@@ -34,10 +34,8 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 | [GOVERNANCE_SPEC.md](../../../../../../../specs/GOVERNANCE_SPEC.md) | Standard ownership, exception, compatibility, and migration rules. |
 | [I18N_SPEC.md](../../../../../../../specs/I18N_SPEC.md) | User-facing language, locale, message catalog, and fallback rules. |
 | [MODULE_SPEC.md](../../../../../../../specs/MODULE_SPEC.md) | Reusable package contract and dependency direction. |
-| [PRIVACY_SPEC.md](../../../../../../../specs/PRIVACY_SPEC.md) | Personal, tenant, sensitive, and regulated data rules. |
 | [README.md](../../../../../../../specs/README.md) | SDKWork root standards entrypoint. |
 | [SDK_SPEC.md](../../../../../../../specs/SDK_SPEC.md) | SDK generation and SDK integration rules. |
-| [SECURITY_SPEC.md](../../../../../../../specs/SECURITY_SPEC.md) | Secure auth, token, secrets, CORS, validation, and logging rules. |
 | [TEST_SPEC.md](../../../../../../../specs/TEST_SPEC.md) | Contract, frontend, SDK, security, parity, and documentation verification rules. |
 
 ## Public Exports

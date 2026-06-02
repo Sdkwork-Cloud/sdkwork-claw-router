@@ -9,11 +9,13 @@ type PromotionOfferRecord struct {
 	CurrentOfferVersionId string `json:"current_offer_version_id"`
 	Description string `json:"description"`
 	EndsAt string `json:"ends_at"`
+	Id string `json:"id"`
 	Name string `json:"name"`
 	OfferCode string `json:"offer_code"`
 	OfferNo string `json:"offer_no"`
 	OfferType string `json:"offer_type"`
 	OrganizationId string `json:"organization_id"`
+	Priority int `json:"priority"`
 	StartsAt string `json:"starts_at"`
 	Status string `json:"status"`
 	TenantId string `json:"tenant_id"`

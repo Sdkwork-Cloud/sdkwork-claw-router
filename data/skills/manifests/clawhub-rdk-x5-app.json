@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rdk-x5-app@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rdk-x5-app-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rdk-x5-app-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ee135ed462cf84325d58de170509523ed9a9f5550bb15fc65ec82248bb6e462",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/useresume@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-useresume-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-useresume-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b1e7f5d8c47cfc533bb50e99560093b1d02c48491eba774b95e810f782a37be9",

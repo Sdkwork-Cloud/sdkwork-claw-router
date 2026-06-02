@@ -19,6 +19,7 @@ class CommerceRefundAttemptRecord:
     failed_at: Optional[str] = None
     failure_code: Optional[str] = None
     failure_message: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     provider_account_id: Optional[str] = None
     provider_refund_id: Optional[str] = None

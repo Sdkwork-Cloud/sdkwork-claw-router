@@ -458,7 +458,12 @@ fn skill_item() -> AppSkillItem {
         developer: "SDKWork".to_owned(),
         description: "Route requests intelligently".to_owned(),
         category: "Routing".to_owned(),
-        image: "https://cdn.example.test/skill-cover.png".to_owned(),
+        image: serde_json::json!({
+            "kind": "image",
+            "source": "external_url",
+            "url": "https://cdn.example.test/skill-cover.png",
+            "publicUrl": "https://cdn.example.test/skill-cover.png"
+        }),
         rating: 4.9,
         downloads: "8.4K".to_owned(),
         features: vec!["Policy routing".to_owned()],
@@ -468,7 +473,12 @@ fn skill_item() -> AppSkillItem {
         size: "42 MB".to_owned(),
         license: "MIT".to_owned(),
         frameworks: vec!["Rust".to_owned()],
-        screenshots: vec!["https://cdn.example.test/skill-screen.png".to_owned()],
+        screenshots: vec![serde_json::json!({
+            "kind": "image",
+            "source": "external_url",
+            "url": "https://cdn.example.test/skill-screen.png",
+            "publicUrl": "https://cdn.example.test/skill-screen.png"
+        })],
         packages: vec![AppSkillPackageItem {
             id: "pkg-routing-1".to_owned(),
             version: "1.0.0".to_owned(),

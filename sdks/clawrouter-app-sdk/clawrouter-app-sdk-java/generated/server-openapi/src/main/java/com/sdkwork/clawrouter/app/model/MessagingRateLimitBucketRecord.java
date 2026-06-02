@@ -3,19 +3,37 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.Map;
 
 public class MessagingRateLimitBucketRecord {
+    private String channel;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
     private String deletedBy;
+    private String deviceHash;
     private String id;
+    private String ipHash;
     private String lastEventAt;
     private Map<String, String> metadata;
     private String organizationId;
+    private Integer rejectCount;
+    private String sceneCode;
+    private Integer sendCount;
     private String status;
+    private String targetHash;
     private String tenantId;
     private String updatedAt;
     private String uuid;
+    private Integer verifyCount;
     private String version;
+    private Integer windowSeconds;
+    private String windowStart;
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -49,12 +67,28 @@ public class MessagingRateLimitBucketRecord {
         this.deletedBy = deletedBy;
     }
 
+    public String getDeviceHash() {
+        return this.deviceHash;
+    }
+
+    public void setDeviceHash(String deviceHash) {
+        this.deviceHash = deviceHash;
+    }
+
     public String getId() {
         return this.id;
     }
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getIpHash() {
+        return this.ipHash;
+    }
+
+    public void setIpHash(String ipHash) {
+        this.ipHash = ipHash;
     }
 
     public String getLastEventAt() {
@@ -81,12 +115,44 @@ public class MessagingRateLimitBucketRecord {
         this.organizationId = organizationId;
     }
 
+    public Integer getRejectCount() {
+        return this.rejectCount;
+    }
+
+    public void setRejectCount(Integer rejectCount) {
+        this.rejectCount = rejectCount;
+    }
+
+    public String getSceneCode() {
+        return this.sceneCode;
+    }
+
+    public void setSceneCode(String sceneCode) {
+        this.sceneCode = sceneCode;
+    }
+
+    public Integer getSendCount() {
+        return this.sendCount;
+    }
+
+    public void setSendCount(Integer sendCount) {
+        this.sendCount = sendCount;
+    }
+
     public String getStatus() {
         return this.status;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getTargetHash() {
+        return this.targetHash;
+    }
+
+    public void setTargetHash(String targetHash) {
+        this.targetHash = targetHash;
     }
 
     public String getTenantId() {
@@ -113,11 +179,35 @@ public class MessagingRateLimitBucketRecord {
         this.uuid = uuid;
     }
 
+    public Integer getVerifyCount() {
+        return this.verifyCount;
+    }
+
+    public void setVerifyCount(Integer verifyCount) {
+        this.verifyCount = verifyCount;
+    }
+
     public String getVersion() {
         return this.version;
     }
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Integer getWindowSeconds() {
+        return this.windowSeconds;
+    }
+
+    public void setWindowSeconds(Integer windowSeconds) {
+        this.windowSeconds = windowSeconds;
+    }
+
+    public String getWindowStart() {
+        return this.windowStart;
+    }
+
+    public void setWindowStart(String windowStart) {
+        this.windowStart = windowStart;
     }
 }

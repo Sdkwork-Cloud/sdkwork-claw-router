@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-companion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-companion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-companion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0837b9ec89c776ef7dc38ee7a8fa1640bc384b315abdac5809f5d1ca783b4703",

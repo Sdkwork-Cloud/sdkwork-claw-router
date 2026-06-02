@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/plant-identifier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-plant-identifier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-plant-identifier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:43eccfc5778c5d4076c0980d5387ba65c7651f5c32ed65ccaf91f5c3d0ebe7cc",

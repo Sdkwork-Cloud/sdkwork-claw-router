@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-painter@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-painter-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-painter-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b904f2617773da30a6cb90d92c0a4599b6ba63d88b3a526c9f2ae7b33e7faf0c",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-claude-code-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-claude-code-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-claude-code-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1594b04bd26743bb8ba856e97417deccafc657e6088a3a16ba1502206633f2a1",

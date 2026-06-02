@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tushare-stock-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-tushare-stock-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tushare-stock-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:ee77a0121a536104d159bed327febd0d29811d24c359ad7cfd2fadf2f9a23905",

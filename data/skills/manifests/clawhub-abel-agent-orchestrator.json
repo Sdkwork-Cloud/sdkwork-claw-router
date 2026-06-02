@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abel-agent-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abel-agent-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abel-agent-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fa9e22f5caab9de3297163f046c6b43039d90390fe44d51a5cff2d7c30371a11",

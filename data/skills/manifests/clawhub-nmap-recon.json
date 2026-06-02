@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nmap-recon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nmap-recon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nmap-recon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c46125e05fc2c69042127dc89ab67dd21b8d908c7d1026a79655f3a429441e88",

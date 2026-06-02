@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-docker-linux@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-docker-linux-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-docker-linux-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:19ebe350d52132b2fc00384bfc6c24e9eecba1558aad4ceb115e25ba4ccaefe4",

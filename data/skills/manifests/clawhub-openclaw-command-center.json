@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-command-center@1.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-command-center-1.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-command-center-1.4.1.json"
+      },
       "version": "1.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e31e7d7713e7b18f4f52d2b300f3078caf5a229584629b88d32249b512f68a6b",

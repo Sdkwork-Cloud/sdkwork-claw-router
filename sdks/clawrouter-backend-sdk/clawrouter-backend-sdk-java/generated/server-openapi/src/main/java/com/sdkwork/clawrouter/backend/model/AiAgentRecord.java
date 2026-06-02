@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class AiAgentRecord {
     private String agentCode;
-    private String avatarUrl;
+    private MediaResource avatar;
     private String createdAt;
     private String dataScope;
     private String defaultVersionId;
@@ -35,12 +35,12 @@ public class AiAgentRecord {
         this.agentCode = agentCode;
     }
 
-    public String getAvatarUrl() {
-        return this.avatarUrl;
+    public MediaResource getAvatar() {
+        return this.avatar;
     }
 
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
+    public void setAvatar(MediaResource avatar) {
+        this.avatar = avatar;
     }
 
     public String getCreatedAt() {

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sds-msds-risk-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sds-msds-risk-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sds-msds-risk-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0de74c6aa41052859a93d6efa37b01f9db1bdef0dd75b280187a387cf40c7feb",

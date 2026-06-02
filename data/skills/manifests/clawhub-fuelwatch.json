@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fuelwatch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fuelwatch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fuelwatch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a22cfb767f36dd486d12530447e91ca73765d22f17f03b9a88b74e3229dc5eec",

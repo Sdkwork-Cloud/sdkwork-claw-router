@@ -36,7 +36,6 @@ const MAX_CODE_LEN: usize = 128;
 const MAX_SUMMARY_LEN: usize = 512;
 const MAX_DESCRIPTION_LEN: usize = 4000;
 const MAX_URL_LEN: usize = 500;
-const MAX_ICON_LEN: usize = 255;
 const MAX_VERSION_LEN: usize = 64;
 const MAX_RUNTIME_LEN: usize = 64;
 const MAX_ENTRYPOINT_LEN: usize = 255;
@@ -65,7 +64,7 @@ struct CreateCategoryRequest {
     name: Option<String>,
     description: Option<String>,
     code: Option<String>,
-    icon: Option<String>,
+    icon: Option<Value>,
     sort_weight: Option<i32>,
     parent_id: Option<Value>,
     path: Option<String>,
@@ -122,8 +121,8 @@ struct CreatePackageRequest {
     name: Option<String>,
     summary: Option<String>,
     description: Option<String>,
-    icon: Option<String>,
-    cover_image: Option<String>,
+    icon: Option<Value>,
+    cover: Option<Value>,
     category_id: Option<Value>,
     enabled: Option<bool>,
     featured: Option<bool>,
@@ -142,7 +141,7 @@ struct UpdatePackageRequest {
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
     icon: Option<Value>,
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
-    cover_image: Option<Value>,
+    cover: Option<Value>,
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
     category_id: Option<Value>,
     enabled: Option<bool>,
@@ -183,8 +182,8 @@ struct CreateSkillRequest {
     name: Option<String>,
     summary: Option<String>,
     description: Option<String>,
-    icon: Option<String>,
-    cover_image: Option<String>,
+    icon: Option<Value>,
+    cover: Option<Value>,
     category_id: Option<Value>,
     package_id: Option<Value>,
     provider: Option<String>,
@@ -225,7 +224,7 @@ struct UpdateSkillRequest {
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
     icon: Option<Value>,
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
-    cover_image: Option<Value>,
+    cover: Option<Value>,
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
     category_id: Option<Value>,
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
@@ -275,8 +274,8 @@ struct ReviewSkillRequest {
 struct CreateSkillAssetRequest {
     artifact_id: Option<Value>,
     asset_type: Option<i32>,
-    asset_url: Option<String>,
-    thumbnail_url: Option<String>,
+    asset: Option<Value>,
+    thumbnail: Option<Value>,
     title: Option<String>,
     alt_text: Option<String>,
     mime_type: Option<String>,
@@ -295,9 +294,10 @@ struct UpdateSkillAssetRequest {
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
     artifact_id: Option<Value>,
     asset_type: Option<i32>,
-    asset_url: Option<String>,
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
-    thumbnail_url: Option<Value>,
+    asset: Option<Value>,
+    #[serde(default, deserialize_with = "deserialize_optional_json_value")]
+    thumbnail: Option<Value>,
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
     title: Option<Value>,
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
@@ -326,7 +326,7 @@ struct CreateSkillArtifactRequest {
     platform_type: Option<String>,
     os_name: Option<String>,
     artifact_ref: Option<String>,
-    artifact_url: Option<String>,
+    artifact: Option<Value>,
     artifact_size_bytes: Option<i64>,
     runtime: Option<String>,
     frameworks: Option<Vec<String>>,
@@ -348,7 +348,7 @@ struct UpdateSkillArtifactRequest {
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
     artifact_ref: Option<Value>,
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
-    artifact_url: Option<Value>,
+    artifact: Option<Value>,
     artifact_size_bytes: Option<i64>,
     #[serde(default, deserialize_with = "deserialize_optional_json_value")]
     runtime: Option<Value>,
@@ -394,7 +394,7 @@ struct AdminSkillCategoryItemResponse {
     #[serde(skip_serializing_if = "Option::is_none")]
     code: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    icon: Option<String>,
+    icon: Option<Value>,
     sort_weight: i32,
     #[serde(skip_serializing_if = "Option::is_none")]
     parent_id: Option<String>,
@@ -417,9 +417,9 @@ struct AdminSkillPackageItemResponse {
     #[serde(skip_serializing_if = "Option::is_none")]
     description: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    icon: Option<String>,
+    icon: Option<Value>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    cover_image: Option<String>,
+    cover: Option<Value>,
     #[serde(skip_serializing_if = "Option::is_none")]
     category_id: Option<String>,
     enabled: bool,
@@ -443,9 +443,9 @@ struct AdminSkillItemResponse {
     #[serde(skip_serializing_if = "Option::is_none")]
     description: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    icon: Option<String>,
+    icon: Option<Value>,
     #[serde(skip_serializing_if = "Option::is_none")]
-    cover_image: Option<String>,
+    cover: Option<Value>,
     #[serde(skip_serializing_if = "Option::is_none")]
     category_id: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -510,8 +510,8 @@ struct AdminSkillAssetItemResponse {
     target_id: String,
     artifact_id: Option<String>,
     asset_type: i32,
-    asset_url: String,
-    thumbnail_url: Option<String>,
+    asset: Value,
+    thumbnail: Option<Value>,
     title: Option<String>,
     alt_text: Option<String>,
     mime_type: Option<String>,
@@ -538,7 +538,7 @@ struct AdminSkillArtifactItemResponse {
     platform_type: String,
     os_name: String,
     artifact_ref: Option<String>,
-    artifact_url: Option<String>,
+    artifact: Option<Value>,
     artifact_size_bytes: i64,
     runtime: Option<String>,
     frameworks: Vec<String>,
@@ -1911,7 +1911,7 @@ fn build_create_category_command(
             MAX_SUMMARY_LEN,
         )?,
         code,
-        icon: optional_url_or_path(request.icon.as_deref(), "category icon", MAX_ICON_LEN)?,
+        icon: optional_media_resource(request.icon, "icon")?,
         sort_weight: request.sort_weight.unwrap_or(0),
         parent_id,
         path,
@@ -1983,7 +1983,7 @@ fn build_update_category_command(
             MAX_SUMMARY_LEN,
         )?,
         code,
-        icon: normalize_nullable_url_or_path(request.icon.as_ref(), "category icon", MAX_ICON_LEN)?,
+        icon: normalize_nullable_media_resource(request.icon, "icon")?,
         sort_weight: request.sort_weight,
         parent_id,
         path,
@@ -2142,12 +2142,8 @@ fn build_create_package_command(
             "skill package description",
             MAX_DESCRIPTION_LEN,
         )?,
-        icon: optional_url_or_path(request.icon.as_deref(), "skill package icon", MAX_ICON_LEN)?,
-        cover_image: optional_url_or_path(
-            request.cover_image.as_deref(),
-            "skill package coverImage",
-            MAX_ICON_LEN,
-        )?,
+        icon: optional_media_resource(request.icon, "icon")?,
+        cover: optional_media_resource(request.cover, "cover")?,
         category_id: normalize_optional_id_value(request.category_id.as_ref(), "categoryId")?,
         enabled: request.enabled.unwrap_or(true),
         featured: request.featured.unwrap_or(false),
@@ -2189,16 +2185,8 @@ fn build_update_package_command(
             "skill package description",
             MAX_DESCRIPTION_LEN,
         )?,
-        icon: normalize_nullable_url_or_path(
-            request.icon.as_ref(),
-            "skill package icon",
-            MAX_ICON_LEN,
-        )?,
-        cover_image: normalize_nullable_url_or_path(
-            request.cover_image.as_ref(),
-            "skill package coverImage",
-            MAX_ICON_LEN,
-        )?,
+        icon: normalize_nullable_media_resource(request.icon, "icon")?,
+        cover: normalize_nullable_media_resource(request.cover, "cover")?,
         category_id: normalize_nullable_id_value(request.category_id.as_ref(), "categoryId")?,
         enabled: request.enabled,
         featured: request.featured,
@@ -2216,7 +2204,7 @@ fn build_update_package_command(
         && command.summary.is_none()
         && command.description.is_none()
         && command.icon.is_none()
-        && command.cover_image.is_none()
+        && command.cover.is_none()
         && command.category_id.is_none()
         && command.enabled.is_none()
         && command.featured.is_none()
@@ -2282,12 +2270,8 @@ fn build_create_skill_command(
             "skill description",
             MAX_DESCRIPTION_LEN,
         )?,
-        icon: optional_url_or_path(request.icon.as_deref(), "skill icon", MAX_ICON_LEN)?,
-        cover_image: optional_url_or_path(
-            request.cover_image.as_deref(),
-            "skill coverImage",
-            MAX_ICON_LEN,
-        )?,
+        icon: optional_media_resource(request.icon, "icon")?,
+        cover: optional_media_resource(request.cover, "cover")?,
         category_id: normalize_optional_id_value(request.category_id.as_ref(), "categoryId")?,
         package_id: normalize_optional_id_value(request.package_id.as_ref(), "packageId")?,
         provider: optional_text(
@@ -2403,12 +2387,8 @@ fn build_update_skill_command(
             "skill description",
             MAX_DESCRIPTION_LEN,
         )?,
-        icon: normalize_nullable_url_or_path(request.icon.as_ref(), "skill icon", MAX_ICON_LEN)?,
-        cover_image: normalize_nullable_url_or_path(
-            request.cover_image.as_ref(),
-            "skill coverImage",
-            MAX_ICON_LEN,
-        )?,
+        icon: normalize_nullable_media_resource(request.icon, "icon")?,
+        cover: normalize_nullable_media_resource(request.cover, "cover")?,
         category_id: normalize_nullable_id_value(request.category_id.as_ref(), "categoryId")?,
         package_id: normalize_nullable_id_value(request.package_id.as_ref(), "packageId")?,
         provider: normalize_nullable_text(
@@ -2506,7 +2486,7 @@ fn build_update_skill_command(
         && command.summary.is_none()
         && command.description.is_none()
         && command.icon.is_none()
-        && command.cover_image.is_none()
+        && command.cover.is_none()
         && command.category_id.is_none()
         && command.package_id.is_none()
         && command.provider.is_none()
@@ -2630,8 +2610,8 @@ fn build_create_asset_command(
         artifact_id: normalize_optional_id_value(request.artifact_id.as_ref(), "artifactId")?,
         asset_type: normalize_optional_non_negative_i32(request.asset_type, "assetType")?
             .unwrap_or(1),
-        asset_url: required_resource_ref(request.asset_url.as_deref(), "assetUrl")?,
-        thumbnail_url: optional_resource_ref(request.thumbnail_url.as_deref(), "thumbnailUrl")?,
+        asset: required_media_resource(request.asset, "asset")?,
+        thumbnail: optional_media_resource(request.thumbnail, "thumbnail")?,
         title: optional_text(request.title.as_deref(), "asset title", MAX_NAME_LEN)?,
         alt_text: optional_text(
             request.alt_text.as_deref(),
@@ -2679,15 +2659,11 @@ fn build_update_asset_command(
         audit_log_uuid: generate_entity_uuid(&state)?,
         artifact_id: normalize_nullable_id_value(request.artifact_id.as_ref(), "artifactId")?,
         asset_type: normalize_optional_non_negative_i32(request.asset_type, "assetType")?,
-        asset_url: request
-            .asset_url
-            .as_deref()
-            .map(|value| required_resource_ref(Some(value), "assetUrl"))
+        asset: request
+            .asset
+            .map(|value| required_media_resource(Some(value), "asset"))
             .transpose()?,
-        thumbnail_url: normalize_nullable_resource_ref(
-            request.thumbnail_url.as_ref(),
-            "thumbnailUrl",
-        )?,
+        thumbnail: normalize_nullable_media_resource(request.thumbnail, "thumbnail")?,
         title: normalize_nullable_text(request.title.as_ref(), "asset title", MAX_NAME_LEN)?,
         alt_text: normalize_nullable_text(
             request.alt_text.as_ref(),
@@ -2719,8 +2695,8 @@ fn build_update_asset_command(
     };
     if command.artifact_id.is_none()
         && command.asset_type.is_none()
-        && command.asset_url.is_none()
-        && command.thumbnail_url.is_none()
+        && command.asset.is_none()
+        && command.thumbnail.is_none()
         && command.title.is_none()
         && command.alt_text.is_none()
         && command.mime_type.is_none()
@@ -2764,10 +2740,10 @@ fn build_create_artifact_command(
     request: CreateSkillArtifactRequest,
 ) -> Result<CreateAdminSkillArtifactCommand, AdminSkillCommandBuildError> {
     let artifact_ref = optional_resource_ref(request.artifact_ref.as_deref(), "artifactRef")?;
-    let artifact_url = optional_resource_ref(request.artifact_url.as_deref(), "artifactUrl")?;
-    if artifact_ref.is_none() && artifact_url.is_none() {
+    let artifact = optional_media_resource(request.artifact, "artifact")?;
+    if artifact_ref.is_none() && artifact.is_none() {
         return Err(AdminSkillCommandBuildError::BadRequest(
-            "artifactRef or artifactUrl is required".to_owned(),
+            "artifactRef or artifact is required".to_owned(),
         ));
     }
     Ok(CreateAdminSkillArtifactCommand {
@@ -2793,7 +2769,7 @@ fn build_create_artifact_command(
             MAX_KEY_LEN,
         )?,
         artifact_ref,
-        artifact_url,
+        artifact,
         artifact_size_bytes: normalize_optional_non_negative_i64(
             request.artifact_size_bytes,
             "artifactSizeBytes",
@@ -2865,10 +2841,7 @@ fn build_update_artifact_command(
             request.artifact_ref.as_ref(),
             "artifactRef",
         )?,
-        artifact_url: normalize_nullable_resource_ref(
-            request.artifact_url.as_ref(),
-            "artifactUrl",
-        )?,
+        artifact: normalize_nullable_media_resource(request.artifact, "artifact")?,
         artifact_size_bytes: normalize_optional_non_negative_i64(
             request.artifact_size_bytes,
             "artifactSizeBytes",
@@ -2912,7 +2885,7 @@ fn build_update_artifact_command(
         && command.platform_type.is_none()
         && command.os_name.is_none()
         && command.artifact_ref.is_none()
-        && command.artifact_url.is_none()
+        && command.artifact.is_none()
         && command.artifact_size_bytes.is_none()
         && command.runtime.is_none()
         && command.frameworks.is_none()
@@ -3088,15 +3061,6 @@ fn validate_url_or_path(value: &str, field_name: &str) -> Result<(), AdminSkillC
     )))
 }
 
-fn required_resource_ref(
-    value: Option<&str>,
-    field_name: &str,
-) -> Result<String, AdminSkillCommandBuildError> {
-    let value = required_text(value, field_name, MAX_RESOURCE_REF_LEN)?;
-    validate_resource_ref(&value, field_name)?;
-    Ok(value)
-}
-
 fn optional_resource_ref(
     value: Option<&str>,
     field_name: &str,
@@ -3117,6 +3081,105 @@ fn normalize_nullable_resource_ref(
         validate_resource_ref(value, field_name)?;
     }
     Ok(value)
+}
+
+fn required_media_resource(
+    value: Option<Value>,
+    field_name: &str,
+) -> Result<Value, AdminSkillCommandBuildError> {
+    let value = value.ok_or_else(|| {
+        AdminSkillCommandBuildError::BadRequest(format!("{field_name} is required"))
+    })?;
+    let value = normalize_media_resource(value, field_name)?;
+    value
+        .ok_or_else(|| AdminSkillCommandBuildError::BadRequest(format!("{field_name} is required")))
+}
+
+fn optional_media_resource(
+    value: Option<Value>,
+    field_name: &str,
+) -> Result<Option<Value>, AdminSkillCommandBuildError> {
+    normalize_media_resource_opt(value, field_name)
+}
+
+fn normalize_nullable_media_resource(
+    value: Option<Value>,
+    field_name: &str,
+) -> Result<Option<Option<Value>>, AdminSkillCommandBuildError> {
+    let Some(value) = value else {
+        return Ok(None);
+    };
+    if value.is_null() {
+        return Ok(Some(None));
+    }
+    normalize_media_resource(value, field_name).map(|value| Some(value))
+}
+
+fn normalize_media_resource_opt(
+    value: Option<Value>,
+    field_name: &str,
+) -> Result<Option<Value>, AdminSkillCommandBuildError> {
+    let Some(value) = value else {
+        return Ok(None);
+    };
+    normalize_media_resource(value, field_name)
+}
+
+fn normalize_media_resource(
+    value: Value,
+    field_name: &str,
+) -> Result<Option<Value>, AdminSkillCommandBuildError> {
+    if value.is_null() {
+        return Ok(None);
+    }
+    let mut object = value.as_object().cloned().ok_or_else(|| {
+        AdminSkillCommandBuildError::BadRequest(format!(
+            "{field_name} must be a MediaResource object"
+        ))
+    })?;
+    let kind = media_resource_required_text(field_name, &object, "kind", MAX_ARRAY_ITEM_LEN)?;
+    let source = media_resource_required_text(field_name, &object, "source", MAX_ARRAY_ITEM_LEN)?;
+    object.insert("kind".to_owned(), Value::String(kind));
+    object.insert("source".to_owned(), Value::String(source));
+
+    let mut has_locator = false;
+    for key in ["id", "publicUrl", "url", "uri", "objectKey", "objectBlobId"] {
+        if let Some(value) = object.get_mut(key) {
+            let Some(text) = value.as_str() else {
+                return Err(AdminSkillCommandBuildError::BadRequest(format!(
+                    "{field_name}.{key} must be a string"
+                )));
+            };
+            let normalized = optional_text(
+                Some(text),
+                &format!("{field_name}.{key}"),
+                MAX_RESOURCE_REF_LEN,
+            )?;
+            if let Some(normalized) = normalized {
+                has_locator = true;
+                *value = Value::String(normalized);
+            } else {
+                *value = Value::String(String::new());
+            }
+        }
+    }
+    if !has_locator {
+        return Err(AdminSkillCommandBuildError::BadRequest(format!(
+            "{field_name} must include a media resource locator"
+        )));
+    }
+
+    Ok(Some(Value::Object(object)))
+}
+
+fn media_resource_required_text(
+    field_name: &str,
+    object: &serde_json::Map<String, Value>,
+    key: &str,
+    max_len: usize,
+) -> Result<String, AdminSkillCommandBuildError> {
+    let value = object.get(key).and_then(Value::as_str);
+    required_text(value, &format!("{field_name}.{key}"), max_len)
 }
 
 fn validate_resource_ref(value: &str, field_name: &str) -> Result<(), AdminSkillCommandBuildError> {
@@ -3539,7 +3602,7 @@ fn to_package_response(item: AdminSkillPackageItem) -> AdminSkillPackageItemResp
         summary: item.summary,
         description: item.description,
         icon: item.icon,
-        cover_image: item.cover_image,
+        cover: item.cover,
         category_id: item.category_id.map(|value| value.to_string()),
         enabled: item.enabled,
         featured: item.featured,
@@ -3559,7 +3622,7 @@ fn to_skill_response(item: AdminSkillItem) -> AdminSkillItemResponse {
         summary: item.summary,
         description: item.description,
         icon: item.icon,
-        cover_image: item.cover_image,
+        cover: item.cover,
         category_id: item.category_id.map(|value| value.to_string()),
         package_id: item.package_id.map(|value| value.to_string()),
         provider: item.provider,
@@ -3607,8 +3670,8 @@ fn to_asset_response(item: AdminSkillAssetItem) -> AdminSkillAssetItemResponse {
         target_id: item.target_id.to_string(),
         artifact_id: item.artifact_id.map(|value| value.to_string()),
         asset_type: item.asset_type,
-        asset_url: item.asset_url,
-        thumbnail_url: item.thumbnail_url,
+        asset: item.asset,
+        thumbnail: item.thumbnail,
         title: item.title,
         alt_text: item.alt_text,
         mime_type: item.mime_type,
@@ -3635,7 +3698,7 @@ fn to_artifact_response(item: AdminSkillArtifactItem) -> AdminSkillArtifactItemR
         platform_type: item.platform_type,
         os_name: item.os_name,
         artifact_ref: item.artifact_ref,
-        artifact_url: item.artifact_url,
+        artifact: item.artifact,
         artifact_size_bytes: item.artifact_size_bytes,
         runtime: item.runtime,
         frameworks: item.frameworks,

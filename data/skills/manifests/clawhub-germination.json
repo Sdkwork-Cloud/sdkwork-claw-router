@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/germination@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-germination-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-germination-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77f221153fb3de00b8cf5bed18f60919f7db6e35600112d3b5e3031a4a120c44",

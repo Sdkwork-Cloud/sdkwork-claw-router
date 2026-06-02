@@ -120,8 +120,8 @@ System.out.println(result);
 ### ai
 
 ```java
-// List traces
-GatewayTracesListResult result = client.getAi().gatewayTracesList();
+// List groups
+ChannelGroupsListResult result = client.getAi().channelGroupsList();
 System.out.println(result);
 ```
 
@@ -163,8 +163,8 @@ System.out.println(result);
 ### iam
 
 ```java
-// List groups
-ApiKeyGroupsListResult result = client.getIam().apiKeyGroupsList();
+// List keys
+ApiKeysListResult result = client.getIam().apiKeysList();
 System.out.println(result);
 ```
 

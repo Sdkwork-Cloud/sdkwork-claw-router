@@ -14,8 +14,8 @@ class CommerceProductSpuRecord:
     title: str
     updated_at: str
     brand: Optional[str] = None
-    category_id: Optional[str] = None
     description: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     published_at: Optional[str] = None
     subtitle: Optional[str] = None

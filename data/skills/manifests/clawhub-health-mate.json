@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-mate@1.5.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-mate-1.5.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-mate-1.5.4.json"
+      },
       "version": "1.5.4",
       "runtime": "metadata",
       "checksumHash": "sha256:7b8b023df1cfd4ce28546cef29515fa71372a8051fc68942a9223a5c05c85084",

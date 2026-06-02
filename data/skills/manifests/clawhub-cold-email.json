@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cold-email@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-cold-email-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cold-email-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:fb6db7f46e0572cd009f6600c9927abf940d5959501cadaf65a7999bc37fb90c",

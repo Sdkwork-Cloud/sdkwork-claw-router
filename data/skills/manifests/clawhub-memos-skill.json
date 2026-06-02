@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memos-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memos-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memos-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b161be2a6cd88490fcffa4cf6adfceba0986f8cee7cb80a194b4fc3a0485b31",

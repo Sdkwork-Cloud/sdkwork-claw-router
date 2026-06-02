@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/go-vuln-auth-bypass@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-go-vuln-auth-bypass-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-go-vuln-auth-bypass-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee025a7f74c2edd276456d0f442b4427c21650ab6905ca90686a4f680d964138",

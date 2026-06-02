@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/metasploit-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-metasploit-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-metasploit-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fa222b44ae74bfd706e590ac8dfe29acb2aa43e188ebf02c5d61d4dffa3a5746",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spotify-download@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spotify-download-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spotify-download-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1efa170819b6a8116616867293e0ae2c5b317a449cd5fbce6bf61b2d3463b2b4",

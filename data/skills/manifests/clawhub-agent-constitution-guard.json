@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-constitution-guard@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-constitution-guard-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-constitution-guard-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a36b7a1c98a0299efc3a0e8b5412cfe1e435533248bf2ea9aa8aea14b2f2bb64",

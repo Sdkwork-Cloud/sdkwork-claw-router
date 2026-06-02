@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pwc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pwc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pwc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3ee2d479d828fb00c6b5de18e11a35223e062b8a249039df744d39ea8ca1353",

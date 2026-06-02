@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cockroachdb@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cockroachdb-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cockroachdb-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2d43fa6669db44b10136a7ecb886b9f4a76d7e6c5442f66c948ad54c0f0a4d7c",

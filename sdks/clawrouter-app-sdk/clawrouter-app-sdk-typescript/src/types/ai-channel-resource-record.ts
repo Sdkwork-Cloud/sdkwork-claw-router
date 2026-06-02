@@ -18,12 +18,16 @@ export interface AiChannelResourceRecord {
   effective_from?: string;
   /** Effective to field on ai channel resource record. */
   effective_to?: string;
+  /** Grant type field on ai channel resource record. */
+  grant_type: string;
   /** Id field on ai channel resource record. */
   id?: string;
   /** Metadata field on ai channel resource record. */
   metadata?: Record<string, JsonValue>;
   /** Organization id field on ai channel resource record. */
   organization_id: string;
+  /** Priority field on ai channel resource record. */
+  priority?: number;
   /** Provider code field on ai channel resource record. */
   provider_code?: string;
   /** Resource code field on ai channel resource record. */
@@ -44,4 +48,6 @@ export interface AiChannelResourceRecord {
   uuid: string;
   /** Version field on ai channel resource record. */
   version?: string;
+  /** Weight field on ai channel resource record. */
+  weight?: number;
 }

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/neodomain-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-neodomain-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-neodomain-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0810807a7e0f61357242651488167012bd5f6ad4eb90bfe214935c49cd978918",

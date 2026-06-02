@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nomad@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nomad-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nomad-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f3944ed809b907a1c9fbb1f9c6f4632c4296afc174442f24770f1578341b2ac",

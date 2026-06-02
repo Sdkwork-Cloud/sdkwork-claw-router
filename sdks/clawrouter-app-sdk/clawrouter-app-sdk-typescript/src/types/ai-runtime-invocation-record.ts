@@ -82,6 +82,8 @@ export interface AiRuntimeInvocationRecord {
   started_at?: string;
   /** Status field on ai runtime invocation record. */
   status?: string;
+  /** Streaming field on ai runtime invocation record. */
+  streaming?: boolean;
   /** Tenant id field on ai runtime invocation record. */
   tenant_id?: string;
   /** Tool call id field on ai runtime invocation record. */

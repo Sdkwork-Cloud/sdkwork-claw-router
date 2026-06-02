@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronRight, Pencil, Plus, Trash2 } from 'lucide-react';
+import { ArrowDown, ArrowUp, ChevronRight, Pencil, Plus, Trash2 } from 'lucide-react';
 import { MembershipAdminPageShell } from '../components/MembershipAdminPageShell';
+import { MembershipDialog } from '../components/MembershipDialog';
 import { MembershipDrawer } from '../components/MembershipDrawer';
 import { MembershipEmptyState } from '../components/MembershipEmptyState';
 import {
@@ -12,12 +13,19 @@ import {
 } from '../components/MembershipPageControls';
 import { MembershipStatusBadge } from '../components/MembershipStatusBadge';
 import { MembershipPackageDrawerForm } from '../forms/MembershipPackageDrawerForm';
+import { MembershipPackageGroupDrawerForm } from '../forms/MembershipPackageGroupDrawerForm';
 import {
   createMembershipAdminPackage,
+  createMembershipAdminPackageGroup,
   deleteMembershipAdminPackage,
+  deleteMembershipAdminPackageGroup,
   fetchMembershipAdminPackageCatalog,
+  moveMembershipAdminPackageGroup as moveMembershipPackageGroup,
   updateMembershipAdminPackage,
+  updateMembershipAdminPackageGroup,
+  type MembershipPackageGroupMoveDirection,
   type MembershipsAdminPackageGroup,
+  type MembershipsAdminPackageGroupMutationInput,
   type MembershipsAdminPackageItem,
   type MembershipsAdminPackageMutationInput,
   type MembershipsAdminPlanItem,
@@ -30,11 +38,14 @@ export function MembershipPackagesPage() {
   const [plans, setPlans] = useState<MembershipsAdminPlanItem[]>([]);
   const [selectedGroupId, setSelectedGroupId] = useState<string | null>(null);
   const [editingPackage, setEditingPackage] = useState<MembershipsAdminPackageItem | null>(null);
+  const [editingGroup, setEditingGroup] = useState<MembershipsAdminPackageGroup | null>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isGroupDialogOpen, setIsGroupDialogOpen] = useState(false);
+  const [movingGroupId, setMovingGroupId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const loadCatalog = useCallback(async () => {
+  const loadCatalog = useCallback(async (preferredGroupId?: string | null) => {
     setIsLoading(true);
     setError(null);
     try {
@@ -42,7 +53,13 @@ export function MembershipPackagesPage() {
       setGroups(catalog.groups);
       setPackages(catalog.packages);
       setPlans(catalog.plans);
-      setSelectedGroupId((current) => current ?? catalog.groups[0]?.id ?? null);
+      setSelectedGroupId((current) => {
+        const candidateGroupId = preferredGroupId === undefined ? current : preferredGroupId;
+        if (candidateGroupId && catalog.groups.some((group) => group.id === candidateGroupId)) {
+          return candidateGroupId;
+        }
+        return catalog.groups[0]?.id ?? null;
+      });
     } catch (loadError) {
       setError(loadError instanceof Error ? loadError.message : t('admin.commerce.memberships.packages.error', 'Membership packages could not be loaded'));
     } finally {
@@ -73,6 +90,16 @@ export function MembershipPackagesPage() {
     setIsDrawerOpen(true);
   };
 
+  const openCreateGroupDialog = () => {
+    setEditingGroup(null);
+    setIsGroupDialogOpen(true);
+  };
+
+  const openEditGroupDialog = (group: MembershipsAdminPackageGroup) => {
+    setEditingGroup(group);
+    setIsGroupDialogOpen(true);
+  };
+
   const handleSavePackage = async (input: MembershipsAdminPackageMutationInput) => {
     if (editingPackage) {
       await updateMembershipAdminPackage(editingPackage.id, input);
@@ -84,12 +111,52 @@ export function MembershipPackagesPage() {
     await loadCatalog();
   };
 
+  const handleSaveGroup = async (input: MembershipsAdminPackageGroupMutationInput) => {
+    const savedGroup = editingGroup
+      ? await updateMembershipAdminPackageGroup(editingGroup.id, input)
+      : await createMembershipAdminPackageGroup(input);
+    setIsGroupDialogOpen(false);
+    setEditingGroup(null);
+    await loadCatalog(savedGroup.id);
+  };
+
   const handleDeletePackage = async (item: MembershipsAdminPackageItem) => {
     if (!confirmMembershipAction(t('admin.commerce.memberships.packages.deleteConfirmNamed', 'Delete membership package {{name}}?', { name: item.name || item.packageNo }))) {
       return;
     }
     await deleteMembershipAdminPackage(item.id);
     await loadCatalog();
+  };
+
+  const handleDeleteGroup = async (group: MembershipsAdminPackageGroup) => {
+    if (!confirmMembershipAction(t('admin.commerce.memberships.groups.deleteConfirmNamed', 'Delete package group {{name}}?', { name: group.name }))) {
+      return;
+    }
+    await deleteMembershipAdminPackageGroup(group.id);
+    await loadCatalog(selectedGroupId === group.id ? null : selectedGroupId);
+  };
+
+  const handleMoveGroup = async (
+    group: MembershipsAdminPackageGroup,
+    direction: MembershipPackageGroupMoveDirection,
+  ) => {
+    const movedGroups = moveMembershipPackageGroup(groups, group.id, direction);
+    const changedGroups = movedGroups.filter((movedGroup) => {
+      const currentGroup = groups.find((item) => item.id === movedGroup.id);
+      return currentGroup?.sortWeight !== movedGroup.sortWeight;
+    });
+    if (changedGroups.length === 0) {
+      return;
+    }
+
+    setMovingGroupId(group.id);
+    try {
+      await Promise.all(changedGroups.map((group) => updateMembershipAdminPackageGroup(group.id, buildPackageGroupMutationInput(group))));
+      setGroups(movedGroups);
+      await loadCatalog(group.id);
+    } finally {
+      setMovingGroupId(null);
+    }
   };
 
   return (
@@ -111,29 +178,73 @@ export function MembershipPackagesPage() {
       >
         <div className="grid min-h-[560px] gap-4 lg:grid-cols-[280px_minmax(0,1fr)]">
           <div className="rounded-xl border border-slate-200 bg-white dark:border-white/10 dark:bg-white/5">
-            <div className="border-b border-slate-200 px-4 py-3 dark:border-white/10">
+            <div data-admin-membership-package-groups-header className="flex items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 dark:border-white/10">
               <h3 className="text-sm font-semibold text-slate-900 dark:text-white">{t('admin.commerce.memberships.groups.title', 'Package Groups')}</h3>
+              <div data-admin-membership-package-group-add>
+                <MembershipIconActionButton
+                  label={t('admin.commerce.memberships.groups.addTitle', 'Add Package Group')}
+                  icon={<Plus className="h-4 w-4" />}
+                  onClick={openCreateGroupDialog}
+                />
+              </div>
             </div>
             <div className="max-h-[520px] overflow-y-auto p-2">
               {groups.length === 0 ? (
                 <MembershipEmptyState title={t('admin.commerce.memberships.groups.empty', 'No package groups')} />
-              ) : groups.map((group) => (
-                <button
+              ) : groups.map((group, index) => (
+                <div
                   key={group.id}
-                  type="button"
-                  onClick={() => setSelectedGroupId(group.id)}
-                  className={`flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left transition-colors ${
+                  className={`flex items-center gap-1 rounded-lg transition-colors ${
                     selectedGroupId === group.id
                       ? 'bg-lobster-50 dark:bg-lobster-500/10'
                       : 'hover:bg-slate-50 dark:hover:bg-white/5'
                   }`}
                 >
-                  <span className="min-w-0">
-                    <span className="block truncate text-sm font-medium text-slate-800 dark:text-slate-200">{group.name}</span>
-                    <span className="mt-0.5 block text-xs text-slate-400">{t('admin.commerce.memberships.groups.packagesCount', '{{count}} packages', { count: group.packageCount })}</span>
-                  </span>
-                  <ChevronRight className="h-4 w-4 shrink-0 text-slate-300" />
-                </button>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedGroupId(group.id)}
+                    className="flex min-w-0 flex-1 items-center justify-between px-3 py-2.5 text-left"
+                  >
+                    <span className="min-w-0">
+                      <span className="block truncate text-sm font-medium text-slate-800 dark:text-slate-200">{group.name}</span>
+                      <span className="mt-0.5 block text-xs text-slate-400">{t('admin.commerce.memberships.groups.packagesCount', '{{count}} packages', { count: group.packageCount })}</span>
+                    </span>
+                    <ChevronRight className="h-4 w-4 shrink-0 text-slate-300" />
+                  </button>
+                  <div className="flex shrink-0 items-center gap-1 pr-2">
+                    <div data-admin-membership-package-group-move-up>
+                      <MembershipIconActionButton
+                        label={t('common.actions.moveUp', 'Move up')}
+                        icon={<ArrowUp className="h-4 w-4" />}
+                        disabled={index === 0 || movingGroupId === group.id}
+                        onClick={() => void handleMoveGroup(group, 'up')}
+                      />
+                    </div>
+                    <div data-admin-membership-package-group-move-down>
+                      <MembershipIconActionButton
+                        label={t('common.actions.moveDown', 'Move down')}
+                        icon={<ArrowDown className="h-4 w-4" />}
+                        disabled={index === groups.length - 1 || movingGroupId === group.id}
+                        onClick={() => void handleMoveGroup(group, 'down')}
+                      />
+                    </div>
+                    <div data-admin-membership-package-group-edit>
+                      <MembershipIconActionButton
+                        label={t('common.actions.edit', 'Edit')}
+                        icon={<Pencil className="h-4 w-4" />}
+                        onClick={() => openEditGroupDialog(group)}
+                      />
+                    </div>
+                    <div data-admin-membership-package-group-delete>
+                      <MembershipIconActionButton
+                        label={t('common.actions.delete', 'Delete')}
+                        icon={<Trash2 className="h-4 w-4" />}
+                        tone="danger"
+                        onClick={() => void handleDeleteGroup(group)}
+                      />
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -202,6 +313,35 @@ export function MembershipPackagesPage() {
           onSubmit={handleSavePackage}
         />
       </MembershipDrawer>
+
+      <MembershipDialog
+        title={editingGroup
+          ? t('admin.commerce.memberships.groups.editTitle', 'Edit Package Group')
+          : t('admin.commerce.memberships.groups.addTitle', 'Add Package Group')}
+        isOpen={isGroupDialogOpen}
+        onClose={() => setIsGroupDialogOpen(false)}
+      >
+        <MembershipPackageGroupDrawerForm
+          mode={editingGroup ? 'edit' : 'create'}
+          initialValue={editingGroup}
+          onCancel={() => setIsGroupDialogOpen(false)}
+          onSubmit={handleSaveGroup}
+        />
+      </MembershipDialog>
     </>
   );
+}
+
+function buildPackageGroupMutationInput(
+  group: MembershipsAdminPackageGroup,
+): MembershipsAdminPackageGroupMutationInput {
+  return {
+    code: group.code,
+    name: group.name,
+    description: group.description,
+    billingCycle: group.billingCycle,
+    durationDays: group.durationDays,
+    sortWeight: group.sortWeight,
+    status: group.status === 'inactive' || group.status === 'disabled' ? group.status : 'active',
+  };
 }

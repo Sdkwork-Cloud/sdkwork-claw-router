@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-guardian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-guardian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-guardian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00e4261893d0f20b10e3944ddef65e4dea78b37914fcf4d9ebdbb1ca85fc16b3",

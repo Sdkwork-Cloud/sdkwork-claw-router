@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Commerce product category record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CommerceProductCategoryRecord {
@@ -13,9 +15,13 @@ pub struct CommerceProductCategoryRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
 
-    /// Icon url field on commerce product category record.
+    /// Icon field on commerce product category record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon_url: Option<String>,
+    pub icon: Option<MediaResource>,
+
+    /// Id field on commerce product category record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
 
     /// Level no field on commerce product category record.
     pub level_no: i64,
@@ -33,6 +39,9 @@ pub struct CommerceProductCategoryRecord {
 
     /// Path field on commerce product category record.
     pub path: String,
+
+    /// Sort order field on commerce product category record.
+    pub sort_order: String,
 
     /// Status field on commerce product category record.
     pub status: String,

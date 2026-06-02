@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-attestation@3.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-attestation-3.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-attestation-3.0.2.json"
+      },
       "version": "3.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:15d611b00f662fca2757165781261628dbe2e9e028bd0ef6d1df8b1ca521765e",

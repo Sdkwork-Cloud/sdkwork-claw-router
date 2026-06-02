@@ -25,13 +25,16 @@ class AiChannelEndpointRecord:
     deleted_by: Optional[str] = None
     effective_from: Optional[str] = None
     effective_to: Optional[str] = None
+    health_status: Optional[str] = None
     id: Optional[str] = None
     last_latency_ms: Optional[int] = None
     metadata: Optional[Dict[str, str]] = None
     path_prefix: Optional[str] = None
+    priority: Optional[int] = None
     provider_code: Optional[str] = None
     retry_policy: Optional[Dict[str, str]] = None
     timeout_ms: Optional[int] = None
     updated_at: Optional[str] = None
     vendor_id: Optional[str] = None
     version: Optional[str] = None
+    weight: Optional[int] = None

@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Route each authenticated OpenAI-compatible request through the account pool configured for the API key group.
+**Goal:** Route each authenticated OpenAI-compatible request through the account pool configured for the channel group.
 
 **Architecture:** Reuse the existing `ai_routing_policy`, `ai_routing_profile`, and `ai_routing_rule` tables as the standard policy model. Add focused routing domain objects, load them into the pricing catalog snapshot, and move provider route selection into an independent `ProviderRouteSelector` application component.
 

@@ -488,7 +488,7 @@ class CommerceApi(private val client: HttpClient) {
     }
 
     /** Recharges Orders Create */
-    suspend fun rechargesOrdersCreate(body: CommerceStandardCommandRequest, idempotencyKey: String): RechargesOrdersCreateResult? {
+    suspend fun rechargesOrdersCreate(body: CommerceRechargeOrderCreateRequest, idempotencyKey: String): RechargesOrdersCreateResult? {
         val requestHeaders = buildRequestHeaders(
             mapOf(
                 "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
@@ -514,6 +514,12 @@ class CommerceApi(private val client: HttpClient) {
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.appPath("/recharges/packages"), query))
         return client.convertValue(raw, object : TypeReference<RechargesPackagesListResult>() {})
+    }
+
+    /** Recharges Settings Retrieve */
+    suspend fun rechargesSettingsRetrieve(): RechargesSettingsRetrieveResult? {
+        val raw = client.get(ApiPaths.appPath("/recharges/settings"))
+        return client.convertValue(raw, object : TypeReference<RechargesSettingsRetrieveResult>() {})
     }
 
     /** Refunds List */

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weixin-plugin-installer@0.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-weixin-plugin-installer-0.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weixin-plugin-installer-0.1.3.json"
+      },
       "version": "0.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:2e2440e540e6f1ca0a664bd9945a38e1d64bb1df3986d05330ed66c3362d0319",

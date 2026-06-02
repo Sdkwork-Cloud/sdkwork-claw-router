@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dex-quote@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dex-quote-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dex-quote-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64721736310cf3ccf2845651e54927579ca6ab0992c392a7ac4b487c7e469231",

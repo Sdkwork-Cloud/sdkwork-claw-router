@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cn-tendering-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cn-tendering-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cn-tendering-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3f77f1e1855d0bcda38e2d72db9b7ff574073bd365e1a79e7bff505cb3a9905",

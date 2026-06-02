@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weibo-hot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weibo-hot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weibo-hot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f621ca0740553582894f36f659e535c263c0436b6879198cc31eebed91c4fdd9",

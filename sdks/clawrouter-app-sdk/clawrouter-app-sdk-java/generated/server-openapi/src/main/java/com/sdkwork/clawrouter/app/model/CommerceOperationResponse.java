@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 
 public class CommerceOperationResponse {
     private String paymentId;
-    private String qrCodeImageUrl;
+    private MediaResource qrCode;
     private String qrCodePayload;
     private String requestNo;
     private String status;
@@ -17,12 +17,12 @@ public class CommerceOperationResponse {
         this.paymentId = paymentId;
     }
 
-    public String getQrCodeImageUrl() {
-        return this.qrCodeImageUrl;
+    public MediaResource getQrCode() {
+        return this.qrCode;
     }
 
-    public void setQrCodeImageUrl(String qrCodeImageUrl) {
-        this.qrCodeImageUrl = qrCodeImageUrl;
+    public void setQrCode(MediaResource qrCode) {
+        this.qrCode = qrCode;
     }
 
     public String getQrCodePayload() {

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ihg-hotels@99.99.99",
-      "artifactUrl": "data/skills/artifacts/clawhub-ihg-hotels-99.99.99.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ihg-hotels-99.99.99.json"
+      },
       "version": "99.99.99",
       "runtime": "metadata",
       "checksumHash": "sha256:b25dfd294d3c157c554004ae1759a955acc21205e878120e6f3f9128352fb64a",

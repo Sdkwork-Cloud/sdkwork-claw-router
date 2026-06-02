@@ -5,9 +5,11 @@ public class CommerceInventoryReservationRecord {
     private String checkoutSessionId;
     private String createdAt;
     private String expiresAt;
+    private String id;
     private String idempotencyKey;
     private String orderId;
     private String organizationId;
+    private String quantity;
     private String reservationNo;
     private String skuId;
     private String status;
@@ -39,6 +41,14 @@ public class CommerceInventoryReservationRecord {
         this.expiresAt = expiresAt;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getIdempotencyKey() {
         return this.idempotencyKey;
     }
@@ -61,6 +71,14 @@ public class CommerceInventoryReservationRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getQuantity() {
+        return this.quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
     public String getReservationNo() {

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/find-skills-local-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-find-skills-local-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-find-skills-local-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f77af1f18f349ace9153f4f66fa3b09e651b38f2cb5dff696d38b0d1c8cd28e",

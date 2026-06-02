@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/enable-chrome-gemini@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-enable-chrome-gemini-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-enable-chrome-gemini-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5031e19f90479f2eabdc4a5fff11f6356b9934ec3f4ef69695e25fd8640cb6e5",

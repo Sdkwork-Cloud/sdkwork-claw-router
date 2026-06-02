@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/siri@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-siri-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-siri-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b5c1194b0d0d2dbe6141494c5c1f4bb3a8b63a7ca533f6a587a76a88b0a68457",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drift@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-drift-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drift-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af17eb45dd13edf1de990b6bc6f4c20d8175513cd647e4429eeca022f4316b71",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-memory@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-memory-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-memory-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef2b0e4af14b4f482dec66e908289f2fb5eb2a50169b954af0149435c076e2a3",

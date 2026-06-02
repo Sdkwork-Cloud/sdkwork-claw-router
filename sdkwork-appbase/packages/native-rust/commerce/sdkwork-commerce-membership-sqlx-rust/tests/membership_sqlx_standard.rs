@@ -392,7 +392,7 @@ async fn sqlite_seed_integrity_report_detects_broken_membership_links() {
             "orphan_membership_package_sku",
         ),
         (
-            "UPDATE commerce_product_sku SET spu_id = 'seed-product-points-recharge' WHERE id = 'seed-sku-membership-month-pro'",
+            "UPDATE commerce_product_sku SET spu_id = 'seed-product-points-recharge-cny' WHERE id = 'seed-sku-membership-month-pro'",
             "invalid_membership_sku_product",
         ),
         (

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ssl-monitor@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-ssl-monitor-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ssl-monitor-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:37165a8b69abab7bab7e88d8f7c92015e09b0df91df0dc41984ed3271fca2898",

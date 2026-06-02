@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hot-wheels@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hot-wheels-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hot-wheels-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00a798d6fa922e8525294271598ab1bad6cafccf974c93fc3031cc0acb7928c0",

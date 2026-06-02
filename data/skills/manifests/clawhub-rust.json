@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rust@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-rust-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rust-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a03d69241e9b1f65b90c28ab33e98b2bc8a4d7dd350f3a752f91f73661d4d0ad",

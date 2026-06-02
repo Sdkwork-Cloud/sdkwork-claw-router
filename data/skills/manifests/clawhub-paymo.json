@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paymo@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-paymo-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paymo-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:87afe5b2c0f0e01d899a86a2ff42fcf849e7d2e70c13852a8f17d532c3e8c521",

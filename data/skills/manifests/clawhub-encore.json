@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/encore@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-encore-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-encore-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:028dcbf186f7dbefa24cb4b750a755e3c73eb1b844e9d0d0c6447729ad67bd9b",

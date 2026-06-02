@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tesy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tesy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tesy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ae31df0baac4d91717c14242b37811a0f89322e9933c90712831c584fb93e9d1",

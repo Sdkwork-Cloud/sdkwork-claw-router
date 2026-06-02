@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Persisted app template snapshot returned by the backend. */
 export interface AdminAppTemplateItemResponse {
@@ -10,8 +11,8 @@ export interface AdminAppTemplateItemResponse {
   categoryCode?: string | null;
   /** Category id field on admin app template item response. */
   categoryId?: string | null;
-  /** Cover url field on admin app template item response. */
-  coverUrl?: string | null;
+  /** Cover field on admin app template item response. */
+  cover?: MediaResource;
   /** Created at field on admin app template item response. */
   createdAt: string;
   /** Current version id field on admin app template item response. */
@@ -32,8 +33,8 @@ export interface AdminAppTemplateItemResponse {
   gitRepoUrl?: string | null;
   /** Git sub path field on admin app template item response. */
   gitSubPath?: string | null;
-  /** Icon url field on admin app template item response. */
-  iconUrl?: string | null;
+  /** Icon field on admin app template item response. */
+  icon?: MediaResource;
   /** Id field on admin app template item response. */
   id: string;
   /** Language field on admin app template item response. */

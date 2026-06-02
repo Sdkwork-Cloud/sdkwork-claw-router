@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-bitagent@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-bitagent-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-bitagent-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:015275556efa579bfa212e892e955f86ef78b9a970a2c95109171a494a465053",

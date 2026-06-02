@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telesign@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-telesign-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telesign-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:12b63ff1b61930751306ff533efd054fdd73605fb0e1a2c8c30c2ee7d9704fff",

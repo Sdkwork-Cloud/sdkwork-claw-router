@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/authorized-session-scrape@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-authorized-session-scrape-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-authorized-session-scrape-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4208d687e7c5cb60d5c8f76f6a0a9fa87d9f467c812cca685a6e643040a569c6",

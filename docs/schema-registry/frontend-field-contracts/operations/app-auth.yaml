@@ -285,7 +285,7 @@ frontend_operations:
         - username
         - displayName
         - email
-        - avatarUrl
+        - avatar
         - phone
         - language
         - isVerified
@@ -312,9 +312,8 @@ frontend_operations:
           email:
             type: string
             maxLength: 256
-          avatarUrl:
-            type: string
-            maxLength: 2048
+          avatar:
+            $ref: '#/components/schemas/MediaResource'
           phone:
             type: string
             description: Safe display phone value, empty when unavailable.

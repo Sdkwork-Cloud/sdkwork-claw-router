@@ -82,8 +82,7 @@ x_response_entities:
         minLength: 1
         maxLength: 128
       image:
-        type: string
-        maxLength: 2048
+        $ref: '#/components/schemas/MediaResource'
       rating:
         type: number
         minimum: 0

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloudflare-whisper-worker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-whisper-worker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloudflare-whisper-worker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1ddf4c63c8e4e2ff39b0f5540882f7f5e57f234dec04ef88d03faea8989baf1e",

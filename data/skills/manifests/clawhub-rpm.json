@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rpm@4.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-rpm-4.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rpm-4.0.1.json"
+      },
       "version": "4.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6cf3811f4830398a893cf7cc08304fe63a3e22abdd199e6396f4063ef1656fb1",

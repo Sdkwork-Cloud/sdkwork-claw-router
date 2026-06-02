@@ -11,6 +11,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? FailedAt { get; set; }
         public string? FailureCode { get; set; }
         public string? FailureMessage { get; set; }
+        public string? Id { get; set; }
         public string? InvoiceId { get; set; }
         public string? OrganizationId { get; set; }
         public string? ProviderAccountId { get; set; }

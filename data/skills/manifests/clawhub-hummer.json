@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hummer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hummer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hummer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fbf21d20e08fefafe16cb68690ca229b2329810af3f0427483455d13afe9a7f6",

@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.backend
 data class AiRuntimeUsageLinkRecord(
     val agentRunId: String? = null,
     val agentRunStepId: String? = null,
+    val agentRunStepIdKey: String? = null,
     val agentSessionId: String? = null,
     val cachedTokens: String? = null,
     val chatItemId: String? = null,

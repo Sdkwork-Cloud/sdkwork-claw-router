@@ -8,7 +8,7 @@ pub enum RoutingPolicyScope {
     Tenant,
     Organization,
     ApiKey,
-    ApiKeyGroup,
+    ChannelGroup,
 }
 
 impl RoutingPolicyScope {
@@ -18,7 +18,7 @@ impl RoutingPolicyScope {
             2 => Ok(Self::Tenant),
             3 => Ok(Self::Organization),
             4 => Ok(Self::ApiKey),
-            5 => Ok(Self::ApiKeyGroup),
+            5 => Ok(Self::ChannelGroup),
             value => Err(DomainError::new(format!(
                 "ai_routing_policy.policy_scope contains unsupported value: {value}"
             ))),
@@ -31,7 +31,7 @@ impl RoutingPolicyScope {
             Self::Tenant => 2,
             Self::Organization => 3,
             Self::ApiKey => 4,
-            Self::ApiKeyGroup => 5,
+            Self::ChannelGroup => 5,
         }
     }
 }

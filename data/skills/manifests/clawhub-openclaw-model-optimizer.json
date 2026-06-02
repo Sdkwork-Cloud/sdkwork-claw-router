@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-model-optimizer@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-model-optimizer-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-model-optimizer-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9add44b6ef8a555112a6e265887f9be8c08020f15ea7894557ecfe873e2d319e",

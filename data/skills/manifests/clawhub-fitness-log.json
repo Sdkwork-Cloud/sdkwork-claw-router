@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fitness-log@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fitness-log-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fitness-log-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:338aae622347a7b48b694b6320407bb2975557ddf3fe8e24ca0ae99103e6c7b5",

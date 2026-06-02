@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-improver@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-improver-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-improver-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e9e23a68f504666de32025050d2700825756018307c7df12668c2bae34b10b0",

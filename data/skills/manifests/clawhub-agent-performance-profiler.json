@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-performance-profiler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-performance-profiler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-performance-profiler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0c7bec1c2d5793a8bf751123f314d9844a3da9722c5977360021dd61d3f2d98",

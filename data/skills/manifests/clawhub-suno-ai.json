@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/suno-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-suno-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-suno-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e03044eb2e4d74143d1bbc486c051c14ea46f4baa3b836a3769f03c354cdfe6",

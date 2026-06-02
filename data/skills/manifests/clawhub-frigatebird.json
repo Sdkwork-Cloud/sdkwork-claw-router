@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/frigatebird@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-frigatebird-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-frigatebird-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ea9b92d369513aa5642cc8e3fbd299571c9469c8a0b81c10017ce9a55fee8361",

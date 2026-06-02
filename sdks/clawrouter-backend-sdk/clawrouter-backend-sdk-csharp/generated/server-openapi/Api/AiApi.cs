@@ -16,6 +16,54 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// List groups
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsListResult?> ChannelGroupsListAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsListResult>(ApiPaths.BackendPath("/ai/channel_groups"));
+        }
+
+        /// <summary>
+        /// Create group
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsCreateResult?> ChannelGroupsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminChannelGroupCreateRequest body)
+        {
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsCreateResult>(ApiPaths.BackendPath("/ai/channel_groups"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// Delete group
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsDeleteResult?> ChannelGroupsDeleteAsync(string channelGroupId)
+        {
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsDeleteResult>(ApiPaths.BackendPath($"/ai/channel_groups/{SerializePathParameter(channelGroupId, new PathParameterSpec("channelGroupId", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// Update group
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsUpdateResult?> ChannelGroupsUpdateAsync(string channelGroupId, Sdkwork.ClawRouter.Backend.Models.AdminChannelGroupUpdateRequest body)
+        {
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsUpdateResult>(ApiPaths.BackendPath($"/ai/channel_groups/{SerializePathParameter(channelGroupId, new PathParameterSpec("channelGroupId", "simple", false))}"), body, null, null, "application/json");
+        }
+
+        /// <summary>
+        /// List group channel bindings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsChannelBindingsListResult?> ChannelGroupsBindingsListAsync(string channelGroupId)
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsChannelBindingsListResult>(ApiPaths.BackendPath($"/ai/channel_groups/{SerializePathParameter(channelGroupId, new PathParameterSpec("channelGroupId", "simple", false))}/channel_bindings"));
+        }
+
+        /// <summary>
+        /// Replace group channel bindings
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsChannelBindingsUpdateResult?> ChannelGroupsBindingsUpdateAsync(string channelGroupId, Sdkwork.ClawRouter.Backend.Models.AdminChannelGroupChannelBindingsReplaceRequest body)
+        {
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.ChannelGroupsChannelBindingsUpdateResult>(ApiPaths.BackendPath($"/ai/channel_groups/{SerializePathParameter(channelGroupId, new PathParameterSpec("channelGroupId", "simple", false))}/channel_bindings"), body, null, null, "application/json");
+        }
+
+        /// <summary>
         /// List model rankings
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.ModelRankingsListResult?> ModelRankingsListAsync(string? rankScope = null, string? vendorCode = null, string? modality = null, string? q = null, int? limit = null)

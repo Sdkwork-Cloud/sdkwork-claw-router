@@ -1,13 +1,15 @@
+import type { MediaResource } from './media-resource';
+
 /** Updated skill catalog asset snapshot returned by the backend. */
 export interface AdminSkillAssetItem {
   /** Alt text field on admin skill asset item. */
   altText?: string | null;
   /** Artifact id field on admin skill asset item. */
   artifactId?: string | null;
+  /** Asset field on admin skill asset item. */
+  asset: MediaResource;
   /** Asset type field on admin skill asset item. */
   assetType: number;
-  /** Asset url field on admin skill asset item. */
-  assetUrl: string;
   /** Created at field on admin skill asset item. */
   createdAt: string;
   /** Duration seconds field on admin skill asset item. */
@@ -32,8 +34,8 @@ export interface AdminSkillAssetItem {
   targetId: string;
   /** Target type field on admin skill asset item. */
   targetType: 35;
-  /** Thumbnail url field on admin skill asset item. */
-  thumbnailUrl?: string | null;
+  /** Thumbnail field on admin skill asset item. */
+  thumbnail?: MediaResource;
   /** Title field on admin skill asset item. */
   title?: string | null;
   /** Updated at field on admin skill asset item. */

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-to-text@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-to-text-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-to-text-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca0848634c3b6b80b377fa4651ba6c21dae0241494c06dec6225425aa3e2e7be",

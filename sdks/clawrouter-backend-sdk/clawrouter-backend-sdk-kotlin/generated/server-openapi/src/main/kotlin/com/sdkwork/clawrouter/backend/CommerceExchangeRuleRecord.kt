@@ -2,6 +2,7 @@ package com.sdkwork.clawrouter.backend
 
 data class CommerceExchangeRuleRecord(
     val createdAt: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val organizationId: String? = null,
     val rate: String? = null,

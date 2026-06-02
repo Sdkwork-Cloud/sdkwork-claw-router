@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cross-agent-chat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cross-agent-chat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cross-agent-chat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d295b294847f55e89a885334e2b1a30ffd436ec72c06ddfca80bc0fab5a412b",

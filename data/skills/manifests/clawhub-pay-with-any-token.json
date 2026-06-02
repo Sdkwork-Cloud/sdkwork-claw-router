@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pay-with-any-token@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pay-with-any-token-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pay-with-any-token-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a9500b0a2464749f79fe7cd9824bd200e206a50b84498c706f107e5ab5a475fa",

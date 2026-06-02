@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deepseek-tamagotchi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deepseek-tamagotchi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deepseek-tamagotchi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f702a515154f8aad4da7995bf1ea922146eea78c9189dda0c40badf09c34b78a",

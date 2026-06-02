@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/metricfire@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-metricfire-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-metricfire-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b3158d010e25395647b1762c1f84c14c2303c3377d29a4b44a47006c3c2856a9",

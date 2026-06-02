@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/advogato@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-advogato-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-advogato-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a125d6ef02948e3a1d0c263b929bf1060a9f9b3efc84e01dd259e4e308a1ee51",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gdpr@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gdpr-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gdpr-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f6c5c30521784716a600a2fcacc1e07c7da3360bb15bff8bdf71e6a60ec7d9df",

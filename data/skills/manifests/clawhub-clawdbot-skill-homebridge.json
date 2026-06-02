@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawdbot-skill-homebridge@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-skill-homebridge-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawdbot-skill-homebridge-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fbd05423a03c0f318fa024b470a718165c545f771d823c5cbe0f0e74f76f5620",

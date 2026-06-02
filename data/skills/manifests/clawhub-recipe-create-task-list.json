@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/recipe-create-task-list@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-recipe-create-task-list-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-recipe-create-task-list-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:3055c499a1969df55c3d5ce4e85708333fd107a0e4d3c655b209c3b25f1aa274",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/broadridge@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-broadridge-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-broadridge-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:30d4f246ff85e8bdbaccb57f155ee779f7c6762ffa62af30e1237f3225b15794",

@@ -17,6 +17,7 @@ class StorageQuotaReservationRecord:
     organization_id: Optional[str] = None
     released_at: Optional[str] = None
     reservation_no: Optional[str] = None
+    reserved_bytes: Optional[str] = None
     scope_id: Optional[str] = None
     scope_type: Optional[str] = None
     status: Optional[str] = None

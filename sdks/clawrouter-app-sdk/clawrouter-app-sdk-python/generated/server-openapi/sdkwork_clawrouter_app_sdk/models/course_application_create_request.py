@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class CourseApplicationCreateRequest:
@@ -14,4 +17,4 @@ class CourseApplicationCreateRequest:
     contact_name: Optional[str] = None
     external_bvid: Optional[str] = None
     notes: Optional[str] = None
-    video_url: Optional[str] = None
+    video: Optional[MediaResource] = None

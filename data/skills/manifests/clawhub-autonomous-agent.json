@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/autonomous-agent@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-autonomous-agent-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-autonomous-agent-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6ed7fd26f881bf1bc24faf61a8ec38a91b4a4f86e5666d271d140a254b17ff03",

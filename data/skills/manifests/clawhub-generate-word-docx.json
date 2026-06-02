@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generate-word-docx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-generate-word-docx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generate-word-docx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5bd0c5d062323e4799c860c25b8c33619d9ab03b031e3631340eeb277989204b",

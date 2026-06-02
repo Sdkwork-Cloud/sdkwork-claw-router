@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/atlassian-mcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-atlassian-mcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-atlassian-mcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d282e61382aab2ba914be53b4873aa9a30e8fe29be08552a373a9c25a2af85bb",

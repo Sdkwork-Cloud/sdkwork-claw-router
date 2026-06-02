@@ -7,8 +7,7 @@ frontend_operations:
   api_surface: app
   api_method: GET
   api_path: /app/v3/api/platform/apps/store
-  description: Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED. Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections;
-    tenant isolation is always enforced.
+  description: Returns public App Store entries where PlusApp runtime status is ACTIVE and config.portal.marketStatus is PUBLISHED. Authenticated positive-organization app sessions may read same-tenant public organization_id = 0 app projections; tenant isolation is always enforced.
   read_sources:
   - plus_app
   - plus_category
@@ -130,8 +129,7 @@ frontend_operations:
               minLength: 1
               maxLength: 128
             image:
-              type: string
-              maxLength: 2048
+              $ref: '#/components/schemas/MediaResource'
             rating:
               type: number
               minimum: 0
@@ -146,8 +144,7 @@ frontend_operations:
               type: array
               maxItems: 20
               items:
-                type: string
-                maxLength: 2048
+                $ref: '#/components/schemas/MediaResource'
             features:
               type: array
               maxItems: 64
@@ -169,7 +166,7 @@ frontend_operations:
                 - version
                 - size
                 - releaseDate
-                - downloadUrl
+                - artifact
                 properties:
                   id:
                     type: string
@@ -208,9 +205,8 @@ frontend_operations:
                   releaseDate:
                     type: string
                     maxLength: 64
-                  downloadUrl:
-                    type: string
-                    maxLength: 2048
+                  artifact:
+                    $ref: '#/components/schemas/MediaResource'
                   whatsNew:
                     type: string
                     maxLength: 4096
@@ -282,8 +278,7 @@ frontend_operations:
   api_path: /app/v3/api/open_platform/qr_auth/sessions
   sdk_domain: platform
   summary: Create open platform QR auth session
-  description: Creates a short-lived QR auth session. Without a default open platform account the QR content is a normal fallback URL that any scanner can open and complete with password login or registration; configured official-account and
-    mini-app defaults return their bound entry URLs with session context.
+  description: Creates a short-lived QR auth session. Without a default open platform account the QR content is a normal fallback URL that any scanner can open and complete with password login or registration; configured official-account and mini-app defaults return their bound entry URLs with session context.
   request_body_required: true
   request_schema:
     name: OpenPlatformQrAuthSessionCreateRequest

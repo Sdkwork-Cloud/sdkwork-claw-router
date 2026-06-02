@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/planetscale-cli-skills@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-planetscale-cli-skills-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-planetscale-cli-skills-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:53c2d874df100d614e575229af417cfe8e7c995c7ae17ba8e80d307631f73374",

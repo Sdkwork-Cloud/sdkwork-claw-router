@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-church@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-church-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-church-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4c814c509a5d1474aaad9f3e1d4a48116bfe16a4709532ce2fd923c209b135e3",

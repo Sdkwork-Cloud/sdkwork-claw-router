@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modesty-agent-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-modesty-agent-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modesty-agent-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a42f1d31a2ebdccacca4e2f605621490206ffc510b2427dbe51086e12f0ce55b",

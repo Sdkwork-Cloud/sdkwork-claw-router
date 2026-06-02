@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ocr-web-service@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ocr-web-service-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ocr-web-service-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:73bca671205bb14593990426cff616f495c9cb0590a59bf66429ecc995d98261",

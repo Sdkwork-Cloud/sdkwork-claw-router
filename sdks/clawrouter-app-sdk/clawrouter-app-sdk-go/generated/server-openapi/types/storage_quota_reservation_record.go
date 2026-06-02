@@ -13,6 +13,7 @@ type StorageQuotaReservationRecord struct {
 	OrganizationId string `json:"organization_id"`
 	ReleasedAt string `json:"released_at"`
 	ReservationNo string `json:"reservation_no"`
+	ReservedBytes string `json:"reserved_bytes"`
 	ScopeId string `json:"scope_id"`
 	ScopeType string `json:"scope_type"`
 	Status string `json:"status"`

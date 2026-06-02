@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moneysharks@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-moneysharks-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moneysharks-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ee3b97229073f42ab26c2385e12e062418e763085e13c7b62e1ab74249f97581",

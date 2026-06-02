@@ -113,6 +113,21 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// Initialize admin category seed datasets
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CatalogCategorySeedsCreateResult?> CatalogCategorySeedsCreateAsync(Sdkwork.ClawRouter.Backend.Models.CommerceCategorySeedInitializeRequest body, string idempotencyKey)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CatalogCategorySeedsCreateResult>(ApiPaths.BackendPath("/catalog/category_seeds/initialize"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
         /// List product price lists
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.CatalogPriceListsListResult?> CatalogPriceListsAsync(string? currencyCode = null, string? marketCode = null, string? status = null, int? page = null, int? pageSize = null)
@@ -177,6 +192,14 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// Delete product SPU
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CatalogProductsDeleteResult?> CatalogProductsDeleteAsync(string productId)
+        {
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CatalogProductsDeleteResult>(ApiPaths.BackendPath($"/catalog/products/{SerializePathParameter(productId, new PathParameterSpec("productId", "simple", false))}"));
+        }
+
+        /// <summary>
         /// Update product SPU
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.CatalogProductsUpdateResult?> CatalogProductsUpdateAsync(string productId, Sdkwork.ClawRouter.Backend.Models.CommerceProductSpuMutationRequest body, string idempotencyKey)
@@ -220,6 +243,14 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new Dictionary<string, HeaderParameterSpec>()
             );
             return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.CatalogSkusCreateResult>(ApiPaths.BackendPath("/catalog/skus"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Delete product SKU
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.CatalogSkusDeleteResult?> CatalogSkusDeleteAsync(string skuId)
+        {
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.CatalogSkusDeleteResult>(ApiPaths.BackendPath($"/catalog/skus/{SerializePathParameter(skuId, new PathParameterSpec("skuId", "simple", false))}"));
         }
 
         /// <summary>
@@ -723,6 +754,44 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
+        /// Payments Provider Accounts Delete
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PaymentsProviderAccountsDeleteResult?> PaymentsProviderAccountsDeleteAsync(string providerAccountId)
+        {
+            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.PaymentsProviderAccountsDeleteResult>(ApiPaths.BackendPath($"/payments/provider_accounts/{SerializePathParameter(providerAccountId, new PathParameterSpec("providerAccountId", "simple", false))}"));
+        }
+
+        /// <summary>
+        /// Payments Provider Accounts Update
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PaymentsProviderAccountsUpdateResult?> PaymentsProviderAccountsUpdateAsync(string providerAccountId, Sdkwork.ClawRouter.Backend.Models.CommercePaymentProviderAccountMutationRequest body, string idempotencyKey)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.PaymentsProviderAccountsUpdateResult>(ApiPaths.BackendPath($"/payments/provider_accounts/{SerializePathParameter(providerAccountId, new PathParameterSpec("providerAccountId", "simple", false))}"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Payments Provider Accounts Status Update
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PaymentsProviderAccountsStatusUpdateResult?> PaymentsProviderAccountsStatusUpdateAsync(string providerAccountId, Sdkwork.ClawRouter.Backend.Models.CommercePaymentProviderAccountStatusUpdateRequest body, string idempotencyKey)
+        {
+            var requestHeaders = BuildRequestHeaders(
+                new Dictionary<string, HeaderParameterSpec>
+                {
+                    ["Idempotency-Key"] = new HeaderParameterSpec(idempotencyKey, "simple", false, null),
+                },
+                new Dictionary<string, HeaderParameterSpec>()
+            );
+            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.PaymentsProviderAccountsStatusUpdateResult>(ApiPaths.BackendPath($"/payments/provider_accounts/{SerializePathParameter(providerAccountId, new PathParameterSpec("providerAccountId", "simple", false))}/status"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
         /// Payments Providers List
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.PaymentsProvidersListResult?> PaymentsProvidersListAsync(int? page = null, int? pageSize = null, string? status = null)
@@ -767,6 +836,18 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new QueryParameterSpec("status", status, "form", true, false, null),
             });
             return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PaymentsRouteRulesListResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/payments/route_rules"), queryString));
+        }
+
+        /// <summary>
+        /// Payments Runtime Snapshot Retrieve
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.PaymentsRuntimeSnapshotRetrieveResult?> PaymentsRuntimeSnapshotRetrieveAsync(string? environment = null)
+        {
+            var queryString = BuildQueryString(new[]
+            {
+                new QueryParameterSpec("environment", environment, "form", true, false, null),
+            });
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.PaymentsRuntimeSnapshotRetrieveResult>(ApiPaths.AppendQueryString(ApiPaths.BackendPath("/payments/runtime/snapshot"), queryString));
         }
 
         /// <summary>
@@ -848,6 +929,22 @@ namespace Sdkwork.ClawRouter.Backend.Api
                 new Dictionary<string, HeaderParameterSpec>()
             );
             return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.RechargesPackagesUpdateResult>(ApiPaths.BackendPath($"/recharges/packages/{SerializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false))}"), body, null, requestHeaders, "application/json");
+        }
+
+        /// <summary>
+        /// Recharges Settings Retrieve
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RechargesSettingsRetrieveResult?> RechargesSettingsRetrieveAsync()
+        {
+            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.RechargesSettingsRetrieveResult>(ApiPaths.BackendPath("/recharges/settings"));
+        }
+
+        /// <summary>
+        /// Recharges Settings Update
+        /// </summary>
+        public async Task<Sdkwork.ClawRouter.Backend.Models.RechargesSettingsUpdateResult?> RechargesSettingsUpdateAsync(Sdkwork.ClawRouter.Backend.Models.CommerceRechargeSettingsUpdateRequest body)
+        {
+            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.RechargesSettingsUpdateResult>(ApiPaths.BackendPath("/recharges/settings"), body, null, null, "application/json");
         }
 
         /// <summary>

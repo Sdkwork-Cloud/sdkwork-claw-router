@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-sos@6.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-sos-6.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-sos-6.1.2.json"
+      },
       "version": "6.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b92d229d0cba8b8c2187172d6f4846c226d4af3393b88f1cfb38f1e1c037a1a5",

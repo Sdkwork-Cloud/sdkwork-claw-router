@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swarm-control-feishu@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swarm-control-feishu-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swarm-control-feishu-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:369895b931bb7e907ff981375d0b29358a8cc1a7119d493cf87132cbf3247519",

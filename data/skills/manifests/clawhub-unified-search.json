@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unified-search@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-unified-search-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unified-search-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ca0bcfbaba795951b35f831424f55705b92780e85c937de3383a281867be997",

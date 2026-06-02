@@ -9,6 +9,7 @@ class PromotionDiscountApplicationRecord:
     application_no: str
     created_at: str
     currency_code: str
+    discount_amount_minor: str
     idempotency_key: str
     offer_id: str
     offer_version_id: str
@@ -23,6 +24,7 @@ class PromotionDiscountApplicationRecord:
     budget_account_id: Optional[str] = None
     failure_code: Optional[str] = None
     failure_message: Optional[str] = None
+    id: Optional[str] = None
     order_no: Optional[str] = None
     organization_id: Optional[str] = None
     payment_id: Optional[str] = None

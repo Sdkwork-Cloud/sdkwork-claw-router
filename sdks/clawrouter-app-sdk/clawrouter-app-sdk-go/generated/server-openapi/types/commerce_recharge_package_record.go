@@ -2,9 +2,11 @@ package types
 
 // Commerce recharge package record schema exposed by Claw Router.
 type CommerceRechargePackageRecord struct {
+	BonusPoints string `json:"bonus_points"`
 	CreatedAt string `json:"created_at"`
 	CurrencyCode string `json:"currency_code"`
 	ExternalId string `json:"external_id"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	Name string `json:"name"`
 	OrganizationId string `json:"organization_id"`
@@ -12,6 +14,7 @@ type CommerceRechargePackageRecord struct {
 	PriceAmount string `json:"price_amount"`
 	RequestNo string `json:"request_no"`
 	SkuId string `json:"sku_id"`
+	SortWeight string `json:"sort_weight"`
 	Status string `json:"status"`
 	TenantId string `json:"tenant_id"`
 	UpdatedAt string `json:"updated_at"`

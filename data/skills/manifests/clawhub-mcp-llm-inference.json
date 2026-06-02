@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcp-llm-inference@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcp-llm-inference-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcp-llm-inference-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f22c26e53037d83cad65a6df2c24eed669794122bc0fe422758c5d6eabb6585",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slope@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-slope-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slope-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:aacab0ab13c45e0045096d5e2c6ee9bbb64555bf04b1e724fce14a668bb93a2d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-dedup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-dedup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-dedup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d665a879e3e2750c42a59f6463ae067a78119215709a6b52cfadf7408cc7631",

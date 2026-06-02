@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/funai-skill@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-funai-skill-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-funai-skill-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:b92e93b605985eed4e924915ce0e4e4f307cf7bb2feba59dae7660bed2da73cf",

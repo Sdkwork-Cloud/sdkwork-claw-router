@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/imperial@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-imperial-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-imperial-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ea52ee6daea86df4bd8f88b788a5d2703b649164177e3e96f5b8d0cb59bcba4",

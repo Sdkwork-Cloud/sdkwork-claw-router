@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shortcuts-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shortcuts-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shortcuts-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15aae420731d7bdd49394c71b1bc27442a80d0b20394101beb7a591b9ab8e3b8",

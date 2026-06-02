@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paramount@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paramount-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paramount-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:53bccbb3b628cfc11c1eae096ab68e13994f17de9e5788c83d12057a8a3fcfb1",

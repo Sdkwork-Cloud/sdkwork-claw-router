@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/temp-skill-download@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-temp-skill-download-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-temp-skill-download-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:064ad6ed1a1bfd943bfc0038064fd36842ce025baf8016f932e374d1eff71061",

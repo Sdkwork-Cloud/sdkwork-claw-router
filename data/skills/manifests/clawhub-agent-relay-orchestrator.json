@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-relay-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-relay-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-relay-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f4d34f7b97d5a24e93f5e0cd2b33b584a30bbe79fd8c9cc782a28fb1c16089e",

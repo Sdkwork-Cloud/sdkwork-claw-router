@@ -40,7 +40,9 @@ describe("sdkwork-media-pc-react domain contract", () => {
       type: "media-route-intent",
     });
 
-    expect(createEmptySdkworkMediaWorkspace()).toMatchObject({
+    const workspace = createEmptySdkworkMediaWorkspace();
+
+    expect(workspace).toMatchObject({
       digest: {
         queueCount: 3,
         totalItems: 4,
@@ -49,6 +51,12 @@ describe("sdkwork-media-pc-react domain contract", () => {
       queues: expect.arrayContaining([
         expect.objectContaining({ id: "launch-review" }),
       ]),
+    });
+    expect(workspace.items[0]).toMatchObject({
+      resource: {
+        kind: "video",
+        source: "generated",
+      },
     });
   });
 });

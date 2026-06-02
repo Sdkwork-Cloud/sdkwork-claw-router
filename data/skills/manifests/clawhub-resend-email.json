@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resend-email@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-resend-email-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resend-email-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:299a1e5e79420393e61367b8253f6abba26bfb4a17889497fab17f43218493e4",

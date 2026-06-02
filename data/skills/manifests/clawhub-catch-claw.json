@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/catch-claw@3.5.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-catch-claw-3.5.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-catch-claw-3.5.7.json"
+      },
       "version": "3.5.7",
       "runtime": "metadata",
       "checksumHash": "sha256:460e20d0ff6973a4da13deb651b534ede6e0299a4514ebc6dee092cc44c80828",

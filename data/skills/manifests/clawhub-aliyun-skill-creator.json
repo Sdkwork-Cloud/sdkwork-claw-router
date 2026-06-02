@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aliyun-skill-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-skill-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aliyun-skill-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:43de679a69fb1a9adc1599a16b55471f33e71f219592f767d9309d0f5aa4f72a",

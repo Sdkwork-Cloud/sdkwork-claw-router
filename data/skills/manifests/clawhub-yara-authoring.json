@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yara-authoring@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-yara-authoring-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yara-authoring-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:fae74ed06ad37523c8e79b3bb48de4a0af8675c99dfbc24310883f99e43eff3d",

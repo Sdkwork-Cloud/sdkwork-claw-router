@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tg-cs-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tg-cs-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tg-cs-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:39d210c87012cd9ae4e0f90536a01a645cf3f0b4589cf7fe14f05df2b8108336",

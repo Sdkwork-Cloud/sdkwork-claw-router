@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-fence@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-fence-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-fence-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:22c2f5d76d22121de3ded795ad1be936f43519312a61f105e1536a122c807fb0",

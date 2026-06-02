@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nginx-config-linter@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-nginx-config-linter-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nginx-config-linter-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4ebc9aa39d8d1cf9ad74a2f486d7f020c3ff69a58a5c86ecce0b140656b43ff3",

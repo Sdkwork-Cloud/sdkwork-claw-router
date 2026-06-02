@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nsfw-image@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-nsfw-image-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nsfw-image-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6ddcfa84f040170280b3a5d9aee4d78539354534fe7498d2100c957b6a53488c",

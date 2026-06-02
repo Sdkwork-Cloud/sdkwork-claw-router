@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/esign@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-esign-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-esign-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8fac47736d8ead04889d4e022dd7081d050250b1e5bde2929175004c3638e1ce",

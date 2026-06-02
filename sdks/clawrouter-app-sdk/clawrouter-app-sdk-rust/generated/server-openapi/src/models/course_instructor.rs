@@ -1,10 +1,12 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Course instructor schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CourseInstructor {
     /// Avatar field on course instructor.
-    pub avatar: String,
+    pub avatar: MediaResource,
 
     /// Bio field on course instructor.
     pub bio: String,

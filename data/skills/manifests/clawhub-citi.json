@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/citi@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-citi-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-citi-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:81c336573ccc50e6df62845d68b1795cc13a1f819bc3c8d6b452594f39142c83",

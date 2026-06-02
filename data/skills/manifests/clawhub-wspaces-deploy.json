@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wspaces-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wspaces-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wspaces-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff0a522824d19f2d343754b96bf6159cb855517946f1aacd026ce0b7d607020c",

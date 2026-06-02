@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slack-gif-creator-anthropic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slack-gif-creator-anthropic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slack-gif-creator-anthropic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8f9c1a0825a46380ce6cdc2ee50e1d6630d0fba439e28883f0df6856a0d1d86e",

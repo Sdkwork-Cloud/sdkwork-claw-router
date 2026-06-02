@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/context-compression-claude-code-custom@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-context-compression-claude-code-custom-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-context-compression-claude-code-custom-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb61e24fa243cd53d940b918c0e4f3cd31ebe75d4318b86651e9718b341d4cf4",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-security-hardening@98.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-security-hardening-98.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-security-hardening-98.0.1.json"
+      },
       "version": "98.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d620e7519d240127b392e24ca0838e52a7d5bdd2f096437412edc3425cff78ee",

@@ -10,7 +10,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public List<string>? Capabilities { get; set; }
         public string? CategoryId { get; set; }
         public Dictionary<string, string>? ConfigSchema { get; set; }
-        public string? CoverImage { get; set; }
+        public MediaResource? Cover { get; set; }
         public string? CreatedAt { get; set; }
         public string? Currency { get; set; }
         public Dictionary<string, string>? DefaultConfig { get; set; }
@@ -20,7 +20,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? Entrypoint { get; set; }
         public bool? Featured { get; set; }
         public string? HomepageUrl { get; set; }
-        public string? Icon { get; set; }
+        public MediaResource? Icon { get; set; }
         public string? Id { get; set; }
         public string? InstallCount { get; set; }
         public bool? IsBuiltin { get; set; }

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/link-fact-checker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-link-fact-checker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-link-fact-checker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f33b7fb74207e9221335202111356e2d96d149ab389f00ca283815623ad01dbf",

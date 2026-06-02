@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/formpass-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-formpass-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-formpass-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a7ef30a82b2839d2a4a638270b1ccaa7f1d62cbb538207d081b08f743785653",

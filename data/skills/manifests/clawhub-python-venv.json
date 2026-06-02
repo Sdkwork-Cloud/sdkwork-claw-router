@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/python-venv@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-python-venv-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-python-venv-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:031ead776370985a1d640502f6288e3bf6c424f73a36b5e2dccc70939c4a2483",

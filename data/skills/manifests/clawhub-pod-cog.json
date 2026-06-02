@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pod-cog@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-pod-cog-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pod-cog-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:54e57019179d2b1fa7831c1c478d6ee36696de9e299d450133bfe72765c37187",

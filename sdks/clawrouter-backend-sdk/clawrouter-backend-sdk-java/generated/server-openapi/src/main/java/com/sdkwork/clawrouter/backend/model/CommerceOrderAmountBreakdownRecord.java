@@ -5,6 +5,7 @@ public class CommerceOrderAmountBreakdownRecord {
     private String createdAt;
     private String currencyCode;
     private String discountAmount;
+    private String id;
     private String orderId;
     private String originalAmount;
     private String payableAmount;
@@ -32,6 +33,14 @@ public class CommerceOrderAmountBreakdownRecord {
 
     public void setDiscountAmount(String discountAmount) {
         this.discountAmount = discountAmount;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrderId() {

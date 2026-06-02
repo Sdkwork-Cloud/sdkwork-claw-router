@@ -3,7 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 
 public class RechargesOrdersRetrieveResult {
     private String code;
-    private CommerceStandardResourceResponse data;
+    private CommerceRechargeCheckoutStatusResponse data;
     private String msg;
 
     public String getCode() {
@@ -14,11 +14,11 @@ public class RechargesOrdersRetrieveResult {
         this.code = code;
     }
 
-    public CommerceStandardResourceResponse getData() {
+    public CommerceRechargeCheckoutStatusResponse getData() {
         return this.data;
     }
 
-    public void setData(CommerceStandardResourceResponse data) {
+    public void setData(CommerceRechargeCheckoutStatusResponse data) {
         this.data = data;
     }
 

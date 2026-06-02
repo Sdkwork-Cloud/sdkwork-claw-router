@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weekly-feast-planner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weekly-feast-planner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weekly-feast-planner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd51210893cb1a3c152c4e80a2b349a68b95c61e77f671891ab4cad7143dbd84",

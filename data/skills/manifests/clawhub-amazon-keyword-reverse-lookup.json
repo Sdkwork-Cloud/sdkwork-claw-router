@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-keyword-reverse-lookup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-keyword-reverse-lookup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-keyword-reverse-lookup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15b541b1708f24e36cf4483a37bad3e3d29e7ac045e65918b7738ccd660af2f5",

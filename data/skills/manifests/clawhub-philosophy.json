@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/philosophy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-philosophy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-philosophy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3e66c7df4adb7b30198ed4a0ec930a531633ffa5a67e3d22b24e91fb42fca160",

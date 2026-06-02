@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gateway-manager@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-gateway-manager-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gateway-manager-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7522196da9a8fb872c1d86363258d4032eb7eeb9febe04bfac60abad00226af3",

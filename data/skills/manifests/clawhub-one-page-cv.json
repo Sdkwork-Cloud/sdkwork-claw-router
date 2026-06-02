@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/one-page-cv@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-one-page-cv-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-one-page-cv-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:33bffe4547abf482a9da9d94e019c821dc003c01afecbd93af2e11c9e0994140",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/global-pay@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-global-pay-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-global-pay-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7395bf978963a4e4d821e843418ad332419b039aba3fe8c99d7f2063556949dc",

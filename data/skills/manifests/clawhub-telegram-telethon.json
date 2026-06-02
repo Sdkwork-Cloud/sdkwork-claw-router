@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-telethon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-telethon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-telethon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8aa690946f3a612e9147a59a7b6d322e181b58a19faeaf0a2a794a8b88a1d52",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/survival-basics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-survival-basics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-survival-basics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:906d6cf66f68ca70861fba3204bcef21998519f64b7cbb2c8e4583d79066a5ef",

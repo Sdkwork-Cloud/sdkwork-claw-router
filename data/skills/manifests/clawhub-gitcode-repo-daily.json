@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitcode-repo-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitcode-repo-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitcode-repo-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:735bd20204bf7d292c97507cdf64f22c3ac06c44b62739482dded8f880650881",

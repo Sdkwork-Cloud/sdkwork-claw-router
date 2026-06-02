@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sayit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sayit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sayit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:07ef53ec472878674f6feb67733f3581f6507b6a37e4deb6032a0b882674f9c3",

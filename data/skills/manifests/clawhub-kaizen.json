@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kaizen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kaizen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kaizen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:416e28c39fd2f0450c1a5038c78ba09ae39834a781ce1e0db99187cca3d11355",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-models@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-models-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-models-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:4ee87b942f520e0246eb933effa99762fdc73d046c65c0d81a6ecb99fec5446f",

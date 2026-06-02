@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3046969486dd562fab236f3c909d038ed2219e80cc39c3a1250de7d98f196ecd",

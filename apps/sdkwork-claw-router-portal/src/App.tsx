@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useLayoutEffect, Suspense, lazy } from 'react';
+import React, { useState, useEffect, useLayoutEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Navbar, Footer } from 'sdkwork-claw-router-commons';
 import {
@@ -312,6 +312,8 @@ export default function App() {
               <Route path="courses/engagement" element={<CourseAdmin sectionId="engagement" />} />
               <Route path="catalog" element={<Navigate to="/admin/catalog/products" replace />} />
               <Route path="catalog/categories" element={<CatalogAdmin sectionId="categories" />} />
+              <Route path="catalog/products/new" element={<CatalogAdmin sectionId="productCreate" />} />
+              <Route path="catalog/products/:productId/edit" element={<CatalogAdmin sectionId="productEdit" />} />
               <Route path="catalog/products" element={<CatalogAdmin sectionId="products" />} />
               <Route path="catalog/skus" element={<CatalogAdmin sectionId="skus" />} />
               <Route path="catalog/attributes" element={<CatalogAdmin sectionId="attributes" />} />
@@ -337,6 +339,7 @@ export default function App() {
               <Route path="payments/reconciliation-runs" element={<PaymentsAdmin sectionId="reconciliationRuns" />} />
               <Route path="memberships" element={<Navigate to="/admin/memberships/packages" replace />} />
               <Route path="memberships/packages" element={<MembershipsAdmin sectionId="packages" />} />
+              <Route path="memberships/vip-packages" element={<MembershipsAdmin sectionId="vipPackages" />} />
               <Route path="memberships/plans" element={<MembershipsAdmin sectionId="plans" />} />
               <Route path="memberships/members" element={<MembershipsAdmin sectionId="members" />} />
               <Route path="memberships/entitlements" element={<MembershipsAdmin sectionId="entitlements" />} />

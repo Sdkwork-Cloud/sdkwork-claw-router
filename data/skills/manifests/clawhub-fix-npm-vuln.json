@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fix-npm-vuln@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fix-npm-vuln-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fix-npm-vuln-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:12687bc271c78c65ffe623258e81e637696dfe2b78339cd38cc23478a7c83f0f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gator-cli@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gator-cli-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gator-cli-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:412d594226cc6b547e510bdd15cbdc642c93b7e09dcebd899acddb8cd98ba1fa",

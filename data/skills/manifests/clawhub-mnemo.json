@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mnemo@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-mnemo-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mnemo-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:74fd85677b447179a7a41fb7de233aa449535377a7d327266ff54c5ed55ba15b",

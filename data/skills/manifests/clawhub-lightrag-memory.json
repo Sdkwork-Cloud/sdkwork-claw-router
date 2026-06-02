@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lightrag-memory@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lightrag-memory-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lightrag-memory-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:033e4873b27b52857e328ca0b40290f35808a8b05f9c1fc3a0130ca6b8a9749f",

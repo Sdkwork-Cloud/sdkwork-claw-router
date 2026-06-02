@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-preflight@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-preflight-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-preflight-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:5a9cae164321183b433bf79f6cd960ef84b57ff9d7d581c9103fd6582608fbc4",

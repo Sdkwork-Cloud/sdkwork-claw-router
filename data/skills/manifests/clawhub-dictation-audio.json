@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dictation-audio@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dictation-audio-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dictation-audio-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d6c00e84730310806fd1080695d31a5178ad4ea441ccbe6af3edf16ab5b3400",

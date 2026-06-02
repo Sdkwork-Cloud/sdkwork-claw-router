@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eam@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eam-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eam-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1dbc733a6261c9f8039470ce8efd01ef21d43b4661d20f05027f12c4b869a7b3",

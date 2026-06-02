@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/session-tracker@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-session-tracker-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-session-tracker-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26ef7a98b38888e8bb1e59fbce8ece3498658fd8347775b69658115ff12ae0bd",

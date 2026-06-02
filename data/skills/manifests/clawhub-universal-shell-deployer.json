@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/universal-shell-deployer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-universal-shell-deployer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-universal-shell-deployer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b2e834ece5d29f5195e800f0be760bb66eafd201f0bca5f6b0c21c415b6b024d",

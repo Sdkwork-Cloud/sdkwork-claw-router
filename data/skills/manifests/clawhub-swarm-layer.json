@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swarm-layer@0.5.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-swarm-layer-0.5.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swarm-layer-0.5.3.json"
+      },
       "version": "0.5.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c16e3be087eec4b2b7a6c937d213c5c5ccdd25a9a88eb88a6388867de5355533",

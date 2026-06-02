@@ -4,8 +4,8 @@ import java.util.Map;
 
 public class AiGenerationAssetRecord {
     private Integer activeIndex;
+    private MediaResource asset;
     private String assetType;
-    private String assetUrl;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
@@ -22,6 +22,7 @@ public class AiGenerationAssetRecord {
     private Map<String, String> metadata;
     private String mimeType;
     private String modelSnapshot;
+    private String objectKey;
     private String organizationId;
     private String ownerId;
     private String ownerType;
@@ -30,10 +31,9 @@ public class AiGenerationAssetRecord {
     private String shareTokenHash;
     private Boolean shared;
     private String status;
-    private String storageKey;
     private String storageProvider;
     private String tenantId;
-    private String thumbnailUrl;
+    private MediaResource thumbnail;
     private String updatedAt;
     private String userId;
     private String uuid;
@@ -49,20 +49,20 @@ public class AiGenerationAssetRecord {
         this.activeIndex = activeIndex;
     }
 
+    public MediaResource getAsset() {
+        return this.asset;
+    }
+
+    public void setAsset(MediaResource asset) {
+        this.asset = asset;
+    }
+
     public String getAssetType() {
         return this.assetType;
     }
 
     public void setAssetType(String assetType) {
         this.assetType = assetType;
-    }
-
-    public String getAssetUrl() {
-        return this.assetUrl;
-    }
-
-    public void setAssetUrl(String assetUrl) {
-        this.assetUrl = assetUrl;
     }
 
     public String getCreatedAt() {
@@ -193,6 +193,14 @@ public class AiGenerationAssetRecord {
         this.modelSnapshot = modelSnapshot;
     }
 
+    public String getObjectKey() {
+        return this.objectKey;
+    }
+
+    public void setObjectKey(String objectKey) {
+        this.objectKey = objectKey;
+    }
+
     public String getOrganizationId() {
         return this.organizationId;
     }
@@ -257,14 +265,6 @@ public class AiGenerationAssetRecord {
         this.status = status;
     }
 
-    public String getStorageKey() {
-        return this.storageKey;
-    }
-
-    public void setStorageKey(String storageKey) {
-        this.storageKey = storageKey;
-    }
-
     public String getStorageProvider() {
         return this.storageProvider;
     }
@@ -281,12 +281,12 @@ public class AiGenerationAssetRecord {
         this.tenantId = tenantId;
     }
 
-    public String getThumbnailUrl() {
-        return this.thumbnailUrl;
+    public MediaResource getThumbnail() {
+        return this.thumbnail;
     }
 
-    public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+    public void setThumbnail(MediaResource thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     public String getUpdatedAt() {

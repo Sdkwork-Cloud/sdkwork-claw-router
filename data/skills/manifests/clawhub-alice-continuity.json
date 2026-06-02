@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alice-continuity@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alice-continuity-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alice-continuity-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86715057f86c5f07dbbb318fa46184b74c8f7c6ece3269042b86dea46129fca8",

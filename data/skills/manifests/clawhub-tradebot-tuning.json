@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tradebot-tuning@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tradebot-tuning-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tradebot-tuning-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a56cb7c6cbc8ac2e60961f359dd047593f8b37d7d3c60dabd6f7798c24bf9421",

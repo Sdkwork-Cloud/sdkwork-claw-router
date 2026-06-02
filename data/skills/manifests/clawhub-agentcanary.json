@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentcanary@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentcanary-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentcanary-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:a24dcbe24222dd3ed4f77c9e0dd315413df8ed56e98d82f9d6d3e5de8df6a95d",

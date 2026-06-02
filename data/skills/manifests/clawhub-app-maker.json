@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/app-maker@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-app-maker-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-app-maker-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cb1f3885598619a95cf530d2dce1b14c70c37f9850010fa8cc1d5ab527b75ed9",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentx-marketplace@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentx-marketplace-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentx-marketplace-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:47cf0430fe7dc62b2a6116af54492edbca579709224fc308b6de4e7fbae097d9",

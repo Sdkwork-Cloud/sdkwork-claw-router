@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customer-response-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-customer-response-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customer-response-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec76d77c08f09714db29666d5ef223b518f53e3cccf85ab0b72af9231359a4fd",

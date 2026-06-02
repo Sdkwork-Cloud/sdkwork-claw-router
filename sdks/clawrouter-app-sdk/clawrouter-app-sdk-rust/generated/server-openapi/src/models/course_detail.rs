@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{CourseEngagement, CourseInstructor, CourseItem, CourseOverviewSource, CourseSectionItem};
+use crate::models::{CourseEngagement, CourseInstructor, CourseItem, CourseOverviewSource, CourseSectionItem, MediaResource};
 
 /// Course detail schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -95,9 +95,8 @@ pub struct CourseDetail {
     /// Tags field on course detail.
     pub tags: Vec<String>,
 
-    /// Thumbnail url field on course detail.
-    #[serde(rename = "thumbnailUrl")]
-    pub thumbnail_url: String,
+    /// Thumbnail field on course detail.
+    pub thumbnail: MediaResource,
 
     /// Title field on course detail.
     pub title: String,

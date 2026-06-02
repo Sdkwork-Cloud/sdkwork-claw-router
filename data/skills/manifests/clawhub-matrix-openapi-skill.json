@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/matrix-openapi-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-matrix-openapi-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-matrix-openapi-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7b18aec19e534bfc3a39858185a67f85987a185a076eff477785d20835f56a1",

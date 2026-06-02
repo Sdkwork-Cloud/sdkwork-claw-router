@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pokerclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pokerclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pokerclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:414d2eadb52a0df62397a6150962982c1277459324072700c684ec3401cea539",

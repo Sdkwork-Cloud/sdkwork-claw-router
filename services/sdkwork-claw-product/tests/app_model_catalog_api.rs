@@ -3,7 +3,7 @@ use std::sync::Arc;
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_claw_product::domain::{
-    AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
     ProviderChannelRoute,
 };
@@ -100,15 +100,15 @@ fn catalog() -> InMemoryPricingCatalog {
         DecimalValue::parse("1.200000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
         DecimalValue::parse("1.000000").unwrap(),
         DecimalValue::parse("1.100000").unwrap(),
     ));
-    catalog.add_api_key_group(
-        ApiKeyGroup::new(
+    catalog.add_channel_group(
+        ChannelGroup::new(
             11,
             "premium-lab",
             "standard",
@@ -521,8 +521,8 @@ async fn app_model_catalog_route_keeps_unpriced_models_explicitly_unavailable() 
 #[tokio::test]
 async fn app_model_catalog_route_returns_public_taxonomy_and_filters_server_side() {
     let mut catalog = catalog();
-    catalog.add_api_key_group(
-        ApiKeyGroup::new(
+    catalog.add_channel_group(
+        ChannelGroup::new(
             12,
             "empty-admin-group",
             "standard",

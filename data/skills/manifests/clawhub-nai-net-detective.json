@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nai-net-detective@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nai-net-detective-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nai-net-detective-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b852db2bf1ba72ccbcd416497b3f35c6789df430904f2095c2c777fd0ce44c3d",

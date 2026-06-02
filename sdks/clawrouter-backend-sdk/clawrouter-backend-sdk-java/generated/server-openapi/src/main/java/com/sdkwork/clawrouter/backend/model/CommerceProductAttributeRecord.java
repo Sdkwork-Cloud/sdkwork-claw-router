@@ -5,6 +5,7 @@ public class CommerceProductAttributeRecord {
     private String attributeNo;
     private String createdAt;
     private Boolean filterable;
+    private String id;
     private String name;
     private String organizationId;
     private Boolean required;
@@ -37,6 +38,14 @@ public class CommerceProductAttributeRecord {
 
     public void setFilterable(Boolean filterable) {
         this.filterable = filterable;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

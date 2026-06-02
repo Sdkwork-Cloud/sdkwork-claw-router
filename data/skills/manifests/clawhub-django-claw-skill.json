@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/django-claw-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-django-claw-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-django-claw-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef93bb6888c1744020e5f069d841d02851bb66d8fecdaa86ee7ae4f89837c0b4",

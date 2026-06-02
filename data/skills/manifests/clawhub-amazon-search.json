@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-search@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-search-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-search-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3d49986ea3f0933d5f16b5f4671397f20a3a625a9a2daec0043d4650aa8cd1f6",

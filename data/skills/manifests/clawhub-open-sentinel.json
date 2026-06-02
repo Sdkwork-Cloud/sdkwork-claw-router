@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/open-sentinel@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-open-sentinel-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-open-sentinel-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:915e8a6089765ee15b813518493d62bb8a5de90a0c6f626c6a293de307fbbe07",

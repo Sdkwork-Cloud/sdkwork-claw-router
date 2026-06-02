@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/outlook-microsoft@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-outlook-microsoft-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-outlook-microsoft-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70eb021f5f0d61bf14899874bf880c4d0ba06786fd4e3e165e669c1f106edde1",

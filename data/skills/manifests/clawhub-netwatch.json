@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/netwatch@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-netwatch-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-netwatch-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7d77dd458d9562f8f177ada40fac5a7d60f442f1455063f65fd4900e415fd008",

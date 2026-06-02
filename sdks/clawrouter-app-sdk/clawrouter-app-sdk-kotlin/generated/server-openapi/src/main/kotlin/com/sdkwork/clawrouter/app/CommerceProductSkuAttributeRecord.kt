@@ -5,6 +5,7 @@ data class CommerceProductSkuAttributeRecord(
     val attributeValueId: String? = null,
     val createdAt: String? = null,
     val customValue: String? = null,
+    val id: String? = null,
     val organizationId: String? = null,
     val skuId: String? = null,
     val tenantId: String? = null,

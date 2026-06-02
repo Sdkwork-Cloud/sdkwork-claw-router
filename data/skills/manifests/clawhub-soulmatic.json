@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/soulmatic@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-soulmatic-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-soulmatic-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef833fb82d2423294e707eed89e8679071f4e234109565548c8aa9b05998e14a",

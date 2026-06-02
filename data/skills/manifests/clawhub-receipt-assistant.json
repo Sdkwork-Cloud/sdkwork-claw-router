@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/receipt-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-receipt-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-receipt-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75d32b5b8ca2533a84dae039242d95f095ac3200415770f4c4a7a2033868384e",

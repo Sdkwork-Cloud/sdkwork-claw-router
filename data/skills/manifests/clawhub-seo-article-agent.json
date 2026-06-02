@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seo-article-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-seo-article-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seo-article-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c70373725ef4579cb8e7313852ff69feb43257722bf430c6afc4894af019153b",

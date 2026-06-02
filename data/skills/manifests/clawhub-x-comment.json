@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/x-comment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-x-comment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-x-comment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e66e6362d365d7a03548191af70de67373497ec639ef5bf90b9a5f4f617cc89",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-standup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-standup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-standup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d54e696c66d801a5aeb8bb6231f3705d6d70168018b054b6b69b655df2e28ad",

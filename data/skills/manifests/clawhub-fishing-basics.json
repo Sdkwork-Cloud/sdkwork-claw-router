@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fishing-basics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fishing-basics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fishing-basics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8b89fd0ef26adbb84f3b170b4d3bc21a35f1c9f40329e13d27a88eef63477011",

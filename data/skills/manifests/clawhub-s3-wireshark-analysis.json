@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/s3-wireshark-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-s3-wireshark-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-s3-wireshark-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00ee115c68c640c47c35b14498d2fef0d2c696f87b86a2020107a2c646bd8074",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcf-lead-gen-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcf-lead-gen-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcf-lead-gen-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:34651ea64dd93ee5670f73bb597e4fcc68279be32c875f6fde2ee3ba111e2903",

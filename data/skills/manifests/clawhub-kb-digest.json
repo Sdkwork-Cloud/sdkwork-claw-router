@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kb-digest@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kb-digest-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kb-digest-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7defd690a54fdd7891fc16088da93414191d44bdfb7b43ee0706ffbf3e6aa078",

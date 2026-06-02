@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/breitling@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-breitling-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-breitling-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:8bb4fd457bd142c34880ca644248848f09273f49482f03e870381ce399367cbd",

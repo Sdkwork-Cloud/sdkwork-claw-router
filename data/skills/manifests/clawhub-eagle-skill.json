@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eagle-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eagle-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eagle-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:011bbdc8efa67c99447f0ec179fbc207ebd26fcb2f1f7be34ce68daaa131d757",

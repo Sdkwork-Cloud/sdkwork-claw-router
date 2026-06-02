@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whatisagent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whatisagent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whatisagent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14d811ba8daea8e10fbd115bed51298d5d334a42d1679cfe46859a2c508c4ab3",

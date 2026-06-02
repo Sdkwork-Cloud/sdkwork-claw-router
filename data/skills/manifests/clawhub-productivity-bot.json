@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/productivity-bot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-productivity-bot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-productivity-bot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35dff73462a7b5f051e5a82aac097be29a8b35f29266f60df9644bd0136162e8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hellofresh@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hellofresh-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hellofresh-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:471a7bf2824691542c25e3233362c6d93483f112545427d08c4906a60d2d15b4",

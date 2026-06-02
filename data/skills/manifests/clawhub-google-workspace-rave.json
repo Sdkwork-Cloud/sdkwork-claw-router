@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-workspace-rave@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-workspace-rave-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-workspace-rave-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:21059c383e7f3af7427b5a7a1f857185c144b8552f00a2bb6e9968684d9e8247",

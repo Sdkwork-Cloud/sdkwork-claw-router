@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multi-llm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-multi-llm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multi-llm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b783593a7b5ca823dfb9bdd1fc6086a018cbe1d05ceff590b49cb5c644956aa",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subagent-driven-dev@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-subagent-driven-dev-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subagent-driven-dev-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3ab5251f039a11717247e71f90c6bcaca8b5a7cc18f78b6989de9594c65bc8a7",

@@ -6,6 +6,7 @@ type CommerceOrderCancellationRecord struct {
 	CancellationNo string `json:"cancellation_no"`
 	CompletedAt string `json:"completed_at"`
 	CreatedAt string `json:"created_at"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	OrderId string `json:"order_id"`
 	OrganizationId string `json:"organization_id"`

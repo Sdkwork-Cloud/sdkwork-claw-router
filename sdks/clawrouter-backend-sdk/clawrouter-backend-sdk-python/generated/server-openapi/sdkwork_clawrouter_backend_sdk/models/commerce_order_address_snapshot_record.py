@@ -13,8 +13,10 @@ class CommerceOrderAddressSnapshotRecord:
     order_id: str
     phone_masked: str
     recipient_name_snapshot: str
+    snapshot_version: str
     tenant_id: str
     district: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     postal_code: Optional[str] = None
     region_code: Optional[str] = None

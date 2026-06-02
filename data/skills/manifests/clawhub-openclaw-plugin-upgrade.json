@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-plugin-upgrade@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-plugin-upgrade-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-plugin-upgrade-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:37fcc33db20c67bffadf3559f08069358c1a4acd4f3c2be5d1c981a8fa8c4efa",

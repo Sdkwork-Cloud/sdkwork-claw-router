@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ggshield-scanner@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ggshield-scanner-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ggshield-scanner-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cf45ace9486e3d3738d8d174908f7b7a58c1f701137df3509576d8e2dfaf8dd8",

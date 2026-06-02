@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hero-generator@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-hero-generator-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hero-generator-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b36b3845b381750099c8d15b945c998abde1d9c5cd4d42ebf31ef9b2986b2a33",

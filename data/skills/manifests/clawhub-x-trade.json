@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/x-trade@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-x-trade-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-x-trade-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dcc1baed6696caf65a2395a5cfa400553abb7ff49185563ff183ac2f8d6a72bf",

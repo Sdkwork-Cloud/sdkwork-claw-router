@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/elastic-datadog@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-elastic-datadog-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-elastic-datadog-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c4b54ebbaa2afb9e11e4062415bae33d030eb1eb9866a1ab0e1ea1fe2f5dce1d",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modesty-agent-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-modesty-agent-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modesty-agent-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5be65615c9c53f920c7de77ba17cee1398082a44204e00ab994f1a01c5543914",

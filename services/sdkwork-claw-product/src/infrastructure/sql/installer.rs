@@ -56,6 +56,9 @@ use crate::infrastructure::sql::skills_seed::{
     postgres_skills_seed_complete, postgres_skills_seed_current,
     repair_incomplete_sqlite_skills_seed, sqlite_skills_seed_current,
 };
+use crate::infrastructure::sql::sql_admin_product_center::{
+    media_resource_object_blob_id, media_resource_stable_id, provider_asset_media_resource,
+};
 use crate::ports::{AdminModelStore, AdminModelSubject, SyncAdminModelCatalogCommand};
 
 const GENERATED_POSTGRES_SCHEMA: &str =
@@ -1776,6 +1779,21 @@ async fn sqlite_status(
     if !sqlite_sdkwork_models_catalog_complete(pool, &spec).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
+    if !sqlite_ai_routing_seed_complete(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !sqlite_seed_migration_payload_current(
+        pool,
+        "ai-routing",
+        CURRENT_SCHEMA_VERSION,
+        bundled_ai_routing_seed_payload()
+            .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
+            .as_str(),
+    )
+    .await?
+    {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
     if !sqlite_app_seed_complete(pool).await? {
         return Ok(InstallationStatus::UpgradeRequired);
     }
@@ -1968,6 +1986,21 @@ async fn postgres_status(
     };
     let spec = catalog_completeness_spec(&catalog);
     if !postgres_sdkwork_models_catalog_complete(pool, &spec).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_ai_routing_seed_complete(pool).await? {
+        return Ok(InstallationStatus::UpgradeRequired);
+    }
+    if !postgres_seed_migration_payload_current(
+        pool,
+        "ai-routing",
+        CURRENT_SCHEMA_VERSION,
+        bundled_ai_routing_seed_payload()
+            .map_err(|error| DatabaseInstallError::InvalidState(error.to_string()))?
+            .as_str(),
+    )
+    .await?
+    {
         return Ok(InstallationStatus::UpgradeRequired);
     }
     if !postgres_app_seed_complete(pool).await? {
@@ -3036,15 +3069,46 @@ async fn upsert_postgres_bootstrap_admin_recharge_settings(
     Ok(())
 }
 
+fn bootstrap_recharge_group_key(currency_code: &str) -> &'static str {
+    let normalized = currency_code.trim();
+    if normalized.is_empty() || normalized.eq_ignore_ascii_case("CNY") {
+        "cny"
+    } else {
+        "non-cny"
+    }
+}
+
 async fn upsert_sqlite_bootstrap_admin_recharge_packages(
     pool: &SqlitePool,
 ) -> Result<(), DatabaseInstallError> {
     let now = current_utc_timestamp_string();
     let mut sort_weight = 1_i64;
-    for package in commerce_recharge_package_seeds() {
+    let package_seeds = commerce_recharge_package_seeds();
+    let cny_spu_sales_status = if package_seeds.iter().any(|package| {
+        bootstrap_recharge_group_key(package.currency_code) == "cny"
+            && package.status.eq_ignore_ascii_case("active")
+    }) {
+        "active"
+    } else {
+        "inactive"
+    };
+    let non_cny_spu_sales_status = if package_seeds.iter().any(|package| {
+        bootstrap_recharge_group_key(package.currency_code) == "non-cny"
+            && package.status.eq_ignore_ascii_case("active")
+    }) {
+        "active"
+    } else {
+        "inactive"
+    };
+    for package in package_seeds {
+        let group_key = bootstrap_recharge_group_key(package.currency_code);
         let spu_id = format!(
             "bootstrap-admin-recharge-spu-{}-{}",
-            DEFAULT_IAM_TENANT_ID, package.external_id
+            DEFAULT_IAM_TENANT_ID, group_key
+        );
+        let spu_category_id = format!(
+            "bootstrap-admin-recharge-spu-category-{}-{}",
+            DEFAULT_IAM_TENANT_ID, group_key
         );
         let sku_id = format!(
             "bootstrap-admin-recharge-sku-{}-{}",
@@ -3054,9 +3118,19 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
             "bootstrap-admin-recharge-package-{}-{}",
             DEFAULT_IAM_TENANT_ID, package.external_id
         );
-        let spu_no = format!("bootstrap-admin-recharge-{}", package.external_id);
+        let spu_no = format!("bootstrap-admin-recharge-{group_key}");
         let sku_no = format!("bootstrap-admin-recharge-{}", package.external_id);
         let package_no = format!("bootstrap-admin-recharge-{}", package.external_id);
+        let spu_title = if group_key == "cny" {
+            "Bootstrap admin recharge catalog (CNY)"
+        } else {
+            "Bootstrap admin recharge catalog (Non-CNY)"
+        };
+        let spu_sales_status = if group_key == "cny" {
+            cny_spu_sales_status
+        } else {
+            non_cny_spu_sales_status
+        };
         let spec_json = serde_json::json!({
             "kind": "points_recharge_package",
             "packageId": package_id,
@@ -3070,9 +3144,9 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
         sqlx::query(
             r#"
             INSERT INTO commerce_product_spu
-                (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, category_id, sales_status, visible_surfaces, created_at, updated_at)
+                (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, sales_status, visible_surfaces, created_at, updated_at)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, 'points_recharge', 'commerce-recharge', 'active', '["app","console","admin"]', ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, 'points_recharge', ?, '["app","console","admin"]', ?, ?)
             ON CONFLICT(tenant_id, spu_no) DO UPDATE SET
                 id = excluded.id,
                 organization_id = excluded.organization_id,
@@ -3080,7 +3154,6 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
                 subtitle = excluded.subtitle,
                 description = excluded.description,
                 product_type = excluded.product_type,
-                category_id = excluded.category_id,
                 sales_status = excluded.sales_status,
                 visible_surfaces = excluded.visible_surfaces,
                 updated_at = excluded.updated_at
@@ -3090,9 +3163,33 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
         .bind(DEFAULT_IAM_TENANT_ID)
         .bind(DEFAULT_IAM_ORGANIZATION_ID)
         .bind(&spu_no)
-        .bind(package.name)
+        .bind(spu_title)
         .bind("Bootstrap admin recharge catalog")
         .bind("Bootstrap admin recharge package")
+        .bind(spu_sales_status)
+        .bind(&now)
+        .bind(&now)
+        .execute(pool)
+        .await?;
+
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_product_spu_category
+                (id, tenant_id, organization_id, spu_id, category_id, primary_flag, sort_order, status, created_at, updated_at)
+            VALUES
+                (?, ?, ?, ?, 'commerce-recharge', TRUE, 0, 'active', ?, ?)
+            ON CONFLICT(tenant_id, spu_id, category_id) DO UPDATE SET
+                organization_id = excluded.organization_id,
+                primary_flag = excluded.primary_flag,
+                sort_order = excluded.sort_order,
+                status = excluded.status,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(&spu_category_id)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(&spu_id)
         .bind(&now)
         .bind(&now)
         .execute(pool)
@@ -3103,7 +3200,7 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
             INSERT INTO commerce_product_sku
                 (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, spec_json, created_at, updated_at)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, 'points_credit', 'untracked', 'active', ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, 'points_credit', 'untracked', ?, ?, ?, ?)
             ON CONFLICT(tenant_id, sku_no) DO UPDATE SET
                 id = excluded.id,
                 organization_id = excluded.organization_id,
@@ -3129,6 +3226,7 @@ async fn upsert_sqlite_bootstrap_admin_recharge_packages(
         .bind(package.name)
         .bind(package.price_amount)
         .bind(package.currency_code)
+        .bind(package.status)
         .bind(&spec_json)
         .bind(&now)
         .bind(&now)
@@ -3187,10 +3285,32 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
 ) -> Result<(), DatabaseInstallError> {
     let now = current_utc_timestamp_string();
     let mut sort_weight = 1_i64;
-    for package in commerce_recharge_package_seeds() {
+    let package_seeds = commerce_recharge_package_seeds();
+    let cny_spu_sales_status = if package_seeds.iter().any(|package| {
+        bootstrap_recharge_group_key(package.currency_code) == "cny"
+            && package.status.eq_ignore_ascii_case("active")
+    }) {
+        "active"
+    } else {
+        "inactive"
+    };
+    let non_cny_spu_sales_status = if package_seeds.iter().any(|package| {
+        bootstrap_recharge_group_key(package.currency_code) == "non-cny"
+            && package.status.eq_ignore_ascii_case("active")
+    }) {
+        "active"
+    } else {
+        "inactive"
+    };
+    for package in package_seeds {
+        let group_key = bootstrap_recharge_group_key(package.currency_code);
         let spu_id = format!(
             "bootstrap-admin-recharge-spu-{}-{}",
-            DEFAULT_IAM_TENANT_ID, package.external_id
+            DEFAULT_IAM_TENANT_ID, group_key
+        );
+        let spu_category_id = format!(
+            "bootstrap-admin-recharge-spu-category-{}-{}",
+            DEFAULT_IAM_TENANT_ID, group_key
         );
         let sku_id = format!(
             "bootstrap-admin-recharge-sku-{}-{}",
@@ -3200,9 +3320,19 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
             "bootstrap-admin-recharge-package-{}-{}",
             DEFAULT_IAM_TENANT_ID, package.external_id
         );
-        let spu_no = format!("bootstrap-admin-recharge-{}", package.external_id);
+        let spu_no = format!("bootstrap-admin-recharge-{group_key}");
         let sku_no = format!("bootstrap-admin-recharge-{}", package.external_id);
         let package_no = format!("bootstrap-admin-recharge-{}", package.external_id);
+        let spu_title = if group_key == "cny" {
+            "Bootstrap admin recharge catalog (CNY)"
+        } else {
+            "Bootstrap admin recharge catalog (Non-CNY)"
+        };
+        let spu_sales_status = if group_key == "cny" {
+            cny_spu_sales_status
+        } else {
+            non_cny_spu_sales_status
+        };
         let spec_json = serde_json::json!({
             "kind": "points_recharge_package",
             "packageId": package_id,
@@ -3216,9 +3346,9 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
         sqlx::query(
             r#"
             INSERT INTO commerce_product_spu
-                (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, category_id, sales_status, visible_surfaces, created_at, updated_at)
+                (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, sales_status, visible_surfaces, created_at, updated_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, 'points_recharge', 'commerce-recharge', 'active', '["app","console","admin"]', $8, $9)
+                ($1, $2, $3, $4, $5, $6, $7, 'points_recharge', $8, '["app","console","admin"]', $9, $10)
             ON CONFLICT(tenant_id, spu_no) DO UPDATE SET
                 id = excluded.id,
                 organization_id = excluded.organization_id,
@@ -3226,7 +3356,6 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
                 subtitle = excluded.subtitle,
                 description = excluded.description,
                 product_type = excluded.product_type,
-                category_id = excluded.category_id,
                 sales_status = excluded.sales_status,
                 visible_surfaces = excluded.visible_surfaces,
                 updated_at = excluded.updated_at
@@ -3236,9 +3365,33 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
         .bind(DEFAULT_IAM_TENANT_ID)
         .bind(DEFAULT_IAM_ORGANIZATION_ID)
         .bind(&spu_no)
-        .bind(package.name)
+        .bind(spu_title)
         .bind("Bootstrap admin recharge catalog")
         .bind("Bootstrap admin recharge package")
+        .bind(spu_sales_status)
+        .bind(&now)
+        .bind(&now)
+        .execute(pool)
+        .await?;
+
+        sqlx::query(
+            r#"
+            INSERT INTO commerce_product_spu_category
+                (id, tenant_id, organization_id, spu_id, category_id, primary_flag, sort_order, status, created_at, updated_at)
+            VALUES
+                ($1, $2, $3, $4, 'commerce-recharge', TRUE, 0, 'active', $5, $6)
+            ON CONFLICT(tenant_id, spu_id, category_id) DO UPDATE SET
+                organization_id = excluded.organization_id,
+                primary_flag = excluded.primary_flag,
+                sort_order = excluded.sort_order,
+                status = excluded.status,
+                updated_at = excluded.updated_at
+            "#,
+        )
+        .bind(&spu_category_id)
+        .bind(DEFAULT_IAM_TENANT_ID)
+        .bind(DEFAULT_IAM_ORGANIZATION_ID)
+        .bind(&spu_id)
         .bind(&now)
         .bind(&now)
         .execute(pool)
@@ -3249,7 +3402,7 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
             INSERT INTO commerce_product_sku
                 (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, spec_json, created_at, updated_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, NULL, $9, 'points_credit', 'untracked', 'active', $10, $11, $12)
+                ($1, $2, $3, $4, $5, $6, $7, $8, NULL, $9, 'points_credit', 'untracked', $10, $11, $12, $13)
             ON CONFLICT(tenant_id, sku_no) DO UPDATE SET
                 id = excluded.id,
                 organization_id = excluded.organization_id,
@@ -3275,6 +3428,7 @@ async fn upsert_postgres_bootstrap_admin_recharge_packages(
         .bind(package.name)
         .bind(package.price_amount)
         .bind(package.currency_code)
+        .bind(package.status)
         .bind(&spec_json)
         .bind(&now)
         .bind(&now)
@@ -3868,17 +4022,21 @@ async fn upsert_sqlite_bootstrap_admin(
     password_hash: Option<&str>,
     now: &str,
 ) -> Result<bool, sqlx::Error> {
+    let avatar = bootstrap_admin_avatar_resource();
     sqlx::query(
         r#"
         INSERT INTO iam_user
-            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
+            (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
         VALUES
-            (?, ?, ?, ?, ?, '', '', 'active', ?, ?)
+            (?, ?, ?, ?, ?, '', ?, ?, ?, 'active', ?, ?)
         ON CONFLICT(id) DO UPDATE SET
             tenant_id = excluded.tenant_id,
             username = excluded.username,
             display_name = excluded.display_name,
             email = excluded.email,
+            avatar_media_resource_id = excluded.avatar_media_resource_id,
+            avatar_object_blob_id = excluded.avatar_object_blob_id,
+            avatar_resource_snapshot = excluded.avatar_resource_snapshot,
             status = excluded.status,
             updated_at = excluded.updated_at
         "#,
@@ -3888,6 +4046,9 @@ async fn upsert_sqlite_bootstrap_admin(
     .bind(&options.username)
     .bind(&options.display_name)
     .bind(&options.email)
+    .bind(media_resource_stable_id(&avatar))
+    .bind(media_resource_object_blob_id(&avatar))
+    .bind(avatar.to_string())
     .bind(now)
     .bind(now)
     .execute(&mut **tx)
@@ -3982,17 +4143,21 @@ async fn upsert_postgres_bootstrap_admin(
     password_hash: Option<&str>,
     now: &str,
 ) -> Result<bool, sqlx::Error> {
+    let avatar = bootstrap_admin_avatar_resource();
     sqlx::query(
         r#"
         INSERT INTO iam_user
-            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
+            (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, $5, '', '', 'active', $6::timestamptz, $6::timestamptz)
+            ($1, $2, $3, $4, $5, '', $6, $7, $8::jsonb, 'active', $9::timestamptz, $9::timestamptz)
         ON CONFLICT(id) DO UPDATE SET
             tenant_id = excluded.tenant_id,
             username = excluded.username,
             display_name = excluded.display_name,
             email = excluded.email,
+            avatar_media_resource_id = excluded.avatar_media_resource_id,
+            avatar_object_blob_id = excluded.avatar_object_blob_id,
+            avatar_resource_snapshot = excluded.avatar_resource_snapshot,
             status = excluded.status,
             updated_at = excluded.updated_at
         "#,
@@ -4002,6 +4167,9 @@ async fn upsert_postgres_bootstrap_admin(
     .bind(&options.username)
     .bind(&options.display_name)
     .bind(&options.email)
+    .bind(media_resource_stable_id(&avatar))
+    .bind(media_resource_object_blob_id(&avatar))
+    .bind(avatar.to_string())
     .bind(now)
     .execute(&mut **tx)
     .await?;
@@ -4085,6 +4253,10 @@ async fn upsert_postgres_bootstrap_admin(
     .execute(&mut **tx)
     .await?;
     Ok(password_written)
+}
+
+fn bootstrap_admin_avatar_resource() -> serde_json::Value {
+    provider_asset_media_resource("image", "bootstrap-admin-avatar")
 }
 
 async fn sqlite_table_exists(pool: &SqlitePool, table_name: &str) -> Result<bool, sqlx::Error> {

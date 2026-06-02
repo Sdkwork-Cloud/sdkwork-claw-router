@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sky@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sky-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sky-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c5594e99d9f15cbd15abfd5944d0b41938e4ca30cf95a064961b60b9feb8d6d3",

@@ -6,12 +6,16 @@ export interface CommerceInventoryReservationRecord {
   created_at: string;
   /** Expires at field on commerce inventory reservation record. */
   expires_at: string;
+  /** Id field on commerce inventory reservation record. */
+  id?: string;
   /** Idempotency key field on commerce inventory reservation record. */
   idempotency_key: string;
   /** Order id field on commerce inventory reservation record. */
   order_id?: string;
   /** Organization id field on commerce inventory reservation record. */
   organization_id?: string;
+  /** Quantity field on commerce inventory reservation record. */
+  quantity: string;
   /** Reservation no field on commerce inventory reservation record. */
   reservation_no: string;
   /** Sku id field on commerce inventory reservation record. */

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openspec@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openspec-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openspec-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a1d6dc13ddef36b530ab3f26c1f9c7c8dd6b7b1e0a58f620fa43f70ddcb9b45",

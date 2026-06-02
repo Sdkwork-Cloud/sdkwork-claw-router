@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/radisson@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-radisson-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-radisson-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f370482d771cd612ea38cc106bd31e469540586fb6642ecee9b5fc9d500f042b",

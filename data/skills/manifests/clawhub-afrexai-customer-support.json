@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/afrexai-customer-support@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-customer-support-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-afrexai-customer-support-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05f621dc2bb1f89c38205bff5c553159e5dfa15e4822886dc6b762a799e0e7bb",

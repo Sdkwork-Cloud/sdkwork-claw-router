@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agntdata-youtube@1.0.15",
-      "artifactUrl": "data/skills/artifacts/clawhub-agntdata-youtube-1.0.15.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agntdata-youtube-1.0.15.json"
+      },
       "version": "1.0.15",
       "runtime": "metadata",
       "checksumHash": "sha256:7f2dd610707fdb4d835d723dab10e312c6e894bc773871bfb096b25edb08c10d",

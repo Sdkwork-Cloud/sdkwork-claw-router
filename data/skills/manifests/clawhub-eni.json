@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eni@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eni-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eni-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:edbb7da150d61d0052e9c5c80941a0153b174030bab60261d0201bb58e7ef840",

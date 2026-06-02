@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/census@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-census-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-census-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a3509d3964438e3615bef2a80ec8f227414a81b1d5b28ec909f5eed186863c5d",

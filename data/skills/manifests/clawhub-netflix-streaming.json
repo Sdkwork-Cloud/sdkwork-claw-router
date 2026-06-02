@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/netflix-streaming@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-netflix-streaming-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-netflix-streaming-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:23c770cdf70342032f2948f64c669f3b08a3875b43b1b568bd32513e0ad79f0a",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ic-trade-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ic-trade-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ic-trade-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:07c3d031d48458219b6773b151c79f88e1ad27c00d72289e3969da8d39a01be4",

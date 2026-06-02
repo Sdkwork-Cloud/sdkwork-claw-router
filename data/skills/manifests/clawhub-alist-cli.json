@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alist-cli@1.6.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-alist-cli-1.6.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alist-cli-1.6.2.json"
+      },
       "version": "1.6.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4b836af28febc1a1ef4633cae9fefbb2c96c9958841262876ac889458bf39d60",

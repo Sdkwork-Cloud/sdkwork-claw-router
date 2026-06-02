@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mama-cli@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mama-cli-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mama-cli-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4e8f54021ff954a4d73d481db7317125ae84d200233453f8ca72d442e5e1935c",

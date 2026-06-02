@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beeper@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-beeper-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beeper-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4a2ec028b222c2e15ee1b827dc20643e9bc7e2f5ba21f34b2e81ef19f1359eb2",

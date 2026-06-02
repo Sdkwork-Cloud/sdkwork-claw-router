@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/akashic-knowledge-base@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-akashic-knowledge-base-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-akashic-knowledge-base-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:578669f1fd7057bee2de1c42ddcfdd9ade05bef9ed4419e48eaf059244cb76cd",

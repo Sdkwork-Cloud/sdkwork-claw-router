@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::base::{RequestHeaders};
 use crate::api::paths::backend_path;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AccessGroupsChannelBindingsListResult, AccessGroupsChannelBindingsUpdateResult, AccessGroupsCreateResult, AccessGroupsDeleteResult, AccessGroupsListResult, AccessGroupsUpdateResult, AdminAccessGroupChannelBindingsReplaceRequest, AdminAccessGroupCreateRequest, AdminAccessGroupUpdateRequest, AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult};
+use crate::models::{AdminApiKeyCreateRequest, AdminUserCreateRequest, AdminUserUpdateRequest, ApiKeysCreateResult, ApiKeysDeleteResult, ApiKeysListResult, UsersCreateResult, UsersListResult, UsersUpdateResult};
 
 #[derive(Clone)]
 pub struct IamApi {
@@ -13,42 +13,6 @@ pub struct IamApi {
 impl IamApi {
     pub fn new(client: Arc<SdkworkHttpClient>) -> Self {
         Self { client }
-    }
-
-    /// List groups
-    pub async fn access_groups_list(&self) -> Result<AccessGroupsListResult, SdkworkError> {
-        let path = backend_path(&"/iam/access_groups".to_string());
-        self.client.get(&path, None, None).await
-    }
-
-    /// Create group
-    pub async fn access_groups_create(&self, body: &AdminAccessGroupCreateRequest) -> Result<AccessGroupsCreateResult, SdkworkError> {
-        let path = backend_path(&"/iam/access_groups".to_string());
-        self.client.post(&path, Some(body), None, None, Some("application/json")).await
-    }
-
-    /// Delete group
-    pub async fn access_groups_delete(&self, group_id: &str) -> Result<AccessGroupsDeleteResult, SdkworkError> {
-        let path = backend_path(&format!("/iam/access_groups/{}", serialize_path_parameter(group_id, PathParameterSpec::new("groupId", "simple", false))));
-        self.client.delete(&path, None, None).await
-    }
-
-    /// Update group
-    pub async fn access_groups_update(&self, group_id: &str, body: &AdminAccessGroupUpdateRequest) -> Result<AccessGroupsUpdateResult, SdkworkError> {
-        let path = backend_path(&format!("/iam/access_groups/{}", serialize_path_parameter(group_id, PathParameterSpec::new("groupId", "simple", false))));
-        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
-    }
-
-    /// List group channel bindings
-    pub async fn access_groups_channel_bindings_list(&self, group_id: &str) -> Result<AccessGroupsChannelBindingsListResult, SdkworkError> {
-        let path = backend_path(&format!("/iam/access_groups/{}/channel_bindings", serialize_path_parameter(group_id, PathParameterSpec::new("groupId", "simple", false))));
-        self.client.get(&path, None, None).await
-    }
-
-    /// Replace group channel bindings
-    pub async fn access_groups_channel_bindings_update(&self, group_id: &str, body: &AdminAccessGroupChannelBindingsReplaceRequest) -> Result<AccessGroupsChannelBindingsUpdateResult, SdkworkError> {
-        let path = backend_path(&format!("/iam/access_groups/{}/channel_bindings", serialize_path_parameter(group_id, PathParameterSpec::new("groupId", "simple", false))));
-        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List API key map

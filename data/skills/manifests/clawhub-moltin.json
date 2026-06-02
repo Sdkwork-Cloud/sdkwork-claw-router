@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltin@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltin-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltin-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c0fc2c3c8bc5bdc59025acda9e1de382f1c705a82d3f06e62783fd86b162bd47",

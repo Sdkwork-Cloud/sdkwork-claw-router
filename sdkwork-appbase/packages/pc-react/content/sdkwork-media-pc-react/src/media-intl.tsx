@@ -4,7 +4,7 @@ import {
   useMemo,
   type PropsWithChildren,
 } from "react";
-import type { SdkworkMediaKind, SdkworkMediaPublishPosture } from "./media";
+import type { SdkworkMediaItemKind, SdkworkMediaPublishPosture } from "./media";
 import {
   createSdkworkMediaMessages,
   normalizeSdkworkMediaLocale,
@@ -16,7 +16,7 @@ import {
 export interface SdkworkMediaIntlValue {
   copy: SdkworkMediaMessages;
   formatInteger: (value: number) => string;
-  formatKindLabel: (value: SdkworkMediaKind) => string;
+  formatKindLabel: (value: SdkworkMediaItemKind) => string;
   formatPublishPostureLabel: (value: SdkworkMediaPublishPosture | "all") => string;
   locale: SdkworkMediaLocale;
 }

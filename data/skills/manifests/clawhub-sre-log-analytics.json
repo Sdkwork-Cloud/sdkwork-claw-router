@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sre-log-analytics@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sre-log-analytics-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sre-log-analytics-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:587cc5bb966b526f045ad4ecd630bf692f24a3d6e8a489ccd2e7efd29e870521",

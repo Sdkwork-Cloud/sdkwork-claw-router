@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-push-system-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-push-system-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-push-system-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:48bbd486e8489df3e46b97320d286e09eaf50082ec2b07babc7d30d76c469103",

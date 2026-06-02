@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/militia-training@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-militia-training-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-militia-training-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:807cfb24e1fdcfd7de20994b3d57b8d368c48e1295acd846b67e4834ccf33859",

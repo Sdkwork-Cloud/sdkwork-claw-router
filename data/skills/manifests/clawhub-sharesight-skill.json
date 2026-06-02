@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sharesight-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sharesight-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sharesight-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16b6ec8cb5b53350721b1256ac0f61d71ee8f4adfa9d76aa0160d232b25e9eb4",

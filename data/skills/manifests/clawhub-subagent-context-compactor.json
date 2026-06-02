@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subagent-context-compactor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subagent-context-compactor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subagent-context-compactor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d870ff7d150dd655e23ab9be44585e8be613ef6f3f4f4d42bb9e9636ec29f06a",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rex-skill-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rex-skill-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rex-skill-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:95b6087ebc22e3579f3a84d16569c335a9fbb1a88c2649852dfcf6148c44bfe3",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-radio@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-radio-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-radio-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:90ea1b95ff0f0d10ff4ffe36a501843b4ff93c66d8d6d3092d9231db5e64c050",

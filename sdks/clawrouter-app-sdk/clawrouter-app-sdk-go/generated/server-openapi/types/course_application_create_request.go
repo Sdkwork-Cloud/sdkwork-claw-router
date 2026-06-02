@@ -10,5 +10,5 @@ type CourseApplicationCreateRequest struct {
 	Notes string `json:"notes"`
 	SourceProvider string `json:"sourceProvider"`
 	Title string `json:"title"`
-	VideoUrl string `json:"videoUrl"`
+	Video MediaResource `json:"video"`
 }

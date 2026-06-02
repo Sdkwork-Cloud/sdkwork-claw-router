@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-subagent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-subagent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-subagent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3c9f332f667d81ec291f05e213e9eb393ecb9e0437263ccbdd360bdd39826f6d",

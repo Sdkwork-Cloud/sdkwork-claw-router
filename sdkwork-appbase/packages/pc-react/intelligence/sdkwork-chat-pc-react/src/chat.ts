@@ -1,7 +1,9 @@
 import {
   createSdkworkAppCapabilityManifest,
+  getSdkworkMediaDeliveryUrl,
   type CreateSdkworkAppCapabilityManifestOptions,
   type SdkworkAppCapabilityManifest,
+  type SdkworkMediaResource,
 } from "@sdkwork/appbase-pc-react";
 import {
   evaluateLlmExecutionReadiness,
@@ -39,9 +41,8 @@ export interface SdkworkChatAttachment {
   kind: SdkworkChatAttachmentKind;
   mimeType?: string;
   name: string;
-  previewUrl?: string;
+  resource: SdkworkMediaResource;
   sizeBytes?: number;
-  url?: string;
 }
 
 export interface SdkworkChatToolCall {
@@ -301,13 +302,13 @@ function createLlmPartsFromChatContent(
   }
 
   for (const attachment of attachments) {
-    const url = attachment.url?.trim() || attachment.previewUrl?.trim() || undefined;
+    const deliveryUrl = getSdkworkMediaDeliveryUrl(attachment.resource);
 
-    if (attachment.kind === "image" && url) {
+    if (attachment.kind === "image" && deliveryUrl) {
       parts.push({
         ...(attachment.mimeType ? { mimeType: attachment.mimeType } : {}),
         type: "image",
-        url,
+        url: deliveryUrl,
       });
       continue;
     }
@@ -316,7 +317,7 @@ function createLlmPartsFromChatContent(
       fileId: attachment.id,
       ...(attachment.mimeType ? { mimeType: attachment.mimeType } : {}),
       type: "file",
-      ...(url ? { url } : {}),
+      ...(deliveryUrl ? { url: deliveryUrl } : {}),
     });
   }
 
@@ -460,8 +461,9 @@ export function composeOutgoingChatMessageText(
         lines.push(`MIME: ${attachment.mimeType.trim()}`);
       }
 
-      if (attachment.url?.trim()) {
-        lines.push(`URL: ${attachment.url.trim()}`);
+      const deliveryUrl = getSdkworkMediaDeliveryUrl(attachment.resource);
+      if (deliveryUrl) {
+        lines.push(`URL: ${deliveryUrl}`);
       }
 
       return lines.join("\n");

@@ -9,6 +9,7 @@ import {
   buildPortalShareUrl,
   getLoadErrorMessage,
   hasStoredPortalSession,
+  readMediaResourceUrl,
 } from 'sdkwork-claw-router-commons/runtime';
 import { skillService } from '../services/skillService';
 import {
@@ -229,7 +230,7 @@ export function SkillDetails() {
             animate={{ opacity: 1, scale: 1 }}
             className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0 rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-white/10"
           >
-            <img src={detailSkill.image} alt={detailSkill.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <img src={readMediaResourceUrl(detailSkill.image)} alt={detailSkill.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           </motion.div>
 
           {/* Skill Info */}

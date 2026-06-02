@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yuntu@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yuntu-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yuntu-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd4ee8863066b8686df02125482360f0cdccfcc5b684280634ee3d95df40821f",

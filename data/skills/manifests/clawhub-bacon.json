@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bacon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bacon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bacon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:90e7ac5452d1f0b70cd54021b6e0ba0ae5ee7ea5d9658da0dbbc25b3a6b81129",

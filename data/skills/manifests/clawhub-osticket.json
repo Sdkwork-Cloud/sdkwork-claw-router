@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/osticket@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-osticket-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-osticket-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:03916aaa3f46ae95b0664bd52c9b42f3b483a4501586aef388c56d77d834abf7",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcp-vods@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcp-vods-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcp-vods-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:90bda968bf19de76c89d094208349ca279f0c10ee3f4f19e38a139aade963973",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawsergeant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawsergeant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawsergeant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5f64472eba09c7e7914c779db29f1b9b1b9fe172a47834fce1c15aefc082b3e2",

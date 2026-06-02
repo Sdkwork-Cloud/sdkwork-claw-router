@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bootstrap-hardening@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bootstrap-hardening-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bootstrap-hardening-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28454625a32f0c3b5bac2aeef6cad2f72febc09ac90b7b22660138b82407f65f",

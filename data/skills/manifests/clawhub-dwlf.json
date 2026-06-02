@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dwlf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dwlf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dwlf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8be5745854ccaeac6972d9516943a63432ef621794461c9768fe3aa8a106eaed",

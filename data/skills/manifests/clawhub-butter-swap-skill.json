@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/butter-swap-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-butter-swap-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-butter-swap-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77bf4b1435f4b6ff4e09cb904e2b01d3c8b4313464c7fcda473e12270435ac78",

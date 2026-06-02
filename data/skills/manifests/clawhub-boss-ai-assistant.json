@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boss-ai-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boss-ai-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boss-ai-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9ef0964f5db199e4b93fd7a10510b67418f34b00591c2860f77b66cc21d09fb",

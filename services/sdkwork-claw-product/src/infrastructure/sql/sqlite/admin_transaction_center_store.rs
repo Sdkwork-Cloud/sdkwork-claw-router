@@ -3,13 +3,19 @@ use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
-    AdminTransactionCenterFuture, AdminTransactionCenterStore, AdminTransactionCollection,
-    AdminTransactionJsonRecord, CreateAdminPaymentProviderAccountCommand,
+    AdminTransactionCenterFuture, AdminTransactionCenterStore, AdminTransactionCenterSubject,
+    AdminTransactionCollection, AdminTransactionJsonRecord,
+    CreateAdminPaymentProviderAccountCommand, DeleteAdminPaymentProviderAccountCommand,
     ListAdminTransactionChildRecordsQuery, ListAdminTransactionRecordsQuery,
-    LoadAdminTransactionRecordQuery,
+    LoadAdminTransactionRecordQuery, UpdateAdminPaymentProviderAccountCommand,
+    UpdateAdminPaymentProviderAccountStatusCommand,
 };
 
 const PAYMENT_PROVIDER_ACCOUNT_AUDIT_ACTION: &str = "payments.provider_account.create";
+const PAYMENT_PROVIDER_ACCOUNT_UPDATE_AUDIT_ACTION: &str = "payments.provider_account.update";
+const PAYMENT_PROVIDER_ACCOUNT_STATUS_AUDIT_ACTION: &str =
+    "payments.provider_account.status.update";
+const PAYMENT_PROVIDER_ACCOUNT_DELETE_AUDIT_ACTION: &str = "payments.provider_account.delete";
 const PAYMENT_PROVIDER_ACCOUNT_AUDIT_TARGET_TYPE: i32 = 1701;
 
 #[derive(Debug, Clone)]
@@ -99,6 +105,27 @@ impl AdminTransactionCenterStore for SqliteAdminTransactionCenterStore {
         command: CreateAdminPaymentProviderAccountCommand,
     ) -> AdminTransactionCenterFuture<'a, AdminTransactionJsonRecord> {
         Box::pin(async move { create_payment_provider_account(&self.pool, command).await })
+    }
+
+    fn update_payment_provider_account<'a>(
+        &'a self,
+        command: UpdateAdminPaymentProviderAccountCommand,
+    ) -> AdminTransactionCenterFuture<'a, AdminTransactionJsonRecord> {
+        Box::pin(async move { update_payment_provider_account(&self.pool, command).await })
+    }
+
+    fn update_payment_provider_account_status<'a>(
+        &'a self,
+        command: UpdateAdminPaymentProviderAccountStatusCommand,
+    ) -> AdminTransactionCenterFuture<'a, AdminTransactionJsonRecord> {
+        Box::pin(async move { update_payment_provider_account_status(&self.pool, command).await })
+    }
+
+    fn delete_payment_provider_account<'a>(
+        &'a self,
+        command: DeleteAdminPaymentProviderAccountCommand,
+    ) -> AdminTransactionCenterFuture<'a, bool> {
+        Box::pin(async move { delete_payment_provider_account(&self.pool, command).await })
     }
 
     fn list_payment_methods<'a>(
@@ -587,6 +614,16 @@ async fn list_payment_provider_accounts(
             account_no AS accountNo,
             provider_code,
             provider_code AS providerCode,
+            (
+                SELECT json_extract(audit.change_summary, '$.accountRole')
+                FROM ops_audit_log audit
+                WHERE audit.tenant_id = CAST(commerce_payment_provider_account.tenant_id AS INTEGER)
+                  AND audit.organization_id = CAST(commerce_payment_provider_account.organization_id AS INTEGER)
+                  AND audit.action IN ('payments.provider_account.create', 'payments.provider_account.update')
+                  AND audit.target_uuid = commerce_payment_provider_account.id
+                ORDER BY audit.id DESC
+                LIMIT 1
+            ) AS accountRole,
             merchant_id,
             merchant_id AS merchantId,
             environment,
@@ -608,7 +645,7 @@ async fn list_payment_provider_accounts(
                 FROM ops_audit_log audit
                 WHERE audit.tenant_id = CAST(commerce_payment_provider_account.tenant_id AS INTEGER)
                   AND audit.organization_id = CAST(commerce_payment_provider_account.organization_id AS INTEGER)
-                  AND audit.action = 'payments.provider_account.create'
+                  AND audit.action IN ('payments.provider_account.create', 'payments.provider_account.update', 'payments.provider_account.status.update')
                   AND audit.target_uuid = commerce_payment_provider_account.id
                 ORDER BY audit.id DESC
                 LIMIT 1
@@ -719,6 +756,21 @@ async fn create_payment_provider_account(
         ));
     }
 
+    deactivate_peer_payment_provider_accounts_for_channel_scope(
+        &mut tx,
+        PaymentProviderAccountChannelScope {
+            tenant_id: command.subject.tenant_id,
+            organization_id: command.subject.organization_id,
+            provider_account_id: id.clone(),
+            provider_code: command.provider_code.clone(),
+            environment: command.environment.clone(),
+            country_code: command.country_code.clone(),
+            settlement_currency: command.settlement_currency.clone(),
+            status: command.status.clone(),
+            requested_at: command.requested_at.clone(),
+        },
+    )
+    .await?;
     insert_payment_provider_account_audit_if_absent(&mut tx, &command, &id).await?;
     tx.commit().await.map_err(store_error)?;
 
@@ -730,6 +782,380 @@ async fn create_payment_provider_account(
     )
     .await?
     .ok_or_else(|| DomainError::new("created payment provider account could not be reloaded"))
+}
+
+async fn update_payment_provider_account(
+    pool: &SqlitePool,
+    command: UpdateAdminPaymentProviderAccountCommand,
+) -> DomainResult<AdminTransactionJsonRecord> {
+    let Some(provider_account_id) = resolve_payment_provider_account_id(
+        pool,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &command.provider_account_id,
+    )
+    .await?
+    else {
+        return Err(DomainError::not_found(
+            "payment provider account was not found",
+        ));
+    };
+
+    let mut tx = pool.begin().await.map_err(|error| store_error(error))?;
+    let update_result = sqlx::query(
+        r#"
+        UPDATE commerce_payment_provider_account
+        SET provider_code = ?1,
+            merchant_id = ?2,
+            environment = ?3,
+            country_code = ?4,
+            settlement_currency = ?5,
+            secret_ref = ?6,
+            webhook_secret_ref = ?7,
+            certificate_ref = ?8,
+            status = ?9,
+            rotated_at = ?10,
+            updated_at = ?11
+        WHERE tenant_id = CAST(?12 AS TEXT)
+          AND organization_id = CAST(?13 AS TEXT)
+          AND id = ?14
+        "#,
+    )
+    .bind(&command.provider_code)
+    .bind(&command.merchant_id)
+    .bind(&command.environment)
+    .bind(&command.country_code)
+    .bind(&command.settlement_currency)
+    .bind(&command.secret_ref)
+    .bind(command.webhook_secret_ref.as_deref())
+    .bind(command.certificate_ref.as_deref())
+    .bind(&command.status)
+    .bind(command.rotated_at.as_deref())
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(&provider_account_id)
+    .execute(&mut *tx)
+    .await;
+
+    let update_result = update_result
+        .map_err(|error| write_error("failed to update payment provider account", error))?;
+    if update_result.rows_affected() != 1 {
+        return Err(DomainError::not_found(
+            "payment provider account was not found",
+        ));
+    }
+
+    deactivate_peer_payment_provider_accounts_for_channel_scope(
+        &mut tx,
+        PaymentProviderAccountChannelScope {
+            tenant_id: command.subject.tenant_id,
+            organization_id: command.subject.organization_id,
+            provider_account_id: provider_account_id.clone(),
+            provider_code: command.provider_code.clone(),
+            environment: command.environment.clone(),
+            country_code: command.country_code.clone(),
+            settlement_currency: command.settlement_currency.clone(),
+            status: command.status.clone(),
+            requested_at: command.requested_at.clone(),
+        },
+    )
+    .await?;
+    insert_payment_provider_account_mutation_audit(
+        &mut tx,
+        PaymentProviderAccountAuditInput {
+            subject: command.subject,
+            action: PAYMENT_PROVIDER_ACCOUNT_UPDATE_AUDIT_ACTION,
+            target_uuid: &provider_account_id,
+            request_id: command.request_id.as_deref(),
+            idempotency_key: Some(command.idempotency_key.as_str()),
+            requested_at: &command.requested_at,
+            change_summary: serde_json::json!({
+                "providerCode": command.provider_code,
+                "accountRole": command.account_role,
+                "merchantId": command.merchant_id,
+                "environment": command.environment,
+                "countryCode": command.country_code,
+                "settlementCurrency": command.settlement_currency,
+                "status": command.status,
+                "rotatedAt": command.rotated_at,
+                "clientRequestNo": command.client_request_no,
+                "note": command.note
+            }),
+        },
+    )
+    .await?;
+    tx.commit().await.map_err(store_error)?;
+
+    load_payment_provider_account_by_id(
+        pool,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &provider_account_id,
+    )
+    .await?
+    .ok_or_else(|| DomainError::new("updated payment provider account could not be reloaded"))
+}
+
+async fn update_payment_provider_account_status(
+    pool: &SqlitePool,
+    command: UpdateAdminPaymentProviderAccountStatusCommand,
+) -> DomainResult<AdminTransactionJsonRecord> {
+    let Some(provider_account_id) = resolve_payment_provider_account_id(
+        pool,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &command.provider_account_id,
+    )
+    .await?
+    else {
+        return Err(DomainError::not_found(
+            "payment provider account was not found",
+        ));
+    };
+
+    let mut tx = pool.begin().await.map_err(|error| store_error(error))?;
+    let update_result = sqlx::query(
+        r#"
+        UPDATE commerce_payment_provider_account
+        SET status = ?1,
+            updated_at = ?2
+        WHERE tenant_id = CAST(?3 AS TEXT)
+          AND organization_id = CAST(?4 AS TEXT)
+          AND id = ?5
+        "#,
+    )
+    .bind(&command.status)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(&provider_account_id)
+    .execute(&mut *tx)
+    .await
+    .map_err(|error| write_error("failed to update payment provider account status", error))?;
+    if update_result.rows_affected() != 1 {
+        return Err(DomainError::not_found(
+            "payment provider account was not found",
+        ));
+    }
+
+    if command.status == "active" {
+        deactivate_peer_payment_provider_accounts_for_current_channel_scope(
+            &mut tx,
+            command.subject,
+            &provider_account_id,
+            &command.status,
+            &command.requested_at,
+        )
+        .await?;
+    }
+    insert_payment_provider_account_mutation_audit(
+        &mut tx,
+        PaymentProviderAccountAuditInput {
+            subject: command.subject,
+            action: PAYMENT_PROVIDER_ACCOUNT_STATUS_AUDIT_ACTION,
+            target_uuid: &provider_account_id,
+            request_id: command.request_id.as_deref(),
+            idempotency_key: Some(command.idempotency_key.as_str()),
+            requested_at: &command.requested_at,
+            change_summary: serde_json::json!({
+                "status": command.status,
+                "clientRequestNo": command.client_request_no,
+                "note": command.note
+            }),
+        },
+    )
+    .await?;
+    tx.commit().await.map_err(store_error)?;
+
+    load_payment_provider_account_by_id(
+        pool,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &provider_account_id,
+    )
+    .await?
+    .ok_or_else(|| DomainError::new("updated payment provider account could not be reloaded"))
+}
+
+struct PaymentProviderAccountChannelScope {
+    tenant_id: i64,
+    organization_id: i64,
+    provider_account_id: String,
+    provider_code: String,
+    environment: String,
+    country_code: String,
+    settlement_currency: String,
+    status: String,
+    requested_at: String,
+}
+
+async fn deactivate_peer_payment_provider_accounts_for_current_channel_scope(
+    tx: &mut Transaction<'_, Sqlite>,
+    subject: AdminTransactionCenterSubject,
+    provider_account_id: &str,
+    status: &str,
+    requested_at: &str,
+) -> DomainResult<()> {
+    if status != "active" {
+        return Ok(());
+    }
+    let Some(scope) = load_payment_provider_account_channel_scope(
+        tx,
+        subject,
+        provider_account_id,
+        status,
+        requested_at,
+    )
+    .await?
+    else {
+        return Ok(());
+    };
+    deactivate_peer_payment_provider_accounts_for_channel_scope(tx, scope).await
+}
+
+async fn load_payment_provider_account_channel_scope(
+    tx: &mut Transaction<'_, Sqlite>,
+    subject: AdminTransactionCenterSubject,
+    provider_account_id: &str,
+    status: &str,
+    requested_at: &str,
+) -> DomainResult<Option<PaymentProviderAccountChannelScope>> {
+    let row = sqlx::query(
+        r#"
+        SELECT provider_code, environment, country_code, settlement_currency
+        FROM commerce_payment_provider_account
+        WHERE tenant_id = CAST(?1 AS TEXT)
+          AND organization_id = CAST(?2 AS TEXT)
+          AND id = ?3
+        LIMIT 1
+        "#,
+    )
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(provider_account_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(store_error)?;
+    let Some(row) = row else {
+        return Ok(None);
+    };
+    Ok(Some(PaymentProviderAccountChannelScope {
+        tenant_id: subject.tenant_id,
+        organization_id: subject.organization_id,
+        provider_account_id: provider_account_id.to_owned(),
+        provider_code: string_cell(&row, "provider_code")?,
+        environment: string_cell(&row, "environment")?,
+        country_code: string_cell(&row, "country_code")?,
+        settlement_currency: string_cell(&row, "settlement_currency")?,
+        status: status.to_owned(),
+        requested_at: requested_at.to_owned(),
+    }))
+}
+
+async fn deactivate_peer_payment_provider_accounts_for_channel_scope(
+    tx: &mut Transaction<'_, Sqlite>,
+    scope: PaymentProviderAccountChannelScope,
+) -> DomainResult<()> {
+    if scope.status != "active" {
+        return Ok(());
+    }
+    sqlx::query(
+        r#"
+        UPDATE commerce_payment_provider_account
+        SET status = 'inactive',
+            updated_at = ?1
+        WHERE tenant_id = CAST(?2 AS TEXT)
+          AND organization_id = CAST(?3 AS TEXT)
+          AND id <> ?4
+          AND provider_code = ?5
+          AND environment = ?6
+          AND country_code = ?7
+          AND settlement_currency = ?8
+          AND status = 'active'
+        "#,
+    )
+    .bind(&scope.requested_at)
+    .bind(scope.tenant_id)
+    .bind(scope.organization_id)
+    .bind(&scope.provider_account_id)
+    .bind(&scope.provider_code)
+    .bind(&scope.environment)
+    .bind(&scope.country_code)
+    .bind(&scope.settlement_currency)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| write_error("failed to deactivate peer payment provider accounts", error))?;
+    Ok(())
+}
+
+async fn delete_payment_provider_account(
+    pool: &SqlitePool,
+    command: DeleteAdminPaymentProviderAccountCommand,
+) -> DomainResult<bool> {
+    let Some(provider_account_id) = resolve_payment_provider_account_id(
+        pool,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &command.provider_account_id,
+    )
+    .await?
+    else {
+        return Err(DomainError::not_found(
+            "payment provider account was not found",
+        ));
+    };
+    let channel_count = count_payment_channels_for_provider_account(
+        pool,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &provider_account_id,
+    )
+    .await?;
+    if channel_count > 0 {
+        return Err(DomainError::conflict(
+            "payment provider account is used by payment channels; disable it before removing routing references",
+        ));
+    }
+
+    let mut tx = pool.begin().await.map_err(|error| store_error(error))?;
+    insert_payment_provider_account_mutation_audit(
+        &mut tx,
+        PaymentProviderAccountAuditInput {
+            subject: command.subject,
+            action: PAYMENT_PROVIDER_ACCOUNT_DELETE_AUDIT_ACTION,
+            target_uuid: &provider_account_id,
+            request_id: command.request_id.as_deref(),
+            idempotency_key: None,
+            requested_at: &command.requested_at,
+            change_summary: serde_json::json!({
+                "providerAccountId": provider_account_id,
+                "deleted": true
+            }),
+        },
+    )
+    .await?;
+    let delete_result = sqlx::query(
+        r#"
+        DELETE FROM commerce_payment_provider_account
+        WHERE tenant_id = CAST(?1 AS TEXT)
+          AND organization_id = CAST(?2 AS TEXT)
+          AND id = ?3
+        "#,
+    )
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(&provider_account_id)
+    .execute(&mut *tx)
+    .await
+    .map_err(|error| write_error("failed to delete payment provider account", error))?;
+    if delete_result.rows_affected() != 1 {
+        return Err(DomainError::not_found(
+            "payment provider account was not found",
+        ));
+    }
+    tx.commit().await.map_err(store_error)?;
+    Ok(true)
 }
 
 async fn insert_payment_provider_account_audit_if_absent(
@@ -744,6 +1170,7 @@ async fn insert_payment_provider_account_audit_if_absent(
     let change_summary = serde_json::json!({
         "accountNo": command.account_no,
         "providerCode": command.provider_code,
+        "accountRole": command.account_role,
         "merchantId": command.merchant_id,
         "environment": command.environment,
         "countryCode": command.country_code,
@@ -801,6 +1228,122 @@ async fn insert_payment_provider_account_audit_if_absent(
     Ok(())
 }
 
+struct PaymentProviderAccountAuditInput<'a> {
+    subject: AdminTransactionCenterSubject,
+    action: &'static str,
+    target_uuid: &'a str,
+    request_id: Option<&'a str>,
+    idempotency_key: Option<&'a str>,
+    requested_at: &'a str,
+    change_summary: serde_json::Value,
+}
+
+async fn insert_payment_provider_account_mutation_audit(
+    tx: &mut Transaction<'_, Sqlite>,
+    input: PaymentProviderAccountAuditInput<'_>,
+) -> DomainResult<()> {
+    let audit_request_id = input
+        .request_id
+        .or(input.idempotency_key)
+        .unwrap_or(input.target_uuid);
+    sqlx::query(
+        r#"
+        INSERT INTO ops_audit_log
+            (uuid, tenant_id, organization_id, request_id, operator_id, operator_type,
+             action, target_type, target_uuid, created_at, change_summary)
+        SELECT
+            ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11
+        WHERE NOT EXISTS (
+            SELECT 1
+            FROM ops_audit_log
+            WHERE tenant_id = ?12
+              AND organization_id = ?13
+              AND request_id = ?14
+              AND action = ?15
+        )
+        "#,
+    )
+    .bind(stable_id(
+        "transaction-center-audit",
+        &[
+            &input.subject.tenant_id.to_string(),
+            &input.subject.organization_id.to_string(),
+            audit_request_id,
+            input.action,
+            input.target_uuid,
+        ],
+    ))
+    .bind(input.subject.tenant_id)
+    .bind(input.subject.organization_id)
+    .bind(audit_request_id)
+    .bind(input.subject.operator_id)
+    .bind(input.subject.operator_type)
+    .bind(input.action)
+    .bind(PAYMENT_PROVIDER_ACCOUNT_AUDIT_TARGET_TYPE)
+    .bind(input.target_uuid)
+    .bind(input.requested_at)
+    .bind(input.change_summary.to_string())
+    .bind(input.subject.tenant_id)
+    .bind(input.subject.organization_id)
+    .bind(audit_request_id)
+    .bind(input.action)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| write_error("failed to write payment provider account audit log", error))?;
+    Ok(())
+}
+
+async fn resolve_payment_provider_account_id(
+    pool: &SqlitePool,
+    tenant_id: i64,
+    organization_id: i64,
+    provider_account_id: &str,
+) -> DomainResult<Option<String>> {
+    let row = sqlx::query(
+        r#"
+        SELECT id
+        FROM commerce_payment_provider_account
+        WHERE tenant_id = CAST(?1 AS TEXT)
+          AND organization_id = CAST(?2 AS TEXT)
+          AND (id = ?3 OR account_no = ?3)
+        LIMIT 1
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(provider_account_id)
+    .fetch_optional(pool)
+    .await
+    .map_err(store_error)?;
+
+    row.map(|row| string_cell(&row, "id")).transpose()
+}
+
+async fn count_payment_channels_for_provider_account(
+    pool: &SqlitePool,
+    tenant_id: i64,
+    organization_id: i64,
+    provider_account_id: &str,
+) -> DomainResult<i64> {
+    let row = sqlx::query(
+        r#"
+        SELECT COUNT(*) AS total
+        FROM commerce_payment_channel
+        WHERE tenant_id = CAST(?1 AS TEXT)
+          AND organization_id = CAST(?2 AS TEXT)
+          AND provider_account_id = ?3
+        "#,
+    )
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(provider_account_id)
+    .fetch_one(pool)
+    .await
+    .map_err(store_error)?;
+
+    integer_cell(&row, "total")
+}
+
 async fn load_payment_provider_account_by_id(
     pool: &SqlitePool,
     tenant_id: i64,
@@ -817,6 +1360,16 @@ async fn load_payment_provider_account_by_id(
             account_no AS accountNo,
             provider_code,
             provider_code AS providerCode,
+            (
+                SELECT json_extract(audit.change_summary, '$.accountRole')
+                FROM ops_audit_log audit
+                WHERE audit.tenant_id = CAST(commerce_payment_provider_account.tenant_id AS INTEGER)
+                  AND audit.organization_id = CAST(commerce_payment_provider_account.organization_id AS INTEGER)
+                  AND audit.action IN ('payments.provider_account.create', 'payments.provider_account.update')
+                  AND audit.target_uuid = commerce_payment_provider_account.id
+                ORDER BY audit.id DESC
+                LIMIT 1
+            ) AS accountRole,
             merchant_id,
             merchant_id AS merchantId,
             environment,
@@ -838,7 +1391,7 @@ async fn load_payment_provider_account_by_id(
                 FROM ops_audit_log audit
                 WHERE audit.tenant_id = CAST(commerce_payment_provider_account.tenant_id AS INTEGER)
                   AND audit.organization_id = CAST(commerce_payment_provider_account.organization_id AS INTEGER)
-                  AND audit.action = 'payments.provider_account.create'
+                  AND audit.action IN ('payments.provider_account.create', 'payments.provider_account.update', 'payments.provider_account.status.update')
                   AND audit.target_uuid = commerce_payment_provider_account.id
                 ORDER BY audit.id DESC
                 LIMIT 1
@@ -1490,6 +2043,7 @@ const PAYMENT_PROVIDER_ACCOUNT_FIELDS: &[Field] = &[
     Field::String("accountNo"),
     Field::String("provider_code"),
     Field::String("providerCode"),
+    Field::OptionalString("accountRole"),
     Field::String("merchant_id"),
     Field::String("merchantId"),
     Field::String("environment"),
@@ -1914,6 +2468,7 @@ fn ensure_payment_provider_account_replay_matches(
         }
     }
     for (field, expected) in [
+        ("accountRole", command.account_role.as_deref()),
         ("webhookSecretRef", command.webhook_secret_ref.as_deref()),
         ("certificateRef", command.certificate_ref.as_deref()),
         ("rotatedAt", command.rotated_at.as_deref()),

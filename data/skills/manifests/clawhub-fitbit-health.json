@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fitbit-health@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fitbit-health-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fitbit-health-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fb48b6e87535304634a5b474625bd2bf19e4377e7e562d0cab8a285366a38043",

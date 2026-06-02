@@ -256,10 +256,12 @@ async fn insert_channel_endpoint(
             (
                 SELECT v.id
                 FROM ai_model_vendor v
-                WHERE v.tenant_id = a.tenant_id
-                  AND v.organization_id = a.organization_id
+                WHERE (v.tenant_id = ? OR v.tenant_id = 0)
+                  AND (v.organization_id = ? OR v.organization_id = 0)
                   AND v.vendor_code = ?
                   AND v.deleted_at IS NULL
+                ORDER BY CASE WHEN v.tenant_id = ? AND v.organization_id = ? THEN 0 ELSE 1 END,
+                         v.id ASC
                 LIMIT 1
             ),
             ?,
@@ -267,10 +269,12 @@ async fn insert_channel_endpoint(
             (
                 SELECT e.id
                 FROM ai_api_endpoint e
-                WHERE e.tenant_id = a.tenant_id
-                  AND e.organization_id = a.organization_id
+                WHERE (e.tenant_id = ? OR e.tenant_id = 0)
+                  AND (e.organization_id = ? OR e.organization_id = 0)
                   AND e.endpoint_code = ?
                   AND e.deleted_at IS NULL
+                ORDER BY CASE WHEN e.tenant_id = ? AND e.organization_id = ? THEN 0 ELSE 1 END,
+                         e.id ASC
                 LIMIT 1
             ),
             ?,
@@ -291,10 +295,18 @@ async fn insert_channel_endpoint(
     .bind(status_code(&command.status))
     .bind(&command.requested_at)
     .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(&command.vendor_code)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(&command.vendor_code)
     .bind(&command.region_code)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(&command.api_endpoint_code)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(&command.api_endpoint_code)
     .bind(&command.base_url)
     .bind(command.priority)
@@ -343,10 +355,12 @@ async fn update_channel_endpoint_core(
             vendor_id = CASE WHEN ? THEN (
                 SELECT v.id
                 FROM ai_model_vendor v
-                WHERE v.tenant_id = ai_channel_endpoint.tenant_id
-                  AND v.organization_id = ai_channel_endpoint.organization_id
+                WHERE (v.tenant_id = ? OR v.tenant_id = 0)
+                  AND (v.organization_id = ? OR v.organization_id = 0)
                   AND v.vendor_code = ?
                   AND v.deleted_at IS NULL
+                ORDER BY CASE WHEN v.tenant_id = ? AND v.organization_id = ? THEN 0 ELSE 1 END,
+                         v.id ASC
                 LIMIT 1
             ) ELSE vendor_id END,
             region_code = COALESCE(?, region_code),
@@ -354,10 +368,12 @@ async fn update_channel_endpoint_core(
             api_endpoint_id = CASE WHEN ? THEN (
                 SELECT e.id
                 FROM ai_api_endpoint e
-                WHERE e.tenant_id = ai_channel_endpoint.tenant_id
-                  AND e.organization_id = ai_channel_endpoint.organization_id
+                WHERE (e.tenant_id = ? OR e.tenant_id = 0)
+                  AND (e.organization_id = ? OR e.organization_id = 0)
                   AND e.endpoint_code = ?
                   AND e.deleted_at IS NULL
+                ORDER BY CASE WHEN e.tenant_id = ? AND e.organization_id = ? THEN 0 ELSE 1 END,
+                         e.id ASC
                 LIMIT 1
             ) ELSE api_endpoint_id END,
             base_url = COALESCE(?, base_url),
@@ -376,11 +392,19 @@ async fn update_channel_endpoint_core(
     )
     .bind(command.vendor_code.as_deref())
     .bind(present_flag(command.vendor_code.is_some()))
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(command.vendor_code.as_deref())
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(command.region_code.as_deref())
     .bind(command.api_endpoint_code.as_deref())
     .bind(present_flag(command.api_endpoint_code.is_some()))
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(command.api_endpoint_code.as_deref())
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
     .bind(command.base_url.as_deref())
     .bind(command.priority)
     .bind(command.weight)
@@ -419,8 +443,8 @@ async fn ensure_vendor_exists(
         r#"
         SELECT COUNT(1)
         FROM ai_model_vendor
-        WHERE tenant_id = ?
-          AND organization_id = ?
+        WHERE (tenant_id = ? OR tenant_id = 0)
+          AND (organization_id = ? OR organization_id = 0)
           AND vendor_code = ?
           AND deleted_at IS NULL
         "#,
@@ -449,8 +473,8 @@ async fn ensure_api_endpoint_exists(
         r#"
         SELECT COUNT(1)
         FROM ai_api_endpoint
-        WHERE tenant_id = ?
-          AND organization_id = ?
+        WHERE (tenant_id = ? OR tenant_id = 0)
+          AND (organization_id = ? OR organization_id = 0)
           AND endpoint_code = ?
           AND deleted_at IS NULL
         "#,

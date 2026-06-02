@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bnbot@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bnbot-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bnbot-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00e200cce8f95bb2463a20843b6c73e5c9a2028a66d024d2db4a747fb6ce23c1",

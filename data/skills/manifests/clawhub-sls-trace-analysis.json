@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sls-trace-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sls-trace-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sls-trace-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13261605ca2f66862957931351324db2f200ff504b4804014139a3720cdad412",

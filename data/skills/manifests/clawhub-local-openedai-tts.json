@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-openedai-tts@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-openedai-tts-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-openedai-tts-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35d5e49c9982325a0229bf23b8882596c6ea142125e67b3af4ca75f102425b79",

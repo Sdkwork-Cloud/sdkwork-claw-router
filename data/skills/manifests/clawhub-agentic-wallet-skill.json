@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentic-wallet-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentic-wallet-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentic-wallet-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e5aaaead516d4d52ae14cd527f019f2804abd50478cde194bbc889b6160b9c44",

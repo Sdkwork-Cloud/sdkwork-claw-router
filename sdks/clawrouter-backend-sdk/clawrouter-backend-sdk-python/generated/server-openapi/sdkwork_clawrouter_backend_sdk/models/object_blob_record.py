@@ -17,14 +17,17 @@ class ObjectBlobRecord:
     id: Optional[str] = None
     kms_key_ref: Optional[str] = None
     last_verified_at: Optional[str] = None
+    legal_hold: Optional[bool] = None
     metadata: Optional[Dict[str, str]] = None
     object_key: Optional[str] = None
     organization_id: Optional[str] = None
     original_filename: Optional[str] = None
     owner_id: Optional[str] = None
     owner_type: Optional[str] = None
+    physical_size_bytes: Optional[str] = None
     provider_id: Optional[str] = None
     retention_until: Optional[str] = None
+    size_bytes: Optional[str] = None
     status: Optional[str] = None
     storage_class: Optional[str] = None
     storage_etag: Optional[str] = None

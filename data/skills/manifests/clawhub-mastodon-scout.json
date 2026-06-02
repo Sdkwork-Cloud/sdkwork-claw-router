@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mastodon-scout@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mastodon-scout-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mastodon-scout-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9dcfe2e189760740fa9844d9b6d9471c0ded85af3321dc7ab5d0f1b917ce9ed8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sevo@1.5.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sevo-1.5.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sevo-1.5.1.json"
+      },
       "version": "1.5.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a521bb5307e9d8fdda67ffa90335f11bb0f45a5c604a99da925d6f0cea8356f6",

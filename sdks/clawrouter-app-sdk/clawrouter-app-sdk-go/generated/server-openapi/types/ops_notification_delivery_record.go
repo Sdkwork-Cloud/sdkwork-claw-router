@@ -2,6 +2,7 @@ package types
 
 // Ops notification delivery record schema exposed by Claw Router.
 type OpsNotificationDeliveryRecord struct {
+	AppId string `json:"app_id"`
 	ArchivedAt string `json:"archived_at"`
 	CreatedAt string `json:"created_at"`
 	DataScope string `json:"data_scope"`

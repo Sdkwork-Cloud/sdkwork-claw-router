@@ -222,9 +222,6 @@ components:
         default_version_id:
           type: string
           format: int64
-        avatar_url:
-          type: string
-          maxLength: 512
         template_source:
           type: string
           maxLength: 128
@@ -237,6 +234,8 @@ components:
         published_by:
           type: string
           format: int64
+        avatar:
+          $ref: '#/components/schemas/MediaResource'
     AiAgentRunRecord:
       type: object
       x-table: ai_agent_run
@@ -269,7 +268,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -302,6 +301,9 @@ components:
         run_uuid:
           type: string
           maxLength: 128
+        run_status:
+          type: string
+          maxLength: 64
         source_surface:
           type: string
           maxLength: 64
@@ -398,7 +400,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -425,6 +427,9 @@ components:
         step_type:
           type: string
           x-db-type: enum_int32
+        step_status:
+          type: string
+          maxLength: 64
         title:
           type: string
           maxLength: 128
@@ -523,7 +528,7 @@ components:
           x-db-type: enum_int32
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -1052,12 +1057,21 @@ components:
         path_prefix:
           type: string
           maxLength: 256
+        priority:
+          type: integer
+          format: int32
+        weight:
+          type: integer
+          format: int32
         timeout_ms:
           type: integer
           format: int32
         retry_policy:
           type: object
           additionalProperties: true
+        health_status:
+          type: string
+          x-db-type: enum_int32
         last_latency_ms:
           type: integer
           format: int32
@@ -1130,6 +1144,14 @@ components:
         channel_id:
           type: string
           format: int64
+        priority:
+          type: integer
+          format: int32
+        weight:
+          type: integer
+          format: int32
+        enabled:
+          type: boolean
         effective_from:
           type: string
           format: date-time
@@ -1386,6 +1408,12 @@ components:
         resource_group_code:
           type: string
           maxLength: 128
+        grant_type:
+          type: string
+          maxLength: 32
+        priority:
+          type: integer
+          format: int32
         effective_from:
           type: string
           format: date-time
@@ -1398,6 +1426,7 @@ components:
       - organization_id
       - status
       - channel_group_id
+      - grant_type
     AiChannelModelRecord:
       type: object
       x-table: ai_channel_model
@@ -1615,6 +1644,12 @@ components:
         last_used_at:
           type: string
           format: date-time
+        priority:
+          type: integer
+          format: int32
+        weight:
+          type: integer
+          format: int32
         rpm_limit:
           type: string
           format: int64
@@ -1627,6 +1662,9 @@ components:
         circuit_breaker_policy:
           type: object
           additionalProperties: true
+        health_status:
+          type: string
+          x-db-type: enum_int32
         last_latency_ms:
           type: integer
           format: int32
@@ -1710,6 +1748,15 @@ components:
         resource_group_code:
           type: string
           maxLength: 128
+        grant_type:
+          type: string
+          maxLength: 32
+        priority:
+          type: integer
+          format: int32
+        weight:
+          type: integer
+          format: int32
         effective_from:
           type: string
           format: date-time
@@ -1722,6 +1769,7 @@ components:
       - organization_id
       - status
       - channel_id
+      - grant_type
     AiChannelVendorRecord:
       type: object
       x-table: ai_channel_vendor
@@ -1826,7 +1874,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -1918,7 +1966,7 @@ components:
           x-db-type: enum_int32
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -2036,7 +2084,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -2133,7 +2181,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -2168,8 +2216,15 @@ components:
         asset_id:
           type: string
           maxLength: 128
-        storage_url:
+        media_resource_id:
           type: string
+          maxLength: 128
+        object_blob_id:
+          type: string
+          format: int64
+        resource_snapshot:
+          type: object
+          additionalProperties: true
         file_name:
           type: string
           maxLength: 512
@@ -2214,7 +2269,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -2276,6 +2331,9 @@ components:
         token_count:
           type: string
           format: int64
+        updated_at:
+          type: string
+          format: date-time
     AiChatTurnRecord:
       type: object
       x-table: ai_chat_turn
@@ -2308,7 +2366,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -2320,6 +2378,9 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        updated_at:
+          type: string
+          format: date-time
         conversation_id:
           type: string
           format: int64
@@ -2450,12 +2511,18 @@ components:
         config_version:
           type: string
           format: int64
+        event_status:
+          type: string
+          maxLength: 32
         event_payload:
           type: object
           additionalProperties: true
         published_at:
           type: string
           format: date-time
+        publish_attempts:
+          type: integer
+          format: int32
         last_error_message:
           type: string
           maxLength: 512
@@ -2466,6 +2533,7 @@ components:
       - status
       - config_scope
       - config_version
+      - event_status
     AiConfigVersionRecord:
       type: object
       x-table: ai_config_version
@@ -2511,6 +2579,9 @@ components:
         config_scope:
           type: string
           maxLength: 64
+        config_version:
+          type: string
+          format: int64
         changed_object_type:
           type: string
           maxLength: 64
@@ -2526,6 +2597,7 @@ components:
       - organization_id
       - status
       - config_scope
+      - config_version
     AiGenerationAssetActionRecord:
       type: object
       x-table: ai_generation_asset_action
@@ -2657,18 +2729,12 @@ components:
         asset_type:
           type: string
           x-db-type: enum_int32
-        asset_url:
-          type: string
-          maxLength: 1024
-        thumbnail_url:
-          type: string
-          maxLength: 1024
         storage_provider:
           type: string
           maxLength: 64
-        storage_key:
+        object_key:
           type: string
-          maxLength: 512
+          maxLength: 1024
         mime_type:
           type: string
           maxLength: 128
@@ -2714,6 +2780,10 @@ components:
         expire_at:
           type: string
           format: date-time
+        asset:
+          $ref: '#/components/schemas/MediaResource'
+        thumbnail:
+          $ref: '#/components/schemas/MediaResource'
     AiGenerationJobRecord:
       type: object
       x-table: ai_generation_job
@@ -2932,6 +3002,23 @@ components:
         owner_id:
           type: string
           format: int64
+        allowed_tools:
+          type: object
+          additionalProperties: true
+        denied_tools:
+          type: object
+          additionalProperties: true
+        policy_json:
+          type: object
+          additionalProperties: true
+        priority:
+          type: integer
+          format: int32
+        enabled:
+          type: boolean
+        snapshot_json:
+          type: object
+          additionalProperties: true
     AiMcpServerRecord:
       type: object
       x-table: ai_mcp_server
@@ -3003,11 +3090,17 @@ components:
         published_revision_id:
           type: string
           format: int64
+        health_status:
+          type: string
+          maxLength: 64
         last_checked_at:
           type: string
           format: date-time
         last_error_masked:
           type: string
+        tags:
+          type: object
+          additionalProperties: true
         published_at:
           type: string
           format: date-time
@@ -3071,9 +3164,24 @@ components:
         command:
           type: string
           maxLength: 1024
+        args_json:
+          type: object
+          additionalProperties: true
+        env_schema:
+          type: object
+          additionalProperties: true
+        auth_type:
+          type: string
+          maxLength: 64
         secret_ref:
           type: string
           maxLength: 512
+        timeout_ms:
+          type: integer
+          format: int32
+        retry_policy:
+          type: object
+          additionalProperties: true
         config_hash:
           type: string
           maxLength: 128
@@ -3145,6 +3253,22 @@ components:
           maxLength: 255
         description:
           type: string
+        input_schema:
+          type: object
+          additionalProperties: true
+        output_schema:
+          type: object
+          additionalProperties: true
+        risk_level:
+          type: string
+          maxLength: 64
+        requires_approval:
+          type: boolean
+        enabled:
+          type: boolean
+        rate_limit_policy:
+          type: object
+          additionalProperties: true
         schema_hash:
           type: string
           maxLength: 128
@@ -3154,6 +3278,9 @@ components:
         last_invoked_at:
           type: string
           format: date-time
+        sort_weight:
+          type: integer
+          format: int32
     AiMemoryEmbeddingRecord:
       type: object
       x-table: ai_memory_embedding
@@ -3177,7 +3304,7 @@ components:
           x-db-type: enum_int32
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -3251,7 +3378,7 @@ components:
           x-db-type: enum_int32
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -3373,7 +3500,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -3449,7 +3576,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -3533,7 +3660,7 @@ components:
           x-db-type: enum_int32
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -3601,7 +3728,7 @@ components:
           x-db-type: enum_int32
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -4250,9 +4377,6 @@ components:
         docs_url:
           type: string
           maxLength: 512
-        icon_url:
-          type: string
-          maxLength: 512
         color_token:
           type: string
           maxLength: 64
@@ -4274,6 +4398,8 @@ components:
         sort_order:
           type: integer
           format: int32
+        icon:
+          $ref: '#/components/schemas/MediaResource'
       required:
       - uuid
       - tenant_id
@@ -4801,9 +4927,6 @@ components:
         output_modalities:
           type: object
           additionalProperties: true
-        icon_url:
-          type: string
-          maxLength: 1024
         color_token:
           type: string
           maxLength: 64
@@ -4877,6 +5000,8 @@ components:
           maxLength: 128
         description:
           type: string
+        icon:
+          $ref: '#/components/schemas/MediaResource'
       required:
       - uuid
       - tenant_id
@@ -4949,12 +5074,6 @@ components:
         docs_url:
           type: string
           maxLength: 512
-        logo_url:
-          type: string
-          maxLength: 512
-        icon_url:
-          type: string
-          maxLength: 512
         color_token:
           type: string
           maxLength: 64
@@ -4975,6 +5094,10 @@ components:
         sort_order:
           type: integer
           format: int32
+        icon:
+          $ref: '#/components/schemas/MediaResource'
+        logo:
+          $ref: '#/components/schemas/MediaResource'
       required:
       - uuid
       - tenant_id
@@ -5655,6 +5778,17 @@ components:
         binding_role:
           type: string
           maxLength: 64
+        priority:
+          type: integer
+          format: int32
+        enabled:
+          type: boolean
+        policy_json:
+          type: object
+          additionalProperties: true
+        snapshot_json:
+          type: object
+          additionalProperties: true
     AiPromptRecord:
       type: object
       x-table: ai_prompt
@@ -5726,6 +5860,9 @@ components:
         published_version_id:
           type: string
           format: int64
+        tags:
+          type: object
+          additionalProperties: true
         published_at:
           type: string
           format: date-time
@@ -5785,6 +5922,21 @@ components:
           maxLength: 255
         content:
           type: string
+        variable_schema:
+          type: object
+          additionalProperties: true
+        output_schema:
+          type: object
+          additionalProperties: true
+        model_constraints:
+          type: object
+          additionalProperties: true
+        safety_policy:
+          type: object
+          additionalProperties: true
+        examples_json:
+          type: object
+          additionalProperties: true
         checksum_hash:
           type: string
           maxLength: 128
@@ -5961,9 +6113,6 @@ components:
         description:
           type: string
           maxLength: 512
-        icon_url:
-          type: string
-          maxLength: 512
         color_token:
           type: string
           maxLength: 64
@@ -5997,6 +6146,8 @@ components:
         sort_order:
           type: integer
           format: int32
+        icon:
+          $ref: '#/components/schemas/MediaResource'
       required:
       - uuid
       - tenant_id
@@ -6668,6 +6819,18 @@ components:
         billing_meter_code:
           type: string
           maxLength: 64
+        model_requirement:
+          type: string
+          maxLength: 32
+        route_strategy:
+          type: string
+          maxLength: 64
+        failure_strategy:
+          type: string
+          maxLength: 64
+        selection_strategy:
+          type: string
+          maxLength: 64
         sticky_object_type:
           type: string
           maxLength: 64
@@ -6683,6 +6846,12 @@ components:
         response_bindings:
           type: object
           additionalProperties: true
+        endpoint_failover_scope:
+          type: string
+          maxLength: 64
+        idempotency_mode:
+          type: string
+          maxLength: 32
         cache_ttl_seconds:
           type: string
           format: int64
@@ -6696,6 +6865,10 @@ components:
       - status
       - resource_code
       - route_key
+      - route_strategy
+      - failure_strategy
+      - selection_strategy
+      - model_requirement
     AiRouteCandidateRecord:
       type: object
       x-table: ai_route_candidate
@@ -7214,7 +7387,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -7264,10 +7437,15 @@ components:
         content_json:
           type: object
           additionalProperties: true
-        storage_key:
+        media_resource_id:
           type: string
-        storage_url:
+          maxLength: 128
+        object_blob_id:
           type: string
+          format: int64
+        resource_snapshot:
+          type: object
+          additionalProperties: true
         sha256:
           type: string
           maxLength: 128
@@ -7306,7 +7484,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -7382,7 +7560,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -7427,6 +7605,8 @@ components:
         attempt_no:
           type: integer
           format: int32
+        streaming:
+          type: boolean
         started_at:
           type: string
           format: date-time
@@ -7530,7 +7710,7 @@ components:
           maxLength: 128
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 64
         created_at:
           type: string
           format: date-time
@@ -7561,6 +7741,9 @@ components:
           type: string
           maxLength: 128
         agent_run_step_id:
+          type: string
+          maxLength: 128
+        agent_run_step_id_key:
           type: string
           maxLength: 128
         runtime_invocation_id:
@@ -8310,6 +8493,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8374,6 +8560,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8441,6 +8630,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8456,6 +8648,15 @@ components:
         currency_code:
           type: string
           maxLength: 512
+        available_amount:
+          type: string
+          maxLength: 512
+        frozen_amount:
+          type: string
+          maxLength: 512
+        version:
+          type: string
+          format: int64
         status:
           type: string
           maxLength: 512
@@ -8469,6 +8670,9 @@ components:
       - tenant_id
       - owner_user_id
       - asset_type
+      - available_amount
+      - frozen_amount
+      - version
       - status
       - created_at
       - updated_at
@@ -8478,6 +8682,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8499,9 +8706,15 @@ components:
         asset_type:
           type: string
           maxLength: 512
+        amount:
+          type: string
+          maxLength: 512
         currency_code:
           type: string
           maxLength: 512
+        points_delta:
+          type: string
+          format: int64
         status:
           type: string
           maxLength: 512
@@ -8545,6 +8758,8 @@ components:
       - history_type
       - direction
       - asset_type
+      - amount
+      - points_delta
       - status
       - title
       - source_type
@@ -8558,6 +8773,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8570,6 +8788,11 @@ components:
         sku_id:
           type: string
           maxLength: 512
+        quantity:
+          type: string
+          format: int64
+        selected:
+          type: boolean
         price_snapshot_json:
           type: object
           additionalProperties: true
@@ -8586,6 +8809,8 @@ components:
       - tenant_id
       - cart_id
       - sku_id
+      - quantity
+      - selected
       - created_at
       - updated_at
     CommerceCartRecord:
@@ -8594,6 +8819,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8612,6 +8840,9 @@ components:
         status:
           type: string
           maxLength: 64
+        version:
+          type: string
+          format: int64
         created_at:
           type: string
           maxLength: 512
@@ -8624,6 +8855,7 @@ components:
       - cart_no
       - currency_code
       - status
+      - version
       - created_at
       - updated_at
     CommerceCheckoutLineRecord:
@@ -8632,6 +8864,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8644,6 +8879,9 @@ components:
         sku_id:
           type: string
           maxLength: 512
+        quantity:
+          type: string
+          format: int64
         purchase_type:
           type: string
           maxLength: 64
@@ -8666,6 +8904,7 @@ components:
       - tenant_id
       - checkout_session_id
       - sku_id
+      - quantity
       - purchase_type
       - fulfillment_type
       - created_at
@@ -8675,6 +8914,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8688,6 +8930,15 @@ components:
           type: string
           maxLength: 128
         original_amount:
+          type: string
+          maxLength: 64
+        discount_amount:
+          type: string
+          maxLength: 64
+        shipping_amount:
+          type: string
+          maxLength: 64
+        tax_amount:
           type: string
           maxLength: 64
         payable_amount:
@@ -8707,6 +8958,9 @@ components:
       - checkout_session_id
       - quote_no
       - original_amount
+      - discount_amount
+      - shipping_amount
+      - tax_amount
       - payable_amount
       - currency_code
       - expires_at
@@ -8717,6 +8971,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8774,6 +9031,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8823,6 +9083,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8876,6 +9139,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8891,6 +9157,9 @@ components:
         sku_id:
           type: string
           maxLength: 512
+        quantity:
+          type: string
+          format: int64
         status:
           type: string
           maxLength: 64
@@ -8905,6 +9174,7 @@ components:
       - fulfillment_id
       - order_item_id
       - sku_id
+      - quantity
       - status
       - created_at
       - updated_at
@@ -8914,6 +9184,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -8964,6 +9237,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9012,6 +9288,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9030,6 +9309,12 @@ components:
         direction:
           type: string
           maxLength: 64
+        quantity:
+          type: string
+          format: int64
+        balance_after:
+          type: string
+          format: int64
         business_type:
           type: string
           maxLength: 128
@@ -9050,6 +9335,8 @@ components:
       - movement_no
       - sku_id
       - direction
+      - quantity
+      - balance_after
       - business_type
       - source_type
       - source_id
@@ -9061,6 +9348,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9082,6 +9372,9 @@ components:
         warehouse_id:
           type: string
           maxLength: 512
+        quantity:
+          type: string
+          format: int64
         status:
           type: string
           maxLength: 64
@@ -9101,6 +9394,7 @@ components:
       - tenant_id
       - reservation_no
       - sku_id
+      - quantity
       - status
       - expires_at
       - idempotency_key
@@ -9112,6 +9406,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9124,6 +9421,18 @@ components:
         warehouse_id:
           type: string
           maxLength: 512
+        available_quantity:
+          type: string
+          format: int64
+        reserved_quantity:
+          type: string
+          format: int64
+        sold_quantity:
+          type: string
+          format: int64
+        version:
+          type: string
+          format: int64
         status:
           type: string
           maxLength: 512
@@ -9136,6 +9445,10 @@ components:
       required:
       - tenant_id
       - sku_id
+      - available_quantity
+      - reserved_quantity
+      - sold_quantity
+      - version
       - status
       - created_at
       - updated_at
@@ -9145,6 +9458,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9205,6 +9521,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9220,6 +9539,9 @@ components:
         amount:
           type: string
           maxLength: 512
+        tax_amount:
+          type: string
+          maxLength: 512
         created_at:
           type: string
           maxLength: 512
@@ -9228,6 +9550,7 @@ components:
       - invoice_id
       - title
       - amount
+      - tax_amount
       - created_at
     CommerceInvoiceProviderAttemptRecord:
       type: object
@@ -9235,6 +9558,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9294,6 +9620,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9321,9 +9650,6 @@ components:
         invoice_code:
           type: string
           maxLength: 512
-        document_url:
-          type: string
-          maxLength: 512
         created_at:
           type: string
           maxLength: 512
@@ -9333,6 +9659,8 @@ components:
         updated_at:
           type: string
           maxLength: 512
+        document:
+          $ref: '#/components/schemas/MediaResource'
       required:
       - tenant_id
       - owner_user_id
@@ -9348,6 +9676,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9382,6 +9713,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9429,6 +9763,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9486,6 +9823,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9507,6 +9847,9 @@ components:
         status:
           type: string
           maxLength: 64
+        sort_order:
+          type: string
+          format: int64
         created_at:
           type: string
           maxLength: 512
@@ -9518,6 +9861,7 @@ components:
       - group_no
       - name
       - status
+      - sort_order
       - created_at
       - updated_at
     CommerceMembershipPackageRecord:
@@ -9526,6 +9870,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9565,6 +9912,9 @@ components:
         ends_at:
           type: string
           maxLength: 512
+        sort_order:
+          type: string
+          format: int64
         created_at:
           type: string
           maxLength: 512
@@ -9580,6 +9930,7 @@ components:
       - price_amount
       - currency_code
       - status
+      - sort_order
       - created_at
       - updated_at
     CommerceMembershipPlanRecord:
@@ -9588,6 +9939,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9609,6 +9963,9 @@ components:
         status:
           type: string
           maxLength: 64
+        sort_order:
+          type: string
+          format: int64
         created_at:
           type: string
           maxLength: 512
@@ -9621,6 +9978,7 @@ components:
       - name
       - level_code
       - status
+      - sort_order
       - created_at
       - updated_at
     CommerceMembershipRecord:
@@ -9629,6 +9987,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9662,6 +10023,8 @@ components:
         grace_until:
           type: string
           maxLength: 512
+        auto_renew:
+          type: boolean
         created_at:
           type: string
           maxLength: 512
@@ -9676,6 +10039,7 @@ components:
       - status
       - starts_at
       - expires_at
+      - auto_renew
       - created_at
       - updated_at
     CommerceOrderAddressSnapshotRecord:
@@ -9684,6 +10048,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9696,6 +10063,9 @@ components:
         source_address_id:
           type: string
           maxLength: 512
+        snapshot_version:
+          type: string
+          format: int64
         recipient_name_snapshot:
           type: string
           maxLength: 128
@@ -9726,6 +10096,7 @@ components:
       required:
       - tenant_id
       - order_id
+      - snapshot_version
       - recipient_name_snapshot
       - phone_masked
       - country_code
@@ -9738,6 +10109,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9773,6 +10147,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9824,6 +10201,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9884,6 +10264,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9923,6 +10306,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -9982,6 +10368,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10042,6 +10431,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10069,6 +10461,9 @@ components:
         currency_code:
           type: string
           maxLength: 16
+        final_capture:
+          type: string
+          format: int64
         status:
           type: string
           maxLength: 64
@@ -10106,6 +10501,7 @@ components:
       - provider_code
       - amount
       - currency_code
+      - final_capture
       - status
       - request_no
       - idempotency_key
@@ -10117,6 +10513,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10144,6 +10543,9 @@ components:
         status:
           type: string
           maxLength: 64
+        priority:
+          type: string
+          format: int64
         created_at:
           type: string
           maxLength: 512
@@ -10159,6 +10561,7 @@ components:
       - currency_code
       - country_code
       - status
+      - priority
       - created_at
       - updated_at
     CommercePaymentDisputeEventRecord:
@@ -10167,6 +10570,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10214,6 +10620,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10280,6 +10689,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10330,6 +10742,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10418,6 +10833,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10436,6 +10854,9 @@ components:
         status:
           type: string
           maxLength: 512
+        sort_weight:
+          type: string
+          format: int64
         request_no:
           type: string
           maxLength: 512
@@ -10454,6 +10875,7 @@ components:
       - display_name
       - provider
       - status
+      - sort_weight
       - request_no
       - idempotency_key
       - created_at
@@ -10464,6 +10886,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10551,6 +10976,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10614,6 +11042,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10687,6 +11118,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10714,6 +11148,9 @@ components:
         status:
           type: string
           maxLength: 64
+        sort_order:
+          type: string
+          format: int64
         created_at:
           type: string
           maxLength: 512
@@ -10726,6 +11163,7 @@ components:
       - display_name
       - provider_type
       - status
+      - sort_order
       - created_at
       - updated_at
     CommercePaymentReconciliationItemRecord:
@@ -10734,6 +11172,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10818,6 +11259,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10912,6 +11356,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10980,6 +11427,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -10989,6 +11439,9 @@ components:
         rule_no:
           type: string
           maxLength: 128
+        priority:
+          type: string
+          format: int64
         purchase_type:
           type: string
           maxLength: 64
@@ -11034,6 +11487,7 @@ components:
       required:
       - tenant_id
       - rule_no
+      - priority
       - channel_id
       - status
       - created_at
@@ -11044,6 +11498,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11129,6 +11586,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11171,6 +11631,9 @@ components:
         parse_status:
           type: string
           maxLength: 64
+        row_count:
+          type: string
+          format: int64
         total_amount:
           type: string
           maxLength: 64
@@ -11208,6 +11671,7 @@ components:
       - period_end
       - download_status
       - parse_status
+      - row_count
       - total_amount
       - fee_amount
       - net_amount
@@ -11221,6 +11685,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11314,6 +11781,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11383,6 +11853,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11401,6 +11874,9 @@ components:
         compare_at_amount:
           type: string
           maxLength: 512
+        min_quantity:
+          type: string
+          format: int64
         max_quantity:
           type: string
           format: int64
@@ -11415,6 +11891,7 @@ components:
       - price_list_id
       - sku_id
       - price_amount
+      - min_quantity
       - created_at
       - updated_at
     CommercePriceListRecord:
@@ -11423,6 +11900,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11469,6 +11949,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11520,6 +12003,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11535,6 +12021,9 @@ components:
         display_value:
           type: string
           maxLength: 512
+        sort_order:
+          type: string
+          format: int64
         status:
           type: string
           maxLength: 512
@@ -11549,6 +12038,57 @@ components:
       - attribute_id
       - value_code
       - display_value
+      - sort_order
+      - status
+      - created_at
+      - updated_at
+    CommerceProductCategoryAttributeRecord:
+      type: object
+      x-table: commerce_product_category_attribute
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        id:
+          type: string
+          maxLength: 512
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        category_id:
+          type: string
+          maxLength: 512
+        attribute_id:
+          type: string
+          maxLength: 512
+        required:
+          type: boolean
+        searchable:
+          type: boolean
+        filterable:
+          type: boolean
+        sort_order:
+          type: string
+          format: int64
+        status:
+          type: string
+          maxLength: 512
+        created_at:
+          type: string
+          maxLength: 512
+        updated_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - category_id
+      - attribute_id
+      - required
+      - searchable
+      - filterable
+      - sort_order
       - status
       - created_at
       - updated_at
@@ -11558,6 +12098,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11582,9 +12125,9 @@ components:
         description:
           type: string
           maxLength: 1024
-        icon_url:
+        sort_order:
           type: string
-          maxLength: 1024
+          format: int64
         status:
           type: string
           maxLength: 512
@@ -11594,12 +12137,15 @@ components:
         updated_at:
           type: string
           maxLength: 512
+        icon:
+          $ref: '#/components/schemas/MediaResource'
       required:
       - tenant_id
       - category_no
       - path
       - level_no
       - name
+      - sort_order
       - status
       - created_at
       - updated_at
@@ -11609,6 +12155,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11621,15 +12170,24 @@ components:
         owner_id:
           type: string
           maxLength: 512
-        media_type:
+        media_role:
           type: string
           maxLength: 64
-        url:
+        media_resource_id:
           type: string
-          maxLength: 2048
+          maxLength: 128
+        object_blob_id:
+          type: string
+          format: int64
+        resource_snapshot:
+          type: object
+          additionalProperties: true
         alt_text:
           type: string
           maxLength: 512
+        sort_order:
+          type: string
+          format: int64
         status:
           type: string
           maxLength: 512
@@ -11643,8 +12201,9 @@ components:
       - tenant_id
       - owner_type
       - owner_id
-      - media_type
-      - url
+      - media_role
+      - media_resource_id
+      - sort_order
       - status
       - created_at
       - updated_at
@@ -11654,6 +12213,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11690,6 +12252,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11741,12 +12306,59 @@ components:
       - status
       - created_at
       - updated_at
+    CommerceProductSpuCategoryRecord:
+      type: object
+      x-table: commerce_product_spu_category
+      x-domain: commerce
+      x-generated-by-this-project: false
+      properties:
+        id:
+          type: string
+          maxLength: 512
+        tenant_id:
+          type: string
+          maxLength: 512
+        organization_id:
+          type: string
+          maxLength: 512
+        spu_id:
+          type: string
+          maxLength: 512
+        category_id:
+          type: string
+          maxLength: 512
+        primary_flag:
+          type: boolean
+        sort_order:
+          type: string
+          format: int64
+        status:
+          type: string
+          maxLength: 512
+        created_at:
+          type: string
+          maxLength: 512
+        updated_at:
+          type: string
+          maxLength: 512
+      required:
+      - tenant_id
+      - spu_id
+      - category_id
+      - primary_flag
+      - sort_order
+      - status
+      - created_at
+      - updated_at
     CommerceProductSpuRecord:
       type: object
       x-table: commerce_product_spu
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11759,9 +12371,6 @@ components:
         product_type:
           type: string
           maxLength: 64
-        category_id:
-          type: string
-          maxLength: 512
         title:
           type: string
           maxLength: 512
@@ -11799,6 +12408,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11823,6 +12435,9 @@ components:
         currency_code:
           type: string
           maxLength: 512
+        bonus_points:
+          type: string
+          format: int64
         status:
           type: string
           maxLength: 512
@@ -11832,6 +12447,9 @@ components:
         valid_to:
           type: string
           maxLength: 512
+        sort_weight:
+          type: string
+          format: int64
         request_no:
           type: string
           maxLength: 512
@@ -11852,7 +12470,9 @@ components:
       - name
       - price_amount
       - currency_code
+      - bonus_points
       - status
+      - sort_weight
       - request_no
       - idempotency_key
       - created_at
@@ -11863,6 +12483,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11934,6 +12557,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -11994,6 +12620,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -12006,7 +12635,16 @@ components:
         order_item_id:
           type: string
           maxLength: 512
+        quantity:
+          type: string
+          format: int64
         refund_amount:
+          type: string
+          maxLength: 64
+        tax_refund_amount:
+          type: string
+          maxLength: 64
+        shipping_refund_amount:
           type: string
           maxLength: 64
         created_at:
@@ -12016,7 +12654,10 @@ components:
       - tenant_id
       - refund_id
       - order_item_id
+      - quantity
       - refund_amount
+      - tax_refund_amount
+      - shipping_refund_amount
       - created_at
     CommerceRefundRecord:
       type: object
@@ -12024,6 +12665,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -12237,6 +12881,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -12285,6 +12932,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -13174,6 +13824,9 @@ components:
       x-domain: commerce
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -13216,6 +13869,8 @@ components:
         postal_code:
           type: string
           maxLength: 64
+        is_default:
+          type: boolean
         status:
           type: string
           maxLength: 64
@@ -13234,6 +13889,7 @@ components:
       - country_code
       - city
       - address_line1_encrypted
+      - is_default
       - status
       - created_at
       - updated_at
@@ -13369,9 +14025,6 @@ components:
         external_bvid:
           type: string
           maxLength: 64
-        video_url:
-          type: string
-          maxLength: 1024
         contact_name:
           type: string
           maxLength: 128
@@ -13390,6 +14043,8 @@ components:
         review_comment:
           type: string
           maxLength: 1000
+        video:
+          $ref: '#/components/schemas/MediaResource'
     ContentCourseLessonRecord:
       type: object
       x-table: content_course_lesson
@@ -13446,9 +14101,6 @@ components:
           maxLength: 200
         description:
           type: string
-        video_url:
-          type: string
-          maxLength: 1024
         external_bvid:
           type: string
           maxLength: 64
@@ -13468,6 +14120,8 @@ components:
           format: int32
         free_preview:
           type: boolean
+        video:
+          $ref: '#/components/schemas/MediaResource'
     ContentCourseRecord:
       type: object
       x-table: content_course
@@ -13518,9 +14172,6 @@ components:
           maxLength: 200
         description:
           type: string
-        thumbnail_url:
-          type: string
-          maxLength: 1024
         instructor_snapshot:
           type: object
           additionalProperties: true
@@ -13561,6 +14212,8 @@ components:
         published_at:
           type: string
           format: date-time
+        thumbnail:
+          $ref: '#/components/schemas/MediaResource'
     ContentCourseRelationRecord:
       type: object
       x-table: content_course_relation
@@ -15140,9 +15793,6 @@ components:
         phone:
           type: string
           maxLength: 32
-        avatar_url:
-          type: string
-          maxLength: 2048
         status:
           type: string
           maxLength: 32
@@ -15152,6 +15802,8 @@ components:
         updated_at:
           type: string
           format: date-time
+        avatar:
+          $ref: '#/components/schemas/MediaResource'
     IamUserRoleRecord:
       type: object
       x-table: iam_user_role
@@ -15294,6 +15946,21 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        challenge_id:
+          type: string
+          format: int64
+        scene_code:
+          type: string
+          maxLength: 128
+        target_type:
+          type: string
+          maxLength: 32
+        target_hash:
+          type: string
+          maxLength: 128
+        result:
+          type: string
+          maxLength: 32
         failure_reason:
           type: string
           maxLength: 128
@@ -15303,6 +15970,12 @@ components:
         device_hash:
           type: string
           maxLength: 128
+        risk_snapshot:
+          type: object
+          additionalProperties: true
+        occurred_at:
+          type: string
+          format: date-time
     IamVerificationChallengeRecord:
       type: object
       x-table: iam_verification_challenge
@@ -15345,24 +16018,57 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        code_id:
+          type: string
+          maxLength: 128
+        scene_code:
+          type: string
+          maxLength: 128
+        channel:
+          type: string
+          maxLength: 32
+        target_type:
+          type: string
+          maxLength: 32
+        target_hash:
+          type: string
+          maxLength: 128
         target_masked:
           type: string
           maxLength: 128
         user_id:
           type: string
           format: int64
+        code_hash:
+          type: string
+          maxLength: 256
+        hash_algorithm:
+          type: string
+          maxLength: 64
         salt_ref:
           type: string
           maxLength: 256
         delivery_request_id:
           type: string
           format: int64
+        policy_snapshot:
+          type: object
+          additionalProperties: true
+        expires_at:
+          type: string
+          format: date-time
         verified_at:
           type: string
           format: date-time
         consumed_at:
           type: string
           format: date-time
+        challenge_status:
+          type: string
+          maxLength: 32
+        verify_attempts:
+          type: integer
+          format: int32
         locked_until:
           type: string
           format: date-time
@@ -15408,12 +16114,47 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        scene_code:
+          type: string
+          maxLength: 128
         scene_name:
           type: string
           maxLength: 128
+        allowed_channels:
+          type: object
+          additionalProperties: true
         default_channel:
           type: string
           maxLength: 32
+        code_length:
+          type: integer
+          format: int32
+        code_charset:
+          type: string
+          maxLength: 64
+        ttl_seconds:
+          type: integer
+          format: int32
+        resend_interval_seconds:
+          type: integer
+          format: int32
+        max_send_per_hour:
+          type: integer
+          format: int32
+        max_verify_attempts:
+          type: integer
+          format: int32
+        target_binding_required:
+          type: boolean
+        template_code:
+          type: string
+          maxLength: 128
+        risk_policy:
+          type: object
+          additionalProperties: true
+        rollout_policy:
+          type: object
+          additionalProperties: true
     IntegrationProviderAccountRecord:
       type: object
       x-table: integration_provider_account
@@ -15459,6 +16200,30 @@ components:
         provider_id:
           type: string
           format: int64
+        provider_code:
+          type: string
+          maxLength: 64
+        account_code:
+          type: string
+          maxLength: 64
+        account_name:
+          type: string
+          maxLength: 128
+        account_type:
+          type: string
+          maxLength: 32
+        channel_type:
+          type: string
+          maxLength: 32
+        auth_type:
+          type: string
+          x-db-type: enum_int32
+        credential_profile:
+          type: string
+          x-db-type: enum_int32
+        auth_config:
+          type: object
+          additionalProperties: true
         secret_ref:
           type: string
           maxLength: 512
@@ -15468,15 +16233,30 @@ components:
         masked_label:
           type: string
           maxLength: 128
+        credential_version:
+          type: string
+          format: int64
         base_url:
           type: string
           maxLength: 512
         region_code:
           type: string
           maxLength: 64
+        environment:
+          type: string
+          x-db-type: enum_int32
+        health_status:
+          type: string
+          x-db-type: enum_int32
         last_latency_ms:
           type: integer
           format: int32
+        consecutive_error_count:
+          type: string
+          format: int64
+        risk_level:
+          type: string
+          x-db-type: enum_int32
         quota_snapshot:
           type: object
           additionalProperties: true
@@ -15497,6 +16277,9 @@ components:
       - tenant_id
       - organization_id
       - status
+      - provider_code
+      - account_code
+      - account_name
     IntegrationProviderHealthSnapshotRecord:
       type: object
       x-table: integration_provider_health_snapshot
@@ -16733,6 +17516,298 @@ components:
         failure_count:
           type: string
           format: int64
+    MediaAccess:
+      type: object
+      additionalProperties: false
+      required:
+      - visibility
+      properties:
+        visibility:
+          type: string
+          enum:
+          - private
+          - tenant
+          - organization
+          - public
+          - signed
+        expiresAt:
+          type: string
+          format: date-time
+    MediaAiProvenance:
+      type: object
+      additionalProperties: false
+      properties:
+        provenance:
+          type: string
+          enum:
+          - uploaded
+          - generated
+          - edited
+          - imported
+        provider:
+          type: string
+          maxLength: 128
+        model:
+          type: string
+          maxLength: 128
+        promptId:
+          type: string
+          maxLength: 128
+        generationTaskId:
+          type: string
+          maxLength: 128
+        sourceMediaIds:
+          type: array
+          items:
+            type: string
+            maxLength: 128
+          maxItems: 64
+        seed:
+          type: string
+          maxLength: 128
+        moderationStatus:
+          type: string
+          enum:
+          - unknown
+          - pending
+          - approved
+          - rejected
+          - blocked
+        safetyLabels:
+          type: array
+          items:
+            type: string
+            maxLength: 128
+          maxItems: 64
+    MediaChecksum:
+      type: object
+      additionalProperties: false
+      required:
+      - algorithm
+      - value
+      properties:
+        algorithm:
+          type: string
+          enum:
+          - sha256
+          - md5
+          - etag
+        value:
+          type: string
+          minLength: 1
+          maxLength: 256
+    MediaKind:
+      type: string
+      enum:
+      - image
+      - video
+      - audio
+      - voice
+      - document
+      - archive
+      - model
+      - other
+    MediaResource:
+      type: object
+      additionalProperties: false
+      required:
+      - kind
+      - source
+      properties:
+        id:
+          type: string
+          maxLength: 128
+        kind:
+          $ref: '#/components/schemas/MediaKind'
+        source:
+          $ref: '#/components/schemas/MediaSource'
+        url:
+          type: string
+          format: uri
+          maxLength: 4096
+        publicUrl:
+          type: string
+          format: uri
+          maxLength: 4096
+        uri:
+          type: string
+          maxLength: 4096
+        objectBlobId:
+          type: string
+          format: int64
+        bucketId:
+          type: string
+          format: int64
+        objectKey:
+          type: string
+          maxLength: 1024
+        objectVersion:
+          type: string
+          maxLength: 256
+        fileName:
+          type: string
+          maxLength: 512
+        mimeType:
+          type: string
+          maxLength: 256
+        sizeBytes:
+          type: string
+          pattern: ^[0-9]+$
+        checksum:
+          $ref: '#/components/schemas/MediaChecksum'
+        width:
+          type: integer
+          format: int32
+          minimum: 0
+        height:
+          type: integer
+          format: int32
+          minimum: 0
+        durationSeconds:
+          type: number
+          minimum: 0
+        altText:
+          type: string
+          maxLength: 512
+        title:
+          type: string
+          maxLength: 255
+        poster:
+          $ref: '#/components/schemas/MediaResource'
+        thumbnails:
+          type: array
+          items:
+            $ref: '#/components/schemas/MediaResource'
+        variants:
+          type: array
+          items:
+            $ref: '#/components/schemas/MediaResource'
+        access:
+          $ref: '#/components/schemas/MediaAccess'
+        ai:
+          $ref: '#/components/schemas/MediaAiProvenance'
+        metadata:
+          type: object
+          additionalProperties: true
+    MediaResourceRecord:
+      type: object
+      x-table: media_resource
+      x-domain: content
+      x-generated-by-this-project: true
+      properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        user_id:
+          type: string
+          format: int64
+        owner_type:
+          type: string
+          x-db-type: enum_int32
+        owner_id:
+          type: string
+          format: int64
+        data_scope:
+          type: string
+          x-db-type: enum_int32
+        status:
+          type: string
+          x-db-type: enum_int32
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        version:
+          type: string
+          format: int64
+        deleted_at:
+          type: string
+          format: date-time
+        deleted_by:
+          type: string
+          format: int64
+        metadata:
+          type: object
+          additionalProperties: true
+        media_resource_no:
+          type: string
+          maxLength: 128
+        kind:
+          type: string
+          maxLength: 32
+        source:
+          type: string
+          maxLength: 32
+        object_blob_id:
+          type: string
+          format: int64
+        bucket_id:
+          type: string
+          format: int64
+        object_key:
+          type: string
+          maxLength: 1024
+        object_version:
+          type: string
+          maxLength: 256
+        uri:
+          type: string
+          maxLength: 1024
+        file_name:
+          type: string
+          maxLength: 512
+        mime_type:
+          type: string
+          maxLength: 256
+        size_bytes:
+          type: string
+          format: int64
+        checksum_json:
+          type: object
+          additionalProperties: true
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        duration_seconds:
+          type: string
+          format: decimal
+        alt_text:
+          type: string
+          maxLength: 512
+        title:
+          type: string
+          maxLength: 255
+        access_json:
+          type: object
+          additionalProperties: true
+        ai_json:
+          type: object
+          additionalProperties: true
+        renditions_json:
+          type: object
+          additionalProperties: true
+    MediaSource:
+      type: string
+      enum:
+      - object_storage
+      - external_url
+      - data_url
+      - provider_asset
+      - generated
     MessagingDeliveryEventRecord:
       type: object
       x-table: messaging_delivery_event
@@ -16777,12 +17852,30 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        send_request_id:
+          type: string
+          format: int64
         send_attempt_id:
           type: string
           format: int64
+        provider_code:
+          type: string
+          maxLength: 64
+        provider_event_id:
+          type: string
+          maxLength: 256
         provider_message_id:
           type: string
           maxLength: 256
+        event_type:
+          type: string
+          maxLength: 64
+        event_at:
+          type: string
+          format: date-time
+        payload_redacted:
+          type: object
+          additionalProperties: true
     MessagingProviderAccountRecord:
       type: object
       x-table: messaging_provider_account
@@ -16828,6 +17921,18 @@ components:
         provider_id:
           type: string
           format: int64
+        provider_code:
+          type: string
+          maxLength: 64
+        account_code:
+          type: string
+          maxLength: 64
+        account_name:
+          type: string
+          maxLength: 128
+        channel:
+          type: string
+          maxLength: 32
         delivery_purpose:
           type: string
           maxLength: 64
@@ -16849,6 +17954,9 @@ components:
         masked_label:
           type: string
           maxLength: 128
+        health_status:
+          type: string
+          maxLength: 32
         last_verified_at:
           type: string
           format: date-time
@@ -16860,6 +17968,10 @@ components:
       - tenant_id
       - organization_id
       - status
+      - provider_code
+      - account_code
+      - account_name
+      - channel
     MessagingProviderCapabilityRecord:
       type: object
       x-table: messaging_provider_capability
@@ -16902,6 +18014,45 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        provider_code:
+          type: string
+          maxLength: 64
+        provider_account_id:
+          type: string
+          format: int64
+        channel:
+          type: string
+          maxLength: 32
+        delivery_purpose:
+          type: string
+          maxLength: 64
+        country_code:
+          type: string
+          maxLength: 16
+        locale:
+          type: string
+          maxLength: 32
+        supports_template_sync:
+          type: boolean
+        supports_delivery_receipt:
+          type: boolean
+        supports_test_send:
+          type: boolean
+        supports_batch_send:
+          type: boolean
+        supports_webhook:
+          type: boolean
+        sandbox_supported:
+          type: boolean
+        capability_schema:
+          type: object
+          additionalProperties: true
+        rate_limit_policy:
+          type: object
+          additionalProperties: true
+        health_status:
+          type: string
+          maxLength: 32
         last_verified_at:
           type: string
           format: date-time
@@ -16947,6 +18098,15 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        provider_code:
+          type: string
+          maxLength: 64
+        display_name:
+          type: string
+          maxLength: 128
+        channel:
+          type: string
+          maxLength: 32
         provider_type:
           type: string
           maxLength: 64
@@ -16956,20 +18116,21 @@ components:
         docs_url:
           type: string
           maxLength: 512
-        icon_url:
-          type: string
-          maxLength: 512
         metadata_schema_version:
           type: string
           maxLength: 32
         sort_order:
           type: integer
           format: int32
+        icon:
+          $ref: '#/components/schemas/MediaResource'
       required:
       - uuid
       - tenant_id
       - organization_id
       - status
+      - provider_code
+      - display_name
     MessagingRateLimitBucketRecord:
       type: object
       x-table: messaging_rate_limit_bucket
@@ -17012,6 +18173,36 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        scene_code:
+          type: string
+          maxLength: 128
+        channel:
+          type: string
+          maxLength: 32
+        target_hash:
+          type: string
+          maxLength: 128
+        ip_hash:
+          type: string
+          maxLength: 128
+        device_hash:
+          type: string
+          maxLength: 128
+        window_start:
+          type: string
+          format: date-time
+        window_seconds:
+          type: integer
+          format: int32
+        send_count:
+          type: integer
+          format: int32
+        verify_count:
+          type: integer
+          format: int32
+        reject_count:
+          type: integer
+          format: int32
         last_event_at:
           type: string
           format: date-time
@@ -17057,15 +18248,48 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        rule_code:
+          type: string
+          maxLength: 128
         app_id:
           type: string
           maxLength: 128
+        scene_code:
+          type: string
+          maxLength: 128
+        channel:
+          type: string
+          maxLength: 32
+        delivery_purpose:
+          type: string
+          maxLength: 64
+        locale:
+          type: string
+          maxLength: 32
+        country_code:
+          type: string
+          maxLength: 16
+        user_segment:
+          type: string
+          maxLength: 128
+        priority:
+          type: integer
+          format: int32
+        weight:
+          type: integer
+          format: int32
         effective_from:
           type: string
           format: date-time
         effective_to:
           type: string
           format: date-time
+        failover_policy:
+          type: object
+          additionalProperties: true
+        selection_policy:
+          type: object
+          additionalProperties: true
     MessagingRouteRuleTargetRecord:
       type: object
       x-table: messaging_route_rule_target
@@ -17108,12 +18332,30 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        route_rule_id:
+          type: string
+          format: int64
+        provider_account_id:
+          type: string
+          format: int64
+        provider_code:
+          type: string
+          maxLength: 64
         sender_identity_id:
           type: string
           format: int64
         template_binding_id:
           type: string
           format: int64
+        target_order:
+          type: integer
+          format: int32
+        weight:
+          type: integer
+          format: int32
+        circuit_breaker_policy:
+          type: object
+          additionalProperties: true
     MessagingSendAttemptRecord:
       type: object
       x-table: messaging_send_attempt
@@ -17158,6 +18400,18 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        send_request_id:
+          type: string
+          format: int64
+        attempt_no:
+          type: integer
+          format: int32
+        provider_code:
+          type: string
+          maxLength: 64
+        provider_account_id:
+          type: string
+          format: int64
         provider_request_id:
           type: string
           maxLength: 256
@@ -17180,6 +18434,9 @@ components:
           type: string
           maxLength: 512
         retry_after_at:
+          type: string
+          format: date-time
+        attempted_at:
           type: string
           format: date-time
     MessagingSendRequestRecord:
@@ -17226,7 +18483,28 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        request_no:
+          type: string
+          maxLength: 128
+        idempotency_key:
+          type: string
+          maxLength: 128
         app_id:
+          type: string
+          maxLength: 128
+        scene_code:
+          type: string
+          maxLength: 128
+        channel:
+          type: string
+          maxLength: 32
+        delivery_purpose:
+          type: string
+          maxLength: 64
+        target_type:
+          type: string
+          maxLength: 32
+        target_hash:
           type: string
           maxLength: 128
         target_masked:
@@ -17247,6 +18525,17 @@ components:
         resolved_sender_identity_id:
           type: string
           format: int64
+        render_hash:
+          type: string
+          maxLength: 128
+        request_payload_redacted:
+          type: object
+          additionalProperties: true
+        dry_run:
+          type: boolean
+        delivery_status:
+          type: string
+          maxLength: 32
         scheduled_at:
           type: string
           format: date-time
@@ -17307,6 +18596,18 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        provider_account_id:
+          type: string
+          format: int64
+        provider_code:
+          type: string
+          maxLength: 64
+        channel:
+          type: string
+          maxLength: 32
+        identity_code:
+          type: string
+          maxLength: 128
         display_name:
           type: string
           maxLength: 128
@@ -17331,9 +18632,15 @@ components:
         country_code:
           type: string
           maxLength: 16
+        approval_status:
+          type: string
+          maxLength: 32
         verified_at:
           type: string
           format: date-time
+        approval_payload:
+          type: object
+          additionalProperties: true
         rejection_reason:
           type: string
           maxLength: 512
@@ -17379,12 +18686,33 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        channel:
+          type: string
+          maxLength: 32
+        target_hash:
+          type: string
+          maxLength: 128
         target_masked:
           type: string
           maxLength: 128
+        reason_code:
+          type: string
+          maxLength: 128
+        scope_type:
+          type: string
+          maxLength: 64
+        scope_id:
+          type: string
+          maxLength: 128
+        starts_at:
+          type: string
+          format: date-time
         ends_at:
           type: string
           format: date-time
+        source:
+          type: string
+          maxLength: 64
         note:
           type: string
           maxLength: 512
@@ -17430,6 +18758,21 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        template_variant_id:
+          type: string
+          format: int64
+        provider_account_id:
+          type: string
+          format: int64
+        provider_code:
+          type: string
+          maxLength: 64
+        provider_template_code:
+          type: string
+          maxLength: 128
+        approval_status:
+          type: string
+          maxLength: 32
         provider_template_version:
           type: string
           maxLength: 64
@@ -17442,6 +18785,9 @@ components:
         rejection_reason:
           type: string
           maxLength: 512
+        provider_payload:
+          type: object
+          additionalProperties: true
     MessagingTemplateRecord:
       type: object
       x-table: messaging_template
@@ -17484,7 +18830,25 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        template_code:
+          type: string
+          maxLength: 128
+        scene_code:
+          type: string
+          maxLength: 128
+        channel:
+          type: string
+          maxLength: 32
+        delivery_purpose:
+          type: string
+          maxLength: 64
+        category:
+          type: string
+          maxLength: 64
         owner_app_id:
+          type: string
+          maxLength: 128
+        template_name:
           type: string
           maxLength: 128
         description:
@@ -17493,6 +18857,9 @@ components:
         current_version_id:
           type: string
           format: int64
+        publish_status:
+          type: string
+          maxLength: 32
     MessagingTemplateVariantRecord:
       type: object
       x-table: messaging_template_variant
@@ -17535,9 +18902,29 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        template_version_id:
+          type: string
+          format: int64
+        channel:
+          type: string
+          maxLength: 32
+        locale:
+          type: string
+          maxLength: 32
+        content_format:
+          type: string
+          maxLength: 32
+        body_template:
+          type: string
         length_limit:
           type: integer
           format: int32
+        provider_payload_schema:
+          type: object
+          additionalProperties: true
+        render_options:
+          type: object
+          additionalProperties: true
     MessagingTemplateVersionRecord:
       type: object
       x-table: messaging_template_version
@@ -17580,6 +18967,12 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        template_id:
+          type: string
+          format: int64
+        version_no:
+          type: integer
+          format: int32
         subject_template:
           type: string
           maxLength: 512
@@ -17587,6 +18980,18 @@ components:
           type: string
         html_template:
           type: string
+        variable_schema:
+          type: object
+          additionalProperties: true
+        render_engine:
+          type: string
+          maxLength: 32
+        content_hash:
+          type: string
+          maxLength: 128
+        review_status:
+          type: string
+          maxLength: 32
         published_at:
           type: string
           format: date-time
@@ -17668,6 +19073,12 @@ components:
         original_filename:
           type: string
           maxLength: 512
+        size_bytes:
+          type: string
+          format: int64
+        physical_size_bytes:
+          type: string
+          format: int64
         storage_class:
           type: string
           maxLength: 64
@@ -17680,6 +19091,8 @@ components:
         retention_until:
           type: string
           format: date-time
+        legal_hold:
+          type: boolean
         last_verified_at:
           type: string
           format: date-time
@@ -17706,7 +19119,7 @@ components:
           x-db-type: enum_int32
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 32
         created_at:
           type: string
           format: date-time
@@ -17740,9 +19153,26 @@ components:
         data_residency_region:
           type: string
           maxLength: 64
+        object_key_prefix:
+          type: string
+          maxLength: 512
+        default_storage_class:
+          type: string
+          maxLength: 64
+        default_encryption_mode:
+          type: string
+          maxLength: 64
         kms_key_ref:
           type: string
           maxLength: 256
+        versioning_enabled:
+          type: boolean
+        object_lock_enabled:
+          type: boolean
+        lifecycle_enabled:
+          type: boolean
+        public_access_blocked:
+          type: boolean
         idempotency_key:
           type: string
           maxLength: 128
@@ -17772,7 +19202,7 @@ components:
           x-db-type: enum_int32
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 32
         created_at:
           type: string
           format: date-time
@@ -17806,6 +19236,17 @@ components:
         credential_ref:
           type: string
           maxLength: 256
+        path_style_enabled:
+          type: boolean
+        supports_multipart:
+          type: boolean
+        supports_lifecycle:
+          type: boolean
+        supports_object_lock:
+          type: boolean
+        health_status:
+          type: string
+          maxLength: 64
         last_health_check_at:
           type: string
           format: date-time
@@ -18159,9 +19600,6 @@ components:
         name:
           type: string
           maxLength: 128
-        icon_url:
-          type: string
-          maxLength: 512
         docs_url:
           type: string
           maxLength: 512
@@ -18174,6 +19612,8 @@ components:
         sort_order:
           type: integer
           format: int32
+        icon:
+          $ref: '#/components/schemas/MediaResource'
     OpsAlertEventRecord:
       type: object
       x-table: ops_alert_event
@@ -18849,6 +20289,9 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        app_id:
+          type: string
+          maxLength: 128
         message_id:
           type: string
           format: int64
@@ -18921,6 +20364,9 @@ components:
         app_id:
           type: string
           maxLength: 128
+        scope_type:
+          type: string
+          x-db-type: enum_int32
         message_code:
           type: string
           maxLength: 128
@@ -18938,6 +20384,11 @@ components:
         severity:
           type: string
           x-db-type: enum_int32
+        priority:
+          type: integer
+          format: int32
+        show_as_popup:
+          type: boolean
         action_url:
           type: string
           maxLength: 512
@@ -18998,6 +20449,20 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        app_id:
+          type: string
+          maxLength: 128
+        message_type:
+          type: string
+          x-db-type: enum_int32
+        delivery_channel:
+          type: string
+          x-db-type: enum_int32
+        enabled:
+          type: boolean
+        quiet_hours:
+          type: object
+          additionalProperties: true
     OpsNotificationRecipientRecord:
       type: object
       x-table: ops_notification_recipient
@@ -19040,9 +20505,15 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        message_id:
+          type: string
+          format: int64
         app_id:
           type: string
           maxLength: 128
+        recipient_type:
+          type: string
+          x-db-type: enum_int32
         recipient_value:
           type: string
           maxLength: 256
@@ -19237,48 +20708,110 @@ components:
       x-domain: legacy
       x-generated-by-this-project: true
       properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 255
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        v:
+          type: string
+          format: int64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: integer
+          format: int32
         user_id:
           type: string
           format: int64
+        package_key:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 255
         summary:
           type: string
           maxLength: 512
         description:
           type: string
           maxLength: 4000
-        icon:
-          type: string
-          maxLength: 255
-        cover_image:
-          type: string
-          maxLength: 255
         category_id:
           type: string
           format: int64
+        enabled:
+          type: boolean
+        featured:
+          type: boolean
+        sort_weight:
+          type: integer
+          format: int32
+        tags:
+          type: object
+          additionalProperties: true
         latest_published_at:
           type: string
           format: date-time
+        cover:
+          $ref: '#/components/schemas/MediaResource'
+        icon:
+          $ref: '#/components/schemas/MediaResource'
     PlusAgentSkillRecord:
       type: object
       x-table: plus_agent_skill
       x-domain: legacy
       x-generated-by-this-project: true
       properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 255
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        v:
+          type: string
+          format: int64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: integer
+          format: int32
         user_id:
           type: string
           format: int64
+        skill_key:
+          type: string
+          maxLength: 128
+        name:
+          type: string
+          maxLength: 255
         summary:
           type: string
           maxLength: 512
         description:
           type: string
           maxLength: 4000
-        icon:
-          type: string
-          maxLength: 255
-        cover_image:
-          type: string
-          maxLength: 255
         category_id:
           type: string
           format: int64
@@ -19315,6 +20848,18 @@ components:
         license_name:
           type: string
           maxLength: 128
+        source_type:
+          type: string
+          maxLength: 32
+        market_status:
+          type: string
+          maxLength: 32
+        visibility:
+          type: string
+          maxLength: 32
+        review_status:
+          type: string
+          maxLength: 32
         review_comment:
           type: string
           maxLength: 1000
@@ -19324,24 +20869,89 @@ components:
         reviewed_at:
           type: string
           format: date-time
+        builtin:
+          type: boolean
+        is_builtin:
+          type: boolean
+        enabled:
+          type: boolean
+        featured:
+          type: boolean
+        recommend_weight:
+          type: integer
+          format: int32
         price:
           type: string
           format: decimal
+        currency:
+          type: string
+          maxLength: 16
+        install_count:
+          type: string
+          format: int64
+        rating_avg:
+          type: string
+          format: decimal
+        rating_count:
+          type: string
+          format: int64
+        tags:
+          type: object
+          additionalProperties: true
+        capabilities:
+          type: object
+          additionalProperties: true
+        config_schema:
+          type: object
+          additionalProperties: true
+        default_config:
+          type: object
+          additionalProperties: true
         latest_published_at:
           type: string
           format: date-time
+        cover:
+          $ref: '#/components/schemas/MediaResource'
+        icon:
+          $ref: '#/components/schemas/MediaResource'
     PlusAppRecord:
       type: object
       x-table: plus_app
       x-domain: legacy
       x-generated-by-this-project: true
       properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 255
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        v:
+          type: string
+          format: int64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: integer
+          format: int32
         user_id:
           type: string
           format: int64
+        name:
+          type: string
+          maxLength: 255
         icon:
-          type: object
-          additionalProperties: true
+          $ref: '#/components/schemas/MediaResource'
         resource_list:
           type: object
           additionalProperties: true
@@ -19353,12 +20963,15 @@ components:
         version:
           type: string
           maxLength: 64
-        icon_url:
-          type: string
-          maxLength: 512
         access_url:
           type: string
           maxLength: 512
+        config:
+          type: object
+          additionalProperties: true
+        status:
+          type: integer
+          format: int32
         app_type:
           type: string
           maxLength: 64
@@ -19386,9 +20999,8 @@ components:
         store_url:
           type: string
           maxLength: 512
-        download_url:
-          type: string
-          maxLength: 512
+        artifact:
+          $ref: '#/components/schemas/MediaResource'
     PlusCardRecord:
       type: object
       x-table: plus_card
@@ -19407,26 +21019,66 @@ components:
       x-domain: legacy
       x-generated-by-this-project: true
       properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 255
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        v:
+          type: string
+          format: int64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: integer
+          format: int32
+        name:
+          type: string
+          maxLength: 255
         description:
           type: string
         shop_id:
           type: string
           format: int64
+        type:
+          type: integer
+          format: int32
         group_name:
           type: string
           maxLength: 128
         code:
           type: string
           maxLength: 128
-        icon:
-          type: string
-          maxLength: 255
+        tags:
+          type: object
+          additionalProperties: true
+        sort_weight:
+          type: integer
+          format: int32
         parent_id:
           type: string
           format: int64
         path:
           type: string
           maxLength: 1024
+        visible:
+          type: boolean
+        status:
+          type: integer
+          format: int32
+        icon:
+          $ref: '#/components/schemas/MediaResource'
     PlusChannelAccountRecord:
       type: object
       x-table: plus_channel_account
@@ -19451,6 +21103,30 @@ components:
       x-domain: legacy
       x-generated-by-this-project: true
       properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 255
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        v:
+          type: string
+          format: int64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: integer
+          format: int32
         user_id:
           type: string
           format: int64
@@ -19460,6 +21136,28 @@ components:
         path:
           type: string
           maxLength: 1024
+        sort_weight:
+          type: integer
+          format: int32
+        content:
+          type: string
+        content_type:
+          type: integer
+          format: int32
+        content_id:
+          type: string
+          format: int64
+        status:
+          type: integer
+          format: int32
+        likes:
+          type: integer
+          format: int32
+        reply_count:
+          type: integer
+          format: int32
+        is_top:
+          type: boolean
         ip_address:
           type: string
           maxLength: 64
@@ -19475,9 +21173,45 @@ components:
       x-domain: legacy
       x-generated-by-this-project: true
       properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 255
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        v:
+          type: string
+          format: int64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: integer
+          format: int32
         user_id:
           type: string
           format: int64
+        content_type:
+          type: integer
+          format: int32
+        content_id:
+          type: string
+          format: int64
+        rating:
+          type: string
+          maxLength: 20
+        metadata:
+          type: object
+          additionalProperties: true
         source:
           type: string
           maxLength: 50
@@ -19499,6 +21233,30 @@ components:
       x-domain: legacy
       x-generated-by-this-project: true
       properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 255
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        v:
+          type: string
+          format: int64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: integer
+          format: int32
         user_id:
           type: string
           format: int64
@@ -19508,6 +21266,12 @@ components:
         image:
           type: object
           additionalProperties: true
+        content_type:
+          type: integer
+          format: int32
+        content_id:
+          type: string
+          format: int64
         folder_id:
           type: string
           format: int64
@@ -19517,6 +21281,17 @@ components:
         tags:
           type: string
           maxLength: 500
+        sort_weight:
+          type: integer
+          format: int32
+        is_private:
+          type: boolean
+        status:
+          type: integer
+          format: int32
+        view_count:
+          type: integer
+          format: int32
         last_viewed_at:
           type: string
           format: date-time
@@ -19526,12 +21301,48 @@ components:
       x-domain: legacy
       x-generated-by-this-project: true
       properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 255
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        v:
+          type: string
+          format: int64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: integer
+          format: int32
         user_id:
           type: string
           format: int64
+        title:
+          type: string
+          maxLength: 255
         summary:
           type: string
-        cover_images:
+        category_id:
+          type: string
+          format: int64
+        content_type:
+          type: integer
+          format: int32
+        content_id:
+          type: string
+          format: int64
+        cover_resources:
           type: object
           additionalProperties: true
         resource_list:
@@ -19552,6 +21363,33 @@ components:
         tags:
           type: object
           additionalProperties: true
+        status:
+          type: integer
+          format: int32
+        view_count:
+          type: string
+          format: int64
+        like_count:
+          type: string
+          format: int64
+        comment_count:
+          type: string
+          format: int64
+        share_count:
+          type: string
+          format: int64
+        favorite_count:
+          type: string
+          format: int64
+        is_top:
+          type: boolean
+        is_hot:
+          type: boolean
+        is_recommended:
+          type: boolean
+        sort_order:
+          type: integer
+          format: int32
     PlusInvitationCodeRecord:
       type: object
       x-table: plus_invitation_code
@@ -19606,6 +21444,41 @@ components:
       x-domain: legacy
       x-generated-by-this-project: true
       properties:
+        id:
+          type: string
+          format: int64
+        uuid:
+          type: string
+          maxLength: 255
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        v:
+          type: string
+          format: int64
+        tenant_id:
+          type: string
+          format: int64
+        organization_id:
+          type: string
+          format: int64
+        data_scope:
+          type: integer
+          format: int32
+        user_id:
+          type: string
+          format: int64
+        skill_id:
+          type: string
+          format: int64
+        enabled:
+          type: boolean
+        config:
+          type: object
+          additionalProperties: true
         installed_at:
           type: string
           format: date-time
@@ -19615,6 +21488,9 @@ components:
         last_used_at:
           type: string
           format: date-time
+        used_count:
+          type: string
+          format: int64
     PlusUserCardRecord:
       type: object
       x-table: plus_user_card
@@ -19627,6 +21503,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -19651,6 +21530,18 @@ components:
         currency_code:
           type: string
           maxLength: 3
+        total_amount_minor:
+          type: string
+          format: int64
+        reserved_amount_minor:
+          type: string
+          format: int64
+        consumed_amount_minor:
+          type: string
+          format: int64
+        available_amount_minor:
+          type: string
+          format: int64
         planned_amount_minor:
           type: string
           format: int64
@@ -19660,6 +21551,18 @@ components:
         lock_mode:
           type: string
           maxLength: 64
+        total_quantity:
+          type: string
+          format: decimal
+        reserved_quantity:
+          type: string
+          format: decimal
+        consumed_quantity:
+          type: string
+          format: decimal
+        available_quantity:
+          type: string
+          format: decimal
         status:
           type: string
           maxLength: 64
@@ -19681,9 +21584,17 @@ components:
       - offer_id
       - budget_type
       - currency_code
+      - total_amount_minor
+      - reserved_amount_minor
+      - consumed_amount_minor
+      - available_amount_minor
       - planned_amount_minor
       - overrun_amount_minor
       - lock_mode
+      - total_quantity
+      - reserved_quantity
+      - consumed_quantity
+      - available_quantity
       - status
       - created_at
       - updated_at
@@ -19693,6 +21604,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -19711,9 +21625,21 @@ components:
         direction:
           type: string
           maxLength: 64
+        amount_delta_minor:
+          type: string
+          format: int64
         currency_code:
           type: string
           maxLength: 3
+        quantity_delta:
+          type: string
+          format: decimal
+        balance_amount_minor:
+          type: string
+          format: int64
+        balance_quantity:
+          type: string
+          format: decimal
         business_type:
           type: string
           maxLength: 64
@@ -19740,7 +21666,11 @@ components:
       - ledger_no
       - budget_account_id
       - direction
+      - amount_delta_minor
       - currency_code
+      - quantity_delta
+      - balance_amount_minor
+      - balance_quantity
       - business_type
       - source_type
       - source_id
@@ -19754,6 +21684,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -19807,6 +21740,12 @@ components:
         channel_code:
           type: string
           maxLength: 128
+        max_claims:
+          type: string
+          format: int64
+        claimed_quantity:
+          type: string
+          format: int64
         status:
           type: string
           maxLength: 64
@@ -19839,6 +21778,8 @@ components:
       - currency_code
       - activation_status
       - can_resend
+      - max_claims
+      - claimed_quantity
       - status
       - created_at
       - updated_at
@@ -19848,6 +21789,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -19939,6 +21883,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -19969,6 +21916,12 @@ components:
         direction:
           type: string
           maxLength: 64
+        quantity_delta:
+          type: string
+          format: int64
+        balance_after:
+          type: string
+          format: int64
         business_type:
           type: string
           maxLength: 64
@@ -19996,6 +21949,8 @@ components:
       - stock_id
       - offer_id
       - direction
+      - quantity_delta
+      - balance_after
       - business_type
       - source_type
       - source_id
@@ -20009,6 +21964,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20068,7 +22026,31 @@ components:
         code_prefix:
           type: string
           maxLength: 64
+        requested_quantity:
+          type: string
+          format: int64
+        generated_quantity:
+          type: string
+          format: int64
         total_quantity:
+          type: string
+          format: int64
+        available_quantity:
+          type: string
+          format: int64
+        claimed_quantity:
+          type: string
+          format: int64
+        redeemed_quantity:
+          type: string
+          format: int64
+        locked_quantity:
+          type: string
+          format: int64
+        disabled_quantity:
+          type: string
+          format: int64
+        returned_quantity:
           type: string
           format: int64
         max_claims_per_subject:
@@ -20115,6 +22097,14 @@ components:
       - activation_status
       - can_resend
       - overspend_policy
+      - requested_quantity
+      - generated_quantity
+      - available_quantity
+      - claimed_quantity
+      - redeemed_quantity
+      - locked_quantity
+      - disabled_quantity
+      - returned_quantity
       - status
       - created_at
       - updated_at
@@ -20124,6 +22114,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20142,6 +22135,9 @@ components:
         sku_id:
           type: string
           maxLength: 512
+        allocation_amount_minor:
+          type: string
+          format: int64
         currency_code:
           type: string
           maxLength: 3
@@ -20155,6 +22151,7 @@ components:
       - tenant_id
       - application_id
       - order_id
+      - allocation_amount_minor
       - currency_code
       - created_at
     PromotionDiscountApplicationRecord:
@@ -20163,6 +22160,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20202,6 +22202,9 @@ components:
         subject_id:
           type: string
           maxLength: 512
+        discount_amount_minor:
+          type: string
+          format: int64
         currency_code:
           type: string
           maxLength: 3
@@ -20255,6 +22258,7 @@ components:
       - order_id
       - subject_type
       - subject_id
+      - discount_amount_minor
       - currency_code
       - status
       - request_no
@@ -20267,6 +22271,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20297,6 +22304,9 @@ components:
         status:
           type: string
           maxLength: 64
+        publish_attempts:
+          type: integer
+          format: int32
         next_retry_at:
           type: string
           format: date-time
@@ -20318,6 +22328,7 @@ components:
       - event_version
       - payload_json
       - status
+      - publish_attempts
       - occurred_at
       - created_at
     PromotionExternalBindingRecord:
@@ -20326,6 +22337,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20426,6 +22440,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20489,6 +22506,9 @@ components:
         sanitized_response_json:
           type: object
           additionalProperties: true
+        retry_count:
+          type: integer
+          format: int32
         next_retry_at:
           type: string
           format: date-time
@@ -20523,6 +22543,7 @@ components:
       - status
       - sanitized_request_json
       - sanitized_response_json
+      - retry_count
       - idempotency_key
       - occurred_at
       - created_at
@@ -20532,6 +22553,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20553,6 +22577,9 @@ components:
         rule_value_json:
           type: object
           additionalProperties: true
+        priority:
+          type: integer
+          format: int32
         created_at:
           type: string
           format: date-time
@@ -20564,6 +22591,7 @@ components:
       - offer_version_id
       - rule_type
       - rule_operator
+      - priority
       - created_at
       - updated_at
     PromotionOfferPresentationRecord:
@@ -20572,6 +22600,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20677,6 +22708,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20704,6 +22738,9 @@ components:
         combinability:
           type: string
           maxLength: 64
+        priority:
+          type: integer
+          format: int32
         status:
           type: string
           maxLength: 64
@@ -20736,6 +22773,7 @@ components:
       - offer_type
       - audience_scope
       - combinability
+      - priority
       - status
       - created_at
       - updated_at
@@ -20745,6 +22783,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20766,6 +22807,9 @@ components:
         target_code:
           type: string
           maxLength: 256
+        priority:
+          type: integer
+          format: int32
         created_at:
           type: string
           format: date-time
@@ -20777,6 +22821,7 @@ components:
       - offer_version_id
       - scope_type
       - match_mode
+      - priority
       - created_at
       - updated_at
     PromotionOfferTimeWindowRecord:
@@ -20785,6 +22830,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20833,6 +22881,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -20861,6 +22912,9 @@ components:
           type: string
           format: int64
         maximum_discount_amount_minor:
+          type: string
+          format: int64
+        minimum_order_amount_minor:
           type: string
           format: int64
         currency_code:
@@ -20893,6 +22947,8 @@ components:
         settlement_policy:
           type: string
           maxLength: 64
+        customer_visible:
+          type: boolean
         benefit_definition_id:
           type: string
           maxLength: 512
@@ -20935,6 +22991,8 @@ components:
       - validity_type
       - return_policy
       - settlement_policy
+      - customer_visible
+      - minimum_order_amount_minor
       - stack_strategy
       - rule_snapshot_json
       - created_at
@@ -20945,6 +23003,9 @@ components:
       x-domain: promotion
       x-generated-by-this-project: false
       properties:
+        id:
+          type: string
+          maxLength: 512
         tenant_id:
           type: string
           maxLength: 512
@@ -21007,6 +23068,15 @@ components:
           format: date-time
         can_resend:
           type: boolean
+        face_value_minor:
+          type: string
+          format: int64
+        maximum_discount_amount_minor:
+          type: string
+          format: int64
+        minimum_order_amount_minor:
+          type: string
+          format: int64
         discount_percent_bps:
           type: integer
           format: int32
@@ -21063,6 +23133,9 @@ components:
       - offer_version_id
       - subject_type
       - subject_id
+      - face_value_minor
+      - maximum_discount_amount_minor
+      - minimum_order_amount_minor
       - currency_code
       - verify_method
       - activation_status
@@ -21096,7 +23169,7 @@ components:
           x-db-type: enum_int32
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 32
         created_at:
           type: string
           format: date-time
@@ -21178,6 +23251,8 @@ components:
         job_type:
           type: string
           maxLength: 64
+        dry_run:
+          type: boolean
         requested_by:
           type: string
           format: int64
@@ -21187,6 +23262,15 @@ components:
         cursor_token:
           type: string
           maxLength: 512
+        candidate_count:
+          type: string
+          format: int64
+        deleted_object_count:
+          type: string
+          format: int64
+        released_bytes:
+          type: string
+          format: int64
         started_at:
           type: string
           format: date-time
@@ -21196,6 +23280,12 @@ components:
         request_id:
           type: string
           maxLength: 128
+        criteria_json:
+          type: object
+          additionalProperties: true
+        result_json:
+          type: object
+          additionalProperties: true
     StorageQuotaPolicyRecord:
       type: object
       x-table: storage_quota_policy
@@ -21219,7 +23309,7 @@ components:
           x-db-type: enum_int32
         status:
           type: string
-          x-db-type: enum_int32
+          maxLength: 32
         created_at:
           type: string
           format: date-time
@@ -21311,6 +23401,9 @@ components:
           type: string
           maxLength: 128
         upload_session_id:
+          type: string
+          format: int64
+        reserved_bytes:
           type: string
           format: int64
         expires_at:
@@ -21453,9 +23546,26 @@ components:
         check_mode:
           type: string
           maxLength: 64
+        dry_run:
+          type: boolean
+        started_at:
+          type: string
+          format: date-time
         completed_at:
           type: string
           format: date-time
+        scanned_object_count:
+          type: string
+          format: int64
+        missing_object_count:
+          type: string
+          format: int64
+        orphan_object_count:
+          type: string
+          format: int64
+        checksum_mismatch_count:
+          type: string
+          format: int64
         requested_by:
           type: string
           format: int64
@@ -21465,6 +23575,9 @@ components:
         request_id:
           type: string
           maxLength: 128
+        summary_json:
+          type: object
+          additionalProperties: true
     StorageUsageCounterRecord:
       type: object
       x-table: storage_usage_counter
@@ -21531,6 +23644,27 @@ components:
         business_domain:
           type: string
           maxLength: 128
+        used_logical_bytes:
+          type: string
+          format: int64
+        used_physical_bytes:
+          type: string
+          format: int64
+        reserved_bytes:
+          type: string
+          format: int64
+        retained_bytes:
+          type: string
+          format: int64
+        trash_bytes:
+          type: string
+          format: int64
+        file_count:
+          type: string
+          format: int64
+        last_ledger_id:
+          type: string
+          format: int64
     StorageUsageLedgerRecord:
       type: object
       x-table: storage_usage_ledger
@@ -21593,12 +23727,27 @@ components:
         usage_event_type:
           type: string
           maxLength: 128
+        delta_logical_bytes:
+          type: string
+          format: int64
+        delta_physical_bytes:
+          type: string
+          format: int64
+        delta_reserved_bytes:
+          type: string
+          format: int64
+        delta_file_count:
+          type: string
+          format: int64
         reason:
           type: string
           maxLength: 512
         idempotency_key:
           type: string
           maxLength: 128
+        occurred_at:
+          type: string
+          format: date-time
     StorageUsageSnapshotRecord:
       type: object
       x-table: storage_usage_snapshot
@@ -21662,6 +23811,27 @@ components:
         snapshot_type:
           type: string
           maxLength: 64
+        snapshot_at:
+          type: string
+          format: date-time
+        used_logical_bytes:
+          type: string
+          format: int64
+        used_physical_bytes:
+          type: string
+          format: int64
+        reserved_bytes:
+          type: string
+          format: int64
+        retained_bytes:
+          type: string
+          format: int64
+        trash_bytes:
+          type: string
+          format: int64
+        file_count:
+          type: string
+          format: int64
     StudioAppTemplateRecord:
       type: object
       x-table: studio_app_template
@@ -21733,12 +23903,6 @@ components:
         language:
           type: string
           maxLength: 64
-        icon_url:
-          type: string
-          maxLength: 1024
-        cover_url:
-          type: string
-          maxLength: 1024
         visibility:
           type: string
           x-db-type: enum_int32
@@ -21789,6 +23953,10 @@ components:
         deprecated_at:
           type: string
           format: date-time
+        cover:
+          $ref: '#/components/schemas/MediaResource'
+        icon:
+          $ref: '#/components/schemas/MediaResource'
     StudioAppTemplateUsageRecord:
       type: object
       x-table: studio_app_template_usage
@@ -22065,9 +24233,6 @@ components:
         artifact_ref:
           type: string
           maxLength: 512
-        artifact_url:
-          type: string
-          maxLength: 1024
         artifact_size_bytes:
           type: string
           format: int64
@@ -22091,6 +24256,8 @@ components:
         deprecated_at:
           type: string
           format: date-time
+        artifact:
+          $ref: '#/components/schemas/MediaResource'
     StudioCatalogAssetRecord:
       type: object
       x-table: studio_catalog_asset
@@ -22145,12 +24312,6 @@ components:
         asset_type:
           type: string
           x-db-type: enum_int32
-        asset_url:
-          type: string
-          maxLength: 1024
-        thumbnail_url:
-          type: string
-          maxLength: 1024
         title:
           type: string
           maxLength: 200
@@ -22178,6 +24339,10 @@ components:
         published_at:
           type: string
           format: date-time
+        asset:
+          $ref: '#/components/schemas/MediaResource'
+        thumbnail:
+          $ref: '#/components/schemas/MediaResource'
     SystemInstallationStateRecord:
       type: object
       x-table: system_installation_state
@@ -22368,6 +24533,9 @@ components:
         part_sha256:
           type: string
           maxLength: 128
+        size_bytes:
+          type: string
+          format: int64
         presigned_url_expires_at:
           type: string
           format: date-time
@@ -22526,9 +24694,24 @@ components:
         original_filename:
           type: string
           maxLength: 512
+        expected_size_bytes:
+          type: string
+          format: int64
         expected_sha256:
           type: string
           maxLength: 128
+        part_size_bytes:
+          type: string
+          format: int64
+        part_count:
+          type: integer
+          format: int32
+        completed_part_count:
+          type: integer
+          format: int32
+        completed_bytes:
+          type: string
+          format: int64
         expires_at:
           type: string
           format: date-time

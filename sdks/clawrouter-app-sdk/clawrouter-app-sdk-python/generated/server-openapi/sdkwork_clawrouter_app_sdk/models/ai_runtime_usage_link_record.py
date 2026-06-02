@@ -8,6 +8,7 @@ class AiRuntimeUsageLinkRecord:
     """Ai runtime usage link record schema exposed by Claw Router."""
     agent_run_id: Optional[str] = None
     agent_run_step_id: Optional[str] = None
+    agent_run_step_id_key: Optional[str] = None
     agent_session_id: Optional[str] = None
     cached_tokens: Optional[str] = None
     chat_item_id: Optional[str] = None

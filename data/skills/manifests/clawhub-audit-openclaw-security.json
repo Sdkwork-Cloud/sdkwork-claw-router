@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audit-openclaw-security@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-audit-openclaw-security-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audit-openclaw-security-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:12b505cc9ebd2caa1427c5de8456ba8c6375c17251b439a57cfe428ace7775e7",

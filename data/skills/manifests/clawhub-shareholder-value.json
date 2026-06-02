@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shareholder-value@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shareholder-value-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shareholder-value-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:276de3033442f3dbdd5f63e0ffd7c1b56e6f22b281c62b3fe067e2df1403150a",

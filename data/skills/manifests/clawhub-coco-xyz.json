@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coco-xyz@2.4.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-coco-xyz-2.4.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coco-xyz-2.4.4.json"
+      },
       "version": "2.4.4",
       "runtime": "metadata",
       "checksumHash": "sha256:f186e188e3704c404c1f4955827d1ab27489d22dbe19d8c616d6fc27e116b023",

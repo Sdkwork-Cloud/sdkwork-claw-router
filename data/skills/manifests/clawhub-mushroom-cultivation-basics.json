@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mushroom-cultivation-basics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mushroom-cultivation-basics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mushroom-cultivation-basics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f70b2824e01547de44bd017515e4106dbed2ca2a1500ce47cb967a4ec997f94",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spot-advanced-swap-orders@2.5.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-spot-advanced-swap-orders-2.5.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spot-advanced-swap-orders-2.5.5.json"
+      },
       "version": "2.5.5",
       "runtime": "metadata",
       "checksumHash": "sha256:0e1c5bd49207f635e9ec1564c65fdbddea3ea5856cf7c26acdc5651a48c1d06d",

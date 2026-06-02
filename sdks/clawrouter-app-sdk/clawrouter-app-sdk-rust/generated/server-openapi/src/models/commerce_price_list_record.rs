@@ -17,6 +17,10 @@ pub struct CommercePriceListRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub ends_at: Option<String>,
 
+    /// Id field on commerce price list record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Market code field on commerce price list record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub market_code: Option<String>,

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kickstart@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-kickstart-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kickstart-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e5bb43f4106370028b23a53355b00223f96ce948c3521dc1089d35ab55eba3f3",

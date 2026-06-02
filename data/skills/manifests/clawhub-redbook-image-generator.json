@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/redbook-image-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-redbook-image-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-redbook-image-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:417c71a002cb3506781995c8b6ad6c9e7f63c65c61711a1ff2f8a889153bf10f",

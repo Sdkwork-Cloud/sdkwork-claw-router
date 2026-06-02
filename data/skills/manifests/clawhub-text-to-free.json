@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-free@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-free-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-free-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a290c1902dc0c35254607bf540b62529f8e533d4c6ea126ca91b0c649f6d4c18",

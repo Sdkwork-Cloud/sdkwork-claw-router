@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-pay@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-pay-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-pay-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7cb36adc36b09313c34d028108df62747f6ac013dd664a689d2dd16765b71c47",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cwork-skill-update@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-cwork-skill-update-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cwork-skill-update-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:a0accb197e5038d822c2fd98189480b298968dac5bb20eb4ee67bf7016259af8",

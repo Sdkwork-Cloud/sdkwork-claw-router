@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawbus-skill@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawbus-skill-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawbus-skill-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c4c5997989a15a3555284094d026e9c34e5607186e44ab83b709d679f13ccb6",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flowtrack@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-flowtrack-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flowtrack-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c2964c01b8a64e360c01e2108103d498a24771c36515b013fce7781c88a83a8c",

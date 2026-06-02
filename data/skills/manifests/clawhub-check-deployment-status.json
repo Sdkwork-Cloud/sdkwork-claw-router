@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/check-deployment-status@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-check-deployment-status-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-check-deployment-status-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:50da08985b924c08b569dc5ce2a777c6870e800bcbfc7a8e2f859a6cea5569c5",

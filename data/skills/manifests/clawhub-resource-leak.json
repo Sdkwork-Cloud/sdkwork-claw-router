@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resource-leak@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resource-leak-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resource-leak-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e34c88b64477e2aa6c91212ddfb8e80e9c9436fd94a85191c9ff84ccff3b58c3",

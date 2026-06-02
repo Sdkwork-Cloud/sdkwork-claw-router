@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chatgpt-image-tailnet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chatgpt-image-tailnet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chatgpt-image-tailnet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3cce7ef6ce41b7e4ca82817b17c22c425c35d49ed846e68affd94c47c0efa287",

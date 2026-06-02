@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/can@1.9.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-can-1.9.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-can-1.9.0.json"
+      },
       "version": "1.9.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a6763152d4ffce2946628dbcfd4b0a4820e9b30f1af04a3b7ac1961bb2d9aed9",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beta-skill-maker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-beta-skill-maker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beta-skill-maker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:751fee4ceb84079eba16dc393e15a3b184c6f9f1fffb193201b302405621eed7",

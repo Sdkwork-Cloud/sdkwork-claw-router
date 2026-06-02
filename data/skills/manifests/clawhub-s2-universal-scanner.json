@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/s2-universal-scanner@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-s2-universal-scanner-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-s2-universal-scanner-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e4943dbe191c0c23882b2a06a90948a8929bd249ae48d1ba5f04a209eb4086a8",

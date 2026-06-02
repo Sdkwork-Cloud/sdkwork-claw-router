@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toys-r-us@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toys-r-us-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toys-r-us-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec994ff0f2f2a5a3a578b2febc1ea271e8dafef665338d15d56d5536a98e4246",

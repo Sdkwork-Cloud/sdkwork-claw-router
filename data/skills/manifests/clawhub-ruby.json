@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ruby@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ruby-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ruby-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9e24f6d35ffc84a07fed727a1651b9533f0b2e6b03fcb5cbd7038c2d8e6dc2e9",

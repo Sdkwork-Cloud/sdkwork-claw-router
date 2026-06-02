@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jal-group@99.99.99",
-      "artifactUrl": "data/skills/artifacts/clawhub-jal-group-99.99.99.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jal-group-99.99.99.json"
+      },
       "version": "99.99.99",
       "runtime": "metadata",
       "checksumHash": "sha256:d01f92bfb750bb8cc77e8beb52fcebbcfef9c06e05f9b2eaac0688f65e9093ee",

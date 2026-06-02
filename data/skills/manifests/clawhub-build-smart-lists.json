@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/build-smart-lists@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-build-smart-lists-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-build-smart-lists-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bcd4ad9a810f1ad8229127d8655c5e2b5a23a8a1d807d3b725ec91608839e940",

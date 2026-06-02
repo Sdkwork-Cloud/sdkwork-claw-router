@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-harness-doctor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-harness-doctor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-harness-doctor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed512005cf192ae169544e1499ad05bb61902c668f3c5ae47bae08441b95f14e",

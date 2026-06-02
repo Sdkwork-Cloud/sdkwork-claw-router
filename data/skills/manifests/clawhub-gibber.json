@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gibber@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gibber-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gibber-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed4c4981fdde00adf5db9ce8c81c868510032c60a5469fa7c06cbf9e47646d52",

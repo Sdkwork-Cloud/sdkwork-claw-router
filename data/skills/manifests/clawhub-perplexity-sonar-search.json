@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/perplexity-sonar-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-perplexity-sonar-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-perplexity-sonar-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e26e0e4ff4b42951be2dd4d97e6f8f4882e7d45efe270704d82993e795ce612e",

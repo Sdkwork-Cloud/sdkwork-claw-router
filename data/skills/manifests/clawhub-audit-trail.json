@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audit-trail@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audit-trail-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audit-trail-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d9cac9740fa5a7f87804c7509158ea0c9a2542167a96a1d4748258e7827bd2c8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcqueen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcqueen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcqueen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f7a8a026e0a7d07e0a3437c653c16b6277fed97c79bfae04195da965d811568",

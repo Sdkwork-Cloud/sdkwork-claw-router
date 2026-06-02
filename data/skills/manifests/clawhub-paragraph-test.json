@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paragraph-test@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paragraph-test-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paragraph-test-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc96aebe885dd2741d507050be6d1548cb51d4ae96e0eae227ac1009fae974f8",

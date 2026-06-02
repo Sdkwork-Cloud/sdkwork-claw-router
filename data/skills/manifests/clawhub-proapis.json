@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proapis@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-proapis-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proapis-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3b555440f4bfb5b5101e2a883941e9adb4f23ad2bba09cdd88da4a6ca1c84167",

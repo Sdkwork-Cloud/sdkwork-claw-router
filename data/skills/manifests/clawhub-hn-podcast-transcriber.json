@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hn-podcast-transcriber@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hn-podcast-transcriber-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hn-podcast-transcriber-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:59817d4d9b4a310a8b026291d3cfea61e71be11262285fc7ddf5594bcea16b8f",

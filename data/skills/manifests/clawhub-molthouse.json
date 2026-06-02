@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/molthouse@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-molthouse-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-molthouse-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e2f10b7fe241b1c37730ef6ab5304522836e8022faa6e7065968706b52054944",

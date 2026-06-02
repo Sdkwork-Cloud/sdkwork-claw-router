@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:badb1f6a813c542d3f555f3cb4d68dfa000b1f4310782c0df4174bcdbb87c872",

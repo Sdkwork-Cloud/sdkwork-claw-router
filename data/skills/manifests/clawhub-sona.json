@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sona@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-sona-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sona-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:565a19a0d72f0237ebc265550d0f6a06969b0efe717ee29e7e0736463e25b7f4",

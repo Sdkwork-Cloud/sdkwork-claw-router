@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shell-ai@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-shell-ai-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shell-ai-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cbd0310e83211cd26239b4d7655e4c56d73f3e681bcdd15647881b5d65f3edfa",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/suno-headless-skill@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-suno-headless-skill-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-suno-headless-skill-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:6c5b85f38249f6c443d344a1dbfe413879191b25aadb0f702feba96b2fc9abe7",

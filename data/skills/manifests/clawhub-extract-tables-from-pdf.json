@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/extract-tables-from-pdf@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-extract-tables-from-pdf-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-extract-tables-from-pdf-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ebf8f65e972644005f9321691d01b822e76c420508b1049f55223c88d21ccf2c",

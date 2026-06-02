@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-father@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-father-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-father-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a3ea35119403cd4e061c6aeb04a549e3b5e929407e283040fd51001387b70177",

@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.backend.model;
 
 public class CommerceExchangeRuleRecord {
     private String createdAt;
+    private String id;
     private String idempotencyKey;
     private String organizationId;
     private String rate;
@@ -21,6 +22,14 @@ public class CommerceExchangeRuleRecord {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/speech-recognition@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-speech-recognition-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-speech-recognition-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0d8d45569e2d126d2679f2b44fcdff851fab01406f4031ddbfbadb3195ec7717",

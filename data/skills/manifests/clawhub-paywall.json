@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paywall@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paywall-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paywall-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b71bd1086b6f75909fdb76352089c2285ed47bfa4bf03cb2854281d01df6300",

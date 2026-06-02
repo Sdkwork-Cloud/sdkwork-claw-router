@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/everything-cli-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-everything-cli-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-everything-cli-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:171e489e0f330d55cca74c03624fdb4168392aedcaef2e9acc63f0aaffae9125",

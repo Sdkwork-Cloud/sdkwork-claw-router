@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/penfield@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-penfield-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-penfield-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de4927d3c13c0a37d6e01151a8bdc40f78caed9c495fadf1080e2bc55abc587e",

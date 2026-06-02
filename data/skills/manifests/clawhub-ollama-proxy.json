@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ollama-proxy@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-ollama-proxy-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ollama-proxy-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:bcf55f14fe5457db523e5b20a27ea7ea9e21556b8ff2d0e12e1622f3a0a84bba",

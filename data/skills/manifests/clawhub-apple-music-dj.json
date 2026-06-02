@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-music-dj@3.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-music-dj-3.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-music-dj-3.1.0.json"
+      },
       "version": "3.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b426478d1699de8a02ac5d01bce75a046ac10dc93538384bbc510d1dae8659fb",

@@ -9,6 +9,8 @@ class CommerceInvoiceItemRecord:
     amount: str
     created_at: str
     invoice_id: str
+    tax_amount: str
     tenant_id: str
     title: str
+    id: Optional[str] = None
     order_item_id: Optional[str] = None

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/recipe-create-shared-drive@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-recipe-create-shared-drive-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-recipe-create-shared-drive-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:2ee732df56fac7196bdac8adc6ab1a93d3764c04cd91b7262c5703de32e2617d",

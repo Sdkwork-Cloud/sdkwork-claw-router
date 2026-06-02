@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawrank@2.5.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawrank-2.5.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawrank-2.5.1.json"
+      },
       "version": "2.5.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5c6f0b5813f1920a5b8ca69c796eee0fb30021e1ff6218d3e8c85f64e187e400",

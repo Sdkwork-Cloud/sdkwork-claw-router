@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/batch-id@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-batch-id-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-batch-id-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b1146c7e382d77d2de8e15034d4ae33f1c8f2499982a5cda42cf692f3c97b25",

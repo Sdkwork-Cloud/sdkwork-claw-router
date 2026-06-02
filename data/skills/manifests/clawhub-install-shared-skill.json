@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/install-shared-skill@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-install-shared-skill-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-install-shared-skill-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:39124375e8463e5058a4461218ab9a8dfdb26c6573b16396d993d67b77d03d41",

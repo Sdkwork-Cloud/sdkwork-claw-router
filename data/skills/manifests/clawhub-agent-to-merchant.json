@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-to-merchant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-to-merchant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-to-merchant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b24f5b8b4288654bbba3f8ba1fb63a5c8456ee7530e5885d8654898aff68910a",

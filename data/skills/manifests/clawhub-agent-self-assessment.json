@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-self-assessment@2.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-self-assessment-2.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-self-assessment-2.3.3.json"
+      },
       "version": "2.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:48389628e41e6127c76c43733a4046de4b5210734ebac2135e3f08baae152ea2",

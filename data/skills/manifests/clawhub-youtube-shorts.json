@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-shorts@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-shorts-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-shorts-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d35db39f09d79f789ec3dd84ee5784c441c568051f7e4af96a20fc2cf81cba76",

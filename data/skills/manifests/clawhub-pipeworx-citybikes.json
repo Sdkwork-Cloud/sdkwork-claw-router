@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-citybikes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-citybikes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-citybikes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:202e3d0b65e2a5c60dfc1a2e8f9b36fde6738a54b528c641de918a1545631d93",

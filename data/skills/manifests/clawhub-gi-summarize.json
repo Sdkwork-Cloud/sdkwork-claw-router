@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gi-summarize@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gi-summarize-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gi-summarize-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cba01fa77b55cebb917925b3766ea0b5ff197cc36b037f505b57460872c427b8",

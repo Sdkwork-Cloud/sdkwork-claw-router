@@ -8,8 +8,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? AltText { get; set; }
         public string? ArtifactId { get; set; }
+        public MediaResource? Asset { get; set; }
         public int? AssetType { get; set; }
-        public string? AssetUrl { get; set; }
         public string? DurationSeconds { get; set; }
         public int? FileSize { get; set; }
         public int? Height { get; set; }
@@ -17,7 +17,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? PublishedAt { get; set; }
         public int? SortOrder { get; set; }
         public int? Status { get; set; }
-        public string? ThumbnailUrl { get; set; }
+        public MediaResource? Thumbnail { get; set; }
         public string? Title { get; set; }
         public int? Width { get; set; }
     }

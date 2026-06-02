@@ -4,12 +4,12 @@ package com.sdkwork.clawrouter.backend.model;
 public class CommerceProductMediaItem {
     private String altText;
     private String id;
-    private String mediaType;
+    private String mediaRole;
     private String ownerId;
     private String ownerType;
+    private MediaResource resource;
     private Integer sortOrder;
     private String status;
-    private String url;
 
     public String getAltText() {
         return this.altText;
@@ -27,12 +27,12 @@ public class CommerceProductMediaItem {
         this.id = id;
     }
 
-    public String getMediaType() {
-        return this.mediaType;
+    public String getMediaRole() {
+        return this.mediaRole;
     }
 
-    public void setMediaType(String mediaType) {
-        this.mediaType = mediaType;
+    public void setMediaRole(String mediaRole) {
+        this.mediaRole = mediaRole;
     }
 
     public String getOwnerId() {
@@ -51,6 +51,14 @@ public class CommerceProductMediaItem {
         this.ownerType = ownerType;
     }
 
+    public MediaResource getResource() {
+        return this.resource;
+    }
+
+    public void setResource(MediaResource resource) {
+        this.resource = resource;
+    }
+
     public Integer getSortOrder() {
         return this.sortOrder;
     }
@@ -65,13 +73,5 @@ public class CommerceProductMediaItem {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public String getUrl() {
-        return this.url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 }

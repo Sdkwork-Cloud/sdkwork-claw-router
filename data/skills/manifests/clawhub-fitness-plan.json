@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fitness-plan@6.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-fitness-plan-6.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fitness-plan-6.0.3.json"
+      },
       "version": "6.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d225073bb569a7e23f8bf9283d11f3212548bb47ef62074361d7e3dd1118830a",

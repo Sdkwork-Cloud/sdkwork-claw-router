@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-cli-guardian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-cli-guardian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-cli-guardian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dacdba261daf0242ff5e601ba8b432790afae6e0f369f66cfa4feb27bbf17f5e",

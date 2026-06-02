@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thegraph-mcp-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-thegraph-mcp-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thegraph-mcp-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b6274c86ec6a0327d6dc96e6aebda135c5b0d1190a90de528b82f0324e5da960",

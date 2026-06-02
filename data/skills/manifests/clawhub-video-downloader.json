@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-downloader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-downloader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-downloader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:052d29e9d0232d3f153cdc29153fa1dc7791ea4ac5e1114cb4640e7c25da9ae3",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ctf-solver@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ctf-solver-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ctf-solver-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:092c524557e1b68256f85816d862f2e35648afbcb9cb820e2863303858c604dc",

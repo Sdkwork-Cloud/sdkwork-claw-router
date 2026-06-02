@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mmxagent-skill-wecom@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mmxagent-skill-wecom-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mmxagent-skill-wecom-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d8cbc9943834b212a2860fa08cae69b1ca28fa3ea35b3e9fb8a317ea33d52d2f",

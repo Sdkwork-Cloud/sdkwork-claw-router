@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hallucination-detective@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hallucination-detective-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hallucination-detective-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f31a4bd5f386a498cd0aed59e79b0ef1095a21aeb5e518b2ac66c0eb2210561",

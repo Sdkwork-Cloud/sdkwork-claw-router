@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-agent-security-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-agent-security-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-agent-security-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:24dafa85754ae986eea4102b845c8b9ef7c599b2e5304cdb32abc1c869c5c4fd",

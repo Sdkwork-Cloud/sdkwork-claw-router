@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/driftabot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-driftabot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-driftabot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:341587b9ea9d9ae059407becb62980d59d497ed108f7e245a68d0591d665d879",

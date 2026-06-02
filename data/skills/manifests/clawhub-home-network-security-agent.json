@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/home-network-security-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-home-network-security-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-home-network-security-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:20673f58d2648f5447eb9bde508c892259700b195b173ae2d92f86330050c458",

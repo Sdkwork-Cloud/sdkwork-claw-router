@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/markdown@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-markdown-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-markdown-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:80830d701d4cf75eb0238a0f4ac1f800077417a296aa20daf9add8bb00ec59a6",

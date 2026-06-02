@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quincy-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quincy-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quincy-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:625dc6090456ae4ef509be4d77d2c216a29758dad9193ccf2868403b4cd38706",

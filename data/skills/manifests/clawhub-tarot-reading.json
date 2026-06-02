@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tarot-reading@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tarot-reading-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tarot-reading-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e5a3605c23deb71de33e663a98903e87e738844eaff17b19ff6fee883c826591",

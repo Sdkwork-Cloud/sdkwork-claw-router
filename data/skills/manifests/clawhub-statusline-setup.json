@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/statusline-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-statusline-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-statusline-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a118ce392f22db0c232dc5952326a2bb6b5a58a9687909f185d7f72d105fc51c",

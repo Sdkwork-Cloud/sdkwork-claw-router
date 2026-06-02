@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lh-edge-tts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lh-edge-tts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lh-edge-tts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:263462cb1153f6de173c665bfd38348539ea8fb692b2c25dac7ded86e991a981",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/affinity@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-affinity-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-affinity-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:cbd21b86d58500501c27cc38adf21c800be3be7b1e9cd4347f10c04779cc47d5",

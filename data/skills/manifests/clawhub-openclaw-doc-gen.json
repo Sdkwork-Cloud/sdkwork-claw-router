@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-doc-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-doc-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-doc-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd5250a5e450eddf16bdb526bdc8e054b309c6a40511e9bdb58a6e76d41e8eaf",

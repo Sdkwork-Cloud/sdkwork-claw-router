@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/safe-ia@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-safe-ia-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-safe-ia-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:695bcaea632cbf9219683a9fd2a216b0bbd2f2f86e173a7f14a93a2ef74501d3",

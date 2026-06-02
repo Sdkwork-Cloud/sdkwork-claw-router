@@ -302,6 +302,26 @@
     },
     {
       "api_method": "POST",
+      "api_path": "/backend/v3/api/catalog/category_attributes",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createCommerceCategoryAttribute",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_product_category_attribute",
+        "commerce_product_category",
+        "commerce_product_attribute"
+      ],
+      "route": "/admin/catalog",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
+      "write_tables": [
+        "commerce_product_category_attribute",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
       "api_path": "/backend/v3/api/catalog/price_lists",
       "api_surface": "backend",
       "file_targets": [],
@@ -334,6 +354,7 @@
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
       "write_tables": [
         "commerce_product_spu",
+        "commerce_product_spu_category",
         "commerce_product_media",
         "ops_audit_log"
       ]
@@ -350,13 +371,15 @@
         "commerce_product_sku",
         "commerce_product_spu",
         "commerce_product_attribute",
-        "commerce_product_attribute_value"
+        "commerce_product_attribute_value",
+        "commerce_product_media"
       ],
       "route": "/admin/catalog",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
       "write_tables": [
         "commerce_product_sku",
         "commerce_product_sku_attribute",
+        "commerce_product_media",
         "ops_audit_log"
       ]
     },
@@ -370,12 +393,88 @@
       "operation_scope": null,
       "read_sources": [
         "commerce_product_category",
-        "commerce_product_spu"
+        "commerce_product_spu_category"
       ],
       "route": "/admin/catalog",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
       "write_tables": [
         "commerce_product_category",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/catalog/category_attributes/{bindingId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteCommerceCategoryAttribute",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_product_category_attribute"
+      ],
+      "route": "/admin/catalog",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
+      "write_tables": [
+        "commerce_product_category_attribute",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/catalog/products/{productId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteCommerceProduct",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_product_spu",
+        "commerce_product_sku"
+      ],
+      "route": "/admin/catalog",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
+      "write_tables": [
+        "commerce_product_spu",
+        "commerce_product_sku",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/catalog/skus/{skuId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteCommerceSku",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_product_sku"
+      ],
+      "route": "/admin/catalog",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
+      "write_tables": [
+        "commerce_product_sku",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/catalog/category_seeds/initialize",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "initializeCommerceCategorySeeds",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_product_category",
+        "plus_category"
+      ],
+      "route": "/admin/catalog",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
+      "write_tables": [
+        "commerce_product_category",
+        "plus_category",
         "ops_audit_log"
       ]
     },
@@ -412,6 +511,23 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/backend/v3/api/catalog/category_attributes",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listCommerceCategoryAttributes",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_product_category_attribute",
+        "commerce_product_category",
+        "commerce_product_attribute"
+      ],
+      "route": "/admin/catalog",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
       "api_path": "/backend/v3/api/catalog/price_lists",
       "api_surface": "backend",
       "file_targets": [],
@@ -436,6 +552,7 @@
       "operation_scope": null,
       "read_sources": [
         "commerce_product_spu",
+        "commerce_product_spu_category",
         "commerce_product_sku",
         "commerce_product_category",
         "commerce_product_media",
@@ -459,6 +576,7 @@
         "commerce_product_spu",
         "commerce_product_attribute",
         "commerce_product_attribute_value",
+        "commerce_product_media",
         "commerce_product_sku_attribute",
         "commerce_price_list",
         "commerce_price_list_item"
@@ -487,6 +605,26 @@
     },
     {
       "api_method": "PATCH",
+      "api_path": "/backend/v3/api/catalog/category_attributes/{bindingId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateCommerceCategoryAttribute",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_product_category_attribute",
+        "commerce_product_category",
+        "commerce_product_attribute"
+      ],
+      "route": "/admin/catalog",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
+      "write_tables": [
+        "commerce_product_category_attribute",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
       "api_path": "/backend/v3/api/catalog/products/{productId}",
       "api_surface": "backend",
       "file_targets": [],
@@ -501,6 +639,7 @@
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
       "write_tables": [
         "commerce_product_spu",
+        "commerce_product_spu_category",
         "commerce_product_media",
         "ops_audit_log"
       ]
@@ -517,13 +656,15 @@
         "commerce_product_sku",
         "commerce_product_spu",
         "commerce_product_attribute",
-        "commerce_product_attribute_value"
+        "commerce_product_attribute_value",
+        "commerce_product_media"
       ],
       "route": "/admin/catalog",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts",
       "write_tables": [
         "commerce_product_sku",
         "commerce_product_sku_attribute",
+        "commerce_product_media",
         "ops_audit_log"
       ]
     },
@@ -1689,7 +1830,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/access_groups",
+      "api_path": "/backend/v3/api/ai/channel_groups",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "create",
@@ -1709,7 +1850,7 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/backend/v3/api/router/access_groups/{groupId}",
+      "api_path": "/backend/v3/api/ai/channel_groups/{channelGroupId}",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "delete",
@@ -1746,7 +1887,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/access_groups/{groupId}/channel_bindings",
+      "api_path": "/backend/v3/api/ai/channel_groups/{channelGroupId}/channel_bindings",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -1765,7 +1906,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/access_groups",
+      "api_path": "/backend/v3/api/ai/channel_groups",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -1782,7 +1923,7 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/backend/v3/api/router/access_groups/{groupId}/channel_bindings",
+      "api_path": "/backend/v3/api/ai/channel_groups/{channelGroupId}/channel_bindings",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "update",
@@ -1805,7 +1946,7 @@
     },
     {
       "api_method": "PATCH",
-      "api_path": "/backend/v3/api/router/access_groups/{groupId}",
+      "api_path": "/backend/v3/api/ai/channel_groups/{channelGroupId}",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "update",
@@ -4411,6 +4552,25 @@
       ]
     },
     {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/payments/provider_accounts/{providerAccountId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "backendPaymentsProviderAccountsDelete",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_payment_provider_account",
+        "commerce_payment_channel"
+      ],
+      "route": "/admin/payments",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts",
+      "write_tables": [
+        "commerce_payment_provider_account",
+        "ops_audit_log"
+      ]
+    },
+    {
       "api_method": "GET",
       "api_path": "/backend/v3/api/payments/provider_accounts",
       "api_surface": "backend",
@@ -4425,6 +4585,51 @@
       "route": "/admin/payments",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts",
       "write_tables": []
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/payments/provider_accounts/{providerAccountId}/status",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "backendPaymentsProviderAccountsStatusUpdate",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_payment_provider_account",
+        "commerce_payment_channel"
+      ],
+      "route": "/admin/payments",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts",
+      "write_tables": [
+        "commerce_payment_provider_account",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/payments/provider_accounts/{providerAccountId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "backendPaymentsProviderAccountsUpdate",
+      "operation_scope": null,
+      "read_sources": [
+        "commerce_payment_provider",
+        "commerce_payment_provider_account",
+        "commerce_payment_method",
+        "commerce_payment_channel",
+        "commerce_payment_route_rule",
+        "commerce_payment_intent",
+        "commerce_payment_attempt",
+        "commerce_payment_webhook_event",
+        "commerce_payment_reconciliation_run"
+      ],
+      "route": "/admin/payments",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts",
+      "write_tables": [
+        "commerce_payment_provider_account",
+        "ops_audit_log"
+      ]
     },
     {
       "api_method": "GET",
@@ -4734,7 +4939,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/rate_limits/ip",
+      "api_path": "/backend/v3/api/system/rate_limits/ip",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "create",
@@ -4752,7 +4957,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/rate_limits/models",
+      "api_path": "/backend/v3/api/system/rate_limits/models",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "create",
@@ -4771,7 +4976,7 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/rate_limits/api_keys",
+      "api_path": "/backend/v3/api/system/rate_limits/api_keys",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "create",
@@ -4805,7 +5010,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/rate_limits/ip",
+      "api_path": "/backend/v3/api/system/rate_limits/ip",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -4820,7 +5025,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/rate_limits/models",
+      "api_path": "/backend/v3/api/system/rate_limits/models",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -4836,7 +5041,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/rate_limits/api_keys",
+      "api_path": "/backend/v3/api/system/rate_limits/api_keys",
       "api_surface": "backend",
       "file_targets": [],
       "kind": "read",
@@ -7053,7 +7258,7 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/iam/api_key_groups",
+      "api_path": "/app/v3/api/ai/channel_groups",
       "api_surface": "app",
       "file_targets": [],
       "kind": "read",
@@ -8486,29 +8691,6 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/recharges/orders/{orderId}/cancellations",
-      "api_surface": "app",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "appRechargesOrdersCancel",
-      "operation_scope": null,
-      "read_sources": [
-        "commerce_order",
-        "commerce_order_item",
-        "commerce_payment_intent",
-        "commerce_payment_attempt",
-        "commerce_order_cancellation"
-      ],
-      "route": "/console/recharge",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
-      "write_tables": [
-        "commerce_order_cancellation",
-        "commerce_order_event",
-        "ops_audit_log"
-      ]
-    },
-    {
-      "api_method": "POST",
       "api_path": "/app/v3/api/recharges/orders",
       "api_surface": "app",
       "file_targets": [],
@@ -8574,29 +8756,6 @@
       "route": "/console/recharge",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
       "write_tables": []
-    },
-    {
-      "api_method": "POST",
-      "api_path": "/app/v3/api/recharges/orders/{orderId}/cancellations",
-      "api_surface": "app",
-      "file_targets": [],
-      "kind": "create",
-      "operation": "cancelRechargeOrder",
-      "operation_scope": "app_shell",
-      "read_sources": [
-        "commerce_order",
-        "commerce_order_item",
-        "commerce_payment_intent",
-        "commerce_payment_attempt",
-        "commerce_order_cancellation"
-      ],
-      "route": "/console/recharge",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-recharge/src/rechargeService.ts",
-      "write_tables": [
-        "commerce_order_cancellation",
-        "commerce_order_event",
-        "ops_audit_log"
-      ]
     },
     {
       "api_method": "GET",
@@ -8688,6 +8847,7 @@
       "operation_scope": null,
       "read_sources": [
         "commerce_product_spu",
+        "commerce_product_spu_category",
         "commerce_product_sku",
         "commerce_product_category",
         "commerce_product_media",
@@ -8708,6 +8868,7 @@
       "operation_scope": null,
       "read_sources": [
         "commerce_product_spu",
+        "commerce_product_spu_category",
         "commerce_product_sku",
         "commerce_product_category",
         "commerce_product_attribute",
@@ -11371,8 +11532,8 @@
     }
   ],
   "summary": {
-    "operation_count": 596,
+    "operation_count": 604,
     "source_file_count": 63,
-    "write_operation_count": 296
+    "write_operation_count": 303
   }
 }

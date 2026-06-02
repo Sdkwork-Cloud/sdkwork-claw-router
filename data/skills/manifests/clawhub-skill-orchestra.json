@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-orchestra@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-orchestra-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-orchestra-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e4cfe0734e31c8c16bd1a9a8b5d2eb74064d5938874ab1934a9e53cdfc8e3782",

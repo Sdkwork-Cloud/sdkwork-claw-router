@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-id-osiris@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-id-osiris-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-id-osiris-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:c913792fc81039e3734a23862702946c9080ffd8230d391c50ccacb2893719cd",

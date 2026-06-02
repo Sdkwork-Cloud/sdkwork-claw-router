@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-pulse@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-pulse-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-pulse-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:64b4017fa7544fc0ac55056f26fc35c8f2145e00729f0f7021704484f75a4e64",

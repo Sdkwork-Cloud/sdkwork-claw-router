@@ -10,12 +10,15 @@ type AiChannelGroupMemberRecord struct {
 	DeletedBy string `json:"deleted_by"`
 	EffectiveFrom string `json:"effective_from"`
 	EffectiveTo string `json:"effective_to"`
+	Enabled bool `json:"enabled"`
 	Id string `json:"id"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	OrganizationId string `json:"organization_id"`
+	Priority int `json:"priority"`
 	Status string `json:"status"`
 	TenantId string `json:"tenant_id"`
 	UpdatedAt string `json:"updated_at"`
 	Uuid string `json:"uuid"`
 	Version string `json:"version"`
+	Weight int `json:"weight"`
 }

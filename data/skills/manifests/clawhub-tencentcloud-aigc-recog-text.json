@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentcloud-aigc-recog-text@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-aigc-recog-text-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentcloud-aigc-recog-text-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:ba7696e88bb9f9bcfe5af86e5edcade5dc7261e4a7a7be7e92b8a639ea3f7d00",

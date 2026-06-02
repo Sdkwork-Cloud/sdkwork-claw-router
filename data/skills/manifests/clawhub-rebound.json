@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rebound@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rebound-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rebound-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2fb1dd046f8906cbaef3d97dbaad1377dfb01fd8efad7b7152abeb3423975551",

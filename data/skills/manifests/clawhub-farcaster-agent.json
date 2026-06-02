@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/farcaster-agent@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-farcaster-agent-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-farcaster-agent-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be1713cf703565f7574d83dce729a08964151d4703898ff737a16b35ce068728",

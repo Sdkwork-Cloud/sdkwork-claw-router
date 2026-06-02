@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/backstage@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-backstage-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-backstage-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ce29cf011dd8b8bd040670b2408db84df2bea35b863cab63f7a545c439320f80",

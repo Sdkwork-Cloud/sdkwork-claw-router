@@ -11,5 +11,5 @@ type AdminCourseLessonMutationRequest struct {
 	SectionId string `json:"sectionId"`
 	Status string `json:"status"`
 	Title string `json:"title"`
-	VideoUrl string `json:"videoUrl"`
+	Video MediaResource `json:"video"`
 }

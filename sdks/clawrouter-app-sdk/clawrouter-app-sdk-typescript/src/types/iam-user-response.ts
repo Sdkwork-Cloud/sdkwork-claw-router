@@ -1,7 +1,9 @@
+import type { MediaResource } from './media-resource';
+
 /** Iam user response schema exposed by Claw Router. */
 export interface IamUserResponse {
-  /** Avatar url field on iam user response. */
-  avatarUrl: string;
+  /** Avatar field on iam user response. */
+  avatar: MediaResource;
   /** Display name field on iam user response. */
   displayName: string;
   /** Email field on iam user response. */

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alpaca-trading-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alpaca-trading-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alpaca-trading-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca275947d10a16b7ba4b04416da5d886fcb37db5fa3ab5e95ca30d965a394df6",

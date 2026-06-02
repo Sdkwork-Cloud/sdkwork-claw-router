@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/testcase-gen-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-testcase-gen-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-testcase-gen-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:95250a9b53140696874f029dc7c4ab89bffe296a4dcb2068b67e12bf44dcc079",

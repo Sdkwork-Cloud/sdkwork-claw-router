@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fuel-cli@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fuel-cli-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fuel-cli-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:986ad9a21bedda64756a24ee43fc126c5201b0450a8d893d03be502f1a6a88e7",

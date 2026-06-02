@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/macos-say@0.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-macos-say-0.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-macos-say-0.0.2.json"
+      },
       "version": "0.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:41ab0ca96b1393031a6131582c2965dee94217704602cc233329bdf2d942382d",

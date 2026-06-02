@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/all-routes-offline@1.3.23",
-      "artifactUrl": "data/skills/artifacts/clawhub-all-routes-offline-1.3.23.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-all-routes-offline-1.3.23.json"
+      },
       "version": "1.3.23",
       "runtime": "metadata",
       "checksumHash": "sha256:0247ef33ebdd7b1a252fc3ced0683eee0a117fbf01c4ffe90ec8d08c054b4b7d",

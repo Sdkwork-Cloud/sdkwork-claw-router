@@ -174,6 +174,20 @@ describe("SDKWork IAM standard contracts", () => {
       "left_at",
       "remark",
     ]);
+    expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "user")?.fields).toEqual([
+      "id",
+      "tenant_id",
+      "username",
+      "display_name",
+      "email",
+      "phone",
+      "avatar_media_resource_id",
+      "avatar_object_blob_id",
+      "avatar_resource_snapshot",
+      "status",
+      "created_at",
+      "updated_at",
+    ]);
     expect(SDKWORK_IAM_DOMAIN_MODELS.find((model) => model.name === "session")?.fields).toEqual(
       expect.arrayContaining([
         "auth_token_hash",

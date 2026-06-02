@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linux-ai-server@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linux-ai-server-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linux-ai-server-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98054a2d11452b2c88debb11411af3faca1b30e3e1cf2ce5411cb5f43ded2692",

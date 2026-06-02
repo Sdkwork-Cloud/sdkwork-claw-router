@@ -8,24 +8,35 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? AcceptedAt { get; set; }
         public string? AppId { get; set; }
+        public string? Channel { get; set; }
         public string? CreatedAt { get; set; }
         public string? DeliveredAt { get; set; }
+        public string? DeliveryPurpose { get; set; }
+        public string? DeliveryStatus { get; set; }
+        public bool? DryRun { get; set; }
         public string? ExpiresAt { get; set; }
         public string? FailedAt { get; set; }
         public string? Id { get; set; }
+        public string? IdempotencyKey { get; set; }
         public bool? LegalHold { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? OrganizationId { get; set; }
         public string? PayloadHash { get; set; }
+        public string? RenderHash { get; set; }
         public string? RequestId { get; set; }
+        public string? RequestNo { get; set; }
+        public Dictionary<string, string>? RequestPayloadRedacted { get; set; }
         public string? ResolvedProviderAccountId { get; set; }
         public string? ResolvedRouteRuleId { get; set; }
         public string? ResolvedSenderIdentityId { get; set; }
         public string? RetentionUntil { get; set; }
+        public string? SceneCode { get; set; }
         public string? ScheduledAt { get; set; }
         public string? SentAt { get; set; }
         public string? Status { get; set; }
+        public string? TargetHash { get; set; }
         public string? TargetMasked { get; set; }
+        public string? TargetType { get; set; }
         public string? TemplateVariantId { get; set; }
         public string? TemplateVersionId { get; set; }
         public string? TenantId { get; set; }

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-court-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-court-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-court-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f61bdd8bc5625dd40ee3b9de2f5fd86c1d7b32508e73377ccd4854143981c47",

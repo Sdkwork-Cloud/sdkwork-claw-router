@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/negotiate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-negotiate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-negotiate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:876aba929af17a1608981ed66b205e90403636555919c5e5cafef529c951e5fa",

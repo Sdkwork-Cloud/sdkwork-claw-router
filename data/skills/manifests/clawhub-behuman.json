@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/behuman@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-behuman-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-behuman-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4505b4ebf86b01a27d13d782361583fcdd37bfb7f671abac7bd35aa7272d796b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-skill-hangs-001@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-skill-hangs-001-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-skill-hangs-001-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7850b8b2382a6db3f40e89e840669777899aae26ca0d90e37f3cfe4cdc8ba27e",

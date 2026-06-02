@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bitrise@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-bitrise-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bitrise-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5217a423e013943b27b22e31beb501ba9752c8f796d3e98dcd07250137645b6d",

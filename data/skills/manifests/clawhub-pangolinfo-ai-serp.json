@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pangolinfo-ai-serp@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pangolinfo-ai-serp-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pangolinfo-ai-serp-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:483badcfbece00c5fa2a93430bbe4de9584f2ac465483f8a70db074081f1474b",

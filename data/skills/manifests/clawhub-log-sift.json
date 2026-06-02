@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/log-sift@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-log-sift-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-log-sift-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2ac682af7252330f78ae95b41bd3dd8c2e7f37d00c3c3bddb411b63e8e9484ba",

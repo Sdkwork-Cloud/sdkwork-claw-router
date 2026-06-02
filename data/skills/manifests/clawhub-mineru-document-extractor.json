@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mineru-document-extractor@0.1.29",
-      "artifactUrl": "data/skills/artifacts/clawhub-mineru-document-extractor-0.1.29.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mineru-document-extractor-0.1.29.json"
+      },
       "version": "0.1.29",
       "runtime": "metadata",
       "checksumHash": "sha256:4cf471c7df66bfce6135c30f774b296c316555c5f9322660eb73425281f40bf5",

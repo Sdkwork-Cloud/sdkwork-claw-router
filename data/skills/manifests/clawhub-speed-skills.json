@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/speed-skills@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-speed-skills-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-speed-skills-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c450551c7b6bbf357c510403178c5e333b419080d50c93d47396f2c6e19463da",

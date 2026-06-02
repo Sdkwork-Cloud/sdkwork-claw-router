@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boiler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boiler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boiler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7eae9c19d815921acc162652703e4f2ba155c4241168259bac2862f86137331e",

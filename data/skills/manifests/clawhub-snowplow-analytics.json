@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snowplow-analytics@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-snowplow-analytics-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snowplow-analytics-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:edf6961b8b52ad6720a05f839513221d7d8f29f16109125043fa1961fcdf1d0c",

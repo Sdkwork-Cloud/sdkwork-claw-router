@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/all-weather-strategy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-all-weather-strategy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-all-weather-strategy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7429edf442926b02b4ffa4e5db5fe30b89db904dfe1e5a91bcd5e451482b0cb",

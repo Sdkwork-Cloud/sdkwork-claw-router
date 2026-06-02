@@ -13,7 +13,7 @@ type AiProviderRecord struct {
 	Description string `json:"description"`
 	DisplayName string `json:"display_name"`
 	DocsUrl string `json:"docs_url"`
-	IconUrl string `json:"icon_url"`
+	Icon MediaResource `json:"icon"`
 	Id string `json:"id"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	MetadataSchemaVersion string `json:"metadata_schema_version"`

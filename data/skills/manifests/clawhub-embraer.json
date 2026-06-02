@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/embraer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-embraer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-embraer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d31008964a9b15a2f7dd077323465514492370ac1c528d7928597975f8adcb24",

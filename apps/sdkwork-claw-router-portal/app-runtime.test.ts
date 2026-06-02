@@ -3,6 +3,10 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
+import {
+  readMediaResourceUrl,
+  toExternalUrlMediaResource,
+} from "./packages/sdkwork-claw-router-commons/src/media-resource.ts";
 import { buildPortalShareUrl } from "./packages/sdkwork-claw-router-commons/src/share-url.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import {
@@ -11,7 +15,7 @@ import {
   filterAppsForCatalog,
   formatAppCount,
   formatAppDateLabel,
-  getReleaseDownloadUrl,
+  getReleaseDownloadHref,
   isReleaseDownloadable,
   normalizeAppApiRecord,
   type App,
@@ -68,17 +72,25 @@ async function withAppSdkFetch<T>(
   }
 }
 
+function imageResource(url: string) {
+  return toExternalUrlMediaResource(url, "image")!;
+}
+
+function artifactResource(url: string) {
+  return toExternalUrlMediaResource(url, "archive")!;
+}
+
 const runtimeApps: App[] = [
   {
     id: "app-1",
     name: "Data Lens",
     developer: "SDKWork Apps",
     category: "Data Analysis",
-    image: "https://cdn.example.test/data.png",
+    image: imageResource("https://cdn.example.test/data.png"),
     rating: 4.9,
     downloads: "1.2M",
     description: "Analyze model usage and business metrics.",
-    screenshots: ["https://cdn.example.test/data-1.png"],
+    screenshots: [imageResource("https://cdn.example.test/data-1.png")],
     features: ["Forecasting", "Dashboards"],
     releases: [
       {
@@ -88,7 +100,7 @@ const runtimeApps: App[] = [
         version: "2026.05",
         size: "N/A",
         releaseDate: "2026-05-03",
-        downloadUrl: "https://apps.example.test/data-lens",
+        artifact: artifactResource("https://apps.example.test/data-lens"),
         whatsNew: "Realtime model usage explorer.",
       },
       {
@@ -98,7 +110,6 @@ const runtimeApps: App[] = [
         version: "1.4.0",
         size: "128 MB",
         releaseDate: "2026-04-25",
-        downloadUrl: "#",
         whatsNew: "Local cache support.",
       },
     ],
@@ -108,7 +119,7 @@ const runtimeApps: App[] = [
     name: "Prompt Studio",
     developer: "CreativeAI",
     category: "Content Creation",
-    image: "https://cdn.example.test/prompt.png",
+    image: imageResource("https://cdn.example.test/prompt.png"),
     rating: 4.7,
     downloads: "850K",
     description: "Design reusable prompts and team workflows.",
@@ -122,7 +133,6 @@ const runtimeApps: App[] = [
         version: "3.2.1",
         size: "78 MB",
         releaseDate: "2026-04-01",
-        downloadUrl: "",
         whatsNew: "Team prompt library.",
       },
     ],
@@ -132,7 +142,7 @@ const runtimeApps: App[] = [
     name: "Gateway Console",
     developer: "DevTools Inc",
     category: "Development",
-    image: "https://cdn.example.test/gateway.png",
+    image: imageResource("https://cdn.example.test/gateway.png"),
     rating: 4.8,
     downloads: "2.5M",
     description: "Operate routing channels and inspect traffic.",
@@ -146,7 +156,7 @@ const runtimeApps: App[] = [
         version: "2.0.0",
         size: "96 MB",
         releaseDate: "2026-05-01",
-        downloadUrl: "https://apps.example.test/gateway.AppImage",
+        artifact: artifactResource("https://apps.example.test/gateway.AppImage"),
         whatsNew: "Provider health probes.",
       },
     ],
@@ -165,9 +175,9 @@ test("app runtime normalizes app SDK records with catalog artifacts and public-s
     installCount: "1234567",
     resourceList: ["Forecasting", "", " Dashboards "],
     assets: [
-      { assetType: "cover", assetUrl: "https://cdn.example.test/cover.png" },
-      { assetType: "screenshot", assetUrl: "https://cdn.example.test/screen-1.png" },
-      { type: "screenshot", url: "https://cdn.example.test/screen-2.png" },
+      { assetType: "cover", asset: imageResource("https://cdn.example.test/cover.png") },
+      { assetType: "screenshot", asset: imageResource("https://cdn.example.test/screen-1.png") },
+      { type: "screenshot", assetResourceSnapshot: imageResource("https://cdn.example.test/screen-2.png") },
     ],
     artifacts: [
       {
@@ -175,7 +185,7 @@ test("app runtime normalizes app SDK records with catalog artifacts and public-s
         platformType: "Web",
         osName: "PC Web",
         version: "2026.05",
-        artifactUrl: "https://apps.example.test/data",
+        artifact: artifactResource("https://apps.example.test/data"),
         publishedAt: "2026-05-03T10:30:00Z",
         releaseNotes: "Realtime dashboards.",
       },
@@ -185,7 +195,6 @@ test("app runtime normalizes app SDK records with catalog artifacts and public-s
         os_name: "Windows",
         version: "1.2.3",
         artifact_size_bytes: 134217728,
-        artifact_url: "#",
         published_at: "2026-04-01 08:00:00",
       },
     ],
@@ -195,15 +204,17 @@ test("app runtime normalizes app SDK records with catalog artifacts and public-s
   assert.equal(app.name, "Data Lens");
   assert.equal(app.developer, "SDKWork Apps");
   assert.equal(app.category, "Uncategorized");
-  assert.equal(app.image, "https://cdn.example.test/cover.png");
+  assert.equal(readMediaResourceUrl(app.image), "https://cdn.example.test/cover.png");
   assert.equal(app.rating, 4.85);
   assert.equal(app.downloads, "1.2M");
   assert.deepEqual(app.features, ["Forecasting", "Dashboards"]);
-  assert.deepEqual(app.screenshots, [
+  assert.deepEqual(app.screenshots.map(readMediaResourceUrl), [
     "https://cdn.example.test/screen-1.png",
     "https://cdn.example.test/screen-2.png",
   ]);
   assert.deepEqual(app.releases.map((release) => release.id), ["rel-web", "rel-win"]);
+  assert.equal(readMediaResourceUrl(app.releases[0].artifact), "https://apps.example.test/data");
+  assert.equal(readMediaResourceUrl(app.releases[1].artifact), "");
   assert.equal(app.releases[0].releaseDate, "2026-05-03");
   assert.equal(app.releases[1].size, "128 MB");
 });
@@ -289,7 +300,7 @@ test("app service sends catalog filters to generated app SDK and preserves serve
                   version: "1.0.0",
                   size: "N/A",
                   releaseDate: "2026-05-20",
-                  downloadUrl: "https://apps.example.test/prompt-studio",
+                  artifact: artifactResource("https://apps.example.test/prompt-studio"),
                   whatsNew: "Initial release",
                 },
               ],
@@ -367,7 +378,7 @@ test("app detail view derives selected release and download availability determi
   assert.equal(detail?.releaseDateLabel, "2026-04-25");
   assert.equal(detail?.availablePlatformReleases.map((release) => release.id).join(","), "app-1-web");
   assert.equal(isReleaseDownloadable(detail?.selectedRelease), false);
-  assert.equal(getReleaseDownloadUrl(detail?.selectedRelease), "#");
+  assert.equal(getReleaseDownloadHref(detail?.selectedRelease), "");
   assert.equal(isReleaseDownloadable(detail?.availablePlatformReleases[0]), true);
   assert.equal(deriveAppDetailView(runtimeApps, "missing"), null);
 });
@@ -622,4 +633,18 @@ test("app detail page wires visible share control to canonical copy behavior", (
   assert.doesNotMatch(source, /<button className="p-3 rounded-xl[\s\S]*?<Share2/u);
   assert.doesNotMatch(source, /\bfetch\s*\(/u);
   assert.doesNotMatch(source, /\baxios\b/u);
+});
+
+test("app runtime release models keep artifacts as media resources until the download boundary", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-app-center/src/appRuntime.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /artifact\?: ClawRouterMediaResource/u);
+  assert.match(source, /readMediaResource\(item\.artifact\)/u);
+  assert.match(source, /readMediaResourceUrl\(release\?\.artifact\)/u);
+  assert.doesNotMatch(source, /\bdownloadUrl:\s*string\b/u);
+  assert.doesNotMatch(source, /downloadUrl:\s*readString\(item,\s*'downloadUrl'\)/u);
+  assert.doesNotMatch(source, /readString\(item,\s*'downloadUrl'\)/u);
 });

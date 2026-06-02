@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import { ensureSdkworkApiSuccess, readApiRecord, readString, type ApiRecord } from './api-result.ts';
+import { readMediaResource, readMediaResourceUrl, type ClawRouterMediaResource } from './media-resource.ts';
 import { getClawRouterAppSdkClient } from './sdk-clients.ts';
 
 export interface SiteBranding {
   siteName: string;
   shortName: string;
   description: string;
-  logoUrl: string;
-  iconUrl: string;
-  faviconUrl: string;
+  logo?: ClawRouterMediaResource;
+  icon?: ClawRouterMediaResource;
+  favicon?: ClawRouterMediaResource;
   brandColor: string;
   accentColor: string;
   footerCopyright: string;
@@ -29,9 +30,9 @@ export const DEFAULT_SITE_BRANDING: SiteBranding = {
   siteName: 'Claw Router',
   shortName: 'Claw Router',
   description: 'Unified AI gateway and model routing platform.',
-  logoUrl: '',
-  iconUrl: '',
-  faviconUrl: '',
+  logo: undefined,
+  icon: undefined,
+  favicon: undefined,
   brandColor: '#0f172a',
   accentColor: '#e9583f',
   footerCopyright: 'Claw Router. All rights reserved.',
@@ -127,7 +128,7 @@ export function applySiteBrandingToDocument(siteBranding: SiteBranding): void {
     documentRef.title = title;
   }
   setMetaContent(documentRef, 'description', siteBranding.seoDescription || siteBranding.description);
-  setFavicon(documentRef, siteBranding.faviconUrl || siteBranding.iconUrl || siteBranding.logoUrl);
+  setFavicon(documentRef, readMediaResourceUrl(siteBranding.favicon) || readMediaResourceUrl(siteBranding.icon) || readMediaResourceUrl(siteBranding.logo));
   documentRef.documentElement.style.setProperty('--claw-router-brand-color', siteBranding.brandColor);
   documentRef.documentElement.style.setProperty('--claw-router-accent-color', siteBranding.accentColor);
   applyCustomCss(documentRef, siteBranding.customCss);
@@ -144,9 +145,9 @@ function normalizeSiteBranding(record: ApiRecord): SiteBranding {
     siteName,
     shortName,
     description,
-    logoUrl: readConfiguredString(record, 'logoUrl').trim(),
-    iconUrl: readConfiguredString(record, 'iconUrl').trim(),
-    faviconUrl: readConfiguredString(record, 'faviconUrl').trim(),
+    logo: readMediaResource(record.logo),
+    icon: readMediaResource(record.icon),
+    favicon: readMediaResource(record.favicon),
     brandColor: normalizeColor(readString(record, 'brandColor'), DEFAULT_SITE_BRANDING.brandColor),
     accentColor: normalizeColor(readString(record, 'accentColor'), DEFAULT_SITE_BRANDING.accentColor),
     footerCopyright: readConfiguredString(record, 'footerCopyright', DEFAULT_SITE_BRANDING.footerCopyright).trim()

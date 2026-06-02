@@ -3,6 +3,9 @@ use serde::{Deserialize, Serialize};
 /// Commerce recharge package record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CommerceRechargePackageRecord {
+    /// Bonus points field on commerce recharge package record.
+    pub bonus_points: String,
+
     /// Created at field on commerce recharge package record.
     pub created_at: String,
 
@@ -11,6 +14,10 @@ pub struct CommerceRechargePackageRecord {
 
     /// External id field on commerce recharge package record.
     pub external_id: String,
+
+    /// Id field on commerce recharge package record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
 
     /// Idempotency key field on commerce recharge package record.
     pub idempotency_key: String,
@@ -33,6 +40,9 @@ pub struct CommerceRechargePackageRecord {
 
     /// Sku id field on commerce recharge package record.
     pub sku_id: String,
+
+    /// Sort weight field on commerce recharge package record.
+    pub sort_weight: String,
 
     /// Status field on commerce recharge package record.
     pub status: String,

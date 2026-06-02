@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pharmaclaw-literature-agent@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pharmaclaw-literature-agent-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pharmaclaw-literature-agent-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6612e452fd45144d1dbaa433128dd8d9f822ccdad31352d2ae0ed379dc0e3fa4",

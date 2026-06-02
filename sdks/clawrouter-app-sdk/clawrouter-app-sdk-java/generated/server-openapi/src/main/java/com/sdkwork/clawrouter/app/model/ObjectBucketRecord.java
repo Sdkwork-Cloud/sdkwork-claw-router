@@ -8,21 +8,28 @@ public class ObjectBucketRecord {
     private String createdAt;
     private String dataResidencyRegion;
     private String dataScope;
+    private String defaultEncryptionMode;
+    private String defaultStorageClass;
     private String deletedAt;
     private String deletedBy;
     private String id;
     private String idempotencyKey;
     private String kmsKeyRef;
+    private Boolean lifecycleEnabled;
     private String logicalScope;
     private Map<String, String> metadata;
+    private String objectKeyPrefix;
+    private Boolean objectLockEnabled;
     private String organizationId;
     private String providerId;
+    private Boolean publicAccessBlocked;
     private String requestId;
     private String status;
     private String tenantId;
     private String updatedAt;
     private String uuid;
     private String version;
+    private Boolean versioningEnabled;
 
     public String getBucketName() {
         return this.bucketName;
@@ -62,6 +69,22 @@ public class ObjectBucketRecord {
 
     public void setDataScope(String dataScope) {
         this.dataScope = dataScope;
+    }
+
+    public String getDefaultEncryptionMode() {
+        return this.defaultEncryptionMode;
+    }
+
+    public void setDefaultEncryptionMode(String defaultEncryptionMode) {
+        this.defaultEncryptionMode = defaultEncryptionMode;
+    }
+
+    public String getDefaultStorageClass() {
+        return this.defaultStorageClass;
+    }
+
+    public void setDefaultStorageClass(String defaultStorageClass) {
+        this.defaultStorageClass = defaultStorageClass;
     }
 
     public String getDeletedAt() {
@@ -104,6 +127,14 @@ public class ObjectBucketRecord {
         this.kmsKeyRef = kmsKeyRef;
     }
 
+    public Boolean getLifecycleEnabled() {
+        return this.lifecycleEnabled;
+    }
+
+    public void setLifecycleEnabled(Boolean lifecycleEnabled) {
+        this.lifecycleEnabled = lifecycleEnabled;
+    }
+
     public String getLogicalScope() {
         return this.logicalScope;
     }
@@ -120,6 +151,22 @@ public class ObjectBucketRecord {
         this.metadata = metadata;
     }
 
+    public String getObjectKeyPrefix() {
+        return this.objectKeyPrefix;
+    }
+
+    public void setObjectKeyPrefix(String objectKeyPrefix) {
+        this.objectKeyPrefix = objectKeyPrefix;
+    }
+
+    public Boolean getObjectLockEnabled() {
+        return this.objectLockEnabled;
+    }
+
+    public void setObjectLockEnabled(Boolean objectLockEnabled) {
+        this.objectLockEnabled = objectLockEnabled;
+    }
+
     public String getOrganizationId() {
         return this.organizationId;
     }
@@ -134,6 +181,14 @@ public class ObjectBucketRecord {
 
     public void setProviderId(String providerId) {
         this.providerId = providerId;
+    }
+
+    public Boolean getPublicAccessBlocked() {
+        return this.publicAccessBlocked;
+    }
+
+    public void setPublicAccessBlocked(Boolean publicAccessBlocked) {
+        this.publicAccessBlocked = publicAccessBlocked;
     }
 
     public String getRequestId() {
@@ -182,5 +237,13 @@ public class ObjectBucketRecord {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Boolean getVersioningEnabled() {
+        return this.versioningEnabled;
+    }
+
+    public void setVersioningEnabled(Boolean versioningEnabled) {
+        this.versioningEnabled = versioningEnabled;
     }
 }

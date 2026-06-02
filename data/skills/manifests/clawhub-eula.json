@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eula@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eula-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eula-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5feb522e55bc9fe97ef471978283380f0f911c090e6e0463c61c16ac2af97c1b",

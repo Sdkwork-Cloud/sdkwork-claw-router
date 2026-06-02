@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baidu-image-classify@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-baidu-image-classify-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baidu-image-classify-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a3929d3de72af4b426c3e6de4eeda3a9a4b3a432d9d6066e5493e1995f6ffd2",

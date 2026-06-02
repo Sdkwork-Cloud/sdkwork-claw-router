@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ipam-dns-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ipam-dns-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ipam-dns-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5d5ff33a0724848e868f65669fc4f13458ee11827590f6ef60d728842da393b",

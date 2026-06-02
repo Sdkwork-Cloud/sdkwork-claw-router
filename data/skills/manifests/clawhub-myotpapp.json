@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/myotpapp@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-myotpapp-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-myotpapp-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:cb647db13d0028ef6b370e2dbfc2636f58a34e739843582a0e16221644b7d70d",

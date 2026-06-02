@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/poke@0.6.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-poke-0.6.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-poke-0.6.5.json"
+      },
       "version": "0.6.5",
       "runtime": "metadata",
       "checksumHash": "sha256:e5544f7556a0291b6cf52a0b37ffeb74d1674f84efdbfd1ba248e5b59f73886f",

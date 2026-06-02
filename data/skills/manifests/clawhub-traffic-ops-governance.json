@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/traffic-ops-governance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-traffic-ops-governance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-traffic-ops-governance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:81647e9907470dab30a7ef820aa08e1eec40361c21d3c4442bc60fc455fe8883",

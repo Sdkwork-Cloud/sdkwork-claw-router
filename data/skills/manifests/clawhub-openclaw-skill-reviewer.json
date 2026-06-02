@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-reviewer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-reviewer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-reviewer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:90a7189baa0f62f8619a9be5e38dc6e371070b19c8837b8d5189290f9416a095",

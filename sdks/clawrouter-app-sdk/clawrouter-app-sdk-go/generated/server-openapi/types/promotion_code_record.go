@@ -10,12 +10,15 @@ type PromotionCodeRecord struct {
 	ChannelCode string `json:"channel_code"`
 	ClaimCodeHash string `json:"claim_code_hash"`
 	ClaimCodeSuffix string `json:"claim_code_suffix"`
+	ClaimedQuantity string `json:"claimed_quantity"`
 	CodeNo string `json:"code_no"`
 	CodeType string `json:"code_type"`
 	CreatedAt string `json:"created_at"`
 	CreatedBy string `json:"created_by"`
 	CurrencyCode string `json:"currency_code"`
 	ExpiresAt string `json:"expires_at"`
+	Id string `json:"id"`
+	MaxClaims string `json:"max_claims"`
 	OfferId string `json:"offer_id"`
 	OfferVersionId string `json:"offer_version_id"`
 	OrganizationId string `json:"organization_id"`

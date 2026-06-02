@@ -1,7 +1,7 @@
 /** Admin model limit create request schema exposed by Claw Router. */
 export interface AdminModelLimitCreateRequest {
-  /** Access group or quota group identifier. */
-  group: string;
+  /** AI channel group code or identifier. */
+  channelGroup: string;
   /** AI model identifier. */
   model: string;
   /** Maximum requests per minute for the model and group. */

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gh-securitysuite@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gh-securitysuite-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gh-securitysuite-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f4b62c1fd7dc98510a1962874237e1e39953638a1eac05e933782940281fc012",

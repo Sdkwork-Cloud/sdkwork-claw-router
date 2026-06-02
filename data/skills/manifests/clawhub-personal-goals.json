@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personal-goals@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-personal-goals-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personal-goals-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fe3a817bdd43c92bdaae9ae16322744a112e305f56fe4151eee9eb72038a122c",

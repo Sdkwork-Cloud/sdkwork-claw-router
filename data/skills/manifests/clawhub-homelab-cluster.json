@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/homelab-cluster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-homelab-cluster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-homelab-cluster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cb51c87b917dfac4c0a2ffd917a9a6f797278c446ae056d6917bf7f9cf5317f0",

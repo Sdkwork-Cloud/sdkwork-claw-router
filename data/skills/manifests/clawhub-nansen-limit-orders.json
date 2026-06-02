@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nansen-limit-orders@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nansen-limit-orders-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nansen-limit-orders-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:50d79fe05c21bf8fcc618ba7a8d726471ab77717561c86f3de833dbf73698424",

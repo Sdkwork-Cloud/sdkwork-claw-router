@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/avbuzz@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-avbuzz-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-avbuzz-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:569fbd4e666bdf05345456f9a663372794dd8345c509cb9eac3931c384bcba11",

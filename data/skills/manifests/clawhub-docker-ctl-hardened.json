@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-ctl-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-ctl-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-ctl-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ffaa29809474a7a22d0d9e895243c50a6dd40c93ebc24093f89f2013bcd2279c",

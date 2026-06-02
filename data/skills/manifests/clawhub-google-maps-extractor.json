@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-maps-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-maps-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-maps-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc5b3ac97c642d31a89ec8eead9a12e7889e1f10416cd28d9c992dd0067e51c8",

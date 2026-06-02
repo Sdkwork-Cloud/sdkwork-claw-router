@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-meeting-minutes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-meeting-minutes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-meeting-minutes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e5811816ee4c75bffc35bf418576f35e828ea71cfc4a277c5799c3efd1af327",

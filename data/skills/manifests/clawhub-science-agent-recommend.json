@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/science-agent-recommend@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-science-agent-recommend-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-science-agent-recommend-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:948df8f34daa1741c5c0b7b8159d94374f8560816cbed57c84121ad5701c1674",

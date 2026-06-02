@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kayak@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kayak-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kayak-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:032ea40f9ae944011cf5244227c4170a980b90400fb4a03a52e7cca84fa206a2",

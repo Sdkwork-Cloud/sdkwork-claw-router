@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/issue-analysis-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-issue-analysis-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-issue-analysis-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f54fbe06790ee29a70519f9483dd70270ed720b880b7b4eda2905da71b8b6405",

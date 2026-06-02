@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/twitterscore@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-twitterscore-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-twitterscore-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a95ed0a7d000a664bd2673fe798ab2fe2c18ca7dad553cc52797aad1e7ccbec",

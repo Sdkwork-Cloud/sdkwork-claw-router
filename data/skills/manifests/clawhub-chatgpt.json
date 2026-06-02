@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chatgpt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chatgpt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chatgpt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ab3c6c9ff14610f44a3f42b152f0725e9319ce815c00f4fe553dda4a489673b",

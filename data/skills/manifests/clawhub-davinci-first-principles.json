@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/davinci-first-principles@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-davinci-first-principles-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-davinci-first-principles-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0b8ea7408f669d1769d0c8066c382f2471feedb8b79935dc08a36913315e00f",

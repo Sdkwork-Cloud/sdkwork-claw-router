@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fanout@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-fanout-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fanout-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:643efc353b3630bbfa0a1bfea0615b22792ec770d90803ff2fa8fcb1c2090829",

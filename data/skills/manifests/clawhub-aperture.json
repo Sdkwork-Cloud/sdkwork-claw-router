@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aperture@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aperture-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aperture-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f675683b6e697fcb55506b71d59671dc5bc42120e88e049c014d3f443c5a34ec",

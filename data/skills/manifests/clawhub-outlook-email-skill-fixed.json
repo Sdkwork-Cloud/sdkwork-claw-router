@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/outlook-email-skill-fixed@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-outlook-email-skill-fixed-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-outlook-email-skill-fixed-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4af62c3f7088a0ed681f53c61fe4d8cf596e4c45eab3c80f9c596563d3cc1182",

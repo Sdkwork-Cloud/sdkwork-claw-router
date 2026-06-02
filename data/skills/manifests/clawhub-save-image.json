@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/save-image@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-save-image-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-save-image-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1e2179772630566c3b26dbbe648c8a94fdd7b80fe85b86766f60ce39f35330b",

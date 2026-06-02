@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abm-churn-prevention@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abm-churn-prevention-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abm-churn-prevention-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5f39bdf7502f842b11f08787b983c77b40e44fd11b43bb880c3e0ce44872d9a2",

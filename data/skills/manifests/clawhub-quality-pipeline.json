@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quality-pipeline@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quality-pipeline-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quality-pipeline-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:897cc9526cc1b80861029957ffee00c9ab2275b665113b73366c04ca0bd9302d",

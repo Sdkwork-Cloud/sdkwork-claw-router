@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trade-inquiry-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-trade-inquiry-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trade-inquiry-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:125e3f8178d69537e2b16020bfefcd13f616dd52c43f1e91f061ffc198496464",

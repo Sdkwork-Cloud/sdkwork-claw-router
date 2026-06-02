@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/superphone@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-superphone-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-superphone-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:24b300901ab794a84e31fa59c39640377bf69b86fcb39982109df2d8724c981f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mlops-validation-cn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mlops-validation-cn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mlops-validation-cn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:68c50fa742b5a66b12309c135dad16242b4661bf0f7deee8f57d74ad220ba889",

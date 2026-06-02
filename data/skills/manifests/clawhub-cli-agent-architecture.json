@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cli-agent-architecture@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cli-agent-architecture-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cli-agent-architecture-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25008aba5649f42710b53c7f3717f0a67042dc1afe2030f6b2938feeadf3515d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/img-to-pdf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-img-to-pdf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-img-to-pdf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2300cff8855f33144548874bde649d444c006144d2b4fe2fa0ae08212b59105",

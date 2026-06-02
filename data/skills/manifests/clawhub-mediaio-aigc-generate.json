@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mediaio-aigc-generate@1.0.14",
-      "artifactUrl": "data/skills/artifacts/clawhub-mediaio-aigc-generate-1.0.14.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mediaio-aigc-generate-1.0.14.json"
+      },
       "version": "1.0.14",
       "runtime": "metadata",
       "checksumHash": "sha256:45e86fad80ab14063b6aa0b320ae38ce643aca969eb642f5bfc4f322f00113d7",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-explain@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-explain-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-explain-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aa1a259706b313076dc5d96936079ab8324bf8410e2e8403c8a0547ebe6a2a1c",

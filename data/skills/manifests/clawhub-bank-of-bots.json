@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bank-of-bots@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bank-of-bots-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bank-of-bots-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f010b64ced75e988ce9532e4f66073f1d28bf7bebaf7f83120c295df2559bd0c",

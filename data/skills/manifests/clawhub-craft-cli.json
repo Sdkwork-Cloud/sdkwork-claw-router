@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/craft-cli@1.6.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-craft-cli-1.6.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-craft-cli-1.6.2.json"
+      },
       "version": "1.6.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6eec53512a6c61d3866fbaca02d26cc9479e09bc41f5141870639515738ba6c2",

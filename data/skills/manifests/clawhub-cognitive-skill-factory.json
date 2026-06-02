@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cognitive-skill-factory@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cognitive-skill-factory-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cognitive-skill-factory-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4499b51c5f28337edaa2fd9ecc87bcf3156f1226e0e4fdacc5f68143eae83ed7",

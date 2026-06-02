@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pexoai-agent@0.3.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-pexoai-agent-0.3.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pexoai-agent-0.3.10.json"
+      },
       "version": "0.3.10",
       "runtime": "metadata",
       "checksumHash": "sha256:691b807e898836495a82ff4b4b80f8de35d79c43cf2e471a1f381d3e8c5252d5",

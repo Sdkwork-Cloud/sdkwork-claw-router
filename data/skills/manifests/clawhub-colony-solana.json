@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/colony-solana@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-colony-solana-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-colony-solana-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9321e566686f12cb765fbcd94e096f0ca88f4db544a13593dade9be9fa56feeb",

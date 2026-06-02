@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gillette@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gillette-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gillette-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:78225c000c1b0846297fb58df1269e85d74b7991596f2fae86d5b38cf66c13dc",

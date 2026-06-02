@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/universal-command@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-universal-command-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-universal-command-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:865f0112f7f33ceb86663ef659c78d1895f6ea793b09a1ace3911d61ed30171e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-hot-products@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-hot-products-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-hot-products-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2d3629ee77e93a30f099e7bd4b4f642d8b888f808d0830c49cf3873664bb737b",

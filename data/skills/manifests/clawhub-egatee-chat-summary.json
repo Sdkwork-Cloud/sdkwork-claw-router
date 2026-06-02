@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/egatee-chat-summary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-egatee-chat-summary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-egatee-chat-summary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0847094443e87b122227e896db30244ad0596341522991ce642b8c99df3a7789",

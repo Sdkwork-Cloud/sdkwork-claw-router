@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/corning@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-corning-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-corning-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fbb4084a977c4584078901e90fab79107080f8ddd2174a3685ea4256481be5bb",

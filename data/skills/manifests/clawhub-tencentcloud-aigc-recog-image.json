@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentcloud-aigc-recog-image@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-aigc-recog-image-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentcloud-aigc-recog-image-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:b4962dd0a10496721d27ac4437c218914b063abf38a46575e7ba46aeaef224b5",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/divorce@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-divorce-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-divorce-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:478f85ec704cf5cb00307e51687c9409a1c1a6e6f379e000a132e40ceb353e5d",

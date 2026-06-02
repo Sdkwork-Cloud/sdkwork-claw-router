@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/indie-hacker-playbook@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-indie-hacker-playbook-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-indie-hacker-playbook-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b68f110ea111021dab080f98816596de9846f6421453ce40ee3e6ffd21fa36f1",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-upscaling@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-upscaling-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-upscaling-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:2daa439c3773637a7bd39af7c96dbd4fd846d2aa9b82de8d196cf2b1af783f23",

@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class CommerceOperationResponse
     {
         public string? PaymentId { get; set; }
-        public string? QrCodeImageUrl { get; set; }
+        public MediaResource? QrCode { get; set; }
         public string? QrCodePayload { get; set; }
         public string? RequestNo { get; set; }
         public string? Status { get; set; }

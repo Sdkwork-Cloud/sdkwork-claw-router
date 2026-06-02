@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-search-unlimited-v2@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-search-unlimited-v2-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-search-unlimited-v2-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2f24d29256f77757283e925e39d1209fa532bbe9f1a12bdbf7f4cda9b3588c86",

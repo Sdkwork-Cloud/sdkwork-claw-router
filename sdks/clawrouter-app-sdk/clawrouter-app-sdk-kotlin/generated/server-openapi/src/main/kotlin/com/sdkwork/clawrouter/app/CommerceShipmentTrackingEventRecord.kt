@@ -5,6 +5,7 @@ data class CommerceShipmentTrackingEventRecord(
     val description: String? = null,
     val eventCode: String? = null,
     val eventTime: String? = null,
+    val id: String? = null,
     val location: String? = null,
     val organizationId: String? = null,
     val rawPayloadJson: Map<String, String>? = null,

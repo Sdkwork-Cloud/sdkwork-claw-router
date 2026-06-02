@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-bored@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-bored-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-bored-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64e3c6168bb220ae0d08263d36a9afebb625400120f209a1d692962d84ee60b4",

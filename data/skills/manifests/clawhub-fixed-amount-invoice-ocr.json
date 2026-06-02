@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fixed-amount-invoice-ocr@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-fixed-amount-invoice-ocr-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fixed-amount-invoice-ocr-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2a8161eed14fff2ec46979ec9f2a9b7933c074fa28aca15f18551ad6f0310bdb",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-summary-generator@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-summary-generator-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-summary-generator-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a404567029d01f5fcbb2b539de36d4833472a9cff9d9a3888007d0d24cebbc32",

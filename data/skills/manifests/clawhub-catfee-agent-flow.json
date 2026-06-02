@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/catfee-agent-flow@1.9.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-catfee-agent-flow-1.9.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-catfee-agent-flow-1.9.0.json"
+      },
       "version": "1.9.0",
       "runtime": "metadata",
       "checksumHash": "sha256:291dfaf3fbd547a6428dafefa114a8cdb4cb16bd20aea4aef30a10d0d50ba639",

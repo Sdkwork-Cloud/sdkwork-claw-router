@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentmem@2.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentmem-2.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentmem-2.4.0.json"
+      },
       "version": "2.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d74ce0af0d6bfb099d2a2e334f00aab78876b97b14143d2f51a640e434bbf036",

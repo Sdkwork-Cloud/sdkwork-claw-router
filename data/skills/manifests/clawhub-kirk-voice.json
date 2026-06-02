@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kirk-voice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kirk-voice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kirk-voice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eabcfed005d582ce983ae97af8eb4dcbda86023a6409a50bc342bc84da107399",

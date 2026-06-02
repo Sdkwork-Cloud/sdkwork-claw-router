@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/expanso-text-summarize@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-expanso-text-summarize-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-expanso-text-summarize-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:07857528f3903a67258470582e7b1d37e5f43d4693f92c5e6431234d1b2a1586",

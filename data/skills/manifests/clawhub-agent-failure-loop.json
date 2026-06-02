@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-failure-loop@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-failure-loop-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-failure-loop-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:20a171030ea0477636e31fff3a49b36f3869f4a48fb63533b700027ce5b10666",

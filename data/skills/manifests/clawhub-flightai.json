@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flightai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flightai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flightai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c90aad82984ed4bf2ecc53c8ba301ad796cf35bfdc49edd8e4eb023d0f38c67",

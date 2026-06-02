@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/site-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-site-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-site-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c009ac99a9dad66238b109fd0411cbb93bae410fbd3c5c216570b093ae4e083",

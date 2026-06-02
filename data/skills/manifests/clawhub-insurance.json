@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/insurance@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-insurance-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-insurance-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8a9c083cc431edeaf2e5b6bcdad951c44686f7a7104918fee1ca8d5b3a3a2759",

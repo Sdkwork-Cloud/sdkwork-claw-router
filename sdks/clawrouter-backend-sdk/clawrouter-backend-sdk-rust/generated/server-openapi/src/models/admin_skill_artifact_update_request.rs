@@ -1,8 +1,14 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Admin skill artifact update request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminSkillArtifactUpdateRequest {
+    /// Artifact field on admin skill artifact update request.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub artifact: Option<MediaResource>,
+
     /// Artifact ref field on admin skill artifact update request.
     #[serde(rename = "artifactRef")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -17,11 +23,6 @@ pub struct AdminSkillArtifactUpdateRequest {
     #[serde(rename = "artifactType")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub artifact_type: Option<i64>,
-
-    /// Artifact url field on admin skill artifact update request.
-    #[serde(rename = "artifactUrl")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub artifact_url: Option<String>,
 
     /// Checksum hash field on admin skill artifact update request.
     #[serde(rename = "checksumHash")]

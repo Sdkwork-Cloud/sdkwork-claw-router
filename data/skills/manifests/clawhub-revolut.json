@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/revolut@1.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-revolut-1.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-revolut-1.3.2.json"
+      },
       "version": "1.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:155bd568e005ce1a10706d9d321d564c41302542aec03ec260bdf74ad598a6f7",

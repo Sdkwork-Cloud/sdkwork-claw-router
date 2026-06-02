@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/krump@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-krump-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-krump-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:06f5d157fe44b95ccbb8603304776d76ddaeca98555e1fc715e8a01623a58f48",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-hansa@0.6.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-hansa-0.6.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-hansa-0.6.4.json"
+      },
       "version": "0.6.4",
       "runtime": "metadata",
       "checksumHash": "sha256:bbca556d061259614068e782c60faf5edc71fd3aad45d1023a4078414c9328f7",

@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Course lesson item schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CourseLessonItem {
@@ -50,7 +52,6 @@ pub struct CourseLessonItem {
     /// Title field on course lesson item.
     pub title: String,
 
-    /// Video url field on course lesson item.
-    #[serde(rename = "videoUrl")]
-    pub video_url: String,
+    /// Video field on course lesson item.
+    pub video: MediaResource,
 }

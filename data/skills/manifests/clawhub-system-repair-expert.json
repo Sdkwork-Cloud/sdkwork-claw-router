@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/system-repair-expert@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-system-repair-expert-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-system-repair-expert-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c747d22d33dd34d16dcf4cf90475147a54b0bb00db87e5dc9c0a861640aa55f",

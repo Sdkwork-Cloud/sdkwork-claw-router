@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bridgestone@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bridgestone-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bridgestone-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cd477b6f6fde45a9fc6e436e1734e5bd518cc54a1dbd334ce3bc48fae51afd8d",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoice-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoice-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoice-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b9561d9e0407427f0f87d4b4e3aba9060fe110b16a85bd0567e8e6989ebca5e0",

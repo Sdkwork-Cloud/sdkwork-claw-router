@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/complex-task-orchestrator@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-complex-task-orchestrator-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-complex-task-orchestrator-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7bd78c550776d19223569bd6cdcb0dc86791069e270b0fc7148ca53c217ef7fb",

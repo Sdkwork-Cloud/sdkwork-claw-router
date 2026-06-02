@@ -26,7 +26,7 @@ func main() {
     client.SetApiKey("your-api-key")
 
     // Use the SDK
-    result, err := client.Ai.ModelVendorsList()
+    result, err := client.Ai.ChannelGroupsList()
     if err != nil {
         panic(err)
     }
@@ -113,8 +113,8 @@ fmt.Println(result)
 ### ai
 
 ```go
-// List vendors
-result, err := client.Ai.ModelVendorsList()
+// List groups
+result, err := client.Ai.ChannelGroupsList()
 if err != nil {
     panic(err)
 }
@@ -157,8 +157,8 @@ fmt.Println(result)
 ### iam
 
 ```go
-// List groups
-result, err := client.Iam.AccessGroupsList()
+// List API key map
+result, err := client.Iam.ApiKeysList()
 if err != nil {
     panic(err)
 }
@@ -305,7 +305,7 @@ fmt.Println(result)
 ## Error Handling
 
 ```go
-_, err := client.Ai.ModelVendorsList()
+_, err := client.Ai.ChannelGroupsList()
 if err != nil {
     // Handle error
     fmt.Println("Error:", err)

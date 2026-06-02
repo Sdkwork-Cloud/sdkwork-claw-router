@@ -1,4 +1,4 @@
-﻿import json
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -260,10 +260,20 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             upload_response = {
                 "type": "object",
                 "additionalProperties": False,
-                "required": ["videoUrl", "sha256"],
+                "required": ["video", "sha256"],
                 "properties": {
-                    "videoUrl": {"type": "string"},
+                    "video": {"$ref": "#/components/schemas/MediaResource"},
                     "sha256": {"type": "string"},
+                },
+            }
+            media_resource = {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["kind", "source"],
+                "properties": {
+                    "kind": {"type": "string"},
+                    "source": {"type": "string"},
+                    "uri": {"type": "string"},
                 },
             }
             manifest = {
@@ -331,6 +341,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                     "schemas": {
                         "CourseApplicationVideoUploadRequest": upload_request,
                         "CourseApplicationVideoUploadResponse": upload_response,
+                        "MediaResource": media_resource,
                         "ApplicationsVideosCreateResult": {
                             "type": "object",
                             "properties": {
@@ -369,7 +380,12 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
                 encoding="utf-8",
             )
             (sdk_base / "types" / "course-application-video-upload-response.ts").write_text(
-                "export interface CourseApplicationVideoUploadResponse { videoUrl: string; sha256: string; }\n",
+                "import type { MediaResource } from './media-resource';\n"
+                "export interface CourseApplicationVideoUploadResponse { video: MediaResource; sha256: string; }\n",
+                encoding="utf-8",
+            )
+            (sdk_base / "types" / "media-resource.ts").write_text(
+                "export interface MediaResource { kind: string; source: string; uri?: string; }\n",
                 encoding="utf-8",
             )
             (sdk_base / "types" / "applications-videos-create-result.ts").write_text(
@@ -380,6 +396,7 @@ class ClawRouterPayloadSdkAuditTest(unittest.TestCase):
             (sdk_base / "types" / "index.ts").write_text(
                 "export type { CourseApplicationVideoUploadRequest } from './course-application-video-upload-request';\n"
                 "export type { CourseApplicationVideoUploadResponse } from './course-application-video-upload-response';\n"
+                "export type { MediaResource } from './media-resource';\n"
                 "export type { ApplicationsVideosCreateResult } from './applications-videos-create-result';\n",
                 encoding="utf-8",
             )

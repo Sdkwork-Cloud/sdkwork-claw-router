@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nat-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nat-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nat-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:19b15eda3bb82eb7b95116f04efd479ad039f3e78d0a4e733c00e469783d2b58",

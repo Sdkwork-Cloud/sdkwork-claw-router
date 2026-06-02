@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hn-news@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-hn-news-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hn-news-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4fca3d83d00d7211239dd432a54d7fe1609b91f25896c8cac2a29bac6db78539",

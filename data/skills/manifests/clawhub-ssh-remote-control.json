@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ssh-remote-control@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-ssh-remote-control-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ssh-remote-control-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:21219f21c5044bc60d02b8d66d3a2a0dea4b1858dbe898aa694010256d23d05a",

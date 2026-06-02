@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icecube-voice-clone@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icecube-voice-clone-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icecube-voice-clone-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac82589a270a30c15cc4fa46345d9f2db9f57e8840cc72037c0505c063800fc8",

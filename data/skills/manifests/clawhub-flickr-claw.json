@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flickr-claw@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flickr-claw-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flickr-claw-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10b1b91eea83410856b7d05c5b77ced426ed07577cfe5f6058352d835e516d11",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nomad-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nomad-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nomad-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:27ca6a5f416c1c2753dfe5dad52812083f2ad7df437e16f573a9be2bf87ceb67",

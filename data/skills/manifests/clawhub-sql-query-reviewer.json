@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-query-reviewer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-query-reviewer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-query-reviewer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d01a9f789390c69748c70bd3f97a779cad118fbdb09215b9756bf185766b4ff4",

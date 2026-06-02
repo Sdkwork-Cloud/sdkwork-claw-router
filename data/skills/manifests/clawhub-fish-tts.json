@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fish-tts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fish-tts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fish-tts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:979926b795985b388b67fe143e570bef033295f242a7119ea47ac72ea05b7c97",

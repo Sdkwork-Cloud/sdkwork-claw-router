@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/media-player@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-media-player-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-media-player-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:246dd420aaa45737fdd3e535068a072d532ba56325c18f76d0fc36da39630164",

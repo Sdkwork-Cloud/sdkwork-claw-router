@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/real-human@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-real-human-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-real-human-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:440a1931134d200b14cc82b05b427cba34fe96559fc87c23be24a10bcee67b10",

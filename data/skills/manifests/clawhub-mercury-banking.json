@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mercury-banking@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mercury-banking-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mercury-banking-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4988c9661da280ff6dc710aa880786ad05ff1e751d24c3210c8539b2a8dcaa00",

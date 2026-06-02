@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/discogs-sync@0.1.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-discogs-sync-0.1.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-discogs-sync-0.1.10.json"
+      },
       "version": "0.1.10",
       "runtime": "metadata",
       "checksumHash": "sha256:be9156bbb0523b414afccefabfd6662dbc581ae8397495d45c0a9062334a8134",

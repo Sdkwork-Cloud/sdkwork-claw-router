@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/redis-labs-integration@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-redis-labs-integration-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-redis-labs-integration-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e0873a6af7a2674ab667300d685d60072f0da072a67da31f520a349f77a571cc",

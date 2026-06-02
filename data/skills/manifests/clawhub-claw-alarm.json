@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-alarm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-alarm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-alarm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:99c112376682de19f2239ad22efe383310bc26725bcfb70454bcc032982b1379",

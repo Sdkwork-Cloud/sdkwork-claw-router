@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geminis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-geminis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geminis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:17b85b1a60d8dce538a2a2ad3fb068f5f340b6d127b5f8caa8e798545ec28f71",

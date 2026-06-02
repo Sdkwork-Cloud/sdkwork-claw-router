@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openrouter-transcribe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openrouter-transcribe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openrouter-transcribe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14c9c52194bb1a794d470ea939425863dbd1609da8bf54faa24fffe46b52de4d",

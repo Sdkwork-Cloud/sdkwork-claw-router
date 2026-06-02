@@ -10,7 +10,7 @@ use sdkwork_claw_product::api::{
 };
 use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
-    AiModel, ApiKeyGroup, BillingMeter, DecimalValue, GatewayApiKey, ModelPrice,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
     ProviderAuthProfile, ProviderChannelRoute, ProviderRetryPolicy, RouteCandidate,
     RoutingCapability, RoutingPolicy, RoutingPolicyScope, RoutingRule,
@@ -88,7 +88,7 @@ fn catalog_with_hashed_api_key_without_routing(key_hash: String) -> InMemoryPric
         DecimalValue::parse("1.200000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
@@ -171,7 +171,7 @@ fn catalog_with_hashed_api_key_without_provider_route_snapshot(
         DecimalValue::parse("1.200000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
@@ -219,7 +219,7 @@ fn add_group_routing_policy(
             10,
             20,
             &format!("{rule_code}-policy"),
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(group_id),
             Some(profile_id),
         )
@@ -245,7 +245,7 @@ fn catalog_with_group_channel_routes(
     premium_key_hash: String,
 ) -> InMemoryPricingCatalog {
     let mut catalog = catalog_with_hashed_api_key(standard_key_hash);
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         20,
         "premium-group",
         "standard",
@@ -381,7 +381,7 @@ fn catalog_with_regional_minimax_pricing_and_routes(key_hash: String) -> InMemor
         DecimalValue::parse("1.000000").unwrap(),
         Money::cny("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
@@ -437,7 +437,7 @@ fn catalog_with_regional_minimax_pricing_and_routes(key_hash: String) -> InMemor
             10,
             20,
             "standard-group-minimax-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(9501),
         )
@@ -646,7 +646,7 @@ async fn openai_chat_completions_accepts_base_catalog_key_for_region_scoped_pric
 }
 
 #[tokio::test]
-async fn openai_chat_completions_routes_each_api_key_group_to_its_configured_channel_route() {
+async fn openai_chat_completions_routes_each_channel_group_to_its_configured_channel_route() {
     let hasher =
         Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
     let standard_key_hash = hasher.hash_secret("sk-standard-secret").unwrap();
@@ -657,7 +657,7 @@ async fn openai_chat_completions_routes_each_api_key_group_to_its_configured_cha
         10,
         20,
         "standard-group-policy",
-        RoutingPolicyScope::ApiKeyGroup,
+        RoutingPolicyScope::ChannelGroup,
         Some(10),
         Some(9101),
     ));
@@ -679,7 +679,7 @@ async fn openai_chat_completions_routes_each_api_key_group_to_its_configured_cha
         10,
         20,
         "premium-group-policy",
-        RoutingPolicyScope::ApiKeyGroup,
+        RoutingPolicyScope::ChannelGroup,
         Some(20),
         Some(9201),
     ));
@@ -1385,7 +1385,7 @@ async fn openai_chat_completions_rejects_misconfigured_group_channel_route_witho
         10,
         20,
         "standard-group-policy",
-        RoutingPolicyScope::ApiKeyGroup,
+        RoutingPolicyScope::ChannelGroup,
         Some(10),
         Some(9101),
     ));
@@ -1476,7 +1476,7 @@ async fn openai_chat_completions_reports_pricing_unavailable_for_callable_route_
         DecimalValue::parse("1.200000").unwrap(),
         Money::usd("0.000000").unwrap(),
     ));
-    catalog.add_api_key_group(ApiKeyGroup::new(
+    catalog.add_channel_group(ChannelGroup::new(
         10,
         "standard-group",
         "standard",
@@ -1596,7 +1596,7 @@ async fn openai_chat_completions_rejects_group_policy_missing_chat_capability_wi
             10,
             20,
             "standard-group-embedding-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(9101),
         )
@@ -1664,7 +1664,7 @@ async fn openai_chat_completions_rejects_configured_group_policy_without_matchin
         10,
         20,
         "standard-group-policy",
-        RoutingPolicyScope::ApiKeyGroup,
+        RoutingPolicyScope::ChannelGroup,
         Some(10),
         Some(9101),
     ));
@@ -2411,7 +2411,7 @@ async fn openai_chat_completions_fails_over_to_rule_fallback_after_primary_relay
             10,
             20,
             "standard-group-failover-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(9101),
         )
@@ -2522,7 +2522,7 @@ async fn openai_chat_completions_fails_over_after_retryable_provider_status() {
             10,
             20,
             "standard-group-failover-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(9101),
         )
@@ -2631,7 +2631,7 @@ async fn openai_chat_completions_uses_runtime_default_retry_policy_for_status_fa
             10,
             20,
             "standard-group-failover-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(9101),
         )
@@ -2735,7 +2735,7 @@ async fn openai_chat_completions_fail_closed_strategy_stops_after_retryable_prov
             10,
             20,
             "standard-group-failover-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(9101),
         )
@@ -2844,7 +2844,7 @@ async fn openai_chat_completions_stream_fails_over_to_rule_fallback_before_respo
             10,
             20,
             "standard-group-stream-failover-policy",
-            RoutingPolicyScope::ApiKeyGroup,
+            RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(9101),
         )

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltbook-validator@1.0.0-alpha",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltbook-validator-1.0.0-alpha.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltbook-validator-1.0.0-alpha.json"
+      },
       "version": "1.0.0-alpha",
       "runtime": "metadata",
       "checksumHash": "sha256:efe2a0dc3f7a4e459b4e5001e5b0df3a826350bb884aea44477833d5dbf06740",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/basketball@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-basketball-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-basketball-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4fc8adde27eb9d26be494e90350bb9def23f1633ea90334bdf78474c690b1248",

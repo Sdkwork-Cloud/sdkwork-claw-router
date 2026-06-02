@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/client-reporting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-client-reporting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-client-reporting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:115084aa85fd41150a14b32124f9119f7372f644341ebff89ecd011290a7bb8c",

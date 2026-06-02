@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-notes-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-notes-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-notes-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7fa340c76c7b78bac3ad0cab7480c57d6f427ed4b7270112cbe97d69a12628fa",

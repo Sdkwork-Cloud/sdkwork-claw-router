@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/girlfriend@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-girlfriend-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-girlfriend-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8ce8c4b03eddc7fa7d4db6082909eb4848b27a487b98d2c2efaf4bf48f669b4d",

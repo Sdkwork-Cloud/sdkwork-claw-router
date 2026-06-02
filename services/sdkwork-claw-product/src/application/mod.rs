@@ -4,6 +4,7 @@ mod alipay_payment_adapter;
 mod api_key_authenticator;
 mod api_key_secret_generator;
 mod cache_runtime;
+mod category_seed;
 mod model_catalog_query;
 mod model_ranking_refresh_worker;
 mod model_rankings_service;
@@ -29,10 +30,9 @@ pub use ai_route_taxonomy::{
     builtin_ai_route_taxonomy, find_builtin_ai_route, AiRouteTaxonomyEntry, AiRoutingIndex,
 };
 pub use ai_routing_cache_invalidation::{
-    AiRoutingCacheInvalidatingAdminAccessGroupStore,
     AiRoutingCacheInvalidatingAdminAiResourceStore,
     AiRoutingCacheInvalidatingAdminChannelEndpointStore,
-    AiRoutingCacheInvalidatingAdminChannelStore,
+    AiRoutingCacheInvalidatingAdminChannelGroupStore, AiRoutingCacheInvalidatingAdminChannelStore,
     AiRoutingCacheInvalidatingAdminProviderSecretStore, AiRoutingCacheInvalidator,
 };
 pub use alipay_payment_adapter::{
@@ -57,6 +57,7 @@ pub use cache_runtime::{
     ROUTING_DISABLED_CHANNEL_CACHE_NAMESPACE, ROUTING_IDEMPOTENCY_CACHE_NAMESPACE,
     ROUTING_PROVIDER_OBJECT_ROUTE_CACHE_NAMESPACE, ROUTING_SNAPSHOT_CACHE_NAMESPACE,
 };
+pub use category_seed::{load_admin_category_seed_bundles, DEFAULT_ADMIN_CATEGORY_SEED_DATASETS};
 pub use model_catalog_query::{
     ListModelCatalogQuery, ModelCatalogGroup, ModelCatalogItem, ModelCatalogPage,
     ModelCatalogPriceView, ModelCatalogQueryService, ModelCatalogReferencePriceView,

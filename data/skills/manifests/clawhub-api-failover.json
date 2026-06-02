@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/api-failover@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-api-failover-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-api-failover-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:615382eb815ac04485d07b5433d460b64139946662d772207320a88218ae9b02",

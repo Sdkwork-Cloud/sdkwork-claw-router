@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-ai-video-maker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-ai-video-maker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-ai-video-maker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8bcf77142a4c272d2ff78fb46009782f663afe858365e24b38a778751943a2a9",

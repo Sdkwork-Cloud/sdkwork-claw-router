@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/release-gate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-release-gate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-release-gate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8849c78f1292de42c2bbbdd01b7d1f0ffe528179ecb5d823322eb4e326002b53",

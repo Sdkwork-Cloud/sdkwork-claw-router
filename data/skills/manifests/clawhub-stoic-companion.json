@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stoic-companion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stoic-companion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stoic-companion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ecef004bf6a790451e071dd3e3c1dfc09d82d22411729081e6bffbfaad2c2bd6",

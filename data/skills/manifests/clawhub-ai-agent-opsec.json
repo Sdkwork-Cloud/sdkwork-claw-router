@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-agent-opsec@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-agent-opsec-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-agent-opsec-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3fcafde33a79cab828a5d28481d7d5a477906d86c0c4d546043214fbf448cea",

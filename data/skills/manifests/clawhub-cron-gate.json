@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cron-gate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cron-gate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cron-gate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9eec63b9e6595586020933df3f597cc2feb66c32b3a6a2f0575e839d7478426d",

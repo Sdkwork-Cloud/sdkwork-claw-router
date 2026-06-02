@@ -14,6 +14,8 @@ export interface CommercePaymentRouteDecisionRecord {
   decision_reason?: string;
   /** Fallback from channel id field on commerce payment route decision record. */
   fallback_from_channel_id?: string;
+  /** Id field on commerce payment route decision record. */
+  id?: string;
   /** Method code field on commerce payment route decision record. */
   method_code: string;
   /** Organization id field on commerce payment route decision record. */

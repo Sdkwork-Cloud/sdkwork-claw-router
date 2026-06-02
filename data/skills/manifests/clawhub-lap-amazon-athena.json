@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lap-amazon-athena@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lap-amazon-athena-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lap-amazon-athena-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:681a3380194b1f40a159c50b3a650ff6eaba139cd0f605db28c088df2a66e050",

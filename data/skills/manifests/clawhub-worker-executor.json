@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/worker-executor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-worker-executor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-worker-executor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2bb0309f684ddab0f46c3cc2c57e4b57d90eada4688e9a692f938a60271f06a5",

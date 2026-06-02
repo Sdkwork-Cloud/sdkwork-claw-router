@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/global-intel-summary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-global-intel-summary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-global-intel-summary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25ce47359ba7520df9f48309fdb8617b0d0606e499def945cd07ccd0f4dc5ac8",

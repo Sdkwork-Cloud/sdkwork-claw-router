@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fn-portrait@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fn-portrait-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fn-portrait-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d173ed582db9bd3fdef1d271db540c1686d288fa77d2280273c45b1054ee2cca",

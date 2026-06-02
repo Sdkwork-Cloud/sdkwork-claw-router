@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meego-skill@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meego-skill-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meego-skill-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e84eb59b9f7eac2df3f4696c8beeca92ff5db225966b7a85e6def683fdccc621",

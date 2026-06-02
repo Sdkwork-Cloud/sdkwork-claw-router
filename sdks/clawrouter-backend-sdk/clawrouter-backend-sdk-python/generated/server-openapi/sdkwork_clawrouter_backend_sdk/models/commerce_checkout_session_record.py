@@ -17,5 +17,6 @@ class CommerceCheckoutSessionRecord:
     status: str
     tenant_id: str
     updated_at: str
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     source_id: Optional[str] = None

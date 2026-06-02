@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-orchestration@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-orchestration-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-orchestration-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8723b05338a37a26eee6bc1ba5b064daa5e6f4ab65d30e2507a01700e534370b",

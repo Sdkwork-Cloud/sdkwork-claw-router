@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/venue@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-venue-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-venue-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d419a1c8b2852b8a54818cacfe94f4d30b2c070cf250d1996602eb3c93983e2f",

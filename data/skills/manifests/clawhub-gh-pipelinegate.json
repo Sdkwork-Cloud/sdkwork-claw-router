@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gh-pipelinegate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gh-pipelinegate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gh-pipelinegate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2de184c34694dd53a805362631103698d3ff509f031653aa34981e7dfce1951a",

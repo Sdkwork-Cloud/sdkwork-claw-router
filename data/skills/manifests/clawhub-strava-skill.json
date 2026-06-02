@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/strava-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-strava-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-strava-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7e8ba341f816aa3ca359b2cf15c866eb7669b3421a591710e24e05bc60c78c29",

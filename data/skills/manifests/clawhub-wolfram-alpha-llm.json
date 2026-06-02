@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wolfram-alpha-llm@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wolfram-alpha-llm-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wolfram-alpha-llm-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fb39c220f7bd0c50189ea2c681d419c5d51bc06c7c289ba22c3ef8e34bd258a8",

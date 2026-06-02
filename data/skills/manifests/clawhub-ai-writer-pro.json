@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-writer-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-writer-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-writer-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a44b5d4bb2b1f7d115db9cef581221e8fc352deff1237698a6e1ff9fc9a70adf",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/poem-generator@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-poem-generator-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-poem-generator-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:01241295a461094e8079fd8af5a1f4e578d4da3a40024743b4e6d62907c5dde5",

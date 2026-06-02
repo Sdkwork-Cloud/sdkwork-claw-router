@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kombo@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-kombo-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kombo-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5c8142b3261acc9afb9735f76000eeae8723790d046c86bac39cacb0ef7bad7b",

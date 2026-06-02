@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aisp@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-aisp-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aisp-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:79fea46fb526773f791ff863153bbdbffba8c6e0ea6ddedeb7f5489f0225a74b",

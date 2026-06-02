@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/movie-recommender@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-movie-recommender-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-movie-recommender-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a7ee2156bc0bc16260b972806ed8c97ac9405fff66a840e7f288c2b580355d8a",

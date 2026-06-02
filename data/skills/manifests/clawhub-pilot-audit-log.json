@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-audit-log@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-audit-log-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-audit-log-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:130adefe071a0a540cfdab98fa96b264bf2b66f57094b279ff78c203339d91f2",

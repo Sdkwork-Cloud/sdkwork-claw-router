@@ -47,26 +47,29 @@ async fn app_store_catalog_route_returns_sdk_contract_items() {
         "Unified API router",
         payload["data"]["items"][0]["description"]
     );
-    assert_eq!(
+    assert_media_resource(
+        &payload["data"]["items"][0]["image"],
+        "image",
         "https://cdn.example.test/app-cover.png",
-        payload["data"]["items"][0]["image"]
     );
     assert_eq!(
         "Reliable routing",
         payload["data"]["items"][0]["features"][0]
     );
-    assert_eq!(
+    assert_media_resource(
+        &payload["data"]["items"][0]["screenshots"][0],
+        "image",
         "https://cdn.example.test/app-screen.png",
-        payload["data"]["items"][0]["screenshots"][0]
     );
     assert_eq!(
         "Desktop",
         payload["data"]["items"][0]["releases"][0]["platformType"]
     );
     assert_eq!("Windows", payload["data"]["items"][0]["releases"][0]["os"]);
-    assert_eq!(
+    assert_media_resource(
+        &payload["data"]["items"][0]["releases"][0]["artifact"],
+        "archive",
         "https://download.example.test/claw-router.exe",
-        payload["data"]["items"][0]["releases"][0]["downloadUrl"]
     );
 }
 
@@ -410,17 +413,34 @@ fn async_result<'a, T: Send + 'a>(
     Box::pin(async move { Ok(value) })
 }
 
+fn assert_media_resource(value: &Value, kind: &str, public_url: &str) {
+    assert_eq!(kind, value["kind"]);
+    assert_eq!("external_url", value["source"]);
+    assert_eq!(public_url, value["url"]);
+    assert_eq!(public_url, value["publicUrl"]);
+}
+
 fn app_item() -> AppStoreItem {
     AppStoreItem {
         id: "claw-router".to_owned(),
         name: "Claw Router".to_owned(),
         developer: "SDKWork".to_owned(),
         category: "Developer Tools".to_owned(),
-        image: "https://cdn.example.test/app-cover.png".to_owned(),
+        image: serde_json::json!({
+            "kind": "image",
+            "source": "external_url",
+            "url": "https://cdn.example.test/app-cover.png",
+            "publicUrl": "https://cdn.example.test/app-cover.png"
+        }),
         rating: 4.8,
         description: "Unified API router".to_owned(),
         downloads: "12.5K".to_owned(),
-        screenshots: vec!["https://cdn.example.test/app-screen.png".to_owned()],
+        screenshots: vec![serde_json::json!({
+            "kind": "image",
+            "source": "external_url",
+            "url": "https://cdn.example.test/app-screen.png",
+            "publicUrl": "https://cdn.example.test/app-screen.png"
+        })],
         features: vec!["Reliable routing".to_owned()],
         releases: vec![AppStoreReleaseItem {
             id: "windows-x64".to_owned(),
@@ -429,7 +449,12 @@ fn app_item() -> AppStoreItem {
             version: "1.2.3".to_owned(),
             size: "82 MB".to_owned(),
             release_date: "2026-05-01".to_owned(),
-            download_url: "https://download.example.test/claw-router.exe".to_owned(),
+            artifact: serde_json::json!({
+                "kind": "archive",
+                "source": "external_url",
+                "url": "https://download.example.test/claw-router.exe",
+                "publicUrl": "https://download.example.test/claw-router.exe"
+            }),
             whats_new: Some("Stable release".to_owned()),
         }],
     }

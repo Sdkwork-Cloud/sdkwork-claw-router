@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-wallet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-wallet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-wallet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0774eebdb5f9ec8592bff993a4f6f66548abda52aac138ef508ca53e8f93484",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-agent-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-agent-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-agent-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db87e62ab1a2c9e0f1bd7df12ba57edf8f87806ea602e1d5be861a53ee000590",

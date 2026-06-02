@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wimbledon-tennis@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wimbledon-tennis-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wimbledon-tennis-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:651ce2346cfd8439a12cf48c24e3d1d6d4c699f5e3d7a571ba10d761e486501f",

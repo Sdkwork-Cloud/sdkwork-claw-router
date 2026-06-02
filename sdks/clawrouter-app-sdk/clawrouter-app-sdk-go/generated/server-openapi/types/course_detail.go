@@ -27,6 +27,6 @@ type CourseDetail struct {
 	Source CourseOverviewSource `json:"source"`
 	StudentsCount int `json:"studentsCount"`
 	Tags []string `json:"tags"`
-	ThumbnailUrl string `json:"thumbnailUrl"`
+	Thumbnail MediaResource `json:"thumbnail"`
 	Title string `json:"title"`
 }

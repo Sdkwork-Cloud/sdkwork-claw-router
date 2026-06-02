@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/palo-alto-firewall-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-palo-alto-firewall-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-palo-alto-firewall-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0f9c80c439341942312eca51a018320e043faac8553ff5937a0065542523ff4",

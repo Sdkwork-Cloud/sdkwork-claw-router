@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proxmox-create-vm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-proxmox-create-vm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proxmox-create-vm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:22367fea03bb5c914feaea99918920f9de665ce02fd5a3a41629ba53285f7477",

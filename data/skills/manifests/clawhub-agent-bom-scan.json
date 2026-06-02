@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bom-scan@0.86.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-scan-0.86.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bom-scan-0.86.2.json"
+      },
       "version": "0.86.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d57dcb93e893dcc39626c51cfbe048c7af083ec7ec67e276bcec609d39bff2ce",

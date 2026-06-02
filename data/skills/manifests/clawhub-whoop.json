@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whoop@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whoop-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whoop-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ba29fa930058ee944e935b790886fdf3ac0caf1d35097c5a2d06ea0d447d7400",

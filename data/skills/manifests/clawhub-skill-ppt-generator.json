@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-ppt-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-ppt-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-ppt-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67f962ebbd8be72b2a662bb19e2ff3a93415d4016931f10ce5ed5ef3236f44b2",

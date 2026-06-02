@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/orders@3.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-orders-3.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-orders-3.4.1.json"
+      },
       "version": "3.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4727413d86815921519177401b99b2785e512745149cd667d59b7dda5b6c8eb9",

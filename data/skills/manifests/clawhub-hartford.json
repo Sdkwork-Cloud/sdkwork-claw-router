@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hartford@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hartford-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hartford-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26b3cdd87edd2b52b68f7acdcb5386845827f3ce530e3df73a9c004fe0ef80d1",

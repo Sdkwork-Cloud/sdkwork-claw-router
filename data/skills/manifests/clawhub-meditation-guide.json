@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meditation-guide@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meditation-guide-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meditation-guide-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c6b7094537b9f632af0068f28af2df224aca84cb2426459df9a92b5c7933a82e",

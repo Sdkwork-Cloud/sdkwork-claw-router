@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cidr-calc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cidr-calc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cidr-calc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:892dfb853b7c46a0703ab5ab7ff89e8bfddfb25437cde973aa0d5c19da3e7b35",

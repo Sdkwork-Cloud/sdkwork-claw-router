@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-fuel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-fuel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-fuel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:44ccc5f2fa4caa60f0c37437ed985534c592b11e1690591c7b035e2c3e5533d5",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-intel-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-intel-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-intel-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86ebb0943d96b642833c151093ef5182696691f9011335f2c77902a58d9d2459",

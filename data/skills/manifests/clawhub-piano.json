@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/piano@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-piano-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-piano-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7589b7c9458bde3e03da0bee6b7b53e7e510125a72da779d4308c6256cce85b8",

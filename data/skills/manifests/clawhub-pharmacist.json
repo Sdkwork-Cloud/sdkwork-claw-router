@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pharmacist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pharmacist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pharmacist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:87dd5877337a636ab9f068d2094d6976aef7354d735d08d15cccecb9fedf5561",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawdbot-blogwatcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-blogwatcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawdbot-blogwatcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9647ac0031c45fe07ccd5b9fff72e664c3394f58f6e9b38022a03935c053fff2",

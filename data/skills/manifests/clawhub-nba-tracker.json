@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nba-tracker@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-nba-tracker-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nba-tracker-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:ba865e5e119bde4e82aedcffcf74aa45d9e13fbe0a3090d3ad1e86e71a90645a",

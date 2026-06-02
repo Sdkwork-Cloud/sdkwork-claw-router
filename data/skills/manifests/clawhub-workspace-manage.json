@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workspace-manage@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workspace-manage-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workspace-manage-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7e73ed3b199178b30d1642af250ed694355c98592f6239fc96d2292f22af4b6",

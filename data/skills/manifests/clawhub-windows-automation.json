@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-automation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-automation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-automation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70e2253b19d9ba66d802807d6a80a17b11ea5573c16576c8950c68875807b64f",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/concord@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-concord-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-concord-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:368bd5563263d0123f44213ee9afbf65681fda603c3363410ad0255f4639bf93",

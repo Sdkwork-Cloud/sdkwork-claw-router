@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quickintel-scan@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-quickintel-scan-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quickintel-scan-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:34db283a42da4b1c88facf0a50009aa9f2e42f31fbe32ee7711650a508e43dc0",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skills-security-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skills-security-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skills-security-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ffc8dfa3c58417fa27de339d5fb504f19365a03cc68327b7c64e09fd9ba8005b",

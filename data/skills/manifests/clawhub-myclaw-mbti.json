@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/myclaw-mbti@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-myclaw-mbti-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-myclaw-mbti-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fec69512d63d96d36a0ecb64e1735f33a1890127e27adad9adde71b5d614d437",

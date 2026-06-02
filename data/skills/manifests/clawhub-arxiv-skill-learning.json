@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arxiv-skill-learning@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-skill-learning-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arxiv-skill-learning-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67988f3c3526b09050f6ddf2bf9b54fce371ce2730e6df5b6666e001a53dfdc7",

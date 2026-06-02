@@ -27,7 +27,7 @@ public class ContentCourseLessonRecord {
     private String updatedAt;
     private String uuid;
     private String version;
-    private String videoUrl;
+    private MediaResource video;
 
     public String getContent() {
         return this.content;
@@ -221,11 +221,11 @@ public class ContentCourseLessonRecord {
         this.version = version;
     }
 
-    public String getVideoUrl() {
-        return this.videoUrl;
+    public MediaResource getVideo() {
+        return this.video;
     }
 
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
+    public void setVideo(MediaResource video) {
+        this.video = video;
     }
 }

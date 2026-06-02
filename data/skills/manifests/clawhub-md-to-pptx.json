@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/md-to-pptx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-md-to-pptx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-md-to-pptx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f809753bddad91840b93ed186ce9cc12419d341c9c55544d569850c273a2bbbf",

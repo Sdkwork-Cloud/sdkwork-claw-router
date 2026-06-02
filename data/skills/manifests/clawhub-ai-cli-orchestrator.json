@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-cli-orchestrator@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-cli-orchestrator-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-cli-orchestrator-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:b261adb969b60340f0e30aaf08cfa0a4cd45cf130d5abb293b0137e4f4b5fca7",

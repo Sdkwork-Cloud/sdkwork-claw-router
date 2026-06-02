@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/riot-games@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-riot-games-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-riot-games-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4bcafdd22859bbcbaf3741ceadd0fa46eaad9387e155177fa3b23b779ae09287",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stonebornbot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stonebornbot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stonebornbot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fdb919c66cdc065a422edbb34f3d4dcf83cd52273238886add889655459ff423",

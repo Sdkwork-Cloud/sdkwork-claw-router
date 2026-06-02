@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solana-agent-registry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solana-agent-registry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solana-agent-registry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9b7a6be18d87564198a3457fa3dcd46e1276aedc449e0b836085b838b6c65db9",

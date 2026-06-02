@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vultr-inference@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-vultr-inference-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vultr-inference-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:db4cf3671b9bf49690da55723f90d1cc5503be879e83fcb57ab92280a4eae670",

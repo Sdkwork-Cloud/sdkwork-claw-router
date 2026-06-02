@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pharmaclaw-alphafold-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pharmaclaw-alphafold-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pharmaclaw-alphafold-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:082e3ab5ee99f0cefc6225fddeb21a312bac8e02c6da7aae53f1f9cac3575906",

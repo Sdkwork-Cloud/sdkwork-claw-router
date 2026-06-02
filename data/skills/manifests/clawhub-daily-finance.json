@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-finance@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-finance-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-finance-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66d83731dddb63742252368f19ed1df519acc0e2c7e1fb1c9e73d4788fe1272e",

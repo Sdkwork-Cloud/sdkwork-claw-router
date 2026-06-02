@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agave@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agave-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agave-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8f4f1c80602913ab3fbd4d42b556255bbfbc7527e73167b15e85ee719c505608",

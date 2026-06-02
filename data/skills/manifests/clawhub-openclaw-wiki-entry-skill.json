@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-wiki-entry-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-wiki-entry-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-wiki-entry-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1c7900b2b12077aa1ee2c03ea0b562c621ca15b4735f3612c070f9819ab24b39",

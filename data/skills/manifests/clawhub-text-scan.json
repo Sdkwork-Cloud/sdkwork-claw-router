@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-scan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-scan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-scan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d8dd103752e8e36d7b76937239be2f8d5adce2c8745d90940c245eb74f271aa",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/s2-timeline-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-s2-timeline-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-s2-timeline-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5febff07c110f2e018a12bb0e6bb00682ed919e600b142dc8b23828048fece94",

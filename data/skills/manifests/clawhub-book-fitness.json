@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-fitness@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-fitness-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-fitness-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ccee108ed5df41800eb4444d32e4541cb6d1a3e2240143486b8a7509bc524f02",

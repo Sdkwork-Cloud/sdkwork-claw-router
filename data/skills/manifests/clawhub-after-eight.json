@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/after-eight@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-after-eight-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-after-eight-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6cc37560395513a78434b1e04b1d95b60fd0242df1871d8aa985633fed205cdb",

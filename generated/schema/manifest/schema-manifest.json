@@ -170,6 +170,7 @@
     "integration_service_provider_price_rule",
     "integration_service_provider_subject_binding",
     "integration_webhook_endpoint",
+    "media_resource",
     "messaging_delivery_event",
     "messaging_provider",
     "messaging_provider_account",
@@ -351,11 +352,14 @@
         "commerce_product_attribute",
         "commerce_product_attribute_value",
         "commerce_product_category",
+        "commerce_product_category_attribute",
         "commerce_product_media",
         "commerce_product_sku",
         "commerce_product_sku_attribute",
         "commerce_product_spu",
-        "ops_audit_log"
+        "commerce_product_spu_category",
+        "ops_audit_log",
+        "plus_category"
       ]
     },
     "/admin/catalog/attributes": {
@@ -372,10 +376,12 @@
         "commerce_product_attribute",
         "commerce_product_attribute_value",
         "commerce_product_category",
+        "commerce_product_category_attribute",
         "commerce_product_media",
         "commerce_product_sku",
         "commerce_product_sku_attribute",
         "commerce_product_spu",
+        "commerce_product_spu_category",
         "ops_audit_log"
       ]
     },
@@ -393,10 +399,12 @@
         "commerce_product_attribute",
         "commerce_product_attribute_value",
         "commerce_product_category",
+        "commerce_product_category_attribute",
         "commerce_product_media",
         "commerce_product_sku",
         "commerce_product_sku_attribute",
         "commerce_product_spu",
+        "commerce_product_spu_category",
         "ops_audit_log"
       ]
     },
@@ -414,10 +422,12 @@
         "commerce_product_attribute",
         "commerce_product_attribute_value",
         "commerce_product_category",
+        "commerce_product_category_attribute",
         "commerce_product_media",
         "commerce_product_sku",
         "commerce_product_sku_attribute",
         "commerce_product_spu",
+        "commerce_product_spu_category",
         "ops_audit_log"
       ]
     },
@@ -435,10 +445,58 @@
         "commerce_product_attribute",
         "commerce_product_attribute_value",
         "commerce_product_category",
+        "commerce_product_category_attribute",
         "commerce_product_media",
         "commerce_product_sku",
         "commerce_product_sku_attribute",
         "commerce_product_spu",
+        "commerce_product_spu_category",
+        "ops_audit_log"
+      ]
+    },
+    "/admin/catalog/products/:productId/edit": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "commerce_price_list",
+        "commerce_price_list_item",
+        "commerce_product_attribute",
+        "commerce_product_attribute_value",
+        "commerce_product_category",
+        "commerce_product_category_attribute",
+        "commerce_product_media",
+        "commerce_product_sku",
+        "commerce_product_sku_attribute",
+        "commerce_product_spu",
+        "commerce_product_spu_category",
+        "ops_audit_log"
+      ]
+    },
+    "/admin/catalog/products/new": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "commerce_price_list",
+        "commerce_price_list_item",
+        "commerce_product_attribute",
+        "commerce_product_attribute_value",
+        "commerce_product_category",
+        "commerce_product_category_attribute",
+        "commerce_product_media",
+        "commerce_product_sku",
+        "commerce_product_sku_attribute",
+        "commerce_product_spu",
+        "commerce_product_spu_category",
         "ops_audit_log"
       ]
     },
@@ -456,10 +514,12 @@
         "commerce_product_attribute",
         "commerce_product_attribute_value",
         "commerce_product_category",
+        "commerce_product_category_attribute",
         "commerce_product_media",
         "commerce_product_sku",
         "commerce_product_sku_attribute",
         "commerce_product_spu",
+        "commerce_product_spu_category",
         "ops_audit_log"
       ]
     },
@@ -723,6 +783,7 @@
       "route_scope": "admin",
       "tables": [
         "iam_user",
+        "media_resource",
         "ops_audit_log"
       ]
     },
@@ -1735,6 +1796,29 @@
         "commerce_product_sku",
         "commerce_product_spu",
         "commerce_recharge_package",
+        "ops_audit_log"
+      ]
+    },
+    "/admin/memberships/vip-packages": {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "required_api_surface": "backend",
+      "route_scope": "admin",
+      "tables": [
+        "commerce_membership",
+        "commerce_membership_entitlement",
+        "commerce_membership_entitlement_usage",
+        "commerce_membership_package",
+        "commerce_membership_package_group",
+        "commerce_membership_plan",
+        "commerce_order",
+        "commerce_order_item",
+        "commerce_payment_attempt",
+        "commerce_product_sku",
+        "commerce_product_spu",
         "ops_audit_log"
       ]
     },
@@ -2878,6 +2962,7 @@
       "route_scope": "admin",
       "tables": [
         "iam_user",
+        "media_resource",
         "object_blob",
         "object_bucket",
         "object_provider",
@@ -2997,6 +3082,7 @@
       "route_scope": "admin",
       "tables": [
         "iam_user",
+        "media_resource",
         "ops_audit_log",
         "storage_quota_policy",
         "storage_quota_reservation",
@@ -3612,6 +3698,7 @@
         "commerce_product_sku",
         "commerce_product_sku_attribute",
         "commerce_product_spu",
+        "commerce_product_spu_category",
         "commerce_recharge_package",
         "ops_audit_log"
       ]
@@ -4039,6 +4126,7 @@
         "commerce_payment_intent",
         "commerce_product_sku",
         "commerce_product_spu",
+        "commerce_product_spu_category",
         "ops_audit_log",
         "promotion_budget_account",
         "promotion_budget_ledger_entry",
@@ -4072,17 +4160,17 @@
   },
   "summary": {
     "api_surface_counts": {
-      "app": 206,
-      "backend": 316,
+      "app": 209,
+      "backend": 319,
       "openai_v1": 10,
       "system": 3,
-      "worker": 249
+      "worker": 252
     },
     "external_legacy_table_count": 15,
-    "frontend_route_count": 183,
-    "generated_table_count": 221,
+    "frontend_route_count": 186,
+    "generated_table_count": 222,
     "legacy_table_count": 24,
-    "table_count": 327
+    "table_count": 330
   },
   "tables": [
     {
@@ -4196,9 +4284,19 @@
           "type": "int64"
         },
         {
-          "name": "avatar_url",
+          "name": "avatar_media_resource_id",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "string(128)"
+        },
+        {
+          "name": "avatar_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "avatar_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "template_source",
@@ -11625,9 +11723,19 @@
           "type": "string(128)"
         },
         {
-          "name": "storage_url",
+          "name": "media_resource_id",
           "source": "explicit",
-          "type": "text"
+          "type": "string(128)"
+        },
+        {
+          "name": "object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "file_name",
@@ -12779,14 +12887,34 @@
           "type": "enum_int32"
         },
         {
-          "name": "asset_url",
+          "name": "asset_media_resource_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "string(128)"
         },
         {
-          "name": "thumbnail_url",
+          "name": "asset_object_blob_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "int64"
+        },
+        {
+          "name": "asset_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "thumbnail_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "thumbnail_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "thumbnail_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "storage_provider",
@@ -12794,9 +12922,9 @@
           "type": "string(64)"
         },
         {
-          "name": "storage_key",
+          "name": "object_key",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "string(1024)"
         },
         {
           "name": "mime_type",
@@ -17476,9 +17604,19 @@
           "type": "json"
         },
         {
-          "name": "icon_url",
+          "name": "icon_media_resource_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "color_token",
@@ -19248,9 +19386,19 @@
           "type": "string(512)"
         },
         {
-          "name": "icon_url",
+          "name": "icon_media_resource_id",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "color_token",
@@ -20827,14 +20975,34 @@
           "type": "string(512)"
         },
         {
-          "name": "logo_url",
+          "name": "logo_media_resource_id",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "string(128)"
         },
         {
-          "name": "icon_url",
+          "name": "logo_object_blob_id",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "int64"
+        },
+        {
+          "name": "logo_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "icon_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "color_token",
@@ -23725,9 +23893,19 @@
           "type": "string(512)"
         },
         {
-          "name": "icon_url",
+          "name": "icon_media_resource_id",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "color_token",
@@ -28297,14 +28475,19 @@
           "type": "json"
         },
         {
-          "name": "storage_key",
+          "name": "media_resource_id",
           "source": "explicit",
-          "type": "text"
+          "type": "string(128)"
         },
         {
-          "name": "storage_url",
+          "name": "object_blob_id",
           "source": "explicit",
-          "type": "text"
+          "type": "int64"
+        },
+        {
+          "name": "resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "sha256",
@@ -34142,9 +34325,19 @@
           "type": "string(512)"
         },
         {
-          "name": "document_url",
+          "name": "document_media_resource_id",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "string(128)"
+        },
+        {
+          "name": "document_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "document_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "created_at",
@@ -34811,6 +35004,7 @@
         "/vip",
         "/admin/memberships",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements"
@@ -34938,6 +35132,7 @@
         "/vip",
         "/admin/memberships",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements"
@@ -35070,6 +35265,7 @@
         "/console/memberships",
         "/admin/memberships",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements"
@@ -35223,6 +35419,7 @@
         "/vip",
         "/admin/memberships",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements"
@@ -35346,6 +35543,7 @@
         "/vip",
         "/admin/memberships",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements"
@@ -35465,6 +35663,7 @@
         "/vip",
         "/admin/memberships",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements"
@@ -35621,6 +35820,7 @@
         "/admin/orders/fulfillments",
         "/admin/orders/shipments",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements",
@@ -36282,6 +36482,7 @@
         "/admin/orders/fulfillments",
         "/admin/orders/shipments",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements",
@@ -36452,6 +36653,7 @@
         "/admin/payments/webhook-events",
         "/admin/payments/reconciliation-runs",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements",
@@ -37950,7 +38152,6 @@
       "unique_constraints": [
         {
           "columns": [
-            "tenant_id",
             "account_no"
           ]
         }
@@ -39547,6 +39748,8 @@
         "/admin/catalog",
         "/admin/catalog/categories",
         "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
         "/admin/catalog/skus",
         "/admin/catalog/attributes",
         "/admin/catalog/prices"
@@ -39667,6 +39870,8 @@
         "/admin/catalog",
         "/admin/catalog/categories",
         "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
         "/admin/catalog/skus",
         "/admin/catalog/attributes",
         "/admin/catalog/prices"
@@ -39796,6 +40001,8 @@
         "/admin/catalog",
         "/admin/catalog/categories",
         "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
         "/admin/catalog/skus",
         "/admin/catalog/attributes",
         "/admin/catalog/prices"
@@ -39914,6 +40121,8 @@
         "/admin/catalog",
         "/admin/catalog/categories",
         "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
         "/admin/catalog/skus",
         "/admin/catalog/attributes",
         "/admin/catalog/prices"
@@ -40014,9 +40223,19 @@
           "type": "string(1024)"
         },
         {
-          "name": "icon_url",
+          "name": "icon_media_resource_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "sort_order",
@@ -40048,6 +40267,8 @@
         "/admin/catalog",
         "/admin/catalog/categories",
         "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
         "/admin/catalog/skus",
         "/admin/catalog/attributes",
         "/admin/catalog/prices"
@@ -40129,6 +40350,144 @@
           "type": "string(512)"
         },
         {
+          "name": "category_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "attribute_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "required",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "searchable",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "filterable",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "sort_order",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/catalog",
+        "/admin/catalog/categories",
+        "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
+        "/admin/catalog/skus",
+        "/admin/catalog/attributes",
+        "/admin/catalog/prices"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "category_id",
+            "sort_order"
+          ],
+          "name": "idx_commerce_product_category_attribute_category",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "attribute_id",
+            "status"
+          ],
+          "name": "idx_commerce_product_category_attribute_attribute",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "category_id",
+        "attribute_id",
+        "required",
+        "searchable",
+        "filterable",
+        "sort_order",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_product_category_attribute",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "category_id",
+            "attribute_id"
+          ]
+        }
+      ],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
           "name": "owner_type",
           "source": "explicit",
           "type": "string(64)"
@@ -40139,14 +40498,24 @@
           "type": "string(512)"
         },
         {
-          "name": "media_type",
+          "name": "media_role",
           "source": "explicit",
           "type": "string(64)"
         },
         {
-          "name": "url",
+          "name": "media_resource_id",
           "source": "explicit",
-          "type": "string(2048)"
+          "type": "string(128)"
+        },
+        {
+          "name": "object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "alt_text",
@@ -40183,6 +40552,8 @@
         "/admin/catalog",
         "/admin/catalog/categories",
         "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
         "/admin/catalog/skus",
         "/admin/catalog/attributes",
         "/admin/catalog/prices"
@@ -40205,8 +40576,8 @@
         "tenant_id",
         "owner_type",
         "owner_id",
-        "media_type",
-        "url",
+        "media_role",
+        "media_resource_id",
         "sort_order",
         "status",
         "created_at",
@@ -40323,6 +40694,8 @@
         "/admin/wallet",
         "/admin/catalog/categories",
         "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
         "/admin/catalog/skus",
         "/admin/catalog/attributes",
         "/admin/catalog/prices",
@@ -40330,6 +40703,7 @@
         "/admin/inventory/reservations",
         "/admin/inventory/ledger",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements",
@@ -40456,6 +40830,8 @@
         "/admin/catalog",
         "/admin/catalog/categories",
         "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
         "/admin/catalog/skus",
         "/admin/catalog/attributes",
         "/admin/catalog/prices"
@@ -40533,11 +40909,6 @@
           "type": "string(64)"
         },
         {
-          "name": "category_id",
-          "source": "explicit",
-          "type": "string(512)"
-        },
-        {
           "name": "title",
           "source": "explicit",
           "type": "string(512)"
@@ -40593,10 +40964,13 @@
         "/admin/wallet",
         "/admin/catalog/categories",
         "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
         "/admin/catalog/skus",
         "/admin/catalog/attributes",
         "/admin/catalog/prices",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements",
@@ -40609,16 +40983,6 @@
       ],
       "generated_by_this_project": false,
       "indexes": [
-        {
-          "columns": [
-            "tenant_id",
-            "organization_id",
-            "category_id",
-            "status"
-          ],
-          "name": "idx_commerce_product_spu_category_status",
-          "unique": false
-        },
         {
           "columns": [
             "tenant_id",
@@ -40654,6 +41018,135 @@
             "tenant_id",
             "organization_id",
             "spu_no"
+          ]
+        }
+      ],
+      "write_owner": "sdkwork-appbase-commerce"
+    },
+    {
+      "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "name": "id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "tenant_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "organization_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "spu_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "category_id",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "primary_flag",
+          "source": "explicit",
+          "type": "bool"
+        },
+        {
+          "name": "sort_order",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "status",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "created_at",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "updated_at",
+          "source": "explicit",
+          "type": "string(512)"
+        }
+      ],
+      "common_columns": [],
+      "compliance_level": "L3",
+      "domain": "commerce",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/catalog",
+        "/admin/catalog/categories",
+        "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
+        "/admin/catalog/skus",
+        "/admin/catalog/attributes",
+        "/admin/catalog/prices",
+        "/console/recharge",
+        "/vip"
+      ],
+      "generated_by_this_project": false,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "category_id",
+            "status"
+          ],
+          "name": "idx_commerce_product_spu_category_category",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "spu_id",
+            "primary_flag",
+            "sort_order"
+          ],
+          "name": "idx_commerce_product_spu_category_spu",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [
+        "tenant_id",
+        "spu_id",
+        "category_id",
+        "primary_flag",
+        "sort_order",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "physical_columns": null,
+      "profile": "appbase_standard",
+      "projection_policy": null,
+      "security": null,
+      "source_refs": [],
+      "source_tables": [],
+      "system_of_record": true,
+      "table": "commerce_product_spu_category",
+      "unique_constraints": [
+        {
+          "columns": [
+            "tenant_id",
+            "spu_id",
+            "category_id"
           ]
         }
       ],
@@ -45433,9 +45926,19 @@
           "type": "text"
         },
         {
-          "name": "thumbnail_url",
+          "name": "thumbnail_media_resource_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "string(128)"
+        },
+        {
+          "name": "thumbnail_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "thumbnail_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "instructor_snapshot",
@@ -45754,9 +46257,19 @@
           "type": "string(64)"
         },
         {
-          "name": "video_url",
+          "name": "video_media_resource_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "string(128)"
+        },
+        {
+          "name": "video_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "video_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "contact_name",
@@ -46033,9 +46546,19 @@
           "type": "text"
         },
         {
-          "name": "video_url",
+          "name": "video_media_resource_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "string(128)"
+        },
+        {
+          "name": "video_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "video_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "external_bvid",
@@ -50570,9 +51093,19 @@
           "type": "string(32)"
         },
         {
-          "name": "avatar_url",
+          "name": "avatar_media_resource_id",
           "source": "explicit",
-          "type": "string(2048)"
+          "type": "string(128)"
+        },
+        {
+          "name": "avatar_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "avatar_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "status",
@@ -57199,6 +57732,357 @@
     },
     {
       "api_surfaces": [
+        "app",
+        "backend",
+        "worker"
+      ],
+      "column_types": {},
+      "columns": [
+        {
+          "group": "user_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_type",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "name": "media_resource_no",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "kind",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "source",
+          "source": "explicit",
+          "type": "string(32)"
+        },
+        {
+          "name": "object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "bucket_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "object_key",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "object_version",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "uri",
+          "source": "explicit",
+          "type": "string(1024)"
+        },
+        {
+          "name": "file_name",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "mime_type",
+          "source": "explicit",
+          "type": "string(256)"
+        },
+        {
+          "name": "size_bytes",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "checksum_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "width",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "height",
+          "source": "explicit",
+          "type": "int32"
+        },
+        {
+          "name": "duration_seconds",
+          "source": "explicit",
+          "type": "decimal"
+        },
+        {
+          "name": "alt_text",
+          "source": "explicit",
+          "type": "string(512)"
+        },
+        {
+          "name": "title",
+          "source": "explicit",
+          "type": "string(255)"
+        },
+        {
+          "name": "access_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "ai_json",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "renditions_json",
+          "source": "explicit",
+          "type": "json"
+        }
+      ],
+      "common_columns": [
+        {
+          "group": "user_entity",
+          "name": "id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "uuid",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "tenant_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "organization_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "user_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_type",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "owner_id",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "data_scope",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "status",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "created_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "updated_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "version",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_at",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "deleted_by",
+          "source": "common",
+          "type": "common"
+        },
+        {
+          "group": "user_entity",
+          "name": "metadata",
+          "source": "common",
+          "type": "common"
+        }
+      ],
+      "compliance_level": "L3",
+      "domain": "content",
+      "foreign_keys": [],
+      "frontend_routes": [
+        "/admin/storage",
+        "/admin/storage/usage",
+        "/admin/drive"
+      ],
+      "generated_by_this_project": true,
+      "indexes": [
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "media_resource_no"
+          ],
+          "name": "uk_media_resource_no",
+          "unique": true
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "object_blob_id",
+            "status",
+            "id"
+          ],
+          "name": "idx_media_resource_blob",
+          "unique": false
+        },
+        {
+          "columns": [
+            "tenant_id",
+            "organization_id",
+            "kind",
+            "status",
+            "id"
+          ],
+          "name": "idx_media_resource_kind_status",
+          "unique": false
+        }
+      ],
+      "lifecycle": null,
+      "not_null_columns": [],
+      "physical_columns": null,
+      "profile": "media_resource",
+      "projection_policy": null,
+      "security": {
+        "audit_required": true,
+        "stores_secret_plaintext": false
+      },
+      "source_refs": [],
+      "source_tables": [
+        "object_blob"
+      ],
+      "system_of_record": true,
+      "table": "media_resource",
+      "unique_constraints": [],
+      "write_owner": "storage-service"
+    },
+    {
+      "api_surfaces": [
         "backend",
         "worker"
       ],
@@ -57584,9 +58468,19 @@
           "type": "string(512)"
         },
         {
-          "name": "icon_url",
+          "name": "icon_media_resource_id",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "metadata_schema_version",
@@ -63558,9 +64452,19 @@
           "type": "string(128)"
         },
         {
-          "name": "icon_url",
+          "name": "icon_media_resource_id",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "docs_url",
@@ -64240,6 +65144,8 @@
         "/admin/finance",
         "/admin/catalog/categories",
         "/admin/catalog/products",
+        "/admin/catalog/products/new",
+        "/admin/catalog/products/:productId/edit",
         "/admin/catalog/skus",
         "/admin/catalog/attributes",
         "/admin/catalog/prices",
@@ -64260,6 +65166,7 @@
         "/admin/payments/webhook-events",
         "/admin/payments/reconciliation-runs",
         "/admin/memberships/packages",
+        "/admin/memberships/vip-packages",
         "/admin/memberships/plans",
         "/admin/memberships/members",
         "/admin/memberships/entitlements",
@@ -67839,14 +68746,34 @@
           "type": "string(4000)"
         },
         {
-          "name": "icon",
+          "name": "icon_media_resource_id",
           "source": "explicit",
-          "type": "string(255)"
+          "type": "string(128)"
         },
         {
-          "name": "cover_image",
+          "name": "icon_object_blob_id",
           "source": "explicit",
-          "type": "string(255)"
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "cover_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "cover_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "cover_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "category_id",
@@ -68114,8 +69041,12 @@
           "name",
           "summary",
           "description",
-          "icon",
-          "cover_image",
+          "icon_media_resource_id",
+          "icon_object_blob_id",
+          "icon_resource_snapshot",
+          "cover_media_resource_id",
+          "cover_object_blob_id",
+          "cover_resource_snapshot",
           "category_id",
           "package_id",
           "provider",
@@ -68233,14 +69164,34 @@
           "type": "string(4000)"
         },
         {
-          "name": "icon",
+          "name": "icon_media_resource_id",
           "source": "explicit",
-          "type": "string(255)"
+          "type": "string(128)"
         },
         {
-          "name": "cover_image",
+          "name": "icon_object_blob_id",
           "source": "explicit",
-          "type": "string(255)"
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "cover_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "cover_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "cover_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "category_id",
@@ -68342,8 +69293,12 @@
           "name",
           "summary",
           "description",
-          "icon",
-          "cover_image",
+          "icon_media_resource_id",
+          "icon_object_blob_id",
+          "icon_resource_snapshot",
+          "cover_media_resource_id",
+          "cover_object_blob_id",
+          "cover_resource_snapshot",
           "category_id",
           "enabled",
           "featured",
@@ -68445,9 +69400,19 @@
           "type": "string(64)"
         },
         {
-          "name": "icon_url",
+          "name": "icon_media_resource_id",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "access_url",
@@ -68510,9 +69475,19 @@
           "type": "string(512)"
         },
         {
-          "name": "download_url",
+          "name": "artifact_media_resource_id",
           "source": "explicit",
-          "type": "string(512)"
+          "type": "string(128)"
+        },
+        {
+          "name": "artifact_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "artifact_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         }
       ],
       "common_columns": [],
@@ -68560,7 +69535,9 @@
           "project_id",
           "description",
           "version",
-          "icon_url",
+          "icon_media_resource_id",
+          "icon_object_blob_id",
+          "icon_resource_snapshot",
           "access_url",
           "config",
           "status",
@@ -68573,10 +69550,12 @@
           "package_name",
           "bundle_id",
           "store_url",
-          "download_url"
+          "artifact_media_resource_id",
+          "artifact_object_blob_id",
+          "artifact_resource_snapshot"
         ]
       },
-      "profile": "java_compatible_owned",
+      "profile": "router_owned_standard",
       "projection_policy": null,
       "security": null,
       "source_refs": [],
@@ -68584,7 +69563,7 @@
       "system_of_record": true,
       "table": "plus_app",
       "unique_constraints": [],
-      "write_owner": "spring-ai-plus-business-entity"
+      "write_owner": "sdkwork-claw-product"
     },
     {
       "api_surfaces": [
@@ -68729,9 +69708,19 @@
           "type": "json"
         },
         {
-          "name": "icon",
+          "name": "icon_media_resource_id",
           "source": "explicit",
-          "type": "string(255)"
+          "type": "string(128)"
+        },
+        {
+          "name": "icon_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "sort_weight",
@@ -68770,6 +69759,7 @@
         "/skills-hub/:id",
         "/courses",
         "/courses/:id",
+        "/admin/catalog",
         "/admin/app",
         "/admin/open-platform",
         "/admin/skill",
@@ -68815,7 +69805,9 @@
           "group_name",
           "code",
           "tags",
-          "icon",
+          "icon_media_resource_id",
+          "icon_object_blob_id",
+          "icon_resource_snapshot",
           "sort_weight",
           "parent_id",
           "path",
@@ -69565,7 +70557,7 @@
           "type": "int64"
         },
         {
-          "name": "cover_images",
+          "name": "cover_resources",
           "source": "explicit",
           "type": "json"
         },
@@ -69714,7 +70706,7 @@
           "category_id",
           "content_type",
           "content_id",
-          "cover_images",
+          "cover_resources",
           "resource_list",
           "author",
           "source",
@@ -76573,14 +77565,34 @@
           "type": "string(64)"
         },
         {
-          "name": "icon_url",
+          "name": "icon_media_resource_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "string(128)"
         },
         {
-          "name": "cover_url",
+          "name": "icon_object_blob_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "int64"
+        },
+        {
+          "name": "icon_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "cover_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "cover_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "cover_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "visibility",
@@ -77768,9 +78780,19 @@
           "type": "string(512)"
         },
         {
-          "name": "artifact_url",
+          "name": "artifact_media_resource_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "string(128)"
+        },
+        {
+          "name": "artifact_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "artifact_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "artifact_size_bytes",
@@ -78059,14 +79081,34 @@
           "type": "enum_int32"
         },
         {
-          "name": "asset_url",
+          "name": "asset_media_resource_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "string(128)"
         },
         {
-          "name": "thumbnail_url",
+          "name": "asset_object_blob_id",
           "source": "explicit",
-          "type": "string(1024)"
+          "type": "int64"
+        },
+        {
+          "name": "asset_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
+        },
+        {
+          "name": "thumbnail_media_resource_id",
+          "source": "explicit",
+          "type": "string(128)"
+        },
+        {
+          "name": "thumbnail_object_blob_id",
+          "source": "explicit",
+          "type": "int64"
+        },
+        {
+          "name": "thumbnail_resource_snapshot",
+          "source": "explicit",
+          "type": "json"
         },
         {
           "name": "title",

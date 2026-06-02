@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tyk@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-tyk-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tyk-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:4b0679ac1709b706803f2b11572abfc4533e006d5219d22f3f8f419fc6088fb9",

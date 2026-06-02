@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:69806b04d4684dbabc9ce31e52fbccf58a988649974f0f1ccbf584a3e321d0ab",

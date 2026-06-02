@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/portcheck@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-portcheck-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-portcheck-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:23a75f18d4243c63184220d756f43f287eed7c263fa64a8b4e25c13419ce77d3",

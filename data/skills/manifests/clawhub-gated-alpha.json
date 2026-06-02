@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gated-alpha@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gated-alpha-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gated-alpha-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:53806b90c406aee53a1dd78a3e632be7bf8b1df3bab84dc639bd8a5887637bae",

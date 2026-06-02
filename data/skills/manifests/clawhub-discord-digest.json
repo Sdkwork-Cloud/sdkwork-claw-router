@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/discord-digest@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-discord-digest-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-discord-digest-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:837d3eb524d533154370deccae14eb4f4db88ca9226636a60029307be8233635",

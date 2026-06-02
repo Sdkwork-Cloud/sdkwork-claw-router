@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-skill-trader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-skill-trader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-skill-trader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f5cf4d00b1c985f9d04ea05df2de83fb218e74775ca3e3802c49df45443a9cb",

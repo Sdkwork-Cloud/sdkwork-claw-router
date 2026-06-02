@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amply@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-amply-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amply-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:f5c1b361f5ddbbe03a394743d9bc2535a096197e1b609f3159d90612a26c64d1",

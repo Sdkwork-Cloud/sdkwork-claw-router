@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opennotebook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-opennotebook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opennotebook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f66b518521f7a5c419710edc307c3bf197bd79278ba2a823394c48e36f02e0b7",

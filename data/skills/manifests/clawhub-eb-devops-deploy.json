@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eb-devops-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eb-devops-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eb-devops-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:508b3a654039bd8cd7d1aa8991b21d4a9e6561b95ac2b7d25aa4659a73da33d7",

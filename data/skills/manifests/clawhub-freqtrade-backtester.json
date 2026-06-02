@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/freqtrade-backtester@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-freqtrade-backtester-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-freqtrade-backtester-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e8d5c7de5246048b7a81eee8bb886001d548a05b24c176a7ce913ef8edbbb066",

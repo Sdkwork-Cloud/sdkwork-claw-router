@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reformed-books@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reformed-books-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reformed-books-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:093675cb54e37405e69a676fa00ff54ab6170e97c60d7e8d8035adbe35689b70",

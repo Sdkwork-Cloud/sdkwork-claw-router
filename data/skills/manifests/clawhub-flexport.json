@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flexport@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-flexport-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flexport-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:74257e07d790148026a0bf8ece2a03ecd05592ef64a88576655f9201c86331b4",

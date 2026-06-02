@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-brain@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-brain-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-brain-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5fd13197ffb5e23505fa21bd8e3d7f605e5160fe8c014090359f0460df236eb8",

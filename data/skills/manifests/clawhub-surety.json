@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/surety@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-surety-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-surety-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bbe09f748159031d286e6309ea903067225628d2b36a3a27e1c02502ff2af2f2",

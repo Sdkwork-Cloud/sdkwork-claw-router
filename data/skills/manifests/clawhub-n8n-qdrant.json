@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/n8n-qdrant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-n8n-qdrant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-n8n-qdrant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5efe541dda3705f45e0867e78d9f8ed1024e642bf5013104001569ae02d41c33",

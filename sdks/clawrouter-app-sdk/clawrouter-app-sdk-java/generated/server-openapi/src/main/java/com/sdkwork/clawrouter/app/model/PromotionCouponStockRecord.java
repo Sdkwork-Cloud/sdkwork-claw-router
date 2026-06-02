@@ -3,18 +3,24 @@ package com.sdkwork.clawrouter.app.model;
 
 public class PromotionCouponStockRecord {
     private String activationStatus;
+    private String availableQuantity;
     private String budgetAccountId;
     private Integer budgetStopThresholdBps;
     private Integer budgetWarningThresholdBps;
     private Boolean canResend;
     private String cancelUntil;
+    private String claimedQuantity;
     private String codeMode;
     private String codePrefix;
     private String createdAt;
     private String createdBy;
     private String currencyCode;
+    private String disabledQuantity;
     private String expiresAt;
+    private String generatedQuantity;
+    private String id;
     private String issueChannel;
+    private String lockedQuantity;
     private Integer maxClaimsPerNaturalPerson;
     private Integer maxClaimsPerSubject;
     private String name;
@@ -23,6 +29,9 @@ public class PromotionCouponStockRecord {
     private String organizationId;
     private String overspendPolicy;
     private String perSubjectLimit;
+    private String redeemedQuantity;
+    private String requestedQuantity;
+    private String returnedQuantity;
     private String startsAt;
     private String status;
     private String stockCreatorMerchantId;
@@ -40,6 +49,14 @@ public class PromotionCouponStockRecord {
 
     public void setActivationStatus(String activationStatus) {
         this.activationStatus = activationStatus;
+    }
+
+    public String getAvailableQuantity() {
+        return this.availableQuantity;
+    }
+
+    public void setAvailableQuantity(String availableQuantity) {
+        this.availableQuantity = availableQuantity;
     }
 
     public String getBudgetAccountId() {
@@ -82,6 +99,14 @@ public class PromotionCouponStockRecord {
         this.cancelUntil = cancelUntil;
     }
 
+    public String getClaimedQuantity() {
+        return this.claimedQuantity;
+    }
+
+    public void setClaimedQuantity(String claimedQuantity) {
+        this.claimedQuantity = claimedQuantity;
+    }
+
     public String getCodeMode() {
         return this.codeMode;
     }
@@ -122,6 +147,14 @@ public class PromotionCouponStockRecord {
         this.currencyCode = currencyCode;
     }
 
+    public String getDisabledQuantity() {
+        return this.disabledQuantity;
+    }
+
+    public void setDisabledQuantity(String disabledQuantity) {
+        this.disabledQuantity = disabledQuantity;
+    }
+
     public String getExpiresAt() {
         return this.expiresAt;
     }
@@ -130,12 +163,36 @@ public class PromotionCouponStockRecord {
         this.expiresAt = expiresAt;
     }
 
+    public String getGeneratedQuantity() {
+        return this.generatedQuantity;
+    }
+
+    public void setGeneratedQuantity(String generatedQuantity) {
+        this.generatedQuantity = generatedQuantity;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getIssueChannel() {
         return this.issueChannel;
     }
 
     public void setIssueChannel(String issueChannel) {
         this.issueChannel = issueChannel;
+    }
+
+    public String getLockedQuantity() {
+        return this.lockedQuantity;
+    }
+
+    public void setLockedQuantity(String lockedQuantity) {
+        this.lockedQuantity = lockedQuantity;
     }
 
     public Integer getMaxClaimsPerNaturalPerson() {
@@ -200,6 +257,30 @@ public class PromotionCouponStockRecord {
 
     public void setPerSubjectLimit(String perSubjectLimit) {
         this.perSubjectLimit = perSubjectLimit;
+    }
+
+    public String getRedeemedQuantity() {
+        return this.redeemedQuantity;
+    }
+
+    public void setRedeemedQuantity(String redeemedQuantity) {
+        this.redeemedQuantity = redeemedQuantity;
+    }
+
+    public String getRequestedQuantity() {
+        return this.requestedQuantity;
+    }
+
+    public void setRequestedQuantity(String requestedQuantity) {
+        this.requestedQuantity = requestedQuantity;
+    }
+
+    public String getReturnedQuantity() {
+        return this.returnedQuantity;
+    }
+
+    public void setReturnedQuantity(String returnedQuantity) {
+        this.returnedQuantity = returnedQuantity;
     }
 
     public String getStartsAt() {

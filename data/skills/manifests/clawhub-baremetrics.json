@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baremetrics@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-baremetrics-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baremetrics-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8263ccbc2375d5e134d05a894c775930ea4b826cded11853c00a65ad43907df5",

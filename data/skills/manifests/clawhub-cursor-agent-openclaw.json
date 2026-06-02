@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cursor-agent-openclaw@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cursor-agent-openclaw-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cursor-agent-openclaw-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e86107777726c91fc3164b125ebf34ff2afece630dfd60175c7e6d1c3886c21b",

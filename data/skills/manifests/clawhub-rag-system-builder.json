@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rag-system-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rag-system-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rag-system-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:87f6374da0e38563f4b91f836a9b80707c50fdf6567a217e2b1d3e4643597014",

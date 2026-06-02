@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitlab-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitlab-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5328dbb7719d28d232621595655726cd947df7034d3c44780a8bb23623e5d847",

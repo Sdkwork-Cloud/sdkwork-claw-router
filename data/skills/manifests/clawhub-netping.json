@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/netping@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-netping-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-netping-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:90b1d49216bc4a0c3d55ed90ce1275a5d1376d7f2d04e388fab98fd01406d209",

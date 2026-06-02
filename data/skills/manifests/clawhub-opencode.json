@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opencode@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-opencode-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opencode-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c3faef417d6d7949352d45b9a2fce005378537e0fec58f6300fffef414c40a02",

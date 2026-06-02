@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-data-reviewer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-data-reviewer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-data-reviewer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6cb17b5727a39b4865f778549bc86fc16ac629ee58706231be08e7cbedddeb18",

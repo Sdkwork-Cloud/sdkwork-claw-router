@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knods@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-knods-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knods-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0824bb22ef7e5cd4a2771cce00ce70f85b7faf190f57e493c65ddb3c18d4a651",

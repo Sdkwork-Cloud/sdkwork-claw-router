@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nzta-traffic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nzta-traffic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nzta-traffic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f1ae6043dd50bfeae96d4557a42fc876809801d0faad32489b7552bdd6d84182",

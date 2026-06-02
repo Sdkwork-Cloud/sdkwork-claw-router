@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-watchdog@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-watchdog-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-watchdog-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:51ab4fb07fa97df5c7e3ccf0f1e896d252f04873276633d5a415b5707ec4f91a",

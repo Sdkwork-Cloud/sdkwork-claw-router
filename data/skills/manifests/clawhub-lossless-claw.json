@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lossless-claw@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lossless-claw-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lossless-claw-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:81f1e7b7791e34d35f0495c71662c568f3859e67dc181b875af69f408cf86b0e",

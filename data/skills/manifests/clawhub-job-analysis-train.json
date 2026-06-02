@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/job-analysis-train@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-job-analysis-train-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-job-analysis-train-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d28ddebead6412d9422c5cf54ae5300e2bb2721009010bde74fd250412eeeceb",

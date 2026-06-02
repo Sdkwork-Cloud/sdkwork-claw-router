@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tonic-self-learn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tonic-self-learn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tonic-self-learn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:745e00a60c60be7c99a4e951596dc2c1b078c636f06652eb741cadd406cfa0c7",

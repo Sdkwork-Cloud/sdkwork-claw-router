@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-rag-search@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-rag-search-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-rag-search-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb0b0d09b8cc3355fe9352ec7b1e1f7ef86dab3da450c4ba5a8a6ccb3025d550",

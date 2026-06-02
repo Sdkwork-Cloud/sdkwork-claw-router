@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bus-ticket-ocr@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-bus-ticket-ocr-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bus-ticket-ocr-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:9ac3e6a1d3f81e6b348d172b0ece65b00a6c85c690b5e7a445cb0d01a1dda6d5",

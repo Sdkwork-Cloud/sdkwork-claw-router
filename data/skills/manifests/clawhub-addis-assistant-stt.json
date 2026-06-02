@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/addis-assistant-stt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-addis-assistant-stt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-addis-assistant-stt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8bc298888ce552660fed57837f01997d3d583a9fbb3c4ee3b2862b3e14fceb7",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/document-sanitizer@1.5.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-document-sanitizer-1.5.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-document-sanitizer-1.5.1.json"
+      },
       "version": "1.5.1",
       "runtime": "metadata",
       "checksumHash": "sha256:18325855f983701cf53fc55255f991fcbfc7767c1a8c8ab0a628a4983c8faaf6",

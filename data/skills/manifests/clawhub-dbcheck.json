@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dbcheck@2.3.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-dbcheck-2.3.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dbcheck-2.3.6.json"
+      },
       "version": "2.3.6",
       "runtime": "metadata",
       "checksumHash": "sha256:ff06d06707a79c4731ad82c0046ce54edc46a0412c954a5f1a3396764d231945",

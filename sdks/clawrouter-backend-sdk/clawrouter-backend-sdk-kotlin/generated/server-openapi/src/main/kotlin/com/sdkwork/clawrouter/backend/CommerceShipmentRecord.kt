@@ -5,6 +5,7 @@ data class CommerceShipmentRecord(
     val createdAt: String? = null,
     val deliveredAt: String? = null,
     val fulfillmentId: String? = null,
+    val id: String? = null,
     val organizationId: String? = null,
     val shipmentNo: String? = null,
     val shippedAt: String? = null,

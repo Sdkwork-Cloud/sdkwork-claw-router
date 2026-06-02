@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/browseros-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-browseros-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-browseros-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f976a55bafa235f95e2111996a2116ef497d9dd8e637cd35961a7a12d3da0482",

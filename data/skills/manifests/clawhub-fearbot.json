@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fearbot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fearbot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fearbot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:81b52198eba586fda62fa178a3558c44c375c75b8bddfccf706ed2d4238f7f10",

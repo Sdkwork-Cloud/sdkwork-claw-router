@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-provenance@4.9.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-provenance-4.9.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-provenance-4.9.0.json"
+      },
       "version": "4.9.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3a088a5f761ef3240641dbe2224ff4b2f764d8f754e0207e8f9dd97afaad673",

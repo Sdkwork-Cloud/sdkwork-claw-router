@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skillcompass@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skillcompass-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skillcompass-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f55e1665067479b52d1d196a726ff658506b6490eb2fc0a8c4fe940c935d3103",

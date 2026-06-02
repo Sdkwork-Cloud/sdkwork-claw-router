@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentino@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentino-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentino-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3ef90e660644ba107c61d2f3b5780c083e1597d6cf861a0c3191a10aff5deac6",

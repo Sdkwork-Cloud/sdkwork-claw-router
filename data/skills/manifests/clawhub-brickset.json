@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/brickset@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-brickset-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-brickset-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3aff42919f373470441cf708d9c75ab5c125be6ccbe144c61bc8479ff71c9a1f",

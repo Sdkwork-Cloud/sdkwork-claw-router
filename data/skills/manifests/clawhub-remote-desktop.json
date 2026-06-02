@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/remote-desktop@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-remote-desktop-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-remote-desktop-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4b9e09d747aa3ab5e9e1df0ebd53a2080de879088445f5459f3f1a41c7d773a0",

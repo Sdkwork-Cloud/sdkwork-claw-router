@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/uefa@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-uefa-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-uefa-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bfb9cbde05c24a9d2fdc85f50531263d35dd7e03994137371dea1c89ecb13759",

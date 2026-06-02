@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-config-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-config-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-config-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00cbc1eaa428ad65fa6373f74e8fbc792e448e236fc7961d5b4b5974dc4855fa",

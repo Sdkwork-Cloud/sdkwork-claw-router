@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/exam-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-exam-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-exam-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b027ad5d6cb1d34e583760b98df9428e70ae04b3c84857ea11ef6938178b5278",

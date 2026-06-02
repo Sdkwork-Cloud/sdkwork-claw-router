@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentxpay@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentxpay-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentxpay-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:81f050226afe77eacefa5a958fe69c878f1b1431976babe38806bd428f2080b3",

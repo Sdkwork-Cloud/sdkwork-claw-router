@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentvibes-openclaw-skill@4.6.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentvibes-openclaw-skill-4.6.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentvibes-openclaw-skill-4.6.6.json"
+      },
       "version": "4.6.6",
       "runtime": "metadata",
       "checksumHash": "sha256:43fadeda5b7e15ea70e5d8b4dfa2819da495b42cd0d8c9ca0c243b98e4843a41",

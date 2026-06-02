@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hf-whisper-speech-to-text@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hf-whisper-speech-to-text-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hf-whisper-speech-to-text-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86276994662634ec92ebd49bc7ee6851d21140b462e0da2186a6416b33a6030c",

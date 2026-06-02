@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-openmeteo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-openmeteo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-openmeteo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c2df83acaaf24809d196e6aad79ffc734d7f94b7089fabc849175649c34b649",

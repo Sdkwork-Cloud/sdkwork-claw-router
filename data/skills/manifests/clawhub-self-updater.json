@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-updater@1.4.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-updater-1.4.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-updater-1.4.2.json"
+      },
       "version": "1.4.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b651d854da1aaf8183cf9748d09b44a8ce4208581ed548549dc7ebd6c8bbbf24",

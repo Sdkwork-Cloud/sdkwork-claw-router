@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-project-manager@2.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-project-manager-2.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-project-manager-2.4.1.json"
+      },
       "version": "2.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:824a8f17681dacdf909cf65452fc7eae4b07c9f25c43079df0452f8614b91ac2",

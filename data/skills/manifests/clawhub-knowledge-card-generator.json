@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-card-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-card-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-card-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8bb2d618ac90a6e5fe72044345cb4d34ff69bf12f8962f9b974c63453863e15b",

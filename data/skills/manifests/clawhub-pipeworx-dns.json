@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-dns@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-dns-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-dns-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a48e5309c189a6b5b385b56967ffb6fe560411080271940409677fbeecc1377d",

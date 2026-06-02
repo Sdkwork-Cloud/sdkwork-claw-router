@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shipworks@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-shipworks-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shipworks-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c7a9c1ceebb9941265f7739b19b8929d5fbe6bb9633e1eb2a63906ae5449de7a",

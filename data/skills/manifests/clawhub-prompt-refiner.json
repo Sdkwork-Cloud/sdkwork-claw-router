@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-refiner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-refiner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-refiner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3426fa824ab003e2afdf5c2e460c33d57444cb5687322f19069cf70fccc2586a",

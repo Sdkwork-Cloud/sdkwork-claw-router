@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentledger-decision-log@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentledger-decision-log-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentledger-decision-log-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:91392e35d907d5ed463aee302b7dc925dffd3e0609ec59c8f49140131b12cb74",

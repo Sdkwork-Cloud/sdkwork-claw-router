@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiaoka-foodlog-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiaoka-foodlog-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiaoka-foodlog-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7092d94ac59a0162a05d41a0980278302a8c3199dc95974456f0772ab3efaf4",

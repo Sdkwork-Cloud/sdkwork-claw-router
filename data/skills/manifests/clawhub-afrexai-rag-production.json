@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/afrexai-rag-production@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-rag-production-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-afrexai-rag-production-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:02b7ee30dec4cb2a45c820310604e6e9259e825fa973980c66fb745b34d24200",

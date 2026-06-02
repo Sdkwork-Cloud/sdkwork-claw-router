@@ -24,6 +24,7 @@ class PromotionCodeRedemptionRecord:
     code_id: Optional[str] = None
     failure_code: Optional[str] = None
     failure_message: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     owner_user_id: Optional[str] = None
     redemption_scene: Optional[str] = None

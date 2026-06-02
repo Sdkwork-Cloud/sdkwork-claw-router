@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-injection-tester@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-injection-tester-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-injection-tester-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dcf59c7ab6e4971575552a281822ac06cfd5e21dabbd43aaf68827b0b5553a57",

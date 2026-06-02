@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-content-tailor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-content-tailor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-content-tailor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4480558e45fafdbb77bd290ed81df54a42207fc8bebd55455cf9f932fb0afdfe",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/li-civilization@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-li-civilization-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-li-civilization-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64e9abb727b1acac0d91309d55148b4831a0399258f429c4df1ef396fc6410e7",

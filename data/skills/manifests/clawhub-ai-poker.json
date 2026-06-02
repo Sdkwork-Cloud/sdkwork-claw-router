@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-poker@0.3.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-poker-0.3.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-poker-0.3.5.json"
+      },
       "version": "0.3.5",
       "runtime": "metadata",
       "checksumHash": "sha256:25c84b972f9ff491e8cabe92a4b6aab0975a86850fcd177526bcaba5433ad584",

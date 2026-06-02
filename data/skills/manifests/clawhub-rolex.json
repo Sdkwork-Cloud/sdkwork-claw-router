@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rolex@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-rolex-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rolex-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0d38f3e2aafb113baf69ac2edceaba6308db12dbc7c4134ca9cdbec945d522fe",

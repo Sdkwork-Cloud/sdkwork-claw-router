@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-rename@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-rename-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-rename-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a19f65ffc6ee3ce397b1dccd09b0271e1a198697abb1c193efc8be13bfc61007",

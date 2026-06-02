@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comodo@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-comodo-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comodo-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:188a63f1ea93d389902e0dd1d32c52a2a902602e3bbe4bdaeaebb69d552f5b80",

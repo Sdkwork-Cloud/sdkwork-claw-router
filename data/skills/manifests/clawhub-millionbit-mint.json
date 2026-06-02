@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/millionbit-mint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-millionbit-mint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-millionbit-mint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ea5720b82072975a9c820b79971fe45964b40384226559f18419d981cd46e680",

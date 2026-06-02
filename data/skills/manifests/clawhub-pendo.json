@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pendo@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-pendo-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pendo-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0f36936a22d9e394dc88bdc72ec5771df58618b2d91ad54037226c4fe7964599",

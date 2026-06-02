@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitpod@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitpod-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitpod-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:93fb4dc39806142619026c619a622f0d3cf0ac7adf8dd91f30e146d04b03bd84",

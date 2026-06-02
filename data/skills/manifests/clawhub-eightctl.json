@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eightctl@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eightctl-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eightctl-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b7d5ec48ba4093a1615a04f343f9dc986871858b3c9675faa58273f9c50ae5a5",

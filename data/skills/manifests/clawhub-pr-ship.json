@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pr-ship@1.0.13",
-      "artifactUrl": "data/skills/artifacts/clawhub-pr-ship-1.0.13.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pr-ship-1.0.13.json"
+      },
       "version": "1.0.13",
       "runtime": "metadata",
       "checksumHash": "sha256:9e860a38072cc6f1f5b26f611fea5629e17c140314c305e7ecaa6fb02cd87a66",

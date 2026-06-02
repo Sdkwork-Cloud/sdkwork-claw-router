@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/realme@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-realme-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-realme-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3bf6d2991d281b4859006294c7765dc1c21a567fd3092c130866146524e2a42",

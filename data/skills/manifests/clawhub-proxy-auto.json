@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proxy-auto@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-proxy-auto-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proxy-auto-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e144c1448144fb7d2b751fd1941a39a071529e71630c8c744f0d2dafc276711c",

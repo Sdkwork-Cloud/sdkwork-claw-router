@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/umemployment-skill@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-umemployment-skill-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-umemployment-skill-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d25567ebc90ca040533f92a5ac3ab3549e7ffe0e09dcd64fc23c832b05f4737d",

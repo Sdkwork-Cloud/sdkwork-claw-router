@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/compound-eng-meta-prompting@3.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-compound-eng-meta-prompting-3.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-compound-eng-meta-prompting-3.0.5.json"
+      },
       "version": "3.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:b14dbfcba4f7a23240fcd5a1668cc79f9a77d159f88fb20c66cd79fa6cee4837",

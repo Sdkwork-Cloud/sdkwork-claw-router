@@ -3,7 +3,7 @@ use std::sync::Arc;
 use crate::api::paths::backend_path;
 use crate::api::paths::append_query_string;
 use crate::http::{SdkworkError, SdkworkHttpClient};
-use crate::models::{AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelVendorsCreateResult, ModelVendorsListResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult};
+use crate::models::{AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelVendorsCreateResult, ModelVendorsListResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult};
 
 #[derive(Clone)]
 pub struct AiApi {
@@ -13,6 +13,42 @@ pub struct AiApi {
 impl AiApi {
     pub fn new(client: Arc<SdkworkHttpClient>) -> Self {
         Self { client }
+    }
+
+    /// List groups
+    pub async fn channel_groups_list(&self) -> Result<ChannelGroupsListResult, SdkworkError> {
+        let path = backend_path(&"/ai/channel_groups".to_string());
+        self.client.get(&path, None, None).await
+    }
+
+    /// Create group
+    pub async fn channel_groups_create(&self, body: &AdminChannelGroupCreateRequest) -> Result<ChannelGroupsCreateResult, SdkworkError> {
+        let path = backend_path(&"/ai/channel_groups".to_string());
+        self.client.post(&path, Some(body), None, None, Some("application/json")).await
+    }
+
+    /// Delete group
+    pub async fn channel_groups_delete(&self, channel_group_id: &str) -> Result<ChannelGroupsDeleteResult, SdkworkError> {
+        let path = backend_path(&format!("/ai/channel_groups/{}", serialize_path_parameter(channel_group_id, PathParameterSpec::new("channelGroupId", "simple", false))));
+        self.client.delete(&path, None, None).await
+    }
+
+    /// Update group
+    pub async fn channel_groups_update(&self, channel_group_id: &str, body: &AdminChannelGroupUpdateRequest) -> Result<ChannelGroupsUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/ai/channel_groups/{}", serialize_path_parameter(channel_group_id, PathParameterSpec::new("channelGroupId", "simple", false))));
+        self.client.patch(&path, Some(body), None, None, Some("application/json")).await
+    }
+
+    /// List group channel bindings
+    pub async fn channel_groups_bindings_list(&self, channel_group_id: &str) -> Result<ChannelGroupsChannelBindingsListResult, SdkworkError> {
+        let path = backend_path(&format!("/ai/channel_groups/{}/channel_bindings", serialize_path_parameter(channel_group_id, PathParameterSpec::new("channelGroupId", "simple", false))));
+        self.client.get(&path, None, None).await
+    }
+
+    /// Replace group channel bindings
+    pub async fn channel_groups_bindings_update(&self, channel_group_id: &str, body: &AdminChannelGroupChannelBindingsReplaceRequest) -> Result<ChannelGroupsChannelBindingsUpdateResult, SdkworkError> {
+        let path = backend_path(&format!("/ai/channel_groups/{}/channel_bindings", serialize_path_parameter(channel_group_id, PathParameterSpec::new("channelGroupId", "simple", false))));
+        self.client.put(&path, Some(body), None, None, Some("application/json")).await
     }
 
     /// List model rankings

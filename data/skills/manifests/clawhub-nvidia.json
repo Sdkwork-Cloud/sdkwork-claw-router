@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nvidia@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nvidia-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nvidia-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3782a436c5e06d260845bb54611c5f38a19b276120590b9afa71b8d37a02eefa",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-contract-redactor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-contract-redactor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-contract-redactor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b08356974e2d55ae6efa5e1c88f2170890028679a1b640cc833dcab85391a714",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/autopilot-pbv@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-autopilot-pbv-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-autopilot-pbv-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c807effa6f95d499571f7e6e20c854e57eb441e55ea8858bf7246246ce4e5480",

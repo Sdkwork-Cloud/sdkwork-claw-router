@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/monochrome@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-monochrome-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-monochrome-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29a659e3612124499ca02e8684e553cb283f94c1b5f1e88f168c759884d545f2",

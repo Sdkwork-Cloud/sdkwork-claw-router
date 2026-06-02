@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/naruto-multi-agent-cn@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-naruto-multi-agent-cn-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-naruto-multi-agent-cn-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:53c2763e2c85b4442577fc1b3d882257e2f039ef2802bb92a7b9551eae18602e",

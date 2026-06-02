@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whatsapp-faq-bot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-faq-bot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whatsapp-faq-bot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0023c7fa0ccca0076a964f5ae4b1e13cc8f3beba225e55fa4e455d4daea84e83",

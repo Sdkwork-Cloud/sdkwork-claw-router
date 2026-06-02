@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cancel-task@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cancel-task-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cancel-task-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ba0fe53aa1fc23c76b6da46665665ec2f3328154cbe51c19d2e08a9522a6973",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/remote-console@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-remote-console-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-remote-console-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5b81c8f93af6ff42c7dc228366078187889576b651d6622d48d7289dfb3f740c",

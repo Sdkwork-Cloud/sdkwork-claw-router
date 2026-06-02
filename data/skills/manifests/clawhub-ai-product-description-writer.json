@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-product-description-writer@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-product-description-writer-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-product-description-writer-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8bc126327b2dd5aeca555a95cc78dcd012d966edc5eb5f58173b68dc076284b9",

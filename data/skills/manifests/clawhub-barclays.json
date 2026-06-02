@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/barclays@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-barclays-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-barclays-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:9cd5ce7f1160fa940255afca9bc434f9649578a3f3dd43b16af011022283a63d",

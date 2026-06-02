@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cad@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cad-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cad-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:71620e06ec02f932ddfe48da9ccb9532810e9f6be44b59e118b8f20c5cd79652",

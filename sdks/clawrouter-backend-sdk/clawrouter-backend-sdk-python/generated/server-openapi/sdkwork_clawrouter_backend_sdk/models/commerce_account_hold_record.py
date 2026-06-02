@@ -18,6 +18,7 @@ class CommerceAccountHoldRecord:
     status: str
     tenant_id: str
     updated_at: str
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     released_at: Optional[str] = None
     settled_at: Optional[str] = None

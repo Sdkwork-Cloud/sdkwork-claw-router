@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/search-cluster@3.5.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-search-cluster-3.5.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-search-cluster-3.5.1.json"
+      },
       "version": "3.5.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8b37bd5e6733aeb8c653a9e7701f964205212002357203bebd1bb563afa2362c",

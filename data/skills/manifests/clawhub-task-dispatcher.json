@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-dispatcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-dispatcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-dispatcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3cb9a057159ea71dda91251d938f76cb9067e28968efbb112115f28336937cb8",

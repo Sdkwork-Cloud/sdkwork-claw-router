@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cmd-guard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cmd-guard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cmd-guard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f9bc7c885798c9f194c325b4172088d1b3895300af50e139edc46f1a9443ae7",

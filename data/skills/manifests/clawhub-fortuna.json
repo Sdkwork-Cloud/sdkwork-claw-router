@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fortuna@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fortuna-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fortuna-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:40c6512fb45dcbcbc27f6eb7e960b6de1ff993f22560df24030f669d3105b361",

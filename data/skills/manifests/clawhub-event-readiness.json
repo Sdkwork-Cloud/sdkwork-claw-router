@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/event-readiness@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-event-readiness-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-event-readiness-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74113589dad73877947d3b9895b26c2e2a73dffea07a895c49cb7b1f96544383",

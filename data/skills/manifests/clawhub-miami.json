@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/miami@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-miami-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-miami-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74b1f82ed42980700bb58196c8edde73679711cb68a746ee4ad2e790b7f78c63",

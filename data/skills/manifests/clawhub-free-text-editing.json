@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/free-text-editing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-free-text-editing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-free-text-editing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3be04fc058ed606cc9e6bcb7d87098f9ad4ab42346e63b9ed967df0647815dd7",

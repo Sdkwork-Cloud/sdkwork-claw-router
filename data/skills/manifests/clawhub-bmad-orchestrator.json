@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bmad-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bmad-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bmad-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:772d6250d818cb30eb17c3ee05629b8f1850895690a962713f28dd9f26562464",

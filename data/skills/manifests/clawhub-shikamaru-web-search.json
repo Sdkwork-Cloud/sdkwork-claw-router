@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shikamaru-web-search@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-shikamaru-web-search-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shikamaru-web-search-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:14a743ba21174e0c5a53dd4bc3c142e557e3e6897202e1568ab14c82b3248c46",

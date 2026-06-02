@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/viam-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-viam-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-viam-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f35504cfaa7199faee522f10b68401a4422e24c613af68d61ce4a6492a92775a",

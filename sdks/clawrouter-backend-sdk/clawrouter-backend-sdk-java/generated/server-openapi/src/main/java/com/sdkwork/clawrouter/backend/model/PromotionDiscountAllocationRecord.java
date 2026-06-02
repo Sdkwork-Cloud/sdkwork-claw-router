@@ -2,15 +2,25 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class PromotionDiscountAllocationRecord {
+    private String allocationAmountMinor;
     private Integer allocationRatioBps;
     private String applicationId;
     private String createdAt;
     private String currencyCode;
+    private String id;
     private String orderId;
     private String orderItemId;
     private String organizationId;
     private String skuId;
     private String tenantId;
+
+    public String getAllocationAmountMinor() {
+        return this.allocationAmountMinor;
+    }
+
+    public void setAllocationAmountMinor(String allocationAmountMinor) {
+        this.allocationAmountMinor = allocationAmountMinor;
+    }
 
     public Integer getAllocationRatioBps() {
         return this.allocationRatioBps;
@@ -42,6 +52,14 @@ public class PromotionDiscountAllocationRecord {
 
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrderId() {

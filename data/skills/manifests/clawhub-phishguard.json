@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/phishguard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-phishguard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-phishguard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6223cb990e82e6d5135e9107531c822f0510a348d34574f9201f87a5dc94f545",

@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class AgentItem
     {
-        public string? AvatarUrl { get; set; }
+        public MediaResource? Avatar { get; set; }
         public AgentCapabilities? Capabilities { get; set; }
         public string? Code { get; set; }
         public string? CreatedAt { get; set; }

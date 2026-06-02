@@ -7,12 +7,12 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class AdminSkillPackageItem
     {
         public string? CategoryId { get; set; }
-        public string? CoverImage { get; set; }
+        public MediaResource? Cover { get; set; }
         public string? CreatedAt { get; set; }
         public string? Description { get; set; }
         public bool? Enabled { get; set; }
         public bool? Featured { get; set; }
-        public string? Icon { get; set; }
+        public MediaResource? Icon { get; set; }
         public string? Id { get; set; }
         public string? LatestPublishedAt { get; set; }
         public string? Name { get; set; }

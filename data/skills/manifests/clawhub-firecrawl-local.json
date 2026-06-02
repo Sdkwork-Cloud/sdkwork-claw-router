@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/firecrawl-local@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-firecrawl-local-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-firecrawl-local-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:096c1a072388f413989ab816f56609d1746010c94dd4020dd8270f1f411e3a34",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-security-vetter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-security-vetter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-security-vetter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cfb9332c419fa78bfcf87627dd5971c68564c4a34b12fe64f9b2e8a0d27a5cd8",

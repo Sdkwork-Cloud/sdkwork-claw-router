@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modbus@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-modbus-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modbus-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66c2b4e23abf2d7a71fe9142d1e68a4e1b8f779de2b6864bae5252016a318891",

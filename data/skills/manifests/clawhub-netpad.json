@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/netpad@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-netpad-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-netpad-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e5b507d9edf6b9c6423d54ceb326186e50e195fed0dd8f19ac2b80e02b26848",

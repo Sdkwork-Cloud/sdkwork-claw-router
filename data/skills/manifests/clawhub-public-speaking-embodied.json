@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/public-speaking-embodied@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-public-speaking-embodied-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-public-speaking-embodied-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3377911a6c392bcb19a8b69eba37df9c7df4ee451ec42b237c09c77d48d10de",

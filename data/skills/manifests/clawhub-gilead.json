@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gilead@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gilead-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gilead-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77d1c4c8a0069f15a00e95aa9f1559292f2067b838889bef3d249212b0d0a847",

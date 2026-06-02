@@ -1,9 +1,8 @@
 import { AssetGalleryView, type AssetType } from './AssetGalleryView';
 import {
   isSdkworkGenerationImageHistoryType,
-  readSdkworkGenerationMediaThumb,
-  readSdkworkGenerationMediaUrl,
 } from '@sdkwork/generation-pc-react/react';
+import { type ClawRouterMediaResource } from 'sdkwork-claw-router-commons/runtime';
 import type { PlaygroundHistoryItem, PlaygroundPreviewSetter } from '../../playgroundTypes';
 
 interface AssetViewProps {
@@ -18,12 +17,12 @@ export function AssetView({
   const assets = agentHistory
     .filter((item) => item.type !== 'text')
     .map((item) => {
-      const url = readAssetUrl(item);
+      const asset = readAssetResource(item);
       return {
         id: item.id,
         type: getAssetType(item.type),
-        thumbnail: readAssetThumbnail(item, url),
-        url,
+        thumbnail: readAssetThumbnail(item, asset),
+        asset,
         duration: formatDuration(item.durationSeconds),
         title: createAssetTitle(item),
         createdAt: readAssetDate(item),
@@ -48,24 +47,28 @@ export function AssetView({
   );
 }
 
-function readAssetUrl(item: PlaygroundHistoryItem): string | undefined {
+function readAssetResource(item: PlaygroundHistoryItem): ClawRouterMediaResource | undefined {
   if (isSdkworkGenerationImageHistoryType(item.type)) {
-    return item.images?.[0] || item.url;
+    return item.images?.[0] ?? item.asset;
   }
   if (item.type === 'video') {
-    return readSdkworkGenerationMediaUrl(item.videos?.[0]) || item.url;
+    return item.videos?.[0] ?? item.asset;
   }
-  return item.url || item.images?.[0] || readSdkworkGenerationMediaUrl(item.videos?.[0]);
+  return item.asset ?? item.images?.[0] ?? item.videos?.[0];
 }
 
-function readAssetThumbnail(item: PlaygroundHistoryItem, url: string | undefined): string {
+function readAssetThumbnail(
+  item: PlaygroundHistoryItem,
+  fallback: ClawRouterMediaResource | undefined,
+): ClawRouterMediaResource | undefined {
   if (isSdkworkGenerationImageHistoryType(item.type)) {
-    return item.images?.[0] || url || '';
+    return item.images?.[0] ?? fallback;
   }
   if (item.type === 'video') {
-    return readSdkworkGenerationMediaThumb(item.videos?.[0]) || url || '';
+    const video = item.videos?.[0] ?? item.asset;
+    return video?.poster ?? video?.thumbnails?.[0] ?? fallback;
   }
-  return url || '';
+  return fallback;
 }
 
 function readAssetDate(item: PlaygroundHistoryItem): Date {

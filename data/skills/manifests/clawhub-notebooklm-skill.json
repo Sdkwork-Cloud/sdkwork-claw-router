@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/notebooklm-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-notebooklm-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c5f66d3994e200c7350ea700c72d7713009158481bcd0d05e2a222fc2f936906",

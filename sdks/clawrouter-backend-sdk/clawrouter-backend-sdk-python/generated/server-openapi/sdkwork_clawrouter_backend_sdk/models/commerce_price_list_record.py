@@ -14,6 +14,7 @@ class CommercePriceListRecord:
     updated_at: str
     customer_segment: Optional[str] = None
     ends_at: Optional[str] = None
+    id: Optional[str] = None
     market_code: Optional[str] = None
     organization_id: Optional[str] = None
     starts_at: Optional[str] = None

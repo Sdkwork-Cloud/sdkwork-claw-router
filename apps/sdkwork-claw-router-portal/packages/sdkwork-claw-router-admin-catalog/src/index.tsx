@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import { Layers, Package, PackageCheck, Tags } from 'lucide-react';
 import { AdminResourceCenter, type AdminResourceSection } from 'sdkwork-claw-router-commons';
 import {
@@ -9,8 +10,13 @@ import {
   listCommerceProducts,
   listCommerceSkus,
 } from './catalogService';
+import { AttributeManagementPage } from './AttributeManagementPage';
+import { CategoryManagementPage } from './CategoryManagementPage';
+import { ProductCreatePage } from './ProductCreatePage';
+import { ProductListPage } from './ProductListPage';
+import { SkuManagementPage } from './SkuManagementPage';
 
-type CatalogAdminTab = 'categories' | 'products' | 'skus' | 'attributes' | 'prices';
+type CatalogAdminTab = 'categories' | 'products' | 'productCreate' | 'productEdit' | 'skus' | 'attributes' | 'prices';
 type CatalogAdminGroup = string;
 
 const DEFAULT_PAGE_PARAMS = { page: 1, pageSize: 100 };
@@ -21,7 +27,15 @@ type CatalogAdminProps = {
 };
 
 function resolveCatalogSectionId(sectionId?: string): CatalogAdminTab {
-  if (sectionId === 'categories' || sectionId === 'products' || sectionId === 'skus' || sectionId === 'attributes' || sectionId === 'prices') {
+  if (
+    sectionId === 'categories'
+    || sectionId === 'products'
+    || sectionId === 'productCreate'
+    || sectionId === 'productEdit'
+    || sectionId === 'skus'
+    || sectionId === 'attributes'
+    || sectionId === 'prices'
+  ) {
     return sectionId;
   }
   return DEFAULT_CATALOG_SECTION_ID;
@@ -109,8 +123,33 @@ function buildCatalogSections(t: ReturnType<typeof useTranslation>['t']): AdminR
 
 export function CatalogAdmin({ sectionId }: CatalogAdminProps = {}) {
   const { t } = useTranslation();
+  const { productId } = useParams();
   const sections = useMemo(() => buildCatalogSections(t), [t]);
   const activeSectionId = resolveCatalogSectionId(sectionId);
+
+  if (activeSectionId === 'products') {
+    return <ProductListPage />;
+  }
+
+  if (activeSectionId === 'categories') {
+    return <CategoryManagementPage />;
+  }
+
+  if (activeSectionId === 'productCreate') {
+    return <ProductCreatePage mode="create" />;
+  }
+
+  if (activeSectionId === 'productEdit') {
+    return <ProductCreatePage mode="edit" productId={productId} />;
+  }
+
+  if (activeSectionId === 'skus') {
+    return <SkuManagementPage />;
+  }
+
+  if (activeSectionId === 'attributes') {
+    return <AttributeManagementPage />;
+  }
 
   return (
     <AdminResourceCenter

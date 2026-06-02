@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/01-tomato-ip-parse@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-01-tomato-ip-parse-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-01-tomato-ip-parse-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:35fa5bb4469455a8d3c6c1b93ac874771b9c129eeab8af2e9e5918e21fb2f42c",

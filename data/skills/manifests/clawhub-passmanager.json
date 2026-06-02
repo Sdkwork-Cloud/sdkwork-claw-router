@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/passmanager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-passmanager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-passmanager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:093ca83a12520cf299148721240fba4c00831db35d7a493a04047664a4bc4f16",

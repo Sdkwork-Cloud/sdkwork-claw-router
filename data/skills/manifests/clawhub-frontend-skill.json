@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/frontend-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-frontend-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-frontend-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c28e7e2cd81752c32abb61f017571c1eb8928e87e333cb088457642efac08fa4",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ralph-security@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ralph-security-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ralph-security-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:43ca2f2383bc2256bdaf41665bcc2084a8edede39cf53432e0b13dc09c78239f",

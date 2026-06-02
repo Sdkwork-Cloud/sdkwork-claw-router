@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-upscale@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-upscale-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-upscale-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a6bee2ad13d72347d6cecb98e644d8dc0b87352da91eaed7de7e43acaffe9d18",

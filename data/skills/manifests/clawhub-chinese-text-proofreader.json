@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-text-proofreader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-text-proofreader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-text-proofreader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bcaf943c961969194be71246a3f9632c6e182fd38aad515fb389707ff9719d6e",

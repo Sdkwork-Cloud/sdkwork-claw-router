@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/translate-image@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-translate-image-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-translate-image-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:72db907444711e7f183ddbe778baabcd9917b0e45a86ac2d502a8fa69350d83a",

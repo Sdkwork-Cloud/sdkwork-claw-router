@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mev-engine@2.9.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mev-engine-2.9.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mev-engine-2.9.0.json"
+      },
       "version": "2.9.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96845006604bd5827f1ba6c08e87051305ab1b3fb668c982fac347ac7ea4f87d",

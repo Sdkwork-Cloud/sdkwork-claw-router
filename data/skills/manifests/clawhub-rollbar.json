@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rollbar@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rollbar-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rollbar-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3117999a62020eac73a2a871fe1a8884b4d2fafcc11b173a4a625fcc3ae20429",

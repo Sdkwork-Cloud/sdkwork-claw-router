@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nashville@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nashville-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nashville-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bca69ce1d8204ca9648320bff4d9a70a24c91104398846eaafd4ee931f3401ce",

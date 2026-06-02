@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zbrain@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-zbrain-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zbrain-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:53812df517a5a13171ec4d91eaec830982c4766a42ba56ebadaed4c2298942e9",

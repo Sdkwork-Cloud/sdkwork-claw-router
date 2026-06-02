@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lance@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lance-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lance-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b4c28bce814ca6cfd296a041b5ed1981d3291bd4d78e086fe681df473efd94d5",

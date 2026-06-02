@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/homekit@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-homekit-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-homekit-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:32a4791ec234ce57d39e1dd2449f4446d49bc905ecf68d7ad795145d63fa755e",

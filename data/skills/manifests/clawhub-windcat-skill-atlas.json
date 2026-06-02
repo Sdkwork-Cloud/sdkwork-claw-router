@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windcat-skill-atlas@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windcat-skill-atlas-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windcat-skill-atlas-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64a7dae92cd4f7095fb853b72f9a2f9e88901c1f415c69df8e9ddf071b10c2ae",

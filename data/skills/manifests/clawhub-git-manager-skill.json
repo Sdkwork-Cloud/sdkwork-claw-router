@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-manager-skill@2.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-manager-skill-2.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-manager-skill-2.4.0.json"
+      },
       "version": "2.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f3727af63a4dcc2397f3fad44be96aa9b0a0eb0ab077792540813162b3d9e2a",

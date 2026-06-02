@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/peking@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-peking-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-peking-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e9b34955bf1c693b784d69df025d960af32d748195c5d99a7712a74536721ffd",

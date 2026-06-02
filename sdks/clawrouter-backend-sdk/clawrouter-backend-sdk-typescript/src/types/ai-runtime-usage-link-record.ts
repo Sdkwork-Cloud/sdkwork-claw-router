@@ -6,6 +6,8 @@ export interface AiRuntimeUsageLinkRecord {
   agent_run_id?: string;
   /** Agent run step id field on ai runtime usage link record. */
   agent_run_step_id?: string;
+  /** Agent run step id key field on ai runtime usage link record. */
+  agent_run_step_id_key?: string;
   /** Agent session id field on ai runtime usage link record. */
   agent_session_id?: string;
   /** Cached tokens field on ai runtime usage link record. */

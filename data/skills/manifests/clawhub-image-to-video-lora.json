@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-to-video-lora@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-to-video-lora-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-to-video-lora-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5c928f90d80a59018b3ff63b2591324e7e83db3b4d32da82777b1880d6ea46f4",

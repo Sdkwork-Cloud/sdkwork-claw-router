@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/detect-file-type-local@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-detect-file-type-local-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-detect-file-type-local-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9b865d95c731662ebc4018f66820842e6baf70bbfa759652fd43b160616ffdcd",

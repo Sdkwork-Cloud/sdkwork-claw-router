@@ -5,6 +5,7 @@ data class CommerceCheckoutSessionRecord(
     val createdAt: String? = null,
     val currencyCode: String? = null,
     val expiresAt: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val organizationId: String? = null,
     val ownerUserId: String? = null,

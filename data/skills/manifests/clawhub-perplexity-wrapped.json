@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/perplexity-wrapped@2.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-perplexity-wrapped-2.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-perplexity-wrapped-2.1.2.json"
+      },
       "version": "2.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4535ccdc863f302a55724dbdccfbb96b8f9a7e32c459adb3b5924cb55870ff48",

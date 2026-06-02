@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/space-query-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-space-query-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-space-query-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e042479bffe03b253a79a9c4e694d1e452ec0d77bebc4efe47af7cf67b8c201",

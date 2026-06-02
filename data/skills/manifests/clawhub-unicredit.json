@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unicredit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-unicredit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unicredit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b328ebe1a7be1019f5254a4284f1a0ade6284d0668d028de268ef82368639a5",

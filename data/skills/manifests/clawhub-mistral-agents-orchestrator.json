@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mistral-agents-orchestrator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mistral-agents-orchestrator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mistral-agents-orchestrator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1930ea068b6fd6e496a63f05e8bfdc890bac86afd9b5e592a695ea8f1d724962",

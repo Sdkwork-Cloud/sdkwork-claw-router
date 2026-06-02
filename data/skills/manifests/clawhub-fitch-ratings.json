@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fitch-ratings@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fitch-ratings-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fitch-ratings-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b737e7c9f2b013be3f9a97b1a287a415a0f47ba69aa5b29db509ab4dd265a16c",

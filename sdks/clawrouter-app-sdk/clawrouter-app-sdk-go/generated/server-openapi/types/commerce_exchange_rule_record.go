@@ -3,6 +3,7 @@ package types
 // Commerce exchange rule record schema exposed by Claw Router.
 type CommerceExchangeRuleRecord struct {
 	CreatedAt string `json:"created_at"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	OrganizationId string `json:"organization_id"`
 	Rate string `json:"rate"`

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/testskillx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-testskillx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-testskillx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af6746ecf164d36c81bf05119eedd49f42abeafc2dda9ae995d86c4494436321",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mqtt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mqtt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mqtt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:82b1877f15e39a0f72295b81b5a6b4eca40148b0a67dd19b203ee92970b5e300",

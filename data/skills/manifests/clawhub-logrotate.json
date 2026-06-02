@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/logrotate@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-logrotate-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-logrotate-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:4bb1fbcdf3f600c09e5f5c05eef40380efe89605552cb3e563d2b9db9ad595d2",

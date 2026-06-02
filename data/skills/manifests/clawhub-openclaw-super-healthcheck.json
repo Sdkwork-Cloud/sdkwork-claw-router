@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-super-healthcheck@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-super-healthcheck-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-super-healthcheck-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e30ea3751e924b099b4e26d94cd0bf72f02c6e735282e7617c38cdf3d9e8de4",

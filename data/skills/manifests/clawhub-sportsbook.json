@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sportsbook@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sportsbook-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sportsbook-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0739c75026f32dc9c4655e63095351511b432bb23939309a1589950602da5c4f",

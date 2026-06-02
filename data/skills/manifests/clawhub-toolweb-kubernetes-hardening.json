@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toolweb-kubernetes-hardening@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-kubernetes-hardening-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toolweb-kubernetes-hardening-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8fb2d5064d7f41ab8fd35145c1386a5dd88ba658434fc38a9795bf50a9e86a81",

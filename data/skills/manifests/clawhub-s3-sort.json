@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/s3-sort@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-s3-sort-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-s3-sort-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:96630c91278054c655acec85bed3e3780c473db3bd57ceb799c66af669f5cba2",

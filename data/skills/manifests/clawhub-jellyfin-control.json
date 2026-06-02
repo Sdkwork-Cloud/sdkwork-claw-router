@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jellyfin-control@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jellyfin-control-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jellyfin-control-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a2860a38f8b4a047c1515d812edb83c4fccc8bce7f939192840996e0d35172a",

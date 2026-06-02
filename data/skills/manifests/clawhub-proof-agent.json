@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proof-agent@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-proof-agent-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proof-agent-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0261d83941f3bb4bf11640d8a3e73c20fba6c3a0945d81f81aa95c384ad54ee7",

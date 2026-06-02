@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/peter-ci-gate@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-peter-ci-gate-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-peter-ci-gate-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c192dc4c63af779dd8f807438265d121bdd9ba47f511283c1397f5b5e6bc49cc",

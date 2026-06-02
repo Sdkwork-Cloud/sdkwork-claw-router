@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/diffbot@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-diffbot-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-diffbot-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ed24a51718163e155bf8df4f9451be4e2a6ec36af6cd78dc8b91e90541e763d1",

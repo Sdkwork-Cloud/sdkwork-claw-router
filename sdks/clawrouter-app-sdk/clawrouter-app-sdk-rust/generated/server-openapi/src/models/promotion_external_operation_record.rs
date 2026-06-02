@@ -52,6 +52,10 @@ pub struct PromotionExternalOperationRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub external_status: Option<String>,
 
+    /// Id field on promotion external operation record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on promotion external operation record.
     pub idempotency_key: String,
 
@@ -94,6 +98,9 @@ pub struct PromotionExternalOperationRecord {
     /// Response hash field on promotion external operation record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub response_hash: Option<String>,
+
+    /// Retry count field on promotion external operation record.
+    pub retry_count: i64,
 
     /// Sanitized request json field on promotion external operation record.
     pub sanitized_request_json: std::collections::HashMap<String, String>,

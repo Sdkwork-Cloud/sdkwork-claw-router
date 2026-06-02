@@ -10,6 +10,13 @@ import {
   type SdkworkOrderMessagesOverrides,
 } from "../src";
 
+const productImage = {
+  kind: "image",
+  publicUrl: "https://cdn.sdkwork.ai/pro-annual.png",
+  source: "external_url",
+  url: "https://cdn.sdkwork.ai/pro-annual.png",
+} as const;
+
 describe("sdkwork-order-pc-react service", () => {
   beforeEach(() => {
     configureCommerceServiceMockSession({ authToken: "order-auth-token" });
@@ -32,6 +39,7 @@ describe("sdkwork-order-pc-react service", () => {
             items: [
               {
                 id: "ITEM-1",
+                productImage,
                 productName: "Pro Annual",
                 quantity: 1,
                 totalAmount: "699",
@@ -43,7 +51,7 @@ describe("sdkwork-order-pc-react service", () => {
             paidAmount: "699",
             payTime: "2026-04-02T08:03:00.000Z",
             paymentMethod: "WECHAT",
-            productImage: "https://cdn.sdkwork.ai/pro-annual.png",
+            productImage,
             quantity: 1,
             remark: "Annual renewal",
             status: "PAID",
@@ -158,8 +166,13 @@ describe("sdkwork-order-pc-react service", () => {
     });
     expect(detail).toMatchObject({
       id: "ORDER-2",
+      productImage,
       status: "paid",
       subject: "Pro Annual",
+    });
+    expect(detail.items[0]).toMatchObject({
+      image: productImage,
+      name: "Pro Annual",
     });
     expect(detail.timeline).toHaveLength(3);
 

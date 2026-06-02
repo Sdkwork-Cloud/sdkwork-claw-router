@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mempalace-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mempalace-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mempalace-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d76e05884062f3fbea1de928950c796557a019c46fad1b6944d29779885c551c",

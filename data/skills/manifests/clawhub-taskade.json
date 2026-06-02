@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taskade@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-taskade-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taskade-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8069940198192761e5c004b2d39e089ce8b60d0f658efe415fb5f74221352753",

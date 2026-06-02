@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gangtise-agent@1.4.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-gangtise-agent-1.4.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gangtise-agent-1.4.2.json"
+      },
       "version": "1.4.2",
       "runtime": "metadata",
       "checksumHash": "sha256:27ce06678946d5d62d589b0b898c2504b934f1a3f3c102ac3b3f6b6bf5ab8887",

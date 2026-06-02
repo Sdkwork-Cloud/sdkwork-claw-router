@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paragon@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-paragon-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paragon-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a08567ac6dcf248e101c88bbff4061d49a75f9b73cb29c484b9addf327db75cb",

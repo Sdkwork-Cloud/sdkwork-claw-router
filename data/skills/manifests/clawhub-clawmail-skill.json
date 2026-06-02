@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawmail-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawmail-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawmail-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a3518106b5c7266a2bdd971c02a42453d414f4d75eeeddd01be3306270a4827",

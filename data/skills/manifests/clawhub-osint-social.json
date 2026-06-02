@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/osint-social@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-osint-social-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-osint-social-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6eeca45bb9954e70cca100b7ae5009d65e065d4d077a5167e1ef5ea4fe1e8084",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mh-session-logs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mh-session-logs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mh-session-logs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:623f12111554e8abf503abb79aeab011c93de47799db34b7183b37c02522b4ad",

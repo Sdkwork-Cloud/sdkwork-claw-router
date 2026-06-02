@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dashscope-image-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dashscope-image-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dashscope-image-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e0f1785c9b8b51376ef93057ee643145fd708d0b476148ad2005d35c48dc3d8d",

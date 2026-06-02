@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buku@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-buku-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buku-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3120264819aea8e7db0b390fb7b209bf0e4163a0d6830a4dbd64d0fff353f8eb",

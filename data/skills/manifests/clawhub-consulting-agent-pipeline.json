@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/consulting-agent-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-consulting-agent-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-consulting-agent-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6bec4ce7c56ccde599a1cebffc9e48ca43834b86b59e06488e74769e2fb3585c",

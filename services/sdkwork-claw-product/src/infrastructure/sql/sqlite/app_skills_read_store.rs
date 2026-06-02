@@ -21,8 +21,8 @@ SELECT
     COALESCE(NULLIF(s.provider, ''), '') AS provider,
     COALESCE(NULLIF(s.description, ''), NULLIF(s.summary, ''), '') AS description,
     COALESCE(NULLIF(c.name, ''), '') AS category_name,
-    COALESCE(NULLIF(s.icon, ''), '') AS icon,
-    COALESCE(NULLIF(s.cover_image, ''), '') AS cover_image,
+    COALESCE(CAST(s.icon_resource_snapshot AS TEXT), '') AS icon_resource_snapshot,
+    COALESCE(CAST(s.cover_resource_snapshot AS TEXT), '') AS cover_resource_snapshot,
     COALESCE(NULLIF(s.version, ''), '') AS version,
     COALESCE(NULLIF(s.license_name, ''), '') AS license_name,
     COALESCE(s.install_count, 0) AS install_count,
@@ -59,8 +59,8 @@ SELECT
     COALESCE(NULLIF(s.provider, ''), '') AS provider,
     COALESCE(NULLIF(s.description, ''), NULLIF(s.summary, ''), '') AS description,
     COALESCE(NULLIF(c.name, ''), '') AS category_name,
-    COALESCE(NULLIF(s.icon, ''), '') AS icon,
-    COALESCE(NULLIF(s.cover_image, ''), '') AS cover_image,
+    COALESCE(CAST(s.icon_resource_snapshot AS TEXT), '') AS icon_resource_snapshot,
+    COALESCE(CAST(s.cover_resource_snapshot AS TEXT), '') AS cover_resource_snapshot,
     COALESCE(NULLIF(s.version, ''), '') AS version,
     COALESCE(NULLIF(s.license_name, ''), '') AS license_name,
     COALESCE(s.install_count, 0) AS install_count,
@@ -102,8 +102,8 @@ SELECT
     COALESCE(NULLIF(s.provider, ''), '') AS provider,
     COALESCE(NULLIF(s.description, ''), NULLIF(s.summary, ''), '') AS description,
     COALESCE(NULLIF(c.name, ''), '') AS category_name,
-    COALESCE(NULLIF(s.icon, ''), '') AS icon,
-    COALESCE(NULLIF(s.cover_image, ''), '') AS cover_image,
+    COALESCE(CAST(s.icon_resource_snapshot AS TEXT), '') AS icon_resource_snapshot,
+    COALESCE(CAST(s.cover_resource_snapshot AS TEXT), '') AS cover_resource_snapshot,
     COALESCE(NULLIF(s.version, ''), '') AS version,
     COALESCE(NULLIF(s.license_name, ''), '') AS license_name,
     COALESCE(s.install_count, 0) AS install_count,
@@ -148,8 +148,8 @@ SELECT
     COALESCE(NULLIF(s.provider, ''), '') AS provider,
     COALESCE(NULLIF(s.description, ''), NULLIF(s.summary, ''), '') AS description,
     COALESCE(NULLIF(c.name, ''), '') AS category_name,
-    COALESCE(NULLIF(s.icon, ''), '') AS icon,
-    COALESCE(NULLIF(s.cover_image, ''), '') AS cover_image,
+    COALESCE(CAST(s.icon_resource_snapshot AS TEXT), '') AS icon_resource_snapshot,
+    COALESCE(CAST(s.cover_resource_snapshot AS TEXT), '') AS cover_resource_snapshot,
     COALESCE(NULLIF(s.version, ''), '') AS version,
     COALESCE(NULLIF(s.license_name, ''), '') AS license_name,
     COALESCE(s.install_count, 0) AS install_count,
@@ -185,8 +185,8 @@ LIMIT 200
 const LOAD_ASSETS: &str = r#"
 SELECT
     COALESCE(CAST(asset_type AS TEXT), '') AS asset_type,
-    COALESCE(NULLIF(asset_url, ''), '') AS asset_url,
-    COALESCE(NULLIF(thumbnail_url, ''), '') AS thumbnail_url
+    COALESCE(CAST(asset_resource_snapshot AS TEXT), '') AS asset_resource_snapshot,
+    COALESCE(CAST(thumbnail_resource_snapshot AS TEXT), '') AS thumbnail_resource_snapshot
 FROM studio_catalog_asset
 WHERE tenant_id = ?1
   AND organization_id = ?2
@@ -205,7 +205,7 @@ SELECT
     COALESCE(NULLIF(os_name, ''), '') AS os_name,
     COALESCE(NULLIF(version, ''), '') AS version,
     COALESCE(NULLIF(artifact_ref, ''), '') AS artifact_ref,
-    COALESCE(NULLIF(artifact_url, ''), '') AS artifact_url,
+    COALESCE(CAST(artifact_resource_snapshot AS TEXT), '') AS artifact_resource_snapshot,
     COALESCE(artifact_size_bytes, 0) AS artifact_size_bytes,
     COALESCE(CAST(frameworks AS TEXT), '') AS frameworks,
     COALESCE(NULLIF(license_name, ''), '') AS license_name,
@@ -516,8 +516,8 @@ fn row_to_raw_skill(row: &sqlx::sqlite::SqliteRow) -> RawAppSkillRecord {
         provider: string_cell(row, "provider"),
         description: string_cell(row, "description"),
         category_name: string_cell(row, "category_name"),
-        icon: string_cell(row, "icon"),
-        cover_image: string_cell(row, "cover_image"),
+        icon_resource_snapshot: string_cell(row, "icon_resource_snapshot"),
+        cover_resource_snapshot: string_cell(row, "cover_resource_snapshot"),
         version: string_cell(row, "version"),
         license_name: string_cell(row, "license_name"),
         install_count: integer_cell(row, "install_count"),
@@ -534,8 +534,8 @@ fn row_to_raw_skill(row: &sqlx::sqlite::SqliteRow) -> RawAppSkillRecord {
 fn row_to_asset(row: &sqlx::sqlite::SqliteRow) -> RawCatalogAsset {
     RawCatalogAsset {
         asset_type: string_cell(row, "asset_type"),
-        asset_url: string_cell(row, "asset_url"),
-        thumbnail_url: string_cell(row, "thumbnail_url"),
+        asset_resource_snapshot: string_cell(row, "asset_resource_snapshot"),
+        thumbnail_resource_snapshot: string_cell(row, "thumbnail_resource_snapshot"),
     }
 }
 
@@ -546,7 +546,7 @@ fn row_to_artifact(row: &sqlx::sqlite::SqliteRow) -> RawCatalogArtifact {
         os_name: string_cell(row, "os_name"),
         version: string_cell(row, "version"),
         artifact_ref: string_cell(row, "artifact_ref"),
-        artifact_url: string_cell(row, "artifact_url"),
+        artifact_resource_snapshot: string_cell(row, "artifact_resource_snapshot"),
         artifact_size_bytes: integer_cell(row, "artifact_size_bytes"),
         frameworks: string_cell(row, "frameworks"),
         license_name: string_cell(row, "license_name"),

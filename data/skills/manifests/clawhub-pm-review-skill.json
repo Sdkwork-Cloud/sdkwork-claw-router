@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pm-review-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pm-review-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pm-review-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:21a9d6f5648ac3abc9a94b2c99d33759868445cbc2a41c99b74aefd3e5c188fd",

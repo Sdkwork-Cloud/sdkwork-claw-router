@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/startup-verifier@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-startup-verifier-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-startup-verifier-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8e24c179fabd999c2daff36535892acc105dc74ae50e7fbd6e817769b10367cd",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amgen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amgen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amgen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:322ea9894b0fe66a52eed59c3649d43317cb0b6e9030db2318557f201e3b784d",

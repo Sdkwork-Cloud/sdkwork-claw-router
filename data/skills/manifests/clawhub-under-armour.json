@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/under-armour@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-under-armour-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-under-armour-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:04906a07f011b5a44f493856aa27f74fef560694193bc60ab8afbfc937c111d1",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dingtalk-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dingtalk-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2a02e814aef3fd836f18dfb051e8a38bcaeb7f6a4dab60ce65960b88a10b5a9",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cicd-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cicd-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cicd-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42829e07e8441825570b5a730d053193d2d4390d36bb9bf1a3d42ec13d167a93",

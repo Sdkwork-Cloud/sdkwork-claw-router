@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-quality-tester@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-quality-tester-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-quality-tester-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6981cb5728757b39a172b81d2b4cfbfeaa56ec22a16f9d645598a55e38c714b5",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rag-retriever-v3@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rag-retriever-v3-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rag-retriever-v3-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1101613a55b8025cd5a9489bf9c72de8f14f1059d2b82333370f640b4fd7e48",

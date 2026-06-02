@@ -2,8 +2,10 @@ package com.sdkwork.clawrouter.backend
 
 data class PromotionOfferAudienceRuleRecord(
     val createdAt: String? = null,
+    val id: String? = null,
     val offerVersionId: String? = null,
     val organizationId: String? = null,
+    val priority: Int? = null,
     val ruleOperator: String? = null,
     val ruleType: String? = null,
     val ruleValue: String? = null,

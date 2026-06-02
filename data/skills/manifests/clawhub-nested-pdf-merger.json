@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nested-pdf-merger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nested-pdf-merger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nested-pdf-merger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e16a10f862dd4901006b87e5d396641208e5077da6b3c6583dd895ee87f4b57a",

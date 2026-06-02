@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crewmind-bets@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crewmind-bets-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crewmind-bets-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:010f24d61b163406736cc997ce75fe5935cf87298244a43eae1128f8c6beebd6",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-tracker-pro@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-tracker-pro-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-tracker-pro-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f57ff4bd0ba1a04b695caba492d22a83850a6f8288379e1464a7d13b89ae9de5",

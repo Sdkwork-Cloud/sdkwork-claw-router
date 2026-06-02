@@ -16,6 +16,8 @@ export interface CommercePaymentDisputeEventRecord {
   event_type: string;
   /** From status field on commerce payment dispute event record. */
   from_status?: string;
+  /** Id field on commerce payment dispute event record. */
+  id?: string;
   /** Organization id field on commerce payment dispute event record. */
   organization_id?: string;
   /** Payload json field on commerce payment dispute event record. */

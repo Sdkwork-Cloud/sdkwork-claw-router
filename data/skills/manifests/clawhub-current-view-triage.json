@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/current-view-triage@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-current-view-triage-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-current-view-triage-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ccb57ca30dbd045f6f7f4936e56ca51fb2b4707bc39188aeb21060c1baba551",

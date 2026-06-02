@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jira-task-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jira-task-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jira-task-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:78812c2091a900c81f1da4068d5cc65445eb8769619628744b2e4d66b5ed2020",

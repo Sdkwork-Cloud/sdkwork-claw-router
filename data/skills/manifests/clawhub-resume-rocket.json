@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-rocket@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-rocket-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-rocket-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:20eecaf6754125444f763615c0ce80f036198c56f75c1e264073c8afd363bb78",

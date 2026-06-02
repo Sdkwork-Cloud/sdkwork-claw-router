@@ -2,10 +2,11 @@ import {
   createSdkworkAppCapabilityManifest,
   type CreateSdkworkAppCapabilityManifestOptions,
   type SdkworkAppCapabilityManifest,
+  type SdkworkMediaResource,
 } from "@sdkwork/appbase-pc-react";
 
 export type SdkworkSocialFeedMode = "following" | "for-you" | "media" | "trending";
-export type SdkworkSocialMediaType = "file" | "image" | "link" | "video";
+export type SdkworkSocialMediaType = SdkworkMediaResource["kind"];
 export type SdkworkSocialProfileKind = "creator" | "personal" | "studio";
 export type SdkworkSocialRelationship =
   | "blocked"
@@ -15,13 +16,10 @@ export type SdkworkSocialRelationship =
   | "not-following";
 export type SdkworkSocialVisibility = "followers" | "private" | "public";
 
-export interface SdkworkSocialMediaItem {
-  type: SdkworkSocialMediaType;
-  url: string;
-}
+export type SdkworkSocialMediaItem = SdkworkMediaResource;
 
 export interface SdkworkSocialProfile {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   bio?: string;
   displayName: string;
   followerCount?: number;

@@ -64,8 +64,12 @@ tables:
     target_id: int64
     artifact_id: int64
     asset_type: enum_int32
-    asset_url: string(1024)
-    thumbnail_url: string(1024)
+    asset_media_resource_id: string(128)
+    asset_object_blob_id: int64
+    asset_resource_snapshot: json
+    thumbnail_media_resource_id: string(128)
+    thumbnail_object_blob_id: int64
+    thumbnail_resource_snapshot: json
     title: string(200)
     alt_text: string(500)
     mime_type: string(128)
@@ -136,7 +140,9 @@ tables:
     platform_type: string(64)
     os_name: string(64)
     artifact_ref: string(512)
-    artifact_url: string(1024)
+    artifact_media_resource_id: string(128)
+    artifact_object_blob_id: int64
+    artifact_resource_snapshot: json
     artifact_size_bytes: int64
     runtime: string(128)
     frameworks: json
@@ -207,8 +213,12 @@ tables:
     runtime: string(128)
     framework: string(128)
     language: string(64)
-    icon_url: string(1024)
-    cover_url: string(1024)
+    icon_media_resource_id: string(128)
+    icon_object_blob_id: int64
+    icon_resource_snapshot: json
+    cover_media_resource_id: string(128)
+    cover_object_blob_id: int64
+    cover_resource_snapshot: json
     visibility: enum_int32
     publish_status: enum_int32
     featured: bool

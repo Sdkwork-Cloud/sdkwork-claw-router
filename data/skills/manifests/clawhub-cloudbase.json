@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloudbase@1.72.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloudbase-1.72.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloudbase-1.72.0.json"
+      },
       "version": "1.72.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2759f4d7696e21d3f382f8ffcaf84e73a9dd3348cbaa8812dbf8da435bc12d7",

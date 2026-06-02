@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sidecar-onestep@1.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sidecar-onestep-1.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sidecar-onestep-1.4.1.json"
+      },
       "version": "1.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2b9f2b2a95df14616d7ff0d6c3dd1bab57afb972ab5225a3d0be3d8112898244",

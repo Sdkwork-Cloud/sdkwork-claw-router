@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-reader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-reader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-reader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98ba4372bb012e09a8eb62663ac112cd8e828388a128c96343c7ae811694f270",

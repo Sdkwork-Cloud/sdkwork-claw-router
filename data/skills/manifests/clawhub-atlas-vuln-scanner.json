@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/atlas-vuln-scanner@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-atlas-vuln-scanner-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-atlas-vuln-scanner-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b43e24d83285a2c129699556a9eee7bb2f7d99bb9ff0ec09d33aa49729f1624b",

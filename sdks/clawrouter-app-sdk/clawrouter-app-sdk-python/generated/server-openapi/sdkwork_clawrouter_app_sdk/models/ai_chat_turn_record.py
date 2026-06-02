@@ -41,6 +41,7 @@ class AiChatTurnRecord:
     tenant_id: Optional[str] = None
     trace_id: Optional[str] = None
     turn_no: Optional[str] = None
+    updated_at: Optional[str] = None
     usage_snapshot: Optional[Dict[str, str]] = None
     user_id: Optional[str] = None
     uuid: Optional[str] = None

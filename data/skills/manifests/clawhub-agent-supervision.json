@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-supervision@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-supervision-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-supervision-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8e0cf38edb42194f1e0f7cbd7ef11f66668dbd99c345db07a90e162f74b3966f",

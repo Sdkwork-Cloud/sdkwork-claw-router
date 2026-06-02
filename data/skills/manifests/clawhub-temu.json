@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/temu@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-temu-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-temu-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:551cfcc769851562d9da93571959f174e9ff60164007e0ddfb7aec934ad30c95",

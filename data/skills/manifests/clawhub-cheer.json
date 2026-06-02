@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cheer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cheer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cheer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd70e13390d176210c3e0b692b68bcdfbbbb45a0e1f84ad97096588ce1d9e3d2",

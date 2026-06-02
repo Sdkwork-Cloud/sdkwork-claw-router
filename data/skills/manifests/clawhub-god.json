@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/god@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-god-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-god-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:389d9563962a9b12be4b2f1804b297ba9692e73c36bfb0dc7b947968ebf1b228",

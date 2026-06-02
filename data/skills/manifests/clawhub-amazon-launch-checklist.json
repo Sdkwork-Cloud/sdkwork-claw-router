@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-launch-checklist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-launch-checklist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-launch-checklist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89cc11ef518d331995beb7eaa579c09448d42e6d2c34e974c1c449c587f9e655",

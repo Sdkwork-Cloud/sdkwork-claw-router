@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hallucination-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hallucination-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hallucination-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:673885e247ac483b2768f8c22a8e3284b37508571bda39e21f681367176f9bb5",

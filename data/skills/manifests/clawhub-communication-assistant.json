@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/communication-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-communication-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-communication-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8ae4a6d2919f0ea753243c7aa4740436aa18da66414178486e4b9e456ace89f",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/serverless-runner@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-serverless-runner-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-serverless-runner-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:403f34ed6b5e25505e78a6782fcf97c7718cb1528ac710c32fa4ce44b5bdc214",

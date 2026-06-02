@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:198fbde8b203edb1dd65de466940e7422ba6d78c928ef6110ff8351354e0949f",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-agent-enhanced@1.0.0-enhanced",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-agent-enhanced-1.0.0-enhanced.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-agent-enhanced-1.0.0-enhanced.json"
+      },
       "version": "1.0.0-enhanced",
       "runtime": "metadata",
       "checksumHash": "sha256:b776ac45c8a67327f7e1e4822830ca6cd3dd22e9bb21b4d14652eb5695ae2834",

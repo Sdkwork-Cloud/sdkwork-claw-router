@@ -49,6 +49,41 @@ function sdkHttpResponse(
   };
 }
 
+function mediaResource(
+  kind: "audio" | "image" | "video",
+  locator: string,
+  options: { durationSeconds?: number; mimeType?: string } = {},
+) {
+  return {
+    kind,
+    source: "external_url",
+    url: locator,
+    publicUrl: locator,
+    ...options,
+  };
+}
+
+function videoMediaResource(
+  locator: string,
+  poster?: string,
+  options: { durationSeconds?: number; mimeType?: string } = {},
+) {
+  const resource = mediaResource("video", locator, options);
+  if (!poster) {
+    return resource;
+  }
+  const thumbnail = mediaResource("image", poster);
+  return {
+    ...resource,
+    poster: thumbnail,
+    thumbnails: [thumbnail],
+  };
+}
+
+function mediaUrl(resource: { publicUrl?: string; url?: string; uri?: string } | undefined): string {
+  return resource?.publicUrl || resource?.url || resource?.uri || "";
+}
+
 function isQueuedSdkHttpResponse(value: unknown): value is QueuedSdkHttpResponse {
   return Boolean(
     value
@@ -722,7 +757,7 @@ test("console user service reads current user data returned by the generated app
         email: "ada@example.com",
         phone: "",
         language: "en",
-        avatarUrl: "A",
+        avatar: mediaResource("image", "https://cdn.example.test/avatar.png"),
         isVerified: true,
         status: "active",
         registeredAt: "2026-05-01T00:00:00Z",
@@ -788,7 +823,7 @@ test("console user service fails closed when the generated app SDK omits current
         displayName: "Ada",
         phone: "",
         language: "en",
-        avatarUrl: "A",
+        avatar: mediaResource("image", "https://cdn.example.test/avatar.png"),
         isVerified: true,
         status: "active",
         registeredAt: "2026-05-01T00:00:00Z",
@@ -825,7 +860,7 @@ test("console user service fails closed when the generated app SDK omits require
             email: "ada@example.com",
             phone: "",
             language: "en",
-            avatarUrl: "A",
+            avatar: mediaResource("image", "https://cdn.example.test/avatar.png"),
             isVerified: true,
             status: "active",
             registeredAt: "2026-05-01T00:00:00Z",
@@ -858,7 +893,7 @@ test("console user service preserves contract-defined empty current user display
         email: "ada@example.com",
         phone: "",
         language: "en",
-        avatarUrl: "A",
+        avatar: mediaResource("image", "https://cdn.example.test/avatar.png"),
         isVerified: true,
         status: "active",
         registeredAt: "2026-05-01T00:00:00Z",
@@ -1167,7 +1202,8 @@ test("playground service reads generation history returned by the generated app 
             date: "2026-05-05",
             prompt: "A precise router diagram",
             type: "image",
-            images: ["https://example.com/result.png"],
+            asset: mediaResource("image", "https://example.com/result.png"),
+            images: [mediaResource("image", "https://example.com/result.png")],
             videos: [],
             createdAt: "2026-05-05T08:00:00Z",
           },
@@ -1180,7 +1216,7 @@ test("playground service reads generation history returned by the generated app 
       assert.equal(captured[0].url, "/app/v3/api/ai/generations");
       assert.deepEqual(result.map((item) => item.id), ["gen-1"]);
       assert.equal(result[0].type, "images");
-      assert.deepEqual(result[0].images, ["https://example.com/result.png"]);
+      assert.deepEqual(result[0].images, [mediaResource("image", "https://example.com/result.png")]);
     },
     { authenticated: true },
   );
@@ -1567,7 +1603,7 @@ test("playground generation agent normalizes media assets from Runtime SSE into 
       createAgentRunStepResponse(),
       [
         'data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"message.delta","eventSource":"runtime","textDelta":"Generating launch video.","payloadJson":{},"createdAt":"2026-05-17T08:00:01Z"}',
-        'data: {"id":"runtime-event-2","invocationId":"runtime-invocation-1","eventNo":2,"eventType":"generation.asset","eventSource":"generation","payloadJson":{"modality":"video","url":"https://cdn.example.test/generated/launch.mp4","thumb":"https://cdn.example.test/generated/launch.jpg","durationSeconds":10},"createdAt":"2026-05-17T08:00:02Z"}',
+        `data: {"id":"runtime-event-2","invocationId":"runtime-invocation-1","eventNo":2,"eventType":"generation.asset","eventSource":"generation","payloadJson":{"modality":"video","resource":${JSON.stringify(videoMediaResource("https://cdn.example.test/generated/launch.mp4", "https://cdn.example.test/generated/launch.jpg", { durationSeconds: 10 }))}},"createdAt":"2026-05-17T08:00:02Z"}`,
         "data: [DONE]",
         "",
       ].join("\n"),
@@ -1630,22 +1666,25 @@ test("playground generation agent normalizes media assets from Runtime SSE into 
 
       assert.equal(result.item.type, "video");
       assert.deepEqual(result.item.videos, [
-        {
-          url: "https://cdn.example.test/generated/launch.mp4",
-          thumb: "https://cdn.example.test/generated/launch.jpg",
-        },
+        videoMediaResource(
+          "https://cdn.example.test/generated/launch.mp4",
+          "https://cdn.example.test/generated/launch.jpg",
+          { durationSeconds: 10 },
+        ),
       ]);
-      assert.equal(result.item.url, "https://cdn.example.test/generated/launch.mp4");
+      assert.equal(result.item.asset, result.item.videos[0]);
       assert.equal(result.item.durationSeconds, 10);
       assert.equal(result.steps.some((step) => step.type === "media_generation"), true);
       assert.equal(result.usage.videoSeconds, "10");
       assert.deepEqual(captured[6].body.responseJson, {
         media: [
           {
-            durationSeconds: 10,
+            asset: videoMediaResource(
+              "https://cdn.example.test/generated/launch.mp4",
+              "https://cdn.example.test/generated/launch.jpg",
+              { durationSeconds: 10 },
+            ),
             modality: "video",
-            thumb: "https://cdn.example.test/generated/launch.jpg",
-            url: "https://cdn.example.test/generated/launch.mp4",
           },
         ],
         outputText: "Generating launch video.",
@@ -1653,10 +1692,12 @@ test("playground generation agent normalizes media assets from Runtime SSE into 
       assert.deepEqual(captured[7].body.outputJson, {
         media: [
           {
-            durationSeconds: 10,
+            asset: videoMediaResource(
+              "https://cdn.example.test/generated/launch.mp4",
+              "https://cdn.example.test/generated/launch.jpg",
+              { durationSeconds: 10 },
+            ),
             modality: "video",
-            thumb: "https://cdn.example.test/generated/launch.jpg",
-            url: "https://cdn.example.test/generated/launch.mp4",
           },
         ],
         outputText: "Generating launch video.",
@@ -1676,7 +1717,7 @@ test("playground generation agent derives broad agent result type from Runtime m
       createAgentRunStepResponse(),
       [
         'data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"message.delta","eventSource":"runtime","textDelta":"Generating launch video.","payloadJson":{},"createdAt":"2026-05-17T08:00:01Z"}',
-        'data: {"id":"runtime-event-2","invocationId":"runtime-invocation-1","eventNo":2,"eventType":"generation.asset","eventSource":"generation","payloadJson":{"modality":"video","url":"https://cdn.example.test/generated/broad-agent-video.mp4","thumb":"https://cdn.example.test/generated/broad-agent-video.jpg","durationSeconds":8},"createdAt":"2026-05-17T08:00:02Z"}',
+        `data: {"id":"runtime-event-2","invocationId":"runtime-invocation-1","eventNo":2,"eventType":"generation.asset","eventSource":"generation","payloadJson":{"modality":"video","resource":${JSON.stringify(videoMediaResource("https://cdn.example.test/generated/broad-agent-video.mp4", "https://cdn.example.test/generated/broad-agent-video.jpg", { durationSeconds: 8 }))}},"createdAt":"2026-05-17T08:00:02Z"}`,
         "data: [DONE]",
         "",
       ].join("\n"),
@@ -1736,13 +1777,14 @@ test("playground generation agent derives broad agent result type from Runtime m
       assert.equal(captured[4].body.inputJson?.targetType, undefined);
       assert.equal(result.targetType, "video");
       assert.equal(result.item.type, "video");
-      assert.equal(result.item.url, "https://cdn.example.test/generated/broad-agent-video.mp4");
       assert.deepEqual(result.item.videos, [
-        {
-          url: "https://cdn.example.test/generated/broad-agent-video.mp4",
-          thumb: "https://cdn.example.test/generated/broad-agent-video.jpg",
-        },
+        videoMediaResource(
+          "https://cdn.example.test/generated/broad-agent-video.mp4",
+          "https://cdn.example.test/generated/broad-agent-video.jpg",
+          { durationSeconds: 8 },
+        ),
       ]);
+      assert.equal(result.item.asset, result.item.videos[0]);
       assert.deepEqual(result.item.images, []);
       assert.equal(result.item.durationSeconds, 8);
     },
@@ -1759,7 +1801,7 @@ test("playground generation agent completes media-only Runtime SSE streams", asy
       createAgentRuntimeInvocationResponse(),
       createAgentRunStepResponse(),
       [
-        'data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"generation.asset","eventSource":"generation","payloadJson":{"modality":"image","url":"https://cdn.example.test/generated/media-only.png"},"createdAt":"2026-05-17T08:00:01Z"}',
+        `data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"generation.asset","eventSource":"generation","payloadJson":{"modality":"image","resource":${JSON.stringify(mediaResource("image", "https://cdn.example.test/generated/media-only.png"))}},"createdAt":"2026-05-17T08:00:01Z"}`,
         "data: [DONE]",
         "",
       ].join("\n"),
@@ -1816,18 +1858,18 @@ test("playground generation agent completes media-only Runtime SSE streams", asy
         targetType: "image",
         selectedModel: "kling-v2",
         onArtifact: (artifact) => {
-          artifacts.push(artifact.url);
+          artifacts.push(mediaUrl(artifact.asset));
         },
       });
 
       assert.deepEqual(artifacts, ["https://cdn.example.test/generated/media-only.png"]);
-      assert.deepEqual(result.item.images, ["https://cdn.example.test/generated/media-only.png"]);
+      assert.deepEqual(result.item.images, [mediaResource("image", "https://cdn.example.test/generated/media-only.png")]);
       assert.equal(result.item.outputText, undefined);
       assert.deepEqual(captured[6].body.responseJson, {
         media: [
           {
+            asset: mediaResource("image", "https://cdn.example.test/generated/media-only.png"),
             modality: "image",
-            url: "https://cdn.example.test/generated/media-only.png",
           },
         ],
       });
@@ -1838,7 +1880,7 @@ test("playground generation agent completes media-only Runtime SSE streams", asy
 });
 
 test("playground generation agent maps image and audio family assets from Runtime SSE into Generation history items", async () => {
-  for (const [targetType, assetUrl, expectedField] of [
+  for (const [targetType, assetLocator, expectedField] of [
     ["image", "https://cdn.example.test/generated/image.png", "images"],
     ["audio", "https://cdn.example.test/generated/voice.mp3", "url"],
     ["music", "https://cdn.example.test/generated/music.mp3", "url"],
@@ -1853,7 +1895,7 @@ test("playground generation agent maps image and audio family assets from Runtim
         createAgentRunStepResponse(),
         [
           'data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"message.delta","eventSource":"runtime","textDelta":"Asset ready.","payloadJson":{},"createdAt":"2026-05-17T08:00:01Z"}',
-          `data: {"id":"runtime-event-2","invocationId":"runtime-invocation-1","eventNo":2,"eventType":"generation.asset","eventSource":"generation","payloadJson":{"modality":"${targetType}","url":"${assetUrl}","durationSeconds":6},"createdAt":"2026-05-17T08:00:02Z"}`,
+          `data: {"id":"runtime-event-2","invocationId":"runtime-invocation-1","eventNo":2,"eventType":"generation.asset","eventSource":"generation","payloadJson":{"modality":"${targetType}","resource":${JSON.stringify(mediaResource(targetType === "video" ? "video" : targetType === "image" ? "image" : "audio", assetLocator, { durationSeconds: 6 }))}},"createdAt":"2026-05-17T08:00:02Z"}`,
           "data: [DONE]",
           "",
         ].join("\n"),
@@ -1913,9 +1955,9 @@ test("playground generation agent maps image and audio family assets from Runtim
 
         assert.equal(result.item.type, targetType === "image" ? "images" : targetType);
         if (expectedField === "images") {
-          assert.deepEqual(result.item.images, [assetUrl]);
+          assert.deepEqual(result.item.images, [mediaResource("image", assetLocator, { durationSeconds: 6 })]);
         } else {
-          assert.equal(result.item.url, assetUrl);
+          assert.deepEqual(result.item.asset, mediaResource("audio", assetLocator, { durationSeconds: 6 }));
           assert.equal(result.item.durationSeconds, 6);
         }
         assert.equal(result.steps.some((step) => step.type === "media_generation"), true);
@@ -1926,7 +1968,7 @@ test("playground generation agent maps image and audio family assets from Runtim
 });
 
 test("playground generation agent infers artifact modality from MIME type when Runtime SSE omits modality", async () => {
-  for (const [targetType, assetUrl, mimeType] of [
+  for (const [targetType, assetLocator, mimeType] of [
     ["image", "https://cdn.example.test/generated/inferred.png", "image/png"],
     ["video", "https://cdn.example.test/generated/inferred.mp4", "video/mp4"],
     ["audio", "https://cdn.example.test/generated/inferred.mp3", "audio/mpeg"],
@@ -1939,7 +1981,7 @@ test("playground generation agent infers artifact modality from MIME type when R
         createAgentRuntimeInvocationResponse(),
         createAgentRunStepResponse(),
         [
-          `data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"generation.asset","eventSource":"generation","payloadJson":{"url":"${assetUrl}","mimeType":"${mimeType}","durationSeconds":5},"createdAt":"2026-05-17T08:00:01Z"}`,
+          `data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"generation.asset","eventSource":"generation","payloadJson":{"resource":${JSON.stringify(mediaResource(targetType === "video" ? "video" : targetType === "image" ? "image" : "audio", assetLocator, { durationSeconds: 5, mimeType }))}},"createdAt":"2026-05-17T08:00:01Z"}`,
           "data: [DONE]",
           "",
         ].join("\n"),
@@ -1996,25 +2038,23 @@ test("playground generation agent infers artifact modality from MIME type when R
           targetType,
           selectedModel: "kling-v2",
           onArtifact: (artifact) => {
-            artifacts.push(`${artifact.modality}:${artifact.url}`);
+            artifacts.push(`${artifact.modality}:${mediaUrl(artifact.asset)}`);
           },
         });
 
-        assert.deepEqual(artifacts, [`${targetType}:${assetUrl}`]);
+        assert.deepEqual(artifacts, [`${targetType}:${assetLocator}`]);
         assert.deepEqual(captured[6].body.responseJson.media, [
           {
-            durationSeconds: 5,
-            mimeType,
+            asset: mediaResource(targetType, assetLocator, { durationSeconds: 5, mimeType }),
             modality: targetType,
-            url: assetUrl,
           },
         ]);
         if (targetType === "image") {
-          assert.deepEqual(result.item.images, [assetUrl]);
+          assert.deepEqual(result.item.images, [mediaResource("image", assetLocator, { durationSeconds: 5, mimeType })]);
         } else if (targetType === "video") {
-          assert.deepEqual(result.item.videos, [{ url: assetUrl }]);
+          assert.deepEqual(result.item.videos, [mediaResource("video", assetLocator, { durationSeconds: 5, mimeType })]);
         } else {
-          assert.equal(result.item.url, assetUrl);
+          assert.deepEqual(result.item.asset, mediaResource("audio", assetLocator, { durationSeconds: 5, mimeType }));
         }
       },
       { authenticated: true },
@@ -2031,8 +2071,8 @@ test("playground generation agent reads nested Runtime SSE artifact envelopes an
       createAgentRuntimeInvocationResponse(),
       createAgentRunStepResponse(),
       [
-        'data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"runtime.output","eventSource":"generation","payloadJson":{"data":{"assets":[{"type":"image","assetUrl":"https://cdn.example.test/generated/nested-1.png"},{"type":"image","storageUrl":"https://cdn.example.test/generated/nested-1.png"},{"type":"image","href":"https://cdn.example.test/generated/nested-2.png"}]}},"createdAt":"2026-05-17T08:00:01Z"}',
-        'data: {"id":"runtime-event-2","invocationId":"runtime-invocation-1","eventNo":2,"eventType":"artifact.created","eventSource":"runtime","payloadJson":{"result":{"asset":{"type":"image","url":"https://cdn.example.test/generated/nested-3.png"}}},"createdAt":"2026-05-17T08:00:02Z"}',
+        `data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"runtime.output","eventSource":"generation","payloadJson":{"data":{"assets":[{"type":"image","resource":${JSON.stringify(mediaResource("image", "https://cdn.example.test/generated/nested-1.png"))}},{"type":"image","resource":${JSON.stringify(mediaResource("image", "https://cdn.example.test/generated/nested-1.png"))}},{"type":"image","resource":${JSON.stringify(mediaResource("image", "https://cdn.example.test/generated/nested-2.png"))}}]}},"createdAt":"2026-05-17T08:00:01Z"}`,
+        `data: {"id":"runtime-event-2","invocationId":"runtime-invocation-1","eventNo":2,"eventType":"artifact.created","eventSource":"runtime","payloadJson":{"result":{"asset":{"type":"image","resource":${JSON.stringify(mediaResource("image", "https://cdn.example.test/generated/nested-3.png"))}}}},"createdAt":"2026-05-17T08:00:02Z"}`,
         "data: [DONE]",
         "",
       ].join("\n"),
@@ -2089,7 +2129,7 @@ test("playground generation agent reads nested Runtime SSE artifact envelopes an
         targetType: "image",
         selectedModel: "kling-v2",
         onArtifact: (artifact) => {
-          artifacts.push(artifact.url);
+          artifacts.push(mediaUrl(artifact.asset));
         },
       });
 
@@ -2098,19 +2138,19 @@ test("playground generation agent reads nested Runtime SSE artifact envelopes an
         "https://cdn.example.test/generated/nested-2.png",
         "https://cdn.example.test/generated/nested-3.png",
       ]);
-      assert.deepEqual(result.item.images, artifacts);
+      assert.deepEqual(result.item.images, artifacts.map((url) => mediaResource("image", url)));
       assert.deepEqual(captured[6].body.responseJson.media, [
         {
+          asset: mediaResource("image", "https://cdn.example.test/generated/nested-1.png"),
           modality: "image",
-          url: "https://cdn.example.test/generated/nested-1.png",
         },
         {
+          asset: mediaResource("image", "https://cdn.example.test/generated/nested-2.png"),
           modality: "image",
-          url: "https://cdn.example.test/generated/nested-2.png",
         },
         {
+          asset: mediaResource("image", "https://cdn.example.test/generated/nested-3.png"),
           modality: "image",
-          url: "https://cdn.example.test/generated/nested-3.png",
         },
       ]);
     },
@@ -2335,7 +2375,7 @@ test("playground generation agent ignores media-shaped URLs from non-artifact Ru
         targetType: "image",
         selectedModel: "kling-v2",
         onArtifact: (artifact) => {
-          artifacts.push(artifact.url);
+          artifacts.push(mediaUrl(artifact.asset));
         },
       });
 
@@ -2416,7 +2456,7 @@ test("playground generation agent ignores top-level media URLs from non-artifact
         targetType: "image",
         selectedModel: "kling-v2",
         onArtifact: (artifact) => {
-          artifacts.push(artifact.url);
+          artifacts.push(mediaUrl(artifact.asset));
         },
       });
 
@@ -2453,7 +2493,12 @@ test("playground generation agent falls back to Runtime artifact list when SSE o
               artifactType: "image",
               name: "generated.png",
               mimeType: "image/png",
-              storageUrl: "https://cdn.example.test/generated/from-artifact-list.png",
+              resource: {
+                kind: "image",
+                source: "external_url",
+                url: "https://cdn.example.test/generated/from-artifact-list.png",
+                publicUrl: "https://cdn.example.test/generated/from-artifact-list.png",
+              },
               createdAt: "2026-05-17T08:00:01Z",
             },
           ],
@@ -2512,7 +2557,7 @@ test("playground generation agent falls back to Runtime artifact list when SSE o
         targetType: "image",
         selectedModel: "kling-v2",
         onArtifact: (artifact) => {
-          artifacts.push(artifact.url);
+          artifacts.push(mediaUrl(artifact.asset));
         },
       });
 
@@ -2529,13 +2574,14 @@ test("playground generation agent falls back to Runtime artifact list when SSE o
         "POST /app/v3/api/agents/runs/agent-run-1/complete",
       ]);
       assert.deepEqual(artifacts, ["https://cdn.example.test/generated/from-artifact-list.png"]);
-      assert.deepEqual(result.item.images, ["https://cdn.example.test/generated/from-artifact-list.png"]);
+      assert.deepEqual(result.item.images, [
+        mediaResource("image", "https://cdn.example.test/generated/from-artifact-list.png", { mimeType: "image/png" }),
+      ]);
       assert.deepEqual(captured[7].body.responseJson, {
         media: [
           {
-            mimeType: "image/png",
+            asset: mediaResource("image", "https://cdn.example.test/generated/from-artifact-list.png", { mimeType: "image/png" }),
             modality: "image",
-            url: "https://cdn.example.test/generated/from-artifact-list.png",
           },
         ],
       });
@@ -2544,7 +2590,7 @@ test("playground generation agent falls back to Runtime artifact list when SSE o
   );
 });
 
-test("playground generation agent does not query Runtime artifacts when SSE already contains artifact URLs", async () => {
+test("playground generation agent does not query Runtime artifacts when SSE already contains MediaResource assets", async () => {
   await withAppSdkResponses(
     [
       createPlaygroundAgentListResponse(),
@@ -2553,7 +2599,7 @@ test("playground generation agent does not query Runtime artifacts when SSE alre
       createAgentRuntimeInvocationResponse(),
       createAgentRunStepResponse(),
       [
-        'data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"artifact.created","eventSource":"runtime","payloadJson":{"artifactId":"runtime-artifact-1","artifactType":"image","storageUrl":"https://cdn.example.test/generated/direct-artifact.png","mimeType":"image/png"},"createdAt":"2026-05-17T08:00:01Z"}',
+        `data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"artifact.created","eventSource":"runtime","payloadJson":{"artifactId":"runtime-artifact-1","artifactType":"image","resource":${JSON.stringify(mediaResource("image", "https://cdn.example.test/generated/direct-artifact.png", { mimeType: "image/png" }))}},"createdAt":"2026-05-17T08:00:01Z"}`,
         "data: [DONE]",
         "",
       ].join("\n"),
@@ -2610,7 +2656,7 @@ test("playground generation agent does not query Runtime artifacts when SSE alre
         targetType: "image",
         selectedModel: "kling-v2",
         onArtifact: (artifact) => {
-          artifacts.push(artifact.url);
+          artifacts.push(mediaUrl(artifact.asset));
         },
       });
 
@@ -2626,12 +2672,13 @@ test("playground generation agent does not query Runtime artifacts when SSE alre
         "POST /app/v3/api/agents/runs/agent-run-1/complete",
       ]);
       assert.deepEqual(artifacts, ["https://cdn.example.test/generated/direct-artifact.png"]);
-      assert.deepEqual(result.item.images, ["https://cdn.example.test/generated/direct-artifact.png"]);
+      assert.deepEqual(result.item.images, [
+        mediaResource("image", "https://cdn.example.test/generated/direct-artifact.png", { mimeType: "image/png" }),
+      ]);
       assert.deepEqual(captured[6].body.responseJson.media, [
         {
-          mimeType: "image/png",
+          asset: mediaResource("image", "https://cdn.example.test/generated/direct-artifact.png", { mimeType: "image/png" }),
           modality: "image",
-          url: "https://cdn.example.test/generated/direct-artifact.png",
         },
       ]);
     },
@@ -2662,7 +2709,12 @@ test("playground generation agent falls back to Runtime artifact list for nested
               artifactType: "video",
               name: "generated.mp4",
               mimeType: "video/mp4",
-              storageUrl: "https://cdn.example.test/generated/from-nested-artifact-list.mp4",
+              resource: {
+                kind: "video",
+                source: "external_url",
+                url: "https://cdn.example.test/generated/from-nested-artifact-list.mp4",
+                publicUrl: "https://cdn.example.test/generated/from-nested-artifact-list.mp4",
+              },
               createdAt: "2026-05-17T08:00:01Z",
             },
           ],
@@ -2721,7 +2773,7 @@ test("playground generation agent falls back to Runtime artifact list for nested
         targetType: "video",
         selectedModel: "kling-v2",
         onArtifact: (artifact) => {
-          artifacts.push(`${artifact.modality}:${artifact.url}`);
+          artifacts.push(`${artifact.modality}:${mediaUrl(artifact.asset)}`);
         },
       });
 
@@ -2739,13 +2791,12 @@ test("playground generation agent falls back to Runtime artifact list for nested
       ]);
       assert.deepEqual(artifacts, ["video:https://cdn.example.test/generated/from-nested-artifact-list.mp4"]);
       assert.deepEqual(result.item.videos, [
-        { url: "https://cdn.example.test/generated/from-nested-artifact-list.mp4" },
+        mediaResource("video", "https://cdn.example.test/generated/from-nested-artifact-list.mp4", { mimeType: "video/mp4" }),
       ]);
       assert.deepEqual(captured[7].body.responseJson.media, [
         {
-          mimeType: "video/mp4",
+          asset: mediaResource("video", "https://cdn.example.test/generated/from-nested-artifact-list.mp4", { mimeType: "video/mp4" }),
           modality: "video",
-          url: "https://cdn.example.test/generated/from-nested-artifact-list.mp4",
         },
       ]);
     },
@@ -2753,7 +2804,7 @@ test("playground generation agent falls back to Runtime artifact list for nested
   );
 });
 
-test("playground generation agent normalizes common media URL aliases and millisecond durations from Runtime artifacts", async () => {
+test("playground generation agent reads MediaResource poster and duration from Runtime artifacts", async () => {
   await withAppSdkResponses(
     [
       createPlaygroundAgentListResponse(),
@@ -2776,9 +2827,20 @@ test("playground generation agent normalizes common media URL aliases and millis
               artifactType: "video",
               name: "generated.mp4",
               mimeType: "video/mp4",
-              downloadUrl: "https://cdn.example.test/generated/download-url-video.mp4",
-              posterUrl: "https://cdn.example.test/generated/download-url-video.jpg",
-              durationMs: 12000,
+              resource: {
+                kind: "video",
+                source: "external_url",
+                url: "https://cdn.example.test/generated/download-url-video.mp4",
+                publicUrl: "https://cdn.example.test/generated/download-url-video.mp4",
+                mimeType: "video/mp4",
+                durationSeconds: 12,
+                poster: {
+                  kind: "image",
+                  source: "external_url",
+                  url: "https://cdn.example.test/generated/download-url-video.jpg",
+                  publicUrl: "https://cdn.example.test/generated/download-url-video.jpg",
+                },
+              },
               createdAt: "2026-05-17T08:00:01Z",
             },
           ],
@@ -2837,7 +2899,7 @@ test("playground generation agent normalizes common media URL aliases and millis
         targetType: "video",
         selectedModel: "kling-v2",
         onArtifact: (artifact) => {
-          artifacts.push(`${artifact.url}:${artifact.durationSeconds}:${artifact.thumb}`);
+          artifacts.push(`${mediaUrl(artifact.asset)}:${artifact.asset.durationSeconds}:${mediaUrl(artifact.asset.poster)}`);
         },
       });
 
@@ -2846,18 +2908,20 @@ test("playground generation agent normalizes common media URL aliases and millis
       ]);
       assert.equal(result.item.durationSeconds, 12);
       assert.deepEqual(result.item.videos, [
-        {
-          url: "https://cdn.example.test/generated/download-url-video.mp4",
-          thumb: "https://cdn.example.test/generated/download-url-video.jpg",
-        },
+        videoMediaResource(
+          "https://cdn.example.test/generated/download-url-video.mp4",
+          "https://cdn.example.test/generated/download-url-video.jpg",
+          { durationSeconds: 12, mimeType: "video/mp4" },
+        ),
       ]);
       assert.deepEqual(captured[7].body.responseJson.media, [
         {
-          durationSeconds: 12,
-          mimeType: "video/mp4",
+          asset: videoMediaResource(
+            "https://cdn.example.test/generated/download-url-video.mp4",
+            "https://cdn.example.test/generated/download-url-video.jpg",
+            { durationSeconds: 12, mimeType: "video/mp4" },
+          ),
           modality: "video",
-          thumb: "https://cdn.example.test/generated/download-url-video.jpg",
-          url: "https://cdn.example.test/generated/download-url-video.mp4",
         },
       ]);
     },
@@ -3145,7 +3209,7 @@ test("playground agent SSE ignores text-shaped payloads on non-text Runtime even
       createAgentRuntimeInvocationResponse(),
       createAgentRunStepResponse(),
       [
-        'data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"runtime.artifact","eventSource":"runtime","textDelta":"Top-level artifact text must not become output text.","payloadJson":{"content":"This artifact description must not become output text.","artifact":{"id":"runtime-artifact-4","type":"image","url":"https://cdn.example.test/generated/non-text-event.png"}},"createdAt":"2026-05-17T08:00:01Z"}',
+        `data: {"id":"runtime-event-1","invocationId":"runtime-invocation-1","eventNo":1,"eventType":"runtime.artifact","eventSource":"runtime","textDelta":"Top-level artifact text must not become output text.","payloadJson":{"content":"This artifact description must not become output text.","artifact":{"id":"runtime-artifact-4","type":"image","resource":${JSON.stringify(mediaResource("image", "https://cdn.example.test/generated/non-text-event.png"))}}},"createdAt":"2026-05-17T08:00:01Z"}`,
         "data: [DONE]",
         "",
       ].join("\n"),
@@ -3203,12 +3267,12 @@ test("playground agent SSE ignores text-shaped payloads on non-text Runtime even
 
       assert.deepEqual(deltas, []);
       assert.equal(result.item.outputText, undefined);
-      assert.deepEqual(result.item.images, ["https://cdn.example.test/generated/non-text-event.png"]);
+      assert.deepEqual(result.item.images, [mediaResource("image", "https://cdn.example.test/generated/non-text-event.png")]);
       assert.deepEqual(captured[6].body.responseJson, {
         media: [
           {
+            asset: mediaResource("image", "https://cdn.example.test/generated/non-text-event.png"),
             modality: "image",
-            url: "https://cdn.example.test/generated/non-text-event.png",
           },
         ],
       });
@@ -4740,7 +4804,8 @@ test("playground service does not read user generation history without a portal 
             date: "2026-05-05",
             prompt: "A private generation",
             type: "image",
-            images: ["https://example.com/private.png"],
+            asset: mediaResource("image", "https://example.com/private.png"),
+            images: [mediaResource("image", "https://example.com/private.png")],
             videos: [],
             createdAt: "2026-05-05T08:00:00Z",
           },
@@ -4768,7 +4833,8 @@ test("playground service exposes generation workspace state through the appbase 
             prompt: "A precise router diagram",
             type: "image",
             modelInfo: "openai/gpt-image-1",
-            images: ["https://example.com/result.png"],
+            asset: mediaResource("image", "https://example.com/result.png"),
+            images: [mediaResource("image", "https://example.com/result.png")],
             videos: [],
             createdAt: "2026-05-05T08:00:00Z",
             updatedAt: "2026-05-05T08:01:00Z",
@@ -5082,7 +5148,8 @@ test("playground service fails closed when SDK generation history contains unsup
             date: "2026-05-05",
             prompt: "A precise router diagram",
             type: "image",
-            images: ["https://example.com/result.png"],
+            asset: mediaResource("image", "https://example.com/result.png"),
+            images: [mediaResource("image", "https://example.com/result.png")],
             videos: [],
             createdAt: "2026-05-05T08:00:00Z",
           },

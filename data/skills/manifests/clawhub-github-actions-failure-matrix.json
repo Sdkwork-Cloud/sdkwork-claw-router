@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-actions-failure-matrix@1.7.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-failure-matrix-1.7.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-actions-failure-matrix-1.7.0.json"
+      },
       "version": "1.7.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4fa253e74d9010b1920452f1940d8bb6ccee9624e8ddceccd6363dfc2fea95b5",

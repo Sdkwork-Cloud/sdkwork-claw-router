@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arch-sla-cloudq@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arch-sla-cloudq-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arch-sla-cloudq-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d7cb877f7f3528da3227a610b44b40d867158b72ef4cea6d66d43ac135d46a8",

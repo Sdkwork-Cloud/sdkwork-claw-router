@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/breakup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-breakup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-breakup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:613ffe0d6b218f5add76db5213540ff733c1325b94e49b70228c3d99723fefe6",

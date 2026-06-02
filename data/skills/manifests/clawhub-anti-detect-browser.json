@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anti-detect-browser@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-anti-detect-browser-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anti-detect-browser-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1ff633ec38e25b593ab2b30941f3db51c1a9b26998854f9629ff2d23dadcae04",

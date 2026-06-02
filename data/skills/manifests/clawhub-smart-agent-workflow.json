@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-agent-workflow@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-agent-workflow-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-agent-workflow-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a4f7da22afb24175127be461228113824d96c96c3f06c572107387023a68146e",

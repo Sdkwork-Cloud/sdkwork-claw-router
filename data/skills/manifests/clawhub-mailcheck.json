@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mailcheck@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-mailcheck-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mailcheck-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:7db766768e60f93a3435a672fcd8e3ab56262c48f74c89a0530719d397125644",

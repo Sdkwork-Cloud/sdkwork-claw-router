@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lyrics-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lyrics-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lyrics-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ffd0696aae1c4e9bf6523669cdc50f05d0a87532f50d0334e705fb015cc1b15",

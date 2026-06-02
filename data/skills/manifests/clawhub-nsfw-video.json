@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nsfw-video@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-nsfw-video-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nsfw-video-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:f49c08f51cae43812b06f38dded739ea9684885771773b28b9afffbdf48ac2c9",

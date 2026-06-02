@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-quote@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-quote-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-quote-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:12682a2d76018154604824149a2b9fc34a5d0bcbb2c2c7ba73b5e8d05826ca35",

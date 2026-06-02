@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/etcd-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-etcd-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-etcd-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5e54ce69afc584f01a507c26adf762ea5cacf6e9e1ad2036207b5219700fe7b",

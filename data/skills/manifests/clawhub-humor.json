@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/humor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-humor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-humor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4afaa01b7c5b51be6fce3ce80dc820cdc632143319dd295ac93da593c54fc2b5",

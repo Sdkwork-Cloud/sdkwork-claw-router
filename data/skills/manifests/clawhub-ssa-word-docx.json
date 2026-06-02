@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ssa-word-docx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ssa-word-docx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ssa-word-docx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7469b44f3c2114afde169ddd658434bc3c11593d0ad54df269f0187427f694fa",

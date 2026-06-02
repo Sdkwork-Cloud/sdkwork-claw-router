@@ -15,6 +15,10 @@ pub struct CommerceCheckoutSessionRecord {
     /// Expires at field on commerce checkout session record.
     pub expires_at: String,
 
+    /// Id field on commerce checkout session record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on commerce checkout session record.
     pub idempotency_key: String,
 

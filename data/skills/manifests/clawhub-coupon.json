@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coupon@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coupon-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coupon-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c1d5dc18958e0382453660f87c0973e877925499e6454894c62fb2ef2163561",

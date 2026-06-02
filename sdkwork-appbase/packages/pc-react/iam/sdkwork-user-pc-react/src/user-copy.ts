@@ -38,7 +38,7 @@ export interface SdkworkUserMessages {
     title: string;
   };
   profile: {
-    avatarUrlLabel: string;
+    avatarLabel: string;
     description: string;
     emailLabel: string;
     firstNameLabel: string;
@@ -205,7 +205,7 @@ const EN_US_MESSAGES: SdkworkUserMessages = {
     title: "Account Center",
   },
   profile: {
-    avatarUrlLabel: "Avatar URL",
+    avatarLabel: "Avatar",
     description: "Profile fields are generalized for reuse across desktop applications.",
     emailLabel: "Email",
     firstNameLabel: "First name",
@@ -314,7 +314,7 @@ const ZH_CN_MESSAGES: SdkworkUserMessages = {
     title: "账户中心",
   },
   profile: {
-    avatarUrlLabel: "头像地址",
+    avatarLabel: "头像",
     description: "资料字段已抽象为可在桌面应用中复用的通用能力。",
     emailLabel: "邮箱",
     firstNameLabel: "名",

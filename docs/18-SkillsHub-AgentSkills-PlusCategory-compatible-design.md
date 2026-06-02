@@ -65,7 +65,7 @@ backend 管理端 API 固定走 Java `spring-ai-plus-backend-api` 已有路径�
 | --- | --- |
 | `skill_key` | 技能机器标识，租户和组织内唯一 |
 | `name`、`summary`、`description` | 列表和详情文案 |
-| `icon`、`cover_image` | 列表图和详情主图 |
+| `icon_resource_snapshot`、`cover_resource_snapshot` | 列表图和详情主图的 `MediaResource` 快照；API/view model 输出 `icon`、`cover` 对象 |
 | `category_id` | 指向 `plus_category.id` |
 | `package_id` | 指向 `plus_agent_skill_package.id` |
 | `provider` | 技能提供者/开发者补充信息 |
@@ -88,7 +88,7 @@ backend 管理端 API 固定走 Java `spring-ai-plus-backend-api` 已有路径�
 
 用途：技能包、集合、分组和聚合展示上下文。前端当前是技能卡片列表，但 app API 已支持 package 列表和详情，数据库设计必须保留此层以兼容 Java 双端 API。
 
-关键字段：`package_key`、`name`、`summary`、`description`、`icon`、`cover_image`、`category_id`、`enabled`、`featured`、`sort_weight`、`tags`、`latest_published_at`。
+关键字段：`package_key`、`name`、`summary`、`description`、`icon_media_resource_id`、`icon_object_blob_id`、`icon_resource_snapshot`、`cover_media_resource_id`、`cover_object_blob_id`、`cover_resource_snapshot`、`category_id`、`enabled`、`featured`、`sort_weight`、`tags`、`latest_published_at`。API/view model 输出 `icon`、`cover` 为 `MediaResource` 对象。
 
 ### 3.3 `plus_user_agent_skill`
 
@@ -122,7 +122,7 @@ backend 管理端 API 固定走 Java `spring-ai-plus-backend-api` 已有路径�
 | `developer` | `SkillVO.authorName`，缺省时使用 `provider` |
 | `description` | `description` |
 | `category` | `SkillVO.categoryName` / `PlusCategory.name` |
-| `image` | `coverImage`，缺省时使用 `icon` |
+| `image` | `cover` 媒体资源，缺省时使用 `icon` 媒体资源 |
 | `rating` | `ratingAvg` |
 | `downloads` | `installCount` 格式化 |
 | `features` | `capabilities` |
@@ -132,7 +132,7 @@ backend 管理端 API 固定走 Java `spring-ai-plus-backend-api` 已有路径�
 | `size` | `defaultConfig.portal.sizeText` |
 | `license` | `licenseName` |
 | `frameworks` | `defaultConfig.portal.frameworks` 或 `tags` 中的 framework namespace |
-| `screenshots` | `defaultConfig.portal.screenshots`，缺省时使用 `coverImage` |
+| `screenshots` | `defaultConfig.portal.screenshots`，缺省时使用 `cover` 媒体资源 |
 
 推荐的 `default_config.portal` 结构：
 

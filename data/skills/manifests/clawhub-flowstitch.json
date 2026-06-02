@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flowstitch@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flowstitch-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flowstitch-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:22525a1a05917a20f947cd8a433fc69263a53200b9a738e92db9a05ca3196e62",

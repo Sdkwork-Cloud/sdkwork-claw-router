@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pltr-cli@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pltr-cli-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pltr-cli-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1843ab24ebb94270c78836972b408bf1f24db3632dc20e27e8591ac3885715c9",

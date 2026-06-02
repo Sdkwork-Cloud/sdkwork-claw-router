@@ -11,6 +11,8 @@ tables:
   - /admin/catalog
   - /admin/catalog/categories
   - /admin/catalog/products
+  - /admin/catalog/products/new
+  - /admin/catalog/products/:productId/edit
   - /admin/catalog/skus
   - /admin/catalog/attributes
   - /admin/catalog/prices
@@ -30,7 +32,9 @@ tables:
     level_no: int32
     name: string(256)
     description: string(1024)
-    icon_url: string(1024)
+    icon_media_resource_id: string(128)
+    icon_object_blob_id: int64
+    icon_resource_snapshot: json
     sort_order:
       type: int64
       constraints: DEFAULT 0
@@ -82,10 +86,13 @@ tables:
   - /admin/wallet
   - /admin/catalog/categories
   - /admin/catalog/products
+  - /admin/catalog/products/new
+  - /admin/catalog/products/:productId/edit
   - /admin/catalog/skus
   - /admin/catalog/attributes
   - /admin/catalog/prices
   - /admin/memberships/packages
+  - /admin/memberships/vip-packages
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
@@ -107,7 +114,6 @@ tables:
     organization_id: string(512)
     spu_no: string(128)
     product_type: string(64)
-    category_id: string(512)
     title: string(512)
     subtitle: string(512)
     description: text
@@ -130,18 +136,77 @@ tables:
     - organization_id
     - spu_no
   indexes:
-  - name: idx_commerce_product_spu_category_status
-    columns:
-    - tenant_id
-    - organization_id
-    - category_id
-    - status
   - name: idx_commerce_product_spu_type_status
     columns:
     - tenant_id
     - organization_id
     - product_type
     - status
+- table: commerce_product_spu_category
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/catalog
+  - /admin/catalog/categories
+  - /admin/catalog/products
+  - /admin/catalog/products/new
+  - /admin/catalog/products/:productId/edit
+  - /admin/catalog/skus
+  - /admin/catalog/attributes
+  - /admin/catalog/prices
+  - /console/recharge
+  - /vip
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    spu_id: string(512)
+    category_id: string(512)
+    primary_flag: bool
+    sort_order:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - spu_id
+  - category_id
+  - primary_flag
+  - sort_order
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - spu_id
+    - category_id
+  indexes:
+  - name: idx_commerce_product_spu_category_category
+    columns:
+    - tenant_id
+    - organization_id
+    - category_id
+    - status
+  - name: idx_commerce_product_spu_category_spu
+    columns:
+    - tenant_id
+    - organization_id
+    - spu_id
+    - primary_flag
+    - sort_order
 - table: commerce_product_sku
   domain: commerce
   profile: appbase_standard
@@ -161,6 +226,8 @@ tables:
   - /admin/wallet
   - /admin/catalog/categories
   - /admin/catalog/products
+  - /admin/catalog/products/new
+  - /admin/catalog/products/:productId/edit
   - /admin/catalog/skus
   - /admin/catalog/attributes
   - /admin/catalog/prices
@@ -168,6 +235,7 @@ tables:
   - /admin/inventory/reservations
   - /admin/inventory/ledger
   - /admin/memberships/packages
+  - /admin/memberships/vip-packages
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
@@ -238,6 +306,8 @@ tables:
   - /admin/catalog
   - /admin/catalog/categories
   - /admin/catalog/products
+  - /admin/catalog/products/new
+  - /admin/catalog/products/:productId/edit
   - /admin/catalog/skus
   - /admin/catalog/attributes
   - /admin/catalog/prices
@@ -285,6 +355,72 @@ tables:
     - organization_id
     - scope
     - status
+- table: commerce_product_category_attribute
+  domain: commerce
+  profile: appbase_standard
+  compliance_level: L3
+  system_of_record: true
+  write_owner: sdkwork-appbase-commerce
+  generated_by_this_project: false
+  frontend_routes:
+  - /admin/catalog
+  - /admin/catalog/categories
+  - /admin/catalog/products
+  - /admin/catalog/products/new
+  - /admin/catalog/products/:productId/edit
+  - /admin/catalog/skus
+  - /admin/catalog/attributes
+  - /admin/catalog/prices
+  api_surfaces:
+  - app
+  - backend
+  - worker
+  columns:
+    id:
+      type: string(512)
+      constraints: PRIMARY KEY
+    tenant_id: string(512)
+    organization_id: string(512)
+    category_id: string(512)
+    attribute_id: string(512)
+    required: bool
+    searchable: bool
+    filterable: bool
+    sort_order:
+      type: int64
+      constraints: DEFAULT 0
+    status: string(512)
+    created_at: string(512)
+    updated_at: string(512)
+  not_null_columns:
+  - tenant_id
+  - category_id
+  - attribute_id
+  - required
+  - searchable
+  - filterable
+  - sort_order
+  - status
+  - created_at
+  - updated_at
+  unique_constraints:
+  - columns:
+    - tenant_id
+    - category_id
+    - attribute_id
+  indexes:
+  - name: idx_commerce_product_category_attribute_category
+    columns:
+    - tenant_id
+    - organization_id
+    - category_id
+    - sort_order
+  - name: idx_commerce_product_category_attribute_attribute
+    columns:
+    - tenant_id
+    - organization_id
+    - attribute_id
+    - status
 - table: commerce_product_attribute_value
   domain: commerce
   profile: appbase_standard
@@ -297,6 +433,8 @@ tables:
   - /admin/catalog
   - /admin/catalog/categories
   - /admin/catalog/products
+  - /admin/catalog/products/new
+  - /admin/catalog/products/:productId/edit
   - /admin/catalog/skus
   - /admin/catalog/attributes
   - /admin/catalog/prices
@@ -351,6 +489,8 @@ tables:
   - /admin/catalog
   - /admin/catalog/categories
   - /admin/catalog/products
+  - /admin/catalog/products/new
+  - /admin/catalog/products/:productId/edit
   - /admin/catalog/skus
   - /admin/catalog/attributes
   - /admin/catalog/prices
@@ -399,6 +539,8 @@ tables:
   - /admin/catalog
   - /admin/catalog/categories
   - /admin/catalog/products
+  - /admin/catalog/products/new
+  - /admin/catalog/products/:productId/edit
   - /admin/catalog/skus
   - /admin/catalog/attributes
   - /admin/catalog/prices
@@ -414,8 +556,10 @@ tables:
     organization_id: string(512)
     owner_type: string(64)
     owner_id: string(512)
-    media_type: string(64)
-    url: string(2048)
+    media_role: string(64)
+    media_resource_id: string(128)
+    object_blob_id: int64
+    resource_snapshot: json
     alt_text: string(512)
     sort_order:
       type: int64
@@ -427,8 +571,8 @@ tables:
   - tenant_id
   - owner_type
   - owner_id
-  - media_type
-  - url
+  - media_role
+  - media_resource_id
   - sort_order
   - status
   - created_at
@@ -452,6 +596,8 @@ tables:
   - /admin/catalog
   - /admin/catalog/categories
   - /admin/catalog/products
+  - /admin/catalog/products/new
+  - /admin/catalog/products/:productId/edit
   - /admin/catalog/skus
   - /admin/catalog/attributes
   - /admin/catalog/prices
@@ -507,6 +653,8 @@ tables:
   - /admin/catalog
   - /admin/catalog/categories
   - /admin/catalog/products
+  - /admin/catalog/products/new
+  - /admin/catalog/products/:productId/edit
   - /admin/catalog/skus
   - /admin/catalog/attributes
   - /admin/catalog/prices
@@ -1085,6 +1233,7 @@ tables:
   - /vip
   - /admin/memberships
   - /admin/memberships/packages
+  - /admin/memberships/vip-packages
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
@@ -1140,6 +1289,7 @@ tables:
   - /vip
   - /admin/memberships
   - /admin/memberships/packages
+  - /admin/memberships/vip-packages
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
@@ -1195,6 +1345,7 @@ tables:
   - /vip
   - /admin/memberships
   - /admin/memberships/packages
+  - /admin/memberships/vip-packages
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
@@ -1261,6 +1412,7 @@ tables:
   - /vip
   - /admin/memberships
   - /admin/memberships/packages
+  - /admin/memberships/vip-packages
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
@@ -1323,6 +1475,7 @@ tables:
   - /vip
   - /admin/memberships
   - /admin/memberships/packages
+  - /admin/memberships/vip-packages
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
@@ -1375,6 +1528,7 @@ tables:
   - /console/memberships
   - /admin/memberships
   - /admin/memberships/packages
+  - /admin/memberships/vip-packages
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
@@ -1530,6 +1684,7 @@ tables:
   - /admin/orders/fulfillments
   - /admin/orders/shipments
   - /admin/memberships/packages
+  - /admin/memberships/vip-packages
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
@@ -1631,6 +1786,7 @@ tables:
   - /admin/orders/fulfillments
   - /admin/orders/shipments
   - /admin/memberships/packages
+  - /admin/memberships/vip-packages
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
@@ -2015,7 +2171,6 @@ tables:
   - updated_at
   unique_constraints:
   - columns:
-    - tenant_id
     - account_no
   indexes:
   - name: idx_commerce_payment_provider_account_provider
@@ -2838,6 +2993,7 @@ tables:
   - /admin/payments/webhook-events
   - /admin/payments/reconciliation-runs
   - /admin/memberships/packages
+  - /admin/memberships/vip-packages
   - /admin/memberships/plans
   - /admin/memberships/members
   - /admin/memberships/entitlements
@@ -3821,7 +3977,9 @@ tables:
     status: string(512)
     invoice_no: string(512)
     invoice_code: string(512)
-    document_url: string(512)
+    document_media_resource_id: string(128)
+    document_object_blob_id: int64
+    document_resource_snapshot: json
     created_at: string(512)
     issued_at: string(512)
     updated_at: string(512)

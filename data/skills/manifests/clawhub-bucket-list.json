@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bucket-list@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bucket-list-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bucket-list-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2471dd6a53fd2eaf0b651c9ea8f6465fcf462aed76b22e451b6480adf0e6a8c8",

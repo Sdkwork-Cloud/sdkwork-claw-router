@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/job-scheduler@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-job-scheduler-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-job-scheduler-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:297177f1feec202212348d6b1cc45880aebfe4bd618c8509bc301f8688c1db59",

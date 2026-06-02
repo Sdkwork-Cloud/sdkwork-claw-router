@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rss-reader-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rss-reader-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rss-reader-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c09566f51e11e2f361bfb1f9f855101e4a089ab5c8ea15f3d65f1943984ea473",

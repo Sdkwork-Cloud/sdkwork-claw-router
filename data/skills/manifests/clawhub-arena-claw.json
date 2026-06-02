@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arena-claw@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arena-claw-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arena-claw-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ffeec718de5de0939b63a3da31ca836d64625245a591fe4a5379b51c72d7d91",

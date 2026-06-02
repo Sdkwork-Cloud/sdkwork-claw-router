@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docx-tables@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docx-tables-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docx-tables-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f55939ca05c1b44db2b2e49b7ae0f22c0c6d84da68b637cadacbc9741a738e46",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-figure-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-figure-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-figure-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ad23f59e1371ecf1d2da3e22522e885ea657de604638891da00c711c32ccc88b",

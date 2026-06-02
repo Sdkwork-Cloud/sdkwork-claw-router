@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mortgage-rate-lookup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mortgage-rate-lookup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mortgage-rate-lookup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c86a4f798e2f72cdd4eb349c7d79a5a0520f97470fb6444fee6f8d6f1a0b10ab",

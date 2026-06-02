@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mind-security@1.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-mind-security-1.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mind-security-1.2.4.json"
+      },
       "version": "1.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:baf684fe034abdd05a92cf6f418c1f83514aad71ceeeea48326dede886971747",

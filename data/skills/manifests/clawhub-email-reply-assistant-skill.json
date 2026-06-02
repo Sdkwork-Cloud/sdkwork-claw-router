@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-reply-assistant-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-reply-assistant-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-reply-assistant-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3d8e7d361ba6581c23633d3771ba638f9b5ca00d535a6603b5eb15ad98d44ef",

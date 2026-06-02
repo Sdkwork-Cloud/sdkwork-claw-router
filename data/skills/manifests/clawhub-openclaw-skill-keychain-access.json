@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-keychain-access@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-keychain-access-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-keychain-access-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e29e05080997a21351e8afd51d25c85ce9b4d4e151e089a82d7164a4a296b3f6",

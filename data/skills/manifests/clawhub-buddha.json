@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buddha@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-buddha-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buddha-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6068a671e9df6bcb9074eb7cda3daf8d09788c815b8874d5e5a854774654a6b7",

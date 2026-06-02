@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bw-vault@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bw-vault-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bw-vault-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:475d5ac0f1d0c7f772c432fde89488f2d019e407dcb3211634eaf1f9eca7608a",

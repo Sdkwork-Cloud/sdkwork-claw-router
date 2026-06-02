@@ -3,10 +3,10 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.Map;
 
 public class StudioCatalogArtifactRecord {
+    private MediaResource artifact;
     private String artifactRef;
     private String artifactSizeBytes;
     private String artifactType;
-    private String artifactUrl;
     private String checksumHash;
     private String createdAt;
     private String dataScope;
@@ -31,6 +31,14 @@ public class StudioCatalogArtifactRecord {
     private String uuid;
     private String version;
 
+    public MediaResource getArtifact() {
+        return this.artifact;
+    }
+
+    public void setArtifact(MediaResource artifact) {
+        this.artifact = artifact;
+    }
+
     public String getArtifactRef() {
         return this.artifactRef;
     }
@@ -53,14 +61,6 @@ public class StudioCatalogArtifactRecord {
 
     public void setArtifactType(String artifactType) {
         this.artifactType = artifactType;
-    }
-
-    public String getArtifactUrl() {
-        return this.artifactUrl;
-    }
-
-    public void setArtifactUrl(String artifactUrl) {
-        this.artifactUrl = artifactUrl;
     }
 
     public String getChecksumHash() {

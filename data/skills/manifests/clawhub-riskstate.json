@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/riskstate@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-riskstate-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-riskstate-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b5e3d6e015b2e279b931d455085f674f03d8bfc2f5ea18874a1eee8e99f81b23",

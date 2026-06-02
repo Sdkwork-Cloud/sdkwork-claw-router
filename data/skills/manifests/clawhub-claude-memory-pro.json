@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-memory-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-memory-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-memory-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5278d1363dec67541c150e19a65f0baf9e5d6bff12bc953ff67ca88808b0c00",

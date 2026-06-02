@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-queue-sr@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-queue-sr-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-queue-sr-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b997da5d61e7f780c45916fc4a20801a042f491f9a38f52f0e2f25c74081c68e",

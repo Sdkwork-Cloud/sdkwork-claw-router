@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tradingview-screener@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tradingview-screener-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tradingview-screener-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b17c52cdbf8cf60406d915c0ddf110c5053ebb1aaa84e6245ee3229cc06e137",

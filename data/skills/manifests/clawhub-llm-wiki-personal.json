@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-wiki-personal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-wiki-personal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-wiki-personal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d1f59179188ff7694e127a71a8b1d8cb4688c2ca089cb31e07758fc14113d8b5",

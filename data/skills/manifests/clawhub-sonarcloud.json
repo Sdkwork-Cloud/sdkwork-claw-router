@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sonarcloud@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-sonarcloud-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sonarcloud-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a424bcb38552bd3c225270a22ffea2929d9593f4edabbb851a78792f23324715",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/robinhood@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-robinhood-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-robinhood-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f39035b88c4e994efe6e829c135be9727fd5cb271a43096fe5421a0689e05984",

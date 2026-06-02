@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/papertrail@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-papertrail-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-papertrail-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:0c701fd51b0508fc520e805cccab1d86e4d586c26a7537c30c73709d7373cd06",

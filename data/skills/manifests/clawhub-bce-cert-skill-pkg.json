@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bce-cert-skill-pkg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bce-cert-skill-pkg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bce-cert-skill-pkg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f7c3789553753841380fe1466adbb68a8495158cbf744338cbfd9e8c743816b3",

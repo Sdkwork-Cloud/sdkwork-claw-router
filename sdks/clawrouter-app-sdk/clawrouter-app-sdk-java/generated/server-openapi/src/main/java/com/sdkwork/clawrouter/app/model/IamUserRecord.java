@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class IamUserRecord {
-    private String avatarUrl;
+    private MediaResource avatar;
     private String createdAt;
     private String displayName;
     private String email;
@@ -13,12 +13,12 @@ public class IamUserRecord {
     private String updatedAt;
     private String username;
 
-    public String getAvatarUrl() {
-        return this.avatarUrl;
+    public MediaResource getAvatar() {
+        return this.avatar;
     }
 
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
+    public void setAvatar(MediaResource avatar) {
+        this.avatar = avatar;
     }
 
     public String getCreatedAt() {

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice2text@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice2text-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice2text-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0cf4cec24f005b2560df9b7288cf1e258b0e669c40f4be83402cf21367430494",

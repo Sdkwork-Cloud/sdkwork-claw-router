@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-executor@2.3.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-executor-2.3.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-executor-2.3.4.json"
+      },
       "version": "2.3.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6493564e047a3e62532f1621668e1b785ca7a2fc037f72b5a78694c618bb8110",

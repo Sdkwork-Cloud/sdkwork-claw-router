@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subtitle-davinci@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subtitle-davinci-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subtitle-davinci-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0e792d21a766f3ba8c3103a02d39da27ce43de8ad718d8cc54b1acc7eb07a42",

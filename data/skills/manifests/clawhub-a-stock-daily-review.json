@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/a-stock-daily-review@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-daily-review-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-a-stock-daily-review-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c4ae6911a1a65ff5d1b2392ebf51d4bdd28f547bb337f35724828f868f44df6b",

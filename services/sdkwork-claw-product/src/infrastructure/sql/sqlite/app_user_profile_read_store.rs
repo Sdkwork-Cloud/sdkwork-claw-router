@@ -1,6 +1,7 @@
 use sqlx::{Row, SqlitePool};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::sql_admin_product_center::media_resource_from_snapshot;
 use crate::ports::{
     AppUserProfileReadFuture, AppUserProfileReadStore, AppUserProfileSnapshot,
     AppUserProfileSubject,
@@ -49,7 +50,7 @@ SELECT
     COALESCE(u.username, '') AS username,
     COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), 'SDKWork User') AS display_name,
     COALESCE(u.email, '') AS email,
-    COALESCE(u.avatar_url, '') AS avatar_url,
+    COALESCE(CAST(u.avatar_resource_snapshot AS TEXT), '') AS avatar_resource_snapshot,
     COALESCE(u.phone, '') AS phone,
     COALESCE(NULLIF(pref.language, ''), 'en-US') AS language,
     COALESCE(u.status, '') AS user_status,
@@ -139,7 +140,7 @@ fn row_to_user_profile(row: &sqlx::sqlite::SqliteRow) -> DomainResult<AppUserPro
         username: string_cell(row, "username"),
         display_name: string_cell(row, "display_name"),
         email: string_cell(row, "email"),
-        avatar_url: string_cell(row, "avatar_url"),
+        avatar: media_resource_from_row(row, "avatar_resource_snapshot", "image"),
         phone: string_cell(row, "phone"),
         language: language_label(&string_cell(row, "language")),
         is_verified: status == "active",
@@ -153,6 +154,14 @@ fn row_to_user_profile(row: &sqlx::sqlite::SqliteRow) -> DomainResult<AppUserPro
             .max(0)
             .to_string(),
     })
+}
+
+fn media_resource_from_row(
+    row: &sqlx::sqlite::SqliteRow,
+    column: &str,
+    kind: &str,
+) -> serde_json::Value {
+    media_resource_from_snapshot(&string_cell(row, column), kind)
 }
 
 fn require_subject(subject: Option<AppUserProfileSubject>) -> DomainResult<AppUserProfileSubject> {

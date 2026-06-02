@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rumor-buster@0.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rumor-buster-0.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rumor-buster-0.5.0.json"
+      },
       "version": "0.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:763bf97a074c5e02c19039c67782b0dcc8e3bc84c8bad794216a80de6a69d74d",

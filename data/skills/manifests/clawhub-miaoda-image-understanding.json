@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/miaoda-image-understanding@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-miaoda-image-understanding-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-miaoda-image-understanding-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d66185137d9ef7c8eed14cbcd1ff2b8c06e2921ffe98cbfb774bd13c098f42d9",

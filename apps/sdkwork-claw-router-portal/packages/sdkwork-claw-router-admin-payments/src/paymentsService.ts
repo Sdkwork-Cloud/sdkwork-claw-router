@@ -2,6 +2,7 @@ import { createIdempotencyParams, createClientOperationToken, getClawRouterBacke
 
 type BackendCommerce = ReturnType<typeof getClawRouterBackendSdkClient>['commerce'];
 export type PaymentProviderAccountMutationInput = Parameters<BackendCommerce['payments']['providerAccounts']['create']>[0];
+export type PaymentProviderAccountStatusUpdateInput = Parameters<BackendCommerce['payments']['providerAccounts']['status']['update']>[1];
 
 export async function backendPaymentsProvidersList(params?: Parameters<BackendCommerce['payments']['providers']['list']>[0]) {
   return getClawRouterBackendSdkClient().commerce.payments.providers.list(params);
@@ -21,6 +22,40 @@ export async function backendPaymentsProviderAccountsCreate(input: PaymentProvid
   return getClawRouterBackendSdkClient().commerce.payments.providerAccounts.create(
     body,
     createIdempotencyParams('backend-payment-provider-account-create'),
+  );
+}
+
+export async function backendPaymentsProviderAccountsUpdate(
+  providerAccountId: string,
+  input: PaymentProviderAccountMutationInput,
+) {
+  const body: PaymentProviderAccountMutationInput = {
+    ...input,
+    clientRequestNo: input.clientRequestNo ?? createClientOperationToken('payment-provider-account-update'),
+  };
+  return getClawRouterBackendSdkClient().commerce.payments.providerAccounts.update(
+    providerAccountId,
+    body,
+    createIdempotencyParams('backend-payment-provider-account-update'),
+  );
+}
+
+export async function backendPaymentsProviderAccountsDelete(providerAccountId: string) {
+  return getClawRouterBackendSdkClient().commerce.payments.providerAccounts.delete(providerAccountId);
+}
+
+export async function backendPaymentsProviderAccountsStatusUpdate(
+  providerAccountId: string,
+  input: PaymentProviderAccountStatusUpdateInput,
+) {
+  const body: PaymentProviderAccountStatusUpdateInput = {
+    ...input,
+    clientRequestNo: input.clientRequestNo ?? createClientOperationToken('payment-provider-account-status'),
+  };
+  return getClawRouterBackendSdkClient().commerce.payments.providerAccounts.status.update(
+    providerAccountId,
+    body,
+    createIdempotencyParams('backend-payment-provider-account-status'),
   );
 }
 

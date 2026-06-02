@@ -8,10 +8,14 @@ export interface CommercePaymentChannelRecord {
   created_at: string;
   /** Currency code field on commerce payment channel record. */
   currency_code: string;
+  /** Id field on commerce payment channel record. */
+  id?: string;
   /** Method id field on commerce payment channel record. */
   method_id: string;
   /** Organization id field on commerce payment channel record. */
   organization_id?: string;
+  /** Priority field on commerce payment channel record. */
+  priority: string;
   /** Provider account id field on commerce payment channel record. */
   provider_account_id: string;
   /** Scene code field on commerce payment channel record. */

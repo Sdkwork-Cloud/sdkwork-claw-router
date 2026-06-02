@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/leviathan-news@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-leviathan-news-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-leviathan-news-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4ce778485d58032fc48a05f99790dcf1caec9f4704f9aef1964f46fa2f342e1a",

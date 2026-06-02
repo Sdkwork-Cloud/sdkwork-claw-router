@@ -39,8 +39,8 @@ AI_CHANNEL_ROUTE_CONTRACT_PATHS = (
     ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "queries.rs",
     ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "app_routing_read_store.rs",
     ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "app_routing_read_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_access_group_store.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_access_group_store.rs",
+    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_channel_group_store.rs",
+    ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_channel_group_store.rs",
     ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_channel_store.rs",
     ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "sqlite" / "admin_channel_store.rs",
     ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "postgres" / "admin_ai_resource_store.rs",
@@ -67,7 +67,7 @@ RUNTIME_MODEL_IDENTITY_FIXTURE_PATHS = (
     ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_chat_adapter_api.rs",
     ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_embeddings_adapter_api.rs",
     ROOT / "services" / "sdkwork-claw-product" / "tests" / "openai_responses_adapter_api.rs",
-    ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_admin_access_group_store.rs",
+    ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_admin_channel_group_store.rs",
     ROOT / "services" / "sdkwork-claw-product" / "tests" / "sqlite_openai_invocation_telemetry.rs",
 )
 AI_CHANNEL_ROUTE_RUNTIME_ROOTS = (

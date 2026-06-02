@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/authz@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-authz-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-authz-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:411546484482ab484fd7a0288b3c5c34941b5717ab622bb78e5128ad546c89f9",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/squirrelscan@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-squirrelscan-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-squirrelscan-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:7e2665375e74137f1336f3d8f28a2ce3768b4f4c8fc61a9b691be09bbdd69d75",

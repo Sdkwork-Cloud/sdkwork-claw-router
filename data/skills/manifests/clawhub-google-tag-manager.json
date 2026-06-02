@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-tag-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-tag-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-tag-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e2b6d569d69499bdca9aa7b8532cb763b88df5391c17ae8bbe38310a2dd8edf3",

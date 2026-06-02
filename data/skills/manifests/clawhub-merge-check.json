@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/merge-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-merge-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-merge-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5611419c435257580ce68d289cf39df12a1b2c9ce798b051f026c926f62fdd2d",

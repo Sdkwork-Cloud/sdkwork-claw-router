@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fertigation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fertigation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fertigation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0a933e08bf55be63bf5c00943f468ceeef90ce5f66e7d097ec2cce14b75d4428",

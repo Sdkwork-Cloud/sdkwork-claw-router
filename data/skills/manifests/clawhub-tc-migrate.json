@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tc-migrate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tc-migrate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tc-migrate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:24cbf69c351dca1c77a80b48cf76c68b96c849fd860965571dd483adeb526988",

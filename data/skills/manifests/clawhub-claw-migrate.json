@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-migrate@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-migrate-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-migrate-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28a0efdebd11ed144923f70e0106bd8a67cc5a92d48c5d664e5afc28c4ff68f6",

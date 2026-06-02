@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloud-mount@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloud-mount-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloud-mount-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:924115d6c512cce339a41146f97310f0872f8ce1638ade148e855faae8c47dd8",

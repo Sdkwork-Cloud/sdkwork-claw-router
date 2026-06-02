@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/permissions-broker@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-permissions-broker-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-permissions-broker-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:64f5d5141b7122e33ab0f8f244320cac9e3248875b2cb7a3a62a25e698ad4f58",

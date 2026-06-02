@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multi-bot-dedup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-multi-bot-dedup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multi-bot-dedup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18ef7b9aed26e5a036d5675a4875126b48b561e2e5417f01e2f6b9ee5b492511",

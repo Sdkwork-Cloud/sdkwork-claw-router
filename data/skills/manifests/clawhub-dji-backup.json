@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dji-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dji-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dji-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23d75193ad371cbca99aa7fee8f905e5b51722045975013f909505c822d95f70",

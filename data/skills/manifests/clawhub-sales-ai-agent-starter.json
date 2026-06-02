@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sales-ai-agent-starter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sales-ai-agent-starter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sales-ai-agent-starter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f5cd6dec59be3bd89a0424a7f7e16aa2324bea00fab8addda7ec1380883e15e",

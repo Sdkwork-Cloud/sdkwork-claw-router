@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solo-audit@1.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-solo-audit-1.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solo-audit-1.4.1.json"
+      },
       "version": "1.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:69ecc97cd459e3b3e625074187cc3ca1b8862cc57656101a07f3592bc373c6a2",

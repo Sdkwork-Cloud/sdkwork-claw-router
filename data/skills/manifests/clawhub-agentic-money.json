@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentic-money@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentic-money-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentic-money-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4fd299318f68fc37af6be1e508c9140746ec36ae9458a213dad4ad4096d57095",

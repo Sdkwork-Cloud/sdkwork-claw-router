@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/black-box@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-black-box-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-black-box-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:873ae5dcce00032387ba978f41c6841e31893af380045b96926dd041e13cf6fc",

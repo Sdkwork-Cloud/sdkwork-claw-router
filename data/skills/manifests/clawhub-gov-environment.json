@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gov-environment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gov-environment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gov-environment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9c84879cafb0ccebcac52f9bd83673900c8dfa6a3bd10768575d3543b6c49167",

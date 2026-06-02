@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cuda-ollama@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cuda-ollama-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cuda-ollama-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:760aed181a1909b164aa5abfcf5e46848966b784c2242314f1f680a7d765e810",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/honest-agent@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-honest-agent-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-honest-agent-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be61c8e6de006be7d507c7106de8f40cb39607268849aabf8e3de6018203e544",

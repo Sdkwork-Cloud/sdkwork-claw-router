@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fortune-china500-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fortune-china500-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fortune-china500-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8c79f1f4d395630a3a4e89183f34cefdf0951a17bd59b744225069524a0743dc",

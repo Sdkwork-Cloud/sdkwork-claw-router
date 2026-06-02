@@ -11,6 +11,63 @@ class AiApi {
 
   AiApi(this._client);
 
+  /// List groups
+  Future<ChannelGroupsListResult?> channelGroupsList() async {
+    final response = await _client.get(ApiPaths.backendPath('/ai/channel_groups'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ChannelGroupsListResult.fromJson(map);
+    })();
+  }
+
+  /// Create group
+  Future<ChannelGroupsCreateResult?> channelGroupsCreate(AdminChannelGroupCreateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.post(ApiPaths.backendPath('/ai/channel_groups'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ChannelGroupsCreateResult.fromJson(map);
+    })();
+  }
+
+  /// Delete group
+  Future<ChannelGroupsDeleteResult?> channelGroupsDelete(String channelGroupId) async {
+    final response = await _client.delete(ApiPaths.backendPath('/ai/channel_groups/${serializePathParameter(channelGroupId, const PathParameterSpec('channelGroupId', 'simple', false))}'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ChannelGroupsDeleteResult.fromJson(map);
+    })();
+  }
+
+  /// Update group
+  Future<ChannelGroupsUpdateResult?> channelGroupsUpdate(String channelGroupId, AdminChannelGroupUpdateRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.patch(ApiPaths.backendPath('/ai/channel_groups/${serializePathParameter(channelGroupId, const PathParameterSpec('channelGroupId', 'simple', false))}'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ChannelGroupsUpdateResult.fromJson(map);
+    })();
+  }
+
+  /// List group channel bindings
+  Future<ChannelGroupsChannelBindingsListResult?> channelGroupsBindingsList(String channelGroupId) async {
+    final response = await _client.get(ApiPaths.backendPath('/ai/channel_groups/${serializePathParameter(channelGroupId, const PathParameterSpec('channelGroupId', 'simple', false))}/channel_bindings'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ChannelGroupsChannelBindingsListResult.fromJson(map);
+    })();
+  }
+
+  /// Replace group channel bindings
+  Future<ChannelGroupsChannelBindingsUpdateResult?> channelGroupsBindingsUpdate(String channelGroupId, AdminChannelGroupChannelBindingsReplaceRequest body) async {
+    final payload = body.toJson();
+    final response = await _client.put(ApiPaths.backendPath('/ai/channel_groups/${serializePathParameter(channelGroupId, const PathParameterSpec('channelGroupId', 'simple', false))}/channel_bindings'), body: payload, contentType: 'application/json');
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : ChannelGroupsChannelBindingsUpdateResult.fromJson(map);
+    })();
+  }
+
   /// List model rankings
   Future<ModelRankingsListResult?> modelRankingsList([String? rankScope, String? vendorCode, String? modality, String? q, int? limit]) async {
     final query = buildQueryString([

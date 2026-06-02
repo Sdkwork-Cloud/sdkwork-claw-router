@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inventory-anomaly@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-inventory-anomaly-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inventory-anomaly-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e9382701895868d7aaa726a18901ab4012588c1cb996a9ceb8fe6140a9cf5b47",

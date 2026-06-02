@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/free-maker-image@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-free-maker-image-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-free-maker-image-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b6400f2054e1859d006066d124a6dec6a22495ce168585676b52ef88821d7e8",

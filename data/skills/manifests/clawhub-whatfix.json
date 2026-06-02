@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whatfix@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-whatfix-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whatfix-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:29c34bf3e3b8100bf37b4567d5d54e40ca8c152ef2530d7767a3ab4bac7f93d3",

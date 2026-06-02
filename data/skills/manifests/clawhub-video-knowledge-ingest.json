@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-knowledge-ingest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-knowledge-ingest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-knowledge-ingest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6d801df2b21c785b7724270164ed65b2b16c9add09820d90ee2ec6c52254b370",

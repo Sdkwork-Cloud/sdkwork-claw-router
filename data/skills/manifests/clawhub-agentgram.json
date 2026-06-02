@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentgram@2.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentgram-2.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentgram-2.5.0.json"
+      },
       "version": "2.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c668b723f3cc476c173cf02717e75e73eb8978f5e425bc1f3854b05575ac8431",

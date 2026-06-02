@@ -6,7 +6,7 @@ type AdminAppTemplateItemResponse struct {
 	CapabilityManifest []map[string]JsonValue `json:"capabilityManifest"`
 	CategoryCode string `json:"categoryCode"`
 	CategoryId string `json:"categoryId"`
-	CoverUrl string `json:"coverUrl"`
+	Cover MediaResource `json:"cover"`
 	CreatedAt string `json:"createdAt"`
 	CurrentVersionId string `json:"currentVersionId"`
 	DefaultAppConfig map[string]JsonValue `json:"defaultAppConfig"`
@@ -17,7 +17,7 @@ type AdminAppTemplateItemResponse struct {
 	GitRef string `json:"gitRef"`
 	GitRepoUrl string `json:"gitRepoUrl"`
 	GitSubPath string `json:"gitSubPath"`
-	IconUrl string `json:"iconUrl"`
+	Icon MediaResource `json:"icon"`
 	Id string `json:"id"`
 	Language string `json:"language"`
 	PublishStatus string `json:"publishStatus"`

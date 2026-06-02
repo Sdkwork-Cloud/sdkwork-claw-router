@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-battery@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-battery-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-battery-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f6e0541d3d1ab3457bf45091538e11cac93d3b34d2132f56db5c6d0f6a53c491",

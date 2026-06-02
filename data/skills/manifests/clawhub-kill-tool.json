@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kill-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kill-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kill-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1e53247279546c8ec7e26e18f295ac83574a3220ce8fb332038760df8bc7fc8a",

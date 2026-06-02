@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-voice-skill@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-voice-skill-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-voice-skill-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0e6c1f11a163d746a823c31d92fad8805fb31fa8b102d7efdb4b392057d5d656",

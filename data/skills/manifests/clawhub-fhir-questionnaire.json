@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fhir-questionnaire@0.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-fhir-questionnaire-0.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fhir-questionnaire-0.2.4.json"
+      },
       "version": "0.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:651489625c5d4cda99465c7aa03a410b04eaf726d5f11d10c8618ecd80adf66b",

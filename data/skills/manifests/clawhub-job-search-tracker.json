@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/job-search-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-job-search-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-job-search-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:065f0af232d3141f79a8f604354016a42171cafd0ebc12426a1b97a7d00c8d00",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/md2word@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-md2word-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-md2word-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8be730dccfbeb652d23a2b280d312e80783913dcfab5653a5419fc5abab17a83",

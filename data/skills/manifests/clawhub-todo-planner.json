@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/todo-planner@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-todo-planner-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-todo-planner-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e6578d57c03162880f045fe51fe99bd994e08f90ee5b85a20df57ad29a9ee50",

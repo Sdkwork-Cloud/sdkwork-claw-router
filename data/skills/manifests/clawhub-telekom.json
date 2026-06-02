@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telekom@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-telekom-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telekom-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:114be673e44ad5648fd0acd213cf77d6c97d562d4fffb5207d6205a4282d6959",

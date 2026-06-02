@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/novel-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-novel-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-novel-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5faf3a950630995ea99ef2f7a6cd05d3a624891e65ae086e7dff856b742ea3dc",

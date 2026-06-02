@@ -13,9 +13,11 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? DeletedBy { get; set; }
         public string? EffectiveFrom { get; set; }
         public string? EffectiveTo { get; set; }
+        public string? GrantType { get; set; }
         public string? Id { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? OrganizationId { get; set; }
+        public int? Priority { get; set; }
         public string? ResourceCode { get; set; }
         public string? ResourceGroupCode { get; set; }
         public string? ResourceGroupId { get; set; }

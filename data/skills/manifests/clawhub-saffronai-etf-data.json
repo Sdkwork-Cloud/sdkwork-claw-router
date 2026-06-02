@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/saffronai-etf-data@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-saffronai-etf-data-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-saffronai-etf-data-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ece810ca58548414d2a7d74eed9afdb7b4b90fa3e9a5243e765edf65ec3dce00",

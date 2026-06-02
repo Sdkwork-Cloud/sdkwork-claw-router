@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/composio-agent-orchestrator@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-composio-agent-orchestrator-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-composio-agent-orchestrator-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7010377731298cc2a1e95fef7e675f97157f46a9cc6b9fb601ef57a5546d3d88",

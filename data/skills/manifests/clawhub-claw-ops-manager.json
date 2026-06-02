@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-ops-manager@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-ops-manager-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-ops-manager-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:22f9b5a4a38bddb408bfb7b5832cc9c7a647831f13386f6f221f6df41af45039",

@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminAgentItem
     {
-        public string? AvatarUrl { get; set; }
+        public MediaResource? Avatar { get; set; }
         public AdminAgentCapabilities? Capabilities { get; set; }
         public string? Code { get; set; }
         public string? CreatedAt { get; set; }

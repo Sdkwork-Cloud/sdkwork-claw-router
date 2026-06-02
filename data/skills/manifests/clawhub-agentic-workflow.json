@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentic-workflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentic-workflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentic-workflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1e33f4c43ae64de87bb93e4cf81a39ee5ed3e694fe390ecaff051fb57e5c5c70",

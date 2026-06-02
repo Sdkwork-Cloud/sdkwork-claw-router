@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dr-pepper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dr-pepper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dr-pepper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:243c0118a8b11b391f47c4bc5259d7d4babd39fe6c8ec693f91ad709d57cb8a4",

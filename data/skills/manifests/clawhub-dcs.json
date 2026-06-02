@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dcs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dcs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dcs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:257007b577d11e936cb63e7f799ffb745360182a78cfa304146f826b38487f0c",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/turtle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-turtle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-turtle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:11ce80589a98df90dfb2a39cf627547f5dc915d0c48a5ba112f565376c9d202d",

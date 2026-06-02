@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glm-web-search@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-glm-web-search-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glm-web-search-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:7529a0b86f4b89e63f08e386a0b95252663f777d10a98b2ca034f78875fea9b1",

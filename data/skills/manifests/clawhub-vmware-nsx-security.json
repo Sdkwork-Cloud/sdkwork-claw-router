@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vmware-nsx-security@1.5.22",
-      "artifactUrl": "data/skills/artifacts/clawhub-vmware-nsx-security-1.5.22.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vmware-nsx-security-1.5.22.json"
+      },
       "version": "1.5.22",
       "runtime": "metadata",
       "checksumHash": "sha256:097eafdc3edf2f8c3cb0ae3c7230fd08c6b4ebcb825d2245184e4479a5fbce4a",

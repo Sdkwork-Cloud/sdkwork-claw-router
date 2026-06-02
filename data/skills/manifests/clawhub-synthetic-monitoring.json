@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/synthetic-monitoring@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-synthetic-monitoring-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-synthetic-monitoring-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdacd1593620ae209df193047ff32d9260edf00f4e102b01c9aa3baef8ea4cbf",

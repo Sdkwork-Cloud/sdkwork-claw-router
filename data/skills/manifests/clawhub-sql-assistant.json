@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:21e24ed094b798c4cf0a15945e25fc1aed8d586d3d317d7f8c9efeed767d2a9c",

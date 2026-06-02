@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/serpdog@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-serpdog-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-serpdog-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:b928f3637a50f5bfd6aea493ea9219c1efade71e52a966b810bdab92fa15701a",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slack-automator@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slack-automator-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slack-automator-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:46778fce3929e3bfcbe3d91f8ee26764d4a734205f64ced47c543bf291b91f8b",

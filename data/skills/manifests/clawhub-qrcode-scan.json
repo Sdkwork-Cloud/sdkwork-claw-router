@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qrcode-scan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qrcode-scan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qrcode-scan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b36d70d63e2a2350ddc81700751f1509670c2c3ac5437d98fbfe45e80a5ae501",

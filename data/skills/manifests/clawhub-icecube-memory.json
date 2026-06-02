@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icecube-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icecube-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icecube-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3d3ecf3328d8d817a5dadd4cdb7ec9e49f4b464e8f8927e7c9938f61fdb2278",

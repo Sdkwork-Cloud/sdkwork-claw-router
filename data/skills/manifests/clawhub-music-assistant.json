@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-assistant@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-assistant-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-assistant-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:3a638113c892909ab1d064e8183a9e927ec3080a06917e931c5c875a5c377001",

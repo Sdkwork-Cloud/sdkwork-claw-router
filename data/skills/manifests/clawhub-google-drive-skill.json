@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-drive-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-drive-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-drive-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac5eae5ebecb3751c9af769f5bd1e3672dda51daac77f359b3c1432d4acfe14d",

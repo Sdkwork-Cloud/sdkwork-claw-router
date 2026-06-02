@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Admin app template update request schema exposed by Claw Router. */
 export interface AdminAppTemplateUpdateRequest {
@@ -10,8 +11,8 @@ export interface AdminAppTemplateUpdateRequest {
   categoryCode?: string | null;
   /** Category id field on admin app template update request. */
   categoryId?: string | null;
-  /** Cover url field on admin app template update request. */
-  coverUrl?: string | null;
+  /** Cover field on admin app template update request. */
+  cover?: MediaResource;
   /** Default app config field on admin app template update request. */
   defaultAppConfig?: Record<string, JsonValue>;
   /** Dependency manifest field on admin app template update request. */
@@ -28,8 +29,8 @@ export interface AdminAppTemplateUpdateRequest {
   gitRepoUrl?: string | null;
   /** Git sub path field on admin app template update request. */
   gitSubPath?: string | null;
-  /** Icon url field on admin app template update request. */
-  iconUrl?: string | null;
+  /** Icon field on admin app template update request. */
+  icon?: MediaResource;
   /** Language field on admin app template update request. */
   language?: string | null;
   /** Publish status field on admin app template update request. */

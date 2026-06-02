@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-huggingface@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-huggingface-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-huggingface-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c0903ac8cf676eeeb40008d7c0f0b47d4f7e301a57f340833e9a6141b0a54587",

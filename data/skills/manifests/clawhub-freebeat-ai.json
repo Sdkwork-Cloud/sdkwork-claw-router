@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/freebeat-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-freebeat-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-freebeat-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:900343cb0212ebbbd107ca99efa2258c5ad0fa018bb6a1c3640c5792ed9184f3",

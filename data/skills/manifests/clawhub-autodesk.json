@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/autodesk@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-autodesk-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-autodesk-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:24938ca0140996bbe136710314b398c7b59802ee103f5c51cef1418283fb6178",

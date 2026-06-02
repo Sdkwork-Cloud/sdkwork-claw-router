@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/usdc-hackathon@1.0.15",
-      "artifactUrl": "data/skills/artifacts/clawhub-usdc-hackathon-1.0.15.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-usdc-hackathon-1.0.15.json"
+      },
       "version": "1.0.15",
       "runtime": "metadata",
       "checksumHash": "sha256:ed1c2bca0b9005a887ad0e5f75f9ed7a49d88cb0ee1569cfecedec1ee85f5be9",

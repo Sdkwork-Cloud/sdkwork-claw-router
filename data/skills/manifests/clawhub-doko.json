@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/doko@2.3.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-doko-2.3.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-doko-2.3.4.json"
+      },
       "version": "2.3.4",
       "runtime": "metadata",
       "checksumHash": "sha256:4da003786beca1d3c239ace2c7cfdb729dfb29316373d70db7d86cf48bd2b2e6",

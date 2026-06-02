@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chrome-extension-wxt@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-chrome-extension-wxt-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chrome-extension-wxt-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a4d3d7612bb4800c0088cd599a5a1b61e50a7041d7a5443011bd560cb8bf757f",

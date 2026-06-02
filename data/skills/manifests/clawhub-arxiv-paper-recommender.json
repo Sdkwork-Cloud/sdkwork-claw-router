@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arxiv-paper-recommender@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-paper-recommender-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arxiv-paper-recommender-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4197c25754a38eec074d2cecd88d57269f3f3447b9eb86ad3cbd689811379487",

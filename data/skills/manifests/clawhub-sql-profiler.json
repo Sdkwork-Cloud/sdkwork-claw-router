@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-profiler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-profiler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-profiler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0cd69502ef84f2acd295546f832095138976c4fb665e44b22895d04a854be5eb",

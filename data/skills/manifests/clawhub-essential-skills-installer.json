@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/essential-skills-installer@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-essential-skills-installer-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-essential-skills-installer-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8053ba0907ce3ab82fadf28181480dad2d70b2fa515d11894e0f22b33dc595b",

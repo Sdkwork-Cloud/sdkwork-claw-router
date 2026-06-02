@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/presidio-pii-skill@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-presidio-pii-skill-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-presidio-pii-skill-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2aef391d71b104a6bbb1d3a39fb4ab47e5845c942ce247795930d3103f461f40",

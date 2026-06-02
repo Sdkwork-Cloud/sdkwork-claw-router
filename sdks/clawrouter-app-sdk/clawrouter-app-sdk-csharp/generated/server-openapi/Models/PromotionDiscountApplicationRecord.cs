@@ -11,8 +11,10 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? BudgetAccountId { get; set; }
         public string? CreatedAt { get; set; }
         public string? CurrencyCode { get; set; }
+        public string? DiscountAmountMinor { get; set; }
         public string? FailureCode { get; set; }
         public string? FailureMessage { get; set; }
+        public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
         public string? OfferId { get; set; }
         public string? OfferVersionId { get; set; }

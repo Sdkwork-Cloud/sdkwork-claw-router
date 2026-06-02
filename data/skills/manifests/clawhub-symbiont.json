@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/symbiont@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-symbiont-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-symbiont-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:432f836fbd3a2b8324f83048c1ef1ff77a23ee6da593ae789785443818e07d7e",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solo-ecommerce-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solo-ecommerce-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solo-ecommerce-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70c9cbb8a8d1afd8410aba455982fabed6e958e43e39960708caf9f0bc00d463",

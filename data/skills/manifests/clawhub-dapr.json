@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dapr@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-dapr-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dapr-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7979c1bad20330a628ea2fe0d68748015478eda71dd654631620cff7e1b9c360",

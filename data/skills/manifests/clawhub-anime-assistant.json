@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anime-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-anime-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anime-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd2a588f88f30b6c7e254a894f0fc21707a75abdfdebf65c18e258c48e6b3693",

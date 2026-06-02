@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/screenshot-capture@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-screenshot-capture-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-screenshot-capture-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a5ca257d7794129574b7e50b03f54f426e0341f7157014d72bb31d049744d6a",

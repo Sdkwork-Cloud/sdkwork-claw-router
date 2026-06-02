@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/home-depot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-home-depot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-home-depot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:81906417c07ae99a49ac68d4fe324f865687e30b0f87c74dcc231ee010b5df29",

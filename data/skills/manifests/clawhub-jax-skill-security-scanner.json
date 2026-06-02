@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jax-skill-security-scanner@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-jax-skill-security-scanner-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jax-skill-security-scanner-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:89d5b61366380f9e2adb69b6a7d5e6d6bb91bb8310f0f893cd64d1e78c651b3b",

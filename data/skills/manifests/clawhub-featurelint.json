@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/featurelint@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-featurelint-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-featurelint-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:33ad6f0e85cd18d45d87e99dbc32dd56fdb8e5042b50a4b43d796d14017b9f6a",

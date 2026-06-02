@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/car-sales-invoice-ocr@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-car-sales-invoice-ocr-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-car-sales-invoice-ocr-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:a86a1b872ac06c3a0c4b40e24f2abd0c681788386c32b6e797ec89231d1cba8f",

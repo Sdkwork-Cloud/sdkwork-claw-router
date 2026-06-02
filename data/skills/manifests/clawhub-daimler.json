@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daimler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-daimler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daimler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec31f4ff6fc6ad330639d3ed3382b7ba0fccfd1a7029cb503b537499f9814b8d",

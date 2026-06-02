@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-audit-log@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-audit-log-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-audit-log-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:59b08394512bc2055cdcabc9ca36b9712cf1db61135ceb1960ee20dd5b94b5e9",

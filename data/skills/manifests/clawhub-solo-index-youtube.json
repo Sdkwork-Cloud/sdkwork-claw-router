@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solo-index-youtube@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solo-index-youtube-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solo-index-youtube-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74e53fa10799bebf3ec74ca408b57dc96e7ee14e0cb202d4edb2c8486adc1569",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aana-guardrail-bundled@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-aana-guardrail-bundled-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aana-guardrail-bundled-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8e882d73317ceefb2f3aa44b0135a5b0f90e4231702e955053f7b2282d20f90a",

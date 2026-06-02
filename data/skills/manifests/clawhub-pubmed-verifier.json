@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pubmed-verifier@2.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-pubmed-verifier-2.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pubmed-verifier-2.1.4.json"
+      },
       "version": "2.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1c6f87539eee9fa04dc370aa868d88d64964f986bae3195ed0d419b51fb7eb0a",

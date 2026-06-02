@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hello-worlds@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-hello-worlds-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hello-worlds-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1f075380caa7f0d3e41fd73af3df497c6b0a4c4aeedf8fd085573e2c7cc7fb05",

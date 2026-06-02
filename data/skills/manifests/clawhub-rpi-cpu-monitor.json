@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rpi-cpu-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rpi-cpu-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rpi-cpu-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f0f4112d7ea0327bb111e9924c36da13a6128af18e61d15604fb8f73bac18ac",

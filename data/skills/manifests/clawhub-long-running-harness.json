@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/long-running-harness@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-long-running-harness-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-long-running-harness-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2028f29a377af766ee07324544c5f19091e4e0294c56cbb74fe06e1c95d5eccb",

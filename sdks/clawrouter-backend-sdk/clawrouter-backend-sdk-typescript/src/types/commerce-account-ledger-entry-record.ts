@@ -14,6 +14,8 @@ export interface CommerceAccountLedgerEntryRecord {
   created_at: string;
   /** Direction field on commerce account ledger entry record. */
   direction: string;
+  /** Id field on commerce account ledger entry record. */
+  id?: string;
   /** Idempotency key field on commerce account ledger entry record. */
   idempotency_key: string;
   /** Organization id field on commerce account ledger entry record. */

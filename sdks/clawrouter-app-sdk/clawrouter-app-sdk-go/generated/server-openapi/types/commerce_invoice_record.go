@@ -3,7 +3,8 @@ package types
 // Commerce invoice record schema exposed by Claw Router.
 type CommerceInvoiceRecord struct {
 	CreatedAt string `json:"created_at"`
-	DocumentUrl string `json:"document_url"`
+	Document MediaResource `json:"document"`
+	Id string `json:"id"`
 	InvoiceCode string `json:"invoice_code"`
 	InvoiceNo string `json:"invoice_no"`
 	IssuedAt string `json:"issued_at"`

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sumo-notebook-rag@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sumo-notebook-rag-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sumo-notebook-rag-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:73c4e14b5a3a9e679c91fca2921ae81801ed62d277e0b0c61e2306388b149312",

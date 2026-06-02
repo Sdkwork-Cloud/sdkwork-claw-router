@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsListResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult
+from ..models import AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogCategorySeedsCreateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsDeleteResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusDeleteResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceCategorySeedInitializeRequest, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePaymentProviderAccountStatusUpdateRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceRechargeSettingsUpdateRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsDeleteResult, PaymentsProviderAccountsListResult, PaymentsProviderAccountsStatusUpdateResult, PaymentsProviderAccountsUpdateResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsRuntimeSnapshotRetrieveResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -288,6 +288,7 @@ class CommerceCatalogApi:
         self._client = client
         self.attributes = CommerceCatalogAttributesApi(client)
         self.categories = CommerceCatalogCategoriesApi(client)
+        self.category_seeds = CommerceCatalogCategorySeedsApi(client)
         self.price_lists = CommerceCatalogPriceListsApi(client)
         self.products = CommerceCatalogProductsApi(client)
         self.skus = CommerceCatalogSkusApi(client)
@@ -361,6 +362,23 @@ class CommerceCatalogCategoriesApi:
         )
         return self._client.patch(f"/backend/v3/api/catalog/categories/{serialize_path_parameter(category_id, {'name': 'categoryId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
 
+class CommerceCatalogCategorySeedsApi:
+    """commerce commerce.catalog.category_seeds API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def create(self, body: CommerceCategorySeedInitializeRequest, idempotency_key: str) -> CatalogCategorySeedsCreateResult:
+        """Initialize admin category seed datasets"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.post(f"/backend/v3/api/catalog/category_seeds/initialize", json=body, headers=request_headers)
+
 class CommerceCatalogPriceListsApi:
     """commerce commerce.catalog.price_lists API client."""
 
@@ -419,6 +437,10 @@ class CommerceCatalogProductsApi:
         )
         return self._client.post(f"/backend/v3/api/catalog/products", json=body, headers=request_headers)
 
+    def delete(self, product_id: str) -> CatalogProductsDeleteResult:
+        """Delete product SPU"""
+        return self._client.delete(f"/backend/v3/api/catalog/products/{serialize_path_parameter(product_id, {'name': 'productId', 'style': 'simple', 'explode': False})}")
+
     def update(self, product_id: str, body: CommerceProductSpuMutationRequest, idempotency_key: str) -> CatalogProductsUpdateResult:
         """Update product SPU"""
         request_headers = build_request_headers(
@@ -456,6 +478,10 @@ class CommerceCatalogSkusApi:
             {}
         )
         return self._client.post(f"/backend/v3/api/catalog/skus", json=body, headers=request_headers)
+
+    def delete(self, sku_id: str) -> CatalogSkusDeleteResult:
+        """Delete product SKU"""
+        return self._client.delete(f"/backend/v3/api/catalog/skus/{serialize_path_parameter(sku_id, {'name': 'skuId', 'style': 'simple', 'explode': False})}")
 
     def update(self, sku_id: str, body: CommerceProductSkuMutationRequest, idempotency_key: str) -> CatalogSkusUpdateResult:
         """Update product SKU"""
@@ -888,6 +914,7 @@ class CommercePaymentsApi:
         self.providers = CommercePaymentsProvidersApi(client)
         self.reconciliation_runs = CommercePaymentsReconciliationRunsApi(client)
         self.route_rules = CommercePaymentsRouteRulesApi(client)
+        self.runtime = CommercePaymentsRuntimeApi(client)
         self.webhook_events = CommercePaymentsWebhookEventsApi(client)
 
 
@@ -966,6 +993,7 @@ class CommercePaymentsProviderAccountsApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.status = CommercePaymentsProviderAccountsStatusApi(client)
 
 
     def list(self, provider_code: Optional[str] = None, page: Optional[int] = None, page_size: Optional[int] = None, status: Optional[str] = None) -> PaymentsProviderAccountsListResult:
@@ -987,6 +1015,37 @@ class CommercePaymentsProviderAccountsApi:
             {}
         )
         return self._client.post(f"/backend/v3/api/payments/provider_accounts", json=body, headers=request_headers)
+
+    def delete(self, provider_account_id: str) -> PaymentsProviderAccountsDeleteResult:
+        """Payments Provider Accounts Delete"""
+        return self._client.delete(f"/backend/v3/api/payments/provider_accounts/{serialize_path_parameter(provider_account_id, {'name': 'providerAccountId', 'style': 'simple', 'explode': False})}")
+
+    def update(self, provider_account_id: str, body: CommercePaymentProviderAccountMutationRequest, idempotency_key: str) -> PaymentsProviderAccountsUpdateResult:
+        """Payments Provider Accounts Update"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.patch(f"/backend/v3/api/payments/provider_accounts/{serialize_path_parameter(provider_account_id, {'name': 'providerAccountId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+
+class CommercePaymentsProviderAccountsStatusApi:
+    """commerce commerce.payments.provider_accounts.status API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def update(self, provider_account_id: str, body: CommercePaymentProviderAccountStatusUpdateRequest, idempotency_key: str) -> PaymentsProviderAccountsStatusUpdateResult:
+        """Payments Provider Accounts Status Update"""
+        request_headers = build_request_headers(
+            {
+                'Idempotency-Key': {'value': idempotency_key, 'style': 'simple', 'explode': False},
+            },
+            {}
+        )
+        return self._client.patch(f"/backend/v3/api/payments/provider_accounts/{serialize_path_parameter(provider_account_id, {'name': 'providerAccountId', 'style': 'simple', 'explode': False})}/status", json=body, headers=request_headers)
 
 class CommercePaymentsProvidersApi:
     """commerce commerce.payments.providers API client."""
@@ -1041,6 +1100,28 @@ class CommercePaymentsRouteRulesApi:
         ])
         return self._client.get(_append_query_string(f"/backend/v3/api/payments/route_rules", query))
 
+class CommercePaymentsRuntimeApi:
+    """commerce commerce.payments.runtime API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.snapshot = CommercePaymentsRuntimeSnapshotApi(client)
+
+
+class CommercePaymentsRuntimeSnapshotApi:
+    """commerce commerce.payments.runtime.snapshot API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self, environment: Optional[str] = None) -> PaymentsRuntimeSnapshotRetrieveResult:
+        """Payments Runtime Snapshot Retrieve"""
+        query = build_query_string([
+            {'name': 'environment', 'value': environment, 'style': 'form', 'explode': True, 'allow_reserved': False},
+        ])
+        return self._client.get(_append_query_string(f"/backend/v3/api/payments/runtime/snapshot", query))
+
 class CommercePaymentsWebhookEventsApi:
     """commerce commerce.payments.webhook_events API client."""
 
@@ -1065,6 +1146,7 @@ class CommerceRechargesApi:
         self._client = client
         self.orders = CommerceRechargesOrdersApi(client)
         self.packages = CommerceRechargesPackagesApi(client)
+        self.settings = CommerceRechargesSettingsApi(client)
 
 
 class CommerceRechargesOrdersApi:
@@ -1122,6 +1204,21 @@ class CommerceRechargesPackagesApi:
             {}
         )
         return self._client.patch(f"/backend/v3/api/recharges/packages/{serialize_path_parameter(package_id, {'name': 'packageId', 'style': 'simple', 'explode': False})}", json=body, headers=request_headers)
+
+class CommerceRechargesSettingsApi:
+    """commerce commerce.recharges.settings API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def retrieve(self) -> RechargesSettingsRetrieveResult:
+        """Recharges Settings Retrieve"""
+        return self._client.get(f"/backend/v3/api/recharges/settings")
+
+    def update(self, body: CommerceRechargeSettingsUpdateRequest) -> RechargesSettingsUpdateResult:
+        """Recharges Settings Update"""
+        return self._client.put(f"/backend/v3/api/recharges/settings", json=body)
 
 class CommerceRefundsApi:
     """commerce commerce.refunds API client."""

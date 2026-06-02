@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image2text@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image2text-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image2text-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:78eb940cf071b71e455bb32301622b6cc3bf59f98ba10286c85a7f702cb59ce9",

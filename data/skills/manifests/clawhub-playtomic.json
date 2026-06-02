@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/playtomic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-playtomic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-playtomic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:49de586f8acadd731b8e532976592ab9c2e0f1ab24dfb031387bbfa7ac74801a",

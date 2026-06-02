@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/car-wash@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-car-wash-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-car-wash-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8dca545d0fd6cdc1953b6375bb66320fd6cbddf9b08d651ff39d7f7db495c941",

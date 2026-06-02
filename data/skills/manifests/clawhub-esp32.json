@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/esp32@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-esp32-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-esp32-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1e65ee0c5c9bd8310dc8863368f010fde8a8f3af77e7e6a0c8739d596df9541b",

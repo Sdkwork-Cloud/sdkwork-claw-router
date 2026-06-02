@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kaspa@1.0.11",
-      "artifactUrl": "data/skills/artifacts/clawhub-kaspa-1.0.11.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kaspa-1.0.11.json"
+      },
       "version": "1.0.11",
       "runtime": "metadata",
       "checksumHash": "sha256:f25c7fe555e09b98e3b78a5542d206539a93e7897c5c063018be748a3378148d",

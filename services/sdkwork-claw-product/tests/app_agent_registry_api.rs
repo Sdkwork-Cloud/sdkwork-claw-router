@@ -522,7 +522,7 @@ fn agent_item() -> AppAgentItem {
         description: "Creates product launch assets".to_owned(),
         visibility: "private".to_owned(),
         status: "active".to_owned(),
-        avatar_url: None,
+        avatar: None,
         template_source: None,
         created_at: "2026-05-17 08:00:00".to_owned(),
         updated_at: "2026-05-17 08:00:00".to_owned(),

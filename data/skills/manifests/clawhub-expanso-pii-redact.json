@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/expanso-pii-redact@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-expanso-pii-redact-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-expanso-pii-redact-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:65b4451f003ee20d2178b8dce172b9afbcdf4db063170981d232c78f50c79e58",

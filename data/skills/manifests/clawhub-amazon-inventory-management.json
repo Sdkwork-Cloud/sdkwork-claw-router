@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-inventory-management@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-inventory-management-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-inventory-management-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0ad3158393d805396675f23d22ad39750b2b2283ec53f708cffe0875e4dbf7b",

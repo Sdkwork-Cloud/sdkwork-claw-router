@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/benchmark-email@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-benchmark-email-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-benchmark-email-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ada1d2e9d7c60a78c22875041c2ed0a5c154b2dcce83835ed41b5205e39ab789",

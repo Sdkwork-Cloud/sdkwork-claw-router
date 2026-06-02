@@ -14,6 +14,8 @@ export interface ObjectProviderRecord {
   deleted_by?: string;
   /** Endpoint url field on object provider record. */
   endpoint_url?: string;
+  /** Health status field on object provider record. */
+  health_status?: string;
   /** Id field on object provider record. */
   id?: string;
   /** Idempotency key field on object provider record. */
@@ -24,6 +26,8 @@ export interface ObjectProviderRecord {
   metadata?: Record<string, JsonValue>;
   /** Organization id field on object provider record. */
   organization_id?: string;
+  /** Path style enabled field on object provider record. */
+  path_style_enabled?: boolean;
   /** Provider code field on object provider record. */
   provider_code?: string;
   /** Provider type field on object provider record. */
@@ -34,6 +38,12 @@ export interface ObjectProviderRecord {
   request_id?: string;
   /** Status field on object provider record. */
   status?: string;
+  /** Supports lifecycle field on object provider record. */
+  supports_lifecycle?: boolean;
+  /** Supports multipart field on object provider record. */
+  supports_multipart?: boolean;
+  /** Supports object lock field on object provider record. */
+  supports_object_lock?: boolean;
   /** Tenant id field on object provider record. */
   tenant_id?: string;
   /** Updated at field on object provider record. */

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rsyslog@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rsyslog-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rsyslog-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2438c71e913d92c955a8dae0223311d2d47b07e5ebd381cbdecfa4ac3c9ffe1e",

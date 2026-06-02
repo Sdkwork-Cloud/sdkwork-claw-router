@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chromia-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chromia-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chromia-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2ff5f213ce2a36817a3ba264966449a6b5b57052e79823d0dd5d57a8d9dfbdc7",

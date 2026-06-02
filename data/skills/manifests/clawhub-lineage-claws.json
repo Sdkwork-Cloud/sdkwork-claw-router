@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lineage-claws@0.4.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-lineage-claws-0.4.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lineage-claws-0.4.4.json"
+      },
       "version": "0.4.4",
       "runtime": "metadata",
       "checksumHash": "sha256:f493a09f947e8d4d8fd985eca63f6cdd7ca2b5ace025ed9243e92603d961f6d4",

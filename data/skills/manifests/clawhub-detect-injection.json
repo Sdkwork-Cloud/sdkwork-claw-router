@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/detect-injection@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-detect-injection-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-detect-injection-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cdfc83859ef9adaf6b8ef4a09922de87f130a5236ce0e1720b58a1bc65dd6e8e",

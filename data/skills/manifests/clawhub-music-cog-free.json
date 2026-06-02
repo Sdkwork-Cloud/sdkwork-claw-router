@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-cog-free@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-cog-free-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-cog-free-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:12a56e109f06b21bb68ef568f27c4693a946158881db7991c374ad000b271bfc",

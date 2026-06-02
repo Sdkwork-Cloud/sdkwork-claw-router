@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/context-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-context-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-context-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f6ed433234810734b8ad72a6dfa4e3d50e6aeb31c70454232d6cca6e17a5b45e",

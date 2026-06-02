@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crimson-devlog-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crimson-devlog-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crimson-devlog-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b9776702ad0668419e8c7c492394186c52bc17e277e3604719a7b69df291a544",

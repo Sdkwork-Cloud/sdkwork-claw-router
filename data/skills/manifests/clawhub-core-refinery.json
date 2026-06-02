@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/core-refinery@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-core-refinery-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-core-refinery-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:4978c949bbbadc9b8922f69ad494f9c8001ac56b1bceb2de1b5557dc0a068152",

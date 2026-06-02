@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sora-video-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sora-video-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sora-video-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2ae3397a2eacb590692a15764e06f4a7911dbb2cf3645ec0d372b6032e9685f",

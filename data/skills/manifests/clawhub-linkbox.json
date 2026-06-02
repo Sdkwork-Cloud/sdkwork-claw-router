@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linkbox@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-linkbox-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linkbox-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:deaee81527f5b70fa59a92550a7931c741e50e6668afe33af6528e6c11c3ad1e",

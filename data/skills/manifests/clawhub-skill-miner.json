@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-miner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-miner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-miner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:009ee5e2665e3f36432bf7b42c781555df881f36d802850232a2a9f4bed8c49e",

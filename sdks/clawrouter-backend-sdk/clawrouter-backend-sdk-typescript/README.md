@@ -26,7 +26,7 @@ const client = new SdkworkBackendClient({
 client.setApiKey('your-api-key');
 
 // Use the SDK
-const result = await client.ai.modelVendors.list();
+const result = await client.ai.channelGroups.list();
 ```
 
 ## Authentication Modes (Mutually Exclusive)
@@ -106,8 +106,8 @@ const result = await client.agents.agentDefinitions.list(params);
 ### ai
 
 ```typescript
-// List vendors
-const result = await client.ai.modelVendors.list();
+// List groups
+const result = await client.ai.channelGroups.list();
 ```
 
 ### commerce
@@ -134,8 +134,8 @@ const result = await client.ecosystem.skills.categories.list();
 ### iam
 
 ```typescript
-// List groups
-const result = await client.iam.accessGroups.list();
+// List API key map
+const result = await client.iam.apiKeys.list();
 ```
 
 ### integration
@@ -245,7 +245,7 @@ const result = await client.oss.providers.list();
 import { SdkworkBackendClient, NetworkError, TimeoutError, AuthenticationError } from '@sdkwork/clawrouter-backend-sdk';
 
 try {
-  const result = await client.ai.modelVendors.list();
+  const result = await client.ai.channelGroups.list();
 } catch (error) {
   if (error instanceof AuthenticationError) {
     console.error('Authentication failed:', error.message);

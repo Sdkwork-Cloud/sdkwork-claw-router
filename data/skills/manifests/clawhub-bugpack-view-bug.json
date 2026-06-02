@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bugpack-view-bug@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-bugpack-view-bug-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bugpack-view-bug-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6b89ee3bcbd8ccd69c3f5ab66493f8fe2396ef1f5781279ed11b5cc86aa66e88",

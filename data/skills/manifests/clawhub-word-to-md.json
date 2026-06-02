@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/word-to-md@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-word-to-md-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-word-to-md-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4acfe786b97924592db4c11ee264ec5e150b6b2d2cfa6f754731ef72d794b464",

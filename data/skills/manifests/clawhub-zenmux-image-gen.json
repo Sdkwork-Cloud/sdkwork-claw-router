@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zenmux-image-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zenmux-image-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zenmux-image-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:654e085a5254b738071f470dbf0ab4f88c93bf886dd838f215becadc133890c0",

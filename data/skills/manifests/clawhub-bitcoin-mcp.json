@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bitcoin-mcp@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bitcoin-mcp-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bitcoin-mcp-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b26c788230d2d40428321720800a4c7128f35d72edb7440f46076fd1d44401a2",

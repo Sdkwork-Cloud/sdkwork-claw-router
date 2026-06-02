@@ -2,6 +2,7 @@ package com.sdkwork.clawrouter.backend
 
 data class CommercePaymentProviderAccountItem(
     val accountNo: String? = null,
+    val accountRole: String? = null,
     val certificateRef: String? = null,
     val countryCode: String? = null,
     val createdAt: String? = null,

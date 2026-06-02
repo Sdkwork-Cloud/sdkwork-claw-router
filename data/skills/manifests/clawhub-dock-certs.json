@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dock-certs@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-dock-certs-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dock-certs-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5a88fbb94e24fea835a5587d47707c40d3f94f701c611ef749a046b80d3fda87",

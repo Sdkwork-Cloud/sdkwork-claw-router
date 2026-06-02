@@ -1,8 +1,14 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Studio catalog artifact record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct StudioCatalogArtifactRecord {
+    /// Artifact field on studio catalog artifact record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub artifact: Option<MediaResource>,
+
     /// Artifact ref field on studio catalog artifact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub artifact_ref: Option<String>,
@@ -14,10 +20,6 @@ pub struct StudioCatalogArtifactRecord {
     /// Artifact type field on studio catalog artifact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub artifact_type: Option<String>,
-
-    /// Artifact url field on studio catalog artifact record.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub artifact_url: Option<String>,
 
     /// Checksum hash field on studio catalog artifact record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/core-command-codegen@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-core-command-codegen-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-core-command-codegen-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e9661022afccf36f46c1f6c2d14a07c8ab133703fc044ace4e574a5675ea968d",

@@ -10,6 +10,8 @@ export interface CommerceOrderAddressSnapshotRecord {
   country_code: string;
   /** District field on commerce order address snapshot record. */
   district?: string;
+  /** Id field on commerce order address snapshot record. */
+  id?: string;
   /** Order id field on commerce order address snapshot record. */
   order_id: string;
   /** Organization id field on commerce order address snapshot record. */
@@ -22,6 +24,8 @@ export interface CommerceOrderAddressSnapshotRecord {
   recipient_name_snapshot: string;
   /** Region code field on commerce order address snapshot record. */
   region_code?: string;
+  /** Snapshot version field on commerce order address snapshot record. */
+  snapshot_version: string;
   /** Source address id field on commerce order address snapshot record. */
   source_address_id?: string;
   /** Tenant id field on commerce order address snapshot record. */

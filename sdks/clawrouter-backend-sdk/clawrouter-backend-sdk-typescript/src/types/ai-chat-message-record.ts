@@ -56,6 +56,8 @@ export interface AiChatMessageRecord {
   trace_id?: string;
   /** Turn id field on ai chat message record. */
   turn_id?: string;
+  /** Updated at field on ai chat message record. */
+  updated_at?: string;
   /** Usage link id field on ai chat message record. */
   usage_link_id?: string;
   /** User id field on ai chat message record. */

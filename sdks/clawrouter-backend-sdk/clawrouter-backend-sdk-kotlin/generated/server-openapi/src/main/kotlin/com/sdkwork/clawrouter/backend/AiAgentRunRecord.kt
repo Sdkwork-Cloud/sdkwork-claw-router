@@ -28,6 +28,7 @@ data class AiAgentRunRecord(
     val promptTokens: String? = null,
     val requestId: String? = null,
     val retentionUntil: String? = null,
+    val runStatus: String? = null,
     val runUuid: String? = null,
     val runtime: String? = null,
     val sourceSurface: String? = null,

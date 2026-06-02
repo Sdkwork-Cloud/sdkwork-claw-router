@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Admin skill category update request schema exposed by Claw Router. */
 export interface AdminSkillCategoryUpdateRequest {
   /** Code field on admin skill category update request. */
@@ -5,7 +7,7 @@ export interface AdminSkillCategoryUpdateRequest {
   /** Description field on admin skill category update request. */
   description?: string | null;
   /** Icon field on admin skill category update request. */
-  icon?: string | null;
+  icon?: MediaResource;
   /** Skill category display name. */
   name?: string;
   /** Parent id field on admin skill category update request. */

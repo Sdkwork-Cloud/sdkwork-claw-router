@@ -1,19 +1,5 @@
 fragment: shared/entities/ai
 x_response_entities:
-  generation_history_media_item: &id001
-    name: GenerationHistoryMediaItem
-    type: object
-    additionalProperties: false
-    required:
-    - url
-    properties:
-      url:
-        type: string
-        minLength: 1
-        maxLength: 2048
-      thumb:
-        type: string
-        maxLength: 2048
   generation_history_item:
     name: GenerationHistoryItem
     type: object
@@ -53,19 +39,18 @@ x_response_entities:
       modelCatalogKey:
         type: string
         maxLength: 256
-      url:
-        type: string
-        maxLength: 2048
+      asset:
+        $ref: '#/components/schemas/MediaResource'
       images:
         type: array
         maxItems: 20
         items:
-          type: string
-          maxLength: 2048
+          $ref: '#/components/schemas/MediaResource'
       videos:
         type: array
         maxItems: 20
-        items: *id001
+        items:
+          $ref: '#/components/schemas/MediaResource'
       aspectRatio:
         type: string
         enum:

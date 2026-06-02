@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-query-pro@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-query-pro-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-query-pro-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:84f0ce3954fd5be2ada29c5ae208d871e99ed368b75d66d8adf758e206ff67b5",

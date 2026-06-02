@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/macys@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-macys-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-macys-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c96e8d978243babba2b3e9f3e97fb69fe06d2c848c1612f9b871eb110c3c0124",

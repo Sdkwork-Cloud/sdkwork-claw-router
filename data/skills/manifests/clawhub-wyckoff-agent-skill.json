@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wyckoff-agent-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-wyckoff-agent-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wyckoff-agent-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:9cff20375e17b468180756ee6e427224ab287b886acb64656b8a8be74daefe9f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-score@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-score-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-score-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e197eb0e24080c0e200e8c43f16ea659702be71d354c9b75f3833d66815c4adb",

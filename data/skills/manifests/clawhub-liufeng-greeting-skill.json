@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/liufeng-greeting-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-liufeng-greeting-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-liufeng-greeting-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9b14c982bca67aa8b698ac6db5f1684b5d58c4023e21ee00f2ce3e7002dc85ee",

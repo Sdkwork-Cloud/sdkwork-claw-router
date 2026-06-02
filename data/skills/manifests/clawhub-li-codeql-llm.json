@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/li-codeql-llm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-li-codeql-llm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-li-codeql-llm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:68693684a00239fff2c8766a259db29cd864a2e72ea9693d3f5f2b5ae126fdeb",

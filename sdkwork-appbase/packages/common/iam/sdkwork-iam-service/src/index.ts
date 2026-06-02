@@ -1,8 +1,12 @@
 import { createIamAppContext, type IamAppContext } from "@sdkwork/iam-contracts";
 import type { IamAppSdkClient, IamBackendIamResourceClient, IamBackendSdkClient, IamSdkResourceClient } from "@sdkwork/iam-sdk-ports";
+import {
+  readSdkworkMediaResource,
+  type SdkworkMediaResource,
+} from "@sdkwork/runtime-bootstrap";
 
 export interface IamUser {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   displayName: string;
   email?: string;
   id?: string;
@@ -209,8 +213,7 @@ interface RemoteSession {
 }
 
 interface RemoteUser {
-  avatar?: string;
-  avatarUrl?: string;
+  avatar?: unknown;
   displayName?: string;
   email?: string;
   id?: string;
@@ -520,9 +523,7 @@ function toUser(value: unknown): IamUser {
     || "SDKWork User";
 
   return {
-    ...(optionalString(remote.avatarUrl) || optionalString(remote.avatar)
-      ? { avatarUrl: optionalString(remote.avatarUrl) || optionalString(remote.avatar) }
-      : {}),
+    avatar: readSdkworkMediaResource(remote.avatar),
     displayName,
     ...(optionalString(remote.email) ? { email: optionalString(remote.email) } : {}),
     ...(optionalString(remote.userId) || optionalString(remote.id) ? { id: optionalString(remote.userId) || optionalString(remote.id) } : {}),

@@ -1,11 +1,15 @@
 /** Commerce membership record schema exposed by Claw Router. */
 export interface CommerceMembershipRecord {
+  /** Auto renew field on commerce membership record. */
+  auto_renew: boolean;
   /** Created at field on commerce membership record. */
   created_at: string;
   /** Expires at field on commerce membership record. */
   expires_at: string;
   /** Grace until field on commerce membership record. */
   grace_until?: string;
+  /** Id field on commerce membership record. */
+  id?: string;
   /** Membership no field on commerce membership record. */
   membership_no: string;
   /** Organization id field on commerce membership record. */

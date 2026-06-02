@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/report-processor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-report-processor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-report-processor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b3dc5b572b24aebf8c3f47f660d95132365883c5928e243816cda99e43cccc0",

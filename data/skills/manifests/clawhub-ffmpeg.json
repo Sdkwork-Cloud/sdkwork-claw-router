@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ffmpeg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ffmpeg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ffmpeg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:209a71e1d504adc3bbbfb816a15e2a54222fa981f6634813f6a33f59a45a5af9",

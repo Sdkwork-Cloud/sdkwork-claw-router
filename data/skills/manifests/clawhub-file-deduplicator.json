@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/file-deduplicator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-file-deduplicator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-file-deduplicator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14d50b26a981e57d09484928f8c634ef4d7fc7606011baf85ec95383ed3d8d4c",

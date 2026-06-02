@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltmarkets-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltmarkets-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltmarkets-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bce1bb41339158112f93094aaa4ca7142e7cd1773bf4286c3f11a43f22a42348",

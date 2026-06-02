@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mordred-security-sandbox@4.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mordred-security-sandbox-4.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mordred-security-sandbox-4.1.1.json"
+      },
       "version": "4.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:be81c177797ddef3c8bf2ed476bdb55d6e0e161a45e7e1ab12119084f0f2529a",

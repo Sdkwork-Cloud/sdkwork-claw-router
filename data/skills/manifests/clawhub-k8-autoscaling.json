@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/k8-autoscaling@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-k8-autoscaling-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-k8-autoscaling-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:78a1b32bdb806fa15da9d694a773dba84b311885ab9a798f51f5a39a38021545",

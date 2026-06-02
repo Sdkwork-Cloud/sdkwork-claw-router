@@ -14,6 +14,7 @@ class CommerceIdempotencyKeyRecord:
     status: str
     tenant_id: str
     updated_at: str
+    id: Optional[str] = None
     locked_until: Optional[str] = None
     organization_id: Optional[str] = None
     response_json: Optional[str] = None

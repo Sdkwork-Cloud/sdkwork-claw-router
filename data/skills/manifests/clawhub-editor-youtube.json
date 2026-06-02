@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/editor-youtube@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-editor-youtube-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-editor-youtube-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c49db715670afc78ced5acc399300567559c30f424b8c56c736569bca6724758",

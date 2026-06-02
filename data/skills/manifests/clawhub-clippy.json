@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clippy@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clippy-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clippy-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b9abc2ff1a500759fa0d4ce0e65553dc18cdfa9314b2d680b447b13c74fee0bb",

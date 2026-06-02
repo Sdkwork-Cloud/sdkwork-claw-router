@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skyscanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skyscanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skyscanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:726e958e6fa34a1c00bcfad7da0e4e77852049181403247fd07f965f0e13abc4",

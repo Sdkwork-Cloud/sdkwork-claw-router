@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/track-upvotes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-track-upvotes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-track-upvotes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a5dc789d7c7ffd6c15fc8057585e5384c55973471e5ed3cd816d6394311e264c",

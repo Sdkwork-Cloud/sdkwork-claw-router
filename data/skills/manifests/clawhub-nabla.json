@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nabla@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-nabla-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nabla-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7fbce5fb6ac2c73c4048be543354147f9e1769dd07bf03aac9fdab91209eacad",

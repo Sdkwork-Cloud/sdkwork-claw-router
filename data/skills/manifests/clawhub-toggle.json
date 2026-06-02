@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toggle@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-toggle-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toggle-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:c613e919fdd095fc7b0643e3ad80a51554ebcbc94ae6480a76b0fa03961c9869",

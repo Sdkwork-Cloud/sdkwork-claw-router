@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deepfake-detection@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-deepfake-detection-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deepfake-detection-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e92270f25d5ac6cc2283a794cfa26f37c5c432ba2696052819d6d1c559b092a9",

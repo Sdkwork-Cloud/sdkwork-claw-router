@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lifepath@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lifepath-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lifepath-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0677154644356987f30222f7d9d5c96696dee567f693735520ee99f62bf2aad3",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xml-reader@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xml-reader-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xml-reader-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:43c79f6dd8e5d063b9f4df540a2a265f964a24b2218b22ca27cbbe44583f7578",

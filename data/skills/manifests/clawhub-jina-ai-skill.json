@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jina-ai-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jina-ai-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jina-ai-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c50e380143459633607aefa2f85342d794c0c6e43008c11fc6ff37198ece4397",

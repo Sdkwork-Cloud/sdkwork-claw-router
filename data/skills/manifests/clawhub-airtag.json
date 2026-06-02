@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/airtag@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-airtag-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-airtag-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3d06ba070d1d57e1cf20f107699eea8f3164ddbcc2a8228630fce4cf67d72425",

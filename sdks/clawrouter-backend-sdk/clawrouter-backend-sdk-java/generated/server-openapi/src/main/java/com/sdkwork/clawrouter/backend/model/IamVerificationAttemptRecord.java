@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.Map;
 
 public class IamVerificationAttemptRecord {
+    private String challengeId;
     private String createdAt;
     private String deviceHash;
     private String failureReason;
@@ -10,15 +11,29 @@ public class IamVerificationAttemptRecord {
     private String ipHash;
     private Boolean legalHold;
     private Map<String, String> metadata;
+    private String occurredAt;
     private String organizationId;
     private String payloadHash;
     private String requestId;
+    private String result;
     private String retentionUntil;
+    private Map<String, String> riskSnapshot;
+    private String sceneCode;
     private String status;
+    private String targetHash;
+    private String targetType;
     private String tenantId;
     private String traceId;
     private String userId;
     private String uuid;
+
+    public String getChallengeId() {
+        return this.challengeId;
+    }
+
+    public void setChallengeId(String challengeId) {
+        this.challengeId = challengeId;
+    }
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -76,6 +91,14 @@ public class IamVerificationAttemptRecord {
         this.metadata = metadata;
     }
 
+    public String getOccurredAt() {
+        return this.occurredAt;
+    }
+
+    public void setOccurredAt(String occurredAt) {
+        this.occurredAt = occurredAt;
+    }
+
     public String getOrganizationId() {
         return this.organizationId;
     }
@@ -100,6 +123,14 @@ public class IamVerificationAttemptRecord {
         this.requestId = requestId;
     }
 
+    public String getResult() {
+        return this.result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
     public String getRetentionUntil() {
         return this.retentionUntil;
     }
@@ -108,12 +139,44 @@ public class IamVerificationAttemptRecord {
         this.retentionUntil = retentionUntil;
     }
 
+    public Map<String, String> getRiskSnapshot() {
+        return this.riskSnapshot;
+    }
+
+    public void setRiskSnapshot(Map<String, String> riskSnapshot) {
+        this.riskSnapshot = riskSnapshot;
+    }
+
+    public String getSceneCode() {
+        return this.sceneCode;
+    }
+
+    public void setSceneCode(String sceneCode) {
+        this.sceneCode = sceneCode;
+    }
+
     public String getStatus() {
         return this.status;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getTargetHash() {
+        return this.targetHash;
+    }
+
+    public void setTargetHash(String targetHash) {
+        this.targetHash = targetHash;
+    }
+
+    public String getTargetType() {
+        return this.targetType;
+    }
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
     }
 
     public String getTenantId() {

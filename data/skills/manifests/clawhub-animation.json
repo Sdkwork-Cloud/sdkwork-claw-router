@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/animation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-animation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-animation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77fc4145a7b007608c2b61130363f8b984023acac276a74bf570e0959bb35a8e",

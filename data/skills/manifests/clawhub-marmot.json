@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marmot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marmot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marmot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15910d323e3e4e7c5c5e30cf0b9849c02043d1af9136f6cf7c10f9307bf8e356",

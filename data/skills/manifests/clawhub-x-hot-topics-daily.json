@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/x-hot-topics-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-x-hot-topics-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-x-hot-topics-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bfa5477b4d2830d1a95bf62131e7b51c5ee1758a8a08898b83f15eca1d39f2f5",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-base-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-base-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-base-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec0dba50e3c11a75422653bf52c3ade01d5b8fdc359bb10af19971d187e56a42",

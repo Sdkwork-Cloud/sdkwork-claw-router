@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finops@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-finops-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finops-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:136086086c9d37dd34780757497d2362a25da3c298e814765ee2f31e118cd838",

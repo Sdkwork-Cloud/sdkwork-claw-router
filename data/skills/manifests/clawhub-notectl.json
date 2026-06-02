@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/notectl@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-notectl-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-notectl-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1220dc4edb840dbe12c15c908d60a81c4aefb18a477d8f539456ba642edaac18",

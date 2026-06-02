@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/remote-terminal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-remote-terminal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-remote-terminal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8d08091a1f58900683d7b039df72a153d9e4a51458f3c634525573bb04f46ea0",

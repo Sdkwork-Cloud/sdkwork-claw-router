@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zenquote@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-zenquote-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zenquote-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:2622ef40e71398daa8e7482b66cff41ecfd07fd37306ec15fd7d0d1144b0d4b2",

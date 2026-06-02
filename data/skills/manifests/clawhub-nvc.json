@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nvc@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-nvc-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nvc-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d32dbc9cad6650e097901cc16f3b97de87ee6511f8246aaf1e073495a7f34b79",

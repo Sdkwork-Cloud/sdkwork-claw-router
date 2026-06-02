@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marsbit-news-skill@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-marsbit-news-skill-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marsbit-news-skill-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:8cf173700794bfe6c921d932a26ef8b42efd621958d7165bdb93b73140fd284f",

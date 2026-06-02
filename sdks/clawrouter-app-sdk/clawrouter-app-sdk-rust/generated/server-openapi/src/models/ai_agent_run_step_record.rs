@@ -115,6 +115,10 @@ pub struct AiAgentRunStepRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub step_index: Option<i64>,
 
+    /// Step status field on ai agent run step record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub step_status: Option<String>,
+
     /// Step type field on ai agent run step record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub step_type: Option<String>,

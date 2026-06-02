@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swarm-kanban@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swarm-kanban-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swarm-kanban-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:252e4c2ce0390673a2f0a8368bddb3da976c7ef122023cafceec5f7d9640c962",

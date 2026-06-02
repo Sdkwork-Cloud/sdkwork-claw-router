@@ -13,6 +13,10 @@ pub struct CommercePaymentReconciliationRunRecord {
     /// Difference amount field on commerce payment reconciliation run record.
     pub difference_amount: String,
 
+    /// Id field on commerce payment reconciliation run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on commerce payment reconciliation run record.
     pub idempotency_key: String,
 

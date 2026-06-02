@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sqlboot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sqlboot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sqlboot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05b4493b1594e4b803d7bba7c974abef901140615ea78a9242b362c4e0776335",

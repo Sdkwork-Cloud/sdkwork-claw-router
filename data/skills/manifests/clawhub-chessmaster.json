@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chessmaster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chessmaster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chessmaster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d82f882099b2f149bf6c1f8993673d55f9d1ee35af66eaeb60b88237c6528968",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/industry-map@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-industry-map-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-industry-map-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2aec65e6ba9156afe6437eff1ca38a746eb3669530214942b745550a01b4b7dd",

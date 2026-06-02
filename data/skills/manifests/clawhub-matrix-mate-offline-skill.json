@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/matrix-mate-offline-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-matrix-mate-offline-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-matrix-mate-offline-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:b169cfab4df070eec66043c4033600ac4bb470927937e09dc0da2ec49cc83bb2",

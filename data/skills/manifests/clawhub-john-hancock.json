@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/john-hancock@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-john-hancock-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-john-hancock-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b76e7e9d80f1c27dafa533f697a17fc1018f01ef8d243abc8bd2b97d72795b18",

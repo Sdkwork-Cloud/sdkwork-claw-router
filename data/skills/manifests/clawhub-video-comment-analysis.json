@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-comment-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-comment-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-comment-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ae0e2f690645e2c0cddcabe199e37e6fddb090638b383dc719b6f8229eb94eff",

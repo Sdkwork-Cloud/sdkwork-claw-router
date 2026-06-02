@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cadence@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cadence-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cadence-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:79ba661b62737017c22963f89f434483ccf2cdfc0a89bdb9ec750ff40c944102",

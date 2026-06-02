@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ecg-diagnosis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ecg-diagnosis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ecg-diagnosis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d38beefc908fe508af832fb3c56df8a10515c35337c0132cd323c6656989948e",

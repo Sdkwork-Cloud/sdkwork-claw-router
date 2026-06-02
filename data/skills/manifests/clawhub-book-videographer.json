@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-videographer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-videographer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-videographer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:59bdc3ff6584682cba79f3545840de535baa35268c601b94529ae58067a903a0",

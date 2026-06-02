@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dna@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dna-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dna-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc9c2cb6866259d56e74af5d5cf94344d3b9115ef889fed4a948294036931578",

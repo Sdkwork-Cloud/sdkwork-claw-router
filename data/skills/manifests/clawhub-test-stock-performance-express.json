@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-stock-performance-express@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-stock-performance-express-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-stock-performance-express-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:91b2418346817a15d3aac5f6c085ae99e66161e8fd0f8e3f2153b0346f1c0def",

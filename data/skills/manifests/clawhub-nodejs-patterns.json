@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nodejs-patterns@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nodejs-patterns-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nodejs-patterns-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74e56adde52d6159a7153403cee0b5153cd58b19861c227cd581ebbe11ca15c6",

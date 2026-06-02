@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trader-joes@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-trader-joes-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trader-joes-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a83c8bb116ffaf11d78f34f6109004095a6fb73b8d6426e1eecbadd8ba8cbd5e",

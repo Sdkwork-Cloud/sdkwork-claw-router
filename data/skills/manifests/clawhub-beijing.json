@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beijing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-beijing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beijing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:44c8c990b5d8cd333421e69f464e9f99f49eb4e7257f528b8636f46077537c6c",

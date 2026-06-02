@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bbs@3.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bbs-3.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bbs-3.0.3.json"
+      },
       "version": "3.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:465e8dce57e37349e213728781dd0ba600e69a20593ed36661ad861e51f13be5",

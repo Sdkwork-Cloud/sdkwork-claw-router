@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ssh-tunnel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ssh-tunnel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ssh-tunnel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c7b2aed18bfd56d447b1f4166fc34f29fcf028e38cd7b8791d3782a22188345",

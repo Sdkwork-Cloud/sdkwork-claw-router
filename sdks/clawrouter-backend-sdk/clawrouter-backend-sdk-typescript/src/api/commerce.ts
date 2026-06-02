@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceRechargeSettingsUpdateRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsListResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsRuntimeSnapshotRetrieveResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult } from '../types';
+import type { AuditCommerceEventsListResult, CatalogAttributesCreateResult, CatalogAttributesListResult, CatalogCategoriesCreateResult, CatalogCategoriesDeleteResult, CatalogCategoriesListResult, CatalogCategoriesUpdateResult, CatalogCategoryAttributesCreateResult, CatalogCategoryAttributesDeleteResult, CatalogCategoryAttributesListResult, CatalogCategoryAttributesUpdateResult, CatalogCategorySeedsCreateResult, CatalogPriceListsCreateResult, CatalogPriceListsListResult, CatalogProductsCreateResult, CatalogProductsDeleteResult, CatalogProductsListResult, CatalogProductsUpdateResult, CatalogSkusCreateResult, CatalogSkusDeleteResult, CatalogSkusListResult, CatalogSkusUpdateResult, CommerceCategorySeedInitializeRequest, CommerceInventoryStockUpdateRequest, CommerceMembershipMemberStatusRequest, CommerceMembershipPackageGroupMutationRequest, CommerceMembershipPackageMutationRequest, CommerceMembershipPlanMutationRequest, CommercePaymentProviderAccountMutationRequest, CommercePaymentProviderAccountStatusUpdateRequest, CommercePriceListMutationRequest, CommerceProductAttributeMutationRequest, CommerceProductCategoryAttributeMutationRequest, CommerceProductCategoryMutationRequest, CommerceProductSkuMutationRequest, CommerceProductSpuMutationRequest, CommerceRechargePackageMutationRequest, CommerceRechargeSettingsUpdateRequest, CommerceReportsOrderRevenueListResult, CommerceReportsPaymentReconciliationRetrieveResult, CommerceReportsRefundsListResult, CommerceStandardCommandRequest, FulfillmentsListResult, InventoryLedgerEntriesListResult, InventoryReservationsListResult, InventoryStocksListResult, InventoryStocksUpdateResult, InvoicesListResult, InvoicesRetrieveResult, InvoicesTitlesListResult, MembershipsEntitlementsListResult, MembershipsMembersListResult, MembershipsMembersStatusUpdateResult, MembershipsPackageGroupsCreateResult, MembershipsPackageGroupsDeleteResult, MembershipsPackageGroupsListResult, MembershipsPackageGroupsUpdateResult, MembershipsPackagesCreateResult, MembershipsPackagesDeleteResult, MembershipsPackagesListResult, MembershipsPackagesUpdateResult, MembershipsPlansCreateResult, MembershipsPlansDeleteResult, MembershipsPlansListResult, MembershipsPlansUpdateResult, OrdersEventsListResult, OrdersListResult, OrdersRetrieveResult, PaymentsAttemptsListResult, PaymentsChannelsListResult, PaymentsIntentsListResult, PaymentsMethodsListResult, PaymentsProviderAccountsCreateResult, PaymentsProviderAccountsDeleteResult, PaymentsProviderAccountsListResult, PaymentsProviderAccountsStatusUpdateResult, PaymentsProviderAccountsUpdateResult, PaymentsProvidersListResult, PaymentsReconciliationRunsListResult, PaymentsRouteRulesListResult, PaymentsRuntimeSnapshotRetrieveResult, PaymentsWebhookEventsListResult, RechargesOrdersListResult, RechargesPackagesCreateResult, RechargesPackagesDeleteResult, RechargesPackagesListResult, RechargesPackagesUpdateResult, RechargesSettingsRetrieveResult, RechargesSettingsUpdateResult, RefundsListResult, RefundsRetrieveResult, ShipmentsListResult, ShipmentsTrackingEventsListResult, WalletAccountsListResult, WalletAdjustmentsCreateResult, WalletExchangeRulesListResult, WalletLedgerEntriesListResult } from '../types';
 
 
 export interface CommerceWalletLedgerEntriesListParams {
@@ -465,6 +465,30 @@ export class CommercePaymentsProvidersApi {
   }
 }
 
+export interface CommercePaymentsProviderAccountsStatusUpdateParams {
+  idempotencyKey: string;
+}
+
+export class CommercePaymentsProviderAccountsStatusApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Payments Provider Accounts Status Update */
+  async update(providerAccountId: string, body: CommercePaymentProviderAccountStatusUpdateRequest, params: CommercePaymentsProviderAccountsStatusUpdateParams): Promise<PaymentsProviderAccountsStatusUpdateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.patch<PaymentsProviderAccountsStatusUpdateResult>(backendApiPath(`/payments/provider_accounts/${serializePathParameter(providerAccountId, { name: 'providerAccountId', style: 'simple', explode: false })}/status`), body, undefined, requestHeaders, 'application/json');
+  }
+}
+
 export interface CommercePaymentsProviderAccountsListParams {
   providerCode?: 'wechat_pay' | 'alipay' | 'paypal' | 'stripe' | 'apple_pay' | 'google_pay';
   page?: number;
@@ -476,11 +500,17 @@ export interface CommercePaymentsProviderAccountsCreateParams {
   idempotencyKey: string;
 }
 
+export interface CommercePaymentsProviderAccountsUpdateParams {
+  idempotencyKey: string;
+}
+
 export class CommercePaymentsProviderAccountsApi {
   private client: HttpClient;
+  public readonly status: CommercePaymentsProviderAccountsStatusApi;
 
   constructor(client: HttpClient) {
     this.client = client;
+    this.status = new CommercePaymentsProviderAccountsStatusApi(client);
   }
 
 
@@ -504,6 +534,22 @@ export class CommercePaymentsProviderAccountsApi {
       {}
     );
     return this.client.post<PaymentsProviderAccountsCreateResult>(backendApiPath(`/payments/provider_accounts`), body, undefined, requestHeaders, 'application/json');
+  }
+
+/** Payments Provider Accounts Delete */
+  async delete(providerAccountId: string): Promise<PaymentsProviderAccountsDeleteResult> {
+    return this.client.delete<PaymentsProviderAccountsDeleteResult>(backendApiPath(`/payments/provider_accounts/${serializePathParameter(providerAccountId, { name: 'providerAccountId', style: 'simple', explode: false })}`));
+  }
+
+/** Payments Provider Accounts Update */
+  async update(providerAccountId: string, body: CommercePaymentProviderAccountMutationRequest, params: CommercePaymentsProviderAccountsUpdateParams): Promise<PaymentsProviderAccountsUpdateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.patch<PaymentsProviderAccountsUpdateResult>(backendApiPath(`/payments/provider_accounts/${serializePathParameter(providerAccountId, { name: 'providerAccountId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
   }
 }
 
@@ -1323,6 +1369,11 @@ export class CommerceCatalogSkusApi {
     return this.client.post<CatalogSkusCreateResult>(backendApiPath(`/catalog/skus`), body, undefined, requestHeaders, 'application/json');
   }
 
+/** Delete product SKU */
+  async delete(skuId: string): Promise<CatalogSkusDeleteResult> {
+    return this.client.delete<CatalogSkusDeleteResult>(backendApiPath(`/catalog/skus/${serializePathParameter(skuId, { name: 'skuId', style: 'simple', explode: false })}`));
+  }
+
 /** Update product SKU */
   async update(skuId: string, body: CommerceProductSkuMutationRequest, params: CommerceCatalogSkusUpdateParams): Promise<CatalogSkusUpdateResult> {
     const requestHeaders = buildRequestHeaders(
@@ -1386,6 +1437,11 @@ export class CommerceCatalogProductsApi {
     return this.client.post<CatalogProductsCreateResult>(backendApiPath(`/catalog/products`), body, undefined, requestHeaders, 'application/json');
   }
 
+/** Delete product SPU */
+  async delete(productId: string): Promise<CatalogProductsDeleteResult> {
+    return this.client.delete<CatalogProductsDeleteResult>(backendApiPath(`/catalog/products/${serializePathParameter(productId, { name: 'productId', style: 'simple', explode: false })}`));
+  }
+
 /** Update product SPU */
   async update(productId: string, body: CommerceProductSpuMutationRequest, params: CommerceCatalogProductsUpdateParams): Promise<CatalogProductsUpdateResult> {
     const requestHeaders = buildRequestHeaders(
@@ -1439,6 +1495,94 @@ export class CommerceCatalogPriceListsApi {
       {}
     );
     return this.client.post<CatalogPriceListsCreateResult>(backendApiPath(`/catalog/price_lists`), body, undefined, requestHeaders, 'application/json');
+  }
+}
+
+export interface CommerceCatalogCategorySeedsCreateParams {
+  idempotencyKey: string;
+}
+
+export class CommerceCatalogCategorySeedsApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Initialize admin category seed datasets */
+  async create(body: CommerceCategorySeedInitializeRequest, params: CommerceCatalogCategorySeedsCreateParams): Promise<CatalogCategorySeedsCreateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<CatalogCategorySeedsCreateResult>(backendApiPath(`/catalog/category_seeds/initialize`), body, undefined, requestHeaders, 'application/json');
+  }
+}
+
+export interface CommerceCatalogCategoryAttributesListParams {
+  categoryId?: string;
+  attributeId?: string;
+  status?: string;
+  page?: number;
+  pageSize?: number;
+}
+
+export interface CommerceCatalogCategoryAttributesCreateParams {
+  idempotencyKey: string;
+}
+
+export interface CommerceCatalogCategoryAttributesUpdateParams {
+  idempotencyKey: string;
+}
+
+export class CommerceCatalogCategoryAttributesApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List category attribute bindings */
+  async list(params?: CommerceCatalogCategoryAttributesListParams): Promise<CatalogCategoryAttributesListResult> {
+    const query = buildQueryString([
+      { name: 'category_id', value: params?.categoryId, style: 'form', explode: true, allowReserved: false },
+      { name: 'attribute_id', value: params?.attributeId, style: 'form', explode: true, allowReserved: false },
+      { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
+      { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
+      { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<CatalogCategoryAttributesListResult>(appendQueryString(backendApiPath(`/catalog/category_attributes`), query));
+  }
+
+/** Create category attribute binding */
+  async create(body: CommerceProductCategoryAttributeMutationRequest, params: CommerceCatalogCategoryAttributesCreateParams): Promise<CatalogCategoryAttributesCreateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.post<CatalogCategoryAttributesCreateResult>(backendApiPath(`/catalog/category_attributes`), body, undefined, requestHeaders, 'application/json');
+  }
+
+/** Delete category attribute binding */
+  async delete(bindingId: string): Promise<CatalogCategoryAttributesDeleteResult> {
+    return this.client.delete<CatalogCategoryAttributesDeleteResult>(backendApiPath(`/catalog/category_attributes/${serializePathParameter(bindingId, { name: 'bindingId', style: 'simple', explode: false })}`));
+  }
+
+/** Update category attribute binding */
+  async update(bindingId: string, body: CommerceProductCategoryAttributeMutationRequest, params: CommerceCatalogCategoryAttributesUpdateParams): Promise<CatalogCategoryAttributesUpdateResult> {
+    const requestHeaders = buildRequestHeaders(
+      {
+        'Idempotency-Key': { value: params.idempotencyKey, style: 'simple', explode: false },
+      },
+      {}
+    );
+    return this.client.patch<CatalogCategoryAttributesUpdateResult>(backendApiPath(`/catalog/category_attributes/${serializePathParameter(bindingId, { name: 'bindingId', style: 'simple', explode: false })}`), body, undefined, requestHeaders, 'application/json');
   }
 }
 
@@ -1550,6 +1694,8 @@ export class CommerceCatalogApi {
   private client: HttpClient;
   public readonly attributes: CommerceCatalogAttributesApi;
   public readonly categories: CommerceCatalogCategoriesApi;
+  public readonly categoryAttributes: CommerceCatalogCategoryAttributesApi;
+  public readonly categorySeeds: CommerceCatalogCategorySeedsApi;
   public readonly priceLists: CommerceCatalogPriceListsApi;
   public readonly products: CommerceCatalogProductsApi;
   public readonly skus: CommerceCatalogSkusApi;
@@ -1558,6 +1704,8 @@ export class CommerceCatalogApi {
     this.client = client;
     this.attributes = new CommerceCatalogAttributesApi(client);
     this.categories = new CommerceCatalogCategoriesApi(client);
+    this.categoryAttributes = new CommerceCatalogCategoryAttributesApi(client);
+    this.categorySeeds = new CommerceCatalogCategorySeedsApi(client);
     this.priceLists = new CommerceCatalogPriceListsApi(client);
     this.products = new CommerceCatalogProductsApi(client);
     this.skus = new CommerceCatalogSkusApi(client);

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-validator@1.0.11",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-validator-1.0.11.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-validator-1.0.11.json"
+      },
       "version": "1.0.11",
       "runtime": "metadata",
       "checksumHash": "sha256:d56ef1a82d5a3a62de60a4bdadd1c5c181ac2d147b7e598ea08ee3355953b0af",

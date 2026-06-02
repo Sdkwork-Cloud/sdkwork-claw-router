@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/perrytest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-perrytest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-perrytest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23d517455e7b2faeef8ab579ce12214b89b01e81d58d51ac6ab5ed165713e9b3",

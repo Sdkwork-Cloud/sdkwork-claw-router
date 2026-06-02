@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-free-media-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-free-media-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-free-media-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cf4775e364304439c345a906676d8c1e9bdb3d97292acf31553f830c6bbc5704",

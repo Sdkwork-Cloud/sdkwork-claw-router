@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wordpress-wp-cli-admin@0.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-wp-cli-admin-0.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wordpress-wp-cli-admin-0.5.0.json"
+      },
       "version": "0.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cedfdb440f59a5f852f98e691b8b0c54195514f1d59efe0c87428f661f5b948b",

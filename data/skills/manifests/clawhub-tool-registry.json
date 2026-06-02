@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tool-registry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tool-registry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tool-registry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:496ffc39816000fa0975964a60bb418574615463faf05008e9222d61ab3fb5a6",

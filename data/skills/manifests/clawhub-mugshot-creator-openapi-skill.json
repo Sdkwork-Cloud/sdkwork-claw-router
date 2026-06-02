@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mugshot-creator-openapi-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mugshot-creator-openapi-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mugshot-creator-openapi-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4333c754fcd5dc7bdfc5019e3f8693c9c7d99be07db30917b15695da5e01ca5c",

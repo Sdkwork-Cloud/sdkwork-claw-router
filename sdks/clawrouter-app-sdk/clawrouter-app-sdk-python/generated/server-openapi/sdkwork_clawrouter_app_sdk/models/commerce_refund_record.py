@@ -15,3 +15,9 @@ class CommerceRefundRecord:
     status: str
     tenant_id: str
     updated_at: str
+    currency_code: Optional[str] = None
+    id: Optional[str] = None
+    organization_id: Optional[str] = None
+    payment_intent_id: Optional[str] = None
+    provider_code: Optional[str] = None
+    reason: Optional[str] = None

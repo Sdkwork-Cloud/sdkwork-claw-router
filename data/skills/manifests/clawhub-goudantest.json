@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goudantest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-goudantest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goudantest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9f0ac5bb666fa256bd930cf2777926b89de77705699f860695c71285929f8cd6",

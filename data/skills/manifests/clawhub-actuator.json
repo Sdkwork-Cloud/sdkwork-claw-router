@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/actuator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-actuator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-actuator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71d567dcca478a7d90263e79f72f1fa8ed0870a113600f6933c7094ed790e886",

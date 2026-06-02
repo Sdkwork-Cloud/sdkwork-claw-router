@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tradfri-lights@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tradfri-lights-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tradfri-lights-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1752bee03d2d209c389693690684c055b507ef1736a26769658515352c989238",

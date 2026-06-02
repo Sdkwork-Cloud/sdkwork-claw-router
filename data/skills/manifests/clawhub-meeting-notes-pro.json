@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-notes-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-notes-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-notes-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:edfc893749595278c17ecbd8aa448c3a39c7d118ea3c5d42d3c7b3f18e0396c5",

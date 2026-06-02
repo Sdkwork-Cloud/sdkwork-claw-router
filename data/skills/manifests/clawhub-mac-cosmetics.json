@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mac-cosmetics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mac-cosmetics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mac-cosmetics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e2cdbf7bcf18eeb1e248411177edcf3f64dced8417b03120b14fba975b50b973",

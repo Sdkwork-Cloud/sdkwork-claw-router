@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snapgen@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-snapgen-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snapgen-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:673924f2f7eee3fae5d3505c1de29321860d3dbd9078fd927f6168b70ca88121",

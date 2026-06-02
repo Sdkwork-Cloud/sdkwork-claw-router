@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/energizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-energizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-energizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e220e0447b6765447fe114aa0ea8e5d66d155fb12d8c12a04e2e04b59d72cf7",

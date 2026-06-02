@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/greetr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-greetr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-greetr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2533c8f2b24cf9fc0e86629f636298d392cee6ee429dfc50c618728669e2304b",

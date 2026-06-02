@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-helper-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-helper-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-helper-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4fa1f94cf3362fd78c7333b2c561ba0a945fa6b12c630d32713ff2a37169ce55",

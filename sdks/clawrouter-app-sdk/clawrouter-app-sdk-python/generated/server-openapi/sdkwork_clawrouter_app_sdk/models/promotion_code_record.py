@@ -8,10 +8,12 @@ class PromotionCodeRecord:
     """Promotion code record schema exposed by Claw Router."""
     activation_status: str
     can_resend: bool
+    claimed_quantity: str
     code_no: str
     code_type: str
     created_at: str
     currency_code: str
+    max_claims: str
     offer_id: str
     offer_version_id: str
     promotion_code_hash: str
@@ -27,6 +29,7 @@ class PromotionCodeRecord:
     claim_code_suffix: Optional[str] = None
     created_by: Optional[str] = None
     expires_at: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     promotion_code_last4: Optional[str] = None
     starts_at: Optional[str] = None

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ab-predictor@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ab-predictor-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ab-predictor-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b7e53b1d2f080897ca35350cae036fb6f701cf3dcbea59edd8457edaccf36282",

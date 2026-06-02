@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/theme-park-queue-times@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-theme-park-queue-times-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-theme-park-queue-times-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb9226d6dce8ed5bc3698e07be63230869a7c969718d8ba061550f4fd247b8a4",

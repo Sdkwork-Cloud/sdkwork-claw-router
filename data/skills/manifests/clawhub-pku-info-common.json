@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pku-info-common@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pku-info-common-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pku-info-common-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:63f9ab0697aceed906642cde201519e66f4c242841396a6fea60c15791ba6ed1",

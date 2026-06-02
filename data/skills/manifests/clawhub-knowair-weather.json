@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowair-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowair-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowair-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:30fc988c8d9083cbdd91d47325e6ddb79f49328cf1cea129dc639893b51aca96",

@@ -7,5 +7,5 @@ type CourseApplicationVideoUploadResponse struct {
 	Sha256 string `json:"sha256"`
 	SizeBytes int `json:"sizeBytes"`
 	UploadedAt string `json:"uploadedAt"`
-	VideoUrl string `json:"videoUrl"`
+	Video MediaResource `json:"video"`
 }

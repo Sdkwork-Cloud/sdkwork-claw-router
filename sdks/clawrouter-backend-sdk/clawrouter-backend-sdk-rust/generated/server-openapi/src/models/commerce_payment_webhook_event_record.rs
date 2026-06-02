@@ -9,6 +9,10 @@ pub struct CommercePaymentWebhookEventRecord {
     /// Event id field on commerce payment webhook event record.
     pub event_id: String,
 
+    /// Id field on commerce payment webhook event record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on commerce payment webhook event record.
     pub idempotency_key: String,
 

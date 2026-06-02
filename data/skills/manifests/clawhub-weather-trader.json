@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-trader@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-trader-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-trader-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:13030c53c20dbeda4734f5616de8e5cfdf37e439e420fc7272f80d97c36d05a0",

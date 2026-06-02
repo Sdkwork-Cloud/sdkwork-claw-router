@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/strategy-optimizer-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-strategy-optimizer-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-strategy-optimizer-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4b9d4bddb63a8950bcf3568c9bfe43f5825f03c9a2c27753876bdb45d3247f8b",

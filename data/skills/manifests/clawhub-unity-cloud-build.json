@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unity-cloud-build@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-unity-cloud-build-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unity-cloud-build-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:114aa6d8473f174acb8c223953b70a6e2e7bc30cf78ea93fc4630efe01440950",

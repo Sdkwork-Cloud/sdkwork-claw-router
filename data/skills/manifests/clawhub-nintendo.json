@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nintendo@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-nintendo-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nintendo-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:39b304c2bf2c773b734c89cc05d6109117c8b6575e33e96f545dc7136c87c350",

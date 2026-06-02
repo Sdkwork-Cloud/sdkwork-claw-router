@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-pro@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-pro-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-pro-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e17ba6004ae245852a80867d79393bf5e81fe3200310c37c4c68a4356f7d39a",

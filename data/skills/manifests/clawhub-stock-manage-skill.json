@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-manage-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-manage-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-manage-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:528df5931169f3bae7801297b2e8362471854e2b5e40aebc07249a72a688bf76",

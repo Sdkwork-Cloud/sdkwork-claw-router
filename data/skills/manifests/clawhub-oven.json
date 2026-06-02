@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oven@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-oven-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oven-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c3f6c3661d745604dbf3d3e79b763b5c48809c8637b75426352f90e54d3c42d6",

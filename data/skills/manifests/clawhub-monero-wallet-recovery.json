@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/monero-wallet-recovery@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-monero-wallet-recovery-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-monero-wallet-recovery-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da544d3c0418dc3e55108dfd1b8fd32455b619cebf4614263004c07765334639",

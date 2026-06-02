@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comfypet-jmcai-skill@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-comfypet-jmcai-skill-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comfypet-jmcai-skill-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:c4c3a7dc9df95561ed5099f13047a5659f78321a229c1b4e6a173b203066d9b3",

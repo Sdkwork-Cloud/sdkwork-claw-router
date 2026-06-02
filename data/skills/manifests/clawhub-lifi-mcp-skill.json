@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lifi-mcp-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lifi-mcp-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lifi-mcp-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c136a82403f3e700f9b62dde26550cd5b6507d616240fa8da00eb59b7cec600a",

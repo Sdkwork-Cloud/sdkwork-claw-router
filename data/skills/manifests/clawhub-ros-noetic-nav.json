@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ros-noetic-nav@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ros-noetic-nav-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ros-noetic-nav-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cd9dfcc6e6eb0b111de5ba7aab44baae7dd86cf765e962a253e9d84bdb51a30d",

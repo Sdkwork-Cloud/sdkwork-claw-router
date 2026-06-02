@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zerotoken-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-zerotoken-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zerotoken-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:ba34fc85406a4edfed1fbcbf6328718f1536bc9500463930280243c3b9fa7ca4",

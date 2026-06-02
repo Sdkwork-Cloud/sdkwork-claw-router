@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skills-backup-claw-shell@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skills-backup-claw-shell-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skills-backup-claw-shell-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a50b41435edbb1c5b88b4bec375e8f521c0788ae1bb8c666aa99bdf5837d4d5",

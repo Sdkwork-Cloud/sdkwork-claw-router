@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-discord@1.10.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-discord-1.10.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-discord-1.10.5.json"
+      },
       "version": "1.10.5",
       "runtime": "metadata",
       "checksumHash": "sha256:b9940e912981547770bdc99b63eba054371aa8590fa5613fbb7c071f94dfde82",

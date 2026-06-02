@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coinmarketcap-mcp-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coinmarketcap-mcp-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coinmarketcap-mcp-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67ae8f5da12cfde4eae24c32c3d8f3e0f86500231c95af072831c9e7666da5b4",

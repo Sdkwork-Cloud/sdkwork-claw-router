@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/syxx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-syxx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-syxx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5dd8968de2c19da492efe09fcd8659a75cb51cdbf5ac3fe0f6c01b1f871885ed",

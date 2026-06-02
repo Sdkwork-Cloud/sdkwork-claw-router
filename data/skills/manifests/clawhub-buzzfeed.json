@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buzzfeed@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-buzzfeed-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buzzfeed-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b92cabaa74781876239350b60f8205dc1ab39b96a3b163796da2fc11adf29e2a",

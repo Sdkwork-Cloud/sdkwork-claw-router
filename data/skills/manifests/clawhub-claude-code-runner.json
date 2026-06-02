@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-runner@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-runner-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-runner-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f078c3036d93d720d3a0e67106f3cfb64d0206428b0890f5f281cc6e3d2b5b2f",

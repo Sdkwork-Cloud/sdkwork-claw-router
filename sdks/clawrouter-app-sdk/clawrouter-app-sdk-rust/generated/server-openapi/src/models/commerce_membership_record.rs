@@ -3,6 +3,9 @@ use serde::{Deserialize, Serialize};
 /// Commerce membership record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CommerceMembershipRecord {
+    /// Auto renew field on commerce membership record.
+    pub auto_renew: bool,
+
     /// Created at field on commerce membership record.
     pub created_at: String,
 
@@ -12,6 +15,10 @@ pub struct CommerceMembershipRecord {
     /// Grace until field on commerce membership record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub grace_until: Option<String>,
+
+    /// Id field on commerce membership record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
 
     /// Membership no field on commerce membership record.
     pub membership_no: String,

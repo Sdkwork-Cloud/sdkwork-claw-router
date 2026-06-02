@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-nurture@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-nurture-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-nurture-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a08b651bd578b9b392849e30689d7705cabb1257ea21a09af027423c4dc437e",

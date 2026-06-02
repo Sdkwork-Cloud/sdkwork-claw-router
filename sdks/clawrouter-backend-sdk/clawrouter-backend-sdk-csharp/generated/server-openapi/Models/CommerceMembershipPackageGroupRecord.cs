@@ -9,9 +9,11 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? CreatedAt { get; set; }
         public string? Description { get; set; }
         public string? GroupNo { get; set; }
+        public string? Id { get; set; }
         public string? Name { get; set; }
         public string? OrganizationId { get; set; }
         public string? PlanId { get; set; }
+        public string? SortOrder { get; set; }
         public string? Status { get; set; }
         public string? TenantId { get; set; }
         public string? UpdatedAt { get; set; }

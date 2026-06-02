@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mongo-query@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mongo-query-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mongo-query-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be4cb6778e13a1e0225d6f9116c2193c2f9ab6ad5cb8eac45f50f0d1381a4856",

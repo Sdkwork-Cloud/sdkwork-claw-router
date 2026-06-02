@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/operator-humanizer@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-operator-humanizer-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-operator-humanizer-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f6c47c2a7bf6b3e5a79c05a177c50d360f3ad171760c557afeef4464e9434213",

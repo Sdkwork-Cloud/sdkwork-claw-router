@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trade-closer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trade-closer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trade-closer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71b27ea869e36307580142741015428e234db7b9876e58bf100a0c66781ffcb5",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-firewall@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-firewall-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-firewall-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3652e64ec5b25ee0be1ccc36fb9080ac3e572bd95b52b4a9eaff3524d1818a05",

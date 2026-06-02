@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-browser-image@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-browser-image-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-browser-image-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f07faae35345b51a976b34919074625e17ae296d9a20161807cda5350b3cd572",

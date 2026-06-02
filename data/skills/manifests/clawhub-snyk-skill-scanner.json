@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snyk-skill-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-snyk-skill-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snyk-skill-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e9e061ecb3b17197740bd2dba6a28ba141c16dc8fe54b24f21a3b213bed2b342",

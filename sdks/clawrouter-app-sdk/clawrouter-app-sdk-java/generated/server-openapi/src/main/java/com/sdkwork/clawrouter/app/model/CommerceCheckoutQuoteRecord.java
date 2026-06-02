@@ -5,11 +5,15 @@ public class CommerceCheckoutQuoteRecord {
     private String checkoutSessionId;
     private String createdAt;
     private String currencyCode;
+    private String discountAmount;
     private String expiresAt;
+    private String id;
     private String organizationId;
     private String originalAmount;
     private String payableAmount;
     private String quoteNo;
+    private String shippingAmount;
+    private String taxAmount;
     private String tenantId;
 
     public String getCheckoutSessionId() {
@@ -36,12 +40,28 @@ public class CommerceCheckoutQuoteRecord {
         this.currencyCode = currencyCode;
     }
 
+    public String getDiscountAmount() {
+        return this.discountAmount;
+    }
+
+    public void setDiscountAmount(String discountAmount) {
+        this.discountAmount = discountAmount;
+    }
+
     public String getExpiresAt() {
         return this.expiresAt;
     }
 
     public void setExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrganizationId() {
@@ -74,6 +94,22 @@ public class CommerceCheckoutQuoteRecord {
 
     public void setQuoteNo(String quoteNo) {
         this.quoteNo = quoteNo;
+    }
+
+    public String getShippingAmount() {
+        return this.shippingAmount;
+    }
+
+    public void setShippingAmount(String shippingAmount) {
+        this.shippingAmount = shippingAmount;
+    }
+
+    public String getTaxAmount() {
+        return this.taxAmount;
+    }
+
+    public void setTaxAmount(String taxAmount) {
+        this.taxAmount = taxAmount;
     }
 
     public String getTenantId() {

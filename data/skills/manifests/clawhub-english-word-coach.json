@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/english-word-coach@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-english-word-coach-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-english-word-coach-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c4e8ee7b3e080a5d9e6441cbc05fe2481746b8b622996e5037c01565265b366a",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blueai-models@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blueai-models-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blueai-models-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b80be52badf1731c46dbf05550b2b7dd40bc5c943b90b8dfc17bd082315bf1e",

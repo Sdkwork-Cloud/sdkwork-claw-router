@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-income-coach@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-income-coach-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-income-coach-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e2cd9337741b306fb756a7022299b265c60293f1fa308b83374a33017111982",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-knowledge-extractor@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-knowledge-extractor-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-knowledge-extractor-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c474d7af9c6fecb2b1ba5e47c253ecc846b986765f6206bd01587d0d71e076ec",

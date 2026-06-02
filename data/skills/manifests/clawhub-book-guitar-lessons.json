@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-guitar-lessons@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-guitar-lessons-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-guitar-lessons-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:272e870b7679829f39fe2422969c52a7fcabe8cda75fbc6f3e62bf9ad2d68f7e",

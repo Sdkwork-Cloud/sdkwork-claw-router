@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/volcengine-compute-ecs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-compute-ecs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-volcengine-compute-ecs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:781681c2a06aa1545bdcdcf2896fb65c27587b6906f8693307cab7d28ee4d864",

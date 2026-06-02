@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nautilus-trader-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nautilus-trader-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nautilus-trader-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ba1c14a28ec11106b2c3adfa8de0223cadbb6d988242d6f50f9e732281e48e7",

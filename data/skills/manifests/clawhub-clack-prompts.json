@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clack-prompts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clack-prompts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clack-prompts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b53e48d0a75714483330bf2518e4e26e0d3286cc42ca66b4d22778e0b6a3fa1a",

@@ -261,10 +261,10 @@ impl OpenAiInvocationPlugin for OpenAiBillingSubjectGuardPlugin {
                 missing.push("user");
             }
             if subject.group_id <= 0 {
-                missing.push("api key group");
+                missing.push("channel group");
             }
             if subject.group_code.trim().is_empty() {
-                missing.push("api key group code");
+                missing.push("channel group code");
             }
             if subject.pricing_plan_code.trim().is_empty() {
                 missing.push("pricing plan");

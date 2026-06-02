@@ -8,6 +8,8 @@ public class CommerceUserAddressRecord {
     private String countryCode;
     private String createdAt;
     private String district;
+    private String id;
+    private Boolean isDefault;
     private String organizationId;
     private String ownerUserId;
     private String phoneCountryCode;
@@ -66,6 +68,22 @@ public class CommerceUserAddressRecord {
 
     public void setDistrict(String district) {
         this.district = district;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Boolean getIsDefault() {
+        return this.isDefault;
+    }
+
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
     }
 
     public String getOrganizationId() {

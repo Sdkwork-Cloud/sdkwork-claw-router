@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smiles-to-docking@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-smiles-to-docking-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smiles-to-docking-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:64a6ce48e6fdfc06411706f35101daaea683d83512e489c92eaa8c6018ef9593",

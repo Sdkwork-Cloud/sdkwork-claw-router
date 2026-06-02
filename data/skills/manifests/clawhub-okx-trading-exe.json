@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/okx-trading-exe@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-okx-trading-exe-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-okx-trading-exe-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:17f1411d73e75e2fdbe82a7dfac417c4ffba17a3b505f4f9f74f49f95853a11e",

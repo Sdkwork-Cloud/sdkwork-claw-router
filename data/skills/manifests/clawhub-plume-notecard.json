@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/plume-notecard@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-plume-notecard-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-plume-notecard-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e9d0b73b4284058a7e40c1e88f63684f0d93201a16024ffb74b885c69d7018e4",

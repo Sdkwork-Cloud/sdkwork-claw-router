@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-task-runner@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-task-runner-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-task-runner-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b5509ac9014dae7a6c59dd6a81f8658f67b1d97445107af6b2f8d92ac06d1197",

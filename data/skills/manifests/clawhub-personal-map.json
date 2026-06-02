@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personal-map@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-personal-map-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personal-map-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d531f66f37d97495bc370fbdc0401c61909bd438872c91cd1f7a55779f3236da",

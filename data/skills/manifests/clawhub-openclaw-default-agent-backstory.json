@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-default-agent-backstory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-default-agent-backstory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-default-agent-backstory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c01ca596f73d5f1802d71f74f6aa70f99d41524ac3b11d3b94d69b0cc870e1f",

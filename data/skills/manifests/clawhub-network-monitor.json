@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/network-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-network-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-network-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:81346315fde21d4b86aeb84dd8020a043af2220b6b20b0d1987b0b34459cffac",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tarot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tarot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tarot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d826fd1f5b40046782e3a70cfbd18199cb85774eb69468419e27ffc4f537fa0f",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sage-memory@5.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sage-memory-5.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sage-memory-5.0.2.json"
+      },
       "version": "5.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5e805541c0e5b018526096aded6892a6c40dd49b4b75e9e86a51108867df2844",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cex@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cex-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cex-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:786d53b91fe0dc185b9f2342b324c2efaee65ea17a63a727005baad01383342f",

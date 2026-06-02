@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-coordination@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-coordination-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-coordination-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:34f1327525206ea26034f4e33ac924f93e2eba6b919685faa49d6e13e8471c3c",

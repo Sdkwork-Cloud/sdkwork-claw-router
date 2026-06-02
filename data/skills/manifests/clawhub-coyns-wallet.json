@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coyns-wallet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-coyns-wallet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coyns-wallet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d4386a2361e61590c191f0ce37307c38b161f252703d07ff6e4f77bedaaca4eb",

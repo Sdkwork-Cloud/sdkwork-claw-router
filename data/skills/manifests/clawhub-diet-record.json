@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/diet-record@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-diet-record-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-diet-record-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:96ba1dd96df917903aede56600855acc3a72c570180df6e5bd6417313a36bcf0",

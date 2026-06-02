@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-council@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-council-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-council-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b690eca016c2d65c354d25cc6333ad4a4dbcae98651357fe07fe5dff62372f2",

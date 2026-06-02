@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-llm-wiki@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-llm-wiki-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-llm-wiki-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25c86b63ec47b735d6d8290cdefaf2782fc06fcd1a3527afbf60f46799982adb",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-core-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-core-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-core-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de464bbd74fc6791a8241d0d1e6068bfef63483dde70ee4efaa369a6e36412ef",

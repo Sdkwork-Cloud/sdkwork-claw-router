@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/load-balancer@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-load-balancer-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-load-balancer-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:b8dd62770f9318c82dd6c571f00317bdc57397dcc5e767db77cd53557c1aa270",

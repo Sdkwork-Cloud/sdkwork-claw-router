@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/open-room-agent-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-open-room-agent-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-open-room-agent-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c39dab6644a3d7ab4e5367929a01cd626ec48b0c108e8ab29ced6277f460854",

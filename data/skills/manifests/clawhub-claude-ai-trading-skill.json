@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-ai-trading-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-ai-trading-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-ai-trading-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1a0514f69b11fac73f436f1c8cd7f3e4a35edfd63515e847d4dc94e6a3c337fa",

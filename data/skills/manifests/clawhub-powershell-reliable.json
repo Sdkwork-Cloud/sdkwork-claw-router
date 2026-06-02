@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/powershell-reliable@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-powershell-reliable-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-powershell-reliable-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:737efcdddd0a69b5fae6e94c13020e47675bed15abcbf12439ed4d4cb2ccf7d3",

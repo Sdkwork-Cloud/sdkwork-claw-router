@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-session-history@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-session-history-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-session-history-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3089fc9d33f76f4a8ce6a1554d05e0649353a5d103e749d231f22ac6272cea0f",

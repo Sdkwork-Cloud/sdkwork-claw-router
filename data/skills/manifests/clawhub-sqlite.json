@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sqlite@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sqlite-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sqlite-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:786700f13511aa47ff10322e438573984cba79b55504ee54eaf191664ceced5e",

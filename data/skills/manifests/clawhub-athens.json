@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/athens@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-athens-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-athens-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4297d63a85822df6078c824ff27f531a90a6f0006579f0bd7117027c311e51c8",

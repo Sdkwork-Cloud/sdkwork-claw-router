@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bot-file-processor@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-bot-file-processor-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bot-file-processor-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c8ca0036f448b53e817c7d77bcedb8b76c7ea6fa76f7afbe0cec0f8a09f175b5",

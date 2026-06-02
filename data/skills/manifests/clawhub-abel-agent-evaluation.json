@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abel-agent-evaluation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abel-agent-evaluation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abel-agent-evaluation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f6bf072f482e6c75067646a36104bf279a6d8957229e3fa2d923ce4b78f5885a",

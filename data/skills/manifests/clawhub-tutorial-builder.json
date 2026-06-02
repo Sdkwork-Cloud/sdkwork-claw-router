@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tutorial-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tutorial-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tutorial-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c5489dd3542a0d40042b8bce5b71ae8ff8c4711dee2f8669bbd832f958712e09",

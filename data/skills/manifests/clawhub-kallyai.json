@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kallyai@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kallyai-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kallyai-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:743751a6da70023e82f0c1fb16be0b066973ae5d1fa3782ae1b863960426c84c",

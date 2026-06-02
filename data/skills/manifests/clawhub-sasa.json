@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sasa@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sasa-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sasa-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b523c2c2caecffaa7d26bd195fc58e688784b9d31ae0c85f3ba8f471f7e37e3b",

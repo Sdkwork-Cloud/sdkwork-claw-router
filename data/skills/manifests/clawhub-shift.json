@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shift@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-shift-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shift-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5da24c1573b506a7590bb0113c7ac9f5555965d35a6058fbbf991a2c0836bb1a",

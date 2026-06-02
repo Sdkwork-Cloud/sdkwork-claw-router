@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fiat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fiat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fiat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1101f0331a14b1743d8774697e20da5dc3d794ad86bf2e0dd40a5ad44ff3c112",

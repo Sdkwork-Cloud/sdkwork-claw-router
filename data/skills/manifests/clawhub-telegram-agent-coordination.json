@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-agent-coordination@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-agent-coordination-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-agent-coordination-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0e747a5cde1acada0019748aae04c3e134955c4c0b1f50d5142003d96740eda",

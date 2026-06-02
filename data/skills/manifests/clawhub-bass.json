@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bass@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bass-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bass-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f45515581726942f98135fe942496bbca6852f056aaeeb52931afbfebbd0a474",

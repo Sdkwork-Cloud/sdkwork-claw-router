@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9b2ba1d741d206418738456750c57dc181e189afc5d8b677434b99155a0f364b",

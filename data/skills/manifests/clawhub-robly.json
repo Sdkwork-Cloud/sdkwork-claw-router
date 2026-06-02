@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/robly@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-robly-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-robly-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:cb819d9c014525331a7630ba466d00587ca4daf4ca179c17bd4388f803709d28",

@@ -1,6 +1,9 @@
 package com.sdkwork.clawrouter.backend
 
 data class MessagingSenderIdentityRecord(
+    val approvalPayload: Map<String, String>? = null,
+    val approvalStatus: String? = null,
+    val channel: String? = null,
     val countryCode: String? = null,
     val createdAt: String? = null,
     val dataScope: String? = null,
@@ -11,8 +14,11 @@ data class MessagingSenderIdentityRecord(
     val fromEmail: String? = null,
     val fromName: String? = null,
     val id: String? = null,
+    val identityCode: String? = null,
     val metadata: Map<String, String>? = null,
     val organizationId: String? = null,
+    val providerAccountId: String? = null,
+    val providerCode: String? = null,
     val rejectionReason: String? = null,
     val replyTo: String? = null,
     val senderId: String? = null,

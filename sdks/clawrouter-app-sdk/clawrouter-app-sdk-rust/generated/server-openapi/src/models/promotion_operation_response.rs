@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Promotion operation response schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct PromotionOperationResponse {
@@ -8,10 +10,10 @@ pub struct PromotionOperationResponse {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub payment_id: Option<String>,
 
-    /// Qr code image url field on promotion operation response.
-    #[serde(rename = "qrCodeImageUrl")]
+    /// Qr code field on promotion operation response.
+    #[serde(rename = "qrCode")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub qr_code_image_url: Option<String>,
+    pub qr_code: Option<MediaResource>,
 
     /// Qr code payload field on promotion operation response.
     #[serde(rename = "qrCodePayload")]

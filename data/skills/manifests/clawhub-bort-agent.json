@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bort-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bort-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bort-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62b7898532ce4399733fb02110b9ed89f54d8e968c0cf8bc3b8b5747b3450834",

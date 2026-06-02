@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opsgenie@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-opsgenie-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opsgenie-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:b1289a4fd1704359a7c112fd1c5d394fa7060dc07b66242d85daf9af89c132b8",

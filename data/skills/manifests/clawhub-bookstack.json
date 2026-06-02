@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bookstack@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-bookstack-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bookstack-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:12e4a6ba40ba443560f75ddaf4473f84618dbeda810b61f97eb9635c71b63213",

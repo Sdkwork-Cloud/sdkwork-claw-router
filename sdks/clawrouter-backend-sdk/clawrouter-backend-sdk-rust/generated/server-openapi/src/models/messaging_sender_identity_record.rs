@@ -3,6 +3,18 @@ use serde::{Deserialize, Serialize};
 /// Messaging sender identity record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct MessagingSenderIdentityRecord {
+    /// Approval payload field on messaging sender identity record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub approval_payload: Option<std::collections::HashMap<String, String>>,
+
+    /// Approval status field on messaging sender identity record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub approval_status: Option<String>,
+
+    /// Channel field on messaging sender identity record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub channel: Option<String>,
+
     /// Country code field on messaging sender identity record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub country_code: Option<String>,
@@ -43,6 +55,10 @@ pub struct MessagingSenderIdentityRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
 
+    /// Identity code field on messaging sender identity record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub identity_code: Option<String>,
+
     /// Metadata field on messaging sender identity record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub metadata: Option<std::collections::HashMap<String, String>>,
@@ -50,6 +66,14 @@ pub struct MessagingSenderIdentityRecord {
     /// Organization id field on messaging sender identity record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Provider account id field on messaging sender identity record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_account_id: Option<String>,
+
+    /// Provider code field on messaging sender identity record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_code: Option<String>,
 
     /// Rejection reason field on messaging sender identity record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

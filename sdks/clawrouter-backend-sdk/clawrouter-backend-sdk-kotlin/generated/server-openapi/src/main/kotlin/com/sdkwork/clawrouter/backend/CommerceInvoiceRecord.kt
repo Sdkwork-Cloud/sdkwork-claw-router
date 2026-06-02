@@ -2,7 +2,8 @@ package com.sdkwork.clawrouter.backend
 
 data class CommerceInvoiceRecord(
     val createdAt: String? = null,
-    val documentUrl: String? = null,
+    val document: MediaResource? = null,
+    val id: String? = null,
     val invoiceCode: String? = null,
     val invoiceNo: String? = null,
     val issuedAt: String? = null,

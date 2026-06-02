@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ernie-image-visual-promptsmith@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ernie-image-visual-promptsmith-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ernie-image-visual-promptsmith-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7a412f65a43b922210865742dc2cb4202d1e6ed5d324a5aff9b53e23e1dcdae3",

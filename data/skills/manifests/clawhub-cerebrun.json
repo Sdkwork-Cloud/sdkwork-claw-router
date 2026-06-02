@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cerebrun@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cerebrun-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cerebrun-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:37bc7bebcfe48c8b5b405b804f907441fef3c0b81537c52ad4e353931e5f2894",

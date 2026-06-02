@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/x-smart-read@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-x-smart-read-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-x-smart-read-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:de01db172f47f534e9c076f0aac4df6d3b2eb66d7776bf24682999608cb043a0",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/threat-intel-v2@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-threat-intel-v2-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-threat-intel-v2-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93c4561b0778d76d029a2d0c4904c7eb32301c8de2915c38a5f01df3c0b8f6ad",

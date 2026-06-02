@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nginx-reverse-proxy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nginx-reverse-proxy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nginx-reverse-proxy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86dfd96df0eb312e13d0a43dc283af5bc94ac0b2f84f997ea1d0a2ed022cce1c",

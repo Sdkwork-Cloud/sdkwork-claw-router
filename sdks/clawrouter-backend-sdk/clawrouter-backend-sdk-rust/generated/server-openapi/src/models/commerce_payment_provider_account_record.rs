@@ -19,6 +19,10 @@ pub struct CommercePaymentProviderAccountRecord {
     /// Environment field on commerce payment provider account record.
     pub environment: String,
 
+    /// Id field on commerce payment provider account record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Merchant id field on commerce payment provider account record.
     pub merchant_id: String,
 

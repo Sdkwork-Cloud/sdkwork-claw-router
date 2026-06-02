@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glassdoor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-glassdoor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glassdoor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d537a6bf147e8df7af781571ffcee614d28bfa38518bb17ad3e4569baff08882",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/activity-log-detector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-activity-log-detector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-activity-log-detector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f4f9a675ac4882da5f3fc5d4e10e5a1521625d926a3c577173d77ab92edcde86",

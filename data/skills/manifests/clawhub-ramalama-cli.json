@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ramalama-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ramalama-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ramalama-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c066b5ae657c94c4b1ae671e8804a08876438d1be430ee4305db618431eae5a2",

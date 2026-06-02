@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-knowledge-bases@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-knowledge-bases-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-knowledge-bases-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ccafdcabff8b2a5d5963e43e4d8b837f369507bdc18e03c6b5cf6fe43f307a64",

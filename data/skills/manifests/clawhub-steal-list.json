@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/steal-list@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-steal-list-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-steal-list-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:970f78e3d42c22fba2eded260a8611ec234bd37dfa137325feb1990f7364a775",

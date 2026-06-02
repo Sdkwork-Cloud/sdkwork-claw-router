@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/polibert-sentiment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-polibert-sentiment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-polibert-sentiment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:40d60b2a6d8276ecf9d79903dfba3954f59073c53a5e38ae42f78bcdb4ae755b",

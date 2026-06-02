@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trading-behaviour@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trading-behaviour-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trading-behaviour-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed6049617fd783a360e1f179824e6c751f5e32963e70199c3316c7c22b4d728a",

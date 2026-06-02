@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apicheck@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apicheck-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apicheck-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23a7638ab074fddfd7cc578b0f49bf2ae48360dd07bdbc7137eb7d504dd487c7",

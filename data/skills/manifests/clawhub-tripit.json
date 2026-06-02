@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tripit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tripit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tripit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8606caf5ca844988034f6efa4b05aa8eaa47d500e655a37917d7da73c5055737",

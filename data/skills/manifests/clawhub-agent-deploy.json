@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-deploy@2.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-deploy-2.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-deploy-2.4.0.json"
+      },
       "version": "2.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ccda38b60ccdaf8d963c8674a9fda318f037aa8eac3ca87fb4428ad9d0cbca6a",

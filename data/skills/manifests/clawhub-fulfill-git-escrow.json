@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fulfill-git-escrow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fulfill-git-escrow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fulfill-git-escrow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec5044729509b5dd14ec76389b6c683f73c4bc2fcb8d482ed1e974b5b3f896c1",

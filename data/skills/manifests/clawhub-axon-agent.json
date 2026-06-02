@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/axon-agent@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-axon-agent-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-axon-agent-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:30600f6b442f05378b5ae548165db8ab97fa40ead0b31b26032ec6526b23218d",

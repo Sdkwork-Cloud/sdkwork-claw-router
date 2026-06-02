@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-ocr-parse@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-ocr-parse-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-ocr-parse-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c985927a28a75d7eb7536b3a4c4570c4d7f7163b08c12dde200c3983320087cc",

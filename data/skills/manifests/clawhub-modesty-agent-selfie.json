@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/modesty-agent-selfie@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-modesty-agent-selfie-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-modesty-agent-selfie-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f2213247aabc2a3ca8f6b0ce989db1d2c18a08e15efaa6eeedac0a68f4bf11f",

@@ -17,14 +17,17 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Id { get; set; }
         public string? KmsKeyRef { get; set; }
         public string? LastVerifiedAt { get; set; }
+        public bool? LegalHold { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? ObjectKey { get; set; }
         public string? OrganizationId { get; set; }
         public string? OriginalFilename { get; set; }
         public string? OwnerId { get; set; }
         public string? OwnerType { get; set; }
+        public string? PhysicalSizeBytes { get; set; }
         public string? ProviderId { get; set; }
         public string? RetentionUntil { get; set; }
+        public string? SizeBytes { get; set; }
         public string? Status { get; set; }
         public string? StorageClass { get; set; }
         public string? StorageEtag { get; set; }

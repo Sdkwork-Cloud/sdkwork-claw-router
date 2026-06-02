@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/k8s-prefect-flow-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-k8s-prefect-flow-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-k8s-prefect-flow-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e47b277c52b8665c7bce306bcfe30eb543ba4f016013b532fbe872a03a0ff9c0",

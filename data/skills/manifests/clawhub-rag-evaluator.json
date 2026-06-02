@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rag-evaluator@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rag-evaluator-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rag-evaluator-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1cb489b867c382612d9ca144d80c0ed4177e87505ddf69d7f6c51ac04263904d",

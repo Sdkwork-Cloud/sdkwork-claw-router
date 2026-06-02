@@ -13,6 +13,10 @@ import {
   UserCircle2,
 } from "lucide-react";
 import {
+  getSdkworkMediaDeliveryUrl,
+  toExternalSdkworkMediaResource,
+} from "@sdkwork/appbase-pc-react";
+import {
   Button,
   Input,
   Label,
@@ -226,11 +230,11 @@ export function SdkworkUserProfileSection({
             />
           </div>
           <div className="space-y-2 md:col-span-2">
-            <Label>{copy.profile.avatarUrlLabel}</Label>
+            <Label>{copy.profile.avatarLabel}</Label>
             <Input
-              disabled={!capabilities.avatarUrlEditable}
-              value={draft.avatarUrl || ""}
-              onChange={(event) => setDraft({ ...draft, avatarUrl: event.target.value || undefined })}
+              disabled={!capabilities.avatarEditable}
+              value={getSdkworkMediaDeliveryUrl(draft.avatar) || ""}
+              onChange={(event) => setDraft({ ...draft, avatar: toExternalSdkworkMediaResource(event.target.value, "image") })}
             />
           </div>
           <div className="md:col-span-2 flex justify-end">

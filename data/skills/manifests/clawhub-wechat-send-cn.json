@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-send-cn@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-send-cn-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-send-cn-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d9791987fa8d412bed448129a858b4f6af5179adfd0e0ae0fe88dc8dce73ea9b",

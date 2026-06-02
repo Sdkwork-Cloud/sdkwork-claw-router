@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yes-md@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-yes-md-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yes-md-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0b510b7534fa63a70275e0696d934814631f310c3edd22f98a3f595394ee00a5",

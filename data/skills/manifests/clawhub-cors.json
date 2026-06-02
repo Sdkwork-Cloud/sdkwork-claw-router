@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cors@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cors-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cors-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56bbd82de3d6771649c69c7d2b9fc872e92ac002aa7d0595e1280fd8de1cdf90",

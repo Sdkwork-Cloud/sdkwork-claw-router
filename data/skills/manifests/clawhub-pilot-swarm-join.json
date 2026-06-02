@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-swarm-join@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-swarm-join-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-swarm-join-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9a2482503a3f6b344e07a533df53dd3b1df66d9215ae3ad97be5a37bfad26afb",

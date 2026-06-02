@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/intel-chip@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-intel-chip-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-intel-chip-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ebf586aa1d55ba0f6b5f78f3bdeccf41422cf3426d5acd69bcb55231bf9664c2",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/human-help-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-human-help-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-human-help-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:83a1def6ff8312e9a164b625493aa5a157bf4408f441ec04fcf45f028fd136c8",

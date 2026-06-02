@@ -9,6 +9,10 @@ pub struct CommercePaymentMethodRecord {
     /// Display name field on commerce payment method record.
     pub display_name: String,
 
+    /// Id field on commerce payment method record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on commerce payment method record.
     pub idempotency_key: String,
 
@@ -24,6 +28,9 @@ pub struct CommercePaymentMethodRecord {
 
     /// Request no field on commerce payment method record.
     pub request_no: String,
+
+    /// Sort weight field on commerce payment method record.
+    pub sort_weight: String,
 
     /// Status field on commerce payment method record.
     pub status: String,

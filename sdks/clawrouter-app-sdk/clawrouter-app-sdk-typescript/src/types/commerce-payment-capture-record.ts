@@ -14,6 +14,10 @@ export interface CommercePaymentCaptureRecord {
   failure_code?: string;
   /** Failure message field on commerce payment capture record. */
   failure_message?: string;
+  /** Final capture field on commerce payment capture record. */
+  final_capture: string;
+  /** Id field on commerce payment capture record. */
+  id?: string;
   /** Idempotency key field on commerce payment capture record. */
   idempotency_key: string;
   /** Native capture id field on commerce payment capture record. */

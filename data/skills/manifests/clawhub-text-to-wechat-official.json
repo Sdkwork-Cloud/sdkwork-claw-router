@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-wechat-official@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-wechat-official-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-wechat-official-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:800adaebfd04667eb5c4918bc2127aa570840c820c7e51c977c05791947d9b5a",

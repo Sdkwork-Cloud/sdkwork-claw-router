@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-commit-logbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-commit-logbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-commit-logbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ab0e900a3a3bf09bcb43ca450bb34d9d01284756af43fd907ac0b04704d760a4",

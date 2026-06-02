@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/omega@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-omega-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-omega-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a7b969daa18cc578d0eff1077a037ac0935a6cb917b6c28fa3599f1544017581",

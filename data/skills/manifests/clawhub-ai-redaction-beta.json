@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-redaction-beta@1.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-redaction-beta-1.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-redaction-beta-1.2.4.json"
+      },
       "version": "1.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8e7bcd892eb4e1cbb4acedb671af409b1ed402fecd6fbc0bc21a0ca521942cd8",

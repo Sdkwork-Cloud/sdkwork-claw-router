@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zipline-daily-backtest@0.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-zipline-daily-backtest-0.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zipline-daily-backtest-0.3.3.json"
+      },
       "version": "0.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:2a15a27eecb04aa9278afba22a3bbe1c0312c8cf1420ad563a416e8f6d06f97d",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/incident-response-lifecycle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-incident-response-lifecycle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-incident-response-lifecycle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f7c18bc89936981348c2165a2d43cf52f42f545e0280b50b3f1e68d5bc71308b",

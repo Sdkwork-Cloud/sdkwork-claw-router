@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cn-financial-notes-extraction@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cn-financial-notes-extraction-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cn-financial-notes-extraction-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4191a52782c10317183c45069548df24a4e0d59887a4b60e6ffc634917edc202",

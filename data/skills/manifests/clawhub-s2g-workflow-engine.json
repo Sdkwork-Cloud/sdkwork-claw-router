@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/s2g-workflow-engine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-s2g-workflow-engine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-s2g-workflow-engine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fda2b830ca7ec37ed6070620b3e7f1fe9746348692131687404115feeb8a248c",

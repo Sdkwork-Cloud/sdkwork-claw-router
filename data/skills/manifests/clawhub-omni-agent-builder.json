@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/omni-agent-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-omni-agent-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-omni-agent-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b496dc0d250bdd4cedd88668cbd68d9197b6d5449cc9ce16ccac38ea98009540",

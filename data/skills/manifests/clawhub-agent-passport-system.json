@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-passport-system@5.9.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-passport-system-5.9.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-passport-system-5.9.0.json"
+      },
       "version": "5.9.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bc213875288907de2807e8186aa5975576c7035dd479afe16cfcda9e22bdf79a",

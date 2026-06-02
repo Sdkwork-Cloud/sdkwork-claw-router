@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/packaging@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-packaging-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-packaging-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d79053a6c7227a0f4dcc0fcf68c0694afc1576c0568e2fb9842125d964040cb6",

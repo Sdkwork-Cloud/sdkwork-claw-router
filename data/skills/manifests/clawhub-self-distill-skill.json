@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-distill-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-distill-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-distill-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:22917cbd8e379d216368edc94bcde4214d2a3a0c7a02bbd87d309d4e1f1caa73",

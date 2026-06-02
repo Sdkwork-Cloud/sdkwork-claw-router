@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fill-job-application-info@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fill-job-application-info-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fill-job-application-info-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d2f13867bd9143a497e720325d2def6dc1b448f203ab5bfd74aaf824dc507f4",

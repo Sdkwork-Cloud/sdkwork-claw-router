@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-video-generation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-video-generation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-video-generation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da08eb0df2ed7e32959814d5e565a8a0cd16f1d15bf26d0fbfb8defdae5e8e27",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/post-job@2.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-post-job-2.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-post-job-2.1.3.json"
+      },
       "version": "2.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e1076ec778651e933a2175c92d36e3c03ba10c0e72c7e9ccb539253c56bdb4be",

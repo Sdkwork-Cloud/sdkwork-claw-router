@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zuma-desktop-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zuma-desktop-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zuma-desktop-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:950ebe8346168a8181eb5141e78248b80593290f138010727d33741c38403fe1",

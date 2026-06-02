@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tempest-weather-wf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tempest-weather-wf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tempest-weather-wf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7685d7dec0fc249b4de386bc826b4fe411a1c05c06541e125bb4604467adc39c",

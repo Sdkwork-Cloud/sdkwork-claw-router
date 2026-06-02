@@ -20,7 +20,7 @@ type AiModelRecord struct {
 	DocsUrl string `json:"docs_url"`
 	FamilyCode string `json:"family_code"`
 	FamilyId string `json:"family_id"`
-	IconUrl string `json:"icon_url"`
+	Icon MediaResource `json:"icon"`
 	Id string `json:"id"`
 	InputModalities map[string]JsonValue `json:"input_modalities"`
 	LicenseType string `json:"license_type"`

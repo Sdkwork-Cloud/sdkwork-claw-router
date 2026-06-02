@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arxiv-cv-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-cv-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arxiv-cv-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:87cf642c75a156a22355238fb1163424cd19f36b30de00d906d27d0c768c59df",

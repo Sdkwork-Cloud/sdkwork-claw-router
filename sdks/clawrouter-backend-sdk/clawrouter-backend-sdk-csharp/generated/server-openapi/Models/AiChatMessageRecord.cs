@@ -33,6 +33,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? TokenCount { get; set; }
         public string? TraceId { get; set; }
         public string? TurnId { get; set; }
+        public string? UpdatedAt { get; set; }
         public string? UsageLinkId { get; set; }
         public string? UserId { get; set; }
         public string? Uuid { get; set; }

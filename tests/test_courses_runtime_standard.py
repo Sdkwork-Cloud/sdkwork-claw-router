@@ -310,16 +310,23 @@ class CoursesRuntimeStandardTest(unittest.TestCase):
             "seed lessons must include embeddable Bilibili videos",
         )
         self.assertTrue(
-            any(lesson.get("sourceProvider") == "local" and lesson.get("videoUrl", "").startswith("/uploads/courses/") for lesson in lessons),
-            "seed lessons must include a local uploaded video tutorial URL",
+            any(
+                lesson.get("sourceProvider") == "local"
+                and media_resource_url(lesson.get("video")).startswith("/uploads/courses/")
+                for lesson in lessons
+            ),
+            "seed lessons must include a local uploaded video tutorial media resource",
         )
         for course in courses:
             self.assertIn(course["category"], categories, f"{course['courseCode']} must use a declared course category")
-            thumbnail = course.get("thumbnailUrl", "")
+            self.assertNotIn("thumbnailUrl", course)
+            self.assertNotIn("thumbnailLocator", course)
+            assert_media_resource(self, course.get("thumbnail"), "image")
+            thumbnail = media_resource_url(course["thumbnail"])
             self.assertRegex(
                 thumbnail,
                 r"^/assets/courses/covers/[a-z0-9-]+\.svg$",
-                f"{course['courseCode']} must use a stable local course cover asset",
+                f"{course['courseCode']} must use a stable local course cover media resource",
             )
             self.assertTrue(
                 (public_root / thumbnail.lstrip("/")).is_file(),
@@ -334,10 +341,64 @@ class CoursesRuntimeStandardTest(unittest.TestCase):
                     "each course must include at least one embeddable Bilibili lesson",
                 )
                 self.assertGreaterEqual(
-                    sum(1 for lesson in course_lessons if lesson.get("sourceProvider") == "local" and lesson.get("videoUrl", "").startswith("/uploads/courses/")),
+                    sum(
+                        1
+                        for lesson in course_lessons
+                        if lesson.get("sourceProvider") == "local"
+                        and media_resource_url(lesson.get("video")).startswith("/uploads/courses/")
+                    ),
                     1,
-                    "each course must include at least one local uploaded video lesson",
+                    "each course must include at least one local uploaded video media resource lesson",
                 )
+                for lesson in course_lessons:
+                    self.assertNotIn("videoUrl", lesson)
+                    self.assertNotIn("videoLocator", lesson)
+                    assert_media_resource(self, lesson.get("video"), "video")
+                    if lesson.get("sourceProvider") == "bilibili":
+                        self.assertTrue(
+                            media_resource_url(lesson["video"]).startswith("BV"),
+                            f"{lesson['uuid']} Bilibili video media resource must point at a stable BV provider asset",
+                        )
+                    if lesson.get("sourceProvider") == "local":
+                        self.assertTrue(
+                            media_resource_url(lesson["video"]).startswith("/uploads/courses/"),
+                            f"{lesson['uuid']} local video media resource must point at the uploaded tutorial asset",
+                        )
+
+    def test_courses_seed_pipeline_keeps_media_resources_canonical(self) -> None:
+        seed_path = ROOT / "data" / "courses" / "course-seed.json"
+        generator_path = ROOT / "scripts" / "generate-course-seed.mjs"
+        fallback_sync_path = ROOT / "scripts" / "sync-course-catalog-fallback.mjs"
+        loader_path = ROOT / "services" / "sdkwork-claw-product" / "src" / "infrastructure" / "sql" / "course_seed.rs"
+        seed = json.loads(seed_path.read_text(encoding="utf-8"))
+        generator_source = generator_path.read_text(encoding="utf-8")
+        fallback_sync_source = fallback_sync_path.read_text(encoding="utf-8")
+        loader_source = loader_path.read_text(encoding="utf-8")
+
+        for category in seed["categories"]:
+            with self.subTest(category=category["code"]):
+                self.assertNotIn("icon", category)
+                self.assertIsInstance(category.get("iconKey"), str)
+                self.assertTrue(category["iconKey"].strip())
+
+        for source_name, source in {
+            "course seed generator": generator_source,
+            "course fallback sync": fallback_sync_source,
+            "course seed loader": loader_source,
+        }.items():
+            with self.subTest(source=source_name):
+                for legacy in ("thumbnailUrl", "thumbnailLocator", "videoUrl", "videoLocator", "thumbnail_locator", "video_locator"):
+                    self.assertNotIn(legacy, source)
+
+        self.assertIn("thumbnail: mediaResource(", generator_source)
+        self.assertIn("avatar: mediaResource(", generator_source)
+        self.assertIn("video: mediaResource(", generator_source)
+        self.assertIn("thumbnail: course.thumbnail", fallback_sync_source)
+        self.assertIn("avatar: course.instructor.avatar", fallback_sync_source)
+        self.assertIn("thumbnail: Value,", loader_source)
+        self.assertIn("video: Value,", loader_source)
+        self.assertNotIn("media_resource_from_url_kind(&item.video", loader_source)
+        self.assertNotIn("media_resource_from_url(&item.thumbnail", loader_source)
 
     def test_course_application_dialog_uses_standard_seed_categories(self) -> None:
         seed_path = ROOT / "data" / "courses" / "course-seed.json"
@@ -470,6 +531,24 @@ class CoursesRuntimeStandardTest(unittest.TestCase):
             if isinstance(entry, dict) and entry.get("operation") == operation:
                 return entry
         self.fail(f"Missing frontend operation contract for {operation}.")
+
+
+def assert_media_resource(testcase: unittest.TestCase, value, kind: str) -> None:
+    testcase.assertIsInstance(value, dict)
+    testcase.assertEqual(kind, value.get("kind"))
+    testcase.assertIsInstance(value.get("source"), str)
+    testcase.assertTrue(value["source"].strip())
+    testcase.assertTrue(media_resource_url(value))
+
+
+def media_resource_url(value) -> str:
+    if not isinstance(value, dict):
+        return ""
+    for key in ("publicUrl", "url", "uri", "objectKey", "objectBlobId", "id"):
+        raw = value.get(key)
+        if isinstance(raw, str) and raw.strip():
+            return raw.strip()
+    return ""
 
 
 if __name__ == "__main__":

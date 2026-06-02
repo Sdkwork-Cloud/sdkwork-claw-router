@@ -10,7 +10,7 @@ impl PricingCatalogSql {
             Self::list_provider_routes(),
             Self::list_model_prices(),
             Self::find_api_key(),
-            Self::find_api_key_group(),
+            Self::find_channel_group(),
             Self::find_pricing_plan(),
             Self::find_model(),
             Self::find_vendor(),
@@ -22,7 +22,7 @@ impl PricingCatalogSql {
             Self::load_routing_rules(),
             Self::load_access_policies(),
             Self::load_quota_policies(),
-            Self::load_api_key_group_metric_snapshots(),
+            Self::load_channel_group_metric_snapshots(),
         ]
     }
 }

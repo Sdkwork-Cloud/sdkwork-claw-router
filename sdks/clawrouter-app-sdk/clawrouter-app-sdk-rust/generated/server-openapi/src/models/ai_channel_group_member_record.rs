@@ -33,6 +33,10 @@ pub struct AiChannelGroupMemberRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub effective_to: Option<String>,
 
+    /// Enabled field on ai channel group member record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub enabled: Option<bool>,
+
     /// Id field on ai channel group member record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -43,6 +47,10 @@ pub struct AiChannelGroupMemberRecord {
 
     /// Organization id field on ai channel group member record.
     pub organization_id: String,
+
+    /// Priority field on ai channel group member record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub priority: Option<i64>,
 
     /// Status field on ai channel group member record.
     pub status: String,
@@ -60,4 +68,8 @@ pub struct AiChannelGroupMemberRecord {
     /// Version field on ai channel group member record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub version: Option<String>,
+
+    /// Weight field on ai channel group member record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub weight: Option<i64>,
 }

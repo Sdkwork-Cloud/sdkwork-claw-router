@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-intel-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-intel-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-intel-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:21e5909a0e0ccec30adad1675bfc30b0f4c261aaaef6f709e5a15d90c76f5962",

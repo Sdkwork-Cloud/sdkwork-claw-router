@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reddit-quote-topaz@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reddit-quote-topaz-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reddit-quote-topaz-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:85bd12e7d54ddc223bc3e4dc181f24822d4fdf3a6f0181ebe1caeb95e4aabc8f",

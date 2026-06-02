@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lqs-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lqs-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lqs-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0fd7faf6602af6f73fa89fde98150b4f2c9d65939b3a7c6dbaa47559be91e939",

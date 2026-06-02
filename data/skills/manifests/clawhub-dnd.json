@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dnd@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dnd-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dnd-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ea37ceb07238040d29d6ef89918143eae8df4678e0f5e1e791f15ebe180ede73",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toolweb-ubuntu-hardening@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-ubuntu-hardening-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toolweb-ubuntu-hardening-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f5f850e4194377e25b4419b6fe2445c2fbe8442db44b2b631db9bd3af635d986",

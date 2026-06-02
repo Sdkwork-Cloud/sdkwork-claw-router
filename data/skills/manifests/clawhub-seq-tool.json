@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seq-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-seq-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seq-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b999d3bb15359c3ad86a05679cc7f5506bea5ee1413ab35e937e725469cf5752",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/extruct-api-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-extruct-api-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-extruct-api-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c41eeb11fee00f39c69eb28f9aa1e42c743798aaf5cc422f7367a49864a40ab7",

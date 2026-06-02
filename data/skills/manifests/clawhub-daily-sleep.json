@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-sleep@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-sleep-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-sleep-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:5c5470ef8d334fb0d8f8c89ea9166721a733903f128c43646b1d4fb9cfc41953",

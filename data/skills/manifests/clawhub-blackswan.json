@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blackswan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blackswan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blackswan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c86d4a6db835b031dd6a7c162950e9fc4c76424d6822e969cf943e298159b189",

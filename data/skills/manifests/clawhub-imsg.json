@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/imsg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-imsg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-imsg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13c4ff7857c166919aa2b5aba8e6557830513dfe7a542bc345e2cdd784dbf41c",

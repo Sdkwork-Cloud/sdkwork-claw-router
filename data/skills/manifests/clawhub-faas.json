@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/faas@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-faas-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-faas-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6091dec6d3dcada5cfdbb72f50c28d6db09792714f1377f8e881d4fc732dde6c",

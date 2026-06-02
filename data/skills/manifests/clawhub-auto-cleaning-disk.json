@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-cleaning-disk@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-cleaning-disk-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-cleaning-disk-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:04333714cc3174b3aa77f5b508e5ad5432014078d1c4851608aec58c25ae9058",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-leaderboard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-leaderboard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-leaderboard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:36bfd5f61ed24d943b6d2b32a2fb7b3fa258c00578f1d286acf4450ee3afe0bd",

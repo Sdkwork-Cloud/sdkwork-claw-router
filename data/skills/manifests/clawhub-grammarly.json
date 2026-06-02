@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grammarly@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-grammarly-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grammarly-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c4ef0ddd7db316544ed1c9f1a7120dc2d833833e6b434c53ddeccdfa75ff95b9",

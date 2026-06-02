@@ -7,6 +7,8 @@ import {
   readRequiredApiItem,
   readRequiredApiItems,
   readString,
+  readMediaResource,
+  type ClawRouterMediaResource,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
 
@@ -92,7 +94,7 @@ export interface MembershipsAdminPlanBenefitInput {
   benefitKey?: string;
   type?: string;
   description?: string;
-  icon?: string;
+  icon?: ClawRouterMediaResource;
   usageLimit?: number;
   usedCount?: number;
   claimed?: boolean;
@@ -163,6 +165,35 @@ export interface MembershipsAdminPackageCatalog {
   groups: MembershipsAdminPackageGroup[];
   packages: MembershipsAdminPackageItem[];
   plans: MembershipsAdminPlanItem[];
+}
+
+export type MembershipPackageGroupMoveDirection = 'up' | 'down';
+
+export function sortMembershipAdminPackageGroups(
+  groups: MembershipsAdminPackageGroup[],
+): MembershipsAdminPackageGroup[] {
+  return [...groups].sort(compareMembershipAdminPackageGroups);
+}
+
+export function moveMembershipAdminPackageGroup(
+  groups: MembershipsAdminPackageGroup[],
+  packageGroupId: string,
+  direction: MembershipPackageGroupMoveDirection,
+): MembershipsAdminPackageGroup[] {
+  const sortedGroups = sortMembershipAdminPackageGroups(groups);
+  const currentIndex = sortedGroups.findIndex((group) => group.id === packageGroupId);
+  const targetIndex = direction === 'up' ? currentIndex - 1 : currentIndex + 1;
+  if (currentIndex < 0 || targetIndex < 0 || targetIndex >= sortedGroups.length) {
+    return sortedGroups;
+  }
+
+  const reorderedGroups = [...sortedGroups];
+  const [movedGroup] = reorderedGroups.splice(currentIndex, 1);
+  reorderedGroups.splice(targetIndex, 0, movedGroup);
+  return reorderedGroups.map((group, index) => ({
+    ...group,
+    sortWeight: (index + 1) * 10,
+  }));
 }
 
 export async function backendMembershipsPlansList(params?: Parameters<BackendCommerce['memberships']['plans']['list']>[0]) {
@@ -371,7 +402,7 @@ export async function fetchMembershipAdminPackageCatalog(): Promise<MembershipsA
     groupMap.get(pkg.groupId)!.packageCount++;
   });
 
-  const groups = Array.from(groupMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+  const groups = sortMembershipAdminPackageGroups(Array.from(groupMap.values()));
   const rawPlans = readRequiredApiItems(plansResult, 'Membership plans could not be loaded');
   return {
     groups,
@@ -393,10 +424,10 @@ export async function fetchMembershipAdminPackageGroups(): Promise<MembershipsAd
     .forEach((pkg) => {
       packageCounts.set(pkg.groupId, (packageCounts.get(pkg.groupId) ?? 0) + 1);
     });
-  return groups.map((group) => ({
+  return sortMembershipAdminPackageGroups(groups.map((group) => ({
     ...group,
     packageCount: packageCounts.get(group.id) ?? packageCounts.get(group.code) ?? 0,
-  }));
+  })));
 }
 
 export async function createMembershipAdminPackageGroup(
@@ -620,6 +651,28 @@ function normalizeAdminPackageGroup(value: unknown): MembershipsAdminPackageGrou
   };
 }
 
+function compareMembershipAdminPackageGroups(
+  left: MembershipsAdminPackageGroup,
+  right: MembershipsAdminPackageGroup,
+): number {
+  const weightComparison = left.sortWeight - right.sortWeight;
+  if (weightComparison !== 0) {
+    return weightComparison;
+  }
+
+  const nameComparison = left.name.localeCompare(right.name);
+  if (nameComparison !== 0) {
+    return nameComparison;
+  }
+
+  const codeComparison = left.code.localeCompare(right.code);
+  if (codeComparison !== 0) {
+    return codeComparison;
+  }
+
+  return left.id.localeCompare(right.id);
+}
+
 function normalizeAdminRechargePackage(value: unknown): MembershipsAdminRechargePackageItem {
   const item = isRecord(value) ? value as ApiRecord : {} as ApiRecord;
   const priceAmount = readFirstString(item, ['price_amount', 'priceAmount']);
@@ -750,7 +803,7 @@ function buildPlanBenefitMutationRequest(input: MembershipsAdminPlanBenefitInput
     benefitKey: optionalBoundedText(input.benefitKey),
     type: optionalBoundedText(input.type),
     description: optionalBoundedText(input.description),
-    icon: optionalBoundedText(input.icon),
+    icon: input.icon,
     usageLimit: input.usageLimit === undefined ? undefined : requiredNonNegativeInteger(input.usageLimit, 'usageLimit'),
     usedCount: input.usedCount === undefined ? undefined : requiredNonNegativeInteger(input.usedCount, 'usedCount'),
     claimed: input.claimed ?? false,
@@ -865,7 +918,7 @@ function normalizeAdminPlanBenefit(value: unknown): MembershipsAdminPlanBenefitI
     benefitKey: readFirstString(item, ['benefitKey', 'benefit_key']) || undefined,
     type: readFirstString(item, ['type']) || undefined,
     description: readFirstString(item, ['description']) || undefined,
-    icon: readFirstString(item, ['icon']) || undefined,
+    icon: readMediaResource(item['icon']),
     usageLimit: optionalInteger(item, ['usageLimit', 'usage_limit']),
     usedCount: optionalInteger(item, ['usedCount', 'used_count']),
     claimed: typeof item['claimed'] === 'boolean' ? item['claimed'] : undefined,

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/accenture@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-accenture-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-accenture-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef58affb7074a704e700bc73fc7d0e8fe4db50b1f99ac3294337110b5efc615d",

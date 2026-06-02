@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-image-ocr-aipc@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-image-ocr-aipc-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-image-ocr-aipc-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c4b1ad078093f622f68ed2460fe42b7812900f0287af28ff22940679d77c7059",

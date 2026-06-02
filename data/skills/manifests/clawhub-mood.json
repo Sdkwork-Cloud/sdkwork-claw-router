@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mood@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mood-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mood-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c36f876a5a66f6b479d18984cfab87820836702ebbcc5878303a6121a6817e0",

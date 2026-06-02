@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personality-engine@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-personality-engine-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personality-engine-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d13da32b82b85b71a5159622f45c6bc434605d7d5efcc052b720cd0cb4bc323",

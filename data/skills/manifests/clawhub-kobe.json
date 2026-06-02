@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kobe@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-kobe-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kobe-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:7e9c4f1693e97f29929dfa2a54fb454591c4a1fd21012f339bbd791c8f24edcb",

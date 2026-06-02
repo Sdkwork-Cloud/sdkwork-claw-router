@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class ForumAuthor
     {
-        public string? Avatar { get; set; }
+        public MediaResource? Avatar { get; set; }
         public string? Bio { get; set; }
         public int? Id { get; set; }
         public bool? IsFollowing { get; set; }

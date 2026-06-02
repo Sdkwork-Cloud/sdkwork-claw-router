@@ -1,9 +1,11 @@
+import type { MediaResource } from './media-resource';
+
 /** Enabled skill package snapshot returned by the backend. */
 export interface AdminSkillPackageItem {
   /** Category id field on admin skill package item. */
   categoryId?: string | null;
-  /** Cover image field on admin skill package item. */
-  coverImage?: string;
+  /** Cover field on admin skill package item. */
+  cover?: MediaResource;
   /** Created at field on admin skill package item. */
   createdAt: string;
   /** Description field on admin skill package item. */
@@ -13,7 +15,7 @@ export interface AdminSkillPackageItem {
   /** Featured field on admin skill package item. */
   featured: boolean;
   /** Icon field on admin skill package item. */
-  icon?: string;
+  icon?: MediaResource;
   /** Id field on admin skill package item. */
   id: string;
   /** Latest published at field on admin skill package item. */

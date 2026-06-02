@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vendasta@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-vendasta-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vendasta-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:32476214ff7550f09e83358f42cb8a04166c6a81a862691ad7243467e53ca5f4",

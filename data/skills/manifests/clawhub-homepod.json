@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/homepod@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-homepod-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-homepod-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b4faee426cd31655720f5ea645a5a562210388d87f27fc64e4c03d77c15b6444",

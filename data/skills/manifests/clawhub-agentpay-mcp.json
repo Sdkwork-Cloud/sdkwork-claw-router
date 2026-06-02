@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentpay-mcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentpay-mcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentpay-mcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c57aa035cab9248b107e597baacb77ec5458cd2e41cca9f7bd5b1084bcf489b8",

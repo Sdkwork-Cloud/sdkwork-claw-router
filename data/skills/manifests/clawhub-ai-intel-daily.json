@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-intel-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-intel-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-intel-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13de955bd4df000f3e5d4061e0359e31d1b37714073a9a5cc11ef65a203a2a5e",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-deep-research-v4@1.0.0-beta.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-deep-research-v4-1.0.0-beta.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-deep-research-v4-1.0.0-beta.1.json"
+      },
       "version": "1.0.0-beta.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b9223ef54ef089aaa22b2364e798fbd8349908f0e700ac808e69c7a06ced07db",

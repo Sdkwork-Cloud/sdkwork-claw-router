@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcp-hass@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcp-hass-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcp-hass-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b3e584793cbb06e220a095c5cb518aff9db475a7e72281bb42d9fbe13e341951",

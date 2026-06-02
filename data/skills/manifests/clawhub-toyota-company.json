@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toyota-company@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toyota-company-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toyota-company-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee179dad29e37b88774030e23101e20a26a81a917570f50e215c68e9f80b2a09",

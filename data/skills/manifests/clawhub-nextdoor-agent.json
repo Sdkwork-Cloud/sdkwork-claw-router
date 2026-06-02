@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nextdoor-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nextdoor-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nextdoor-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ceeec081dd13fc3b03e511ef99748d60bd54c84a083491a16ba1dc079d18808",

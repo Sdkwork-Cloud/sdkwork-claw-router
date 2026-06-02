@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.app
 
 data class AgentItem(
-    val avatarUrl: String? = null,
+    val avatar: MediaResource? = null,
     val capabilities: AgentCapabilities? = null,
     val code: String? = null,
     val createdAt: String? = null,

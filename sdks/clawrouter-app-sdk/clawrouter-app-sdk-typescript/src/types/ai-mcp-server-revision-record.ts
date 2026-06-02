@@ -2,6 +2,10 @@ import type { JsonValue } from './json-value';
 
 /** Ai mcp server revision record schema exposed by Claw Router. */
 export interface AiMcpServerRevisionRecord {
+  /** Args json field on ai mcp server revision record. */
+  args_json?: Record<string, JsonValue>;
+  /** Auth type field on ai mcp server revision record. */
+  auth_type?: string;
   /** Command field on ai mcp server revision record. */
   command?: string;
   /** Config hash field on ai mcp server revision record. */
@@ -20,6 +24,8 @@ export interface AiMcpServerRevisionRecord {
   deprecated_at?: string;
   /** Endpoint url field on ai mcp server revision record. */
   endpoint_url?: string;
+  /** Env schema field on ai mcp server revision record. */
+  env_schema?: Record<string, JsonValue>;
   /** Id field on ai mcp server revision record. */
   id?: string;
   /** Lifecycle status field on ai mcp server revision record. */
@@ -30,6 +36,8 @@ export interface AiMcpServerRevisionRecord {
   organization_id?: string;
   /** Published at field on ai mcp server revision record. */
   published_at?: string;
+  /** Retry policy field on ai mcp server revision record. */
+  retry_policy?: Record<string, JsonValue>;
   /** Revision no field on ai mcp server revision record. */
   revision_no?: string;
   /** Secret ref field on ai mcp server revision record. */
@@ -40,6 +48,8 @@ export interface AiMcpServerRevisionRecord {
   status?: string;
   /** Tenant id field on ai mcp server revision record. */
   tenant_id?: string;
+  /** Timeout ms field on ai mcp server revision record. */
+  timeout_ms?: number;
   /** Transport field on ai mcp server revision record. */
   transport?: string;
   /** Updated at field on ai mcp server revision record. */

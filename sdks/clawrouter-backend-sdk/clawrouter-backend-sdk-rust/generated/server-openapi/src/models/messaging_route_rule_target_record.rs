@@ -3,6 +3,10 @@ use serde::{Deserialize, Serialize};
 /// Messaging route rule target record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct MessagingRouteRuleTargetRecord {
+    /// Circuit breaker policy field on messaging route rule target record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub circuit_breaker_policy: Option<std::collections::HashMap<String, String>>,
+
     /// Created at field on messaging route rule target record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -31,6 +35,18 @@ pub struct MessagingRouteRuleTargetRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
 
+    /// Provider account id field on messaging route rule target record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_account_id: Option<String>,
+
+    /// Provider code field on messaging route rule target record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_code: Option<String>,
+
+    /// Route rule id field on messaging route rule target record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub route_rule_id: Option<String>,
+
     /// Sender identity id field on messaging route rule target record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub sender_identity_id: Option<String>,
@@ -38,6 +54,10 @@ pub struct MessagingRouteRuleTargetRecord {
     /// Status field on messaging route rule target record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
+
+    /// Target order field on messaging route rule target record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub target_order: Option<i64>,
 
     /// Template binding id field on messaging route rule target record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -58,4 +78,8 @@ pub struct MessagingRouteRuleTargetRecord {
     /// Version field on messaging route rule target record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub version: Option<String>,
+
+    /// Weight field on messaging route rule target record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub weight: Option<i64>,
 }

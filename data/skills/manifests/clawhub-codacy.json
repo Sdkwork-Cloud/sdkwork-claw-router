@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codacy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-codacy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codacy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9e62a7549fea7551474170e336f89bb20b1fcf01c066c689343fbd83e770c5bc",

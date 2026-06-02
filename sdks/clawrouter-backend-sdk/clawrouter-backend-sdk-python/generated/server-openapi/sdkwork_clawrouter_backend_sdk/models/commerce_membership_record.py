@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class CommerceMembershipRecord:
     """Commerce membership record schema exposed by Claw Router."""
+    auto_renew: bool
     created_at: str
     expires_at: str
     membership_no: str
@@ -16,6 +17,7 @@ class CommerceMembershipRecord:
     tenant_id: str
     updated_at: str
     grace_until: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     source_order_id: Optional[str] = None
     source_payment_intent_id: Optional[str] = None

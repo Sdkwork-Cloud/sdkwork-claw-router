@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dygod-movies@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dygod-movies-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dygod-movies-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2a18efe5b241873f631262467b6f8ab49a7a0e3d6462a05e5c4c11faa1e1bc42",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/empathy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-empathy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-empathy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ab4a221d0dc290e9e42b7478fe782475a3c7316b6b0658f0f1d14343020e6260",

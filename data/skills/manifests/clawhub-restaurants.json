@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/restaurants@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-restaurants-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-restaurants-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f76e23558c97ede6fd1a8bf230a434bc248e24a699e05f685cd2d6523134ea6a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wiki-retriever@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wiki-retriever-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wiki-retriever-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74b1ebe8f306df1fb4813859b43290c55bbf6dd7e3ad6e2642819dc9580e33f5",

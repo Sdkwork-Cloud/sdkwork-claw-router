@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mattermark@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-mattermark-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mattermark-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cde10bd27918dcb723ce9d985f52b38c5e3f43fc25030cf26d1bd0c9a257121c",

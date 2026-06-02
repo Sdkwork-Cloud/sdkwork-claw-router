@@ -8,8 +8,8 @@ data class RuntimeArtifactItem(
     val invocationId: String? = null,
     val mimeType: String? = null,
     val name: String? = null,
+    val resource: MediaResource? = null,
     val sha256: String? = null,
     val sizeBytes: Int? = null,
-    val storageKey: String? = null,
-    val storageUrl: String? = null
+    val storageKey: String? = null
 )

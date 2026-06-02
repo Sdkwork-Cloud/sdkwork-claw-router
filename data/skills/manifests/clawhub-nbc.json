@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nbc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nbc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nbc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66a07e0044e4ff2427487335923b7932832de977b2ea35c9fac7515289fd5a63",

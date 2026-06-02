@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-to-openclaw@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-to-openclaw-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-to-openclaw-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:846eeb7a1e7bb9dcf50a4b78f8b1bd02a5bc2dccc17d54077b4e18d17616905a",

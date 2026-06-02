@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nika-skill-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nika-skill-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nika-skill-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14b5e9b19b18becc902ed67e6065024fa1a955129f8da8c86b45e9f27a4d762c",

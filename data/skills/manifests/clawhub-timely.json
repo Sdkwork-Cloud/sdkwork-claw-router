@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/timely@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-timely-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-timely-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1ed7d0ae07aa2dc7ff173f6891e000b0106ed264b0504283d1e32b4674ade09a",

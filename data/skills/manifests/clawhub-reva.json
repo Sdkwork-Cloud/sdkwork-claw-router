@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reva@0.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-reva-0.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reva-0.1.5.json"
+      },
       "version": "0.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:5d52b75f07cff3665b9f5dad914efc437ad6c0f22452125ab50fa85cb959cb60",

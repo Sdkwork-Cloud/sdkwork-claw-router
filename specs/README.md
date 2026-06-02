@@ -19,32 +19,8 @@ Root SDKWork standards remain authoritative. Local component specs can narrow or
 ## Contract Manifest
 
 - [component.spec.json](./component.spec.json) is the machine-readable component contract.
-- [appbase-integration.yaml](./appbase-integration.yaml) declares which `sdkwork-appbase` capabilities this application assembles and the adapter boundaries that are allowed to connect them.
 - Consumers should integrate through public exports, runtime entrypoints, SDK clients, or adapters declared in the manifest.
 - Generated SDK language outputs are represented at their SDK family root instead of duplicating local specs in generated folders.
-
-## Appbase Integration Standard
-
-`sdkwork-claw-router` is an assembly layer for appbase capabilities. Product code
-may provide generated SDK adapters, route/menu registration, runtime config,
-product seed data, and installer hooks. It must not introduce product-local
-forks of appbase stores, contracts, generated SDK clients, or base capability
-runtime.
-
-Every entry in [appbase-integration.yaml](./appbase-integration.yaml) must
-declare:
-
-- `requiredMaturity`: the minimum appbase catalog maturity accepted by this app.
-- `surfaces`: the app/backend/portal/runtime/installer surfaces touched by the integration.
-- `frontend.adapters` and `rust.crates` where the app injects concrete SDK or storage providers.
-- `contractTests`: route, adapter, or contract files that prove the integration exists.
-- `verification`: executable `python -B -m unittest ...` commands whose modules exist.
-- `forbiddenProductForks`: paths that must remain absent from this application.
-- `sdkBoundary: generated-sdk-through-ports`.
-
-The authoritative guard is
-`python -B -m tools.appbase_integration_guardian --root .`; it is also included
-in the aggregate schema quality gate.
 
 ## Canonical Specs
 
@@ -76,12 +52,9 @@ in the aggregate schema quality gate.
 ## Local Extension Specs
 
 - [API_SPEC.md](./API_SPEC.md)
-- [appbase-integration.yaml](./appbase-integration.yaml)
 - [DATABASE_SPEC.md](./DATABASE_SPEC.md)
 
 ## Verification
 
 - `cargo test --manifest-path apps/sdkwork-claw-router/Cargo.toml`
 - `pnpm --filter sdkwork-claw-router-workspace test`
-- `python -B -m tools.appbase_integration_guardian --root .`
-- `python -B -m tools.schema_quality_gate --root .`

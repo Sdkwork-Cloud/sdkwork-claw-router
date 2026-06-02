@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tech-debt-ledger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tech-debt-ledger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tech-debt-ledger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a29f1cf745da30ac3b2682f7ee36bf437e42d869d29668581d903c4552d561d8",

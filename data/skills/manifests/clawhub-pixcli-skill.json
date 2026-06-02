@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pixcli-skill@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pixcli-skill-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pixcli-skill-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4cec0bbb06f506536a8fa9f582ecdd80a8ce503b163d412fe79c88315a89fcb8",

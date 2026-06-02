@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gh-skillscan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gh-skillscan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gh-skillscan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:273c8497f20b517bcc41b9d92879b877fa374fe80251a1fe7f1e00b1aaf22bfe",

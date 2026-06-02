@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customgpt@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-customgpt-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customgpt-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:55a01e3cd879e2580fbdb50bb9d6511edfc0b1ed9ee1edf253a8c199158516f2",

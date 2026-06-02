@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/traffic-cam@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-traffic-cam-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-traffic-cam-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0b51f2f9a268460ca8e10b80a5f81f1e309fc9b001dd69a2daa3c5bf8ed7c15",

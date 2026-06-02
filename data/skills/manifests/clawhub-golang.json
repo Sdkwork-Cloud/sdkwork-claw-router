@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golang@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-golang-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golang-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d48e273ef9aa5224faf6ce7ef6e36976716d8d4a3bddcbe45f57a553df978ad1",

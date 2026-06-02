@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mccormick@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mccormick-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mccormick-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:caf2b63203c00afecb216743ee263b944e0fe8ab202345eddfa9fee496caaa11",

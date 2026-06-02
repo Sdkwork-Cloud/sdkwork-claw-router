@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goldenclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-goldenclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goldenclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:60bf760a34c4172a17ffd9af63ec7417ebf755691945c8aeca805b313c3d3b50",

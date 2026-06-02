@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/join-meeting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-join-meeting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-join-meeting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5aed8af3876c6be3600c4b7c83cb4d06a4ac43124e5ad3237f3ca1118efcc230",

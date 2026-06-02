@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multi-agent-sandbox@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-sandbox-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multi-agent-sandbox-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f5344b203838a0c520a3a216c313ea9eb33a93e9bcc03d8adc80faa72c62858a",

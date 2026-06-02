@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-skills-by-notifyer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-skills-by-notifyer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-skills-by-notifyer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b1f25d5845b08533f803c10e69e1197f9060f61009d57d5fc639364e692ab2e7",

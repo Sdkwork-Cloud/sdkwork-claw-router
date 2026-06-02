@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/someone-is-struggling@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-someone-is-struggling-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-someone-is-struggling-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:45d8ce648ad8c357edd5b558787ddd581d0a90c91c296b070b9af9044e312305",

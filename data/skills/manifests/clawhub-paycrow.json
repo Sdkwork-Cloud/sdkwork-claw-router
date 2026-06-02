@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paycrow@1.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-paycrow-1.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paycrow-1.2.4.json"
+      },
       "version": "1.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0050a8f1d8ada2e849ce062f814da5c7f92f5d25a4190f0fb54e089cfd7cb12d",

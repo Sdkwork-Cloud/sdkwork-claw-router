@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marriott@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marriott-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marriott-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df46f3041301c0a1372ddfb88f5f64f01f146b3cf99c8bd78a3b49421fb4fd2e",

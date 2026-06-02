@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/starmemo@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-starmemo-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-starmemo-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2cac2a984e9e6b910b6d6cfaf12c602a60e42893cc28807859b7f33f6ad2f757",

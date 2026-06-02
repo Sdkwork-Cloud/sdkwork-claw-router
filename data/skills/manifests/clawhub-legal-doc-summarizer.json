@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/legal-doc-summarizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-legal-doc-summarizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-legal-doc-summarizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e12856562b2582a8667dccdb65a61c18a61a8e0166d1b1fb5efcf24504d09ac7",

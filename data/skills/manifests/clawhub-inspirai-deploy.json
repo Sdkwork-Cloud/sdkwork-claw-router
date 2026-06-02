@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inspirai-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-inspirai-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inspirai-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5ba0e45ac6a76e9b41c1bd55a267aa8ed00674d8f08237b46921a074a491b95c",

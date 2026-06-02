@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-killer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-killer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-killer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26db352bfadeb4abff61607d574f5cd1f7151472b74f2abaeba194d84c62cd42",

@@ -12,6 +12,7 @@ import {
 import {
   buildPortalAuthLoginRedirect,
   hasStoredPortalSession,
+  readMediaResourceUrl,
 } from 'sdkwork-claw-router-commons/runtime';
 import { useTranslation } from 'react-i18next';
 
@@ -79,7 +80,7 @@ function CommentThread({
   return (
     <div className={`flex gap-4 ${isNested ? 'mt-4' : 'mt-6 pt-6 border-t border-slate-100 dark:border-white/10'}`}>
       <img
-        src={comment.author.avatar}
+        src={readMediaResourceUrl(comment.author.avatar)}
         alt={comment.author.name}
         className={`${isNested ? 'w-8 h-8' : 'w-10 h-10'} rounded-full mt-1 shrink-0`}
       />
@@ -387,7 +388,7 @@ export function ForumPostView() {
           </h1>
 
           <div className="flex items-center gap-3 mb-8">
-            <img src={post.author.avatar} alt={post.author.name} className="w-12 h-12 rounded-full" />
+            <img src={readMediaResourceUrl(post.author.avatar)} alt={post.author.name} className="w-12 h-12 rounded-full" />
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-slate-900 dark:text-white">{post.author.name}</span>

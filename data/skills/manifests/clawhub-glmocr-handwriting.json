@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glmocr-handwriting@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-glmocr-handwriting-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glmocr-handwriting-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a129b318f646810a7a0e9a9ff8bc744a8e920e54760d259e6b0c9b4561e57869",

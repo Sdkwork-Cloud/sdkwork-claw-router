@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-dep-fixer@2.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-dep-fixer-2.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-dep-fixer-2.0.9.json"
+      },
       "version": "2.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:3a7a7ed7a81960a99aa6982a42242ec65bf8a7dd897f3d7080ec1d1928fe9258",

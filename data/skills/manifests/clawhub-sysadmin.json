@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sysadmin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sysadmin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sysadmin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:651f182df0bf90d3acfeccdcc719d511c30c08533221ec376b2d8e10e5e4a7fe",

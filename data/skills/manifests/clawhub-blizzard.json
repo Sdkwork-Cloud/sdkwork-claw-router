@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blizzard@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-blizzard-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blizzard-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e08dad712a4f1081ea42da68a0443dd5afb2f394f2fc2f2074ee31211ccc0c5b",

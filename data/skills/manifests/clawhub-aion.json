@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aion@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aion-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aion-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:617a7fbe2e24abb0737d1dbb6095cb9f812364799decbf65ded7f5f4f0016cc6",

@@ -12,6 +12,7 @@ data class StorageQuotaReservationRecord(
     val organizationId: String? = null,
     val releasedAt: String? = null,
     val reservationNo: String? = null,
+    val reservedBytes: String? = null,
     val scopeId: String? = null,
     val scopeType: String? = null,
     val status: String? = null,

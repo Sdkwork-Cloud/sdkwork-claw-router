@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowbster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowbster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowbster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:093b49acc5b1f6613db44a81696647cd757ae29a2cb90ecf9a056cfcb2119fd8",

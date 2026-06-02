@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/canslim-top100-us@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-canslim-top100-us-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-canslim-top100-us-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8cffeb22f357401b7888d37b16175f87e07345388e194bcbfd6d797812d6bbb7",

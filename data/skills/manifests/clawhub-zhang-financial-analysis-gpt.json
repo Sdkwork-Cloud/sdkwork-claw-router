@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zhang-financial-analysis-gpt@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zhang-financial-analysis-gpt-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zhang-financial-analysis-gpt-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d7710aaece91de4ded85d7a349a4c29a5020bbc012ddba20137500edcc93634",

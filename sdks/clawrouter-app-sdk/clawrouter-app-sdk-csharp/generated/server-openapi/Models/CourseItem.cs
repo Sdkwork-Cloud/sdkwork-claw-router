@@ -28,7 +28,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public double? RatingScore { get; set; }
         public int? StudentsCount { get; set; }
         public List<string>? Tags { get; set; }
-        public string? ThumbnailUrl { get; set; }
+        public MediaResource? Thumbnail { get; set; }
         public string? Title { get; set; }
     }
 }

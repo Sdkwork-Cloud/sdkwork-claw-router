@@ -9,7 +9,12 @@ describe("sdkwork-auth-pc-react controller", () => {
         authToken: "auth-token-1",
         refreshToken: "refresh-token-1",
         user: {
-          avatarUrl: "https://cdn.sdkwork.ai/avatar.png",
+          avatar: {
+            kind: "image",
+            publicUrl: "https://cdn.sdkwork.ai/avatar.png",
+            source: "external_url",
+            url: "https://cdn.sdkwork.ai/avatar.png",
+          },
           displayName: "Sdkwork Operator",
           email: "sdkwork@sdkwork.ai",
           firstName: "Sdkwork",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beauty@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-beauty-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beauty-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64be7e4f962f6288aea27cbe1a4a7afa7d639f3d921d35658de5f3c874f87414",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text2sql@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-text2sql-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text2sql-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:10c7d2a537a062d2cd4544fca76c1ca41a0c1dc78c1d05beb6519d8b961d7c9e",

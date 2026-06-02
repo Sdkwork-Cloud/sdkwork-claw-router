@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codeql-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codeql-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codeql-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0deaa200fcbc52804ae4762e0de9e139983f5ce1ddcb27eddaf9e758700a4ed",

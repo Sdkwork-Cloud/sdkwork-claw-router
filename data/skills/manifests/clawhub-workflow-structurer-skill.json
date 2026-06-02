@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workflow-structurer-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workflow-structurer-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workflow-structurer-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e2aedbea3c16c25c6b136812bc88ca708bec9d9221be53c2d8a8bf9e17b8697e",

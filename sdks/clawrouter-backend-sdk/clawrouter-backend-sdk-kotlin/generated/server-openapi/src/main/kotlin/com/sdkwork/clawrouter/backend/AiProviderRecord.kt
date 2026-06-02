@@ -12,7 +12,7 @@ data class AiProviderRecord(
     val description: String? = null,
     val displayName: String? = null,
     val docsUrl: String? = null,
-    val iconUrl: String? = null,
+    val icon: MediaResource? = null,
     val id: String? = null,
     val metadata: Map<String, String>? = null,
     val metadataSchemaVersion: String? = null,

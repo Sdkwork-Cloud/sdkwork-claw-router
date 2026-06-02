@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-creator-feishu@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-creator-feishu-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-creator-feishu-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:532f3e503b91234f62085a1435b63bc5db3cb7317f49bff57e2ceb0b09564dd4",

@@ -12,6 +12,7 @@ class PromotionOfferTimeWindowRecord:
     updated_at: str
     window_type: str
     ends_at: Optional[str] = None
+    id: Optional[str] = None
     local_end_time: Optional[str] = None
     local_start_time: Optional[str] = None
     organization_id: Optional[str] = None

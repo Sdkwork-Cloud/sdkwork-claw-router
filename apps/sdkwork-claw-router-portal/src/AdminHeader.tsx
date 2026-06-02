@@ -19,6 +19,7 @@ import {
   subscribePortalSessionChange,
 } from 'sdkwork-claw-router-commons/runtime';
 import { useSiteBranding } from 'sdkwork-claw-router-commons/runtime';
+import { readMediaResourceUrl } from 'sdkwork-claw-router-commons/runtime';
 import { ADMIN_MODULES, type AdminModuleDef, type AdminModuleId } from './adminModuleRegistry';
 
 export { ADMIN_MODULES, getActiveModuleFromPath, type AdminModuleDef, type AdminModuleId } from './adminModuleRegistry';
@@ -41,6 +42,7 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
   const location = useLocation();
   const navigate = useNavigate();
   const displaySiteName = siteBranding.shortName || siteBranding.siteName;
+  const logoSource = readMediaResourceUrl(siteBranding.logo);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -97,8 +99,8 @@ export function AdminHeader({ isDark, toggleTheme, activeModule, onModuleChange 
         <div className="flex shrink-0 items-center gap-6">
           <Link to="/" className="flex items-center gap-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10">
-              {siteBranding.logoUrl ? (
-                <img src={siteBranding.logoUrl} alt={siteBranding.siteName} className="h-5 w-5 object-contain" />
+              {logoSource ? (
+                <img src={logoSource} alt={siteBranding.siteName} className="h-5 w-5 object-contain" />
               ) : (
                 <Terminal className="h-5 w-5 text-white" />
               )}

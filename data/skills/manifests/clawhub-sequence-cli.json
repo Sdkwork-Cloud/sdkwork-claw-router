@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sequence-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sequence-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sequence-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62c794ffd6a9978d19c291a90e25a1a52b22aa56dd899d4c692ff2dba34cfdb3",

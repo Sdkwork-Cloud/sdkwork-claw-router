@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/launchpad@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-launchpad-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-launchpad-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2bf5cfde186427b2e7faef491bb0debfdee2f55bff59bffc060c20e0d5d3f816",

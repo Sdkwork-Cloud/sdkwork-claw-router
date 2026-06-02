@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meituan-bike@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meituan-bike-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meituan-bike-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:223e13c0b4b1c8c0dddf3b3185bd26d650dd3a1b02da5bf04404621e3366ac86",

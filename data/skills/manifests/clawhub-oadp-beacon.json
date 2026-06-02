@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oadp-beacon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-oadp-beacon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oadp-beacon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1eeb93f01cb215e8ca2a2e0fd4c99275e4bae24da23b165cb7bda26e55929dd0",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apprentice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apprentice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apprentice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cf004fd223960b07df43e7dca70e8b3eb9a21c643a9529a61fda20c51f17de7e",

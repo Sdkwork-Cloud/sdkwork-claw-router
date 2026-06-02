@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-to-hd@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-to-hd-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-to-hd-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2905a973bbfd929ad2ec9bb0f934cf3a852cd8e5b8aa2f16773bf4225e129554",

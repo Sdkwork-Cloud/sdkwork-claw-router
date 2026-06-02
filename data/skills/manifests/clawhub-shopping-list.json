@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shopping-list@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-shopping-list-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shopping-list-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ee64f3054a4662ab7dc8778598679a996dab881e74831090f58487ed10ed6c9e",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-openclaw-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-openclaw-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-openclaw-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3c58c322972773c2d0c31ddf44bd40601dc2899c12ff7c9d36414a556eafdf7",

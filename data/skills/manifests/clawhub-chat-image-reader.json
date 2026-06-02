@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-image-reader@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-image-reader-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-image-reader-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e5a9d6b108b30f3b60e807d659f5e7053428e9bc4fd96c933291d0f405227870",

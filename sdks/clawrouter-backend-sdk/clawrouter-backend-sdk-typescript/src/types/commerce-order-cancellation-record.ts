@@ -8,6 +8,8 @@ export interface CommerceOrderCancellationRecord {
   completed_at?: string;
   /** Created at field on commerce order cancellation record. */
   created_at: string;
+  /** Id field on commerce order cancellation record. */
+  id?: string;
   /** Idempotency key field on commerce order cancellation record. */
   idempotency_key: string;
   /** Order id field on commerce order cancellation record. */

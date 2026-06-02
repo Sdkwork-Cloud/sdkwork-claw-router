@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/turbot-pipes@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-turbot-pipes-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-turbot-pipes-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cb037e453b59f298da3a59a730ee278c82d2fa59d59894f1e4264ee5f8259215",

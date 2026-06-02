@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pr-review@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pr-review-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pr-review-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a85be47e9092b7d58a6cec3fd94fce86c0ba0b7565e20cb6f41484d206afb74c",

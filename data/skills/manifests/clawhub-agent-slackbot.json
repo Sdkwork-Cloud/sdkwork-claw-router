@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-slackbot@1.10.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-slackbot-1.10.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-slackbot-1.10.5.json"
+      },
       "version": "1.10.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7dd1a9bffd6dca059e492a4b7b3e73721997f84505695dd3dc4a523cb777bd2a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/industry-news-agent@3.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-industry-news-agent-3.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-industry-news-agent-3.1.1.json"
+      },
       "version": "3.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4fd2c91605a9c15d8c461dcd019614878864530b2e23fd25ad63d9e1e0a405c8",

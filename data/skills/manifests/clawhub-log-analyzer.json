@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/log-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-log-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-log-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7fe04900a264b86d821503873c885f0535b56a8edcc585bf80927c953c9cb87f",

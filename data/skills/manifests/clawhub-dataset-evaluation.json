@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dataset-evaluation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dataset-evaluation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dataset-evaluation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a995cf71dc65eacc68e607324291b29e339b70fd8549afd6a25740e6d16a15a",

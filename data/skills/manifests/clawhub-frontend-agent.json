@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/frontend-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-frontend-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-frontend-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:65249f831f409525a79eb1fb4d3c8e40c24d2e9cde833e921f286e0139a8cd7b",

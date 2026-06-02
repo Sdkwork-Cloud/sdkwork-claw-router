@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pbe-extractor@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-pbe-extractor-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pbe-extractor-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:8fda84dd6e7ab83e9961b2e74e29411b7118e4372e9efdd240ae42c26a8317af",

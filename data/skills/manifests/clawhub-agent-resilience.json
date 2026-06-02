@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-resilience@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-resilience-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-resilience-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e7835f780f15559044cbdd2c61e54ad906f39141a99a2a2cbdd6a973a15683a",

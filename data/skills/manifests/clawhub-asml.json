@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/asml@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-asml-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-asml-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:dfb01fd424207011401c06b1744e88c21d3d056db1a0d0e0bc2017bf928d2311",

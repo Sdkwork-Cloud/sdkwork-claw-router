@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-causal@0.10.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-causal-0.10.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-causal-0.10.3.json"
+      },
       "version": "0.10.3",
       "runtime": "metadata",
       "checksumHash": "sha256:ef2c8e04a3974bc289785d615d2c8175be6eb800442dcbd7e334e5c26742190a",

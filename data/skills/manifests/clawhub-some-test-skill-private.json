@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/some-test-skill-private@1.1.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-some-test-skill-private-1.1.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-some-test-skill-private-1.1.6.json"
+      },
       "version": "1.1.6",
       "runtime": "metadata",
       "checksumHash": "sha256:2c13a24024847e1fc380f03adaf0b28b0a68aee709dd4f29cd25fd50d1e50959",

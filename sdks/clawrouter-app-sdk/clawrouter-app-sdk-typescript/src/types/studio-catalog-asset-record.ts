@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Studio catalog asset record schema exposed by Claw Router. */
 export interface StudioCatalogAssetRecord {
@@ -6,10 +7,10 @@ export interface StudioCatalogAssetRecord {
   alt_text?: string;
   /** Artifact id field on studio catalog asset record. */
   artifact_id?: string;
+  /** Asset field on studio catalog asset record. */
+  asset?: MediaResource;
   /** Asset type field on studio catalog asset record. */
   asset_type?: string;
-  /** Asset url field on studio catalog asset record. */
-  asset_url?: string;
   /** Created at field on studio catalog asset record. */
   created_at?: string;
   /** Data scope field on studio catalog asset record. */
@@ -44,8 +45,8 @@ export interface StudioCatalogAssetRecord {
   target_type?: string;
   /** Tenant id field on studio catalog asset record. */
   tenant_id?: string;
-  /** Thumbnail url field on studio catalog asset record. */
-  thumbnail_url?: string;
+  /** Thumbnail field on studio catalog asset record. */
+  thumbnail?: MediaResource;
   /** Title field on studio catalog asset record. */
   title?: string;
   /** Updated at field on studio catalog asset record. */

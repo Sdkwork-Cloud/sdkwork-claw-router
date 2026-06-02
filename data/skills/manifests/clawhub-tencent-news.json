@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencent-news@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencent-news-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencent-news-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:14d5538196062033cb89019c97022366c47a5f10b784a3685345b0c9ebebca9c",

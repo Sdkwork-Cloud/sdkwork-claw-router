@@ -2,6 +2,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class CourseApplicationVideoUploadResponse:
@@ -11,4 +14,4 @@ class CourseApplicationVideoUploadResponse:
     sha256: str
     size_bytes: int
     uploaded_at: str
-    video_url: str
+    video: MediaResource

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bank-skills@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bank-skills-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bank-skills-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0640aa91345112ebb613a0d45aee4c74aba4ce94214fbae033fffd5657968582",

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/diary-beast@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-diary-beast-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-diary-beast-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:79fa14499e7e8bea722e032c64ac10cc0fce1c11ae4f293f337a4894f773470b",

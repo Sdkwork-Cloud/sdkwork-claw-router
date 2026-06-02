@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/car-rental@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-car-rental-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-car-rental-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d9dd2cc67a0e598745a9dceb3bcaac1ad2d3d0b5bde174ea70d1ddb7430c62a9",

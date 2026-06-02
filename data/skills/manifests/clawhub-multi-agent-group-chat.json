@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multi-agent-group-chat@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-group-chat-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multi-agent-group-chat-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a4f8c25591841e6aada449cab7f93d0c64a6c301ae6d5008dad214bf5efaa487",

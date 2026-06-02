@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bioinfo-daily-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bioinfo-daily-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bioinfo-daily-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:18850e0a75cb4512a282e1ffd70b5cd38ecdc17df862507f8697b4c2e5820bce",

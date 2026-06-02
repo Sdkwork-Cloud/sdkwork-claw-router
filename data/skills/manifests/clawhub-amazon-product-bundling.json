@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-product-bundling@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-product-bundling-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-product-bundling-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f78ee75112c252020cdb00c34cf164a56c78a3d95ff8049136fa44c99d0151fa",

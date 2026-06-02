@@ -25,7 +25,7 @@ var config = new SdkConfig("http://localhost:18081");
 var client = new SdkworkBackendClient(config);
 client.SetApiKey("your-api-key");
 
-var result = await client.Ai.ModelVendorsListAsync();
+var result = await client.Ai.ChannelGroupsListAsync();
 Console.WriteLine(result);
 ```
 
@@ -106,8 +106,8 @@ Console.WriteLine(result);
 ### ai
 
 ```csharp
-// List vendors
-var result = await client.Ai.ModelVendorsListAsync();
+// List groups
+var result = await client.Ai.ChannelGroupsListAsync();
 Console.WriteLine(result);
 ```
 
@@ -138,8 +138,8 @@ Console.WriteLine(result);
 ### iam
 
 ```csharp
-// List groups
-var result = await client.Iam.AccessGroupsListAsync();
+// List API key map
+var result = await client.Iam.ApiKeysListAsync();
 Console.WriteLine(result);
 ```
 
@@ -263,7 +263,7 @@ Console.WriteLine(result);
 ```csharp
 try
 {
-    await client.Ai.ModelVendorsListAsync();
+    await client.Ai.ChannelGroupsListAsync();
 }
 catch (HttpRequestException ex)
 {

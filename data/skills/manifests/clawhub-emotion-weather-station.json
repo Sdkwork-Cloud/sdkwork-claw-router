@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/emotion-weather-station@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-emotion-weather-station-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-emotion-weather-station-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c5152c54ba4ed9216804d05fac879bf9d3819d8a25235f2fa7c3d419a8a31716",

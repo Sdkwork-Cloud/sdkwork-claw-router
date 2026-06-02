@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-cloud-watch@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-cloud-watch-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-cloud-watch-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cd35f077e27ebe040d9e7db8b28ca508ace633b210a99535e5edd202feee552f",

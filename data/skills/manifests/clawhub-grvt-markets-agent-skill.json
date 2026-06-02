@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grvt-markets-agent-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grvt-markets-agent-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grvt-markets-agent-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:173ad7010f09a3ac5a161340fdafaa8608154d83a7b0a6499870a1447a323eec",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ascii-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ascii-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ascii-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ce2cdb1b147313e6a96b666083599ba5d1b64c18140353904d4f017bca6aed1a",

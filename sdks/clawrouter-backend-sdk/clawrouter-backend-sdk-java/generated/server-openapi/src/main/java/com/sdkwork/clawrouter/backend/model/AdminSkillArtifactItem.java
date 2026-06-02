@@ -3,10 +3,10 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.List;
 
 public class AdminSkillArtifactItem {
+    private MediaResource artifact;
     private String artifactRef;
     private Integer artifactSizeBytes;
     private Integer artifactType;
-    private String artifactUrl;
     private String checksumHash;
     private String createdAt;
     private String deprecatedAt;
@@ -24,6 +24,14 @@ public class AdminSkillArtifactItem {
     private Integer targetType;
     private String updatedAt;
     private String version;
+
+    public MediaResource getArtifact() {
+        return this.artifact;
+    }
+
+    public void setArtifact(MediaResource artifact) {
+        this.artifact = artifact;
+    }
 
     public String getArtifactRef() {
         return this.artifactRef;
@@ -47,14 +55,6 @@ public class AdminSkillArtifactItem {
 
     public void setArtifactType(Integer artifactType) {
         this.artifactType = artifactType;
-    }
-
-    public String getArtifactUrl() {
-        return this.artifactUrl;
-    }
-
-    public void setArtifactUrl(String artifactUrl) {
-        this.artifactUrl = artifactUrl;
     }
 
     public String getChecksumHash() {

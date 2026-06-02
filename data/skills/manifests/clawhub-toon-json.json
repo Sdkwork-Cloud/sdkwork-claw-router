@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toon-json@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toon-json-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toon-json-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:353bae33b4d2a7ec917055ccf09144deab3412f546848e3cec3c71c33408fd55",

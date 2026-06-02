@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tellent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tellent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tellent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5c12084d91525edba454e55a728530990e12f110bc559c8efb16ed783e0c9ddf",

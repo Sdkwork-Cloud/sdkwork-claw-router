@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mautic@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-mautic-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mautic-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ab887e15db69e45d0feb09e18b848e85c46d29909c4b0057d07952965c3fd18d",

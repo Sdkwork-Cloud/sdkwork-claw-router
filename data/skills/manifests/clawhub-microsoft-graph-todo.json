@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/microsoft-graph-todo@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-graph-todo-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-microsoft-graph-todo-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:817fcbd0b6a438130bc9917a8ffab10f531d8fc1506bb9f7afb4960db137b421",

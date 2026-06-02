@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lidar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lidar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lidar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:643f1dc204d9eb8ebbaa15647e355d4c7950e040ffe4fe7cf6cc5952a31914f0",

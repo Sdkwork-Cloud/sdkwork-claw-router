@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/content-scheduler@3.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-content-scheduler-3.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-content-scheduler-3.1.0.json"
+      },
       "version": "3.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cf658281486492019fd15ad50fc7e2a1001174fb786dfa949c312d4a49fe0950",

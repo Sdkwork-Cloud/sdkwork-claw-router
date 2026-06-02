@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ryot@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ryot-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ryot-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:431dd8d0cf1bd46b5e0612cfa6b36fed3377693aa829f40069df16ef562c1806",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icecube-auto-content@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icecube-auto-content-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icecube-auto-content-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:751fba33bc2901fdafdab4825378635b66023bac2055d294934d92b9a7b27594",

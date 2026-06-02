@@ -9,6 +9,7 @@ public class CommerceOrderEventRecord {
     private String eventNo;
     private String eventType;
     private String fromStatus;
+    private String id;
     private String idempotencyKey;
     private String message;
     private String orderId;
@@ -65,6 +66,14 @@ public class CommerceOrderEventRecord {
 
     public void setFromStatus(String fromStatus) {
         this.fromStatus = fromStatus;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

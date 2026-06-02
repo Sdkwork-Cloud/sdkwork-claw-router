@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/simplebackups@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-simplebackups-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-simplebackups-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:73fb250a9aa9d96e1a605ec31748b4a6077de7bc1aecc475ebf2296011973978",

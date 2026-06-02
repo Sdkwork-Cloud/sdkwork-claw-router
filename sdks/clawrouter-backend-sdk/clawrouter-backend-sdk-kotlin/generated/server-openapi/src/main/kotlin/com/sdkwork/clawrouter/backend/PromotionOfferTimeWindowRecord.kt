@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.backend
 data class PromotionOfferTimeWindowRecord(
     val createdAt: String? = null,
     val endsAt: String? = null,
+    val id: String? = null,
     val localEndTime: String? = null,
     val localStartTime: String? = null,
     val offerVersionId: String? = null,

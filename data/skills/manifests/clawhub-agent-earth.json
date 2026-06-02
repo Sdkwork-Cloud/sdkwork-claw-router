@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-earth@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-earth-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-earth-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:589ab991f746683a3c69e78d61cd0264eca98b30482d20f9ac6e3de1e9e0fc4c",

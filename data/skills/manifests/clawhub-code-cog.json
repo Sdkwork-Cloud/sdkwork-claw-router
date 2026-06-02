@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/code-cog@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-code-cog-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-code-cog-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:96039f702f66e6a9153ba64185f5cdc424233796559f767ec9fa41c6334c5a24",

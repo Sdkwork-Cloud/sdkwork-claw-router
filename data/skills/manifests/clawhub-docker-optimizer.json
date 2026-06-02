@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3f84ccf35fa1ccf1f8d83f3a8ee421708073c9121850aea4a998bb365045771",

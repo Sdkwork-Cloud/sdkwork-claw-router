@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/the-agent-sims@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-the-agent-sims-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-the-agent-sims-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62a320af023d9142a24a87b3c3a109719bbe0c4e87162050b5604c53c01a54ce",

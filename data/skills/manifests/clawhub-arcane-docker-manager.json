@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arcane-docker-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arcane-docker-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arcane-docker-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2dee1e28a53aff306716d43b53a7260167bd64ba35f6fbafaa493c99e75e8c0",

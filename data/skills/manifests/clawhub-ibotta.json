@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ibotta@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ibotta-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ibotta-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dddc0d6b932b5386a26fca96f8281460c5a0842d4626b69c181211564916a998",

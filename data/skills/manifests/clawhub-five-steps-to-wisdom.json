@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/five-steps-to-wisdom@3.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-five-steps-to-wisdom-3.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-five-steps-to-wisdom-3.1.0.json"
+      },
       "version": "3.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25311b0a8851522fce36741771009a5c143a739e047e8080becde6fbbf6ea079",

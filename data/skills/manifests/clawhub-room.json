@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/room@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-room-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-room-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:23a2e8f6871d5c14c6b4fbcf5cd0ab8143ba9d8895153f1be08285a8640a861a",

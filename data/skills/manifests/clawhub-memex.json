@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memex@0.5.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-memex-0.5.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memex-0.5.12.json"
+      },
       "version": "0.5.12",
       "runtime": "metadata",
       "checksumHash": "sha256:e4b8d882260fee50a08929081868ad3558caef1e66cf942219b005d9d4c570d7",

@@ -1,4 +1,4 @@
-﻿import json
+import json
 import tempfile
 import textwrap
 import unittest
@@ -571,18 +571,44 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         "schema": {
                             "type": "object",
                             "additionalProperties": False,
-                            "required": ["videoUrl"],
+                            "required": ["video"],
                             "properties": {
-                                "videoUrl": {"type": "string"},
+                                "video": {"$ref": "#/components/schemas/MediaResource"},
                             },
                         },
                     },
                 }
             )
             manifest.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            schema_components = root / "generated" / "openapi" / "schema-components.yaml"
+            schema_components.parent.mkdir(parents=True, exist_ok=True)
+            schema_components.write_text(
+                textwrap.dedent(
+                    """
+                    components:
+                      schemas:
+                        MediaResource:
+                          type: object
+                          additionalProperties: false
+                          required:
+                            - kind
+                            - source
+                          properties:
+                            kind:
+                              type: string
+                            source:
+                              type: string
+                            uri:
+                              type: string
+                    """
+                ).strip()
+                + "\n",
+                encoding="utf-8",
+            )
 
             app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
             operation = app_spec["paths"]["/app/v3/api/courses/applications/videos"]["post"]
+            schemas = app_spec["components"]["schemas"]
 
             self.assertEqual(
                 {"$ref": "#/components/schemas/CourseApplicationVideoUploadRequest"},
@@ -590,6 +616,11 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             )
             self.assertEqual(["course_application_video_uploads"], operation["x-file-targets"])
             self.assertIn("File targets course_application_video_uploads.", operation["description"])
+            self.assertIn("MediaResource", schemas)
+            self.assertDescribedSchemaRef(
+                schemas["CourseApplicationVideoUploadResponse"]["properties"]["video"],
+                "#/components/schemas/MediaResource",
+            )
 
     def test_registration_schema_preserves_required_verification_code(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ihop@99.99.99",
-      "artifactUrl": "data/skills/artifacts/clawhub-ihop-99.99.99.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ihop-99.99.99.json"
+      },
       "version": "99.99.99",
       "runtime": "metadata",
       "checksumHash": "sha256:19bc6c09a4c32b74eb3dbc4dade3164867482695e593b54dd9a91420cad9f57a",

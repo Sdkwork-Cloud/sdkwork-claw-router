@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/build-transparency-dashboard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-build-transparency-dashboard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-build-transparency-dashboard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2076bd652b72d0821bb7fee7e8cac90218180fb8b28562d88a2f2090abcffbc",

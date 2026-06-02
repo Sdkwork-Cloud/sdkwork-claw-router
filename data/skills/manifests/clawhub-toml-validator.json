@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toml-validator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-toml-validator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toml-validator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6acb1e24288ab64e007aec3b59c4481ec2e143a5f63a8c89943635669593e722",

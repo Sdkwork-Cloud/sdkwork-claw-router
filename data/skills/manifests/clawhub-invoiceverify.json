@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoiceverify@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoiceverify-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoiceverify-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:fa17668f40d90362c149d5032632f14c566b6a4772a8571b1bfa0a5109366aa5",

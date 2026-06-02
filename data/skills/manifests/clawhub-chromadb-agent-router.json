@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chromadb-agent-router@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chromadb-agent-router-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chromadb-agent-router-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52be94961491a7c6888a0cf44bfb8f0b10b4fd069081d5a6503ead7ac0f73ac2",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minara@3.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-minara-3.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minara-3.0.3.json"
+      },
       "version": "3.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:46426640c11be614f05e703c054a17416db123d44e3c3086483f99db0d376e77",

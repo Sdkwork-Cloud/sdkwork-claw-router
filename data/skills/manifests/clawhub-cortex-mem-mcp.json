@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cortex-mem-mcp@2.7.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cortex-mem-mcp-2.7.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cortex-mem-mcp-2.7.0.json"
+      },
       "version": "2.7.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74aa9f2924f51164f7766dbd67a7470021a95c85775073f385d2880269cbf215",

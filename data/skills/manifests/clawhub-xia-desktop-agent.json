@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xia-desktop-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xia-desktop-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xia-desktop-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:37affa77ce1c22bd93213fd113e7a0ace892e7bf09ba0477bf39e1d01ab5d841",

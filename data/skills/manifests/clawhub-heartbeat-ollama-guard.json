@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heartbeat-ollama-guard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-heartbeat-ollama-guard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heartbeat-ollama-guard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71fb46338d58e1801b832232633d6ef381d3599b86cc68371b681dff8be04ba0",

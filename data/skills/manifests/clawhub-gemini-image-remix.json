@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-image-remix@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-image-remix-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-image-remix-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2cf2139ee8861d4ed3b7f6d20a62214d7a001e4e33b03130a7152c1002cde715",

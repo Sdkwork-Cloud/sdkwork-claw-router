@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bird-info@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bird-info-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bird-info-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89f48a24ccd1d30f9e5bd2f99e1c1c82196ea8aa36cf5510a148f25f9aaca3f2",

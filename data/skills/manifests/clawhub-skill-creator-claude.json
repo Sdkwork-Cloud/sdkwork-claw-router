@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-creator-claude@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-creator-claude-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-creator-claude-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ab43a2d84ca2efce1a9795ae976e53e6f4cfb7b0631e78b496724b657fbb595d",

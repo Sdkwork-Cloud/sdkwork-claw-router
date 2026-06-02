@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/takeout-coupon@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-takeout-coupon-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-takeout-coupon-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e45f851dd4775fd92c7656f663be42c2a4babc4631188b2683f3f37a01b63807",

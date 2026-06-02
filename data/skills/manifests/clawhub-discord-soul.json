@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/discord-soul@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-discord-soul-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-discord-soul-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec2253f9728633aab9b243843c691088cb8262fbfe097335c92a9a3070a07714",

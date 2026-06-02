@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/btc-risk-radar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-btc-risk-radar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-btc-risk-radar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c51ccc044c782fc115d4890bff8fb2316018818ea2404e12dbd086413e39220b",

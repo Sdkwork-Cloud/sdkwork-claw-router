@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grok-swarm@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-grok-swarm-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grok-swarm-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:2189d6e9b7d8665c5ff3fe3a2f9579b3cf6240d4db442e68c22073b27470d35e",

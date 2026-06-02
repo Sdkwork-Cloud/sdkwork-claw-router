@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sec-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sec-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sec-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f7923f0cead789771f8ef2f2da8d111a9ac1780c37199f4f423df477d3aa0de",

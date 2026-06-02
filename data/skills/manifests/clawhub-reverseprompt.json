@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reverseprompt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reverseprompt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reverseprompt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:198e408eaa5b14509d3b7c56f82637ebdfcbd0558a1601c8ba01c5ec72cb3ada",

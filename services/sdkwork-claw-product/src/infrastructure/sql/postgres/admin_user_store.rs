@@ -2,6 +2,9 @@ use sdkwork_commerce_core::{CommerceAccountAssetType, CommerceLedgerDirection};
 use sqlx::{PgPool, Postgres, Row, Transaction};
 
 use crate::domain::{DecimalValue, DomainError, DomainResult};
+use crate::infrastructure::sql::sql_admin_product_center::{
+    media_resource_object_blob_id, media_resource_stable_id, provider_asset_media_resource,
+};
 use crate::ports::{
     AdjustAdminUserBalanceCommand, AdminUserApiKeyItem, AdminUserCommandFuture, AdminUserItem,
     AdminUserStore, CreateAdminUserApiKeyCommand, CreateAdminUserCommand,
@@ -17,7 +20,7 @@ const TARGET_TYPE_USER: i32 = 61;
 const TARGET_TYPE_API_KEY: i32 = 62;
 const TARGET_TYPE_ACCOUNT: i32 = 63;
 const DEFAULT_CHANNEL_GROUP_CODE: &str = "default";
-const DEFAULT_API_KEY_GROUP_NAME: &str = "Default";
+const DEFAULT_CHANNEL_GROUP_NAME: &str = "Default";
 const DEFAULT_PRICING_PLAN_CODE: &str = "standard";
 const CASH_CURRENCY_CODE: &str = "USD";
 
@@ -250,7 +253,7 @@ impl AdminUserStore for PostgresAdminUserStore {
                 return Err(DomainError::not_found("user was not found"));
             }
             ensure_api_key_idempotency_available(&mut tx, &command).await?;
-            let group_id = ensure_default_api_key_group(
+            let group_id = ensure_default_channel_group(
                 &mut tx,
                 command.subject.tenant_id,
                 command.subject.organization_id,
@@ -474,12 +477,13 @@ async fn insert_user(
     let user_id_text = user_id.to_string();
     let tenant_id = command.subject.tenant_id.to_string();
     let organization_id = command.subject.organization_id.to_string();
+    let avatar = user_default_avatar_resource(&command.username);
     sqlx::query(
         r#"
         INSERT INTO iam_user
-            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
+            (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, $5, '', '', 'active', $6::timestamp AT TIME ZONE 'UTC', $6::timestamp AT TIME ZONE 'UTC')
+            ($1, $2, $3, $4, $5, '', $6, $7, $8::jsonb, 'active', $9::timestamp AT TIME ZONE 'UTC', $9::timestamp AT TIME ZONE 'UTC')
         "#,
     )
     .bind(&user_id_text)
@@ -487,6 +491,9 @@ async fn insert_user(
     .bind(&command.username)
     .bind(&command.username)
     .bind(&command.email)
+    .bind(media_resource_stable_id(&avatar))
+    .bind(media_resource_object_blob_id(&avatar))
+    .bind(avatar.to_string())
     .bind(&command.requested_at)
     .execute(&mut **tx)
     .await
@@ -528,6 +535,13 @@ async fn insert_user(
     .map_err(|error| store_error("failed to create IAM user email identity", error))?;
 
     Ok(user_id)
+}
+
+fn user_default_avatar_resource(username: &str) -> serde_json::Value {
+    provider_asset_media_resource(
+        "image",
+        &format!("iam-user-avatar:{}", username.trim().to_ascii_lowercase()),
+    )
 }
 
 async fn insert_cash_account(
@@ -803,7 +817,7 @@ async fn ensure_api_key_idempotency_available(
     }
 }
 
-async fn find_default_api_key_group(
+async fn find_default_channel_group(
     tx: &mut Transaction<'_, Postgres>,
     tenant_id: i64,
     organization_id: i64,
@@ -827,21 +841,21 @@ async fn find_default_api_key_group(
     .bind(DEFAULT_CHANNEL_GROUP_CODE)
     .fetch_optional(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to load default api key group", error))
+    .map_err(|error| store_error("failed to load default channel group", error))
 }
 
-async fn ensure_default_api_key_group(
+async fn ensure_default_channel_group(
     tx: &mut Transaction<'_, Postgres>,
     tenant_id: i64,
     organization_id: i64,
     _source_uuid: &str,
     requested_at: &str,
 ) -> DomainResult<i64> {
-    if let Some(group_id) = find_default_api_key_group(tx, tenant_id, organization_id).await? {
+    if let Some(group_id) = find_default_channel_group(tx, tenant_id, organization_id).await? {
         return Ok(group_id);
     }
 
-    let group_uuid = format!("default-api-key-group-{tenant_id}-{organization_id}");
+    let group_uuid = format!("default-channel-group-{tenant_id}-{organization_id}");
     let pricing_plan_id = find_default_pricing_plan_id(tx, tenant_id, organization_id).await?;
     let row = sqlx::query_scalar(
         r#"
@@ -866,13 +880,13 @@ async fn ensure_default_api_key_group(
     .bind(tenant_id)
     .bind(organization_id)
     .bind(requested_at)
-    .bind(DEFAULT_API_KEY_GROUP_NAME)
+    .bind(DEFAULT_CHANNEL_GROUP_NAME)
     .bind(DEFAULT_CHANNEL_GROUP_CODE)
     .bind(pricing_plan_id)
     .bind(DEFAULT_PRICING_PLAN_CODE)
     .fetch_one(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to ensure default api key group", error))?;
+    .map_err(|error| store_error("failed to ensure default channel group", error))?;
 
     Ok(row)
 }
@@ -906,7 +920,7 @@ async fn find_default_pricing_plan_id(
     .bind(organization_id)
     .fetch_optional(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to load default api key group pricing plan", error))
+    .map_err(|error| store_error("failed to load default channel group pricing plan", error))
 }
 
 async fn insert_api_key(

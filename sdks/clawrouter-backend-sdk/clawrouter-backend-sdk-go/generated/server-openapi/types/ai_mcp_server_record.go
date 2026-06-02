@@ -10,6 +10,7 @@ type AiMcpServerRecord struct {
 	DeletedBy string `json:"deleted_by"`
 	DeprecatedAt string `json:"deprecated_at"`
 	Description string `json:"description"`
+	HealthStatus string `json:"health_status"`
 	Id string `json:"id"`
 	LastCheckedAt string `json:"last_checked_at"`
 	LastErrorMasked string `json:"last_error_masked"`
@@ -22,6 +23,7 @@ type AiMcpServerRecord struct {
 	PublishedRevisionId string `json:"published_revision_id"`
 	ServerKey string `json:"server_key"`
 	Status string `json:"status"`
+	Tags map[string]JsonValue `json:"tags"`
 	TenantId string `json:"tenant_id"`
 	Transport string `json:"transport"`
 	UpdatedAt string `json:"updated_at"`

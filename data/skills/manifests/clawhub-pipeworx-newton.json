@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-newton@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-newton-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-newton-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:699fa16344afde4b7fe5b6c09e21d47cc3dbae6bd4e4ba16682942306fd5efcd",

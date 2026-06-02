@@ -12,6 +12,10 @@ pub struct CommerceCartRecord {
     /// Currency code field on commerce cart record.
     pub currency_code: String,
 
+    /// Id field on commerce cart record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Organization id field on commerce cart record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
@@ -27,4 +31,7 @@ pub struct CommerceCartRecord {
 
     /// Updated at field on commerce cart record.
     pub updated_at: String,
+
+    /// Version field on commerce cart record.
+    pub version: String,
 }

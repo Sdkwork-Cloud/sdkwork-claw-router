@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/desktop-pet@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-desktop-pet-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-desktop-pet-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b6927303196957b8debfb8ab653d4abf1a29fed03f6bd5639a353545cd8eeca",

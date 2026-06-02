@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-students-textbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-students-textbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-students-textbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ffcbd66a9543a5414ed32f31a6fb8bdd77005a4294196c58d5187e0fac2c1af",

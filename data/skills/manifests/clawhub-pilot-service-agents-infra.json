@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-service-agents-infra@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-service-agents-infra-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-service-agents-infra-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b18be65eb74b84af54f814e64e2c7141c49b978919f03e81767a5f3a40b98807",

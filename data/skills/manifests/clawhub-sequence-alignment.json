@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sequence-alignment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sequence-alignment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sequence-alignment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d67320a62a439396176b8f81095d434395ff22daae2e49bfde7c415df2c23871",

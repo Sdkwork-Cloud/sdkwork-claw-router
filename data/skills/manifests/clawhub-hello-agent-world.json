@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hello-agent-world@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hello-agent-world-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hello-agent-world-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4b3cd0c20ddaf05d69e59710dec4267f53fc029d48d8a742179c8873cb3a05b1",

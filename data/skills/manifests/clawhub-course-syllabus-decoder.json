@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/course-syllabus-decoder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-course-syllabus-decoder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-course-syllabus-decoder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e889d412a2f19b226321a46f66469ba7ebdc553a920da6c75008ad576d64d194",

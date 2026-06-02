@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/conduit@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-conduit-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-conduit-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6a04240dafc0297a4875c82eac7af2d87ed7eafbf034dfc02e52052375a82941",

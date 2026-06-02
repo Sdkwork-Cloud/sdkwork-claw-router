@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feynman-lobster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feynman-lobster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feynman-lobster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3fbff52eac4888932639eae8e048882dc62acac3204a320be5191af15e09afcf",

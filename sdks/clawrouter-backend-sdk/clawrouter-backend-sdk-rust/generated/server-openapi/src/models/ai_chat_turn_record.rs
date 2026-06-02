@@ -143,6 +143,10 @@ pub struct AiChatTurnRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub turn_no: Option<String>,
 
+    /// Updated at field on ai chat turn record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub updated_at: Option<String>,
+
     /// Usage snapshot field on ai chat turn record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub usage_snapshot: Option<std::collections::HashMap<String, String>>,

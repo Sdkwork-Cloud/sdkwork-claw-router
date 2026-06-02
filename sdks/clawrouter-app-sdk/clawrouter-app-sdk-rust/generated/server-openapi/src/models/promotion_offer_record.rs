@@ -28,6 +28,10 @@ pub struct PromotionOfferRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub ends_at: Option<String>,
 
+    /// Id field on promotion offer record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Name field on promotion offer record.
     pub name: String,
 
@@ -43,6 +47,9 @@ pub struct PromotionOfferRecord {
     /// Organization id field on promotion offer record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Priority field on promotion offer record.
+    pub priority: i64,
 
     /// Starts at field on promotion offer record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

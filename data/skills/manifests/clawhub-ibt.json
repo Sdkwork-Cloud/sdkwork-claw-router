@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ibt@2.9.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ibt-2.9.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ibt-2.9.2.json"
+      },
       "version": "2.9.2",
       "runtime": "metadata",
       "checksumHash": "sha256:542aa65f38f68c2652cc25f4843abd3542d2c87e0e28e41acb38cdeba5f3ee14",

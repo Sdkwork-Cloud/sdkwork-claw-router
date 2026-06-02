@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gateway-recovery@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gateway-recovery-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gateway-recovery-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:88754b2c00c77f04c9bca63b827e269abd23e67388264cf928bd041f9968c75a",

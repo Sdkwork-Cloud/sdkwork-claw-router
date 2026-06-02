@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icecube-tasks@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icecube-tasks-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icecube-tasks-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac444669743aa552bc99b400e3469389b2277ecd03a5a4d97b5c8a48e9b36cd1",

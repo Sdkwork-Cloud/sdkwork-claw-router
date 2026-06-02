@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/postgres-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-postgres-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-postgres-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:562d3919d881e2053587076476723e034b6d7cc8e9a8b6d50036f0aba28f6d98",

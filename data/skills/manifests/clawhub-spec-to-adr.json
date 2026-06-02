@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spec-to-adr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spec-to-adr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spec-to-adr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29bbb82c621904973761c5d3decc056586bcede3448f8e414e936e3fecef42fc",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwen3-tts-voicedesign@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwen3-tts-voicedesign-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwen3-tts-voicedesign-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e4dad2201ff10a3cd5ea84fae23d7d4efc42828063e7f6adb3bfffd07bc2103",

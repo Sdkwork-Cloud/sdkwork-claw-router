@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/verve@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-verve-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-verve-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ef5f62072b20effc208def228853b073844e8b1fd9aa50dd8e07f84beac7b872",

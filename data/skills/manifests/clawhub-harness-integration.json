@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/harness-integration@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-harness-integration-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-harness-integration-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4c954e4bd7864619d2e127b296565533bb7ffd85359fa759c7395a672d707010",

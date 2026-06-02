@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-meeting-minutes-cn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-meeting-minutes-cn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-meeting-minutes-cn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1aa02485c071e4e7796bff43a5cdf13607205de91df23eaceca6ec2897009547",

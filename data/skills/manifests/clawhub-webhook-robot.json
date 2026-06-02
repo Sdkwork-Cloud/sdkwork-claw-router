@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/webhook-robot@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-webhook-robot-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-webhook-robot-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f04ff0c6becfb30bf68dbb80efa4f8ffcd413238d0a6e84863d62e3126e0d95",

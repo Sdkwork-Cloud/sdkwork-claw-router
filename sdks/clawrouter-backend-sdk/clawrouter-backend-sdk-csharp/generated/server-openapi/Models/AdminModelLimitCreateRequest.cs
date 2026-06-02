@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
 {
     public class AdminModelLimitCreateRequest
     {
-        public string? Group { get; set; }
+        public string? ChannelGroup { get; set; }
         public string? Model { get; set; }
         public int? Rpm { get; set; }
         public string? Status { get; set; }

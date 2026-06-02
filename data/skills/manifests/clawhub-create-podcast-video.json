@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-podcast-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-podcast-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-podcast-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0c2497d6f2ce3493e6596bf9e07a196fa82b79455fd54efb7cc70ad8e240f09e",

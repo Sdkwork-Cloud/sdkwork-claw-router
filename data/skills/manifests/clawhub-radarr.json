@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/radarr@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-radarr-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-radarr-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0a7e8f352e93a29023ff571492028c9dfe0515c15c152ba9b58f90d19913b49c",

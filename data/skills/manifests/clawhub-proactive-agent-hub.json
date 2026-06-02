@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proactive-agent-hub@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-proactive-agent-hub-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proactive-agent-hub-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5621796d031f3e489205036e508729d5cb6fbdbdba835a1fcfb1c5f5515b8519",

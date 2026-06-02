@@ -13,6 +13,7 @@ export * from './admin-category-options';
 export * from './admin-resource-options';
 export * from './clipboard';
 export * from './api-request-url';
+export * from './media-resource';
 export * from './reference-sidebar-groups';
 export * from './share-url';
 export * from './recharge-math';

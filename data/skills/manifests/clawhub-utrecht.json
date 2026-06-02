@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/utrecht@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-utrecht-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-utrecht-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f2fe08882cced94cf94834c05062fe182d5c5cc30fa25b54ed3ed05af1634200",

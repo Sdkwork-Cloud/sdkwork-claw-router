@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-smog@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-smog-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-smog-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:548db2dd7525281095c34577b09f0d798a784ee5182332fe0d8d004a5400363f",

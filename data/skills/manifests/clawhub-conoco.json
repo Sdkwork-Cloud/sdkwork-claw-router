@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/conoco@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-conoco-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-conoco-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a577184dad4591d33320e50bfd3e2f56eb75a90cb16f3ccd2c831b0cb6d4e2ef",

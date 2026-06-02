@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tricore@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tricore-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tricore-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:57d9244d02d4ea3ddb2958a09bd5fdf2499ab08c7fdc1cdb54b57ccf139160fb",

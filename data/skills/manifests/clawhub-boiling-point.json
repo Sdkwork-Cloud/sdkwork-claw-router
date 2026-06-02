@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boiling-point@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-boiling-point-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boiling-point-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:340d65e14ebafc966db5757b4f7bdf7ddb05e980c9e6db49ff84fecbe13979bc",

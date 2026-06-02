@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-editor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-editor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-editor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48b601b316e47e1669d3508dea584bcef4c3a17a97c81cf8296fc9a294aac553",

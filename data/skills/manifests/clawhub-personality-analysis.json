@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personality-analysis@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-personality-analysis-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personality-analysis-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ebba0b1a225432ae7f2ee22f8b5aff92ff0c1ca518d602127f4d54e9115d55d4",

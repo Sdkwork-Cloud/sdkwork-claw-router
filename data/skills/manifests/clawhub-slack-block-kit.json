@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slack-block-kit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slack-block-kit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slack-block-kit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:857497f3116a82477ed087d2b57014e3c78dfea972f92bc68a5db35b8ad1cdbe",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/biomass@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-biomass-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-biomass-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:49846d527a2285c1b616ad3c2d346080ebc3ae5fc0c44d9b8430cfc838f2b7d3",

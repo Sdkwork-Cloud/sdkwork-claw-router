@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-scan@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-scan-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-scan-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2bf40c405cb3e83b30532339f86c7fe3406c30216305839e798a57cd729653cb",

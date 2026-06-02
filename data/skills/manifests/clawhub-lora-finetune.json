@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lora-finetune@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lora-finetune-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lora-finetune-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f94ffdb791cc2d5d742a71e5eee41d65b266b3ceaca46b985f478c56d37757fb",

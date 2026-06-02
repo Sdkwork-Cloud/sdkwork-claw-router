@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shutdown@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-shutdown-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shutdown-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e779e1fa5bc8b82fbab492c1516e3507ff06298a2ae7731b59756ce01b92917b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bmo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bmo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bmo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff8911aa6da07e8fd925aef4d4b7c2f5eb5e5ac78f8d9c5fca0f325ff97aa0d2",

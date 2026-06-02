@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ana@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ana-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ana-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2dcc6bcf2ae5689d042e5a211837f7b15f16d7f5319e007651985871f0f2cd79",

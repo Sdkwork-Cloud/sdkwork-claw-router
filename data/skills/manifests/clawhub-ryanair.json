@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ryanair@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ryanair-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ryanair-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d276ee8cc5e0a58372f1af2288f871e0b728bc6466b813e0f02b863d39923cc9",

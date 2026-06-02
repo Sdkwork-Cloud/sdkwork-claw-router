@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-mail-agent@0.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-mail-agent-0.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-mail-agent-0.1.3.json"
+      },
       "version": "0.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:573d208f992652367dc8acbadf5100252d355ff3f3546ad9d5bd4bd7282947dc",

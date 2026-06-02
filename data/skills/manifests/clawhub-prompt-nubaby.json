@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-nubaby@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-nubaby-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-nubaby-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fdd8a83726b9ad91d4b9dbf5e83178edee084ffd47b767216f66a06e28a1f3ef",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/headless-vault-cli@1.2.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-headless-vault-cli-1.2.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-headless-vault-cli-1.2.6.json"
+      },
       "version": "1.2.6",
       "runtime": "metadata",
       "checksumHash": "sha256:fd9ab0d292634dbd3c9f8730c28ed0c56a0b9a7cf209046acee1c3e5e171d554",

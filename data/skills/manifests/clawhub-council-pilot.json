@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/council-pilot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-council-pilot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-council-pilot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9fabae23ace572ca5542d3e2936c977a94191f8d8e05201d05604f11fac82235",

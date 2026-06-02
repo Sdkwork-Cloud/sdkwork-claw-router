@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resume-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-resume-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resume-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3d5d7718366a87c115ab5d40bc90dcb7f240b32a579cce3a402af080b0dbf239",

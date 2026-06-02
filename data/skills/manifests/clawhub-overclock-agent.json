@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/overclock-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-overclock-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-overclock-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a869a8d9192bb216457d88780d5cadf9e25009768a8efea41625dbe25bccf23",

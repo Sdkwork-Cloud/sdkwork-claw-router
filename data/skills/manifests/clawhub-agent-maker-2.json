@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-maker-2@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-maker-2-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-maker-2-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf527df56d6e9e38f880a542c0ea9038bdecac4d9bc1c9ec1f2adf11f122900d",

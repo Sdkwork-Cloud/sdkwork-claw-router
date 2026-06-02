@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-workflow@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-workflow-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-workflow-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:94dee209c00330bd06f492f0b349cb4c470e09bcc96b22fbb84f09d086461b44",

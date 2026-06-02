@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-memento@2.0.15",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-memento-2.0.15.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-memento-2.0.15.json"
+      },
       "version": "2.0.15",
       "runtime": "metadata",
       "checksumHash": "sha256:9c83bfc7d4b14b60449ea246d435750829966ac4699f238aef6069db3d9eb118",

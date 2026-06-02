@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Commerce membership benefit mutation request schema exposed by Claw Router. */
 export interface CommerceMembershipBenefitMutationRequest {
   /** Benefit key field on commerce membership benefit mutation request. */
@@ -7,7 +9,7 @@ export interface CommerceMembershipBenefitMutationRequest {
   /** Description field on commerce membership benefit mutation request. */
   description?: string | null;
   /** Icon field on commerce membership benefit mutation request. */
-  icon?: string | null;
+  icon?: MediaResource;
   /** Id field on commerce membership benefit mutation request. */
   id?: number;
   /** Name field on commerce membership benefit mutation request. */

@@ -9,6 +9,7 @@ public class CommerceAccountLedgerEntryRecord {
     private String businessType;
     private String createdAt;
     private String direction;
+    private String id;
     private String idempotencyKey;
     private String organizationId;
     private String ownerUserId;
@@ -73,6 +74,14 @@ public class CommerceAccountLedgerEntryRecord {
 
     public void setDirection(String direction) {
         this.direction = direction;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

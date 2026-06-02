@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zenheart-user-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-zenheart-user-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zenheart-user-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:deb834c76d8e5195650981b9d9246b56e28dd403e43af787f8a11f78acb6a77a",

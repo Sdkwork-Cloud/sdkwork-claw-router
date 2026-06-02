@@ -2,9 +2,11 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class CommerceRechargePackageRecord {
+    private String bonusPoints;
     private String createdAt;
     private String currencyCode;
     private String externalId;
+    private String id;
     private String idempotencyKey;
     private String name;
     private String organizationId;
@@ -12,11 +14,20 @@ public class CommerceRechargePackageRecord {
     private String priceAmount;
     private String requestNo;
     private String skuId;
+    private String sortWeight;
     private String status;
     private String tenantId;
     private String updatedAt;
     private String validFrom;
     private String validTo;
+
+    public String getBonusPoints() {
+        return this.bonusPoints;
+    }
+
+    public void setBonusPoints(String bonusPoints) {
+        this.bonusPoints = bonusPoints;
+    }
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -40,6 +51,14 @@ public class CommerceRechargePackageRecord {
 
     public void setExternalId(String externalId) {
         this.externalId = externalId;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {
@@ -96,6 +115,14 @@ public class CommerceRechargePackageRecord {
 
     public void setSkuId(String skuId) {
         this.skuId = skuId;
+    }
+
+    public String getSortWeight() {
+        return this.sortWeight;
+    }
+
+    public void setSortWeight(String sortWeight) {
+        this.sortWeight = sortWeight;
     }
 
     public String getStatus() {

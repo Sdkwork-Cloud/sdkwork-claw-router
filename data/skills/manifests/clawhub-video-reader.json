@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-reader@4.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-reader-4.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-reader-4.1.1.json"
+      },
       "version": "4.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5c501476f0621577c08b66d77548933597de679d8bfecd5b4f94f5c574084521",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whitehat-security@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-whitehat-security-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whitehat-security-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:38223fd96ab53def2c8e44238f43697dcbf34b3222a3e1c9222193465e31bef4",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marjorie-agent-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marjorie-agent-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marjorie-agent-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e61874c813a9438c7b71c8badc7659294dddb8c66cc22b669e08fb9b43f12ef",

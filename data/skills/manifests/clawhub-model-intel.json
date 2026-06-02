@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-intel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-intel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-intel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a64eb517fb9a235ccb1f2978146660086d811302b021af3297aa2ee386ac97d8",

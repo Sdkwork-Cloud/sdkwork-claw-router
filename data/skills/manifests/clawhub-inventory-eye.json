@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inventory-eye@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-inventory-eye-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inventory-eye-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:44680444b091565adc7ca8cc91fefd783c26bcec7c591bef26976fde6226618d",

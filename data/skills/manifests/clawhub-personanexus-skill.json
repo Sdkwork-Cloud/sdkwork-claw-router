@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personanexus-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-personanexus-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personanexus-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1865e399d8fcc6a4fd32a118d419a3162aec6c728ec7637c72734449f7991042",

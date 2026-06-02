@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-healthcheck-cron@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-healthcheck-cron-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-healthcheck-cron-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c40c3a83813f085e857fd3ec8606ed381008eeb3635e049d2616f3829aeb9e7",

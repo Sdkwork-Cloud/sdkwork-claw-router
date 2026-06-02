@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oppenheimer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-oppenheimer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oppenheimer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:10b2535f0573a35c0746cbf643eb661eba1b2ceee7b7697b069a4cb4f171849f",

@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.backend
 
 data class CommercePaymentProviderAccountMutationRequest(
-    val accountNo: String? = null,
+    val accountRole: String? = null,
     val certificateRef: String? = null,
     val clientRequestNo: String? = null,
     val countryCode: String? = null,

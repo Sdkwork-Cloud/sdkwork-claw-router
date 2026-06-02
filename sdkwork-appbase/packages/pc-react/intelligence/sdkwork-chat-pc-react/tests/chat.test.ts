@@ -24,7 +24,14 @@ const attachments = [
     kind: "image",
     mimeType: "image/png",
     name: "Architecture Diagram.png",
-    url: "https://example.com/diagram.png",
+    resource: {
+      id: "media-resource-diagram",
+      kind: "image",
+      mimeType: "image/png",
+      publicUrl: "https://example.com/diagram.png",
+      source: "external_url",
+      url: "https://signed.example.com/diagram.png",
+    },
   },
 ] as const;
 
@@ -33,7 +40,14 @@ const fileAttachment = {
   kind: "document",
   mimeType: "application/pdf",
   name: "Execution Spec.pdf",
-  url: "https://example.com/spec.pdf",
+  resource: {
+    id: "media-resource-spec",
+    kind: "document",
+    mimeType: "application/pdf",
+    publicUrl: "https://example.com/spec.pdf",
+    source: "external_url",
+    url: "https://signed.example.com/spec.pdf",
+  },
 } as const;
 
 const model = {

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fortify@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-fortify-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fortify-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:4b9da45349169555350bd381f1572e8c5cdc80664de1e9a53db00d258cf35746",

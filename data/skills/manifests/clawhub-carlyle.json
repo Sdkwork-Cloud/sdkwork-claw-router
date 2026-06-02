@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/carlyle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-carlyle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-carlyle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56bcd52b0b08a41ac54b028761e417044e53b91375bcff2ba9d9f23c485b3372",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sumo-smart-note@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sumo-smart-note-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sumo-smart-note-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18d51637c3e023a7077447d9318e9fe84b366e5c63ef4bbb7406c9ece8724185",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linkfox-multimodal-generate-image@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-multimodal-generate-image-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linkfox-multimodal-generate-image-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:780b6627c45f5761e6ba97d025dfe18ab2b877432cfff0d1387b3d957e028f70",

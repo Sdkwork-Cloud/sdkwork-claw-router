@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/formula1@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-formula1-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-formula1-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:339962efeed4b022d43948748009fc1accee2463598d1338e6096715d4e79e78",

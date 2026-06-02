@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minecraft@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-minecraft-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minecraft-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:540b2c67ef09286d4335997731381db7e69beebf65d04a4eaa111a7703dca25c",

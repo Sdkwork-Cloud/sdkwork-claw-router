@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-validate@4.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-validate-4.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-validate-4.0.1.json"
+      },
       "version": "4.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:84aa521a59a24925288bd12407c35ccdf57f277ea4b10d0e1cddb7b28bc640a8",

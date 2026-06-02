@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/plg-playbook@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-plg-playbook-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-plg-playbook-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d8f8b541626fdf5250aaa3de342aebc2ae225533b21127734cb9589d5ef03d8a",

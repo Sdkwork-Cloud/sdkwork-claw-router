@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deep-work-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deep-work-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deep-work-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:217a6ab7d7f65ea0eb89809aa8652ef493df3cedffc7b29bc117d7dd65594c5e",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-to-best@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-to-best-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-to-best-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:de54f4fa37666c54ad3231418001c5dde802eae32913c0d09b40436e11aeff5a",

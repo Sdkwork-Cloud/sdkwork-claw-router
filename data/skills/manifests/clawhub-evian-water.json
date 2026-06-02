@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/evian-water@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-evian-water-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-evian-water-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a818513eddf5ba90765de599883846e9beea4bc6f45790f37907b536099e0e9",

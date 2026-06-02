@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Ai agent record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AiAgentRecord {
@@ -7,9 +9,9 @@ pub struct AiAgentRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub agent_code: Option<String>,
 
-    /// Avatar url field on ai agent record.
+    /// Avatar field on ai agent record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub avatar_url: Option<String>,
+    pub avatar: Option<MediaResource>,
 
     /// Created at field on ai agent record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

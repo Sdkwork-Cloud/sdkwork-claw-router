@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/human-like-reply@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-human-like-reply-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-human-like-reply-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2832f6ef196d5f014674e93935739fcd3bf74435fc939a8f80011c6bfac13b92",

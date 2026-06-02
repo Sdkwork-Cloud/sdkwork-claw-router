@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentiment-score@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentiment-score-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentiment-score-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:aab137fd698950e1ed7ab4230d8cc732f9fec640f19bda8b504e5ac7710b56ca",

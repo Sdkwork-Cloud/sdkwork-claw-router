@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/patient-consent-simplifier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-patient-consent-simplifier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-patient-consent-simplifier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:46d7eecb07a4681ccf084660c2f811f01e377877a366571cf96130d7a9a82197",

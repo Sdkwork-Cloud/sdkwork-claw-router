@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mews@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-mews-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mews-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d4c69202a8c1e50cfe56db5ed6e6785ce9b02cd92e2580bd230cd4a394e59178",

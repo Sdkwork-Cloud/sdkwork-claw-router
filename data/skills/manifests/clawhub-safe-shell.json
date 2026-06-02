@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/safe-shell@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-safe-shell-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-safe-shell-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:94e2af36596e279326855e5b5323d59e1b99f5548c33487a13709030d75683e3",

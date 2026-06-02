@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-macos-security@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-macos-security-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-macos-security-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2576c4756e15eb9484c16db04f04a8a95960f5a9a1900a420a1c3a73f00b4ae1",

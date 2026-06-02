@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-lwops-deployer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-lwops-deployer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-lwops-deployer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7b53f7dee91bbea03f3cfd4046050e6adfe06d578eb3d9bbf2cf20f4b94300e",

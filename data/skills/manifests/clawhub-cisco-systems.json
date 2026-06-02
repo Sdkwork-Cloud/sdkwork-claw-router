@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cisco-systems@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cisco-systems-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cisco-systems-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:439d1fc089aca8ab5515a7bddf294f2a31d414beadc93748e3616484e8d95128",

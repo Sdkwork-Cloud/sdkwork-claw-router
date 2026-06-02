@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/china-news@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-china-news-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-china-news-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:8285c03f220675cb891509a493fd0bba1af87c3aae701db74691d1fb7793b755",

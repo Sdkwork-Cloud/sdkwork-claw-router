@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nasdaq100-futures@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-nasdaq100-futures-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nasdaq100-futures-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a732a1ea5d50cc05833c03f498ac9d4ab9fe717079a4b91ec2afa2192a3fc87f",

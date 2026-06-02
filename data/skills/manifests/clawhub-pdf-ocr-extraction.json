@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-ocr-extraction@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-ocr-extraction-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-ocr-extraction-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:a32fcfa66ad8f6871b812f4dba3cb6457964774a346c0a799e16ca62636ed9c2",

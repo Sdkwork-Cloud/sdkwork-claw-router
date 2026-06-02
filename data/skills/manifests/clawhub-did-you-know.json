@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/did-you-know@0.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-did-you-know-0.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-did-you-know-0.2.2.json"
+      },
       "version": "0.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d69967ff94ce2185a75dae6166059ae5227b243523a34eba3dffc750e90563d3",

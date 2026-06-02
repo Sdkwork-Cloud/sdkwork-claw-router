@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentcall@2.1.14",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentcall-2.1.14.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentcall-2.1.14.json"
+      },
       "version": "2.1.14",
       "runtime": "metadata",
       "checksumHash": "sha256:2cd8432192b714df5343be28ced20f1858524fcdc0d3921f1969202c36b637c7",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resurface@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-resurface-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resurface-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2e35f626f047eadeff8d165f6cdab8bde0cb6ccd28142af554dc0d91365abbdb",

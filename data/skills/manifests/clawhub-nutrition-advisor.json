@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nutrition-advisor@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nutrition-advisor-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nutrition-advisor-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca091c237d701ad8a727f01eef575d88514e82cd42e8fd08aee29d34dbb557b0",

@@ -10,6 +10,10 @@ pub struct PromotionOfferTimeWindowRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub ends_at: Option<String>,
 
+    /// Id field on promotion offer time window record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Local end time field on promotion offer time window record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub local_end_time: Option<String>,

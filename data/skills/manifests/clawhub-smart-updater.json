@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-updater@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-updater-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-updater-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:94f9eee6df0a9e0149455ce253036c6d7e0af3e8719fa5f332b1add46538fb6d",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drain-mcp@1.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-drain-mcp-1.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drain-mcp-1.8.0.json"
+      },
       "version": "1.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ffea33456ee634927ba2e05c91d82e8c35e98228ea6d8c574a4cd993bb22f90c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-article-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-article-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0253f98fcefcfebaf49c4c982fd5b644de4f3c710b87f27a7ca5139c307e6a07",

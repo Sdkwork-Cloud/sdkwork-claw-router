@@ -11,6 +11,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? AssetType { get; set; }
         public string? CreatedAt { get; set; }
         public string? ExpiresAt { get; set; }
+        public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
         public string? OrganizationId { get; set; }
         public string? OwnerUserId { get; set; }

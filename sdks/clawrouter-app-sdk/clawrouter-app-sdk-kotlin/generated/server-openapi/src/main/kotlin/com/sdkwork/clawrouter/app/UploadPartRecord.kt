@@ -12,6 +12,7 @@ data class UploadPartRecord(
     val partNumber: Int? = null,
     val partSha256: String? = null,
     val presignedUrlExpiresAt: String? = null,
+    val sizeBytes: String? = null,
     val status: String? = null,
     val tenantId: String? = null,
     val updatedAt: String? = null,

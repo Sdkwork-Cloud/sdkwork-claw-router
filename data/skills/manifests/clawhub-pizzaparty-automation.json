@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pizzaparty-automation@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pizzaparty-automation-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pizzaparty-automation-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be6202fe276d53d53fcd4f9b07cbb540f57a26335521cf0117c831f23d990204",

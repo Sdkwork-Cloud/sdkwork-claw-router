@@ -48,7 +48,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geoip@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-geoip-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geoip-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5e26d86495d390019aacc9fb2269d88006f3448b8697145cbca47cbaeb14811",

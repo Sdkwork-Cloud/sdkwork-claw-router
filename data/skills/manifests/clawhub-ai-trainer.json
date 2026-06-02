@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-trainer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-trainer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-trainer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:573035e65e0bc7580e0f28fda481a3a3def3cfb529a27dde33e24d65df4bddf3",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/junit-failure-fingerprint@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-junit-failure-fingerprint-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-junit-failure-fingerprint-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5eff3f00d0bd8d340c4e5ae4a12fd7aba38bc58efb0e72ec28c1f46736947ff5",

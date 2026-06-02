@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/myr@1.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-myr-1.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-myr-1.3.1.json"
+      },
       "version": "1.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c60ee707d920d42c01fe4bfcc93f1be52cc68fe1430ea80d692c45ac80530ea3",

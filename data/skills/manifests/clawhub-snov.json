@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/snov@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-snov-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-snov-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:df829647ceb233ee6abde1a8f42b4754420e83ac39c57d4b6fd45b4bc13f8ff1",

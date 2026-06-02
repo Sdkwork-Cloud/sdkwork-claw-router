@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/redact-kit@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-redact-kit-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-redact-kit-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9db5ba59c9009f0d1f2cd0b31977d1576728a5ff24f52c77ee43f9c2990b26de",

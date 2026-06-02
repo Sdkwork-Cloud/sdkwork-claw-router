@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hellosign@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-hellosign-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hellosign-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2cd6730651b0a220b9df354c2811e44e19b4d624701ea2c315af7365da3c1a5d",

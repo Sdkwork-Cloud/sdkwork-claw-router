@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/star-office-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-star-office-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-star-office-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8102dba69eb664236ab2a56e764dffd1e7d72a92d3778f12117b02f97f7d874a",

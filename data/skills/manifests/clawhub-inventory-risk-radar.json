@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inventory-risk-radar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-inventory-risk-radar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inventory-risk-radar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b2dd147c3c6872dc778202a88d263b0527cfac2595f0b28166219a911c4df84",

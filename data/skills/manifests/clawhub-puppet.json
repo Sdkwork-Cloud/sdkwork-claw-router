@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/puppet@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-puppet-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-puppet-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:523d7d7c95818afb9c977dd0c02422e972376290739925fc105ef03653228fbd",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-guru@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-guru-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-guru-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8221394e8db91711c6069f72899fc19d972c502cb273daf7f262b716bd789406",

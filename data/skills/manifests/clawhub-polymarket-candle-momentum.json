@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/polymarket-candle-momentum@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-candle-momentum-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-polymarket-candle-momentum-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31ac5ea581265f39aa660903a3c96754ce62a7e834667e419e262667533c011d",

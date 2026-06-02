@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vision-bot@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vision-bot-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vision-bot-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77e1e02dba78bd1d9bf555fbd348d5fe818776617b23282cd5077095861c75d0",

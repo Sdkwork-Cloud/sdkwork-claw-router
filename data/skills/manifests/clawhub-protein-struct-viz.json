@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/protein-struct-viz@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-protein-struct-viz-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-protein-struct-viz-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5dbfe44293b3f745cdb1dae8c677f35b6bd10dcccb0d75946a9aaf4e75e88961",

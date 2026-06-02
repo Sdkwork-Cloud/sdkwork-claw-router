@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-supervisor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-supervisor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-supervisor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2c762162d874e9b796bc136a6bd4a4555adb46c4b5e7df8a40721d2e5525809",

@@ -1,7 +1,9 @@
+import type { MediaResource } from './media-resource';
+
 /** App release item schema exposed by Claw Router. */
 export interface AppReleaseItem {
-  /** Download url field on app release item. */
-  downloadUrl: string;
+  /** Artifact field on app release item. */
+  artifact: MediaResource;
   /** Id field on app release item. */
   id: string;
   /** Os field on app release item. */

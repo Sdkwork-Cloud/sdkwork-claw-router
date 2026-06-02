@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mission-control-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mission-control-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mission-control-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0cf461ca88a825f7482c536a84316cdddd50d7ef8e7472bcdcf457c19aff8d5c",

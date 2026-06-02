@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-harness@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-harness-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-harness-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d926006db7a2ea4f8d2fea19678ed3b2b05200c5d2604bbb24fb1e7fe229a551",

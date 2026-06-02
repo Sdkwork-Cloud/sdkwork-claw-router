@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/volcengine-rds-mysql@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-rds-mysql-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-volcengine-rds-mysql-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:643bedf45c06ea6d51c6c44ac47d93d543b45d7ef68b9c745a91103563b4570d",

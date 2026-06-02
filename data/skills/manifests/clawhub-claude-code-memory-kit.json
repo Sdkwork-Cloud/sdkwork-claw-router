@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-memory-kit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-memory-kit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-memory-kit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5139e7b7422fe040ab1917bffdfbfaa46ecc3e9068a46f931158152079078d10",

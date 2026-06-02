@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-rufus-optimizer@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-rufus-optimizer-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-rufus-optimizer-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac69408910ac44ed980be49f60d37840b74977577f5f7c830ec8654862efd0ec",

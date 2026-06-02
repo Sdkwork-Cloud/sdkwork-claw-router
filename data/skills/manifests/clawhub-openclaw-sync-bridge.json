@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-sync-bridge@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-sync-bridge-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-sync-bridge-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3cda39886dc0e61b52ba00b202dec1d8d32899fb872837d0dec3f92e7d6ae7ce",

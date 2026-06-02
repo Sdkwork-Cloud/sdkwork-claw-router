@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/data-synthesis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-data-synthesis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-data-synthesis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd49bcedd1b11768571be54892540297bfad53002d56647b92d5f6dd5d84473c",

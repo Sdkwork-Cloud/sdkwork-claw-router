@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/saas-worker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-saas-worker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-saas-worker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da65da1811ff8e14b79889fca97e6be99fd04ca3343bbda1215f590314ec63a7",

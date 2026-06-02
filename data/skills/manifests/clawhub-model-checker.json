@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-checker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-checker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-checker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e59fc26a142a7004e361364fccbea86fa65e6248610029199957a9e266c194e4",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/uno@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-uno-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-uno-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:39bdd036eb845539efdc41be9d0c7fd3050a2e97088b956514217d2546c34cc0",

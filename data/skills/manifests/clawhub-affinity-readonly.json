@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/affinity-readonly@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-affinity-readonly-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-affinity-readonly-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef4ef7588793b8b63e591d28a0093b947fa3eaf7b19e12e7814cb4577868683a",

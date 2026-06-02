@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/procrastination-buster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-procrastination-buster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-procrastination-buster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a9078d9ab124a6ee9d643da4cb7230b1c4cbe00cb6ef4c89ef89ca384c5d5417",

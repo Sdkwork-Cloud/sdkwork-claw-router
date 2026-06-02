@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scheduled-tasks@2.1.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-scheduled-tasks-2.1.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scheduled-tasks-2.1.7.json"
+      },
       "version": "2.1.7",
       "runtime": "metadata",
       "checksumHash": "sha256:88cf596dec16b9d422288baa29690991e5d78b809c05cac72b17013f7f05ddec",

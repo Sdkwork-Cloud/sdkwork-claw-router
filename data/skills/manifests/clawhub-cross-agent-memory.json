@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cross-agent-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cross-agent-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cross-agent-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:199b6d4e6ecc0d948e8a2058cc42a0bb3fc4de401091cb8391a8bb18358d4be7",

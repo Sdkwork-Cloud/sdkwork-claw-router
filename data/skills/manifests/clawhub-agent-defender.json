@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-defender@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-defender-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-defender-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8ccaf6c085128be49f2c132c1e34083f2eace7b9efe6735ba3ac590e704e387c",

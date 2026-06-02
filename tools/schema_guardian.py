@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from dataclasses import dataclass
 from pathlib import Path
+import re
 from typing import Any
 
 from tools.frontend_contract_loader import DEFAULT_CONTRACT_INDEX, DEFAULT_CONTRACT_SNAPSHOT
@@ -254,6 +255,155 @@ MOJIBAKE_MARKER_CODEPOINTS: tuple[int, ...] = (
 # Keep bad-glyph samples as code points so this source file stays readable.
 MOJIBAKE_MARKERS: tuple[str, ...] = tuple(chr(codepoint) for codepoint in MOJIBAKE_MARKER_CODEPOINTS)
 
+BARE_MEDIA_DB_COLUMN_NAMES = {
+    "asset_url",
+    "artifact_url",
+    "audio_url",
+    "avatar_url",
+    "cover_image",
+    "cover_images",
+    "cover_url",
+    "document_url",
+    "favicon_url",
+    "file_url",
+    "icon_url",
+    "image_url",
+    "logo_url",
+    "media_url",
+    "storage_url",
+    "thumbnail_url",
+    "video_url",
+    "voice_url",
+}
+
+BARE_MEDIA_FRONTEND_FIELD_NAMES = {
+    "assetUrl",
+    "artifactUrl",
+    "audioUrl",
+    "avatarUrl",
+    "coverImage",
+    "coverImages",
+    "coverUrl",
+    "documentUrl",
+    "faviconUrl",
+    "fileUrl",
+    "iconUrl",
+    "imageUrl",
+    "logoUrl",
+    "mediaUrl",
+    "storageUrl",
+    "thumbnailUrl",
+    "videoUrl",
+    "voiceUrl",
+    *BARE_MEDIA_DB_COLUMN_NAMES,
+}
+
+MEDIA_CONTEXT_TOKENS = {
+    "asset",
+    "artifact",
+    "attachment",
+    "audio",
+    "avatar",
+    "cover",
+    "document",
+    "file",
+    "icon",
+    "image",
+    "logo",
+    "media",
+    "photo",
+    "picture",
+    "storage",
+    "thumbnail",
+    "video",
+    "voice",
+}
+
+MEDIA_RESOURCE_FIELD_NAMES = {
+    "asset",
+    "artifact",
+    "audio",
+    "avatar",
+    "cover",
+    "document",
+    "favicon",
+    "icon",
+    "image",
+    "logo",
+    "mainImage",
+    "poster",
+    "resource",
+    "skuImage",
+    "thumbnail",
+    "video",
+    "voice",
+}
+
+MEDIA_RESOURCE_COLLECTION_FIELD_NAMES = {
+    "assets",
+    "artifacts",
+    "attachments",
+    "audios",
+    "avatars",
+    "covers",
+    "documents",
+    "files",
+    "images",
+    "logos",
+    "posters",
+    "resources",
+    "skuImages",
+    "thumbnails",
+    "videos",
+    "voices",
+}
+
+NON_MEDIA_URL_FIELD_NAMES = {
+    "access_url",
+    "accessUrl",
+    "action_url",
+    "actionUrl",
+    "authorization_url",
+    "authorizationUrl",
+    "base_url",
+    "baseUrl",
+    "callback_url",
+    "callbackUrl",
+    "cashier_url",
+    "cashierUrl",
+    "docs_url",
+    "docsUrl",
+    "download_url",
+    "downloadUrl",
+    "endpoint_url",
+    "endpointUrl",
+    "entry_url",
+    "entryUrl",
+    "homepage_url",
+    "homepageUrl",
+    "manifest_url",
+    "manifestUrl",
+    "payment_url",
+    "paymentUrl",
+    "redirect_url",
+    "redirectUrl",
+    "repository_url",
+    "repositoryUrl",
+    "return_url",
+    "returnUrl",
+    "source_url",
+    "sourceUrl",
+    "store_url",
+    "storeUrl",
+    "target_url",
+    "targetUrl",
+    "website_url",
+    "websiteUrl",
+    "webhook_url",
+    "webhookUrl",
+}
+
+
 @dataclass(frozen=True)
 class SchemaGuardianResult:
     ok: bool
@@ -295,6 +445,8 @@ class SchemaGuardian:
         messages.extend(self._check_legacy_identity_standard(data, by_table))
         messages.extend(self._check_appbase_commerce_legacy_aliases(by_table))
         messages.extend(self._check_appbase_commerce_legacy_alias_references())
+        messages.extend(self._check_schema_registry_media_resource_columns(by_table))
+        messages.extend(self._check_frontend_contract_media_resource_fields())
         messages.extend(self._check_skills_hub_tables(by_table))
         messages.extend(self._check_domain_names(data, by_table))
         messages.extend(self._check_pricing_and_billing_contracts(by_table))
@@ -360,6 +512,234 @@ class SchemaGuardian:
                     )
 
         return messages
+
+    def _check_schema_registry_media_resource_columns(
+        self,
+        by_table: dict[str, dict[str, Any]],
+    ) -> list[str]:
+        messages: list[str] = []
+        for table, metadata in sorted(by_table.items()):
+            columns = metadata.get("columns", {})
+            if not isinstance(columns, dict):
+                continue
+            for column in sorted(name for name in columns if isinstance(name, str)):
+                if self._is_bare_media_db_column(table, column):
+                    messages.append(
+                        f"{table}.{column} is a bare media URL column; use MediaResource stable reference fields"
+                    )
+        return messages
+
+    def _is_bare_media_db_column(self, table: str, column: str) -> bool:
+        if column in NON_MEDIA_URL_FIELD_NAMES:
+            return False
+        if column in BARE_MEDIA_DB_COLUMN_NAMES:
+            return True
+        return column == "url" and self._has_media_context((table,))
+
+    def _check_frontend_contract_media_resource_fields(self) -> list[str]:
+        messages: list[str] = []
+        for source in self._frontend_contract_source_paths():
+            if not source.exists():
+                continue
+            payload = self._load_yaml_mapping(source)
+            for table, column in self._iter_frontend_required_columns(payload):
+                if self._is_bare_media_db_column(table, column):
+                    messages.append(
+                        f"{source.relative_to(self.root)} required column {table}.{column} is a bare media URL column; use MediaResource stable reference fields"
+                    )
+            for field_path in self._iter_frontend_schema_field_paths(payload):
+                field_name = field_path[-1] if field_path else ""
+                if self._is_bare_media_frontend_field(field_name, field_path):
+                    messages.append(
+                        f"{source.relative_to(self.root)} field {'.'.join(field_path)} is a bare media URL field; use MediaResource"
+                    )
+            for field_path, schema in self._iter_frontend_schema_property_schemas(payload):
+                field_name = field_path[-1] if field_path else ""
+                if self._is_plain_natural_media_field(field_name, field_path, schema):
+                    messages.append(
+                        f"{source.relative_to(self.root)} field {'.'.join(field_path)} must use MediaResource schema"
+                    )
+        return messages
+
+    def _iter_frontend_required_columns(self, value: Any) -> list[tuple[str, str]]:
+        columns: list[tuple[str, str]] = []
+        if isinstance(value, dict):
+            required_columns = value.get("required_columns")
+            if isinstance(required_columns, dict):
+                for table, table_columns in required_columns.items():
+                    if not isinstance(table, str) or not isinstance(table_columns, list):
+                        continue
+                    for column in table_columns:
+                        if isinstance(column, str):
+                            columns.append((table, column))
+
+            for key, child in value.items():
+                if key == "required_columns":
+                    continue
+                columns.extend(self._iter_frontend_required_columns(child))
+            return columns
+
+        if isinstance(value, list):
+            for item in value:
+                columns.extend(self._iter_frontend_required_columns(item))
+
+        return columns
+
+    def _iter_frontend_schema_property_schemas(
+        self,
+        value: Any,
+        field_path: tuple[str, ...] = (),
+    ) -> list[tuple[tuple[str, ...], dict[str, Any]]]:
+        paths: list[tuple[tuple[str, ...], dict[str, Any]]] = []
+
+        if isinstance(value, dict):
+            properties = value.get("properties")
+            if isinstance(properties, dict):
+                for property_name, property_schema in properties.items():
+                    if not isinstance(property_name, str) or not isinstance(property_schema, dict):
+                        continue
+                    next_path = (*field_path, property_name)
+                    paths.append((next_path, property_schema))
+                    paths.extend(self._iter_frontend_schema_property_schemas(property_schema, next_path))
+
+            for key, child in value.items():
+                if key == "properties":
+                    continue
+                paths.extend(self._iter_frontend_schema_property_schemas(child, field_path))
+            return paths
+
+        if isinstance(value, list):
+            for item in value:
+                paths.extend(self._iter_frontend_schema_property_schemas(item, field_path))
+
+        return paths
+
+    def _iter_frontend_schema_field_paths(
+        self,
+        value: Any,
+        field_path: tuple[str, ...] = (),
+    ) -> list[tuple[str, ...]]:
+        paths: list[tuple[str, ...]] = []
+
+        if isinstance(value, dict):
+            for field_list_key in ("fields", "derived_fields"):
+                fields = value.get(field_list_key)
+                if isinstance(fields, list):
+                    for field in fields:
+                        if isinstance(field, str):
+                            paths.append(tuple(part for part in field.split(".") if part))
+
+            properties = value.get("properties")
+            if isinstance(properties, dict):
+                for property_name, property_schema in properties.items():
+                    if not isinstance(property_name, str):
+                        continue
+                    next_path = (*field_path, property_name)
+                    paths.append(next_path)
+                    paths.extend(self._iter_frontend_schema_field_paths(property_schema, next_path))
+
+            for key, child in value.items():
+                if key in {"fields", "derived_fields", "properties"}:
+                    continue
+                paths.extend(self._iter_frontend_schema_field_paths(child, field_path))
+            return paths
+
+        if isinstance(value, list):
+            for item in value:
+                paths.extend(self._iter_frontend_schema_field_paths(item, field_path))
+
+        return paths
+
+    def _is_bare_media_frontend_field(self, field_name: str, field_path: tuple[str, ...]) -> bool:
+        if field_name in NON_MEDIA_URL_FIELD_NAMES:
+            return False
+        if field_name in BARE_MEDIA_FRONTEND_FIELD_NAMES:
+            return True
+        return field_name == "url" and self._has_media_context(field_path[:-1])
+
+    def _is_plain_natural_media_field(
+        self,
+        field_name: str,
+        field_path: tuple[str, ...],
+        schema: dict[str, Any],
+    ) -> bool:
+        if field_name not in MEDIA_RESOURCE_FIELD_NAMES:
+            if field_name not in MEDIA_RESOURCE_COLLECTION_FIELD_NAMES:
+                return False
+            if not self._is_plain_media_resource_collection(field_name, field_path, schema):
+                return False
+        if self._is_allowed_non_media_resource_field(field_name, field_path, schema):
+            return False
+        if self._uses_media_resource_schema(schema):
+            return False
+        return True
+
+    def _is_plain_media_resource_collection(
+        self,
+        field_name: str,
+        field_path: tuple[str, ...],
+        schema: dict[str, Any],
+    ) -> bool:
+        if schema.get("type") != "array":
+            return False
+        if self._is_allowed_non_media_resource_field(field_name, field_path, schema):
+            return False
+        items = schema.get("items")
+        if not isinstance(items, dict):
+            return False
+        if items.get("type") == "string":
+            return True
+        if items.get("$ref") == "#/components/schemas/MediaResource" or items.get("name") == "MediaResource":
+            return False
+        if items.get("name") == "GenerationHistoryMediaItem":
+            return True
+        if self._has_media_context(field_path):
+            return True
+        return False
+
+    def _is_allowed_non_media_resource_field(
+        self,
+        field_name: str,
+        field_path: tuple[str, ...],
+        schema: dict[str, Any],
+    ) -> bool:
+        if field_name == "file" and schema.get("format") == "binary":
+            return True
+        if field_name == "icon":
+            max_length = schema.get("maxLength")
+            if isinstance(max_length, int) and max_length <= 128:
+                return True
+            if isinstance(schema.get("type"), str) and schema.get("type") != "string":
+                return True
+        if field_name in {"image", "video", "audio"}:
+            return "modalities" in field_path or "capabilities" in field_path
+        return False
+
+    def _uses_media_resource_schema(self, schema: dict[str, Any]) -> bool:
+        if schema.get("$ref") == "#/components/schemas/MediaResource":
+            return True
+        if schema.get("name") == "MediaResource":
+            return True
+        if schema.get("type") == "array":
+            items = schema.get("items")
+            return isinstance(items, dict) and self._uses_media_resource_schema(items)
+        for union_key in ("oneOf", "anyOf", "allOf"):
+            values = schema.get(union_key)
+            if isinstance(values, list) and any(isinstance(item, dict) and self._uses_media_resource_schema(item) for item in values):
+                return True
+        return False
+
+    def _has_media_context(self, values: tuple[str, ...]) -> bool:
+        for value in values:
+            normalized = self._normalize_identifier(value)
+            tokens = set(filter(None, normalized.split("_")))
+            if normalized in MEDIA_CONTEXT_TOKENS or tokens & MEDIA_CONTEXT_TOKENS:
+                return True
+        return False
+
+    def _normalize_identifier(self, value: str) -> str:
+        normalized = re.sub(r"(?<!^)(?=[A-Z])", "_", value).lower()
+        return re.sub(r"[^a-z0-9]+", "_", normalized).strip("_")
 
     def _frontend_contract_source_paths(self) -> list[Path]:
         index_path = self.root / DEFAULT_CONTRACT_INDEX

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gog-local-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gog-local-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gog-local-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31e4a0faa6611f439ed42142ca8ee2456cfa574ec35205fe4a3b8b73523ddc4e",

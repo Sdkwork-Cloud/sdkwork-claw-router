@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-config-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-config-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-config-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c42601f33809e3d7809fd2c59386869671911f4260936f5ef79f275b34b88d79",

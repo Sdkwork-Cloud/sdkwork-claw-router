@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eurobot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-eurobot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eurobot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42ad61d6fa0f1d84ca01dd1818616d96aa6fc6b4e5103cff0087f29daca80a82",

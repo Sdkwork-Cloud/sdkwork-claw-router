@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ftp-sync@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ftp-sync-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ftp-sync-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0806ecf81b83b48ea657ef4c42d839f6479ca92afb49061c6a6e161d4a83228f",

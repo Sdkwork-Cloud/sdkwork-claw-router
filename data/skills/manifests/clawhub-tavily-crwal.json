@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tavily-crwal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tavily-crwal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tavily-crwal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28e50f5176a1375455ca2e0ad5841057a2e7a33d364ed4b9e5f26ab36124687f",

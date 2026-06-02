@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abc-disney@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abc-disney-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abc-disney-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9c0828b677779a6b99f8752c5b44d432182f76e59a29c03d653ee3b113eab41d",

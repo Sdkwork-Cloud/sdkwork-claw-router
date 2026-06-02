@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edgeone-pages-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-edgeone-pages-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edgeone-pages-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64cbb2a4378ce582374ca803085be9bb97e8b673ada0e48013c5cb772ed1829f",

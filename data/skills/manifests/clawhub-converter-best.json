@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/converter-best@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-converter-best-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-converter-best-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9cf210f2a4b48c900b960db596426eac0509feec85d51683990884502353116f",

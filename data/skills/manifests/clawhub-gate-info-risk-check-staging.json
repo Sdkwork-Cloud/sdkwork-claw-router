@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gate-info-risk-check-staging@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-risk-check-staging-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gate-info-risk-check-staging-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:31cbbee6024a9784a609d00bb026bca410d83e9d6bd56e4c0e3097ab8a7ac025",

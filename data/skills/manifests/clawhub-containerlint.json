@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/containerlint@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-containerlint-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-containerlint-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3f2872330adec09a45e1648f070fcf9df71ba5fcace830f1faefea0bb0493381",

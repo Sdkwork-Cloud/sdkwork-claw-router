@@ -1,6 +1,10 @@
-use serde::Deserialize;
+﻿use serde::Deserialize;
 use sha2::{Digest, Sha256};
 use sqlx::{PgPool, QueryBuilder, Row, Sqlite, SqlitePool};
+
+use crate::infrastructure::sql::sql_admin_product_center::{
+    media_resource_object_blob_id, media_resource_stable_id,
+};
 
 const MANIFEST_JSON: &str = include_str!("../../../../../data/skills/install-manifest.json");
 const CATEGORIES_JSON: &str = include_str!("../../../../../data/skills/categories.json");
@@ -19,9 +23,9 @@ const ACTIVE_STATUS: i32 = 1;
 const SKILL_TARGET_TYPE: i32 = 35;
 const SQLITE_MAX_BIND_PARAMETERS: usize = 999;
 const SQLITE_COUNT_BATCH_SIZE: usize = 900;
-const SQLITE_SKILL_INSERT_BIND_COUNT: usize = 46;
-const SQLITE_ASSET_INSERT_BIND_COUNT: usize = 21;
-const SQLITE_ARTIFACT_INSERT_BIND_COUNT: usize = 22;
+const SQLITE_SKILL_INSERT_BIND_COUNT: usize = 50;
+const SQLITE_ASSET_INSERT_BIND_COUNT: usize = 25;
+const SQLITE_ARTIFACT_INSERT_BIND_COUNT: usize = 24;
 const SQLITE_SKILL_INSERT_BATCH_SIZE: usize =
     SQLITE_MAX_BIND_PARAMETERS / SQLITE_SKILL_INSERT_BIND_COUNT;
 const SQLITE_ASSET_INSERT_BATCH_SIZE: usize =
@@ -56,7 +60,9 @@ struct SkillCategorySeed {
     group_name: Option<String>,
     code: Option<String>,
     tags: Vec<String>,
-    icon: Option<String>,
+    #[serde(default)]
+    #[serde(deserialize_with = "deserialize_optional_media_resource")]
+    icon: Option<serde_json::Value>,
     sort_weight: i32,
     parent_id: Option<i64>,
     path: Option<String>,
@@ -74,8 +80,12 @@ struct SkillPackageSeed {
     name: String,
     summary: Option<String>,
     description: Option<String>,
-    icon: Option<String>,
-    cover_image: Option<String>,
+    #[serde(default)]
+    #[serde(deserialize_with = "deserialize_optional_media_resource")]
+    icon: Option<serde_json::Value>,
+    #[serde(default)]
+    #[serde(deserialize_with = "deserialize_optional_media_resource")]
+    cover: Option<serde_json::Value>,
     category_id: Option<i64>,
     enabled: bool,
     featured: bool,
@@ -94,8 +104,12 @@ struct AgentSkillSeed {
     name: String,
     summary: Option<String>,
     description: Option<String>,
-    icon: Option<String>,
-    cover_image: Option<String>,
+    #[serde(default)]
+    #[serde(deserialize_with = "deserialize_optional_media_resource")]
+    icon: Option<serde_json::Value>,
+    #[serde(default)]
+    #[serde(deserialize_with = "deserialize_optional_media_resource")]
+    cover: Option<serde_json::Value>,
     category_id: Option<i64>,
     package_id: Option<i64>,
     provider: Option<String>,
@@ -140,8 +154,11 @@ struct CatalogAssetSeed {
     target_id: i64,
     artifact_id: Option<i64>,
     asset_type: i32,
-    asset_url: String,
-    thumbnail_url: Option<String>,
+    #[serde(deserialize_with = "deserialize_required_media_resource")]
+    asset: serde_json::Value,
+    #[serde(default)]
+    #[serde(deserialize_with = "deserialize_optional_media_resource")]
+    thumbnail: Option<serde_json::Value>,
     title: Option<String>,
     alt_text: Option<String>,
     mime_type: Option<String>,
@@ -164,7 +181,10 @@ struct CatalogArtifactSeed {
     platform_type: String,
     os_name: String,
     artifact_ref: Option<String>,
-    artifact_url: Option<String>,
+    #[serde(rename = "artifact")]
+    #[serde(default)]
+    #[serde(deserialize_with = "deserialize_optional_media_resource")]
+    artifact_resource_snapshot: Option<serde_json::Value>,
     artifact_size_bytes: i64,
     runtime: Option<String>,
     frameworks: Vec<String>,
@@ -218,6 +238,63 @@ impl SkillsSeedCatalog {
             artifacts: serde_json::from_str(ARTIFACTS_JSON)?,
         })
     }
+}
+
+fn deserialize_optional_media_resource<'de, D>(
+    deserializer: D,
+) -> Result<Option<serde_json::Value>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    let raw = Option::<serde_json::Value>::deserialize(deserializer)?;
+    raw.map(validate_seed_media_resource).transpose()
+}
+
+fn deserialize_required_media_resource<'de, D>(
+    deserializer: D,
+) -> Result<serde_json::Value, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    let raw = serde_json::Value::deserialize(deserializer)?;
+    validate_seed_media_resource(raw)
+}
+
+fn validate_seed_media_resource<E>(value: serde_json::Value) -> Result<serde_json::Value, E>
+where
+    E: serde::de::Error,
+{
+    let object = value
+        .as_object()
+        .ok_or_else(|| E::custom("seed media resource must be an object"))?;
+    let kind = object
+        .get("kind")
+        .and_then(serde_json::Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty());
+    let source = object
+        .get("source")
+        .and_then(serde_json::Value::as_str)
+        .map(str::trim)
+        .filter(|value| !value.is_empty());
+    let locator = ["publicUrl", "url", "uri", "objectKey", "objectBlobId", "id"]
+        .iter()
+        .find_map(|key| {
+            object
+                .get(*key)
+                .and_then(|value| match value {
+                    serde_json::Value::String(text) => Some(text.trim().to_owned()),
+                    serde_json::Value::Number(number) => Some(number.to_string()),
+                    _ => None,
+                })
+                .filter(|value| !value.is_empty())
+        });
+    if kind.is_none() || source.is_none() || locator.is_none() {
+        return Err(E::custom(
+            "seed media resource must include kind, source, and a stable locator",
+        ));
+    }
+    Ok(value)
 }
 
 impl SkillsSeedIntegrityCatalog {
@@ -470,12 +547,16 @@ async fn import_sqlite_category_rows(
     categories: &[SkillCategorySeed],
 ) -> Result<(), sqlx::Error> {
     for item in categories {
+        let icon = item.icon.clone();
+        let icon_media_resource_id = icon.as_ref().map(media_resource_stable_id);
+        let icon_object_blob_id = icon.as_ref().and_then(media_resource_object_blob_id);
+        let icon_resource_snapshot = icon.as_ref().map(serde_json::Value::to_string);
         sqlx::query(
             r#"
             INSERT INTO plus_category
-                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status)
+                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -488,7 +569,9 @@ async fn import_sqlite_category_rows(
                 group_name = excluded.group_name,
                 code = excluded.code,
                 tags = excluded.tags,
-                icon = excluded.icon,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
                 sort_weight = excluded.sort_weight,
                 parent_id = excluded.parent_id,
                 path = excluded.path,
@@ -509,7 +592,9 @@ async fn import_sqlite_category_rows(
         .bind(&item.group_name)
         .bind(&item.code)
         .bind(json_string(&item.tags))
-        .bind(&item.icon)
+        .bind(icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(icon_resource_snapshot)
         .bind(item.sort_weight)
         .bind(item.parent_id)
         .bind(&item.path)
@@ -533,6 +618,13 @@ async fn import_sqlite_package_rows(
     packages: &[SkillPackageSeed],
 ) -> Result<(), sqlx::Error> {
     for item in packages {
+        let icon = item.icon.clone();
+        let icon_media_resource_id = icon.as_ref().map(media_resource_stable_id);
+        let icon_object_blob_id = icon.as_ref().and_then(media_resource_object_blob_id);
+        let icon_resource_snapshot = icon.as_ref().map(serde_json::Value::to_string);
+        let cover_media_resource_id = item.cover.as_ref().map(media_resource_stable_id);
+        let cover_object_blob_id = item.cover.as_ref().and_then(media_resource_object_blob_id);
+        let cover_resource_snapshot = item.cover.as_ref().map(serde_json::Value::to_string);
         sqlx::query(
             r#"
             DELETE FROM plus_agent_skill_package
@@ -558,9 +650,9 @@ async fn import_sqlite_package_rows(
         sqlx::query(
             r#"
             INSERT INTO plus_agent_skill_package
-                (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, summary, description, icon, cover_image, category_id, enabled, featured, sort_weight, tags, latest_published_at)
+                (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, summary, description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot, category_id, enabled, featured, sort_weight, tags, latest_published_at)
             VALUES
-                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -571,8 +663,12 @@ async fn import_sqlite_package_rows(
                 name = excluded.name,
                 summary = excluded.summary,
                 description = excluded.description,
-                icon = excluded.icon,
-                cover_image = excluded.cover_image,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
+                cover_media_resource_id = excluded.cover_media_resource_id,
+                cover_object_blob_id = excluded.cover_object_blob_id,
+                cover_resource_snapshot = excluded.cover_resource_snapshot,
                 category_id = excluded.category_id,
                 enabled = excluded.enabled,
                 featured = excluded.featured,
@@ -592,8 +688,12 @@ async fn import_sqlite_package_rows(
         .bind(&item.name)
         .bind(&item.summary)
         .bind(&item.description)
-        .bind(&item.icon)
-        .bind(&item.cover_image)
+        .bind(icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(icon_resource_snapshot)
+        .bind(cover_media_resource_id)
+        .bind(cover_object_blob_id)
+        .bind(cover_resource_snapshot)
         .bind(item.category_id)
         .bind(item.enabled)
         .bind(item.featured)
@@ -621,10 +721,17 @@ async fn import_sqlite_skill_rows(
         let mut query_builder: QueryBuilder<'_, Sqlite> = QueryBuilder::new(
             r#"
             INSERT INTO plus_agent_skill
-                (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary, description, icon, cover_image, category_id, package_id, provider, version, version_name, runtime, entrypoint, manifest_url, repository_url, homepage_url, documentation_url, license_name, source_type, market_status, visibility, review_status, review_comment, reviewed_by, reviewed_at, builtin, is_builtin, enabled, featured, recommend_weight, price, currency, install_count, rating_avg, rating_count, tags, capabilities, config_schema, default_config, latest_published_at)
+                (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary, description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot, category_id, package_id, provider, version, version_name, runtime, entrypoint, manifest_url, repository_url, homepage_url, documentation_url, license_name, source_type, market_status, visibility, review_status, review_comment, reviewed_by, reviewed_at, builtin, is_builtin, enabled, featured, recommend_weight, price, currency, install_count, rating_avg, rating_count, tags, capabilities, config_schema, default_config, latest_published_at)
             "#,
         );
         query_builder.push_values(chunk, |mut row, item| {
+            let icon = item.icon.clone();
+            let icon_media_resource_id = icon.as_ref().map(media_resource_stable_id);
+            let icon_object_blob_id = icon.as_ref().and_then(media_resource_object_blob_id);
+            let icon_resource_snapshot = icon.as_ref().map(serde_json::Value::to_string);
+            let cover_media_resource_id = item.cover.as_ref().map(media_resource_stable_id);
+            let cover_object_blob_id = item.cover.as_ref().and_then(media_resource_object_blob_id);
+            let cover_resource_snapshot = item.cover.as_ref().map(serde_json::Value::to_string);
             row.push_bind(item.id)
                 .push_bind(&item.uuid)
                 .push_bind(SYSTEM_TENANT_ID)
@@ -635,8 +742,12 @@ async fn import_sqlite_skill_rows(
                 .push_bind(&item.name)
                 .push_bind(&item.summary)
                 .push_bind(&item.description)
-                .push_bind(&item.icon)
-                .push_bind(&item.cover_image)
+                .push_bind(icon_media_resource_id)
+                .push_bind(icon_object_blob_id)
+                .push_bind(icon_resource_snapshot)
+                .push_bind(cover_media_resource_id)
+                .push_bind(cover_object_blob_id)
+                .push_bind(cover_resource_snapshot)
                 .push_bind(item.category_id)
                 .push_bind(item.package_id)
                 .push_bind(&item.provider)
@@ -680,8 +791,12 @@ async fn import_sqlite_skill_rows(
                 name = excluded.name,
                 summary = excluded.summary,
                 description = excluded.description,
-                icon = excluded.icon,
-                cover_image = excluded.cover_image,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
+                cover_media_resource_id = excluded.cover_media_resource_id,
+                cover_object_blob_id = excluded.cover_object_blob_id,
+                cover_resource_snapshot = excluded.cover_resource_snapshot,
                 category_id = excluded.category_id,
                 package_id = excluded.package_id,
                 provider = excluded.provider,
@@ -748,10 +863,20 @@ async fn import_sqlite_asset_rows(
         let mut query_builder: QueryBuilder<'_, Sqlite> = QueryBuilder::new(
             r#"
             INSERT INTO studio_catalog_asset
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_url, thumbnail_url, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
             "#,
         );
         query_builder.push_values(chunk, |mut row, item| {
+            let asset_media_resource_id = media_resource_stable_id(&item.asset);
+            let asset_object_blob_id = media_resource_object_blob_id(&item.asset);
+            let asset_resource_snapshot = item.asset.to_string();
+            let thumbnail_media_resource_id = item.thumbnail.as_ref().map(media_resource_stable_id);
+            let thumbnail_object_blob_id = item
+                .thumbnail
+                .as_ref()
+                .and_then(media_resource_object_blob_id);
+            let thumbnail_resource_snapshot =
+                item.thumbnail.as_ref().map(serde_json::Value::to_string);
             row.push_bind(&item.uuid)
                 .push_bind(SYSTEM_TENANT_ID)
                 .push_bind(SYSTEM_ORGANIZATION_ID)
@@ -767,8 +892,12 @@ async fn import_sqlite_asset_rows(
                 .push_bind(item.target_id)
                 .push_bind(item.artifact_id)
                 .push_bind(item.asset_type)
-                .push_bind(&item.asset_url)
-                .push_bind(&item.thumbnail_url)
+                .push_bind(asset_media_resource_id)
+                .push_bind(asset_object_blob_id)
+                .push_bind(asset_resource_snapshot)
+                .push_bind(thumbnail_media_resource_id)
+                .push_bind(thumbnail_object_blob_id)
+                .push_bind(thumbnail_resource_snapshot)
                 .push_bind(&item.title)
                 .push_bind(&item.alt_text)
                 .push_bind(&item.mime_type)
@@ -808,10 +937,22 @@ async fn import_sqlite_artifact_rows(
         let mut query_builder: QueryBuilder<'_, Sqlite> = QueryBuilder::new(
             r#"
             INSERT INTO studio_catalog_artifact
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_url, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
             "#,
         );
         query_builder.push_values(chunk, |mut row, item| {
+            let artifact_media_resource_id = item
+                .artifact_resource_snapshot
+                .as_ref()
+                .map(media_resource_stable_id);
+            let artifact_object_blob_id = item
+                .artifact_resource_snapshot
+                .as_ref()
+                .and_then(media_resource_object_blob_id);
+            let artifact_resource_snapshot = item
+                .artifact_resource_snapshot
+                .as_ref()
+                .map(serde_json::Value::to_string);
             row.push_bind(&item.uuid)
                 .push_bind(SYSTEM_TENANT_ID)
                 .push_bind(SYSTEM_ORGANIZATION_ID)
@@ -830,7 +971,9 @@ async fn import_sqlite_artifact_rows(
                 .push_bind(&item.platform_type)
                 .push_bind(&item.os_name)
                 .push_bind(&item.artifact_ref)
-                .push_bind(&item.artifact_url)
+                .push_bind(artifact_media_resource_id)
+                .push_bind(artifact_object_blob_id)
+                .push_bind(artifact_resource_snapshot)
                 .push_bind(item.artifact_size_bytes)
                 .push_bind(&item.runtime)
                 .push_bind(json_string(&item.frameworks))
@@ -845,7 +988,9 @@ async fn import_sqlite_artifact_rows(
             ON CONFLICT(tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name) DO UPDATE SET
                 uuid = excluded.uuid,
                 artifact_ref = excluded.artifact_ref,
-                artifact_url = excluded.artifact_url,
+                artifact_media_resource_id = excluded.artifact_media_resource_id,
+                artifact_object_blob_id = excluded.artifact_object_blob_id,
+                artifact_resource_snapshot = excluded.artifact_resource_snapshot,
                 artifact_size_bytes = excluded.artifact_size_bytes,
                 runtime = excluded.runtime,
                 frameworks = excluded.frameworks,
@@ -893,12 +1038,16 @@ async fn import_postgres_categories(
     seed: &SkillsSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     for item in &seed.categories {
+        let icon = item.icon.clone();
+        let icon_media_resource_id = icon.as_ref().map(media_resource_stable_id);
+        let icon_object_blob_id = icon.as_ref().and_then(media_resource_object_blob_id);
+        let icon_resource_snapshot = icon.as_ref().map(serde_json::Value::to_string);
         sqlx::query(
             r#"
             INSERT INTO plus_category
-                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon, sort_weight, parent_id, path, visible, status)
+                (id, uuid, tenant_id, organization_id, data_scope, name, description, shop_id, type, group_name, code, tags, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, sort_weight, parent_id, path, visible, status)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15, $16, $17, $18)
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14, $15::jsonb, $16, $17, $18, $19, $20)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -911,7 +1060,9 @@ async fn import_postgres_categories(
                 group_name = excluded.group_name,
                 code = excluded.code,
                 tags = excluded.tags,
-                icon = excluded.icon,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
                 sort_weight = excluded.sort_weight,
                 parent_id = excluded.parent_id,
                 path = excluded.path,
@@ -932,7 +1083,9 @@ async fn import_postgres_categories(
         .bind(&item.group_name)
         .bind(&item.code)
         .bind(json_string(&item.tags))
-        .bind(&item.icon)
+        .bind(icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(icon_resource_snapshot)
         .bind(item.sort_weight)
         .bind(item.parent_id)
         .bind(&item.path)
@@ -949,6 +1102,13 @@ async fn import_postgres_packages(
     seed: &SkillsSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     for item in &seed.packages {
+        let icon = item.icon.clone();
+        let icon_media_resource_id = icon.as_ref().map(media_resource_stable_id);
+        let icon_object_blob_id = icon.as_ref().and_then(media_resource_object_blob_id);
+        let icon_resource_snapshot = icon.as_ref().map(serde_json::Value::to_string);
+        let cover_media_resource_id = item.cover.as_ref().map(media_resource_stable_id);
+        let cover_object_blob_id = item.cover.as_ref().and_then(media_resource_object_blob_id);
+        let cover_resource_snapshot = item.cover.as_ref().map(serde_json::Value::to_string);
         sqlx::query(
             r#"
             DELETE FROM plus_agent_skill_package
@@ -974,9 +1134,9 @@ async fn import_postgres_packages(
         sqlx::query(
             r#"
             INSERT INTO plus_agent_skill_package
-                (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, summary, description, icon, cover_image, category_id, enabled, featured, sort_weight, tags, latest_published_at)
+                (id, uuid, tenant_id, organization_id, data_scope, user_id, package_key, name, summary, description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot, category_id, enabled, featured, sort_weight, tags, latest_published_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17::jsonb, $18)
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21::jsonb, $22)
             ON CONFLICT(id) DO UPDATE SET
                 uuid = excluded.uuid,
                 tenant_id = excluded.tenant_id,
@@ -987,8 +1147,12 @@ async fn import_postgres_packages(
                 name = excluded.name,
                 summary = excluded.summary,
                 description = excluded.description,
-                icon = excluded.icon,
-                cover_image = excluded.cover_image,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
+                cover_media_resource_id = excluded.cover_media_resource_id,
+                cover_object_blob_id = excluded.cover_object_blob_id,
+                cover_resource_snapshot = excluded.cover_resource_snapshot,
                 category_id = excluded.category_id,
                 enabled = excluded.enabled,
                 featured = excluded.featured,
@@ -1008,8 +1172,12 @@ async fn import_postgres_packages(
         .bind(&item.name)
         .bind(&item.summary)
         .bind(&item.description)
-        .bind(&item.icon)
-        .bind(&item.cover_image)
+        .bind(icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(icon_resource_snapshot)
+        .bind(cover_media_resource_id)
+        .bind(cover_object_blob_id)
+        .bind(cover_resource_snapshot)
         .bind(item.category_id)
         .bind(item.enabled)
         .bind(item.featured)
@@ -1027,20 +1195,31 @@ async fn import_postgres_skills(
     seed: &SkillsSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     for item in &seed.skills {
+        let icon = item.icon.clone();
+        let icon_media_resource_id = icon.as_ref().map(media_resource_stable_id);
+        let icon_object_blob_id = icon.as_ref().and_then(media_resource_object_blob_id);
+        let icon_resource_snapshot = icon.as_ref().map(serde_json::Value::to_string);
+        let cover_media_resource_id = item.cover.as_ref().map(media_resource_stable_id);
+        let cover_object_blob_id = item.cover.as_ref().and_then(media_resource_object_blob_id);
+        let cover_resource_snapshot = item.cover.as_ref().map(serde_json::Value::to_string);
         sqlx::query(
             r#"
             INSERT INTO plus_agent_skill
-                (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary, description, icon, cover_image, category_id, package_id, provider, version, version_name, runtime, entrypoint, manifest_url, repository_url, homepage_url, documentation_url, license_name, source_type, market_status, visibility, review_status, review_comment, reviewed_by, reviewed_at, builtin, is_builtin, enabled, featured, recommend_weight, price, currency, install_count, rating_avg, rating_count, tags, capabilities, config_schema, default_config, latest_published_at)
+                (id, uuid, tenant_id, organization_id, data_scope, user_id, skill_key, name, summary, description, icon_media_resource_id, icon_object_blob_id, icon_resource_snapshot, cover_media_resource_id, cover_object_blob_id, cover_resource_snapshot, category_id, package_id, provider, version, version_name, runtime, entrypoint, manifest_url, repository_url, homepage_url, documentation_url, license_name, source_type, market_status, visibility, review_status, review_comment, reviewed_by, reviewed_at, builtin, is_builtin, enabled, featured, recommend_weight, price, currency, install_count, rating_avg, rating_count, tags, capabilities, config_schema, default_config, latest_published_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42::jsonb, $43::jsonb, $44::jsonb, $45::jsonb, $46)
+                ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33, $34, $35, $36, $37, $38, $39, $40, $41, $42, $43, $44, $45, $46::jsonb, $47::jsonb, $48::jsonb, $49::jsonb, $50)
             ON CONFLICT(tenant_id, organization_id, skill_key) DO UPDATE SET
                 uuid = excluded.uuid,
                 user_id = excluded.user_id,
                 name = excluded.name,
                 summary = excluded.summary,
                 description = excluded.description,
-                icon = excluded.icon,
-                cover_image = excluded.cover_image,
+                icon_media_resource_id = excluded.icon_media_resource_id,
+                icon_object_blob_id = excluded.icon_object_blob_id,
+                icon_resource_snapshot = excluded.icon_resource_snapshot,
+                cover_media_resource_id = excluded.cover_media_resource_id,
+                cover_object_blob_id = excluded.cover_object_blob_id,
+                cover_resource_snapshot = excluded.cover_resource_snapshot,
                 category_id = excluded.category_id,
                 package_id = excluded.package_id,
                 provider = excluded.provider,
@@ -1088,8 +1267,12 @@ async fn import_postgres_skills(
         .bind(&item.name)
         .bind(&item.summary)
         .bind(&item.description)
-        .bind(&item.icon)
-        .bind(&item.cover_image)
+        .bind(icon_media_resource_id)
+        .bind(icon_object_blob_id)
+        .bind(icon_resource_snapshot)
+        .bind(cover_media_resource_id)
+        .bind(cover_object_blob_id)
+        .bind(cover_resource_snapshot)
         .bind(item.category_id)
         .bind(item.package_id)
         .bind(&item.provider)
@@ -1135,6 +1318,15 @@ async fn import_postgres_assets(
     seed: &SkillsSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     for item in &seed.assets {
+        let asset_media_resource_id = media_resource_stable_id(&item.asset);
+        let asset_object_blob_id = media_resource_object_blob_id(&item.asset);
+        let asset_resource_snapshot = item.asset.to_string();
+        let thumbnail_media_resource_id = item.thumbnail.as_ref().map(media_resource_stable_id);
+        let thumbnail_object_blob_id = item
+            .thumbnail
+            .as_ref()
+            .and_then(media_resource_object_blob_id);
+        let thumbnail_resource_snapshot = item.thumbnail.as_ref().map(serde_json::Value::to_string);
         let result = sqlx::query(
             r#"
             UPDATE studio_catalog_asset
@@ -1143,33 +1335,41 @@ async fn import_postgres_assets(
                 target_id = $2,
                 artifact_id = $3,
                 asset_type = $4,
-                asset_url = $5,
-                thumbnail_url = $6,
-                title = $7,
-                alt_text = $8,
-                mime_type = $9,
-                width = $10,
-                height = $11,
-                duration_seconds = $12,
-                file_size = $13,
-                sort_order = $14,
-                published_at = $15,
-                metadata = $16::jsonb,
-                status = $17,
+                asset_media_resource_id = $5,
+                asset_object_blob_id = $6,
+                asset_resource_snapshot = $7::jsonb,
+                thumbnail_media_resource_id = $8,
+                thumbnail_object_blob_id = $9,
+                thumbnail_resource_snapshot = $10::jsonb,
+                title = $11,
+                alt_text = $12,
+                mime_type = $13,
+                width = $14,
+                height = $15,
+                duration_seconds = $16,
+                file_size = $17,
+                sort_order = $18,
+                published_at = $19,
+                metadata = $20::jsonb,
+                status = $21,
                 deleted_at = NULL,
                 deleted_by = NULL,
                 updated_at = CURRENT_TIMESTAMP
-            WHERE tenant_id = $18
-              AND organization_id = $19
-              AND uuid = $20
+            WHERE tenant_id = $22
+              AND organization_id = $23
+              AND uuid = $24
             "#,
         )
         .bind(item.target_type)
         .bind(item.target_id)
         .bind(item.artifact_id)
         .bind(item.asset_type)
-        .bind(&item.asset_url)
-        .bind(&item.thumbnail_url)
+        .bind(asset_media_resource_id.clone())
+        .bind(asset_object_blob_id.clone())
+        .bind(asset_resource_snapshot.clone())
+        .bind(thumbnail_media_resource_id.clone())
+        .bind(thumbnail_object_blob_id.clone())
+        .bind(thumbnail_resource_snapshot.clone())
         .bind(&item.title)
         .bind(&item.alt_text)
         .bind(&item.mime_type)
@@ -1192,9 +1392,9 @@ async fn import_postgres_assets(
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_asset
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_url, thumbnail_url, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_id, asset_type, asset_media_resource_id, asset_object_blob_id, asset_resource_snapshot, thumbnail_media_resource_id, thumbnail_object_blob_id, thumbnail_resource_snapshot, title, alt_text, mime_type, width, height, duration_seconds, file_size, sort_order, published_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13::jsonb, $14, $15, $16::jsonb, $17, $18, $19, $20, $21, $22, $23, $24, $25)
             "#,
         )
         .bind(&item.uuid)
@@ -1207,8 +1407,12 @@ async fn import_postgres_assets(
         .bind(item.target_id)
         .bind(item.artifact_id)
         .bind(item.asset_type)
-        .bind(&item.asset_url)
-        .bind(&item.thumbnail_url)
+        .bind(asset_media_resource_id)
+        .bind(asset_object_blob_id)
+        .bind(asset_resource_snapshot)
+        .bind(thumbnail_media_resource_id)
+        .bind(thumbnail_object_blob_id)
+        .bind(thumbnail_resource_snapshot)
         .bind(&item.title)
         .bind(&item.alt_text)
         .bind(&item.mime_type)
@@ -1229,16 +1433,30 @@ async fn import_postgres_artifacts(
     seed: &SkillsSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     for item in &seed.artifacts {
+        let artifact_media_resource_id = item
+            .artifact_resource_snapshot
+            .as_ref()
+            .map(media_resource_stable_id);
+        let artifact_object_blob_id = item
+            .artifact_resource_snapshot
+            .as_ref()
+            .and_then(media_resource_object_blob_id);
+        let artifact_resource_snapshot = item
+            .artifact_resource_snapshot
+            .as_ref()
+            .map(serde_json::Value::to_string);
         sqlx::query(
             r#"
             INSERT INTO studio_catalog_artifact
-                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_url, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
+                (uuid, tenant_id, organization_id, data_scope, status, metadata, target_type, target_id, artifact_type, version, platform_type, os_name, artifact_ref, artifact_media_resource_id, artifact_object_blob_id, artifact_resource_snapshot, artifact_size_bytes, runtime, frameworks, license_name, checksum_hash, release_notes, published_at, deprecated_at)
             VALUES
-                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17::jsonb, $18, $19, $20, $21, $22)
+                ($1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16::jsonb, $17, $18, $19::jsonb, $20, $21, $22, $23, $24)
             ON CONFLICT(tenant_id, organization_id, target_type, target_id, artifact_type, version, platform_type, os_name) DO UPDATE SET
                 uuid = excluded.uuid,
                 artifact_ref = excluded.artifact_ref,
-                artifact_url = excluded.artifact_url,
+                artifact_media_resource_id = excluded.artifact_media_resource_id,
+                artifact_object_blob_id = excluded.artifact_object_blob_id,
+                artifact_resource_snapshot = excluded.artifact_resource_snapshot,
                 artifact_size_bytes = excluded.artifact_size_bytes,
                 runtime = excluded.runtime,
                 frameworks = excluded.frameworks,
@@ -1267,7 +1485,9 @@ async fn import_postgres_artifacts(
         .bind(&item.platform_type)
         .bind(&item.os_name)
         .bind(&item.artifact_ref)
-        .bind(&item.artifact_url)
+        .bind(artifact_media_resource_id)
+        .bind(artifact_object_blob_id)
+        .bind(artifact_resource_snapshot)
         .bind(item.artifact_size_bytes)
         .bind(&item.runtime)
         .bind(json_string(&item.frameworks))
@@ -1330,6 +1550,9 @@ async fn sqlite_core_asset_seed_standard_count(
     let mut count = 0;
     for item in assets {
         let metadata = seed_metadata_with_hash(manifest, source_hash, "skill_asset", &item.uuid);
+        let asset_media_resource_id = media_resource_stable_id(&item.asset);
+        let asset_object_blob_id = media_resource_object_blob_id(&item.asset);
+        let asset_resource_snapshot = item.asset.to_string();
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
@@ -1343,7 +1566,9 @@ async fn sqlite_core_asset_seed_standard_count(
               AND target_type = ?
               AND target_id = ?
               AND asset_type = ?
-              AND asset_url = ?
+              AND asset_media_resource_id = ?
+              AND asset_object_blob_id IS ?
+              AND CAST(asset_resource_snapshot AS TEXT) = ?
               AND sort_order = ?
             "#,
         )
@@ -1352,7 +1577,9 @@ async fn sqlite_core_asset_seed_standard_count(
         .bind(item.target_type)
         .bind(item.target_id)
         .bind(item.asset_type)
-        .bind(&item.asset_url)
+        .bind(asset_media_resource_id)
+        .bind(asset_object_blob_id)
+        .bind(asset_resource_snapshot)
         .bind(item.sort_order)
         .fetch_one(pool)
         .await?;
@@ -1387,7 +1614,7 @@ async fn sqlite_core_artifact_seed_standard_count(
               AND platform_type = ?
               AND os_name = ?
               AND artifact_ref = ?
-              AND artifact_url = ?
+              AND CAST(artifact_resource_snapshot AS TEXT) IS ?
               AND artifact_size_bytes = ?
               AND runtime = ?
               AND checksum_hash = ?
@@ -1402,7 +1629,11 @@ async fn sqlite_core_artifact_seed_standard_count(
         .bind(&item.platform_type)
         .bind(&item.os_name)
         .bind(&item.artifact_ref)
-        .bind(&item.artifact_url)
+        .bind(
+            item.artifact_resource_snapshot
+                .as_ref()
+                .map(serde_json::Value::to_string),
+        )
         .bind(item.artifact_size_bytes)
         .bind(&item.runtime)
         .bind(&item.checksum_hash)
@@ -1669,6 +1900,9 @@ async fn postgres_core_asset_seed_standard_count(
     let mut count = 0;
     for item in assets {
         let metadata = seed_metadata_with_hash(manifest, source_hash, "skill_asset", &item.uuid);
+        let asset_media_resource_id = media_resource_stable_id(&item.asset);
+        let asset_object_blob_id = media_resource_object_blob_id(&item.asset);
+        let asset_resource_snapshot = item.asset.to_string();
         let row = sqlx::query(
             r#"
             SELECT COUNT(1) AS count
@@ -1682,8 +1916,10 @@ async fn postgres_core_asset_seed_standard_count(
               AND target_type = $3
               AND target_id = $4
               AND asset_type = $5
-              AND asset_url = $6
-              AND sort_order = $7
+              AND asset_media_resource_id = $6
+              AND asset_object_blob_id IS NOT DISTINCT FROM $7
+              AND asset_resource_snapshot = $8::jsonb
+              AND sort_order = $9
             "#,
         )
         .bind(&item.uuid)
@@ -1691,7 +1927,9 @@ async fn postgres_core_asset_seed_standard_count(
         .bind(item.target_type)
         .bind(item.target_id)
         .bind(item.asset_type)
-        .bind(&item.asset_url)
+        .bind(asset_media_resource_id)
+        .bind(asset_object_blob_id)
+        .bind(asset_resource_snapshot)
         .bind(item.sort_order)
         .fetch_one(pool)
         .await?;
@@ -1726,7 +1964,7 @@ async fn postgres_core_artifact_seed_standard_count(
               AND platform_type = $7
               AND os_name = $8
               AND artifact_ref = $9
-              AND artifact_url = $10
+              AND artifact_resource_snapshot IS NOT DISTINCT FROM $10::jsonb
               AND artifact_size_bytes = $11
               AND runtime = $12
               AND checksum_hash = $13
@@ -1741,7 +1979,11 @@ async fn postgres_core_artifact_seed_standard_count(
         .bind(&item.platform_type)
         .bind(&item.os_name)
         .bind(&item.artifact_ref)
-        .bind(&item.artifact_url)
+        .bind(
+            item.artifact_resource_snapshot
+                .as_ref()
+                .map(serde_json::Value::to_string),
+        )
         .bind(item.artifact_size_bytes)
         .bind(&item.runtime)
         .bind(&item.checksum_hash)

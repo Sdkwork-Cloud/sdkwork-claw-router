@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minibook@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-minibook-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minibook-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef005a70d12f93a4639b3d12a30d90e8be625509ca1917b59e1461fc3223c13c",

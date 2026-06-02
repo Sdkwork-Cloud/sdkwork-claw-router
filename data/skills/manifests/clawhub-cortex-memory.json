@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cortex-memory@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cortex-memory-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cortex-memory-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c2a99a480f5805505d59b2444b056b3a5a8f58dd4b9a58c3110941b7d4701acb",

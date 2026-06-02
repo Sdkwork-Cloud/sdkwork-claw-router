@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gcloud-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gcloud-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gcloud-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b4059e2122f4a793079c4ea11be025e063019e468e854dd4bb5fb3bb3bd29d79",

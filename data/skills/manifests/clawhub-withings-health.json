@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/withings-health@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-withings-health-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-withings-health-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:88bc52207f631f546c2ce5e16a2675b6290a8390c14a1ea5a9d54c2c8fea633e",

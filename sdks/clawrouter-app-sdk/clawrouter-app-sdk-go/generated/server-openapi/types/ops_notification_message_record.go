@@ -15,8 +15,11 @@ type OpsNotificationMessageRecord struct {
 	MessageType string `json:"message_type"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	OrganizationId string `json:"organization_id"`
+	Priority int `json:"priority"`
 	PublishedAt string `json:"published_at"`
+	ScopeType string `json:"scope_type"`
 	Severity string `json:"severity"`
+	ShowAsPopup bool `json:"show_as_popup"`
 	Status string `json:"status"`
 	Summary string `json:"summary"`
 	TenantId string `json:"tenant_id"`

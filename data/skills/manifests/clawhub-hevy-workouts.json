@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hevy-workouts@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-hevy-workouts-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hevy-workouts-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4a9aea0cfaf1930c31d6aec7d02b251565b2bf6ef192b2bd13a2eb999cf2b75b",

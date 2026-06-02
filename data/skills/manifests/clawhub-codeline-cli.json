@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codeline-cli@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codeline-cli-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codeline-cli-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:364f686a4a97d1e087a3530ea4554a88e076408961793322e943b75cd250a5be",

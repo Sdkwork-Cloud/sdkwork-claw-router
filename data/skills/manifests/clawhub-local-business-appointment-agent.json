@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-business-appointment-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-business-appointment-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-business-appointment-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3cf8a7868bc927cf7691a3b6b90d0d60a120512536e613783472f1157fc76ff0",

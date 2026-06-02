@@ -2,6 +2,7 @@ use std::future::Future;
 use std::pin::Pin;
 
 use serde::Serialize;
+use serde_json::Value;
 
 use crate::domain::DomainResult;
 
@@ -28,7 +29,7 @@ pub struct CourseQuery {
 #[serde(rename_all = "camelCase")]
 pub struct CourseInstructor {
     pub name: String,
-    pub avatar: String,
+    pub avatar: Value,
     pub title: String,
     pub bio: String,
 }
@@ -52,7 +53,7 @@ pub struct CourseCategoryItem {
     pub name: String,
     pub label: String,
     pub description: String,
-    pub icon: String,
+    pub icon_key: String,
     pub sort_weight: i64,
     pub course_count: i64,
 }
@@ -66,7 +67,7 @@ pub struct CourseLessonItem {
     pub number: i64,
     pub title: String,
     pub description: String,
-    pub video_url: String,
+    pub video: Value,
     pub external_bvid: String,
     pub source_provider: String,
     pub duration_seconds: i64,
@@ -98,7 +99,7 @@ pub struct CourseItem {
     pub course_code: String,
     pub title: String,
     pub description: String,
-    pub thumbnail_url: String,
+    pub thumbnail: Value,
     pub instructor: CourseInstructor,
     pub duration_text: String,
     pub lessons_count: i64,
@@ -155,7 +156,7 @@ pub struct CourseOverview {
     pub source: CourseOverviewSource,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct CreateCourseApplicationCommand {
     pub subject: CourseSubject,
     pub uuid: String,
@@ -164,14 +165,14 @@ pub struct CreateCourseApplicationCommand {
     pub description: String,
     pub source_provider: String,
     pub external_bvid: Option<String>,
-    pub video_url: Option<String>,
+    pub video: Option<Value>,
     pub contact_name: Option<String>,
     pub contact_email: Option<String>,
     pub notes: Option<String>,
     pub submitted_at: String,
 }
 
-#[derive(Debug, Clone, Default, Serialize, PartialEq, Eq)]
+#[derive(Debug, Clone, Default, Serialize, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct CourseApplicationItem {
     pub id: String,
@@ -181,7 +182,8 @@ pub struct CourseApplicationItem {
     pub description: String,
     pub source_provider: String,
     pub external_bvid: String,
-    pub video_url: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub video: Option<Value>,
     pub contact_name: String,
     pub contact_email: String,
     pub status: String,

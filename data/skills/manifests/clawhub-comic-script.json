@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comic-script@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-comic-script-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comic-script-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:db3c62978ac40af762845508745302f85cf61c06e5dacfc88d65ad2ef8ff4313",

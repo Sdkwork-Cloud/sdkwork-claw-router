@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ad-platform-tracker-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ad-platform-tracker-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ad-platform-tracker-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8c35998b567ca3df8c4e00ee0253e292167acaef049ab2f5d7003304e691041f",

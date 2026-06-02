@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/commcare@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-commcare-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-commcare-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7cedc4c70e66adb31e4633f71fbd443038f45e0f4ff19429205f72481a475883",

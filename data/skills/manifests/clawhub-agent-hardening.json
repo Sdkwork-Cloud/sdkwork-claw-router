@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-hardening@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-hardening-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-hardening-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:273971a3b1967477f8082e342cfee76cd46ef3cc6adad74f68afdd264afdbd5d",

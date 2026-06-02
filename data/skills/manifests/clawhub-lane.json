@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lane@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-lane-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lane-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:de39d4907e4e593185b172e33fa19d601297ad2baced7c80614b9f50006f4aea",

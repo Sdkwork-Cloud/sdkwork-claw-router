@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/todo@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-todo-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-todo-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d05e2393d97217d65d6fb6a44259eb510ef2e6cbce1649009df84b4357ae0167",

@@ -5,24 +5,35 @@ import java.util.Map;
 public class MessagingSendRequestRecord {
     private String acceptedAt;
     private String appId;
+    private String channel;
     private String createdAt;
     private String deliveredAt;
+    private String deliveryPurpose;
+    private String deliveryStatus;
+    private Boolean dryRun;
     private String expiresAt;
     private String failedAt;
     private String id;
+    private String idempotencyKey;
     private Boolean legalHold;
     private Map<String, String> metadata;
     private String organizationId;
     private String payloadHash;
+    private String renderHash;
     private String requestId;
+    private String requestNo;
+    private Map<String, String> requestPayloadRedacted;
     private String resolvedProviderAccountId;
     private String resolvedRouteRuleId;
     private String resolvedSenderIdentityId;
     private String retentionUntil;
+    private String sceneCode;
     private String scheduledAt;
     private String sentAt;
     private String status;
+    private String targetHash;
     private String targetMasked;
+    private String targetType;
     private String templateVariantId;
     private String templateVersionId;
     private String tenantId;
@@ -46,6 +57,14 @@ public class MessagingSendRequestRecord {
         this.appId = appId;
     }
 
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
     public String getCreatedAt() {
         return this.createdAt;
     }
@@ -60,6 +79,30 @@ public class MessagingSendRequestRecord {
 
     public void setDeliveredAt(String deliveredAt) {
         this.deliveredAt = deliveredAt;
+    }
+
+    public String getDeliveryPurpose() {
+        return this.deliveryPurpose;
+    }
+
+    public void setDeliveryPurpose(String deliveryPurpose) {
+        this.deliveryPurpose = deliveryPurpose;
+    }
+
+    public String getDeliveryStatus() {
+        return this.deliveryStatus;
+    }
+
+    public void setDeliveryStatus(String deliveryStatus) {
+        this.deliveryStatus = deliveryStatus;
+    }
+
+    public Boolean getDryRun() {
+        return this.dryRun;
+    }
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
     }
 
     public String getExpiresAt() {
@@ -84,6 +127,14 @@ public class MessagingSendRequestRecord {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getIdempotencyKey() {
+        return this.idempotencyKey;
+    }
+
+    public void setIdempotencyKey(String idempotencyKey) {
+        this.idempotencyKey = idempotencyKey;
     }
 
     public Boolean getLegalHold() {
@@ -118,12 +169,36 @@ public class MessagingSendRequestRecord {
         this.payloadHash = payloadHash;
     }
 
+    public String getRenderHash() {
+        return this.renderHash;
+    }
+
+    public void setRenderHash(String renderHash) {
+        this.renderHash = renderHash;
+    }
+
     public String getRequestId() {
         return this.requestId;
     }
 
     public void setRequestId(String requestId) {
         this.requestId = requestId;
+    }
+
+    public String getRequestNo() {
+        return this.requestNo;
+    }
+
+    public void setRequestNo(String requestNo) {
+        this.requestNo = requestNo;
+    }
+
+    public Map<String, String> getRequestPayloadRedacted() {
+        return this.requestPayloadRedacted;
+    }
+
+    public void setRequestPayloadRedacted(Map<String, String> requestPayloadRedacted) {
+        this.requestPayloadRedacted = requestPayloadRedacted;
     }
 
     public String getResolvedProviderAccountId() {
@@ -158,6 +233,14 @@ public class MessagingSendRequestRecord {
         this.retentionUntil = retentionUntil;
     }
 
+    public String getSceneCode() {
+        return this.sceneCode;
+    }
+
+    public void setSceneCode(String sceneCode) {
+        this.sceneCode = sceneCode;
+    }
+
     public String getScheduledAt() {
         return this.scheduledAt;
     }
@@ -182,12 +265,28 @@ public class MessagingSendRequestRecord {
         this.status = status;
     }
 
+    public String getTargetHash() {
+        return this.targetHash;
+    }
+
+    public void setTargetHash(String targetHash) {
+        this.targetHash = targetHash;
+    }
+
     public String getTargetMasked() {
         return this.targetMasked;
     }
 
     public void setTargetMasked(String targetMasked) {
         this.targetMasked = targetMasked;
+    }
+
+    public String getTargetType() {
+        return this.targetType;
+    }
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
     }
 
     public String getTemplateVariantId() {

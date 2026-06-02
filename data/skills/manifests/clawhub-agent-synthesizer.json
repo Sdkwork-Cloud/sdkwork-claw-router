@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-synthesizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-synthesizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-synthesizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f8ba7f87403b056cc671d462d7673d5cbc4fd216d06ab480010cec7752f6758",

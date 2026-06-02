@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gandi-skill@0.2.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-gandi-skill-0.2.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gandi-skill-0.2.7.json"
+      },
       "version": "0.2.7",
       "runtime": "metadata",
       "checksumHash": "sha256:9538adc6d193f6a555e683e29ac4c9502ea8310907284f6bbd25c0b9faa8f9ec",

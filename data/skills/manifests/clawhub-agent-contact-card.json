@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-contact-card@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-contact-card-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-contact-card-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b65b061e556b7cb7abc762cf98f87c839ec7ba16490e8b29b2279b4f8d751e5c",

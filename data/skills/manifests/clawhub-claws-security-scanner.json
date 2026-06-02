@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claws-security-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claws-security-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claws-security-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:173cc1b924894642d874f92779af65dfa1283449fbd92f01b58b7eef9c268d49",

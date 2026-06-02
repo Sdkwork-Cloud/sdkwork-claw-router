@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opencli-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-opencli-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opencli-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f150de29fdd6cbf6c252b3dcc3b3c8d5d673a9ca288b6afd01951edc0d703e25",

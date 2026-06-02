@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-query-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-query-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-query-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da5de446a245dc4cf4673c1f19c047b8e29fdcd75c9d6ef29e7b03359a34fbdf",

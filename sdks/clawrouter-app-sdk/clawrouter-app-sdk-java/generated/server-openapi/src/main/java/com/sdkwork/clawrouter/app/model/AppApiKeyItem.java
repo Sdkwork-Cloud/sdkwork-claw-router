@@ -3,12 +3,12 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.List;
 
 public class AppApiKeyItem {
+    private String channelGroup;
+    private String channelGroupName;
     private String copyableKey;
     private String created;
     private Boolean defaultForRuntime;
     private String expires;
-    private String group;
-    private String groupName;
     private String id;
     private String ipLimit;
     private String maskedKey;
@@ -18,6 +18,22 @@ public class AppApiKeyItem {
     private String rate;
     private String status;
     private String usedQuota;
+
+    public String getChannelGroup() {
+        return this.channelGroup;
+    }
+
+    public void setChannelGroup(String channelGroup) {
+        this.channelGroup = channelGroup;
+    }
+
+    public String getChannelGroupName() {
+        return this.channelGroupName;
+    }
+
+    public void setChannelGroupName(String channelGroupName) {
+        this.channelGroupName = channelGroupName;
+    }
 
     public String getCopyableKey() {
         return this.copyableKey;
@@ -49,22 +65,6 @@ public class AppApiKeyItem {
 
     public void setExpires(String expires) {
         this.expires = expires;
-    }
-
-    public String getGroup() {
-        return this.group;
-    }
-
-    public void setGroup(String group) {
-        this.group = group;
-    }
-
-    public String getGroupName() {
-        return this.groupName;
-    }
-
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
     }
 
     public String getId() {

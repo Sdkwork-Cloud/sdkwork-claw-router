@@ -11,12 +11,12 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? CustomCss { get; set; }
         public string? Description { get; set; }
         public string? DocsUrl { get; set; }
-        public string? FaviconUrl { get; set; }
+        public MediaResource? Favicon { get; set; }
         public string? FooterCopyright { get; set; }
-        public string? IconUrl { get; set; }
+        public MediaResource? Icon { get; set; }
         public string? IcpRecordNumber { get; set; }
         public string? IcpRecordUrl { get; set; }
-        public string? LogoUrl { get; set; }
+        public MediaResource? Logo { get; set; }
         public string? PoliceRecordNumber { get; set; }
         public string? PoliceRecordUrl { get; set; }
         public string? PrivacyUrl { get; set; }

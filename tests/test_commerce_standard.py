@@ -617,10 +617,19 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertNotIn("metadata", service)
 
         self.assertIn("toPaymentProviderAccountRequest", view)
-        self.assertIn("accountNo: requiredText(form.accountNo, 'accountNo')", view)
-        self.assertIn("providerCode: requiredPaymentProviderCode(form.providerCode)", view)
-        self.assertIn("environment: requiredPaymentEnvironment(form.environment)", view)
+        self.assertIn("const accountNo = requiredText(form.generatedAccountNo, 'accountNo')", view)
+        self.assertIn("accountNo,", view)
+        self.assertIn("const providerCode = requiredPaymentProviderCode(form.providerCode)", view)
+        self.assertIn("providerCode,", view)
+        self.assertIn("const environment = requiredPaymentEnvironment(form.environment)", view)
+        self.assertIn("environment,", view)
         self.assertIn("status: requiredPaymentStatus(form.status)", view)
+        self.assertIn("const profile = resolvePaymentProviderCredentialProfile(providerCode, form.credentialMode)", view)
+        self.assertIn("resolvePaymentCredentialSecretRef(form, profile, accountNo, providerCode, environment)", view)
+        self.assertIn("resolvePaymentCertificateRef(form, profile, accountNo, providerCode, environment)", view)
+        self.assertIn("resolvePaymentWebhookSecretRef(form, profile, accountNo, providerCode, environment)", view)
+        self.assertIn("profile.secretPurpose", view)
+        self.assertIn("createGeneratedPaymentProviderAccountNo", view)
 
         for required_column_key in [
             "providerCode",
@@ -738,6 +747,142 @@ class CommerceStandardTest(unittest.TestCase):
                 "commerce_order",
             },
         )
+
+    def test_product_center_multi_category_and_attribute_binding_contract_is_canonical(self) -> None:
+        registry = load_table_registry()
+        tables = {
+            table.get("table"): table
+            for table in registry.get("tables", [])
+            if isinstance(table, dict) and isinstance(table.get("table"), str)
+        }
+        operations = {
+            (
+                operation.get("api_surface"),
+                operation.get("api_method"),
+                operation.get("api_path"),
+                operation.get("operation_id"),
+            ): operation
+            for operation in load_frontend_operations()
+            if operation.get("openapi_exposed", True) is not False
+        }
+        backend_schemas = json.loads(BACKEND_OPENAPI_PATH.read_text(encoding="utf-8"))["components"]["schemas"]
+        product_create_page = (
+            PORTAL_PATH
+            / "packages"
+            / "sdkwork-claw-router-admin-catalog"
+            / "src"
+            / "ProductCreatePage.tsx"
+        ).read_text(encoding="utf-8")
+
+        for table in [
+            "commerce_product_spu_category",
+            "commerce_product_category_attribute",
+            "commerce_product_sku_attribute",
+        ]:
+            self.assertIn(table, tables)
+
+        self.assertNotIn("category_id", tables["commerce_product_spu"].get("columns", {}))
+
+        for column in [
+            "tenant_id",
+            "organization_id",
+            "spu_id",
+            "category_id",
+            "primary_flag",
+            "sort_order",
+            "status",
+            "created_at",
+            "updated_at",
+        ]:
+            self.assertIn(column, tables["commerce_product_spu_category"].get("columns", {}))
+
+        for column in [
+            "tenant_id",
+            "organization_id",
+            "category_id",
+            "attribute_id",
+            "required",
+            "searchable",
+            "filterable",
+            "sort_order",
+            "status",
+            "created_at",
+            "updated_at",
+        ]:
+            self.assertIn(column, tables["commerce_product_category_attribute"].get("columns", {}))
+
+        product_create = operations[
+            ("backend", "POST", "/backend/v3/api/catalog/products", "catalog.products.create")
+        ]
+        product_update = operations[
+            ("backend", "PATCH", "/backend/v3/api/catalog/products/{productId}", "catalog.products.update")
+        ]
+        product_list = operations[
+            ("backend", "GET", "/backend/v3/api/catalog/products", "catalog.products.list")
+        ]
+        app_product_list = operations[("app", "GET", "/app/v3/api/catalog/products", "catalog.products.list")]
+
+        for operation in [product_create, product_update]:
+            self.assertIn("commerce_product_spu_category", operation.get("write_tables", []))
+            properties = operation.get("request_schema", {}).get("properties", {})
+            self.assertIn("categoryIds", properties)
+            self.assertNotIn("categoryId", properties)
+            self.assertEqual("array", properties["categoryIds"].get("type"))
+            self.assertEqual(3, properties["categoryIds"].get("maxItems"))
+
+        for operation in [product_list, app_product_list]:
+            self.assertIn("commerce_product_spu_category", operation.get("read_sources", []))
+
+        for schema_name in ["CommerceProductSpuMutationRequest", "CommerceProductSpuItem"]:
+            properties = backend_schemas.get(schema_name, {}).get("properties", {})
+            self.assertIn("categoryIds", properties)
+            self.assertNotIn("categoryId", properties)
+
+        mutation_source = (BACKEND_SDK_TYPES_PATH / "commerce-product-spu-mutation-request.ts").read_text(
+            encoding="utf-8"
+        )
+        item_source = (BACKEND_SDK_TYPES_PATH / "commerce-product-spu-item.ts").read_text(encoding="utf-8")
+        self.assertIn("categoryIds?: string[]", mutation_source)
+        self.assertIn("categoryIds?: string[]", item_source)
+        self.assertNotIn("categoryId?: string | null", mutation_source)
+        self.assertNotIn("categoryId?: string | null", item_source)
+
+        self.assertIn("categoryIds: normalizeSelectedCategoryIds(draft.selectedCategoryIds)", product_create_page)
+        self.assertNotIn("categoryId: draft.selectedCategoryIds[0]", product_create_page)
+
+        rust_sources = {
+            "api": ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "admin_catalog.rs",
+            "ports": ROOT / "services" / "sdkwork-claw-product" / "src" / "ports" / "admin_catalog_store.rs",
+            "sqlite": ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "sqlite"
+            / "admin_catalog_store.rs",
+            "postgres": ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "postgres"
+            / "admin_catalog_store.rs",
+            "routes_test": ROOT / "services" / "sdkwork-claw-admin-api" / "tests" / "product_center_routes.rs",
+        }
+        for source_path in rust_sources.values():
+            source = source_path.read_text(encoding="utf-8")
+            self.assertNotIn("commerce_product_sku_attribute_value", source)
+
+        for source_name in ["sqlite", "postgres", "routes_test"]:
+            source = rust_sources[source_name].read_text(encoding="utf-8")
+            self.assertIn("commerce_product_sku_attribute", source)
+            self.assertIn("commerce_product_spu_category", source)
+
+        self.assertIn("category_ids: normalize_product_category_ids", rust_sources["api"].read_text(encoding="utf-8"))
+        self.assertIn("category_ids: Vec<String>", rust_sources["ports"].read_text(encoding="utf-8"))
+        self.assertIn("commerce_product_spu_category", rust_sources["ports"].read_text(encoding="utf-8"))
 
     def test_promotion_coupon_currency_is_first_class_across_lifecycle(self) -> None:
         registry = load_table_registry()

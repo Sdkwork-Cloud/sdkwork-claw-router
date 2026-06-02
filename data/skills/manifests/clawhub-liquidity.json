@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/liquidity@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-liquidity-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-liquidity-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:520ae465070fb864a8bdd7511bd9fea18112d2de2d5c33d7d5cbd7a56a3843cb",

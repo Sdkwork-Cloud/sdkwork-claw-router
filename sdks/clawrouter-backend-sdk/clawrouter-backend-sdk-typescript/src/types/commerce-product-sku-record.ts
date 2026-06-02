@@ -8,6 +8,8 @@ export interface CommerceProductSkuRecord {
   default_price_amount?: string;
   /** Fulfillment type field on commerce product sku record. */
   fulfillment_type: string;
+  /** Id field on commerce product sku record. */
+  id?: string;
   /** Organization id field on commerce product sku record. */
   organization_id?: string;
   /** Published at field on commerce product sku record. */

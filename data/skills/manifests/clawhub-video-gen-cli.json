@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-gen-cli@5.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-gen-cli-5.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-gen-cli-5.0.0.json"
+      },
       "version": "5.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d66d919c223499ac06a8fa99bd29cc9ef23640be0191d3aa5aa293746afc728",

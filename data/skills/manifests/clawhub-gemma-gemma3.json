@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemma-gemma3@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemma-gemma3-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemma-gemma3-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4f319a04de92fb8abeed02820adc376d53d0b46e4c996373f4585f4416e2d537",

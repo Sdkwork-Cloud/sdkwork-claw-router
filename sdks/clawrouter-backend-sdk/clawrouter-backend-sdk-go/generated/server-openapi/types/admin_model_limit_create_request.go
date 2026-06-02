@@ -2,7 +2,7 @@ package types
 
 // Admin model limit create request schema exposed by Claw Router.
 type AdminModelLimitCreateRequest struct {
-	Group string `json:"group"`
+	ChannelGroup string `json:"channelGroup"`
 	Model string `json:"model"`
 	Rpm int `json:"rpm"`
 	Status string `json:"status"`

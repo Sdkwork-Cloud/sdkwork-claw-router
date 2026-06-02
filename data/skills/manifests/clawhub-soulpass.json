@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/soulpass@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-soulpass-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-soulpass-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:372f2108dd62fde9215384848d2a62d6095fb68ed984413a9d08a79c71fbd9e0",

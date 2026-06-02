@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/virtuoso-support-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-virtuoso-support-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-virtuoso-support-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cbfc0e34f3b6bfa39afe9a29f49fc3e9e7cae040bf4a690b878bf62f124794cd",

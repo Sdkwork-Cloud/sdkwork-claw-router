@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vlan-linux-client@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vlan-linux-client-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vlan-linux-client-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:96cc7cd5410203e2d48c6905220793af1d991137bfa88aea51df8f88118915ff",

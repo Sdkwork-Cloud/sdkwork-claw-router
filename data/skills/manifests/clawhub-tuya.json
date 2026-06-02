@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tuya@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tuya-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tuya-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f55b23fa5eca013aeeff5b6308bbf17b92b00b4d68f0641e749d6528f5b262d0",

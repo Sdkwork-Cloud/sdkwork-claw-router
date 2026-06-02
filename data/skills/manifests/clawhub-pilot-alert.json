@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-alert@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-alert-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-alert-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5f64b83a5b8473df06100b31d9a2988ca9f944dbd58ec5324be231ac26358453",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-card-signing-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-card-signing-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-card-signing-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8c5ae683a2384ad5396b31ead7a27f6b341fa9d5d855613920221fc2c5554802",

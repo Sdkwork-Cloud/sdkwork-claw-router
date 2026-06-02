@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/peninsula@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-peninsula-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-peninsula-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5fd400059a9dec36f4098585fecf689bb9ec08642b9e094e28f1ce21e3b92a33",

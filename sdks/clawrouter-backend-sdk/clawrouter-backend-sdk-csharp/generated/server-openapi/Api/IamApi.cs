@@ -16,54 +16,6 @@ namespace Sdkwork.ClawRouter.Backend.Api
         }
 
         /// <summary>
-        /// List groups
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsListResult?> AccessGroupsListAsync()
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsListResult>(ApiPaths.BackendPath("/iam/access_groups"));
-        }
-
-        /// <summary>
-        /// Create group
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsCreateResult?> AccessGroupsCreateAsync(Sdkwork.ClawRouter.Backend.Models.AdminAccessGroupCreateRequest body)
-        {
-            return await _client.PostAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsCreateResult>(ApiPaths.BackendPath("/iam/access_groups"), body, null, null, "application/json");
-        }
-
-        /// <summary>
-        /// Delete group
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsDeleteResult?> AccessGroupsDeleteAsync(string groupId)
-        {
-            return await _client.DeleteAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsDeleteResult>(ApiPaths.BackendPath($"/iam/access_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}"));
-        }
-
-        /// <summary>
-        /// Update group
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsUpdateResult?> AccessGroupsUpdateAsync(string groupId, Sdkwork.ClawRouter.Backend.Models.AdminAccessGroupUpdateRequest body)
-        {
-            return await _client.PatchAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsUpdateResult>(ApiPaths.BackendPath($"/iam/access_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}"), body, null, null, "application/json");
-        }
-
-        /// <summary>
-        /// List group channel bindings
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsListResult?> AccessGroupsChannelBindingsListAsync(string groupId)
-        {
-            return await _client.GetAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsListResult>(ApiPaths.BackendPath($"/iam/access_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}/channel_bindings"));
-        }
-
-        /// <summary>
-        /// Replace group channel bindings
-        /// </summary>
-        public async Task<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsUpdateResult?> AccessGroupsChannelBindingsUpdateAsync(string groupId, Sdkwork.ClawRouter.Backend.Models.AdminAccessGroupChannelBindingsReplaceRequest body)
-        {
-            return await _client.PutAsync<Sdkwork.ClawRouter.Backend.Models.AccessGroupsChannelBindingsUpdateResult>(ApiPaths.BackendPath($"/iam/access_groups/{SerializePathParameter(groupId, new PathParameterSpec("groupId", "simple", false))}/channel_bindings"), body, null, null, "application/json");
-        }
-
-        /// <summary>
         /// List API key map
         /// </summary>
         public async Task<Sdkwork.ClawRouter.Backend.Models.ApiKeysListResult?> ApiKeysListAsync()

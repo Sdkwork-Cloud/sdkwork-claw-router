@@ -115,7 +115,6 @@ async fn transaction_center_provider_account_create_persists_to_database() {
 
     let body = Body::from(
         json!({
-            "accountNo": "acct-paypal-sandbox",
             "providerCode": "paypal",
             "merchantId": "merchant-paypal-1",
             "environment": "sandbox",
@@ -145,7 +144,9 @@ async fn transaction_center_provider_account_create_persists_to_database() {
     .await;
 
     assert_eq!("2000", payload["code"]);
-    assert_eq!("acct-paypal-sandbox", payload["data"]["item"]["accountNo"]);
+    let account_no = payload["data"]["item"]["accountNo"].as_str().unwrap();
+    assert!(account_no.starts_with("pacc-"));
+    assert_eq!(37, account_no.len());
     assert_eq!("paypal", payload["data"]["item"]["providerCode"]);
     assert_eq!("2026-04-29 10:00:00", payload["data"]["item"]["rotatedAt"]);
     assert_eq!(
@@ -164,7 +165,6 @@ async fn transaction_center_provider_account_create_persists_to_database() {
         .header("x-request-id", "provider-account-request-1")
         .body(Body::from(
             json!({
-                "accountNo": "acct-paypal-sandbox",
                 "providerCode": "paypal",
                 "merchantId": "merchant-paypal-1",
                 "environment": "sandbox",
@@ -187,6 +187,10 @@ async fn transaction_center_provider_account_create_persists_to_database() {
         payload["data"]["item"]["id"],
         replay_payload["data"]["item"]["id"]
     );
+    assert_eq!(
+        payload["data"]["item"]["accountNo"],
+        replay_payload["data"]["item"]["accountNo"]
+    );
 
     let conflicting_note_replay = signed_request_builder(
         "POST",
@@ -197,7 +201,6 @@ async fn transaction_center_provider_account_create_persists_to_database() {
     .header("x-request-id", "provider-account-request-1")
     .body(Body::from(
         json!({
-            "accountNo": "acct-paypal-sandbox",
             "providerCode": "paypal",
             "merchantId": "merchant-paypal-1",
             "environment": "sandbox",
@@ -228,7 +231,6 @@ async fn transaction_center_provider_account_create_persists_to_database() {
     .header("idempotency-key", "provider-account-create-1")
     .body(Body::from(
         json!({
-            "accountNo": "acct-paypal-second",
             "providerCode": "paypal",
             "merchantId": "merchant-paypal-1",
             "environment": "sandbox",
@@ -261,10 +263,10 @@ async fn transaction_center_provider_account_create_persists_to_database() {
     let list_items = list_payload["data"]["items"].as_array().unwrap();
     assert!(list_items
         .iter()
-        .any(|item| item["accountNo"] == "acct-paypal-sandbox"));
+        .any(|item| item["accountNo"] == account_no));
     let created_list_item = list_items
         .iter()
-        .find(|item| item["accountNo"] == "acct-paypal-sandbox")
+        .find(|item| item["accountNo"] == account_no)
         .unwrap()
         .clone();
     assert_eq!(
@@ -273,12 +275,12 @@ async fn transaction_center_provider_account_create_persists_to_database() {
     );
     let replayed_items = list_items
         .iter()
-        .filter(|item| item["accountNo"] == "acct-paypal-sandbox")
+        .filter(|item| item["accountNo"] == account_no)
         .count();
     assert_eq!(1, replayed_items);
     assert!(!list_items
         .iter()
-        .any(|item| item["accountNo"] == "acct-paypal-second"));
+        .any(|item| item["accountNo"] == "acct-paypal-sandbox"));
 
     let audit_pool = catalog.open_pool().await.unwrap();
     let audit_rows = sqlx::query_as::<_, (String, String, String, String, i64, i64, String)>(
@@ -307,7 +309,7 @@ async fn transaction_center_provider_account_create_persists_to_database() {
     assert_eq!(1, audit.5);
     assert!(audit.6.starts_with("transaction-center-audit-"));
     let change_summary: Value = serde_json::from_str(&audit.3).unwrap();
-    assert_eq!("acct-paypal-sandbox", change_summary["accountNo"]);
+    assert_eq!(account_no, change_summary["accountNo"]);
     assert_eq!("paypal", change_summary["providerCode"]);
     assert_eq!("sandbox", change_summary["environment"]);
     assert_eq!(
@@ -322,6 +324,320 @@ async fn transaction_center_provider_account_create_persists_to_database() {
 }
 
 #[tokio::test]
+async fn transaction_center_provider_account_crud_and_status_commands_persist_to_database() {
+    let catalog = seeded_sqlite_catalog().await.unwrap();
+    let pool = catalog.open_pool().await.unwrap();
+    create_transaction_center_schema(&pool).await;
+    seed_transaction_center_data(&pool).await;
+    let router = transaction_center_router(&pool);
+
+    let create_payload = request_json(
+        router.clone(),
+        signed_request_builder(
+            "POST",
+            "/backend/v3/api/payments/provider_accounts",
+            default_trusted_request_subject(),
+        )
+        .header("idempotency-key", "provider-account-crud-create-1")
+        .body(Body::from(
+            json!({
+                "providerCode": "stripe",
+                "accountRole": "service_provider",
+                "merchantId": "acct-service-main",
+                "environment": "sandbox",
+                "countryCode": "US",
+                "settlementCurrency": "USD",
+                "secretRef": "vault://payments/stripe/service",
+                "webhookSecretRef": "vault://payments/stripe/service/webhook",
+                "clientRequestNo": "client-provider-account-crud-create-1",
+                "note": "service provider account for marketplace routing",
+                "status": "inactive"
+            })
+            .to_string(),
+        ))
+        .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", create_payload["code"]);
+    let provider_account_id = create_payload["data"]["item"]["id"].as_str().unwrap();
+    let created_account_no = create_payload["data"]["item"]["accountNo"]
+        .as_str()
+        .unwrap();
+    assert!(created_account_no.starts_with("pacc-"));
+    assert_eq!(
+        "service_provider",
+        create_payload["data"]["item"]["accountRole"]
+    );
+
+    let update_payload = request_json(
+        router.clone(),
+        signed_request_builder(
+            "PATCH",
+            &format!("/backend/v3/api/payments/provider_accounts/{provider_account_id}"),
+            default_trusted_request_subject(),
+        )
+        .header("idempotency-key", "provider-account-crud-update-1")
+        .body(Body::from(
+            json!({
+                "providerCode": "stripe",
+                "accountRole": "service_provider",
+                "merchantId": "acct-service-updated",
+                "environment": "production",
+                "countryCode": "US",
+                "settlementCurrency": "USD",
+                "secretRef": "vault://payments/stripe/service-production",
+                "webhookSecretRef": "vault://payments/stripe/service-production/webhook",
+                "certificateRef": "vault://payments/stripe/service-production/cert",
+                "rotatedAt": "2026-06-01 12:00:00",
+                "clientRequestNo": "client-provider-account-crud-update-1",
+                "note": "production service provider account",
+                "status": "active"
+            })
+            .to_string(),
+        ))
+        .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", update_payload["code"]);
+    assert_eq!(
+        created_account_no,
+        update_payload["data"]["item"]["accountNo"]
+    );
+    assert_eq!(
+        "acct-service-updated",
+        update_payload["data"]["item"]["merchantId"]
+    );
+    assert_eq!("production", update_payload["data"]["item"]["environment"]);
+    assert_eq!(
+        "production service provider account",
+        update_payload["data"]["item"]["note"]
+    );
+
+    let disable_payload = request_json(
+        router.clone(),
+        signed_request_builder(
+            "PATCH",
+            &format!("/backend/v3/api/payments/provider_accounts/{provider_account_id}/status"),
+            default_trusted_request_subject(),
+        )
+        .header("idempotency-key", "provider-account-crud-disable-1")
+        .body(Body::from(
+            json!({
+                "status": "disabled",
+                "clientRequestNo": "client-provider-account-crud-disable-1",
+                "note": "disabled while rotating provider credentials"
+            })
+            .to_string(),
+        ))
+        .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", disable_payload["code"]);
+    assert_eq!("disabled", disable_payload["data"]["item"]["status"]);
+    assert_eq!(
+        "disabled while rotating provider credentials",
+        disable_payload["data"]["item"]["note"]
+    );
+
+    let enable_payload = request_json(
+        router.clone(),
+        signed_request_builder(
+            "PATCH",
+            &format!("/backend/v3/api/payments/provider_accounts/{provider_account_id}/status"),
+            default_trusted_request_subject(),
+        )
+        .header("idempotency-key", "provider-account-crud-enable-1")
+        .body(Body::from(
+            json!({
+                "status": "active",
+                "clientRequestNo": "client-provider-account-crud-enable-1",
+                "note": "credentials rotation verified"
+            })
+            .to_string(),
+        ))
+        .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", enable_payload["code"]);
+    assert_eq!("active", enable_payload["data"]["item"]["status"]);
+
+    let delete_payload = request_json(
+        router.clone(),
+        signed_request(
+            "DELETE",
+            &format!("/backend/v3/api/payments/provider_accounts/{provider_account_id}"),
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", delete_payload["code"]);
+    assert_eq!(true, delete_payload["data"]["deleted"]);
+
+    let list_payload = request_json(
+        router,
+        signed_request(
+            "GET",
+            "/backend/v3/api/payments/provider_accounts",
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert!(!list_payload["data"]["items"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .any(|item| item["id"] == provider_account_id));
+
+    pool.close().await;
+}
+
+#[tokio::test]
+async fn transaction_center_provider_account_active_status_is_exclusive_per_channel_scope() {
+    let catalog = seeded_sqlite_catalog().await.unwrap();
+    let pool = catalog.open_pool().await.unwrap();
+    create_transaction_center_schema(&pool).await;
+    seed_transaction_center_data(&pool).await;
+    let router = transaction_center_router(&pool);
+
+    let create_payload = request_json(
+        router.clone(),
+        signed_request_builder(
+            "POST",
+            "/backend/v3/api/payments/provider_accounts",
+            default_trusted_request_subject(),
+        )
+        .header("idempotency-key", "provider-account-exclusive-create-1")
+        .body(Body::from(
+            json!({
+                "providerCode": "stripe",
+                "accountRole": "merchant",
+                "merchantId": "merchant-stripe-backup",
+                "environment": "sandbox",
+                "countryCode": "US",
+                "settlementCurrency": "USD",
+                "secretRef": "vault://payments/stripe/backup",
+                "webhookSecretRef": "vault://payments/stripe/backup/webhook",
+                "clientRequestNo": "client-provider-account-exclusive-create-1",
+                "note": "backup account promoted into the channel account pool",
+                "status": "active"
+            })
+            .to_string(),
+        ))
+        .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", create_payload["code"]);
+    let backup_provider_account_id = create_payload["data"]["item"]["id"].as_str().unwrap();
+    let backup_account_no = create_payload["data"]["item"]["accountNo"]
+        .as_str()
+        .unwrap();
+    assert!(backup_account_no.starts_with("pacc-"));
+    assert_eq!("active", create_payload["data"]["item"]["status"]);
+
+    let list_after_create = request_json(
+        router.clone(),
+        signed_request(
+            "GET",
+            "/backend/v3/api/payments/provider_accounts?provider_code=stripe",
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", list_after_create["code"]);
+    assert_provider_account_status(&list_after_create, "acct-stripe-main", "inactive");
+    assert_provider_account_status(&list_after_create, backup_account_no, "active");
+
+    let enable_original_payload = request_json(
+        router.clone(),
+        signed_request_builder(
+            "PATCH",
+            "/backend/v3/api/payments/provider_accounts/provider-account-stripe/status",
+            default_trusted_request_subject(),
+        )
+        .header(
+            "idempotency-key",
+            "provider-account-exclusive-enable-original-1",
+        )
+        .body(Body::from(
+            json!({
+                "status": "active",
+                "clientRequestNo": "client-provider-account-exclusive-enable-original-1",
+                "note": "restore primary account as the only available account"
+            })
+            .to_string(),
+        ))
+        .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", enable_original_payload["code"]);
+    assert_eq!("active", enable_original_payload["data"]["item"]["status"]);
+
+    let list_after_enable = request_json(
+        router.clone(),
+        signed_request(
+            "GET",
+            "/backend/v3/api/payments/provider_accounts?provider_code=stripe",
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", list_after_enable["code"]);
+    assert_provider_account_status(&list_after_enable, "acct-stripe-main", "active");
+    assert_provider_account_status(&list_after_enable, backup_account_no, "inactive");
+    assert_ne!(
+        "active",
+        provider_account_status(&list_after_enable, backup_provider_account_id)
+    );
+
+    let update_backup_payload = request_json(
+        router.clone(),
+        signed_request_builder(
+            "PATCH",
+            &format!("/backend/v3/api/payments/provider_accounts/{backup_provider_account_id}"),
+            default_trusted_request_subject(),
+        )
+        .header(
+            "idempotency-key",
+            "provider-account-exclusive-update-backup-1",
+        )
+        .body(Body::from(
+            json!({
+                "providerCode": "stripe",
+                "accountRole": "merchant",
+                "merchantId": "merchant-stripe-backup",
+                "environment": "sandbox",
+                "countryCode": "US",
+                "settlementCurrency": "USD",
+                "secretRef": "vault://payments/stripe/backup-rotated",
+                "webhookSecretRef": "vault://payments/stripe/backup-rotated/webhook",
+                "clientRequestNo": "client-provider-account-exclusive-update-backup-1",
+                "note": "promote rotated backup account as the only available account",
+                "status": "active"
+            })
+            .to_string(),
+        ))
+        .unwrap(),
+    )
+    .await;
+    assert_eq!("2000", update_backup_payload["code"]);
+    assert_eq!("active", update_backup_payload["data"]["item"]["status"]);
+
+    let list_after_update = request_json(
+        router,
+        signed_request(
+            "GET",
+            "/backend/v3/api/payments/provider_accounts?provider_code=stripe",
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", list_after_update["code"]);
+    assert_provider_account_status(&list_after_update, "acct-stripe-main", "inactive");
+    assert_provider_account_status(&list_after_update, backup_account_no, "active");
+    pool.close().await;
+}
+
+#[tokio::test]
 async fn transaction_center_provider_account_create_rejects_contract_invalid_fields() {
     let catalog = seeded_sqlite_catalog().await.unwrap();
     let pool = catalog.open_pool().await.unwrap();
@@ -331,9 +647,9 @@ async fn transaction_center_provider_account_create_rejects_contract_invalid_fie
 
     assert_provider_account_create_rejects_patch(
         router.clone(),
-        "account-no-pattern",
-        json!({ "accountNo": "acct paypal sandbox" }),
-        "accountNo must match ^[A-Za-z0-9_-]+$",
+        "unknown-account-no",
+        json!({ "accountNo": "acct-paypal-sandbox" }),
+        "unknown field `accountNo`",
     )
     .await;
     assert_provider_account_create_rejects_patch(
@@ -592,7 +908,6 @@ async fn transaction_center_payment_runtime_projection_standardizes_appbase_meth
 
 fn valid_provider_account_body() -> Value {
     json!({
-        "accountNo": "acct-paypal-sandbox",
         "providerCode": "paypal",
         "merchantId": "merchant-paypal-1",
         "environment": "sandbox",
@@ -663,6 +978,27 @@ fn assert_server_request_id(value: &str, client_header_value: &str) {
         matches!(bytes[19], b'8' | b'9' | b'a' | b'b'),
         "request id must use the RFC 4122 UUID variant"
     );
+}
+
+fn assert_provider_account_status(payload: &Value, account_no: &str, expected_status: &str) {
+    assert_eq!(
+        expected_status,
+        provider_account_status(payload, account_no),
+        "{account_no} should be {expected_status}"
+    );
+}
+
+fn provider_account_status(payload: &Value, account_no_or_id: &str) -> String {
+    payload["data"]["items"]
+        .as_array()
+        .and_then(|items| {
+            items.iter().find_map(|item| {
+                let matches_account = item["accountNo"].as_str() == Some(account_no_or_id)
+                    || item["id"].as_str() == Some(account_no_or_id);
+                matches_account.then(|| item["status"].as_str().unwrap_or_default().to_owned())
+            })
+        })
+        .unwrap_or_default()
 }
 
 async fn request_json(router: axum::Router, request: Request<Body>) -> Value {
@@ -823,7 +1159,7 @@ async fn create_transaction_center_schema(pool: &SqlitePool) {
             rotated_at TEXT,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
-            UNIQUE (tenant_id, account_no)
+            UNIQUE (account_no)
         )"#,
         r#"CREATE TABLE ops_audit_log (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

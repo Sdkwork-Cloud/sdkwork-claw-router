@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/genshin-impact@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-genshin-impact-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-genshin-impact-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cba2b25995cd75dcb4b6ed3350fbae34ed6a8eb5e5509946b2ecdae2c5125d3c",

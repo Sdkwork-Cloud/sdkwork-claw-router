@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/karpathy-coding-guidelines@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-coding-guidelines-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-karpathy-coding-guidelines-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:34d86dc162503614efafe58648ac432e540824fd3b69dd2578568b18828c607b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chatskillproject@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chatskillproject-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chatskillproject-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:399640c5079dce6146dda16115ba15464a123e3a76ff006d834919364f6ef3aa",

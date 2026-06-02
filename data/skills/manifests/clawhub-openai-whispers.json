@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openai-whispers@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openai-whispers-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openai-whispers-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:40dd6e6dc8c7d045025dbf94d5a9a9853786ab0df090140f0611fec9b90d78b0",

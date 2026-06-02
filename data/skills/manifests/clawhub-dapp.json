@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dapp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dapp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dapp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6fbe027181e243bb3131533d82f66e100be021282f3223f6aa949861baef1f1b",

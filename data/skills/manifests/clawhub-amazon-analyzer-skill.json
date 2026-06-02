@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-analyzer-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-analyzer-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-analyzer-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:53d96b0243e88fbb2728560fd9140c57865c4565b4046a8a58f123549b9c7fa9",

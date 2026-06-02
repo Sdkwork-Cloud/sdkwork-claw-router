@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stata-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stata-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stata-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:420ad640ca1e446a6efef7c0c0e18748506eddb93931a2281dc0f2a35f56c5b6",

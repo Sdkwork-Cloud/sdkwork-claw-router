@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/translate-manual@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-translate-manual-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-translate-manual-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b18781d648b5593006d3c8ee8fc9b7981d1b2e647dda5f05b0e9cce2fa66fe4",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-timezone@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-timezone-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-timezone-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:64b8bfaf032c14cb115d30d45594adc4f757eb42233c7cadd5fa07809f64d41d",

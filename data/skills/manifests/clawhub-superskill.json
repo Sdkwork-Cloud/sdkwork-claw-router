@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/superskill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-superskill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-superskill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1c85bf1da5d0c8b0f7db8d24e16410682d08afce04832b2b72cdd565f930f2e",

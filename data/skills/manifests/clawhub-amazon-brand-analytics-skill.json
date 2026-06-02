@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-brand-analytics-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-brand-analytics-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-brand-analytics-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:314a2e53fc6216144940a134949a7d390d619ecb849b614fd47e8299a0bf5634",

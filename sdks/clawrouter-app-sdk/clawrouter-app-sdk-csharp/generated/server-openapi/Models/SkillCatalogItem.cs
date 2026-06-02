@@ -14,13 +14,13 @@ namespace Sdkwork.ClawRouter.App.Models
         public List<string>? Features { get; set; }
         public List<string>? Frameworks { get; set; }
         public string? Id { get; set; }
-        public string? Image { get; set; }
+        public MediaResource? Image { get; set; }
         public string? LastUpdated { get; set; }
         public string? License { get; set; }
         public string? Name { get; set; }
         public List<SkillPackageItem>? Packages { get; set; }
         public double? Rating { get; set; }
-        public List<string>? Screenshots { get; set; }
+        public List<MediaResource>? Screenshots { get; set; }
         public string? Size { get; set; }
         public string? Version { get; set; }
     }

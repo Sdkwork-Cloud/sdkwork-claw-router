@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/firstup@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-firstup-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-firstup-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:afff876542f2b8e6bfff791acba0d12e791788c7c416a15dbdd144fc6118e42e",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anthropic-integration@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-anthropic-integration-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anthropic-integration-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1aa6a9fd9caaa41a874a4cd9960b345e580d3bcf16b3d0b2239ad2644f204af9",

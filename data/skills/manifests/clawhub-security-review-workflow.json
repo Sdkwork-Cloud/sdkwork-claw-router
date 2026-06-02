@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-review-workflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-review-workflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-review-workflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d079b29463b562f931d9c7386e167014baee5009456c9310d67958dbd649336",

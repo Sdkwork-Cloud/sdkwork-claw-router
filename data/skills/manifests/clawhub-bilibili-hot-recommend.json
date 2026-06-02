@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bilibili-hot-recommend@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-hot-recommend-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bilibili-hot-recommend-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cbddc723b80e25a342063a084c97074095c4aaefa86e6c10c6883344d237b1f2",

@@ -31,7 +31,7 @@ frontend_models:
   - packages.features.id
   - packages.features.name
   - packages.features.description
-  - packages.features.icon
+  - packages.features.iconKey
   - packages.features.included
   - packages.isPopular
   - packages.isRecommended
@@ -65,7 +65,7 @@ frontend_models:
   - features.id
   - features.name
   - features.description
-  - features.icon
+  - features.iconKey
   - features.included
   - isPopular
   - isRecommended
@@ -84,7 +84,7 @@ frontend_models:
   - id
   - name
   - description
-  - icon
+  - iconKey
   - included
   data_sources:
   - commerce_membership_entitlement
@@ -135,7 +135,7 @@ frontend_models:
   - groups.packages.features.id
   - groups.packages.features.name
   - groups.packages.features.description
-  - groups.packages.features.icon
+  - groups.packages.features.iconKey
   - groups.packages.features.included
   - groups.packages.isPopular
   - groups.packages.isRecommended
@@ -165,7 +165,7 @@ frontend_models:
   - paymentId
   - cashierUrl
   - qrCodePayload
-  - qrCodeImageUrl
+  - qrCode
   - requestPaymentPayload
   data_sources:
   - commerce_order

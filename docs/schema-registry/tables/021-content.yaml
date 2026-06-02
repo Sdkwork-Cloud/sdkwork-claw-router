@@ -302,7 +302,9 @@ tables:
     course_code: string(64)
     title: string(200)
     description: text
-    thumbnail_url: string(1024)
+    thumbnail_media_resource_id: string(128)
+    thumbnail_object_blob_id: int64
+    thumbnail_resource_snapshot: json
     instructor_snapshot: json
     duration_text: string(64)
     lessons_count: int32
@@ -383,7 +385,9 @@ tables:
     lesson_no: int32
     title: string(200)
     description: text
-    video_url: string(1024)
+    video_media_resource_id: string(128)
+    video_object_blob_id: int64
+    video_resource_snapshot: json
     external_bvid: string(64)
     source_provider: string(64)
     duration_seconds: int64
@@ -452,7 +456,9 @@ tables:
     description: text
     source_provider: string(64)
     external_bvid: string(64)
-    video_url: string(1024)
+    video_media_resource_id: string(128)
+    video_object_blob_id: int64
+    video_resource_snapshot: json
     contact_name: string(128)
     contact_email: string(254)
     submitted_at: instant

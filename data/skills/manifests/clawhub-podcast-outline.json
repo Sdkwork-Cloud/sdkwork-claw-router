@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podcast-outline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-podcast-outline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podcast-outline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:662604362eba94099c74f70e69641a1632ce8b2091cd3056e6ace0781090e8fd",

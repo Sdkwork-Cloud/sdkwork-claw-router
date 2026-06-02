@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wisdom-forum-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wisdom-forum-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wisdom-forum-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1852f76bef8904a460fbcba749d7bc4605ff0753f3599541502d321fa1d2389e",

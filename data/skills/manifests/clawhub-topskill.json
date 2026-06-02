@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/topskill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-topskill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-topskill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4118943bd8e32d735267abbcf3712bc17b92278e01f12c5e375123fe9b1284b4",

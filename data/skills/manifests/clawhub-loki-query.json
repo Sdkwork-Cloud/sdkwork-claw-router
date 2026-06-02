@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/loki-query@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-loki-query-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-loki-query-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ccaf3fe4df4f1f6e8cf78dfbac7a8e38c3df1d050d4cc230131fc9a416c2e584",

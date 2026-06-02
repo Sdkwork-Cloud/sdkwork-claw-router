@@ -4,10 +4,10 @@ package types
 type CommerceProductMediaItem struct {
 	AltText string `json:"altText"`
 	Id string `json:"id"`
-	MediaType string `json:"mediaType"`
+	MediaRole string `json:"mediaRole"`
 	OwnerId string `json:"ownerId"`
 	OwnerType string `json:"ownerType"`
+	Resource MediaResource `json:"resource"`
 	SortOrder int `json:"sortOrder"`
 	Status string `json:"status"`
-	Url string `json:"url"`
 }

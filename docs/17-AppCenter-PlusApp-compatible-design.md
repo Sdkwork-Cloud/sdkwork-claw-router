@@ -14,10 +14,10 @@ AppCenter 必须沿用 Java 侧 `PlusApp` 设计体系，数据库主数据表�
 
 | 能力 | 标准数据源 | 说明 |
 | --- | --- | --- |
-| 应用基础信息 | `plus_app` | `name`、`description`、`version`、`icon`、`icon_url`、`access_url`、`status`、`app_type` |
+| 应用基础信息 | `plus_app` | `name`、`description`、`version`、`icon_resource_snapshot`、`access_url`、`status`、`app_type`；API/view model 输出 `icon: MediaResource` |
 | 应用分类 | `plus_category` | App Store 分类统一读取 `plus_category` 中 `type=999999`、`group_name=app-store` 的分类树；`plus_app.app_type` 仅保留为应用运行类型/兼容字段，不再作为分类事实来源 |
 | 开发者名称 | `plus_user` + `plus_app.user_id` | Java `AppStoreAppService` 优先取 `PlusUser.nickname/username`，兜底取 `installSkill.name` 或 `SDKWork` |
-| 图标/封面/截图 | `plus_app.icon`、`plus_app.icon_url`、`plus_app.resource_list` | 前端 `image/screenshots` 由适配层从资源列表筛选 cover/screenshot，不改变 UI |
+| 图标/封面/截图 | `plus_app.icon_resource_snapshot`、`plus_app.cover_resource_snapshot`、`plus_app.resource_list` | 前端 `image/screenshots` 保持为 `MediaResource` 对象，由适配层从资源列表筛选 cover/screenshot；只在 `<img>`/下载等具体边界解析 URL |
 | 平台支持 | `plus_app.platforms`、`plus_app.install_platforms` | 对应前端 `PlatformType` 与 `OS` 筛选能力 |
 | 下载包 | `plus_app.install_config` | `AppDetailVO.releases/currentRelease` 已将 install packages 和 release notes 解析为前端下载所需结构 |
 | 发布说明 | `plus_app.release_notes` | 对应前端 `whatsNew`、版本号、发布时间、当前版本 |
@@ -68,7 +68,7 @@ Backend/Admin 走 backend-api 标准，路径沿用 Java：
 | `name` | `AppVO.name` / `plus_app.name` | 直接映射 |
 | `developer` | `AppVO.developer` | 由 `PlusUser` 或 `installSkill.name` 补齐 |
 | `category` | `AppVO.category` | 由 `plus_category.name` 投影；前端无需改 UI |
-| `image` | `iconUrl`、`icon.url`、`resourceList.cover` | 优先 `iconUrl`，再取图标资源，再取资源列表首个 cover |
+| `image` | `icon: MediaResource`、`cover: MediaResource`、`resourceList.cover` | 优先图标资源，再取资源列表首个 cover；view model 保持媒体对象，图片 URL 只在渲染边界读取 |
 | `rating` | `studio_catalog_action` 聚合 | 无行为数据时可返回默认空值/0，不写入 `plus_app` |
 | `downloads` | `studio_catalog_action` 聚合 | 前端展示文本由适配层格式化，例如 `450k+` |
 | `description` | `AppVO.description` / `plus_app.description` | 直接映射 |

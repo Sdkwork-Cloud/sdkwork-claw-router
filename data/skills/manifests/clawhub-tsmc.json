@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tsmc@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tsmc-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tsmc-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d76b346ca393bfbbd80000e07354dc50abffd54d3e1490ff516d180c5cd553cc",

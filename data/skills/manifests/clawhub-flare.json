@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flare@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-flare-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flare-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7ed55a14b9707c44979753ba1dda04551ea7217c8c30d00af363576ae0c14c1a",

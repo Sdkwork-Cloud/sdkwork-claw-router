@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-tts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-tts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-tts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:49a9b9638694d94b0cea679dc9ee866534e6a83badc1adbd6f0c148c03e4411f",

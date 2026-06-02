@@ -123,6 +123,7 @@ LIMIT 1
 
 const LOAD_RECHARGE_PACK_BY_ID: &str = r#"
 SELECT
+    p.id AS package_id,
     COALESCE(NULLIF(p.name, ''), 'Points recharge package') AS name,
     CAST(p.price_amount AS TEXT) AS price_amount,
     COALESCE(NULLIF(p.currency_code, ''), 'CNY') AS currency_code,
@@ -150,6 +151,7 @@ LIMIT 1
 
 const LOAD_RECHARGE_PACK_BY_ID_PUBLIC: &str = r#"
 SELECT
+    p.id AS package_id,
     COALESCE(NULLIF(p.name, ''), 'Points recharge package') AS name,
     CAST(p.price_amount AS TEXT) AS price_amount,
     COALESCE(NULLIF(p.currency_code, ''), 'CNY') AS currency_code,
@@ -168,6 +170,7 @@ LIMIT 1
 
 const LOAD_RECHARGE_PACK_FOR_AMOUNT: &str = r#"
 SELECT
+    p.id AS package_id,
     COALESCE(NULLIF(p.name, ''), 'Points recharge package') AS name,
     CAST(p.price_amount AS TEXT) AS price_amount,
     COALESCE(NULLIF(p.currency_code, ''), 'CNY') AS currency_code,
@@ -196,6 +199,7 @@ LIMIT 1
 
 const LOAD_RECHARGE_PACK_FOR_AMOUNT_PUBLIC: &str = r#"
 SELECT
+    p.id AS package_id,
     COALESCE(NULLIF(p.name, ''), 'Points recharge package') AS name,
     CAST(p.price_amount AS TEXT) AS price_amount,
     COALESCE(NULLIF(p.currency_code, ''), 'CNY') AS currency_code,
@@ -353,6 +357,57 @@ ORDER BY COALESCE(pa.created_at, pi.created_at, o.created_at) DESC, o.id DESC
 LIMIT 1
 "#;
 
+const LOAD_REUSABLE_RECHARGE_CHECKOUT: &str = r#"
+SELECT
+    o.id AS order_id,
+    pi.id AS payment_id,
+    pa.id AS payment_attempt_id,
+    COALESCE(NULLIF(o.order_no, ''), NULLIF(pa.out_trade_no, ''), '-') AS order_no,
+    COALESCE(NULLIF(pa.out_trade_no, ''), NULLIF(o.order_no, ''), '-') AS out_trade_no,
+    CAST(COALESCE(NULLIF(pa.amount, ''), NULLIF(pi.amount, ''), '0') AS TEXT) AS amount,
+    COALESCE(NULLIF(pa.currency_code, ''), NULLIF(pi.currency_code, ''), NULLIF(o.currency_code, ''), 'CNY') AS currency_code,
+    CAST(COALESCE(
+        NULLIF(json_extract(COALESCE(pa.callback_payload, '{}'), '$.points'), ''),
+        '0'
+    ) AS TEXT) AS points_value,
+    COALESCE(NULLIF(pa.provider, ''), NULLIF(pi.provider, ''), '-') AS payment_method,
+    o.status AS order_status,
+    pi.status AS payment_status,
+    pa.status AS payment_attempt_status,
+    CAST(o.created_at AS TEXT) AS created_at,
+    CAST(COALESCE(o.expired_at, '') AS TEXT) AS expires_at,
+    CAST(COALESCE(pa.paid_at, o.paid_at, '') AS TEXT) AS paid_at
+FROM commerce_order o
+JOIN commerce_payment_intent pi
+    ON pi.tenant_id = o.tenant_id
+   AND (pi.organization_id IS NULL OR o.organization_id IS NULL OR pi.organization_id = o.organization_id)
+   AND pi.order_id = o.id
+JOIN commerce_payment_attempt pa
+    ON pa.tenant_id = o.tenant_id
+   AND (pa.organization_id IS NULL OR o.organization_id IS NULL OR pa.organization_id = o.organization_id)
+   AND pa.order_id = o.id
+WHERE o.tenant_id = CAST(?1 AS TEXT)
+  AND ((o.organization_id = CAST(?2 AS TEXT)) OR (o.organization_id IS NULL AND ?2 IS NULL))
+  AND o.owner_user_id = CAST(?3 AS TEXT)
+  AND o.subject = 'points_recharge'
+  AND CAST(COALESCE(NULLIF(pa.amount, ''), NULLIF(pi.amount, ''), '0') AS TEXT) IN (?4, ?5, ?6)
+  AND COALESCE(NULLIF(pa.currency_code, ''), NULLIF(pi.currency_code, ''), NULLIF(o.currency_code, ''), 'CNY') = ?7
+  AND CAST(COALESCE(
+        NULLIF(json_extract(COALESCE(pa.callback_payload, '{}'), '$.points'), ''),
+        '0'
+      ) AS INTEGER) = ?8
+  AND COALESCE(
+        NULLIF(CAST(json_extract(COALESCE(pa.callback_payload, '{}'), '$.packageId') AS TEXT), ''),
+        ''
+      ) = COALESCE(?9, '')
+  AND LOWER(COALESCE(NULLIF(o.status, ''), 'pending_payment')) IN ('draft', 'pending', 'pending_payment')
+  AND LOWER(COALESCE(NULLIF(pi.status, ''), 'pending')) IN ('created', 'pending', 'processing')
+  AND LOWER(COALESCE(NULLIF(pa.status, ''), 'pending')) IN ('created', 'pending', 'processing')
+  AND (o.expired_at IS NULL OR o.expired_at = '' OR o.expired_at > ?10)
+ORDER BY COALESCE(pa.created_at, pi.created_at, o.created_at) DESC, o.id DESC
+LIMIT 1
+"#;
+
 #[derive(Debug, Clone)]
 pub struct SqliteCommerceRechargeStore {
     pool: SqlitePool,
@@ -367,6 +422,7 @@ struct RechargeMethod {
 
 #[derive(Debug, Clone)]
 struct RechargePack {
+    id: String,
     name: String,
     price_amount: CommerceMoney,
     currency_code: String,
@@ -469,15 +525,30 @@ impl SqliteCommerceRechargeStore {
             command.organization_id.as_deref(),
         )
         .await?;
-        let method = load_recharge_method(&mut tx, &command).await?;
         let pack = load_recharge_pack(&mut tx, &command).await?;
-        let product = load_recharge_product_sku(&mut tx, &command, pack.as_ref()).await?;
         let credited_points = compute_grant_amount(
             command.amount.as_str(),
             &command.currency_code,
             pack.as_ref().map(|item| item.bonus_points).unwrap_or(0),
             &settings,
         )?;
+        if let Some(reusable_checkout_status) = load_reusable_recharge_checkout_status(
+            &mut tx,
+            &command,
+            pack.as_ref(),
+            credited_points,
+        )
+        .await?
+        {
+            tx.rollback().await.map_err(|error| {
+                store_error("failed to rollback reusable recharge transaction", error)
+            })?;
+            return Ok(recharge_outcome_from_checkout_status(
+                reusable_checkout_status,
+            ));
+        }
+        let method = load_recharge_method(&mut tx, &command).await?;
+        let product = load_recharge_product_sku(&mut tx, &command, pack.as_ref()).await?;
         let product_name = pack
             .as_ref()
             .map(|item| item.name.clone())
@@ -815,6 +886,7 @@ fn map_recharge_pack_row(
     row: &sqlx::sqlite::SqliteRow,
 ) -> Result<RechargePack, CommerceServiceError> {
     Ok(RechargePack {
+        id: string_cell(row, "package_id"),
         name: string_cell(row, "name"),
         price_amount: commerce_money_cell(row, "price_amount", "recharge package price amount")?,
         currency_code: string_cell(row, "currency_code")
@@ -900,6 +972,31 @@ async fn load_recharge_product_sku(
         sku_id: string_cell(&row, "sku_id"),
         product_name: string_cell(&row, "product_name"),
     })
+}
+
+async fn load_reusable_recharge_checkout_status(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &CreatePointsRechargeOrderCommand,
+    pack: Option<&RechargePack>,
+    credited_points: i64,
+) -> Result<Option<CheckoutStatusSnapshot>, CommerceServiceError> {
+    let amount_match = decimal_sql_match_keys(command.amount.as_str());
+    let row = sqlx::query(LOAD_REUSABLE_RECHARGE_CHECKOUT)
+        .bind(&command.tenant_id)
+        .bind(command.organization_id.as_deref())
+        .bind(&command.owner_user_id)
+        .bind(command.amount.as_str())
+        .bind(&amount_match.compact)
+        .bind(&amount_match.one_decimal)
+        .bind(&command.currency_code)
+        .bind(credited_points)
+        .bind(pack.map(|item| item.id.as_str()))
+        .bind(&command.requested_at)
+        .fetch_optional(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to load reusable recharge checkout", error))?;
+
+    row.as_ref().map(map_checkout_status).transpose()
 }
 
 async fn insert_order(
@@ -1113,6 +1210,27 @@ fn recharge_payment_callback_payload(
         "source": source,
     })
     .to_string()
+}
+
+fn recharge_outcome_from_checkout_status(
+    status: CheckoutStatusSnapshot,
+) -> CreatePointsRechargeOrderOutcome {
+    CreatePointsRechargeOrderOutcome {
+        success: true,
+        order_no: status.order_no,
+        out_trade_no: status.out_trade_no,
+        amount: status.amount,
+        currency_code: status.currency_code,
+        points: status.points,
+        provider_code: status.provider_code,
+        payment_method: status.payment_method,
+        payment_product: status.payment_product,
+        status: status.status,
+        next_action: status.next_action,
+        cashier_url: status.cashier_url,
+        qr_code_payload: status.qr_code_payload,
+        request_payment_payload: status.request_payment_payload,
+    }
 }
 
 fn map_checkout_status(

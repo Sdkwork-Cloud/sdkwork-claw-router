@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-caption@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-caption-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-caption-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:82709b8ede27aa4b8e2940ac39f5eb059374d0dd3999bc59b7cb1ef38a1b6f2f",

@@ -10,19 +10,21 @@ type AiChatMessagePartRecord struct {
 	ItemId string `json:"item_id"`
 	JsonContent map[string]JsonValue `json:"json_content"`
 	LegalHold bool `json:"legal_hold"`
+	MediaResourceId string `json:"media_resource_id"`
 	MessageId string `json:"message_id"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	MimeType string `json:"mime_type"`
+	ObjectBlobId string `json:"object_blob_id"`
 	OrganizationId string `json:"organization_id"`
 	PartNo int `json:"part_no"`
 	PartType string `json:"part_type"`
 	PayloadHash string `json:"payload_hash"`
 	ProviderPartId string `json:"provider_part_id"`
 	RequestId string `json:"request_id"`
+	ResourceSnapshot map[string]JsonValue `json:"resource_snapshot"`
 	RetentionUntil string `json:"retention_until"`
 	Sha256 string `json:"sha256"`
 	Status string `json:"status"`
-	StorageUrl string `json:"storage_url"`
 	TenantId string `json:"tenant_id"`
 	TextContent string `json:"text_content"`
 	TraceId string `json:"trace_id"`

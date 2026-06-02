@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taskify-cli@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-taskify-cli-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taskify-cli-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:32ae934320039f89a17eda8e9b56bc54640666556fd0522587f8c15d108ebc4b",

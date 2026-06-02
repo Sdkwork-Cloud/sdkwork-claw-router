@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nightly-build@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nightly-build-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nightly-build-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a1361b27fab391362dc5b3a729f01232998f717dca1c0d3b9f132ab8ef6f1d47",

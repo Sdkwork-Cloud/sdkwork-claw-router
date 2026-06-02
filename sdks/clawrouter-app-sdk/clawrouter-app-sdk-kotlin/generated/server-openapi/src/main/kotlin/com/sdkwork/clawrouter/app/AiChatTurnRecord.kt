@@ -36,6 +36,7 @@ data class AiChatTurnRecord(
     val tenantId: String? = null,
     val traceId: String? = null,
     val turnNo: String? = null,
+    val updatedAt: String? = null,
     val usageSnapshot: Map<String, String>? = null,
     val userId: String? = null,
     val uuid: String? = null

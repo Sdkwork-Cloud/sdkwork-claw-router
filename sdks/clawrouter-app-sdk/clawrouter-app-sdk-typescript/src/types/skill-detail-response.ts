@@ -1,3 +1,4 @@
+import type { MediaResource } from './media-resource';
 import type { SkillPackageItem } from './skill-package-item';
 
 /** Skill detail response schema exposed by Claw Router. */
@@ -19,7 +20,7 @@ export interface SkillDetailResponse {
   /** Id field on skill detail response. */
   id: string;
   /** Image field on skill detail response. */
-  image: string;
+  image: MediaResource;
   /** Last updated field on skill detail response. */
   lastUpdated: string;
   /** License field on skill detail response. */
@@ -31,7 +32,7 @@ export interface SkillDetailResponse {
   /** Rating field on skill detail response. */
   rating: number;
   /** Screenshots field on skill detail response. */
-  screenshots: string[];
+  screenshots: MediaResource[];
   /** Size field on skill detail response. */
   size: string;
   /** Version field on skill detail response. */

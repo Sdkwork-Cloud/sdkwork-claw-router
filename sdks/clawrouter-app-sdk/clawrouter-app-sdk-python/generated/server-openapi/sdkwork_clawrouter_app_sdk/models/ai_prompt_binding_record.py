@@ -11,13 +11,17 @@ class AiPromptBindingRecord:
     data_scope: Optional[str] = None
     deleted_at: Optional[str] = None
     deleted_by: Optional[str] = None
+    enabled: Optional[bool] = None
     id: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
     organization_id: Optional[str] = None
     owner_id: Optional[str] = None
     owner_type: Optional[str] = None
+    policy_json: Optional[Dict[str, str]] = None
+    priority: Optional[int] = None
     prompt_id: Optional[str] = None
     prompt_version_id: Optional[str] = None
+    snapshot_json: Optional[Dict[str, str]] = None
     status: Optional[str] = None
     tenant_id: Optional[str] = None
     updated_at: Optional[str] = None

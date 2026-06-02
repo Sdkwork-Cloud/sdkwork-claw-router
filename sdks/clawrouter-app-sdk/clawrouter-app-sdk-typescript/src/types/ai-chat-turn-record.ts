@@ -72,6 +72,8 @@ export interface AiChatTurnRecord {
   trace_id?: string;
   /** Turn no field on ai chat turn record. */
   turn_no?: string;
+  /** Updated at field on ai chat turn record. */
+  updated_at?: string;
   /** Usage snapshot field on ai chat turn record. */
   usage_snapshot?: Record<string, JsonValue>;
   /** User id field on ai chat turn record. */

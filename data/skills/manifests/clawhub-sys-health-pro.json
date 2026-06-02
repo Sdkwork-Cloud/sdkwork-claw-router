@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sys-health-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sys-health-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sys-health-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a49a282b6b9635da6c3707cc9f7238108b4169b52868accb55bf7e7f3ca797e",

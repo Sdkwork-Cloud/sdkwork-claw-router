@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marsai-weather-forecast@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marsai-weather-forecast-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marsai-weather-forecast-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cb0b9b7c18d2ff2683b1cefcccea21534504bef482a2f6f0e982cdac61a6cf8c",

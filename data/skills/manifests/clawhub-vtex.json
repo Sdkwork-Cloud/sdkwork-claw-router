@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vtex@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-vtex-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vtex-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3ff210f1b5f36eedce90ad2282514435e8f83f74510dc35ef14ef8b33d998545",

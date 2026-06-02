@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-recall@2.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-recall-2.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-recall-2.1.2.json"
+      },
       "version": "2.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:baa155b85f05816e512033b2e9b18aba619f4ea3211f64873a069e95e0d7c995",

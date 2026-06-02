@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sudoku@2.6.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sudoku-2.6.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sudoku-2.6.0.json"
+      },
       "version": "2.6.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9c76c45e4c149767be15058cc805bde14e8914f8d8b285dca87a36d4b9581d3e",

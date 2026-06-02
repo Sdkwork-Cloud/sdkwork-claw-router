@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/currency-exchange@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-currency-exchange-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-currency-exchange-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db8931e5c18c70e3902d65df4441c6156158b55d3a1a9603b770093c11872f8f",

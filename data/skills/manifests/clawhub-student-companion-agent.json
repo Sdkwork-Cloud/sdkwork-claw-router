@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/student-companion-agent@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-student-companion-agent-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-student-companion-agent-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:32121d2abb6ec24134708955893cdc35d598317914a40f17eabcc0caeb6b86e4",

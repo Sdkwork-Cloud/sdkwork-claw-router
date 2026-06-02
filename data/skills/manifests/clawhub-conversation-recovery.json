@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/conversation-recovery@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-conversation-recovery-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-conversation-recovery-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:691fd55838eba0d722f456dfbefd308f63d41a8c472b8efda8ecd01f20693171",

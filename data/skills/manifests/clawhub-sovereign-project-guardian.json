@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sovereign-project-guardian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-project-guardian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sovereign-project-guardian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2feff218739b40adb1f8c5f09d6a8e07cfe636d48148780234c6ba83710fab96",

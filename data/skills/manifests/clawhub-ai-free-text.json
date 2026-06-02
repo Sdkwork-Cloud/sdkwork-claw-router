@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-free-text@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-free-text-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-free-text-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6d19a626660110cec75f8a908bb4badcb0a23572daf6054841f764ac03f4489a",

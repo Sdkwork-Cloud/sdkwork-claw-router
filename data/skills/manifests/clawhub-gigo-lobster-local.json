@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gigo-lobster-local@2.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-gigo-lobster-local-2.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gigo-lobster-local-2.1.2.json"
+      },
       "version": "2.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e78dfd477df44711c5c4f7b1671f98f5558d110505deba8094bcde60e561bf17",

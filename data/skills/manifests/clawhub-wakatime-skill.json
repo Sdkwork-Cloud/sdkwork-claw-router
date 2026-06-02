@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wakatime-skill@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wakatime-skill-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wakatime-skill-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8a548b465c203e86d08dfeda1ba5def8574bd47479057a7f48c443bb2dfd9550",

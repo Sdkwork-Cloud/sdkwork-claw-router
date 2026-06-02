@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/plex-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-plex-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-plex-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:233e2793417acee8e7f53af18467f45b19934a46479b6d5b3c4d9929bd97012e",

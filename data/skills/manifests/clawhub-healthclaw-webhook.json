@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/healthclaw-webhook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-healthclaw-webhook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-healthclaw-webhook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee638a81eca33a8e4aab9b9afe105a77288a0bc85980decad2419b47cbe28aa9",

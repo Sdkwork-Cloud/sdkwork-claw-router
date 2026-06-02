@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zstack-mcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-zstack-mcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zstack-mcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af6d4243719ee420391b67054b79555edc57d546bbe814693f0a58c305c14ec3",

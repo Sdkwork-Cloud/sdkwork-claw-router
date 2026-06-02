@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/phog-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-phog-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-phog-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93f3488d633642ee55d4da302a2b6c258516a56ce8cb6b58dab79979c59ce456",

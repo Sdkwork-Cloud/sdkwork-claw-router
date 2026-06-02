@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maestra@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-maestra-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maestra-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0c7df2bdb9381b5d74007adf3afcc138db8a94c89604613e3c3f0db373997d40",

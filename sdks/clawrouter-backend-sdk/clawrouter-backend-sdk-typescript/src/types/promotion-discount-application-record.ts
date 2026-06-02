@@ -12,10 +12,14 @@ export interface PromotionDiscountApplicationRecord {
   created_at: string;
   /** Currency code field on promotion discount application record. */
   currency_code: string;
+  /** Discount amount minor field on promotion discount application record. */
+  discount_amount_minor: string;
   /** Failure code field on promotion discount application record. */
   failure_code?: string;
   /** Failure message field on promotion discount application record. */
   failure_message?: string;
+  /** Id field on promotion discount application record. */
+  id?: string;
   /** Idempotency key field on promotion discount application record. */
   idempotency_key: string;
   /** Offer id field on promotion discount application record. */

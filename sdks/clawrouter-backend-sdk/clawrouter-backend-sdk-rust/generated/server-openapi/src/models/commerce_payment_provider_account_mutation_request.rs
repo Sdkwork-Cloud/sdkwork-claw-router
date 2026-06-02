@@ -3,9 +3,10 @@ use serde::{Deserialize, Serialize};
 /// Commerce payment provider account mutation request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CommercePaymentProviderAccountMutationRequest {
-    /// Account no field on commerce payment provider account mutation request.
-    #[serde(rename = "accountNo")]
-    pub account_no: String,
+    /// Account role field on commerce payment provider account mutation request.
+    #[serde(rename = "accountRole")]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub account_role: Option<String>,
 
     /// Certificate ref field on commerce payment provider account mutation request.
     #[serde(rename = "certificateRef")]

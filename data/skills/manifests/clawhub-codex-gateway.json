@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-gateway@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-gateway-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-gateway-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a9bafbc5f39b525f8d407ba8f4fd3f18d484bc1de368fe6bc9a03686046a511d",

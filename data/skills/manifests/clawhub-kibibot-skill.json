@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kibibot-skill@1.5.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-kibibot-skill-1.5.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kibibot-skill-1.5.2.json"
+      },
       "version": "1.5.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7956feedc263711eb0eea6e016f61b0ae1a415005fc4491446fdfb48e84bcaa6",

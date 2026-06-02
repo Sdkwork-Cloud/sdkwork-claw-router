@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hummingbot-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hummingbot-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hummingbot-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:245f7c6a6ce7034bca47792ed4e5c3073d77f1d2a41693b9bc75a2ef2265bf11",

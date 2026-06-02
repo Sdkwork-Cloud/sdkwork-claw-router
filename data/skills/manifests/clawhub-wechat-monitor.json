@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechat-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechat-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechat-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e07594892ab5abedb6755c55b2c7eedbaeef5af41175b79a103c236a37ec1107",

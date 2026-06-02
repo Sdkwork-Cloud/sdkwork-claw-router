@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-top-gainers@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-top-gainers-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-top-gainers-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cc8a91a2f3a80c7621422694e2e9237f60c04ca189fe755b115c59eb53de8c70",

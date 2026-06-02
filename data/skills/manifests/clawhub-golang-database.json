@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golang-database@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-golang-database-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golang-database-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:961ba4558382da70b2dac31a5c73b4a53f3f376cb43f182e43aff6fbee211487",

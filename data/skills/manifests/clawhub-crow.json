@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crow@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-crow-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crow-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e1e7e0e7bddba1eba73ba9b5244b900bb81cea7daa5a11602c28d46a6040b18c",

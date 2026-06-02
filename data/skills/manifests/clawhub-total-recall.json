@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/total-recall@1.5.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-total-recall-1.5.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-total-recall-1.5.1.json"
+      },
       "version": "1.5.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ae7b07c7a1cc1a62d1966269ba2edcff3c4c087393641d55069d720fc5805251",

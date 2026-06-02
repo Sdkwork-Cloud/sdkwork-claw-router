@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bmw-group@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bmw-group-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bmw-group-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:94e57a8f06e5628134483fb57f28f0ff6b692acef73216ce584420d72072a0aa",

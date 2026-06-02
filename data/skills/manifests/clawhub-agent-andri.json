@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-andri@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-andri-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-andri-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a39cf7ad682d691054b9ab62b6801e86cbd6f5126b9069dfb5c94a49aa78d7c9",

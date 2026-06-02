@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-manager@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-manager-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-manager-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:807f8efe890a5e5f898985682f18df2e5155d5ada3e066c337abfc66964309d3",

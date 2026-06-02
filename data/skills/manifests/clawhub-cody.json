@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cody@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cody-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cody-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8f7f58ef3dc53d638104a45ba42a2c9603cb4150bd1fc79bc6b262e5a25ed810",

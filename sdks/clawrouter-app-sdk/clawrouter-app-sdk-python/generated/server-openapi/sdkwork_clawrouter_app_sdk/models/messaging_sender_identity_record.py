@@ -6,6 +6,9 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 @dataclass
 class MessagingSenderIdentityRecord:
     """Messaging sender identity record schema exposed by Claw Router."""
+    approval_payload: Optional[Dict[str, str]] = None
+    approval_status: Optional[str] = None
+    channel: Optional[str] = None
     country_code: Optional[str] = None
     created_at: Optional[str] = None
     data_scope: Optional[str] = None
@@ -16,8 +19,11 @@ class MessagingSenderIdentityRecord:
     from_email: Optional[str] = None
     from_name: Optional[str] = None
     id: Optional[str] = None
+    identity_code: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
     organization_id: Optional[str] = None
+    provider_account_id: Optional[str] = None
+    provider_code: Optional[str] = None
     rejection_reason: Optional[str] = None
     reply_to: Optional[str] = None
     sender_id: Optional[str] = None

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/duckduckgo-websearch@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-duckduckgo-websearch-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-duckduckgo-websearch-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9717a13fe3deb573b39bb3ae3a2d8d8a9b259dbabc482eeaa3082309f501534f",

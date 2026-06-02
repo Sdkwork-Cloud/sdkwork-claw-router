@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/theswarm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-theswarm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-theswarm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b0ed18bb54e9148c1f940029b7ae9d7b47542463aa0504b50484a194d5fb771",

@@ -46,6 +46,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? SandboxPolicy { get; set; }
         public string? StartedAt { get; set; }
         public string? Status { get; set; }
+        public bool? Streaming { get; set; }
         public string? TenantId { get; set; }
         public string? ToolCallId { get; set; }
         public string? ToolName { get; set; }

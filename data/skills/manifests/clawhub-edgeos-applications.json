@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edgeos-applications@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-edgeos-applications-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edgeos-applications-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f129d392368773115210606e583f077ade78095b6d87503b295120cb1f712e81",

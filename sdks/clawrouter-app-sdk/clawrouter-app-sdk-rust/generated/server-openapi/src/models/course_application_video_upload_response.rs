@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Course application video upload response schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct CourseApplicationVideoUploadResponse {
@@ -22,7 +24,6 @@ pub struct CourseApplicationVideoUploadResponse {
     #[serde(rename = "uploadedAt")]
     pub uploaded_at: String,
 
-    /// Video url field on course application video upload response.
-    #[serde(rename = "videoUrl")]
-    pub video_url: String,
+    /// Video field on course application video upload response.
+    pub video: MediaResource,
 }

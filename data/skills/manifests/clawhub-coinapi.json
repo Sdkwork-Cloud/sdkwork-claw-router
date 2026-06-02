@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coinapi@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-coinapi-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coinapi-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ef5337077484be8e8c5150764d8fda098927ae0160a851951bb341866980f3ca",

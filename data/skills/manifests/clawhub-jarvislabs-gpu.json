@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jarvislabs-gpu@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-jarvislabs-gpu-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jarvislabs-gpu-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fb8c3fa109851a772984dc7ccdd5b0c40cc636937b67579d56fdf760b6bad424",

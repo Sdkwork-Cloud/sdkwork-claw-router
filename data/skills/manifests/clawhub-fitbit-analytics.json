@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fitbit-analytics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fitbit-analytics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fitbit-analytics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd97c4b003ee794503802be6b4dac2d9ffb9dad3152be38a3201c71c8e65f4c9",

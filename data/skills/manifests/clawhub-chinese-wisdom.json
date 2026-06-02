@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-wisdom@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-wisdom-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-wisdom-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52753dd1aee742621de421a0714d4c208dae2d6204cfea0b126dfb665f3fd057",

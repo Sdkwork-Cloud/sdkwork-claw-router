@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-security@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-security-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-security-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:aed1fd4b7f5b487af5fd00734b7c8da398e7b303464813df791081cf0ed26dd5",

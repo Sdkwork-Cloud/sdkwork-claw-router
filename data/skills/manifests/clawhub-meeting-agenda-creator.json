@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-agenda-creator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-agenda-creator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-agenda-creator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93f28c248d541ed9801f9215f3faa4b6936fdd752d082ce7df1eb615f839a8b0",

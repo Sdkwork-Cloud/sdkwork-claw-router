@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-whisper-voice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-whisper-voice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-whisper-voice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e891e05176cb261b7867205719133bb916eca3c54a2425a793cab267d68e3b41",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/circleci-config-validator@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-circleci-config-validator-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-circleci-config-validator-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:76a534d264edc486b015a97774f48c326827c311f073a87cd168b7cfb9b64e88",

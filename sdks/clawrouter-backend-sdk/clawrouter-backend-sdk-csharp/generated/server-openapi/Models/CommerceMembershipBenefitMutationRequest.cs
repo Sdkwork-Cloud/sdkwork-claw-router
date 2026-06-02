@@ -9,7 +9,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? BenefitKey { get; set; }
         public bool? Claimed { get; set; }
         public string? Description { get; set; }
-        public string? Icon { get; set; }
+        public MediaResource? Icon { get; set; }
         public int? Id { get; set; }
         public string? Name { get; set; }
         public string? Type { get; set; }

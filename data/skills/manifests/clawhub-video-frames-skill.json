@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-frames-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-frames-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-frames-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6946f1673d165861eee96a6aeebc088822c3d12160b50be90ea41d92cad6050f",

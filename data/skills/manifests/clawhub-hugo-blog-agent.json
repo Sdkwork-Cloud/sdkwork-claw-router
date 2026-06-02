@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hugo-blog-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hugo-blog-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hugo-blog-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9436e04fafcc780407bd1b9897c21617ebdbd1c661ee77e66cf393439ab6e7c1",

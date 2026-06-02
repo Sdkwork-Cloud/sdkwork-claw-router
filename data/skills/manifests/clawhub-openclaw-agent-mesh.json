@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-agent-mesh@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-agent-mesh-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-agent-mesh-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a4341d81304f2211b206facaa63772fd37083fde2d362476a721e1a41328a9e",

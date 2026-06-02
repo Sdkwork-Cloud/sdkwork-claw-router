@@ -194,7 +194,15 @@ async fn database_config_user_profile_requires_session_and_returns_safe_subject_
     assert_eq!("owner@example.com", payload["data"]["email"]);
     assert_eq!("+15550000030", payload["data"]["phone"]);
     assert_eq!("zh-CN", payload["data"]["language"]);
-    assert_eq!("O", payload["data"]["avatarUrl"]);
+    assert!(payload["data"].get("avatarUrl").is_none());
+    assert_eq!(
+        json!({
+            "kind": "image",
+            "source": "provider_asset",
+            "uri": "iam-user-avatar:owner"
+        }),
+        payload["data"]["avatar"]
+    );
     assert_eq!(true, payload["data"]["isVerified"]);
     assert_eq!("active", payload["data"]["status"]);
     assert_eq!("2026-04-01 08:00:00", payload["data"]["registeredAt"]);
@@ -254,7 +262,15 @@ async fn database_config_password_login_issues_app_session_and_records_password_
     assert_eq!("owner", login_payload["data"]["user"]["username"]);
     assert_eq!("owner@example.com", login_payload["data"]["user"]["email"]);
     assert_eq!("Owner User", login_payload["data"]["user"]["displayName"]);
-    assert_eq!("O", login_payload["data"]["user"]["avatarUrl"]);
+    assert!(login_payload["data"]["user"].get("avatarUrl").is_none());
+    assert_eq!(
+        json!({
+            "kind": "image",
+            "source": "provider_asset",
+            "uri": "iam-user-avatar:owner"
+        }),
+        login_payload["data"]["user"]["avatar"]
+    );
     assert_eq!(
         "sdkwork-claw-router",
         login_payload["data"]["context"]["appId"]
@@ -4759,7 +4775,9 @@ async fn create_schema(pool: &SqlitePool) {
             display_name TEXT NOT NULL,
             email TEXT,
             phone TEXT,
-            avatar_url TEXT,
+            avatar_media_resource_id TEXT,
+            avatar_object_blob_id TEXT,
+            avatar_resource_snapshot TEXT,
             status TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL
@@ -5678,12 +5696,24 @@ async fn create_schema(pool: &SqlitePool) {
             subtitle TEXT,
             description TEXT,
             product_type TEXT NOT NULL,
-            category_id TEXT,
             sales_status TEXT NOT NULL,
             visible_surfaces TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
             UNIQUE (tenant_id, spu_no)
+        )"#,
+        r#"CREATE TABLE commerce_product_spu_category (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            spu_id TEXT NOT NULL,
+            category_id TEXT NOT NULL,
+            primary_flag INTEGER NOT NULL DEFAULT 0,
+            sort_order INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, spu_id, category_id)
         )"#,
         r#"CREATE TABLE commerce_product_sku (
             id TEXT PRIMARY KEY,
@@ -6181,11 +6211,11 @@ async fn seed_app_user_data(pool: &SqlitePool) {
             (id, tenant_id, parent_id, code, name, path, status, created_at, updated_at)
             VALUES ('20', '10', NULL, 'root', 'Root Organization', '/20', 'active', '2026-04-01 00:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO iam_user
-            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
-            VALUES ('30', '10', 'owner', 'Owner User', 'owner@example.com', '+15550000030', 'O', 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
+            (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
+            VALUES ('30', '10', 'owner', 'Owner User', 'owner@example.com', '+15550000030', 'media-owner-avatar', 'iam-user-avatar:owner', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:owner"}', 'active', '2026-04-01 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO iam_user
-            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
-            VALUES ('31', '10', 'other', 'Other User', 'other@example.com', '+15550000031', 'O', 'active', '2026-04-02 08:00:00', '2026-04-29 08:00:00')"#,
+            (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
+            VALUES ('31', '10', 'other', 'Other User', 'other@example.com', '+15550000031', 'media-other-avatar', 'iam-user-avatar:other', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:other"}', 'active', '2026-04-02 08:00:00', '2026-04-29 08:00:00')"#,
         r#"INSERT INTO iam_organization_member
             (id, tenant_id, organization_id, user_id, role_code, status, joined_at)
             VALUES ('member-30', '10', '20', '30', 'owner', 'active', '2026-04-01 08:00:00')"#,

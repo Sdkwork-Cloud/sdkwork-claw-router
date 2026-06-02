@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/update-signature-verifier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-update-signature-verifier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-update-signature-verifier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bca25ef50f482ba41b8a9f3db350a32a900e5da90c7014c270e5144fbcdac9ea",

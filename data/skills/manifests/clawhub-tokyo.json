@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tokyo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tokyo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tokyo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9fc697bc7152d7ca916bbf46cb90d641d4851fe90b6a6de8432119a01931317d",

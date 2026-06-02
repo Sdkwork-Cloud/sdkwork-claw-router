@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cn-stock-market-shanghai-shenzhen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cn-stock-market-shanghai-shenzhen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cn-stock-market-shanghai-shenzhen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c5fab6f485d142db1f93570abf67bbe1fadbfddf90d73baa02e0c1888eb2859",

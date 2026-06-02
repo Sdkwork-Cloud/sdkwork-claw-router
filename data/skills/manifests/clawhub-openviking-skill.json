@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openviking-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-openviking-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openviking-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:901302da50f19d41489088a127ae2e54f7eef41ee4325710ccc77cdab3180f74",

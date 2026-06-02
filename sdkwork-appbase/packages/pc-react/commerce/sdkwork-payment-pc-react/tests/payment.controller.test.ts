@@ -132,7 +132,7 @@ describe("sdkwork-payment-pc-react controller", () => {
       paymentSn: "PAY-1002",
       paymentUrl: "https://pay.sdkwork.ai/wechat/1002",
       productType: "native" as const,
-      qrCode: "weixin://wxpay/bizpayurl?pr=PAY1002",
+      qrContent: "weixin://wxpay/bizpayurl?pr=PAY1002",
       queryIntervalSeconds: 3,
       status: "pending" as const,
       statusLabel: "Pending",

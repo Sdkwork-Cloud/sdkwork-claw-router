@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chatdev@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chatdev-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chatdev-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c14099464a0a2cd966d08a7dd696cc16d495cee063add07ec84294084abe467f",

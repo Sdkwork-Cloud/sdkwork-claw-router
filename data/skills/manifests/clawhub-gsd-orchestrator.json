@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gsd-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gsd-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gsd-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f9bef46ea4d0596d33e0e4bac8447532957263fcdb561fdda78f131c5613756",

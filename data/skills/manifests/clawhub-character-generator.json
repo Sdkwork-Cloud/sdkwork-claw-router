@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/character-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-character-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-character-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e0bd7d5873e3f013c6a2c573ee3c98ddcbe575ac013d334c02abc1cd560cc87",

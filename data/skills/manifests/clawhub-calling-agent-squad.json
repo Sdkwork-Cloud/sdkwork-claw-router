@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/calling-agent-squad@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-calling-agent-squad-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-calling-agent-squad-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1a41ecb8c999c190880aed7c13ccc47acc563a13c32636d30ccd8809a940c99a",

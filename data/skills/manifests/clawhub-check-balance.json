@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/check-balance@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-check-balance-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-check-balance-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cea8096b9c8cbcbea35475fb3b884e971b3dc61ce74a178f4d54f2a86eb023bd",

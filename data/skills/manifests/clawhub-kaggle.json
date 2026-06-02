@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kaggle@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kaggle-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kaggle-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:65d77eb1118a768e504532b334fad99cb7ff48b74c1eec9adc9b4c85a1ec1569",

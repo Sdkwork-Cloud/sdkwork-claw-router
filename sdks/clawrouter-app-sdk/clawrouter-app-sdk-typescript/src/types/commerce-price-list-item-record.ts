@@ -4,8 +4,12 @@ export interface CommercePriceListItemRecord {
   compare_at_amount?: string;
   /** Created at field on commerce price list item record. */
   created_at: string;
+  /** Id field on commerce price list item record. */
+  id?: string;
   /** Max quantity field on commerce price list item record. */
   max_quantity?: string;
+  /** Min quantity field on commerce price list item record. */
+  min_quantity: string;
   /** Organization id field on commerce price list item record. */
   organization_id?: string;
   /** Price amount field on commerce price list item record. */

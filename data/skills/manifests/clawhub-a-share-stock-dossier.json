@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/a-share-stock-dossier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-a-share-stock-dossier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-a-share-stock-dossier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b07ac19dff4344a8f2beebf8c3bd19bda1f1654d6be4573d66f206311182354",

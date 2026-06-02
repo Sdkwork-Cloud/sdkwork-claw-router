@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pokeinfo@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pokeinfo-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pokeinfo-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1bd3725ab0dc7d15e33808ee784910af2f1de88db9201eb47b2b85632a97023e",

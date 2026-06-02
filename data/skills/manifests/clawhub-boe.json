@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boe@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boe-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boe-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6edb0bbd18a65c57f0fa34ecfea3ad1f2d2cc36bf7b019c3a3895c41a27b4d9a",

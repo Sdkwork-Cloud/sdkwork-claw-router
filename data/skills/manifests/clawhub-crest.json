@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:85818e6646e28ed378e15804f057dbdadfbf3c1e60e91a024f44497ba65e589c",

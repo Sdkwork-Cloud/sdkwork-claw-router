@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-receptionist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-receptionist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-receptionist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28776762847c31d3b66af91658e24e3f9e7d20b00d10d3362d70f5f510291ba9",

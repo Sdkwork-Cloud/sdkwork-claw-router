@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tickets@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-tickets-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tickets-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:b12290012429fce9660c229664eec850ed8ef475fa96fead4fbb700075c4ac10",

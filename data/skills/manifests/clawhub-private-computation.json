@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/private-computation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-private-computation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-private-computation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09d5302ce7deb9ad2fd7496657a89394b9024fda579705d20865b2c93de8b393",

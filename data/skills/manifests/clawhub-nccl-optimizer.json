@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nccl-optimizer@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nccl-optimizer-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nccl-optimizer-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:34ff833825421df0ad9ee182f1bdce3e727705659f82c9243b87b8101e519741",

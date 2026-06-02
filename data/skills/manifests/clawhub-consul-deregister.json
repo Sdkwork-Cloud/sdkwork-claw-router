@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/consul-deregister@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-consul-deregister-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-consul-deregister-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5d8c753f55fdaf1de0571f4f0c93e6487dee0a54722777d481dc5b3afec653ba",

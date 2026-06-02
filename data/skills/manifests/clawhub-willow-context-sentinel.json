@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/willow-context-sentinel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-willow-context-sentinel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-willow-context-sentinel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b90fb4c8c0fe2cae7be9088bd816da8a1887b315248659c0ebfc3081e5520563",

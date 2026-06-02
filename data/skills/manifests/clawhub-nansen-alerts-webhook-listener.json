@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nansen-alerts-webhook-listener@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nansen-alerts-webhook-listener-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nansen-alerts-webhook-listener-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a23744e36a3d7218e0acb244b589e70a303d6cbb1da9249d162718f8b447a44f",

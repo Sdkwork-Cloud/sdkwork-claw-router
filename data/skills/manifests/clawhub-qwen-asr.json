@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwen-asr@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwen-asr-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwen-asr-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:59c95969f9684ed8765590e459ff3ea37d54ce7743987a66f938b048240bab02",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/passport@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-passport-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-passport-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a75bf8cb5c1251482d8b95c40601564420a8f15bf101223374aae88bd77e08e5",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/job-skills-advisor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-job-skills-advisor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-job-skills-advisor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8764ff1b8d20717d98d3fe7256854236642fc18bd99a467da49415b0bfeac369",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/argocd-deployment-analyzer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-argocd-deployment-analyzer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-argocd-deployment-analyzer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3169d317b3014765a7192d1235367b009a1e842324fb9c40decdf5959028e5d1",

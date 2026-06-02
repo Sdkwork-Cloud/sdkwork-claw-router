@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ask-ai-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ask-ai-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ask-ai-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f0c3562ed5800a2af36e1d0e855d2d2173f960f7a886e524034db366fee6f452",

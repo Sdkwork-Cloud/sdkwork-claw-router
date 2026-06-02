@@ -77,6 +77,17 @@ public class CommerceApi {
         return try await client.patch(ApiPaths.backendPath("/catalog/categories/\(serializePathParameter(categoryId, PathParameterSpec(name: "categoryId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CatalogCategoriesUpdateResult.self)
     }
 
+    /// Initialize admin category seed datasets
+    public func catalogCategorySeedsCreate(body: CommerceCategorySeedInitializeRequest, idempotencyKey: String) async throws -> CatalogCategorySeedsCreateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.post(ApiPaths.backendPath("/catalog/category_seeds/initialize"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CatalogCategorySeedsCreateResult.self)
+    }
+
     /// List product price lists
     public func catalogPriceLists(currencyCode: String? = nil, marketCode: String? = nil, status: String? = nil, page: Int? = nil, pageSize: Int? = nil) async throws -> CatalogPriceListsListResult? {
         let query = buildQueryString([
@@ -125,6 +136,11 @@ public class CommerceApi {
         return try await client.post(ApiPaths.backendPath("/catalog/products"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CatalogProductsCreateResult.self)
     }
 
+    /// Delete product SPU
+    public func catalogProductsDelete(productId: String) async throws -> CatalogProductsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/catalog/products/\(serializePathParameter(productId, PathParameterSpec(name: "productId", style: "simple", explode: false)))"), responseType: CatalogProductsDeleteResult.self)
+    }
+
     /// Update product SPU
     public func catalogProductsUpdate(productId: String, body: CommerceProductSpuMutationRequest, idempotencyKey: String) async throws -> CatalogProductsUpdateResult? {
         let requestHeaders = buildRequestHeaders(
@@ -157,6 +173,11 @@ public class CommerceApi {
             [:]
         )
         return try await client.post(ApiPaths.backendPath("/catalog/skus"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: CatalogSkusCreateResult.self)
+    }
+
+    /// Delete product SKU
+    public func catalogSkusDelete(skuId: String) async throws -> CatalogSkusDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/catalog/skus/\(serializePathParameter(skuId, PathParameterSpec(name: "skuId", style: "simple", explode: false)))"), responseType: CatalogSkusDeleteResult.self)
     }
 
     /// Update product SKU
@@ -521,6 +542,33 @@ public class CommerceApi {
         return try await client.post(ApiPaths.backendPath("/payments/provider_accounts"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: PaymentsProviderAccountsCreateResult.self)
     }
 
+    /// Payments Provider Accounts Delete
+    public func paymentsProviderAccountsDelete(providerAccountId: String) async throws -> PaymentsProviderAccountsDeleteResult? {
+        return try await client.delete(ApiPaths.backendPath("/payments/provider_accounts/\(serializePathParameter(providerAccountId, PathParameterSpec(name: "providerAccountId", style: "simple", explode: false)))"), responseType: PaymentsProviderAccountsDeleteResult.self)
+    }
+
+    /// Payments Provider Accounts Update
+    public func paymentsProviderAccountsUpdate(providerAccountId: String, body: CommercePaymentProviderAccountMutationRequest, idempotencyKey: String) async throws -> PaymentsProviderAccountsUpdateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.patch(ApiPaths.backendPath("/payments/provider_accounts/\(serializePathParameter(providerAccountId, PathParameterSpec(name: "providerAccountId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: PaymentsProviderAccountsUpdateResult.self)
+    }
+
+    /// Payments Provider Accounts Status Update
+    public func paymentsProviderAccountsStatusUpdate(providerAccountId: String, body: CommercePaymentProviderAccountStatusUpdateRequest, idempotencyKey: String) async throws -> PaymentsProviderAccountsStatusUpdateResult? {
+        let requestHeaders = buildRequestHeaders(
+            [
+                "Idempotency-Key": HeaderParameterSpec(value: idempotencyKey, style: "simple", explode: false, contentType: nil),
+            ],
+            [:]
+        )
+        return try await client.patch(ApiPaths.backendPath("/payments/provider_accounts/\(serializePathParameter(providerAccountId, PathParameterSpec(name: "providerAccountId", style: "simple", explode: false)))/status"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: PaymentsProviderAccountsStatusUpdateResult.self)
+    }
+
     /// Payments Providers List
     public func paymentsProvidersList(page: Int? = nil, pageSize: Int? = nil, status: String? = nil) async throws -> PaymentsProvidersListResult? {
         let query = buildQueryString([
@@ -554,6 +602,14 @@ public class CommerceApi {
             QueryParameterSpec(name: "status", value: status, style: "form", explode: true, allowReserved: false, contentType: nil)
         ])
         return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/route_rules"), query), responseType: PaymentsRouteRulesListResult.self)
+    }
+
+    /// Payments Runtime Snapshot Retrieve
+    public func paymentsRuntimeSnapshotRetrieve(environment: String? = nil) async throws -> PaymentsRuntimeSnapshotRetrieveResult? {
+        let query = buildQueryString([
+            QueryParameterSpec(name: "environment", value: environment, style: "form", explode: true, allowReserved: false, contentType: nil)
+        ])
+        return try await client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/runtime/snapshot"), query), responseType: PaymentsRuntimeSnapshotRetrieveResult.self)
     }
 
     /// Payments Webhook Events List
@@ -612,6 +668,16 @@ public class CommerceApi {
             [:]
         )
         return try await client.patch(ApiPaths.backendPath("/recharges/packages/\(serializePathParameter(packageId, PathParameterSpec(name: "packageId", style: "simple", explode: false)))"), body: body, params: nil, headers: requestHeaders, contentType: "application/json", responseType: RechargesPackagesUpdateResult.self)
+    }
+
+    /// Recharges Settings Retrieve
+    public func rechargesSettingsRetrieve() async throws -> RechargesSettingsRetrieveResult? {
+        return try await client.get(ApiPaths.backendPath("/recharges/settings"), responseType: RechargesSettingsRetrieveResult.self)
+    }
+
+    /// Recharges Settings Update
+    public func rechargesSettingsUpdate(body: CommerceRechargeSettingsUpdateRequest) async throws -> RechargesSettingsUpdateResult? {
+        return try await client.put(ApiPaths.backendPath("/recharges/settings"), body: body, params: nil, headers: nil, contentType: "application/json", responseType: RechargesSettingsUpdateResult.self)
     }
 
     /// Refunds List

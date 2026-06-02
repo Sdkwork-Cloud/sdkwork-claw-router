@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mh-healthcheck@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mh-healthcheck-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mh-healthcheck-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8ccc92cbdc20a9f227e2647281a3f0de69fccc07bf8de1bbfb9a06852e364f23",

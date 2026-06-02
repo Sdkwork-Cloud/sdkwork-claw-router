@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sparkey@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sparkey-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sparkey-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:064ee84b373233d4ffb3e07d2402cfaa2adc12ec41575d7e98542eb80c5db7f5",

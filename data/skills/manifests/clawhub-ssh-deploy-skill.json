@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ssh-deploy-skill@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ssh-deploy-skill-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ssh-deploy-skill-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:178e661d5082bbf6839fd81d550f3b492ab6ebedc9608e574973ae012be058cf",

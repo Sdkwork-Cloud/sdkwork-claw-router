@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finmo@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-finmo-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finmo-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5d3e4e3b1705ac27f54e05de8b794710738f1d04517864dba50560624140139b",

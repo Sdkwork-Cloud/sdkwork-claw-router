@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fill-docx-template@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-fill-docx-template-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fill-docx-template-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b2a032fc198b6ff806972dfe8a01ca8bd46a4ed10129b58255b49bc6229771d6",

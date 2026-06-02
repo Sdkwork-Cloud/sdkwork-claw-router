@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sendcloud@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-sendcloud-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sendcloud-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:dc85935bc5174a9875a6410898655c75092fd559403096e298287b736627661e",

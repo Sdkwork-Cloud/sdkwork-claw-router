@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personal-finance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-personal-finance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personal-finance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d9ee09c864c103940ae740730628abd03161412179b736591ad43c0b1b1f3e61",

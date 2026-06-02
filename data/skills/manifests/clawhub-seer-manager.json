@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seer-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-seer-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seer-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b6d965ae267f20631c9aa962d1b8eb2207e57d2563d288ce02a900b5c06833de",

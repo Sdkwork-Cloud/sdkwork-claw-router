@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vmware-company@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vmware-company-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vmware-company-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fab4eafb7a198ba18509d9459c74c542a165da68acb5aff48295d48841737e2c",

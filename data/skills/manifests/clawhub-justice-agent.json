@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/justice-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-justice-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-justice-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:383226cd95494633914bcc55e4e6144f321ddf7ac76e34eabb528914a42b9c88",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cross-instance-relay@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cross-instance-relay-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cross-instance-relay-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1dbdb694e78f6d3658079e208c4aec32e22856132bcbbab5ed48a3b0f6d0848b",

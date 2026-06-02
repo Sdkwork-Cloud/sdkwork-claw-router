@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/private-car@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-private-car-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-private-car-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:12f2af1fa311d4a9935b273f89f4382ddfabe1bf122aef2f45033543bf63d70b",

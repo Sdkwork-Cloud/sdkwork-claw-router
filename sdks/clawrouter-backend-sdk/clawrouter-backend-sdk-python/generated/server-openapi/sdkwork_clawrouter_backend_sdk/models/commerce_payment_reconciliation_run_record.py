@@ -25,6 +25,7 @@ class CommercePaymentReconciliationRunRecord:
     total_provider_amount: str
     updated_at: str
     completed_at: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     provider_account_id: Optional[str] = None
     report_file_ref: Optional[str] = None

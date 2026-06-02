@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gpu-cluster-manager@1.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gpu-cluster-manager-1.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gpu-cluster-manager-1.4.1.json"
+      },
       "version": "1.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a516946f18d9b1990e7018cfb50088a8411695509df0e994a64043d2b968d2e2",

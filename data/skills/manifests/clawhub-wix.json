@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wix@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-wix-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wix-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d3221ea0c8980333e85fc07ba2176593d30387e975cae82d7fb98d2d58329bdb",

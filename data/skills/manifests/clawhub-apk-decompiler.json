@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apk-decompiler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apk-decompiler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apk-decompiler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c9fdd5e61ffcc54b52c6236d2ab432e9a64b1b80323dfeba4f5a86d2b65273bb",

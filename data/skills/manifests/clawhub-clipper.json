@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clipper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clipper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clipper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8769ccbfce3099f415873399228dc5d1e6cf7daf4289458f563eda220b491d3a",

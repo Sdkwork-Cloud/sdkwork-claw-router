@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29d1b5de444acea39b371c07b92ce5482c0eafd65daed1a3f28809921b56ec61",

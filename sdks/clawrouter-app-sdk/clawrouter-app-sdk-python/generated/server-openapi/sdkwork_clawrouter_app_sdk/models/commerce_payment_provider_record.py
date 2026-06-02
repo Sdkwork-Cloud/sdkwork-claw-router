@@ -10,9 +10,11 @@ class CommercePaymentProviderRecord:
     display_name: str
     provider_code: str
     provider_type: str
+    sort_order: str
     status: str
     tenant_id: str
     updated_at: str
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     supported_countries: Optional[Dict[str, str]] = None
     supported_currencies: Optional[Dict[str, str]] = None

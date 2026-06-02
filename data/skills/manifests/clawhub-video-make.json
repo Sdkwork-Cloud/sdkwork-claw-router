@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-make@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-make-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-make-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a5bafc57167db4d31a366ecdf7f29af67d488b5f175245e2f91f7e1d46d21fe5",

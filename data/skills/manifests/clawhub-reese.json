@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reese@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reese-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reese-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:464c9f45250ba30b8c39f99967b9db27a6e72d9825aef2275b4ec1920979a7cd",

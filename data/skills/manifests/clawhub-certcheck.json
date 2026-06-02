@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/certcheck@4.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-certcheck-4.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-certcheck-4.0.2.json"
+      },
       "version": "4.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f8ff2b3c88d74c085bda2eb78d153ecc83062636d591569c16eb0eabf02f5b10",

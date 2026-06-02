@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seiko-watch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-seiko-watch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seiko-watch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2697e2722ed06887d552c2f8f0969bca89f397a0a113b7a0e6e5dc8d6768d6da",

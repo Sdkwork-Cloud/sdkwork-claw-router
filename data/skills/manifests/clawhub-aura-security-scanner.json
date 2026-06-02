@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aura-security-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aura-security-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aura-security-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2e3a737c8ecaff2c0b1721cb3153c3668f223fae82438539f77936e50ad4fb10",

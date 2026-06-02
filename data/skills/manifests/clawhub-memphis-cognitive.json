@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memphis-cognitive@3.7.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-memphis-cognitive-3.7.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memphis-cognitive-3.7.2.json"
+      },
       "version": "3.7.2",
       "runtime": "metadata",
       "checksumHash": "sha256:73f6c7fa97fa1e5c3421ee636bf204bf65a7cfddd4a5077b307c41417302c101",

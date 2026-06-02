@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-health-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-health-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-health-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db0fe6f06dd685ca5e122fcf2ce848f1991529a9808ff69f5f7aafd116d9f063",

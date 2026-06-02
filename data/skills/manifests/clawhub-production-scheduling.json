@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/production-scheduling@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-production-scheduling-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-production-scheduling-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4af7eca3e635988885fb7ac012dcbcc36f2904fa598b8a5a5d3252b65c62d448",

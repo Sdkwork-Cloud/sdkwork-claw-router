@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/switchboard-data-operator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-switchboard-data-operator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-switchboard-data-operator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:964a7d5ad4bed24c50c4f9f686080e93f9e305c9259604e4e50285404b1df88f",

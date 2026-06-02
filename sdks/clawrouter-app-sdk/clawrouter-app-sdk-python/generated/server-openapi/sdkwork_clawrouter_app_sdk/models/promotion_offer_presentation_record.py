@@ -26,6 +26,7 @@ class PromotionOfferPresentationRecord:
     brand_name: Optional[str] = None
     cover_asset_id: Optional[str] = None
     created_by: Optional[str] = None
+    id: Optional[str] = None
     logo_asset_id: Optional[str] = None
     offer_id: Optional[str] = None
     organization_id: Optional[str] = None

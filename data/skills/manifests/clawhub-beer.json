@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/beer@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-beer-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-beer-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f23e0d19cd2d0825f545e1c1f7da5f38ffa033712daebf95d4040cca44700974",

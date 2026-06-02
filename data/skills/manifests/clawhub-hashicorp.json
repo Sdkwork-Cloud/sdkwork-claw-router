@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hashicorp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hashicorp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hashicorp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9640c4bf57e44d227deff5cad45e832441638ed3b37650e49ad20e047babecd7",

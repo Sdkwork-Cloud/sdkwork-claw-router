@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-cloud-translate-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-cloud-translate-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-cloud-translate-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a648a1b40e19dc5e4d6dd5600ba69b729bcc6b8106015bb196144073d37991b8",

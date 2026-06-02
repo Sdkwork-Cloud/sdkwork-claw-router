@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/go-code-review@2.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-go-code-review-2.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-go-code-review-2.3.1.json"
+      },
       "version": "2.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:24ecd198fe622e11a47b785839a3667cec10e19b5c87e4bdd016a79ad22e710f",

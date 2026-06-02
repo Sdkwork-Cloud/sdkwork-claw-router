@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/garmin-health-report@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-garmin-health-report-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-garmin-health-report-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a983c7c1eded7efcb345783cedc0619b11aee705c403e6d9e5100ffdee4e6a20",

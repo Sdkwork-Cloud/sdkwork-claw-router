@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qmd@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qmd-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qmd-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2711eda50d26927060dbcdcd3b2d4131b5ff93d6de5239b8eb838c3d31b0f942",

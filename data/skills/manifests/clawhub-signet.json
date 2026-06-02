@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/signet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-signet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-signet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6334fa8b6187815fc29029b3068eb13c4f53ae7023e28cd9f5ae4c5da2e48008",

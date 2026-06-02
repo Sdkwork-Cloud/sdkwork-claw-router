@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-electrician@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-electrician-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-electrician-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5733611899805de92fbb4aea5ccc16a2886a6fb94b91bd20b188bb1d2529f0a0",

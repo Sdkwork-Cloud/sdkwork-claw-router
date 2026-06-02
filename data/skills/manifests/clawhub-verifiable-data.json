@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/verifiable-data@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-verifiable-data-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-verifiable-data-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:f04bbf2054d673cdb44ab5a72ef21821fe42fcee15bf8862e0b7848e9cfa0359",

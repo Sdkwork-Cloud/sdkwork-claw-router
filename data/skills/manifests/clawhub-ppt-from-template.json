@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ppt-from-template@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ppt-from-template-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ppt-from-template-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26cbf58df3edca46eb844331cb349fe015d6960c6e81f25c0a4574a6b5f6b596",

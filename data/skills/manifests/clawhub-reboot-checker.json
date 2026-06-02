@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reboot-checker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reboot-checker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reboot-checker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a706d798653765ab893b8dc90d04e4f8c646bd478d8dea06f8b7abd4e6ea9b60",

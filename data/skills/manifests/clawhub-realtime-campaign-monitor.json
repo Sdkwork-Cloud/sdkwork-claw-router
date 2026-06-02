@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/realtime-campaign-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-realtime-campaign-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-realtime-campaign-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1ede0ab23f61c2543527b071d4fb84cdf96da33abb4716a1aa2c4b7059437d0",

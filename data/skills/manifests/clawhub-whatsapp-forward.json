@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whatsapp-forward@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-forward-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whatsapp-forward-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a939dd54befdf71e14b42a8cd82e4a91d0d9fee9812937782bc455422b9aebe",

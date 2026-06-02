@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/postgrid@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-postgrid-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-postgrid-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e4d35d42a97bb3e75c05c9ea2b5435c12e3af271fee004e222c8e1ae7178f50d",

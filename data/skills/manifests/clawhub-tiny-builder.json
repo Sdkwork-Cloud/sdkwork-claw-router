@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tiny-builder@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tiny-builder-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tiny-builder-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:460a442140f532f73e5ad746e24fb9818301a2a0e0a6eaf1c8eb7512807375d5",

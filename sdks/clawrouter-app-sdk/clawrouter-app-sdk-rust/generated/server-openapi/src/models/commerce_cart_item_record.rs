@@ -9,6 +9,10 @@ pub struct CommerceCartItemRecord {
     /// Created at field on commerce cart item record.
     pub created_at: String,
 
+    /// Id field on commerce cart item record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Metadata json field on commerce cart item record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub metadata_json: Option<std::collections::HashMap<String, String>>,
@@ -20,6 +24,12 @@ pub struct CommerceCartItemRecord {
     /// Price snapshot json field on commerce cart item record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub price_snapshot_json: Option<std::collections::HashMap<String, String>>,
+
+    /// Quantity field on commerce cart item record.
+    pub quantity: String,
+
+    /// Selected field on commerce cart item record.
+    pub selected: bool,
 
     /// Sku id field on commerce cart item record.
     pub sku_id: String,

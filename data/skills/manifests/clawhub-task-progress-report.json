@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-progress-report@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-progress-report-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-progress-report-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f61f366f2326ae5303833086ba63f638ea4900bf1c123ef223e7502710f4c321",

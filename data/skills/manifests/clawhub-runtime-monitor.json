@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/runtime-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-runtime-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-runtime-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c411a155b6d98645ff355d83721131e22d9203e3b53efba5c860a2452e23739",

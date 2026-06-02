@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-maps-leadgen-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-maps-leadgen-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-maps-leadgen-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ac71bb4ef3686dd4202314b5dfc93bfc2721efa93656a0f33e91139a74a2f27",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rag-construction@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rag-construction-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rag-construction-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:285fd0b65e0bdbef646d464c9402b917b02d0f9a2f6a7554479ec05d8c2b6fa2",

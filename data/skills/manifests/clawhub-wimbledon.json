@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wimbledon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wimbledon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wimbledon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:522dd766e1a78974a46e1fc04b21b915a45debab08ac74bfbf7e1b65159d8309",

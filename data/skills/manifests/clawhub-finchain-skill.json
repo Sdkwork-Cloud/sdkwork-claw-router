@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finchain-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-finchain-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finchain-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:69f6e0f4e941a3e486dfd48e36970edf066b18fa2487d5fa7f613b26e3679729",

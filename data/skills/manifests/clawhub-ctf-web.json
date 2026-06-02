@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ctf-web@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ctf-web-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ctf-web-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:73270044b252c7aeb79a6c84440a851e4cb645109125c126286deb50d86b390d",

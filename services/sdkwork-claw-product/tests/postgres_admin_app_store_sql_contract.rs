@@ -48,7 +48,7 @@ fn postgres_admin_app_writes_java_compatible_assigned_ids_explicitly() {
 fn postgres_admin_app_scopes_every_mutation_to_trusted_tenant_and_organization() {
     for expected in [
         "FROM plus_app WHERE id = $1 AND tenant_id = $2 AND organization_id = $3",
-        "WHERE id = $22 AND tenant_id = $23 AND organization_id = $24",
+        "WHERE id = $26 AND tenant_id = $27 AND organization_id = $28",
         "WHERE id = $4 AND tenant_id = $5 AND organization_id = $6",
         "WHERE id = $1 AND tenant_id = $2 AND organization_id = $3",
         "DELETE FROM studio_catalog_asset",
@@ -100,7 +100,7 @@ fn postgres_admin_app_uses_jsonb_for_app_payloads_market_state_and_audit() {
 }
 
 #[test]
-fn postgres_admin_app_matches_existing_plus_app_schema_without_new_columns() {
+fn postgres_admin_app_matches_canonical_media_resource_schema() {
     let plus_app_table = POSTGRES_SCHEMA
         .split("CREATE TABLE IF NOT EXISTS plus_app")
         .nth(1)
@@ -108,8 +108,49 @@ fn postgres_admin_app_matches_existing_plus_app_schema_without_new_columns() {
         .split("CREATE INDEX IF NOT EXISTS idx_app_user_id")
         .next()
         .unwrap();
+    let plus_category_table = POSTGRES_SCHEMA
+        .split("CREATE TABLE IF NOT EXISTS plus_category")
+        .nth(1)
+        .unwrap()
+        .split("CREATE INDEX IF NOT EXISTS idx_category_shop_id")
+        .next()
+        .unwrap();
+    let studio_app_template_table = POSTGRES_SCHEMA
+        .split("CREATE TABLE IF NOT EXISTS studio_app_template")
+        .nth(1)
+        .unwrap()
+        .split("CREATE UNIQUE INDEX IF NOT EXISTS uk_studio_app_template_no")
+        .next()
+        .unwrap();
     assert_sql_contains(plus_app_table, "config JSONB NOT NULL DEFAULT '{}'::jsonb");
     assert_sql_contains(plus_app_table, "status INTEGER NOT NULL DEFAULT 1");
+    assert_sql_contains(plus_app_table, "icon_media_resource_id VARCHAR(128)");
+    assert_sql_contains(plus_app_table, "icon_object_blob_id BIGINT");
+    assert_sql_contains(plus_app_table, "icon_resource_snapshot JSONB");
+    assert_sql_contains(plus_app_table, "artifact_media_resource_id VARCHAR(128)");
+    assert_sql_contains(plus_app_table, "artifact_object_blob_id BIGINT");
+    assert_sql_contains(plus_app_table, "artifact_resource_snapshot JSONB");
+    assert_sql_not_contains(plus_app_table, "icon_url");
+    assert_sql_not_contains(plus_app_table, "download_url");
+    assert_sql_not_contains(POSTGRES_ADMIN_APP_STORE, "download_url");
+    assert_sql_contains(plus_category_table, "icon_media_resource_id VARCHAR(128)");
+    assert_sql_contains(plus_category_table, "icon_object_blob_id BIGINT");
+    assert_sql_contains(plus_category_table, "icon_resource_snapshot JSONB");
+    assert_sql_not_contains(plus_category_table, "icon TEXT");
+    assert_sql_contains(
+        studio_app_template_table,
+        "icon_media_resource_id VARCHAR(128)",
+    );
+    assert_sql_contains(studio_app_template_table, "icon_object_blob_id BIGINT");
+    assert_sql_contains(studio_app_template_table, "icon_resource_snapshot JSONB");
+    assert_sql_contains(
+        studio_app_template_table,
+        "cover_media_resource_id VARCHAR(128)",
+    );
+    assert_sql_contains(studio_app_template_table, "cover_object_blob_id BIGINT");
+    assert_sql_contains(studio_app_template_table, "cover_resource_snapshot JSONB");
+    assert_sql_not_contains(studio_app_template_table, "icon_url");
+    assert_sql_not_contains(studio_app_template_table, "cover_url");
     assert_sql_not_contains(plus_app_table, "market_status");
     assert_sql_not_contains(plus_app_table, "app_key");
     assert_sql_not_contains(POSTGRES_ADMIN_APP_STORE, "plus_app.market_status");

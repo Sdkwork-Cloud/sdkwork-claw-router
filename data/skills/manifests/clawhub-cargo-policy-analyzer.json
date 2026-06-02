@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cargo-policy-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cargo-policy-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cargo-policy-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d90ba6c4647dee0bb5241e1aede1cfa0912bd3ac226688aad760d8d0e1f05d08",

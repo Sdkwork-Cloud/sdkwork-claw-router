@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/three-layer-memory@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-three-layer-memory-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-three-layer-memory-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ea8c1979ecd02e0986b3224862ab18282b1ec31d1f03378dd61fefca34ca4868",

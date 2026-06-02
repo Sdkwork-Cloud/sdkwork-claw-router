@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/twitter-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-twitter-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-twitter-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ce7858261e00bbf594b9a933cd9ab0f77127b00641d282ab495fc0e7d2fd6778",

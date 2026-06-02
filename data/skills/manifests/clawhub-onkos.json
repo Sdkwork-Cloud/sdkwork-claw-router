@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/onkos@1.6.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-onkos-1.6.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-onkos-1.6.3.json"
+      },
       "version": "1.6.3",
       "runtime": "metadata",
       "checksumHash": "sha256:43cf345e85a078d44156632336ead644f61288c321c0ba3f218b1be6db4ecac7",

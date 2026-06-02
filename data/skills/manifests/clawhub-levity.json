@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/levity@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-levity-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-levity-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a7592229bdaea04416446caf25251aa46a05bd2076f8f895d37be6c208dee470",

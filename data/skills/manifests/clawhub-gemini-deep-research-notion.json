@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-deep-research-notion@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-deep-research-notion-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-deep-research-notion-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9137413950d8b350728467c064c2362224641178879e2df842a5e7b493fa6c5a",

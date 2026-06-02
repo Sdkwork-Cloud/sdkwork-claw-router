@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-ops-framework@8.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-ops-framework-8.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-ops-framework-8.0.0.json"
+      },
       "version": "8.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:15f68532820a7eb51c9b8601e4bbb991523a04af1a35170003924f32fec69f80",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/caiyun-weather-daily@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-caiyun-weather-daily-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-caiyun-weather-daily-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c913a51618e2b2606b5521426c092cbfbb12f2242b440476394fefb5ad415bd2",

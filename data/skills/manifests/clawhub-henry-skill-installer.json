@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/henry-skill-installer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-henry-skill-installer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-henry-skill-installer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4303bee8399c09b4f358af0d773b37d106c43f52af1d6878019b0b7363d3d965",

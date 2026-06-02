@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-processor@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-processor-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-processor-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0b3edb8a558a10edab6f2b4bed59e1f0f4033c55cffebd0cc27dc960b50b0872",

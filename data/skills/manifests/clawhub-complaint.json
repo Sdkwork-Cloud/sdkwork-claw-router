@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/complaint@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-complaint-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-complaint-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1145e6c4ba5039734d8114150aec5a9f9651abe37b0bf5a6dea921528133764a",

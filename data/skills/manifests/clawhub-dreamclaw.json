@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dreamclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dreamclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dreamclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cee904dc40f27211c936590410f7b683d4f4e80bcc99537b504897f95b07cf54",

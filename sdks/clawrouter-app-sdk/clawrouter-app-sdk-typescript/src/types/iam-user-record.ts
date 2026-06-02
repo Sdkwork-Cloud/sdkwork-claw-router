@@ -1,7 +1,9 @@
+import type { MediaResource } from './media-resource';
+
 /** Iam user record schema exposed by Claw Router. */
 export interface IamUserRecord {
-  /** Avatar url field on iam user record. */
-  avatar_url?: string;
+  /** Avatar field on iam user record. */
+  avatar?: MediaResource;
   /** Created at field on iam user record. */
   created_at?: string;
   /** Display name field on iam user record. */

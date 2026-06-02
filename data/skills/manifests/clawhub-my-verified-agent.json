@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-verified-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-verified-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-verified-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2b4d214f60a19f08139f1f185467a0685168b2a2c6878042287342e9de88140",

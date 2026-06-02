@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pihole-ctl@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pihole-ctl-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pihole-ctl-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e343ab6c2fe53ade38f0da964126a1d300806f2b04d8c32b15e0f758109ffa6a",

@@ -3,9 +3,11 @@ package com.sdkwork.clawrouter.app.model;
 
 public class PromotionOfferScopeRecord {
     private String createdAt;
+    private String id;
     private String matchMode;
     private String offerVersionId;
     private String organizationId;
+    private Integer priority;
     private String scopeType;
     private String targetCode;
     private String targetId;
@@ -18,6 +20,14 @@ public class PromotionOfferScopeRecord {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getMatchMode() {
@@ -42,6 +52,14 @@ public class PromotionOfferScopeRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
     }
 
     public String getScopeType() {

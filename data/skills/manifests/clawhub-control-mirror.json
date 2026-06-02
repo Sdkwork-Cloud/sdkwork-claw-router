@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/control-mirror@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-control-mirror-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-control-mirror-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:84f9a4dd44a449afc73d2b20af9687e3893e3e8989fa94386cab81d2cf169717",

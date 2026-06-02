@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kubeasz-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kubeasz-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kubeasz-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:78ec59f5f4066598ce2fa7714ab909347f21d71fa36d9bca741ea7295544dfa8",

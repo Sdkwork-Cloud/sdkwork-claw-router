@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/slack-backup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-slack-backup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-slack-backup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cb1958afd52415463ac9a17bf4fbb9588241af55bccae82ba3c378845e9cbd55",

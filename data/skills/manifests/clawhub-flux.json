@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flux@2.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flux-2.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flux-2.3.0.json"
+      },
       "version": "2.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6da3a3fb4ac5ec4d92fb2030096c25cdd3e7262031638795e49d222aee19ff12",

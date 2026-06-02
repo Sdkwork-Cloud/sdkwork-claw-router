@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-email-address@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-email-address-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-email-address-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:508a0e64d7e8789c5d445727b7e7cb129cc42fd4c976aed77abe4b82d5f69028",

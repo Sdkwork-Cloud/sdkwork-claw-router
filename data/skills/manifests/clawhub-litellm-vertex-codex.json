@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/litellm-vertex-codex@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-litellm-vertex-codex-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-litellm-vertex-codex-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0118a5d939442837cbd452261d2520565a27086b5abcd81bd9ce16dc2b1b7d2b",

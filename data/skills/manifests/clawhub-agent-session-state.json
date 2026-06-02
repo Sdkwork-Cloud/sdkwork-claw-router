@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-session-state@2.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-session-state-2.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-session-state-2.1.4.json"
+      },
       "version": "2.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:92e4f50e8091541df190c3db20afb9ef57c5b809897058d7a796dcd181a7ff01",

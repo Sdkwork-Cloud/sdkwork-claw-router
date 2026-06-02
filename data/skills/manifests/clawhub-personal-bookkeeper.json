@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personal-bookkeeper@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-personal-bookkeeper-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personal-bookkeeper-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f9aa399e9137d5bf768d848d5e10c067705d3d086f10d064ce55c44dc0669326",

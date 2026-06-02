@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dory-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dory-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dory-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:20fadc72346d85121257a005e7a80aa57c94bd17db9629265cd8f7729589f8d0",

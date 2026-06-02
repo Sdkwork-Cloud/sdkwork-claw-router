@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-tt-skill@1.1.32",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-tt-skill-1.1.32.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-tt-skill-1.1.32.json"
+      },
       "version": "1.1.32",
       "runtime": "metadata",
       "checksumHash": "sha256:5b8373d420ac6b4765517e8549717051d887cf107978164d686ae304847f0e03",

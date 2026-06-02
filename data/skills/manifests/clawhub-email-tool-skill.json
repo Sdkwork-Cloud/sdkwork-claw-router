@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-tool-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-tool-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-tool-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4195ef05f4c9d821ff7e5763955cb4fe1ad98d4b187823041e4e0332ee34aa11",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pretty-mermaid@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pretty-mermaid-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pretty-mermaid-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8b1f6f55ab44867362295c2d0b4b23ac893a9664e76f9294cbf9875d566ae40f",

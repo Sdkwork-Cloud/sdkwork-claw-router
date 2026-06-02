@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taapi@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-taapi-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taapi-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:eb271cca90dcc32291a44d1d7ba1e10944649cf6ac59aa965e40177cab471ae2",

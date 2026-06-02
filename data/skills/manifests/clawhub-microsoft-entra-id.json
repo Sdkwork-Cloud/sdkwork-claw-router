@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/microsoft-entra-id@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-entra-id-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-microsoft-entra-id-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:71894329541152378cd22ee57b34abd5f6af65fb0e194b67cf6fbc65e84b36f6",

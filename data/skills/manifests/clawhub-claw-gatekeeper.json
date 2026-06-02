@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-gatekeeper@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-gatekeeper-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-gatekeeper-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e9f47a621383d5e92bfd9596b028bb7984982fb6aaaca8b6ac24ffcb23fa055f",

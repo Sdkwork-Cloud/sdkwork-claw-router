@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adversarial-prompting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-adversarial-prompting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adversarial-prompting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ae1136e40f68f960b72426360419bc37aca30dab946c2b57645cffe1b1d920b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-weekly@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-weekly-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-weekly-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da7b923549e68da6360a472653bf2fff8329684821022b64426807c93ffa72de",

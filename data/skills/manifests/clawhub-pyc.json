@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pyc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pyc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pyc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb12996713c6ddf187e269b9322b08dee32b6cbf6648b1620e5b2a10884b78e1",

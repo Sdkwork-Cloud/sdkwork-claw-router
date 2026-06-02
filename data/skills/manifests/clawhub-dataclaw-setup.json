@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dataclaw-setup@0.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dataclaw-setup-0.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dataclaw-setup-0.5.0.json"
+      },
       "version": "0.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b4a753bbd0d8af60bc1cb165ddf76e71e33ce958afed79daa24b6ba5ac311f91",

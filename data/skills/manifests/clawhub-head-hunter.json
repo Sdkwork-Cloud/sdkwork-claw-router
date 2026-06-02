@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/head-hunter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-head-hunter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-head-hunter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c552c606ca0c0886d2fda6a0854eaa036efcebb6623f603f64411ec1860da93",

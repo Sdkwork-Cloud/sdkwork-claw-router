@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opensearch-vector-search@1.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-opensearch-vector-search-1.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opensearch-vector-search-1.3.2.json"
+      },
       "version": "1.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:914090538c03127b990acba51598a50bf532cd594f0ca2f0d0257995b797fb79",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-self-care@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-self-care-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-self-care-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b20db49771faf597e775984d0f3a405b89f14b1502fd302cbdfe08d4cd35f91",

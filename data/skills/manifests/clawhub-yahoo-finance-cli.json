@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yahoo-finance-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yahoo-finance-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yahoo-finance-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:62d34e25653eb0560666f8cca895502cea018dae512e22f1a93f564c30a193b2",

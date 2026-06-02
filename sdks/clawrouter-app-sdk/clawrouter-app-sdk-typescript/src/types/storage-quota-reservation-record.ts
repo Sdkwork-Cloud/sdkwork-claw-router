@@ -24,6 +24,8 @@ export interface StorageQuotaReservationRecord {
   released_at?: string;
   /** Reservation no field on storage quota reservation record. */
   reservation_no?: string;
+  /** Reserved bytes field on storage quota reservation record. */
+  reserved_bytes?: string;
   /** Scope id field on storage quota reservation record. */
   scope_id?: string;
   /** Scope type field on storage quota reservation record. */

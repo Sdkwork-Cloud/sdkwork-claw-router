@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/double-check-skill@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-double-check-skill-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-double-check-skill-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:256a7340e5d8019159eddb717a5311eb8b6c252cde61008596a327fb71c8e043",

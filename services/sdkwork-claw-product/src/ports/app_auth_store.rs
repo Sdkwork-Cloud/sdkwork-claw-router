@@ -1,6 +1,8 @@
 use std::future::Future;
 use std::pin::Pin;
 
+use serde_json::Value;
+
 use crate::domain::DomainResult;
 
 pub type AppAuthFuture<'a, T> = Pin<Box<dyn Future<Output = DomainResult<T>> + Send + 'a>>;
@@ -13,7 +15,7 @@ pub struct AppAuthUserCredential {
     pub username: String,
     pub email: String,
     pub display_name: String,
-    pub avatar_url: String,
+    pub avatar: Value,
     pub phone: String,
     pub language: String,
     pub registered_at: String,

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minimal-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-minimal-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minimal-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:38aadc9da0deab652d1e6baa0d0018726e1a6e39c435462f5941715c67fe8b1b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-blog-to-kindle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-blog-to-kindle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-blog-to-kindle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6d57f84e3b0281831d4f640b613d4742561ee129bd6a9b904b67f66717ea3e87",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wakeup-niuma@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wakeup-niuma-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wakeup-niuma-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1d8f09982711574f02ef9c1b20605951bec7784c6a673ffdc7a4644da6fb9ef",

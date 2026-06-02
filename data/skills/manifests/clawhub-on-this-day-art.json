@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/on-this-day-art@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-on-this-day-art-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-on-this-day-art-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0cbf93ee2009dd0441c69f07e20c99cd952060ed88df1b11e1524df65c06943e",

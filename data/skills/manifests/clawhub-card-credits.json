@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/card-credits@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-card-credits-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-card-credits-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:b60a14ea994eb02af85257774f8752a4d1b7ef2231b93d544cdc08245843b23c",

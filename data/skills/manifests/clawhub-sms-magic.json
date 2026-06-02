@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sms-magic@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-sms-magic-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sms-magic-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:681da71a7f1e29c35702be76fcecabac3a577dfc717f52e5fbed29415c4abdb7",

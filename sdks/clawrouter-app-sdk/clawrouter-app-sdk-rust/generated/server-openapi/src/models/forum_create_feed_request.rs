@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Forum create feed request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct ForumCreateFeedRequest {
@@ -13,7 +15,7 @@ pub struct ForumCreateFeedRequest {
 
     /// Images field on forum create feed request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub images: Option<Vec<String>>,
+    pub images: Option<Vec<MediaResource>>,
 
     /// Source field on forum create feed request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

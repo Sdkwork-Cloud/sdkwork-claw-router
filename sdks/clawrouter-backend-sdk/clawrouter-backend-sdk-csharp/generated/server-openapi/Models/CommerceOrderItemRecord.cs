@@ -7,6 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class CommerceOrderItemRecord
     {
         public string? CreatedAt { get; set; }
+        public string? Id { get; set; }
         public string? OrderId { get; set; }
         public string? Quantity { get; set; }
         public string? SkuId { get; set; }

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fitness-personal-assistant@3.6.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fitness-personal-assistant-3.6.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fitness-personal-assistant-3.6.1.json"
+      },
       "version": "3.6.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3eb264630d683c975e5f4475e3cc7784b23d8dfd9548d1dd1574d3fb72f52674",

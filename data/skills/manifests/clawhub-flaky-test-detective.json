@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flaky-test-detective@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-flaky-test-detective-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flaky-test-detective-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a190b7c1009686ce2b7eb858e8460093df774122d5fe735d9da9f0aec38720b7",

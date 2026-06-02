@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-musicbrainz@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-musicbrainz-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-musicbrainz-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26f8daadd71ea49973c9bb0c18f3eedf16a93385086fc4044ef1fbe24aa0a6fe",

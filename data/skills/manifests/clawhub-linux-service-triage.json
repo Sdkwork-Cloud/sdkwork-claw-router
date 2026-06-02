@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linux-service-triage@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linux-service-triage-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linux-service-triage-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:70731be102b6e276c89544db43789d6e43510493e1b2442315a3c655f9abd1ab",

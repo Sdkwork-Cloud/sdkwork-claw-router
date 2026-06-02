@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rss-digest@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-rss-digest-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rss-digest-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0a4c4e71ce7b058a97acde894a59b25ce2afbbfab76211262705403649022bf8",

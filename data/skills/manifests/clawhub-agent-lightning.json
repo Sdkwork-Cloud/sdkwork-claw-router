@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-lightning@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-lightning-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-lightning-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3dc9742e53bad5ee01b1fce60858d8c21ec71ce0812cc2c6e0a3f8b19287991c",

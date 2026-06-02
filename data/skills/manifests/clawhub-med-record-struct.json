@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/med-record-struct@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-med-record-struct-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-med-record-struct-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3fa11c697c5fe42dc6b250e4e29d8860a37f3f9d32f4aef513a34cab53d38b7",

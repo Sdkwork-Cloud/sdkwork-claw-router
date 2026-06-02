@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/email-fortress@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-email-fortress-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-email-fortress-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7690f5e9e63f21b0502d3205391915d9c2f1d142804ebeceea74f8577eb76b96",

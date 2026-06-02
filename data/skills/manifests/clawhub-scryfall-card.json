@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scryfall-card@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scryfall-card-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scryfall-card-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f9fdbc619d6f803f0042f7f989924635c81cbd108502e45033ccf59d476ab91",

@@ -1,5 +1,6 @@
 import type { AdminAppConfig } from './admin-app-config';
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Admin app update request schema exposed by Claw Router. */
 export interface AdminAppUpdateRequest {
@@ -7,18 +8,16 @@ export interface AdminAppUpdateRequest {
   accessUrl?: string | null;
   /** App type field on admin app update request. */
   appType?: string | null;
+  /** Artifact field on admin app update request. */
+  artifact?: MediaResource;
   /** Bundle id field on admin app update request. */
   bundleId?: string | null;
   /** Config field on admin app update request. */
   config?: AdminAppConfig;
   /** Description field on admin app update request. */
   description?: string | null;
-  /** Download url field on admin app update request. */
-  downloadUrl?: string | null;
   /** Icon field on admin app update request. */
-  icon?: Record<string, JsonValue>;
-  /** Icon url field on admin app update request. */
-  iconUrl?: string | null;
+  icon?: MediaResource;
   /** Install config field on admin app update request. */
   installConfig?: Record<string, JsonValue>;
   /** Install platforms field on admin app update request. */

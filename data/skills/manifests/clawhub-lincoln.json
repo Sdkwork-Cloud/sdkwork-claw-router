@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lincoln@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lincoln-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lincoln-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:471411eb91a2a4b80e240d0ebdc2513f5cd0fad4eef8be0bc9745eb3e176f419",

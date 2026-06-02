@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-transformer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-transformer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-transformer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:086bce98c1fbce1f272280c4318b2ebb19dfc6a9a6f6ebf1e91f133078c01257",

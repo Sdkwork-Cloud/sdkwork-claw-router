@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/freeport@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-freeport-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-freeport-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:725cce0c4ab662df7be9be83466c5e06eb8aebd71f83aa466098e9b033f8883d",

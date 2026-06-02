@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ragflow-skill-python@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ragflow-skill-python-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ragflow-skill-python-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f1acc74981baf29cfa5b415ef1464e2f7d847e3e6834dfdb029975ab4d18acdd",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/csctest1@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-csctest1-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-csctest1-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2686cac8a6eca2c460f58cb5e05b583982da163df5c68e42abb4322de004b887",

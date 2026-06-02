@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mindbody@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mindbody-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mindbody-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e71b5b859ea4b4beac4ad03579476d26c371287e6746660274fdc98c83783a60",

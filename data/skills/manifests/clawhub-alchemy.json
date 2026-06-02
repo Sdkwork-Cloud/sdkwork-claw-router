@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alchemy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alchemy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alchemy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:baca81c6ec53f68bab0336b39139aa3c18216a3ec931021fff7c3088a10e139a",

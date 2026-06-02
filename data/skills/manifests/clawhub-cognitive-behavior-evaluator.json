@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cognitive-behavior-evaluator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cognitive-behavior-evaluator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cognitive-behavior-evaluator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8cfb8e815d38225eddc77948e3a3cff4e1a5ab90a29b4432c351677aae15034c",

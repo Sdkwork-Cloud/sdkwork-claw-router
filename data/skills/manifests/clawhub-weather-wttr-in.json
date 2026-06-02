@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-wttr-in@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-wttr-in-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-wttr-in-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:52fb9d0b34f16651ce1e7788263a2017cbc7dea6c062a7657586c1dec82b78ef",

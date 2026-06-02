@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ccp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ccp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ccp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e2b62db077649f7bd8d554bd235cf4013947aa8d0fdda9fd222d769590b4cb8c",

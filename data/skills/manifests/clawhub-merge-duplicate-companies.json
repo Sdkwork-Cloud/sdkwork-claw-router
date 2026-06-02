@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/merge-duplicate-companies@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-merge-duplicate-companies-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-merge-duplicate-companies-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3ed12972b63ffc5e8af1e9032f552e6447aed85ca9de3d50ddbd00a685b2bc5",

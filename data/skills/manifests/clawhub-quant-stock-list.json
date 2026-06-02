@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quant-stock-list@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quant-stock-list-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quant-stock-list-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd7ddb2f1f099b5e8eed60984808ff3983c66c3df77170336271b08c2c90daf0",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/huaweicloud-skill@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-huaweicloud-skill-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-huaweicloud-skill-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cda7f37e95d43208233bfd139c66b040d2b8513a702ba0aab78d9451bbdb2af1",

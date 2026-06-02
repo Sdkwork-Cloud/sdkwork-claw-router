@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/simcluster@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-simcluster-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-simcluster-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:99826684d4e9bafcb6c1b19611b3b14d507dbfff80e90f9ad4fc19008b7b8656",

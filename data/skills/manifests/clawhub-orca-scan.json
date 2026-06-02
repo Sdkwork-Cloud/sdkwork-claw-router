@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/orca-scan@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-orca-scan-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-orca-scan-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7160f348bf6b5c770f1cd7919812c501f9e40716d885cf6754b7491577aa6134",

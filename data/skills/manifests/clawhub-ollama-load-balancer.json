@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ollama-load-balancer@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ollama-load-balancer-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ollama-load-balancer-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9f8a6b40fa83b61e511348aea1a4a3d7474d02305e4c0235271f909fb201db31",

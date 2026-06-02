@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/acrid-skill-creator@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-acrid-skill-creator-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-acrid-skill-creator-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d89b2a0c99d17cea78816f793a3b8d03b1c197c28182c2e7eb6f64aed026f21",

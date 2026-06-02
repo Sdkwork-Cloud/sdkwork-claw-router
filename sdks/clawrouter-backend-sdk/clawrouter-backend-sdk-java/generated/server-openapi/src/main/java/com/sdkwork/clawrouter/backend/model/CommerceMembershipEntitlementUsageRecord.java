@@ -5,6 +5,7 @@ public class CommerceMembershipEntitlementUsageRecord {
     private String balanceAfter;
     private String createdAt;
     private String entitlementId;
+    private String id;
     private String idempotencyKey;
     private String membershipId;
     private String occurredAt;
@@ -38,6 +39,14 @@ public class CommerceMembershipEntitlementUsageRecord {
 
     public void setEntitlementId(String entitlementId) {
         this.entitlementId = entitlementId;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

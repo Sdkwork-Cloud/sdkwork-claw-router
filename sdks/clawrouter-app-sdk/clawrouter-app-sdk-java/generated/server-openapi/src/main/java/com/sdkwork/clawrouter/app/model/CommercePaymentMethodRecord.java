@@ -4,11 +4,13 @@ package com.sdkwork.clawrouter.app.model;
 public class CommercePaymentMethodRecord {
     private String createdAt;
     private String displayName;
+    private String id;
     private String idempotencyKey;
     private String methodKey;
     private String organizationId;
     private String provider;
     private String requestNo;
+    private String sortWeight;
     private String status;
     private String tenantId;
     private String updatedAt;
@@ -27,6 +29,14 @@ public class CommercePaymentMethodRecord {
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {
@@ -67,6 +77,14 @@ public class CommercePaymentMethodRecord {
 
     public void setRequestNo(String requestNo) {
         this.requestNo = requestNo;
+    }
+
+    public String getSortWeight() {
+        return this.sortWeight;
+    }
+
+    public void setSortWeight(String sortWeight) {
+        this.sortWeight = sortWeight;
     }
 
     public String getStatus() {

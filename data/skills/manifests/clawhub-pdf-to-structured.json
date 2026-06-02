@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-to-structured@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-to-structured-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-to-structured-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2e13135a20403aa031684f5046c3c6f4aeb0d179f2e5e2699886c1499cdfc85",

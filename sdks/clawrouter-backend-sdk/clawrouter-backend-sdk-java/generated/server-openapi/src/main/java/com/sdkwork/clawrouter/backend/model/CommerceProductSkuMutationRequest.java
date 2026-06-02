@@ -4,9 +4,11 @@ import java.util.List;
 
 public class CommerceProductSkuMutationRequest {
     private List<CommerceProductSkuAttributeItem> attributes;
+    private String barcode;
     private String defaultCurrencyCode;
     private String defaultPriceAmount;
     private String fulfillmentType;
+    private MediaResource image;
     private String productId;
     private String salesUnit;
     private String skuNo;
@@ -20,6 +22,14 @@ public class CommerceProductSkuMutationRequest {
 
     public void setAttributes(List<CommerceProductSkuAttributeItem> attributes) {
         this.attributes = attributes;
+    }
+
+    public String getBarcode() {
+        return this.barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
     }
 
     public String getDefaultCurrencyCode() {
@@ -44,6 +54,14 @@ public class CommerceProductSkuMutationRequest {
 
     public void setFulfillmentType(String fulfillmentType) {
         this.fulfillmentType = fulfillmentType;
+    }
+
+    public MediaResource getImage() {
+        return this.image;
+    }
+
+    public void setImage(MediaResource image) {
+        this.image = image;
     }
 
     public String getProductId() {

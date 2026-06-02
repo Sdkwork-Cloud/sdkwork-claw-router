@@ -9,10 +9,15 @@ class StorageUsageLedgerRecord:
     app_id: Optional[str] = None
     business_domain: Optional[str] = None
     created_at: Optional[str] = None
+    delta_file_count: Optional[str] = None
+    delta_logical_bytes: Optional[str] = None
+    delta_physical_bytes: Optional[str] = None
+    delta_reserved_bytes: Optional[str] = None
     id: Optional[str] = None
     idempotency_key: Optional[str] = None
     legal_hold: Optional[bool] = None
     metadata: Optional[Dict[str, str]] = None
+    occurred_at: Optional[str] = None
     organization_id: Optional[str] = None
     payload_hash: Optional[str] = None
     reason: Optional[str] = None

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-channel@0.10.7-dev",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-channel-0.10.7-dev.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-channel-0.10.7-dev.json"
+      },
       "version": "0.10.7-dev",
       "runtime": "metadata",
       "checksumHash": "sha256:8c223b3a7ee70d4d5441a7cbf631d91ee7d94cd5b4e4e38ba4008896605737f8",

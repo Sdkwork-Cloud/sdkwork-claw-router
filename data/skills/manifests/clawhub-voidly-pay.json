@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voidly-pay@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voidly-pay-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voidly-pay-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:403cac3651d88609868175ff394b03456ec3513dc796160561cf26e3f9049e7a",

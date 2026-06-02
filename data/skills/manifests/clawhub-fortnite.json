@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fortnite@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fortnite-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fortnite-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed2c4fe26f596de5ade4c0c0ee6e27dd2cdbdb9cc47561296ba4174b23e23944",

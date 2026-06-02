@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/martell@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-martell-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-martell-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1cc073a2790639bd6e08f49e7f839103bf3720b3dc1fbe9f686d1e9302a1428b",

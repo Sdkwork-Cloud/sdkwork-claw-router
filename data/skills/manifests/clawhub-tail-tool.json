@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tail-tool@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tail-tool-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tail-tool-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:825dc0c8a2d59e5c625653b652711b5a104da537bd4fc0f622cc82a7c9039998",

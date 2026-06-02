@@ -76,10 +76,10 @@ export const consoleApiKeysMessages = {
     "console.apiKeys.status.enabled": "Enabled",
     "console.apiKeys.status.disabled": "Disabled",
     "console.apiKeys.errors.loadFallback": "API key loading failed.",
-    "console.apiKeys.errors.loadGroupsFallback": "API key groups loading failed.",
+    "console.apiKeys.errors.loadGroupsFallback": "channel groups loading failed.",
     "console.apiKeys.errors.createFallback": "API key creation failed.",
     "console.apiKeys.errors.updateFallback": "API key update failed.",
-    "console.apiKeys.errors.groupUpdateFallback": "API key group update failed.",
+    "console.apiKeys.errors.groupUpdateFallback": "channel group update failed.",
     "console.apiKeys.errors.deleteFallback": "API key deletion failed.",
   },
   zh: {

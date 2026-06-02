@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fooocus-image-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fooocus-image-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fooocus-image-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cebc54c477218bcd6efd0bae089546f79577c115cf2c1e6e61b5df0ef9b629de",

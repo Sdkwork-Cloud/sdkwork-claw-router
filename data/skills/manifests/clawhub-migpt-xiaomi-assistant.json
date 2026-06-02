@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/migpt-xiaomi-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-migpt-xiaomi-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-migpt-xiaomi-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:03020b186a4f27e665c1d78953405a1e2a402fd96e6da2eb5ef0c71d42d3016f",

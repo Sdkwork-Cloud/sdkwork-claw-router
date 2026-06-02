@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/release-discipline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-release-discipline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-release-discipline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:03cd986d347a2b94f26d8e81fe5dcd297cc5de6f56cd8b7c4c8213102bef779a",

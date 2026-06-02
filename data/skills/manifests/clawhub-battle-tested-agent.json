@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/battle-tested-agent@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-battle-tested-agent-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-battle-tested-agent-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1e5be023900858ce91e003bdfa2561cdbf39fb4d5a7f06e02a20d267584cd5f2",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-glossary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-glossary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-glossary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9625cce87de78f3f85c424504697e884276f86dfdafa44440876d4d5492e79f1",

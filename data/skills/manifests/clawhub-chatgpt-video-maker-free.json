@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chatgpt-video-maker-free@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chatgpt-video-maker-free-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chatgpt-video-maker-free-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1b649256f9d708242a9128e7c5025669c25b8c4ece6f5cb80491bd221e8622c",

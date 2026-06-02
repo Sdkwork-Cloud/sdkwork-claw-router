@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-generator-meta@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-generator-meta-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-generator-meta-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00e02dabf5b6df500b9b61cc7101d3d1a94295ca74a290f7c53f0167fcee164a",

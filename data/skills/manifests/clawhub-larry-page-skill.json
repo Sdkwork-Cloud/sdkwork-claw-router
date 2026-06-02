@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/larry-page-skill@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-larry-page-skill-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-larry-page-skill-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d90d90e63f5e4695dfe96287e0034568e43850f7c7e83cd86c489c3f384a1973",

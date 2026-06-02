@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-orchestrator-molter@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-orchestrator-molter-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-orchestrator-molter-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:20ee079f73903171e4977b034970f7493c51bc82779e892351c8681c21629fcd",

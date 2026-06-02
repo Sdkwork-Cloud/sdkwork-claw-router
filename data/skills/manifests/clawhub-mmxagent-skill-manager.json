@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mmxagent-skill-manager@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mmxagent-skill-manager-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mmxagent-skill-manager-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bef82ba89488ea465baf8b000cba3d4cf0a237b5323e2b9e0ed17a9f043b8407",

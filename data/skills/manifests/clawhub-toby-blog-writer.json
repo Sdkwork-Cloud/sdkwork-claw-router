@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-blog-writer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-blog-writer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-blog-writer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16044ef8f45295db986fdf18c2134cb65e530d02298f9955da1ee59793d9fe41",

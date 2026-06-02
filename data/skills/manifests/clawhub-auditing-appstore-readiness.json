@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auditing-appstore-readiness@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auditing-appstore-readiness-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auditing-appstore-readiness-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0069aba08d9166ac98a3ca1a335be98c1e1612b851d76f3a673f7260c6178d53",

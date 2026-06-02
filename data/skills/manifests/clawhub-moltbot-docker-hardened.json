@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltbot-docker-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltbot-docker-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltbot-docker-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0e44018e3e395efb71fac514cd4c0d13537f4f5f62cbb4d09d640eb2fd17999",

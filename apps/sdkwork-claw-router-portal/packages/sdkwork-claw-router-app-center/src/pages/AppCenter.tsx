@@ -11,7 +11,7 @@ import {
   CollapsibleSection,
   FilterCheckbox,
 } from 'sdkwork-claw-router-commons';
-import { getLoadErrorMessage } from 'sdkwork-claw-router-commons/runtime';
+import { getLoadErrorMessage, readMediaResourceUrl } from 'sdkwork-claw-router-commons/runtime';
 import {
   deriveAppCatalogViewModel,
   type App,
@@ -230,7 +230,7 @@ export function AppCenter() {
                       >
                         <div className="h-40 overflow-hidden relative">
                           <img
-                            src={app.image}
+                            src={readMediaResourceUrl(app.image)}
                             alt={app.name}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             referrerPolicy="no-referrer"

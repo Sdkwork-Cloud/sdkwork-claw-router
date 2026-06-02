@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kml@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kml-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kml-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:152852858d23f5268593407de8fa21274c954f4d1473b5e8ec989a7e27a28e21",

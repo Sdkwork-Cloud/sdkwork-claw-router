@@ -8,6 +8,10 @@ export interface UploadSessionRecord {
   bucket_id?: string;
   /** Completed at field on upload session record. */
   completed_at?: string;
+  /** Completed bytes field on upload session record. */
+  completed_bytes?: string;
+  /** Completed part count field on upload session record. */
+  completed_part_count?: number;
   /** Content type field on upload session record. */
   content_type?: string;
   /** Created at field on upload session record. */
@@ -20,6 +24,8 @@ export interface UploadSessionRecord {
   deleted_by?: string;
   /** Expected sha 256 field on upload session record. */
   expected_sha256?: string;
+  /** Expected size bytes field on upload session record. */
+  expected_size_bytes?: string;
   /** Expires at field on upload session record. */
   expires_at?: string;
   /** Id field on upload session record. */
@@ -40,6 +46,10 @@ export interface UploadSessionRecord {
   owner_id?: string;
   /** Owner type field on upload session record. */
   owner_type?: string;
+  /** Part count field on upload session record. */
+  part_count?: number;
+  /** Part size bytes field on upload session record. */
+  part_size_bytes?: string;
   /** Provider id field on upload session record. */
   provider_id?: string;
   /** Request id field on upload session record. */

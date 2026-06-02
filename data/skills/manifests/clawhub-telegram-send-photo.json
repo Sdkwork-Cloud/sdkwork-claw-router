@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-send-photo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-send-photo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-send-photo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:508be9f8be8737f10659a84766558fcb23da568c2e9213e0d31cd302b0fbd3a6",

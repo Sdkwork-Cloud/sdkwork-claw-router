@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-inject-removal@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-inject-removal-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-inject-removal-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e09c0ab20348e6349d5ff68166d2043894ad2e79c42566856ae272e7e0610361",

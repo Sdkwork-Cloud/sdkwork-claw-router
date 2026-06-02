@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-echo-agent@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-echo-agent-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-echo-agent-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29ecbcf0f5dd8cfc8f22fbb647fbd2f751619f5428ccc98cb920bbbc9cfbbb6c",

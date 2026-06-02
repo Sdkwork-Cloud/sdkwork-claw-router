@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fortigate-config@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fortigate-config-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fortigate-config-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d129810f35a2a1dabb76ddd3848049097fa1c84341d8ea284fd3b07a7fadf59",

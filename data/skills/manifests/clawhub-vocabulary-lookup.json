@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vocabulary-lookup@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vocabulary-lookup-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vocabulary-lookup-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:82bfaa915cda0aba4093a96044371f13517f57b5c6b0af409bbd04fa7d129b0a",

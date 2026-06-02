@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/financial-overview@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-financial-overview-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-financial-overview-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b8f9f2d4cba8d32e721cdbd9cc19b1d38b19720f4a28986607c9349697aac8a",

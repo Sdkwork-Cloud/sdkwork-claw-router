@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/iambic-pentameter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-iambic-pentameter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-iambic-pentameter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0327c02c4b69cd0cba1a42acc434f72bd77e40f45b4ed0ab09ab6309b2fcde82",

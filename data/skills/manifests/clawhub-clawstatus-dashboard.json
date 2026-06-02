@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawstatus-dashboard@2.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawstatus-dashboard-2.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawstatus-dashboard-2.4.0.json"
+      },
       "version": "2.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:356c101d80695c406b799baf793b3754abef64a4ef18530443746a3ae37ff52b",

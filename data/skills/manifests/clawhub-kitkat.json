@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kitkat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kitkat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kitkat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0fd0811953fc08d6fa3199a8bd94e53c06bdf3618fec772a5ee76800c0099f38",

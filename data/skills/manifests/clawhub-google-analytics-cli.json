@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-analytics-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-analytics-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-analytics-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2d4982c0186eca04f24dec49bea19b791a8df219d7ecd8d35b5c3dbffce83f3f",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/browser-harness-skill@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-browser-harness-skill-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-browser-harness-skill-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:b8ab18e3405057b28b750fa1976421740f2be64654358e798dff719726688013",

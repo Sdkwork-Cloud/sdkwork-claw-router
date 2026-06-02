@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexus-ai@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexus-ai-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexus-ai-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ea783cd58ee002b15709ed3f0af19819e01e20bb0444eef4e333b343357ebb96",

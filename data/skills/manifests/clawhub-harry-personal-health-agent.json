@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/harry-personal-health-agent@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-harry-personal-health-agent-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-harry-personal-health-agent-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98813be5d29eec34d25a78b26da0d1543fd42cabd4f9db4bdfbf5f43885f8665",

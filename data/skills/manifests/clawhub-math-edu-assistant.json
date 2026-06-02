@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/math-edu-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-math-edu-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-math-edu-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:99e0523f66b8bff56e4483be1919f29e1cc74843a1553076c32b1e9ab4dc7198",

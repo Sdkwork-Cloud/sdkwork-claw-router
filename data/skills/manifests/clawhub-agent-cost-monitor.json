@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-cost-monitor@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-cost-monitor-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-cost-monitor-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f21bdb04e54d588489077beb11e4a5897063794f7f082d8f9bdfec8e7fedd860",

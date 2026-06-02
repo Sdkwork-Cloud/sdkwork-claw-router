@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-usgswater@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-usgswater-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-usgswater-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:322ce71a92f16c589da2c09d3fe6392466a20b5bbe5f2dc85912e566c9e58c8e",

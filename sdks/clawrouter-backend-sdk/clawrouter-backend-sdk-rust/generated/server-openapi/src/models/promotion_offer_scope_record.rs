@@ -6,6 +6,10 @@ pub struct PromotionOfferScopeRecord {
     /// Created at field on promotion offer scope record.
     pub created_at: String,
 
+    /// Id field on promotion offer scope record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Match mode field on promotion offer scope record.
     pub match_mode: String,
 
@@ -15,6 +19,9 @@ pub struct PromotionOfferScopeRecord {
     /// Organization id field on promotion offer scope record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Priority field on promotion offer scope record.
+    pub priority: i64,
 
     /// Scope type field on promotion offer scope record.
     pub scope_type: String,

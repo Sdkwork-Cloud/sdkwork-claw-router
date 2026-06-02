@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/acpx-agent-playbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-acpx-agent-playbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-acpx-agent-playbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e73bf07c093bfca7f03965cf8b56883dbe091f22a63307aca8ab30d440e49ee7",

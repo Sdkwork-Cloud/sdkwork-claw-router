@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deadclaw@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-deadclaw-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deadclaw-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d822de176751909009e0e0599c9cce70dcda8fde0dd3ba7dfd65934483b19ecb",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentry-integration@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentry-integration-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentry-integration-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6727a9207715690b50238f329b903c9e4106cf5fb8625bc33da14afb1dc7b2b7",

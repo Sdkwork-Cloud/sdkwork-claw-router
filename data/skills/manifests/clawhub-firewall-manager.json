@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/firewall-manager@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-firewall-manager-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-firewall-manager-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0215218545da44800da6b9990875c1c36601211c7d3e07119f219ead8f50d12b",

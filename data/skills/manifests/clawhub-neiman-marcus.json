@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/neiman-marcus@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-neiman-marcus-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-neiman-marcus-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ffaefbf81bc85369238f58aecd0e324f639842844cc3ce8cc224b8e3bd1fb056",

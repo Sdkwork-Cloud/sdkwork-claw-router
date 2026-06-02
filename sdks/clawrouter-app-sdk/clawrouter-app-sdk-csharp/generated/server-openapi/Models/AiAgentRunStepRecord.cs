@@ -34,6 +34,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? StartedAt { get; set; }
         public string? Status { get; set; }
         public int? StepIndex { get; set; }
+        public string? StepStatus { get; set; }
         public string? StepType { get; set; }
         public string? TenantId { get; set; }
         public string? Title { get; set; }

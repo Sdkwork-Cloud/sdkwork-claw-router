@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-announcement@2.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-announcement-2.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-announcement-2.0.8.json"
+      },
       "version": "2.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:c6744d3216b9f323321b800bb351c6a7a300ea9a5211f3282641230c76a3e883",

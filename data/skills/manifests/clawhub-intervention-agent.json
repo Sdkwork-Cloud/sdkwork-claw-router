@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/intervention-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-intervention-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-intervention-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:971acc0defc7f33b020a8e3c4226a9b94de178abd13ffd079fb5635f900098f9",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trello-orchestrator-runner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trello-orchestrator-runner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trello-orchestrator-runner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7517c2f1959a03dd51b2a20ba97d66c93cc135d9888ecaca5e3cedf73148952",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/juniper-device-health@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-juniper-device-health-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-juniper-device-health-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bbc7545817c33fae5343da675d9697f0876eb4da862c5c5bd0ddff2b6f831f63",

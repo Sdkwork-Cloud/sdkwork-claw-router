@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cover-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cover-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cover-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d0b1339e45c252e8208008947fc5bfce6c7991a1ad0c4730c704a176503f5e38",

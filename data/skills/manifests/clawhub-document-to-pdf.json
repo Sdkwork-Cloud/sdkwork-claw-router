@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/document-to-pdf@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-document-to-pdf-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-document-to-pdf-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:79b169ba5aa72276c1796804f0bdd562e8ae30c5b6f181ab89a6ec5837e4a730",

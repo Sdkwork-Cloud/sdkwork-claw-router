@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nyc-subway-status@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nyc-subway-status-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nyc-subway-status-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:50490899aa0e307f30eac7a6c6bdb74feb366c05a7af155f32245b7329f04b33",

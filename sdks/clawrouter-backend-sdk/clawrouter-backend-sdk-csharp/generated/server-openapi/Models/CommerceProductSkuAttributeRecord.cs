@@ -10,6 +10,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? AttributeValueId { get; set; }
         public string? CreatedAt { get; set; }
         public string? CustomValue { get; set; }
+        public string? Id { get; set; }
         public string? OrganizationId { get; set; }
         public string? SkuId { get; set; }
         public string? TenantId { get; set; }

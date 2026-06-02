@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/exa-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-exa-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-exa-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b4b3e6dc5d81a65d4a6d513b0f5cda827693123dcb6a956ab16ed4dea0e5e1ad",

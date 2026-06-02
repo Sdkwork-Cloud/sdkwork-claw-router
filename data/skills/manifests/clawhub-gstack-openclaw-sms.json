@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gstack-openclaw-sms@2.5.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-gstack-openclaw-sms-2.5.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gstack-openclaw-sms-2.5.10.json"
+      },
       "version": "2.5.10",
       "runtime": "metadata",
       "checksumHash": "sha256:0c5eee70714d196ec32c10a86555fbbe13460a65de84bac387ed2e5081cfffc5",

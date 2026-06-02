@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/capcom-games@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-capcom-games-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-capcom-games-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ad76115818e3cdfb3df31ecd290258b512ad30758f8507bb706d4dc939208d26",

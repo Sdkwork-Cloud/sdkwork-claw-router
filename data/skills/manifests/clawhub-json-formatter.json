@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/json-formatter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-json-formatter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-json-formatter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed95d3197f4f8c555343b76fd49187e780ede1a45348fab95475b990ce9d0704",

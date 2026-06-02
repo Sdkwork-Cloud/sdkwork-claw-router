@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ah-terraform-engineer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ah-terraform-engineer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ah-terraform-engineer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7180c1c8e92eae4d2d7493d72cba5c4b0d4af0802275b5277130ba0a865f95eb",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:023e70cc81a1d2d5291343eda242561b6d8ae7e1a6d29bc86e53c35c67a93090",

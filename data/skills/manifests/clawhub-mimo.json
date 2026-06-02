@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mimo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mimo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mimo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e444419f23a4397da8b989dbdfe4d0c1be54f65728827d21ea000407d78db93",

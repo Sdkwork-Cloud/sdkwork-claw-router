@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/json-parser@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-json-parser-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-json-parser-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3c81a899f17a31eb3984ff9cd435e5698337a1e88f00d83baee581214bee25fa",

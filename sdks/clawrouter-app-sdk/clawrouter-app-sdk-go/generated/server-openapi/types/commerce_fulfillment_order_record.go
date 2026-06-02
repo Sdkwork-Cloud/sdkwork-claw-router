@@ -7,6 +7,7 @@ type CommerceFulfillmentOrderRecord struct {
 	CreatedAt string `json:"created_at"`
 	FulfillmentNo string `json:"fulfillment_no"`
 	FulfillmentType string `json:"fulfillment_type"`
+	Id string `json:"id"`
 	OrderId string `json:"order_id"`
 	OrganizationId string `json:"organization_id"`
 	ProviderCode string `json:"provider_code"`

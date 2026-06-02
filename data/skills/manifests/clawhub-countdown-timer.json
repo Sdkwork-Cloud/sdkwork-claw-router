@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/countdown-timer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-countdown-timer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-countdown-timer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:592f5efede49042397946ddd23eda53b846bb4cd89fc9a5f2df43c640b2b30cd",

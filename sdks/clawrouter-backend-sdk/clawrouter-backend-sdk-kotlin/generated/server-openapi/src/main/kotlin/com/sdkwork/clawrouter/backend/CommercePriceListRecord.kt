@@ -5,6 +5,7 @@ data class CommercePriceListRecord(
     val currencyCode: String? = null,
     val customerSegment: String? = null,
     val endsAt: String? = null,
+    val id: String? = null,
     val marketCode: String? = null,
     val organizationId: String? = null,
     val priceListNo: String? = null,

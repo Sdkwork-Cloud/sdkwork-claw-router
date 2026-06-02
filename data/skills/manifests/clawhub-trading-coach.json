@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trading-coach@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trading-coach-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trading-coach-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:50ca6e24299f43315c077f72cbb1aa6c8382e9b0945f0946eb820c4f715a73b9",

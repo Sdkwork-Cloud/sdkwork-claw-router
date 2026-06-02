@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jelastic@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-jelastic-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jelastic-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:54ef72d86ab3c27bbaab2eaea8ef0464c1cda7116f3ce83117768ad2bab3b939",

@@ -4,7 +4,7 @@ package com.sdkwork.clawrouter.backend.model;
 public class AdminSkillCategoryItem {
     private String code;
     private String description;
-    private String icon;
+    private MediaResource icon;
     private String id;
     private String name;
     private String parentId;
@@ -30,11 +30,11 @@ public class AdminSkillCategoryItem {
         this.description = description;
     }
 
-    public String getIcon() {
+    public MediaResource getIcon() {
         return this.icon;
     }
 
-    public void setIcon(String icon) {
+    public void setIcon(MediaResource icon) {
         this.icon = icon;
     }
 

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/typescript@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-typescript-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-typescript-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:659a48a04de0c0f20f9876f993dc7a01fc4d1e5beef160031010ecfc1552c9c5",

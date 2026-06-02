@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/distribution-agent-publisher-pack@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-distribution-agent-publisher-pack-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-distribution-agent-publisher-pack-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9f1e9cfb33cd29a3fc93b3a7e1c2605cb9b4db5bc57961bd3356b5a7763a79ee",

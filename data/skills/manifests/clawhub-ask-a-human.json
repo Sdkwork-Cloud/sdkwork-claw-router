@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ask-a-human@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ask-a-human-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ask-a-human-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dcd3daed3a0e01d4c681c4290286fb09aa6f83054fbf9c1f2ca0b8d04fa4a08c",

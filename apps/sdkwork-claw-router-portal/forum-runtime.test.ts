@@ -3,6 +3,10 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
+import {
+  toExternalUrlMediaResource,
+  type ClawRouterMediaResource,
+} from "./packages/sdkwork-claw-router-commons/src/media-resource.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import {
   FORUM_CONTENT_SOURCE,
@@ -24,7 +28,11 @@ type CapturedSdkRequest = {
   body: string;
 };
 
-const TEST_AVATAR = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2248%22%20fill%3D%22%230f766e%22%2F%3E%3C%2Fsvg%3E";
+const TEST_AVATAR = toExternalUrlMediaResource(
+  "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2096%2096%22%3E%3Crect%20width%3D%2296%22%20height%3D%2296%22%20rx%3D%2248%22%20fill%3D%22%230f766e%22%2F%3E%3C%2Fsvg%3E",
+  "image",
+)!;
+const CDN_FORUM_AVATAR = (path: string): ClawRouterMediaResource => toExternalUrlMediaResource(`https://cdn.example.test/${path}`, "image")!;
 
 const FORUM_POSTS: ForumPost[] = [
   {
@@ -293,7 +301,7 @@ test("forum view models prefer live backend comment counts before comment trees 
     {
       id: "live-1",
       title: "Live statistics from feed list",
-      author: { name: "Stats Maintainer", avatar: "https://cdn.example.test/stats.png" },
+      author: { name: "Stats Maintainer", avatar: CDN_FORUM_AVATAR("stats.png") },
       content: "The feed list already includes comment totals.",
       contentSnippet: "The feed list already includes comment totals.",
       category: "Performance",
@@ -310,7 +318,7 @@ test("forum view models prefer live backend comment counts before comment trees 
     {
       id: "live-2",
       title: "Related live statistics",
-      author: { name: "Forum Operator", avatar: "https://cdn.example.test/operator.png" },
+      author: { name: "Forum Operator", avatar: CDN_FORUM_AVATAR("operator.png") },
       content: "Related cards should use backend counts too.",
       contentSnippet: "Related cards should use backend counts too.",
       category: "Performance",
@@ -365,7 +373,7 @@ test("forum service loads feeds detail and comments through generated app SDK en
             contentType: "feeds",
             categoryId: 1001,
             tags: ["routing", "fallback"],
-            author: { id: 7, name: "Route Maintainer", avatar: "https://cdn.example.test/u7.png" },
+            author: { id: 7, name: "Route Maintainer", avatar: CDN_FORUM_AVATAR("u7.png") },
           viewCount: 1200,
           likeCount: 25,
           commentCount: 2,
@@ -387,7 +395,7 @@ test("forum service loads feeds detail and comments through generated app SDK en
           contentId: 42,
           categoryId: 1001,
           tags: ["routing", "fallback"],
-          author: { id: 7, name: "Route Maintainer", avatar: "https://cdn.example.test/u7.png" },
+          author: { id: 7, name: "Route Maintainer", avatar: CDN_FORUM_AVATAR("u7.png") },
           viewCount: 1201,
           likeCount: 25,
           commentCount: 2,
@@ -412,7 +420,7 @@ test("forum service loads feeds detail and comments through generated app SDK en
               status: "PUBLISHED",
               likes: 5,
               replyCount: 1,
-              author: { id: 8, name: "Trace Reviewer", avatar: "https://cdn.example.test/u8.png" },
+              author: { id: 8, name: "Trace Reviewer", avatar: CDN_FORUM_AVATAR("u8.png") },
               createdAt: "2026-05-09T08:30:00Z",
             },
             {
@@ -425,7 +433,7 @@ test("forum service loads feeds detail and comments through generated app SDK en
               likes: 2,
               replyCount: 0,
               parentId: 100,
-              author: { id: 9, name: "Gateway Operator", avatar: "https://cdn.example.test/u9.png" },
+              author: { id: 9, name: "Gateway Operator", avatar: CDN_FORUM_AVATAR("u9.png") },
               createdAt: "2026-05-09T08:35:00Z",
             },
           ],
@@ -532,7 +540,7 @@ test("forum service exposes the complete feed and comment SDK surface", async ()
         contentType: "feeds",
         categoryId: 1001,
         tags: ["routing", "fallback"],
-        author: { id: 7, name: "Route Maintainer", avatar: "https://cdn.example.test/u7.png" },
+        author: { id: 7, name: "Route Maintainer", avatar: CDN_FORUM_AVATAR("u7.png") },
         viewCount: 1200,
         likeCount: 25,
         commentCount: 2,
@@ -550,7 +558,7 @@ test("forum service exposes the complete feed and comment SDK surface", async ()
         likes: 5,
         replyCount: 1,
         isTop: false,
-        author: { id: 8, name: "Trace Reviewer", avatar: "https://cdn.example.test/u8.png" },
+        author: { id: 8, name: "Trace Reviewer", avatar: CDN_FORUM_AVATAR("u8.png") },
         createdAt: "2026-05-09T08:30:00Z",
       };
       const replyItem = {
@@ -559,7 +567,7 @@ test("forum service exposes the complete feed and comment SDK surface", async ()
         content: "Expose retry reason in trace logs.",
         parentId: 100,
         userId: 9,
-        author: { id: 9, name: "Gateway Operator", avatar: "https://cdn.example.test/u9.png" },
+        author: { id: 9, name: "Gateway Operator", avatar: CDN_FORUM_AVATAR("u9.png") },
         createdAt: "2026-05-09T08:35:00Z",
       };
       const feedPage = [feedItem];
@@ -747,7 +755,8 @@ test("forum service loads live forum overview data through generated app SDK end
       assert.equal(overview.communityLinks[0].id, "wechat");
       assert.equal(overview.communityLinks[0].label, "WeChat Group");
       assert.equal(overview.communityLinks[0].tone, "green");
-      assert.match(overview.communityLinks[0].qrCodeUrl, /^data:image\//u);
+      assert.equal(overview.communityLinks[0].qrCode.kind, "image");
+      assert.match(overview.communityLinks[0].qrCode.url ?? "", /^data:image\//u);
     },
   );
 });
@@ -769,7 +778,12 @@ test("forum service ignores community links that are not real public URLs", asyn
               id: "public",
               label: "Public Community",
               url: "https://community.example.test/forum",
-              qrCodeUrl: "https://cdn.example.test/qrs/forum.png",
+              qrCode: {
+                kind: "image",
+                publicUrl: "https://cdn.example.test/qrs/forum.png",
+                source: "external_url",
+                url: "https://cdn.example.test/qrs/forum.png",
+              },
               tone: "teal",
             },
             {
@@ -812,7 +826,12 @@ test("forum service ignores community links that are not real public URLs", asyn
               id: "unsafeQr",
               label: "Unsafe QR",
               url: "https://community.example.test/unsafe-qr",
-              qrCodeUrl: "http://localhost/qrs/forum.png",
+              qrCode: {
+                kind: "image",
+                publicUrl: "http://localhost/qrs/forum.png",
+                source: "external_url",
+                url: "http://localhost/qrs/forum.png",
+              },
               tone: "green",
             },
           ],
@@ -830,9 +849,9 @@ test("forum service ignores community links that are not real public URLs", asyn
       const overview = await forumService.fetchForumOverview();
 
       assert.deepEqual(overview.communityLinks.map((link) => link.id), ["public", "unsafeQr"]);
-      assert.equal(overview.communityLinks[0].qrCodeUrl, "https://cdn.example.test/qrs/forum.png");
+      assert.equal(overview.communityLinks[0].qrCode.url, "https://cdn.example.test/qrs/forum.png");
       assert.equal(overview.communityLinks[0].tone, "teal");
-      assert.match(overview.communityLinks[1].qrCodeUrl, /^data:image\//u);
+      assert.match(overview.communityLinks[1].qrCode.url ?? "", /^data:image\//u);
     },
   );
 });
@@ -868,16 +887,16 @@ test("forum service rejects forum request DTOs that violate the generated conten
     /categoryId must be greater than or equal to 0/u,
   );
   await assert.rejects(
-    () => forumService.createForumFeed({ content: "Valid content", images: Array.from({ length: 21 }, (_, index) => `https://cdn.example.test/${index}.png`) }),
+    () => forumService.createForumFeed({ content: "Valid content", images: Array.from({ length: 21 }, (_, index) => CDN_FORUM_AVATAR(`${index}.png`)) }),
     /images must contain at most 20 items/u,
   );
   await assert.rejects(
-    () => forumService.createForumFeed({ content: "Valid content", images: Array.from({ length: 21 }, () => " ") }),
+    () => forumService.createForumFeed({ content: "Valid content", images: Array.from({ length: 21 }, () => TEST_AVATAR) }),
     /images must contain at most 20 items/u,
   );
   await assert.rejects(
-    () => forumService.createForumFeed({ content: "Valid content", images: ["x".repeat(2049)] }),
-    /images item must be at most 2048 characters/u,
+    () => forumService.createForumFeed({ content: "Valid content", images: ["https://cdn.example.test/legacy.png" as never] }),
+    /images item must be a MediaResource/u,
   );
   await assert.rejects(
     () => forumService.createForumFeed({ content: "Valid content", tags: Array.from({ length: 21 }, (_, index) => `tag-${index}`) }),

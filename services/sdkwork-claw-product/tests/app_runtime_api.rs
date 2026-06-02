@@ -172,6 +172,14 @@ async fn app_runtime_records_events_and_artifacts_under_invocation() {
     assert_eq!("2000", payload["code"]);
     assert_eq!("runtime-artifact-1", payload["data"]["item"]["id"]);
     assert_eq!("summary.md", payload["data"]["item"]["name"]);
+    assert_eq!(
+        "runtime/runtime-invocation-1/summary.md",
+        payload["data"]["item"]["resource"]["objectKey"]
+    );
+    assert_eq!(
+        "https://cdn.example.test/runtime/runtime-invocation-1/summary.md",
+        payload["data"]["item"]["resource"]["publicUrl"]
+    );
 
     let event_commands = store.create_event_commands.lock().unwrap();
     assert_eq!(1, event_commands.len());
@@ -184,6 +192,14 @@ async fn app_runtime_records_events_and_artifacts_under_invocation() {
     assert_eq!("runtime-invocation-1", artifact_commands[0].invocation_id);
     assert_eq!("file", artifact_commands[0].artifact_type);
     assert_eq!("summary.md", artifact_commands[0].name.as_deref().unwrap());
+    assert_eq!(
+        "runtime/runtime-invocation-1/summary.md",
+        artifact_commands[0].resource.as_ref().unwrap()["objectKey"]
+    );
+    assert_eq!(
+        "object_storage",
+        artifact_commands[0].resource.as_ref().unwrap()["source"]
+    );
 }
 
 #[tokio::test]
@@ -242,6 +258,16 @@ async fn app_runtime_lists_invocations_events_and_artifacts_for_trusted_subject(
     assert_eq!(StatusCode::OK, response.status());
     let payload = response_json(response).await;
     assert_eq!("runtime-artifact-1", payload["data"]["items"][0]["id"]);
+    assert_eq!(
+        "https://cdn.example.test/runtime/runtime-invocation-1/summary.md",
+        payload["data"]["items"][0]["resource"]["publicUrl"]
+    );
+    assert!(
+        payload["data"]["items"][0]
+            .as_object()
+            .is_some_and(|record| !record.contains_key("storageUrl")),
+        "runtime artifact response must not expose legacy storageUrl"
+    );
 
     let subjects = store.list_invocation_subjects.lock().unwrap();
     assert_eq!(
@@ -2668,8 +2694,18 @@ async fn app_runtime_gateway_executor_routes_image_generation_to_gateway_images_
     assert_eq!("generation", asset_event.event_source);
     assert_eq!(
         "https://cdn.example.test/generated/poster.png",
-        asset_event.payload_json["assets"][0]["url"]
+        asset_event.payload_json["assets"][0]["asset"]["url"]
     );
+    assert_eq!(
+        "image",
+        asset_event.payload_json["assets"][0]["asset"]["kind"]
+    );
+    assert_eq!(
+        "external_url",
+        asset_event.payload_json["assets"][0]["asset"]["source"]
+    );
+    assert!(asset_event.payload_json["assets"][0].get("url").is_none());
+    assert!(asset_event.payload_json["assets"][0].get("thumb").is_none());
     assert_eq!(12, asset_event.payload_json["usage"]["input_tokens"]);
     assert_eq!(2, asset_event.payload_json["usage"]["output_tokens"]);
     assert_eq!(14, asset_event.payload_json["usage"]["total_tokens"]);
@@ -2812,8 +2848,17 @@ async fn app_runtime_gateway_executor_routes_gemini_image_generation_and_emits_i
     assert_eq!("generation", asset_event.event_source);
     assert_eq!(
         "data:image/png;base64,aW1hZ2UtYnl0ZXM=",
-        asset_event.payload_json["assets"][0]["url"]
+        asset_event.payload_json["assets"][0]["asset"]["url"]
     );
+    assert_eq!(
+        "image",
+        asset_event.payload_json["assets"][0]["asset"]["kind"]
+    );
+    assert_eq!(
+        "data_url",
+        asset_event.payload_json["assets"][0]["asset"]["source"]
+    );
+    assert!(asset_event.payload_json["assets"][0].get("url").is_none());
     assert_runtime_completed_event_recorded(&event_commands);
 }
 
@@ -2891,12 +2936,25 @@ async fn app_runtime_gateway_executor_routes_suno_music_generation_to_provider_m
     assert_eq!("music", asset_event.payload_json["assets"][0]["modality"]);
     assert_eq!(
         "audio/mpeg",
-        asset_event.payload_json["assets"][0]["mimeType"]
+        asset_event.payload_json["assets"][0]["asset"]["mimeType"]
     );
     assert_eq!(
         30.0,
-        asset_event.payload_json["assets"][0]["durationSeconds"]
+        asset_event.payload_json["assets"][0]["asset"]["durationSeconds"]
     );
+    assert_eq!(
+        "https://cdn.example.test/generated/theme.mp3",
+        asset_event.payload_json["assets"][0]["asset"]["url"]
+    );
+    assert_eq!(
+        "audio",
+        asset_event.payload_json["assets"][0]["asset"]["kind"]
+    );
+    assert_eq!(
+        "external_url",
+        asset_event.payload_json["assets"][0]["asset"]["source"]
+    );
+    assert!(asset_event.payload_json["assets"][0].get("url").is_none());
     assert_runtime_completed_event_recorded(&event_commands);
 }
 
@@ -2966,8 +3024,13 @@ async fn app_runtime_gateway_executor_routes_openai_audio_generation_to_audio_sp
     assert_eq!("audio", asset_event.payload_json["assets"][0]["modality"]);
     assert_eq!(
         "audio/mpeg",
-        asset_event.payload_json["assets"][0]["mimeType"]
+        asset_event.payload_json["assets"][0]["asset"]["mimeType"]
     );
+    assert_eq!(
+        "audio",
+        asset_event.payload_json["assets"][0]["asset"]["kind"]
+    );
+    assert!(asset_event.payload_json["assets"][0].get("url").is_none());
     assert_runtime_completed_event_recorded(&event_commands);
 }
 
@@ -3035,8 +3098,13 @@ async fn app_runtime_gateway_executor_applies_speech_mode_config_to_openai_audio
     let asset_event = single_event_command_of_type(&event_commands, "generation.asset");
     assert_eq!(
         "audio/wav",
-        asset_event.payload_json["assets"][0]["mimeType"]
+        asset_event.payload_json["assets"][0]["asset"]["mimeType"]
     );
+    assert_eq!(
+        "audio",
+        asset_event.payload_json["assets"][0]["asset"]["kind"]
+    );
+    assert!(asset_event.payload_json["assets"][0].get("url").is_none());
     assert_runtime_completed_event_recorded(&event_commands);
 }
 
@@ -3112,8 +3180,13 @@ async fn app_runtime_gateway_executor_routes_gemini_tts_generation_with_audio_co
     assert_eq!("audio", asset_event.payload_json["assets"][0]["modality"]);
     assert_eq!(
         "audio/wav",
-        asset_event.payload_json["assets"][0]["mimeType"]
+        asset_event.payload_json["assets"][0]["asset"]["mimeType"]
     );
+    assert_eq!(
+        "audio",
+        asset_event.payload_json["assets"][0]["asset"]["kind"]
+    );
+    assert!(asset_event.payload_json["assets"][0].get("url").is_none());
     assert_runtime_completed_event_recorded(&event_commands);
 }
 
@@ -3190,8 +3263,13 @@ async fn app_runtime_gateway_executor_routes_elevenlabs_audio_generation_to_text
     assert_eq!("audio", asset_event.payload_json["assets"][0]["modality"]);
     assert_eq!(
         "audio/wav",
-        asset_event.payload_json["assets"][0]["mimeType"]
+        asset_event.payload_json["assets"][0]["asset"]["mimeType"]
     );
+    assert_eq!(
+        "audio",
+        asset_event.payload_json["assets"][0]["asset"]["kind"]
+    );
+    assert!(asset_event.payload_json["assets"][0].get("url").is_none());
     assert_runtime_completed_event_recorded(&event_commands);
 }
 
@@ -3271,8 +3349,13 @@ async fn app_runtime_gateway_executor_routes_elevenlabs_sfx_generation_and_keeps
     assert_eq!("sfx", asset_event.payload_json["assets"][0]["modality"]);
     assert_eq!(
         "audio/wav",
-        asset_event.payload_json["assets"][0]["mimeType"]
+        asset_event.payload_json["assets"][0]["asset"]["mimeType"]
     );
+    assert_eq!(
+        "audio",
+        asset_event.payload_json["assets"][0]["asset"]["kind"]
+    );
+    assert!(asset_event.payload_json["assets"][0].get("url").is_none());
     assert_runtime_completed_event_recorded(&event_commands);
 }
 
@@ -3912,7 +3995,7 @@ impl sdkwork_claw_product::ports::PricingCatalog for TestRuntimeCatalog {
             10,
             20,
             "standard-chat",
-            sdkwork_claw_product::domain::RoutingPolicyScope::ApiKeyGroup,
+            sdkwork_claw_product::domain::RoutingPolicyScope::ChannelGroup,
             Some(10),
             Some(9101),
         )
@@ -3981,16 +4064,16 @@ impl sdkwork_claw_product::ports::PricingCatalog for TestRuntimeCatalog {
         api_keys
     }
 
-    fn list_api_key_groups(&self) -> Vec<sdkwork_claw_product::domain::ApiKeyGroup> {
+    fn list_channel_groups(&self) -> Vec<sdkwork_claw_product::domain::ChannelGroup> {
         vec![
-            sdkwork_claw_product::domain::ApiKeyGroup::new(
+            sdkwork_claw_product::domain::ChannelGroup::new(
                 10,
                 "standard",
                 "standard",
                 sdkwork_claw_product::domain::DecimalValue::parse("1.000000").unwrap(),
                 sdkwork_claw_product::domain::DecimalValue::parse("1.000000").unwrap(),
             ),
-            sdkwork_claw_product::domain::ApiKeyGroup::new(
+            sdkwork_claw_product::domain::ChannelGroup::new(
                 20,
                 "unroutable",
                 "standard",
@@ -4048,11 +4131,11 @@ impl sdkwork_claw_product::ports::PricingCatalog for TestRuntimeCatalog {
         None
     }
 
-    fn find_api_key_group(
+    fn find_channel_group(
         &self,
         group_id: i64,
-    ) -> Option<sdkwork_claw_product::domain::ApiKeyGroup> {
-        self.list_api_key_groups()
+    ) -> Option<sdkwork_claw_product::domain::ChannelGroup> {
+        self.list_channel_groups()
             .into_iter()
             .find(|group| group.id == group_id)
     }
@@ -4071,10 +4154,10 @@ impl sdkwork_claw_product::ports::PricingCatalog for TestRuntimeCatalog {
         None
     }
 
-    fn find_latest_api_key_group_metric_snapshot(
+    fn find_latest_channel_group_metric_snapshot(
         &self,
         _group_id: i64,
-    ) -> Option<sdkwork_claw_product::domain::ApiKeyGroupMetricSnapshot> {
+    ) -> Option<sdkwork_claw_product::domain::ChannelGroupMetricSnapshot> {
         None
     }
 
@@ -4608,7 +4691,12 @@ fn sample_artifact() -> AppRuntimeArtifactItem {
         mime_type: Some("text/markdown".to_owned()),
         content_text: Some("# Summary".to_owned()),
         storage_key: Some("runtime/runtime-invocation-1/summary.md".to_owned()),
-        storage_url: None,
+        resource: Some(serde_json::json!({
+            "kind": "document",
+            "source": "external_url",
+            "objectKey": "runtime/runtime-invocation-1/summary.md",
+            "publicUrl": "https://cdn.example.test/runtime/runtime-invocation-1/summary.md"
+        })),
         sha256: Some("abc123".to_owned()),
         size_bytes: Some(9),
         created_at: "2026-05-18 09:00:02".to_owned(),

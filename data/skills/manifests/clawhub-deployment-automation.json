@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deployment-automation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deployment-automation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deployment-automation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f99ca1bc7acdb41f611a74d11828ec79190e27f75c42837fcea70fa4dbeeb5c4",

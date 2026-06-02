@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drake@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-drake-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drake-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:efbd212916476dad22590b580eba6b58739d81431538552ade7a8e2fda3c9e26",

@@ -85,6 +85,18 @@ class CommerceApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<CatalogCategoriesUpdateResult>() {})
     }
 
+    /** Initialize admin category seed datasets */
+    suspend fun catalogCategorySeedsCreate(body: CommerceCategorySeedInitializeRequest, idempotencyKey: String): CatalogCategorySeedsCreateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.post(ApiPaths.backendPath("/catalog/category_seeds/initialize"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<CatalogCategorySeedsCreateResult>() {})
+    }
+
     /** List product price lists */
     suspend fun catalogPriceLists(currencyCode: String? = null, marketCode: String? = null, status: String? = null, page: Int? = null, pageSize: Int? = null): CatalogPriceListsListResult? {
         val query = buildQueryString(listOf(
@@ -137,6 +149,12 @@ class CommerceApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<CatalogProductsCreateResult>() {})
     }
 
+    /** Delete product SPU */
+    suspend fun catalogProductsDelete(productId: String): CatalogProductsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/catalog/products/${serializePathParameter(productId, PathParameterSpec("productId", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<CatalogProductsDeleteResult>() {})
+    }
+
     /** Update product SPU */
     suspend fun catalogProductsUpdate(productId: String, body: CommerceProductSpuMutationRequest, idempotencyKey: String): CatalogProductsUpdateResult? {
         val requestHeaders = buildRequestHeaders(
@@ -172,6 +190,12 @@ class CommerceApi(private val client: HttpClient) {
         )
         val raw = client.post(ApiPaths.backendPath("/catalog/skus"), body, null, requestHeaders, "application/json")
         return client.convertValue(raw, object : TypeReference<CatalogSkusCreateResult>() {})
+    }
+
+    /** Delete product SKU */
+    suspend fun catalogSkusDelete(skuId: String): CatalogSkusDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/catalog/skus/${serializePathParameter(skuId, PathParameterSpec("skuId", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<CatalogSkusDeleteResult>() {})
     }
 
     /** Update product SKU */
@@ -572,6 +596,36 @@ class CommerceApi(private val client: HttpClient) {
         return client.convertValue(raw, object : TypeReference<PaymentsProviderAccountsCreateResult>() {})
     }
 
+    /** Payments Provider Accounts Delete */
+    suspend fun paymentsProviderAccountsDelete(providerAccountId: String): PaymentsProviderAccountsDeleteResult? {
+        val raw = client.delete(ApiPaths.backendPath("/payments/provider_accounts/${serializePathParameter(providerAccountId, PathParameterSpec("providerAccountId", "simple", false))}"))
+        return client.convertValue(raw, object : TypeReference<PaymentsProviderAccountsDeleteResult>() {})
+    }
+
+    /** Payments Provider Accounts Update */
+    suspend fun paymentsProviderAccountsUpdate(providerAccountId: String, body: CommercePaymentProviderAccountMutationRequest, idempotencyKey: String): PaymentsProviderAccountsUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.patch(ApiPaths.backendPath("/payments/provider_accounts/${serializePathParameter(providerAccountId, PathParameterSpec("providerAccountId", "simple", false))}"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<PaymentsProviderAccountsUpdateResult>() {})
+    }
+
+    /** Payments Provider Accounts Status Update */
+    suspend fun paymentsProviderAccountsStatusUpdate(providerAccountId: String, body: CommercePaymentProviderAccountStatusUpdateRequest, idempotencyKey: String): PaymentsProviderAccountsStatusUpdateResult? {
+        val requestHeaders = buildRequestHeaders(
+            mapOf(
+                "Idempotency-Key" to HeaderParameterSpec(idempotencyKey, "simple", false, null),
+            ),
+            emptyMap()
+        )
+        val raw = client.patch(ApiPaths.backendPath("/payments/provider_accounts/${serializePathParameter(providerAccountId, PathParameterSpec("providerAccountId", "simple", false))}/status"), body, null, requestHeaders, "application/json")
+        return client.convertValue(raw, object : TypeReference<PaymentsProviderAccountsStatusUpdateResult>() {})
+    }
+
     /** Payments Providers List */
     suspend fun paymentsProvidersList(page: Int? = null, pageSize: Int? = null, status: String? = null): PaymentsProvidersListResult? {
         val query = buildQueryString(listOf(
@@ -608,6 +662,15 @@ class CommerceApi(private val client: HttpClient) {
         ))
         val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/route_rules"), query))
         return client.convertValue(raw, object : TypeReference<PaymentsRouteRulesListResult>() {})
+    }
+
+    /** Payments Runtime Snapshot Retrieve */
+    suspend fun paymentsRuntimeSnapshotRetrieve(environment: String? = null): PaymentsRuntimeSnapshotRetrieveResult? {
+        val query = buildQueryString(listOf(
+            QueryParameterSpec("environment", environment, "form", true, false, null)
+        ))
+        val raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/runtime/snapshot"), query))
+        return client.convertValue(raw, object : TypeReference<PaymentsRuntimeSnapshotRetrieveResult>() {})
     }
 
     /** Payments Webhook Events List */
@@ -672,6 +735,18 @@ class CommerceApi(private val client: HttpClient) {
         )
         val raw = client.patch(ApiPaths.backendPath("/recharges/packages/${serializePathParameter(packageId, PathParameterSpec("packageId", "simple", false))}"), body, null, requestHeaders, "application/json")
         return client.convertValue(raw, object : TypeReference<RechargesPackagesUpdateResult>() {})
+    }
+
+    /** Recharges Settings Retrieve */
+    suspend fun rechargesSettingsRetrieve(): RechargesSettingsRetrieveResult? {
+        val raw = client.get(ApiPaths.backendPath("/recharges/settings"))
+        return client.convertValue(raw, object : TypeReference<RechargesSettingsRetrieveResult>() {})
+    }
+
+    /** Recharges Settings Update */
+    suspend fun rechargesSettingsUpdate(body: CommerceRechargeSettingsUpdateRequest): RechargesSettingsUpdateResult? {
+        val raw = client.put(ApiPaths.backendPath("/recharges/settings"), body, null, null, "application/json")
+        return client.convertValue(raw, object : TypeReference<RechargesSettingsUpdateResult>() {})
     }
 
     /** Refunds List */

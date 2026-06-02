@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vans@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-vans-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vans-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c346876fc5b80b0a8ff73033eba64148bc92c89f0ec608b697b2bd5a1abace96",

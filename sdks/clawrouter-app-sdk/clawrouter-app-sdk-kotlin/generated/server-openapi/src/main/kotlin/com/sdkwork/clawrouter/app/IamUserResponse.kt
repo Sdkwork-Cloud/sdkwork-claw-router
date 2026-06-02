@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.app
 
 data class IamUserResponse(
-    val avatarUrl: String? = null,
+    val avatar: MediaResource? = null,
     val displayName: String? = null,
     val email: String? = null,
     val id: String? = null,

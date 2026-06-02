@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crewai-team@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crewai-team-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crewai-team-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be3b6511c77c0991923d0c2b979b395565799ba9fb433a5d377df0feef9b8753",

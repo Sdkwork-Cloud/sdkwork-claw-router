@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/botlearn-google-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-botlearn-google-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-botlearn-google-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8c624020af127fc945a00c2a20568bbff90905229a1456c5cba81c26fa3d5e8",

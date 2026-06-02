@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/median@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-median-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-median-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6c578d38322b7e60410a127d47e3f393387e867a524ac220c7671816ebaf42a4",

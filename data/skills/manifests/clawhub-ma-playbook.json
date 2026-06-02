@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ma-playbook@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ma-playbook-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ma-playbook-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fe32cf5105e0ae2964f79e7ad8776a829628a3b5b282253cb6a88fd0932317ef",

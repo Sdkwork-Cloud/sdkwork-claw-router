@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-dns@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-dns-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-dns-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5544103070e74cfd75698abf3eeaa76d47c46aaa8666975905ffae77867c1da3",

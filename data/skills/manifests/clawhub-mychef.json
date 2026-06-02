@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mychef@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-mychef-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mychef-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d78c8becb5f7aefb1de5a79de8ab3ac1d802daeacc5e0db6d73643922a6c2cfe",

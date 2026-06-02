@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dreamer@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dreamer-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dreamer-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09e42841fb700e1a33daa480cb5a81d469dbb987ba4ecc05465170f73392abef",

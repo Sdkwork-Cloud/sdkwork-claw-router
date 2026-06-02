@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/registry-broker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-registry-broker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-registry-broker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:733bd92f88f135290d3cba7598b72cf857a70976b4438301b491901d48ad2e22",

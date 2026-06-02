@@ -15,6 +15,7 @@ type PromotionExternalOperationRecord struct {
 	ExternalOperationId string `json:"external_operation_id"`
 	ExternalRequestNo string `json:"external_request_no"`
 	ExternalStatus string `json:"external_status"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	NextRetryAt string `json:"next_retry_at"`
 	OccurredAt string `json:"occurred_at"`
@@ -27,6 +28,7 @@ type PromotionExternalOperationRecord struct {
 	ReplayOpId string `json:"replay_op_id"`
 	RequestHash string `json:"request_hash"`
 	ResponseHash string `json:"response_hash"`
+	RetryCount int `json:"retry_count"`
 	SanitizedRequestJson map[string]JsonValue `json:"sanitized_request_json"`
 	SanitizedResponseJson map[string]JsonValue `json:"sanitized_response_json"`
 	Status string `json:"status"`

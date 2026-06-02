@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-elf-cli-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-elf-cli-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-elf-cli-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a37527e39d8c620d31861e29f67154beabd83fe3ecc52c6e9e1a2ab7480510e4",

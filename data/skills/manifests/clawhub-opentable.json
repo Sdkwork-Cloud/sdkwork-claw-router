@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opentable@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-opentable-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opentable-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fcf119f177cf588847f6fd5ea47f3c0ed7cff0d758fc48558102a835148c55ea",

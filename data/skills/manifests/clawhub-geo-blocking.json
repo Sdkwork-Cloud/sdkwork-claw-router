@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/geo-blocking@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-geo-blocking-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-geo-blocking-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9147016a2aabc5848816f70a8f3d248d371ed0af6bb8a1d8eea38cce67d52f61",

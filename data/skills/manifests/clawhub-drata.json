@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drata@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-drata-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drata-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:99c4f562c4717da4954ab5ee0d053aba78fc8b6db03a6bc85877b5b5e8f3926b",

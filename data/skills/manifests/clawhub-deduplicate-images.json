@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deduplicate-images@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-deduplicate-images-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deduplicate-images-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5a63c7442b978cabcfb66234899421c5d1f127657ea32f49acfb31cc027edfe6",

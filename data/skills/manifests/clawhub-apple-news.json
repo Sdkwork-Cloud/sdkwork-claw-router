@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:222c5986ebc540cfee03cd83fa62a4c886395eeb0932822c3215e7fefc3c2da3",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/haproxy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-haproxy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-haproxy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:08f59cdc7d1dd14c354566bf1e0caa0794b4f048d5130d352e219c1fd827515a",

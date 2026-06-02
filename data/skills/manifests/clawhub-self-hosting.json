@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-hosting@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-hosting-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-hosting-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:161b2c3f84e04d36c01d1e8392e7b7aebd75ce30fade62037e628ff3d6e4faee",

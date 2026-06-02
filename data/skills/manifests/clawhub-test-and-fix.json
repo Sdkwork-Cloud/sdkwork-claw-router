@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-and-fix@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-and-fix-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-and-fix-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c7a3088553e8bc642039b55e6a99ab99291d55bfebe1f0a4deeea7f36ab11e7",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/talk-normal@0.6.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-talk-normal-0.6.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-talk-normal-0.6.2.json"
+      },
       "version": "0.6.2",
       "runtime": "metadata",
       "checksumHash": "sha256:78e03375a13dbf598ef845c47f78a5740550f78d0f800af5791facb5658a6918",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quack-wallet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quack-wallet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quack-wallet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ed6f1259f44e6c21325d817c7065024a1f53c3cffe32e71bd11c31350f9dc1e",

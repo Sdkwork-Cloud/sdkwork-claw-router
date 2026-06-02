@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/todoist-cli-skill@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-todoist-cli-skill-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-todoist-cli-skill-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:4cc9561cefb0eff0fd8ffe71aee249e0b7c76bef5afe2072a964fc80b9c1b43d",

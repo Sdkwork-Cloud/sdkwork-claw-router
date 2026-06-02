@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/predicthq@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-predicthq-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-predicthq-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ada953716b7f4a9eadea645e31bfa9d268e0187df95f9cb540c8cb6791b5b0fa",

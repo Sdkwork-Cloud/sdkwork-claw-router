@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chef-integration@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-chef-integration-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chef-integration-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:06b1ddb1c9600f7bb35f986eaaaf265e94fb898a226cc5f7387e4ef4ab99220e",

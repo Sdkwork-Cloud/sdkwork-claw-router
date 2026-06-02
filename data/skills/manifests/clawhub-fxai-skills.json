@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fxai-skills@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-fxai-skills-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fxai-skills-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0158481fd5452dd6281fc74b3ec7e76defd88de65bf3489cbb31b3ca8d0e21db",

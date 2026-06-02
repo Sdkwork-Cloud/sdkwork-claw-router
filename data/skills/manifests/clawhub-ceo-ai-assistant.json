@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ceo-ai-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ceo-ai-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ceo-ai-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a5dc0b361534a6731bc0ac2d0e87737e5f68e762a8545a67bff932c73a2eb2db",

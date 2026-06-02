@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/charisma@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-charisma-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-charisma-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0321b398473922ce872b8190fe2daf5a3e02c97069a0a043f7a4ca35edbc4796",

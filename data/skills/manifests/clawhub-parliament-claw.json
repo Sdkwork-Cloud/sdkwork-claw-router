@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/parliament-claw@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-parliament-claw-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-parliament-claw-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a275cd9d0050af92460f4c2dcdea92339aa442602e2f3e2ba49d425cbcd8f8c",

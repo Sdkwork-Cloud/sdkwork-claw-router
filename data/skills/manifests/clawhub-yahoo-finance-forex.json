@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yahoo-finance-forex@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yahoo-finance-forex-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yahoo-finance-forex-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9b9dde629c493a08760176f8b68b67df9fccc4e75cc56bdbba6a32f87eb676f4",

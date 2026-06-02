@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-service-agents-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-service-agents-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-service-agents-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0563eb862980253edba59a359e7259d2a9f10f985cee640cf30c2b1017975853",

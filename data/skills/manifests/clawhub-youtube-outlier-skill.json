@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-outlier-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-outlier-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-outlier-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9dd0c88377f65668cacf4c92e4301b6527228f0c71066eecbf8b8163c1002deb",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/max-content-machine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-max-content-machine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-max-content-machine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:67debe8532a3f4b29ece5e2e38046d02c91fb1e7818b0e971e9604dbaf18e0f0",

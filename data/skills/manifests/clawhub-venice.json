@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/venice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-venice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-venice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0a00f5c0b72040b44d11ead5e88177b1b68fe1b9ce8c25124341f02137983854",

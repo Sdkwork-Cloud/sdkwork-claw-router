@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/banana-cog@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-banana-cog-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-banana-cog-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:dccd7a400f50e81c202e71323e3d25c26c48b4a30566c74d1e2923a0b53b3469",

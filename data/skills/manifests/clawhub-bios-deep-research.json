@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bios-deep-research@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-bios-deep-research-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bios-deep-research-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:8ac6b6a5c2adcf4953e0fb85cc17720b090b1cc0ed3f992ce86868c42206c212",

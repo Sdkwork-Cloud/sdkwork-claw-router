@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ohmy-skill@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ohmy-skill-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ohmy-skill-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c71ff7337b58df58ac8e8080a2c516efa81216f0f04f87970ab70ea5a6de109f",

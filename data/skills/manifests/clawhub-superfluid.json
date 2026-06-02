@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/superfluid@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-superfluid-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-superfluid-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b7e52187675c5e3f6edf6930fcde2c26c012771a8902429f02c8f55ff7aa3264",

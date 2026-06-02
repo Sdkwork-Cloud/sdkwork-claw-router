@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-compressor-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-compressor-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-compressor-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:639ab0194b2746850bd4892995ebe2742ad7832f362d7bab8a7e36572d835075",

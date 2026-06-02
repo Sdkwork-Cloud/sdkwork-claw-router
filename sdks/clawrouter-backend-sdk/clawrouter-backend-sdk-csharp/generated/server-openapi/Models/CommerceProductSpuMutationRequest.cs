@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     public class CommerceProductSpuMutationRequest
     {
         public string? Brand { get; set; }
-        public string? CategoryId { get; set; }
+        public List<string>? CategoryIds { get; set; }
         public string? Description { get; set; }
         public string? ProductType { get; set; }
         public string? SpuNo { get; set; }

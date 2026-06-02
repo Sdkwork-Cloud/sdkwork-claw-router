@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/e2e-test-recorder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-e2e-test-recorder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-e2e-test-recorder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df812cde244e4fb5f85aa04d273a4407350c5e6e8cc22907a086be8f559b9906",

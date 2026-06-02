@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/satgate-cli@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-satgate-cli-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-satgate-cli-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89879b1beb3d24de1a930035e64cb3f5bb9caabc217f705bb4c81a383a4fccea",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moscow@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-moscow-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moscow-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d64929aaa10027c41c6ab36d0eb10d41794cd72023a7e60f80461c0e3af51851",

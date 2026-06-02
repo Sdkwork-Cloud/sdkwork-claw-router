@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-directory@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-directory-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-directory-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6e4e6651b2cb3d2d61fa5c15b8a73325b13adac0f94d6546cdf0ab4901b03ae8",

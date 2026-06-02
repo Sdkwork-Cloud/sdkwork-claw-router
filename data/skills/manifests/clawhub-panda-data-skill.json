@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/panda-data-skill@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-panda-data-skill-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-panda-data-skill-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0d049190a66e33f9cb17d1784bde4fefd0a02a098313bcbe60239086c6aad9ae",

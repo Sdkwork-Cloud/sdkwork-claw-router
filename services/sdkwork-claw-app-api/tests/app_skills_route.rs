@@ -134,7 +134,7 @@ async fn database_config_app_skills_routes_read_installed_seed_through_session_b
         .as_array()
         .unwrap()
         .iter()
-        .any(|value| value
+        .any(|value| value["publicUrl"]
             .as_str()
             .is_some_and(|url| url.ends_with("/skills/prompt-optimizer/screenshot-1.png"))));
     assert!(

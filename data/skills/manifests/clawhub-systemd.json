@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/systemd@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-systemd-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-systemd-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:41c1332443524d92a389864e87ce143f7d1813ef37d130cc4cf5333f6696b42e",

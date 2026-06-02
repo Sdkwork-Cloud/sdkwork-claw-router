@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-nano@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-nano-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-nano-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df304f054b576a47ed6d72cfdd132385e0081a0724369c4d6042cfab377ff0bd",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aml-kyc-docs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aml-kyc-docs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aml-kyc-docs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5832f7d85a137d36fe7ebc2936bcb3de259f962d9d70acf91245e44886776c37",

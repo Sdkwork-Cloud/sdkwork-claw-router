@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-skill-yub@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-skill-yub-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-skill-yub-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f5c17b6710eff3f35322b2d334fe9a9ef5b67ec43956f10b5e9cbb83f0c5c60",

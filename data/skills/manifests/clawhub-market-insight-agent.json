@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/market-insight-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-market-insight-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-market-insight-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ef8195fb18c5b2527580def542fd7069a1b556a4dfdd10c1aa91b75cabd3ce8",

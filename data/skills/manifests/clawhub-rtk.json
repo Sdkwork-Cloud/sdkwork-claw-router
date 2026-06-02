@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rtk@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rtk-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rtk-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2caca14be2d4ad680a8a9c74e915cee5bb4bf6bed3032b350687a5e312716727",

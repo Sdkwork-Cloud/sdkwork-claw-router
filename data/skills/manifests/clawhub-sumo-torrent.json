@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sumo-torrent@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-sumo-torrent-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sumo-torrent-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:c8b43a51f222a88adeb7e8c47b48508a5e40b445d6b61fa867ff956d2d8b3283",

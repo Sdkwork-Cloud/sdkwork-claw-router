@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hospital@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-hospital-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hospital-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ad49adf0504b8965a4b776e9206f23afe7947bb1edaa6516fc4769a5f28080b2",

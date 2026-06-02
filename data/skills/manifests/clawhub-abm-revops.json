@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abm-revops@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abm-revops-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abm-revops-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6e5edcbb05dec55c6852e433aad03527af4e4577ccfffcc8773bff163204dd81",

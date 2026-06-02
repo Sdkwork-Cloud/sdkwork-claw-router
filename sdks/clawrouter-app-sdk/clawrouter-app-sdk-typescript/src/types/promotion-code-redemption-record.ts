@@ -10,6 +10,8 @@ export interface PromotionCodeRedemptionRecord {
   failure_code?: string;
   /** Failure message field on promotion code redemption record. */
   failure_message?: string;
+  /** Id field on promotion code redemption record. */
+  id?: string;
   /** Idempotency key field on promotion code redemption record. */
   idempotency_key: string;
   /** Occurred at field on promotion code redemption record. */

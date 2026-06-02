@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Admin skill package update request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminSkillPackageUpdateRequest {
@@ -8,10 +10,9 @@ pub struct AdminSkillPackageUpdateRequest {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub category_id: Option<String>,
 
-    /// Cover image field on admin skill package update request.
-    #[serde(rename = "coverImage")]
+    /// Cover field on admin skill package update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub cover_image: Option<String>,
+    pub cover: Option<MediaResource>,
 
     /// Description field on admin skill package update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -27,7 +28,7 @@ pub struct AdminSkillPackageUpdateRequest {
 
     /// Icon field on admin skill package update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Name field on admin skill package update request.
     #[serde(default, skip_serializing_if = "Option::is_none")]

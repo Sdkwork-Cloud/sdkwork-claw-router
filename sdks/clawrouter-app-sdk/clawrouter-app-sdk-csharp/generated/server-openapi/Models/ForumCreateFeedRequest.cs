@@ -8,7 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public int? CategoryId { get; set; }
         public string? Content { get; set; }
-        public List<string>? Images { get; set; }
+        public List<MediaResource>? Images { get; set; }
         public string? Source { get; set; }
         public string? SourceUrl { get; set; }
         public List<string>? Tags { get; set; }

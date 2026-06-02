@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hadoop@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hadoop-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hadoop-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fbf5bbdd931ee167e7d1d3b3061e01bd69fc351f4074918e667af644375cc90f",

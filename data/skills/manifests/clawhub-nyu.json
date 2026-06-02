@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nyu@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nyu-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nyu-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e18ec2cbb8efac7eaa97a644406f7ba24819201052db0b4af1b78ce7597c547a",

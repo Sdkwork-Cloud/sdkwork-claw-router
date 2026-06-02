@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-evolution-engine@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-evolution-engine-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-evolution-engine-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48447915520551420cd95341d812fe7f2ed5e2840d9e316b442db674dac96d56",

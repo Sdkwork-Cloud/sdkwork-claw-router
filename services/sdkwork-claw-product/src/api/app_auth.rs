@@ -12,6 +12,7 @@ use sdkwork_claw_http::{
     verify_app_session_authorization_header, verify_app_session_token, TrustedRequestSubject,
 };
 use serde::{Deserialize, Serialize};
+use serde_json::{json, Value};
 use sha2::{Digest, Sha256};
 
 use crate::api::request_id::{generate_server_request_id, RequestIdError};
@@ -384,7 +385,7 @@ pub(crate) struct IamUserResponse {
     pub username: String,
     pub display_name: String,
     pub email: String,
-    pub avatar_url: String,
+    pub avatar: Value,
     pub phone: String,
     pub language: String,
     pub is_verified: bool,
@@ -405,7 +406,7 @@ pub(crate) struct IamSessionIssueUser {
     pub username: String,
     pub display_name: String,
     pub email: String,
-    pub avatar_url: String,
+    pub avatar: Value,
     pub phone: String,
     pub language: String,
     pub is_verified: bool,
@@ -427,7 +428,7 @@ impl From<AppAuthUserCredential> for IamSessionIssueUser {
             username: user.username,
             display_name: user.display_name,
             email: user.email,
-            avatar_url: user.avatar_url,
+            avatar: user.avatar,
             phone: user.phone,
             language: normalize_language(user.language),
             is_verified: true,
@@ -2540,7 +2541,7 @@ fn sign_iam_session_tokens(
             username: user.username,
             display_name: user.display_name,
             email: user.email,
-            avatar_url: user.avatar_url,
+            avatar: user.avatar,
             phone: user.phone,
             language: normalize_language(user.language),
             is_verified: user.is_verified,
@@ -2593,7 +2594,7 @@ fn user_response_from_record(user: AppSessionUserRecord) -> IamUserResponse {
         username: user.username,
         display_name: user.display_name,
         email: user.email,
-        avatar_url: user.avatar_url,
+        avatar: user.avatar,
         phone: user.phone,
         language: normalize_language(user.language),
         is_verified: user.is_verified,
@@ -2605,6 +2606,13 @@ fn user_response_from_record(user: AppSessionUserRecord) -> IamUserResponse {
         two_factor_enabled: user.two_factor_enabled,
         third_party_bound: user.third_party_bound,
     }
+}
+
+fn empty_avatar_resource() -> Value {
+    json!({
+        "kind": "image",
+        "source": "external_url"
+    })
 }
 
 fn parse_scope_json(value: &str) -> Vec<String> {
@@ -2694,7 +2702,7 @@ async fn rotate_current_session_tokens(
         username: active.user.username.clone(),
         display_name: active.user.display_name.clone(),
         email: active.user.email.clone(),
-        avatar_url: active.user.avatar_url.clone(),
+        avatar: active.user.avatar.clone(),
         phone: active.user.phone.clone(),
         language: active.user.language.clone(),
         is_verified: active.user.is_verified,
@@ -3413,7 +3421,7 @@ async fn create_session_bridge_response(
         username: format!("user-{}", subject.user_id),
         display_name: format!("SDKWork User {}", subject.user_id),
         email: String::new(),
-        avatar_url: String::new(),
+        avatar: empty_avatar_resource(),
         phone: String::new(),
         language: normalize_language(String::new()),
         is_verified: true,

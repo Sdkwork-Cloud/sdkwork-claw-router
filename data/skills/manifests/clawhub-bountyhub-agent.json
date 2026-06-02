@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bountyhub-agent@0.1.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-bountyhub-agent-0.1.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bountyhub-agent-0.1.7.json"
+      },
       "version": "0.1.7",
       "runtime": "metadata",
       "checksumHash": "sha256:fc90942901795e933864ea3ce913df83277be565644878142a387931b8bde6b9",

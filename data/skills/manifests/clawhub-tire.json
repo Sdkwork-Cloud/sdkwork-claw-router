@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tire@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tire-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tire-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8dd95496037bf72ec56f46ecbf63b48fb7ada851cfd2a636acac5f1df0cf017e",

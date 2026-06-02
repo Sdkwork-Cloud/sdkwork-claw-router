@@ -8,6 +8,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? CreatedAt { get; set; }
         public string? EventId { get; set; }
+        public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
         public string? Message { get; set; }
         public string? Nonce { get; set; }

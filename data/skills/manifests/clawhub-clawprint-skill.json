@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawprint-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawprint-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawprint-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b0d7e526f45af03feecb408d789c346ce7df0e5a61368a9872486d8633fcc80c",

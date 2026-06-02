@@ -55,13 +55,25 @@ pub struct OpsNotificationMessageRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
 
+    /// Priority field on ops notification message record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub priority: Option<i64>,
+
     /// Published at field on ops notification message record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub published_at: Option<String>,
 
+    /// Scope type field on ops notification message record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub scope_type: Option<String>,
+
     /// Severity field on ops notification message record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub severity: Option<String>,
+
+    /// Show as popup field on ops notification message record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub show_as_popup: Option<bool>,
 
     /// Status field on ops notification message record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

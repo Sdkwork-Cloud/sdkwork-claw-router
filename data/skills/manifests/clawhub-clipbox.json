@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clipbox@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clipbox-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clipbox-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2f8f75fe5a867387e4aca5158bd67f83ec525b66581ce430c848424ddd1a3015",

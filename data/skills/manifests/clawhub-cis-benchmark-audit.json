@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cis-benchmark-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cis-benchmark-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cis-benchmark-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b6557a8f12dc0607e1041c51ea7c59c9a894810a38c991423d4a666cc9ba24a",

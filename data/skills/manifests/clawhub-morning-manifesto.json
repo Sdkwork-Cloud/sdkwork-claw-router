@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/morning-manifesto@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-morning-manifesto-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-morning-manifesto-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:576957bbb9595d87804a56b197d8fa9a377baa0ee417d369b8938edb799c4ac1",

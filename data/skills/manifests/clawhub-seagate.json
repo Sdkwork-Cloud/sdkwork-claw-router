@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seagate@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-seagate-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seagate-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3b9d424ea0f86cfdfa0061e89220391039c379cad75f4f5ffd9bbc1b2519bfbb",

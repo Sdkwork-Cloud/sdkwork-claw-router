@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/food-hygiene-haccp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-food-hygiene-haccp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-food-hygiene-haccp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dad69b363ffc0d6aee32c92bc0f7ed782b6e3edbc7eedda8039898739efa29c1",

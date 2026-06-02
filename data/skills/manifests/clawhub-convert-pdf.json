@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/convert-pdf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-convert-pdf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-convert-pdf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:410e0649b340de9c585c8ca4336e00cf153d0e6e9b66250451e49498a3fe1cd2",

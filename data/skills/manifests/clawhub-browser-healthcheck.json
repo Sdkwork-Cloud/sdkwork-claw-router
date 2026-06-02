@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/browser-healthcheck@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-browser-healthcheck-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-browser-healthcheck-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:30fb58a451e7f4a6c812304e74b6d48c690d85125b8bed0c9357bb5118759802",

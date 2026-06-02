@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/travels@2.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-travels-2.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-travels-2.4.1.json"
+      },
       "version": "2.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:92d2732b277876993a8612f3e3a6f5fdbbd2ca86f9c362f1bd3e0577718ad0f5",

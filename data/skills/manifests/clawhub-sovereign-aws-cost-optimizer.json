@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sovereign-aws-cost-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-aws-cost-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sovereign-aws-cost-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c068716eebdfafdeb7d6b403057f5950bf9190b6421862056e32518c352a4522",

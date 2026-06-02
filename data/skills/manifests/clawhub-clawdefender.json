@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawdefender@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawdefender-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawdefender-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cc8f5aed67e487ac112af81f2af3a80669a540681a29719db273b107b85904aa",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heartbeat-kit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-heartbeat-kit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heartbeat-kit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed7248dfaca6e52ef81e7064a0358a8f8bdeeae8d0faf4c7fc648289cb46a377",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ultimate-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ultimate-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ultimate-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:36b5b45f3a7e84c5c01fd3b639abc71881912eceb41fd17b15a63b838559e0a3",

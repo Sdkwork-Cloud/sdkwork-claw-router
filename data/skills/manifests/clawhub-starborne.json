@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/starborne@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-starborne-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-starborne-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fd68c1b1f30581ba03a986809865864642d7ebf3a34fffe10a6700388acad1ef",

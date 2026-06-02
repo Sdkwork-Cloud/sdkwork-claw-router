@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mac-battery@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mac-battery-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mac-battery-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b581183845785453243763fe9de098c7643ec9512ffefe9448028c83bd15805d",

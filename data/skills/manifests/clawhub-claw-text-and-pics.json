@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-text-and-pics@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-text-and-pics-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-text-and-pics-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:07d5e46ac3e156f382588059f3f07baeeb3e0a3a286dfc680fe6b7de023d9f91",

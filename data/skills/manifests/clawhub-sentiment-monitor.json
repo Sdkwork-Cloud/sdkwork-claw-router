@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentiment-monitor@0.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentiment-monitor-0.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentiment-monitor-0.4.0.json"
+      },
       "version": "0.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dddf5dd186904269e1903b8dffbc06e84850c4c0b7f159b7f87c588846847edb",

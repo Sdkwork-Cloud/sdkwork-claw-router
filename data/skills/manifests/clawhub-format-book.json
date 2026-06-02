@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/format-book@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-format-book-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-format-book-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:99fdf1c1aa88a52a90b3fa99c3e5ff2a04588394a3a14f31a86d1da695fc4609",

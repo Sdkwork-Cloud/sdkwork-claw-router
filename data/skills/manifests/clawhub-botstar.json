@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/botstar@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-botstar-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-botstar-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:787cf23b5690f1a42c0428e8d8c0d05d307029c538f8821a6d65f48833f4e6db",

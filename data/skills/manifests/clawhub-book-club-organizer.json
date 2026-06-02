@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-club-organizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-club-organizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-club-organizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8194c580cc4281030fbc54e3face7c21fb6e0d6b6d5445b26984cd1222b56ed",

@@ -11,7 +11,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public int? CommentCount { get; set; }
         public string? Content { get; set; }
         public string? ContentType { get; set; }
-        public string? CoverImage { get; set; }
+        public MediaResource? Cover { get; set; }
         public string? CreatedAt { get; set; }
         public int? Id { get; set; }
         public bool? IsCollected { get; set; }

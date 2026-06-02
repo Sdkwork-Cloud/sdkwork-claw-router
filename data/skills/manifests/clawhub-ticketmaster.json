@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ticketmaster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ticketmaster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ticketmaster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5dc1545a8eaa081c3774595610b6d4a9485e8096e56b595de56d22bb1290f194",

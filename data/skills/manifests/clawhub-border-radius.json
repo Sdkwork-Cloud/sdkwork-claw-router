@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/border-radius@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-border-radius-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-border-radius-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ac96e93480e58d54ea94cfc73a1765753b595f645e4987282c0a0776d017c20",

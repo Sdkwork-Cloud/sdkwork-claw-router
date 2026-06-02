@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/failures-md@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-failures-md-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-failures-md-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7ae1f7eafad4b2cfaded8ac055480a8d1d616603fd923bcfde4fb773de4c5b8",

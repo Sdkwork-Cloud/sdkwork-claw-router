@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/robot-evolve@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-robot-evolve-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-robot-evolve-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bda2bf961c9811e22b147a3193a26d6302178d5cbd23a4d7911e99086bf7a37f",

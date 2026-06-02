@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/schedule-sync-claw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-schedule-sync-claw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-schedule-sync-claw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:644bb8dc453c07076bd346e64ceb577175cf048e6befa9044884c317884488cd",

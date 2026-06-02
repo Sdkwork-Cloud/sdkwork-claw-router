@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/summarize-xhs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-summarize-xhs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-summarize-xhs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdad926c6d513918fe8b43776b80301e5acf7e11b5f52396c09386b899605437",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tinyfish-fetch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tinyfish-fetch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tinyfish-fetch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:088dd49c97d77266029e181165898842aa604465ec003daebf2c99cc5c4b2cc8",

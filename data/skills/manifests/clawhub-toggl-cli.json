@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toggl-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toggl-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toggl-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f382fdd8638ce5e0c3a2a895def30a2327ce9668a0c993387b98c4d650274b3d",

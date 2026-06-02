@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/k3-blockchain-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-k3-blockchain-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-k3-blockchain-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b5b36b8fe6f2bfbcd92234eeece5b1fa31efea67d35a18be87bb641021572bd2",

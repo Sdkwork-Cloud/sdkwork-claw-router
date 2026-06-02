@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openswarm-fight-club@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openswarm-fight-club-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openswarm-fight-club-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b51639c2482ed0f5d4b2959c14632226689b44c38f648eb604818a06a78fa6bb",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/accounting-assistant@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-accounting-assistant-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-accounting-assistant-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:5a0b91d8b5fc167d6a2df348622055079c0dd47b9096fea10470d4622531dbbc",

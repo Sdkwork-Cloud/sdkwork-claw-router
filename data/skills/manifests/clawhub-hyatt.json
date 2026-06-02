@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hyatt@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-hyatt-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hyatt-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6b5fb40868ae323eeacc05eaa76f3b0b87e8cc971b8c98100e07e956f86223de",

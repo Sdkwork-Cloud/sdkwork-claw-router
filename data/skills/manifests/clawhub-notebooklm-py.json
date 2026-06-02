@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/notebooklm-py@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-py-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-notebooklm-py-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:980fa3368b9deb10db63a31ecaf4f69579e1ab8c8a9d9c8cbe704cf8f6c58653",

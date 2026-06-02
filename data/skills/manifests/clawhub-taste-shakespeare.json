@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taste-shakespeare@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-taste-shakespeare-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taste-shakespeare-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:bf97a1acdcbebd3add6cfccbffa5e53af3787c8fc581a05bac0acdd259e900c8",

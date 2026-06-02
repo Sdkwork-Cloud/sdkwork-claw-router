@@ -58,6 +58,8 @@ export interface AiAgentRunStepRecord {
   status?: string;
   /** Step index field on ai agent run step record. */
   step_index?: number;
+  /** Step status field on ai agent run step record. */
+  step_status?: string;
   /** Step type field on ai agent run step record. */
   step_type?: string;
   /** Tenant id field on ai agent run step record. */

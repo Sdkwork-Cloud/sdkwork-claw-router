@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-analytics@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-analytics-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-analytics-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:4f9d7a6a9500422bc25effe56058441fa0366c31add749a95805632355128d00",

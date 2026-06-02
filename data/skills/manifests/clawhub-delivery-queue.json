@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/delivery-queue@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-delivery-queue-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-delivery-queue-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f561e2aab049b64ff395152cf9bea44f9bf915c376ca09277d2c42e3b525aa4e",

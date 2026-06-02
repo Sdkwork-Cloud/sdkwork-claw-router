@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/holiday-flights@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-holiday-flights-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-holiday-flights-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8cd03a99af73a56877b005136243ca3978cf54fa677cdde38815fecb1e3234e",

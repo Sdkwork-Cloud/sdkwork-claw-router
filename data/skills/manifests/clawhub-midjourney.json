@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/midjourney@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-midjourney-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-midjourney-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0662b738751d71924d12e37d539e0f8831d896ada5bedde294baeee8e15be43d",

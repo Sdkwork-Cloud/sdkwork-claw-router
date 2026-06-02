@@ -21,6 +21,10 @@ pub struct PromotionEventOutboxRecord {
     /// Event version field on promotion event outbox record.
     pub event_version: i64,
 
+    /// Id field on promotion event outbox record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Next retry at field on promotion event outbox record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub next_retry_at: Option<String>,
@@ -38,6 +42,9 @@ pub struct PromotionEventOutboxRecord {
 
     /// Payload json field on promotion event outbox record.
     pub payload_json: std::collections::HashMap<String, String>,
+
+    /// Publish attempts field on promotion event outbox record.
+    pub publish_attempts: i64,
 
     /// Published at field on promotion event outbox record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

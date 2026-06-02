@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-rumors-aisa@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-rumors-aisa-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-rumors-aisa-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b076311021ff65c929f7c38b0304cd01b50096d87b1828a4f6ee4b00650e3b68",

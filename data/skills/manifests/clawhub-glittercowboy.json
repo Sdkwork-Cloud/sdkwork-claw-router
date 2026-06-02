@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glittercowboy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-glittercowboy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glittercowboy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:843786820e0b80fd64415272a4dbe5d3bd84f3cd929aa64d9b0ba041ee4a179a",

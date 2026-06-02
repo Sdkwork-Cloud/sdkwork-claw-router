@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-mechanic@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-mechanic-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-mechanic-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:34a077115da599ea7d1a4a5e678139b714e74d46b5978aaf3ae4baf55638c0be",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/holocube-emotes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-holocube-emotes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-holocube-emotes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8f2187ad724594a9ca1b12e38664568098c4ca12941aa758151ccedae86a985e",

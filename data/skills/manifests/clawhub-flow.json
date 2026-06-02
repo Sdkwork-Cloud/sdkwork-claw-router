@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flow@0.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-flow-0.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flow-0.1.4.json"
+      },
       "version": "0.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:29bd3fda2a54c50be9ca76f294810fe1c620a16517922c624d0100c85f0af153",

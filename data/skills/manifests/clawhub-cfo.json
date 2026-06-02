@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cfo@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-cfo-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cfo-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:ae33f668b2ba117f0f8399f03244c6540e5cb158bb54669b29239aadf65553a7",

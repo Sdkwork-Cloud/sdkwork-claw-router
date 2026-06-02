@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quincy-agentic-paper-digest-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quincy-agentic-paper-digest-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quincy-agentic-paper-digest-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8b561e4dcdacbd0dbb5c64cbf320bf641abbd615cc989b6bc51076e74c40b531",

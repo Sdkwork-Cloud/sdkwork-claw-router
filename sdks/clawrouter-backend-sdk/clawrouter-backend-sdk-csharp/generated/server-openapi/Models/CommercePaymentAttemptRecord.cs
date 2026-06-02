@@ -10,6 +10,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? CallbackPayload { get; set; }
         public string? CreatedAt { get; set; }
         public string? CurrencyCode { get; set; }
+        public string? Id { get; set; }
         public string? OrderId { get; set; }
         public string? OrganizationId { get; set; }
         public string? OutTradeNo { get; set; }

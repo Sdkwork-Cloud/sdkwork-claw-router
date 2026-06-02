@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pacer-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pacer-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pacer-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e38f19fbc6f0ce0a465fe8a04f6f6ebb184c25f743c9a64eed546a20aa3fc05d",

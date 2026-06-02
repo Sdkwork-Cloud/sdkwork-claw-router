@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-windshield@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-windshield-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-windshield-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dd826e392f4edab3b78ca9a6fe5b51970e3f64451d334490393344e37d57a39f",

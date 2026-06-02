@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/osv-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-osv-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-osv-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2003545d8714a9ca2a03434ddeddd9999422cb7449cd8c091e3a67c7c66b9c44",

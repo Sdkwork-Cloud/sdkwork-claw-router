@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cybersecuritynews@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cybersecuritynews-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cybersecuritynews-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a2726b7df114b60c7013b9630bf682e47d6e7086eaa0fef184bcab303ea3220",

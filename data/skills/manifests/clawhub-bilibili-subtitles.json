@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bilibili-subtitles@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-subtitles-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bilibili-subtitles-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16c0d049da3691e2d1d7f7261f3e92df2497badf33aa5ab8d471ce0a719cfd17",

@@ -24,6 +24,8 @@ export interface ObjectBlobRecord {
   kms_key_ref?: string;
   /** Last verified at field on object blob record. */
   last_verified_at?: string;
+  /** Legal hold field on object blob record. */
+  legal_hold?: boolean;
   /** Metadata field on object blob record. */
   metadata?: Record<string, JsonValue>;
   /** Object key field on object blob record. */
@@ -36,10 +38,14 @@ export interface ObjectBlobRecord {
   owner_id?: string;
   /** Owner type field on object blob record. */
   owner_type?: string;
+  /** Physical size bytes field on object blob record. */
+  physical_size_bytes?: string;
   /** Provider id field on object blob record. */
   provider_id?: string;
   /** Retention until field on object blob record. */
   retention_until?: string;
+  /** Size bytes field on object blob record. */
+  size_bytes?: string;
   /** Status field on object blob record. */
   status?: string;
   /** Storage class field on object blob record. */

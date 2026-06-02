@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weibo-hot-trend@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weibo-hot-trend-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weibo-hot-trend-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:44c57f634a7afb56e2c66f95f9a235f2e27528d453e2c691f19ab1befbdbc172",

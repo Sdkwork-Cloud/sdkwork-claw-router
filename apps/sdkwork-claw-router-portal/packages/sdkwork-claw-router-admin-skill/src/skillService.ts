@@ -12,16 +12,19 @@ import {
   readRequiredString,
   readString,
   readStringArray,
+  readMediaResource,
+  readMediaResourceUrl,
+  readRequiredMediaResource,
   requiredSafePathSegment,
+  toExternalUrlMediaResource,
   type ApiRecord,
+  type ClawRouterMediaResource,
   type JsonObject,
 } from 'sdkwork-claw-router-commons/runtime';
 import type {
   AdminSkillArtifactCreateRequest,
-  AdminSkillArtifactItem,
   AdminSkillArtifactUpdateRequest,
   AdminSkillAssetCreateRequest,
-  AdminSkillAssetItem,
   AdminSkillAssetUpdateRequest,
   AdminSkillCategoryCreateRequest,
   AdminSkillCategoryUpdateRequest,
@@ -43,7 +46,7 @@ export interface AdminSkillCategory {
   name: string;
   description: string;
   code: string;
-  icon: string;
+  icon?: ClawRouterMediaResource;
   sortWeight: number;
   parentId: string | null;
   path: string;
@@ -52,11 +55,11 @@ export interface AdminSkillCategory {
   type: 19 | 20;
 }
 
-export interface AdminSkillCategoryCreateInput extends AdminSkillCategoryCreateRequest {
+export interface AdminSkillCategoryCreateInput {
   name: string;
   code?: string;
   description?: string;
-  icon?: string;
+  icon?: ClawRouterMediaResource;
   sortWeight?: number;
   parentId?: string | null;
   path?: string;
@@ -65,11 +68,11 @@ export interface AdminSkillCategoryCreateInput extends AdminSkillCategoryCreateR
   type?: 19 | 20;
 }
 
-export interface AdminSkillCategoryUpdateInput extends AdminSkillCategoryUpdateRequest {
+export interface AdminSkillCategoryUpdateInput {
   name?: string;
   code?: string | null;
   description?: string | null;
-  icon?: string | null;
+  icon?: ClawRouterMediaResource;
   sortWeight?: number;
   parentId?: string | null;
   path?: string | null;
@@ -84,8 +87,8 @@ export interface AdminSkillPackage {
   name: string;
   summary: string;
   description: string | null;
-  icon: string;
-  coverImage: string;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
   categoryId: string | null;
   enabled: boolean;
   featured: boolean;
@@ -96,13 +99,13 @@ export interface AdminSkillPackage {
   updatedAt: string;
 }
 
-export interface AdminSkillPackageCreateInput extends AdminSkillPackageCreateRequest {
+export interface AdminSkillPackageCreateInput {
   packageKey: string;
   name: string;
   summary?: string;
   description?: string;
-  icon?: string;
-  coverImage?: string;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
   categoryId?: string | null;
   enabled?: boolean;
   featured?: boolean;
@@ -110,13 +113,13 @@ export interface AdminSkillPackageCreateInput extends AdminSkillPackageCreateReq
   tags?: string[];
 }
 
-export interface AdminSkillPackageUpdateInput extends AdminSkillPackageUpdateRequest {
+export interface AdminSkillPackageUpdateInput {
   packageKey?: string;
   name?: string;
   summary?: string;
   description?: string | null;
-  icon?: string | null;
-  coverImage?: string | null;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
   categoryId?: string | null;
   enabled?: boolean;
   featured?: boolean;
@@ -130,8 +133,8 @@ export interface AdminSkill {
   name: string;
   summary: string;
   description: string | null;
-  icon: string;
-  coverImage: string;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
   categoryId: string | null;
   packageId: string | null;
   provider: string;
@@ -170,13 +173,13 @@ export interface AdminSkill {
   updatedAt: string;
 }
 
-export interface AdminSkillCreateInput extends AdminSkillCreateRequest {
+export interface AdminSkillCreateInput {
   skillKey: string;
   name: string;
   summary?: string;
   description?: string;
-  icon?: string;
-  coverImage?: string;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
   categoryId?: string | null;
   packageId?: string | null;
   provider?: string;
@@ -206,13 +209,13 @@ export interface AdminSkillCreateInput extends AdminSkillCreateRequest {
   defaultConfig?: JsonObject;
 }
 
-export interface AdminSkillUpdateInput extends AdminSkillUpdateRequest {
+export interface AdminSkillUpdateInput {
   skillKey?: string;
   name?: string;
   summary?: string;
   description?: string | null;
-  icon?: string | null;
-  coverImage?: string | null;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
   categoryId?: string | null;
   packageId?: string | null;
   provider?: string | null;
@@ -239,15 +242,15 @@ export interface AdminSkillUpdateInput extends AdminSkillUpdateRequest {
   defaultConfig?: JsonObject;
 }
 
-export interface AdminSkillAsset extends AdminSkillAssetItem {
+export interface AdminSkillAsset {
   id: string;
   skillId: string;
   targetType: 35;
   targetId: string;
   artifactId?: string | null;
   assetType: number;
-  assetUrl: string;
-  thumbnailUrl?: string | null;
+  asset: ClawRouterMediaResource;
+  thumbnail?: ClawRouterMediaResource;
   title?: string | null;
   altText?: string | null;
   mimeType?: string | null;
@@ -262,11 +265,11 @@ export interface AdminSkillAsset extends AdminSkillAssetItem {
   updatedAt: string;
 }
 
-export interface AdminSkillAssetCreateInput extends AdminSkillAssetCreateRequest {
+export interface AdminSkillAssetCreateInput {
   artifactId?: string | null;
   assetType?: number;
-  assetUrl: string;
-  thumbnailUrl?: string;
+  asset: ClawRouterMediaResource;
+  thumbnail?: ClawRouterMediaResource;
   title?: string;
   altText?: string;
   mimeType?: string;
@@ -279,11 +282,11 @@ export interface AdminSkillAssetCreateInput extends AdminSkillAssetCreateRequest
   publishedAt?: string;
 }
 
-export interface AdminSkillAssetUpdateInput extends AdminSkillAssetUpdateRequest {
+export interface AdminSkillAssetUpdateInput {
   artifactId?: string | null;
   assetType?: number;
-  assetUrl?: string;
-  thumbnailUrl?: string | null;
+  asset?: ClawRouterMediaResource;
+  thumbnail?: ClawRouterMediaResource | null;
   title?: string | null;
   altText?: string | null;
   mimeType?: string | null;
@@ -296,7 +299,7 @@ export interface AdminSkillAssetUpdateInput extends AdminSkillAssetUpdateRequest
   publishedAt?: string | null;
 }
 
-export interface AdminSkillArtifact extends AdminSkillArtifactItem {
+export interface AdminSkillArtifact {
   id: string;
   skillId: string;
   targetType: 35;
@@ -306,7 +309,7 @@ export interface AdminSkillArtifact extends AdminSkillArtifactItem {
   platformType: string;
   osName: string;
   artifactRef?: string | null;
-  artifactUrl?: string | null;
+  artifact?: ClawRouterMediaResource;
   artifactSizeBytes: number;
   runtime?: string | null;
   frameworks: string[];
@@ -320,13 +323,13 @@ export interface AdminSkillArtifact extends AdminSkillArtifactItem {
   updatedAt: string;
 }
 
-export interface AdminSkillArtifactCreateInput extends AdminSkillArtifactCreateRequest {
+export interface AdminSkillArtifactCreateInput {
   artifactType?: number;
   version?: string;
   platformType?: string;
   osName?: string;
   artifactRef?: string;
-  artifactUrl?: string;
+  artifact?: ClawRouterMediaResource;
   artifactSizeBytes?: number;
   runtime?: string;
   frameworks?: string[];
@@ -338,13 +341,13 @@ export interface AdminSkillArtifactCreateInput extends AdminSkillArtifactCreateR
   deprecatedAt?: string;
 }
 
-export interface AdminSkillArtifactUpdateInput extends AdminSkillArtifactUpdateRequest {
+export interface AdminSkillArtifactUpdateInput {
   artifactType?: number;
   version?: string;
   platformType?: string;
   osName?: string;
   artifactRef?: string | null;
-  artifactUrl?: string | null;
+  artifact?: ClawRouterMediaResource | null;
   artifactSizeBytes?: number;
   runtime?: string | null;
   frameworks?: string[];
@@ -788,7 +791,7 @@ export function updateSkillInputFromForm(form: FormData): AdminSkillUpdateInput 
 
 export function createSkillAssetInputFromForm(form: FormData): AdminSkillAssetCreateInput {
   const input: AdminSkillAssetCreateInput = {
-    assetUrl: requiredFormText(form, 'assetUrl', 1024),
+    asset: requiredFormMediaResource(form, 'asset', 'other', 1024),
   };
   mergeSharedAssetFormFields(input, form);
   return input;
@@ -803,8 +806,8 @@ export function updateSkillAssetInputFromForm(form: FormData): AdminSkillAssetUp
 export function createSkillArtifactInputFromForm(form: FormData): AdminSkillArtifactCreateInput {
   const input: AdminSkillArtifactCreateInput = {};
   mergeSharedArtifactFormFields(input, form);
-  if (!input.artifactRef && !input.artifactUrl) {
-    throw new Error('artifactRef or artifactUrl is required');
+  if (!input.artifactRef && !input.artifact) {
+    throw new Error('artifactRef or artifact is required');
   }
   return input;
 }
@@ -817,13 +820,14 @@ export function updateSkillArtifactInputFromForm(form: FormData): AdminSkillArti
 
 function normalizeCreateCategoryRequest(input: AdminSkillCategoryCreateInput): AdminSkillCategoryCreateRequest {
   return {
-    ...input,
     name: requiredText(input.name, 'name', 255),
     code: optionalText(input.code, 'code', 128),
     description: optionalText(input.description, 'description', 512),
-    icon: optionalText(input.icon, 'icon', 255),
+    icon: input.icon,
     parentId: normalizeNullableId(input.parentId),
     path: optionalText(input.path, 'path', 1024),
+    visible: input.visible,
+    type: input.type,
     sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
     status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
   };
@@ -831,13 +835,14 @@ function normalizeCreateCategoryRequest(input: AdminSkillCategoryCreateInput): A
 
 function normalizeUpdateCategoryRequest(input: AdminSkillCategoryUpdateInput): AdminSkillCategoryUpdateRequest {
   return pruneUndefined({
-    ...input,
     name: optionalText(input.name, 'name', 255),
     code: normalizeNullableCode(input.code, 'code', 128),
     description: normalizeNullableText(input.description, 'description', 512),
-    icon: normalizeNullableUrlOrPath(input.icon, 'icon', 255),
+    icon: input.icon,
     parentId: normalizeNullableId(input.parentId),
     path: normalizeNullablePath(input.path, 'path', 1024),
+    visible: input.visible,
+    type: input.type,
     sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
     status: input.status === undefined ? undefined : nonNegativeInteger(input.status, 'status', 1_000_000),
   });
@@ -898,14 +903,15 @@ function normalizePackageListRequest(input: AdminSkillPackageListInput): AdminSk
 
 function normalizeCreatePackageRequest(input: AdminSkillPackageCreateInput): AdminSkillPackageCreateRequest {
   return pruneUndefined({
-    ...input,
     packageKey: requiredText(input.packageKey, 'packageKey', 128),
     name: requiredText(input.name, 'name', 255),
     summary: optionalText(input.summary, 'summary', 512),
     description: optionalText(input.description, 'description', 4000),
-    icon: optionalUrlOrPath(input.icon, 'icon', 255),
-    coverImage: optionalUrlOrPath(input.coverImage, 'coverImage', 255),
+    icon: input.icon,
+    cover: input.cover,
     categoryId: normalizeNullableId(input.categoryId),
+    enabled: input.enabled,
+    featured: input.featured,
     sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
     tags: normalizeStringArray(input.tags, 'tags'),
   });
@@ -913,14 +919,15 @@ function normalizeCreatePackageRequest(input: AdminSkillPackageCreateInput): Adm
 
 function normalizeUpdatePackageRequest(input: AdminSkillPackageUpdateInput): AdminSkillPackageUpdateRequest {
   return pruneUndefined({
-    ...input,
     packageKey: optionalCode(input.packageKey, 'packageKey', 128),
     name: optionalText(input.name, 'name', 255),
     summary: optionalText(input.summary, 'summary', 512),
     description: normalizeNullableText(input.description, 'description', 4000),
-    icon: normalizeNullableUrlOrPath(input.icon, 'icon', 255),
-    coverImage: normalizeNullableUrlOrPath(input.coverImage, 'coverImage', 255),
+    icon: input.icon,
+    cover: input.cover,
     categoryId: normalizeNullableId(input.categoryId),
+    enabled: input.enabled,
+    featured: input.featured,
     sortWeight: input.sortWeight === undefined ? undefined : nonNegativeInteger(input.sortWeight, 'sortWeight', 1_000_000),
     tags: input.tags ? normalizeStringArray(input.tags, 'tags') : undefined,
   });
@@ -928,13 +935,12 @@ function normalizeUpdatePackageRequest(input: AdminSkillPackageUpdateInput): Adm
 
 function normalizeCreateSkillRequest(input: AdminSkillCreateInput): AdminSkillCreateRequest {
   return pruneUndefined({
-    ...input,
     skillKey: requiredText(input.skillKey, 'skillKey', 128),
     name: requiredText(input.name, 'name', 255),
     summary: optionalText(input.summary, 'summary', 512),
     description: optionalText(input.description, 'description', 4000),
-    icon: optionalUrlOrPath(input.icon, 'icon', 255),
-    coverImage: optionalUrlOrPath(input.coverImage, 'coverImage', 255),
+    icon: input.icon,
+    cover: input.cover,
     categoryId: normalizeNullableId(input.categoryId),
     packageId: normalizeNullableId(input.packageId),
     provider: optionalText(input.provider, 'provider', 128),
@@ -951,6 +957,10 @@ function normalizeCreateSkillRequest(input: AdminSkillCreateInput): AdminSkillCr
     marketStatus: readMarketStatus(input.marketStatus ?? 'DRAFT'),
     visibility: readVisibility(input.visibility ?? 'PUBLIC'),
     reviewStatus: readReviewStatus(input.reviewStatus ?? 'PENDING'),
+    builtin: input.builtin,
+    isBuiltin: input.isBuiltin,
+    enabled: input.enabled,
+    featured: input.featured,
     recommendWeight: input.recommendWeight === undefined ? undefined : nonNegativeInteger(input.recommendWeight, 'recommendWeight', 1_000_000),
     price: normalizeNullableDecimal(input.price),
     currency: normalizeCurrency(input.currency ?? 'CNY'),
@@ -962,14 +972,13 @@ function normalizeCreateSkillRequest(input: AdminSkillCreateInput): AdminSkillCr
 }
 
 function normalizeUpdateSkillRequest(input: AdminSkillUpdateInput): AdminSkillUpdateRequest {
-  const request: AdminSkillUpdateInput = pruneUndefined({
-    ...input,
+  const request: AdminSkillUpdateRequest = pruneUndefined({
     skillKey: optionalCode(input.skillKey, 'skillKey', 128),
     name: optionalText(input.name, 'name', 255),
     summary: optionalText(input.summary, 'summary', 512),
     description: normalizeNullableText(input.description, 'description', 4000),
-    icon: normalizeNullableUrlOrPath(input.icon, 'icon', 255),
-    coverImage: normalizeNullableUrlOrPath(input.coverImage, 'coverImage', 255),
+    icon: input.icon,
+    cover: input.cover,
     categoryId: normalizeNullableId(input.categoryId),
     packageId: normalizeNullableId(input.packageId),
     provider: normalizeNullableText(input.provider, 'provider', 128),
@@ -984,6 +993,9 @@ function normalizeUpdateSkillRequest(input: AdminSkillUpdateInput): AdminSkillUp
     licenseName: normalizeNullableText(input.licenseName, 'licenseName', 128),
     sourceType: input.sourceType ? readSourceType(input.sourceType) : undefined,
     visibility: input.visibility ? readVisibility(input.visibility) : undefined,
+    builtin: input.builtin,
+    isBuiltin: input.isBuiltin,
+    featured: input.featured,
     recommendWeight: input.recommendWeight === undefined ? undefined : nonNegativeInteger(input.recommendWeight, 'recommendWeight', 1_000_000),
     price: normalizeNullableDecimal(input.price),
     currency: input.currency ? normalizeCurrency(input.currency) : undefined,
@@ -1002,11 +1014,10 @@ function normalizeReviewRequest(input: AdminSkillReviewRequest): AdminSkillRevie
 
 function normalizeCreateAssetRequest(input: AdminSkillAssetCreateInput): AdminSkillAssetCreateRequest {
   return pruneUndefined({
-    ...input,
     artifactId: normalizeNullableId(input.artifactId),
     assetType: input.assetType === undefined ? undefined : nonNegativeInteger(input.assetType, 'assetType', 1_000_000),
-    assetUrl: requiredResourceRef(input.assetUrl, 'assetUrl'),
-    thumbnailUrl: optionalResourceRef(input.thumbnailUrl, 'thumbnailUrl'),
+    asset: requireMediaResourceInput(input.asset, 'asset'),
+    thumbnail: optionalMediaResourceInput(input.thumbnail, 'thumbnail'),
     title: optionalText(input.title, 'title', 255),
     altText: optionalText(input.altText, 'altText', 512),
     mimeType: optionalText(input.mimeType, 'mimeType', 128),
@@ -1022,11 +1033,10 @@ function normalizeCreateAssetRequest(input: AdminSkillAssetCreateInput): AdminSk
 
 function normalizeUpdateAssetRequest(input: AdminSkillAssetUpdateInput): AdminSkillAssetUpdateRequest {
   return pruneUndefined({
-    ...input,
     artifactId: normalizeNullableId(input.artifactId),
     assetType: input.assetType === undefined ? undefined : nonNegativeInteger(input.assetType, 'assetType', 1_000_000),
-    assetUrl: optionalResourceRef(input.assetUrl, 'assetUrl'),
-    thumbnailUrl: normalizeNullableResourceRef(input.thumbnailUrl, 'thumbnailUrl'),
+    asset: optionalMediaResourceInput(input.asset, 'asset'),
+    thumbnail: nullableMediaResourceInput(input.thumbnail, 'thumbnail'),
     title: normalizeNullableText(input.title, 'title', 255),
     altText: normalizeNullableText(input.altText, 'altText', 512),
     mimeType: normalizeNullableText(input.mimeType, 'mimeType', 128),
@@ -1042,18 +1052,17 @@ function normalizeUpdateAssetRequest(input: AdminSkillAssetUpdateInput): AdminSk
 
 function normalizeCreateArtifactRequest(input: AdminSkillArtifactCreateInput): AdminSkillArtifactCreateRequest {
   const artifactRef = optionalResourceRef(input.artifactRef, 'artifactRef');
-  const artifactUrl = optionalResourceRef(input.artifactUrl, 'artifactUrl');
-  if (!artifactRef && !artifactUrl) {
-    throw new Error('artifactRef or artifactUrl is required');
+  const artifact = optionalMediaResourceInput(input.artifact, 'artifact');
+  if (!artifactRef && !artifact) {
+    throw new Error('artifactRef or artifact is required');
   }
   return pruneUndefined({
-    ...input,
     artifactType: input.artifactType === undefined ? undefined : nonNegativeInteger(input.artifactType, 'artifactType', 1_000_000),
     version: optionalText(input.version, 'version', 64),
     platformType: optionalText(input.platformType, 'platformType', 128),
     osName: optionalText(input.osName, 'osName', 128),
     artifactRef,
-    artifactUrl,
+    artifact,
     artifactSizeBytes: input.artifactSizeBytes === undefined ? undefined : nonNegativeInteger(input.artifactSizeBytes, 'artifactSizeBytes', Number.MAX_SAFE_INTEGER),
     runtime: optionalText(input.runtime, 'runtime', 64),
     frameworks: input.frameworks ? normalizeLabelArray(input.frameworks, 'frameworks') : undefined,
@@ -1068,13 +1077,12 @@ function normalizeCreateArtifactRequest(input: AdminSkillArtifactCreateInput): A
 
 function normalizeUpdateArtifactRequest(input: AdminSkillArtifactUpdateInput): AdminSkillArtifactUpdateRequest {
   return pruneUndefined({
-    ...input,
     artifactType: input.artifactType === undefined ? undefined : nonNegativeInteger(input.artifactType, 'artifactType', 1_000_000),
     version: optionalText(input.version, 'version', 64),
     platformType: optionalText(input.platformType, 'platformType', 128),
     osName: optionalText(input.osName, 'osName', 128),
     artifactRef: normalizeNullableResourceRef(input.artifactRef, 'artifactRef'),
-    artifactUrl: normalizeNullableResourceRef(input.artifactUrl, 'artifactUrl'),
+    artifact: nullableMediaResourceInput(input.artifact, 'artifact'),
     artifactSizeBytes: input.artifactSizeBytes === undefined ? undefined : nonNegativeInteger(input.artifactSizeBytes, 'artifactSizeBytes', Number.MAX_SAFE_INTEGER),
     runtime: normalizeNullableText(input.runtime, 'runtime', 64),
     frameworks: input.frameworks ? normalizeLabelArray(input.frameworks, 'frameworks') : undefined,
@@ -1098,7 +1106,7 @@ function normalizeSkillCategory(value: unknown): AdminSkillCategory {
     name: readRequiredString(item, 'name', 'Skill category name is required'),
     description: readString(item, 'description'),
     code: readString(item, 'code'),
-    icon: readString(item, 'icon'),
+    icon: readMediaResource(item.icon),
     sortWeight: readRequiredNonNegativeInteger(item, 'sortWeight', 'Skill category sort weight is required'),
     parentId: readNullableString(item, 'parentId'),
     path: readString(item, 'path'),
@@ -1116,8 +1124,8 @@ function normalizeSkillPackage(value: unknown): AdminSkillPackage {
     name: readRequiredString(item, 'name', 'Skill package name is required'),
     summary: readString(item, 'summary'),
     description: readNullableString(item, 'description'),
-    icon: readString(item, 'icon'),
-    coverImage: readString(item, 'coverImage'),
+    icon: readMediaResource(item.icon),
+    cover: readMediaResource(item.cover),
     categoryId: readNullableString(item, 'categoryId'),
     enabled: readRequiredBoolean(item, 'enabled', 'Skill package enabled flag is required'),
     featured: readRequiredBoolean(item, 'featured', 'Skill package featured flag is required'),
@@ -1137,8 +1145,8 @@ function normalizeSkill(value: unknown): AdminSkill {
     name: readRequiredString(item, 'name', 'Skill name is required'),
     summary: readString(item, 'summary'),
     description: readNullableString(item, 'description'),
-    icon: readString(item, 'icon'),
-    coverImage: readString(item, 'coverImage'),
+    icon: readMediaResource(item.icon),
+    cover: readMediaResource(item.cover),
     categoryId: readNullableString(item, 'categoryId'),
     packageId: readNullableString(item, 'packageId'),
     provider: readString(item, 'provider'),
@@ -1191,8 +1199,8 @@ function normalizeSkillAsset(value: unknown): AdminSkillAsset {
     targetId: readRequiredString(item, 'targetId', 'Skill asset target id is required'),
     artifactId: readNullableString(item, 'artifactId'),
     assetType: readRequiredNonNegativeInteger(item, 'assetType', 'Skill asset type is required'),
-    assetUrl: readRequiredString(item, 'assetUrl', 'Skill asset URL is required'),
-    thumbnailUrl: readNullableString(item, 'thumbnailUrl'),
+    asset: readRequiredMediaResource(item.asset, 'Skill asset resource is required'),
+    thumbnail: readMediaResource(item.thumbnail),
     title: readNullableString(item, 'title'),
     altText: readNullableString(item, 'altText'),
     mimeType: readNullableString(item, 'mimeType'),
@@ -1224,7 +1232,7 @@ function normalizeSkillArtifact(value: unknown): AdminSkillArtifact {
     platformType: readRequiredString(item, 'platformType', 'Skill artifact platform type is required'),
     osName: readRequiredString(item, 'osName', 'Skill artifact OS name is required'),
     artifactRef: readNullableString(item, 'artifactRef'),
-    artifactUrl: readNullableString(item, 'artifactUrl'),
+    artifact: readMediaResource(item.artifact),
     artifactSizeBytes: readRequiredNonNegativeInteger(item, 'artifactSizeBytes', 'Skill artifact size is required'),
     runtime: readNullableString(item, 'runtime'),
     frameworks: uniqueStrings(readRequiredStringArray(item, 'frameworks', 'Skill artifact frameworks are required')),
@@ -1243,8 +1251,6 @@ function mergeSharedSkillFormFields(input: AdminSkillCreateInput | AdminSkillUpd
   for (const [key, maxLength] of [
     ['summary', 512],
     ['description', 4000],
-    ['icon', 255],
-    ['coverImage', 255],
     ['categoryId', 128],
     ['packageId', 128],
     ['provider', 128],
@@ -1264,6 +1270,14 @@ function mergeSharedSkillFormFields(input: AdminSkillCreateInput | AdminSkillUpd
     if (value !== undefined) {
       input[key] = value;
     }
+  }
+  const icon = optionalFormMediaResource(form, 'icon', 'image', 255);
+  if (icon !== undefined) {
+    input.icon = icon;
+  }
+  const cover = optionalFormMediaResource(form, 'cover', 'image', 255);
+  if (cover !== undefined) {
+    input.cover = cover;
   }
   const recommendWeight = optionalFormNonNegativeInteger(form, 'recommendWeight');
   if (recommendWeight !== undefined) {
@@ -1306,7 +1320,6 @@ function mergeSharedCategoryFormFields(
   for (const [key, maxLength] of [
     ['code', 128],
     ['description', 512],
-    ['icon', 255],
     ['parentId', 128],
     ['path', 1024],
   ] as const) {
@@ -1316,6 +1329,10 @@ function mergeSharedCategoryFormFields(
     if (value !== undefined) {
       input[key] = value;
     }
+  }
+  const icon = optionalFormMediaResource(form, 'icon', 'image', 255);
+  if (icon !== undefined) {
+    input.icon = icon;
   }
   const sortWeight = optionalFormNonNegativeInteger(form, 'sortWeight');
   if (sortWeight !== undefined) {
@@ -1336,14 +1353,20 @@ function mergeSharedPackageFormFields(input: AdminSkillPackageCreateInput | Admi
   for (const [key, maxLength] of [
     ['summary', 512],
     ['description', 4000],
-    ['icon', 255],
-    ['coverImage', 255],
     ['categoryId', 128],
   ] as const) {
     const value = optionalFormText(form, key, maxLength);
     if (value !== undefined) {
       input[key] = value;
     }
+  }
+  const icon = optionalFormMediaResource(form, 'icon', 'image', 255);
+  if (icon !== undefined) {
+    input.icon = icon;
+  }
+  const cover = optionalFormMediaResource(form, 'cover', 'image', 255);
+  if (cover !== undefined) {
+    input.cover = cover;
   }
   const sortWeight = optionalFormNonNegativeInteger(form, 'sortWeight');
   if (sortWeight !== undefined) {
@@ -1373,7 +1396,6 @@ function mergeSharedAssetFormFields(input: AdminSkillAssetCreateInput | AdminSki
     }
   }
   for (const [key, maxLength] of [
-    ['thumbnailUrl', 1024],
     ['title', 255],
     ['altText', 512],
     ['mimeType', 128],
@@ -1385,9 +1407,13 @@ function mergeSharedAssetFormFields(input: AdminSkillAssetCreateInput | AdminSki
       input[key] = value;
     }
   }
-  const assetUrl = optionalFormText(form, 'assetUrl', 1024);
-  if (assetUrl !== undefined) {
-    input.assetUrl = assetUrl;
+  const thumbnail = optionalFormMediaResource(form, 'thumbnail', 'image', 1024);
+  if (thumbnail !== undefined) {
+    input.thumbnail = thumbnail;
+  }
+  const asset = optionalFormMediaResource(form, 'asset', 'other', 1024);
+  if (asset !== undefined) {
+    input.asset = asset;
   }
 }
 
@@ -1403,7 +1429,6 @@ function mergeSharedArtifactFormFields(input: AdminSkillArtifactCreateInput | Ad
     ['platformType', 128],
     ['osName', 128],
     ['artifactRef', 1024],
-    ['artifactUrl', 1024],
     ['runtime', 64],
     ['licenseName', 128],
     ['checksumHash', 128],
@@ -1416,6 +1441,10 @@ function mergeSharedArtifactFormFields(input: AdminSkillArtifactCreateInput | Ad
       input[key] = value;
     }
   }
+  const artifact = optionalFormMediaResource(form, 'artifact', 'archive', 1024);
+  if (artifact !== undefined) {
+    input.artifact = artifact;
+  }
   const frameworks = splitCsvFormField(form, 'frameworks');
   if (frameworks.length > 0) {
     input.frameworks = frameworks;
@@ -1424,6 +1453,58 @@ function mergeSharedArtifactFormFields(input: AdminSkillArtifactCreateInput | Ad
 
 function requiredFormText(form: FormData, key: string, maxLength: number): string {
   return requiredText(formString(form, key), key, maxLength);
+}
+
+function requiredFormMediaResource(
+  form: FormData,
+  key: string,
+  kind: ClawRouterMediaResource['kind'],
+  maxLength: number,
+): ClawRouterMediaResource {
+  const resource = optionalFormMediaResource(form, key, kind, maxLength);
+  if (!resource) {
+    throw new Error(`${key} is required`);
+  }
+  return resource;
+}
+
+function optionalFormMediaResource(
+  form: FormData,
+  key: string,
+  kind: ClawRouterMediaResource['kind'],
+  maxLength: number,
+): ClawRouterMediaResource | undefined {
+  const value = optionalFormText(form, key, maxLength);
+  return toExternalUrlMediaResource(value, kind);
+}
+
+function requireMediaResourceInput(value: unknown, fieldName: string): ClawRouterMediaResource {
+  return readRequiredMediaResource(value, `${fieldName} is required`);
+}
+
+function optionalMediaResourceInput(value: unknown, fieldName: string): ClawRouterMediaResource | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  const resource = readMediaResource(value);
+  if (!resource) {
+    throw new Error(`${fieldName} must be a media resource`);
+  }
+  return resource;
+}
+
+function nullableMediaResourceInput(value: unknown, fieldName: string): ClawRouterMediaResource | null | undefined {
+  if (value === undefined) {
+    return undefined;
+  }
+  if (value === null) {
+    return null;
+  }
+  const resource = readMediaResource(value);
+  if (!resource) {
+    throw new Error(`${fieldName} must be a media resource`);
+  }
+  return resource;
 }
 
 function optionalFormText(form: FormData, key: string, maxLength: number): string | undefined {

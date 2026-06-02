@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/birdnet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-birdnet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-birdnet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c616c0173385e38fd6f114d6096b35e2510f71a892af4abfb69b636c77a1f82d",

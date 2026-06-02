@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/createrepo@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-createrepo-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-createrepo-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3dcb8b7dfb3bfcd6dce56c74be695b836b04ba0e1f748248a33094a412d0e7c3",

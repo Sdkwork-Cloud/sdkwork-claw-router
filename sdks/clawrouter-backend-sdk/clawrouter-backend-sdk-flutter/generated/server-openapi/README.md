@@ -20,7 +20,7 @@ final client = SdkworkBackendClient.withBaseUrl(baseUrl: 'http://localhost:18081
 client.setApiKey('your-api-key');
 
 // Use the SDK
-final result = await client.ai.modelVendorsList();
+final result = await client.ai.channelGroupsList();
 print(result);
 ```
 
@@ -95,8 +95,8 @@ print(result);
 
 ### ai
 ```dart
-// List vendors
-final result = await client.ai.modelVendorsList();
+// List groups
+final result = await client.ai.channelGroupsList();
 print(result);
 ```
 
@@ -123,8 +123,8 @@ print(result);
 
 ### iam
 ```dart
-// List groups
-final result = await client.iam.accessGroupsList();
+// List API key map
+final result = await client.iam.apiKeysList();
 print(result);
 ```
 
@@ -233,7 +233,7 @@ print(result);
 
 ```dart
 try {
-  final result = await client.ai.modelVendorsList();
+  final result = await client.ai.channelGroupsList();
   print(result);
 } catch (e) {
   print('Error: $e');

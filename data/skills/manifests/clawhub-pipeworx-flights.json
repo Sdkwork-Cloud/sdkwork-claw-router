@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-flights@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-flights-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-flights-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71de94e6ee4efcc357667635a406ac8ba07292066ce028e7b86509051555e849",

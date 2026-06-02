@@ -23,6 +23,6 @@ data class CourseItem(
     val ratingScore: Double? = null,
     val studentsCount: Int? = null,
     val tags: List<String>? = null,
-    val thumbnailUrl: String? = null,
+    val thumbnail: MediaResource? = null,
     val title: String? = null
 )

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-robot-skills@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-robot-skills-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-robot-skills-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2c746b8652bd731255c1d2f401452830619037150025301ef8453fb058f70849",

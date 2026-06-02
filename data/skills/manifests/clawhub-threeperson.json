@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/threeperson@3.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-threeperson-3.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-threeperson-3.3.2.json"
+      },
       "version": "3.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4240f0dfb7d98cdefe56484149fdc371b693da6553f481b13b62b946b9cda65c",

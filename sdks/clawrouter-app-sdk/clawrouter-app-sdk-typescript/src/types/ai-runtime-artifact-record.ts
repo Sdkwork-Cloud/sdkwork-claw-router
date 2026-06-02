@@ -26,6 +26,8 @@ export interface AiRuntimeArtifactRecord {
   id?: string;
   /** Legal hold field on ai runtime artifact record. */
   legal_hold?: boolean;
+  /** Media resource id field on ai runtime artifact record. */
+  media_resource_id?: string;
   /** Message id field on ai runtime artifact record. */
   message_id?: string;
   /** Metadata field on ai runtime artifact record. */
@@ -34,12 +36,16 @@ export interface AiRuntimeArtifactRecord {
   mime_type?: string;
   /** Name field on ai runtime artifact record. */
   name?: string;
+  /** Object blob id field on ai runtime artifact record. */
+  object_blob_id?: string;
   /** Organization id field on ai runtime artifact record. */
   organization_id?: string;
   /** Payload hash field on ai runtime artifact record. */
   payload_hash?: string;
   /** Request id field on ai runtime artifact record. */
   request_id?: string;
+  /** Resource snapshot field on ai runtime artifact record. */
+  resource_snapshot?: Record<string, JsonValue>;
   /** Retention until field on ai runtime artifact record. */
   retention_until?: string;
   /** Runtime invocation id field on ai runtime artifact record. */
@@ -50,10 +56,6 @@ export interface AiRuntimeArtifactRecord {
   size_bytes?: string;
   /** Status field on ai runtime artifact record. */
   status?: string;
-  /** Storage key field on ai runtime artifact record. */
-  storage_key?: string;
-  /** Storage url field on ai runtime artifact record. */
-  storage_url?: string;
   /** Tenant id field on ai runtime artifact record. */
   tenant_id?: string;
   /** Trace id field on ai runtime artifact record. */

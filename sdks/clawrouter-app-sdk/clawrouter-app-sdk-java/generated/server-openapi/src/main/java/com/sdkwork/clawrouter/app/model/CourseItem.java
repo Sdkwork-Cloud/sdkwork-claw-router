@@ -25,7 +25,7 @@ public class CourseItem {
     private Double ratingScore;
     private Integer studentsCount;
     private List<String> tags;
-    private String thumbnailUrl;
+    private MediaResource thumbnail;
     private String title;
 
     public String getCategory() {
@@ -204,12 +204,12 @@ public class CourseItem {
         this.tags = tags;
     }
 
-    public String getThumbnailUrl() {
-        return this.thumbnailUrl;
+    public MediaResource getThumbnail() {
+        return this.thumbnail;
     }
 
-    public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+    public void setThumbnail(MediaResource thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
     public String getTitle() {

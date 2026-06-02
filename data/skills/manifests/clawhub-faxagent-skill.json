@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/faxagent-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-faxagent-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-faxagent-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b911e661b152740056a187ce8ec72604b7e6074c6a2355eb4e821cd6729f77e1",

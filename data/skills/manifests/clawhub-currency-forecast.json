@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/currency-forecast@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-currency-forecast-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-currency-forecast-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c109ccb2cf735638edf6837aa54f26d9d51f3c7ace344163437c994a843ec5d3",

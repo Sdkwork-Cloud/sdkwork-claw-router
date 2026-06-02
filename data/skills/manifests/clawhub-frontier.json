@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/frontier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-frontier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-frontier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e4e14f87237553d4951cd0a164c0878c86732ab2ebe666458219cc6dc4515945",

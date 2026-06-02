@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoice-chaser-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoice-chaser-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoice-chaser-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f03510dd06b205d9f21febee1915e935c6e3c0dd1143560c3179791137ea2da6",

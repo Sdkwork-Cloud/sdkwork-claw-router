@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/juniper-networks@99.99.99",
-      "artifactUrl": "data/skills/artifacts/clawhub-juniper-networks-99.99.99.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-juniper-networks-99.99.99.json"
+      },
       "version": "99.99.99",
       "runtime": "metadata",
       "checksumHash": "sha256:af33039faf05f848b87d2de42ec7f0a4cd88cc3e053aed101a84d4390afbccdf",

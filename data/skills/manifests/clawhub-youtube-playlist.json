@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-playlist@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-playlist-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-playlist-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:664befc17e77363a052484698d4baea2b778e475837442330e9e81e9878da7d5",

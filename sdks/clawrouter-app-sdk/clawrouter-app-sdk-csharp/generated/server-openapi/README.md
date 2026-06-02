@@ -111,8 +111,8 @@ Console.WriteLine(result);
 ### ai
 
 ```csharp
-// List traces
-var result = await client.Ai.GatewayTracesListAsync();
+// List groups
+var result = await client.Ai.ChannelGroupsListAsync();
 Console.WriteLine(result);
 ```
 
@@ -156,8 +156,8 @@ Console.WriteLine(result);
 ### iam
 
 ```csharp
-// List groups
-var result = await client.Iam.ApiKeyGroupsListAsync();
+// List keys
+var result = await client.Iam.ApiKeysListAsync();
 Console.WriteLine(result);
 ```
 

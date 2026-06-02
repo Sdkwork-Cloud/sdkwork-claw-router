@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rss-personalized-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rss-personalized-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rss-personalized-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3b0de393aecde483c9dd561b79727da60adc839e7c04c61ece39c6dc94166e54",

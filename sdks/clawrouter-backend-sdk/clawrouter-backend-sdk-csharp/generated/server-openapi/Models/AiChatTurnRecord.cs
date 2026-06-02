@@ -41,6 +41,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? TenantId { get; set; }
         public string? TraceId { get; set; }
         public string? TurnNo { get; set; }
+        public string? UpdatedAt { get; set; }
         public Dictionary<string, string>? UsageSnapshot { get; set; }
         public string? UserId { get; set; }
         public string? Uuid { get; set; }

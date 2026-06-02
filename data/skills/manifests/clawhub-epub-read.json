@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/epub-read@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-epub-read-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-epub-read-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ab5a74116e9b1975183daf9561574bfd52dd42ae77cf6ef500a4f877aea131f1",

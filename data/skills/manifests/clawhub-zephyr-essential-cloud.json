@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zephyr-essential-cloud@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-zephyr-essential-cloud-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zephyr-essential-cloud-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8d5d910f36e01c6e13437ecc4c7cd4ebb93ee95a85ba079fe89b75c82a32d93c",

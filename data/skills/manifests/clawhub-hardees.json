@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hardees@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hardees-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hardees-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d71e3c007bc3700e06e2cd0665486ac97aaf88f455760e700c24904fac6d9919",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/statuscake@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-statuscake-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-statuscake-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:dc0e04dd4338b9b9ce79f3446190fdf1212e8fe92e355c9a3c627dccd76199ec",

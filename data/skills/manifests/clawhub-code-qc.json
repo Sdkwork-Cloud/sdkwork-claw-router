@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/code-qc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-code-qc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-code-qc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f7d68e242e23b4bb8fa8c0a765628b7f28ff5fc601dad14b6e40f5a6623ae4d9",

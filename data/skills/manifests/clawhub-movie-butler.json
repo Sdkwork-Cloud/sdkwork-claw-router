@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/movie-butler@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-movie-butler-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-movie-butler-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8943c8b0073e7e0a1c9ce8a385c53d27facf37eedabc96aec4c9eac88ede78b1",

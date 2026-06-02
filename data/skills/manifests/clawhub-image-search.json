@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2ba3742d381ace47fa8fe6eb02deb3c31bfdb6d9c765b33dbac981a9a61c074b",

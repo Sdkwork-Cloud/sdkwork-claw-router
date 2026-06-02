@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kirk-scrape@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kirk-scrape-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kirk-scrape-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:23a8a942e7798793c11f4dabda71ab4f2290d9eebaedb07cff18ce32ddebe06f",

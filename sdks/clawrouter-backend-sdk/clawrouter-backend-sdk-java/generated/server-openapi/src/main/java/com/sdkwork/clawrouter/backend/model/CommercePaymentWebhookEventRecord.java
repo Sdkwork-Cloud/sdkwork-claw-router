@@ -4,6 +4,7 @@ package com.sdkwork.clawrouter.backend.model;
 public class CommercePaymentWebhookEventRecord {
     private String createdAt;
     private String eventId;
+    private String id;
     private String idempotencyKey;
     private String message;
     private String nonce;
@@ -34,6 +35,14 @@ public class CommercePaymentWebhookEventRecord {
 
     public void setEventId(String eventId) {
         this.eventId = eventId;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

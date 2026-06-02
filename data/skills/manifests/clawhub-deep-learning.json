@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deep-learning@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deep-learning-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deep-learning-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:280e0c2fe173286f87f040a3cce3d786500fea5b1ba7f0fb9b197ef1af93f86f",

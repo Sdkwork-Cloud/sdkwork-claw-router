@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/the-economist@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-the-economist-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-the-economist-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b93d20348160ec4381d62a27e9e27e7c6dfca0dfdc11e9d03d5bcd1200da4419",

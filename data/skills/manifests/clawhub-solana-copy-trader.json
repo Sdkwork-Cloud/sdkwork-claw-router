@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solana-copy-trader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solana-copy-trader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solana-copy-trader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:739753d09639315cfa46a2c3a0bca2d00cdfc129a66396065adf3a95d34b14d4",

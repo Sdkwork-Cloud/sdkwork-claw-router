@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/terraform-patterns@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-terraform-patterns-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-terraform-patterns-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ce54c572f4ffd77d4cae54a1f690730e6d62af66e363a2d8b1110d95c1954b42",

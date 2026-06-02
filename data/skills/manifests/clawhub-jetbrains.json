@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jetbrains@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jetbrains-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jetbrains-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:222c13e70d5f2aba6faf83b4804ff764e712e9d9a9942b8466b90a1937533827",

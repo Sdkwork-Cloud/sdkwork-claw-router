@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lint@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lint-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lint-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c57923e6d1ddd7597b5c5d9c27bb0cfffc196e2da9d0c52fa3b3df3765178bbf",

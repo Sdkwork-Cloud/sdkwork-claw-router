@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/money-router@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-money-router-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-money-router-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:571bdbcddd8f2787a634c227ce44ff787722c52af28c53a69104842ca365741d",

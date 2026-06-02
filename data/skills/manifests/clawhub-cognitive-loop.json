@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cognitive-loop@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cognitive-loop-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cognitive-loop-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:19d886e64d112c5a502b74d966ca51af035f8c4d10a280492b24f4239c6042ce",

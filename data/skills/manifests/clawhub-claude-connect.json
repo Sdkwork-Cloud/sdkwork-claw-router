@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-connect@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-connect-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-connect-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a161f9ac3d2303b927c9d276ab32371c2d7b6255dfde172c7ceb269585de18f9",

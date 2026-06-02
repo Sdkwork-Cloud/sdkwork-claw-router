@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lead-gen-website-pipeline@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lead-gen-website-pipeline-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lead-gen-website-pipeline-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f6fb51e3ee392319ccbe4a2f3d93336f6bf01d1ba9c3d60c501126af7ae7203c",

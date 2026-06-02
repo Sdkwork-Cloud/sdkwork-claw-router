@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shipday@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-shipday-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shipday-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:bd538615a0cecdda9816f7c86b63ec954178329d49becc18c15afb9b4e7a750b",

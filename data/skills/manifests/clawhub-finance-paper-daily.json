@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finance-paper-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-finance-paper-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finance-paper-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ebb3d03af1a6d3615e5229aba30bc8c48577c8a641f88aed7f7247c22184c73f",

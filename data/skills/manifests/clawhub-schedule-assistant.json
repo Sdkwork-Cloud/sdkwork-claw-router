@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/schedule-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-schedule-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-schedule-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4bf24a8ceeaf2324101d6b24900e728b08a21f67c61ffeda0a8ddbc1d201cd06",

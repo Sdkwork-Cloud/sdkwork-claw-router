@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generate-insight-ppt@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-generate-insight-ppt-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generate-insight-ppt-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1a6e1f332e5a586de409a0b4379273ec8334d1b9249bdf3b9a0cc5536ebda86d",

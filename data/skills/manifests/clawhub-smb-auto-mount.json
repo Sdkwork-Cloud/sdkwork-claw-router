@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smb-auto-mount@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-smb-auto-mount-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smb-auto-mount-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:8bf2fc460e3280b74aecc65b33ce45a28863eb44170dd6e5043b8db01f87e587",

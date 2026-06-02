@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arbiscan-skill@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-arbiscan-skill-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arbiscan-skill-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09defb10c10fe05456739fdc8aa594a809327624342323e81c3ce914fd60bfda",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/carapace@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-carapace-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-carapace-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:25ca54575a3829b0ca047ec68b637f55dae07d94448a971ba982cf30ca127938",

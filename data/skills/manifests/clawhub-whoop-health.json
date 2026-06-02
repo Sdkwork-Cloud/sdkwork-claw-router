@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whoop-health@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whoop-health-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whoop-health-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:570d894d6b81efcb5d3109f25390bf2ff8c27924388c0a20f5dc42ce2e5c2347",

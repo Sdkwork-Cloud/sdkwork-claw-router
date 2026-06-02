@@ -17,6 +17,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public int? PartNumber { get; set; }
         public string? PartSha256 { get; set; }
         public string? PresignedUrlExpiresAt { get; set; }
+        public string? SizeBytes { get; set; }
         public string? Status { get; set; }
         public string? TenantId { get; set; }
         public string? UpdatedAt { get; set; }

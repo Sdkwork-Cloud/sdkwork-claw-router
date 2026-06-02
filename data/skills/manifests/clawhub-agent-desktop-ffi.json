@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-desktop-ffi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-desktop-ffi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-desktop-ffi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2d992efa3e461e1bcdb818c7b8dbfc84a496713097cc896c2615f883b52d932",

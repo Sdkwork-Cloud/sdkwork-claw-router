@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/init-kb@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-init-kb-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-init-kb-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc4d5e68804eaabea51edc96db7fa29fd941f3790aee11a56019199f12349b27",

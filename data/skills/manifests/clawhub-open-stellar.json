@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/open-stellar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-open-stellar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-open-stellar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb03ae77a016284871abc88e6f3e8290c206f6b4f4ade24336e420dfe6222d64",

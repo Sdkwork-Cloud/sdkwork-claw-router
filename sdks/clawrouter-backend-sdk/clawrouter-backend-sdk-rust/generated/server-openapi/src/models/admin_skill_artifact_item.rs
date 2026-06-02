@@ -1,8 +1,14 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Updated skill catalog artifact snapshot returned by the backend.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminSkillArtifactItem {
+    /// Artifact field on admin skill artifact item.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub artifact: Option<MediaResource>,
+
     /// Artifact ref field on admin skill artifact item.
     #[serde(rename = "artifactRef")]
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -15,11 +21,6 @@ pub struct AdminSkillArtifactItem {
     /// Artifact type field on admin skill artifact item.
     #[serde(rename = "artifactType")]
     pub artifact_type: i64,
-
-    /// Artifact url field on admin skill artifact item.
-    #[serde(rename = "artifactUrl")]
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub artifact_url: Option<String>,
 
     /// Checksum hash field on admin skill artifact item.
     #[serde(rename = "checksumHash")]

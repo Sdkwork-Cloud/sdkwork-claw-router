@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/interview-question-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-interview-question-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-interview-question-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd32f4ef522cfefd2b209471dca6675b276effc3fa45968000b921bc5d8a77fa",

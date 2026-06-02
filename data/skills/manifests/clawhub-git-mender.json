@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/git-mender@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-git-mender-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-git-mender-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9386d0b62fc8c165c4560c2ecd53e475e34e455b4cbd5da50d9ccf3b38901013",

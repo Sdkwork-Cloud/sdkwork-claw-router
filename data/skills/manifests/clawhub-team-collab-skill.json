@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/team-collab-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-team-collab-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-team-collab-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aa0b64e8f4f5f385abf57ccad81614c25d4d425ae6e3b3f4ef99c699d7682323",

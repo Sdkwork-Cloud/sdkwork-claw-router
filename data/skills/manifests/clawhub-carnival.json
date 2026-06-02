@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/carnival@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-carnival-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-carnival-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ea2fb339f48fa7680489c15d6569d53a42121c6efd27cd4f722cd8ec4bb83125",

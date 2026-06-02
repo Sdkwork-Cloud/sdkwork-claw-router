@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-location-service@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-location-service-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-location-service-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:222e0cc8565213089cda87cb3ecb9226bd8223d347fee022a93f77c74b8e14fb",

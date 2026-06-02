@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-rpg@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-rpg-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-rpg-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0f573203b8b2efee0a00e664abcc73b7f43a4706d7b7701ae8cd1c17cb057b36",

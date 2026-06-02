@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wangkang-skill1@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-wangkang-skill1-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wangkang-skill1-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d5a3661007f06d2f8178a35559ffab435b73d98ce533554f709e34fa0c69a955",

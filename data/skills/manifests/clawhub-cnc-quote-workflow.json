@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cnc-quote-workflow@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cnc-quote-workflow-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cnc-quote-workflow-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cb92f60e1377db609e655de2c6fd354eda214770a624cd1f7ce217f103fd992b",

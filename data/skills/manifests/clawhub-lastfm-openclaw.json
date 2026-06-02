@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lastfm-openclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lastfm-openclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lastfm-openclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:001846e78d7fdb85235199e2df22839fd87b4aa75b0a30f383cd9f802342b688",

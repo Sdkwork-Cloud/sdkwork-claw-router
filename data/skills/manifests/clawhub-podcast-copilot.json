@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/podcast-copilot@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-podcast-copilot-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-podcast-copilot-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f43ce4994a5f00a43b8ee0f9ec54a64659427af4bdfb40c7296387c7ac259b1",

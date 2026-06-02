@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/databricks@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-databricks-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-databricks-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:316db93e60a99ba8aca6a11b0a0e5502468f131c740a84862c89bc198a6356a5",

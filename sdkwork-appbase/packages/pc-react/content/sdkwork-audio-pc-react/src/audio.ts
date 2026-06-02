@@ -1,9 +1,12 @@
+import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";
+
 export type SdkworkAudioJobStatus = "processing" | "queued" | "ready";
 
 export interface SdkworkAudioAsset {
   durationLabel: string;
   format: string;
   id: string;
+  resource: SdkworkMediaResource;
   status: SdkworkAudioJobStatus;
   title: string;
   updatedAt: string;
@@ -94,6 +97,38 @@ function sortSdkworkAudio(items: readonly SdkworkAudioAsset[]): SdkworkAudioAsse
   );
 }
 
+function parseDurationSeconds(durationLabel: string): number | undefined {
+  const [minutes, seconds] = durationLabel.split(":").map((part) => Number.parseInt(part, 10));
+  if (!Number.isFinite(minutes) || !Number.isFinite(seconds)) {
+    return undefined;
+  }
+  return minutes * 60 + seconds;
+}
+
+function createGeneratedAudioResource(
+  id: string,
+  title: string,
+  format: string,
+  durationLabel: string,
+  voiceId: string,
+): SdkworkMediaResource {
+  return {
+    ai: {
+      provenance: "generated",
+    },
+    durationSeconds: parseDurationSeconds(durationLabel),
+    fileName: `${id}.${format}`,
+    id: `media-resource-${id}`,
+    kind: "audio",
+    metadata: {
+      voiceId,
+    },
+    mimeType: format === "mp3" ? "audio/mpeg" : `audio/${format}`,
+    source: "generated",
+    title,
+  };
+}
+
 export function createDefaultSdkworkAudioVoices(): SdkworkAudioVoice[] {
   return [
     { id: "voice-brand-female", itemCount: 2, title: "Brand Female" },
@@ -103,12 +138,17 @@ export function createDefaultSdkworkAudioVoices(): SdkworkAudioVoice[] {
 }
 
 export function createDefaultSdkworkAudioItems(): SdkworkAudioAsset[] {
-  return [
+  const items = [
     { durationLabel: "00:45", format: "wav", id: "audio-launch-tag", status: "ready", title: "Launch Tag", updatedAt: "2026-04-03T04:20:00.000Z", voiceId: "voice-brand-female" },
     { durationLabel: "03:20", format: "mp3", id: "audio-podcast-intro", status: "processing", title: "Podcast Intro", updatedAt: "2026-04-02T04:20:00.000Z", voiceId: "voice-brand-male" },
     { durationLabel: "00:20", format: "wav", id: "audio-onboarding-tip", status: "ready", title: "Onboarding Tip", updatedAt: "2026-04-01T04:20:00.000Z", voiceId: "voice-brand-female" },
     { durationLabel: "01:10", format: "wav", id: "audio-product-narration", status: "queued", title: "Product Narration", updatedAt: "2026-03-31T04:20:00.000Z", voiceId: "voice-narration" },
-  ];
+  ] as const;
+
+  return items.map((item) => ({
+    ...item,
+    resource: createGeneratedAudioResource(item.id, item.title, item.format, item.durationLabel, item.voiceId),
+  }));
 }
 
 export function summarizeSdkworkAudioWorkspace(

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/instant-genius@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-instant-genius-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-instant-genius-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e4aafb1683af52183995c8050bba7b962575be0c9e312eb46234f63147d2326",

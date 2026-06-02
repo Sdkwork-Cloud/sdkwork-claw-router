@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/venus-agent-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-venus-agent-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-venus-agent-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a24baf4831b157c0d53fa3e3b5852d3276b8e885dfe3e4d450f0546137d152e2",

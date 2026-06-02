@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mkisofs@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mkisofs-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mkisofs-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5e985f46068615d59131e160c7907f1a67abeaa1043cb36e86125b53c535a206",

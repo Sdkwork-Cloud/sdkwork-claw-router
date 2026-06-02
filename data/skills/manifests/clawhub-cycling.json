@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cycling@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cycling-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cycling-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:883d6431818586c7a01544a3f65aa638de8cc64ac9c8ea230cd6d9ab1c3ce746",

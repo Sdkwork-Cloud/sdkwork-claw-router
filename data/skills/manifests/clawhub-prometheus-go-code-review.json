@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prometheus-go-code-review@2.3.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-prometheus-go-code-review-2.3.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prometheus-go-code-review-2.3.1.json"
+      },
       "version": "2.3.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ce9b27a066df9c4202534c1ae7a13f4d0621b928c66eaaa244c0cf229f0e926a",

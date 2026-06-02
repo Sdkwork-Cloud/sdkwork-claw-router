@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dc-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dc-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dc-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4b56dd70db543092339fafba777ac5997da53fc100e4837a6f36ce9d6f34651d",

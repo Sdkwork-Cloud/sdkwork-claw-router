@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/karpathy-compile@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-compile-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-karpathy-compile-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:93798a85a1cb6bd0890e268ec82982ee65f01edd71d967eb8478ea3726be23bb",

@@ -1,9 +1,11 @@
+import type { ClawRouterMediaResource } from 'sdkwork-claw-router-commons';
+
 export type CourseLevel = 'Beginner' | 'Intermediate' | 'Advanced';
 export type CourseLevelFilter = 'All' | CourseLevel;
 
 export type CourseInstructor = {
   name: string;
-  avatar: string;
+  avatar: ClawRouterMediaResource;
   title: string;
   bio: string;
 };
@@ -22,7 +24,7 @@ export interface Course {
   courseCode?: string;
   title: string;
   description: string;
-  thumbnail: string;
+  thumbnail: ClawRouterMediaResource;
   instructor: CourseInstructor;
   duration: string;
   lessonsCount: number;
@@ -85,7 +87,7 @@ export type CourseLessonView = {
   description?: string;
   duration: string;
   active: boolean;
-  videoUrl?: string;
+  video?: ClawRouterMediaResource;
   externalBvid?: string;
   sourceProvider?: string;
   content?: string;
@@ -114,7 +116,7 @@ export type CourseVideoView = {
 export type CourseRelatedCardView = {
   id: string;
   title: string;
-  thumbnail: string;
+  thumbnail: ClawRouterMediaResource;
   instructorName: string;
   duration: string;
   viewsLabel: string;
@@ -124,7 +126,7 @@ export type CourseRelatedCardView = {
 export type CourseCommentView = {
   id: string;
   author: string;
-  avatarUrl: string;
+  avatar: ClawRouterMediaResource;
   level: number;
   body: string;
   createdAt: string;
@@ -138,7 +140,7 @@ export type CourseCommentsView = {
 
 export type CoursePublisherView = {
   name: string;
-  avatar: string;
+  avatar: ClawRouterMediaResource;
   title: string;
   bio: string;
   followersLabel: string;
@@ -168,6 +170,16 @@ export const COURSE_CONTENT_SNAPSHOT_SOURCE = {
   ],
 } as const;
 
+function localImageResource(url: string, title?: string): ClawRouterMediaResource {
+  return {
+    kind: 'image',
+    source: 'external_url',
+    url,
+    publicUrl: url,
+    ...(title ? { title } : {}),
+  };
+}
+
 export const COURSE_CATALOG: Course[] = [
   {
     id: "c1",
@@ -175,10 +187,10 @@ export const COURSE_CATALOG: Course[] = [
     courseCode: "c1",
     title: "飞书 CLI 与 Claude Code/Codex 远程开发实战",
     description: "基于 Bilibili 的飞书 CLI、Claude Code、Codex 课程，覆盖远程开发、Agent 协作、上下文规则和生产任务交付。",
-    thumbnail: "/assets/courses/covers/ai-coding.svg",
+    thumbnail: localImageResource("/assets/courses/covers/ai-coding.svg", "AI Coding"),
     instructor: {
       name: "SDKWork Academy",
-      avatar: "/assets/courses/avatars/sdkwork-academy.svg",
+      avatar: localImageResource("/assets/courses/avatars/sdkwork-academy.svg", "SDKWork Academy"),
       title: "AI Coding Curriculum Team",
       bio: "Curates practical AI coding courses from Bilibili and local tutorial uploads.",
     },
@@ -216,10 +228,10 @@ export const COURSE_CATALOG: Course[] = [
     courseCode: "c2",
     title: "OpenAI Codex CLI 超级入门教程",
     description: "面向在线学习的 Codex 课程，覆盖 Codex CLI、IDE 协作、AGENTS.md、代码审查、上下文处理、MCP 和云端任务委派。",
-    thumbnail: "/assets/courses/covers/ai-coding.svg",
+    thumbnail: localImageResource("/assets/courses/covers/ai-coding.svg", "AI Coding"),
     instructor: {
       name: "SDKWork Academy",
-      avatar: "/assets/courses/avatars/sdkwork-academy.svg",
+      avatar: localImageResource("/assets/courses/avatars/sdkwork-academy.svg", "SDKWork Academy"),
       title: "AI Coding Curriculum Team",
       bio: "Curates practical AI coding courses from Bilibili and local tutorial uploads.",
     },
@@ -258,10 +270,10 @@ export const COURSE_CATALOG: Course[] = [
     courseCode: "c3",
     title: "Claude Code 从 0 到 1 全攻略",
     description: "面向真实项目的 Claude Code 课程，从安装授权、Plan Mode、MCP、图片处理、上下文压缩到 Hook、Agent Skill 和 SubAgent。",
-    thumbnail: "/assets/courses/covers/ai-coding.svg",
+    thumbnail: localImageResource("/assets/courses/covers/ai-coding.svg", "AI Coding"),
     instructor: {
       name: "SDKWork Academy",
-      avatar: "/assets/courses/avatars/sdkwork-academy.svg",
+      avatar: localImageResource("/assets/courses/avatars/sdkwork-academy.svg", "SDKWork Academy"),
       title: "AI Coding Curriculum Team",
       bio: "Curates practical AI coding courses from Bilibili and local tutorial uploads.",
     },
@@ -299,10 +311,10 @@ export const COURSE_CATALOG: Course[] = [
     courseCode: "c4",
     title: "DeepSeek + 即梦 AI 图片制作",
     description: "围绕 DeepSeek + 即梦 AI 生成图片的在线课程，覆盖图片描述词、图片制作、局部重绘、角色一致性和商业海报素材。",
-    thumbnail: "/assets/courses/covers/ai-image-creation.svg",
+    thumbnail: localImageResource("/assets/courses/covers/ai-image-creation.svg", "AI Image Creation"),
     instructor: {
       name: "SDKWork Creative Lab",
-      avatar: "/assets/courses/avatars/sdkwork-creative-lab.svg",
+      avatar: localImageResource("/assets/courses/avatars/sdkwork-creative-lab.svg", "SDKWork Creative Lab"),
       title: "AI Creation Curriculum Team",
       bio: "Curates image, video, and short drama courses for creators and operators.",
     },
@@ -340,10 +352,10 @@ export const COURSE_CATALOG: Course[] = [
     courseCode: "c5",
     title: "即梦 AI 视频制作零基础教程",
     description: "即梦 AI 视频制作零基础课，覆盖脚本、分镜图、AI 视频生成、配音、音效、剪辑和 AI 漫剧生产流程。",
-    thumbnail: "/assets/courses/covers/ai-video-creation.svg",
+    thumbnail: localImageResource("/assets/courses/covers/ai-video-creation.svg", "AI Video Creation"),
     instructor: {
       name: "SDKWork Creative Lab",
-      avatar: "/assets/courses/avatars/sdkwork-creative-lab.svg",
+      avatar: localImageResource("/assets/courses/avatars/sdkwork-creative-lab.svg", "SDKWork Creative Lab"),
       title: "AI Creation Curriculum Team",
       bio: "Curates image, video, and short drama courses for creators and operators.",
     },
@@ -383,10 +395,10 @@ export const COURSE_CATALOG: Course[] = [
     courseCode: "c6",
     title: "AI 图片到视频创作工作流",
     description: "把 AI 图片制作、图生视频、运镜短片、剪辑和本地上传教程资产连接起来的入门课程。",
-    thumbnail: "/assets/courses/covers/ai-video-creation.svg",
+    thumbnail: localImageResource("/assets/courses/covers/ai-video-creation.svg", "AI Video Creation"),
     instructor: {
       name: "SDKWork Creative Lab",
-      avatar: "/assets/courses/avatars/sdkwork-creative-lab.svg",
+      avatar: localImageResource("/assets/courses/avatars/sdkwork-creative-lab.svg", "SDKWork Creative Lab"),
       title: "AI Creation Curriculum Team",
       bio: "Curates image, video, and short drama courses for creators and operators.",
     },
@@ -639,7 +651,7 @@ function deriveCourseComments(course: Course): CourseCommentsView {
     items: authors.map(([author, level, body], index) => ({
       id: `${course.id}-comment-${index + 1}`,
       author,
-      avatarUrl: '/assets/courses/avatars/learner.svg',
+      avatar: localImageResource('/assets/courses/avatars/learner.svg', author),
       level,
       body,
       createdAt: `2026-05-0${index + 1} 14:30`,

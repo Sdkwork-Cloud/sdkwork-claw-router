@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/refine-agent@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-refine-agent-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-refine-agent-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6fdfdba8606e3194179bb584db9ee5a39ca415ca1c661f3b557569ad5d62d069",

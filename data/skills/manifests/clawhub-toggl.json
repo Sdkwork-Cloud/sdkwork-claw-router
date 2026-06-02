@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toggl@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toggl-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toggl-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86c86cb5a1129114e63651a6048abe505f12d304720f30b3fd95a1e986ce551e",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rerange-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rerange-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rerange-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ebd25694d2e12a5335285af8504f1a1ee0247dc15b610435d91edc7243613ff",

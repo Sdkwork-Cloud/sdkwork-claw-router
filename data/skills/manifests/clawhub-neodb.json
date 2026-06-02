@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/neodb@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-neodb-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-neodb-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f4110312248d0ff0480bb2c7a3d323c42f49ddeb41f91103a08d35e284cf2fca",

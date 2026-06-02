@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-sourcing-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-sourcing-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-sourcing-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9cb961cc66df2158684a53d33405a84f3f31f7f345fa71d331e5ccc1d2761674",

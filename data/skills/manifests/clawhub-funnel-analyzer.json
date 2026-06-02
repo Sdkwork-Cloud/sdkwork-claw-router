@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/funnel-analyzer@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-funnel-analyzer-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-funnel-analyzer-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:390da90a2ea0637d47ff96ddab5d1ccaf045ee71d3f05275aa7ac426f8f49027",

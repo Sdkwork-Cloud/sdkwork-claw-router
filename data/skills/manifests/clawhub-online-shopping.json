@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/online-shopping@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-online-shopping-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-online-shopping-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57a8f33363e4a6d57cb1948b4f8ad51baab9fae25fa2890077f17d1f8060f264",

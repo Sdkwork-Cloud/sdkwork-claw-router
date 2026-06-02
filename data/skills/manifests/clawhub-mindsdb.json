@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mindsdb@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-mindsdb-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mindsdb-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8ba9ab280f33927a95fd155dc58cb045b19a941de3364802e0a0ae16038ed374",

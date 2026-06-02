@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-power-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-power-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-power-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28c3481a3f6476b5ac043939042211702c59e5ca6c488d10ec0644d95523420e",

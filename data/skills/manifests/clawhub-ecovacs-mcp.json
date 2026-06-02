@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ecovacs-mcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ecovacs-mcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ecovacs-mcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9864c881a58afe517addc57d2108a1336b27ab4babb02a7c61da693c04a90571",

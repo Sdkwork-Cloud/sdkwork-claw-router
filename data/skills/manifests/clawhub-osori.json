@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/osori@1.6.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-osori-1.6.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-osori-1.6.1.json"
+      },
       "version": "1.6.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0f9c39e5390eb9d28ca130ffcc59c61bb5bac5148467cdc25b940c848a32e823",

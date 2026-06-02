@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/arxiv-digest@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-digest-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-arxiv-digest-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:42826e2743795e16f697d0d206f49ce7401f4ca3222a28e490b21b9663008632",

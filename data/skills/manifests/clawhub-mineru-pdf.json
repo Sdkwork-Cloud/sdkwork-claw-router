@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mineru-pdf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mineru-pdf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mineru-pdf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ffb8dc10a8f123adce7df035fe72763b6d103ebc550cfe8c28faa648f37d27ad",

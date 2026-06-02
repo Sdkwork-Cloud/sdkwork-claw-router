@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/observability-slos@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-observability-slos-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-observability-slos-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7b06a8f4f5a58178a10eeb7dc3d282bd99d00a52f9bf68fd289508ebc5bf9c76",

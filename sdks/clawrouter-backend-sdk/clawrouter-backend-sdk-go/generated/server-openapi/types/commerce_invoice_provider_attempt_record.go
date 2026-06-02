@@ -7,6 +7,7 @@ type CommerceInvoiceProviderAttemptRecord struct {
 	FailedAt string `json:"failed_at"`
 	FailureCode string `json:"failure_code"`
 	FailureMessage string `json:"failure_message"`
+	Id string `json:"id"`
 	InvoiceId string `json:"invoice_id"`
 	OrganizationId string `json:"organization_id"`
 	ProviderAccountId string `json:"provider_account_id"`

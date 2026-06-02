@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-notifier@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-notifier-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-notifier-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b5f2f93dd4468410deeed109ae43aa4f27ed4ed9ed41a0a4d50c0b60c3cdc39b",

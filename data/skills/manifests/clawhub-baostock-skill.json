@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/baostock-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-baostock-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-baostock-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb4ebe198af6d55d51b38a7f7be90b2d26429c383d4ec4a66919cfd7d779568d",

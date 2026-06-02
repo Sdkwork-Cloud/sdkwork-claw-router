@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/safe-skills@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-safe-skills-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-safe-skills-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dfc20cf5f7946c04a3a9a28d306a92e55110f68605bcf0fcb2874dba1b576e8e",

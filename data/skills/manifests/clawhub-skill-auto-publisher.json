@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-auto-publisher@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-auto-publisher-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-auto-publisher-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d71b60c79c22d600e2ee80cda1e5bd33cad984a53438aa69f1adf7dd5f2b6e32",

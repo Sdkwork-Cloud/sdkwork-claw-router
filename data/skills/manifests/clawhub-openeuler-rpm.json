@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openeuler-rpm@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-openeuler-rpm-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openeuler-rpm-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fa29e31cd9ce66a3b15e8278c5184465197a82d114e930b07d55640193062911",

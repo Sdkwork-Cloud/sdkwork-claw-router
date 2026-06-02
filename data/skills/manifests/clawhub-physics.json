@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/physics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-physics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-physics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cbea5153f36c28daf99be642d8c098ca4c87736d5e281db0b84bac31a72bce75",

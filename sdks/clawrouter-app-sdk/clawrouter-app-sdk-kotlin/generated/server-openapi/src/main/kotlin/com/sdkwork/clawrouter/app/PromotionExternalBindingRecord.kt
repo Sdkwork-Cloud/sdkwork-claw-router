@@ -11,6 +11,7 @@ data class PromotionExternalBindingRecord(
     val externalMerchantId: String? = null,
     val externalObjectId: String? = null,
     val externalObjectType: String? = null,
+    val id: String? = null,
     val lastErrorCode: String? = null,
     val lastErrorMessage: String? = null,
     val lastSyncAt: String? = null,

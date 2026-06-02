@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-call-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-call-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-call-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3752c5f6a4f2bcb072a4a16267d2402a1a1c18565de1a8a807a26fc2e3fb5d6d",

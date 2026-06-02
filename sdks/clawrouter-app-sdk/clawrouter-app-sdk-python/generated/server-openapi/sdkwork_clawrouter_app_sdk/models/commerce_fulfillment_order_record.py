@@ -15,6 +15,7 @@ class CommerceFulfillmentOrderRecord:
     updated_at: str
     address_snapshot_id: Optional[str] = None
     completed_at: Optional[str] = None
+    id: Optional[str] = None
     organization_id: Optional[str] = None
     provider_code: Optional[str] = None
     warehouse_id: Optional[str] = None

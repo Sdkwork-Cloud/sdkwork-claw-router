@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-ocr-skill@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-ocr-skill-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-ocr-skill-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f665d4579584958c79e6e23d4c18df51a22113a62edeafe179054395949e0da",

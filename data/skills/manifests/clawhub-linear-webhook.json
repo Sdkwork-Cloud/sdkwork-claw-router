@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linear-webhook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linear-webhook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linear-webhook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:95bc982e9772c631dd720ed3cb6cb70f5f3864b672660a4427cafeb5956486a2",

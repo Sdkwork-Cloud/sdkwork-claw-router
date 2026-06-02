@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goat-agent-pulse@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-goat-agent-pulse-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goat-agent-pulse-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:967e1d41d60583ccf3f8787465ef81af9de12e3d143fe8a0a459815d99d5c5c8",

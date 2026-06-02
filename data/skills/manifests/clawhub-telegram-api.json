@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/telegram-api@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-telegram-api-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-telegram-api-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:dd4e392c2260a77e989f5aa20d21a44567bb70b4ba28992f1aa568dc6596af49",

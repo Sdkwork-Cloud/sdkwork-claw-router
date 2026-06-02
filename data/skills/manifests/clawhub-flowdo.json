@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flowdo@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flowdo-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flowdo-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ef54ac1da0e5aa7cb4d527b8142d85bad8f706a9de436ff32decf066a840ea4",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cpp@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cpp-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cpp-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1f38521cbb57c6821e083380d7a65824749231f5ebb63557e00fe0157e4f029b",

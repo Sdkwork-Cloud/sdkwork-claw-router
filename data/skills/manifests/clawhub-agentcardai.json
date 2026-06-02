@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentcardai@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentcardai-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentcardai-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:4b51aecf98ef059d3d67c141dfab7638b1bf351499c2cfc5f6f606f854753a55",

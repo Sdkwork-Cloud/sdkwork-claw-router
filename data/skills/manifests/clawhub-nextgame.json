@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nextgame@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-nextgame-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nextgame-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:da07d16b212c9978d63633463c951adcf2df5b05fb91fd9ad580144d03c5eb28",

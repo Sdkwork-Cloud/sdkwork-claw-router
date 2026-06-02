@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-profile-orchestrator@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-profile-orchestrator-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-profile-orchestrator-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b271c8fdcb51d9bbbe81947403c7ee667337cfc3201a45ec9074a5d139b04ca9",

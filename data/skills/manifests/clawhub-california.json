@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/california@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-california-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-california-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:000721ec5dc6f59ab598dad009031c7713b28a67be76b2eda3d1bf532a1abcec",

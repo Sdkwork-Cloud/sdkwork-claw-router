@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/x-twitter-collector@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-x-twitter-collector-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-x-twitter-collector-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ae6e0212404fb4b8a79edb538bd420da49c7b2cd1730fe365fa0dce1fde8793",

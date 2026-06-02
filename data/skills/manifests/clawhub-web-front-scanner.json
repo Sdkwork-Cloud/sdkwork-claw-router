@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/web-front-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-web-front-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-web-front-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:953f2c0853f863bc8fff2d8298541ddc709746fa8db94b34c5b39db7461ef428",

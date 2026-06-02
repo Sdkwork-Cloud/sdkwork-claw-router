@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toil-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toil-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toil-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:853695b987bbef31dcde3d65048129ee1a1eb5c468287281df9673c64ad6f4ed",

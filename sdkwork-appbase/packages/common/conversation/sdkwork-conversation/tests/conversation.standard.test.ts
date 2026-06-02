@@ -141,6 +141,19 @@ describe("SDKWork conversation standard", () => {
     expect(SDKWORK_CONVERSATION_DOMAIN_MODELS.find((model) => model.name === "message")?.fields).toEqual(
       expect.arrayContaining(["role", "source", "channel", "conversation_id", "turn_id"]),
     );
+    const messagePartFields = SDKWORK_CONVERSATION_DOMAIN_MODELS.find((model) => model.name === "messagePart")?.fields ?? [];
+    expect(messagePartFields).toEqual(
+      expect.arrayContaining([
+        "media_resource_id",
+        "media_resource_snapshot",
+        "media_role",
+        "object_blob_id",
+        "part_type",
+      ]),
+    );
+    expect(messagePartFields).not.toEqual(
+      expect.arrayContaining(["attachment_url", "media_url", "object_key", "url"]),
+    );
     expect(SDKWORK_CONVERSATION_DOMAIN_MODELS.find((model) => model.name === "conversationExternal")?.fields).toEqual(
       expect.arrayContaining(["provider", "account_id", "external_user_id"]),
     );

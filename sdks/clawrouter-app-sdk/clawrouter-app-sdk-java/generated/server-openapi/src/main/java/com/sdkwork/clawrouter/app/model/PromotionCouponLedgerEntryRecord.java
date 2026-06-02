@@ -3,14 +3,17 @@ package com.sdkwork.clawrouter.app.model;
 
 public class PromotionCouponLedgerEntryRecord {
     private String applicationId;
+    private String balanceAfter;
     private String businessType;
     private String createdAt;
     private String direction;
+    private String id;
     private String idempotencyKey;
     private String ledgerNo;
     private String occurredAt;
     private String offerId;
     private String organizationId;
+    private String quantityDelta;
     private String requestNo;
     private String sourceId;
     private String sourceType;
@@ -26,6 +29,14 @@ public class PromotionCouponLedgerEntryRecord {
 
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
+    }
+
+    public String getBalanceAfter() {
+        return this.balanceAfter;
+    }
+
+    public void setBalanceAfter(String balanceAfter) {
+        this.balanceAfter = balanceAfter;
     }
 
     public String getBusinessType() {
@@ -50,6 +61,14 @@ public class PromotionCouponLedgerEntryRecord {
 
     public void setDirection(String direction) {
         this.direction = direction;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {
@@ -90,6 +109,14 @@ public class PromotionCouponLedgerEntryRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getQuantityDelta() {
+        return this.quantityDelta;
+    }
+
+    public void setQuantityDelta(String quantityDelta) {
+        this.quantityDelta = quantityDelta;
     }
 
     public String getRequestNo() {

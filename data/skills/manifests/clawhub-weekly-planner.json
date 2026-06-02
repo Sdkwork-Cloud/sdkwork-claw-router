@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weekly-planner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weekly-planner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weekly-planner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8f2e8c327f209c7ad6421302829c1cd5f9efee837032e651959d500930fa5b01",

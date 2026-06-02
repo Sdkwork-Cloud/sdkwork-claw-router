@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tessie@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-tessie-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tessie-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c943cb92b8d362a55abcbd329e813e66a05918ca65e908458598879e40256a23",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/penguin-penguin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-penguin-penguin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-penguin-penguin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2242126557fc279ad5f3dc227460903f20df3dbfa431798b159dbeccdb2ad178",

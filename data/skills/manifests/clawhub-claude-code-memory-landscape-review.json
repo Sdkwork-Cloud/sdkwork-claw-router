@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-memory-landscape-review@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-memory-landscape-review-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-memory-landscape-review-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a343ec7c0f82fa6095b6a11d431512c05c45615cd3213fd8ba2bc6392208adfd",

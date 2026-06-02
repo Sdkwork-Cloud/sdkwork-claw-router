@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ltpm@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ltpm-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ltpm-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0c313fea681e58f9f45cedc897c543ade26a37b696b4a36e459ba8b7c970b537",

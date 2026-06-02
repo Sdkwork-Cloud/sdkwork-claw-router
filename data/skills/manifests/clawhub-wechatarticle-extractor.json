@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wechatarticle-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wechatarticle-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wechatarticle-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b5fc04b708897624ece6b13cb045c2bce8873332635776db9fa97b6772336a37",

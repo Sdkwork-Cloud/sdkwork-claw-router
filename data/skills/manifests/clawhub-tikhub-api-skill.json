@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tikhub-api-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tikhub-api-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tikhub-api-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ad860a52e99138497e1cf3158a455957940ed237b478588c8214ed97fe18e782",

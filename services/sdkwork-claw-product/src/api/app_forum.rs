@@ -10,6 +10,7 @@ use axum::{Json, Router};
 use sdkwork_claw_http::TrustedRequestSubject;
 use serde::Deserialize;
 use serde::Serialize;
+use serde_json::Value;
 
 use crate::api::response::PlusApiResult;
 use crate::application::EntityUuidGenerator;
@@ -33,7 +34,6 @@ const MAX_QUERY_TEXT_LEN: usize = 128;
 const DEFAULT_JSON_BODY_MAX_BYTES: usize =
     sdkwork_claw_config::RequestLimitsConfig::DEFAULT_FORUM_JSON_BODY_MAX_BYTES;
 const MAX_FEED_IMAGES: usize = 20;
-const MAX_FEED_IMAGE_LEN: usize = 2048;
 const MAX_FEED_TAGS: usize = 20;
 const MAX_FEED_TAG_LEN: usize = 64;
 const MAX_COMMENT_CONTENT_LEN: usize = 20_000;
@@ -75,7 +75,7 @@ struct CreateFeedRequest {
     title: Option<String>,
     content: Option<String>,
     category_id: Option<i64>,
-    images: Option<Vec<String>>,
+    images: Option<Vec<Value>>,
     tags: Option<Vec<String>>,
     source: Option<String>,
     source_url: Option<String>,
@@ -119,7 +119,7 @@ struct ForumCommunityLinkConfig {
     id: String,
     label: String,
     url: String,
-    qr_code_url: Option<String>,
+    qr_code: Option<Value>,
     tone: Option<String>,
 }
 
@@ -1241,13 +1241,7 @@ fn build_create_feed_command(
         title: normalize_optional_text(request.title, "title", 255)?,
         content,
         category_id,
-        images: normalize_optional_text_list(
-            request.images,
-            "images",
-            "image",
-            MAX_FEED_IMAGES,
-            MAX_FEED_IMAGE_LEN,
-        )?,
+        images: normalize_optional_media_resource_list(request.images, "images", MAX_FEED_IMAGES)?,
         tags: normalize_optional_text_list(
             request.tags,
             "tags",
@@ -1462,7 +1456,7 @@ fn normalize_community_link(item: ForumCommunityLinkConfig) -> Option<ForumCommu
         .ok()
         .flatten()?;
     let url = normalize_public_url(item.url)?;
-    let qr_code_url = item.qr_code_url.and_then(normalize_public_url);
+    let qr_code = item.qr_code.and_then(normalize_community_link_qr_code);
     let tone = normalize_optional_text(item.tone, "tone", 32)
         .ok()
         .flatten()
@@ -1472,9 +1466,41 @@ fn normalize_community_link(item: ForumCommunityLinkConfig) -> Option<ForumCommu
         id,
         label,
         url,
-        qr_code_url,
+        qr_code,
         tone,
     })
+}
+
+fn normalize_community_link_qr_code(value: Value) -> Option<Value> {
+    let value = normalize_media_resource(value, "qrCode").ok()?;
+    if media_resource_uses_only_public_urls(&value) {
+        Some(value)
+    } else {
+        None
+    }
+}
+
+fn media_resource_uses_only_public_urls(value: &Value) -> bool {
+    let Some(record) = value.as_object() else {
+        return false;
+    };
+    for key in ["publicUrl", "url"] {
+        let Some(raw) = record.get(key).and_then(Value::as_str) else {
+            continue;
+        };
+        if normalize_public_url(raw.to_owned()).is_none() {
+            return false;
+        }
+    }
+    if let Some(raw) = record.get("uri").and_then(Value::as_str) {
+        let trimmed = raw.trim();
+        if (trimmed.starts_with("http://") || trimmed.starts_with("https://"))
+            && normalize_public_url(trimmed.to_owned()).is_none()
+        {
+            return false;
+        }
+    }
+    true
 }
 
 fn normalize_public_url(value: String) -> Option<String> {
@@ -1641,6 +1667,55 @@ fn normalize_optional_text_list(
         .into_iter()
         .filter_map(|value| normalize_optional_text(Some(value), item_field, max_len).transpose())
         .collect()
+}
+
+fn normalize_optional_media_resource_list(
+    values: Option<Vec<Value>>,
+    field: &str,
+    max_items: usize,
+) -> Result<Vec<Value>, String> {
+    let values = values.unwrap_or_default();
+    if values.len() > max_items {
+        return Err(format!("{field} must contain at most {max_items} items"));
+    }
+    values
+        .into_iter()
+        .map(|value| normalize_media_resource(value, &format!("{field} item")))
+        .collect()
+}
+
+fn normalize_media_resource(value: Value, field: &str) -> Result<Value, String> {
+    let Some(record) = value.as_object() else {
+        return Err(format!("{field} must be a MediaResource object"));
+    };
+    let kind = record
+        .get("kind")
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .unwrap_or_default();
+    let source = record
+        .get("source")
+        .and_then(Value::as_str)
+        .map(str::trim)
+        .unwrap_or_default();
+    if kind.is_empty() || source.is_empty() {
+        return Err(format!(
+            "{field} must include MediaResource kind and source"
+        ));
+    }
+    let has_locator = ["id", "publicUrl", "url", "uri", "objectKey", "objectBlobId"]
+        .iter()
+        .any(|key| {
+            record
+                .get(*key)
+                .and_then(Value::as_str)
+                .map(str::trim)
+                .is_some_and(|value| !value.is_empty())
+        });
+    if !has_locator {
+        return Err(format!("{field} must include a media resource locator"));
+    }
+    Ok(Value::Object(record.clone()))
 }
 
 fn validate_optional_positive(value: Option<i64>, field: &str) -> Result<Option<i64>, String> {

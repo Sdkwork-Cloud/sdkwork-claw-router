@@ -155,9 +155,8 @@ frontend_operations:
               nullable: true
               maxLength: 512
             icon:
-              type: string
+              $ref: '#/components/schemas/MediaResource'
               nullable: true
-              maxLength: 512
             claimed:
               type: boolean
             usageLimit:

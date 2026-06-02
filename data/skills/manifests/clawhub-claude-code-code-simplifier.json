@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-code-simplifier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-code-simplifier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-code-simplifier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:43ffa0d2ab4ef89a09acb3abf60fbcd666e9bcb461d9504c0a82c246aa9f47bb",

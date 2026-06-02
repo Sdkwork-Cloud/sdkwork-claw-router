@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/product-fruits@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-product-fruits-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-product-fruits-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ff11f05950e1685bd181162c962c94f5594643367ef74a3e52c1cb4bfbe6ab86",

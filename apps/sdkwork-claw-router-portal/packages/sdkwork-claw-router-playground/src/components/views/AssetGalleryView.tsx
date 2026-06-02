@@ -22,14 +22,18 @@ import {
   ChevronDown,
   Play,
 } from 'lucide-react';
+import {
+  readMediaResourceUrl,
+  type ClawRouterMediaResource,
+} from 'sdkwork-claw-router-commons/runtime';
 
 export type AssetType = 'image' | 'video' | 'speech' | 'sound' | 'music';
 
 interface AssetItem {
   id: string;
   type: AssetType;
-  thumbnail: string;
-  url?: string;
+  thumbnail?: ClawRouterMediaResource;
+  asset?: ClawRouterMediaResource;
   duration?: string;
   title?: string;
   createdAt: Date;
@@ -139,7 +143,7 @@ export function AssetGalleryView({
   const copySelectedAssets = async () => {
     const text = sortedAssets
       .filter((asset) => selectedAssets.has(asset.id))
-      .map((asset) => asset.url || asset.thumbnail || asset.title || asset.id)
+      .map((asset) => readMediaResourceUrl(asset.asset) || readMediaResourceUrl(asset.thumbnail) || asset.title || asset.id)
       .filter(Boolean)
       .join('\n');
 
@@ -470,6 +474,7 @@ function AssetCard({
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const TypeIcon = TYPE_ICON_MAP[asset.type] || FileText;
+  const thumbnailSource = readMediaResourceUrl(asset.thumbnail);
 
   return (
     <div
@@ -491,7 +496,7 @@ function AssetCard({
       {/* Thumbnail */}
       <div className={`relative w-full bg-gradient-to-br from-gray-800 to-gray-900 ${masonry ? '' : 'h-full'}`}>
         <img
-          src={asset.thumbnail}
+          src={thumbnailSource}
           alt={asset.title || 'Asset'}
           className={`w-full object-cover ${masonry ? 'w-full' : 'h-full'}`}
           loading="lazy"

@@ -37,11 +37,12 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
 
         self.assertEqual("AdminModelLimitCreateRequest", add_model_limit["request_schema"]["name"])
         self.assertEqual(
-            ["model", "group", "rpm", "tpm"],
+            ["model", "channelGroup", "rpm", "tpm"],
             add_model_limit["request_schema"]["schema"]["required"],
         )
         self.assertEqual("AdminRateLimitMutationResponse", add_model_limit["response_schema"]["name"])
         self.assertFalse(add_model_limit["request_id_header"])
+        self.assertEqual("/backend/v3/api/system/rate_limits/models", add_model_limit["api_path"])
 
         self.assertEqual("AdminFirewallRuleCreateRequest", add_firewall["request_schema"]["name"])
         self.assertEqual(["type", "value", "reason"], add_firewall["request_schema"]["schema"]["required"])
@@ -89,6 +90,9 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("router.addModelLimit(rule)", service)
         self.assertNotIn("router.addFirewall(rule)", service)
         self.assertNotIn("as unknown as Record<string, unknown>", service)
+        self.assertNotIn("group: string;", service)
+        self.assertNotIn("readModelLimitGroup", service)
+        self.assertNotIn("group: requiredText(rule.channelGroup, 'channelGroup')", service)
 
         self.assertIn(
             "async create(body: AdminIpLimitCreateRequest): Promise<RateLimitsIpCreateResult>",
@@ -154,6 +158,7 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
         self.assertIn("function toCreateTokenLimitRequest(rule: TokenLimitCreateInput)", service)
         self.assertIn("function toCreateModelLimitRequest(rule: ModelLimitCreateInput)", service)
         self.assertIn("function toCreateFirewallRequest(rule: FirewallCreateInput)", service)
+        self.assertIn("channelGroup: requiredText(rule.channelGroup, 'channelGroup')", service)
         self.assertIn("createIpLimitInputFromForm", view)
         self.assertIn("createTokenLimitInputFromForm", view)
         self.assertIn("createModelLimitInputFromForm", view)
@@ -175,6 +180,35 @@ class AdminRateLimitRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("Date.now()", form)
         self.assertNotIn("Math.random()", form)
         self.assertIn("admin-ratelimit-runtime.test.ts", verifier)
+
+    def test_admin_model_limit_public_model_uses_channel_group_only(self) -> None:
+        model_contract = (
+            ROOT / "docs" / "schema-registry" / "frontend-field-contracts" / "models" / "admin-ratelimit.yaml"
+        ).read_text(encoding="utf-8")
+        service = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-admin-ratelimit"
+            / "src"
+            / "ratelimitService.ts"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("- channelGroup", model_contract)
+        self.assertIn("- channelGroupId", model_contract)
+        self.assertIn("- channelGroupName", model_contract)
+        self.assertNotIn("- group\n", model_contract)
+        self.assertIn("channelGroup: string;", service)
+        self.assertIn("channelGroupId?: string;", service)
+        self.assertIn("channelGroupName?: string;", service)
+        self.assertIn(
+            "channelGroup: readRequiredString(item, 'channelGroup', 'Model limit channel group is required')",
+            service,
+        )
+        self.assertNotIn("group: string;", service)
+        self.assertNotIn("const group = readModelLimitGroup(item);", service)
+        self.assertNotIn("readRequiredString(item, 'group', 'Model limit group is required')", service)
 
     def test_admin_ratelimit_read_models_reject_missing_required_policy_numbers(self) -> None:
         store_paths = [

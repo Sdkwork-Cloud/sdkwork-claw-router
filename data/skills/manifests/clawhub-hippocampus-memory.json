@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hippocampus-memory@3.8.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-hippocampus-memory-3.8.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hippocampus-memory-3.8.6.json"
+      },
       "version": "3.8.6",
       "runtime": "metadata",
       "checksumHash": "sha256:23aac4929cdcd6b29a2d4020963e22e483b87f1046208c3c897d4025f06ace3e",

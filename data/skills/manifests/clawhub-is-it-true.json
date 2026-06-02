@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/is-it-true@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-is-it-true-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-is-it-true-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:675a5226e63111abb8e01a27ade3e7999a239af18671db7cb7aa862fd0923da8",

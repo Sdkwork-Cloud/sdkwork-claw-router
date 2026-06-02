@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-multi-publisher@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-multi-publisher-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-multi-publisher-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d01c6cf92189591c4deae394e397521ac0475c1fbd631a43001a217eebc2ac44",

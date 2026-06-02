@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chmod-calc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chmod-calc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chmod-calc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ae818007fdb799d44eeab4a15d6c10cd7aac38e0f34ee54a4aeb02f8b9877aeb",

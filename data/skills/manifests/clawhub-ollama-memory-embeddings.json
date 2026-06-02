@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ollama-memory-embeddings@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ollama-memory-embeddings-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ollama-memory-embeddings-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:4839a6aaffda99e901450c7252bbbac84824b4de1d7fa374101c2d5c54324e67",

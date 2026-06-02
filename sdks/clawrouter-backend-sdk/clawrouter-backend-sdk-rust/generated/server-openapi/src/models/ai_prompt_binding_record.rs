@@ -23,6 +23,10 @@ pub struct AiPromptBindingRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub deleted_by: Option<String>,
 
+    /// Enabled field on ai prompt binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub enabled: Option<bool>,
+
     /// Id field on ai prompt binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -43,6 +47,14 @@ pub struct AiPromptBindingRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub owner_type: Option<String>,
 
+    /// Policy json field on ai prompt binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub policy_json: Option<std::collections::HashMap<String, String>>,
+
+    /// Priority field on ai prompt binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub priority: Option<i64>,
+
     /// Prompt id field on ai prompt binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub prompt_id: Option<String>,
@@ -50,6 +62,10 @@ pub struct AiPromptBindingRecord {
     /// Prompt version id field on ai prompt binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub prompt_version_id: Option<String>,
+
+    /// Snapshot json field on ai prompt binding record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub snapshot_json: Option<std::collections::HashMap<String, String>>,
 
     /// Status field on ai prompt binding record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

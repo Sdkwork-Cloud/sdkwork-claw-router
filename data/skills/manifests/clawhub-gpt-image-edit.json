@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gpt-image-edit@0.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-gpt-image-edit-0.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gpt-image-edit-0.1.4.json"
+      },
       "version": "0.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8171a0f5a94c2b77df76932bd04e29efbb825b811d73002e6acd6d43cddc9f2f",

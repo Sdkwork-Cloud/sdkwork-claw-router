@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adwords@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-adwords-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adwords-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2da617bb169efe348604b1fa370bcabe00a7fad6cbe61b4928a437be31a4a830",

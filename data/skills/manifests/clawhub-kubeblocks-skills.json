@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kubeblocks-skills@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kubeblocks-skills-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kubeblocks-skills-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5feb0bb9829ea4cd5b6fa3e092cbdb1e62e25e4607f8eb299711918fd9ce3535",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nsg-firewall-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nsg-firewall-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nsg-firewall-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f794866ae9c9c5e01d6f3286f60fa8445a4e27945c744509f80108fded4b6f8",

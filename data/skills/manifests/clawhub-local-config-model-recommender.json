@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-config-model-recommender@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-config-model-recommender-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-config-model-recommender-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a06c0f95d55e55cc1e35c9452194e20243bb6e829993944288719be36ec842a1",

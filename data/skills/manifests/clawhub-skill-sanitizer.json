@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-sanitizer@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-sanitizer-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-sanitizer-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f07541653da396ec0688cee07be2478959e113a615701d3ee523a50c166bf10c",

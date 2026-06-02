@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-gateway@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-gateway-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-gateway-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8c71f065463da45ad545c2bf97295e3c3d1e3f968906c354c032e9f37780b665",

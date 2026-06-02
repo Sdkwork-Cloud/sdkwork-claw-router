@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/btcd-skill-beta@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-btcd-skill-beta-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-btcd-skill-beta-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5c1308f0de325915e7ec06e748ab4b87e6607c04a1764023c21811fa2178cdee",

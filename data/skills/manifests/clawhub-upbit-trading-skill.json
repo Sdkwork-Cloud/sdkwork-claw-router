@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/upbit-trading-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-upbit-trading-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-upbit-trading-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71e7c332129bc15d7c4018b22f7645f1fd0d517985f0afadee7655827176d2e1",

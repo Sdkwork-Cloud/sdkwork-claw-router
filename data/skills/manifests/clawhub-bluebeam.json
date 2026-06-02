@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bluebeam@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-bluebeam-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bluebeam-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:41d7e9adec7d4d98a71eb39710c24d380930d7d33f2086cc3e4f3f2e09aed64a",

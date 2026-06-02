@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/find-vendors@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-find-vendors-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-find-vendors-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75b1ea317078978d228daaa44980601dae61f60ace9675e7741de588a300a845",

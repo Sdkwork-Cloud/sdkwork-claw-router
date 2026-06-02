@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spec-engine@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spec-engine-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spec-engine-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5b683e715510755b739509780b69d966c2735a0c62afa75e67b24c162ca5d1c3",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sensitive-content-scanner@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sensitive-content-scanner-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sensitive-content-scanner-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:14e1358c50a3ed7b443fb34b40d181cc3a35e9fb664a66a21b5ca2ae872a4d05",

@@ -9,16 +9,21 @@ public class ObjectProviderRecord {
     private String deletedAt;
     private String deletedBy;
     private String endpointUrl;
+    private String healthStatus;
     private String id;
     private String idempotencyKey;
     private String lastHealthCheckAt;
     private Map<String, String> metadata;
     private String organizationId;
+    private Boolean pathStyleEnabled;
     private String providerCode;
     private String providerType;
     private String region;
     private String requestId;
     private String status;
+    private Boolean supportsLifecycle;
+    private Boolean supportsMultipart;
+    private Boolean supportsObjectLock;
     private String tenantId;
     private String updatedAt;
     private String uuid;
@@ -72,6 +77,14 @@ public class ObjectProviderRecord {
         this.endpointUrl = endpointUrl;
     }
 
+    public String getHealthStatus() {
+        return this.healthStatus;
+    }
+
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+
     public String getId() {
         return this.id;
     }
@@ -112,6 +125,14 @@ public class ObjectProviderRecord {
         this.organizationId = organizationId;
     }
 
+    public Boolean getPathStyleEnabled() {
+        return this.pathStyleEnabled;
+    }
+
+    public void setPathStyleEnabled(Boolean pathStyleEnabled) {
+        this.pathStyleEnabled = pathStyleEnabled;
+    }
+
     public String getProviderCode() {
         return this.providerCode;
     }
@@ -150,6 +171,30 @@ public class ObjectProviderRecord {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Boolean getSupportsLifecycle() {
+        return this.supportsLifecycle;
+    }
+
+    public void setSupportsLifecycle(Boolean supportsLifecycle) {
+        this.supportsLifecycle = supportsLifecycle;
+    }
+
+    public Boolean getSupportsMultipart() {
+        return this.supportsMultipart;
+    }
+
+    public void setSupportsMultipart(Boolean supportsMultipart) {
+        this.supportsMultipart = supportsMultipart;
+    }
+
+    public Boolean getSupportsObjectLock() {
+        return this.supportsObjectLock;
+    }
+
+    public void setSupportsObjectLock(Boolean supportsObjectLock) {
+        this.supportsObjectLock = supportsObjectLock;
     }
 
     public String getTenantId() {

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mikrotik@1.8.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-mikrotik-1.8.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mikrotik-1.8.5.json"
+      },
       "version": "1.8.5",
       "runtime": "metadata",
       "checksumHash": "sha256:26fa2c2fae2b452498b53f794f5ce2d954612e453b8ed79daefe6240ef99f781",

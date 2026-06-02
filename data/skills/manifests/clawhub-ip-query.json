@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ip-query@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ip-query-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ip-query-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:29b450a7c511da6346b304db897789c97dae7efc9fa80b7d3329032ef768a638",

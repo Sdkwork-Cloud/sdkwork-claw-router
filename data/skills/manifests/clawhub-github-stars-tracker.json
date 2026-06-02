@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/github-stars-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-github-stars-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-github-stars-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4cd484dad3aa818e2c19f786223a847718d136b9debe90a719f21efb9afbe82c",

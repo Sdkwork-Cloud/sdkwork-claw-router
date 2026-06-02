@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tiktok-pipeline@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-pipeline-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tiktok-pipeline-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a52e85c0320d9b728248ffb3e71a2a7594eb9d8ab494acd095f1077cb87c9d6d",

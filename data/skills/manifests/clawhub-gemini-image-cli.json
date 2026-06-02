@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-image-cli@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-image-cli-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-image-cli-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4b9a00e92d276700bd636e65de902a25c7a4b2fb609d7415d75d7dcbca93b80e",

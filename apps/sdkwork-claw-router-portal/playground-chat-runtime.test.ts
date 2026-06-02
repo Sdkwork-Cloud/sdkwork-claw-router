@@ -1584,9 +1584,10 @@ test("asset view maps history items from real history fields", () => {
   const source = readPortalFile("./packages/sdkwork-claw-router-playground/src/components/views/AssetView.tsx");
 
   assert.doesNotMatch(source, /item\.(thumbnail|previewUrl|duration|timestamp|size)\b/);
+  assert.match(source, /item\.asset/);
   assert.match(source, /item\.images/);
   assert.match(source, /item\.videos/);
-  assert.match(source, /item\.url/);
+  assert.doesNotMatch(source, /item\.url/);
   assert.match(source, /item\.durationSeconds/);
   assert.match(source, /item\.createdAt/);
   assert.match(source, /item\.updatedAt/);
@@ -1669,11 +1670,19 @@ test("video generation reference assets sit above the prompt and follow model mo
   assert(promptPosition >= 0, "Prompt textarea should be rendered by AssetGenerationPanel");
   assert(uploaderPosition < promptPosition, "Video reference asset uploader should sit above the prompt textarea");
   assert.match(typeSource, /export interface PlaygroundReferenceAssetInput/);
+  assert.match(typeSource, /import type \{ ClawRouterMediaResource \} from 'sdkwork-claw-router-commons\/runtime';/);
   assert.match(typeSource, /kind: 'image' \| 'audio' \| 'video';/);
   assert.match(typeSource, /role: 'first_frame' \| 'last_frame' \| 'reference_image' \| 'reference_audio' \| 'reference_video';/);
+  assert.match(typeSource, /resource: ClawRouterMediaResource;/);
+  assert.doesNotMatch(typeSource, /dataUrl\?: string;/);
+  assert.doesNotMatch(typeSource, /url\?: string;/);
+  assert.doesNotMatch(typeSource, /assetId\?: string;/);
   assert.match(typeSource, /referenceAssets\?: PlaygroundReferenceAssetInput\[\];/);
   assert.match(typeSource, /referenceMode\?: PlaygroundReferenceAssetMode;/);
   assert.match(panelSource, /const \[referenceAssets, setReferenceAssets\] = useState<ReferenceAssetPreview\[\]>\(\[\]\);/);
+  assert.match(panelSource, /previewSrc: string;/);
+  assert.match(panelSource, /function createUploadedReferenceMediaResource\([\s\S]*?\): ClawRouterMediaResource \{/);
+  assert.match(panelSource, /resource: createUploadedReferenceMediaResource\(/);
   assert.match(panelSource, /referenceAssets:\s*referenceAssets\.map\(\(referenceAsset\) => referenceAsset\.metadata\)/);
   assert.match(panelSource, /referenceMode:\s*modality === 'video' \? activeVideoReferenceMode : undefined/);
   assert.match(panelSource, /accept=\{modeUpload\.accept\}/);
@@ -1951,16 +1960,22 @@ test("playground history and preview mapping reuse appbase generation history he
 
 test("playground asset history views reuse appbase history media helpers", () => {
   const assetViewSource = readPortalFile("./packages/sdkwork-claw-router-playground/src/components/views/AssetView.tsx");
+  const assetGallerySource = readPortalFile("./packages/sdkwork-claw-router-playground/src/components/views/AssetGalleryView.tsx");
   const sharedHistorySource = readPortalFile("./packages/sdkwork-claw-router-playground/src/components/views/SharedHistoryView.tsx");
   const chatHistorySource = readPortalFile("./packages/sdkwork-claw-router-playground/src/components/ChatHistoryItem.tsx");
   const messageItemsSource = readPortalFile("./packages/sdkwork-claw-router-playground/src/components/MessageItems.tsx");
 
   assert.match(assetViewSource, /isSdkworkGenerationImageHistoryType/);
-  assert.match(assetViewSource, /readSdkworkGenerationMediaUrl/);
-  assert.match(assetViewSource, /readSdkworkGenerationMediaThumb/);
+  assert.match(assetViewSource, /item\.asset/);
+  assert.match(assetViewSource, /video\?\.poster \?\? video\?\.thumbnails\?\.\[0\]/);
+  assert.doesNotMatch(assetViewSource, /readSdkworkGenerationMediaUrl/);
+  assert.doesNotMatch(assetViewSource, /readSdkworkGenerationMediaThumb/);
+  assert.doesNotMatch(assetViewSource, /toExternalUrlMediaResource/);
   assert.doesNotMatch(assetViewSource, /function readMediaUrl/);
   assert.doesNotMatch(assetViewSource, /function readMediaThumb/);
   assert.doesNotMatch(assetViewSource, /item\.type === 'image' \|\| item\.type === 'images'/);
+
+  assert.match(assetGallerySource, /readMediaResourceUrl/);
 
   assert.match(sharedHistorySource, /isSdkworkGenerationImageHistoryType/);
   assert.doesNotMatch(sharedHistorySource, /item\.type === 'images' \|\| item\.type === 'image'/);
@@ -1992,6 +2007,10 @@ test("generation history contract preserves runtime output text after reload", (
 
   assert.equal(openapi.components.schemas.GenerationHistoryItem.properties.outputText.type, "string");
   assert(openapi.components.schemas.GenerationHistoryItem.properties.type.enum.includes("text"));
+  assert(openapi.components.schemas.GenerationHistoryItem.properties.asset);
+  assert.equal(openapi.components.schemas.GenerationHistoryItem.properties.url, undefined);
+  assert.match(generationHistoryItemSource, /asset\?: MediaResource;/);
+  assert.doesNotMatch(generationHistoryItemSource, /url\?: string;/);
   assert.match(generationHistoryItemSource, /outputText\?: string;/);
   assert.match(generationHistoryItemSource, /'text'/);
   assert.match(historyMapperSource, /item\.outputText \?\? item\.outputMessage/);

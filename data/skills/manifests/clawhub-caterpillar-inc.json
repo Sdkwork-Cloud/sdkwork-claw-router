@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/caterpillar-inc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-caterpillar-inc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-caterpillar-inc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:03e6e3a9a14065a02d9ba26634cf657c67ea8a8b367bdb48f4f02ec323cedcf9",

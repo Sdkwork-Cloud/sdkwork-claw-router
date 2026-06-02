@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/safety-net@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-safety-net-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-safety-net-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:919b6c56aeab60201745cb107bdc698a66d260af1a42f14b4150f56ca67bb224",

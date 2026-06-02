@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mysqladm@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mysqladm-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mysqladm-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a794b8be87b50d93b6e4892e83af21d372592ab2536c4a0c9908bccedc98464c",

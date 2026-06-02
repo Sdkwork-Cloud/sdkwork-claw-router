@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/remember@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-remember-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-remember-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:19690b29e5fc37ca353216efc24b13188da6392ea3053ec92ee411377bb866bd",

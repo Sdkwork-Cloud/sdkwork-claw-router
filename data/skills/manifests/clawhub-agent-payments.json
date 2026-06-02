@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-payments@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-payments-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-payments-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:08d373d6c7954954d26f1c09a4ac3ba01ab27dd8879dba90d2dbfcfa459210a1",

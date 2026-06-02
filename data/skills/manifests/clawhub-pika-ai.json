@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pika-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pika-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pika-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b768bfed8a23171a9780f98f96b86cba3d9d32cb6601291698e7712f7e704fd",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/healthie@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-healthie-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-healthie-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1514e91f51ca568fd5fc0afb5146ac60b77fc2a77d7c675a8cd7acf23f0ef728",

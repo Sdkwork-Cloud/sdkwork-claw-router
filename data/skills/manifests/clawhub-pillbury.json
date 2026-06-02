@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pillbury@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pillbury-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pillbury-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec4321f23174ff2b36275d980f9830316d31c5ef748ebed9aa5402e2227864bf",

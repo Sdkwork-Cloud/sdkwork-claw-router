@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gnss-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gnss-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gnss-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e36b6eedf8644cfcaefa0cd2ace0e3e9cfe70e0f329dce66890ec7bf45dd6cc4",

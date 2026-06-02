@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-filter-skills@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-filter-skills-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-filter-skills-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a7044ce2db72877ad3be10c7913cd64ebb39df741b3bd84704f8a777cda7f3a4",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alpaca-trading@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alpaca-trading-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alpaca-trading-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8f360b83ee7843f84f1180173becfb47fc9e68e1078ff0b0c5fd5ac6cda61d7",

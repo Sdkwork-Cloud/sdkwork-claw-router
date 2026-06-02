@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/milvus@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-milvus-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-milvus-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ee6c5db65cc4a8ff437325c54a3b21fe597e90dbe2aabf90725fdc29b0a5eaf",

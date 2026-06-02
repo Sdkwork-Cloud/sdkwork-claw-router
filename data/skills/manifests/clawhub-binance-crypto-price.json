@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/binance-crypto-price@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-binance-crypto-price-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-binance-crypto-price-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d0d750dc5566e8ac67c91951650421b1fc7861c6ab374638efb68df0fbff44a4",

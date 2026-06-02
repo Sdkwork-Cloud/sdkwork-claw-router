@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aruba-networks@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-aruba-networks-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aruba-networks-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:449ea7acbebe1f2ec6abc6274f24d69498ce9b0671bd5251ae17a21ec5222600",

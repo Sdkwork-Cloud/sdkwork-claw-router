@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-product-compliance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-product-compliance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-product-compliance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:276de6ff5a614b1d20c6daa3c4e9cd9f06ee470bf9501711d054fd4a146671c8",

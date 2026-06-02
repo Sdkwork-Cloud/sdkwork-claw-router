@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gpu-helper@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-gpu-helper-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gpu-helper-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:5f3ed9d24a98a06231a407934dde5bab27e97893ff2036ffae3a03487218f3bc",

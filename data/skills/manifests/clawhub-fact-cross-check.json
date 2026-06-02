@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fact-cross-check@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-fact-cross-check-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fact-cross-check-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:1c675eea5cc2fca548ae0ebc4c53d197485b6cb94c3e8ba9fbc33f67c3108831",

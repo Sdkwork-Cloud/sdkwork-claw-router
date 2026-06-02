@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dune-mcp-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dune-mcp-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dune-mcp-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a3b799f79a17b8a60bd2a9b308183f5f6b3720b4517e361c11a62a129165330",

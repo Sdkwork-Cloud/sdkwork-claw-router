@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pet-companion-journal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pet-companion-journal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pet-companion-journal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d828ccafe75c7007460a511f2f25c43ffef42859a55c3a00aa4298f2062a4f19",

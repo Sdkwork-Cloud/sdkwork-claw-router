@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taste-skill@1.6.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-taste-skill-1.6.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taste-skill-1.6.1.json"
+      },
       "version": "1.6.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0d57d64c0a710b5bcbdb4369ff3b57f9df31fc950e5cf7b9155a239d5dca0cb7",

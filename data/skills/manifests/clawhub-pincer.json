@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pincer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pincer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pincer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6a5f35e4f7da956a559d9879972ef11fc8ff528b71611db6a2291595d87b885f",

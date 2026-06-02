@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ros1-noetic-general@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ros1-noetic-general-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ros1-noetic-general-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:046718a3ca3b27b12defc5e31731d316087fb1d73f983df0fb396218ae9a73ec",

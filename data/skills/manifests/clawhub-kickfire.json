@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kickfire@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-kickfire-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kickfire-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:782934271a6870953bd166bf067612988cdb3ff57808b8c958f3718a17640701",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-minutes-task-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-minutes-task-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-minutes-task-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc215bb94c8ee88030fcfad8b4d27e92a57ccb0ec2cf3f71432fed382c72c77a",

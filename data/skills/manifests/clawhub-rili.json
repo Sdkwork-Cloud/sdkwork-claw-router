@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rili@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rili-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rili-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f08f89272ae04522a4ecda8f992c4a81647934442bbf071d6760e211ce97d84",

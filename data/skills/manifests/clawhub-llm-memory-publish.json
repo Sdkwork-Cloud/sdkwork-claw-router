@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-memory-publish@8.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-memory-publish-8.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-memory-publish-8.0.2.json"
+      },
       "version": "8.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e6ca1a1d5125f14663b68c782ddc1baa5f6c1d0bda9b8c86935754fc9cabd984",

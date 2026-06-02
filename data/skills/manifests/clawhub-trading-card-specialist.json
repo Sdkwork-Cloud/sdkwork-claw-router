@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trading-card-specialist@2.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-trading-card-specialist-2.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trading-card-specialist-2.0.5.json"
+      },
       "version": "2.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:150872e90200fd905190acd888f62ffc5e7e1432aee00af7398985111b3710f5",

@@ -84,6 +84,16 @@ public class CommerceApi {
         return client.convertValue(raw, new TypeReference<CatalogCategoriesUpdateResult>() {});
     }
 
+    /** Initialize admin category seed datasets */
+    public CatalogCategorySeedsCreateResult catalogCategorySeedsCreate(CommerceCategorySeedInitializeRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.post(ApiPaths.backendPath("/catalog/category_seeds/initialize"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<CatalogCategorySeedsCreateResult>() {});
+    }
+
     /** List product price lists */
     public CatalogPriceListsListResult catalogPriceLists(String currencyCode, String marketCode, String status, Integer page, Integer pageSize) throws Exception {
         String query = buildQueryString(List.of(
@@ -132,6 +142,12 @@ public class CommerceApi {
         return client.convertValue(raw, new TypeReference<CatalogProductsCreateResult>() {});
     }
 
+    /** Delete product SPU */
+    public CatalogProductsDeleteResult catalogProductsDelete(String productId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/catalog/products/" + serializePathParameter(productId, new PathParameterSpec("productId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<CatalogProductsDeleteResult>() {});
+    }
+
     /** Update product SPU */
     public CatalogProductsUpdateResult catalogProductsUpdate(String productId, CommerceProductSpuMutationRequest body, String idempotencyKey) throws Exception {
         Map<String, String> requestHeaders = buildRequestHeaders(
@@ -163,6 +179,12 @@ public class CommerceApi {
         );
         Object raw = client.post(ApiPaths.backendPath("/catalog/skus"), body, null, requestHeaders, "application/json");
         return client.convertValue(raw, new TypeReference<CatalogSkusCreateResult>() {});
+    }
+
+    /** Delete product SKU */
+    public CatalogSkusDeleteResult catalogSkusDelete(String skuId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/catalog/skus/" + serializePathParameter(skuId, new PathParameterSpec("skuId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<CatalogSkusDeleteResult>() {});
     }
 
     /** Update product SKU */
@@ -543,6 +565,32 @@ public class CommerceApi {
         return client.convertValue(raw, new TypeReference<PaymentsProviderAccountsCreateResult>() {});
     }
 
+    /** Payments Provider Accounts Delete */
+    public PaymentsProviderAccountsDeleteResult paymentsProviderAccountsDelete(String providerAccountId) throws Exception {
+        Object raw = client.delete(ApiPaths.backendPath("/payments/provider_accounts/" + serializePathParameter(providerAccountId, new PathParameterSpec("providerAccountId", "simple", false)) + ""));
+        return client.convertValue(raw, new TypeReference<PaymentsProviderAccountsDeleteResult>() {});
+    }
+
+    /** Payments Provider Accounts Update */
+    public PaymentsProviderAccountsUpdateResult paymentsProviderAccountsUpdate(String providerAccountId, CommercePaymentProviderAccountMutationRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.patch(ApiPaths.backendPath("/payments/provider_accounts/" + serializePathParameter(providerAccountId, new PathParameterSpec("providerAccountId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<PaymentsProviderAccountsUpdateResult>() {});
+    }
+
+    /** Payments Provider Accounts Status Update */
+    public PaymentsProviderAccountsStatusUpdateResult paymentsProviderAccountsStatusUpdate(String providerAccountId, CommercePaymentProviderAccountStatusUpdateRequest body, String idempotencyKey) throws Exception {
+        Map<String, String> requestHeaders = buildRequestHeaders(
+                Map.of("Idempotency-Key", new HeaderParameterSpec(idempotencyKey, "simple", false, null)),
+                Map.of()
+        );
+        Object raw = client.patch(ApiPaths.backendPath("/payments/provider_accounts/" + serializePathParameter(providerAccountId, new PathParameterSpec("providerAccountId", "simple", false)) + "/status"), body, null, requestHeaders, "application/json");
+        return client.convertValue(raw, new TypeReference<PaymentsProviderAccountsStatusUpdateResult>() {});
+    }
+
     /** Payments Providers List */
     public PaymentsProvidersListResult paymentsProvidersList(Integer page, Integer pageSize, String status) throws Exception {
         String query = buildQueryString(List.of(
@@ -579,6 +627,15 @@ public class CommerceApi {
         ));
         Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/route_rules"), query));
         return client.convertValue(raw, new TypeReference<PaymentsRouteRulesListResult>() {});
+    }
+
+    /** Payments Runtime Snapshot Retrieve */
+    public PaymentsRuntimeSnapshotRetrieveResult paymentsRuntimeSnapshotRetrieve(String environment) throws Exception {
+        String query = buildQueryString(List.of(
+            new QueryParameterSpec("environment", environment, "form", true, false, null)
+        ));
+        Object raw = client.get(ApiPaths.appendQueryString(ApiPaths.backendPath("/payments/runtime/snapshot"), query));
+        return client.convertValue(raw, new TypeReference<PaymentsRuntimeSnapshotRetrieveResult>() {});
     }
 
     /** Payments Webhook Events List */
@@ -639,6 +696,18 @@ public class CommerceApi {
         );
         Object raw = client.patch(ApiPaths.backendPath("/recharges/packages/" + serializePathParameter(packageId, new PathParameterSpec("packageId", "simple", false)) + ""), body, null, requestHeaders, "application/json");
         return client.convertValue(raw, new TypeReference<RechargesPackagesUpdateResult>() {});
+    }
+
+    /** Recharges Settings Retrieve */
+    public RechargesSettingsRetrieveResult rechargesSettingsRetrieve() throws Exception {
+        Object raw = client.get(ApiPaths.backendPath("/recharges/settings"));
+        return client.convertValue(raw, new TypeReference<RechargesSettingsRetrieveResult>() {});
+    }
+
+    /** Recharges Settings Update */
+    public RechargesSettingsUpdateResult rechargesSettingsUpdate(CommerceRechargeSettingsUpdateRequest body) throws Exception {
+        Object raw = client.put(ApiPaths.backendPath("/recharges/settings"), body, null, null, "application/json");
+        return client.convertValue(raw, new TypeReference<RechargesSettingsUpdateResult>() {});
     }
 
     /** Refunds List */

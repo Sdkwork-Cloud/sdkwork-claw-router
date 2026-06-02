@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/journalism-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-journalism-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-journalism-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:66f15ff4697150f0a84069a1ce06860a520438feb68ab227632076af0ce2f07b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flicker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flicker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flicker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:61deba9ae5933b807a1258f7668499f0915e5650f2d8ed2cc30d66d50536b88a",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bw-cli@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bw-cli-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bw-cli-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1a931173da01b4ac030c07e9b525eadd5164d0d7355f3637ec29a78520e97db5",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/simple-mail-client@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-simple-mail-client-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-simple-mail-client-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fd4f11a637ca6d0f4ca7f4d4909a5b716a56b93aa6255aff465680ee0546b071",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mood-logger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mood-logger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mood-logger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:757f7efc04fa6909458c380e1b9967dbbedadcc3d031f8fa935e423f93fb8279",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-enhancer@1.0.0-alpha",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-enhancer-1.0.0-alpha.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-enhancer-1.0.0-alpha.json"
+      },
       "version": "1.0.0-alpha",
       "runtime": "metadata",
       "checksumHash": "sha256:c37aa54daba5512b540719200f8c6adacabf46310258a06869173a257497453f",

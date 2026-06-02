@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personal-kb-lite@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-personal-kb-lite-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personal-kb-lite-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:afacab043e4b727ad51b79055fdd76458a432090bc22262196e8789413b7d497",

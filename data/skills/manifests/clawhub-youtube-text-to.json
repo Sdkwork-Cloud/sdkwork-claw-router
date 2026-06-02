@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-text-to@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-text-to-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-text-to-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df309e62c8ee2bf902a2565e78281d55eb28f90d5d2dcb6f461a97bae2613e77",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lusha@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-lusha-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lusha-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:75510f022126158c4948243e8426cd12789a590a68fa7a4f44448a7ae4d6553b",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/newscatcher@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-newscatcher-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-newscatcher-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:2b0379582122a3cda5ca032959391140c8524ff16e3588c72aa8fcb1e8ee97c8",

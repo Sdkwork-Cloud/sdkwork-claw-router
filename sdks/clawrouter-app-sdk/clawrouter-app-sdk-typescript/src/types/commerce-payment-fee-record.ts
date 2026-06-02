@@ -8,6 +8,8 @@ export interface CommercePaymentFeeRecord {
   currency_code: string;
   /** Fee type field on commerce payment fee record. */
   fee_type: string;
+  /** Id field on commerce payment fee record. */
+  id?: string;
   /** Occurred at field on commerce payment fee record. */
   occurred_at: string;
   /** Organization id field on commerce payment fee record. */

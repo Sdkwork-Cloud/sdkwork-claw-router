@@ -73,6 +73,64 @@ class OpenApiComponentGeneratorTest(unittest.TestCase):
             self.assertIn("required:\n      - vendor_code\n      - enabled", source)
             self.assertNotIn("physical_only_column", source)
 
+    def test_generates_media_resource_standard_components(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                tables: []
+                """,
+            )
+
+            source = OpenApiComponentGenerator(root=root, registry_path=registry).render_yaml()
+
+            self.assertIn("MediaResource:", source)
+            self.assertIn("MediaKind:", source)
+            self.assertIn("MediaSource:", source)
+            self.assertIn("objectBlobId:", source)
+            self.assertIn("access:\n          $ref: '#/components/schemas/MediaAccess'", source)
+            self.assertIn("ai:\n          $ref: '#/components/schemas/MediaAiProvenance'", source)
+
+    def test_projects_media_resource_snapshot_columns_to_logical_media_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = self.write_registry(
+                root,
+                """
+                tables:
+                  - table: plus_agent_skill_package
+                    domain: legacy
+                    frontend_contract:
+                      field_mapping:
+                        icon: icon_resource_snapshot MediaResource
+                        image: cover MediaResource or icon MediaResource
+                    columns:
+                      name:
+                        type: string(255)
+                      icon_media_resource_id: string(128)
+                      icon_object_blob_id: int64
+                      icon_resource_snapshot: json
+                      cover_media_resource_id: string(128)
+                      cover_object_blob_id: int64
+                      cover_resource_snapshot: json
+                """,
+            )
+
+            source = OpenApiComponentGenerator(root=root, registry_path=registry).render_yaml()
+
+            self.assertIn("PlusAgentSkillPackageRecord:", source)
+            self.assertIn("name:\n          type: string\n          maxLength: 255", source)
+            self.assertIn("icon:\n          $ref: '#/components/schemas/MediaResource'", source)
+            self.assertIn("cover:\n          $ref: '#/components/schemas/MediaResource'", source)
+            self.assertNotIn("image:\n          $ref: '#/components/schemas/MediaResource'", source)
+            self.assertNotIn("icon_media_resource_id:", source)
+            self.assertNotIn("icon_object_blob_id:", source)
+            self.assertNotIn("icon_resource_snapshot:", source)
+            self.assertNotIn("cover_media_resource_id:", source)
+            self.assertNotIn("cover_object_blob_id:", source)
+            self.assertNotIn("cover_resource_snapshot:", source)
+
     def test_writes_and_checks_components(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

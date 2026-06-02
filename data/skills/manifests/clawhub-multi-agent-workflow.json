@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multi-agent-workflow@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-workflow-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multi-agent-workflow-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:1f0bb8d98e7ca3d996dab6454d62776438f17f01871abb6e156c91d991111690",

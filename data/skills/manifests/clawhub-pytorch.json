@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pytorch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pytorch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pytorch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:715a098c3989f7bdca7c1be76095f5931d6fe2afb472234afbb213e4c674a224",

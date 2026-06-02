@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/autodl-train@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-autodl-train-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-autodl-train-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aea32d170c51bd3497ec296139336bfb0bbd91f51a6b3880ee1338053396ea77",

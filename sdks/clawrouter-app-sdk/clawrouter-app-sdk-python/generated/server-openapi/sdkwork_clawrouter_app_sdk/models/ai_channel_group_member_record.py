@@ -18,7 +18,10 @@ class AiChannelGroupMemberRecord:
     deleted_by: Optional[str] = None
     effective_from: Optional[str] = None
     effective_to: Optional[str] = None
+    enabled: Optional[bool] = None
     id: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
+    priority: Optional[int] = None
     updated_at: Optional[str] = None
     version: Optional[str] = None
+    weight: Optional[int] = None

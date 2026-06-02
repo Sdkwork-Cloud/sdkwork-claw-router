@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-api-gateway@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-api-gateway-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-api-gateway-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:62c7ecbb2b1f60f21c8812cc6bb8a597bb6038672cc8ffa69e32db6a0b48f521",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/checklist@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-checklist-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-checklist-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8d71736bc2f9e58240764bbdd58d5d72e7dcb58baf54923592cb8071f478efc4",

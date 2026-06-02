@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buy-me-a-pie@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-buy-me-a-pie-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buy-me-a-pie-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8194500bc5a08ba1ee5f5ce21b0949d7e6945909bf769459f96cdc09d98f035",

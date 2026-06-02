@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-agent-control@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-agent-control-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-agent-control-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5de09f7cbf0b3736eb277aca69ce4dbfc1a451a812ef60dafd1a669515674ec2",

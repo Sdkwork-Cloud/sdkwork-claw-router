@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-postmaster-tools@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-postmaster-tools-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-postmaster-tools-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6b66bf3ee4e4af6cc53769c4678f27b0061fb9c17fb3a12f39b7c14f6cb7a9a4",

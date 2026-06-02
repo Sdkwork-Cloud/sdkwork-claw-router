@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aap-agent-bounty@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-aap-agent-bounty-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aap-agent-bounty-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:2c0ccded1c826c256e2b09a4aabcd7d6cb013b45b6df0eb31996fab1bb38cd3e",

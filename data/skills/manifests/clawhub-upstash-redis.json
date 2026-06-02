@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/upstash-redis@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-upstash-redis-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-upstash-redis-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b44fd8d7bdb362248129ae730d8148f090ef95a18d768b92d78235646d55d64a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fsd-secure-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fsd-secure-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fsd-secure-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b4e4eb257cedc23a4bfcdf2ce1e1fca9549035dd552b185bf585d6d228af945",

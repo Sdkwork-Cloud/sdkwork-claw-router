@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-workflow@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-workflow-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-workflow-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:88e8713767e4682d8a80f7bbadb6eca3b984cd0d404ab0cda1da2197fa851374",

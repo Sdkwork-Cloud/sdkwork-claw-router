@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whatsapp-otp@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-otp-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whatsapp-otp-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:773ba577642fc8f4a94c89d2dd2748a00ab77fab5a53afbd5dc5dc27ec66cde8",

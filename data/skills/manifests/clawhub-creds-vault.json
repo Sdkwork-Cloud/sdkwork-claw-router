@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/creds-vault@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-creds-vault-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-creds-vault-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a96e0242d286dc2fa62ef41aa31e34fea04cb18b4f6bb2f2d14914c3326544bd",

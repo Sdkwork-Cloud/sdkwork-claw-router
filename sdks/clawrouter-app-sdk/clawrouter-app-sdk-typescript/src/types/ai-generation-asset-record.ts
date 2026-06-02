@@ -1,13 +1,14 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Ai generation asset record schema exposed by Claw Router. */
 export interface AiGenerationAssetRecord {
   /** Active index field on ai generation asset record. */
   active_index?: number;
+  /** Asset field on ai generation asset record. */
+  asset?: MediaResource;
   /** Asset type field on ai generation asset record. */
   asset_type?: string;
-  /** Asset url field on ai generation asset record. */
-  asset_url?: string;
   /** Created at field on ai generation asset record. */
   created_at?: string;
   /** Data scope field on ai generation asset record. */
@@ -40,6 +41,8 @@ export interface AiGenerationAssetRecord {
   mime_type?: string;
   /** Model snapshot field on ai generation asset record. */
   model_snapshot?: string;
+  /** Object key field on ai generation asset record. */
+  object_key?: string;
   /** Organization id field on ai generation asset record. */
   organization_id?: string;
   /** Owner id field on ai generation asset record. */
@@ -56,14 +59,12 @@ export interface AiGenerationAssetRecord {
   shared?: boolean;
   /** Status field on ai generation asset record. */
   status?: string;
-  /** Storage key field on ai generation asset record. */
-  storage_key?: string;
   /** Storage provider field on ai generation asset record. */
   storage_provider?: string;
   /** Tenant id field on ai generation asset record. */
   tenant_id?: string;
-  /** Thumbnail url field on ai generation asset record. */
-  thumbnail_url?: string;
+  /** Thumbnail field on ai generation asset record. */
+  thumbnail?: MediaResource;
   /** Updated at field on ai generation asset record. */
   updated_at?: string;
   /** User id field on ai generation asset record. */

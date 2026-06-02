@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chopard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chopard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chopard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:50a00e9f8108b6b18437297cfc585ea753a6dc53299335ebe0117383be907b09",

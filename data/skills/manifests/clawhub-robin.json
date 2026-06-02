@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/robin@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-robin-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-robin-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9128ba7dd3433cdb0164bc5165a2cb5346bddc70626cfcac54539d7eac0c92fa",

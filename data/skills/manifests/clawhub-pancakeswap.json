@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pancakeswap@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pancakeswap-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pancakeswap-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a692ee6ca3878b4ab23d6eee13d208ab42bd7e4470931f69971b2aa833bc26b",

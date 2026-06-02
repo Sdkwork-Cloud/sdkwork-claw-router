@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/citadel-securities@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-citadel-securities-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-citadel-securities-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc37d792532049e6a183b9d6922b69dd7e492471fa1fea7584556ac9efc088ce",

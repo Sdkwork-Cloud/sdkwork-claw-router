@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ironclaw-pipeline-analytics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ironclaw-pipeline-analytics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ironclaw-pipeline-analytics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86266149793e8af1329e53c50fbca730ec4cda1a267682b2e99ecbb3b3a6734b",

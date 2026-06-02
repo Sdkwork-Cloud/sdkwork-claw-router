@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CommerceProductSpuItem {
     private String brand;
-    private String categoryId;
+    private List<String> categoryIds;
     private String createdAt;
     private String currencyCode;
     private String defaultSkuId;
@@ -28,12 +28,12 @@ public class CommerceProductSpuItem {
         this.brand = brand;
     }
 
-    public String getCategoryId() {
-        return this.categoryId;
+    public List<String> getCategoryIds() {
+        return this.categoryIds;
     }
 
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
+    public void setCategoryIds(List<String> categoryIds) {
+        this.categoryIds = categoryIds;
     }
 
     public String getCreatedAt() {

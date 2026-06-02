@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/capcom@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-capcom-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-capcom-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:dfcaead73e9add1d07d30f6890a10bf0c3bc04d9a892cb9348846e032560e2ef",

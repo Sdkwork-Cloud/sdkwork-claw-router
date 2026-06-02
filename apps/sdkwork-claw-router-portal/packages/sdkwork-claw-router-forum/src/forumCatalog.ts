@@ -1,3 +1,5 @@
+import type { ClawRouterMediaResource } from 'sdkwork-claw-router-commons/runtime';
+
 export type ForumCategory =
   | 'Announcements'
   | 'General Discussion'
@@ -10,7 +12,7 @@ export type ForumSortKey = 'latest' | 'top' | 'unanswered';
 
 export type ForumAuthor = {
   name: string;
-  avatar: string;
+  avatar: ClawRouterMediaResource;
   role?: string;
 };
 
@@ -81,7 +83,7 @@ export type ForumStatsView = {
 export type ForumCommunityLinkView = {
   id: string;
   label: string;
-  qrCodeUrl: string;
+  qrCode: ClawRouterMediaResource;
   tone: 'green' | 'blue' | 'teal' | 'red' | 'pink';
 };
 

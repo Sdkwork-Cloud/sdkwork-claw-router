@@ -8,6 +8,8 @@ type CommerceUserAddressRecord struct {
 	CountryCode string `json:"country_code"`
 	CreatedAt string `json:"created_at"`
 	District string `json:"district"`
+	Id string `json:"id"`
+	IsDefault bool `json:"is_default"`
 	OrganizationId string `json:"organization_id"`
 	OwnerUserId string `json:"owner_user_id"`
 	PhoneCountryCode string `json:"phone_country_code"`

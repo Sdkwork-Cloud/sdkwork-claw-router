@@ -17,6 +17,7 @@ class UploadPartRecord:
     part_number: Optional[int] = None
     part_sha256: Optional[str] = None
     presigned_url_expires_at: Optional[str] = None
+    size_bytes: Optional[str] = None
     status: Optional[str] = None
     tenant_id: Optional[str] = None
     updated_at: Optional[str] = None

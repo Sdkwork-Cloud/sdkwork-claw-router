@@ -4,6 +4,7 @@ package types
 type CommerceMembershipEntitlementRecord struct {
 	CreatedAt string `json:"created_at"`
 	EntitlementCode string `json:"entitlement_code"`
+	Id string `json:"id"`
 	Name string `json:"name"`
 	OrganizationId string `json:"organization_id"`
 	PlanId string `json:"plan_id"`

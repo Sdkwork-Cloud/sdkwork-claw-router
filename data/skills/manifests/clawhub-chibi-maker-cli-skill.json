@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chibi-maker-cli-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chibi-maker-cli-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chibi-maker-cli-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16819261b020bea6003da669fb514cf9edad36fdb0abb420002b6ff18a8c5678",

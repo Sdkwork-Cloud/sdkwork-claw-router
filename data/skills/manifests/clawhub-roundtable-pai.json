@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/roundtable-pai@1.6.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-roundtable-pai-1.6.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-roundtable-pai-1.6.5.json"
+      },
       "version": "1.6.5",
       "runtime": "metadata",
       "checksumHash": "sha256:50cd97599016b61f975012f1a77bb20d12a0295327119e256e612ce7c6ba2b12",

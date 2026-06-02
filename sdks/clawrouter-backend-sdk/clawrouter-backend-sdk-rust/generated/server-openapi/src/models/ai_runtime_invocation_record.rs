@@ -163,6 +163,10 @@ pub struct AiRuntimeInvocationRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
 
+    /// Streaming field on ai runtime invocation record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub streaming: Option<bool>,
+
     /// Tenant id field on ai runtime invocation record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub tenant_id: Option<String>,

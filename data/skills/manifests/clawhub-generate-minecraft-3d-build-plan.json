@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generate-minecraft-3d-build-plan@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-generate-minecraft-3d-build-plan-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generate-minecraft-3d-build-plan-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:52d31cfed5be65a9663af7f7d27d43777ba34ffe32e21669a98913fd2f0fd7f5",

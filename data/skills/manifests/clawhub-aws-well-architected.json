@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-well-architected@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-well-architected-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-well-architected-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:939214a65b6058f1caea37a0c9cd035453e112ee1d935ba60cf53b0d7cdb88a4",

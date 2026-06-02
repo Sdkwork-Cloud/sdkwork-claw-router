@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/protonmail-claw@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-protonmail-claw-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-protonmail-claw-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6475d016c0d43ce1f25e71bec92940a1509a5ea27409b1b59483ae2d9bf6b0a8",

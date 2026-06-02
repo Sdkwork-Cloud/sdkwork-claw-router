@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marp-slides@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marp-slides-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marp-slides-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb621a12279cbf612140ae988203efbbb36f229bb74d580ec6ffa26369cd5a8f",

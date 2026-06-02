@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vnpy@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-vnpy-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vnpy-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d21dc145879b2dced75a0a0bd189f34757f0f85752c21c5d8ef9081ac2e1518d",

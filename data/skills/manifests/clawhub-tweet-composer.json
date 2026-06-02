@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tweet-composer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tweet-composer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tweet-composer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:473ba0c3e882a7b8b46d644d5b7d0f6af480feae96cf3925be378ea762f4b1ab",

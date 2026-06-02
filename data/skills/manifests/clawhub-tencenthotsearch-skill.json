@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencenthotsearch-skill@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencenthotsearch-skill-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencenthotsearch-skill-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:2cef7b70c4a5c69ab16f2fc4a6b9e958d0ed0f6ba122a4bb59233eedcd1ab5b3",

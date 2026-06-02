@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kiwi-voice@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kiwi-voice-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kiwi-voice-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:24b3c66bad511925d034b97f3b77a2ddb132d0def7ac07214b17efbdea4ee14d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/joy-log@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-joy-log-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-joy-log-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2efe186f9b2be1344528cd01b1ee7a32428d29d758befe5264f080ea93a6483c",

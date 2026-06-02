@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/swarmhaul@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-swarmhaul-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-swarmhaul-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1a0ca38269416762e76592b50d5018af7fe1f0328ad9573a51301c91fc8984f5",

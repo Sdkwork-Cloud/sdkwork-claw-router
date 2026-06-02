@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/macau@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-macau-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-macau-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a651b7a4e7986b307cf8e2ad5b966ae261958aa279f46b946593b953bd0f8dd2",

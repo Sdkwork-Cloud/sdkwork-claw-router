@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zilliz-skill@0.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-zilliz-skill-0.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zilliz-skill-0.0.2.json"
+      },
       "version": "0.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:7e13532f86cb3a62740527b8e85f8b3ead3138ba3ec4834db5991ecb98175ba1",

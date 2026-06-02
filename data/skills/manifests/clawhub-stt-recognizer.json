@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stt-recognizer@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-stt-recognizer-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stt-recognizer-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:3327ef30b0e8d36fd66afb0543f3fa9dcc4e9815773e74dd770294a1705991e5",

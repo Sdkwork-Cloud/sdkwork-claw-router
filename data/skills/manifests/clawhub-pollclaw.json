@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pollclaw@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-pollclaw-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pollclaw-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:d249c5c66dd9d4baea8837e0908aa2a935faa962768c78b392d808d2c4c13b98",

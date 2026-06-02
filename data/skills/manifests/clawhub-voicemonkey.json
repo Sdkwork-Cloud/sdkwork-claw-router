@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voicemonkey@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voicemonkey-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voicemonkey-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7c3024600db1b8b764973563eec2b21bb97cc29fec0aa9b845141c6712016cf2",

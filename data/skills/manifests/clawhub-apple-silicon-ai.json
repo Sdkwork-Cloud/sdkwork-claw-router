@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-silicon-ai@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-silicon-ai-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-silicon-ai-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c9bd9ad14d2b97ce8878c9b78f8fd1ab0e1fb5d05eab1242d500fb422173a82f",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/azd-deployment@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-azd-deployment-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-azd-deployment-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:90488619b6203a796a0909ba2f0cb02679cfcb5c9dcd8f2b38f32147d867e68c",

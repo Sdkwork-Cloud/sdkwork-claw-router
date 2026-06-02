@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bahn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bahn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bahn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6588f81d9bb1083b0e23938aa5e95e57fcd846b088f9d4f790916aafbccdd631",

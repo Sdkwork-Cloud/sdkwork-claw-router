@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lvmh-louis-vuitton@99.99.99",
-      "artifactUrl": "data/skills/artifacts/clawhub-lvmh-louis-vuitton-99.99.99.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lvmh-louis-vuitton-99.99.99.json"
+      },
       "version": "99.99.99",
       "runtime": "metadata",
       "checksumHash": "sha256:32dd2c8c3c1e8eaf62f89b1a07cdd5783d3ddc3844638820714567304a27a019",

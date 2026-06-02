@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/atomgit-powershell@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-atomgit-powershell-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-atomgit-powershell-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3c5a23c437727537bb78d1a1b0e9fafa4f0792b663af057c3615a3e702913090",

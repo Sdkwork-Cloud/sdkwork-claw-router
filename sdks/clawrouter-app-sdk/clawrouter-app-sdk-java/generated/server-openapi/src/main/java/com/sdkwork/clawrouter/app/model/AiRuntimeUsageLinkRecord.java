@@ -5,6 +5,7 @@ import java.util.Map;
 public class AiRuntimeUsageLinkRecord {
     private String agentRunId;
     private String agentRunStepId;
+    private String agentRunStepIdKey;
     private String agentSessionId;
     private String cachedTokens;
     private String chatItemId;
@@ -51,6 +52,14 @@ public class AiRuntimeUsageLinkRecord {
 
     public void setAgentRunStepId(String agentRunStepId) {
         this.agentRunStepId = agentRunStepId;
+    }
+
+    public String getAgentRunStepIdKey() {
+        return this.agentRunStepIdKey;
+    }
+
+    public void setAgentRunStepIdKey(String agentRunStepIdKey) {
+        this.agentRunStepIdKey = agentRunStepIdKey;
     }
 
     public String getAgentSessionId() {

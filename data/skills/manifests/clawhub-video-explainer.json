@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-explainer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-explainer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-explainer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18566b8439f54f3156f73e2b49be55b748f0ddb73b3bafc1d43b1868950efc65",

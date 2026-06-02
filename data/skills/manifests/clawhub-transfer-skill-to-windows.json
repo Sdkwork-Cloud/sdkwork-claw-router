@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/transfer-skill-to-windows@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-transfer-skill-to-windows-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-transfer-skill-to-windows-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c60287a650af09e8ccf31573ead72ca59da007d9c6cb3b578fd8d4cf761b64b",

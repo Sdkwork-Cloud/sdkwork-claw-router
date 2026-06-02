@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 if TYPE_CHECKING:
     from .agent_capabilities import AgentCapabilities
     from .agent_version_item import AgentVersionItem
+    from .media_resource import MediaResource
 
 
 @dataclass
@@ -21,5 +22,5 @@ class AgentItem:
     status: str
     updated_at: str
     visibility: str
-    avatar_url: Optional[str] = None
+    avatar: Optional[MediaResource] = None
     template_source: Optional[str] = None

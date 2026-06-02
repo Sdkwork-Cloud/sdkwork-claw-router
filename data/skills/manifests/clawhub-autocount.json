@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/autocount@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-autocount-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-autocount-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:833205c7264e37dc3e0c5e79de33f46767cf1410dd6cd923a5a55e0f32d58ef8",

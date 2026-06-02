@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cn-regex-tester@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-cn-regex-tester-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cn-regex-tester-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:4a9aab8ef7b6d818e4e1234cffa290e6484d809e4645462b2a565d581d01a7ac",

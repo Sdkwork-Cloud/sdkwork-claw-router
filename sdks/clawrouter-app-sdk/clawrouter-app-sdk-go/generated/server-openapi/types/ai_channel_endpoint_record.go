@@ -15,11 +15,13 @@ type AiChannelEndpointRecord struct {
 	DeletedBy string `json:"deleted_by"`
 	EffectiveFrom string `json:"effective_from"`
 	EffectiveTo string `json:"effective_to"`
+	HealthStatus string `json:"health_status"`
 	Id string `json:"id"`
 	LastLatencyMs int `json:"last_latency_ms"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	OrganizationId string `json:"organization_id"`
 	PathPrefix string `json:"path_prefix"`
+	Priority int `json:"priority"`
 	ProviderCode string `json:"provider_code"`
 	RegionCode string `json:"region_code"`
 	RetryPolicy map[string]JsonValue `json:"retry_policy"`
@@ -31,4 +33,5 @@ type AiChannelEndpointRecord struct {
 	VendorCode string `json:"vendor_code"`
 	VendorId string `json:"vendor_id"`
 	Version string `json:"version"`
+	Weight int `json:"weight"`
 }

@@ -9,6 +9,10 @@ import {
   type SdkworkCommerceService,
 } from "@sdkwork/commerce-service";
 import {
+  readSdkworkMediaResource,
+  toExternalSdkworkMediaResource,
+} from "@sdkwork/appbase-pc-react";
+import {
   createSdkworkPaymentMessages,
   type SdkworkPaymentMessages,
   type SdkworkPaymentMessagesOverrides,
@@ -98,8 +102,8 @@ interface RemotePaymentMethodProductType {
 interface RemotePaymentMethod {
   available?: boolean;
   code?: string;
-  icon?: string;
-  methodIcon?: string;
+  icon?: unknown;
+  methodIcon?: unknown;
   methodId?: string;
   methodName?: string;
   productTypes?: RemotePaymentMethodProductType[];
@@ -132,7 +136,8 @@ interface RemotePaymentDetail extends RemotePaymentStatus {
   paymentOrderId?: string;
   paymentParams?: Record<string, unknown>;
   paymentUrl?: string;
-  qrCode?: string;
+  qrCode?: unknown;
+  qrImage?: unknown;
   queryInterval?: number | string;
   remark?: string;
   subject?: string;
@@ -306,7 +311,7 @@ function mapMethod(method: RemotePaymentMethod, messages: SdkworkPaymentCopyCont
   return {
     available: method.available !== false,
     code: toSdkworkCommerceOptionalString(method.code) || "UNKNOWN",
-    icon: toSdkworkCommerceOptionalString(method.methodIcon) || toSdkworkCommerceOptionalString(method.icon),
+    icon: readSdkworkMediaResource(method.methodIcon) || readSdkworkMediaResource(method.icon),
     id: createMethodId(method),
     label: toSdkworkCommerceOptionalString(method.methodName) || messages.common.payment,
     productTypes,
@@ -331,11 +336,34 @@ function derivePaymentUrl(detail: RemotePaymentDetail | null | undefined): strin
     || toSdkworkCommerceOptionalString(paymentParams.mwebUrl);
 }
 
-function deriveQrCode(detail: RemotePaymentDetail | null | undefined): string | undefined {
+function isQrImageLocator(value: string | undefined): boolean {
+  return Boolean(value && /^(?:data:image\/|https?:\/\/).+/i.test(value));
+}
+
+function deriveQrContent(detail: RemotePaymentDetail | null | undefined): string | undefined {
   const paymentParams = detail?.paymentParams ?? {};
-  return toSdkworkCommerceOptionalString(detail?.qrCode)
+  const value = toSdkworkCommerceOptionalString(detail?.qrCode)
     || toSdkworkCommerceOptionalString(paymentParams.qrCode)
     || toSdkworkCommerceOptionalString(paymentParams.codeUrl);
+  return isQrImageLocator(value) ? undefined : value;
+}
+
+function deriveQrImage(detail: RemotePaymentDetail | null | undefined) {
+  const paymentParams = detail?.paymentParams ?? {};
+  const imageResource = readSdkworkMediaResource(detail?.qrImage)
+    || readSdkworkMediaResource(detail?.qrCode)
+    || readSdkworkMediaResource(paymentParams.qrImage);
+  if (imageResource) {
+    return imageResource;
+  }
+
+  const imageLocator = [
+    toSdkworkCommerceOptionalString(detail?.qrCode),
+    toSdkworkCommerceOptionalString(paymentParams.qrCode),
+    toSdkworkCommerceOptionalString(paymentParams.qrImage),
+  ].find(isQrImageLocator);
+
+  return toExternalSdkworkMediaResource(imageLocator, "image");
 }
 
 function mapSummary(
@@ -383,7 +411,8 @@ function mapDetail(
       || fallback.paymentOrderId,
     paymentParams: (payment?.paymentParams ?? fallback.paymentParams ?? {}) as Record<string, unknown>,
     paymentUrl: derivePaymentUrl(payment) || fallback.paymentUrl,
-    qrCode: deriveQrCode(payment) || fallback.qrCode,
+    qrContent: deriveQrContent(payment) || fallback.qrContent,
+    qrImage: deriveQrImage(payment) || fallback.qrImage,
     queryIntervalSeconds: toNullableSdkworkCommerceNumber(payment?.queryInterval) ?? fallback.queryIntervalSeconds ?? undefined,
     remark: toSdkworkCommerceOptionalString(payment?.remark) || fallback.remark,
     subject: toSdkworkCommerceOptionalString(payment?.subject) || fallback.subject,

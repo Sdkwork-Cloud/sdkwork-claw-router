@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bilibili-subtitle-download-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-subtitle-download-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bilibili-subtitle-download-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:69e7aea77335cd30e7815d015aed7c0a252483210a3b1aa8ef90f3c2b5dc86e5",

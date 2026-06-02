@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/terra@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-terra-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-terra-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:4d66765fef87b0b94c0de5ecc0519263caa099038cde0fe64b0b82f95a8bef90",

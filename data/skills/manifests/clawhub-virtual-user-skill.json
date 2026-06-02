@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/virtual-user-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-virtual-user-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-virtual-user-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:484848a0ce09890d1d96f1bc7664cb86f869525508f7458ba83059b66a12f4db",

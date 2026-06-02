@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-skill-finder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-skill-finder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-skill-finder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4baa0ff835c292fafc9e571b21a7911f4881e6de26e5532697fb2f2bddf9b248",

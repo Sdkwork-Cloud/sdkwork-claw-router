@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cheddar@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-cheddar-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cheddar-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:fcf9ecce4f89e3c813ceddcdd7c437346fe708ccf6b1e8ca27cf049d6e363a9a",

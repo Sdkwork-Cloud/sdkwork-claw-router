@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grok-search@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-grok-search-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grok-search-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5a2949ac78baec157bb1df08244398e14045aab8da458f0ec8a842ca522bb8bc",

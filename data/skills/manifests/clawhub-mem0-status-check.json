@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mem0-status-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mem0-status-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mem0-status-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9156a894e2ca77d0e7b533c9163094089e22a3d8fa91dd0f23bc4c9445827512",

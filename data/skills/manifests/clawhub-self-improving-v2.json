@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-improving-v2@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-v2-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-improving-v2-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:21238dfe3e0936f9c20db68c4244390450c47e19fe3b18e25dae854173a5c3ef",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/caption-generator-from-photo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-caption-generator-from-photo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-caption-generator-from-photo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5e9f8813284993d5c15a4626214bc259083293e977203f3b86a7b2e32b8b411",

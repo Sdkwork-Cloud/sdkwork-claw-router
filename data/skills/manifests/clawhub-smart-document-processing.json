@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/smart-document-processing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-smart-document-processing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-smart-document-processing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f7005d5a5a579808766c6c452fc7d3179743894acbcd1af884a5965fa5c6be84",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hbo@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-hbo-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hbo-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5d3958960d9131ebaa33507b0972f157990081071a8a07d8d2a8b5e26150241e",

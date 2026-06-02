@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subgraph-registry-mcp@0.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-subgraph-registry-mcp-0.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subgraph-registry-mcp-0.3.2.json"
+      },
       "version": "0.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:bca0f6ca6506360014eedf3be1af011a21b4a02e13bc209001216cc6bd485a94",

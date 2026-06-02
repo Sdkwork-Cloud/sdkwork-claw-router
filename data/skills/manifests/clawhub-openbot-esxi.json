@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openbot-esxi@0.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-openbot-esxi-0.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openbot-esxi-0.1.3.json"
+      },
       "version": "0.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:621306a40707bf259a5f0a067d976a2de787092bfb69fd5bc2c68937478aa674",

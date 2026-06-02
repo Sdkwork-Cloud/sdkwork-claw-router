@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/orchard@0.2.5-rc.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-orchard-0.2.5-rc.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-orchard-0.2.5-rc.5.json"
+      },
       "version": "0.2.5-rc.5",
       "runtime": "metadata",
       "checksumHash": "sha256:dd95789fee6954c6923ff0ea94d1152495b0adae93b5310e4f703891de3fc289",

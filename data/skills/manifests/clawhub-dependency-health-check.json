@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dependency-health-check@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-dependency-health-check-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dependency-health-check-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:492aff0da34e7c73ac1488b79c5e99e0daa8338232a98247322cc61c60eb9eb1",

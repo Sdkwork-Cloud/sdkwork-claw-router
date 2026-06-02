@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aflac@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aflac-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aflac-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:21f7d8c3b429cc24514324407ad28b30561758d0a4daa69d1f97a91a9ede1e7a",

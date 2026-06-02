@@ -13,9 +13,9 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? InvocationId { get; set; }
         public string? MimeType { get; set; }
         public string? Name { get; set; }
+        public MediaResource? Resource { get; set; }
         public string? Sha256 { get; set; }
         public int? SizeBytes { get; set; }
         public string? StorageKey { get; set; }
-        public string? StorageUrl { get; set; }
     }
 }

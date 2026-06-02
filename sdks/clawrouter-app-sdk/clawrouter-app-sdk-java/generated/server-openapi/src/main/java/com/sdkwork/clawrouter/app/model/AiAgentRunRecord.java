@@ -30,6 +30,7 @@ public class AiAgentRunRecord {
     private String promptTokens;
     private String requestId;
     private String retentionUntil;
+    private String runStatus;
     private String runUuid;
     private String runtime;
     private String sourceSurface;
@@ -260,6 +261,14 @@ public class AiAgentRunRecord {
 
     public void setRetentionUntil(String retentionUntil) {
         this.retentionUntil = retentionUntil;
+    }
+
+    public String getRunStatus() {
+        return this.runStatus;
+    }
+
+    public void setRunStatus(String runStatus) {
+        this.runStatus = runStatus;
     }
 
     public String getRunUuid() {

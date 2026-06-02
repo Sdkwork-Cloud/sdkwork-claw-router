@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hamibot@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-hamibot-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hamibot-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5aa3a0f99d30958fa1d41bfc6e38f1f3015b5ebcc72fc75ed6cef22586861ef1",

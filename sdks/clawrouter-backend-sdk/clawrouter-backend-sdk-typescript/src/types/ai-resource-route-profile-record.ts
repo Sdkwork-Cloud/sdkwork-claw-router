@@ -16,12 +16,20 @@ export interface AiResourceRouteProfileRecord {
   deleted_at?: string;
   /** Deleted by field on ai resource route profile record. */
   deleted_by?: string;
+  /** Endpoint failover scope field on ai resource route profile record. */
+  endpoint_failover_scope?: string;
+  /** Failure strategy field on ai resource route profile record. */
+  failure_strategy: string;
   /** Http method field on ai resource route profile record. */
   http_method?: string;
   /** Id field on ai resource route profile record. */
   id?: string;
+  /** Idempotency mode field on ai resource route profile record. */
+  idempotency_mode?: string;
   /** Metadata field on ai resource route profile record. */
   metadata?: Record<string, JsonValue>;
+  /** Model requirement field on ai resource route profile record. */
+  model_requirement: string;
   /** Organization id field on ai resource route profile record. */
   organization_id: string;
   /** Parent object types field on ai resource route profile record. */
@@ -38,6 +46,10 @@ export interface AiResourceRouteProfileRecord {
   response_bindings?: Record<string, JsonValue>;
   /** Route key field on ai resource route profile record. */
   route_key: string;
+  /** Route strategy field on ai resource route profile record. */
+  route_strategy: string;
+  /** Selection strategy field on ai resource route profile record. */
+  selection_strategy: string;
   /** Sort order field on ai resource route profile record. */
   sort_order?: number;
   /** Status field on ai resource route profile record. */

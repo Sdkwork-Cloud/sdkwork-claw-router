@@ -46,7 +46,7 @@ pub struct AppSkillItem {
     pub developer: String,
     pub description: String,
     pub category: String,
-    pub image: String,
+    pub image: Value,
     pub rating: f64,
     pub downloads: String,
     pub features: Vec<String>,
@@ -56,7 +56,7 @@ pub struct AppSkillItem {
     pub size: String,
     pub license: String,
     pub frameworks: Vec<String>,
-    pub screenshots: Vec<String>,
+    pub screenshots: Vec<Value>,
     #[serde(skip_serializing_if = "Vec::is_empty")]
     pub packages: Vec<AppSkillPackageItem>,
 }

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:12c1b985ec24e8726a271a858098c0471a006b302ca8258fd0686025c6b3fd19",

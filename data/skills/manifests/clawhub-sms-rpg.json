@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sms-rpg@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sms-rpg-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sms-rpg-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3c76cba6a2b574221b1d6ba4b553d356578c9627c2200d85a263b949120e3606",

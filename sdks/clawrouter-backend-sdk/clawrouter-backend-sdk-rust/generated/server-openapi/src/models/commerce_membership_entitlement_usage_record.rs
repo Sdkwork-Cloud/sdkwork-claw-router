@@ -13,6 +13,10 @@ pub struct CommerceMembershipEntitlementUsageRecord {
     /// Entitlement id field on commerce membership entitlement usage record.
     pub entitlement_id: String,
 
+    /// Id field on commerce membership entitlement usage record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on commerce membership entitlement usage record.
     pub idempotency_key: String,
 

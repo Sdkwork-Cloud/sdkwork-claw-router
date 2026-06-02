@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ghost-browser@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-ghost-browser-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ghost-browser-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:a4131e5235208c05d456b784353cbef502e726738f550135386c254117b212da",

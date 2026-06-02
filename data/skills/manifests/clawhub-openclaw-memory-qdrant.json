@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-memory-qdrant@1.0.15",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-memory-qdrant-1.0.15.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-memory-qdrant-1.0.15.json"
+      },
       "version": "1.0.15",
       "runtime": "metadata",
       "checksumHash": "sha256:f9af3aae4b15f99e143dbf286532f3e1f95fcacf79ac9adce277883768569663",

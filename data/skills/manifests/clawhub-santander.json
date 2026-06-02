@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/santander@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-santander-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-santander-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29ddb7ea554478aaed0351d91636d14d224245780016db6b95744f49232c1751",

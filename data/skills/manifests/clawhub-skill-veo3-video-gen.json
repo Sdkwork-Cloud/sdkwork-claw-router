@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-veo3-video-gen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-veo3-video-gen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-veo3-video-gen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2f1a8cfab79ac5a49bd144f23f14264f7070710abb1848f0ba631fa6b14c823",

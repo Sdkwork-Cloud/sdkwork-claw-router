@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/radiology-image-quiz@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-radiology-image-quiz-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-radiology-image-quiz-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e2f1b5dea02bbd9935318031c9c5292a5b1168679b699da77992376bf1eb6b52",

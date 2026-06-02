@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/package-manager-updates@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-package-manager-updates-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-package-manager-updates-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e25d2d6d5b6e1fb53b7edfc3720ba4a3bceca38dc3cc6a4481319c2ecbe6b6b",

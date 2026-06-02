@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fridge-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fridge-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fridge-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8760fb496b0a8aedfcf153af1e60023ee88a86a156849653a726df41aad30fd",

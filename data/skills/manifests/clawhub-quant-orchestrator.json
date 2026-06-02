@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quant-orchestrator@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quant-orchestrator-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quant-orchestrator-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6a4edd9d97240832e068ae45ab5627c511350d018c3a9dc8a809ff03c9000228",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-create-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-create-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-create-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d1e63f128e6603011845f3df147778a0c20320d72e8db7f3fb86dc3e0550bf72",

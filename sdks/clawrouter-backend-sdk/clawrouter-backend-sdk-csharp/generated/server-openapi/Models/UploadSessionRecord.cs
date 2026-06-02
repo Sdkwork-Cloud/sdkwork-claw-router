@@ -9,12 +9,15 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? AbortedAt { get; set; }
         public string? BucketId { get; set; }
         public string? CompletedAt { get; set; }
+        public string? CompletedBytes { get; set; }
+        public int? CompletedPartCount { get; set; }
         public string? ContentType { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }
         public string? DeletedAt { get; set; }
         public string? DeletedBy { get; set; }
         public string? ExpectedSha256 { get; set; }
+        public string? ExpectedSizeBytes { get; set; }
         public string? ExpiresAt { get; set; }
         public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
@@ -25,6 +28,8 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? OriginalFilename { get; set; }
         public string? OwnerId { get; set; }
         public string? OwnerType { get; set; }
+        public int? PartCount { get; set; }
+        public string? PartSizeBytes { get; set; }
         public string? ProviderId { get; set; }
         public string? RequestId { get; set; }
         public string? S3UploadId { get; set; }

@@ -5,6 +5,7 @@ type CommerceMembershipEntitlementUsageRecord struct {
 	BalanceAfter string `json:"balance_after"`
 	CreatedAt string `json:"created_at"`
 	EntitlementId string `json:"entitlement_id"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	MembershipId string `json:"membership_id"`
 	OccurredAt string `json:"occurred_at"`

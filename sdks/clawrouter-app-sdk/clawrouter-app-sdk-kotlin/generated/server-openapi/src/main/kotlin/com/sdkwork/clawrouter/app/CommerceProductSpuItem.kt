@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.app
 
 data class CommerceProductSpuItem(
     val brand: String? = null,
-    val categoryId: String? = null,
+    val categoryIds: List<String>? = null,
     val createdAt: String? = null,
     val currencyCode: String? = null,
     val defaultSkuId: String? = null,

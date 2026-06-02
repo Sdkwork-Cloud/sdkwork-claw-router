@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cross-asset-intelligence@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cross-asset-intelligence-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cross-asset-intelligence-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:481a4b16d39d08df97c230aa3091e5ec955d1f6b05b7c393e4f94e0857fc7b4d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/webhook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-webhook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-webhook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:201539374604419b26cafb96c52949d67b1e18224c91e17f2d9e8536c78796d4",

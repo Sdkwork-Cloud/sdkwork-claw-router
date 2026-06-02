@@ -9,6 +9,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? CompletedAt { get; set; }
         public string? CreatedAt { get; set; }
         public string? DifferenceAmount { get; set; }
+        public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
         public string? MatchedCount { get; set; }
         public string? MismatchedCount { get; set; }

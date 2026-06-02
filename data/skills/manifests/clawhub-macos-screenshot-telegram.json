@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/macos-screenshot-telegram@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-macos-screenshot-telegram-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-macos-screenshot-telegram-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:78824ca82b8a4ed78325166607e45ae4c9e7ce1c8c04370de5a9507753682edc",

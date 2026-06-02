@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-stock-master@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-stock-master-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-stock-master-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dbf5a36f5616b01423f471ba14e1b02f42e64abf30a40e454e5cbb5a79c65346",

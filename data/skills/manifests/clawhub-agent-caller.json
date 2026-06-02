@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-caller@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-caller-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-caller-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:682dab550575da90f75e77ad1a513822982b62c53230f2b8fb88f57b769e22e4",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anakin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-anakin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anakin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a769462617c44146a4b186bab4d6c176be4e53f7ee3a780781d9c1f9bd4ebe1d",

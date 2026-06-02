@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mini-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mini-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mini-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a6a74dd3409cfbd653bea8d3fa07a67e049bc340a2e0b9ddcfcf11941cd5e2b9",

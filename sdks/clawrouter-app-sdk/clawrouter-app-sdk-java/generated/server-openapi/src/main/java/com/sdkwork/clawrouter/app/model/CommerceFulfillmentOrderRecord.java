@@ -7,6 +7,7 @@ public class CommerceFulfillmentOrderRecord {
     private String createdAt;
     private String fulfillmentNo;
     private String fulfillmentType;
+    private String id;
     private String orderId;
     private String organizationId;
     private String providerCode;
@@ -53,6 +54,14 @@ public class CommerceFulfillmentOrderRecord {
 
     public void setFulfillmentType(String fulfillmentType) {
         this.fulfillmentType = fulfillmentType;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrderId() {

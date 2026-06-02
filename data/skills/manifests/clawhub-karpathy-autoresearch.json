@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/karpathy-autoresearch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-karpathy-autoresearch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-karpathy-autoresearch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f842bf902c055ba67b0b15c0d941a9008ad34c91e62961f9a426564a572d1f1a",

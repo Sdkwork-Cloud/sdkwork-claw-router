@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cashflow@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cashflow-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cashflow-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b40b6ae7f2ea4a05595555680d9e2f1f8580aaf1c4ea0c751e95a8b367915dfa",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pulseai-skill@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-pulseai-skill-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pulseai-skill-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:fbd33a8c5880910dd7efb067e5399ac92fc05b2152b73f2df1e6b524ccd8b39f",

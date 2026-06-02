@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ob1-install@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ob1-install-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ob1-install-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8aa224ef06d5983f6e6e35f418d056011e57a81a2c06ccb023477a5b493aab69",

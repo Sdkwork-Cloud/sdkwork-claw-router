@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chinese-patent@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chinese-patent-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chinese-patent-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:41333382b435b3cc3ddcb2012a0302169866e680076a87bc85721fd3a38c888d",

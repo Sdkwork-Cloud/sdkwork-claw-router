@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/protein-docking-configurator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-protein-docking-configurator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-protein-docking-configurator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:504da43c1d4e027d4a0644766899d2481143b21defc02600c7ef57372a1a0b76",

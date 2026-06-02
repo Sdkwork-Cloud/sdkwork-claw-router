@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edge-browser@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-edge-browser-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edge-browser-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:06cb47610aae2019014f8f13b4056fef026ce51a1bdaa57e5d876e976ec3472a",

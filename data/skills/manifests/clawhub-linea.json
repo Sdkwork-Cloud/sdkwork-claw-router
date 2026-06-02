@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linea@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linea-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linea-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0c64f3b216779fad01e36841fdc181c82833493b6d3b889ee48ddbf324eca9ff",

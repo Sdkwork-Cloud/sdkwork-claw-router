@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/colab@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-colab-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-colab-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f5449d602dd821f55d0d18317045b66e45ae5cb8cfdb4cfabeb9fa1b686fe015",

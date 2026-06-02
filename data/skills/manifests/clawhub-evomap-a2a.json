@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/evomap-a2a@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-evomap-a2a-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-evomap-a2a-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f68286dc04347e22f05525a610d9199e597a4ca40a192ddcb057a640bac5e306",

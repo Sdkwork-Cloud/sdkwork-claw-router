@@ -64,7 +64,7 @@ frontend_operations:
           - courseCode
           - title
           - description
-          - thumbnailUrl
+          - thumbnail
           - instructor
           - durationText
           - lessonsCount
@@ -102,9 +102,8 @@ frontend_operations:
             description:
               type: string
               maxLength: 2048
-            thumbnailUrl:
-              type: string
-              maxLength: 2048
+            thumbnail:
+              $ref: '#/components/schemas/MediaResource'
             instructor: &id002
               name: CourseInstructor
               type: object
@@ -120,8 +119,7 @@ frontend_operations:
                   minLength: 1
                   maxLength: 128
                 avatar:
-                  type: string
-                  maxLength: 2048
+                  $ref: '#/components/schemas/MediaResource'
                 title:
                   type: string
                   maxLength: 128
@@ -343,7 +341,7 @@ frontend_operations:
       - label
       - name
       - description
-      - icon
+      - iconKey
       - sortWeight
       - courseCount
       properties:
@@ -366,7 +364,7 @@ frontend_operations:
         description:
           type: string
           maxLength: 1024
-        icon:
+        iconKey:
           type: string
           maxLength: 128
         sortWeight:
@@ -419,9 +417,8 @@ frontend_operations:
       externalBvid:
         type: string
         maxLength: 64
-      videoUrl:
-        type: string
-        maxLength: 1024
+      video:
+        $ref: '#/components/schemas/MediaResource'
       contactName:
         type: string
         maxLength: 128
@@ -473,9 +470,8 @@ frontend_operations:
       externalBvid:
         type: string
         maxLength: 64
-      videoUrl:
-        type: string
-        maxLength: 1024
+      video:
+        $ref: '#/components/schemas/MediaResource'
       contactName:
         type: string
         maxLength: 128
@@ -523,17 +519,15 @@ frontend_operations:
     type: object
     additionalProperties: false
     required:
-    - videoUrl
+    - video
     - fileName
     - contentType
     - sizeBytes
     - sha256
     - uploadedAt
     properties:
-      videoUrl:
-        type: string
-        minLength: 1
-        maxLength: 1024
+      video:
+        $ref: '#/components/schemas/MediaResource'
       fileName:
         type: string
         minLength: 1
@@ -582,7 +576,7 @@ frontend_operations:
     - courseCode
     - title
     - description
-    - thumbnailUrl
+    - thumbnail
     - instructor
     - durationText
     - lessonsCount
@@ -623,9 +617,8 @@ frontend_operations:
       description:
         type: string
         maxLength: 2048
-      thumbnailUrl:
-        type: string
-        maxLength: 2048
+      thumbnail:
+        $ref: '#/components/schemas/MediaResource'
       instructor: *id002
       durationText:
         type: string
@@ -749,7 +742,7 @@ frontend_operations:
                 - number
                 - title
                 - description
-                - videoUrl
+                - video
                 - externalBvid
                 - sourceProvider
                 - durationSeconds
@@ -781,9 +774,8 @@ frontend_operations:
                   description:
                     type: string
                     maxLength: 1024
-                  videoUrl:
-                    type: string
-                    maxLength: 2048
+                  video:
+                    $ref: '#/components/schemas/MediaResource'
                   externalBvid:
                     type: string
                     maxLength: 128

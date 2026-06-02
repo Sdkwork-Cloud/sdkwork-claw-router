@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentcloud-ocr-mlidpassport@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-ocr-mlidpassport-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentcloud-ocr-mlidpassport-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e2af08e46d78fc9561781a087b3f856999e9f6fe4d50f516814f448e4181b497",

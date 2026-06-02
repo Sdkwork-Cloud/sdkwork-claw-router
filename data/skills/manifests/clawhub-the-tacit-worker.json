@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/the-tacit-worker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-the-tacit-worker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-the-tacit-worker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4055af6fdc2cf55b6301915b3d5e4f1714969053278c614781aaee28750ac2a3",

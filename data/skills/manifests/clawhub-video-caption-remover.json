@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-caption-remover@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-caption-remover-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-caption-remover-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:920ba5ab8c2fe6bedab632af757e33af249e56d155f193e2c3eaa477b19924f5",

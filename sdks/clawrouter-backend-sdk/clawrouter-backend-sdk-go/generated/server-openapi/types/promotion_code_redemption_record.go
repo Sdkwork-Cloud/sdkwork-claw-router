@@ -7,6 +7,7 @@ type PromotionCodeRedemptionRecord struct {
 	CurrencyCode string `json:"currency_code"`
 	FailureCode string `json:"failure_code"`
 	FailureMessage string `json:"failure_message"`
+	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	OccurredAt string `json:"occurred_at"`
 	OfferId string `json:"offer_id"`

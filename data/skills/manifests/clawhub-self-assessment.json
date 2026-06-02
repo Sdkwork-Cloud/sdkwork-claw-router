@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-assessment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-assessment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-assessment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:66a1017fe13c610ea84da0a4df46d8f9e6e2a514ef0a43ba38db65a5d579951a",

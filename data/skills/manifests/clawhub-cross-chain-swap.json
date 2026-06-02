@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cross-chain-swap@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cross-chain-swap-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cross-chain-swap-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:063cab80d64da13a90979554edf3114148c7d96d78f3cff28506ec422f243d2c",

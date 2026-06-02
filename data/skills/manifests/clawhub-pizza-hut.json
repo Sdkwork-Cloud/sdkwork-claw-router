@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pizza-hut@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-pizza-hut-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pizza-hut-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:a7697715dfc4d8a4b79e72e6323e544458c3379438bdd4691cac1f8b829556d0",

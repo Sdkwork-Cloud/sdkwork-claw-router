@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentshield-audit@1.0.32",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentshield-audit-1.0.32.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentshield-audit-1.0.32.json"
+      },
       "version": "1.0.32",
       "runtime": "metadata",
       "checksumHash": "sha256:969fd805e80bd51779607d29062e800cf8f0e0049c092a199880a5c3ab61cfdb",

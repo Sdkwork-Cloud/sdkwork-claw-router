@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/binance-trader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-binance-trader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-binance-trader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:20184185d0820dede5780fb289ac746b2d2c0c7e64a44abe48f18da3a7c07467",

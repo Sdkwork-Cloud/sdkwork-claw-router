@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitlab-cli-skills@1.13.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-cli-skills-1.13.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitlab-cli-skills-1.13.5.json"
+      },
       "version": "1.13.5",
       "runtime": "metadata",
       "checksumHash": "sha256:572e19be4dad052b1bd2ddcd65fb5a346b90293a8c4e2cc4258c877586032ed5",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/confluence-cli@0.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-confluence-cli-0.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-confluence-cli-0.2.5.json"
+      },
       "version": "0.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:81a18688670bbaabd3b6a3c21509e8d75a974d52b120cea161344ae7357cd96d",

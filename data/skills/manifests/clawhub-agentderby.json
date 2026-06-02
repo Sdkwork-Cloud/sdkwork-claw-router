@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentderby@0.3.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentderby-0.3.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentderby-0.3.6.json"
+      },
       "version": "0.3.6",
       "runtime": "metadata",
       "checksumHash": "sha256:3591d16704398d298e08ab908fb9e20d7c26a71bd73bc495d5538524139e68a8",

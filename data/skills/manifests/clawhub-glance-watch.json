@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glance-watch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-glance-watch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glance-watch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35edcb445dd4e1eb1b43d0ca991a7a8d80f4206ad7409686b259475477c4dac8",

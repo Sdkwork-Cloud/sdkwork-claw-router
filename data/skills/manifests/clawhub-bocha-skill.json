@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bocha-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bocha-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bocha-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dfa3e269824508a3f227b74642fdaa26810c1f44738ce3396fa79e566c8054bf",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aicade-galaxy-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-aicade-galaxy-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aicade-galaxy-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dccbc7a096bd4d95c5ac4672c1c13cdb020fd12a65bc21886930a18ce54e4a70",

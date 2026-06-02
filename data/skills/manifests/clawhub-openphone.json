@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openphone@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openphone-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openphone-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:550c6bbf0d04522a64fa9ee793981db55e6a9c98156de709770b29457e643dbf",

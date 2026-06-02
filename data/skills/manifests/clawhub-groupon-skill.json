@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/groupon-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-groupon-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-groupon-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3bd8d787c267b65f4ff37bd203ae62180a606229b11f2bec22f224c49efa30f5",

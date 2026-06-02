@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tradealpha-news@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tradealpha-news-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tradealpha-news-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:13282b68d9759cb51c7439e86d6403448bf11d8a82cc4c532d39594a88159c7f",

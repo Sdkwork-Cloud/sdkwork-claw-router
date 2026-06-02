@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-outlier@0.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-outlier-0.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-outlier-0.3.0.json"
+      },
       "version": "0.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8c8bc7509cd6a24b891aad8c10d2f5799c2d32a0a59fffbe589651a73611ea10",

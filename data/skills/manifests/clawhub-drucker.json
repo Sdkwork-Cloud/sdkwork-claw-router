@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drucker@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-drucker-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drucker-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9534e175e5690df40744552fb77e904202101b8c0bbd5133d6a3b279266be5ea",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resend-cli@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-resend-cli-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resend-cli-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:32c41f002883f772fe1d27dc1c5084c7c46bd3a694fdb963818286f758b7a7ff",

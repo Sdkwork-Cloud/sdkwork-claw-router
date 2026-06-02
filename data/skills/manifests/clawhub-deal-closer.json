@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deal-closer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deal-closer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deal-closer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b20adb6ac663f98b141e2388318cf858f4260954e0764abf4d24ff52f666e746",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gojek@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gojek-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gojek-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e477b567370d74512331f18fb6cba8692a742dcb62e48f38cc51fc854ab3c335",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minio-integration@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-minio-integration-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minio-integration-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:89444692142b1f2a63da592befa65530d9cfad32b671a838d54dd5e44771b57b",

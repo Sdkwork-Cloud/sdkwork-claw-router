@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/word-jumble@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-word-jumble-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-word-jumble-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d52c18609135d2870be49960b7b45ea6deb84d1dea30bc162402f9818b300254",

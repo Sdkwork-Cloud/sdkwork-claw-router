@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.backend
 
 data class AdminModelLimitCreateRequest(
-    val group: String? = null,
+    val channelGroup: String? = null,
     val model: String? = null,
     val rpm: Int? = null,
     val status: String? = null,

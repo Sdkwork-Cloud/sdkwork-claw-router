@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/interrogate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-interrogate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-interrogate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2bd8f7674a2d5deb6eb989d3a38de4bf2b1e0b92247ed790f296093fef721a2d",

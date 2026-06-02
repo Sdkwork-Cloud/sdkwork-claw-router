@@ -24,6 +24,8 @@ export interface UploadPartRecord {
   part_sha256?: string;
   /** Presigned url expires at field on upload part record. */
   presigned_url_expires_at?: string;
+  /** Size bytes field on upload part record. */
+  size_bytes?: string;
   /** Status field on upload part record. */
   status?: string;
   /** Tenant id field on upload part record. */

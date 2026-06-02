@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fly-install@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fly-install-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fly-install-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:bb7020e7a7a08ea1870a7b798d4151ba13060bd0f5bac38661496a8720c2a310",

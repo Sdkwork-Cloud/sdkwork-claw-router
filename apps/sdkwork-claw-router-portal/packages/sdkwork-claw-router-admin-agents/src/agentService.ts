@@ -12,12 +12,11 @@ import {
   readRequiredNumber,
   readRequiredString,
   readString,
+  readMediaResource,
   type ApiRecord,
+  type ClawRouterMediaResource,
 } from 'sdkwork-claw-router-commons/runtime';
-import type {
-  AdminAgentItem as SdkAdminAgentItem,
-  JsonValue,
-} from '@sdkwork/clawrouter-backend-sdk';
+import type { JsonValue } from '@sdkwork/clawrouter-backend-sdk';
 
 export interface AdminAgentPolicyDocument extends Record<string, JsonValue> {}
 
@@ -50,7 +49,7 @@ export interface AdminAgentItem {
   description: string;
   visibility: 'private' | 'organization' | 'public';
   status: 'active' | 'disabled';
-  avatarUrl: string | null;
+  avatar?: ClawRouterMediaResource;
   templateSource: string | null;
   createdAt: string;
   updatedAt: string;
@@ -136,7 +135,7 @@ function normalizeAdminAgentItem(value: unknown): AdminAgentItem {
     description: readString(item, 'description'),
     visibility: readAgentVisibility(item),
     status: readAgentStatus(item),
-    avatarUrl: readNullableField(item, 'avatarUrl'),
+    avatar: readMediaResource(item.avatar),
     templateSource: readNullableField(item, 'templateSource'),
     createdAt: readRequiredString(item, 'createdAt', 'Agent created time is required'),
     updatedAt: readRequiredString(item, 'updatedAt', 'Agent updated time is required'),
@@ -146,7 +145,7 @@ function normalizeAdminAgentItem(value: unknown): AdminAgentItem {
       mcpServerCount: readRequiredNonNegativeNumber(capabilities, 'mcpServerCount', 'Agent MCP server count is required'),
       skillBindingCount: readRequiredNonNegativeNumber(capabilities, 'skillBindingCount', 'Agent skill binding count is required'),
     },
-  } satisfies SdkAdminAgentItem;
+  };
 }
 
 function normalizeAgentVersion(value: ApiRecord): AdminAgentVersion {

@@ -24,7 +24,7 @@ PLUS_APP_FIELDS = {
     "name",
     "description",
     "version",
-    "iconUrl",
+    "icon",
     "accessUrl",
     "config",
     "status",
@@ -37,7 +37,7 @@ PLUS_APP_FIELDS = {
     "packageName",
     "bundleId",
     "storeUrl",
-    "downloadUrl",
+    "artifact",
 }
 
 
@@ -94,6 +94,44 @@ def stable_hash_mod(value, modulo):
     return hash_value % modulo
 
 
+def assert_media_resource(testcase: unittest.TestCase, value, kind: str) -> None:
+    testcase.assertIsInstance(value, dict)
+    testcase.assertEqual(kind, value.get("kind"))
+    testcase.assertIsInstance(value.get("source"), str)
+    testcase.assertTrue(value["source"].strip())
+    testcase.assertTrue(media_resource_locator(value))
+
+
+def assert_media_descriptor(testcase: unittest.TestCase, value, kind: str) -> None:
+    testcase.assertIsInstance(value, dict)
+    testcase.assertNotIn("url", value)
+    assert_media_resource(testcase, value.get("asset"), kind)
+    thumbnail = value.get("thumbnail")
+    if thumbnail is not None:
+        assert_media_resource(testcase, thumbnail, "image")
+
+
+def media_resource_locator(value) -> str:
+    if not isinstance(value, dict):
+        return ""
+    for key in ("publicUrl", "url", "uri", "objectKey", "objectBlobId", "id"):
+        raw = value.get(key)
+        if isinstance(raw, str) and raw.strip():
+            return raw.strip()
+        if isinstance(raw, int) and raw > 0:
+            return str(raw)
+    return ""
+
+
+def media_resource(locator: str, kind: str = "image") -> dict:
+    return {
+        "kind": kind,
+        "source": "data_url" if locator.startswith("data:") else "external_url",
+        "url": locator,
+        "publicUrl": locator,
+    }
+
+
 def app_category_id(code):
     explicit = {
         "app-store-html": 20_002_001,
@@ -120,7 +158,7 @@ def expected_app_categories(seed):
             "description": f"{name} SDKWork app category",
             "code": f"app-store-{normalize_code(name)}",
             "tags": ["sdkwork-app", normalize_code(name)],
-            "icon": f"https://cdn.sdkwork.com/app-categories/{normalize_code(name)}.svg",
+            "icon": media_resource(f"https://cdn.sdkwork.com/app-categories/{normalize_code(name)}.svg"),
             "sortWeight": 100 + index,
             "path": f"/app-store/{normalize_code(name)}",
         }
@@ -165,6 +203,12 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
                 )
                 self.assertIsInstance(plus_app["name"], str)
                 self.assertTrue(plus_app["name"].strip())
+                self.assertNotIn("iconUrl", plus_app)
+                self.assertNotIn("downloadUrl", plus_app)
+                assert_media_resource(self, plus_app.get("icon"), "image")
+                artifact = plus_app.get("artifact")
+                if artifact is not None:
+                    assert_media_resource(self, artifact, "document")
                 self.assertIn(
                     plus_app["status"],
                     {"ACTIVE", "INACTIVE"},
@@ -205,7 +249,57 @@ class AppSeedCatalogStandardTest(unittest.TestCase):
                 self.assertIsInstance(plus_app["releaseNotes"], list)
                 self.assertGreater(len(plus_app["releaseNotes"]), 0)
 
+    def test_app_seed_media_fields_are_canonical_media_resources(self):
+        seed = json.loads(SEED_PATH.read_text(encoding="utf-8"))
+        categories = json.loads(APP_CATEGORY_SEED_PATH.read_text(encoding="utf-8"))["categories"]
+        source = APP_SEED_SOURCE_PATH.read_text(encoding="utf-8")
+
+        for item in seed["apps"]:
+            plus_app = item["plusApp"]
+            with self.subTest(app=item["appKey"]):
+                self.assertNotIn("iconUrl", plus_app)
+                self.assertNotIn("downloadUrl", plus_app)
+                assert_media_resource(self, plus_app.get("icon"), "image")
+                if plus_app.get("artifact") is not None:
+                    assert_media_resource(self, plus_app["artifact"], "document")
+                for package in plus_app["installConfig"]["packages"]:
+                    self.assertNotIn("url", package)
+                    self.assertNotIn("downloadUrl", package)
+                    assert_media_resource(self, package.get("artifact"), "document")
+
+                media = plus_app["config"].get("media", {})
+                primary_icon = media.get("icons", {}).get("primary")
+                if primary_icon is not None:
+                    assert_media_descriptor(self, primary_icon, "image")
+                for icon in media.get("icons", {}).get("platform", []):
+                    assert_media_descriptor(self, icon, "image")
+                for screenshot in media.get("screenshots", []):
+                    assert_media_descriptor(self, screenshot, "image")
+                for preview in media.get("previews", []):
+                    preview_kind = "video" if preview.get("format", "").lower() in {"mp4", "webm", "mov"} else "image"
+                    assert_media_descriptor(self, preview, preview_kind)
+
+        for category in categories:
+            with self.subTest(category=category["code"]):
+                assert_media_resource(self, category.get("icon"), "image")
+
+        for legacy in (
+            'serde(rename = "iconUrl")',
+            'json_text(package, "downloadUrl")',
+            '"iconUrl"',
+            '"downloadUrl"',
+        ):
+            self.assertNotIn(legacy, source)
+
     def test_app_seed_catalog_matches_standard_exporter_output(self):
+        if not APP_SEED_EXPORTER_PATH.exists():
+            self.skipTest(
+                "standard app seed exporter lives outside the writable sdkwork-claw-router workspace"
+            )
+        if not APP_SEED_EXPORTER_PATH.is_relative_to(REPO_ROOT):
+            self.skipTest(
+                "standard app seed exporter lives outside the writable sdkwork-claw-router workspace"
+            )
         result = subprocess.run(
             [
                 "node",

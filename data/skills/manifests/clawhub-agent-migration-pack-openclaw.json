@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-migration-pack-openclaw@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-migration-pack-openclaw-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-migration-pack-openclaw-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5bb404cf96ad84f8af89ec169665dcfc64b67a68f0d683707d5e305ffb7ce378",

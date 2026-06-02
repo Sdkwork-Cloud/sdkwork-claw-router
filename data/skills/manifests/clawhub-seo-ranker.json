@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seo-ranker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-seo-ranker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seo-ranker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:676edc46f6a08260ce72a03781143f0ddddc4648816f291826fb3105cb34733f",

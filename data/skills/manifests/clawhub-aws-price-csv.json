@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-price-csv@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-price-csv-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-price-csv-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b7b49a0a0aa32017a21bddeb9fe087c7ead2c7c4f61eeb336a8b565e1558866c",

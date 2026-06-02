@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/guardrail-smart-accounts@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-guardrail-smart-accounts-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-guardrail-smart-accounts-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:19915134ca5cb37510cc283e9678c4e5ad85f3fcb3c88e0d2a0010111e30401c",

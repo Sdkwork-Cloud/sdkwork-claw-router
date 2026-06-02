@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fuzzy-agent-daily-driver@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fuzzy-agent-daily-driver-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fuzzy-agent-daily-driver-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1a39d7f2811f700a4fe22745a66aa196e0229ce9a5829ddcfd3bd2d0be5cc10c",

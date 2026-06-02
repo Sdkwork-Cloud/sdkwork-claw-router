@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/teamgate@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-teamgate-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-teamgate-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3643f27e2f9248e90f15334c297c781d341b1b2f5a4dc202f957217118bf97f1",

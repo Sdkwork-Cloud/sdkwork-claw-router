@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-handoff-skill@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-handoff-skill-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-handoff-skill-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6b7f97ab31584cf2d074463eb21bdc33e12b2e208a6ff70fd9d0fb5cd5c6085f",

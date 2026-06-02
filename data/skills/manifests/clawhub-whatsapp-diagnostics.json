@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whatsapp-diagnostics@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-diagnostics-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whatsapp-diagnostics-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0be91036ba34bbd02037315e4d993a7638087133126a43537fd8c01012a8db88",

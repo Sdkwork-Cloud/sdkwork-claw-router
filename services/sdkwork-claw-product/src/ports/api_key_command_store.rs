@@ -2,7 +2,7 @@ use std::future::Future;
 use std::pin::Pin;
 
 use crate::domain::{
-    ApiKeyGroup, DecimalValue, DomainResult, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
+    ChannelGroup, DecimalValue, DomainResult, GatewayAccessPolicy, GatewayApiKey, QuotaPolicy,
 };
 
 pub type ApiKeyCommandStoreFuture<'a, T> =
@@ -97,7 +97,7 @@ pub struct UpdatedGatewayApiKey {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct EnsureDefaultApiKeyGroupCommand {
+pub struct EnsureDefaultChannelGroupCommand {
     pub group_uuid: String,
     pub tenant_id: i64,
     pub organization_id: i64,
@@ -110,10 +110,10 @@ pub struct EnsureDefaultApiKeyGroupCommand {
 }
 
 pub trait GatewayApiKeyCommandStore {
-    fn ensure_default_api_key_group<'a>(
+    fn ensure_default_channel_group<'a>(
         &'a self,
-        command: EnsureDefaultApiKeyGroupCommand,
-    ) -> ApiKeyCommandStoreFuture<'a, ApiKeyGroup>;
+        command: EnsureDefaultChannelGroupCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, ChannelGroup>;
 
     fn create_gateway_api_key<'a>(
         &'a self,

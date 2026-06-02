@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moco@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-moco-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moco-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d32afca4495b6b69d64721f28c237e310f2b2d3c2ea7ba7ed7eeb9cc956a1d5f",

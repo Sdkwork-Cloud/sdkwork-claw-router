@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/funpay-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-funpay-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-funpay-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aef870dd6e1bda6ddb4ee10773b5315b5ab951ad4a3ef00fe08083212ef574be",

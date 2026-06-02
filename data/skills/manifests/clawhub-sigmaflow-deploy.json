@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sigmaflow-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sigmaflow-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sigmaflow-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:38675a3c3d91d10fe58394a6d02b27f8c05ef52535be879091ff2ca968980dc6",

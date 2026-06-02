@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skillguard-scanner@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skillguard-scanner-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skillguard-scanner-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f40f358d56b94054f6974569cfb83bbd34050cb00de313d8ab51460d29d7737",

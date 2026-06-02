@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-autonomy-pro@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-autonomy-pro-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-autonomy-pro-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:202b44d2e6acb28626d219110c4fdb1b3cb9e096cb61f4e95d01126c8df4adaa",

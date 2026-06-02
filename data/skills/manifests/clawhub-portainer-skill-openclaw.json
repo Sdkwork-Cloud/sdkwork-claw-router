@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/portainer-skill-openclaw@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-portainer-skill-openclaw-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-portainer-skill-openclaw-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f9890a99f98f35f36f95968b768b388af2519c5d81ac47a3df27886f589a7083",

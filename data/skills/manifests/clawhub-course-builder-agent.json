@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/course-builder-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-course-builder-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-course-builder-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d6944eac94b454e110ba8053f9bf18f5a44e9f321e7e15c33e24acdbb7576b4e",

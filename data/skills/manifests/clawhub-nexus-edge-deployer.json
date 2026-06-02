@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexus-edge-deployer@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexus-edge-deployer-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexus-edge-deployer-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c8c82eed1d2d735dbc3f4669a01f291841df190a478d5068d27d763f315e1105",

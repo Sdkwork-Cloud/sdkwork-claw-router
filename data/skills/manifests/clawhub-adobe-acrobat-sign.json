@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adobe-acrobat-sign@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-adobe-acrobat-sign-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adobe-acrobat-sign-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:eb236cebcc82f3bb62dfffe8f855cb77c65d3dba62d69d2f51a3e743c7b5ddb9",

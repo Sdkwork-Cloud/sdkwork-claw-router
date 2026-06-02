@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoice-expense-categoriser@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoice-expense-categoriser-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoice-expense-categoriser-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1ee5aad76f0fa81056adb89d52fe9311daef195c973ce5e7cc71aa055e2b36d",

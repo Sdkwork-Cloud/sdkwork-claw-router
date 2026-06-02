@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/solo-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-solo-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-solo-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:705c30a79db364b1d0fbdcb49b293d214c2a36da8eb9f3fe8310933932169e0a",

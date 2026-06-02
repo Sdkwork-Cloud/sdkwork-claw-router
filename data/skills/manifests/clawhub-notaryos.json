@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/notaryos@2.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-notaryos-2.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-notaryos-2.4.0.json"
+      },
       "version": "2.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f59e35e757ed6628b58cd03b57f3aac803773e2efb4ec9f174c6128a13f09d9",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-ledger@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-ledger-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-ledger-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6e6fa6b34eec05b000bd5f7230b48ab681fd9de89b8d74926031c92bcbbff113",

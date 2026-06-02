@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-quick-gen@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-quick-gen-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-quick-gen-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:27b39b9a183605caf45d461e3de6ff374c4d269e7be852b62df69a31e13a4f41",

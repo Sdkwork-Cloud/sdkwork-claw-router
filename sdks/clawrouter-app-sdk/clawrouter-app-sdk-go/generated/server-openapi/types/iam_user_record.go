@@ -2,7 +2,7 @@ package types
 
 // Iam user record schema exposed by Claw Router.
 type IamUserRecord struct {
-	AvatarUrl string `json:"avatar_url"`
+	Avatar MediaResource `json:"avatar"`
 	CreatedAt string `json:"created_at"`
 	DisplayName string `json:"display_name"`
 	Email string `json:"email"`

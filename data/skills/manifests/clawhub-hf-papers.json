@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hf-papers@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-hf-papers-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hf-papers-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:e8a041aeb034dd4be17d2b879828b9a546fccfc170c6fb483ed23639d4541436",

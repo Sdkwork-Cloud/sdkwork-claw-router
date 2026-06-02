@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/motor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-motor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-motor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e73a50465b99167dddd4e2f0d81e82a98407e9a4bba94bc9324de24e45ff3196",

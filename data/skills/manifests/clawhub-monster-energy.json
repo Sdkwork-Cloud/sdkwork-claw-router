@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/monster-energy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-monster-energy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-monster-energy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6853f38f18ec84d674bef16346aa3cad778c4d51281fcb3b603e004ae825b40f",

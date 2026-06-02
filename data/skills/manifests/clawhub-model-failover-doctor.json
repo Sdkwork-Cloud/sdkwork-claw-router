@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/model-failover-doctor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-model-failover-doctor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-model-failover-doctor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f5ac6ea41d80f70b060bf451644577b6d221664419291e74edef636ae5ede49",

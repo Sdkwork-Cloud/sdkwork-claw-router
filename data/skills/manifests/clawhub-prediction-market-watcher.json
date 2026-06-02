@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prediction-market-watcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prediction-market-watcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prediction-market-watcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4447a6a12f5b9626025e694a9e31ce0deee48c27c12c5a94ee2d203196c28903",

@@ -1244,7 +1244,7 @@ async fn database_config_router_serves_signed_subject_provider_secret_crud_witho
 }
 
 #[tokio::test]
-async fn database_config_router_serves_signed_subject_access_group_crud() {
+async fn database_config_router_serves_signed_subject_channel_group_crud() {
     let database_url = unique_sqlite_url();
     let pool = create_sqlite_pool(&database_url).await;
     create_schema(&pool).await;
@@ -1265,9 +1265,9 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
         .clone()
         .oneshot(app_session_request(
             "POST",
-            "/backend/v3/api/router/access_groups",
+            "/backend/v3/api/ai/channel_groups",
             Body::from(
-                r#"{"name":"\u4e2d\u6587 enterprise","platform":"OpenAI","billingType":"standard","rateMultiplier":1.25,"type":"dedicated","capacity":{"total":500},"status":"active"}"#,
+                r#"{"groupName":"\u4e2d\u6587 enterprise","groupCode":"zh-enterprise","priceReferenceMode":"multiplier","rateMultiplier":1.25,"groupType":"dedicated","capacity":{"total":500},"status":"active"}"#,
             ),
         ))
         .await
@@ -1282,12 +1282,22 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
     assert_eq!("2000", create_payload["code"]);
     assert_eq!(
         expected_create_name,
-        create_payload["data"]["item"]["name"].as_str().unwrap()
+        create_payload["data"]["item"]["groupName"]
+            .as_str()
+            .unwrap()
     );
-    assert_eq!("openai", create_payload["data"]["item"]["platform"]);
-    assert_eq!("standard", create_payload["data"]["item"]["billingType"]);
+    assert_eq!("zh-enterprise", create_payload["data"]["item"]["groupCode"]);
+    assert_eq!("openai", create_payload["data"]["item"]["providerCode"]);
+    assert_eq!(
+        "multiplier",
+        create_payload["data"]["item"]["priceReferenceMode"]
+    );
     assert_eq!(1.25, create_payload["data"]["item"]["rateMultiplier"]);
-    assert_eq!("dedicated", create_payload["data"]["item"]["type"]);
+    assert_eq!(
+        1.0,
+        create_payload["data"]["item"]["officialPriceMultiplier"]
+    );
+    assert_eq!("dedicated", create_payload["data"]["item"]["groupType"]);
     assert_eq!(500.0, create_payload["data"]["item"]["capacity"]["total"]);
     assert_eq!("active", create_payload["data"]["item"]["status"]);
     let group_id = create_payload["data"]["item"]["id"].as_str().unwrap();
@@ -1296,9 +1306,9 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
         .clone()
         .oneshot(signed_request(
             "PATCH",
-            &format!("/backend/v3/api/router/access_groups/{group_id}"),
+            &format!("/backend/v3/api/ai/channel_groups/{group_id}"),
             Body::from(
-                r#"{"name":"OpenAI dedicated","rateMultiplier":1.5,"capacity":{"total":750},"status":"disabled"}"#,
+                r#"{"groupName":"OpenAI dedicated","priceReferenceMode":"official_price","officialPriceMultiplier":1.5,"capacity":{"total":750},"status":"disabled"}"#,
             ),
         ))
         .await
@@ -1310,16 +1320,28 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
     let update_body_text = String::from_utf8(update_body.to_vec()).unwrap();
     assert_eq!(StatusCode::OK, update_status, "{update_body_text}");
     let update_payload: serde_json::Value = serde_json::from_str(&update_body_text).unwrap();
-    assert_eq!("OpenAI dedicated", update_payload["data"]["item"]["name"]);
-    assert_eq!(1.5, update_payload["data"]["item"]["rateMultiplier"]);
+    assert_eq!(
+        "OpenAI dedicated",
+        update_payload["data"]["item"]["groupName"]
+    );
+    assert_eq!(
+        "official_price",
+        update_payload["data"]["item"]["priceReferenceMode"]
+    );
+    assert_eq!(1.0, update_payload["data"]["item"]["rateMultiplier"]);
+    assert_eq!(
+        1.5,
+        update_payload["data"]["item"]["officialPriceMultiplier"]
+    );
     assert_eq!(750.0, update_payload["data"]["item"]["capacity"]["total"]);
+    assert_eq!("dedicated", update_payload["data"]["item"]["groupType"]);
     assert_eq!("disabled", update_payload["data"]["item"]["status"]);
 
     let list_response = router
         .clone()
         .oneshot(signed_request(
             "GET",
-            "/backend/v3/api/router/access_groups",
+            "/backend/v3/api/ai/channel_groups",
             Body::empty(),
         ))
         .await
@@ -1335,15 +1357,16 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
     let listed_group = list_items
         .iter()
         .find(|item| item["id"].as_str() == Some(group_id))
-        .expect("created access group should be returned by admin access group list");
-    assert_eq!("openai", listed_group["platform"]);
+        .expect("created channel group should be returned by admin channel group list");
+    assert_eq!("zh-enterprise", listed_group["groupCode"]);
+    assert_eq!("openai", listed_group["providerCode"]);
     assert_eq!("disabled", listed_group["status"]);
 
     let delete_response = router
         .clone()
         .oneshot(signed_request(
             "DELETE",
-            &format!("/backend/v3/api/router/access_groups/{group_id}"),
+            &format!("/backend/v3/api/ai/channel_groups/{group_id}"),
             Body::empty(),
         ))
         .await
@@ -1360,7 +1383,7 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
     let final_list_response = router
         .oneshot(signed_request(
             "GET",
-            "/backend/v3/api/router/access_groups",
+            "/backend/v3/api/ai/channel_groups",
             Body::empty(),
         ))
         .await
@@ -1377,7 +1400,7 @@ async fn database_config_router_serves_signed_subject_access_group_crud() {
         final_items
             .iter()
             .all(|item| item["id"].as_str() != Some(group_id)),
-        "deleted access group must not be returned by admin access group list"
+        "deleted channel group must not be returned by admin channel group list"
     );
 }
 
@@ -1589,9 +1612,9 @@ async fn database_config_router_serves_signed_subject_model_rate_limit_create_an
         .clone()
         .oneshot(app_session_request(
             "POST",
-            "/backend/v3/api/router/rate_limits/models",
+            "/backend/v3/api/system/rate_limits/models",
             Body::from(
-                r#"{"model":"gpt-4o-mini","group":"standard-group","rpm":600,"tpm":120000}"#,
+                r#"{"model":"gpt-4o-mini","channelGroup":"standard-group","rpm":600,"tpm":120000}"#,
             ),
         ))
         .await
@@ -1605,7 +1628,10 @@ async fn database_config_router_serves_signed_subject_model_rate_limit_create_an
     let create_payload: serde_json::Value = serde_json::from_str(&create_body_text).unwrap();
     assert_eq!("2000", create_payload["code"]);
     assert_eq!("gpt-4o-mini", create_payload["data"]["item"]["model"]);
-    assert_eq!("standard-group", create_payload["data"]["item"]["group"]);
+    assert_eq!(
+        "standard-group",
+        create_payload["data"]["item"]["channelGroup"]
+    );
     assert_eq!(600, create_payload["data"]["item"]["rpm"]);
     assert_eq!(120000, create_payload["data"]["item"]["tpm"]);
     assert_eq!("active", create_payload["data"]["item"]["status"]);
@@ -1613,7 +1639,7 @@ async fn database_config_router_serves_signed_subject_model_rate_limit_create_an
     let list_response = router
         .oneshot(signed_request(
             "GET",
-            "/backend/v3/api/router/rate_limits/models",
+            "/backend/v3/api/system/rate_limits/models",
             Body::empty(),
         ))
         .await
@@ -1627,7 +1653,10 @@ async fn database_config_router_serves_signed_subject_model_rate_limit_create_an
     .unwrap();
     assert_eq!(1, list_payload["data"]["items"].as_array().unwrap().len());
     assert_eq!("gpt-4o-mini", list_payload["data"]["items"][0]["model"]);
-    assert_eq!("standard-group", list_payload["data"]["items"][0]["group"]);
+    assert_eq!(
+        "standard-group",
+        list_payload["data"]["items"][0]["channelGroup"]
+    );
     assert_eq!(600, list_payload["data"]["items"][0]["rpm"]);
     assert_eq!(120000, list_payload["data"]["items"][0]["tpm"]);
 }
@@ -1829,7 +1858,7 @@ async fn database_config_router_serves_backend_sdk_contract_aliases() {
         "/backend/v3/api/system/firewalls/rules",
         "/backend/v3/api/iam/users",
         "/backend/v3/api/iam/api_keys",
-        "/backend/v3/api/iam/access_groups",
+        "/backend/v3/api/ai/channel_groups",
         "/backend/v3/api/integration/channels",
         "/backend/v3/api/integration/provider_secrets",
         "/backend/v3/api/ecosystem/skills/categories",
@@ -3202,8 +3231,12 @@ async fn create_schema(pool: &SqlitePool) {
             description TEXT,
             website_url TEXT,
             docs_url TEXT,
-            logo_url TEXT,
-            icon_url TEXT,
+            logo_media_resource_id TEXT,
+            logo_object_blob_id INTEGER,
+            logo_resource_snapshot TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
             color_token TEXT,
             country_region TEXT,
             vendor_type INTEGER,
@@ -3242,7 +3275,9 @@ async fn create_schema(pool: &SqlitePool) {
             modalities TEXT,
             input_modalities TEXT,
             output_modalities TEXT,
-            icon_url TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
             color_token TEXT,
             docs_url TEXT,
             license_type INTEGER,
@@ -3582,7 +3617,9 @@ async fn create_schema(pool: &SqlitePool) {
             display_name TEXT,
             description TEXT,
             docs_url TEXT,
-            icon_url TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
             color_token TEXT,
             family_type INTEGER,
             primary_modality INTEGER,
@@ -4012,7 +4049,9 @@ async fn create_schema(pool: &SqlitePool) {
             display_name TEXT NOT NULL,
             email TEXT,
             phone TEXT,
-            avatar_url TEXT,
+            avatar_media_resource_id TEXT,
+            avatar_object_blob_id TEXT,
+            avatar_resource_snapshot TEXT,
             status TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
@@ -4180,12 +4219,24 @@ async fn create_schema(pool: &SqlitePool) {
             subtitle TEXT,
             description TEXT,
             product_type TEXT NOT NULL,
-            category_id TEXT,
             sales_status TEXT NOT NULL,
             visible_surfaces TEXT NOT NULL,
             created_at TEXT NOT NULL,
             updated_at TEXT NOT NULL,
             UNIQUE (tenant_id, spu_no)
+        )"#,
+        r#"CREATE TABLE commerce_product_spu_category (
+            id TEXT PRIMARY KEY,
+            tenant_id TEXT NOT NULL,
+            organization_id TEXT,
+            spu_id TEXT NOT NULL,
+            category_id TEXT NOT NULL,
+            primary_flag INTEGER NOT NULL DEFAULT 0,
+            sort_order INTEGER NOT NULL DEFAULT 0,
+            status TEXT NOT NULL,
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            UNIQUE (tenant_id, spu_id, category_id)
         )"#,
         r#"CREATE TABLE commerce_product_sku (
             id TEXT PRIMARY KEY,
@@ -4463,7 +4514,9 @@ async fn create_schema(pool: &SqlitePool) {
             project_id INTEGER,
             description TEXT,
             version TEXT,
-            icon_url TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
             access_url TEXT,
             config TEXT NOT NULL DEFAULT '{}',
             status INTEGER NOT NULL DEFAULT 1,
@@ -4476,7 +4529,9 @@ async fn create_schema(pool: &SqlitePool) {
             package_name TEXT,
             bundle_id TEXT,
             store_url TEXT,
-            download_url TEXT
+            artifact_media_resource_id TEXT,
+            artifact_object_blob_id INTEGER,
+            artifact_resource_snapshot TEXT
         )"#,
         "CREATE INDEX idx_app_user_id ON plus_app (user_id)",
         "CREATE INDEX idx_app_project_id ON plus_app (project_id)",
@@ -4517,6 +4572,9 @@ async fn create_schema(pool: &SqlitePool) {
             code TEXT,
             tags TEXT NOT NULL DEFAULT '[]',
             icon TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
             sort_weight INTEGER NOT NULL DEFAULT 0,
             parent_id INTEGER,
             path TEXT,
@@ -4537,8 +4595,12 @@ async fn create_schema(pool: &SqlitePool) {
             name TEXT NOT NULL,
             summary TEXT,
             description TEXT,
-            icon TEXT,
-            cover_image TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
+            cover_media_resource_id TEXT,
+            cover_object_blob_id INTEGER,
+            cover_resource_snapshot TEXT,
             category_id INTEGER,
             enabled INTEGER NOT NULL DEFAULT 1,
             featured INTEGER NOT NULL DEFAULT 0,
@@ -4564,8 +4626,12 @@ async fn create_schema(pool: &SqlitePool) {
             name TEXT NOT NULL,
             summary TEXT,
             description TEXT,
-            icon TEXT,
-            cover_image TEXT,
+            icon_media_resource_id TEXT,
+            icon_object_blob_id INTEGER,
+            icon_resource_snapshot TEXT,
+            cover_media_resource_id TEXT,
+            cover_object_blob_id INTEGER,
+            cover_resource_snapshot TEXT,
             category_id INTEGER,
             package_id INTEGER,
             provider TEXT,
@@ -4630,7 +4696,7 @@ async fn create_schema(pool: &SqlitePool) {
         )"#,
         r#"CREATE TABLE ai_channel_group (
             id INTEGER PRIMARY KEY,
-            uuid TEXT NOT NULL DEFAULT 'seed-api-key-group',
+            uuid TEXT NOT NULL DEFAULT 'seed-channel-group',
             tenant_id INTEGER,
             organization_id INTEGER,
             data_scope INTEGER,
@@ -5428,7 +5494,7 @@ async fn seed_catalog(pool: &SqlitePool) {
         "INSERT INTO ai_channel_resource (id, uuid, tenant_id, organization_id, channel_id, provider_code, channel_code, resource_group_id, resource_group_code, grant_type, priority, status) VALUES (9203, 'channel-resource-openrouter-openai-admin-api-test', 10, 20, 3001, 'openrouter', 'openrouter-main', 9201, 'bundle.openrouter.openai.standard', 'allow', 1, 1)",
         "INSERT INTO ai_channel_group_resource (id, uuid, tenant_id, organization_id, channel_group_id, resource_group_id, resource_group_code, grant_type, priority, status) VALUES (9204, 'channel-group-resource-openrouter-openai-admin-api-test', 10, 20, 10, 9201, 'bundle.openrouter.openai.standard', 'allow', 1, 1)",
         "INSERT INTO iam_gateway_api_key (id, tenant_id, organization_id, user_id, channel_group_id, key_prefix, key_hash, idempotency_key, status) VALUES (100, 10, 20, 30, 10, 'sk-test', 'hash:sk-test', 'seed-api-key-100', 1)",
-        "INSERT INTO iam_user (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at) VALUES ('1', '10', 'bootstrap-admin', 'Bootstrap Admin', 'bootstrap-admin@example.com', '', '', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')",
+        r#"INSERT INTO iam_user (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at) VALUES ('1', '10', 'bootstrap-admin', 'Bootstrap Admin', 'bootstrap-admin@example.com', '', 'media-bootstrap-admin-avatar', 'iam-user-avatar:bootstrap-admin', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:bootstrap-admin"}', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
         "INSERT INTO iam_organization_member (id, tenant_id, organization_id, user_id, role_code, status, joined_at, left_at, remark) VALUES ('member-1-admin', '10', '20', '1', 'admin', 'active', '2026-04-01 08:00:00', NULL, 'seed bootstrap admin membership')",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, status, priority) VALUES (1, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 1, 'llm_input_token', '0.150000', 'USD', 1, 1)",
         "INSERT INTO ai_model_pricing (id, catalog_key, model, vendor_code, region_code, price_side, billing_meter_code, unit_price, currency, provider_code, channel_id, status, priority) VALUES (2, 'openai/gpt-4o-mini', 'gpt-4o-mini', 'openai', 'global', 2, 'llm_input_token', '0.110000', 'USD', 'openrouter', 3001, 1, 1)",
@@ -5440,8 +5506,8 @@ async fn seed_catalog(pool: &SqlitePool) {
 async fn seed_admin_users(pool: &SqlitePool) {
     for statement in [
         r#"INSERT INTO iam_user
-            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
-            VALUES ('30', '10', 'owner', 'Owner', 'owner@example.com', '', '', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
+            (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
+            VALUES ('30', '10', 'owner', 'Owner', 'owner@example.com', '', 'media-owner-avatar', 'iam-user-avatar:owner', '{"kind":"image","source":"provider_asset","uri":"iam-user-avatar:owner"}', 'active', '2026-04-01 08:00:00', '2026-04-29 08:30:00')"#,
         r#"INSERT INTO iam_organization_member
             (id, tenant_id, organization_id, user_id, role_code, status, joined_at, left_at, remark)
             VALUES ('member-30-admin', '10', '20', '30', 'admin', 'active', '2026-04-01 08:00:00', NULL, 'seed admin membership')"#,
@@ -5492,8 +5558,11 @@ async fn seed_admin_marketing(pool: &SqlitePool) {
             (id, tenant_id, organization_id, method_key, display_name, provider, status, sort_weight, created_at, updated_at)
             VALUES ('payment-method-7', '10', '20', '7', 'provider-7', 'provider-7', 'active', 1, '2026-04-01 08:00:00', '2026-04-01 08:00:00')"#,
         r#"INSERT INTO commerce_product_spu
-            (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, category_id, sales_status, visible_surfaces, created_at, updated_at)
-            VALUES ('recharge-product-10-20-801', '10', '20', 'recharge-product-801', 'Starter Recharge Pack', '', 'seed recharge product', 'points_recharge', 'commerce-recharge', 'active', '["app","console","admin"]', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+            (id, tenant_id, organization_id, spu_no, title, subtitle, description, product_type, sales_status, visible_surfaces, created_at, updated_at)
+            VALUES ('recharge-product-10-20-801', '10', '20', 'recharge-product-801', 'Starter Recharge Pack', '', 'seed recharge product', 'points_recharge', 'active', '["app","console","admin"]', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
+        r#"INSERT INTO commerce_product_spu_category
+            (id, tenant_id, organization_id, spu_id, category_id, primary_flag, sort_order, status, created_at, updated_at)
+            VALUES ('recharge-product-category-10-20-801', '10', '20', 'recharge-product-10-20-801', 'commerce-recharge', 1, 0, 'active', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,
         r#"INSERT INTO commerce_product_sku
             (id, tenant_id, organization_id, spu_id, sku_no, name, title, price_amount, original_price_amount, currency_code, delivery_mode, inventory_tracking, sales_status, spec_json, created_at, updated_at)
             VALUES ('recharge-sku-10-20-801', '10', '20', 'recharge-product-10-20-801', 'recharge-sku-801', 'Starter Recharge Pack', 'Starter Recharge Pack', '10.00', '10.00', 'CNY', 'points_credit', 'untracked', 'active', '{}', '2026-04-29 10:00:00', '2026-04-29 10:00:00')"#,

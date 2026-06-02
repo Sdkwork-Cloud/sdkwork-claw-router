@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-paper-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-paper-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-paper-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:775edb12033560af173e740cf965d1b197a5716c20d21551bd1dcc994374e098",

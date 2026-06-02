@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nas-agent-sync@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nas-agent-sync-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nas-agent-sync-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7b63fc7788e191471eee2f4aba2fd36e36a65d5842df4c3232e3779707bc1c70",

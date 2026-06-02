@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-tuner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-tuner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-tuner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1670c0570483f470e6c8c450c1da440ad5b0392b70d1d9e8fd0e842a5b819056",

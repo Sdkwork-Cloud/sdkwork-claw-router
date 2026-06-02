@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skiplagged-flights@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skiplagged-flights-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skiplagged-flights-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1f3db779617bd8475a655730f285fa9455a6fb1ad023d607873f2916b7f22004",

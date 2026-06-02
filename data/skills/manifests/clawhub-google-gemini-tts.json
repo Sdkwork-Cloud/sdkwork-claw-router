@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-gemini-tts@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-gemini-tts-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-gemini-tts-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:130e34b64bed41c469c4598b6ae38bd7e466de45f0e5a33f02a12e9500449c80",

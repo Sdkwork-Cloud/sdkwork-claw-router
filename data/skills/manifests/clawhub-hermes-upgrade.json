@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hermes-upgrade@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-hermes-upgrade-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hermes-upgrade-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:9bbbe5a141617630fc20739d61653641f29d98e3794916aafa314738ec4072df",

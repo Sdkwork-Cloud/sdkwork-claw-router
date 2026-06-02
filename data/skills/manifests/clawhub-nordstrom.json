@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nordstrom@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nordstrom-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nordstrom-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c66709e44a3e9f530b9ab91253c7c1ecd4eef6dd5852f4ee77faa314b35c863c",

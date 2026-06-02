@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/k1-kzcloud-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-k1-kzcloud-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-k1-kzcloud-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:ea08a65a1ce1e9f76e0d9d08e046495b3173d8718cbd6ff81ff1bccfc02be933",

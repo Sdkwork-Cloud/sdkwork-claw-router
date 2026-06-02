@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-tasks@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-tasks-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-tasks-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7b494a794559d6ab74fe116f3f07d5a5cf691e300e0280587312738549e97768",

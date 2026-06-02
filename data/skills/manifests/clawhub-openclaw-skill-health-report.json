@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-health-report@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-health-report-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-health-report-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:da0fe872d93054612caeea550d8e3418a1d8c973c7a20026aa443f45c19225be",

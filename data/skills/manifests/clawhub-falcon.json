@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/falcon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-falcon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-falcon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:715f93ee1b2625e301894cff467db7046cdd85675db32608950e25e651ba4211",

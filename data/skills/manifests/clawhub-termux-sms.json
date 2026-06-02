@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/termux-sms@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-termux-sms-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-termux-sms-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ef3238026073a2bfa0b2aece19d0202fbe9e89d8bea81b6143721628da39c609",

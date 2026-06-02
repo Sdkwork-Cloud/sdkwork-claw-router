@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/enrich-industry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-enrich-industry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-enrich-industry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0bec74bb15b97cad09959ba7b552a34e0cc585cc8248ecf6ce203d39e7f16c3f",

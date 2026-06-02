@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/acoustic-guitar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-acoustic-guitar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-acoustic-guitar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09fa2f6b8abc0c593b1355f5a27144406f0ea8185fcb02ec98880e8141ce85cc",

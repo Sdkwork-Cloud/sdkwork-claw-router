@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icecube-heartbeat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icecube-heartbeat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icecube-heartbeat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:278c51a55469cb725bf646bee6d98817b1d1483c96c850e5733cd80fd7106db0",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mark-zuckerberg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mark-zuckerberg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mark-zuckerberg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89522ac5c038575d9bc2a49713b30f039d0829de48eaaac372d80ef19caeb50f",

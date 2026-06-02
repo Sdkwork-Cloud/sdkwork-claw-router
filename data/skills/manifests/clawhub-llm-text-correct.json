@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-text-correct@1.2.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-text-correct-1.2.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-text-correct-1.2.4.json"
+      },
       "version": "1.2.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1ee40642da67bd220d411559fde7b81ece67f3c0962ef2fc84644ea7bf2491a0",

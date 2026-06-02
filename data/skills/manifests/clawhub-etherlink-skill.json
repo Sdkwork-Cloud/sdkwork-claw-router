@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/etherlink-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-etherlink-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-etherlink-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97e32ad2ed29eefe66b3df4c31acc69e23c39f0acc1204d2ce98cc7d40aae13f",

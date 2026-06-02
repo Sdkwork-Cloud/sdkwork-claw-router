@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/waimai-merchant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-waimai-merchant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-waimai-merchant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:20776f9a04e9f2437126452bd0a584fb58d42bee357c2bd5489dc13f363c042e",

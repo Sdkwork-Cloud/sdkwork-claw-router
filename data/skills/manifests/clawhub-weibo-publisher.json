@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weibo-publisher@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weibo-publisher-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weibo-publisher-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fe3ad8791c25b03196acce08bbbbc52e13cc8605c241fa1bb705489a517316cd",

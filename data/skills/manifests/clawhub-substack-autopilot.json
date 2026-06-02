@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/substack-autopilot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-substack-autopilot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-substack-autopilot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:930ca53dbf531be1884634b896196f91a0706244647cca5de5d8de7a266182d2",

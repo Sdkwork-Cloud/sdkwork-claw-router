@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-to-free@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-to-free-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-to-free-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9f3e0a2b25ac268a780bf117963517eb2baaf7dec3e901287bc8498263e77038",

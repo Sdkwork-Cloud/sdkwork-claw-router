@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-skillforge@4.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-skillforge-4.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-skillforge-4.1.2.json"
+      },
       "version": "4.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:77e37bf985384187b49061d9c107e3d9619a8590358b1d8a8f3fa9e48a4e5f0d",

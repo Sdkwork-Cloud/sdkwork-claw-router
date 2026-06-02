@@ -2,11 +2,14 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Optional, List, Dict, Any
 
+if TYPE_CHECKING:
+    from .media_resource import MediaResource
+
 
 @dataclass
 class IamUserResponse:
     """Iam user response schema exposed by Claw Router."""
-    avatar_url: str
+    avatar: MediaResource
     display_name: str
     email: str
     id: str

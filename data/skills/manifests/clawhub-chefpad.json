@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chefpad@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-chefpad-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chefpad-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ceb6012ada3aa2a19d517259a353b153c2f51c0d949125e608f7ae4609a7bacf",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-transcript-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-transcript-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-transcript-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eed5590cdff7ab523ba298d8646a8dcd7504b35fd91308686b5cb4ca3e8407ba",

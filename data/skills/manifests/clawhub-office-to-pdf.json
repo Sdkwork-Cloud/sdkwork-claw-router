@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/office-to-pdf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-office-to-pdf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-office-to-pdf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e35bf3db3b364b6931070331b3346a17bd538d73a969aa1f12a0457428a06f37",

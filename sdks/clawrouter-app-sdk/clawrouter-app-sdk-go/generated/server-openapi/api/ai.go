@@ -17,6 +17,16 @@ func NewAiApi(client *sdkhttp.Client) *AiApi {
     return &AiApi{client: client}
 }
 
+// List groups
+func (a *AiApi) ChannelGroupsList() (sdktypes.ChannelGroupsListResult, error) {
+    raw, err := a.client.Get(AppApiPath("/ai/channel_groups"), nil, nil)
+    if err != nil {
+        var zero sdktypes.ChannelGroupsListResult
+        return zero, err
+    }
+    return decodeResult[sdktypes.ChannelGroupsListResult](raw)
+}
+
 // List dashboard overview
 func (a *AiApi) DashboardOverviewRetrieve(timeRange *string, startTime *string, endTime *string) (sdktypes.DashboardOverviewRetrieveResult, error) {
     query := BuildQueryString([]QueryParameterSpec{

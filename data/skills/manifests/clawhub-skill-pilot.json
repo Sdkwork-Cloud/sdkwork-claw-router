@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-pilot@0.4.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-pilot-0.4.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-pilot-0.4.6.json"
+      },
       "version": "0.4.6",
       "runtime": "metadata",
       "checksumHash": "sha256:289fa47e4ec6f7c85518d100508be39a97a69809dd1539417ac63a8d3f5c400b",

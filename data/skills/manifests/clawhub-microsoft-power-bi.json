@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/microsoft-power-bi@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-power-bi-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-microsoft-power-bi-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:026964fa64cbc03d7722df4855eb8cb67ad3bbdbd0f5d378cf8f1907bc02ea6f",

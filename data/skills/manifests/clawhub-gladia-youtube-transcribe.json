@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gladia-youtube-transcribe@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-gladia-youtube-transcribe-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gladia-youtube-transcribe-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e835edf972442f87ada1c18712e6c186b42a8860328accb8587970118164d586",

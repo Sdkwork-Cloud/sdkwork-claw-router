@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/easter-egg@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-easter-egg-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-easter-egg-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:763b549c7c5c627689b8a07e3934298baf979b4e4694aa632be4c25050c69a4f",

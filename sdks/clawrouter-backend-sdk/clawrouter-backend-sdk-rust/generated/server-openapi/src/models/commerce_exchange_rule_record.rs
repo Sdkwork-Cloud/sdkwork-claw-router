@@ -6,6 +6,10 @@ pub struct CommerceExchangeRuleRecord {
     /// Created at field on commerce exchange rule record.
     pub created_at: String,
 
+    /// Id field on commerce exchange rule record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on commerce exchange rule record.
     pub idempotency_key: String,
 

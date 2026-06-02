@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/command-flow@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-command-flow-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-command-flow-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:814b09e4918d6a66e5b204565ea8f0200ba0eb4250b1314558e003f86975cd03",

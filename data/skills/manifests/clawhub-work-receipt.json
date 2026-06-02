@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/work-receipt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-work-receipt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-work-receipt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:05bbd8e00e791745355e7c7d745ebbf91c37184f4fb354149a0aaaa35dfd3d06",

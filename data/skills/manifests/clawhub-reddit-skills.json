@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reddit-skills@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-reddit-skills-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reddit-skills-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:3c1a90e1e2c120bec4d033b636ec2add3a009710c9f28c0db67c0abb96e297a6",

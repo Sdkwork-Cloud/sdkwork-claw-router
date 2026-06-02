@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-smoke-test-author@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-smoke-test-author-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-smoke-test-author-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d1b901ef333fbeff3616854575427b1a1465a79dac42feb7abc97f105c97df0e",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lamborghini-cars@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lamborghini-cars-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lamborghini-cars-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f86396dc33c307cdbccc60e0dbe060e3da015c60555c2b28d1682954d3194db0",

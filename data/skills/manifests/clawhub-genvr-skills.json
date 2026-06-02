@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/genvr-skills@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-genvr-skills-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-genvr-skills-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d24ea2d49aaba2c3032b1d8bd66c99275059c492cadfca54803d16fad1076038",

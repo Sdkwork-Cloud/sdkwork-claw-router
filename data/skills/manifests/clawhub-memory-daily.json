@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df243eb0807451b98506938e00449548e845a547b674c5656ddd5e72dbcdcdc3",

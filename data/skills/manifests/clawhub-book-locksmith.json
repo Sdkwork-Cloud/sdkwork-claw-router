@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-locksmith@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-locksmith-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-locksmith-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:f6366c14d0f9dca314371f60093e2cddd110f8af43ded38901cea737e7bdf3bf",

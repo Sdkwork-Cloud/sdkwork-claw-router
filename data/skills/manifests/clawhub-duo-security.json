@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/duo-security@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-duo-security-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-duo-security-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:74cde2c247240a01a993c3967f53dd1c513a130ca0a1dcb0e782f40f0f38de35",

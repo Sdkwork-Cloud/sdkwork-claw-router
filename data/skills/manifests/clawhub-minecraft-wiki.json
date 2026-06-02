@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/minecraft-wiki@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-minecraft-wiki-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-minecraft-wiki-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8901d6c99423714d5b9d257feff2b187002639e612d9d7331f5e8e22e8214ae3",

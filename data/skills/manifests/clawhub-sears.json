@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sears@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sears-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sears-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77e570ba8d10b97d68b43be9bdaeacd135fd71318637d097967e20ede93fc98c",

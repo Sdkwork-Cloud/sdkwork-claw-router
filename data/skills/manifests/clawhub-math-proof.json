@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/math-proof@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-math-proof-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-math-proof-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8afb75bf8dafa66cdcff6074ed4ed321dadd36631055d3adea825f8595a5019",

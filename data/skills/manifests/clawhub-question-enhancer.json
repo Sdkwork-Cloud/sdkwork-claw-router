@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/question-enhancer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-question-enhancer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-question-enhancer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3bcbd7f4dc545d7eb5f9c697873ec25e50477b524a8811c1fcb4acd08a9d839e",

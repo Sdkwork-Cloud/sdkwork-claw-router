@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/remoting@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-remoting-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-remoting-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:33855448d9bf6ead725c30f15edcc6e17d67c40652417eff0ef63fd39652dc2d",

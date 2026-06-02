@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/readme-maker@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-readme-maker-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-readme-maker-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aa4f3fffedd4a357c96206409c96d3919bb7c5b48c4ee00cb1f3d8a965476de0",

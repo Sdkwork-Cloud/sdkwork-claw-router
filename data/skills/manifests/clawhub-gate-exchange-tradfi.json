@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gate-exchange-tradfi@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-tradfi-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gate-exchange-tradfi-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:f97b62b4ee2bbefdcab8604d204fcc7c8b35b10148065beff571a9aa7fc29c85",

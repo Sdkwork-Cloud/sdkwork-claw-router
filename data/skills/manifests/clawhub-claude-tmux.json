@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-tmux@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-tmux-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-tmux-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:090e95df77a6f0fd3732bccc8f0b2510bcf2efa5b0397995b24b18987fe31697",

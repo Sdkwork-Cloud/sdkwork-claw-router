@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/roast-my-code@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-roast-my-code-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-roast-my-code-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6760857014cdc5d3e21a66d8fb1997b8c4665b1ad6a4811e3031f1ce0950433f",

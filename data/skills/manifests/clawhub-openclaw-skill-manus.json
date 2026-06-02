@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-manus@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-manus-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-manus-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af3dc30fbf749e8d59f810d6d8dc9a0c36584fa20103513fc396e15f9b97f82d",

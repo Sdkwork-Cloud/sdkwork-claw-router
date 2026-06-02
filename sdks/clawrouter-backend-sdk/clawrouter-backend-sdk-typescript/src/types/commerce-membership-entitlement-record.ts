@@ -4,6 +4,8 @@ export interface CommerceMembershipEntitlementRecord {
   created_at: string;
   /** Entitlement code field on commerce membership entitlement record. */
   entitlement_code: string;
+  /** Id field on commerce membership entitlement record. */
+  id?: string;
   /** Name field on commerce membership entitlement record. */
   name: string;
   /** Organization id field on commerce membership entitlement record. */

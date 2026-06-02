@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kubernetes-automation@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kubernetes-automation-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kubernetes-automation-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be441e58ba3e37d50435a37c1f14c3507caa1a1599491dae81c2f84e356a4ee1",

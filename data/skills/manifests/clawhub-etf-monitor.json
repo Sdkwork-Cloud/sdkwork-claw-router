@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/etf-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-etf-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-etf-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86570eb67f804c373439153ba0a1af3418acd8e192d7dfac596ded16b038cf6d",

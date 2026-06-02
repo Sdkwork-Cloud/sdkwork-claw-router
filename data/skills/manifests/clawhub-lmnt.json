@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lmnt@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-lmnt-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lmnt-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:be57301c290137f4dbd35abbe17558dc13c59abd55b3370155df206da54335e3",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/istanbul@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-istanbul-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-istanbul-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:174eeeebe62c3792568873fbb66b3089536f9de26f175817c8e8b0885e23a580",

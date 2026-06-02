@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blender@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-blender-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blender-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:576686b4447b7b3e9d061bcbe427048c0b2c8ae206936f399c3e2e4fd610d075",

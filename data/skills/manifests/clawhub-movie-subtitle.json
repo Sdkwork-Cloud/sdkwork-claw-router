@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/movie-subtitle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-movie-subtitle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-movie-subtitle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:36eb42f22e29ee1b577b19c907daa0355008d765f7270beeb025f52bcd03dd08",

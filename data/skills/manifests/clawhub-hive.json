@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hive@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-hive-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hive-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:65ce0f1725e16eb37572fbac399e754c6432314286dc51af022e740ef5d9b54f",

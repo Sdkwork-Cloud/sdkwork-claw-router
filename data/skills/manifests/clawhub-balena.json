@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/balena@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-balena-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-balena-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:5160518bf1b6926f03447a7a41e2572aeabcaec4c2ccc04487a3516c03b28694",

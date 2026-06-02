@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vps-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vps-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vps-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09699bca56d16345ffb31cfb78a9480f659dffe7ee1c2b9d6667b0508f0be80f",

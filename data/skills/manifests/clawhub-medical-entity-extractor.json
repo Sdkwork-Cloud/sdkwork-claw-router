@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medical-entity-extractor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-medical-entity-extractor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medical-entity-extractor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5cd7355922b849a51215bec53737c398990194ff1b06e98c4a09eadf2008a56d",

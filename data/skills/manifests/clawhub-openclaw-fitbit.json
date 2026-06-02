@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-fitbit@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-fitbit-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-fitbit-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:444efdaca59d262fde31ac72c4ca46b71863e9e5dd13f37959dc62b102f16f53",

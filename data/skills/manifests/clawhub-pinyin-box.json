@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pinyin-box@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pinyin-box-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pinyin-box-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:27d89d06a2561f877bd4bb6f11cb01e74401589dad8ffb8349406a773c03edaa",

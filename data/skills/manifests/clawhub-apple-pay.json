@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-pay@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-pay-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-pay-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:756fcbe7fd611dfcb8adcc21a31ff895041ed33f809b5b212aa90a6690c73cea",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/demodesk@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-demodesk-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-demodesk-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:851679ec76f19a9da77d14162dd162e3b7cc106dc0951d7573307663f96728cf",

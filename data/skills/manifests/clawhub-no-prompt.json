@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/no-prompt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-no-prompt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-no-prompt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:800a693342b3b6f8e6d460697ebf14dbf4633a27f1c09e851ed6445e1d92618b",

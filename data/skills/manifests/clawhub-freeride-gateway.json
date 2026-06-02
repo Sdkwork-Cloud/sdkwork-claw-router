@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/freeride-gateway@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-freeride-gateway-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-freeride-gateway-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9b530b434debf89cc8733eb706d6d2a983bbf57649947f1789aeedb4da813573",

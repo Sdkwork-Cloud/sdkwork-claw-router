@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quality-boost@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quality-boost-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quality-boost-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:232d41782d10f03204f64efdb62002b62d755f364134c549c1409e4b68be3576",

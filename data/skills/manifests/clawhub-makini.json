@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/makini@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-makini-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-makini-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:30116854d1c0760ebae639851182fdf971bb4da68754e004f100e4fd7f4bf660",

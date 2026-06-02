@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentstead-deploy@1.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentstead-deploy-1.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentstead-deploy-1.4.1.json"
+      },
       "version": "1.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:24cf99ba3f0c1c10c80dc7a53e7c238ca1441fd8434f6139f72ccec6d51d9b33",

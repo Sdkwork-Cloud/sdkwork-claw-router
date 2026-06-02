@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/youtube-content-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-youtube-content-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-youtube-content-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d19994aeb592225d04218b10ffc0831fbccef6dacf468a22cde7606ec9f0adb9",

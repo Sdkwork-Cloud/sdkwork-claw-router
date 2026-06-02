@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-linkedin@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-linkedin-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-linkedin-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:5fc3a72e6f04574ad2588f11cc56ca8f50ce1a214bf4ec926838d1a29167c3b0",

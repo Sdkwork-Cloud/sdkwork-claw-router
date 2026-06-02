@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/soc-deploy-thehive@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-soc-deploy-thehive-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-soc-deploy-thehive-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eeced827d3feeeabb3111317b3b24c790021995c545a0ea8405873143472c794",

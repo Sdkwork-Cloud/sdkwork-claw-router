@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wx-echo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wx-echo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wx-echo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e987d973c22861ad1d374bcb2c1d7f6650cc32b0a7e8f62d78aecc3280016398",

@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Course application create request schema exposed by Claw Router. */
 export interface CourseApplicationCreateRequest {
   /** Category field on course application create request. */
@@ -16,6 +18,6 @@ export interface CourseApplicationCreateRequest {
   sourceProvider: 'bilibili' | 'local';
   /** Title field on course application create request. */
   title: string;
-  /** Video url field on course application create request. */
-  videoUrl?: string;
+  /** Video field on course application create request. */
+  video?: MediaResource;
 }

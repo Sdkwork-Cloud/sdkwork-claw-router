@@ -12,9 +12,16 @@ pub struct CommerceProductAttributeValueRecord {
     /// Display value field on commerce product attribute value record.
     pub display_value: String,
 
+    /// Id field on commerce product attribute value record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Organization id field on commerce product attribute value record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Sort order field on commerce product attribute value record.
+    pub sort_order: String,
 
     /// Status field on commerce product attribute value record.
     pub status: String,

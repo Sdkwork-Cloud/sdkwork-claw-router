@@ -8,16 +8,21 @@ type ObjectProviderRecord struct {
 	DeletedAt string `json:"deleted_at"`
 	DeletedBy string `json:"deleted_by"`
 	EndpointUrl string `json:"endpoint_url"`
+	HealthStatus string `json:"health_status"`
 	Id string `json:"id"`
 	IdempotencyKey string `json:"idempotency_key"`
 	LastHealthCheckAt string `json:"last_health_check_at"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	OrganizationId string `json:"organization_id"`
+	PathStyleEnabled bool `json:"path_style_enabled"`
 	ProviderCode string `json:"provider_code"`
 	ProviderType string `json:"provider_type"`
 	Region string `json:"region"`
 	RequestId string `json:"request_id"`
 	Status string `json:"status"`
+	SupportsLifecycle bool `json:"supports_lifecycle"`
+	SupportsMultipart bool `json:"supports_multipart"`
+	SupportsObjectLock bool `json:"supports_object_lock"`
 	TenantId string `json:"tenant_id"`
 	UpdatedAt string `json:"updated_at"`
 	Uuid string `json:"uuid"`

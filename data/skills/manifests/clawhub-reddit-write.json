@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/reddit-write@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-reddit-write-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-reddit-write-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a4ac959cd48a87d0bb1c01db2e930f72e305fc548da76773c29aa1da6887a41a",

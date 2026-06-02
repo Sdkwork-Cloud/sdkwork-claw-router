@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aivie@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-aivie-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aivie-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:1c036bfc90bf4b5d69ee362e760398b40a6458446fef634abcfef887a4b19221",

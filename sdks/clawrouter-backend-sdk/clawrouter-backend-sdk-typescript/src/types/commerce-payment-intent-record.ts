@@ -8,6 +8,8 @@ export interface CommercePaymentIntentRecord {
   created_at: string;
   /** Currency code field on commerce payment intent record. */
   currency_code: string;
+  /** Id field on commerce payment intent record. */
+  id?: string;
   /** Idempotency key field on commerce payment intent record. */
   idempotency_key: string;
   /** Merchant order no field on commerce payment intent record. */

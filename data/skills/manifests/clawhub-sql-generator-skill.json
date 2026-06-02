@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sql-generator-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sql-generator-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sql-generator-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b8358658a16d78427cd04d8384f0317df4746d26b07976dd5d136ea45084f1ab",

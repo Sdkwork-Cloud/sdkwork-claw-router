@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alertops@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-alertops-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alertops-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:9cca51d3f88d658d79a4c1c0c3e4bb1300ac855e5bd3fa0deb59f8fe5d5c2882",

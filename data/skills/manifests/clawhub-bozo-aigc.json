@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bozo-aigc@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bozo-aigc-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bozo-aigc-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f96f54761f51b60321ad914c5859787d6efc202b380ce45c263c7b7a0646bc2b",

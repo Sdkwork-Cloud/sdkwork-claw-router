@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chain-of-consciousness@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-chain-of-consciousness-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chain-of-consciousness-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4bedf589629d063078376eac2fb6975ada46bb881d3d847fc2417af289222482",

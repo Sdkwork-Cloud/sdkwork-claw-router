@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/queman@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-queman-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-queman-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7aa075e4ce1358d3af4617476c41fc61a5bf60e0ad3c964e826b69618688c960",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chip-distribution@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chip-distribution-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chip-distribution-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:267dc032b55d37b900974fbe188055ab3bae0616c00a5ff26c424450874c1217",

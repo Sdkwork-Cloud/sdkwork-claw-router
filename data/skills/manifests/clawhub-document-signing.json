@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/document-signing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-document-signing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-document-signing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9550c37be23c4c8c9f29bfb5615bcabb80eba71ccab7c33e5953e4650c36dff3",

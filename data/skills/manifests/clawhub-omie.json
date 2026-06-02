@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/omie@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-omie-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-omie-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:91537012944e740773d376e64835d310e7f1fb1a8e3ad92090645e26d600ed99",

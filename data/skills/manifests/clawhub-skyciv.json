@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skyciv@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-skyciv-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skyciv-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:251cc2235a4dbf06ec50a04ce9356c4925ea5a6e1499f2f287103ba6711bd609",

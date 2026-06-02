@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/climate@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-climate-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-climate-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a7200ab21aac8fe01c07529a36f4ec56e372f4d9a7f741290adf5e246862e37f",

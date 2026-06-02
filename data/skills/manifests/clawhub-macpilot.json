@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/macpilot@0.7.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-macpilot-0.7.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-macpilot-0.7.0.json"
+      },
       "version": "0.7.0",
       "runtime": "metadata",
       "checksumHash": "sha256:24e3b704c4015cc7df9215d203e0c1a90b96e52ed7e260008f803ae3f754f27e",

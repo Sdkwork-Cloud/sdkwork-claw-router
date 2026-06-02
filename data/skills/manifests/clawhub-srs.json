@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/srs@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-srs-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-srs-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f9efec6d416bffba4f428b3ac899212ccff9131890e47b4001631eb6a649a33f",

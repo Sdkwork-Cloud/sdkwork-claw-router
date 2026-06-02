@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ces@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ces-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ces-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b9dc9d601437955c443df84cd40e3981c81176e087b5a4be296b67f7143424c",

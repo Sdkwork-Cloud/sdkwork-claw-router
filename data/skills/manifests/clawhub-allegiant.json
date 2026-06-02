@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/allegiant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-allegiant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-allegiant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:218149ace1026686220cfd7b171e1ce0c96686500ef8eb4600d7b46afc2d7ef8",

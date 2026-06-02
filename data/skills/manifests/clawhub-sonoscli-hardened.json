@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sonoscli-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sonoscli-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sonoscli-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:180787aee4b9324814a8a921e8cdaaa3aa65002789b822c8820d9848df31c411",

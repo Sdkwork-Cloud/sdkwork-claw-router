@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-gossip@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-gossip-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-gossip-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1199fed64f5e55634428e5dff560b04ffd1b0b9d4edfb064c10d1a02fcd50442",

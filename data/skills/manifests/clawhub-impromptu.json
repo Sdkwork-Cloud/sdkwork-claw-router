@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/impromptu@3.3.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-impromptu-3.3.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-impromptu-3.3.5.json"
+      },
       "version": "3.3.5",
       "runtime": "metadata",
       "checksumHash": "sha256:500cdeb96677caca6af3e3f08ac18cb7c0f5c164d19950978789009829ba4408",

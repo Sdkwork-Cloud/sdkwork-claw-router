@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mineru-pdf-parser-clawdbot-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mineru-pdf-parser-clawdbot-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mineru-pdf-parser-clawdbot-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c909acc432c390bd26e11fe8932b139c135e8c2a51d29d78e2e2033140d89a8f",

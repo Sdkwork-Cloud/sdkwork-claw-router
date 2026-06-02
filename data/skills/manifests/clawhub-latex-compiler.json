@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/latex-compiler@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-latex-compiler-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-latex-compiler-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:25970e4c7792b6b4248245f96b3adb6f50175e53bba62a00e7a3e7776f9726a9",

@@ -4,7 +4,7 @@ package com.sdkwork.clawrouter.app.model;
 public class ForumCommunityLink {
     private String id;
     private String label;
-    private String qrCodeUrl;
+    private MediaResource qrCode;
     private String tone;
     private String url;
 
@@ -24,12 +24,12 @@ public class ForumCommunityLink {
         this.label = label;
     }
 
-    public String getQrCodeUrl() {
-        return this.qrCodeUrl;
+    public MediaResource getQrCode() {
+        return this.qrCode;
     }
 
-    public void setQrCodeUrl(String qrCodeUrl) {
-        this.qrCodeUrl = qrCodeUrl;
+    public void setQrCode(MediaResource qrCode) {
+        this.qrCode = qrCode;
     }
 
     public String getTone() {

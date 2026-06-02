@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/viz-table@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-viz-table-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-viz-table-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0cb356e183f2f4fdf0d40884ace783dcd936e465df1a6481bd9161398c19b809",

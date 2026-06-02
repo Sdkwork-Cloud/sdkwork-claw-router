@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thesaurus@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-thesaurus-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thesaurus-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cdd9cf7e9d3a2ce8adc390abe30cbae624b13113f85e538afab96b716aa599ca",

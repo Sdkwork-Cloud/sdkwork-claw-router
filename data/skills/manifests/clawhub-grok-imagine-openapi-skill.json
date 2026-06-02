@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grok-imagine-openapi-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grok-imagine-openapi-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grok-imagine-openapi-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:02f88ddfd13161778fa33351158ebc333101adda0e9a0af6497a6b2952dbd8be",

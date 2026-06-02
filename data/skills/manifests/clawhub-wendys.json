@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wendys@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wendys-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wendys-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:53146712df70c6fb73f7cf92c0cd2ae73a9d4a9043d3eee54368898621926392",

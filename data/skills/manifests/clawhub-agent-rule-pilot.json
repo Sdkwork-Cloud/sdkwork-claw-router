@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-rule-pilot@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-rule-pilot-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-rule-pilot-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d21269fe25da3477acb2f1e28201a7ad88dfa9e4ab796062b19151f6576a3410",

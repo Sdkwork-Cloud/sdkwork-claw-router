@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/icd-coding@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-icd-coding-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-icd-coding-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:902e5994acb09864037e12c72039f58aa6d0234acaf7046081559fe233aee4fe",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/parley-ai-daily-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-parley-ai-daily-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-parley-ai-daily-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a50049d8e1e6e568e515318f7c8e21337601fff0bb4bb6f404bf60912f29983d",

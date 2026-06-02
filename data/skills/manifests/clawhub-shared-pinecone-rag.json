@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/shared-pinecone-rag@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-shared-pinecone-rag-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-shared-pinecone-rag-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e2c48135c87811ffcc5647e1b2ad39a579b688a2b4c7e9d0e01117fce2211219",

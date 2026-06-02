@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dublin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dublin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dublin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6d3f09b6890406ed24eea0947a0b67fbcec642b72319d4b2b46aaf73cec15960",

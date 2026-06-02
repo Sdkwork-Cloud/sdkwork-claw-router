@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dedicated-file-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dedicated-file-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dedicated-file-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:08822c9f7f279c1197772640b272492f98b4721a3c7c3302b6d1202a9c239c39",

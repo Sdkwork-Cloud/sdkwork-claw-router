@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/personal-trainer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-personal-trainer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-personal-trainer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b70f7107cb0294304407f224d83993fe92be38d7d2d1ca341ce3321644bd1343",

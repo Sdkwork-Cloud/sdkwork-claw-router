@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/soulguard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-soulguard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-soulguard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b45cfaeea2a6e3c40d689b7e3f72ef4a6235111420cb3f9937822d53f44faee4",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paythefly@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-paythefly-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paythefly-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:1ca5b1555bd71691130dd49c3a7ee6091ca3319776782adfa265ce905b0c90f4",

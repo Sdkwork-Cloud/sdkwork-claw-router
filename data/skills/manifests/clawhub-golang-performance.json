@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/golang-performance@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-golang-performance-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-golang-performance-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2c5944ab2a4a9e460bcd6347a0371ebaa056730fedbe8337b9114adef621c20c",

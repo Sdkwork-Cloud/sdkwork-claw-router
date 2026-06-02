@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rag-chunking-optimizer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-rag-chunking-optimizer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rag-chunking-optimizer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:544231b9121caea61478aadb66486c6ff5da584a7d3bfa0615d3e12dbcc1e3b6",

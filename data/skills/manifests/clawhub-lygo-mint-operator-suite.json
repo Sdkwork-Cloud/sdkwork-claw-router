@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lygo-mint-operator-suite@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lygo-mint-operator-suite-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lygo-mint-operator-suite-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e236196f7722ce9940811702e3cc7f7c96e2a1d7f0957c902f7427ae83ec79b5",

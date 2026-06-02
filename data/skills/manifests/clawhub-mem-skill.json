@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mem-skill@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mem-skill-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mem-skill-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ab462a22205a45f0f790dc3d5427f3d723caa2c240aecbd73194310184afaca",

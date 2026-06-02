@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-doctorbot-healthcheck-free@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-doctorbot-healthcheck-free-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-doctorbot-healthcheck-free-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af563d70d1d5657570b8b673d99dc807d3e15c627f0d472c348a563a6ebdb129",

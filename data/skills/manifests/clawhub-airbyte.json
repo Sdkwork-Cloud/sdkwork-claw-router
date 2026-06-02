@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/airbyte@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-airbyte-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-airbyte-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6b557d57273309cb5d7b2d98604d893a93e6d0400040fbfaa0153462b5d821e8",

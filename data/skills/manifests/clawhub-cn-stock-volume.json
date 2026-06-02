@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cn-stock-volume@3.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cn-stock-volume-3.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cn-stock-volume-3.1.0.json"
+      },
       "version": "3.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7129c14e14e32fd2210e0519913260666875942377ad7672d32d54af6788c6ef",

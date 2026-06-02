@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-converter-mov@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-converter-mov-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-converter-mov-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:84ed3c67b6543e310fd75f962aedde28dc12219bf71b90738a19802512ba6b49",

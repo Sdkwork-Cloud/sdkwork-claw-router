@@ -4,8 +4,8 @@ import type { CommerceProductMediaItem } from './commerce-product-media-item';
 export interface CommerceProductSpuItem {
   /** Brand field on commerce product spu item. */
   brand?: string | null;
-  /** Category id field on commerce product spu item. */
-  categoryId?: string | null;
+  /** Category ids field on commerce product spu item. */
+  categoryIds?: string[];
   /** Created at field on commerce product spu item. */
   createdAt: string;
   /** Currency code field on commerce product spu item. */

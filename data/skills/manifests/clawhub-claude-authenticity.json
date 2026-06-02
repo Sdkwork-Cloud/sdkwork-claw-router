@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-authenticity@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-authenticity-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-authenticity-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:213ca00c281aa3db5c74828765939651046bc4c6fbe6292f92cdaf8d2ffa7296",

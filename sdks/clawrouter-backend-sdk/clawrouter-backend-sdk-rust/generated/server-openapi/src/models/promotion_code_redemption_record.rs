@@ -21,6 +21,10 @@ pub struct PromotionCodeRedemptionRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub failure_message: Option<String>,
 
+    /// Id field on promotion code redemption record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Idempotency key field on promotion code redemption record.
     pub idempotency_key: String,
 

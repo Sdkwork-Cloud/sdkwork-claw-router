@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skillcraft@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skillcraft-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skillcraft-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:621757e089b87269f42655270a101b2fe21a936067fd44a486d9b1d45abef800",

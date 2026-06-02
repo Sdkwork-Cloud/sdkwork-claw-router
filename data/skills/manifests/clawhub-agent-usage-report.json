@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-usage-report@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-usage-report-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-usage-report-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f67f6a8ce769bc9490f01be94f30549b3f230e8eae044f4352987cc23fe3ef63",

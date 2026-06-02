@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fpl-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fpl-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fpl-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d52a16d9124cffaef68fde45972ad462109de83fa39ba55bc1a7edb93ca4d4b",

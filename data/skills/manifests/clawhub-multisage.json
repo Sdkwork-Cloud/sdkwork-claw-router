@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/multisage@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-multisage-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-multisage-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a495bd78d27fcdd159c7465f9439bf20b9b015810012aeb61cfcdbde44170810",

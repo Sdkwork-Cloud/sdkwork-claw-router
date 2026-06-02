@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cost-prediction@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cost-prediction-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cost-prediction-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:59b14265b5c8b9ac278f8029c034001e186ceb2b41efccd472f4afad322b3701",

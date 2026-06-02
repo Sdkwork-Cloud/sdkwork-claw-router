@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/build-amazon-affiliate-plugin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-build-amazon-affiliate-plugin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-build-amazon-affiliate-plugin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ace47af6c8ab3782414b5104094931a03e97cf24148ca5e478befd025672738",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/itau@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-itau-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-itau-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1d9db886d075d5600a1acd73ad4c0df83c9a2344712a750457a0bfdb24e28be1",

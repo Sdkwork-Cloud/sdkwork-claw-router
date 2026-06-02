@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openstreet-map@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openstreet-map-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openstreet-map-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da66f9319aa8a380bd7f35c8815611ccb6bbce071656bfe2f641f6dabefa0e0b",

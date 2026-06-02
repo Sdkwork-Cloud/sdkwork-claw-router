@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alfred-agent-governance@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alfred-agent-governance-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alfred-agent-governance-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e1afb5a37cf487a6160b254bffd63b40f7fd27f209f3f415c0f0e69455f693e",

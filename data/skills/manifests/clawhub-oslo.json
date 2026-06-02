@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oslo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-oslo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oslo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:91ef080f4971b1335b1dabc94419faca251b95d55841108451d022ec1ee7c1c3",

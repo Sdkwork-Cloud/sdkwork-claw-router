@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kleo-static-files@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kleo-static-files-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kleo-static-files-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eeb2f5d534ba3518176ff1d3897be4ea33f6815111ab85d6b55fe339c4eab0a2",

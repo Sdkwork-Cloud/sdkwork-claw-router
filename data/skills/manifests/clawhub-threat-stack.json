@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/threat-stack@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-threat-stack-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-threat-stack-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a7f5646232a7cfd0cf3f85250b4be838906ae0db9e73f14f3833fb8bf212f65c",

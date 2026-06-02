@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-sec-scan@4.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-sec-scan-4.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-sec-scan-4.4.1.json"
+      },
       "version": "4.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:da03420a917a340683a3a20707efe5d7c8c21e3c8b4c57a33632a03271f06c6b",

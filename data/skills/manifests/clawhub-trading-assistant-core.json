@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trading-assistant-core@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trading-assistant-core-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trading-assistant-core-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7e5ae5c8b58be3dafd972ece1ae72cdb984f2150d2986b60a6cb63894497d3dc",

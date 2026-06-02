@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/postgres-job-queue@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-postgres-job-queue-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-postgres-job-queue-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3da973d5d09d75abaa7609014b5bff1db41beba957d7f399df0cea00241eae6b",

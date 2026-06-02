@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grove-skill@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-grove-skill-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grove-skill-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:08923af0d8821b15a87bbaaaee8f741629a724c559b4110dcc3cdf330b9d875f",

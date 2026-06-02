@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/luban-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-luban-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-luban-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:da3d57ffd26cb6590f0581910abe6e7bf15cbf86c6c5afda8bf9e2d0664d401f",

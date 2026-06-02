@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/duke-energy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-duke-energy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-duke-energy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:28690bf8ab595699644be47630ce8272b2ce611dd12014460fef09375c7f62fc",

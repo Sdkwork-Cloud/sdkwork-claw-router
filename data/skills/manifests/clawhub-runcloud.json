@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/runcloud@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-runcloud-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-runcloud-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0c2c1725f23efc35d879c945d5c77df123d155d88277671897db8eaba48b431d",

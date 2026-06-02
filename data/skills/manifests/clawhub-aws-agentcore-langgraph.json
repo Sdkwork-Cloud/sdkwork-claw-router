@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-agentcore-langgraph@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-agentcore-langgraph-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-agentcore-langgraph-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:757851bac0dcbfd44f575b502dc1cf93758c9f84b9e5b2a9c347b0595f3cc36e",

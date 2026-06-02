@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bandwidth@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bandwidth-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bandwidth-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a9bb6d187130fa8c50b1c2523d064a72c22b8ce2d786fbafc9adbfd70c421505",

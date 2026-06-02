@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sensitivity-charts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sensitivity-charts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sensitivity-charts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:937ed7b0f8db16fa99f35da98cdb8779075e29e050eb852932bb2264ddadbd56",

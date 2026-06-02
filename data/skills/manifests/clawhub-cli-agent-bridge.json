@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cli-agent-bridge@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cli-agent-bridge-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cli-agent-bridge-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2dcf386b92dda0cd95fdc6d0c93fc475afb97bad28fa64034d7d9aadaf0c9e1a",

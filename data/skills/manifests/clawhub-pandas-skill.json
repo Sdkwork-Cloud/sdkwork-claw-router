@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pandas-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pandas-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pandas-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8d7b5827810d59b4d73975aa8bec3c9af5a97cef6b94466d78e1ee803827290b",

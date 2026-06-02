@@ -2339,12 +2339,15 @@ test("admin membership member level and entitlement sections do not depend on pa
   assert.match(membershipsSource, /<EntitlementsTab loadEntitlements=\{fetchMembershipAdminEntitlements\} \/>/);
   assert.doesNotMatch(membershipsSource, /fetchMembershipAdminPackageCatalog/);
   assert.doesNotMatch(membershipsSource, /useEffect\(\(\) => \{\s*void loadData\(\);\s*\}, \[\]\);/);
-  assert.match(packagesPageSource, /const loadCatalog = useCallback\(async \(\) => \{/);
+  assert.match(packagesPageSource, /const loadCatalog = useCallback\(async \([^)]*\) => \{/);
   assert.match(
     packagesPageSource,
     /useEffect\(\(\) => \{\s*void loadCatalog\(\);\s*\}, \[loadCatalog\]\);/,
   );
   assert.match(packagesPageSource, /fetchMembershipAdminPackageCatalog/);
+  assert.doesNotMatch(plansPageSource, /fetchMembershipAdminPackageCatalog/);
+  assert.doesNotMatch(membersPageSource, /fetchMembershipAdminPackageCatalog/);
+  assert.doesNotMatch(entitlementsPageSource, /fetchMembershipAdminPackageCatalog/);
   assert.match(plansPageSource, /fetchMembershipAdminPlans\(\)/);
   assert.match(membersPageSource, /fetchMembershipAdminMembers\(\)/);
   assert.match(entitlementsPageSource, /loadEntitlements = fetchMembershipAdminEntitlements/);
@@ -2456,6 +2459,7 @@ test("portal aliases appbase auth and Tauri host packages for local reuse", () =
   assert.equal(packageJson.dependencies["@sdkwork/iam-runtime"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/iam-sdk-ports"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/iam-service"], "workspace:*");
+  assert.equal(packageJson.dependencies["@sdkwork/runtime-bootstrap"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/appbase-pc-react"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/core-pc-react"], "workspace:*");
   assert.equal(packageJson.dependencies["@sdkwork/host-pc-react"], "workspace:*");
@@ -2476,6 +2480,7 @@ test("portal aliases appbase auth and Tauri host packages for local reuse", () =
     "@sdkwork/iam-runtime",
     "@sdkwork/iam-sdk-ports",
     "@sdkwork/iam-service",
+    "@sdkwork/runtime-bootstrap",
     "@sdkwork/host-pc-react",
     "@sdkwork/host-tauri-pc-react",
     "@sdkwork/i18n-pc-react",
@@ -2486,6 +2491,8 @@ test("portal aliases appbase auth and Tauri host packages for local reuse", () =
   }
   assert.match(tsconfigSource, /packages\/pc-react\/foundation\/sdkwork-i18n-pc-react/);
   assert.match(viteConfigSource, /packages\/pc-react\/foundation\/sdkwork-i18n-pc-react/);
+  assert.match(tsconfigSource, /packages\/common\/foundation\/sdkwork-runtime-bootstrap\/src\/index\.ts/);
+  assert.match(viteConfigSource, /packages\/common\/foundation\/sdkwork-runtime-bootstrap\/src\/index\.ts/);
   assert.match(workspaceSource, /packages\/pc-react\/foundation\/(?:\*|sdkwork-i18n-pc-react)/);
   assert.match(tsconfigSource, /sdkwork-core\/sdkwork-core-pc-react\/src\/index\.ts/);
   assert.match(viteConfigSource, /sdkwork-core-pc-react\/src\/index\.ts/);
@@ -2493,6 +2500,7 @@ test("portal aliases appbase auth and Tauri host packages for local reuse", () =
   assert.match(tsconfigSource, /packages\/pc-react\/iam\/sdkwork-auth-pc-react/);
   assert.match(viteConfigSource, /packages\/pc-react\/iam\/sdkwork-auth-pc-react/);
   assert.match(workspaceSource, /packages\/pc-react\/iam\/(?:\*|sdkwork-auth-pc-react)/);
+  assert.match(workspaceSource, /packages\/common\/foundation\/(?:\*|sdkwork-runtime-bootstrap)/);
   assert.match(workspaceSource, /packages\/common\/iam\/(?:\*|sdkwork-iam-runtime)/);
   assert.doesNotMatch(tsconfigSource, legacyAppbasePackageFamilyPattern);
   assert.doesNotMatch(viteConfigSource, legacyAppbasePackageFamilyPattern);

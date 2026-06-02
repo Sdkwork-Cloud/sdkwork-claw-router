@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dolthub@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-dolthub-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dolthub-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:88215e84414345320be199c326cfcd2df44621221f75739d1c33870ac9929721",

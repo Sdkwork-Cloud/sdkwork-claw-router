@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/plaid@0.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-plaid-0.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-plaid-0.0.3.json"
+      },
       "version": "0.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:3f33d32879c3691cf2a44fa5306a03321a6b363622f553e91d63215bdcb8ec81",

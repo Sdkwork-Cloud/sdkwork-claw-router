@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/food-cal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-food-cal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-food-cal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1a0c11f839f3dd0c519fb34a0872c8b0e6f5c0d5f90ce480299efed0fc19e122",

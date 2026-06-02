@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-chiropractor@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-chiropractor-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-chiropractor-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a2e43693ce489cb5e812f426f50f8ffc51abe11a65076ff6c076a0bc5aae0a32",

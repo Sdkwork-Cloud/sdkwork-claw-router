@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/unraid@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-unraid-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-unraid-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a538391563664f10c9300ad0cf0c767ecacf690d70f8317e6ffa0e7118759cb3",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trigger-evaluator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trigger-evaluator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trigger-evaluator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:88132c4dc9c194456207b4040e169713cbd8424391b74a2660b9c70fbf89b270",

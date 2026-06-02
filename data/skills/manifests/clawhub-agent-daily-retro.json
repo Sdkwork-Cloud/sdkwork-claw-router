@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-daily-retro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-daily-retro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-daily-retro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42b19acf0aa7709b0adf606190575859ed16c9d65a411dd2b4a3249322fba351",

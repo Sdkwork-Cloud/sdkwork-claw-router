@@ -4,8 +4,8 @@ package types
 type StudioCatalogAssetRecord struct {
 	AltText string `json:"alt_text"`
 	ArtifactId string `json:"artifact_id"`
+	Asset MediaResource `json:"asset"`
 	AssetType string `json:"asset_type"`
-	AssetUrl string `json:"asset_url"`
 	CreatedAt string `json:"created_at"`
 	DataScope string `json:"data_scope"`
 	DeletedAt string `json:"deleted_at"`
@@ -23,7 +23,7 @@ type StudioCatalogAssetRecord struct {
 	TargetId string `json:"target_id"`
 	TargetType string `json:"target_type"`
 	TenantId string `json:"tenant_id"`
-	ThumbnailUrl string `json:"thumbnail_url"`
+	Thumbnail MediaResource `json:"thumbnail"`
 	Title string `json:"title"`
 	UpdatedAt string `json:"updated_at"`
 	Uuid string `json:"uuid"`

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ip-threat-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ip-threat-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ip-threat-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:95ab8787a80375e6732a11e98531612ec35499b310a4e3ae0cca11f30bc2fb66",

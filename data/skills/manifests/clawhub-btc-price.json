@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/btc-price@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-btc-price-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-btc-price-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2d485f3a820eb69a4b9df1309281245d564469ffe23feba00ed1e96cf683b6d",

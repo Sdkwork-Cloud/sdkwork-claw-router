@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/binance-dca@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-binance-dca-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-binance-dca-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:57ce707e80ea05e75ec7544a3ff5ee07a062960798aa07837b580aa378ff6fcc",

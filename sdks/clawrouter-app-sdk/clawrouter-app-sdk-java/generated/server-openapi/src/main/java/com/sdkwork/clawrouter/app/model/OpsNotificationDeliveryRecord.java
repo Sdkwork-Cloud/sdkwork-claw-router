@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.Map;
 
 public class OpsNotificationDeliveryRecord {
+    private String appId;
     private String archivedAt;
     private String createdAt;
     private String dataScope;
@@ -27,6 +28,14 @@ public class OpsNotificationDeliveryRecord {
     private String userId;
     private String uuid;
     private String version;
+
+    public String getAppId() {
+        return this.appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
 
     public String getArchivedAt() {
         return this.archivedAt;

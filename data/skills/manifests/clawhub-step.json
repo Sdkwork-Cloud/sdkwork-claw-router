@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/step@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-step-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-step-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2bf90e18c498e068956ddd2c0209fda057f2c11cd979d5624a1ed5745bb38891",

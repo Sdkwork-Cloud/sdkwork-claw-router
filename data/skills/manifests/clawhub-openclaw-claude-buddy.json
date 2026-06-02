@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-claude-buddy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-claude-buddy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-claude-buddy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:27b52bc14c3736d347b1d3a1b00f4523cf9648e2b5c3be353a58e86329d68ae6",

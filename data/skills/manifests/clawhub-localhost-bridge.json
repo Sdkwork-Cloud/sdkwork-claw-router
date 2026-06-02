@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/localhost-bridge@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-localhost-bridge-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-localhost-bridge-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f25720649838fdf5792425e2504d4da7eef70d39edda240a0df4839352c911d",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawdbot-release-check@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-release-check-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawdbot-release-check-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:944173701971fb3d9ae466934954c468517bdc8190d223c444ae37bad9b88ce6",

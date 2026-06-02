@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moltrock@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-moltrock-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moltrock-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dca6d3bed4157969e78a052dbea3c2a2ae97911801ebe7da8a46fc82788fb477",

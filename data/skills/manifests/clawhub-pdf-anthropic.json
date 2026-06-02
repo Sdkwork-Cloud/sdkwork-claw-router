@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-anthropic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-anthropic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-anthropic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:52723a9bd5a97a88ccc691bc704b133c5708e8f56492ffb04bae4c1c0c6d791d",

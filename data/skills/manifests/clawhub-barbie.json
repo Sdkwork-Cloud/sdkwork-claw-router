@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/barbie@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-barbie-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-barbie-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df283f14f9ebd40a6192c023f0abf31c5e4c358ca24ca885776be4aa71593077",

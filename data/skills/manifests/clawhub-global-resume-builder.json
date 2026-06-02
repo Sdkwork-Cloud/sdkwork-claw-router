@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/global-resume-builder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-global-resume-builder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-global-resume-builder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:47bb1e8569fe7529d5f3890c152d65b5b860afbdff58d878c00135ce5268aca7",

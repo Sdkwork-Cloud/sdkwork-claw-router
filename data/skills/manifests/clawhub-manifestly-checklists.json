@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/manifestly-checklists@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-manifestly-checklists-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-manifestly-checklists-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:3c78841ce7db45289d5ad70543fa064645df57b998954bcf7857b574cd137682",

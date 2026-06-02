@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toby-brainstorming@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-toby-brainstorming-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toby-brainstorming-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8eb2fe27a873b0ab114b10d8ef8424bd5dc60855502b907e41d9f9e97b392b87",

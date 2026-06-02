@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rent-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rent-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rent-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8369402ef9020f551feb7e7d483abbf83c3823a943f0fa2a3c8b4ee438c4e44e",

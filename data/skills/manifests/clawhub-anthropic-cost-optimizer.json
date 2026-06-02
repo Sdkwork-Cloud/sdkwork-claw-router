@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anthropic-cost-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-anthropic-cost-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anthropic-cost-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:483e8492ef9e3bab281c4ab0e132507c01ea18ae41ba615eeff1ed2a417c1ad7",

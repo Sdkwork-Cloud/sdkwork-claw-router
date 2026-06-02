@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/protein-ligand-docking@2.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-protein-ligand-docking-2.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-protein-ligand-docking-2.3.0.json"
+      },
       "version": "2.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ee0dd4c72ddf50c093dfb67c8f26963456eb381c5d700e3051df45a9f41bc124",

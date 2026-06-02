@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/last30days-lite@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-last30days-lite-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-last30days-lite-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1fd1c54ad05189b3973df39c2d969f761a06c91ffd437eecdae61e8913f71a2a",

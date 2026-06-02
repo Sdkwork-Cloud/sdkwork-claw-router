@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/metaso-search-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-metaso-search-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-metaso-search-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc08876fb126b6039ba6a83fc83f7a4f15033f5ebeae619e42e50d4b2dc272f8",

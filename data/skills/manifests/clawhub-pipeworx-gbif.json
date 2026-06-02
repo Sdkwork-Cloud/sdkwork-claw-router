@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipeworx-gbif@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-gbif-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipeworx-gbif-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2226b47b104dc4dafb79005a5a270171f57045ba82dacd9a154d509d19e7763f",

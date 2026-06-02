@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-services-secure@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-services-secure-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-services-secure-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:92f140390a1537effb4a0ac620e0bbb1e9b0d6902cdbd2ac4d6e6c809f0e1884",

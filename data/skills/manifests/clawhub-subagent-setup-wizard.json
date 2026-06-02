@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subagent-setup-wizard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subagent-setup-wizard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subagent-setup-wizard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0f6bc45f4c4fc9502af352efbb67a8cf2774b6957a827b8c54aa4ee12848ecd5",

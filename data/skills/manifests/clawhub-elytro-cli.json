@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/elytro-cli@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-elytro-cli-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-elytro-cli-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b7cfcdb45a9847e8f6d50bbc03237a83dc196c0b7626d9a266b725c3395f533e",

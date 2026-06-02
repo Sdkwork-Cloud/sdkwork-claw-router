@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/writing-assistant-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-writing-assistant-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-writing-assistant-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:efbed36a2ca92b68a437f1c57b0882346befbb4a30ea20a6369aa4b514e4cc6c",

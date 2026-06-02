@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-index@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-index-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-index-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e049ae8058e85aaf39368c14e641f74f24a938e3e9aec2baceaa5b141a762767",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/external-autopoiesis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-external-autopoiesis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-external-autopoiesis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b671a73cc02629cb43f607236e650d4dd7b67db6a5ba25939898f2e9de758368",

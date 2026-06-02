@@ -18,14 +18,20 @@ export interface AiPromptVersionRecord {
   deleted_by?: string;
   /** Deprecated at field on ai prompt version record. */
   deprecated_at?: string;
+  /** Examples json field on ai prompt version record. */
+  examples_json?: Record<string, JsonValue>;
   /** Id field on ai prompt version record. */
   id?: string;
   /** Lifecycle status field on ai prompt version record. */
   lifecycle_status?: string;
   /** Metadata field on ai prompt version record. */
   metadata?: Record<string, JsonValue>;
+  /** Model constraints field on ai prompt version record. */
+  model_constraints?: Record<string, JsonValue>;
   /** Organization id field on ai prompt version record. */
   organization_id?: string;
+  /** Output schema field on ai prompt version record. */
+  output_schema?: Record<string, JsonValue>;
   /** Prompt id field on ai prompt version record. */
   prompt_id?: string;
   /** Published at field on ai prompt version record. */
@@ -34,6 +40,8 @@ export interface AiPromptVersionRecord {
   review_comment?: string;
   /** Review status field on ai prompt version record. */
   review_status?: string;
+  /** Safety policy field on ai prompt version record. */
+  safety_policy?: Record<string, JsonValue>;
   /** Status field on ai prompt version record. */
   status?: string;
   /** Tenant id field on ai prompt version record. */
@@ -44,6 +52,8 @@ export interface AiPromptVersionRecord {
   updated_at?: string;
   /** Uuid field on ai prompt version record. */
   uuid?: string;
+  /** Variable schema field on ai prompt version record. */
+  variable_schema?: Record<string, JsonValue>;
   /** Version field on ai prompt version record. */
   version?: string;
   /** Version no field on ai prompt version record. */

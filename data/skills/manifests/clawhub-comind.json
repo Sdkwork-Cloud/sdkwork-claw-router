@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comind@2.3.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-comind-2.3.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comind-2.3.4.json"
+      },
       "version": "2.3.4",
       "runtime": "metadata",
       "checksumHash": "sha256:ee614b1c961913829b1d5bab83b02443f93acacbf5c770e3deabe5789dc444f1",

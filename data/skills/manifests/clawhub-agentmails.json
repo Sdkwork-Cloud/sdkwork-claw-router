@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentmails@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentmails-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentmails-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16bdfcc24b2b514984f53a2cdde812ffab9de6846de75b5daa36dbf2e32fcf1a",

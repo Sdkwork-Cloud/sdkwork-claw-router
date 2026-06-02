@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/salary@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-salary-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-salary-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2236c9440192d9e2868e26396356d2ff7f786501c2630d62adf51b82bafbff2",

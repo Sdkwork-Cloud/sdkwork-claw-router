@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/planka-cli@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-planka-cli-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-planka-cli-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d948e480d5c4279ffff55fbcf14486a47191b313c79dfd1303d952d355050081",

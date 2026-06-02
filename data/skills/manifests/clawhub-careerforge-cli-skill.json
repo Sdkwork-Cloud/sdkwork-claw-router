@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/careerforge-cli-skill@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-careerforge-cli-skill-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-careerforge-cli-skill-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:efe73bba5bd81ff0c51948bc6cc9b6e4561b3a631884fe086958c1c576ce575f",

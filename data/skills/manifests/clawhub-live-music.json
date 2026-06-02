@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/live-music@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-live-music-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-live-music-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b374c7a30361dc45c1e8bbd0b3b659f63951fc28e9072915ca361213b4de584c",

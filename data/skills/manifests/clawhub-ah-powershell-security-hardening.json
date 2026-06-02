@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ah-powershell-security-hardening@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ah-powershell-security-hardening-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ah-powershell-security-hardening-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:76c6be0ac960cf4343dff6a812653c52b26a5a89394c33b4c11c8d8aabe7b11a",

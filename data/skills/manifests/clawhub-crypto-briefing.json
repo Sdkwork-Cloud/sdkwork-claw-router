@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-briefing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-briefing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-briefing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48b20047c83541640915e58de98f8d4bd544b13976b770308313b99861164e76",

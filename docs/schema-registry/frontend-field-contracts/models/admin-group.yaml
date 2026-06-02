@@ -5,11 +5,13 @@ frontend_models:
   interface: GroupData
   fields:
   - id
-  - name
-  - platform
-  - billingType
+  - groupCode
+  - groupName
+  - providerCode
+  - priceReferenceMode
   - rateMultiplier
-  - type
+  - officialPriceMultiplier
+  - groupType
   - accountCount
   - capacity
   - usage
@@ -22,11 +24,12 @@ frontend_models:
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
   interface: GroupCreateInput
   fields:
-  - name
-  - platform
-  - billingType
+  - groupName
+  - groupCode
+  - priceReferenceMode
   - rateMultiplier
-  - type
+  - officialPriceMultiplier
+  - groupType
   - capacity
   - status
   data_sources:
@@ -36,11 +39,12 @@ frontend_models:
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
   interface: GroupUpdateInput
   fields:
-  - name
-  - platform
-  - billingType
+  - groupName
+  - groupCode
+  - priceReferenceMode
   - rateMultiplier
-  - type
+  - officialPriceMultiplier
+  - groupType
   - capacity
   - status
   data_sources:
@@ -51,7 +55,7 @@ frontend_models:
   interface: GroupChannelBindingData
   fields:
   - id
-  - groupId
+  - channelGroupId
   - channelId
   - channelName
   - providerCode

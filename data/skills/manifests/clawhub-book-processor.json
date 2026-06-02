@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-processor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-processor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-processor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8c98ee3f69f40aca1d7b19204554cfee38e8a7235d3aa0a64d874752453b18a5",

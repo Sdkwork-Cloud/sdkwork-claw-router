@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paccar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paccar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paccar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fbee6a006c2787c518e7f71bdf3ea92c96650eb59ced3076db451854ecf59d2d",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/file-organizer-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-file-organizer-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-file-organizer-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:acc2bc302419402fa098ad87461fc931fed591986d00405300ced611d15de70c",

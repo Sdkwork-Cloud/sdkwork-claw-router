@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/denso@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-denso-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-denso-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:20198d8595a75090960fc71e58d34782829831cd0fa9693c0a0eaa797ea167d5",

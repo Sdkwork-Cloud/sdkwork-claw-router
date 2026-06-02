@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ci-build-cache-advisor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ci-build-cache-advisor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ci-build-cache-advisor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f8200b4e5d39db23c246a7550914e18452c63a78434a1025d250fb6563dec8b7",

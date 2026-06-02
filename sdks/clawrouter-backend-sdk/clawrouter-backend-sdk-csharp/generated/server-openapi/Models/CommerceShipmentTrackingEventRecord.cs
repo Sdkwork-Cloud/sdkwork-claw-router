@@ -10,6 +10,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? Description { get; set; }
         public string? EventCode { get; set; }
         public string? EventTime { get; set; }
+        public string? Id { get; set; }
         public string? Location { get; set; }
         public string? OrganizationId { get; set; }
         public Dictionary<string, string>? RawPayloadJson { get; set; }

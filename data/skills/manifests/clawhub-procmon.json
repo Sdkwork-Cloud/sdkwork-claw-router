@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/procmon@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-procmon-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-procmon-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6e7906a93ff06c641cad2191e7ee90be9385062d1c9e592c984f9c05e91dbb55",

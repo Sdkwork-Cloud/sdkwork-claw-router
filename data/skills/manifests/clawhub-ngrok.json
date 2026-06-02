@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ngrok@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-ngrok-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ngrok-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:cef2d3aaa5579df7d660b0384680b233ff582a3b73a6ae92383cac258eb524f7",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-gen-coze@1.1.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-gen-coze-1.1.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-gen-coze-1.1.4.json"
+      },
       "version": "1.1.4",
       "runtime": "metadata",
       "checksumHash": "sha256:295c2e4be55157ff484ffc6264ff7932cb8bdc247c7a96a68248e6192dc16d7c",

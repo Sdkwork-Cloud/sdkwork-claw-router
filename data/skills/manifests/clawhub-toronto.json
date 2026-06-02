@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/toronto@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-toronto-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-toronto-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:90ce6562aa2f4fd759a2064981a4a9b00f04ef3efa44169c650ca88bbe98ef64",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/confmt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-confmt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-confmt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:957c7f2af2df5545675ec81d21782b62a5397b29256dfe5a6f993316a325663c",

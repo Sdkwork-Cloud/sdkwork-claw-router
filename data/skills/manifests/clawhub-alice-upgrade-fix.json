@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alice-upgrade-fix@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-alice-upgrade-fix-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alice-upgrade-fix-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f37c49358ed687a0aaddf83c8e6d74b7ae7c651c523098ddd18604d589d9023",

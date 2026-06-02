@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ferrero@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ferrero-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ferrero-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b19f4f1e982f89da07155672ce44ced3bc9520bd793f6e85ab93a1de7177010",

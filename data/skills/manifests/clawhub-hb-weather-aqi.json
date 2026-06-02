@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hb-weather-aqi@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hb-weather-aqi-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hb-weather-aqi-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e43bb28b3b4256d74e3d6bb1e71a4d3477610bdd5b4b42ef5bd1b3d5a717b997",

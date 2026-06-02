@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nutcrackertestgpt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nutcrackertestgpt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nutcrackertestgpt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:25ab8423da5e209f2165dd38480b9b7c1fb3e9583e283f5280a5037aa684eb97",

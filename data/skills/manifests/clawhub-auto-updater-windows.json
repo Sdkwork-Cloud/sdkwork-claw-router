@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-updater-windows@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-updater-windows-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-updater-windows-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:42ff360d49b3ab6c0b817c057d5548a83a936a5447ad1f96b22974288fb2f2e4",

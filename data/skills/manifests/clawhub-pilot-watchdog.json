@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-watchdog@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-watchdog-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-watchdog-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:45e5e03eb34e58042e0b3d71fc826bcdcc27024fd3fb8c82257185eaa9e1991f",

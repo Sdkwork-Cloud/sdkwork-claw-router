@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/san-diego@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-san-diego-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-san-diego-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8398b271fe088d638c8de564db51876cad56b80f6b9ffcb210b49653b107e69c",

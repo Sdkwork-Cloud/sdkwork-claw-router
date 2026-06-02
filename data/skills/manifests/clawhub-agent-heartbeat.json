@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-heartbeat@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-heartbeat-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-heartbeat-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4242303501bfdf2b62b8676d7e30865294711e03e09792c5156369a0611655e3",

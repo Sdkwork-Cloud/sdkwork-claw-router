@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flyai-travelmapify@2.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-flyai-travelmapify-2.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flyai-travelmapify-2.2.2.json"
+      },
       "version": "2.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:65aa4be50505a10cd9c7c2d2eb2a54581bd2e6e05a541ac6de4c033a249d7437",

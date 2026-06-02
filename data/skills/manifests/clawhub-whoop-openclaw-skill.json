@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whoop-openclaw-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whoop-openclaw-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whoop-openclaw-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e542fd3854d695be71e2fad173064337667e0618180994fd330a95a97109318e",

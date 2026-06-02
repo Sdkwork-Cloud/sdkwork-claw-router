@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/status-hero@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-status-hero-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-status-hero-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b7f56a4b872e0d75b700ccd4bc136d6e6ef8dcd3fc4a8c2935ce6b01c962983b",

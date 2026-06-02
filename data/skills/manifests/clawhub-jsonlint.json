@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jsonlint@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jsonlint-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jsonlint-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c9dfb3c4c3f521a9776d5291e71d03ee09309665ac997d7c528dfa9d1d8aa1b5",

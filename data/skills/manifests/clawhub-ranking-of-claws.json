@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ranking-of-claws@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ranking-of-claws-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ranking-of-claws-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:79d3e3cbff4fdb04f40e162854daf6b7eccb7bdef266c855bfe0357e47fdcb8c",

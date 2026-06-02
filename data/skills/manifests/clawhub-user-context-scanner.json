@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/user-context-scanner@0.7.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-user-context-scanner-0.7.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-user-context-scanner-0.7.0.json"
+      },
       "version": "0.7.0",
       "runtime": "metadata",
       "checksumHash": "sha256:046c2fdf02fb9886434b9651bcffda75682eb8c706081a902c147bc3d564f854",

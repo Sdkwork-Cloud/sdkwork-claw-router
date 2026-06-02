@@ -14,8 +14,10 @@ class PromotionEventOutboxRecord:
     event_version: int
     occurred_at: str
     payload_json: Dict[str, str]
+    publish_attempts: int
     status: str
     tenant_id: str
+    id: Optional[str] = None
     next_retry_at: Optional[str] = None
     organization_id: Optional[str] = None
     payload_hash: Optional[str] = None

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/server-monitor-collector@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-server-monitor-collector-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-server-monitor-collector-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:396a2460e4b174498fdb6b1d6a255ddf441a74fcd8b6fb56b9ce6b838843480e",

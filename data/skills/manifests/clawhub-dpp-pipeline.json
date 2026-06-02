@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dpp-pipeline@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-dpp-pipeline-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dpp-pipeline-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:d863449f3b00fbdef13578dffa3c733e20c50ad477e151a8394c0bc2bccd8a63",

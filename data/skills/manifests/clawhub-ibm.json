@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ibm@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-ibm-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ibm-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e8dfb62897cb262350b7ea9ef87e83b76c077a81e96b806325a42f9d9d3e3d92",

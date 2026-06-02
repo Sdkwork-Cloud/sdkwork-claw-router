@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentagon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentagon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentagon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:245e026301e053e39a15f94eb14d5cdadcbe58315e3c2a012de8460b14745622",

@@ -9,5 +9,5 @@ data class CourseApplicationCreateRequest(
     val notes: String? = null,
     val sourceProvider: String? = null,
     val title: String? = null,
-    val videoUrl: String? = null
+    val video: MediaResource? = null
 )

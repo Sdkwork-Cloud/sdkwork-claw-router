@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tg-voice-whisper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tg-voice-whisper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tg-voice-whisper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:17e96dd7390f5846d3d45719d8518348847ab539ccd8cc67f3f67cf8b53e24ca",

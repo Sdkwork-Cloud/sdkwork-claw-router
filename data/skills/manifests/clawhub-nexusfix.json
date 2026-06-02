@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexusfix@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexusfix-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexusfix-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:65ec9c5f17087b8954e16db218cebd376bbaec403160ed248ce2aea693ad646b",

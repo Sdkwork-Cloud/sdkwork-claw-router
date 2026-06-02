@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ripgrep@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ripgrep-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ripgrep-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8a1d3b466536ee68bb1f8bbda1c34d1113c2e2a11063897d101c0ccec003d176",

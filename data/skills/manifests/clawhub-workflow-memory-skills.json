@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workflow-memory-skills@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-workflow-memory-skills-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workflow-memory-skills-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:30ca12a11aa90af7795bc484fa7378c199ec0a22e5635a37a6f9c0fa6c905d5a",

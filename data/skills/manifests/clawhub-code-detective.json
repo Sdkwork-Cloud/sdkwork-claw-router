@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/code-detective@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-code-detective-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-code-detective-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cfec0980621707c7b7ae81ab5de2a4d57ce8fe126c63e6e7ae90bee47f8dfd41",

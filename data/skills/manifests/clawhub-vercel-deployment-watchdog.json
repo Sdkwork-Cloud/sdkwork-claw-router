@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vercel-deployment-watchdog@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vercel-deployment-watchdog-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vercel-deployment-watchdog-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd93676e9db5af79d0cabf9cf8bd28a6cb82fe5101b121e500f90d9249c9315b",

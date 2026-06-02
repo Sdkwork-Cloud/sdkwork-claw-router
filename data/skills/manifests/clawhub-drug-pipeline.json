@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/drug-pipeline@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-drug-pipeline-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-drug-pipeline-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:b4f0b3abd64d5ea33850a25806d2e90fae564271664445a91d7d62b79c71bc89",

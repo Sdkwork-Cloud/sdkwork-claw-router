@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skylv-agent-builder@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-skylv-agent-builder-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skylv-agent-builder-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:6d3e85819ae8e30c8d0cb43628032cd5fdd7af5f1eb283f1ede6647ea3a235bb",

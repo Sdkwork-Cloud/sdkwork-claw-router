@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spec-to-checklist@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-spec-to-checklist-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spec-to-checklist-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2629cfcb19e8e090eed1c47a16ef271690af5b85f56427485d2ac7f127f0400",

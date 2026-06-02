@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pipefy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-pipefy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pipefy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:7ed228a03d4c815d390930db1be6bd58ca2d3f8e734327004236afa678d87c44",

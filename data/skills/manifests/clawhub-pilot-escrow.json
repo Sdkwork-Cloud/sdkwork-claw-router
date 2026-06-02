@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-escrow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-escrow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-escrow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:21bf7ce137fd2f120d4cdcb2d37857d895cd2e4daacf5c39a7166a2de6255b98",

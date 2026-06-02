@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sag-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sag-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sag-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9b2a7eb196822a5c1193170e153e4e2e6e7da5d284024e3022c251e98209fcdd",

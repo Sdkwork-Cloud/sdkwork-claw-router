@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/panda-git-commit@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-panda-git-commit-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-panda-git-commit-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:4143fd0834159d323a7147e5be1120ab49944107027a1809be9a6eddf6f05023",

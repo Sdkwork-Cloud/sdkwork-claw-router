@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-vuln-scanner-hardened@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-vuln-scanner-hardened-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-vuln-scanner-hardened-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7c0885654e26695707318308132d521eeb05028f03ac3ee3afe1e975ef91c559",

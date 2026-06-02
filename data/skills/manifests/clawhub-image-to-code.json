@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-to-code@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-to-code-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-to-code-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fced6c95366a7553b2834836b502f8e8eedd8bdf80711a0a26b6bf5e9fa5c80d",

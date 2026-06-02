@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heartbeat-memories@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-heartbeat-memories-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heartbeat-memories-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4a0817ca116d8dfbd5e97b8b9b077e9e07ff10a1e255126a303c63f369f0a465",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-to-video-gemini@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-to-video-gemini-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-to-video-gemini-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:48e3532b5297e4582e7bc9d2b2d903b5a1c3f042fc5b36528fa071a20e21a0f1",

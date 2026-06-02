@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docpilot@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-docpilot-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docpilot-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:7b5096245db26d5fc6ab5f652ba7f1699c5b2ed7f62f6f7e004948770b4dc1d8",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/setup-local-testnet@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-setup-local-testnet-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-setup-local-testnet-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c7e5f307771c1fc7189a374d63857c15cb644b3e8755306b4c5208bf5039fc01",

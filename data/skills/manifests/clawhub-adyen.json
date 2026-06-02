@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adyen@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-adyen-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adyen-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3019cb1a896ed2009eba6be6f8bc031b499ed25c5bd3dd244f2f796031a776b",

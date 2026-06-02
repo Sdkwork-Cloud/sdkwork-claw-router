@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-metaverse@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-metaverse-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-metaverse-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eedd26d09efd567cf159353b703d651ddfa93c818606bea9df45aabfe8194579",

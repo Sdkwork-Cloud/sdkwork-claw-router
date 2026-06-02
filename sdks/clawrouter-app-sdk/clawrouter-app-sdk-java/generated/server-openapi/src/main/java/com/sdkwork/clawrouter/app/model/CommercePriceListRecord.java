@@ -6,6 +6,7 @@ public class CommercePriceListRecord {
     private String currencyCode;
     private String customerSegment;
     private String endsAt;
+    private String id;
     private String marketCode;
     private String organizationId;
     private String priceListNo;
@@ -44,6 +45,14 @@ public class CommercePriceListRecord {
 
     public void setEndsAt(String endsAt) {
         this.endsAt = endsAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getMarketCode() {

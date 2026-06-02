@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-watermark@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-watermark-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-watermark-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f240987fce33f2b1b2e0e49fffe40419c2eeeca59c0e50282eec3cc1ac83687e",

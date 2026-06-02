@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feishu-readability@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feishu-readability-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feishu-readability-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbce22db82e265c111410d954b1fba140ba65a33afc060a53a89ad72fcb0a968",

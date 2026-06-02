@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/signal-intelligence-pack@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-signal-intelligence-pack-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-signal-intelligence-pack-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db6923d8a118cf71932018cf770c61bcf5ef76461ae0a5bf3a9f336c7304666b",

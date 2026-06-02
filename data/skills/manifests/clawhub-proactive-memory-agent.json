@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proactive-memory-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-proactive-memory-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proactive-memory-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:50f4e45420323694e113226cdf0f1adc60762c44724d17a909be2a86c65316bf",

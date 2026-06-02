@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linux-sysadmin@3.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-linux-sysadmin-3.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linux-sysadmin-3.0.2.json"
+      },
       "version": "3.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:60b4d6984bca748948357377e86700bc5591166ba2fc806c849a02936925f052",

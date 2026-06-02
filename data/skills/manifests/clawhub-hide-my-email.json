@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hide-my-email@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-hide-my-email-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hide-my-email-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dd35962bc786a594d1ee8573aba6d6ada6698318c488012c442e2ed81d4237ac",

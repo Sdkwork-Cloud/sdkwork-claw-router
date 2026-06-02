@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/flap-skills@1.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-flap-skills-1.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-flap-skills-1.8.0.json"
+      },
       "version": "1.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dbdd7811f55d8fb22a1d9abd5b49c6160b431969cbcf521e82eb1540fde0a566",

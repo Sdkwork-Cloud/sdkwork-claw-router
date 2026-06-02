@@ -19,7 +19,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = SdkworkBackendClient::new(SdkworkConfig::new("http://localhost:18081"))?;
     client.set_api_key("your-api-key");
 
-    let result = client.ai().model_vendors_list().await?;
+    let result = client.ai().channel_groups_list().await?;
     println!("{result:?}");
     Ok(())
 }
@@ -96,8 +96,8 @@ println!("{result:?}");
 ### ai
 
 ```rust
-// List vendors
-let result = client.ai().model_vendors_list().await?;
+// List groups
+let result = client.ai().channel_groups_list().await?;
 println!("{result:?}");
 ```
 
@@ -128,8 +128,8 @@ println!("{result:?}");
 ### iam
 
 ```rust
-// List groups
-let result = client.iam().access_groups_list().await?;
+// List API key map
+let result = client.iam().api_keys_list().await?;
 println!("{result:?}");
 ```
 
@@ -252,7 +252,7 @@ use clawrouter_backend_sdk::{SdkworkBackendClient, SdkworkConfig};
 let client = SdkworkBackendClient::new(SdkworkConfig::new("http://localhost:18081"))?;
 
 let outcome: Result<(), _> = async {
-    client.ai().model_vendors_list().await?;
+    client.ai().channel_groups_list().await?;
     Ok(())
 }.await;
 

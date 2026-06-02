@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/heysummon@0.1.0-beta",
-      "artifactUrl": "data/skills/artifacts/clawhub-heysummon-0.1.0-beta.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-heysummon-0.1.0-beta.json"
+      },
       "version": "0.1.0-beta",
       "runtime": "metadata",
       "checksumHash": "sha256:8699e8b4939ff59c2b3da2a2c1158c0daf7e4663c31450d570b8772cab30f624",

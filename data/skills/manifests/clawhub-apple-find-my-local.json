@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/apple-find-my-local@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-apple-find-my-local-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-apple-find-my-local-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2212f031fe75c3dc7ea60d2338bdb3b3ea45c8de1dd0f1c6799f1ff516acc56e",

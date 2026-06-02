@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kitchen-workflow-optimizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kitchen-workflow-optimizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kitchen-workflow-optimizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:32ffd0469c8f855c40f002d58343b44a4071d011e9edca921bf1e198a40638a8",

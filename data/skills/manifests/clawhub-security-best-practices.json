@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-best-practices@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-best-practices-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-best-practices-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:35e200587c2caa0ccbb6add47a70bfa9849c49532a6e00b18122f7f8a3754549",

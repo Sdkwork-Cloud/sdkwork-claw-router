@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/word-docx-1@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-word-docx-1-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-word-docx-1-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a6f8b373762c42f649c75474ff6b5b46f1aeb6a6dffe01ba283f470ccc21e34f",

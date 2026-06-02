@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/comic-drama-generate@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-comic-drama-generate-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-comic-drama-generate-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:e89fbc151b4988ad6a0199c1f1205914be6de51e777e93461754630301155e50",

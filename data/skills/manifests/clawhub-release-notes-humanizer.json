@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/release-notes-humanizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-release-notes-humanizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-release-notes-humanizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6545d55d349d5d42c5a35edec9536ee9937237f8d49bec520d3c7554995bfe90",

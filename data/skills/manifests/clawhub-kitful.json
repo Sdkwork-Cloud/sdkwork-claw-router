@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kitful@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-kitful-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kitful-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:e13f53605178154d47f588a13d5ae4f2ea0d83d2d3b830dc2728368675eecbac",

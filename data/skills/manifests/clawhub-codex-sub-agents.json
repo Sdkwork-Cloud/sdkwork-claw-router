@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/codex-sub-agents@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-codex-sub-agents-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-codex-sub-agents-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:df729e5647c06f290a3807a60a9846a7ef4b7d6d2cfea202ec799e0261281d3a",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/veritone@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-veritone-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-veritone-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:0f8a0b7efba28ec8d0738e95063e3eb299e201048c707974cf8ef51b962a3e93",

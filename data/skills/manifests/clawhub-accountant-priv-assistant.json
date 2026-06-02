@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/accountant-priv-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-accountant-priv-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-accountant-priv-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0da3c52a6a884b765900ba0d3bbba2dd2e7ae8fa75294271d6138ac66eb621ab",

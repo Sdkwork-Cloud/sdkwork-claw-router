@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whale-radar-orion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whale-radar-orion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whale-radar-orion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2be184dd3facf2094eb9f04715eafbfc39354df2c4c771a74693170387a724dd",

@@ -55,7 +55,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/service-booking@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-service-booking-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-service-booking-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3d3da5788388fe2494d516f1b2c2d4b602a230875c0a7eb32ec25bd4920e84f0",

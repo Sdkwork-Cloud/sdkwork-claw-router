@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/payment-skill@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-payment-skill-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-payment-skill-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:b925d70a9c72efda1fd2b72efe1c5727fa85437fb5698b0d7752974b3bf6059a",

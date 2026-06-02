@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docx-to-html@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docx-to-html-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docx-to-html-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7783c8f0e04c7df738c19f1cc427cacf1dde232c65dcecfa80a69349f4bf93e3",

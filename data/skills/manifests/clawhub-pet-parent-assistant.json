@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pet-parent-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pet-parent-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pet-parent-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b35d768f74ef62f58e76c635c71b3981e0b0f5d116760ed5eac4f44bc7fb13a7",

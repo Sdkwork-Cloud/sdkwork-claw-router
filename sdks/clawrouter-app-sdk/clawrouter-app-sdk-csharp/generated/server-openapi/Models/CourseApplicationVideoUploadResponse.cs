@@ -11,6 +11,6 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Sha256 { get; set; }
         public int? SizeBytes { get; set; }
         public string? UploadedAt { get; set; }
-        public string? VideoUrl { get; set; }
+        public MediaResource? Video { get; set; }
     }
 }

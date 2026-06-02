@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/one-mail@1.3.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-one-mail-1.3.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-one-mail-1.3.0.json"
+      },
       "version": "1.3.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2d26d6a3c03c6d99328266d07fe2716746d09cd0825fdc3f25889d0d9822cdbc",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/merge-pdf@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-merge-pdf-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-merge-pdf-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed9920223c4b466fb9da026e2cd84ad4d4b4b9f8289b67b739ba639daf83dbe1",

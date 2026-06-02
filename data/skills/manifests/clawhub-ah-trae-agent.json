@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ah-trae-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ah-trae-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ah-trae-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8e4e0c0449f5f6e7831400c7d67e00cefab5f73e1319920883fca630fa10e91e",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/meeting-transcriber@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-meeting-transcriber-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-meeting-transcriber-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b4ab41e98491350609917b1149587fe46e776d0ddc2c5fa12ef4f90802b8ee87",

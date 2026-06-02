@@ -8,7 +8,7 @@
     "appSeedSource": {
       "rootAppKey": "sdkwork-claw-router",
       "appsRoot": "apps",
-      "generatedBy": "apps/scripts/initialize-sdkwork-app-standard-v3.mjs",
+      "generatedBy": "apps/sdkwork-claw-router/scripts/update-app-store-seed.mjs",
       "environment": "production",
       "channel": "STABLE"
     }
@@ -24,7 +24,12 @@
         "sdkwork-app",
         "html"
       ],
-      "icon": "https://cdn.sdkwork.com/app-categories/html.svg",
+      "icon": {
+        "kind": "image",
+        "source": "external_url",
+        "url": "https://cdn.sdkwork.com/app-categories/html.svg",
+        "publicUrl": "https://cdn.sdkwork.com/app-categories/html.svg"
+      },
       "sortWeight": 100,
       "path": "/app-store/html"
     },
@@ -38,7 +43,12 @@
         "sdkwork-app",
         "productivity"
       ],
-      "icon": "https://cdn.sdkwork.com/app-categories/productivity.svg",
+      "icon": {
+        "kind": "image",
+        "source": "external_url",
+        "url": "https://cdn.sdkwork.com/app-categories/productivity.svg",
+        "publicUrl": "https://cdn.sdkwork.com/app-categories/productivity.svg"
+      },
       "sortWeight": 101,
       "path": "/app-store/productivity"
     },
@@ -52,7 +62,12 @@
         "sdkwork-app",
         "react"
       ],
-      "icon": "https://cdn.sdkwork.com/app-categories/react.svg",
+      "icon": {
+        "kind": "image",
+        "source": "external_url",
+        "url": "https://cdn.sdkwork.com/app-categories/react.svg",
+        "publicUrl": "https://cdn.sdkwork.com/app-categories/react.svg"
+      },
       "sortWeight": 102,
       "path": "/app-store/react"
     }

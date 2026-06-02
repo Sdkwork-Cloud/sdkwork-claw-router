@@ -10,6 +10,8 @@ export interface CommerceInvoiceProviderAttemptRecord {
   failure_code?: string;
   /** Failure message field on commerce invoice provider attempt record. */
   failure_message?: string;
+  /** Id field on commerce invoice provider attempt record. */
+  id?: string;
   /** Invoice id field on commerce invoice provider attempt record. */
   invoice_id: string;
   /** Organization id field on commerce invoice provider attempt record. */

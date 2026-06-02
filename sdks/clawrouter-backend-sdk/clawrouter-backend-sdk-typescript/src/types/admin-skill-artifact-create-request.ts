@@ -1,13 +1,15 @@
+import type { MediaResource } from './media-resource';
+
 /** Admin skill artifact create request schema exposed by Claw Router. */
 export interface AdminSkillArtifactCreateRequest {
+  /** Artifact field on admin skill artifact create request. */
+  artifact?: MediaResource;
   /** Artifact ref field on admin skill artifact create request. */
   artifactRef?: string;
   /** Artifact size bytes field on admin skill artifact create request. */
   artifactSizeBytes?: number;
   /** Artifact type field on admin skill artifact create request. */
   artifactType?: number;
-  /** Artifact url field on admin skill artifact create request. */
-  artifactUrl?: string;
   /** Checksum hash field on admin skill artifact create request. */
   checksumHash?: string;
   /** Deprecated at field on admin skill artifact create request. */

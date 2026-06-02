@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-container-rerun@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-container-rerun-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-container-rerun-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d7aea470711f275a87c35155c0ed7f2251446a0198a214d8f945b79fc830e6d",

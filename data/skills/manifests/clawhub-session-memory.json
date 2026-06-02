@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/session-memory@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-session-memory-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-session-memory-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:16d449b924f767085a5c6501da25a7f6a2a1aed19ec4f814fb72e2ccbc323de9",

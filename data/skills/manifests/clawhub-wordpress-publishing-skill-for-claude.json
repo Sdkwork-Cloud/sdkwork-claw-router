@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wordpress-publishing-skill-for-claude@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wordpress-publishing-skill-for-claude-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wordpress-publishing-skill-for-claude-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:389fef0fcd5913dc4666518ec9e00463f6dfbd248c4c70bb57865939d46a8da5",

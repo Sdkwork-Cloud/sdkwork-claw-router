@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/navclaw@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-navclaw-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-navclaw-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:9b92d5bc8659bb6af80da17c3740134c964a11ed07a69d4ba312995de2261b63",

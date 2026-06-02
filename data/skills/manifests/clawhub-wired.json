@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wired@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wired-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wired-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a5916aaabebaa8a6bacc344b7ea8118f070d05256cf561910a2d8b98de612e39",

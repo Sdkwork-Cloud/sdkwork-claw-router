@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/syncro@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-syncro-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-syncro-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8219520de72b91a722096a3f2e57c821257754c6f58d241278416782fa0898ee",

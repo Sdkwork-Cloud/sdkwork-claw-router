@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alert-manager@9.9.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-alert-manager-9.9.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alert-manager-9.9.5.json"
+      },
       "version": "9.9.5",
       "runtime": "metadata",
       "checksumHash": "sha256:cd449644e0330a826b0fd115930f53350aa3cffbc20c8c192c74081ffa9f159c",

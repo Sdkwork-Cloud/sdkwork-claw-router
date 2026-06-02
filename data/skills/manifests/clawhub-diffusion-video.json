@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/diffusion-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-diffusion-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-diffusion-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:03c26142183d9a136613755521ace115d28cd43c8452df5ed00f6e355048297d",

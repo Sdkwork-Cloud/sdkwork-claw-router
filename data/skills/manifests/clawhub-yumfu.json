@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yumfu@1.7.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-yumfu-1.7.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yumfu-1.7.10.json"
+      },
       "version": "1.7.10",
       "runtime": "metadata",
       "checksumHash": "sha256:eb45cf95d2795a33f30dfd1d674860f1e12fc82c74d08446c625c1fd19d61a3d",

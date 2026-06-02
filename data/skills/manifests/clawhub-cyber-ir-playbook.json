@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cyber-ir-playbook@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cyber-ir-playbook-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cyber-ir-playbook-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c54805e8b844149e7245070f94c64f3046358b559f248025d7706affec5de901",

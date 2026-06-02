@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/uptime-kuma@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-uptime-kuma-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-uptime-kuma-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0623d326ba3bb80a015883c8f33141fd698611a872f56be3672cd7796537742b",

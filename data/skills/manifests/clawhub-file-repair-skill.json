@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/file-repair-skill@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-file-repair-skill-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-file-repair-skill-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:06914716cbefa740e54085fe371722d5a1a7914dd469c87b7a0e538e984f1c5c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/team-agents-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-team-agents-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-team-agents-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed692316435b8a5cf95d46fc6cf9a526f198b6530b1e1818abd32e1554268cda",

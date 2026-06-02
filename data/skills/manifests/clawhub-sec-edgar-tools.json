@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sec-edgar-tools@0.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-sec-edgar-tools-0.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sec-edgar-tools-0.3.3.json"
+      },
       "version": "0.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:5b668a35608f47d35dc062c5f0746a3e461dac8d903442a087ba060035d31aeb",

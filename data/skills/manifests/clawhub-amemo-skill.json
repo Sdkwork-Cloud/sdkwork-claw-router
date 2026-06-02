@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amemo-skill@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-amemo-skill-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amemo-skill-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:c85d8993da0b5730c564198e1a4350559022b253d0afc28622c098730672b1e0",

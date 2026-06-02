@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/raspberry@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-raspberry-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-raspberry-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7066c4ad131a7ad9134e4eb87b2bad56dfe39217cafa421bf2b982cd1ad980e7",

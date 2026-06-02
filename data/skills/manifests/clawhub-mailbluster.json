@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mailbluster@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-mailbluster-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mailbluster-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a1a4ec1c7ed841b29f38b5c2a393a9d5286662dee4ec1a038c47aacfe0284c81",

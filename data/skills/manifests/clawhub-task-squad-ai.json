@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-squad-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-squad-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-squad-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8b5524208c2416bf3311da483db8449c7f26b3cdf57b415576c7607963594c64",

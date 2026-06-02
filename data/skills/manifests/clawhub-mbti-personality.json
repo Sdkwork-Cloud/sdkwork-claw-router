@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mbti-personality@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mbti-personality-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mbti-personality-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f599abf9805ef9f672e44a21718c9a9cdccb6da41b80dd3d60c6355d0c780079",

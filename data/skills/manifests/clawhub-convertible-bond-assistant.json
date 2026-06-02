@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/convertible-bond-assistant@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-convertible-bond-assistant-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-convertible-bond-assistant-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89fd08a3beb9a1d071c144f3c156f077aa8bb24572cefa555222d68a1021851c",

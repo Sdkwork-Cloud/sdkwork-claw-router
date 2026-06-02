@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amap-location@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amap-location-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amap-location-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55178c331a2e78fa767726f01034d539202e9fb43f0058d591238a1c0e0bee58",

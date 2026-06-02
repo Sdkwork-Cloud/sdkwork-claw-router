@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-master@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-master-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-master-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d951a481e7c017e4d5f0d097edd31fa5eedb737e2f532711219f8836e2ac81df",

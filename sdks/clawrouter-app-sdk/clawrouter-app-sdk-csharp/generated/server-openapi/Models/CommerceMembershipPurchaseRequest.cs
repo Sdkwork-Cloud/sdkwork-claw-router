@@ -8,6 +8,5 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? CouponId { get; set; }
         public int? PackageId { get; set; }
-        public string? PaymentMethod { get; set; }
     }
 }

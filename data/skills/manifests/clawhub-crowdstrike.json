@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crowdstrike@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-crowdstrike-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crowdstrike-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:52d2426d9773e0d5078e193049bbdc17ed3a3ef84378d52f3fe611f10d73edf1",

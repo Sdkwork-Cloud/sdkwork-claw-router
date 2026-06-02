@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-test-viedo@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-test-viedo-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-test-viedo-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd63b9fce5958d8d897b7c5e1bd2c1f0234d1ce8278518fd77b5204162a1befd",

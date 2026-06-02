@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/moodring@2.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-moodring-2.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-moodring-2.0.4.json"
+      },
       "version": "2.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:7636da9dcfac09ecac85c3af2c2740cd919af250eb647897099db67e63df02ce",

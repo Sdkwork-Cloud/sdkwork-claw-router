@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sabnzbd@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sabnzbd-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sabnzbd-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:18386eabc47469d03388de96a2338be3e9951632b58037a8c9030ec93a616fdd",

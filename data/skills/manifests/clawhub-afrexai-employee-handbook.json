@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/afrexai-employee-handbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-employee-handbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-afrexai-employee-handbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d388db0d7c275a3057093805c8006f0269fa1812b476be2c58840577477b28a2",

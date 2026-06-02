@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-bom-discover-azure@0.86.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-discover-azure-0.86.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-bom-discover-azure-0.86.2.json"
+      },
       "version": "0.86.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e483489b23217d7afe0bc52e5216b5bfc66119b5faa880577e919b15db63fe85",

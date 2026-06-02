@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/spiff@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-spiff-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-spiff-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5e2ba6689f58c4d40a9d2ff333cbbec025498bfa6a0f3d57dbd15277493f0a5e",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amadeus@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-amadeus-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amadeus-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:628367bfd9e280a79d1976b4c5ba456314a8bd9c2a7110c227c6231034e58588",

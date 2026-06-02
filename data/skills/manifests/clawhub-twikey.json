@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/twikey@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-twikey-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-twikey-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a1f7fffbcaa8f94261c53fcc1ed54523d134e27116f514788c6450fdfd1306b7",

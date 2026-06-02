@@ -1,5 +1,6 @@
 import type { CourseEngagement } from './course-engagement';
 import type { CourseInstructor } from './course-instructor';
+import type { MediaResource } from './media-resource';
 
 /** Course item schema exposed by Claw Router. */
 export interface CourseItem {
@@ -47,8 +48,8 @@ export interface CourseItem {
   studentsCount: number;
   /** Tags field on course item. */
   tags: string[];
-  /** Thumbnail url field on course item. */
-  thumbnailUrl: string;
+  /** Thumbnail field on course item. */
+  thumbnail: MediaResource;
   /** Title field on course item. */
   title: string;
 }

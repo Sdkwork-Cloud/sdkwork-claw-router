@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fast-ocr@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-fast-ocr-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fast-ocr-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:22c4700e7cb00c7e676a4992fa8ad2ab7919c589453a45bf786db9e9feba322e",

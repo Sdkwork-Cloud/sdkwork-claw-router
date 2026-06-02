@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wall-street-journal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wall-street-journal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wall-street-journal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:572e0d8f24fa8858be801afc0bbbf41c61ab238a933bcbfe4bdd23179b429dd9",

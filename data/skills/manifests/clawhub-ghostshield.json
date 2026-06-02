@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ghostshield@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ghostshield-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ghostshield-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:866730a6840bc1be1197751513c3a4065d9270a765745224f6ccf3ce83985fbe",

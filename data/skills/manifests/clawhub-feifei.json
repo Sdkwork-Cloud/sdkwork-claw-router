@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/feifei@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-feifei-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-feifei-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d33cdb3052ce65af37f98fc70ab4155bae719fc8dad96f24139ec4ea1903ebe7",

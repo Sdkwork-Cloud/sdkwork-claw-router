@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/15-min-btc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-15-min-btc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-15-min-btc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c9653afb18a22cde567a00e3b3fa155c0c8f5fb05d97c98e7bcc9bbc6f3a5f04",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/eval-skills@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-eval-skills-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-eval-skills-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6884eb0d11d8b1ee1764ff2f3461d21a795080412143f6e7a59ed008d8a6c74d",

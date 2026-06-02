@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-news-ai-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-news-ai-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-news-ai-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29a936e11ea82d8c3a5772d7bd6b53c156d6b3fea610bc0a20ad72a670c683e8",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-wikimind-mcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-wikimind-mcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-wikimind-mcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b2e93aa4e763632a1f9d2c980d062cd11d657b6c75e614445f2a27c18b0fcbd0",

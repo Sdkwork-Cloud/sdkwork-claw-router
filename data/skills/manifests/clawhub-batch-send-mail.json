@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/batch-send-mail@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-batch-send-mail-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-batch-send-mail-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:becd9ac5cae41b3a9343a9634645772b74b49304e2f946811c71d1b35864b630",

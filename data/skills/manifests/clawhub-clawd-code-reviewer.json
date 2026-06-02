@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawd-code-reviewer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawd-code-reviewer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawd-code-reviewer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:58880c058f6095a38bc881414d82f3afdf8d971c1fe9f00d5ff2621b00cac16d",

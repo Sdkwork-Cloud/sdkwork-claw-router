@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/htlc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-htlc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-htlc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:add19273a5afb23874e85beb823ec876425b197a3a1ed3c2e841bafe080da65d",

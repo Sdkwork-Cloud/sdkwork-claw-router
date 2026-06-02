@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-quick-start@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-quick-start-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-quick-start-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f74ac9cbf6314d61eb57d87345fecc76c2ac5cc84a82fd3fc392bd8fb950d67",

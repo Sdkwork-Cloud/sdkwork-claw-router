@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/custom-skills-updater@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-custom-skills-updater-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-custom-skills-updater-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:504a8c95206003af9c0e7f88e8cd837bcb690a9bad70ff2be61570f965c31b76",

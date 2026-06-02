@@ -6,7 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class IamUserRecord
     {
-        public string? AvatarUrl { get; set; }
+        public MediaResource? Avatar { get; set; }
         public string? CreatedAt { get; set; }
         public string? DisplayName { get; set; }
         public string? Email { get; set; }

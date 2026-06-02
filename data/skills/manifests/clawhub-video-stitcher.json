@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-stitcher@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-stitcher-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-stitcher-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff9c676437a5013f4058c8c82bd95ffa4d79a8300408ff37c7f5ad30018af9fd",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audiobook-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audiobook-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audiobook-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42ebf96b1eaee05e814d2613e7bb7d1fdf2185fb93f66c1bae60c35e28ba532f",

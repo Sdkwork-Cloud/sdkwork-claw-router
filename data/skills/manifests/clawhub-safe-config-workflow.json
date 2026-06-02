@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/safe-config-workflow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-safe-config-workflow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-safe-config-workflow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:82c69eb6736ff41ec1a97b41fc9f50a4b74439fb0a6041d454cbb6178cc35832",

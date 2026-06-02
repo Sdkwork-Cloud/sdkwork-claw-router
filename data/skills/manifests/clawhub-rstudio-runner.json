@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rstudio-runner@4.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-rstudio-runner-4.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rstudio-runner-4.0.1.json"
+      },
       "version": "4.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:08aa5b6e4a2517eca254f4b5898904daf2f37b49783b0494334a10e83632da79",

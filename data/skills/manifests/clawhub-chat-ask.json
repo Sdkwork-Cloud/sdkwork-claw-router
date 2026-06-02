@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-ask@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-ask-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-ask-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3e7d13dcf41e8d15c7a03d89570c83ace4a70d34f73ffb544a407c5a64c7edf",

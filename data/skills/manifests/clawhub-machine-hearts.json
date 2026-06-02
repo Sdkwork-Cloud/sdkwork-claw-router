@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/machine-hearts@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-machine-hearts-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-machine-hearts-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4dc337d33fd09d1ae7e173e40af9d1603358dc3ce995872b428f726ad21159e2",

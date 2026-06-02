@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/banked@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-banked-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-banked-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3143ac01da2145bd30ccf15c44131dafb411a247b1da3a30042a4fbf0b9bb16c",

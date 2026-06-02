@@ -2,9 +2,11 @@ package types
 
 // Commerce membership record schema exposed by Claw Router.
 type CommerceMembershipRecord struct {
+	AutoRenew bool `json:"auto_renew"`
 	CreatedAt string `json:"created_at"`
 	ExpiresAt string `json:"expires_at"`
 	GraceUntil string `json:"grace_until"`
+	Id string `json:"id"`
 	MembershipNo string `json:"membership_no"`
 	OrganizationId string `json:"organization_id"`
 	OwnerUserId string `json:"owner_user_id"`

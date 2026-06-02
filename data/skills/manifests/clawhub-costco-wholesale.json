@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/costco-wholesale@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-costco-wholesale-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-costco-wholesale-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4ca9b467bb19721816513ba88e461b138449ac1fbb08cea45bade89f2cd0357d",

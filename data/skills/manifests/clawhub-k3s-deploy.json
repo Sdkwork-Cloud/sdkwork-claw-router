@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/k3s-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-k3s-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-k3s-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f1618f5e425389f57abeba446add4e31191d599f56efad04bf2132904bad793a",

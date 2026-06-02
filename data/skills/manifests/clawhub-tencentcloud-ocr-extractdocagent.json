@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentcloud-ocr-extractdocagent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-ocr-extractdocagent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentcloud-ocr-extractdocagent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b708b169276f0d47afb2dbd59cf86aba9388790208b34d91d10d1d0676cf0590",

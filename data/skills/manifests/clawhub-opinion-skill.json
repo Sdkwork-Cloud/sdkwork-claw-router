@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/opinion-skill@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-opinion-skill-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-opinion-skill-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ef3ac62817b44f4ae8090df9681180630636b32e598162ccb0ed97bd7a91ca80",

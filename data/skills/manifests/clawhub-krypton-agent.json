@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/krypton-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-krypton-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-krypton-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4810b3d2fd4b3d306a7a3efd799297b311a2a9e902b89e1f54037dedc7de7fdb",

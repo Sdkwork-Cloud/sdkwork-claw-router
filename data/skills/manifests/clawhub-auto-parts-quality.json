@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-parts-quality@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-parts-quality-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-parts-quality-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a1eaf4c7cf71d8c6d2ae890c4bbdbcd71c8c1cf2c9c5999cfd4279a2171dbe85",

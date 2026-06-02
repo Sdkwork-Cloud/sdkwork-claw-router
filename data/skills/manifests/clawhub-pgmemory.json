@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pgmemory@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pgmemory-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pgmemory-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:89f5bff88708350f38cf19909a14a32ed73ebdb81ab5596eeb4ff2edfea66111",

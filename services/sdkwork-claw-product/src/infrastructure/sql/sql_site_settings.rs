@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+use serde_json::Value;
 
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::SiteSettings;
@@ -15,9 +16,9 @@ pub(crate) struct StoredSiteSettings {
     pub site_name: String,
     pub short_name: String,
     pub description: String,
-    pub logo_url: String,
-    pub icon_url: String,
-    pub favicon_url: String,
+    pub logo: Value,
+    pub icon: Value,
+    pub favicon: Value,
     pub brand_color: String,
     pub accent_color: String,
     pub footer_copyright: String,
@@ -53,9 +54,9 @@ impl From<SiteSettings> for StoredSiteSettings {
             site_name: value.site_name,
             short_name: value.short_name,
             description: value.description,
-            logo_url: value.logo_url,
-            icon_url: value.icon_url,
-            favicon_url: value.favicon_url,
+            logo: value.logo,
+            icon: value.icon,
+            favicon: value.favicon,
             brand_color: value.brand_color,
             accent_color: value.accent_color,
             footer_copyright: value.footer_copyright,
@@ -80,9 +81,9 @@ impl From<StoredSiteSettings> for SiteSettings {
             site_name: value.site_name,
             short_name: value.short_name,
             description: value.description,
-            logo_url: value.logo_url,
-            icon_url: value.icon_url,
-            favicon_url: value.favicon_url,
+            logo: value.logo,
+            icon: value.icon,
+            favicon: value.favicon,
             brand_color: value.brand_color,
             accent_color: value.accent_color,
             footer_copyright: value.footer_copyright,
@@ -129,7 +130,6 @@ pub(crate) fn settings_from_payload(payload: &str) -> DomainResult<SiteSettings>
         .as_object()
         .map(|object| !object.contains_key("seoTitle"))
         .unwrap_or(false);
-
     serde_json::from_value::<StoredSiteSettings>(settings)
         .map(|mut stored| {
             if missing_short_name {

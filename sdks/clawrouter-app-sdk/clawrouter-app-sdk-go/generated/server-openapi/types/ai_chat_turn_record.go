@@ -37,6 +37,7 @@ type AiChatTurnRecord struct {
 	TenantId string `json:"tenant_id"`
 	TraceId string `json:"trace_id"`
 	TurnNo string `json:"turn_no"`
+	UpdatedAt string `json:"updated_at"`
 	UsageSnapshot map[string]JsonValue `json:"usage_snapshot"`
 	UserId string `json:"user_id"`
 	Uuid string `json:"uuid"`

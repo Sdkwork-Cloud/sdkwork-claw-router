@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-config-master@1.3.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-config-master-1.3.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-config-master-1.3.3.json"
+      },
       "version": "1.3.3",
       "runtime": "metadata",
       "checksumHash": "sha256:8ae269a4601af83741c6f3cb222a8a70e238fe87428f820427cd8a6a409cf063",

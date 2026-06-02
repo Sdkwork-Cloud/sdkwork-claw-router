@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/book-cover-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-book-cover-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-book-cover-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:17eb62b9625f03cdaf82e92e26978f1074f40c03c019a5685530d8e38f609c73",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/botpicks-skill@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-botpicks-skill-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-botpicks-skill-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3dbb4ac5e6cb622a752bb9244558e6483e58dceab8f37d1deef5a88459867a2d",

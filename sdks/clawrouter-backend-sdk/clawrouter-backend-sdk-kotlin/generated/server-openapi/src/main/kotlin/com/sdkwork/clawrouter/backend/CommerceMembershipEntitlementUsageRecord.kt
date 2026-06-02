@@ -4,6 +4,7 @@ data class CommerceMembershipEntitlementUsageRecord(
     val balanceAfter: String? = null,
     val createdAt: String? = null,
     val entitlementId: String? = null,
+    val id: String? = null,
     val idempotencyKey: String? = null,
     val membershipId: String? = null,
     val occurredAt: String? = null,

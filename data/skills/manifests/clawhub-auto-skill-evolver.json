@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-skill-evolver@1.5.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-skill-evolver-1.5.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-skill-evolver-1.5.1.json"
+      },
       "version": "1.5.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5bcaa50ada1386982d58184a9d9760433deeb9ef3eb0d37bb087e90062cb447d",

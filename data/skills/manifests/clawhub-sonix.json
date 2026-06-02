@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sonix@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-sonix-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sonix-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:729496af084a8f0518266bd03a1e779c4a12e97b6d165997e737328458b6ac0a",

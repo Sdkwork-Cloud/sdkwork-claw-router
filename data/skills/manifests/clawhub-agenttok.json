@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agenttok@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agenttok-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agenttok-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6f2cd186584933bf8f561815e626a9b65e958cd9abc9d0bdfd7163f7fd71573b",

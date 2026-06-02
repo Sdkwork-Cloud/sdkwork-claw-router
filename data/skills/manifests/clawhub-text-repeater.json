@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/text-repeater@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-text-repeater-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-text-repeater-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e4cd3a491efd38115ff3f8d9090db082b1c51ec4960600ec16461505be506c33",

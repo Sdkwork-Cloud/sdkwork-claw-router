@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/provider-sync@2.1.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-provider-sync-2.1.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-provider-sync-2.1.5.json"
+      },
       "version": "2.1.5",
       "runtime": "metadata",
       "checksumHash": "sha256:9e0faf5986f00baac2cfc9a8eea2181948820270d8f06ccce58a0d13dc737d74",

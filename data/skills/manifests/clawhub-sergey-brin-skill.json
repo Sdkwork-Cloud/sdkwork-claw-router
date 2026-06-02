@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sergey-brin-skill@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-sergey-brin-skill-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sergey-brin-skill-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:a2ec55362cb272b69064a9a4eb6fe1bedc8d8954a65d33ac8635ca2999105641",

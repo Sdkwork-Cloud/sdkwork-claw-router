@@ -12,9 +12,11 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? DeletedAt { get; set; }
         public string? DeletedBy { get; set; }
         public string? Id { get; set; }
+        public string? MessageId { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? OrganizationId { get; set; }
         public string? RecipientRoleCode { get; set; }
+        public string? RecipientType { get; set; }
         public string? RecipientUserId { get; set; }
         public string? RecipientValue { get; set; }
         public string? Status { get; set; }

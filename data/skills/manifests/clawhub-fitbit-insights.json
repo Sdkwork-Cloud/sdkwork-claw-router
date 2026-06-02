@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fitbit-insights@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fitbit-insights-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fitbit-insights-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:924d6976fc440a365cb4daced94b39900181b28c0c897006a9db0f67af7b65aa",

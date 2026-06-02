@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cortex-engine@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cortex-engine-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cortex-engine-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:490682b60e7710c88fa5ec361324e26d4919896ec54e92f99241b1631f6dddb9",

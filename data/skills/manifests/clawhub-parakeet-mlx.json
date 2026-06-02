@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/parakeet-mlx@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-parakeet-mlx-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-parakeet-mlx-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a599ffc732740496561dbe1f9c306564bb0540e0a810c7a6fd822c93a149e50a",

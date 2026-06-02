@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/protein-qc-strict@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-protein-qc-strict-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-protein-qc-strict-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ddc7972a6c4f8f97503a9bb8b5e89daa9b67e87226d3f4600ba34cc666c56e23",

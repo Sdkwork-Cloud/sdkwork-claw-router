@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/capgemini@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-capgemini-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-capgemini-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cfb9007a88d874303b928b49d715ba8e81858e6be243a123689a6d53a97a5013",

@@ -8,6 +8,7 @@ public class CommerceDigitalDeliveryRecord {
     private String deliveryRef;
     private String deliveryType;
     private String fulfillmentId;
+    private String id;
     private String orderItemId;
     private String organizationId;
     private String status;
@@ -60,6 +61,14 @@ public class CommerceDigitalDeliveryRecord {
 
     public void setFulfillmentId(String fulfillmentId) {
         this.fulfillmentId = fulfillmentId;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrderItemId() {

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ticktick-tasks@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ticktick-tasks-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ticktick-tasks-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0b77964bec9f017c74fc91b063ea44fc1122b991ed4492261999a4b22e5a3b20",

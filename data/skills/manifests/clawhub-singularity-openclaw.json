@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/singularity-openclaw@2.9.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-singularity-openclaw-2.9.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-singularity-openclaw-2.9.1.json"
+      },
       "version": "2.9.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3daf885507aa9d49d0bc8148a840461198ba9016fcf198c24c1210cb5f51f521",

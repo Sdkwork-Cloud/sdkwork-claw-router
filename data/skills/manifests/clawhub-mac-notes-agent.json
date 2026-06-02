@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mac-notes-agent@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mac-notes-agent-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mac-notes-agent-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a30bbe32427963a373436cc55e723015704a1a9dfe0da816e0693901345c6048",

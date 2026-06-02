@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adp-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-adp-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adp-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8a16751f227c540f0661737b4a275fd36e3b94669cd72dd1f613d1d609e400c",

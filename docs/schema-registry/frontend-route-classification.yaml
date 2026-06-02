@@ -920,6 +920,7 @@ routes:
   - commerce_payment_intent
   - commerce_payment_attempt
   - commerce_product_spu
+  - commerce_product_spu_category
   - commerce_product_sku
   - commerce_product_category
   - commerce_product_media
@@ -1017,6 +1018,20 @@ routes:
   route_scope: admin
   delivery_kind: sdk_backed_business_runtime
   api_surface: backend
+  required_tables:
+  - commerce_product_category
+  - plus_category
+  - commerce_product_spu
+  - commerce_product_spu_category
+  - commerce_product_sku
+  - commerce_product_attribute
+  - commerce_product_category_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  - ops_audit_log
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
@@ -1117,6 +1132,55 @@ routes:
   - commerce_product_spu
   - commerce_product_sku
   - commerce_product_attribute
+  - commerce_product_category_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/catalog/products/new
+  package: sdkwork-claw-router-admin-catalog
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/catalog
+  required_tables:
+  - commerce_product_category
+  - commerce_product_spu
+  - commerce_product_sku
+  - commerce_product_attribute
+  - commerce_product_attribute_value
+  - commerce_product_sku_attribute
+  - commerce_product_media
+  - commerce_price_list
+  - commerce_price_list_item
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-catalog/src/catalogService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/catalog/products/:productId/edit
+  package: sdkwork-claw-router-admin-catalog
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/catalog
+  required_tables:
+  - commerce_product_category
+  - commerce_product_spu
+  - commerce_product_spu_category
+  - commerce_product_sku
+  - commerce_product_attribute
+  - commerce_product_category_attribute
   - commerce_product_attribute_value
   - commerce_product_sku_attribute
   - commerce_product_media
@@ -1138,8 +1202,10 @@ routes:
   required_tables:
   - commerce_product_category
   - commerce_product_spu
+  - commerce_product_spu_category
   - commerce_product_sku
   - commerce_product_attribute
+  - commerce_product_category_attribute
   - commerce_product_attribute_value
   - commerce_product_sku_attribute
   - commerce_product_media
@@ -1161,8 +1227,10 @@ routes:
   required_tables:
   - commerce_product_category
   - commerce_product_spu
+  - commerce_product_spu_category
   - commerce_product_sku
   - commerce_product_attribute
+  - commerce_product_category_attribute
   - commerce_product_attribute_value
   - commerce_product_sku_attribute
   - commerce_product_media
@@ -1184,8 +1252,10 @@ routes:
   required_tables:
   - commerce_product_category
   - commerce_product_spu
+  - commerce_product_spu_category
   - commerce_product_sku
   - commerce_product_attribute
+  - commerce_product_category_attribute
   - commerce_product_attribute_value
   - commerce_product_sku_attribute
   - commerce_product_media
@@ -1588,6 +1658,31 @@ routes:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-payments/src/paymentsService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/memberships/packages
+  package: sdkwork-claw-router-admin-memberships
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/memberships
+  required_tables:
+  - commerce_membership_plan
+  - commerce_membership_package
+  - commerce_membership_package_group
+  - commerce_membership
+  - commerce_membership_entitlement
+  - commerce_membership_entitlement_usage
+  - commerce_product_spu
+  - commerce_product_sku
+  - ops_audit_log
+  - commerce_order
+  - commerce_payment_attempt
+  - commerce_order_item
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/index.tsx
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-memberships/src/membershipsService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/memberships/vip-packages
   package: sdkwork-claw-router-admin-memberships
   owner: admin-control-plane
   route_scope: admin

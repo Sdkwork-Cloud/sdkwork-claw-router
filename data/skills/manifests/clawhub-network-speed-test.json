@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/network-speed-test@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-network-speed-test-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-network-speed-test-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:266586b9c6df4ae883dbba5b69a0ed17e70d65096447a917f3f438b1c3fad361",

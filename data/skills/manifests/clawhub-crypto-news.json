@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crypto-news@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-crypto-news-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crypto-news-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cd4011a246de036f9f1f1e29e6cf37eb0ef78f98062c8a2f8e12509bf9365aa9",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/migratesafe@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-migratesafe-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-migratesafe-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ebab0b9aa59dbbc495e18bc609ce867261f4bb0477d28b3f2069219f2d18d943",

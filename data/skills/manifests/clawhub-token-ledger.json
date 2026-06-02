@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/token-ledger@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-token-ledger-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-token-ledger-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db45dc565b78154aba31870bac10f752d35f06cbb4e16fb7b34907ae720fdda9",

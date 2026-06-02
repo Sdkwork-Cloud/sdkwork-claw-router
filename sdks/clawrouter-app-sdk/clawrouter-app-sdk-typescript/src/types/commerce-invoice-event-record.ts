@@ -14,6 +14,8 @@ export interface CommerceInvoiceEventRecord {
   event_type: string;
   /** From status field on commerce invoice event record. */
   from_status?: string;
+  /** Id field on commerce invoice event record. */
+  id?: string;
   /** Idempotency key field on commerce invoice event record. */
   idempotency_key: string;
   /** Invoice id field on commerce invoice event record. */

@@ -3,14 +3,14 @@ package com.sdkwork.clawrouter.app.model;
 import java.util.List;
 
 public class AppApiKeyListResponse {
-    private List<AppApiKeyGroup> groups;
+    private List<AppChannelGroup> groups;
     private List<AppApiKeyItem> items;
 
-    public List<AppApiKeyGroup> getGroups() {
+    public List<AppChannelGroup> getGroups() {
         return this.groups;
     }
 
-    public void setGroups(List<AppApiKeyGroup> groups) {
+    public void setGroups(List<AppChannelGroup> groups) {
         this.groups = groups;
     }
 

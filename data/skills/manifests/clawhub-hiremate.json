@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hiremate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hiremate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hiremate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b7825d0ea395c62adc69b2a189ebc790a3acbbcc709c8140cb209289ffe349b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/knowledge-spider@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-spider-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-knowledge-spider-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:359fdfd271c48bae89ad96120c528b4ea57010d406930acb56351ef4e005b41f",

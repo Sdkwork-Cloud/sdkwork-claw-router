@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/webcam@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-webcam-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-webcam-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:09798f726e3a863aa5d7839bbb06bde494ffe93cb10f8fc09c14ceced011923e",

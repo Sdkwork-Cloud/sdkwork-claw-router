@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentpass@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentpass-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentpass-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b354dd209e37d6a4480544707aeb03ee859ee9e4414dcc2e6d1d9ddf08a71045",

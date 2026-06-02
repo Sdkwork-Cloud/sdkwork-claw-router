@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/starz@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-starz-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-starz-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:059b433e85a5e0f31d5bbf04a150466b0f5489b240c9b875006c2bc1b4dd471c",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-agent-lending@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-agent-lending-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-agent-lending-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8e5e94579edc587a655074bb2ab6f9d0c532c10b8c53ae0b2885bf0b799315e4",

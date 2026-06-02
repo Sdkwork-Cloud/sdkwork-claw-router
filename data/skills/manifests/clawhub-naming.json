@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/naming@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-naming-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-naming-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bfe5588f598b8d2ccb434a70409ce8d50957540af86b0176f6431c8703830005",

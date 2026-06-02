@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pihole@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pihole-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pihole-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8f8b77d2d82b8464ede0c2cae20c4184f0790e69e92150821d33d2e933f380e6",

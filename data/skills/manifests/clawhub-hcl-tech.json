@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hcl-tech@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hcl-tech-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hcl-tech-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c1b78c7795e86b1c4976b580dada27af4138422976b910d3bbcf76db1e34121b",

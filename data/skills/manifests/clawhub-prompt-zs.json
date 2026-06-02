@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-zs@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-zs-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-zs-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:58b5cbed35857b0261c42298194bd4aa2e24cd4500c0eeb4b281c8174d411c1a",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-global-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-global-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-global-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dcfbe565aa81ff29802832ee717f174ad25b203c2b7d62d874c72a895244a1e8",

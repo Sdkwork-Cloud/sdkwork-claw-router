@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/coinfound-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-coinfound-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-coinfound-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:978fbefae6413b6e4a8e9e1c5e9361d0815cef8cc5d38750a6970c2133d86470",

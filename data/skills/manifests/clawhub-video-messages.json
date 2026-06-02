@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-messages@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-messages-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-messages-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdf92869bb5fba0fe66c500ab034e339178228d7d67ec6aa6dbaba28991b1b8d",

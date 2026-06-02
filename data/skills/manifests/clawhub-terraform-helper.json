@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/terraform-helper@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-terraform-helper-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-terraform-helper-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:659bb8fc7736d5993d81d99d6fd43fc757914da5a4133509f4fba7bdf4f0b541",

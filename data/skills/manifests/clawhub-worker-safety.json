@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/worker-safety@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-worker-safety-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-worker-safety-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f3f9aeddc5a1f4b506e8ac3e41840e6d729fbfa09ab3fa7e85b43ab0bb0b5774",

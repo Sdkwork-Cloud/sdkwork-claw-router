@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bbc-media@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bbc-media-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bbc-media-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:462174be6168a55ade0d1e8b1003c9b293f572519acdf3604132ee235cf43f94",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ragtop-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ragtop-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ragtop-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:79deb7276b6d3477ec12c8f15a4a6f4ce09f1efd13054d19953d77d6c3c9e6ae",

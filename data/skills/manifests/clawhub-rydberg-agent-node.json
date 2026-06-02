@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rydberg-agent-node@2.5.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-rydberg-agent-node-2.5.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rydberg-agent-node-2.5.1.json"
+      },
       "version": "2.5.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3e2092f3da67e68c7f683aa5352a16259242979b681dca7ac9dba73919ba0334",

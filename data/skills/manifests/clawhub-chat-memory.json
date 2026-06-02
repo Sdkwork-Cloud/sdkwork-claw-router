@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d2b55f7aeb032be2667a870f9633ca046f600bfd6258b001992ca636c33c809f",

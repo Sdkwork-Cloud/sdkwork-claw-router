@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docx-footnote-reader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-docx-footnote-reader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docx-footnote-reader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:988f4da3c75a2b991f340c200ce438f57c7a6d3a0e19e1bf4e5774e2beb80e6b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maersk@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-maersk-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maersk-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7132c899a5847a8312bc4217a4ea92be045893122e4be5ee7c524b8a412791a4",

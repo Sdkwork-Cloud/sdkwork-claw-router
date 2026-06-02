@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-migration@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-migration-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-migration-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:66635cc2d76577ea70ae63e52fa52d6f98757f8d259643982a0d00eb4f789928",

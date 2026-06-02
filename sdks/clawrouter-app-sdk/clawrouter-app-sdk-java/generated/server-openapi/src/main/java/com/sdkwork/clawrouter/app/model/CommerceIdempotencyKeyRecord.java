@@ -4,6 +4,7 @@ package com.sdkwork.clawrouter.app.model;
 public class CommerceIdempotencyKeyRecord {
     private String createdAt;
     private String expiresAt;
+    private String id;
     private String idempotencyKey;
     private String lockedUntil;
     private String organizationId;
@@ -28,6 +29,14 @@ public class CommerceIdempotencyKeyRecord {
 
     public void setExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

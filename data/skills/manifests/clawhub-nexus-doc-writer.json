@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nexus-doc-writer@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nexus-doc-writer-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nexus-doc-writer-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3370996f9de039656bbba688d94aa8e510755b13072fe0ba240c59cd3d3f860",

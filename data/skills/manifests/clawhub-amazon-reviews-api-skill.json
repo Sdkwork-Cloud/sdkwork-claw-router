@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-reviews-api-skill@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-reviews-api-skill-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-reviews-api-skill-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:04cab0e1c66ff051941010ac71a9e107ca870e7e3810f314867c677f92a10c02",

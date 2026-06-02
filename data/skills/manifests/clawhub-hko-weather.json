@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hko-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-hko-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hko-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:437d4a72e58876c806d15ec8879c9fd3ffa9bc20f6302c713b8e8f75d239d6b5",

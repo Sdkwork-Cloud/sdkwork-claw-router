@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bayer@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-bayer-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bayer-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:34bab36433db1d26eb3d77d07c6cd1b10aa1705f8dd00309bd3552b1b9a6965f",

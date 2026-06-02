@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.backend.model;
 
 public class CommerceInvoiceTitleRecord {
     private String createdAt;
+    private String id;
     private String name;
     private String ownerUserId;
     private String taxNo;
@@ -16,6 +17,14 @@ public class CommerceInvoiceTitleRecord {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

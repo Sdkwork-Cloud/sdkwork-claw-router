@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/visa-itinerary-gen@1.7.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-visa-itinerary-gen-1.7.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-visa-itinerary-gen-1.7.4.json"
+      },
       "version": "1.7.4",
       "runtime": "metadata",
       "checksumHash": "sha256:73983031b07860f3471c8dce9a44f76fecd8e908fd170c143d52a5f2e305c116",

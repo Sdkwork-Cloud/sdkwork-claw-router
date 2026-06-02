@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nissan-motor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nissan-motor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nissan-motor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9f0a4eea8fff8cdc86eb3e702648cd4b18c829a0de8d89e0ce00b75ad466af22",

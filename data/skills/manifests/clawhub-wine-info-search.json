@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wine-info-search@1.6.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wine-info-search-1.6.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wine-info-search-1.6.1.json"
+      },
       "version": "1.6.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0f33c6a2ddff2db775e9af70239c5b1f58f9f40f38bb0768f51172a713911be9",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/download-webpage-as-pdf@0.1.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-download-webpage-as-pdf-0.1.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-download-webpage-as-pdf-0.1.3.json"
+      },
       "version": "0.1.3",
       "runtime": "metadata",
       "checksumHash": "sha256:38086399835f695392a24379467ce1aaa2787c4bfff0f4d28e47832b2b05cfa4",

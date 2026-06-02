@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nano-banana-pdf-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-nano-banana-pdf-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nano-banana-pdf-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fef856b000a24239a0c5d9c0f4b91364bca798121e8779f783067bde5d9154d8",

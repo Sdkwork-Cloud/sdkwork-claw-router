@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mineru-pdf-parser@3.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-mineru-pdf-parser-3.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mineru-pdf-parser-3.0.3.json"
+      },
       "version": "3.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:54319f8fc8ebbac8c6f4619f7a73fa4d45473512096ef07350b2ba1c9994840e",

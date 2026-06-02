@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pdf-ocr-layout@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pdf-ocr-layout-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pdf-ocr-layout-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:38503ff0dd7879a00758bc68e1edeff0d94e4a44124996ccc9b853c7abe882af",

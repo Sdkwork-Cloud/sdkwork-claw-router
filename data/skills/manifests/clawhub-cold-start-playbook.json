@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cold-start-playbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cold-start-playbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cold-start-playbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:40cc36f7936fd346fb2253b7f5e1d7490b7ab7bcd085bf0a7d5e4c97fd5a90f2",

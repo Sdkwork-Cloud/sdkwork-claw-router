@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bmi@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-bmi-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bmi-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b274c16f891fcec310a96faa10fc59fe01c93e9cb1b7b1fd468d5209c6d3fee8",

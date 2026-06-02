@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/earnings-financials-agent@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-earnings-financials-agent-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-earnings-financials-agent-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:93eaa489a9191694cc7c43cf976c50ea3cdf2432d2dfb6371f2c3873f3b35b48",

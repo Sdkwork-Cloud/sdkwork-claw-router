@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weekly-ops-review@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weekly-ops-review-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weekly-ops-review-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8eca10f06bd5701e09df9ab41139bed444d1d29eecf4f27093fc32dca743c520",

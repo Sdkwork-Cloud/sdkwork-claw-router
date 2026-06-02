@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pms-worklog@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pms-worklog-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pms-worklog-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6eee28ce304c43a16ebc95568d6bf94206a44154fd30f29d9357ec06c9900f34",

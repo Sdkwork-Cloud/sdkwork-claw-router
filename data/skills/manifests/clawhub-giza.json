@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/giza@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-giza-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-giza-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1723f2982a435cc20416e73856faa286c30d0b9fc36c1d5f346d66417f2fbda9",

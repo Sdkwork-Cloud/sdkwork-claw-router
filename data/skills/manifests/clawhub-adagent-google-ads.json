@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/adagent-google-ads@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-adagent-google-ads-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-adagent-google-ads-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d4fc279197cc0d6ac78f97029a79ec75c086c67df2bbc7a7740eb1452b8dd8b6",

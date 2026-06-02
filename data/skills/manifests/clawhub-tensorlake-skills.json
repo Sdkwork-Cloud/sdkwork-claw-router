@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tensorlake-skills@2.7.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-tensorlake-skills-2.7.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tensorlake-skills-2.7.1.json"
+      },
       "version": "2.7.1",
       "runtime": "metadata",
       "checksumHash": "sha256:429738ce46c93c8bb70b1ed720dfbc135965e65763e8775b6333ab7dc0d2258c",

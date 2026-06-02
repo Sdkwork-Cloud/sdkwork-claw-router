@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finddata@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-finddata-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finddata-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5b66e2faf1d89d137797f1931626f6d481641c3fc39a4cd3a2b6394096d7352b",

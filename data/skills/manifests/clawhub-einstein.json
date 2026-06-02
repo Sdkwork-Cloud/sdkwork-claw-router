@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/einstein@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-einstein-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-einstein-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ceb3faacdc72d3b140dcd79afc5ad224e287620328771021e0291e45113aa716",

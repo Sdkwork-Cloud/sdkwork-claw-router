@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/asus@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-asus-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-asus-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:667b82a7586ce0252722871e289ef963fa0e7a6e4b886a509e826cee9ad3cb54",

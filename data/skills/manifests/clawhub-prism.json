@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prism@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-prism-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prism-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0447701e26438c2839ed90b2c6e0079228551022b961c05977fc9ffd42e4919a",

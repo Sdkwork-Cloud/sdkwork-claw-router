@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chrome-debug-launcher@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-chrome-debug-launcher-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chrome-debug-launcher-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:38efaddcdd7e30e0535bf5fc1c6af21dd83b3e36a10b71fdb20eab4a7a9f2433",

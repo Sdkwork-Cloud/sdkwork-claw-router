@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tradekix@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tradekix-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tradekix-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c665347dec1749503d87df327fdf32042cddb7b2c32c631e8d7e486d5c11db13",

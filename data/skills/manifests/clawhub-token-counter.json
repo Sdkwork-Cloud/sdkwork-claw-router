@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/token-counter@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-token-counter-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-token-counter-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:59722b8a0b0b310f41546da3901500ae4ff47ec46c29fa4053759418dd4aed34",

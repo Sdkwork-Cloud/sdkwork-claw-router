@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/silverbullet-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-silverbullet-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-silverbullet-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:39e3a13435c589ca592be11a7ad1f6cf241e5e809c441d7c129a6cff9c8fec2d",

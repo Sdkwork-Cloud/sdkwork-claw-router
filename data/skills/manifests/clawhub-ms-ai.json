@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ms-ai@1.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ms-ai-1.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ms-ai-1.2.1.json"
+      },
       "version": "1.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:45019d09e27d4b20cc950a86215c74280260424d194aa73bb55fd54fb4efa29a",

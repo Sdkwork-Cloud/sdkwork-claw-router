@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloud-tagging-enforcer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloud-tagging-enforcer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloud-tagging-enforcer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:04e4ad8ec7300a9f12782057949f898e96d907c2a46b8babed0cba486b161b6b",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/botlearn-healthcheck@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-botlearn-healthcheck-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-botlearn-healthcheck-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:0f837f40e0f8613ee19be18bd98e26921596f762acc4c2797f6e7481fc1dde66",

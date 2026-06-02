@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pingone@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-pingone-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pingone-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:d3b18e9eb0ea319718b18f0e88eaa48f30b0a34e6b7b044d1544f656f4ae0d81",

@@ -191,6 +191,49 @@ async fn sqlite_admin_channel_endpoint_store_returns_none_when_account_is_out_of
 }
 
 #[tokio::test]
+async fn sqlite_admin_channel_endpoint_store_resolves_system_vendor_and_api_endpoint_catalog() {
+    let pool = schema_sqlite_pool().await;
+    seed_channel_with_system_catalog_scope(&pool).await;
+    let store = SqliteAdminChannelEndpointStore::new(pool.clone());
+
+    let created = store
+        .create_channel_endpoint(CreateAdminChannelEndpointCommand {
+            subject: subject(),
+            endpoint_uuid: "endpoint-system-catalog".to_owned(),
+            audit_log_uuid: "audit-system-catalog".to_owned(),
+            channel_id: 9003,
+            vendor_code: "openai".to_owned(),
+            region_code: "global".to_owned(),
+            api_endpoint_code: "openai.chat_completions".to_owned(),
+            base_url: "https://api.openai.com/v1".to_owned(),
+            priority: 100,
+            weight: 100,
+            status: "disabled".to_owned(),
+            effective_from: None,
+            effective_to: None,
+            request_id: "req-system-catalog".to_owned(),
+            requested_at: "2026-05-28 10:04:00".to_owned(),
+        })
+        .await
+        .unwrap()
+        .expect("system catalog-backed endpoint should be created");
+
+    let stored = sqlx::query(
+        r#"
+        SELECT vendor_id, api_endpoint_id
+        FROM ai_channel_endpoint
+        WHERE id = ?
+        "#,
+    )
+    .bind(created.id)
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(Some(9100), stored.get::<Option<i64>, _>("vendor_id"));
+    assert_eq!(Some(9200), stored.get::<Option<i64>, _>("api_endpoint_id"));
+}
+
+#[tokio::test]
 async fn sqlite_admin_channel_endpoint_store_rejects_unresolved_vendor_or_api_endpoint() {
     let pool = schema_sqlite_pool().await;
     seed_provider_account_scope(&pool).await;
@@ -277,6 +320,16 @@ async fn seed_provider_account_scope(pool: &sqlx::SqlitePool) {
         "INSERT INTO ai_api_endpoint (id, uuid, tenant_id, organization_id, endpoint_code, protocol_code, display_name, path_template, status) VALUES (9201, 'test-endpoint-openai-chat-completions', 10, 20, 'openai.chat_completions', 'openai', 'OpenAI Chat Completions', '/v1/chat/completions', 1)",
         "INSERT INTO ai_channel (id, uuid, tenant_id, organization_id, provider_code, channel_code, channel_name, channel_type, credential_ref, status) VALUES (9002, 'test-channel-openrouter-main', 10, 20, 'openrouter', 'openrouter-main', 'OpenRouter main', 'relay', 'secret://providers/openrouter/main', 1)",
         "INSERT INTO ai_channel (id, uuid, tenant_id, organization_id, provider_code, channel_code, channel_name, channel_type, credential_ref, status) VALUES (9902, 'test-channel-openrouter-other-org', 10, 99, 'openrouter', 'openrouter-other', 'OpenRouter other org', 'relay', 'secret://providers/openrouter/other', 1)",
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
+}
+
+async fn seed_channel_with_system_catalog_scope(pool: &sqlx::SqlitePool) {
+    for statement in [
+        "INSERT INTO ai_model_vendor (id, uuid, tenant_id, organization_id, vendor_code, display_name, status) VALUES (9100, 'test-system-vendor-openai', 0, 0, 'openai', 'OpenAI', 1)",
+        "INSERT INTO ai_api_endpoint (id, uuid, tenant_id, organization_id, endpoint_code, protocol_code, display_name, path_template, status) VALUES (9200, 'test-system-endpoint-openai-chat-completions', 0, 0, 'openai.chat_completions', 'openai', 'OpenAI Chat Completions', '/v1/chat/completions', 1)",
+        "INSERT INTO ai_channel (id, uuid, tenant_id, organization_id, provider_code, channel_code, channel_name, channel_type, credential_ref, status) VALUES (9003, 'test-channel-openai-default', 10, 20, 'openai', 'openai-default', 'OpenAI default', 'official', 'secret://providers/openai/default', 0)",
     ] {
         sqlx::query(statement).execute(pool).await.unwrap();
     }

@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Studio app template record schema exposed by Claw Router. */
 export interface StudioAppTemplateRecord {
@@ -10,8 +11,8 @@ export interface StudioAppTemplateRecord {
   category_code?: string;
   /** Category id field on studio app template record. */
   category_id?: string;
-  /** Cover url field on studio app template record. */
-  cover_url?: string;
+  /** Cover field on studio app template record. */
+  cover?: MediaResource;
   /** Created at field on studio app template record. */
   created_at?: string;
   /** Current version id field on studio app template record. */
@@ -40,8 +41,8 @@ export interface StudioAppTemplateRecord {
   git_repo_url?: string;
   /** Git sub path field on studio app template record. */
   git_sub_path?: string;
-  /** Icon url field on studio app template record. */
-  icon_url?: string;
+  /** Icon field on studio app template record. */
+  icon?: MediaResource;
   /** Id field on studio app template record. */
   id?: string;
   /** Language field on studio app template record. */

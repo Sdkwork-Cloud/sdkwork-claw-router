@@ -8,6 +8,8 @@ export interface CommercePaymentReconciliationItemRecord {
   difference_amount?: string;
   /** Difference type field on commerce payment reconciliation item record. */
   difference_type: string;
+  /** Id field on commerce payment reconciliation item record. */
+  id?: string;
   /** Internal amount field on commerce payment reconciliation item record. */
   internal_amount?: string;
   /** Internal status field on commerce payment reconciliation item record. */

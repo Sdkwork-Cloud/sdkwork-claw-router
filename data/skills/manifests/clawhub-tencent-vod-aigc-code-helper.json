@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencent-vod-aigc-code-helper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencent-vod-aigc-code-helper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencent-vod-aigc-code-helper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a2defdf0f6d6c0242f2abec44a3bb600fdc3f39475ff3b0b4055dd04182a3431",

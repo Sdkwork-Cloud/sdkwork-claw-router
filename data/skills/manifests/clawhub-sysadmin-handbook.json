@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sysadmin-handbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sysadmin-handbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sysadmin-handbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0bafea6e32ede60986577bceef59a2da233e34b0680b8d3739a9cd2116990cc3",

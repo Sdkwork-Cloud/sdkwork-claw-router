@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-token-sentinel@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-token-sentinel-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-token-sentinel-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:56f1882bc041adc1c63226e32923ed69b5a244b7f364e21ded2e87cd3685fda9",

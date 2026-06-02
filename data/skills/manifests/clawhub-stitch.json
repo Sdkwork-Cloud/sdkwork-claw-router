@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stitch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stitch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stitch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9c50c25108573f6b4c0079b9d50bd061bb6642137c70f925cbae2467f8bd65b0",

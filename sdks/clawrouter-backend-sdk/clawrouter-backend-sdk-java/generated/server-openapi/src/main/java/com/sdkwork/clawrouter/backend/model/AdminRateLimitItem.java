@@ -4,7 +4,9 @@ package com.sdkwork.clawrouter.backend.model;
 public class AdminRateLimitItem {
     private String blockDuration;
     private Integer burst;
-    private String group;
+    private String channelGroup;
+    private String channelGroupId;
+    private String channelGroupName;
     private String id;
     private String keyPrefix;
     private String model;
@@ -33,12 +35,28 @@ public class AdminRateLimitItem {
         this.burst = burst;
     }
 
-    public String getGroup() {
-        return this.group;
+    public String getChannelGroup() {
+        return this.channelGroup;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setChannelGroup(String channelGroup) {
+        this.channelGroup = channelGroup;
+    }
+
+    public String getChannelGroupId() {
+        return this.channelGroupId;
+    }
+
+    public void setChannelGroupId(String channelGroupId) {
+        this.channelGroupId = channelGroupId;
+    }
+
+    public String getChannelGroupName() {
+        return this.channelGroupName;
+    }
+
+    public void setChannelGroupName(String channelGroupName) {
+        this.channelGroupName = channelGroupName;
     }
 
     public String getId() {

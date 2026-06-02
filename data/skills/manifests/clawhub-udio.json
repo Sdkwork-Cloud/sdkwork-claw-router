@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/udio@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-udio-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-udio-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:977cb3cede7003176000653cb967ef4c6b43a6c99b84d1596226532600d78d7d",

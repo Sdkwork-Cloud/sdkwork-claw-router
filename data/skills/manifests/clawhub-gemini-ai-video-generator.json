@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-ai-video-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-ai-video-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-ai-video-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b5f85cce1048a3ad6e600aa828f6dc418ede3a55425aca765de95a51978f80f7",

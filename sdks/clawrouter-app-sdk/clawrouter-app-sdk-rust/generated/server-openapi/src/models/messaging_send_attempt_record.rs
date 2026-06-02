@@ -3,6 +3,14 @@ use serde::{Deserialize, Serialize};
 /// Messaging send attempt record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct MessagingSendAttemptRecord {
+    /// Attempt no field on messaging send attempt record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub attempt_no: Option<i64>,
+
+    /// Attempted at field on messaging send attempt record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub attempted_at: Option<String>,
+
     /// Created at field on messaging send attempt record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -43,6 +51,14 @@ pub struct MessagingSendAttemptRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub payload_hash: Option<String>,
 
+    /// Provider account id field on messaging send attempt record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_account_id: Option<String>,
+
+    /// Provider code field on messaging send attempt record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub provider_code: Option<String>,
+
     /// Provider message id field on messaging send attempt record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub provider_message_id: Option<String>,
@@ -66,6 +82,10 @@ pub struct MessagingSendAttemptRecord {
     /// Retry after at field on messaging send attempt record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub retry_after_at: Option<String>,
+
+    /// Send request id field on messaging send attempt record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub send_request_id: Option<String>,
 
     /// Status field on messaging send attempt record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

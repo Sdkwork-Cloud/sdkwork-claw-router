@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/just-note@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-just-note-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-just-note-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f2990a97095bbab834b147cc66741670803465cd7db040000f65e22dc1a06de",

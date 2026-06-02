@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcdonalds-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcdonalds-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcdonalds-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e54b36e6cfcef2e01f7c9eb11a63aadab81869e157efcd538e4d3cadfbc9b70b",

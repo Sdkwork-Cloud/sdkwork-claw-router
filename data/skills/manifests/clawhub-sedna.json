@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sedna@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sedna-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sedna-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:5ed5182dac87f2678761c55dfb7e59ca6127247afcaa190e42f19674ce6b1628",

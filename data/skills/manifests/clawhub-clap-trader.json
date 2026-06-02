@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clap-trader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clap-trader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clap-trader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0baacfff99bf3bcf27ec14225c69c340e426b20624b1e3f1ca459dbe840d8693",

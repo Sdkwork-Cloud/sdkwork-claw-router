@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paper-summarize-pdf-to-feishu@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paper-summarize-pdf-to-feishu-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paper-summarize-pdf-to-feishu-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af29c3a6b00f7178a298610531c3d714a584317df898a1e892539435643ee953",

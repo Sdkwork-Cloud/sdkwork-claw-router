@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/four-word-phrases@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-four-word-phrases-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-four-word-phrases-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4b135d20bc476323d65e4dbd2ccbb0659b79862e4fa825d4dd6b54f808425311",

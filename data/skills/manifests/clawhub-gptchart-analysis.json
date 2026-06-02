@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gptchart-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gptchart-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gptchart-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6089d142f98d5eb0254fa903f83467b82dc32081570a6068a91609ff716f4c0c",

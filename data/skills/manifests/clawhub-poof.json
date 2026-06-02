@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/poof@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-poof-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-poof-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:8069f0f7f8e792cf9b662d440a60a7f4dff01f226988dbcfe536b291d4aa4b03",

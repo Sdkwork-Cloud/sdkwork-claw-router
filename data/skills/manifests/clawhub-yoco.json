@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yoco@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-yoco-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yoco-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:77f91999adc113656737905b8992cf3b68ffc39b0abbd663b27ee495cd9335d2",

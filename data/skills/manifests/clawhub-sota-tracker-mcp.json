@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sota-tracker-mcp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sota-tracker-mcp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sota-tracker-mcp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7ca4e08bda2c923f6caa4f729a10981ad8b1c6b15d3e736c1c1419a8230584bf",

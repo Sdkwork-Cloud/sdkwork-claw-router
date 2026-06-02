@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-transcription@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-transcription-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-transcription-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:788881ed279a8c3706257c3f5a764ee4138a0cc79a356a320e39fcb29dda65d8",

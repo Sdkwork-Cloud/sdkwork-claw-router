@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/discord-openapi-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-discord-openapi-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-discord-openapi-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d1ae46efb9b6f2084a9c1153f328876fbbf527ff8d9f72aa7259d49ffdab3286",

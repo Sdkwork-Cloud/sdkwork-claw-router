@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/proxygate@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-proxygate-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-proxygate-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:854d9235a81ca44b68dc742ac620df2d997d52265487be67d95ba366208f43b7",

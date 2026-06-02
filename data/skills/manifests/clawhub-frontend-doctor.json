@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/frontend-doctor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-frontend-doctor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-frontend-doctor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:20d7b226cc5f759f892bfac74ec5ccf6b44837555520aa95040759bd03f385a6",

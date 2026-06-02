@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiaozhua-agent-deployment@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiaozhua-agent-deployment-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiaozhua-agent-deployment-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7e2ed8ec37f717e46bf3304cca9cf3afbf2ed64d6bcafba8209b5a45cb73f674",

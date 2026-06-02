@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/okta@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-okta-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-okta-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:5dc6e7501a6f3554be5e7beaa86e0f8ca6d155a77046f6becdc6d1c00813cd79",

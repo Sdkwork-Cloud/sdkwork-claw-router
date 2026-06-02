@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/operator-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-operator-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-operator-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a7b7e23fa9010bf671e22aab0aa75cb67d7cfc764e419286bb6eda03255b6948",

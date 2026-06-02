@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/car-log@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-car-log-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-car-log-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:524b4e396808474ee4d1ae08d0c9886a64d2d79eefd54072331771f4f505c186",

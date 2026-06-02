@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/muninn@2.3.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-muninn-2.3.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-muninn-2.3.7.json"
+      },
       "version": "2.3.7",
       "runtime": "metadata",
       "checksumHash": "sha256:1a8bef2a4949f03875fe848b09868b664e2681aac6dab556659a1adab43cf79e",

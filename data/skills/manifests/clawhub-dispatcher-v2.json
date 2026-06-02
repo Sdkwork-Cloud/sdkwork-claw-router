@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dispatcher-v2@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dispatcher-v2-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dispatcher-v2-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7d8ff60f887cdb860279d4d39d1b61d2fc8b4e8c2151a89160b162d0077f5872",

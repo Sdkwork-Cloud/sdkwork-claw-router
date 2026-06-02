@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/videogen@2.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-videogen-2.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-videogen-2.2.0.json"
+      },
       "version": "2.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5c9d13dba94e450ea5615c3a31d5bb28d51329f50b0217f201e6f5aa6bd8c3d8",

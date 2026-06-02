@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/medcrypt@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-medcrypt-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-medcrypt-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b51f3685a777ca5b91e843ba6fe6bfb67f950f2fbfb70aedbf4e8d254fbf49d8",

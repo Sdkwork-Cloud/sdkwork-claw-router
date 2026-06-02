@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jose-self-improving-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jose-self-improving-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jose-self-improving-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:60d8b5d91e3fc1f1c07b4bc78fc789eaaeea43e3c0a7c05f29f0b5b49aa027c0",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rotifer-agent@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-rotifer-agent-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rotifer-agent-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c5ec8d88ea2b2ab4af5f9415d627b3ddd1bea5db4a76af7876dad7aef710746f",

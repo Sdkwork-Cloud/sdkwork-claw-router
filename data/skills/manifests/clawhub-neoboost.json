@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/neoboost@0.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-neoboost-0.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-neoboost-0.2.2.json"
+      },
       "version": "0.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cd1dff075741c63c8620c042127cdd3be8db2fd5d27a639ecfd6b268b9b6571d",

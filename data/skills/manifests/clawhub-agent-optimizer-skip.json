@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-optimizer-skip@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-optimizer-skip-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-optimizer-skip-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e192f2da9e0d85cdf4cb5a4705614038db80237422aace0c8934ed11f61207e1",

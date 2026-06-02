@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gettr-transcribe@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gettr-transcribe-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gettr-transcribe-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d34ec804799cd645ea84c6d23ee5677bb7bbea94de1cae1e1dfa6f2695cf781c",

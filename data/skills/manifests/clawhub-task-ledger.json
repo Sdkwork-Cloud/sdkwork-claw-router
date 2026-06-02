@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/task-ledger@0.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-task-ledger-0.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-task-ledger-0.3.2.json"
+      },
       "version": "0.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:21cf175ea35b11b27b1dbe0b17cdc74292bf92a2d520f14b3964c75d51631ac7",

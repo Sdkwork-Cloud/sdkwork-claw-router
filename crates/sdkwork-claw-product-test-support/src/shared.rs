@@ -356,7 +356,31 @@ pub(crate) async fn sqlite_template_objects_current(pool: &SqlitePool) -> bool {
             return false;
         }
     }
+    for (table, column) in required_generated_columns() {
+        let pragma = format!("PRAGMA table_info({table})");
+        let rows = match sqlx::query(pragma.as_str()).fetch_all(pool).await {
+            Ok(rows) => rows,
+            Err(_) => return false,
+        };
+        let exists = rows.into_iter().any(|row| {
+            row.try_get::<String, _>("name")
+                .map(|name| name.eq_ignore_ascii_case(column))
+                .unwrap_or(false)
+        });
+        if !exists {
+            return false;
+        }
+    }
     true
+}
+
+fn required_generated_columns() -> &'static [(&'static str, &'static str)] {
+    &[
+        ("plus_category", "icon_resource_snapshot"),
+        ("plus_agent_skill_package", "icon_resource_snapshot"),
+        ("plus_agent_skill", "icon_resource_snapshot"),
+        ("content_course", "thumbnail_resource_snapshot"),
+    ]
 }
 
 fn generated_schema_object_names() -> Vec<(&'static str, String)> {

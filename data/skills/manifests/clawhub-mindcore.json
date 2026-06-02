@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mindcore@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mindcore-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mindcore-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3facb8dec61f0b730fbd494be439b3dc75aabee2bb7f67945d00466742258258",

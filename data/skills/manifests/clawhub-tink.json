@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tink@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tink-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tink-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:6ad4e24afe5b758f74e1ab94e7a4aa420e570095e8d05f70c3070b0f346d2af3",

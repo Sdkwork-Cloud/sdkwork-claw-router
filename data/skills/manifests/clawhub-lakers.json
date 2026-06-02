@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lakers@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lakers-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lakers-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2198fd421925de2974cfbef96d148642c8d8860d355fca1d01cabe0f2867148c",

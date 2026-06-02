@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/elastic-path@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-elastic-path-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-elastic-path-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:396e0bc67c341b90adc1e9e32ae5e19a5334341cdd8b4640b7c8aeba780f9b33",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tsend@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tsend-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tsend-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6b6dc48b80d497888723246a89263d96c7c06710a136aa1c41832fe8dd6c904d",

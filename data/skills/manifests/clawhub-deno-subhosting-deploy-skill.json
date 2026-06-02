@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deno-subhosting-deploy-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-deno-subhosting-deploy-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deno-subhosting-deploy-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a3a9e2f64927531ee6e28775a580f45823b439dc4862f7b354fcc5533cd90531",

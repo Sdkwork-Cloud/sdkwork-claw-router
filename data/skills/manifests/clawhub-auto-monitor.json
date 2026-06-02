@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ecb0107fe2f72f5f92e8b2fcbc9332ae18f2a1eda833c5502cf199b2ae15853c",

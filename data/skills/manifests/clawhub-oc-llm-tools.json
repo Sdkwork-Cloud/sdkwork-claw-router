@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/oc-llm-tools@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-oc-llm-tools-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-oc-llm-tools-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86db7d496ccf8c5fd70bd5018166d2107617fc74270a8ded7460ad5a7fbb28d2",

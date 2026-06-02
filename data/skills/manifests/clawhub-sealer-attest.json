@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sealer-attest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sealer-attest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sealer-attest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:288c2b827c2d2bc3b29ffdce6245f25c82621e891e4e8ad9f7016bc916c51374",

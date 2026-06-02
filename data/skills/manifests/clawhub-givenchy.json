@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/givenchy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-givenchy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-givenchy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:aa06f72b0bf69e68af5794ed41382ce21f320d16002b3505aaf8b11fbc944726",

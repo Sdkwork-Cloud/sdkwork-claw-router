@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/backend-developer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-backend-developer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-backend-developer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dd366bc84b00aa590f2fd40327a9876ea68e9d31427b2186414bf2fd79420cf6",

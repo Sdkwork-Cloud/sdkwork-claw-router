@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/local-llm-router@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-local-llm-router-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-local-llm-router-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a52cd3ad5a8cdc404646db4a91a431acc9e7541ae0f5d6861381c0793933624d",

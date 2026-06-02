@@ -3,7 +3,7 @@ package types
 // Ai agent record schema exposed by Claw Router.
 type AiAgentRecord struct {
 	AgentCode string `json:"agent_code"`
-	AvatarUrl string `json:"avatar_url"`
+	Avatar MediaResource `json:"avatar"`
 	CreatedAt string `json:"created_at"`
 	DataScope string `json:"data_scope"`
 	DefaultVersionId string `json:"default_version_id"`

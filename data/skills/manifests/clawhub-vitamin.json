@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vitamin@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-vitamin-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vitamin-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0837f6e4b3f5aee742f8cf34c0638cfefee21e524f4c2f0de68b1bc799ec277a",

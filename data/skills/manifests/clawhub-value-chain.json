@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/value-chain@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-value-chain-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-value-chain-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5924cd8bae2120353ac11cd084900637f4647d778ea6b3ba7fea3173aa838a8f",

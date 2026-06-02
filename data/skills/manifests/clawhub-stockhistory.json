@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stockhistory@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-stockhistory-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stockhistory-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:973d6df2357a8f4caf03883e24e57b17373a7dbcc9a0d172d21c3f9a30bade6e",

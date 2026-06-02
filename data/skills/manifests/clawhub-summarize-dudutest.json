@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/summarize-dudutest@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-summarize-dudutest-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-summarize-dudutest-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:12c1e0278351d69ae56701fafcaba683a306d62a71750ba74e8dcabc51927e08",

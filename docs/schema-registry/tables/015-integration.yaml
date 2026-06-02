@@ -29,7 +29,9 @@ tables:
   columns:
     provider: string(64)
     name: string(128)
-    icon_url: string(512)
+    icon_media_resource_id: string(128)
+    icon_object_blob_id: int64
+    icon_resource_snapshot: json
     docs_url: string(512)
     website_url: string(512)
     capabilities: json

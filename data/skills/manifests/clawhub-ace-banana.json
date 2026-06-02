@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ace-banana@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-ace-banana-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ace-banana-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:1a444df2be0e32f1bff997827371c15243c061c9c88f21d8dd299095662c7591",

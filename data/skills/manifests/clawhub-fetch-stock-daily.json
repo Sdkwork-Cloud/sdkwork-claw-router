@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fetch-stock-daily@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fetch-stock-daily-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fetch-stock-daily-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:921daa4a2cb83ff347f99d8430b60c6742b03e098520186605901f3acfecae46",

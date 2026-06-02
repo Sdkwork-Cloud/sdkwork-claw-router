@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/groq-voice-transcriber@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-groq-voice-transcriber-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-groq-voice-transcriber-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5486a3fec3f484163154a51e808140a334afaa3c90252ccbfbe26d9e18590ce9",

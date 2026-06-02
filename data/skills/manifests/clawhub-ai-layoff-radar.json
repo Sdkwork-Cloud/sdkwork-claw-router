@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-layoff-radar@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-layoff-radar-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-layoff-radar-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8c865d6fd2cad47be43a3388574bf1234628b91c99a6f0b02bb81ff405ee355d",

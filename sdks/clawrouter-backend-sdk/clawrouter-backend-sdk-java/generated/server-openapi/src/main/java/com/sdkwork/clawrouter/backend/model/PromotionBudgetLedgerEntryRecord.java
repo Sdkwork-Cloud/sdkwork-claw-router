@@ -2,20 +2,33 @@ package com.sdkwork.clawrouter.backend.model;
 
 
 public class PromotionBudgetLedgerEntryRecord {
+    private String amountDeltaMinor;
     private String applicationId;
+    private String balanceAmountMinor;
+    private String balanceQuantity;
     private String budgetAccountId;
     private String businessType;
     private String createdAt;
     private String currencyCode;
     private String direction;
+    private String id;
     private String idempotencyKey;
     private String ledgerNo;
     private String occurredAt;
     private String organizationId;
+    private String quantityDelta;
     private String requestNo;
     private String sourceId;
     private String sourceType;
     private String tenantId;
+
+    public String getAmountDeltaMinor() {
+        return this.amountDeltaMinor;
+    }
+
+    public void setAmountDeltaMinor(String amountDeltaMinor) {
+        this.amountDeltaMinor = amountDeltaMinor;
+    }
 
     public String getApplicationId() {
         return this.applicationId;
@@ -23,6 +36,22 @@ public class PromotionBudgetLedgerEntryRecord {
 
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
+    }
+
+    public String getBalanceAmountMinor() {
+        return this.balanceAmountMinor;
+    }
+
+    public void setBalanceAmountMinor(String balanceAmountMinor) {
+        this.balanceAmountMinor = balanceAmountMinor;
+    }
+
+    public String getBalanceQuantity() {
+        return this.balanceQuantity;
+    }
+
+    public void setBalanceQuantity(String balanceQuantity) {
+        this.balanceQuantity = balanceQuantity;
     }
 
     public String getBudgetAccountId() {
@@ -65,6 +94,14 @@ public class PromotionBudgetLedgerEntryRecord {
         this.direction = direction;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getIdempotencyKey() {
         return this.idempotencyKey;
     }
@@ -95,6 +132,14 @@ public class PromotionBudgetLedgerEntryRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getQuantityDelta() {
+        return this.quantityDelta;
+    }
+
+    public void setQuantityDelta(String quantityDelta) {
+        this.quantityDelta = quantityDelta;
     }
 
     public String getRequestNo() {

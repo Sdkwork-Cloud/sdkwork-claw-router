@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-md-initializer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-md-initializer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-md-initializer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c3bc636f0204a5a651268eb33cb7a8292bd02cd70643dc492158de179d22cdd0",

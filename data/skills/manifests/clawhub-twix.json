@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/twix@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-twix-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-twix-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:27d6b56efe52c54073f8f23256cc91af1ed94937c87eee9457d589c0307a9c14",

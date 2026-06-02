@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ppt-agent@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ppt-agent-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ppt-agent-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b3fbf9190b44db91c74a6df3761ea47d78711d722fe1b3b0ccbe491462f94249",

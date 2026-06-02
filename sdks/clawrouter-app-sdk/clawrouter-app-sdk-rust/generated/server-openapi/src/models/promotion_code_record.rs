@@ -33,6 +33,9 @@ pub struct PromotionCodeRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub claim_code_suffix: Option<String>,
 
+    /// Claimed quantity field on promotion code record.
+    pub claimed_quantity: String,
+
     /// Code no field on promotion code record.
     pub code_no: String,
 
@@ -52,6 +55,13 @@ pub struct PromotionCodeRecord {
     /// Expires at field on promotion code record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub expires_at: Option<String>,
+
+    /// Id field on promotion code record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
+    /// Max claims field on promotion code record.
+    pub max_claims: String,
 
     /// Offer id field on promotion code record.
     pub offer_id: String,

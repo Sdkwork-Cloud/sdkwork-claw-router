@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tabnine@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tabnine-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tabnine-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:1f998bb84026f51a74af958af2e1bd834ade71fe47687a025033b20211ae0fdf",

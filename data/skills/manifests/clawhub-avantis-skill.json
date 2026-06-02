@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/avantis-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-avantis-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-avantis-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ef45e4e662ed8e8ac7894a35824662074bce464e60c727ddc680a23753452638",

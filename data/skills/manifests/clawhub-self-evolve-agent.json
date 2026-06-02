@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/self-evolve-agent@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-self-evolve-agent-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-self-evolve-agent-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c2a59b48921272da7834f2a03a677d3fed18442ab285ee4fb7f739f632f1ba1c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-quantizer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-quantizer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-quantizer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:fbae3bc00300a540a1b47b4d9b7bcf3c4d388bff507274154e81733a11d56688",

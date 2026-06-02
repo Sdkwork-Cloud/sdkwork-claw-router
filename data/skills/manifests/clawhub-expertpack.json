@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/expertpack@1.4.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-expertpack-1.4.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-expertpack-1.4.1.json"
+      },
       "version": "1.4.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3d48231d7a21e0a206c960fee96576147ac07e999498619edbff2627c7843325",

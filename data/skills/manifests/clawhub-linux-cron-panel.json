@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linux-cron-panel@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linux-cron-panel-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linux-cron-panel-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:be3f65c817a1b5e000da324260051ed84a28e3ebb3e20500c4c68ccd3323a1ae",

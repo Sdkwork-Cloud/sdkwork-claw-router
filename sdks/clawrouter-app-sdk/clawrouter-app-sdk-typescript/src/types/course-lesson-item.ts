@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Course lesson item schema exposed by Claw Router. */
 export interface CourseLessonItem {
   /** Content field on course lesson item. */
@@ -26,6 +28,6 @@ export interface CourseLessonItem {
   sourceProvider: string;
   /** Title field on course lesson item. */
   title: string;
-  /** Video url field on course lesson item. */
-  videoUrl: string;
+  /** Video field on course lesson item. */
+  video: MediaResource;
 }

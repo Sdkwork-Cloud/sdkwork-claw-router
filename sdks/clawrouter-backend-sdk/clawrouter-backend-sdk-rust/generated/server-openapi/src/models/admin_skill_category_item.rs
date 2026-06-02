@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Updated skill category snapshot returned by the backend.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct AdminSkillCategoryItem {
@@ -13,7 +15,7 @@ pub struct AdminSkillCategoryItem {
 
     /// Icon field on admin skill category item.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub icon: Option<String>,
+    pub icon: Option<MediaResource>,
 
     /// Id field on admin skill category item.
     pub id: String,

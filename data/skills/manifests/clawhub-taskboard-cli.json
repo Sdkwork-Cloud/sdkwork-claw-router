@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taskboard-cli@3.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-taskboard-cli-3.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taskboard-cli-3.0.1.json"
+      },
       "version": "3.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:769b65e080140e75273b536f79f162cade6b8606634b06c152ed6009b3e4c563",

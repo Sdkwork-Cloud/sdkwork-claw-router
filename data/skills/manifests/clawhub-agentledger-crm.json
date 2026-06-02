@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentledger-crm@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentledger-crm-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentledger-crm-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:189fbd37cf7f92287c04406e5d057b0ee421a396c8405c595610722b20c4c084",

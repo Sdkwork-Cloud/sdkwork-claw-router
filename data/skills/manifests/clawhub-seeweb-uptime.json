@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seeweb-uptime@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-seeweb-uptime-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seeweb-uptime-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:8586c9773d838c7dbee9a2ea47d538c92b83cb22737a77cb72560491de787037",

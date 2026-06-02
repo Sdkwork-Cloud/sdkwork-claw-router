@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-skill-hunter@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-hunter-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-skill-hunter-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:238787b308c844d5ffbe280fe6c86d3935fa0f784fb5d1e1f552a3c43568530f",

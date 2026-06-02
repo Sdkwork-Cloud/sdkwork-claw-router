@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/autonomous-sync@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-autonomous-sync-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-autonomous-sync-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8e2f807b72aea3e5e48308c949ba7b6aad57b747b1dec32e541fa0457840a682",

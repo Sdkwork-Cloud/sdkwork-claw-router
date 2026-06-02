@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-defender@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-defender-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-defender-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b6794f5ab03c6fd8ed90406184f44f21cf11076e5712f1fd64a33051871cacb4",

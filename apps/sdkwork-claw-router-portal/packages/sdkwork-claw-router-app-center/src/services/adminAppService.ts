@@ -11,8 +11,12 @@ import {
   readRequiredApiItems,
   readRequiredString,
   readString,
+  readMediaResource,
+  readRequiredMediaResource,
   requiredSafePathSegment,
+  toExternalUrlMediaResource,
   type ApiRecord,
+  type ClawRouterMediaResource,
 } from 'sdkwork-claw-router-commons/runtime';
 import type {
   AdminAppCategoryCreateRequest,
@@ -36,7 +40,7 @@ export interface AdminAppCategory {
   name: string;
   description: string;
   code: string;
-  icon: string;
+  icon?: ClawRouterMediaResource;
   sortWeight: number;
   parentId: string | null;
   path: string;
@@ -45,11 +49,11 @@ export interface AdminAppCategory {
   type: 999999;
 }
 
-export interface AdminAppCategoryCreateInput extends AdminAppCategoryCreateRequest {
+export interface AdminAppCategoryCreateInput {
   name: string;
   description?: string;
   code?: string;
-  icon?: string;
+  icon?: ClawRouterMediaResource;
   sortWeight?: number;
   parentId?: string | null;
   path?: string;
@@ -57,11 +61,11 @@ export interface AdminAppCategoryCreateInput extends AdminAppCategoryCreateReque
   status?: number;
 }
 
-export interface AdminAppCategoryUpdateInput extends AdminAppCategoryUpdateRequest {
+export interface AdminAppCategoryUpdateInput {
   name?: string;
   description?: string | null;
   code?: string | null;
-  icon?: string | null;
+  icon?: ClawRouterMediaResource;
   sortWeight?: number;
   parentId?: string | null;
   path?: string | null;
@@ -76,8 +80,7 @@ export interface AdminApp {
   name: string;
   description: string | null;
   version: string | null;
-  icon: Record<string, unknown>;
-  iconUrl: string | null;
+  icon: ClawRouterMediaResource;
   resourceList: Record<string, unknown>;
   projectId: string | null;
   accessUrl: string | null;
@@ -94,7 +97,7 @@ export interface AdminApp {
   packageName: string | null;
   bundleId: string | null;
   storeUrl: string | null;
-  downloadUrl: string | null;
+  artifact?: ClawRouterMediaResource | null;
   createdAt: string;
   updatedAt: string;
 }
@@ -104,8 +107,7 @@ export interface AdminAppCreateInput {
   name: string;
   description?: string | null;
   version?: string | null;
-  icon?: Record<string, unknown>;
-  iconUrl?: string | null;
+  icon?: ClawRouterMediaResource;
   resourceList?: Record<string, unknown>;
   projectId?: string | null;
   accessUrl?: string | null;
@@ -121,7 +123,7 @@ export interface AdminAppCreateInput {
   packageName?: string | null;
   bundleId?: string | null;
   storeUrl?: string | null;
-  downloadUrl?: string | null;
+  artifact?: ClawRouterMediaResource | null;
 }
 
 export interface AdminAppUpdateInput {
@@ -129,8 +131,7 @@ export interface AdminAppUpdateInput {
   name?: string;
   description?: string | null;
   version?: string | null;
-  icon?: Record<string, unknown>;
-  iconUrl?: string | null;
+  icon?: ClawRouterMediaResource;
   resourceList?: Record<string, unknown>;
   projectId?: string | null;
   accessUrl?: string | null;
@@ -144,7 +145,7 @@ export interface AdminAppUpdateInput {
   packageName?: string | null;
   bundleId?: string | null;
   storeUrl?: string | null;
-  downloadUrl?: string | null;
+  artifact?: ClawRouterMediaResource | null;
 }
 
 export interface AdminAppListInput {
@@ -188,8 +189,8 @@ export interface AdminAppTemplate {
   runtime: string | null;
   framework: string | null;
   language: string | null;
-  iconUrl: string | null;
-  coverUrl: string | null;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
   visibility: AdminAppTemplateVisibility;
   publishStatus: AdminAppTemplatePublishStatus;
   featured: boolean;
@@ -219,8 +220,8 @@ export interface AdminAppTemplateCreateInput {
   runtime?: string | null;
   framework?: string | null;
   language?: string | null;
-  iconUrl?: string | null;
-  coverUrl?: string | null;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
   visibility?: AdminAppTemplateVisibility;
   publishStatus?: AdminAppTemplatePublishStatus;
   featured?: boolean;
@@ -245,8 +246,8 @@ export interface AdminAppTemplateUpdateInput {
   runtime?: string | null;
   framework?: string | null;
   language?: string | null;
-  iconUrl?: string | null;
-  coverUrl?: string | null;
+  icon?: ClawRouterMediaResource;
+  cover?: ClawRouterMediaResource;
   visibility?: AdminAppTemplateVisibility;
   publishStatus?: AdminAppTemplatePublishStatus;
   featured?: boolean;
@@ -563,11 +564,10 @@ export function updateAdminAppTemplateInputFromForm(form: FormData): AdminAppTem
 
 function normalizeCreateCategoryRequest(input: AdminAppCategoryCreateInput): AdminAppCategoryCreateRequest {
   return pruneUndefined({
-    ...input,
     name: requiredText(input.name, 'name', 255),
     description: optionalText(input.description, 'description', 4000),
     code: optionalCategoryCode(input.code, 'code', 128),
-    icon: optionalText(input.icon, 'icon', 255),
+    icon: input.icon,
     parentId: normalizeNullableId(input.parentId),
     path: optionalPath(input.path, 'path', 1024),
     sortWeight: input.sortWeight === undefined ? undefined : boundedInteger(input.sortWeight, 'sortWeight', -1_000_000, 1_000_000),
@@ -578,11 +578,10 @@ function normalizeCreateCategoryRequest(input: AdminAppCategoryCreateInput): Adm
 
 function normalizeUpdateCategoryRequest(input: AdminAppCategoryUpdateInput): AdminAppCategoryUpdateRequest {
   return pruneUndefined({
-    ...input,
     name: optionalText(input.name, 'name', 255),
     description: normalizeNullableText(input.description, 'description', 4000),
     code: normalizeNullableCategoryCode(input.code, 'code', 128),
-    icon: normalizeNullableText(input.icon, 'icon', 255),
+    icon: input.icon,
     parentId: normalizeNullableId(input.parentId),
     path: normalizeNullablePath(input.path, 'path', 1024),
     sortWeight: input.sortWeight === undefined ? undefined : boundedInteger(input.sortWeight, 'sortWeight', -1_000_000, 1_000_000),
@@ -652,13 +651,11 @@ function normalizeCreateRequest(input: AdminAppCreateInput): AdminAppCreateReque
   const name = requiredText(input.name, 'name', 255);
   const config = normalizeAppConfig(input.config);
   return pruneUndefined({
-    ...input,
     userId: normalizeNullableId(input.userId),
     name,
     description: optionalText(input.description, 'description', 4000),
     version: optionalText(input.version, 'version', 64),
-    icon: normalizeObject(input.icon, 'icon'),
-    iconUrl: optionalUrl(input.iconUrl, 'iconUrl', 512),
+    icon: input.icon,
     resourceList: normalizeObject(input.resourceList, 'resourceList'),
     projectId: normalizeNullableId(input.projectId),
     accessUrl: optionalUrl(input.accessUrl, 'accessUrl', 512),
@@ -674,13 +671,12 @@ function normalizeCreateRequest(input: AdminAppCreateInput): AdminAppCreateReque
     packageName: optionalText(input.packageName, 'packageName', 255),
     bundleId: optionalText(input.bundleId, 'bundleId', 255),
     storeUrl: optionalUrl(input.storeUrl, 'storeUrl', 512),
-    downloadUrl: optionalUrl(input.downloadUrl, 'downloadUrl', 512),
-  });
+    artifact: input.artifact,
+  }) as AdminAppCreateRequest;
 }
 
 function normalizeCreateTemplateRequest(input: AdminAppTemplateCreateInput): AdminAppTemplateCreateRequest {
   return pruneUndefined({
-    ...input,
     templateNo: optionalCode(input.templateNo, 'templateNo', 64),
     templateCode: requiredCode(input.templateCode, 'templateCode', 128),
     templateName: requiredText(input.templateName, 'templateName', 255),
@@ -691,8 +687,8 @@ function normalizeCreateTemplateRequest(input: AdminAppTemplateCreateInput): Adm
     runtime: optionalCode(input.runtime, 'runtime', 64),
     framework: optionalCode(input.framework, 'framework', 64),
     language: optionalCode(input.language, 'language', 64),
-    iconUrl: optionalUrl(input.iconUrl, 'iconUrl', 1024),
-    coverUrl: optionalUrl(input.coverUrl, 'coverUrl', 1024),
+    icon: input.icon,
+    cover: input.cover,
     visibility: readTemplateVisibility(input.visibility ?? 'TENANT'),
     publishStatus: readTemplatePublishStatus(input.publishStatus ?? 'DRAFT'),
     featured: input.featured ?? false,
@@ -744,13 +740,11 @@ function ensureTemplatePublishStatus(
 function normalizeUpdateRequest(input: AdminAppUpdateInput): AdminAppUpdateRequest {
   const config = input.config === undefined ? undefined : normalizeAppConfig(input.config);
   return pruneUndefined({
-    ...input,
     userId: normalizeNullableId(input.userId),
     name: optionalText(input.name, 'name', 255),
     description: normalizeNullableText(input.description, 'description', 4000),
     version: normalizeNullableText(input.version, 'version', 64),
-    icon: input.icon === undefined ? undefined : normalizeObject(input.icon, 'icon'),
-    iconUrl: normalizeNullableUrl(input.iconUrl, 'iconUrl', 512),
+    icon: input.icon,
     resourceList: input.resourceList === undefined ? undefined : normalizeObject(input.resourceList, 'resourceList'),
     projectId: normalizeNullableId(input.projectId),
     accessUrl: normalizeNullableUrl(input.accessUrl, 'accessUrl', 512),
@@ -764,13 +758,12 @@ function normalizeUpdateRequest(input: AdminAppUpdateInput): AdminAppUpdateReque
     packageName: normalizeNullableText(input.packageName, 'packageName', 255),
     bundleId: normalizeNullableText(input.bundleId, 'bundleId', 255),
     storeUrl: normalizeNullableUrl(input.storeUrl, 'storeUrl', 512),
-    downloadUrl: normalizeNullableUrl(input.downloadUrl, 'downloadUrl', 512),
-  });
+    artifact: input.artifact,
+  }) as AdminAppUpdateRequest;
 }
 
 function normalizeUpdateTemplateRequest(input: AdminAppTemplateUpdateInput): AdminAppTemplateUpdateRequest {
   return pruneUndefined({
-    ...input,
     templateName: optionalText(input.templateName, 'templateName', 255),
     description: normalizeNullableText(input.description, 'description', 4000),
     categoryId: normalizeNullableId(input.categoryId),
@@ -779,8 +772,8 @@ function normalizeUpdateTemplateRequest(input: AdminAppTemplateUpdateInput): Adm
     runtime: normalizeNullableCode(input.runtime, 'runtime', 64),
     framework: normalizeNullableCode(input.framework, 'framework', 64),
     language: normalizeNullableCode(input.language, 'language', 64),
-    iconUrl: normalizeNullableUrl(input.iconUrl, 'iconUrl', 1024),
-    coverUrl: normalizeNullableUrl(input.coverUrl, 'coverUrl', 1024),
+    icon: input.icon,
+    cover: input.cover,
     visibility: input.visibility === undefined ? undefined : readTemplateVisibility(input.visibility),
     publishStatus: input.publishStatus === undefined ? undefined : readTemplatePublishStatus(input.publishStatus),
     featured: input.featured,
@@ -807,8 +800,7 @@ function normalizeAdminApp(value: unknown): AdminApp {
     name: readRequiredString(item, 'name', 'App name is required'),
     description: readNullableString(item, 'description'),
     version: readNullableString(item, 'version'),
-    icon: readRequiredRecordField(item, 'icon', 'App icon is required'),
-    iconUrl: readNullableString(item, 'iconUrl'),
+    icon: readRequiredMediaResource(item.icon, 'App icon is required'),
     resourceList: readRequiredRecordField(item, 'resourceList', 'App resource list is required'),
     projectId: readNullableString(item, 'projectId'),
     accessUrl: readNullableString(item, 'accessUrl'),
@@ -825,7 +817,7 @@ function normalizeAdminApp(value: unknown): AdminApp {
     packageName: readNullableString(item, 'packageName'),
     bundleId: readNullableString(item, 'bundleId'),
     storeUrl: readNullableString(item, 'storeUrl'),
-    downloadUrl: readNullableString(item, 'downloadUrl'),
+    artifact: readMediaResource(item.artifact),
     createdAt: readRequiredString(item, 'createdAt', 'App created time is required'),
     updatedAt: readRequiredString(item, 'updatedAt', 'App updated time is required'),
   };
@@ -846,8 +838,8 @@ function normalizeAdminAppTemplate(value: unknown): AdminAppTemplate {
     runtime: readNullableString(item, 'runtime'),
     framework: readNullableString(item, 'framework'),
     language: readNullableString(item, 'language'),
-    iconUrl: readNullableString(item, 'iconUrl'),
-    coverUrl: readNullableString(item, 'coverUrl'),
+    icon: readMediaResource(item.icon),
+    cover: readMediaResource(item.cover),
     visibility: readTemplateVisibility(readRequiredString(item, 'visibility', 'App template visibility is required')),
     publishStatus: readTemplatePublishStatus(readRequiredString(item, 'publishStatus', 'App template publish status is required')),
     featured: readRequiredBoolean(item, 'featured', 'App template featured flag is required'),
@@ -878,7 +870,7 @@ function normalizeAppCategory(value: unknown): AdminAppCategory {
     name: readRequiredString(item, 'name', 'App category name is required'),
     description: readString(item, 'description'),
     code: readString(item, 'code'),
-    icon: readString(item, 'icon'),
+    icon: readMediaResource(item.icon),
     sortWeight: readRequiredInteger(item, 'sortWeight', 'App category sort weight is required'),
     parentId: readNullableString(item, 'parentId'),
     path: readString(item, 'path'),
@@ -892,14 +884,12 @@ function mergeSharedFormFields(input: AdminAppCreateInput | AdminAppUpdateInput,
   for (const [key, maxLength] of [
     ['description', 4000],
     ['version', 64],
-    ['iconUrl', 512],
     ['projectId', 128],
     ['accessUrl', 512],
     ['appType', 64],
     ['packageName', 255],
     ['bundleId', 255],
     ['storeUrl', 512],
-    ['downloadUrl', 512],
   ] as const) {
     if (mode === 'update' && form.has(key)) {
       input[key] = nullableFormText(form, key, maxLength);
@@ -910,6 +900,16 @@ function mergeSharedFormFields(input: AdminAppCreateInput | AdminAppUpdateInput,
       }
     }
   }
+  const icon = optionalFormMediaResource(form, 'icon', 'image', 512);
+  if (icon !== undefined) {
+    input.icon = icon;
+  }
+  const artifact = mode === 'create'
+    ? optionalFormMediaResource(form, 'artifact', 'archive', 512)
+    : optionalNullableFormMediaResource(form, 'artifact', 'archive', 512);
+  if (artifact !== undefined) {
+    input.artifact = artifact;
+  }
   if (mode === 'update' && form.has('userId')) {
     input.userId = nullableFormText(form, 'userId', 128);
   } else {
@@ -918,7 +918,7 @@ function mergeSharedFormFields(input: AdminAppCreateInput | AdminAppUpdateInput,
       input.userId = userId;
     }
   }
-  for (const key of ['icon', 'resourceList', 'config', 'platforms', 'installPlatforms', 'installSkill', 'installConfig'] as const) {
+  for (const key of ['resourceList', 'config', 'platforms', 'installPlatforms', 'installSkill', 'installConfig'] as const) {
     const value = optionalJsonObjectFormField(form, key);
     if (value !== undefined) {
       input[key] = value;
@@ -953,7 +953,6 @@ function mergeSharedCategoryFormFields(
   for (const [key, maxLength] of [
     ['code', 128],
     ['description', 4000],
-    ['icon', 255],
     ['parentId', 128],
     ['path', 1024],
   ] as const) {
@@ -963,6 +962,10 @@ function mergeSharedCategoryFormFields(
     if (value !== undefined) {
       input[key] = value;
     }
+  }
+  const icon = optionalFormMediaResource(form, 'icon', 'image', 255);
+  if (icon !== undefined) {
+    input.icon = icon;
   }
   for (const key of ['sortWeight', 'status'] as const) {
     const value = optionalFormBoundedInteger(form, key, -1_000_000, 1_000_000);
@@ -990,8 +993,6 @@ function mergeSharedTemplateFormFields(
     ['runtime', 64],
     ['framework', 64],
     ['language', 64],
-    ['iconUrl', 1024],
-    ['coverUrl', 1024],
     ['sourceAppId', 128],
   ] as const) {
     if (key === 'templateNo' && mode === 'update') {
@@ -1003,6 +1004,14 @@ function mergeSharedTemplateFormFields(
     if (value !== undefined) {
       input[key] = value;
     }
+  }
+  const icon = optionalFormMediaResource(form, 'icon', 'image', 1024);
+  if (icon !== undefined) {
+    input.icon = icon;
+  }
+  const cover = optionalFormMediaResource(form, 'cover', 'image', 1024);
+  if (cover !== undefined) {
+    input.cover = cover;
   }
   const gitRepoUrl = mode === 'create'
     ? optionalGitRepoUrl(formString(form, 'gitRepoUrl'), 'gitRepoUrl', 1024)
@@ -1055,6 +1064,29 @@ function mergeSharedTemplateFormFields(
 
 function requiredFormText(form: FormData, key: string, maxLength: number): string {
   return requiredText(formString(form, key), key, maxLength);
+}
+
+function optionalFormMediaResource(
+  form: FormData,
+  key: string,
+  kind: ClawRouterMediaResource['kind'],
+  maxLength: number,
+): ClawRouterMediaResource | undefined {
+  const value = optionalFormText(form, key, maxLength);
+  return toExternalUrlMediaResource(value, kind);
+}
+
+function optionalNullableFormMediaResource(
+  form: FormData,
+  key: string,
+  kind: ClawRouterMediaResource['kind'],
+  maxLength: number,
+): ClawRouterMediaResource | null | undefined {
+  if (!form.has(key)) {
+    return undefined;
+  }
+  const value = optionalFormText(form, key, maxLength);
+  return toExternalUrlMediaResource(value, kind) ?? null;
 }
 
 function optionalFormText(form: FormData, key: string, maxLength: number): string | undefined {

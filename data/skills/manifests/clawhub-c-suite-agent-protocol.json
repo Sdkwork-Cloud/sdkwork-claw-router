@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/c-suite-agent-protocol@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-c-suite-agent-protocol-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-c-suite-agent-protocol-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0886e0c49833dff31a443fabc15f7646702f60b938982f99b67157c97dd16690",

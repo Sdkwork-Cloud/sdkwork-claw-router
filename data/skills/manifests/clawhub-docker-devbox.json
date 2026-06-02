@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/docker-devbox@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-docker-devbox-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-docker-devbox-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1a8cffcb8b9979ea132983888d0a208f3d8700a15721b885460644f8dc38b51f",

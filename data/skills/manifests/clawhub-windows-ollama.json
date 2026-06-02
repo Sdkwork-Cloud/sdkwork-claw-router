@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-ollama@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-ollama-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-ollama-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc39a1a45ab8e2dda21a1a2bedf3936cabdbf59dd041312471ca5c537c2e3f8d",

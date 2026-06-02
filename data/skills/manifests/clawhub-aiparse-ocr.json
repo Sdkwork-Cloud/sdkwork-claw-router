@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aiparse-ocr@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-aiparse-ocr-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aiparse-ocr-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:40e9f6ae81ced1f1b28f925da09ac1a81e3940c7c1a7f1ae7f864bc25b73d50a",

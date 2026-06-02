@@ -1,12 +1,15 @@
-export type SdkworkMediaKind = "audio" | "image" | "video";
+import type { SdkworkMediaResource } from "@sdkwork/appbase-pc-react";
+
+export type SdkworkMediaItemKind = "audio" | "image" | "video";
 export type SdkworkMediaPublishPosture = "blocked" | "draft" | "ready";
 
 export interface SdkworkMediaItem {
   durationLabel: string;
   id: string;
-  kind: SdkworkMediaKind;
+  kind: SdkworkMediaItemKind;
   publishPosture: SdkworkMediaPublishPosture;
   queueId: string;
+  resource: SdkworkMediaResource;
   title: string;
   updatedAt: string;
 }
@@ -103,6 +106,35 @@ function sortSdkworkMediaItems(items: readonly SdkworkMediaItem[]): SdkworkMedia
   );
 }
 
+function parseDurationSeconds(durationLabel: string): number | undefined {
+  if (durationLabel === "N/A") {
+    return undefined;
+  }
+  const [minutes, seconds] = durationLabel.split(":").map((part) => Number.parseInt(part, 10));
+  if (!Number.isFinite(minutes) || !Number.isFinite(seconds)) {
+    return undefined;
+  }
+  return minutes * 60 + seconds;
+}
+
+function createGeneratedMediaResource(
+  id: string,
+  title: string,
+  kind: SdkworkMediaItemKind,
+  durationLabel: string,
+): SdkworkMediaResource {
+  return {
+    ai: {
+      provenance: "generated",
+    },
+    ...(kind !== "image" ? { durationSeconds: parseDurationSeconds(durationLabel) } : {}),
+    id: `media-resource-${id}`,
+    kind,
+    source: "generated",
+    title,
+  };
+}
+
 export function createDefaultSdkworkMediaQueues(): SdkworkMediaQueue[] {
   return [
     { id: "launch-review", itemCount: 2, title: "Launch Review" },
@@ -112,12 +144,17 @@ export function createDefaultSdkworkMediaQueues(): SdkworkMediaQueue[] {
 }
 
 export function createDefaultSdkworkMediaItems(): SdkworkMediaItem[] {
-  return [
+  const items = [
     { durationLabel: "00:45", id: "media-launch-teaser", kind: "video", publishPosture: "ready", queueId: "launch-review", title: "Launch Teaser", updatedAt: "2026-04-03T04:30:00.000Z" },
     { durationLabel: "03:15", id: "media-podcast-cut", kind: "audio", publishPosture: "blocked", queueId: "podcast-review", title: "Podcast Cut", updatedAt: "2026-04-02T04:30:00.000Z" },
     { durationLabel: "00:12", id: "media-social-loop", kind: "video", publishPosture: "draft", queueId: "social-cutdowns", title: "Social Loop", updatedAt: "2026-04-01T05:30:00.000Z" },
     { durationLabel: "N/A", id: "media-key-visual", kind: "image", publishPosture: "ready", queueId: "launch-review", title: "Key Visual", updatedAt: "2026-03-31T06:30:00.000Z" },
-  ];
+  ] as const;
+
+  return items.map((item) => ({
+    ...item,
+    resource: createGeneratedMediaResource(item.id, item.title, item.kind, item.durationLabel),
+  }));
 }
 
 export function summarizeSdkworkMediaWorkspace(items: readonly SdkworkMediaItem[], queues: readonly SdkworkMediaQueue[]): SdkworkMediaDigest {

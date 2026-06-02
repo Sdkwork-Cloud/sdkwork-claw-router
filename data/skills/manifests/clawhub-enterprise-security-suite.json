@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/enterprise-security-suite@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-security-suite-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-enterprise-security-suite-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d3912ef4354f77ce58793e2f32885c870cfeeb6221c1dc2bd919f93a8f72a5db",

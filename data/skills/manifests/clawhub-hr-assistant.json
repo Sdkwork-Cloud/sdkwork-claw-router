@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hr-assistant@1.2.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-hr-assistant-1.2.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hr-assistant-1.2.5.json"
+      },
       "version": "1.2.5",
       "runtime": "metadata",
       "checksumHash": "sha256:d4daa80fefe232f2b9bdbb00ee2b2c9fe804b7c228017d08c2d3b82d313115da",

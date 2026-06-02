@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/domain-analyzer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-domain-analyzer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-domain-analyzer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1950dd4546eb20a739cbb896133f534ea6a075c4d192d6b5582d6484f2ca7167",

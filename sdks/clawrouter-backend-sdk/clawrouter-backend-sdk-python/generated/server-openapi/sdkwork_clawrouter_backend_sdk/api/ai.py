@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional
 from ..http_client import HttpClient
-from ..models import AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult
+from ..models import AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult
 
 def _append_query_string(path: str, raw_query_string: str) -> str:
     query = raw_query_string.lstrip('?')
@@ -189,11 +189,51 @@ class AiApi:
 
     def __init__(self, client: HttpClient):
         self._client = client
+        self.channel_groups = AiChannelGroupsApi(client)
         self.model_rankings = AiModelRankingsApi(client)
         self.model_vendors = AiModelVendorsApi(client)
         self.models = AiModelsApi(client)
         self.ai_resources = AiAiResourcesApi(client)
 
+
+class AiChannelGroupsApi:
+    """ai ai.channel_groups API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+        self.channel_bindings = AiChannelGroupsChannelBindingsApi(client)
+
+
+    def list(self) -> ChannelGroupsListResult:
+        """List groups"""
+        return self._client.get(f"/backend/v3/api/ai/channel_groups")
+
+    def create(self, body: AdminChannelGroupCreateRequest) -> ChannelGroupsCreateResult:
+        """Create group"""
+        return self._client.post(f"/backend/v3/api/ai/channel_groups", json=body)
+
+    def delete(self, channel_group_id: str) -> ChannelGroupsDeleteResult:
+        """Delete group"""
+        return self._client.delete(f"/backend/v3/api/ai/channel_groups/{serialize_path_parameter(channel_group_id, {'name': 'channelGroupId', 'style': 'simple', 'explode': False})}")
+
+    def update(self, channel_group_id: str, body: AdminChannelGroupUpdateRequest) -> ChannelGroupsUpdateResult:
+        """Update group"""
+        return self._client.patch(f"/backend/v3/api/ai/channel_groups/{serialize_path_parameter(channel_group_id, {'name': 'channelGroupId', 'style': 'simple', 'explode': False})}", json=body)
+
+class AiChannelGroupsChannelBindingsApi:
+    """ai ai.channel_groups.channel_bindings API client."""
+
+    def __init__(self, client: HttpClient):
+        self._client = client
+
+
+    def list(self, channel_group_id: str) -> ChannelGroupsChannelBindingsListResult:
+        """List group channel bindings"""
+        return self._client.get(f"/backend/v3/api/ai/channel_groups/{serialize_path_parameter(channel_group_id, {'name': 'channelGroupId', 'style': 'simple', 'explode': False})}/channel_bindings")
+
+    def update(self, channel_group_id: str, body: AdminChannelGroupChannelBindingsReplaceRequest) -> ChannelGroupsChannelBindingsUpdateResult:
+        """Replace group channel bindings"""
+        return self._client.put(f"/backend/v3/api/ai/channel_groups/{serialize_path_parameter(channel_group_id, {'name': 'channelGroupId', 'style': 'simple', 'explode': False})}/channel_bindings", json=body)
 
 class AiModelRankingsApi:
     """ai ai.model_rankings API client."""

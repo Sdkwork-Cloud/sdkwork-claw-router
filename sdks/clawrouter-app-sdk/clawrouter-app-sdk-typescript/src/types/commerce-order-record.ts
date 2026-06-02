@@ -8,6 +8,8 @@ export interface CommerceOrderRecord {
   currency_code: string;
   /** Expired at field on commerce order record. */
   expired_at?: string;
+  /** Id field on commerce order record. */
+  id?: string;
   /** Idempotency key field on commerce order record. */
   idempotency_key: string;
   /** Order no field on commerce order record. */

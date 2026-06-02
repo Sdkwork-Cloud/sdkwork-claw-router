@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/resumex@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-resumex-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-resumex-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:9bd2232a6601e343f99d58c78eb7c88d7c6904fadc3a434dfc588abf5bb5eca5",

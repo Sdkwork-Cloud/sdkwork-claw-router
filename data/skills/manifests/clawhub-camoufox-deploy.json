@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/camoufox-deploy@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-camoufox-deploy-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-camoufox-deploy-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e3fe18e52196877db583951e765bffe22cc1b77bdb459691e783659b096cd63c",

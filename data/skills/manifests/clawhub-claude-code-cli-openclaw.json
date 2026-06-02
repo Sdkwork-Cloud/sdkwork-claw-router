@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-cli-openclaw@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-cli-openclaw-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-cli-openclaw-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3512339c8aa75f110e732581b2f88b4ec39dcfa13e128f2d5a475e0ea08e1ad2",

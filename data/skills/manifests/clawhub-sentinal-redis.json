@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentinal-redis@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentinal-redis-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentinal-redis-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:280d0fb428bd1d0461ba7d7038446bde0d711cff1574bdaad1fe88fc71eeba25",

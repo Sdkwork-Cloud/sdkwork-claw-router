@@ -32,7 +32,7 @@ frontend_operations:
           - id
           - name
           - maskedKey
-          - group
+          - channelGroup
           - quota
           - usedQuota
           - modalities
@@ -59,15 +59,15 @@ frontend_operations:
               minLength: 1
               maxLength: 256
               description: Full plaintext API key returned only by authenticated owner management responses; public catalog responses omit this field.
-            group:
+            channelGroup:
               type: string
               minLength: 1
               maxLength: 128
-            groupName:
+            channelGroupName:
               type: string
               minLength: 1
               maxLength: 128
-              description: Display name snapshot for the bound API key group so the list view does not need to preload selectable groups.
+              description: Display name snapshot for the bound channel group so the list view does not need to preload selectable groups.
             rate:
               type: string
               nullable: true
@@ -111,7 +111,7 @@ frontend_operations:
       groups:
         type: array
         items: &id001
-          name: AppApiKeyGroup
+          name: AppChannelGroup
           type: object
           additionalProperties: false
           required:
@@ -138,27 +138,6 @@ frontend_operations:
               maxLength: 64
 - route: /console/api-keys
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
-  operation: fetchGroups
-  operation_id: apiKeyGroups.list
-  kind: read
-  api_surface: app
-  api_method: GET
-  api_path: /app/v3/api/iam/api_key_groups
-  read_sources:
-  - ai_channel_group
-  - ai_channel_group_metric_snapshot
-  - ai_pricing_plan
-  query_parameters: []
-  response_schema:
-    name: AppApiKeyGroupListResponse
-    required:
-    - items
-    properties:
-      items:
-        type: array
-        items: *id001
-- route: /console/api-keys
-  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-api-keys/src/apiKeyService.ts
   operation: createKey
   kind: create
   api_surface: app
@@ -177,16 +156,16 @@ frontend_operations:
     name: CreateApiKeyRequest
     required:
     - name
-    - group
+    - channelGroup
     properties:
       name:
         type: string
         maxLength: 128
         description: API key display name.
-      group:
+      channelGroup:
         type: string
         maxLength: 64
-        description: API key group code.
+        description: API key channel group code.
       quota:
         type: string
         format: decimal
@@ -262,10 +241,10 @@ frontend_operations:
         type: string
         maxLength: 128
         description: API key display name.
-      group:
+      channelGroup:
         type: string
         maxLength: 64
-        description: API key group code to bind to this key.
+        description: API key channel group code to bind to this key.
       quota:
         type: string
         format: decimal

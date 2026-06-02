@@ -12,6 +12,8 @@ export interface CommercePaymentStatementRecord {
   file_digest?: string;
   /** File ref field on commerce payment statement record. */
   file_ref?: string;
+  /** Id field on commerce payment statement record. */
+  id?: string;
   /** Idempotency key field on commerce payment statement record. */
   idempotency_key: string;
   /** Net amount field on commerce payment statement record. */
@@ -34,6 +36,8 @@ export interface CommercePaymentStatementRecord {
   provider_statement_id?: string;
   /** Request no field on commerce payment statement record. */
   request_no: string;
+  /** Row count field on commerce payment statement record. */
+  row_count: string;
   /** Settlement currency field on commerce payment statement record. */
   settlement_currency: string;
   /** Statement no field on commerce payment statement record. */

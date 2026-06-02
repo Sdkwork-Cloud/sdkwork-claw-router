@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-notification@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-notification-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-notification-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:76e823cc8b312768d20aff832f8dded4483e6412d5a006cd69063653147d0d55",

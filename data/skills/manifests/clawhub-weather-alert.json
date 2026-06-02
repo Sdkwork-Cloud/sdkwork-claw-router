@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/weather-alert@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-weather-alert-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-weather-alert-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:abecd34e4efba0a5de0944a32eba1ff32dd613970b0c188495afe4402c51d8a6",

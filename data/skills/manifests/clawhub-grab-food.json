@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grab-food@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grab-food-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grab-food-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ce2f465efb887a9ce2227c251251ccdec9f4f9c3ae0c02a211960f4811965dd",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/whop-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-whop-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-whop-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:33cebc01e87a502843d00c55e2517634827136904b4e8ea486214d59199d5de4",

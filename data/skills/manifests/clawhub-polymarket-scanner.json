@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/polymarket-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-polymarket-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1109782dc420f7c8342beda7d6ccc1fc052261fff046ba189e92dec491a98a34",

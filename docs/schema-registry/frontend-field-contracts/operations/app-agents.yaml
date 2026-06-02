@@ -89,10 +89,9 @@ frontend_operations:
               enum:
               - active
               - disabled
-            avatarUrl:
-              type: string
+            avatar:
+              $ref: '#/components/schemas/MediaResource'
               nullable: true
-              maxLength: 2048
             templateSource:
               type: string
               nullable: true
@@ -197,7 +196,7 @@ frontend_operations:
   - ai_agent
   - ai_agent_version
   idempotency_required: true
-  request_schema: &id009
+  request_schema:
     name: AgentCreateRequest
     type: object
     additionalProperties: false
@@ -227,7 +226,7 @@ frontend_operations:
       mcpPolicy: *id001
       skillPolicy: *id001
       runtimePolicy: *id001
-  response_schema: &id010
+  response_schema:
     name: AgentItemResponse
     type: object
     additionalProperties: false
@@ -288,7 +287,7 @@ frontend_operations:
       format: int64
       minimum: 1
       maximum: 100
-  response_schema: &id011
+  response_schema:
     name: AgentSessionListResponse
     type: object
     additionalProperties: false
@@ -441,7 +440,7 @@ frontend_operations:
   path_params:
   - agentId
   idempotency_required: true
-  request_schema: &id012
+  request_schema:
     name: AgentSessionCreateRequest
     type: object
     additionalProperties: false
@@ -497,7 +496,7 @@ frontend_operations:
       metadata:
         type: object
         additionalProperties: true
-  response_schema: &id013
+  response_schema:
     name: AgentSessionResponse
     type: object
     additionalProperties: false
@@ -555,7 +554,7 @@ frontend_operations:
       format: int64
       minimum: 1
       maximum: 100
-  response_schema: &id014
+  response_schema:
     name: AgentRunListResponse
     type: object
     additionalProperties: false
@@ -700,7 +699,7 @@ frontend_operations:
   path_params:
   - sessionId
   idempotency_required: true
-  request_schema: &id015
+  request_schema:
     name: AgentRunCreateRequest
     type: object
     additionalProperties: false
@@ -785,7 +784,7 @@ frontend_operations:
   path_params:
   - runId
   idempotency_required: true
-  request_schema: &id019
+  request_schema:
     name: AgentRunCompleteRequest
     type: object
     additionalProperties: false
@@ -856,7 +855,7 @@ frontend_operations:
       format: int64
       minimum: 1
       maximum: 100
-  response_schema: &id016
+  response_schema:
     name: AgentRunStepListResponse
     type: object
     additionalProperties: false
@@ -982,7 +981,7 @@ frontend_operations:
   path_params:
   - runId
   idempotency_required: true
-  request_schema: &id017
+  request_schema:
     name: AgentRunStepCreateRequest
     type: object
     additionalProperties: false
@@ -1057,7 +1056,7 @@ frontend_operations:
   - runId
   - stepId
   idempotency_required: true
-  request_schema: &id018
+  request_schema:
     name: AgentRunStepCompleteRequest
     type: object
     additionalProperties: false
@@ -1091,8 +1090,7 @@ frontend_operations:
   sdk_domain: agents
   operation_scope: app_shell
   summary: Run reusable playground generation workflow
-  description: Reusable frontend orchestration service used by Playground agent and modality panels to create standard Agent and Runtime resources, consume Runtime SSE, normalize generated artifacts, propagate usage, and complete terminal AgentRun
-    and AgentRunStep state.
+  description: Reusable frontend orchestration service used by Playground agent and modality panels to create standard Agent and Runtime resources, consume Runtime SSE, normalize generated artifacts, propagate usage, and complete terminal AgentRun and AgentRunStep state.
   read_sources:
   - ai_agent
   - ai_agent_version
@@ -1124,8 +1122,7 @@ frontend_operations:
   sdk_domain: agents
   operation_scope: app_shell
   summary: Run playground generation agent workflow
-  description: Frontend orchestration workflow that resolves the Playground generation agent, creates AgentSession, AgentRun, RuntimeInvocation, and AgentRunStep through standard App SDK resources, consumes Runtime SSE, and finalizes runtime,
-    step, and run terminal state.
+  description: Frontend orchestration workflow that resolves the Playground generation agent, creates AgentSession, AgentRun, RuntimeInvocation, and AgentRunStep through standard App SDK resources, consumes Runtime SSE, and finalizes runtime, step, and run terminal state.
   read_sources:
   - ai_agent
   - ai_agent_version
@@ -1293,32 +1290,18 @@ frontend_operations:
           modelCatalogKey:
             type: string
             maxLength: 256
-          url:
-            type: string
-            maxLength: 2048
+          asset:
+            $ref: '#/components/schemas/MediaResource'
           images:
             type: array
             maxItems: 20
             items:
-              type: string
-              maxLength: 2048
+              $ref: '#/components/schemas/MediaResource'
           videos:
             type: array
             maxItems: 20
             items:
-              name: GenerationHistoryMediaItem
-              type: object
-              additionalProperties: false
-              required:
-              - url
-              properties:
-                url:
-                  type: string
-                  minLength: 1
-                  maxLength: 2048
-                thumb:
-                  type: string
-                  maxLength: 2048
+              $ref: '#/components/schemas/MediaResource'
           aspectRatio:
             type: string
             enum:

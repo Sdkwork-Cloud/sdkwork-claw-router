@@ -2,7 +2,7 @@ package types
 
 // Admin agent item schema exposed by Claw Router.
 type AdminAgentItem struct {
-	AvatarUrl string `json:"avatarUrl"`
+	Avatar MediaResource `json:"avatar"`
 	Capabilities AdminAgentCapabilities `json:"capabilities"`
 	Code string `json:"code"`
 	CreatedAt string `json:"createdAt"`

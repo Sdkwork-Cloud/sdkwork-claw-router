@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clipcat@1.0.12",
-      "artifactUrl": "data/skills/artifacts/clawhub-clipcat-1.0.12.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clipcat-1.0.12.json"
+      },
       "version": "1.0.12",
       "runtime": "metadata",
       "checksumHash": "sha256:889a9e9e705577a9da3259763d1e4ac0f65051ca8ff9e588682e0d3ce3aa9e2d",

@@ -25,6 +25,7 @@ import {
   getPortalNotificationClient,
 } from '../notificationService.ts';
 import { useSiteBranding } from '../siteBranding.ts';
+import { readMediaResourceUrl } from '../media-resource.ts';
 
 interface NavbarProps {
   isDark: boolean;
@@ -45,6 +46,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
   const isConsolePath = location.pathname.startsWith('/console');
   const shouldShowAuthenticatedActions = isPortalSessionStored || isConsolePath;
   const displaySiteName = siteBranding.shortName || siteBranding.siteName;
+  const logoSource = readMediaResourceUrl(siteBranding.logo);
   const notificationService = useMemo(() => createPortalNotificationService(), []);
 
   useEffect(() => {
@@ -182,9 +184,9 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
       <div className="mx-auto flex w-full items-center justify-between px-4 md:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 dark:bg-white">
-            {siteBranding.logoUrl ? (
+            {logoSource ? (
               <img
-                src={siteBranding.logoUrl}
+                src={logoSource}
                 alt={siteBranding.siteName}
                 className="h-5 w-5 object-contain"
               />

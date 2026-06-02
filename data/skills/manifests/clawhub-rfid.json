@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rfid@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rfid-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rfid-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5d84be38949dc26536035fa04bd53164af30916c136418e6064835565eb37a02",

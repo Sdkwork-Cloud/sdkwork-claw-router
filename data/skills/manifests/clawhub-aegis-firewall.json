@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aegis-firewall@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aegis-firewall-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aegis-firewall-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d9368b8d30525c45fa46babde43f4b72d807c2f9a8d238f5d0b17357d1df1455",

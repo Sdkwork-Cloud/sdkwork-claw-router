@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-healing-gateway@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-healing-gateway-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-healing-gateway-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a36f28dcc2cb76d464b3e6b62cd3d2aa0fdeff9e4fad605d46b886b663faa3dd",

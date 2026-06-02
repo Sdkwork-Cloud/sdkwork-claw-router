@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/abby-watch@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-abby-watch-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-abby-watch-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75748ee440d5554cf93b51916082d2eab110d0627a53ba35ffd6a5c550135472",

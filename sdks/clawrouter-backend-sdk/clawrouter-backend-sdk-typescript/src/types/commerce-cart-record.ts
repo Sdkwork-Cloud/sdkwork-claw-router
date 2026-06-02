@@ -6,6 +6,8 @@ export interface CommerceCartRecord {
   created_at: string;
   /** Currency code field on commerce cart record. */
   currency_code: string;
+  /** Id field on commerce cart record. */
+  id?: string;
   /** Organization id field on commerce cart record. */
   organization_id?: string;
   /** Owner user id field on commerce cart record. */
@@ -16,4 +18,6 @@ export interface CommerceCartRecord {
   tenant_id: string;
   /** Updated at field on commerce cart record. */
   updated_at: string;
+  /** Version field on commerce cart record. */
+  version: string;
 }

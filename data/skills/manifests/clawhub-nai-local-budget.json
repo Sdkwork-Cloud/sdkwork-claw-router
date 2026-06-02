@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nai-local-budget@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nai-local-budget-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nai-local-budget-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af393ce94d98f0bfec8dc406bd5645bc5ad5c216c87b632e6ce5de35afeaea95",

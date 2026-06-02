@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-lark@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-lark-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-lark-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dff7483e208cabf64b3ba367917ccf8826b11d2ae7bb8c179c34d9241aae70ee",

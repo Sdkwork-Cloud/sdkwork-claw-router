@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tcly@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-tcly-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tcly-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:30daeb1d710082345bdfe96d70a172d34fad7e31e4d1160e6fcbf61d5dd2e643",

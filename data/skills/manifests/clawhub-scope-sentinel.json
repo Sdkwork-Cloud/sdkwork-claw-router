@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scope-sentinel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scope-sentinel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scope-sentinel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9ceb3cc98c0d57df3346ff1a22c522230040417353555991dd871c3374f2b7e8",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/buddha-companion@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-buddha-companion-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-buddha-companion-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b3928e419b861049177df0f4627e7cc55e2b95ff629d6ac234386053c98541d4",

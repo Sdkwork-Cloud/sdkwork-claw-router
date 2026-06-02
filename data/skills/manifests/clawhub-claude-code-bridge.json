@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-bridge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-bridge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-bridge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bc42dd51bfccc5d509fa9d6221781d4ed02ab6d99b369badfc65dd7473efb073",

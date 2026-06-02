@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/idm-downloader@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-idm-downloader-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-idm-downloader-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ba21a4d6294f1ba10e1b4e32206f0459f8d28e0190e533c69a263f0855dc47cc",

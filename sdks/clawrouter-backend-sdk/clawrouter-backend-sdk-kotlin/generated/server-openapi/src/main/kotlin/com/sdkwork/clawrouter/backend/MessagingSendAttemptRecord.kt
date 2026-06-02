@@ -1,6 +1,8 @@
 package com.sdkwork.clawrouter.backend
 
 data class MessagingSendAttemptRecord(
+    val attemptNo: Int? = null,
+    val attemptedAt: String? = null,
     val createdAt: String? = null,
     val failureCode: String? = null,
     val failureMessageMasked: String? = null,
@@ -11,12 +13,15 @@ data class MessagingSendAttemptRecord(
     val metadata: Map<String, String>? = null,
     val organizationId: String? = null,
     val payloadHash: String? = null,
+    val providerAccountId: String? = null,
+    val providerCode: String? = null,
     val providerMessageId: String? = null,
     val providerRequestId: String? = null,
     val providerStatus: String? = null,
     val requestId: String? = null,
     val retentionUntil: String? = null,
     val retryAfterAt: String? = null,
+    val sendRequestId: String? = null,
     val status: String? = null,
     val tenantId: String? = null,
     val traceId: String? = null,

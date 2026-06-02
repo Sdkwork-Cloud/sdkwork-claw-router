@@ -6,7 +6,7 @@ type StudioAppTemplateRecord struct {
 	CapabilityManifest map[string]JsonValue `json:"capability_manifest"`
 	CategoryCode string `json:"category_code"`
 	CategoryId string `json:"category_id"`
-	CoverUrl string `json:"cover_url"`
+	Cover MediaResource `json:"cover"`
 	CreatedAt string `json:"created_at"`
 	CurrentVersionId string `json:"current_version_id"`
 	DataScope string `json:"data_scope"`
@@ -21,7 +21,7 @@ type StudioAppTemplateRecord struct {
 	GitRef string `json:"git_ref"`
 	GitRepoUrl string `json:"git_repo_url"`
 	GitSubPath string `json:"git_sub_path"`
-	IconUrl string `json:"icon_url"`
+	Icon MediaResource `json:"icon"`
 	Id string `json:"id"`
 	Language string `json:"language"`
 	Metadata map[string]JsonValue `json:"metadata"`

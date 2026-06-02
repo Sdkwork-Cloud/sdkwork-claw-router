@@ -4,6 +4,10 @@ import {
   type SdkworkUserController,
 } from "./user-controller.ts";
 import {
+  readSdkworkMediaResource,
+  type SdkworkMediaResource,
+} from "@sdkwork/appbase-pc-react";
+import {
   mergeSdkworkUserMessagesOverrides,
   type SdkworkUserMessagesOverrides,
 } from "./user-copy.ts";
@@ -18,7 +22,7 @@ import type {
 } from "./user-service.ts";
 
 export interface SdkworkCanonicalUserIdentityInput {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   displayName?: string;
   email?: string;
   firstName?: string;
@@ -28,7 +32,7 @@ export interface SdkworkCanonicalUserIdentityInput {
 }
 
 export interface SdkworkCanonicalUserProfileSnapshotLike {
-  avatarUrl?: string;
+  avatar?: SdkworkMediaResource;
   displayName?: string;
   email?: string;
 }
@@ -143,9 +147,7 @@ export function createSdkworkUserProfileFromCanonicalIdentity(
     : splitDisplayName(displayName);
 
   return {
-    ...(normalizeOptionalString(identity.avatarUrl)
-      ? { avatarUrl: normalizeOptionalString(identity.avatarUrl) }
-      : {}),
+    avatar: readSdkworkMediaResource(identity.avatar),
     email: normalizeOptionalString(identity.email) || "",
     firstName: nameParts.firstName,
     lastName: nameParts.lastName,

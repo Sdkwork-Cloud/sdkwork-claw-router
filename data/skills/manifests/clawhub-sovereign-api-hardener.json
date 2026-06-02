@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sovereign-api-hardener@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sovereign-api-hardener-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sovereign-api-hardener-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3fbd19884d66897db7b84e6b2757d2e6e2085d096812c26703b01d925836a29b",

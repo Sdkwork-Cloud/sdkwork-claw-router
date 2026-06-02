@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sre-operator@0.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sre-operator-0.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sre-operator-0.0.1.json"
+      },
       "version": "0.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:510d0458914504ddb044c676f708aadfac744273418535982f7502aab5f688f8",

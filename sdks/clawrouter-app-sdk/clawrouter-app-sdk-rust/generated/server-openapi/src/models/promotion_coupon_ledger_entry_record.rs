@@ -7,6 +7,9 @@ pub struct PromotionCouponLedgerEntryRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub application_id: Option<String>,
 
+    /// Balance after field on promotion coupon ledger entry record.
+    pub balance_after: String,
+
     /// Business type field on promotion coupon ledger entry record.
     pub business_type: String,
 
@@ -15,6 +18,10 @@ pub struct PromotionCouponLedgerEntryRecord {
 
     /// Direction field on promotion coupon ledger entry record.
     pub direction: String,
+
+    /// Id field on promotion coupon ledger entry record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
 
     /// Idempotency key field on promotion coupon ledger entry record.
     pub idempotency_key: String,
@@ -31,6 +38,9 @@ pub struct PromotionCouponLedgerEntryRecord {
     /// Organization id field on promotion coupon ledger entry record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
+
+    /// Quantity delta field on promotion coupon ledger entry record.
+    pub quantity_delta: String,
 
     /// Request no field on promotion coupon ledger entry record.
     pub request_no: String,

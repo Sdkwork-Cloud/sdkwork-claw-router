@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sendgrid-skills@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sendgrid-skills-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sendgrid-skills-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8a66ea98f5ec6b75f689d27853e0547e5d7cf1ffc22898c5d859f60722a68b02",

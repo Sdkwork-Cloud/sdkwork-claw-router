@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/hackathon@1.0.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-hackathon-1.0.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-hackathon-1.0.6.json"
+      },
       "version": "1.0.6",
       "runtime": "metadata",
       "checksumHash": "sha256:472ab98cff6676041e68e8123e11dd2bc1912da41aba6e82c22161bcea06cb73",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-device@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-device-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-device-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:90b114b347805731cb560c59ccb4fc662b10403180e6c9372585f7e12bb12b98",

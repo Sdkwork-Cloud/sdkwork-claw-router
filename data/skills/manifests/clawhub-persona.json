@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/persona@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-persona-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-persona-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:73df16574810ec8857e0bcaf7614eb71c43e083d4a0438963fb22dfcf7265559",

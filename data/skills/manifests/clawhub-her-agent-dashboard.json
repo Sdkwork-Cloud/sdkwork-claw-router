@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/her-agent-dashboard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-her-agent-dashboard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-her-agent-dashboard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7b1bd2c2af378a4fe9382e9ef881c13da8e2bb8ecb33d63eb2768669339b9b3",

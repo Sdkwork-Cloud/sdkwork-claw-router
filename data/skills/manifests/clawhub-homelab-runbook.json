@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/homelab-runbook@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-homelab-runbook-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-homelab-runbook-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:34d3f0cbce50b3a2801653706fd9f033aa17122d0c5846c3911fa3b9dccfe2db",

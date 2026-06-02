@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/why@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-why-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-why-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c4fc31ddc11938e8e26bb39ea41b1a5f19630cfb27385fea27fa496f2171c4e7",

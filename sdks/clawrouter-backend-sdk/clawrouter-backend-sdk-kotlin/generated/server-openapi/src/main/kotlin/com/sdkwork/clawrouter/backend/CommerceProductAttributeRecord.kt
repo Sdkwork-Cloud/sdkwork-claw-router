@@ -4,6 +4,7 @@ data class CommerceProductAttributeRecord(
     val attributeNo: String? = null,
     val createdAt: String? = null,
     val filterable: Boolean? = null,
+    val id: String? = null,
     val name: String? = null,
     val organizationId: String? = null,
     val required: Boolean? = null,

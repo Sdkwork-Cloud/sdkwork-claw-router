@@ -8,6 +8,7 @@ public class CommerceRefundAttemptRecord {
     private String failedAt;
     private String failureCode;
     private String failureMessage;
+    private String id;
     private String organizationId;
     private String outRefundNo;
     private String providerAccountId;
@@ -67,6 +68,14 @@ public class CommerceRefundAttemptRecord {
 
     public void setFailureMessage(String failureMessage) {
         this.failureMessage = failureMessage;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrganizationId() {

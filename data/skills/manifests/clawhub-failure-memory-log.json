@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/failure-memory-log@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-failure-memory-log-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-failure-memory-log-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e2749c286e6668d97224cc2689442229cb7fea6482566a320b504b8d9b05ecc",

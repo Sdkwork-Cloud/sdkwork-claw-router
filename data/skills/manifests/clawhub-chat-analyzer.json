@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-analyzer@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-analyzer-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-analyzer-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:560a973eaae581a03a4e8a8e8570a9b1ed70aba35aa1d3ab691a425fe981de99",

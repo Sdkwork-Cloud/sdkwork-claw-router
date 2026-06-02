@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/commandbar@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-commandbar-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-commandbar-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:cb22ab2302ba4d778c72c214231668980160f6b28776faabbb3ac5a2277c5815",

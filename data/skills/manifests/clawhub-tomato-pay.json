@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tomato-pay@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tomato-pay-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tomato-pay-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:df373532ba7c74c415219f83703e50983040016d44408f66338335a13f2f77e6",

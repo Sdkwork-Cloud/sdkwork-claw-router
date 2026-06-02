@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/survicate@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-survicate-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-survicate-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:6a1d37c5be70a64eb5120ab99b9431e61111f01bc517e6c9f9734a9026eed15b",

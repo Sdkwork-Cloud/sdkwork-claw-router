@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-daily-planner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-daily-planner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-daily-planner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c78e8ac975b5c0a40e5af23267953db78d37d1c6486c7ceb52b1401879e5be08",

@@ -1,4 +1,5 @@
 import type { JsonValue } from './json-value';
+import type { MediaResource } from './media-resource';
 
 /** Open platform provider record schema exposed by Claw Router. */
 export interface OpenPlatformProviderRecord {
@@ -14,8 +15,8 @@ export interface OpenPlatformProviderRecord {
   deleted_by?: string;
   /** Docs url field on open platform provider record. */
   docs_url?: string;
-  /** Icon url field on open platform provider record. */
-  icon_url?: string;
+  /** Icon field on open platform provider record. */
+  icon?: MediaResource;
   /** Id field on open platform provider record. */
   id?: string;
   /** Metadata field on open platform provider record. */

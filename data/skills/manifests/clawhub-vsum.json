@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vsum@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-vsum-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vsum-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:72efa368a7d11587a8c38c4437720b99ddd49309d8e950762cf3a7cb1dd7eb60",

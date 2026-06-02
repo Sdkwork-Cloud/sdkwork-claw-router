@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pre-publish-security-check@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pre-publish-security-check-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pre-publish-security-check-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d26f757df59d3540ee4bdd54bef66305749cbdd9ad0f7819c1f8678edd0000c7",

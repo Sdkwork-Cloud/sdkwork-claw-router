@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/prompt-debugger@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-prompt-debugger-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-prompt-debugger-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:41c93e005e206751fc98999c3752203680768ef1262da0c90046d1eab9e41e4a",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/boxed-curl@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-boxed-curl-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-boxed-curl-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b1bcac8ee1e34c5b7b2c8c9987c0992cde59ffa7c995d37f979087886d1d1f42",

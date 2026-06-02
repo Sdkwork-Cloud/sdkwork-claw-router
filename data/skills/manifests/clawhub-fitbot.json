@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fitbot@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-fitbot-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fitbot-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7ddbe06613a0960f65e7f0aea024f519ee634cda50fc4f000199fc390029ff44",

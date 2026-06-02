@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-review-checker@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-review-checker-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-review-checker-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:819d6a2dc4183f286d52e9e10af95e0d06a437170c14c2af11200acb9e345225",

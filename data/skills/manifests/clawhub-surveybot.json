@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/surveybot@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-surveybot-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-surveybot-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:527cc7d8fad6a88376a59ffb212ff55834b1544ed1cf88753a41f2b3923cbf2d",

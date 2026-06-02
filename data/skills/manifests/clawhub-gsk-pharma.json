@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gsk-pharma@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gsk-pharma-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gsk-pharma-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f791b87e6ef4b63fe9f12bd0fc098be231fa13785bc968355344fc157fd07a5e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kubernetes-triage-expert@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kubernetes-triage-expert-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kubernetes-triage-expert-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8d57ec26bf9e5d0d93cdae90fe0cc3397fbba7cc7194a6be4cf054eefe0d006a",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skynet-score@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skynet-score-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skynet-score-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6dd7ac8d2348a52de801bdcb34702cb2b3338bf1a48af0d5b0128a23d60410f1",

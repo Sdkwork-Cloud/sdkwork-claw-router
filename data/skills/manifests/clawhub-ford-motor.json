@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ford-motor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ford-motor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ford-motor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7284aac8df3c12e6a7cbf03124ccbd74c5d39188e75eab1249445e41c0030d67",

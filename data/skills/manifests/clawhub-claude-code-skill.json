@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-code-skill@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-skill-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-code-skill-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:974401b873ce36020035afcddd70d1fee86c51b62f6f5da665a5116d3b06914b",

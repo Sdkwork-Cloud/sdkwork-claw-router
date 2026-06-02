@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/off-peak-compute@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-off-peak-compute-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-off-peak-compute-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:140b729de6941e9b1b06c8439e19906135e62faf51cbb3ca7964c629fcefb871",

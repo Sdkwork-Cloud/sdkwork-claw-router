@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/debug-detective@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-debug-detective-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-debug-detective-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:671e19900b86ae49223593db5310ceb66f9cb5d1c30362c6932c319d4cb7f2c8",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claude-pet@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claude-pet-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claude-pet-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:db3399cbb6d98ac9a6356843d2b303859517e3d7f0cf6b05873c15f38fabf31a",

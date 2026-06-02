@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wand-skill@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-wand-skill-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wand-skill-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:618e4d1f90d3682f3c4a68eefed65f2246b0efa11a3e164fa2056c181bec65c1",

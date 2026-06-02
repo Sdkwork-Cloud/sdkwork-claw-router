@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-to-data@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-to-data-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-to-data-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fb60b27e7b734ea547de9bf06434ac6c29d464ec81c895c605a2688ea7b93cd9",

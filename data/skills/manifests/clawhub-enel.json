@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/enel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-enel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-enel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af5330e70459d7709e979d97691e7e09f15f6c269ae01f743f1964ae8f15553a",

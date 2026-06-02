@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-soul-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-soul-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-soul-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9c63caa544792136f5921c6e9b4f582de1a606ece066e2e291eb239715636f44",

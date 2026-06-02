@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/postiz@1.0.15",
-      "artifactUrl": "data/skills/artifacts/clawhub-postiz-1.0.15.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-postiz-1.0.15.json"
+      },
       "version": "1.0.15",
       "runtime": "metadata",
       "checksumHash": "sha256:db31ca8f1262fd075eeb3ba428f0373c42240d3019b016cc233ab5ef2d001a2f",

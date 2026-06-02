@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/terraform-cloud@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-terraform-cloud-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-terraform-cloud-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4927e29a6cb1085cc1d9dd51a68b547ccb4a9393976c16058402c3f05b181edc",

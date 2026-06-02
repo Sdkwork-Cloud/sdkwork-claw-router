@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/binance-official-spot@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-binance-official-spot-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-binance-official-spot-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:33a8974e5334629e2bb2f0d2b1eb6716a6fee912da3821c4fceba518171e3f71",

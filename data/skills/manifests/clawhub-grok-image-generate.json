@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/grok-image-generate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-grok-image-generate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-grok-image-generate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9e3eed5a0650bebe873eafb3e2c9f1e86474373da032a10383f179148764dda8",

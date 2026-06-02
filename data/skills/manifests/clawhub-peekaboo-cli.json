@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/peekaboo-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-peekaboo-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-peekaboo-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bd467b9c26a388a894dd829db6dbc1dba05f899b9aeca2c51f4175b51579817d",

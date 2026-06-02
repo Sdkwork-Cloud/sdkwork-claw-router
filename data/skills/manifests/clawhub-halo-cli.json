@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/halo-cli@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-halo-cli-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-halo-cli-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:5b8185a64abe2f0b99aced4483a409e84f0a0d393432f14a12ad7021059d0d46",

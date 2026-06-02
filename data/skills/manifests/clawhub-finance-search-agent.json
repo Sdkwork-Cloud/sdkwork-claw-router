@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/finance-search-agent@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-finance-search-agent-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-finance-search-agent-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cdba777d7ecfacf4bbcc29d2b13656f254b7335106ab021a77ab72a0425800a8",

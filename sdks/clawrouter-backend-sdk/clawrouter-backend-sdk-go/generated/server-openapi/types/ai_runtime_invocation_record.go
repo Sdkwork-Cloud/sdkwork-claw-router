@@ -42,6 +42,7 @@ type AiRuntimeInvocationRecord struct {
 	SandboxPolicy string `json:"sandbox_policy"`
 	StartedAt string `json:"started_at"`
 	Status string `json:"status"`
+	Streaming bool `json:"streaming"`
 	TenantId string `json:"tenant_id"`
 	ToolCallId string `json:"tool_call_id"`
 	ToolName string `json:"tool_name"`

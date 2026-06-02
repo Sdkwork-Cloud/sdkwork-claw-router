@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kaggle-api@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kaggle-api-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kaggle-api-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4f15c22a9966bb057e7bc63708d5527046b75fca3018f30070db445184946d4f",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/v19-certified-agent-workflow@1.2.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-v19-certified-agent-workflow-1.2.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-v19-certified-agent-workflow-1.2.3.json"
+      },
       "version": "1.2.3",
       "runtime": "metadata",
       "checksumHash": "sha256:772560ebea6a5a1f474306e428dcf8e47e787563be59aa06b828414595dc0a6d",

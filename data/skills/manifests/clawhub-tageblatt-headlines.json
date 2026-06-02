@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tageblatt-headlines@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tageblatt-headlines-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tageblatt-headlines-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:270b574337bac5e2f7a7d562fa575482971d75a31a2fa1603570baac3583c5b2",

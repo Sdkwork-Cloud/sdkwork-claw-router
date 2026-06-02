@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ci-pipeline-optimizer@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ci-pipeline-optimizer-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ci-pipeline-optimizer-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3f214a6998d3d57c69714eab0858dde1f47e147fac9f42fbc4538635705dac7a",

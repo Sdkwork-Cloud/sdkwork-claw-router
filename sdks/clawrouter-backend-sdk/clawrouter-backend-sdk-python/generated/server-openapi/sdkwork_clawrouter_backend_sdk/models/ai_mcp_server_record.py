@@ -14,6 +14,7 @@ class AiMcpServerRecord:
     deleted_by: Optional[str] = None
     deprecated_at: Optional[str] = None
     description: Optional[str] = None
+    health_status: Optional[str] = None
     id: Optional[str] = None
     last_checked_at: Optional[str] = None
     last_error_masked: Optional[str] = None
@@ -26,6 +27,7 @@ class AiMcpServerRecord:
     published_revision_id: Optional[str] = None
     server_key: Optional[str] = None
     status: Optional[str] = None
+    tags: Optional[Dict[str, str]] = None
     tenant_id: Optional[str] = None
     transport: Optional[str] = None
     updated_at: Optional[str] = None

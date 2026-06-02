@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/daily-meal-planner@1.2.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-daily-meal-planner-1.2.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-daily-meal-planner-1.2.6.json"
+      },
       "version": "1.2.6",
       "runtime": "metadata",
       "checksumHash": "sha256:22d41a6f4b83230295b9e733d07aff9884fe926643ee5f062a32e4cab9c1b1f7",

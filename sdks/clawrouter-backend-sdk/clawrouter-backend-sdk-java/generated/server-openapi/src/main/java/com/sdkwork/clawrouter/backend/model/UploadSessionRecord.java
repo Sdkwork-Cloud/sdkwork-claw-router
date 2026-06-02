@@ -6,12 +6,15 @@ public class UploadSessionRecord {
     private String abortedAt;
     private String bucketId;
     private String completedAt;
+    private String completedBytes;
+    private Integer completedPartCount;
     private String contentType;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
     private String deletedBy;
     private String expectedSha256;
+    private String expectedSizeBytes;
     private String expiresAt;
     private String id;
     private String idempotencyKey;
@@ -22,6 +25,8 @@ public class UploadSessionRecord {
     private String originalFilename;
     private String ownerId;
     private String ownerType;
+    private Integer partCount;
+    private String partSizeBytes;
     private String providerId;
     private String requestId;
     private String s3UploadId;
@@ -56,6 +61,22 @@ public class UploadSessionRecord {
 
     public void setCompletedAt(String completedAt) {
         this.completedAt = completedAt;
+    }
+
+    public String getCompletedBytes() {
+        return this.completedBytes;
+    }
+
+    public void setCompletedBytes(String completedBytes) {
+        this.completedBytes = completedBytes;
+    }
+
+    public Integer getCompletedPartCount() {
+        return this.completedPartCount;
+    }
+
+    public void setCompletedPartCount(Integer completedPartCount) {
+        this.completedPartCount = completedPartCount;
     }
 
     public String getContentType() {
@@ -104,6 +125,14 @@ public class UploadSessionRecord {
 
     public void setExpectedSha256(String expectedSha256) {
         this.expectedSha256 = expectedSha256;
+    }
+
+    public String getExpectedSizeBytes() {
+        return this.expectedSizeBytes;
+    }
+
+    public void setExpectedSizeBytes(String expectedSizeBytes) {
+        this.expectedSizeBytes = expectedSizeBytes;
     }
 
     public String getExpiresAt() {
@@ -184,6 +213,22 @@ public class UploadSessionRecord {
 
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
+    }
+
+    public Integer getPartCount() {
+        return this.partCount;
+    }
+
+    public void setPartCount(Integer partCount) {
+        this.partCount = partCount;
+    }
+
+    public String getPartSizeBytes() {
+        return this.partSizeBytes;
+    }
+
+    public void setPartSizeBytes(String partSizeBytes) {
+        this.partSizeBytes = partSizeBytes;
     }
 
     public String getProviderId() {

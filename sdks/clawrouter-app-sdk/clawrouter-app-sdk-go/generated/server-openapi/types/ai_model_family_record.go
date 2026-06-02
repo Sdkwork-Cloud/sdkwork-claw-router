@@ -14,7 +14,7 @@ type AiModelFamilyRecord struct {
 	DocsUrl string `json:"docs_url"`
 	FamilyCode string `json:"family_code"`
 	FamilyType string `json:"family_type"`
-	IconUrl string `json:"icon_url"`
+	Icon MediaResource `json:"icon"`
 	Id string `json:"id"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	ModelCount string `json:"model_count"`

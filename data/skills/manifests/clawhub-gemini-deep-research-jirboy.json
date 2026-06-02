@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-deep-research-jirboy@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-deep-research-jirboy-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-deep-research-jirboy-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b98137fa7acd92242a37b2427ede1d944e8b5c44935349fed054e4d5b79fd3b5",

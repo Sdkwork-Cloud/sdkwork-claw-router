@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bitget-wallet-skill-disabled@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bitget-wallet-skill-disabled-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bitget-wallet-skill-disabled-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:86ef102b9cc7d3b4f9fa4f7c75427e259ed4cadfd448f7e3d0f3e01621cb21c9",

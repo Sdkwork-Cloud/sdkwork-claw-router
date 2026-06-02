@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/review-python@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-review-python-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-review-python-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:ee6249ffc7c3e77f9004d0994db672019875470df22f3f034512607b07f5508f",

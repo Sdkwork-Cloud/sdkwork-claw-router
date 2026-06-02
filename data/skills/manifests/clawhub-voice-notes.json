@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/voice-notes@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-voice-notes-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-voice-notes-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:a1b3f934f2797205c5f91c05c221757076bbc0348c55cae99b464460b16dd849",

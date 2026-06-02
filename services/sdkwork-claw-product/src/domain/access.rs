@@ -103,7 +103,7 @@ impl GatewayApiKey {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct ApiKeyGroup {
+pub struct ChannelGroup {
     pub id: i64,
     pub tenant_id: i64,
     pub organization_id: i64,
@@ -132,7 +132,7 @@ impl GatewayAccessPolicy {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct ApiKeyGroupMetricSnapshot {
+pub struct ChannelGroupMetricSnapshot {
     pub group_id: i64,
     pub capacity_used: Option<DecimalValue>,
     pub capacity_limit: Option<DecimalValue>,
@@ -140,7 +140,7 @@ pub struct ApiKeyGroupMetricSnapshot {
     pub snapshot_at: Option<String>,
 }
 
-impl ApiKeyGroupMetricSnapshot {
+impl ChannelGroupMetricSnapshot {
     pub fn new(
         group_id: i64,
         capacity_used: Option<DecimalValue>,
@@ -179,7 +179,7 @@ fn mask_key_prefix(key_prefix: &str) -> String {
     }
 }
 
-impl ApiKeyGroup {
+impl ChannelGroup {
     pub fn new(
         id: i64,
         code: &str,

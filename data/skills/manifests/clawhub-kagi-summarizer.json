@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/kagi-summarizer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-kagi-summarizer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-kagi-summarizer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:565deb71a0b53c212914a4ede6c472840f60ff7775e0c4977fc99ec80add8c72",

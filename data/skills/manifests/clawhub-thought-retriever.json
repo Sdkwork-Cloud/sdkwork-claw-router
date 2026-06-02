@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thought-retriever@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-thought-retriever-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thought-retriever-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:305b4d1c374121c7ed52861ad79171043205bccb50e6823568c7538e5611e22b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mbti-guru@1.5.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-mbti-guru-1.5.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mbti-guru-1.5.2.json"
+      },
       "version": "1.5.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ea604cc058366878afd462b0ecddc03c0e7bad9ffb7b44c44c169171b1ca5229",

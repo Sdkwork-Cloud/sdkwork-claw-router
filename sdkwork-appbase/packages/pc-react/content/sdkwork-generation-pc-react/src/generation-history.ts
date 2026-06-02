@@ -1,3 +1,4 @@
+import { getSdkworkMediaDeliveryUrl, type SdkworkMediaResource } from "@sdkwork/appbase-pc-react";
 import {
   createSdkworkGenerationAssetConfigFromSerialized,
   serializeSdkworkGenerationAssetConfig,
@@ -16,14 +17,12 @@ export type SdkworkGenerationHistoryType =
 
 export type SdkworkGenerationPreviewKind = "audio" | "image" | "text" | "video";
 
-export type SdkworkGenerationMedia = string | { thumb?: string; url?: string };
+export type SdkworkGenerationMediaResource = SdkworkMediaResource;
+export type SdkworkGenerationMedia = SdkworkMediaResource;
 
 export interface SdkworkGenerationArtifact {
-  durationSeconds?: number;
-  mimeType?: string;
+  asset: SdkworkGenerationMediaResource;
   modality: SdkworkGenerationAssetModality;
-  thumb?: string;
-  url: string;
 }
 
 export interface SdkworkGenerationHistoryItem {
@@ -34,7 +33,8 @@ export interface SdkworkGenerationHistoryItem {
   durationSeconds?: number;
   generationConfig?: SdkworkGenerationSerializedAssetConfig;
   id: string;
-  images?: string[];
+  asset?: SdkworkGenerationMediaResource;
+  images?: SdkworkGenerationMediaResource[];
   modelCatalogKey?: string;
   modelInfo?: string;
   outputText?: string;
@@ -42,8 +42,7 @@ export interface SdkworkGenerationHistoryItem {
   status?: string;
   type: SdkworkGenerationHistoryType;
   updatedAt?: string;
-  url?: string;
-  videos?: SdkworkGenerationMedia[];
+  videos?: SdkworkGenerationMediaResource[];
 }
 
 export interface CreateSdkworkGenerationPendingHistoryItemInput {
@@ -57,10 +56,10 @@ export interface CreateSdkworkGenerationPendingHistoryItemInput {
 }
 
 export interface MapSdkworkGenerationArtifactsToHistoryMediaResult {
+  asset?: SdkworkGenerationMediaResource;
   durationSeconds?: number;
-  images: string[];
-  url?: string;
-  videos: SdkworkGenerationMedia[];
+  images: SdkworkGenerationMediaResource[];
+  videos: SdkworkGenerationMediaResource[];
 }
 
 export interface AppendSdkworkGenerationArtifactOptions {
@@ -189,22 +188,23 @@ export function mapSdkworkGenerationArtifactsToHistoryMedia(
 
   const matching = artifacts.filter((artifact) => artifact.modality === targetType);
   const first = matching[0] ?? artifacts[0];
+  const media = matching.map(createSdkworkGenerationMediaResourceFromArtifact);
   const images = targetType === "image"
-    ? matching.map((artifact) => artifact.url)
+    ? media
     : [];
   const videos = targetType === "video"
-    ? matching.map((artifact) => artifact.thumb ? { thumb: artifact.thumb, url: artifact.url } : { url: artifact.url })
+    ? media
     : [];
-  const url = targetType === "image"
+  const asset = targetType === "image"
     ? images[0]
     : targetType === "video"
-      ? readSdkworkGenerationMediaUrl(videos[0])
-      : first?.url;
+      ? videos[0]
+      : first ? createSdkworkGenerationMediaResourceFromArtifact(first) : undefined;
 
   return {
-    durationSeconds: first?.durationSeconds,
+    asset,
+    durationSeconds: first?.asset.durationSeconds,
     images,
-    url,
     videos,
   };
 }
@@ -218,7 +218,9 @@ export function appendSdkworkGenerationArtifactToHistoryItem<TItem extends Sdkwo
   const artifactType = mapSdkworkGenerationModalityToHistoryType(artifact.modality);
 
   if (artifact.modality === "image") {
-    if (item.images?.includes(artifact.url)) {
+    const nextImage = createSdkworkGenerationMediaResourceFromArtifact(artifact);
+    const nextImageUrl = readSdkworkGenerationMediaUrl(nextImage);
+    if ((item.images ?? []).some((media) => readSdkworkGenerationMediaUrl(media) === nextImageUrl)) {
       return {
         ...item,
         updatedAt,
@@ -226,17 +228,18 @@ export function appendSdkworkGenerationArtifactToHistoryItem<TItem extends Sdkwo
     }
     return {
       ...item,
-      images: [...(item.images ?? []), artifact.url],
+      asset: item.asset ?? nextImage,
+      images: [...(item.images ?? []), nextImage],
       status: "processing",
       type: artifactType,
       updatedAt,
-      url: item.url || artifact.url,
     } as TItem;
   }
 
   if (artifact.modality === "video") {
-    const nextVideo = artifact.thumb ? { thumb: artifact.thumb, url: artifact.url } : { url: artifact.url };
-    if ((item.videos ?? []).some((media) => readSdkworkGenerationMediaUrl(media) === artifact.url)) {
+    const nextVideo = createSdkworkGenerationMediaResourceFromArtifact(artifact);
+    const nextVideoUrl = readSdkworkGenerationMediaUrl(nextVideo);
+    if ((item.videos ?? []).some((media) => readSdkworkGenerationMediaUrl(media) === nextVideoUrl)) {
       return {
         ...item,
         updatedAt,
@@ -244,33 +247,59 @@ export function appendSdkworkGenerationArtifactToHistoryItem<TItem extends Sdkwo
     }
     return {
       ...item,
-      durationSeconds: artifact.durationSeconds ?? item.durationSeconds,
+      durationSeconds: artifact.asset.durationSeconds ?? item.durationSeconds,
+      asset: item.asset ?? nextVideo,
       status: "processing",
       type: artifactType,
       updatedAt,
-      url: item.url || artifact.url,
       videos: [...(item.videos ?? []), nextVideo],
     } as TItem;
   }
 
+  const nextAsset = createSdkworkGenerationMediaResourceFromArtifact(artifact);
   return {
     ...item,
-    durationSeconds: artifact.durationSeconds ?? item.durationSeconds,
+    asset: nextAsset,
+    durationSeconds: artifact.asset.durationSeconds ?? item.durationSeconds,
     status: "processing",
     type: artifactType,
     updatedAt,
-    url: artifact.url,
   } as TItem;
+}
+
+function createSdkworkGenerationMediaResourceFromArtifact(
+  artifact: SdkworkGenerationArtifact,
+): SdkworkGenerationMediaResource {
+  return cloneSdkworkGenerationMediaResource(artifact.asset);
+}
+
+function cloneSdkworkGenerationMediaResource(
+  resource: SdkworkGenerationMediaResource,
+): SdkworkGenerationMediaResource {
+  const clone: SdkworkGenerationMediaResource = { ...resource };
+  if (resource.poster) {
+    clone.poster = cloneSdkworkGenerationMediaResource(resource.poster);
+  }
+  if (resource.thumbnails) {
+    clone.thumbnails = resource.thumbnails.map(cloneSdkworkGenerationMediaResource);
+  }
+  return clone;
 }
 
 export function readSdkworkGenerationMediaUrl(
   media: SdkworkGenerationMedia | undefined,
 ): string | undefined {
-  return typeof media === "string" ? media : media?.url;
+  const mediaKey = getSdkworkMediaDeliveryUrl(media)
+    || media?.uri
+    || media?.objectKey
+    || media?.id;
+  return mediaKey;
 }
 
 export function readSdkworkGenerationMediaThumb(
   media: SdkworkGenerationMedia | undefined,
 ): string | undefined {
-  return typeof media === "string" ? media : media?.thumb || media?.url;
+  return readSdkworkGenerationMediaUrl(media?.poster)
+    || readSdkworkGenerationMediaUrl(media?.thumbnails?.[0])
+    || readSdkworkGenerationMediaUrl(media);
 }

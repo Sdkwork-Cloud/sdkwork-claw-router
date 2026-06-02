@@ -2,7 +2,7 @@ package com.sdkwork.clawrouter.app.model;
 
 
 public class AppReleaseItem {
-    private String downloadUrl;
+    private MediaResource artifact;
     private String id;
     private String os;
     private String platformType;
@@ -11,12 +11,12 @@ public class AppReleaseItem {
     private String version;
     private String whatsNew;
 
-    public String getDownloadUrl() {
-        return this.downloadUrl;
+    public MediaResource getArtifact() {
+        return this.artifact;
     }
 
-    public void setDownloadUrl(String downloadUrl) {
-        this.downloadUrl = downloadUrl;
+    public void setArtifact(MediaResource artifact) {
+        this.artifact = artifact;
     }
 
     public String getId() {

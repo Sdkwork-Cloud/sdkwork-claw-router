@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dnd-character-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dnd-character-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dnd-character-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:01e11d22ac9bff6b357ab8f9a44adea220184a4f719f804a18acbd7cb6089643",

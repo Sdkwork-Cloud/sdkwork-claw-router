@@ -40,7 +40,9 @@ describe("sdkwork-assets-pc-react domain contract", () => {
       type: "assets-route-intent",
     });
 
-    expect(createEmptySdkworkAssetsWorkspace()).toMatchObject({
+    const workspace = createEmptySdkworkAssetsWorkspace();
+
+    expect(workspace).toMatchObject({
       collections: expect.arrayContaining([
         expect.objectContaining({ id: "brand-system" }),
       ]),
@@ -49,6 +51,12 @@ describe("sdkwork-assets-pc-react domain contract", () => {
         totalAssets: 4,
       },
       isAuthenticated: false,
+    });
+    expect(workspace.assets[0]).toMatchObject({
+      resource: {
+        kind: "image",
+        source: "object_storage",
+      },
     });
   });
 });

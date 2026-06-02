@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gitea@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-gitea-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gitea-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:77dc32cb7814e69db492a8612e3b23677bb5406a285498211983beca42f77645",

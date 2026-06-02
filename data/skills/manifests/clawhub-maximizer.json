@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/maximizer@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-maximizer-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-maximizer-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3dc560b1ce24b6df36c9b6bb715919e6261b51162b7183e9736c39aab961235d",

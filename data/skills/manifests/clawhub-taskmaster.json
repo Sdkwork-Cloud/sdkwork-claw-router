@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taskmaster@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-taskmaster-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taskmaster-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ce76bf62feae2f113f5048f9b21dd2f34bc31b1869a0b7fcf8bd3afee4d7380",

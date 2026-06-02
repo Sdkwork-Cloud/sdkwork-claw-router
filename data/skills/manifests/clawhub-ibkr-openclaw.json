@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ibkr-openclaw@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ibkr-openclaw-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ibkr-openclaw-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9275229d670869cae742fc82c7066ca9dbb1d054edc53fc61721df254a0146ef",

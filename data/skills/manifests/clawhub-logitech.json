@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/logitech@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-logitech-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-logitech-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:be953537633ac4e1d57e4b8dea57c4d31249632ce8459ae3d9c98607ef6503be",

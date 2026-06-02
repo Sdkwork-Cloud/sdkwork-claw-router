@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pushbots@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-pushbots-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pushbots-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:62bf04fddbfcef0012ccb17c1eaf7f24815eae175142c85065cb20a158e0e62f",

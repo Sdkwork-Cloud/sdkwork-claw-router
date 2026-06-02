@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-download-whisper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-download-whisper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-download-whisper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74a9877905f9206c565d445da338a4b7d5cb11529df3c70fa3b56d7dd12e42a6",

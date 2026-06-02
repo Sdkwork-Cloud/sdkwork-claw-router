@@ -130,7 +130,7 @@ test("admin ratelimit form rejects invalid required values instead of creating p
 
   const modelForm = new FormData();
   modelForm.set("model", "gpt-4o-mini");
-  modelForm.set("group", "enterprise");
+  modelForm.set("channelGroup", "enterprise");
   modelForm.set("rpm", "60");
   modelForm.set("tpm", "not-a-number");
   assert.throws(
@@ -177,7 +177,7 @@ test("admin ratelimit page does not expose unsupported row menus and dashboard l
 test("admin model limit create input does not reuse returned model limit view model", () => {
   const form = new FormData();
   form.set("model", " gpt-4o-mini ");
-  form.set("group", " enterprise ");
+  form.set("channelGroup", " enterprise ");
   form.set("rpm", " 60 ");
   form.set("tpm", " 200000 ");
 
@@ -185,7 +185,7 @@ test("admin model limit create input does not reuse returned model limit view mo
 
   assert.deepEqual(input, {
     model: "gpt-4o-mini",
-    group: "enterprise",
+    channelGroup: "enterprise",
     rpm: 60,
     tpm: 200000,
   });
@@ -278,7 +278,9 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
             {
               id: "model-limit-1",
               model: "gpt-4o-mini",
-              group: "enterprise",
+              channelGroup: "enterprise",
+              channelGroupId: "group-1",
+              channelGroupName: "Enterprise",
               rpm: "60",
               tpm: 200000,
               status: "inactive",
@@ -291,7 +293,9 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
           item: {
             id: "model-limit-2",
             model: "claude-3-5-sonnet",
-            group: "enterprise",
+            channelGroup: "enterprise",
+            channelGroupId: "group-1",
+            channelGroupName: "Enterprise",
             rpm: 30,
             tpm: 100000,
             status: "active",
@@ -347,7 +351,7 @@ test("admin ratelimit service calls generated backend SDK paths and normalizes r
       const modelLimits = await RateLimitService.fetchModelLimits();
       const createdModel = await RateLimitService.addModelLimit({
         model: "claude-3-5-sonnet",
-        group: "enterprise",
+        channelGroup: "enterprise",
         rpm: 30,
         tpm: 100000,
       });
@@ -440,7 +444,7 @@ test("admin ratelimit service rejects invalid commands before calling generated 
         () =>
           RateLimitService.addModelLimit({
             model: "gpt-4o-mini",
-            group: "enterprise",
+            channelGroup: "enterprise",
             rpm: 60,
             tpm: 100.5,
           }),
@@ -677,7 +681,7 @@ test("admin model limit list fails closed when backend omits stable rule ids", a
           items: [
             {
               model: "gpt-4o-mini",
-              group: "enterprise",
+              channelGroup: "enterprise",
               rpm: 60,
               tpm: 200000,
               status: "active",
@@ -707,7 +711,7 @@ test("admin model limit list fails closed when backend omits or corrupts status"
           const rule = {
             id: "model-limit-1",
             model: "gpt-4o-mini",
-            group: "enterprise",
+            channelGroup: "enterprise",
             rpm: 60,
             tpm: 200000,
             status: "active",

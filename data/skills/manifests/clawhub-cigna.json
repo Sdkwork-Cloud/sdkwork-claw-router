@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cigna@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cigna-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cigna-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8466e9adfbd1c92f267ba24818ba6cf6cba6334ca30b5eeaa8266ec412694072",

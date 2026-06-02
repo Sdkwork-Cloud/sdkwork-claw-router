@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wordcraft@2.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-wordcraft-2.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wordcraft-2.0.3.json"
+      },
       "version": "2.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:027d54d42c670c729a38e03ac783b7cad81829181900b455b21a3dd46c24c269",

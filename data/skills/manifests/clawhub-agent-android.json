@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-android@0.1.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-android-0.1.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-android-0.1.6.json"
+      },
       "version": "0.1.6",
       "runtime": "metadata",
       "checksumHash": "sha256:d7bd39b63f74a0b1cfd224d98a2ae91faf0991a24acdc40c49a1e19501de037a",

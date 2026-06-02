@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/taskr@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-taskr-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-taskr-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:899fafc0c3d1b9d7abc8356b78169005b18a448beaed5e313398a23e77aaf1c4",

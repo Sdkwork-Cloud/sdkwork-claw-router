@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-dream-journal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-dream-journal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-dream-journal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e04fc172555811a601df2af847a379586a36ee30638c6bc89a4d9ed1a470c4c6",

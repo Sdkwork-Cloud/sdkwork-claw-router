@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-casino@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-casino-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-casino-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b219d52e4a88f497e8938a85f3028fa4b7074d95023d724d53cb6e552b3d9e3d",

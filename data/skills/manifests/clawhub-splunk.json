@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/splunk@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-splunk-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-splunk-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:46c645a0076b5c4eb0ef83da17cc82e472949046403933be1d60795826fb0440",

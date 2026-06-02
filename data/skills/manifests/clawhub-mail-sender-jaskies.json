@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mail-sender-jaskies@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mail-sender-jaskies-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mail-sender-jaskies-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1e0c43b5c50d907a28f718bb293268a9c8738ad20a811a5386e710bf342b69a",

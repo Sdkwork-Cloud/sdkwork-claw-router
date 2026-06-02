@@ -8,7 +8,7 @@ namespace Sdkwork.ClawRouter.App.Models
     {
         public string? Id { get; set; }
         public string? Label { get; set; }
-        public string? QrCodeUrl { get; set; }
+        public MediaResource? QrCode { get; set; }
         public string? Tone { get; set; }
         public string? Url { get; set; }
     }

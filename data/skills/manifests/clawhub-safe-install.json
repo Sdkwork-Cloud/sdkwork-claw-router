@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/safe-install@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-safe-install-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-safe-install-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:dcb79ee06c7c1622a91d003bc97edc77c39caacc563712f60d382554fdf127c8",

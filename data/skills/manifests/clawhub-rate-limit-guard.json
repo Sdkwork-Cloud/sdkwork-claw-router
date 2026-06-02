@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/rate-limit-guard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-rate-limit-guard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-rate-limit-guard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:863339a61541c9707550aa34a9876ab5a9822660e21383fb44b062735bbd7326",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-screener-cn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-screener-cn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-screener-cn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cbb715847c2b2eee8677c437d0a56d584ec6c52999f6282ad78858160e9f838d",

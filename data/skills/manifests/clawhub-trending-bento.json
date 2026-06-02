@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trending-bento@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trending-bento-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trending-bento-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed6291e827a9c6222872f65fc0da0e20eac00ff5b6ef39dd1120a6b7508d4c0f",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/security-news-feed@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-security-news-feed-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-security-news-feed-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:56b3e83e050c7d5b571b2bd80d401e25a1381c386ec196bb2ad89aadaab02f40",

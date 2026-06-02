@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/konami@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-konami-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-konami-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3a757346e29465073b48f7dab26b5d99d2a2d21b2c79056c6a8575f8eece429e",

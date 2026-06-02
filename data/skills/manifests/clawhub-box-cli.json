@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/box-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-box-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-box-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bf6b3ac865a8645011315f93837642c40eee426051a5da70515b3c51eb7e4e04",

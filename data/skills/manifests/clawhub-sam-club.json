@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sam-club@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sam-club-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sam-club-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e2d44e5c70045cb04789da534697ad35d38aad8126def67e87112f85439223f7",

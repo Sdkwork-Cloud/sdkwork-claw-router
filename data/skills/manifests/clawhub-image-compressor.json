@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/image-compressor@3.0.30",
-      "artifactUrl": "data/skills/artifacts/clawhub-image-compressor-3.0.30.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-image-compressor-3.0.30.json"
+      },
       "version": "3.0.30",
       "runtime": "metadata",
       "checksumHash": "sha256:c89d3d9f2b9dab5b9872a93d49f8032f44dcc727046cf16697918c9d699cebf4",

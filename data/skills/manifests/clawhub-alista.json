@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/alista@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-alista-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-alista-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a4a6e51deb3cb4a9f02b39ee5f1660b807651451475986428457ae67f3cf9937",

@@ -16,6 +16,10 @@ pub struct CommerceMembershipPackageRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub ends_at: Option<String>,
 
+    /// Id field on commerce membership package record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub id: Option<String>,
+
     /// Organization id field on commerce membership package record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub organization_id: Option<String>,
@@ -39,6 +43,9 @@ pub struct CommerceMembershipPackageRecord {
 
     /// Sku id field on commerce membership package record.
     pub sku_id: String,
+
+    /// Sort order field on commerce membership package record.
+    pub sort_order: String,
 
     /// Starts at field on commerce membership package record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

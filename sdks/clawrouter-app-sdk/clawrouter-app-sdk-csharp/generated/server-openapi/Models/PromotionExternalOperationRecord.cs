@@ -19,6 +19,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? ExternalOperationId { get; set; }
         public string? ExternalRequestNo { get; set; }
         public string? ExternalStatus { get; set; }
+        public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
         public string? NextRetryAt { get; set; }
         public string? OccurredAt { get; set; }
@@ -31,6 +32,7 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? ReplayOpId { get; set; }
         public string? RequestHash { get; set; }
         public string? ResponseHash { get; set; }
+        public int? RetryCount { get; set; }
         public Dictionary<string, string>? SanitizedRequestJson { get; set; }
         public Dictionary<string, string>? SanitizedResponseJson { get; set; }
         public string? Status { get; set; }

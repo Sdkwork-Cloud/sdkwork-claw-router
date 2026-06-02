@@ -8,6 +8,8 @@ export interface CommerceCheckoutLineRecord {
   created_at: string;
   /** Fulfillment type field on commerce checkout line record. */
   fulfillment_type: string;
+  /** Id field on commerce checkout line record. */
+  id?: string;
   /** Inventory reservation id field on commerce checkout line record. */
   inventory_reservation_id?: string;
   /** Organization id field on commerce checkout line record. */
@@ -18,6 +20,8 @@ export interface CommerceCheckoutLineRecord {
   promotion_snapshot_json?: Record<string, JsonValue>;
   /** Purchase type field on commerce checkout line record. */
   purchase_type: string;
+  /** Quantity field on commerce checkout line record. */
+  quantity: string;
   /** Sku id field on commerce checkout line record. */
   sku_id: string;
   /** Tenant id field on commerce checkout line record. */

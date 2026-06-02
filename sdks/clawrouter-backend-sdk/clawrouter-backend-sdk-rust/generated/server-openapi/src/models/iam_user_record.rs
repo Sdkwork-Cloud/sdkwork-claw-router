@@ -1,11 +1,13 @@
 use serde::{Deserialize, Serialize};
 
+use crate::models::{MediaResource};
+
 /// Iam user record schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 pub struct IamUserRecord {
-    /// Avatar url field on iam user record.
+    /// Avatar field on iam user record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub avatar_url: Option<String>,
+    pub avatar: Option<MediaResource>,
 
     /// Created at field on iam user record.
     #[serde(default, skip_serializing_if = "Option::is_none")]

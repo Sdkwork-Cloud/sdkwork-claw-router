@@ -661,7 +661,7 @@ class CommerceApi {
   }
 
   /// Recharges Orders Create
-  Future<RechargesOrdersCreateResult?> rechargesOrdersCreate(CommerceStandardCommandRequest body, String idempotencyKey) async {
+  Future<RechargesOrdersCreateResult?> rechargesOrdersCreate(CommerceRechargeOrderCreateRequest body, String idempotencyKey) async {
     final requestHeaders = buildRequestHeaders(
       <String, HeaderParameterSpec>{
         'Idempotency-Key': HeaderParameterSpec(idempotencyKey, 'simple', false, null),
@@ -696,6 +696,15 @@ class CommerceApi {
     return (() {
       final map = sdkworkResponseAsMap(response);
       return map == null ? null : RechargesPackagesListResult.fromJson(map);
+    })();
+  }
+
+  /// Recharges Settings Retrieve
+  Future<RechargesSettingsRetrieveResult?> rechargesSettingsRetrieve() async {
+    final response = await _client.get(ApiPaths.appPath('/recharges/settings'));
+    return (() {
+      final map = sdkworkResponseAsMap(response);
+      return map == null ? null : RechargesSettingsRetrieveResult.fromJson(map);
     })();
   }
 

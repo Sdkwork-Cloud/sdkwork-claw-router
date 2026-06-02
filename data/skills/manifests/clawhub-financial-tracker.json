@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/financial-tracker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-financial-tracker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-financial-tracker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6940ce217e854dd515e4a68f0557571fc0253883e807b13e6d4358afedf57c0b",

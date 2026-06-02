@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/launchagent-manager@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-launchagent-manager-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-launchagent-manager-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:03eb423be449a5a4e77bf0345108f812a15df7f154f7f88e6934e96d576a1769",

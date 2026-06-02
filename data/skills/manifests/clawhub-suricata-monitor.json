@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/suricata-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-suricata-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-suricata-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4499751cf0ba192c5ce12f500e5c9387bcb11da0bb4ce787ed10177411628fd3",

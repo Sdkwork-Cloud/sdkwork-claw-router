@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paylock-escrow@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-paylock-escrow-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paylock-escrow-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:49e55585fe615e864ef58bb241d34bfd4eac5b015adac2b5035041f8f98c5a33",

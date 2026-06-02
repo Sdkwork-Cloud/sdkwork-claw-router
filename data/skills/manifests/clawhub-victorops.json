@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/victorops@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-victorops-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-victorops-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:529490f034273d24b87554d364f711088b1bf9114d56522c6b20a97ee0fbe57a",

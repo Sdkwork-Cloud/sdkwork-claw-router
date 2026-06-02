@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skillweave-sdk-publish-smoke-test@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skillweave-sdk-publish-smoke-test-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skillweave-sdk-publish-smoke-test-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3f2e0c33fde73ed0f591c8c413c6b38eb84bd68e5963f4bd14f86cd15e706a87",

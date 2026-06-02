@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/blackjack@0.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-blackjack-0.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-blackjack-0.3.2.json"
+      },
       "version": "0.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:702b438fb8d359ede2907cd2451f83429ad65ddde3508bdb20bf557b06042ee6",

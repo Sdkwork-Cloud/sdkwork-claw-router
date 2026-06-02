@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-brainstorm-chair@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-brainstorm-chair-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-brainstorm-chair-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:01af7b8e2ded9ed598cc4f7d348fb92e4f499e2446ea9105b8622581f7aa300a",

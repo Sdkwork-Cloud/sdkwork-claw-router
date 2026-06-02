@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nixus-tools@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nixus-tools-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nixus-tools-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f4b7179f1e8bc9ec490e4ad70e8f6af7328f541e82b927c5f76accdaecb9acef",

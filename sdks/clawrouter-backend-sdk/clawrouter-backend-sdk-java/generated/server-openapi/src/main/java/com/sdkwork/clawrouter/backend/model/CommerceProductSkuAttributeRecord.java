@@ -6,6 +6,7 @@ public class CommerceProductSkuAttributeRecord {
     private String attributeValueId;
     private String createdAt;
     private String customValue;
+    private String id;
     private String organizationId;
     private String skuId;
     private String tenantId;
@@ -41,6 +42,14 @@ public class CommerceProductSkuAttributeRecord {
 
     public void setCustomValue(String customValue) {
         this.customValue = customValue;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getOrganizationId() {

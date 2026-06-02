@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/just-do-it@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-just-do-it-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-just-do-it-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c747b82156e66c3c11ba9713fd2304ef259e94f6eb90c29798704454204966c",

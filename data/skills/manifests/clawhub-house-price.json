@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/house-price@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-house-price-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-house-price-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:8659149b9bea7ed8e6feaddea376f8591b2eacf992d889a34c11cc0cdef7915c",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ocr-benchmark@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ocr-benchmark-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ocr-benchmark-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b2eb5db9e03751fa29214ca320370345cec81f6f904b6d137db8ee21b3960170",

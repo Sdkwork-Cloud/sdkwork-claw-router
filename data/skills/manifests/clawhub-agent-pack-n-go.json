@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-pack-n-go@2.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-pack-n-go-2.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-pack-n-go-2.3.2.json"
+      },
       "version": "2.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:10d36e029b84e3ac4f8e6a367657d9f8b5b93f2b215010a196fa033ede49abf7",

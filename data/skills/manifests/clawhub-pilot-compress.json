@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pilot-compress@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pilot-compress-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pilot-compress-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74526d24b9eb56c5e979bc571d13adfb7c1e0c55add19b759f7b246f9be252d5",

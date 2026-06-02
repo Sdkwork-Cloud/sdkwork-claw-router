@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/setup-sandbox@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-setup-sandbox-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-setup-sandbox-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0ace0a8007a811a41f73d9a70b2c174747a9a1f1924c4b46fe4ce25d19449f78",

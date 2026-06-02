@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/gemini-spark-core@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-gemini-spark-core-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-gemini-spark-core-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:4a55a406c01da389b1b65279d830a745a4b768d015c1e54732dec4fff8baf6e4",

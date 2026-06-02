@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/jakarta@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-jakarta-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-jakarta-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6712cf7f6f39d720b74dc7b2ff103014edcc115fae37fc59928bbb962e3c6297",

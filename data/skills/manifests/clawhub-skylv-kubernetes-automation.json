@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skylv-kubernetes-automation@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-skylv-kubernetes-automation-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skylv-kubernetes-automation-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a4c029a5e62524e6a41b51d4825d13251785734681b43aec37a04d1487ea407d",

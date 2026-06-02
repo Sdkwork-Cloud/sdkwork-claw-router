@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cool-github-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cool-github-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cool-github-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:375b9e7c270a8cf292b08c1d668d3798643b21982c2d7843fdbca8db41919bfa",

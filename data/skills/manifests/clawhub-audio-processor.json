@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-processor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-processor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-processor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7fd76feeab2f30e0c28c35d322792d6403adbc5bd8512e4ef6039516d0441b3d",

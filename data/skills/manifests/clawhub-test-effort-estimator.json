@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/test-effort-estimator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-test-effort-estimator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-test-effort-estimator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4d55c60ba28b96461d6e31ec7c5f4c590bf46e5bc4ba01a05fee52aa5b86e766",

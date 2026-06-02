@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/google-baidu-search@1.5.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-google-baidu-search-1.5.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-google-baidu-search-1.5.0.json"
+      },
       "version": "1.5.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c022dc7c28c67cfc299157fe05bac4a12b881f8decd597e0f4a67a59bbde7b2c",

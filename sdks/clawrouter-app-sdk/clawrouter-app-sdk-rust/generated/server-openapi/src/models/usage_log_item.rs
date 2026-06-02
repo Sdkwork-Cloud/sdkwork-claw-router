@@ -34,7 +34,7 @@ pub struct UsageLogItem {
     #[serde(rename = "errorType")]
     pub error_type: String,
 
-    /// Maintained API key group display name. Falls back to the recorded group snapshot when the group has been removed or renamed outside the read model.
+    /// Maintained channel group display name. Falls back to the recorded group snapshot when the group has been removed or renamed outside the read model.
     pub group: String,
 
     /// Http status field on usage log item.

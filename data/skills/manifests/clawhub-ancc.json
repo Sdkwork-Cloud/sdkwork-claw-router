@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ancc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ancc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ancc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0de148854945606a090f7dd25d8d09fce94e151368873f471d9afc05fa65da52",

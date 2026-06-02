@@ -1030,7 +1030,7 @@ Mirror the same for PostgreSQL.
 Keep product-specific seed functions that are not model facts until overlay import covers them:
 
 - pricing plans if not represented in public catalog
-- API key groups
+- channel groups
 - access policies
 - quota policies
 - observability seed rows

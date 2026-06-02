@@ -75,7 +75,7 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             "email",
             "phone",
             "language",
-            "avatar_url",
+            "avatar",
             "is_verified",
             "status",
             "registered_at",
@@ -88,7 +88,10 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             self.assertIn(field_name, port)
 
         self.assertIn("pub display_name: String,", port)
+        self.assertIn("Value", port)
+        self.assertIn("pub avatar: Value,", port)
         self.assertIn("#[serde(rename_all = \"camelCase\")]", port)
+        self.assertNotIn("avatar_url", port)
         for sensitive_field in [
             "password_hash",
             "salt",
@@ -140,7 +143,7 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
                 "email",
                 "phone",
                 "language",
-                "avatar_url",
+                "avatar_resource_snapshot",
                 "user_status",
                 "registered_at",
                 "last_login",
@@ -154,7 +157,9 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             self.assertIn("load_user_profile", store)
             self.assertIn("CAST(u.created_at AS TEXT) AS registered_at", store)
             self.assertIn("COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), 'SDKWork User') AS display_name", store)
-            self.assertIn("COALESCE(u.avatar_url, '') AS avatar_url", store)
+            self.assertIn("u.avatar_resource_snapshot", store)
+            self.assertIn("AS avatar_resource_snapshot", store)
+            self.assertIn('avatar: media_resource_from_row(row, "avatar_resource_snapshot", "image")', compact_store)
             self.assertIn("COALESCE(u.status, '') AS user_status", store)
             self.assertIn(
                 'third_party_bound: integer_cell(row, "identity_binding_count") .max(0) .to_string()',
@@ -164,6 +169,7 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             self.assertIn("LIMIT", store)
             self.assertIn("SELECT", store)
             self.assertNotIn("SELECT *", store)
+            self.assertNotIn("avatar_url", store)
             self.assertNotIn("COALESCE(u.status, 1) AS user_status", store)
             self.assertNotIn('status: user_status_label(integer_cell(row, "user_status"))', store)
             self.assertNotIn("plus_user", store)
@@ -236,7 +242,7 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
                 "username",
                 "displayName",
                 "email",
-                "avatarUrl",
+                "avatar",
                 "phone",
                 "language",
                 "isVerified",
@@ -257,7 +263,7 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
             properties["displayName"],
         )
         self.assertEqual({"type": "string", "maxLength": 256}, properties["email"])
-        self.assertEqual({"type": "string", "maxLength": 2048}, properties["avatarUrl"])
+        self.assertEqual({"$ref": "#/components/schemas/MediaResource"}, properties["avatar"])
         self.assertEqual(
             "Safe display phone value, empty when unavailable.",
             properties["phone"]["description"],
@@ -315,7 +321,8 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         iam_user_response = iam_user_response_path.read_text(encoding="utf-8")
         self.assertIn("export interface IamUserResponse", iam_user_response)
         self.assertIn("displayName: string;", iam_user_response)
-        self.assertIn("avatarUrl: string;", iam_user_response)
+        self.assertIn("avatar: MediaResource;", iam_user_response)
+        self.assertNotIn("avatarUrl", iam_user_response)
         self.assertIn("isVerified: boolean;", iam_user_response)
         self.assertIn("thirdPartyBound: string;", iam_user_response)
         self.assertIn(
@@ -326,6 +333,7 @@ class ConsoleUserBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("IamUserResponse as SdkUserProfileResponse", frontend)
         self.assertIn("export interface UserProfile", frontend)
         self.assertIn("name: SdkUserProfileResponse['displayName'];", frontend)
+        self.assertIn("avatar: SdkUserProfileResponse['avatar'];", frontend)
         self.assertIn("isVerified: SdkUserProfileResponse['isVerified'];", frontend)
         self.assertIn("thirdPartyBound: SdkUserProfileResponse['thirdPartyBound'];", frontend)
         self.assertIn("Promise<UserProfile>", frontend)

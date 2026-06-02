@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-audit-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-audit-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-audit-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ec8097a5b0fb634439b9f76fbe58ceaf2c40e1ee2d701df75cda6d1c5f915668",

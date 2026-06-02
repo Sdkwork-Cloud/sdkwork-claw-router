@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwen-orchestrator@1.5.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwen-orchestrator-1.5.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwen-orchestrator-1.5.8.json"
+      },
       "version": "1.5.8",
       "runtime": "metadata",
       "checksumHash": "sha256:4992a761606b509dad34f2a120f76689143f1fabccd6b140d84787f8abeb35fd",

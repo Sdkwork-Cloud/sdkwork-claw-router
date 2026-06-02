@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mortgage-calculator@2.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mortgage-calculator-2.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mortgage-calculator-2.0.1.json"
+      },
       "version": "2.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:d41e9f0ac4a70323ef4bd8fea1191b3aae699e72a11f396c963c864c8697c049",

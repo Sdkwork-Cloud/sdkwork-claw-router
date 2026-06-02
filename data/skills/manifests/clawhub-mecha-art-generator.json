@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mecha-art-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mecha-art-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mecha-art-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:75585fd3a4aa6f0c9bbf5cea2539fc7b92da846f5124ec59eca06ac1bdba56f6",

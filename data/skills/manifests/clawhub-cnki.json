@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cnki@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cnki-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cnki-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:59c3983caf64ff949871ded4e23b5241ded7b976a6fa506fbcecc4d6dba42831",

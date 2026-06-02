@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/penta@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-penta-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-penta-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:74b011a43c3eb1dbad7707d0dee3990bf64764c4ca06c496f0b0489f01f16a75",

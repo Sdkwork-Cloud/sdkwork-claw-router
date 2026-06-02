@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/worldcoin@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-worldcoin-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-worldcoin-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f7db283f68559adcde6af66dd97cc1b025a54de3d3c381c41d7c90dafc804698",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trae-orchestrator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trae-orchestrator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trae-orchestrator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:154abe62e057dcc1731c4e18f4331a1e86d314cc5f0325816c0e645a3f494999",

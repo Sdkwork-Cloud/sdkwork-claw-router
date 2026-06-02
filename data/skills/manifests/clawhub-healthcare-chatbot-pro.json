@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/healthcare-chatbot-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-healthcare-chatbot-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-healthcare-chatbot-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1b75ca6d8b0e45633a1aa94ae3039a2c45d3629a61cbd71874a25dac07cff9f7",

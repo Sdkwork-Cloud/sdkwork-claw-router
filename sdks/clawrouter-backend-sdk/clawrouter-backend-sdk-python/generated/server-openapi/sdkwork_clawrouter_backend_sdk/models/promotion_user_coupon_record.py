@@ -12,7 +12,10 @@ class PromotionUserCouponRecord:
     coupon_no: str
     created_at: str
     currency_code: str
+    face_value_minor: str
     idempotency_key: str
+    maximum_discount_amount_minor: str
+    minimum_order_amount_minor: str
     offer_id: str
     offer_version_id: str
     request_no: str
@@ -34,6 +37,7 @@ class PromotionUserCouponRecord:
     disabled_at: Optional[str] = None
     discount_percent_bps: Optional[int] = None
     expires_at: Optional[str] = None
+    id: Optional[str] = None
     lock_expires_at: Optional[str] = None
     locked_at: Optional[str] = None
     organization_id: Optional[str] = None

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::models::{CommerceProductSkuAttributeItem};
+use crate::models::{CommerceProductSkuAttributeItem, MediaResource};
 
 /// Commerce product sku mutation request schema exposed by Claw Router.
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
@@ -8,6 +8,10 @@ pub struct CommerceProductSkuMutationRequest {
     /// Attributes field on commerce product sku mutation request.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub attributes: Option<Vec<CommerceProductSkuAttributeItem>>,
+
+    /// Barcode field on commerce product sku mutation request.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub barcode: Option<String>,
 
     /// Default currency code field on commerce product sku mutation request.
     #[serde(rename = "defaultCurrencyCode")]
@@ -22,6 +26,10 @@ pub struct CommerceProductSkuMutationRequest {
     /// Fulfillment type field on commerce product sku mutation request.
     #[serde(rename = "fulfillmentType")]
     pub fulfillment_type: String,
+
+    /// Image field on commerce product sku mutation request.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub image: Option<MediaResource>,
 
     /// Product id field on commerce product sku mutation request.
     #[serde(rename = "productId")]

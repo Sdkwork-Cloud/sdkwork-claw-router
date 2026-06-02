@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sesame@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-sesame-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sesame-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:2489ea088683091822c371b912d3239c7749e2d26e4f194b83b9bf4b7fd0c251",

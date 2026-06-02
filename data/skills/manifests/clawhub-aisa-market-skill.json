@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aisa-market-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-aisa-market-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aisa-market-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:01f1df9aa0085df8aae324c00b9b0f9c7307daf3dca4665ce83fec072bd86b66",

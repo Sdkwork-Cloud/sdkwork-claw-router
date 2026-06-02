@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quality-checker@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-quality-checker-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quality-checker-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:ec65d2b6375542a3dc0ec372ae07ac1ada85a395ef24b2090d8ea3fdddc7fede",

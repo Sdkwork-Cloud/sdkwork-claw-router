@@ -10,123 +10,37 @@
   },
   "status": "ok",
   "mode": "apply",
-  "hasChanges": true,
+  "hasChanges": false,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "17a3589acc1fe465b650cb89dd6d56287e3071196f60bde7a1255f52bae2f3ea",
+  "changeFingerprint": "85a8eb0fb69d46d9eabd651e33861f19250a3081f487545d0ddae8b88d2812c4",
   "changeImpact": {
     "schemaVersion": 1,
-    "areas": [
-      "models"
-    ],
-    "details": [
-      {
-        "area": "models",
-        "paths": [
-          "src/types/commerce-membership-purchase-request.ts",
-          "src/types/commerce-recharge-checkout-status-response.ts",
-          "src/types/commerce-recharge-order-create-request.ts",
-          "src/types/commerce-recharge-order-create-response.ts"
-        ]
-      }
-    ],
-    "requiresVerification": true,
-    "summary": "Detected impact areas: models. Verification is required."
+    "areas": [],
+    "details": [],
+    "requiresVerification": false,
+    "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped."
   },
   "executionDecision": {
     "schemaVersion": 1,
-    "riskLevel": "medium",
-    "nextAction": "verify",
+    "riskLevel": "low",
+    "nextAction": "skip",
     "requiresManualReview": false,
     "applyRequiresExpectedFingerprint": false,
-    "summary": "Changes have been applied. Run the required verification plan now.",
+    "summary": "No actionable changes were detected. No apply or verification step is required.",
     "reasons": [
-      "verification-required"
+      "no-actionable-changes"
     ]
   },
   "executionHandoff": {
     "schemaVersion": 1,
-    "summary": "Run the required verification commands now.",
-    "steps": [
-      {
-        "id": "verify-check",
-        "title": "Unified package check",
-        "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
-        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-        "command": "node",
-        "args": [
-          "./bin/publish-core.mjs",
-          "--language",
-          "typescript",
-          "--project-dir",
-          ".",
-          "--action",
-          "check"
-        ],
-        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
-      },
-      {
-        "id": "verify-build",
-        "title": "Unified package build",
-        "required": true,
-        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
-        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-        "command": "node",
-        "args": [
-          "./bin/publish-core.mjs",
-          "--language",
-          "typescript",
-          "--project-dir",
-          ".",
-          "--action",
-          "build"
-        ],
-        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
-      }
-    ]
+    "summary": "No further commands are required.",
+    "steps": []
   },
   "verificationPlan": {
-    "shouldRun": true,
-    "runPhase": "now",
-    "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
-    "steps": [
-      {
-        "id": "check",
-        "title": "Unified package check",
-        "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
-        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-        "command": "node",
-        "args": [
-          "./bin/publish-core.mjs",
-          "--language",
-          "typescript",
-          "--project-dir",
-          ".",
-          "--action",
-          "check"
-        ],
-        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
-      },
-      {
-        "id": "build",
-        "title": "Unified package build",
-        "required": true,
-        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
-        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-        "command": "node",
-        "args": [
-          "./bin/publish-core.mjs",
-          "--language",
-          "typescript",
-          "--project-dir",
-          ".",
-          "--action",
-          "build"
-        ],
-        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
-      }
-    ]
+    "shouldRun": false,
+    "runPhase": "skip",
+    "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped.",
+    "steps": []
   },
   "sdk": {
     "name": "clawrouter-app-sdk",
@@ -141,10 +55,10 @@
     "localVersions": []
   },
   "stats": {
-    "totalFiles": 766,
-    "models": 728,
+    "totalFiles": 773,
+    "models": 735,
     "apis": 15,
-    "types": 730
+    "types": 737
   },
   "warnings": [
     {
@@ -326,20 +240,15 @@
   ],
   "syncSummary": {
     "dryRun": false,
-    "writtenFiles": 4,
+    "writtenFiles": 0,
     "skippedScaffoldFiles": 2,
-    "skippedUnchangedGeneratedFiles": 759,
+    "skippedUnchangedGeneratedFiles": 770,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "17a3589acc1fe465b650cb89dd6d56287e3071196f60bde7a1255f52bae2f3ea",
+    "changeFingerprint": "85a8eb0fb69d46d9eabd651e33861f19250a3081f487545d0ddae8b88d2812c4",
     "changes": {
       "createdGeneratedFiles": [],
-      "updatedGeneratedFiles": [
-        "src/types/commerce-membership-purchase-request.ts",
-        "src/types/commerce-recharge-checkout-status-response.ts",
-        "src/types/commerce-recharge-order-create-request.ts",
-        "src/types/commerce-recharge-order-create-response.ts"
-      ],
+      "updatedGeneratedFiles": [],
       "unchangedGeneratedFiles": [
         "bin/publish-core.mjs",
         "bin/publish.ps1",
@@ -500,18 +409,17 @@
         "src/types/ai-vendor-modality-record.ts",
         "src/types/analytics-service-provider-daily-record.ts",
         "src/types/analytics-service-provider-edge-daily-record.ts",
-        "src/types/api-key-groups-list-result.ts",
         "src/types/api-keys-create-result.ts",
         "src/types/api-keys-delete-result.ts",
         "src/types/api-keys-list-result.ts",
         "src/types/api-keys-update-result.ts",
-        "src/types/app-api-key-group-list-response.ts",
-        "src/types/app-api-key-group.ts",
         "src/types/app-api-key-item.ts",
         "src/types/app-api-key-list-response.ts",
         "src/types/app-catalog-item.ts",
         "src/types/app-catalog-response.ts",
         "src/types/app-categories-response.ts",
+        "src/types/app-channel-group-list-response.ts",
+        "src/types/app-channel-group.ts",
         "src/types/app-detail-response.ts",
         "src/types/app-installed-skill-item.ts",
         "src/types/app-installed-skill-response.ts",
@@ -543,6 +451,7 @@
         "src/types/catalog-products-list-result.ts",
         "src/types/catalog-products-retrieve-result.ts",
         "src/types/catalog-skus-retrieve-result.ts",
+        "src/types/channel-groups-list-result.ts",
         "src/types/chat-conversation-create-request.ts",
         "src/types/chat-conversation-item.ts",
         "src/types/chat-conversation-list-response.ts",
@@ -595,6 +504,7 @@
         "src/types/commerce-membership-package-group-record.ts",
         "src/types/commerce-membership-package-record.ts",
         "src/types/commerce-membership-plan-record.ts",
+        "src/types/commerce-membership-purchase-request.ts",
         "src/types/commerce-membership-record.ts",
         "src/types/commerce-operation-response.ts",
         "src/types/commerce-order-address-snapshot-record.ts",
@@ -635,6 +545,7 @@
         "src/types/commerce-price-list-record.ts",
         "src/types/commerce-product-attribute-record.ts",
         "src/types/commerce-product-attribute-value-record.ts",
+        "src/types/commerce-product-category-attribute-record.ts",
         "src/types/commerce-product-category-item.ts",
         "src/types/commerce-product-category-list-response.ts",
         "src/types/commerce-product-category-record.ts",
@@ -645,10 +556,14 @@
         "src/types/commerce-product-sku-item.ts",
         "src/types/commerce-product-sku-record.ts",
         "src/types/commerce-product-sku-response.ts",
+        "src/types/commerce-product-spu-category-record.ts",
         "src/types/commerce-product-spu-detail-response.ts",
         "src/types/commerce-product-spu-item.ts",
         "src/types/commerce-product-spu-list-response.ts",
         "src/types/commerce-product-spu-record.ts",
+        "src/types/commerce-recharge-checkout-status-response.ts",
+        "src/types/commerce-recharge-order-create-request.ts",
+        "src/types/commerce-recharge-order-create-response.ts",
         "src/types/commerce-recharge-package-item.ts",
         "src/types/commerce-recharge-package-list-response.ts",
         "src/types/commerce-recharge-package-record.ts",
@@ -766,7 +681,6 @@
         "src/types/gateway-traces-list-result.ts",
         "src/types/gateway-traces-response.ts",
         "src/types/generation-history-item.ts",
-        "src/types/generation-history-media-item.ts",
         "src/types/generation-history-response.ts",
         "src/types/generation-list-result.ts",
         "src/types/iam-api-key-record.ts",
@@ -845,6 +759,13 @@
         "src/types/json-null.ts",
         "src/types/json-object.ts",
         "src/types/json-value.ts",
+        "src/types/media-access.ts",
+        "src/types/media-ai-provenance.ts",
+        "src/types/media-checksum.ts",
+        "src/types/media-kind.ts",
+        "src/types/media-resource-record.ts",
+        "src/types/media-resource.ts",
+        "src/types/media-source.ts",
         "src/types/memberships-benefits-list-result.ts",
         "src/types/memberships-current-retrieve-result.ts",
         "src/types/memberships-current-status-retrieve-result.ts",
@@ -1005,7 +926,6 @@
         "src/types/qr-auth-sessions-scans-create-result.ts",
         "src/types/ranking-vendor-option.ts",
         "src/types/ranking-vendor-options-response.ts",
-        "src/types/recharges-orders-cancel-result.ts",
         "src/types/recharges-orders-create-result.ts",
         "src/types/recharges-orders-retrieve-result.ts",
         "src/types/recharges-packages-list-result.ts",
@@ -1111,75 +1031,26 @@
     },
     "impact": {
       "schemaVersion": 1,
-      "areas": [
-        "models"
-      ],
-      "details": [
-        {
-          "area": "models",
-          "paths": [
-            "src/types/commerce-membership-purchase-request.ts",
-            "src/types/commerce-recharge-checkout-status-response.ts",
-            "src/types/commerce-recharge-order-create-request.ts",
-            "src/types/commerce-recharge-order-create-response.ts"
-          ]
-        }
-      ],
-      "requiresVerification": true,
-      "summary": "Detected impact areas: models. Verification is required."
+      "areas": [],
+      "details": [],
+      "requiresVerification": false,
+      "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped."
     },
     "verificationPlan": {
-      "shouldRun": true,
-      "runPhase": "now",
-      "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
-      "steps": [
-        {
-          "id": "check",
-          "title": "Unified package check",
-          "required": true,
-          "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
-          "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-          "command": "node",
-          "args": [
-            "./bin/publish-core.mjs",
-            "--language",
-            "typescript",
-            "--project-dir",
-            ".",
-            "--action",
-            "check"
-          ],
-          "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
-        },
-        {
-          "id": "build",
-          "title": "Unified package build",
-          "required": true,
-          "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: models.",
-          "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-app-sdk\\clawrouter-app-sdk-typescript",
-          "command": "node",
-          "args": [
-            "./bin/publish-core.mjs",
-            "--language",
-            "typescript",
-            "--project-dir",
-            ".",
-            "--action",
-            "build"
-          ],
-          "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
-        }
-      ]
+      "shouldRun": false,
+      "runPhase": "skip",
+      "summary": "No generated, scaffold, or backup changes detected. Verification can be skipped.",
+      "steps": []
     },
     "executionDecision": {
       "schemaVersion": 1,
-      "riskLevel": "medium",
-      "nextAction": "verify",
+      "riskLevel": "low",
+      "nextAction": "skip",
       "requiresManualReview": false,
       "applyRequiresExpectedFingerprint": false,
-      "summary": "Changes have been applied. Run the required verification plan now.",
+      "summary": "No actionable changes were detected. No apply or verification step is required.",
       "reasons": [
-        "verification-required"
+        "no-actionable-changes"
       ]
     },
     "backedUpFiles": [],

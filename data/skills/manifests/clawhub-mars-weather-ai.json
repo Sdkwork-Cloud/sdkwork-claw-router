@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mars-weather-ai@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mars-weather-ai-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mars-weather-ai-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b2b757d8ea03fa57d04f71cccc58e41229e3a72b467aa39b76c189b03a10e25",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trade-signal@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trade-signal-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trade-signal-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:404722eb2b512f26ff5e71a02debd87de46ad559e96c1f8f9e92dd6018f05d30",

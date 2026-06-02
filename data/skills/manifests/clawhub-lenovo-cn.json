@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lenovo-cn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-lenovo-cn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lenovo-cn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e1b4fb363b9082aaace672036365504925202db715218c8044ee83e4c6575088",

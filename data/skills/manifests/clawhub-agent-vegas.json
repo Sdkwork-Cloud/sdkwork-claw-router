@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-vegas@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-vegas-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-vegas-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:3d36baa85a61fbfcc5771ee5cf05e7e1d2e2aa151acc8c6fc805d27ddd67b552",

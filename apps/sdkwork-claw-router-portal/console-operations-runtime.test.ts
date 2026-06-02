@@ -936,7 +936,7 @@ test("console settings update fails closed unless app SDK confirms success", asy
 test("console API key form rejects invalid command fields while defaulting blank groups", () => {
   const validForm = {
     name: "Production key",
-    group: "default",
+    channelGroup: "default",
     quota: "1000.000000",
     isUnlimitedQuota: false,
     modalities: ["text"],
@@ -947,7 +947,7 @@ test("console API key form rejects invalid command fields while defaulting blank
 
   assert.deepEqual(createApiKeyInputFromForm(validForm), {
     name: "Production key",
-    group: "default",
+    channelGroup: "default",
     quota: "1000.000000",
     isUnlimitedQuota: false,
     modalities: ["text"],
@@ -958,7 +958,7 @@ test("console API key form rejects invalid command fields while defaulting blank
     () => createApiKeyInputFromForm({ ...validForm, name: "" }),
     /name is required/,
   );
-  assert.equal(createApiKeyInputFromForm({ ...validForm, group: "" }).group, "default");
+  assert.equal(createApiKeyInputFromForm({ ...validForm, channelGroup: "" }).channelGroup, "default");
   assert.throws(
     () => createApiKeyInputFromForm({ ...validForm, quota: "bad-decimal" }),
     /quota must be a non-negative decimal/,
@@ -992,7 +992,7 @@ test("console API key service reads and creates keys through generated app SDK",
               id: "key-1",
               name: "Production key",
               maskedKey: "sk-prod********1234",
-              group: "default",
+              channelGroup: "default",
               rate: "1x",
               quota: "1000.000000",
               usedQuota: "10.000000",
@@ -1005,7 +1005,7 @@ test("console API key service reads and creates keys through generated app SDK",
           ],
         };
       }
-      if (url === "/app/v3/api/iam/api_key_groups" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/ai/channel_groups" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -1023,7 +1023,7 @@ test("console API key service reads and creates keys through generated app SDK",
             id: "key-2",
             name: "Batch key",
             maskedKey: "sk-new********5678",
-            group: "default",
+            channelGroup: "default",
             rate: null,
             quota: "unlimited",
             usedQuota: "0.000000",
@@ -1043,7 +1043,7 @@ test("console API key service reads and creates keys through generated app SDK",
       const groups = await ApiKeyService.fetchGroups();
       const created = await ApiKeyService.createKey({
         name: "Batch key",
-        group: "default",
+        channelGroup: "default",
         quota: "0.000000",
         isUnlimitedQuota: true,
         modalities: ["text"],
@@ -1059,13 +1059,13 @@ test("console API key service reads and creates keys through generated app SDK",
         captured.map((request) => `${request.method} ${request.url}`),
         [
           "GET /app/v3/api/iam/api_keys",
-          "GET /app/v3/api/iam/api_key_groups",
+          "GET /app/v3/api/ai/channel_groups",
           "POST /app/v3/api/iam/api_keys",
         ],
       );
       assert.deepEqual(JSON.parse(captured[2].body), {
         name: "Batch key",
-        group: "default",
+        channelGroup: "default",
         quota: "0.000000",
         isUnlimitedQuota: true,
         modalities: ["text"],
@@ -1079,7 +1079,7 @@ test("console API key service reads and creates keys through generated app SDK",
 test("console API key service fails closed when app SDK omits required key fields", async () => {
   for (const [field, message] of [
     ["name", /API key name is required/],
-    ["group", /API key group is required/],
+    ["channelGroup", /API key channel group is required/],
     ["quota", /API key quota is required/],
     ["usedQuota", /API key used quota is required/],
     ["modalities", /API key modalities are required/],
@@ -1095,7 +1095,7 @@ test("console API key service fails closed when app SDK omits required key field
             id: "key-1",
             name: "Production key",
             maskedKey: "sk-prod********1234",
-            group: "default",
+            channelGroup: "default",
             quota: "1000.000000",
             usedQuota: "10.000000",
             modalities: ["text"],
@@ -1124,13 +1124,13 @@ test("console API key service fails closed when app SDK omits required key field
 
 test("console API key service fails closed when app SDK omits required group fields", async () => {
   for (const [field, message] of [
-    ["id", /API key group id is required/],
-    ["code", /API key group code is required/],
-    ["name", /API key group name is required/],
+    ["id", /Channel group id is required/],
+    ["code", /Channel group code is required/],
+    ["name", /Channel group name is required/],
   ] as const) {
     await withAppSdkFetch(
       (url, init) => {
-        if (url === "/app/v3/api/iam/api_key_groups" && (init?.method ?? "GET") === "GET") {
+        if (url === "/app/v3/api/ai/channel_groups" && (init?.method ?? "GET") === "GET") {
           const group = { id: "group-1", code: "default", name: "Default", rate: "1x" } as Record<string, unknown>;
           delete group[field];
           return {

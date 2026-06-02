@@ -1,7 +1,7 @@
 package com.sdkwork.clawrouter.backend
 
 data class AdminAgentItem(
-    val avatarUrl: String? = null,
+    val avatar: MediaResource? = null,
     val capabilities: AdminAgentCapabilities? = null,
     val code: String? = null,
     val createdAt: String? = null,

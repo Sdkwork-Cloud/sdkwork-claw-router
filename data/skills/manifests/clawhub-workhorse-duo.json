@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workhorse-duo@2.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-workhorse-duo-2.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workhorse-duo-2.1.2.json"
+      },
       "version": "2.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e6cceb3d3792173a9406664b0a61e731289a0af53957870c09dfe914c115b938",

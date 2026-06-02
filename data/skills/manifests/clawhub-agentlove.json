@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agentlove@2.9.6",
-      "artifactUrl": "data/skills/artifacts/clawhub-agentlove-2.9.6.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agentlove-2.9.6.json"
+      },
       "version": "2.9.6",
       "runtime": "metadata",
       "checksumHash": "sha256:a0b2e1ea37c4d359533e1eb4ea69484c158aa42072e597680ba9894fb4b7c808",

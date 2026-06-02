@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dustbunny@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dustbunny-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dustbunny-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cc530a8509cce0c65cd7e33d8ac2a3d51543dbf5f368de895ddb3783f1471d7d",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zoho@2.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-zoho-2.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zoho-2.0.2.json"
+      },
       "version": "2.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:751696ccf534f0c41dced6bbb91da17d43621b4dbeca3f31a594bb6384d1316b",

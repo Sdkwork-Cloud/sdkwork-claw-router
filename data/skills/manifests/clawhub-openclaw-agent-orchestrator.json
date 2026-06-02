@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-agent-orchestrator@0.6.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-agent-orchestrator-0.6.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-agent-orchestrator-0.6.0.json"
+      },
       "version": "0.6.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e7624e31e3fa5a58a93434488fc73a1d3f134d48408755653e0e67855d230fec",

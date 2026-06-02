@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-dividend-aisa@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-dividend-aisa-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-dividend-aisa-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:40bb59d5e285adabdcf5f9696b2e77278b8d4c7f653bb10e5703923a95d57ff9",

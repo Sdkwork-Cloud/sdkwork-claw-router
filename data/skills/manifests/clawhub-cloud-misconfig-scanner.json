@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloud-misconfig-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloud-misconfig-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloud-misconfig-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d7b3c139f617f2e62121243ece05166fb4df7d39a2302b5a890e028b271de06f",

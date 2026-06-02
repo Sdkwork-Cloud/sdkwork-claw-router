@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-quality-auditor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-quality-auditor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-quality-auditor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a7fd09ed76c39f45cb491e4256bb7353ae1f7cac7acd38885df514de2100afb",

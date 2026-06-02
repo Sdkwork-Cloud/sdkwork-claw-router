@@ -6,6 +6,7 @@ namespace Sdkwork.ClawRouter.App.Models
 {
     public class MessagingRouteRuleTargetRecord
     {
+        public Dictionary<string, string>? CircuitBreakerPolicy { get; set; }
         public string? CreatedAt { get; set; }
         public string? DataScope { get; set; }
         public string? DeletedAt { get; set; }
@@ -13,12 +14,17 @@ namespace Sdkwork.ClawRouter.App.Models
         public string? Id { get; set; }
         public Dictionary<string, string>? Metadata { get; set; }
         public string? OrganizationId { get; set; }
+        public string? ProviderAccountId { get; set; }
+        public string? ProviderCode { get; set; }
+        public string? RouteRuleId { get; set; }
         public string? SenderIdentityId { get; set; }
         public string? Status { get; set; }
+        public int? TargetOrder { get; set; }
         public string? TemplateBindingId { get; set; }
         public string? TenantId { get; set; }
         public string? UpdatedAt { get; set; }
         public string? Uuid { get; set; }
         public string? Version { get; set; }
+        public int? Weight { get; set; }
     }
 }

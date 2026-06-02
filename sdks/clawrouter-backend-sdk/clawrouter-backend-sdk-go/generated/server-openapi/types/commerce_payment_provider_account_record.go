@@ -7,6 +7,7 @@ type CommercePaymentProviderAccountRecord struct {
 	CountryCode string `json:"country_code"`
 	CreatedAt string `json:"created_at"`
 	Environment string `json:"environment"`
+	Id string `json:"id"`
 	MerchantId string `json:"merchant_id"`
 	OrganizationId string `json:"organization_id"`
 	ProviderCode string `json:"provider_code"`

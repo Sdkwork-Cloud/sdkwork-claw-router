@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoice-ninja@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoice-ninja-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoice-ninja-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:882b5f6caaf96968c5b55b68c72f23c5a29d2794d1131197aba20695576e9496",

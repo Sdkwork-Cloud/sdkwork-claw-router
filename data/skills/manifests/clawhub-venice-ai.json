@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/venice-ai@2.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-venice-ai-2.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-venice-ai-2.1.1.json"
+      },
       "version": "2.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:c4e5ec2a792306cee76f0ca4b80a3f3e59561d6197de05e702e8902d01e89aa7",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/insight-engine@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-insight-engine-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-insight-engine-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:218b82c3adf0884fce46a4937dd5316a6aaff5de92eb770915b7932563c03791",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/add-task@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-add-task-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-add-task-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1deb9c0c0ecae72e4d3fa246a8e230deb02219f9361f628715048b01c624ca78",

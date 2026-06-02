@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-motivator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-motivator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-motivator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ef52524e943020779f73f19442f30877259db84bffc617fb0e8ce12ea265f1c",

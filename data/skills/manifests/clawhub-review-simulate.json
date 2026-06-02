@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/review-simulate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-review-simulate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-review-simulate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7f66b1fcf875891fdf441dd2b3e182471bf1360f6d56df693caef4ee198d5385",

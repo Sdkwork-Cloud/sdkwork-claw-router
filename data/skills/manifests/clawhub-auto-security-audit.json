@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-security-audit@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-security-audit-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-security-audit-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:412eff989a6a96543ea579c8f68a553e2c9f2fae876030cf5ace540779513e88",

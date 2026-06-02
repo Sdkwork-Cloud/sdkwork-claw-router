@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-perf-estimator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-perf-estimator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-perf-estimator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:afafe1ae3ad1843215c6984a72f3f638f64c0fcfdcef756c1e8a21b8ffa0b2ca",

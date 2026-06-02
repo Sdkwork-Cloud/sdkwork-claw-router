@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/openclaw-listing-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-listing-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-openclaw-listing-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2c587bd13d7ae7c83e8a30e37a29643a3eec6fb9bf29ec18d6280e8f3208d838",

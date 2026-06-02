@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/linkdrop-agent-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-linkdrop-agent-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-linkdrop-agent-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3be16fe56b93c4173c7b853e453ceb092ac82b96b1960331d8f5b71620240dd4",

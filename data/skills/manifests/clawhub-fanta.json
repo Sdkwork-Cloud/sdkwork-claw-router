@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fanta@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-fanta-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fanta-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:7edea1bcb124d70781896c7b8b096e9718ae734daa8c069b61d8e778a4cfb804",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sample-size-basic@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sample-size-basic-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sample-size-basic-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:0e5239fccda997bbccff202829999861ed0f97a4919bad09ce9888c0ae5f01e1",

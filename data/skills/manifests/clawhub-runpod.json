@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/runpod@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-runpod-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-runpod-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:cff665c8886d336c66383755eac5916a22982e1eac47739d94257f6ade20fb23",

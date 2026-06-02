@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/crawl4ai-skill@1.0.10",
-      "artifactUrl": "data/skills/artifacts/clawhub-crawl4ai-skill-1.0.10.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-crawl4ai-skill-1.0.10.json"
+      },
       "version": "1.0.10",
       "runtime": "metadata",
       "checksumHash": "sha256:feb36030581e8eea10a57fe0063e1ec24ed894adb78f90c0ad39fd3020ff65cc",

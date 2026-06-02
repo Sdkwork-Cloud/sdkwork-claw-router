@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/auto-skill-extractor@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-auto-skill-extractor-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-auto-skill-extractor-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdfdc087132fd2815345307efaecbbe5bfd22a9fb53f92239574e5d2ce34d01e",

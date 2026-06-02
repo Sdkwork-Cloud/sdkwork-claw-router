@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/claw-agent-spawner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-claw-agent-spawner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-claw-agent-spawner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b87297b28cc2db9a426673040426b28c4a873b1cad16509bc946dead970713fb",

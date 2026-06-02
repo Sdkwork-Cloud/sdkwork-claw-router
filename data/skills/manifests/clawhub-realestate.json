@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/realestate@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-realestate-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-realestate-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a842fb1e35b4ff0d72e0d21adce57279454031641d610eeaf748bbe114c3073",

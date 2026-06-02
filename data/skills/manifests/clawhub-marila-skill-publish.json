@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marila-skill-publish@1.0.8",
-      "artifactUrl": "data/skills/artifacts/clawhub-marila-skill-publish-1.0.8.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marila-skill-publish-1.0.8.json"
+      },
       "version": "1.0.8",
       "runtime": "metadata",
       "checksumHash": "sha256:ce0c487407b0e7eb94212a5c88b79bb4ac65623bde596cbdc221e91869f53a70",

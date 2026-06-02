@@ -2,6 +2,10 @@ use sha2::Digest;
 use sqlx::{PgPool, Row};
 
 use crate::domain::{DomainError, DomainResult};
+use crate::infrastructure::sql::sql_admin_product_center::{
+    media_resource_from_snapshot, media_resource_object_blob_id, media_resource_stable_id,
+    provider_asset_media_resource,
+};
 use crate::ports::{
     AppAuthFuture, AppAuthPasswordResetCodeCommand, AppAuthPasswordResetCommand,
     AppAuthRegistrationCommand, AppAuthStore, AppAuthUserCredential,
@@ -120,7 +124,7 @@ async fn find_user_by_account(
             COALESCE(u.username, '') AS username,
             COALESCE(u.email, '') AS email,
             COALESCE(NULLIF(u.display_name, ''), NULLIF(u.username, ''), NULLIF(u.email, ''), 'SDKWork User') AS display_name,
-            COALESCE(u.avatar_url, '') AS avatar_url,
+            COALESCE(CAST(u.avatar_resource_snapshot AS TEXT), '') AS avatar_resource_snapshot,
             COALESCE(u.phone, '') AS phone,
             'en-US' AS language,
             CAST(u.created_at AS TEXT) AS registered_at,
@@ -144,7 +148,7 @@ async fn find_user_by_account(
          AND ui.user_id = u.id
         WHERE {predicate}
         GROUP BY u.id, u.tenant_id, om.organization_id, u.username, u.email, u.display_name,
-                 u.avatar_url, u.phone, u.created_at, c.credential_hash, u.status, om.joined_at, u.updated_at
+                 u.avatar_resource_snapshot, u.phone, u.created_at, c.credential_hash, u.status, om.joined_at, u.updated_at
         ORDER BY CASE u.status WHEN 'active' THEN 1 ELSE 0 END DESC, om.joined_at DESC NULLS LAST, u.updated_at DESC NULLS LAST, u.id DESC
         LIMIT 1
         "#
@@ -268,12 +272,13 @@ async fn create_registration(
     let member_id = format!("member-{user_id}");
     let credential_id = format!("credential-{user_id}-password");
     let identity_id = format!("identity-{user_id}-{provider}");
+    let avatar = user_default_avatar_resource(&command.username);
     sqlx::query(
         r#"
         INSERT INTO iam_user
-            (id, tenant_id, username, display_name, email, phone, avatar_url, status, created_at, updated_at)
+            (id, tenant_id, username, display_name, email, phone, avatar_media_resource_id, avatar_object_blob_id, avatar_resource_snapshot, status, created_at, updated_at)
         VALUES
-            ($1, $2, $3, $4, $5, $6, '', 'active', to_timestamp($7::double precision), to_timestamp($7::double precision))
+            ($1, $2, $3, $4, $5, $6, $7, $8, $9::jsonb, 'active', to_timestamp($10::double precision), to_timestamp($10::double precision))
         "#,
     )
     .bind(&user_id)
@@ -282,6 +287,9 @@ async fn create_registration(
     .bind(&command.display_name)
     .bind(&command.email)
     .bind(&command.phone)
+    .bind(media_resource_stable_id(&avatar))
+    .bind(media_resource_object_blob_id(&avatar))
+    .bind(avatar.to_string())
     .bind(command.now.to_string())
     .execute(&mut *tx)
     .await
@@ -743,7 +751,7 @@ fn user_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AppAuthUserCredenti
         username: string_cell(&row, "username"),
         email: string_cell(&row, "email"),
         display_name: string_cell(&row, "display_name"),
-        avatar_url: string_cell(&row, "avatar_url"),
+        avatar: media_resource_from_row(&row, "avatar_resource_snapshot", "image"),
         phone: string_cell(&row, "phone"),
         language: string_cell(&row, "language"),
         registered_at: string_cell(&row, "registered_at"),
@@ -808,6 +816,21 @@ fn normalize_code_part(value: &str) -> String {
 fn hash_fragment(value: &str) -> String {
     let digest = sha2::Sha256::digest(value.as_bytes());
     hex::encode(&digest[..6])
+}
+
+fn user_default_avatar_resource(username: &str) -> serde_json::Value {
+    provider_asset_media_resource(
+        "image",
+        &format!("iam-user-avatar:{}", normalize_code_part(username)),
+    )
+}
+
+fn media_resource_from_row(
+    row: &sqlx::postgres::PgRow,
+    column: &str,
+    kind: &str,
+) -> serde_json::Value {
+    media_resource_from_snapshot(&string_cell(row, column), kind)
 }
 
 fn string_cell(row: &sqlx::postgres::PgRow, column: &str) -> String {

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mcp-server-chart@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mcp-server-chart-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mcp-server-chart-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c62b2412fed1941204fd598b2cc7413ac102aa55bec7f4885899afd70e79feb",

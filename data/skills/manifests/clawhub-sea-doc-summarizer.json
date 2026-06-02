@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sea-doc-summarizer@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sea-doc-summarizer-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sea-doc-summarizer-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9056f9d2bdf760839b9317b31cf5defd97929af3cfc79d2482716d29e728869d",

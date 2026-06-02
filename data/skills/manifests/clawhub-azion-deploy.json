@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/azion-deploy@0.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-azion-deploy-0.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-azion-deploy-0.1.1.json"
+      },
       "version": "0.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:2caf1ae32e9373976dbdb983442781073a754f9c75b8d347f4cc606d83818b11",

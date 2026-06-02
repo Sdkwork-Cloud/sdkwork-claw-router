@@ -7,11 +7,11 @@ use axum::http::{Request, StatusCode};
 use sdkwork_claw_http::TrustedRequestSubject;
 use sdkwork_claw_product::application::{ApiKeySecretGenerator, ApiKeySecretHasher};
 use sdkwork_claw_product::domain::{
-    ApiKeyGroup, DecimalValue, DomainResult, GatewayApiKey, QuotaPolicy,
+    ChannelGroup, DecimalValue, DomainResult, GatewayApiKey, QuotaPolicy,
 };
 use sdkwork_claw_product::ports::{
     ApiKeyCommandStoreFuture, ApiKeyManagementReadFuture, CreateGatewayApiKeyCommand,
-    CreatedGatewayApiKey, DeleteGatewayApiKeyCommand, EnsureDefaultApiKeyGroupCommand,
+    CreatedGatewayApiKey, DeleteGatewayApiKeyCommand, EnsureDefaultChannelGroupCommand,
     GatewayApiKeyCommandStore, GatewayApiKeyManagementReadStore, GatewayApiKeyManagementSnapshot,
     UpdateGatewayApiKeyCommand, UpdatedGatewayApiKey,
 };
@@ -33,7 +33,7 @@ async fn app_api_key_create_ensures_default_group_when_missing() {
         .oneshot(signed_request(
             "POST",
             "/app/v3/api/iam/api_keys",
-            r#"{"name":"Console Key","group":"default","quota":"1000","modalities":["text"]}"#,
+            r#"{"name":"Console Key","channelGroup":"default","quota":"1000","modalities":["text"]}"#,
         ))
         .await
         .unwrap();
@@ -41,7 +41,8 @@ async fn app_api_key_create_ensures_default_group_when_missing() {
     assert_eq!(StatusCode::OK, response.status());
     let payload = json_payload(response).await;
     assert_eq!("2000", payload["code"]);
-    assert_eq!("default", payload["data"]["item"]["group"]);
+    assert_eq!("default", payload["data"]["item"]["channelGroup"]);
+    assert_eq!("Default", payload["data"]["item"]["channelGroupName"]);
     assert_eq!("sk-claw-test-secret", payload["data"]["rawKey"]);
     assert_eq!(
         "sk-claw-test-secret",
@@ -71,7 +72,7 @@ async fn app_api_key_update_rebinds_key_to_available_group_for_owner() {
         .oneshot(signed_request(
             "PATCH",
             "/app/v3/api/iam/api_keys/701",
-            r#"{"group":"premium","name":"Updated Console Key"}"#,
+            r#"{"channelGroup":"premium","name":"Updated Console Key"}"#,
         ))
         .await
         .unwrap();
@@ -81,7 +82,7 @@ async fn app_api_key_update_rebinds_key_to_available_group_for_owner() {
     assert_eq!("2000", payload["code"]);
     assert_eq!("701", payload["data"]["item"]["id"]);
     assert_eq!("Updated Console Key", payload["data"]["item"]["name"]);
-    assert_eq!("premium", payload["data"]["item"]["group"]);
+    assert_eq!("premium", payload["data"]["item"]["channelGroup"]);
     assert_eq!(
         "sk-claw-owner-secret",
         payload["data"]["item"]["copyableKey"]
@@ -143,9 +144,10 @@ async fn app_api_key_list_returns_persisted_copyable_key_for_owner() {
         payload["data"]["items"][0]["maskedKey"],
         payload["data"]["items"][0]["copyableKey"]
     );
+    assert_eq!("default", payload["data"]["items"][0]["channelGroup"]);
     assert_eq!(
         "Default customers",
-        payload["data"]["items"][0]["groupName"]
+        payload["data"]["items"][0]["channelGroupName"]
     );
     assert_eq!("premium", payload["data"]["groups"][0]["code"]);
     assert_eq!("Premium customers", payload["data"]["groups"][0]["name"]);
@@ -155,7 +157,7 @@ async fn app_api_key_list_returns_persisted_copyable_key_for_owner() {
 }
 
 #[tokio::test]
-async fn app_api_key_group_list_returns_owner_groups_with_display_names() {
+async fn app_channel_group_list_returns_owner_groups_with_display_names() {
     let read_store = Arc::new(TestApiKeyReadStore::with_owner_key());
     let command_store = Arc::new(TestApiKeyCommandStore::default());
     let router = sdkwork_claw_product::api::app_api_key_router_with_read_store_and_command_store(
@@ -166,7 +168,7 @@ async fn app_api_key_group_list_returns_owner_groups_with_display_names() {
     );
 
     let response = router
-        .oneshot(signed_request("GET", "/app/v3/api/iam/api_key_groups", ""))
+        .oneshot(signed_request("GET", "/app/v3/api/ai/channel_groups", ""))
         .await
         .unwrap();
 
@@ -200,6 +202,26 @@ async fn app_api_key_delete_revokes_owner_key() {
     let payload = json_payload(response).await;
     assert_eq!("2000", payload["code"]);
     assert_eq!("701", payload["data"]["id"]);
+}
+
+#[tokio::test]
+async fn app_channel_group_routes_do_not_expose_legacy_public_path() {
+    let read_store = Arc::new(TestApiKeyReadStore::with_owner_key());
+    let command_store = Arc::new(TestApiKeyCommandStore::default());
+    let router = sdkwork_claw_product::api::app_api_key_router_with_read_store_and_command_store(
+        read_store,
+        command_store,
+        Arc::new(TestHasher),
+        Arc::new(TestSecretGenerator),
+    );
+
+    let legacy_group_path = format!("/app/v3/api/iam/{}{}", "api_key_", "groups");
+    let response = router
+        .oneshot(signed_request("GET", &legacy_group_path, ""))
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::NOT_FOUND, response.status());
 }
 
 fn signed_request(method: &str, path: &str, body: &str) -> Request<Body> {
@@ -247,7 +269,7 @@ impl GatewayApiKeyManagementReadStore for TestApiKeyReadStore {
     ) -> ApiKeyManagementReadFuture<'a, GatewayApiKeyManagementSnapshot> {
         Box::pin(async move {
             let mut snapshot = GatewayApiKeyManagementSnapshot {
-                api_key_groups: vec![ApiKeyGroup::new_scoped(
+                channel_groups: vec![ChannelGroup::new_scoped(
                     99,
                     999,
                     999,
@@ -278,8 +300,8 @@ impl GatewayApiKeyManagementReadStore for TestApiKeyReadStore {
                     status_code: 1,
                     default_for_runtime: false,
                 });
-                snapshot.api_key_groups.push(
-                    ApiKeyGroup::new_scoped(
+                snapshot.channel_groups.push(
+                    ChannelGroup::new_scoped(
                         502,
                         10,
                         20,
@@ -290,8 +312,8 @@ impl GatewayApiKeyManagementReadStore for TestApiKeyReadStore {
                     )
                     .with_name("Premium customers"),
                 );
-                snapshot.api_key_groups.push(
-                    ApiKeyGroup::new_scoped(
+                snapshot.channel_groups.push(
+                    ChannelGroup::new_scoped(
                         501,
                         10,
                         20,
@@ -319,13 +341,13 @@ struct TestApiKeyCommandStore {
 }
 
 impl GatewayApiKeyCommandStore for TestApiKeyCommandStore {
-    fn ensure_default_api_key_group<'a>(
+    fn ensure_default_channel_group<'a>(
         &'a self,
-        command: EnsureDefaultApiKeyGroupCommand,
-    ) -> ApiKeyCommandStoreFuture<'a, ApiKeyGroup> {
+        command: EnsureDefaultChannelGroupCommand,
+    ) -> ApiKeyCommandStoreFuture<'a, ChannelGroup> {
         Box::pin(async move {
             assert_eq!("standard", command.pricing_plan_code);
-            Ok(ApiKeyGroup::new_scoped(
+            Ok(ChannelGroup::new_scoped(
                 501,
                 command.tenant_id,
                 command.organization_id,

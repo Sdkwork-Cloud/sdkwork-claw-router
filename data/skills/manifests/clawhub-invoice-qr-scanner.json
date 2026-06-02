@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/invoice-qr-scanner@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-invoice-qr-scanner-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-invoice-qr-scanner-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7a9df8ffa0f65cc08ca03848bb6a1df5bbd0283c066cb54ca65d38c184e2adc9",

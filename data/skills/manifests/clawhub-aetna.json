@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aetna@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aetna-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aetna-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:97bc93d9fc6cb8e0b9774007ce9b1b82df1098c7f0d6af89e0b7b6cda9c24230",

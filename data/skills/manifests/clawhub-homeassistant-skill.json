@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/homeassistant-skill@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-homeassistant-skill-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-homeassistant-skill-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:00d815993b46d2693889adcc288489c922300b13712c638732c63e093d6f72ed",

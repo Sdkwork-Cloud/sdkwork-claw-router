@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-email-setup@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-email-setup-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-email-setup-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bdd5dbb7dcc2d05bbafc846344880cb7d8a0a21a85a74abf22f0c92431a5d78f",

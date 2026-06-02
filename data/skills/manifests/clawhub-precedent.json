@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/precedent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-precedent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-precedent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a306f16a91cbcadcba228401b985c8a9ca0873265a356a1f3277de196e054ae4",

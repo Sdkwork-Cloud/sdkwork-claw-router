@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING, Optional, List, Dict, Any
 class AiChannelGroupResourceRecord:
     """Ai channel group resource record schema exposed by Claw Router."""
     channel_group_id: str
+    grant_type: str
     organization_id: str
     status: str
     tenant_id: str
@@ -19,6 +20,7 @@ class AiChannelGroupResourceRecord:
     effective_to: Optional[str] = None
     id: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
+    priority: Optional[int] = None
     resource_code: Optional[str] = None
     resource_group_code: Optional[str] = None
     resource_group_id: Optional[str] = None

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sam-food-onboarding@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sam-food-onboarding-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sam-food-onboarding-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0ed52a3a4b1f87289cefda66e086708c6bcd1eeafa08d31811c8cb6a9469f109",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marriage@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marriage-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marriage-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6e7521cbeb32b71561d81387fdd28f78ecd03b20da39083c0538e984d04383cb",

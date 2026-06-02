@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cmc-api-market@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-cmc-api-market-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cmc-api-market-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:27ce64ee1a27edd6db41ed9f1b30a417e80d5341888b1f27145150e3a171d7ff",

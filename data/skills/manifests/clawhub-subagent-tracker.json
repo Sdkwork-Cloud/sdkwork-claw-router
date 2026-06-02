@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/subagent-tracker@1.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-subagent-tracker-1.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-subagent-tracker-1.2.0.json"
+      },
       "version": "1.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:2b0ec4356a44183ebe52bcaccd8a8069edb9b6cb205c16e0e888570fe82f9410",

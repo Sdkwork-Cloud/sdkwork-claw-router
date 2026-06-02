@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ga4-analytics@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ga4-analytics-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ga4-analytics-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b06c836e1a7170c097b0abd4cda7ac67ea3ea659447469747dc94d3f02a44e71",

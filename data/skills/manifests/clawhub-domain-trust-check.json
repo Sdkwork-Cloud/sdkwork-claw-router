@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/domain-trust-check@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-domain-trust-check-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-domain-trust-check-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:277f149a22577026f3611583af078c95009a7a23c7057bed0ed7aba8a716d882",

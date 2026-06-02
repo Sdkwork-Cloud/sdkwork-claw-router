@@ -162,10 +162,20 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                             "CourseApplicationVideoUploadResponse": {
                                 "type": "object",
                                 "additionalProperties": False,
-                                "required": ["videoUrl", "sha256"],
+                                "required": ["video", "sha256"],
                                 "properties": {
-                                    "videoUrl": {"type": "string"},
+                                    "video": {"$ref": "#/components/schemas/MediaResource"},
                                     "sha256": {"type": "string"},
+                                },
+                            },
+                            "MediaResource": {
+                                "type": "object",
+                                "additionalProperties": False,
+                                "required": ["kind", "source"],
+                                "properties": {
+                                    "kind": {"type": "string"},
+                                    "source": {"type": "string"},
+                                    "uri": {"type": "string"},
                                 },
                             },
                             "ApplicationsVideosCreateResult": {
@@ -287,6 +297,11 @@ class ClawRouterStrictSdkGenerateTest(unittest.TestCase):
                 "async applicationsVideosCreate(body: FormData)",
                 multipart_api_source,
             )
+            self.assertIn("src/types/media-resource.ts", files)
+            upload_response_source = files["src/types/course-application-video-upload-response.ts"]
+            self.assertIn("import type { MediaResource } from './media-resource';", upload_response_source)
+            self.assertIn("video: MediaResource;", upload_response_source)
+            self.assertNotIn("video" + "Url", upload_response_source)
 
             self.assertIn("src/api/index.ts", files)
             self.assertIn("export { BaseApi } from './base';", files["src/api/index.ts"])

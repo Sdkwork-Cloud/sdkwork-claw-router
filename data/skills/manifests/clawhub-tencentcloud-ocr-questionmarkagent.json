@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tencentcloud-ocr-questionmarkagent@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-ocr-questionmarkagent-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tencentcloud-ocr-questionmarkagent-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:e0fb73743f2aca2a6bdac15056ce2c09d9027ea579f0ab4b99c223b85c44ec9d",

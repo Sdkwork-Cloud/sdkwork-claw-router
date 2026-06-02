@@ -1,11 +1,13 @@
+import type { MediaResource } from './media-resource';
+
 /** Admin skill category create request schema exposed by Claw Router. */
 export interface AdminSkillCategoryCreateRequest {
   /** Optional stable category code. */
   code?: string;
   /** Optional category description. */
   description?: string;
-  /** Optional icon URL or asset path. */
-  icon?: string;
+  /** Icon field on admin skill category create request. */
+  icon?: MediaResource;
   /** Skill category display name. */
   name: string;
   /** Parent id field on admin skill category create request. */

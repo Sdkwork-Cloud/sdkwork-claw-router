@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deepspeed-finetune@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-deepspeed-finetune-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deepspeed-finetune-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:ae304b57efec1d93d66533428327a15157a07eb6baa00ce2d6b92bfd5e5baf5f",

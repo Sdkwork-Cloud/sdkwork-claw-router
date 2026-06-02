@@ -3,6 +3,7 @@ package com.sdkwork.clawrouter.backend.model;
 
 public class CommercePaymentProviderAccountItem {
     private String accountNo;
+    private String accountRole;
     private String certificateRef;
     private String countryCode;
     private String createdAt;
@@ -24,6 +25,14 @@ public class CommercePaymentProviderAccountItem {
 
     public void setAccountNo(String accountNo) {
         this.accountNo = accountNo;
+    }
+
+    public String getAccountRole() {
+        return this.accountRole;
+    }
+
+    public void setAccountRole(String accountRole) {
+        this.accountRole = accountRole;
     }
 
     public String getCertificateRef() {

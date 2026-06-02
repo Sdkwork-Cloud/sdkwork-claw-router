@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/workflow-optimizer@0.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-workflow-optimizer-0.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-workflow-optimizer-0.2.0.json"
+      },
       "version": "0.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:98615e1a8b413259663be80db680730d7c2894e94a18687c00d4b9799949c741",

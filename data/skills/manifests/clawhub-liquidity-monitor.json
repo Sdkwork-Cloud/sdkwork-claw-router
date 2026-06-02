@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/liquidity-monitor@4.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-liquidity-monitor-4.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-liquidity-monitor-4.0.0.json"
+      },
       "version": "4.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:55bb6832b01ec544aa2cd3982714c10bb21f17256b2f97af46e6833eeaa26df0",

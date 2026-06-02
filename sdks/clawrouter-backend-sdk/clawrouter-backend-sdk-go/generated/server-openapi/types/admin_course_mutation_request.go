@@ -9,6 +9,6 @@ type AdminCourseMutationRequest struct {
 	Level string `json:"level"`
 	Metadata map[string]JsonValue `json:"metadata"`
 	Status string `json:"status"`
-	ThumbnailUrl string `json:"thumbnailUrl"`
+	Thumbnail MediaResource `json:"thumbnail"`
 	Title string `json:"title"`
 }

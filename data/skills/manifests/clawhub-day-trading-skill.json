@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/day-trading-skill@1.2.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-day-trading-skill-1.2.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-day-trading-skill-1.2.2.json"
+      },
       "version": "1.2.2",
       "runtime": "metadata",
       "checksumHash": "sha256:fc08322e7081874f8804090e652ccdb78ef2986596d2eb9d24ffd79569098210",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tron@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tron-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tron-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:dc5f2b168f1c102347c592c155612e354b38507a3ce600ac94649c2aabe0a069",

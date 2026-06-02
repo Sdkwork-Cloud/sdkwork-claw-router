@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/plutus@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-plutus-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-plutus-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:6a051514a46f07e0b951e9d140466928eb5ca623fe941a1d25907cc04f8613fe",

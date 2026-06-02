@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inline-asset-probe@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-inline-asset-probe-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inline-asset-probe-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c642faaadc43a24cba00dbb578684647cd4952ef5776f257e2907b955766bb7b",

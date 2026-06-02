@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/craftsman-agent@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-craftsman-agent-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-craftsman-agent-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1c749862e1bf36a70e977d30d383d70d03d2d38716c37d441d95c763802b64b2",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/seithar-intel@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-seithar-intel-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-seithar-intel-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:36a18c24f5211409eef3ce25a79365f4cb87d1d4515a45c476296014167cd61e",

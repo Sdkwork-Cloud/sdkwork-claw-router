@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trip-advisor@3.2.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trip-advisor-3.2.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trip-advisor-3.2.0.json"
+      },
       "version": "3.2.0",
       "runtime": "metadata",
       "checksumHash": "sha256:c64be22fe9aebe6a737d4545eb4345c322256a70616ce6be3d1c9e75bedacdaa",

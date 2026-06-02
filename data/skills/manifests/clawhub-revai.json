@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/revai@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-revai-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-revai-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:a504d5e8edd41874971bdb1d3cab270e656ef831eadfd5402dedb6cf2eefbaad",

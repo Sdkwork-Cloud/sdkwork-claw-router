@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-zero@1.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-zero-1.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-zero-1.0.7.json"
+      },
       "version": "1.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:c7cb9df0bb049a61ef4a92cf49207cd4a83bd919ae8d8e5020245130318b9503",

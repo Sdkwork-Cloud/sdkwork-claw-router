@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/schema-builder@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-schema-builder-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-schema-builder-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5a751871daf8105ef24a77b5aa9be71b9dcb82cea511730675568334b48c067c",

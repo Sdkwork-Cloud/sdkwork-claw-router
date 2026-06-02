@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/judge@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-judge-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-judge-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5602eb925c345bf318ab1119bb75e1f9616ffccf8593b86aa1844699136c5252",

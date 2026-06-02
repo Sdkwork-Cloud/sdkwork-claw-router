@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/afrexai-agent-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-agent-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-afrexai-agent-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5f41fbb3bdedbae1241e89942a87084f16f58646669187ea03bd27f353ea8d3",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/goldrush-cli@3.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-goldrush-cli-3.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-goldrush-cli-3.0.5.json"
+      },
       "version": "3.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:eb1eb2b33560e898765013e8fa953b42c738ab3450eb701f628e0f11eb361653",

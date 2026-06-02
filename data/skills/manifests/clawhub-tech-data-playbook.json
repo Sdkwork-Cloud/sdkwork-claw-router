@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tech-data-playbook@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tech-data-playbook-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tech-data-playbook-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:42c8460d9c9112e7a4d17ca0002705fdf5c23e0724c8e950abd827d86a261106",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sentient-memory@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sentient-memory-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sentient-memory-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d6535f3e3d93b7a32097a870f3b87c8fdea4e112073d6607058d9b08d03f8879",

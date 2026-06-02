@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/trading-brain@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-trading-brain-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-trading-brain-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ca519713b9ff537a8d598d6dd86b6e3d81613f39f89b3e4f442408c2d442edbe",

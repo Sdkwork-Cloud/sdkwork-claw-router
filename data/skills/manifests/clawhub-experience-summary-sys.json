@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/experience-summary-sys@1.4.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-experience-summary-sys-1.4.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-experience-summary-sys-1.4.0.json"
+      },
       "version": "1.4.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1be23057fcd190c79ae039438085f96e7c8c276d00e499727fd78ae9fec2c99e",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yelp@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yelp-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yelp-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3ae18fa0df707c4daf234513601de007db003c0d5deb9adbb21a4d11780359fc",

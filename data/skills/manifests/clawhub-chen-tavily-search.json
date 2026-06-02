@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chen-tavily-search@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-chen-tavily-search-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chen-tavily-search-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d83fa0bfde1ca56e99803768f36b1550fa76ab75b54deb3b03369cdcddc2174c",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/container-runtime-threat-model@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-container-runtime-threat-model-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-container-runtime-threat-model-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ea0f3cc578549886ac63962849a15b8a540eb4a641a829ac3498ad93535da4df",

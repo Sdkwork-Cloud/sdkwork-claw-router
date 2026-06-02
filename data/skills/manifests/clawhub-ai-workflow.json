@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ai-workflow@2.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ai-workflow-2.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ai-workflow-2.0.0.json"
+      },
       "version": "2.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9820caf642530feea01a59d740ef244a92b8d619353aaee15ebd8ae82522d2d8",

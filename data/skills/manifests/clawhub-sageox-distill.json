@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sageox-distill@0.2.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-sageox-distill-0.2.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sageox-distill-0.2.1.json"
+      },
       "version": "0.2.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b15bbd9b222410348b8d31b3e5f29ef496817ee95fb8e6c65d237f3862c05fda",

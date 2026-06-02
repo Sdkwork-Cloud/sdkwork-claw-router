@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/startup-launch-playbook@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-startup-launch-playbook-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-startup-launch-playbook-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:0ce0e7e0f446951901e6f8bdc31464be657fc019fa42700853460fb8a6ab6ffa",

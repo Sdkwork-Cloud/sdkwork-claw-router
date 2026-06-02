@@ -11,6 +11,6 @@ class CommerceProductSpuMutationRequest:
     status: str
     title: str
     brand: Optional[str] = None
-    category_id: Optional[str] = None
+    category_ids: Optional[List[str]] = None
     description: Optional[str] = None
     subtitle: Optional[str] = None

@@ -7,7 +7,7 @@ namespace Sdkwork.ClawRouter.App.Models
     public class RechargesOrdersRetrieveResult
     {
         public string? Code { get; set; }
-        public CommerceStandardResourceResponse? Data { get; set; }
+        public CommerceRechargeCheckoutStatusResponse? Data { get; set; }
         public string? Msg { get; set; }
     }
 }

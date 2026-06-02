@@ -61,6 +61,36 @@ Search text must be `q` in URL/OpenAPI and may be exposed as `searchQuery` in
 generated SDK or service variables. Do not mechanically feed SDK variable names
 back into OpenAPI wire names.
 
+## Media Resource Fields
+
+Media fields MUST be JSON `MediaResource` objects end to end across contract
+source, OpenAPI, generated SDKs, backend DTOs, frontend service models, and
+application state. A product, app, skill, course, forum post, order, payment,
+profile, or generated asset must not collapse media into a string while it is
+still business data.
+
+Use short logical field names for media resources:
+
+```text
+`cover`, `thumbnail`, `asset`, `artifact`, `video`, `audio`, `avatar`, `icon`, `logo`, `favicon`, `qrCode`
+```
+
+Do not introduce `coverMedia`, `coverImage`, `coverUrl`, `thumbnailUrl`, `assetUrl`, `videoUrl`, or `*_url` JSON fields for business media.
+`cover` is the canonical cover-image field name. The same rule applies to nested payloads:
+`sku.image`, `media.asset`, `media.thumbnail`, `attachments[].resource`, and
+similar fields carry `MediaResource` objects, not URL strings.
+
+Concrete URL strings are allowed only at input, display, download, playback, or provider protocol boundaries.
+Examples include an `<img src>`, `<video src>`, download `href`, a text input that accepts a URL before wrapping it as
+`MediaResource`, and a third-party provider payload whose protocol explicitly
+uses URL fields. Local variables at these boundaries must be named by concrete
+use, such as `imageSrc`, `thumbnailSrc`, `downloadHref`, or `playbackSrc`.
+
+Generated SDK types must expose media fields as `MediaResource`, not `string`.
+The common shape must remain extensible for local files, S3, OSS, MinIO, CDN
+delivery, generated media, signed URLs, object-blob references, hashes,
+dimensions, duration, thumbnails, posters, and future AI-era media metadata.
+
 ## Path Design
 
 Use resource nouns, not UI action phrases.

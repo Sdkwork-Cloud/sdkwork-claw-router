@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clari@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-clari-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clari-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:defd745617a00736662e80e77b9285863f4a2a70be18c5603fb0154ea5632671",

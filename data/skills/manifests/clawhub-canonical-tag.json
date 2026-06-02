@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/canonical-tag@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-canonical-tag-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-canonical-tag-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:12c197a7a0dc2ee6f46aa530b0f7043bffb1583f3ba1904153483105451509fa",

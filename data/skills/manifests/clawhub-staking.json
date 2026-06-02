@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/staking@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-staking-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-staking-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4cab6d04c65478df1203840f4235a45bf036b80e752231a72f23a51d7c05129c",

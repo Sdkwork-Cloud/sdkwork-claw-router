@@ -111,6 +111,10 @@ pub struct AiAgentRunRecord {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub retention_until: Option<String>,
 
+    /// Run status field on ai agent run record.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub run_status: Option<String>,
+
     /// Run uuid field on ai agent run record.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub run_uuid: Option<String>,

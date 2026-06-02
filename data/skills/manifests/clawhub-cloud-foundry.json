@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cloud-foundry@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-cloud-foundry-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cloud-foundry-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:3bbfa9d65f96add7a05aa3f93daa0bfc4de22724c2563c5252c54b70daa5d671",

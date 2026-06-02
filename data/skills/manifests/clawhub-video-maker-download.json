@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/video-maker-download@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-video-maker-download-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-video-maker-download-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fc0fac205f259a8402f3f11a15135cb5ee7af73e6071def531875010dd749b12",

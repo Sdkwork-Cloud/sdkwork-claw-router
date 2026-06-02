@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/patent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-patent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-patent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:523de3522b5e654ea5d69b1c7eb43cc5ddf7bfd1d4fc7604d8b8f02a75c341be",

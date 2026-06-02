@@ -33,6 +33,7 @@ class AiChatMessageRecord:
     token_count: Optional[str] = None
     trace_id: Optional[str] = None
     turn_id: Optional[str] = None
+    updated_at: Optional[str] = None
     usage_link_id: Optional[str] = None
     user_id: Optional[str] = None
     uuid: Optional[str] = None

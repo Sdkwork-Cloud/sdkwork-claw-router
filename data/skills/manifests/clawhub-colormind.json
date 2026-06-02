@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/colormind@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-colormind-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-colormind-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:edb24c3967fc53c724868db8ef3b311dc5e458f96de715a40fe0661f14f90412",

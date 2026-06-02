@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/sys-updater@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-sys-updater-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-sys-updater-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f316298e2f9ae1e89c0704688d1e4fa90be8b8f41809ccce1ac2cbf086d18801",

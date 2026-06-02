@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ssense@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-ssense-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ssense-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:72044a3659442c1db77a2ff13c9b9c38205d9482c7c6059c85e93b08d3fffebf",

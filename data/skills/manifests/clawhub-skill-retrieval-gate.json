@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-retrieval-gate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-retrieval-gate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-retrieval-gate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1858cce0adc7fe123d1001dd4cf7123c5683e0817db19b29f8eed19c132c840a",

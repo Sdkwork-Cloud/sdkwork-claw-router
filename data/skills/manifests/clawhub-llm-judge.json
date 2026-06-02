@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/llm-judge@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-llm-judge-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-llm-judge-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:c2c20ea68274e6a58539937a84523f1c8af659a0c15280452d067d8e887fc827",

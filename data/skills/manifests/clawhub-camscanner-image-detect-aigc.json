@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/camscanner-image-detect-aigc@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-camscanner-image-detect-aigc-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-camscanner-image-detect-aigc-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4c5aa4af438b2d66121aca4ca2f34e789b058e50405b2d751df06934baaa80be",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/create-pr-skip@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-create-pr-skip-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-create-pr-skip-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:511796db72f79afa595e6f0618e4f51f376033d24df3d357dc037086f9cba547",

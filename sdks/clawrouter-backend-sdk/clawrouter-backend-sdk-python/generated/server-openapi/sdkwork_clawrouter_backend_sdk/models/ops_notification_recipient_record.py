@@ -12,9 +12,11 @@ class OpsNotificationRecipientRecord:
     deleted_at: Optional[str] = None
     deleted_by: Optional[str] = None
     id: Optional[str] = None
+    message_id: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
     organization_id: Optional[str] = None
     recipient_role_code: Optional[str] = None
+    recipient_type: Optional[str] = None
     recipient_user_id: Optional[str] = None
     recipient_value: Optional[str] = None
     status: Optional[str] = None

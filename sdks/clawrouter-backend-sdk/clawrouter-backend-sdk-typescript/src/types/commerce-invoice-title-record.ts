@@ -2,6 +2,8 @@
 export interface CommerceInvoiceTitleRecord {
   /** Created at field on commerce invoice title record. */
   created_at: string;
+  /** Id field on commerce invoice title record. */
+  id?: string;
   /** Name field on commerce invoice title record. */
   name: string;
   /** Owner user id field on commerce invoice title record. */

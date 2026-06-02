@@ -4,6 +4,8 @@ export interface CommercePaymentWebhookEventRecord {
   created_at: string;
   /** Event id field on commerce payment webhook event record. */
   event_id: string;
+  /** Id field on commerce payment webhook event record. */
+  id?: string;
   /** Idempotency key field on commerce payment webhook event record. */
   idempotency_key: string;
   /** Message field on commerce payment webhook event record. */

@@ -54,7 +54,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/topydo@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-topydo-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-topydo-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:3f9ac036a0259a58d56bdb35d59c580bbfa56599246200ee554ed326d1204626",

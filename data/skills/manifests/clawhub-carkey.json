@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/carkey@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-carkey-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-carkey-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:523b4a56222cf08471720ad3fd761aceb4826b807efcd6a935912e5d8f34080c",

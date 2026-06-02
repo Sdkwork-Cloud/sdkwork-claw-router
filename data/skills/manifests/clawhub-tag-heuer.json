@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tag-heuer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tag-heuer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tag-heuer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:29834c2b71cd27d207d22f9c606e3868ea8f0f75a6ab52fe2449494330e017ec",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/public-company-analysis@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-public-company-analysis-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-public-company-analysis-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:6c705447e2d3c58fe9c9bd7dc363e3a6a7ee02a6859e49cad501f073753e5178",

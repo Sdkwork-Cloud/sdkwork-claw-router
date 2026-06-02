@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/communication-mqtt@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-communication-mqtt-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-communication-mqtt-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a4ea405beb64f4d0c3d7e4331b813b58390c2896c74e190a9f28ed292232c6bd",

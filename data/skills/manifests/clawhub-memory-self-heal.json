@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/memory-self-heal@1.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-memory-self-heal-1.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-memory-self-heal-1.1.0.json"
+      },
       "version": "1.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:45f022e742d4de19ece51e4ed4badca9a82c3e1b0be862ae47d541e867f2b073",

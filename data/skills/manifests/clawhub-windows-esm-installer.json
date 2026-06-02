@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/windows-esm-installer@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-windows-esm-installer-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-windows-esm-installer-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:edb3468b58e027cb6c02e42f311d113ed7e425d5a80c11bc8c121ee71b124020",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pi-speaker@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-pi-speaker-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pi-speaker-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:586946fd2948600f7edb2c5ad63ab924d16290d00e76fc58aa74101a956d9e64",

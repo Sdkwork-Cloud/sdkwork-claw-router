@@ -14,6 +14,7 @@ public class UploadPartRecord {
     private Integer partNumber;
     private String partSha256;
     private String presignedUrlExpiresAt;
+    private String sizeBytes;
     private String status;
     private String tenantId;
     private String updatedAt;
@@ -108,6 +109,14 @@ public class UploadPartRecord {
 
     public void setPresignedUrlExpiresAt(String presignedUrlExpiresAt) {
         this.presignedUrlExpiresAt = presignedUrlExpiresAt;
+    }
+
+    public String getSizeBytes() {
+        return this.sizeBytes;
+    }
+
+    public void setSizeBytes(String sizeBytes) {
+        this.sizeBytes = sizeBytes;
     }
 
     public String getStatus() {

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-desapetc-123@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-desapetc-123-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-desapetc-123-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:74ba259c044531acab1634d7dae78e5afc3f4d4ff219e189b9f8400ab125ed0a",

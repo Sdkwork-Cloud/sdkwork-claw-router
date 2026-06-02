@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/deputy@1.0.4",
-      "artifactUrl": "data/skills/artifacts/clawhub-deputy-1.0.4.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-deputy-1.0.4.json"
+      },
       "version": "1.0.4",
       "runtime": "metadata",
       "checksumHash": "sha256:15c99cee22e249bb741e8e2f9d2bfda59ac348d229b447e15bd0c874c60ce89b",

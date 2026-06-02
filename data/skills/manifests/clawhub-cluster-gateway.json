@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cluster-gateway@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cluster-gateway-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cluster-gateway-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a824261f1420d8c40aecd29504d80e858e54fcda9ab1d59fbf74d57177a1e179",

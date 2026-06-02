@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mov-toa@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-mov-toa-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mov-toa-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:58b4e1b155259f36222f711fefc25f48fd020606bc2b4af641d229a819729dd4",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amazon-seller-video@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amazon-seller-video-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amazon-seller-video-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f5aabc8cd52419162437fed5a1e1a304d857f766aa2dfd4d65be8ec1e6485f0",

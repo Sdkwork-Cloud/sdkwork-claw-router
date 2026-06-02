@@ -5,6 +5,7 @@ public class CommercePaymentReconciliationRunRecord {
     private String completedAt;
     private String createdAt;
     private String differenceAmount;
+    private String id;
     private String idempotencyKey;
     private String matchedCount;
     private String mismatchedCount;
@@ -48,6 +49,14 @@ public class CommercePaymentReconciliationRunRecord {
 
     public void setDifferenceAmount(String differenceAmount) {
         this.differenceAmount = differenceAmount;
+    }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIdempotencyKey() {

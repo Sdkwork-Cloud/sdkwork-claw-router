@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/customer-onboarding@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-customer-onboarding-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-customer-onboarding-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:73166c8bc93f39e01c6808a2d3f43b1d3cab1a0121fb25c0acbb32dca736e381",

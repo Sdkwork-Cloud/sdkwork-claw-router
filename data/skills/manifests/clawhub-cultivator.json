@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cultivator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cultivator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cultivator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9d5c3b83ec48798a6025663ab90625386958e15f123c348cd86fbc9f0ad02cda",

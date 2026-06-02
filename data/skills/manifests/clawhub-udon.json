@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/udon@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-udon-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-udon-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:26f2a91140a12c1087371e03f6fa752f3a390b36e21937f856fc2701de4c6e00",

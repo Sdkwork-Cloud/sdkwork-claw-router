@@ -27,6 +27,7 @@ interface MembershipIconActionButtonProps {
   label: string;
   icon: ReactNode;
   tone?: MembershipIconActionTone;
+  disabled?: boolean;
   onClick: () => void;
 }
 
@@ -39,15 +40,17 @@ export function MembershipIconActionButton({
   label,
   icon,
   tone = 'default',
+  disabled = false,
   onClick,
 }: MembershipIconActionButtonProps) {
   return (
     <button
       type="button"
       onClick={onClick}
+      disabled={disabled}
       aria-label={label}
       title={label}
-      className={`inline-flex h-8 w-8 items-center justify-center rounded-md ${iconActionToneClassNames[tone]}`}
+      className={`inline-flex h-8 w-8 items-center justify-center rounded-md disabled:cursor-not-allowed disabled:opacity-40 ${iconActionToneClassNames[tone]}`}
     >
       {icon}
     </button>

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mac-power-tools@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-mac-power-tools-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mac-power-tools-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:70bb2a29f9249dc00405b8bd12e1b1a0bd19b1ec9105afe30bece036e5fad608",

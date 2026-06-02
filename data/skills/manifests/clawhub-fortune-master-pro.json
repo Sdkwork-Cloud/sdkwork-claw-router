@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fortune-master-pro@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fortune-master-pro-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fortune-master-pro-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:bb7dc2f8e11f5e67041db616ed4551ea52c07cf8f120530381a265e1f7cbe4e6",

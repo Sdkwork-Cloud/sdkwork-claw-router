@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/anygen-workflow-generate@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-anygen-workflow-generate-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-anygen-workflow-generate-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5e7667e3c4864e1d839ef39374d1f9b722810f9197736ca5fde9446d1ac42024",

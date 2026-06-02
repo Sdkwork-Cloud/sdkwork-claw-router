@@ -11,6 +11,7 @@ namespace Sdkwork.ClawRouter.Backend.Models
         public string? CurrencyCode { get; set; }
         public string? FailureCode { get; set; }
         public string? FailureMessage { get; set; }
+        public string? Id { get; set; }
         public string? IdempotencyKey { get; set; }
         public string? OccurredAt { get; set; }
         public string? OfferId { get; set; }

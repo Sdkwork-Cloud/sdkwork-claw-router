@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nai-rss-digest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nai-rss-digest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nai-rss-digest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ff12cdf90d49f5ad0de58aa240964ba5b8530e2efb69094519971d96bdf48cd6",

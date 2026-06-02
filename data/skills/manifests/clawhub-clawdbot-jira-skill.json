@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clawdbot-jira-skill@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-jira-skill-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clawdbot-jira-skill-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:697ad36f97ea7415956b4132c849bd204769c5c4c176cb89b2c718c80a28a226",

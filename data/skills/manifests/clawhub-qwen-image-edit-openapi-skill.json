@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/qwen-image-edit-openapi-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-qwen-image-edit-openapi-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-qwen-image-edit-openapi-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:807d1476a42dd620c77dc9ae7c41a113ab9036a09211e6194bc5c23b62bce95d",

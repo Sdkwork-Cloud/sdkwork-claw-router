@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cornell-notes@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cornell-notes-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cornell-notes-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:066951c0a9041b5aabc5ce6c1357fe7e268e0b6864edf4e77ce7fcbf543b6cbd",

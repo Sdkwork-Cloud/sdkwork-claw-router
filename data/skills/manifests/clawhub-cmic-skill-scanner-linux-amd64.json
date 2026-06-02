@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/cmic-skill-scanner-linux-amd64@0.8.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-cmic-skill-scanner-linux-amd64-0.8.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-cmic-skill-scanner-linux-amd64-0.8.0.json"
+      },
       "version": "0.8.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ba7634507d6c93ebe90d5ff7b711c51b0e668701c2ff9194ceb0b53887ee2a4c",

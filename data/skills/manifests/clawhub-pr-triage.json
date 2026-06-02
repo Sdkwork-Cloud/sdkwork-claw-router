@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/pr-triage@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-pr-triage-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-pr-triage-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a4572b0ede01db90a7ac0df790ba51728aa39a19b6e9070ef9b0e149cf4e7b9f",

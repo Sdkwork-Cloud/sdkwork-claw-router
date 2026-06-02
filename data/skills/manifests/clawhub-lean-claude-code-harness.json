@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/lean-claude-code-harness@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-lean-claude-code-harness-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-lean-claude-code-harness-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:a27df0695bd235efe3eab68035f08dd85c7db3f047c90951b9d05f8e87f8fad5",

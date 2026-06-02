@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/night-shift@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-night-shift-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-night-shift-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:21398304e9a158ef9ebd198e2f695d9484c3e68c893bf39f008b2bd01a13af48",

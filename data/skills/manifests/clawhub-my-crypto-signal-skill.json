@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/my-crypto-signal-skill@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-my-crypto-signal-skill-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-my-crypto-signal-skill-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:42969d165a1d6703d986dd090bdd0b2b81b15287f152d2f05b611ac53ed4c73f",

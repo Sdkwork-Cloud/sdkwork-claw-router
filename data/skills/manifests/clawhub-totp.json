@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/totp@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-totp-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-totp-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:b3920750cf3588535c609a1a0eeaeed6238fbfc4693087e18826ad53c2a00431",

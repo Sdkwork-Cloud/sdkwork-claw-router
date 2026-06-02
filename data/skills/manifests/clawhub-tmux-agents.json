@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tmux-agents@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tmux-agents-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tmux-agents-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5552c5cdb529fe4370b129e93f82254823c9f11634c1f9b89b2a75377d520eb",

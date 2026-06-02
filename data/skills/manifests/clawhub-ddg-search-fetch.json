@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/ddg-search-fetch@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-ddg-search-fetch-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-ddg-search-fetch-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b8b00203ac0ed9e3593f2caf006117feadbbfa0a97d15e2735f21136e226ee1e",

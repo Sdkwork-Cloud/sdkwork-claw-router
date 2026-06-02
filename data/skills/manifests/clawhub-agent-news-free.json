@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-news-free@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-news-free-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-news-free-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:88ca79741c12ddec6a9993071a375ace846d4b05f7f12a1e44d9136bf2305796",

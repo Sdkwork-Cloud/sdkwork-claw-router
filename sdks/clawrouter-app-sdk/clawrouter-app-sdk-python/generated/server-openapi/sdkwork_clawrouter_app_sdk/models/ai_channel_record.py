@@ -29,6 +29,7 @@ class AiChannelRecord:
     deleted_by: Optional[str] = None
     environment: Optional[str] = None
     external_channel_id: Optional[str] = None
+    health_status: Optional[str] = None
     id: Optional[str] = None
     last_balance_checked_at: Optional[str] = None
     last_latency_ms: Optional[int] = None
@@ -38,6 +39,7 @@ class AiChannelRecord:
     masked_label: Optional[str] = None
     metadata: Optional[Dict[str, str]] = None
     next_rotate_at: Optional[str] = None
+    priority: Optional[int] = None
     protocol_code: Optional[str] = None
     provider_code: Optional[str] = None
     provider_id: Optional[str] = None
@@ -54,3 +56,4 @@ class AiChannelRecord:
     upstream_balance_amount: Optional[str] = None
     upstream_balance_currency: Optional[str] = None
     version: Optional[str] = None
+    weight: Optional[int] = None

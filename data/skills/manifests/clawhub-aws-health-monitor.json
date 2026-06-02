@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-health-monitor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-health-monitor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-health-monitor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a8e6fa016083d72bd038db18671f866f00e0321cff5b9305aa87db7bcd701ccf",

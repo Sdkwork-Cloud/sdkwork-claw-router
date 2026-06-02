@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/internet-lookup-verifier@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-internet-lookup-verifier-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-internet-lookup-verifier-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:fb6bbd72799576c2dba9fd0af06ae0a4572c2f96a58f33d18d2855d6df9fcffc",

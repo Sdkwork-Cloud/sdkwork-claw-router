@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/xiachat-cli@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-xiachat-cli-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-xiachat-cli-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:223e7d25ae08781eb6469a6f878fd4326e40e1a2b54e37a2e78938a28add86be",

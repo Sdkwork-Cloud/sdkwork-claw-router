@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/edison-agent-reach@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-edison-agent-reach-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-edison-agent-reach-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:326797b0d0ec015917391c3d7d72b23e8dc0f21b04d30df689d9846403b3477e",

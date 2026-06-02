@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/decker@2.3.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-decker-2.3.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-decker-2.3.2.json"
+      },
       "version": "2.3.2",
       "runtime": "metadata",
       "checksumHash": "sha256:8b0bd50a55a2ac933ed7e7f3583d6047ce1b18742ef1fd7840c4368bd1865589",

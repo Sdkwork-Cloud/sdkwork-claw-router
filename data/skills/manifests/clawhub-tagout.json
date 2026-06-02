@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tagout@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tagout-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tagout-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a5e745b658e2b1a1707f175e5847b694fe87d920891875f57fbf25ddf575ff3f",

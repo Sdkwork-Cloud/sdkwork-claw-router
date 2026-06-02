@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/botknows@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-botknows-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-botknows-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d88556cfa77cc9e3e709a0e92bcf956075ac8acc98b41c62182d62d0b9952903",

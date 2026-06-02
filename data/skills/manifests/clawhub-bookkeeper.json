@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/bookkeeper@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-bookkeeper-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-bookkeeper-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:13af840d31475dcadcc9209869cb7958d2b486865139aba1f39bbef18ce6e785",

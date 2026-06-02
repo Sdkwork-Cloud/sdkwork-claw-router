@@ -14,6 +14,8 @@ export interface PromotionOfferRecord {
   description?: string;
   /** Ends at field on promotion offer record. */
   ends_at?: string;
+  /** Id field on promotion offer record. */
+  id?: string;
   /** Name field on promotion offer record. */
   name: string;
   /** Offer code field on promotion offer record. */
@@ -24,6 +26,8 @@ export interface PromotionOfferRecord {
   offer_type: string;
   /** Organization id field on promotion offer record. */
   organization_id?: string;
+  /** Priority field on promotion offer record. */
+  priority: number;
   /** Starts at field on promotion offer record. */
   starts_at?: string;
   /** Status field on promotion offer record. */

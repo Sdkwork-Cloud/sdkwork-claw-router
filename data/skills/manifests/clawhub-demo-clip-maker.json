@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/demo-clip-maker@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-demo-clip-maker-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-demo-clip-maker-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d5d3d1be09657dad8a640510a3e0d36bf95b4f90cfe80d70b5920a77ef0c3011",

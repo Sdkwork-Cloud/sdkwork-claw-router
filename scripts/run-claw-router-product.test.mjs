@@ -539,7 +539,7 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
   );
   assert.equal(autoProductInstalledSqliteHelperChange.resolvedProfile, 'auto-targets');
   assert.equal(
-    autoProductInstalledSqliteHelperChange.steps.some((step) => step.args.includes('sqlite_admin_access_group_store')),
+    autoProductInstalledSqliteHelperChange.steps.some((step) => step.args.includes('sqlite_admin_channel_group_store')),
     true,
   );
   assert.equal(
@@ -565,7 +565,7 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
   );
   assert.equal(autoProductSchemaFixtureChange.resolvedProfile, 'auto-targets');
   assert.equal(
-    autoProductSchemaFixtureChange.steps.some((step) => step.args.includes('sqlite_admin_access_group_store')),
+    autoProductSchemaFixtureChange.steps.some((step) => step.args.includes('sqlite_admin_channel_group_store')),
     true,
   );
   assert.equal(
@@ -607,7 +607,7 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
     true,
   );
   assert.equal(
-    autoProductRepairFixtureChange.steps.some((step) => step.args.includes('sqlite_admin_access_group_store')),
+    autoProductRepairFixtureChange.steps.some((step) => step.args.includes('sqlite_admin_channel_group_store')),
     false,
   );
 
@@ -637,7 +637,7 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
     false,
   );
   assert.equal(
-    autoProductInstalledFixtureChange.steps.some((step) => step.args.includes('sqlite_admin_access_group_store')),
+    autoProductInstalledFixtureChange.steps.some((step) => step.args.includes('sqlite_admin_channel_group_store')),
     false,
   );
 
@@ -655,7 +655,7 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
   );
   assert.equal(autoProductCommonModuleChange.resolvedProfile, 'auto-targets');
   assert.equal(
-    autoProductCommonModuleChange.steps.some((step) => step.args.includes('admin_access_group_api')),
+    autoProductCommonModuleChange.steps.some((step) => step.args.includes('admin_channel_group_api')),
     true,
   );
   assert.equal(
@@ -663,7 +663,7 @@ test('rust test runner exposes isolated daily-maintenance profiles', async () =>
     true,
   );
   assert.equal(
-    autoProductCommonModuleChange.steps.some((step) => step.args.includes('sqlite_admin_access_group_store')),
+    autoProductCommonModuleChange.steps.some((step) => step.args.includes('sqlite_admin_channel_group_store')),
     false,
   );
 
@@ -7386,6 +7386,42 @@ test('verification plan includes real browser DOM smoke after production HTTP sm
 }
 );
 
+test('verification plan refreshes generated SDK runtimes after production smoke and before portal runtime suites', async () => {
+  const module = await import(
+    pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
+  );
+  const plan = module.buildVerificationPlan(
+    { skipRustTests: true, skipPythonTests: true, skipSchemaGate: true },
+    {},
+  );
+  const browserSmokeIndex = plan.findIndex((step) => step.label === 'portal production browser DOM smoke');
+  const commonsRuntimeIndex = plan.findIndex((step) => step.label === 'portal commons runtime tests');
+  const runtimeAppSdkRefreshIndex = plan.findIndex((step) => step.label === 'portal runtime app SDK refresh');
+  const runtimeBackendSdkRefreshIndex = plan.findIndex((step) => step.label === 'portal runtime backend SDK refresh');
+  const runtimeOpenSdkRefreshIndex = plan.findIndex((step) => step.label === 'portal runtime open SDK refresh');
+
+  assert.ok(runtimeAppSdkRefreshIndex > browserSmokeIndex, 'runtime app SDK refresh must run after production browser smoke');
+  assert.ok(runtimeBackendSdkRefreshIndex > runtimeAppSdkRefreshIndex, 'runtime backend SDK refresh must run after app SDK refresh');
+  assert.ok(runtimeOpenSdkRefreshIndex > runtimeBackendSdkRefreshIndex, 'runtime open SDK refresh must run after backend SDK refresh');
+  assert.ok(commonsRuntimeIndex > runtimeOpenSdkRefreshIndex, 'portal runtime suites must run after SDK runtime refresh');
+
+  assert.deepEqual(plan[runtimeAppSdkRefreshIndex].args, [
+    '--dir',
+    'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript',
+    'build',
+  ]);
+  assert.deepEqual(plan[runtimeBackendSdkRefreshIndex].args, [
+    '--dir',
+    'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript',
+    'build',
+  ]);
+  assert.deepEqual(plan[runtimeOpenSdkRefreshIndex].args, [
+    '--dir',
+    'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript',
+    'build',
+  ]);
+});
+
 test('verification plan includes portal models runtime tests before broad suites', async () => {
   const module = await import(
     pathToFileURL(path.join(workspaceRoot, 'scripts', 'verify-claw-router-product.mjs')).href
@@ -7798,7 +7834,7 @@ test('verification plan includes portal console app runtime tests before broad s
   assert.ok(consoleAppRuntimeIndex < rustTestsIndex, 'console app runtime tests must run before broad Rust tests');
   assert.ok(consoleAppRuntimeIndex < pythonTestsIndex, 'console app runtime tests must run before broad Python tests');
   assert.ok(commandLines.includes(
-    'node --experimental-strip-types apps/sdkwork-claw-router-portal/console-app-runtime.test.ts',
+    `${module.pnpmCommand()} --dir apps/sdkwork-claw-router-portal exec tsx console-app-runtime.test.ts`,
   ));
 });
 

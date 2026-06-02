@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/glm-master-skill@1.0.9",
-      "artifactUrl": "data/skills/artifacts/clawhub-glm-master-skill-1.0.9.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-glm-master-skill-1.0.9.json"
+      },
       "version": "1.0.9",
       "runtime": "metadata",
       "checksumHash": "sha256:2656934b90d885df57f08e1c9cadb3019721bcb49500010e605ef4ec9406c5ea",

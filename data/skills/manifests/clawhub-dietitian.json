@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/dietitian@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-dietitian-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-dietitian-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:d92e15d5049db4a173ac3fcda03442108efdcfe8d98e0c5fee0c97207c734256",

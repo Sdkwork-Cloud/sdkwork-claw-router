@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/water-reminder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-water-reminder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-water-reminder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b147b0f158e504f0d8ab1a7f0b23f0ea83cced8ec1ff48b33d81255bad5548ff",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amtk-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amtk-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amtk-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:4e7ceb5bf5eadb9500bd53b2b1ffd979291b9b95ee633f6d69b076a34fcc5dde",

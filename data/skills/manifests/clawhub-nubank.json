@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nubank@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nubank-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nubank-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:761b6416c1de8a49ded50c178eb5369d33493102d78f4aa4520b6bbb1c8bc300",

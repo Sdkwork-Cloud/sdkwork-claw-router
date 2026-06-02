@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tidal-lock@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tidal-lock-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tidal-lock-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3677c36db247df3270726ef8fd4cf56aed715c899aab1180239d88d603fec778",

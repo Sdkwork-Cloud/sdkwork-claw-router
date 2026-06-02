@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/scrappa-skill@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-scrappa-skill-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-scrappa-skill-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:cfae5798e3129091b51d527d32e597317e20da594c4d05e6cb9a25e8a466b1dc",

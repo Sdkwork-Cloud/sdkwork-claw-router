@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/music-analysis@3.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-music-analysis-3.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-music-analysis-3.0.2.json"
+      },
       "version": "3.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:aaacdfa905557d06e1faad3a311d66987ae2817700945c830d471c43ce482208",

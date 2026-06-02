@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/verifier-skill-generator@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-verifier-skill-generator-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-verifier-skill-generator-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:063483debcffaceaea0cf87bbf3ee10f730d94303b9b630ae607be3272f1fa3c",

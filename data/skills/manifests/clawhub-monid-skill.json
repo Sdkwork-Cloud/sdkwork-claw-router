@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/monid-skill@0.0.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-monid-skill-0.0.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-monid-skill-0.0.7.json"
+      },
       "version": "0.0.7",
       "runtime": "metadata",
       "checksumHash": "sha256:25ea2ce7f78fd1c8c8a756695c675620546e8a12d509386e16a02f83e089714d",

@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/controld@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-controld-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-controld-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:8cbd4660d9d4dc4da35100e65af5c04bf1d541e9602a48764ffd4f753353b79b",

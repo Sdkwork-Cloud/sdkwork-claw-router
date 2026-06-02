@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/paragon-mls@1.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-paragon-mls-1.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-paragon-mls-1.1.2.json"
+      },
       "version": "1.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:18adbc64ef0c58107c7ce44d1d3d11620176ba3ff9eabaa545c17195e7d0ccee",

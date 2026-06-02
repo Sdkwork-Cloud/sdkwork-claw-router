@@ -1,11 +1,13 @@
+import type { MediaResource } from './media-resource';
+
 /** Admin app category create request schema exposed by Claw Router. */
 export interface AdminAppCategoryCreateRequest {
   /** Optional stable category code. */
   code?: string;
   /** Optional category description. */
   description?: string;
-  /** Optional icon URL or asset path. */
-  icon?: string;
+  /** Icon field on admin app category create request. */
+  icon?: MediaResource;
   /** App store category display name. */
   name: string;
   /** Parent id field on admin app category create request. */

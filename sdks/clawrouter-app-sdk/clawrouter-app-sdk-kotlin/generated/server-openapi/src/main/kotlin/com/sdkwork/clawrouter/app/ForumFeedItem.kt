@@ -6,7 +6,7 @@ data class ForumFeedItem(
     val commentCount: Int? = null,
     val content: String? = null,
     val contentType: String? = null,
-    val coverImage: String? = null,
+    val cover: MediaResource? = null,
     val createdAt: String? = null,
     val id: Int? = null,
     val isCollected: Boolean? = null,

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mdshare-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mdshare-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mdshare-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a731a2c1760e8c0ad2db28d14edd2dc3818952fd536dceb246b5dc99f9a65766",

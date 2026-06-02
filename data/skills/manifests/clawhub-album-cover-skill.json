@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/album-cover-skill@1.5.7",
-      "artifactUrl": "data/skills/artifacts/clawhub-album-cover-skill-1.5.7.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-album-cover-skill-1.5.7.json"
+      },
       "version": "1.5.7",
       "runtime": "metadata",
       "checksumHash": "sha256:ed4c710160b750e434db4a62c1894a23de211b436439d9ce79d2767da0156037",

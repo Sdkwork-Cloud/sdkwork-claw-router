@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/thunder@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-thunder-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-thunder-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:058148917c2cde28a554ab9124df8aedd8f74a007b22d63feab0d19e082c9ecd",

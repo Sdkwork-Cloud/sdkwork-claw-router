@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/preinstall-security-check@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-preinstall-security-check-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-preinstall-security-check-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1833702b54d096750bb3d6afc58614d567d7a827f6a407ae099835368c2193cb",

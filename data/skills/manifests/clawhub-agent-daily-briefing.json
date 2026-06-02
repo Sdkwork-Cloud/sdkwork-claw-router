@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/agent-daily-briefing@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-agent-daily-briefing-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-agent-daily-briefing-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:e64e6c70258e5f0b5bdfac0caa473778186bcc382f83ef83f98159fbf77619b4",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/chat-summary-card@1.0.5",
-      "artifactUrl": "data/skills/artifacts/clawhub-chat-summary-card-1.0.5.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-chat-summary-card-1.0.5.json"
+      },
       "version": "1.0.5",
       "runtime": "metadata",
       "checksumHash": "sha256:986bd5636c2cae5123a3208ce4381eea7917752457fb1026a9debdd06650221c",

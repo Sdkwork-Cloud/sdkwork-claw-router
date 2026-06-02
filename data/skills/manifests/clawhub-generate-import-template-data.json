@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/generate-import-template-data@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-generate-import-template-data-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-generate-import-template-data-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:71756aa2599ce78cfd905bd054e8ad445eec013c6daba4a3fdbd25ed19bbca4b",

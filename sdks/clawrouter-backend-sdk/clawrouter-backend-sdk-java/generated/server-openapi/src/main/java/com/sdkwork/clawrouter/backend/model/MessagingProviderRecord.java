@@ -3,16 +3,19 @@ package com.sdkwork.clawrouter.backend.model;
 import java.util.Map;
 
 public class MessagingProviderRecord {
+    private String channel;
     private String createdAt;
     private String dataScope;
     private String deletedAt;
     private String deletedBy;
+    private String displayName;
     private String docsUrl;
-    private String iconUrl;
+    private MediaResource icon;
     private String id;
     private Map<String, String> metadata;
     private String metadataSchemaVersion;
     private String organizationId;
+    private String providerCode;
     private String providerType;
     private Integer sortOrder;
     private String status;
@@ -21,6 +24,14 @@ public class MessagingProviderRecord {
     private String uuid;
     private String version;
     private String websiteUrl;
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
 
     public String getCreatedAt() {
         return this.createdAt;
@@ -54,6 +65,14 @@ public class MessagingProviderRecord {
         this.deletedBy = deletedBy;
     }
 
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
     public String getDocsUrl() {
         return this.docsUrl;
     }
@@ -62,12 +81,12 @@ public class MessagingProviderRecord {
         this.docsUrl = docsUrl;
     }
 
-    public String getIconUrl() {
-        return this.iconUrl;
+    public MediaResource getIcon() {
+        return this.icon;
     }
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
+    public void setIcon(MediaResource icon) {
+        this.icon = icon;
     }
 
     public String getId() {
@@ -100,6 +119,14 @@ public class MessagingProviderRecord {
 
     public void setOrganizationId(String organizationId) {
         this.organizationId = organizationId;
+    }
+
+    public String getProviderCode() {
+        return this.providerCode;
+    }
+
+    public void setProviderCode(String providerCode) {
+        this.providerCode = providerCode;
     }
 
     public String getProviderType() {

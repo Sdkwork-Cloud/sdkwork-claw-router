@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/instagram-agent@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-instagram-agent-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-instagram-agent-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:eb925aa5a96728615ef2ae993d8eb83fb8202ffb06e511af8a909183e927ad95",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/envguard@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-envguard-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-envguard-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:7912a18265a936895e69ef934abeacb7bfb37f369617e0b475dceb033bb1ea72",

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/clash-vpn@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-clash-vpn-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-clash-vpn-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ed22493573e160d2a128b719a5a7fe22dd5f08656b011566fa3023485d33d411",

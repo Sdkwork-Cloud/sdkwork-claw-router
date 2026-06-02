@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/audio-to-subtitle@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-audio-to-subtitle-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-audio-to-subtitle-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:60362b1931e739880757337da6a90843e24f749735fcc010206a8f9f155b4292",

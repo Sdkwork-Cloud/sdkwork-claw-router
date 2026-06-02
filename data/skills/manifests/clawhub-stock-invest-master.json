@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-invest-master@3.9.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-invest-master-3.9.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-invest-master-3.9.1.json"
+      },
       "version": "3.9.1",
       "runtime": "metadata",
       "checksumHash": "sha256:1f343febc1b7f26d7a6bd4f627a4da20ca3fcc14ebc418fc6c24b9ac49b47f4b",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/vnsh@1.1.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-vnsh-1.1.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-vnsh-1.1.1.json"
+      },
       "version": "1.1.1",
       "runtime": "metadata",
       "checksumHash": "sha256:b2d277a74cecd1167b33715de2db2c0d7d3daa968bd9b28a1e9f9b86a55403c0",

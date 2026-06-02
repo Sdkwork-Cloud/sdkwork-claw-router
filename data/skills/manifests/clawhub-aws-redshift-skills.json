@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/aws-redshift-skills@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-aws-redshift-skills-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-aws-redshift-skills-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:a09b7c7f328e191d9796fcdec5f613fafe71a0c5dba0351ced5bb0774b55c990",

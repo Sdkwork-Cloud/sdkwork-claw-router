@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mediatek@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mediatek-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mediatek-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:edeea94212106dff4ded9fd2ae1addcc5d2cd74f55f2fb2c044ba405166f16e7",

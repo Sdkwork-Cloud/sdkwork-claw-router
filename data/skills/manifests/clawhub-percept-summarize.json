@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/percept-summarize@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-percept-summarize-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-percept-summarize-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:3206bea4b96dfdd939ed901f840307e700fe1a9958631ac98e843df922d410d6",

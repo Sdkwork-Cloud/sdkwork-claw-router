@@ -8,12 +8,11 @@ namespace Sdkwork.ClawRouter.Backend.Models
     {
         public string? AccessUrl { get; set; }
         public string? AppType { get; set; }
+        public MediaResource? Artifact { get; set; }
         public string? BundleId { get; set; }
         public AdminAppConfig? Config { get; set; }
         public string? Description { get; set; }
-        public string? DownloadUrl { get; set; }
-        public Dictionary<string, string>? Icon { get; set; }
-        public string? IconUrl { get; set; }
+        public MediaResource? Icon { get; set; }
         public Dictionary<string, string>? InstallConfig { get; set; }
         public Dictionary<string, string>? InstallPlatforms { get; set; }
         public Dictionary<string, string>? InstallSkill { get; set; }

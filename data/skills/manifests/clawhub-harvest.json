@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/harvest@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-harvest-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-harvest-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b8ae6620e6fddf106ce4c76c0da572a95e07701a11571cb61c1b6070f548ffed",

@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/health-training-frontdoor@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-health-training-frontdoor-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-health-training-frontdoor-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:7926693a18789b522a3c611f74963aac8d75a88fcd9dfa26f10f3347db81e333",

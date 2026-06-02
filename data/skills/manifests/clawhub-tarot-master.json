@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/tarot-master@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-tarot-master-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-tarot-master-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:1f49c34ee647cd7f0a64870377e290cd3daa9fa84dd81f341adc29cbad95c3cd",

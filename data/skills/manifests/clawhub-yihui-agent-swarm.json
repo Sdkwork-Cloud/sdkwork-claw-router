@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/yihui-agent-swarm@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-yihui-agent-swarm-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-yihui-agent-swarm-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:b9ffb724496a1fd8379bb46c6b46c0725f75fdb36c0ba3b48836c49adc798b3c",

@@ -53,7 +53,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/amap-weather@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-amap-weather-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-amap-weather-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:08a1d029670591d02e0c5b6077eed9d19c5e0c0ddd1abca42bbc173d81678c31",

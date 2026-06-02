@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/quick-music@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-quick-music-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-quick-music-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:9a2fb456be7de8a1237a53c15ccc6c28c8f5997a469f37c828677ca670960169",

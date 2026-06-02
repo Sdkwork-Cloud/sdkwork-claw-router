@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/nintendo-switch-daily-report@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-nintendo-switch-daily-report-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-nintendo-switch-daily-report-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:99535ef4491f8bc03135a216c6ea3465fe1645b0de5e38847879ae6d052dde87",

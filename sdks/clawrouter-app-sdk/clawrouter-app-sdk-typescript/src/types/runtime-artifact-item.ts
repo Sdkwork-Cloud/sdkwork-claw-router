@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Runtime artifact item schema exposed by Claw Router. */
 export interface RuntimeArtifactItem {
   /** Artifact type field on runtime artifact item. */
@@ -14,12 +16,12 @@ export interface RuntimeArtifactItem {
   mimeType?: string | null;
   /** Name field on runtime artifact item. */
   name?: string | null;
+  /** Resource field on runtime artifact item. */
+  resource?: MediaResource;
   /** Sha 256 field on runtime artifact item. */
   sha256?: string | null;
   /** Size bytes field on runtime artifact item. */
   sizeBytes?: number | null;
   /** Storage key field on runtime artifact item. */
   storageKey?: string | null;
-  /** Storage url field on runtime artifact item. */
-  storageUrl?: string | null;
 }

@@ -1,3 +1,5 @@
+import type { MediaResource } from './media-resource';
+
 /** Site runtime settings response schema exposed by Claw Router. */
 export interface SiteRuntimeSettingsResponse {
   /** Accent color field on site runtime settings response. */
@@ -10,18 +12,18 @@ export interface SiteRuntimeSettingsResponse {
   description: string;
   /** Docs url field on site runtime settings response. */
   docsUrl: string;
-  /** Favicon url field on site runtime settings response. */
-  faviconUrl: string;
+  /** Favicon field on site runtime settings response. */
+  favicon: MediaResource;
   /** Footer copyright field on site runtime settings response. */
   footerCopyright: string;
-  /** Icon url field on site runtime settings response. */
-  iconUrl: string;
+  /** Icon field on site runtime settings response. */
+  icon: MediaResource;
   /** Icp record number field on site runtime settings response. */
   icpRecordNumber: string;
   /** Icp record url field on site runtime settings response. */
   icpRecordUrl: string;
-  /** Logo url field on site runtime settings response. */
-  logoUrl: string;
+  /** Logo field on site runtime settings response. */
+  logo: MediaResource;
   /** Police record number field on site runtime settings response. */
   policeRecordNumber: string;
   /** Police record url field on site runtime settings response. */

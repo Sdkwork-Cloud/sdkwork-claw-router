@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mealplan@3.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mealplan-3.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mealplan-3.0.0.json"
+      },
       "version": "3.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:f2f9492c4112992c1ef4175a54ee58a3b2ab6cba46dcec5631cfad44e4489a43",

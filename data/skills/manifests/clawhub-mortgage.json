@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/mortgage@2.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-mortgage-2.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-mortgage-2.1.0.json"
+      },
       "version": "2.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:ac7827623344514df71b939be2e8faa6565f7161392904d0eb8e9d14fc7493c1",

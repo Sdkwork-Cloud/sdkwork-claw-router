@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/marcus-investment-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-marcus-investment-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-marcus-investment-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:8f454bb7cd10a72e7758575446b5fcce7e17852f3cfa3a7755a39ea79c5c1795",

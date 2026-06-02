@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/inspector@1.0.3",
-      "artifactUrl": "data/skills/artifacts/clawhub-inspector-1.0.3.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-inspector-1.0.3.json"
+      },
       "version": "1.0.3",
       "runtime": "metadata",
       "checksumHash": "sha256:d65a74ba30a6e1a9000c2df5d657950a6df35511a42e3cdbbf4995e02a44bb26",

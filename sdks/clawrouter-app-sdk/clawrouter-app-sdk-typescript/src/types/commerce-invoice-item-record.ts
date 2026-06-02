@@ -4,10 +4,14 @@ export interface CommerceInvoiceItemRecord {
   amount: string;
   /** Created at field on commerce invoice item record. */
   created_at: string;
+  /** Id field on commerce invoice item record. */
+  id?: string;
   /** Invoice id field on commerce invoice item record. */
   invoice_id: string;
   /** Order item id field on commerce invoice item record. */
   order_item_id?: string;
+  /** Tax amount field on commerce invoice item record. */
+  tax_amount: string;
   /** Tenant id field on commerce invoice item record. */
   tenant_id: string;
   /** Title field on commerce invoice item record. */

@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/wgs84@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-wgs84-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-wgs84-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:148c5a22c8e0c41be3422dd44e504b238df07e3a1ec44984d9365909dec6fbf9",

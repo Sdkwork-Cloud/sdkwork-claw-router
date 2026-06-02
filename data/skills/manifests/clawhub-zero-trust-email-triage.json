@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/zero-trust-email-triage@0.1.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-zero-trust-email-triage-0.1.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-zero-trust-email-triage-0.1.2.json"
+      },
       "version": "0.1.2",
       "runtime": "metadata",
       "checksumHash": "sha256:079550f86f12a1a44531dc063833ae10bec3d52048c950f476c8b1f0321c29a2",

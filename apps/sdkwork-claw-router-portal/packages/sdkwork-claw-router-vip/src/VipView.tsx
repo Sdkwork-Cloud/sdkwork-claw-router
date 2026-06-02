@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Check, Crown, Loader2, Sparkles, Star, Zap, Info, X, QrCode, CreditCard, Gift, WalletCards, User } from 'lucide-react';
 import { toDataURL } from 'qrcode';
 import { BusinessStatePanel, formatRechargeCurrencyAmount } from 'sdkwork-claw-router-commons';
-import { hasStoredPortalSession } from 'sdkwork-claw-router-commons/runtime';
+import { hasStoredPortalSession, readMediaResourceUrl, useSiteBranding, type ClawRouterMediaResource } from 'sdkwork-claw-router-commons/runtime';
 import { CheckoutService, type CheckoutStatus } from 'sdkwork-claw-router-console-checkout';
 import { RechargePackageSelector, RechargeService, type RechargeOption } from 'sdkwork-claw-router-console-recharge';
 import { UserService, type UserProfile } from 'sdkwork-claw-router-console-user';
@@ -37,7 +37,7 @@ function getCurrentUserDisplayName(currentUser: UserProfile | null, t: Translati
 }
 
 function getCurrentUserAvatarSource(currentUser: UserProfile | null): string {
-  return currentUser?.avatar?.trim() ?? '';
+  return readMediaResourceUrl(currentUser?.avatar);
 }
 
 export function VipView() {
@@ -80,7 +80,7 @@ function VipPurchaseExperience({
     packageItem: VipPackage;
     paymentId?: string;
     qrCodePayload?: string;
-    qrCodeImageUrl?: string;
+    qrCode?: ClawRouterMediaResource;
     requestNo: string;
     status: string;
   } | null>(null);
@@ -151,7 +151,7 @@ function VipPurchaseExperience({
         packageItem: pkg,
         paymentId: result.paymentId,
         qrCodePayload: result.qrCodePayload,
-        qrCodeImageUrl: result.qrCodeImageUrl,
+        qrCode: result.qrCode,
         requestNo: result.requestNo,
         status: result.status,
       });
@@ -324,6 +324,8 @@ function VipPointsPurchaseModal({
   onClose: () => void;
 }) {
   const { t } = useTranslation();
+  const siteBranding = useSiteBranding();
+  const agreementBrandName = siteBranding.shortName || siteBranding.siteName;
   const [selectedRechargeOptionId, setSelectedRechargeOptionId] = useState('');
   const [selectedRechargeOption, setSelectedRechargeOption] = useState<RechargeOption | null>(null);
   const [checkoutError, setCheckoutError] = useState('');
@@ -403,36 +405,6 @@ function VipPointsPurchaseModal({
     setGeneratedPointsQrCodeUrl('');
   }, []);
 
-  const cancelRechargeOrderSilently = useCallback((orderNo: string, note: string) => {
-    void RechargeService.cancelRechargeOrder(orderNo, note).catch(() => {});
-  }, []);
-
-  const cancelActiveCheckoutOrder = useCallback(async (
-    checkoutOrder: {
-      currencyCode: string;
-      orderNo: string;
-      optionId: string;
-      packageId?: string;
-    },
-  ) => {
-    try {
-      await RechargeService.cancelRechargeOrder(checkoutOrder.orderNo, 'package-switch');
-      if (activeCheckoutOrderRef.current?.orderNo === checkoutOrder.orderNo) {
-        activeCheckoutOrderRef.current = null;
-      }
-      return;
-    } catch (error) {
-      const latestStatus = await CheckoutService.fetchCheckoutStatus(checkoutOrder.orderNo).catch(() => null);
-      if (latestStatus && isTerminalPointCheckoutStatus(latestStatus.paymentStatus)) {
-        if (activeCheckoutOrderRef.current?.orderNo === checkoutOrder.orderNo) {
-          activeCheckoutOrderRef.current = null;
-        }
-        return;
-      }
-      throw error;
-    }
-  }, []);
-
   const createPointsCheckout = useCallback(async (option: RechargeOption, forceRefresh = false, isActive: () => boolean = () => true) => {
     const checkoutSequence = latestCheckoutRequestRef.current + 1;
     latestCheckoutRequestRef.current = checkoutSequence;
@@ -452,26 +424,11 @@ function VipPointsPurchaseModal({
     setIsCheckoutLoading(true);
     let createdOrderNo: string | null = null;
     try {
-      if (!canReuseActiveOrder && activeCheckoutOrder && activeCheckoutOrder.optionId !== option.id) {
-        await cancelActiveCheckoutOrder(activeCheckoutOrder);
-      }
-
-      const reusableCheckoutOrder = activeCheckoutOrderRef.current;
-      const canReuseCurrentOrder =
-        !forceRefresh
-        && reusableCheckoutOrder !== null
-        && reusableCheckoutOrder.optionId === option.id
-        && reusableCheckoutOrder.currencyCode === option.currencyCode
-        && reusableCheckoutOrder.packageId === option.packageId;
-
-      const targetOrderNo = canReuseCurrentOrder
-        ? reusableCheckoutOrder.orderNo
+      const targetOrderNo = canReuseActiveOrder
+        ? activeCheckoutOrder.orderNo
         : (createdOrderNo = (await RechargeService.submitRecharge(option.amount, option.currencyCode, option.packageId)).orderNo);
       const checkoutStatus = await CheckoutService.fetchCheckoutStatus(targetOrderNo);
       if (!isActive() || latestCheckoutRequestRef.current !== checkoutSequence) {
-        if (createdOrderNo) {
-          cancelRechargeOrderSilently(createdOrderNo, 'selection-replaced');
-        }
         return;
       }
       if (!isTerminalPointCheckoutStatus(checkoutStatus.paymentStatus)) {
@@ -487,9 +444,6 @@ function VipPointsPurchaseModal({
       onCheckoutCreated(checkoutStatus);
     } catch (error) {
       if (!isActive() || latestCheckoutRequestRef.current !== checkoutSequence) {
-        if (createdOrderNo) {
-          cancelRechargeOrderSilently(createdOrderNo, 'selection-replaced');
-        }
         return;
       }
       if (createdOrderNo) {
@@ -508,7 +462,7 @@ function VipPointsPurchaseModal({
         setIsCheckoutLoading(false);
       }
     }
-  }, [cancelActiveCheckoutOrder, cancelRechargeOrderSilently, onCheckoutCreated, resetCheckoutPresentation, t]);
+  }, [onCheckoutCreated, resetCheckoutPresentation, t]);
 
   const handleRechargeOptionChange = useCallback((option: RechargeOption | null) => {
     clearSelectionCheckoutTimer();
@@ -696,7 +650,10 @@ function VipPointsPurchaseModal({
                 {t('vip.pointsPurchase.agreed', 'You have agreed')}
               </p>
               <p className="mt-2 text-sm font-semibold text-slate-300">
-                {t('vip.pointsPurchase.agreement', 'Instant Payment Service Agreement (including auto-renewal terms)')}
+                {t('vip.pointsPurchase.agreement', {
+                  brandName: agreementBrandName,
+                  defaultValue: '{{brandName}} Paid Service Agreement (including auto-renewal terms)',
+                })}
               </p>
             </div>
           </div>
@@ -955,7 +912,7 @@ function VipPaymentDialog({
     packageItem: VipPackage;
     paymentId?: string;
     qrCodePayload?: string;
-    qrCodeImageUrl?: string;
+    qrCode?: ClawRouterMediaResource;
     requestNo: string;
     status: string;
   };
@@ -964,11 +921,12 @@ function VipPaymentDialog({
   const { t } = useTranslation();
   const pkg = paymentDialog.packageItem;
   const [generatedQrCodeUrl, setGeneratedQrCodeUrl] = useState('');
+  const qrCodeSource = readMediaResourceUrl(paymentDialog.qrCode);
 
   useEffect(() => {
     let active = true;
     setGeneratedQrCodeUrl('');
-    if (!paymentDialog.qrCodePayload || paymentDialog.qrCodeImageUrl) {
+    if (!paymentDialog.qrCodePayload || qrCodeSource) {
       return () => { active = false; };
     }
     void toDataURL(paymentDialog.qrCodePayload, {
@@ -991,9 +949,9 @@ function VipPaymentDialog({
         }
       });
     return () => { active = false; };
-  }, [paymentDialog.qrCodeImageUrl, paymentDialog.qrCodePayload]);
+  }, [paymentDialog.qrCodePayload, qrCodeSource]);
 
-  const qrImageUrl = paymentDialog.qrCodeImageUrl || generatedQrCodeUrl;
+  const qrImageUrl = qrCodeSource || generatedQrCodeUrl;
   const priceText = formatCurrency(pkg.priceAmount, pkg.currencyCode);
   const durationText = getDurationText(pkg, t);
   const includedFeatures = pkg.features.filter((feature) => feature.included).slice(0, 4);

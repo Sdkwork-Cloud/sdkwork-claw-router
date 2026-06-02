@@ -52,7 +52,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/algorand@1.0.2",
-      "artifactUrl": "data/skills/artifacts/clawhub-algorand-1.0.2.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-algorand-1.0.2.json"
+      },
       "version": "1.0.2",
       "runtime": "metadata",
       "checksumHash": "sha256:31923a636818990b80321ea9e07dd2eb8f1a0c2c0db4cf7a26715394139fa7df",

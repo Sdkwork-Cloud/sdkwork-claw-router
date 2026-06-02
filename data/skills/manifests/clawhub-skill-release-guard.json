@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/skill-release-guard@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-skill-release-guard-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-skill-release-guard-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:632abb060a48858ded16a3dda36948e99c8527585a0b1b6cdf152e168f59cb2d",

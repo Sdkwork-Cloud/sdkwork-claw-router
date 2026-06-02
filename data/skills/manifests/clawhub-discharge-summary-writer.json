@@ -51,7 +51,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/discharge-summary-writer@0.1.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-discharge-summary-writer-0.1.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-discharge-summary-writer-0.1.0.json"
+      },
       "version": "0.1.0",
       "runtime": "metadata",
       "checksumHash": "sha256:af90a8905b582c81d1ba0d62096e3e60105ed3bb3c6a0ce1801cd2589e2bcf3f",

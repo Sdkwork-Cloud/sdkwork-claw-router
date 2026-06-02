@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/corpus-search@1.0.1",
-      "artifactUrl": "data/skills/artifacts/clawhub-corpus-search-1.0.1.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-corpus-search-1.0.1.json"
+      },
       "version": "1.0.1",
       "runtime": "metadata",
       "checksumHash": "sha256:51f1cd081f574bb7ade93c2455139dac3d4100ddfdfdb11f2345728fd8852a09",

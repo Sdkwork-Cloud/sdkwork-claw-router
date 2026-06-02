@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/fat-ai-cli-skill@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-fat-ai-cli-skill-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-fat-ai-cli-skill-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:338680190a30801c1fa17c60250d0d8640dd1b89057c24f9ef8d5aec50a32727",

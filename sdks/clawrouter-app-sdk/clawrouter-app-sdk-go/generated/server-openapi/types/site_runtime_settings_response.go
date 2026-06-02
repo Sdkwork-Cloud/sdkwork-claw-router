@@ -7,12 +7,12 @@ type SiteRuntimeSettingsResponse struct {
 	CustomCss string `json:"customCss"`
 	Description string `json:"description"`
 	DocsUrl string `json:"docsUrl"`
-	FaviconUrl string `json:"faviconUrl"`
+	Favicon MediaResource `json:"favicon"`
 	FooterCopyright string `json:"footerCopyright"`
-	IconUrl string `json:"iconUrl"`
+	Icon MediaResource `json:"icon"`
 	IcpRecordNumber string `json:"icpRecordNumber"`
 	IcpRecordUrl string `json:"icpRecordUrl"`
-	LogoUrl string `json:"logoUrl"`
+	Logo MediaResource `json:"logo"`
 	PoliceRecordNumber string `json:"policeRecordNumber"`
 	PoliceRecordUrl string `json:"policeRecordUrl"`
 	PrivacyUrl string `json:"privacyUrl"`

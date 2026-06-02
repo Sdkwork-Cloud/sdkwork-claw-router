@@ -50,7 +50,11 @@
   "artifacts": [
     {
       "artifactRef": "clawhub://skills/stock-auto-trade@1.0.0",
-      "artifactUrl": "data/skills/artifacts/clawhub-stock-auto-trade-1.0.0.json",
+      "artifact": {
+        "kind": "document",
+        "source": "provider_asset",
+        "uri": "data/skills/artifacts/clawhub-stock-auto-trade-1.0.0.json"
+      },
       "version": "1.0.0",
       "runtime": "metadata",
       "checksumHash": "sha256:5822c911c733e499dcdf3e71d4f967b49d9fbb19d34193915c4d9792b8eea259",
