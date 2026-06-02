@@ -302,6 +302,228 @@ async fn database_config_router_serves_signed_subject_model_catalog_commands() {
 }
 
 #[tokio::test]
+async fn database_config_router_serves_admin_site_management() {
+    let database_url = unique_sqlite_url();
+    let pool = create_sqlite_pool(&database_url).await;
+    create_schema(&pool).await;
+    seed_catalog(&pool).await;
+    pool.close().await;
+
+    let router = configured_router_from_database_config(
+        DatabaseConfig::from_url_with_max_connections(database_url.as_str(), 1).unwrap(),
+        Some(api_key_security_config()),
+        Some(trusted_subject_config()),
+        Some(app_session_config()),
+    )
+    .await
+    .unwrap();
+
+    let create_site_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "POST",
+            "/backend/v3/api/sites",
+            Body::from(
+                r#"{"siteCode":"acme-relay","siteName":"Acme Relay","displayName":"Acme Relay","description":"Acme hosted relay","baseUrl":"https://relay.example.com","websiteUrl":"https://example.com","docsUrl":"https://example.com/docs","siteType":"relay","ownerKind":"partner","regionCode":"us-east","environment":"production","status":"active","credentialRef":"secret://acme-relay","maskedLabel":"sk-***-relay"}"#,
+            ),
+        ),
+    )
+    .await;
+    assert_eq!("2000", create_site_payload["code"]);
+    let site = &create_site_payload["data"]["item"];
+    assert_eq!("acme_relay", site["siteCode"]);
+    assert_eq!("Acme Relay", site["displayName"]);
+    assert_eq!("https://relay.example.com", site["baseUrl"]);
+    assert_eq!("active", site["status"]);
+    assert!(site.get("credentialRef").is_none());
+    let site_id = site["id"].as_str().unwrap().to_owned();
+
+    let sites_payload = request_json(
+        router.clone(),
+        app_session_request("GET", "/backend/v3/api/sites?q=acme", Body::empty()),
+    )
+    .await;
+    assert_eq!("2000", sites_payload["code"]);
+    assert!(sites_payload["data"]["items"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .any(|item| item["id"] == site_id));
+
+    let update_site_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "PATCH",
+            &format!("/backend/v3/api/sites/{site_id}"),
+            Body::from(r#"{"displayName":"Acme Relay Plus","baseUrl":"https://relay-plus.example.com","environment":"sandbox","status":"active","maskedLabel":null}"#),
+        ),
+    )
+    .await;
+    assert_eq!("2000", update_site_payload["code"]);
+    assert_eq!(
+        "Acme Relay Plus",
+        update_site_payload["data"]["item"]["displayName"]
+    );
+    assert_eq!("sandbox", update_site_payload["data"]["item"]["environment"]);
+
+    let create_model_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "POST",
+            &format!("/backend/v3/api/sites/{site_id}/models"),
+            Body::from(
+                r#"{"modelCode":"gpt-4o-mini","modelName":"GPT-4o mini","displayName":"GPT-4o mini","providerModel":"gpt-4o-mini","providerNativeModel":"gpt-4o-mini","vendorCode":"openai","modality":"chat","capabilities":["chat"],"contextTokens":128000,"maxInputTokens":128000,"maxOutputTokens":16384,"supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true,"status":"active"}"#,
+            ),
+        ),
+    )
+    .await;
+    assert_eq!("2000", create_model_payload["code"]);
+    assert_eq!(
+        "gpt_4o_mini",
+        create_model_payload["data"]["item"]["modelCode"]
+    );
+    assert_eq!(true, create_model_payload["data"]["item"]["supportsTools"]);
+    let site_model_id = create_model_payload["data"]["item"]["id"]
+        .as_str()
+        .unwrap()
+        .to_owned();
+
+    let models_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "GET",
+            &format!("/backend/v3/api/sites/{site_id}/models"),
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", models_payload["code"]);
+    assert_eq!(1, models_payload["data"]["items"].as_array().unwrap().len());
+
+    let update_model_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "PATCH",
+            &format!("/backend/v3/api/sites/{site_id}/models/{site_model_id}"),
+            Body::from(r#"{"displayName":"GPT-4o mini relay","supportsTools":false,"status":"active"}"#),
+        ),
+    )
+    .await;
+    assert_eq!("2000", update_model_payload["code"]);
+    assert_eq!(
+        "GPT-4o mini relay",
+        update_model_payload["data"]["item"]["displayName"]
+    );
+    assert_eq!(false, update_model_payload["data"]["item"]["supportsTools"]);
+
+    let replace_models_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "PUT",
+            &format!("/backend/v3/api/sites/{site_id}/models"),
+            Body::from(
+                r#"{"items":[{"modelCode":"gpt-4o-mini","modelName":"GPT-4o mini","providerModel":"gpt-4o-mini","vendorCode":"openai","modality":"chat","capabilities":["chat","tools"],"contextTokens":128000,"supportsStreaming":true,"supportsTools":true,"supportsJsonSchema":true,"status":"active"},{"modelCode":"text-embedding-3-small","modelName":"Text embedding 3 small","providerModel":"text-embedding-3-small","vendorCode":"openai","modality":"embedding","capabilities":["embedding"],"supportsStreaming":false,"supportsTools":false,"supportsJsonSchema":false,"status":"active"}]}"#,
+            ),
+        ),
+    )
+    .await;
+    assert_eq!("2000", replace_models_payload["code"]);
+    assert_eq!(
+        2,
+        replace_models_payload["data"]["items"].as_array().unwrap().len()
+    );
+
+    let channels_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "GET",
+            &format!("/backend/v3/api/sites/{site_id}/channels"),
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", channels_payload["code"]);
+    assert_eq!(0, channels_payload["data"]["items"].as_array().unwrap().len());
+
+    let test_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "POST",
+            &format!("/backend/v3/api/sites/{site_id}/test_connection"),
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", test_payload["code"]);
+    assert_eq!("success", test_payload["data"]["status"]);
+    assert_eq!("healthy", test_payload["data"]["healthStatus"]);
+
+    let health_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "POST",
+            &format!("/backend/v3/api/sites/{site_id}/health_check"),
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", health_payload["code"]);
+    assert_eq!("success", health_payload["data"]["status"]);
+
+    let refreshed_sites_payload = request_json(
+        router.clone(),
+        app_session_request("GET", "/backend/v3/api/sites?q=acme", Body::empty()),
+    )
+    .await;
+    assert_eq!(
+        "healthy",
+        refreshed_sites_payload["data"]["items"][0]["healthStatus"]
+    );
+
+    let replaced_model_id = replace_models_payload["data"]["items"][0]["id"]
+        .as_str()
+        .unwrap()
+        .to_owned();
+    let delete_model_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "DELETE",
+            &format!("/backend/v3/api/sites/{site_id}/models/{replaced_model_id}"),
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", delete_model_payload["code"]);
+    assert_eq!(true, delete_model_payload["data"]["deleted"]);
+
+    let delete_site_payload = request_json(
+        router.clone(),
+        app_session_request(
+            "DELETE",
+            &format!("/backend/v3/api/sites/{site_id}"),
+            Body::empty(),
+        ),
+    )
+    .await;
+    assert_eq!("2000", delete_site_payload["code"]);
+    assert_eq!(true, delete_site_payload["data"]["deleted"]);
+
+    let recreate_payload = request_json(
+        router,
+        app_session_request(
+            "POST",
+            "/backend/v3/api/sites",
+            Body::from(
+                r#"{"siteCode":"acme-relay","siteName":"Acme Relay","displayName":"Acme Relay","baseUrl":"https://relay.example.com","status":"active"}"#,
+            ),
+        ),
+    )
+    .await;
+    assert_eq!("2000", recreate_payload["code"]);
+    assert_eq!("acme_relay", recreate_payload["data"]["item"]["siteCode"]);
+}
+
+#[tokio::test]
 async fn database_config_router_rejects_missing_api_key_pepper_for_runtime_catalog() {
     let catalog = seeded_sqlite_catalog().await.unwrap();
 
@@ -3372,6 +3594,75 @@ async fn create_schema(pool: &SqlitePool) {
             version INTEGER NOT NULL DEFAULT 0,
             deleted_at TEXT
         )"#,
+        r#"CREATE TABLE ai_site (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            site_code TEXT NOT NULL,
+            site_name TEXT NOT NULL,
+            display_name TEXT NOT NULL,
+            description TEXT,
+            base_url TEXT,
+            website_url TEXT,
+            docs_url TEXT,
+            site_type TEXT NOT NULL DEFAULT 'relay',
+            owner_kind TEXT,
+            region_code TEXT,
+            environment INTEGER NOT NULL DEFAULT 1,
+            health_status INTEGER NOT NULL DEFAULT 1,
+            last_latency_ms INTEGER,
+            consecutive_error_count INTEGER NOT NULL DEFAULT 0,
+            last_checked_at TEXT,
+            last_sync_at TEXT,
+            sort_order INTEGER NOT NULL DEFAULT 100
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_site_tenant_code ON ai_site (tenant_id, organization_id, site_code)",
+        r#"CREATE TABLE ai_site_service (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            site_id INTEGER NOT NULL,
+            site_code TEXT NOT NULL,
+            service_code TEXT NOT NULL,
+            service_name TEXT NOT NULL,
+            service_type TEXT NOT NULL DEFAULT 'ai_model_relay',
+            protocol_code TEXT,
+            base_url TEXT,
+            auth_type INTEGER NOT NULL DEFAULT 1,
+            credential_profile INTEGER NOT NULL DEFAULT 1,
+            auth_config TEXT NOT NULL DEFAULT '{}',
+            credential_ref TEXT,
+            credential_hash TEXT,
+            masked_label TEXT,
+            credential_version INTEGER NOT NULL DEFAULT 1,
+            region_code TEXT,
+            environment INTEGER NOT NULL DEFAULT 1,
+            health_status INTEGER NOT NULL DEFAULT 1,
+            last_latency_ms INTEGER,
+            consecutive_error_count INTEGER NOT NULL DEFAULT 0,
+            last_verified_at TEXT,
+            last_sync_at TEXT,
+            sort_order INTEGER NOT NULL DEFAULT 100
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_site_service_site_code ON ai_site_service (tenant_id, organization_id, site_id, service_code)",
         r#"CREATE TABLE ai_channel (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL DEFAULT 'seed-channel',
@@ -3380,6 +3671,11 @@ async fn create_schema(pool: &SqlitePool) {
             data_scope INTEGER,
             provider_id INTEGER,
             provider_code TEXT NOT NULL,
+            site_id INTEGER,
+            site_service_id INTEGER,
+            site_code TEXT,
+            site_service_code TEXT,
+            site_channel_role TEXT,
             channel_code TEXT,
             channel_name TEXT,
             channel_type TEXT,
@@ -3439,6 +3735,52 @@ async fn create_schema(pool: &SqlitePool) {
             effective_from TEXT,
             effective_to TEXT
         )"#,
+        r#"CREATE TABLE ai_site_model (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            uuid TEXT NOT NULL,
+            tenant_id INTEGER NOT NULL DEFAULT 0,
+            organization_id INTEGER NOT NULL DEFAULT 0,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            site_id INTEGER NOT NULL,
+            site_service_id INTEGER NOT NULL,
+            site_code TEXT NOT NULL,
+            site_service_code TEXT,
+            service_type TEXT NOT NULL DEFAULT 'ai_model_relay',
+            model_id INTEGER,
+            catalog_key TEXT,
+            model_code TEXT NOT NULL,
+            model_name TEXT NOT NULL,
+            display_name TEXT,
+            provider_model TEXT,
+            provider_native_model TEXT,
+            vendor_code TEXT,
+            modality TEXT,
+            capability INTEGER,
+            capabilities TEXT,
+            model_aliases TEXT,
+            default_parameters TEXT,
+            context_tokens INTEGER,
+            max_input_tokens INTEGER,
+            max_output_tokens INTEGER,
+            supports_streaming INTEGER,
+            supports_tools INTEGER,
+            supports_json_schema INTEGER,
+            pricing_snapshot TEXT,
+            health_status INTEGER NOT NULL DEFAULT 1,
+            last_latency_ms INTEGER,
+            consecutive_error_count INTEGER NOT NULL DEFAULT 0,
+            last_sync_at TEXT,
+            effective_from TEXT,
+            effective_to TEXT
+        )"#,
+        "CREATE UNIQUE INDEX uk_ai_site_model_service_model ON ai_site_model (tenant_id, organization_id, site_id, site_service_id, model_code)",
         r#"CREATE TABLE ai_modality (
             id INTEGER PRIMARY KEY,
             uuid TEXT NOT NULL,
@@ -3701,6 +4043,40 @@ async fn create_schema(pool: &SqlitePool) {
             rate_limit_policy_id INTEGER,
             effective_from TEXT,
             effective_to TEXT
+        )"#,
+        r#"CREATE TABLE ai_model_mapping_rule (
+            id INTEGER PRIMARY KEY,
+            uuid TEXT NOT NULL DEFAULT 'seed-model-mapping-rule',
+            tenant_id INTEGER NOT NULL DEFAULT 10,
+            organization_id INTEGER NOT NULL DEFAULT 20,
+            data_scope INTEGER NOT NULL DEFAULT 0,
+            status INTEGER NOT NULL DEFAULT 1,
+            created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            version INTEGER NOT NULL DEFAULT 0,
+            deleted_at TEXT,
+            deleted_by INTEGER,
+            metadata TEXT NOT NULL DEFAULT '{}',
+            scope_type TEXT NOT NULL DEFAULT 'global',
+            vendor_id INTEGER,
+            vendor_code TEXT,
+            channel_id INTEGER,
+            channel_code TEXT,
+            source_model TEXT NOT NULL DEFAULT '',
+            source_catalog_key TEXT,
+            source_vendor_code TEXT,
+            target_model TEXT NOT NULL DEFAULT '',
+            target_catalog_key TEXT,
+            target_vendor_code TEXT,
+            target_provider_model TEXT,
+            target_provider_native_model TEXT,
+            mapping_mode TEXT NOT NULL DEFAULT 'alias',
+            match_type TEXT NOT NULL DEFAULT 'exact',
+            priority INTEGER NOT NULL DEFAULT 100,
+            enabled INTEGER NOT NULL DEFAULT 1,
+            effective_from TEXT,
+            effective_to TEXT,
+            description TEXT
         )"#,
         r#"CREATE TABLE ai_resource (
             id INTEGER PRIMARY KEY,

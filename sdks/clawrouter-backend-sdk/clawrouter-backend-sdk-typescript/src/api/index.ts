@@ -14,4 +14,5 @@ export * from './platform';
 export * from './system';
 export * from './prompts';
 export * from './service-providers';
+export * from './sites';
 export * from './oss';

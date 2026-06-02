@@ -10,15 +10,19 @@ use crate::infrastructure::sql::model_catalog_import::{
 };
 use crate::infrastructure::sql::model_modality;
 use crate::ports::{
-    AdminAiModelItem, AdminModelCatalogSyncItem, AdminModelCommandFuture, AdminModelStore,
-    AdminModelSubject, AdminModelVendorItem, CreateAdminAiModelCommand,
-    CreateAdminModelVendorCommand, DeleteAdminAiModelCommand, ListAdminAiModelsQuery,
-    ListAdminModelVendorsQuery, SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
+    AdminAiModelItem, AdminModelCatalogSyncItem, AdminModelCommandFuture,
+    AdminModelMappingRuleItem, AdminModelMappingRulePatch, AdminModelStore, AdminModelSubject,
+    AdminModelVendorItem, CreateAdminAiModelCommand, CreateAdminModelMappingCommand,
+    CreateAdminModelVendorCommand, DeleteAdminAiModelCommand, DeleteAdminModelMappingCommand,
+    ListAdminAiModelsQuery, ListAdminModelMappingsQuery, ListAdminModelVendorsQuery,
+    ResolveAdminModelMappingQuery, ResolveAdminModelMappingResult, SyncAdminModelCatalogCommand,
+    UpdateAdminAiModelCommand, UpdateAdminModelMappingCommand,
 };
 
 const MODEL_VENDOR_TARGET_TYPE: i32 = 41;
 const AI_MODEL_TARGET_TYPE: i32 = 42;
 const MODEL_CATALOG_SYNC_TARGET_TYPE: i32 = 43;
+const MODEL_MAPPING_TARGET_TYPE: i32 = 44;
 const OFFICIAL_REFERENCE_PRICE_SIDE: i32 = 1;
 const INPUT_BILLING_METER_FILTER_SQL: &str = "('llm_input_token', 'embedding_input_token', 'image_input_token', 'audio_input_second', 'audio_input_minute', 'tts_input_character', 'api_request')";
 const OUTPUT_BILLING_METER_FILTER_SQL: &str = "('llm_output_token', 'image_output_token', 'image_result', 'audio_output_second', 'music_output_second', 'sfx_result', 'video_output_second', 'api_result')";
@@ -70,6 +74,30 @@ struct EffectiveModelUpdate {
     replacement_model: Option<String>,
 }
 
+#[derive(Debug, Clone)]
+struct EffectiveModelMappingRule {
+    scope_type: String,
+    vendor_id: Option<i64>,
+    vendor_code: Option<String>,
+    channel_id: Option<i64>,
+    channel_code: Option<String>,
+    source_model: String,
+    source_catalog_key: Option<String>,
+    source_vendor_code: Option<String>,
+    target_model: String,
+    target_catalog_key: Option<String>,
+    target_vendor_code: Option<String>,
+    target_provider_model: Option<String>,
+    target_provider_native_model: Option<String>,
+    mapping_mode: String,
+    match_type: String,
+    priority: i32,
+    enabled: bool,
+    effective_from: Option<String>,
+    effective_to: Option<String>,
+    description: Option<String>,
+}
+
 impl SqliteAdminModelStore {
     pub fn new(pool: SqlitePool) -> Self {
         Self {
@@ -99,6 +127,13 @@ impl AdminModelStore for SqliteAdminModelStore {
         query: ListAdminAiModelsQuery,
     ) -> AdminModelCommandFuture<'a, Vec<AdminAiModelItem>> {
         Box::pin(async move { list_models(&self.pool, query).await })
+    }
+
+    fn list_model_mappings<'a>(
+        &'a self,
+        query: ListAdminModelMappingsQuery,
+    ) -> AdminModelCommandFuture<'a, Vec<AdminModelMappingRuleItem>> {
+        Box::pin(async move { list_model_mappings(&self.pool, query).await })
     }
 
     fn create_vendor<'a>(
@@ -198,6 +233,52 @@ impl AdminModelStore for SqliteAdminModelStore {
             tx.commit()
                 .await
                 .map_err(|error| store_error("failed to commit ai model transaction", error))?;
+            Ok(item)
+        })
+    }
+
+    fn create_model_mapping<'a>(
+        &'a self,
+        command: CreateAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, AdminModelMappingRuleItem> {
+        Box::pin(async move {
+            let mut tx =
+                self.pool.begin().await.map_err(|error| {
+                    store_error("failed to begin model mapping transaction", error)
+                })?;
+            let mapping_id = insert_model_mapping(&mut tx, &command).await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                command.subject.operator_type,
+                "create_model_mapping",
+                MODEL_MAPPING_TARGET_TYPE,
+                mapping_id,
+                serde_json::json!({
+                    "action": "create_model_mapping",
+                    "mappingId": mapping_id,
+                    "scopeType": &command.draft.scope_type,
+                    "sourceModel": &command.draft.source_model,
+                    "targetModel": &command.draft.target_model,
+                    "priority": command.draft.priority
+                }),
+            )
+            .await?;
+            let item = load_model_mapping_by_id(
+                &mut tx,
+                mapping_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?
+            .ok_or_else(|| DomainError::new("created model mapping could not be reloaded"))?;
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit model mapping transaction", error)
+            })?;
             Ok(item)
         })
     }
@@ -353,6 +434,53 @@ impl AdminModelStore for SqliteAdminModelStore {
         })
     }
 
+    fn update_model_mapping<'a>(
+        &'a self,
+        command: UpdateAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, AdminModelMappingRuleItem> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin model mapping update transaction", error)
+            })?;
+            let current = find_model_mapping_for_update(&mut tx, &command).await?;
+            let effective = effective_model_mapping_patch(&current, &command.patch);
+            update_model_mapping_row(&mut tx, current.id, &command, &effective).await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                command.subject.operator_type,
+                "update_model_mapping",
+                MODEL_MAPPING_TARGET_TYPE,
+                current.id,
+                serde_json::json!({
+                    "action": "update_model_mapping",
+                    "mappingId": current.id,
+                    "scopeType": &effective.scope_type,
+                    "sourceModel": &effective.source_model,
+                    "targetModel": &effective.target_model,
+                    "enabled": effective.enabled
+                }),
+            )
+            .await?;
+            let item = load_model_mapping_by_id(
+                &mut tx,
+                current.id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?
+            .ok_or_else(|| DomainError::new("updated model mapping could not be reloaded"))?;
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit model mapping update transaction", error)
+            })?;
+            Ok(item)
+        })
+    }
+
     fn sync_catalog<'a>(
         &'a self,
         command: SyncAdminModelCatalogCommand,
@@ -501,6 +629,50 @@ impl AdminModelStore for SqliteAdminModelStore {
             Ok(())
         })
     }
+
+    fn delete_model_mapping<'a>(
+        &'a self,
+        command: DeleteAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, ()> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin model mapping delete transaction", error)
+            })?;
+            let mapping = find_model_mapping_for_delete(&mut tx, &command).await?;
+            soft_delete_model_mapping(&mut tx, mapping.id, &command).await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                command.subject.operator_type,
+                "delete_model_mapping",
+                MODEL_MAPPING_TARGET_TYPE,
+                mapping.id,
+                serde_json::json!({
+                    "action": "delete_model_mapping",
+                    "mappingId": mapping.id,
+                    "scopeType": mapping.scope_type,
+                    "sourceModel": mapping.source_model,
+                    "targetModel": mapping.target_model
+                }),
+            )
+            .await?;
+            tx.commit().await.map_err(|error| {
+                store_error("failed to commit model mapping delete transaction", error)
+            })?;
+            Ok(())
+        })
+    }
+
+    fn resolve_model_mapping<'a>(
+        &'a self,
+        query: ResolveAdminModelMappingQuery,
+    ) -> AdminModelCommandFuture<'a, ResolveAdminModelMappingResult> {
+        Box::pin(async move { resolve_model_mapping(&self.pool, query).await })
+    }
 }
 
 fn is_status_only_model_update(command: &UpdateAdminAiModelCommand) -> bool {
@@ -642,6 +814,53 @@ async fn list_models(
     rows.into_iter().map(model_from_row).collect()
 }
 
+async fn list_model_mappings(
+    pool: &SqlitePool,
+    query: ListAdminModelMappingsQuery,
+) -> DomainResult<Vec<AdminModelMappingRuleItem>> {
+    let channel_id = query.channel_id;
+    let scope_type = query.scope_type.as_deref();
+    let vendor_code = query.vendor_code.as_deref();
+    let q = query.q.as_deref();
+    let rows = sqlx::query(&mapping_select_sql(
+        r#"
+        WHERE r.tenant_id = ?
+          AND r.organization_id = ?
+          AND r.deleted_at IS NULL
+          AND (? IS NULL OR r.scope_type = ?)
+          AND (? IS NULL OR r.vendor_code = ?)
+          AND (? IS NULL OR r.channel_id = ?)
+          AND (
+              ? IS NULL
+              OR r.source_model LIKE '%' || ? || '%'
+              OR r.target_model LIKE '%' || ? || '%'
+              OR COALESCE(r.description, '') LIKE '%' || ? || '%'
+          )
+        ORDER BY
+          CASE r.scope_type WHEN 'channel' THEN 0 WHEN 'vendor' THEN 1 ELSE 2 END,
+          r.priority ASC,
+          r.updated_at DESC,
+          r.id DESC
+        "#,
+    ))
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(scope_type)
+    .bind(scope_type)
+    .bind(vendor_code)
+    .bind(vendor_code)
+    .bind(channel_id)
+    .bind(channel_id)
+    .bind(q)
+    .bind(q)
+    .bind(q)
+    .bind(q)
+    .fetch_all(pool)
+    .await
+    .map_err(|error| store_error("failed to list model mappings", error))?;
+    rows.into_iter().map(mapping_from_row).collect()
+}
+
 async fn list_vendors_tx(
     tx: &mut Transaction<'_, Sqlite>,
     tenant_id: i64,
@@ -740,6 +959,57 @@ async fn insert_vendor(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to create model vendor", error))?;
+    last_insert_rowid(tx).await
+}
+
+async fn insert_model_mapping(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &CreateAdminModelMappingCommand,
+) -> DomainResult<i64> {
+    sqlx::query(
+        r#"
+        INSERT INTO ai_model_mapping_rule
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata,
+             scope_type, vendor_id, vendor_code, channel_id, channel_code,
+             source_model, source_catalog_key, source_vendor_code,
+             target_model, target_catalog_key, target_vendor_code, target_provider_model, target_provider_native_model,
+             mapping_mode, match_type, priority, enabled, effective_from, effective_to, description)
+        VALUES
+            (?, ?, ?, 0, 1, ?, ?, 0, '{}',
+             ?, ?, ?, ?, ?,
+             ?, ?, ?,
+             ?, ?, ?, ?, ?,
+             ?, ?, ?, ?, ?, ?, ?)
+        "#,
+    )
+    .bind(&command.mapping_uuid)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(&command.draft.scope_type)
+    .bind(command.draft.vendor_id)
+    .bind(command.draft.vendor_code.as_deref())
+    .bind(command.draft.channel_id)
+    .bind(command.draft.channel_code.as_deref())
+    .bind(&command.draft.source_model)
+    .bind(command.draft.source_catalog_key.as_deref())
+    .bind(command.draft.source_vendor_code.as_deref())
+    .bind(&command.draft.target_model)
+    .bind(command.draft.target_catalog_key.as_deref())
+    .bind(command.draft.target_vendor_code.as_deref())
+    .bind(command.draft.target_provider_model.as_deref())
+    .bind(command.draft.target_provider_native_model.as_deref())
+    .bind(&command.draft.mapping_mode)
+    .bind(&command.draft.match_type)
+    .bind(command.draft.priority)
+    .bind(command.draft.enabled)
+    .bind(command.draft.effective_from.as_deref())
+    .bind(command.draft.effective_to.as_deref())
+    .bind(command.draft.description.as_deref())
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create model mapping", error))?;
     last_insert_rowid(tx).await
 }
 
@@ -1416,6 +1686,230 @@ async fn find_model_for_update(
     row.map(model_from_row)
         .transpose()?
         .ok_or_else(|| DomainError::not_found("ai model was not found"))
+}
+
+async fn load_model_mapping_by_id(
+    tx: &mut Transaction<'_, Sqlite>,
+    mapping_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<Option<AdminModelMappingRuleItem>> {
+    let row = sqlx::query(&mapping_select_sql(
+        r#"
+        WHERE r.id = ?
+          AND r.tenant_id = ?
+          AND r.organization_id = ?
+        LIMIT 1
+        "#,
+    ))
+    .bind(mapping_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load model mapping", error))?;
+    row.map(mapping_from_row).transpose()
+}
+
+async fn find_model_mapping_for_update(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &UpdateAdminModelMappingCommand,
+) -> DomainResult<AdminModelMappingRuleItem> {
+    let numeric_id = command.mapping_id.trim().parse::<i64>().ok();
+    let row = sqlx::query(&mapping_select_sql(
+        r#"
+        WHERE r.tenant_id = ?
+          AND r.organization_id = ?
+          AND r.deleted_at IS NULL
+          AND (? IS NOT NULL AND r.id = ? OR r.uuid = ?)
+        ORDER BY CASE WHEN r.id = ? THEN 0 ELSE 1 END, r.id ASC
+        LIMIT 1
+        "#,
+    ))
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(numeric_id)
+    .bind(numeric_id.unwrap_or(0))
+    .bind(&command.mapping_id)
+    .bind(numeric_id.unwrap_or(0))
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to find model mapping for update", error))?;
+    row.map(mapping_from_row)
+        .transpose()?
+        .ok_or_else(|| DomainError::not_found("model mapping was not found"))
+}
+
+async fn find_model_mapping_for_delete(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &DeleteAdminModelMappingCommand,
+) -> DomainResult<AdminModelMappingRuleItem> {
+    let numeric_id = command.mapping_id.trim().parse::<i64>().ok();
+    let row = sqlx::query(&mapping_select_sql(
+        r#"
+        WHERE r.tenant_id = ?
+          AND r.organization_id = ?
+          AND r.deleted_at IS NULL
+          AND (? IS NOT NULL AND r.id = ? OR r.uuid = ?)
+        ORDER BY CASE WHEN r.id = ? THEN 0 ELSE 1 END, r.id ASC
+        LIMIT 1
+        "#,
+    ))
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(numeric_id)
+    .bind(numeric_id.unwrap_or(0))
+    .bind(&command.mapping_id)
+    .bind(numeric_id.unwrap_or(0))
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to find model mapping for delete", error))?;
+    row.map(mapping_from_row)
+        .transpose()?
+        .ok_or_else(|| DomainError::not_found("model mapping was not found"))
+}
+
+fn effective_model_mapping_patch(
+    current: &AdminModelMappingRuleItem,
+    patch: &AdminModelMappingRulePatch,
+) -> EffectiveModelMappingRule {
+    EffectiveModelMappingRule {
+        scope_type: patch
+            .scope_type
+            .clone()
+            .unwrap_or_else(|| current.scope_type.clone()),
+        vendor_id: patch.vendor_id.unwrap_or(current.vendor_id),
+        vendor_code: patch
+            .vendor_code
+            .clone()
+            .unwrap_or_else(|| current.vendor_code.clone()),
+        channel_id: patch.channel_id.unwrap_or(current.channel_id),
+        channel_code: patch
+            .channel_code
+            .clone()
+            .unwrap_or_else(|| current.channel_code.clone()),
+        source_model: patch
+            .source_model
+            .clone()
+            .unwrap_or_else(|| current.source_model.clone()),
+        source_catalog_key: patch
+            .source_catalog_key
+            .clone()
+            .unwrap_or_else(|| current.source_catalog_key.clone()),
+        source_vendor_code: patch
+            .source_vendor_code
+            .clone()
+            .unwrap_or_else(|| current.source_vendor_code.clone()),
+        target_model: patch
+            .target_model
+            .clone()
+            .unwrap_or_else(|| current.target_model.clone()),
+        target_catalog_key: patch
+            .target_catalog_key
+            .clone()
+            .unwrap_or_else(|| current.target_catalog_key.clone()),
+        target_vendor_code: patch
+            .target_vendor_code
+            .clone()
+            .unwrap_or_else(|| current.target_vendor_code.clone()),
+        target_provider_model: patch
+            .target_provider_model
+            .clone()
+            .unwrap_or_else(|| current.target_provider_model.clone()),
+        target_provider_native_model: patch
+            .target_provider_native_model
+            .clone()
+            .unwrap_or_else(|| current.target_provider_native_model.clone()),
+        mapping_mode: patch
+            .mapping_mode
+            .clone()
+            .unwrap_or_else(|| current.mapping_mode.clone()),
+        match_type: patch
+            .match_type
+            .clone()
+            .unwrap_or_else(|| current.match_type.clone()),
+        priority: patch.priority.unwrap_or(current.priority),
+        enabled: patch.enabled.unwrap_or(current.enabled),
+        effective_from: patch
+            .effective_from
+            .clone()
+            .unwrap_or_else(|| current.effective_from.clone()),
+        effective_to: patch
+            .effective_to
+            .clone()
+            .unwrap_or_else(|| current.effective_to.clone()),
+        description: patch
+            .description
+            .clone()
+            .unwrap_or_else(|| current.description.clone()),
+    }
+}
+
+async fn update_model_mapping_row(
+    tx: &mut Transaction<'_, Sqlite>,
+    mapping_id: i64,
+    command: &UpdateAdminModelMappingCommand,
+    rule: &EffectiveModelMappingRule,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_model_mapping_rule
+        SET scope_type = ?,
+            vendor_id = ?,
+            vendor_code = ?,
+            channel_id = ?,
+            channel_code = ?,
+            source_model = ?,
+            source_catalog_key = ?,
+            source_vendor_code = ?,
+            target_model = ?,
+            target_catalog_key = ?,
+            target_vendor_code = ?,
+            target_provider_model = ?,
+            target_provider_native_model = ?,
+            mapping_mode = ?,
+            match_type = ?,
+            priority = ?,
+            enabled = ?,
+            effective_from = ?,
+            effective_to = ?,
+            description = ?,
+            updated_at = ?,
+            version = COALESCE(version, 0) + 1
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&rule.scope_type)
+    .bind(rule.vendor_id)
+    .bind(rule.vendor_code.as_deref())
+    .bind(rule.channel_id)
+    .bind(rule.channel_code.as_deref())
+    .bind(&rule.source_model)
+    .bind(rule.source_catalog_key.as_deref())
+    .bind(rule.source_vendor_code.as_deref())
+    .bind(&rule.target_model)
+    .bind(rule.target_catalog_key.as_deref())
+    .bind(rule.target_vendor_code.as_deref())
+    .bind(rule.target_provider_model.as_deref())
+    .bind(rule.target_provider_native_model.as_deref())
+    .bind(&rule.mapping_mode)
+    .bind(&rule.match_type)
+    .bind(rule.priority)
+    .bind(rule.enabled)
+    .bind(rule.effective_from.as_deref())
+    .bind(rule.effective_to.as_deref())
+    .bind(rule.description.as_deref())
+    .bind(&command.requested_at)
+    .bind(mapping_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update model mapping", error))?;
+    Ok(())
 }
 
 fn effective_model_update(
@@ -2115,6 +2609,144 @@ async fn soft_delete_model_graph(
     Ok(())
 }
 
+async fn soft_delete_model_mapping(
+    tx: &mut Transaction<'_, Sqlite>,
+    mapping_id: i64,
+    command: &DeleteAdminModelMappingCommand,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_model_mapping_rule
+        SET deleted_at = ?,
+            updated_at = ?,
+            deleted_by = ?,
+            version = COALESCE(version, 0) + 1
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(command.subject.operator_id)
+    .bind(mapping_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete model mapping", error))?;
+    Ok(())
+}
+
+async fn resolve_model_mapping(
+    pool: &SqlitePool,
+    query: ResolveAdminModelMappingQuery,
+) -> DomainResult<ResolveAdminModelMappingResult> {
+    let rule = find_matching_model_mapping(pool, &query).await?;
+    let Some(rule) = rule else {
+        return Ok(ResolveAdminModelMappingResult {
+            source_model: query.source_model.clone(),
+            target_model: query.source_model,
+            target_catalog_key: None,
+            target_vendor_code: query.vendor_code,
+            target_provider_model: None,
+            target_provider_native_model: None,
+            matched: false,
+            matched_scope_type: None,
+            rule: None,
+        });
+    };
+    Ok(ResolveAdminModelMappingResult {
+        source_model: query.source_model,
+        target_model: rule.target_model.clone(),
+        target_catalog_key: rule.target_catalog_key.clone(),
+        target_vendor_code: rule.target_vendor_code.clone(),
+        target_provider_model: rule.target_provider_model.clone(),
+        target_provider_native_model: rule.target_provider_native_model.clone(),
+        matched: true,
+        matched_scope_type: Some(rule.scope_type.clone()),
+        rule: Some(rule),
+    })
+}
+
+async fn find_matching_model_mapping(
+    pool: &SqlitePool,
+    query: &ResolveAdminModelMappingQuery,
+) -> DomainResult<Option<AdminModelMappingRuleItem>> {
+    if let Some(rule) = find_mapping_for_scope(
+        pool,
+        query,
+        "channel",
+        query.channel_id,
+        query.channel_code.as_deref(),
+        None,
+    )
+    .await?
+    {
+        return Ok(Some(rule));
+    }
+    if let Some(rule) = find_mapping_for_scope(
+        pool,
+        query,
+        "vendor",
+        None,
+        None,
+        query.vendor_code.as_deref(),
+    )
+    .await?
+    {
+        return Ok(Some(rule));
+    }
+    find_mapping_for_scope(pool, query, "global", None, None, None).await
+}
+
+async fn find_mapping_for_scope(
+    pool: &SqlitePool,
+    query: &ResolveAdminModelMappingQuery,
+    scope_type: &str,
+    channel_id: Option<i64>,
+    channel_code: Option<&str>,
+    vendor_code: Option<&str>,
+) -> DomainResult<Option<AdminModelMappingRuleItem>> {
+    let row = sqlx::query(&mapping_select_sql(
+        r#"
+        WHERE r.tenant_id = ?
+          AND r.organization_id = ?
+          AND r.deleted_at IS NULL
+          AND r.status = 1
+          AND r.enabled = 1
+          AND r.scope_type = ?
+          AND r.match_type = 'exact'
+          AND r.source_model = ?
+          AND (r.effective_from IS NULL OR r.effective_from <= CURRENT_TIMESTAMP)
+          AND (r.effective_to IS NULL OR r.effective_to >= CURRENT_TIMESTAMP)
+          AND (
+              r.scope_type = 'global'
+              OR (? = 'vendor' AND r.vendor_code = ?)
+              OR (? = 'channel' AND (? IS NOT NULL AND r.channel_id = ? OR ? IS NOT NULL AND r.channel_code = ?))
+          )
+        ORDER BY r.priority ASC, r.updated_at DESC, r.id DESC
+        LIMIT 1
+        "#,
+    ))
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .bind(scope_type)
+    .bind(&query.source_model)
+    .bind(scope_type)
+    .bind(vendor_code)
+    .bind(scope_type)
+    .bind(channel_id)
+    .bind(channel_id)
+    .bind(channel_code)
+    .bind(channel_code)
+    .fetch_optional(pool)
+    .await
+    .map_err(|error| store_error("failed to resolve model mapping", error))?;
+    row.map(mapping_from_row).transpose()
+}
+
 async fn last_insert_rowid(tx: &mut Transaction<'_, Sqlite>) -> DomainResult<i64> {
     sqlx::query_scalar("SELECT last_insert_rowid()")
         .fetch_one(&mut **tx)
@@ -2329,6 +2961,43 @@ fn model_select_sql(
     )
 }
 
+fn mapping_select_sql(predicate: &str) -> String {
+    format!(
+        r#"
+        SELECT
+            r.id,
+            COALESCE(r.uuid, '') AS uuid,
+            COALESCE(r.tenant_id, 0) AS tenant_id,
+            COALESCE(r.organization_id, 0) AS organization_id,
+            COALESCE(r.scope_type, 'global') AS scope_type,
+            r.vendor_id AS vendor_id,
+            NULLIF(COALESCE(r.vendor_code, ''), '') AS vendor_code,
+            r.channel_id AS channel_id,
+            NULLIF(COALESCE(r.channel_code, ''), '') AS channel_code,
+            COALESCE(r.source_model, '') AS source_model,
+            NULLIF(COALESCE(r.source_catalog_key, ''), '') AS source_catalog_key,
+            NULLIF(COALESCE(r.source_vendor_code, ''), '') AS source_vendor_code,
+            COALESCE(r.target_model, '') AS target_model,
+            NULLIF(COALESCE(r.target_catalog_key, ''), '') AS target_catalog_key,
+            NULLIF(COALESCE(r.target_vendor_code, ''), '') AS target_vendor_code,
+            NULLIF(COALESCE(r.target_provider_model, ''), '') AS target_provider_model,
+            NULLIF(COALESCE(r.target_provider_native_model, ''), '') AS target_provider_native_model,
+            COALESCE(r.mapping_mode, 'alias') AS mapping_mode,
+            COALESCE(r.match_type, 'exact') AS match_type,
+            COALESCE(r.priority, 100) AS priority,
+            COALESCE(r.enabled, 0) AS enabled,
+            CAST(r.effective_from AS TEXT) AS effective_from,
+            CAST(r.effective_to AS TEXT) AS effective_to,
+            NULLIF(COALESCE(r.description, ''), '') AS description,
+            CAST(r.created_at AS TEXT) AS created_at,
+            CAST(r.updated_at AS TEXT) AS updated_at,
+            CAST(r.deleted_at AS TEXT) AS deleted_at
+        FROM ai_model_mapping_rule r
+        {predicate}
+        "#
+    )
+}
+
 fn vendor_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminModelVendorItem> {
     Ok(AdminModelVendorItem {
         id: row.try_get("id").map_err(row_error)?,
@@ -2340,6 +3009,38 @@ fn vendor_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminModelVendo
         status: status_label(required_integer_cell(&row, "status", "vendor status")?)?,
         color: row.try_get("color").map_err(row_error)?,
         description: row.try_get("description").map_err(row_error)?,
+        deleted_at: row.try_get("deleted_at").ok().flatten(),
+    })
+}
+
+fn mapping_from_row(row: sqlx::sqlite::SqliteRow) -> DomainResult<AdminModelMappingRuleItem> {
+    Ok(AdminModelMappingRuleItem {
+        id: row.try_get("id").map_err(row_error)?,
+        uuid: row.try_get("uuid").map_err(row_error)?,
+        tenant_id: optional_integer_cell(&row, "tenant_id").unwrap_or(0),
+        organization_id: optional_integer_cell(&row, "organization_id").unwrap_or(0),
+        scope_type: row.try_get("scope_type").map_err(row_error)?,
+        vendor_id: optional_integer_cell(&row, "vendor_id"),
+        vendor_code: row.try_get("vendor_code").ok().flatten(),
+        channel_id: optional_integer_cell(&row, "channel_id"),
+        channel_code: row.try_get("channel_code").ok().flatten(),
+        source_model: row.try_get("source_model").map_err(row_error)?,
+        source_catalog_key: row.try_get("source_catalog_key").ok().flatten(),
+        source_vendor_code: row.try_get("source_vendor_code").ok().flatten(),
+        target_model: row.try_get("target_model").map_err(row_error)?,
+        target_catalog_key: row.try_get("target_catalog_key").ok().flatten(),
+        target_vendor_code: row.try_get("target_vendor_code").ok().flatten(),
+        target_provider_model: row.try_get("target_provider_model").ok().flatten(),
+        target_provider_native_model: row.try_get("target_provider_native_model").ok().flatten(),
+        mapping_mode: row.try_get("mapping_mode").map_err(row_error)?,
+        match_type: row.try_get("match_type").map_err(row_error)?,
+        priority: optional_i32_cell(&row, "priority").unwrap_or(100),
+        enabled: bool_cell(&row, "enabled"),
+        effective_from: row.try_get("effective_from").ok().flatten(),
+        effective_to: row.try_get("effective_to").ok().flatten(),
+        description: row.try_get("description").ok().flatten(),
+        created_at: row.try_get("created_at").ok().flatten(),
+        updated_at: row.try_get("updated_at").ok().flatten(),
         deleted_at: row.try_get("deleted_at").ok().flatten(),
     })
 }

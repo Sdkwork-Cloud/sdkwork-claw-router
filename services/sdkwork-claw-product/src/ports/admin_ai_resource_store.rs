@@ -41,9 +41,103 @@ pub struct AdminAiResourceItem {
     pub members: Vec<AdminAiResourceMemberItem>,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminAiResourceGroupItem {
+    pub id: i64,
+    pub group_code: String,
+    pub group_name: String,
+    pub group_type: String,
+    pub selection_mode: String,
+    pub description: Option<String>,
+    pub sort_order: Option<i64>,
+    pub status: String,
+    pub resource_count: i64,
+    pub dynamic: bool,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminAiResourceGroupResourceItem {
+    pub id: i64,
+    pub resource_code: String,
+    pub resource_type: String,
+    pub display_name: String,
+    pub vendor_code: Option<String>,
+    pub modality_code: Option<String>,
+    pub api_endpoint_code: Option<String>,
+    pub catalog_key: Option<String>,
+    pub model: Option<String>,
+    pub provider_native_model: Option<String>,
+    pub status: String,
+    pub sort_order: Option<i64>,
+    pub member_role: String,
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct ListAdminAiResourcesQuery {
     pub subject: AdminAiResourceSubject,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct ListAdminAiResourceGroupsQuery {
+    pub subject: AdminAiResourceSubject,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ListAdminAiResourceGroupResourcesQuery {
+    pub subject: AdminAiResourceSubject,
+    pub group_id_or_code: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminAiResourceGroupMemberCommand {
+    pub resource_code: String,
+    pub item_role: String,
+    pub sort_order: Option<i64>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct CreateAdminAiResourceGroupCommand {
+    pub subject: AdminAiResourceSubject,
+    pub group_uuid: String,
+    pub member_uuids: Vec<String>,
+    pub audit_log_uuid: String,
+    pub group_code: String,
+    pub group_name: String,
+    pub group_type: String,
+    pub selection_mode: String,
+    pub description: Option<String>,
+    pub sort_order: Option<i64>,
+    pub status: String,
+    pub members: Vec<AdminAiResourceGroupMemberCommand>,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct UpdateAdminAiResourceGroupCommand {
+    pub subject: AdminAiResourceSubject,
+    pub group_id: i64,
+    pub member_uuids: Vec<String>,
+    pub audit_log_uuid: String,
+    pub group_code: Option<String>,
+    pub group_name: Option<String>,
+    pub group_type: Option<String>,
+    pub selection_mode: Option<String>,
+    pub description: Option<Option<String>>,
+    pub sort_order: Option<Option<i64>>,
+    pub status: Option<String>,
+    pub members: Option<Vec<AdminAiResourceGroupMemberCommand>>,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct DeleteAdminAiResourceGroupCommand {
+    pub subject: AdminAiResourceSubject,
+    pub group_id: i64,
+    pub audit_log_uuid: String,
+    pub request_id: String,
+    pub requested_at: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -115,4 +209,29 @@ pub trait AdminAiResourceStore {
         &'a self,
         command: UpdateAdminAiResourceCommand,
     ) -> AdminAiResourceReadFuture<'a, Option<AdminAiResourceItem>>;
+
+    fn list_ai_resource_groups<'a>(
+        &'a self,
+        query: ListAdminAiResourceGroupsQuery,
+    ) -> AdminAiResourceReadFuture<'a, Vec<AdminAiResourceGroupItem>>;
+
+    fn list_ai_resource_group_resources<'a>(
+        &'a self,
+        query: ListAdminAiResourceGroupResourcesQuery,
+    ) -> AdminAiResourceReadFuture<'a, Vec<AdminAiResourceGroupResourceItem>>;
+
+    fn create_ai_resource_group<'a>(
+        &'a self,
+        command: CreateAdminAiResourceGroupCommand,
+    ) -> AdminAiResourceReadFuture<'a, AdminAiResourceGroupItem>;
+
+    fn update_ai_resource_group<'a>(
+        &'a self,
+        command: UpdateAdminAiResourceGroupCommand,
+    ) -> AdminAiResourceReadFuture<'a, Option<AdminAiResourceGroupItem>>;
+
+    fn delete_ai_resource_group<'a>(
+        &'a self,
+        command: DeleteAdminAiResourceGroupCommand,
+    ) -> AdminAiResourceReadFuture<'a, bool>;
 }

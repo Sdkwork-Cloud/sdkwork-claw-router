@@ -4,6 +4,7 @@ import {
   DEFAULT_SERVICE_PROVIDER_DOWNSTREAM_FORM,
   DEFAULT_SERVICE_PROVIDER_PRICING_RULE_CREATE_FORM,
   DEFAULT_SERVICE_PROVIDER_PRICING_RULE_UPDATE_FORM,
+  SERVICE_PROVIDER_PRICE_RESOURCE_CATEGORIES,
   toServiceProviderDownstreamCreateRequest,
   toServiceProviderPricingRuleCreateRequest,
   toServiceProviderPricingRuleUpdateCommand,
@@ -81,6 +82,68 @@ test("service provider pricing rule create form requires a writable edge or pric
     currency: "USD",
     priority: 20,
   });
+});
+
+test("service provider pricing rule create form maps resource categories to billing meters", () => {
+  assert.deepEqual(
+    SERVICE_PROVIDER_PRICE_RESOURCE_CATEGORIES.map((category) => category.id),
+    ["model", "image", "video", "audio", "music", "sfx", "api_resource"],
+  );
+  assert.ok(
+    SERVICE_PROVIDER_PRICE_RESOURCE_CATEGORIES.some(
+      (category) => category.id === "api_resource" && category.defaultBillingMeterCode === "api_request",
+    ),
+  );
+  assert.ok(
+    SERVICE_PROVIDER_PRICE_RESOURCE_CATEGORIES.some(
+      (category) => category.id === "sfx" && category.defaultBillingMeterCode === "sfx_result",
+    ),
+  );
+
+  const apiRule = toServiceProviderPricingRuleCreateRequest({
+    ...DEFAULT_SERVICE_PROVIDER_PRICING_RULE_CREATE_FORM,
+    sellerProviderId: "1",
+    buyerProviderId: "2",
+    edgeId: "500",
+    resourceCategory: "api_resource",
+    pricingMethod: "specified_unit_price",
+    billingMeterCode: "",
+    tokenKind: "",
+    unitPrice: "0.0100",
+    unitSize: "1",
+    minimumCharge: "0",
+  });
+  assert.equal(apiRule.billingMeterCode, "api_request");
+  assert.equal(apiRule.tokenKind, "request");
+
+  const sfxRule = toServiceProviderPricingRuleCreateRequest({
+    ...DEFAULT_SERVICE_PROVIDER_PRICING_RULE_CREATE_FORM,
+    sellerProviderId: "1",
+    buyerProviderId: "2",
+    edgeId: "500",
+    resourceCategory: "sfx",
+    pricingMethod: "specified_unit_price",
+    billingMeterCode: "",
+    tokenKind: "",
+    unitPrice: "0.0200",
+    unitSize: "1",
+    minimumCharge: "0",
+  });
+  assert.equal(sfxRule.billingMeterCode, "sfx_result");
+  assert.equal(sfxRule.tokenKind, "result");
+});
+
+test("service provider pricing rule create form does not fake multiplier persistence", () => {
+  assert.throws(
+    () => toServiceProviderPricingRuleCreateRequest({
+      ...DEFAULT_SERVICE_PROVIDER_PRICING_RULE_CREATE_FORM,
+      sellerProviderId: "1",
+      buyerProviderId: "2",
+      edgeId: "500",
+      pricingMethod: "official_multiplier",
+    }),
+    /defaultMultiplier/,
+  );
 });
 
 test("service provider pricing rule update form returns rule id and changed fields only", () => {

@@ -535,6 +535,20 @@ const BUILTIN_AI_ROUTE_TAXONOMY: &[AiRouteTaxonomyEntry] = &[
         BillingMeter::ApiRequest,
     ),
     media_task(
+        "minimax.music_generation",
+        "minimax.music_generation",
+        RoutingCapability::Music,
+        BillingMeter::MusicOutputSecond,
+        "music_task",
+    ),
+    media_task(
+        "vidu.reference_to_image",
+        "vidu.reference_to_image",
+        RoutingCapability::Image,
+        BillingMeter::ImageResult,
+        "image_task",
+    ),
+    media_task(
         "vidu.start_end_to_video",
         "vidu.start_end_to_video",
         RoutingCapability::Video,

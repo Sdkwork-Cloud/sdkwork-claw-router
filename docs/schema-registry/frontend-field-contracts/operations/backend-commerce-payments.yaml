@@ -272,7 +272,6 @@ frontend_operations:
     type: object
     additionalProperties: false
     required:
-    - accountNo
     - providerCode
     - merchantId
     - environment
@@ -281,7 +280,6 @@ frontend_operations:
     - secretRef
     - status
     properties:
-      accountNo: *accountNoSchema
       providerCode: *paymentProviderCodeSchema
       accountRole: *paymentProviderAccountRoleSchema
       merchantId: *merchantIdSchema

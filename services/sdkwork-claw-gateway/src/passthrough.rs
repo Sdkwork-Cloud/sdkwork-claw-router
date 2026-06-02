@@ -110,6 +110,7 @@ const PROVIDER_NATIVE_PASSTHROUGH_PROVIDERS: &[&str] = &[
     "tencent-hunyuan",
     "alicloud",
     "aliyun",
+    "minimax",
     "suno",
     "elevenlabs",
     "midjourney",
@@ -1923,7 +1924,12 @@ fn provider_native_api_code_from_standard_path(
         "volcengine" if path == "/v1/images/generations" => "volcengine.image_generation",
         "volcengine" if path == "/v1/videos/generations" => "volcengine.video_generation",
         "volcengine" if task_query_path_matches(path.as_str()) => "volcengine.task_query",
+        "minimax" if path == "/v1/music_generation" => "minimax.music_generation",
+        "minimax" if path == "/v1/music/generations" => "minimax.music_generation",
+        "minimax" if path == "/v1/music/generation" => "minimax.music_generation",
+        "vidu" if path == "/ent/v2/reference2image" => "vidu.reference_to_image",
         "vidu" if path == "/ent/v2/start-end2video" => "vidu.start_end_to_video",
+        "tencent.cloud" if path == "/vidu/ent/v2/reference2image" => "vidu.reference_to_image",
         "tencent.cloud" if path == "/vidu/ent/v2/start-end2video" => "vidu.start_end_to_video",
         _ => return None,
     };
@@ -2140,6 +2146,7 @@ fn is_standard_path_namespace(value: &str) -> bool {
             | "google"
             | "anthropic"
             | "volcengine"
+            | "minimax"
             | "suno"
             | "elevenlabs"
             | "midjourney"
@@ -2228,6 +2235,14 @@ mod tests {
             "vidu.start_end_to_video",
             endpoint_key_from_standard_path("tencent-cloud", "/vidu/ent/v2/start-end2video")
         );
+        assert_eq!(
+            "vidu.reference_to_image",
+            endpoint_key_from_standard_path("vidu", "/vidu/ent/v2/reference2image")
+        );
+        assert_eq!(
+            "minimax.music_generation",
+            endpoint_key_from_standard_path("minimax", "/minimax/v1/music_generation")
+        );
     }
 
     #[test]
@@ -2254,6 +2269,12 @@ mod tests {
         route.standard_path_pattern = "/vidu/ent/v2/start-end2video".to_owned();
         assert_eq!(
             Some("vidu.start_end_to_video".to_owned()),
+            standard_api_code_for_provider_adapter_route(&route)
+        );
+
+        route.standard_path_pattern = "/vidu/ent/v2/reference2image".to_owned();
+        assert_eq!(
+            Some("vidu.reference_to_image".to_owned()),
             standard_api_code_for_provider_adapter_route(&route)
         );
 

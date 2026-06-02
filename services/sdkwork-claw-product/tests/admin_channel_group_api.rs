@@ -38,7 +38,7 @@ async fn admin_channel_group_route_creates_lists_updates_and_soft_deletes_groups
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"groupName":"\u4e2d\u6587 standard","groupCode":"zh-standard","priceReferenceMode":"multiplier","rateMultiplier":1.25,"groupType":"dedicated","capacity":{"total":500},"status":"active"}"#,
+                    r#"{"groupName":"\u4e2d\u6587 standard","groupCode":"zh-standard","priceReferenceMode":"multiplier","rateMultiplier":1.25,"groupType":"dedicated","capacity":{"total":500},"status":"active","resourceGroupCodes":[" api.openai.chat ","api.google.image","api.openai.chat"],"resourceCodes":[" api.openai.chat_completions ","api.openai.responses","api.openai.chat_completions"]}"#,
                 ))
                 .unwrap(),
         )
@@ -68,6 +68,14 @@ async fn admin_channel_group_route_creates_lists_updates_and_soft_deletes_groups
     assert_eq!("dedicated", create_payload["data"]["item"]["groupType"]);
     assert_eq!(500.0, create_payload["data"]["item"]["capacity"]["total"]);
     assert_eq!("active", create_payload["data"]["item"]["status"]);
+    assert_eq!(
+        serde_json::json!(["api.openai.chat", "api.google.image"]),
+        create_payload["data"]["item"]["resourceGroupCodes"]
+    );
+    assert_eq!(
+        serde_json::json!(["api.openai.chat_completions", "api.openai.responses"]),
+        create_payload["data"]["item"]["resourceCodes"]
+    );
 
     let update_response = router
         .clone()
@@ -78,7 +86,7 @@ async fn admin_channel_group_route_creates_lists_updates_and_soft_deletes_groups
                 .header("content-type", "application/json")
                 .internal_trusted_subject(10, 20, 30)
                 .body(Body::from(
-                    r#"{"groupName":"OpenAI enterprise","priceReferenceMode":"official_price","officialPriceMultiplier":1.5,"capacity":{"total":750},"status":"disabled"}"#,
+                    r#"{"groupName":"OpenAI enterprise","priceReferenceMode":"official_price","officialPriceMultiplier":1.5,"capacity":{"total":750},"status":"disabled","resourceGroupCodes":["api.openai.codex"],"resourceCodes":["api.openai.containers","api.openai.skills"]}"#,
                 ))
                 .unwrap(),
         )
@@ -102,6 +110,14 @@ async fn admin_channel_group_route_creates_lists_updates_and_soft_deletes_groups
     );
     assert_eq!(750.0, update_payload["data"]["item"]["capacity"]["total"]);
     assert_eq!("disabled", update_payload["data"]["item"]["status"]);
+    assert_eq!(
+        serde_json::json!(["api.openai.codex"]),
+        update_payload["data"]["item"]["resourceGroupCodes"]
+    );
+    assert_eq!(
+        serde_json::json!(["api.openai.containers", "api.openai.skills"]),
+        update_payload["data"]["item"]["resourceCodes"]
+    );
 
     let list_response = router
         .clone()
@@ -120,6 +136,14 @@ async fn admin_channel_group_route_creates_lists_updates_and_soft_deletes_groups
     let list_payload = json_payload(list_response).await;
     assert_eq!(1, list_payload["data"]["items"].as_array().unwrap().len());
     assert_eq!("disabled", list_payload["data"]["items"][0]["status"]);
+    assert_eq!(
+        serde_json::json!(["api.openai.codex"]),
+        list_payload["data"]["items"][0]["resourceGroupCodes"]
+    );
+    assert_eq!(
+        serde_json::json!(["api.openai.containers", "api.openai.skills"]),
+        list_payload["data"]["items"][0]["resourceCodes"]
+    );
 
     let delete_response = router
         .clone()
@@ -509,6 +533,8 @@ impl AdminChannelGroupStore for TestChannelGroupStore {
                 rate_multiplier: command.rate_multiplier,
                 official_price_multiplier: command.official_price_multiplier,
                 group_type: command.group_type,
+                resource_group_codes: command.resource_group_codes,
+                resource_codes: command.resource_codes,
                 account_available: 0,
                 account_total: 0,
                 capacity_used: 0.0,
@@ -558,6 +584,12 @@ impl AdminChannelGroupStore for TestChannelGroupStore {
             }
             if let Some(group_type) = command.group_type {
                 item.group_type = group_type;
+            }
+            if let Some(resource_group_codes) = command.resource_group_codes {
+                item.resource_group_codes = resource_group_codes;
+            }
+            if let Some(resource_codes) = command.resource_codes {
+                item.resource_codes = resource_codes;
             }
             if let Some(capacity_total) = command.capacity_total {
                 item.capacity_total = capacity_total;

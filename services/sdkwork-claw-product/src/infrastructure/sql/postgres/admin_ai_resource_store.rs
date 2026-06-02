@@ -7,9 +7,12 @@ use crate::infrastructure::sql::routing_config_change::{
     record_postgres_ai_routing_config_change, AiRoutingConfigChange,
 };
 use crate::ports::{
-    AdminAiResourceItem, AdminAiResourceMemberCommand, AdminAiResourceMemberItem,
-    AdminAiResourceReadFuture, AdminAiResourceStore, CreateAdminAiResourceCommand,
-    ListAdminAiResourcesQuery, UpdateAdminAiResourceCommand,
+    AdminAiResourceGroupItem, AdminAiResourceGroupResourceItem, AdminAiResourceItem,
+    AdminAiResourceMemberCommand, AdminAiResourceMemberItem, AdminAiResourceReadFuture,
+    AdminAiResourceStore, CreateAdminAiResourceCommand, CreateAdminAiResourceGroupCommand,
+    DeleteAdminAiResourceGroupCommand, ListAdminAiResourceGroupResourcesQuery,
+    ListAdminAiResourceGroupsQuery, ListAdminAiResourcesQuery, UpdateAdminAiResourceCommand,
+    UpdateAdminAiResourceGroupCommand,
 };
 
 const AI_RESOURCE_TARGET_TYPE: i32 = 91;
@@ -219,6 +222,41 @@ impl AdminAiResourceStore for PostgresAdminAiResourceStore {
             Ok(Some(item))
         })
     }
+
+    fn list_ai_resource_groups<'a>(
+        &'a self,
+        query: ListAdminAiResourceGroupsQuery,
+    ) -> AdminAiResourceReadFuture<'a, Vec<AdminAiResourceGroupItem>> {
+        Box::pin(async move { list_ai_resource_groups(&self.pool, query).await })
+    }
+
+    fn list_ai_resource_group_resources<'a>(
+        &'a self,
+        query: ListAdminAiResourceGroupResourcesQuery,
+    ) -> AdminAiResourceReadFuture<'a, Vec<AdminAiResourceGroupResourceItem>> {
+        Box::pin(async move { list_ai_resource_group_resources(&self.pool, query).await })
+    }
+
+    fn create_ai_resource_group<'a>(
+        &'a self,
+        command: CreateAdminAiResourceGroupCommand,
+    ) -> AdminAiResourceReadFuture<'a, AdminAiResourceGroupItem> {
+        Box::pin(async move { create_ai_resource_group(&self.pool, command).await })
+    }
+
+    fn update_ai_resource_group<'a>(
+        &'a self,
+        command: UpdateAdminAiResourceGroupCommand,
+    ) -> AdminAiResourceReadFuture<'a, Option<AdminAiResourceGroupItem>> {
+        Box::pin(async move { update_ai_resource_group(&self.pool, command).await })
+    }
+
+    fn delete_ai_resource_group<'a>(
+        &'a self,
+        command: DeleteAdminAiResourceGroupCommand,
+    ) -> AdminAiResourceReadFuture<'a, bool> {
+        Box::pin(async move { delete_ai_resource_group(&self.pool, command).await })
+    }
 }
 
 async fn list_ai_resources(
@@ -274,6 +312,530 @@ async fn list_ai_resources(
         .collect()
 }
 
+async fn list_ai_resource_groups(
+    pool: &PgPool,
+    query: ListAdminAiResourceGroupsQuery,
+) -> DomainResult<Vec<AdminAiResourceGroupItem>> {
+    let rows = sqlx::query(
+        r#"
+        SELECT
+            g.id,
+            g.group_code,
+            g.group_name,
+            COALESCE(NULLIF(g.group_type, ''), 'api_group') AS group_type,
+            COALESCE(NULLIF(g.selection_mode, ''), 'manual') AS selection_mode,
+            g.description,
+            g.sort_order,
+            g.status,
+            CASE
+                WHEN g.selection_mode = 'dynamic_all_api' THEN (
+                    SELECT COUNT(1)
+                    FROM ai_resource r
+                    WHERE (
+                            (r.tenant_id = g.tenant_id AND r.organization_id = g.organization_id)
+                            OR (r.tenant_id = 0 AND r.organization_id = 0)
+                          )
+                      AND r.resource_type = 'api_endpoint'
+                      AND r.deleted_at IS NULL
+                      AND NOT (
+                          r.tenant_id = 0
+                          AND r.organization_id = 0
+                          AND (g.tenant_id <> 0 OR g.organization_id <> 0)
+                          AND EXISTS (
+                              SELECT 1
+                              FROM ai_resource tenant_resource
+                              WHERE tenant_resource.tenant_id = g.tenant_id
+                                AND tenant_resource.organization_id = g.organization_id
+                                AND tenant_resource.resource_code = r.resource_code
+                                AND tenant_resource.deleted_at IS NULL
+                          )
+                      )
+                )
+                ELSE (
+                    SELECT COUNT(1)
+                    FROM ai_resource_group_item item
+                    JOIN ai_resource r
+                      ON r.resource_code = item.resource_code
+                     AND r.deleted_at IS NULL
+                     AND (
+                          (r.tenant_id = item.tenant_id AND r.organization_id = item.organization_id)
+                          OR (r.tenant_id = 0 AND r.organization_id = 0)
+                     )
+                     AND NOT (
+                          r.tenant_id = 0
+                          AND r.organization_id = 0
+                          AND (item.tenant_id <> 0 OR item.organization_id <> 0)
+                          AND EXISTS (
+                              SELECT 1
+                              FROM ai_resource tenant_resource
+                              WHERE tenant_resource.tenant_id = item.tenant_id
+                                AND tenant_resource.organization_id = item.organization_id
+                                AND tenant_resource.resource_code = item.resource_code
+                                AND tenant_resource.deleted_at IS NULL
+                          )
+                     )
+                    WHERE item.tenant_id = g.tenant_id
+                      AND item.organization_id = g.organization_id
+                      AND item.resource_group_id = g.id
+                      AND item.item_type = 'resource'
+                      AND item.deleted_at IS NULL
+                      AND item.status = 1
+                )
+            END AS resource_count,
+            (g.selection_mode = 'dynamic_all_api') AS dynamic
+        FROM ai_resource_group g
+        WHERE (
+                (g.tenant_id = $1 AND g.organization_id = $2)
+                OR (g.tenant_id = 0 AND g.organization_id = 0)
+              )
+          AND g.deleted_at IS NULL
+          AND COALESCE(NULLIF(g.group_type, ''), 'api_group') = 'api_group'
+          AND NOT (
+              g.tenant_id = 0
+              AND g.organization_id = 0
+              AND EXISTS (
+                  SELECT 1
+                  FROM ai_resource_group tenant_group
+                  WHERE tenant_group.tenant_id = $1
+                    AND tenant_group.organization_id = $2
+                    AND tenant_group.group_code = g.group_code
+                    AND tenant_group.deleted_at IS NULL
+                    AND COALESCE(NULLIF(tenant_group.group_type, ''), 'api_group') = 'api_group'
+              )
+          )
+        ORDER BY CASE WHEN g.tenant_id = $1 AND g.organization_id = $2 THEN 0 ELSE 1 END,
+                 COALESCE(g.sort_order, 100000) ASC,
+                 g.id ASC
+        LIMIT 1000
+        "#,
+    )
+    .bind(query.subject.tenant_id)
+    .bind(query.subject.organization_id)
+    .fetch_all(pool)
+    .await
+    .map_err(|error| store_error("failed to list AI resource groups", error))?;
+
+    rows.into_iter().map(group_item_from_row).collect()
+}
+
+async fn list_ai_resource_group_resources(
+    pool: &PgPool,
+    query: ListAdminAiResourceGroupResourcesQuery,
+) -> DomainResult<Vec<AdminAiResourceGroupResourceItem>> {
+    let group = load_group_header(
+        pool,
+        query.subject.tenant_id,
+        query.subject.organization_id,
+        &query.group_id_or_code,
+    )
+    .await?
+    .ok_or_else(|| DomainError::not_found("AI resource group was not found"))?;
+    let dynamic = is_dynamic_group(group.group_code.as_str(), group.selection_mode.as_str());
+    let rows = if dynamic {
+        sqlx::query(
+            r#"
+            SELECT
+                r.id,
+                r.resource_code,
+                r.resource_type,
+                COALESCE(NULLIF(r.display_name, ''), r.resource_code) AS display_name,
+                r.vendor_code,
+                r.modality_code,
+                r.api_code AS api_endpoint_code,
+                r.catalog_key,
+                r.model,
+                r.provider_native_model,
+                r.status,
+                r.sort_order,
+                'included' AS member_role
+            FROM ai_resource r
+            WHERE (
+                    (r.tenant_id = $1 AND r.organization_id = $2)
+                    OR (r.tenant_id = 0 AND r.organization_id = 0)
+                  )
+              AND r.resource_type = 'api_endpoint'
+              AND r.deleted_at IS NULL
+              AND NOT (
+                  r.tenant_id = 0
+                  AND r.organization_id = 0
+                  AND ($1 <> 0 OR $2 <> 0)
+                  AND EXISTS (
+                      SELECT 1
+                      FROM ai_resource tenant_resource
+                      WHERE tenant_resource.tenant_id = $1
+                        AND tenant_resource.organization_id = $2
+                        AND tenant_resource.resource_code = r.resource_code
+                        AND tenant_resource.deleted_at IS NULL
+                  )
+              )
+            ORDER BY COALESCE(r.sort_order, 100000) ASC, r.id ASC
+            LIMIT 2000
+            "#,
+        )
+        .bind(group.tenant_id)
+        .bind(group.organization_id)
+        .fetch_all(pool)
+        .await
+    } else {
+        sqlx::query(
+            r#"
+            SELECT
+                r.id,
+                r.resource_code,
+                r.resource_type,
+                COALESCE(NULLIF(r.display_name, ''), r.resource_code) AS display_name,
+                r.vendor_code,
+                r.modality_code,
+                r.api_code AS api_endpoint_code,
+                r.catalog_key,
+                r.model,
+                r.provider_native_model,
+                r.status,
+                COALESCE(item.sort_order, r.sort_order) AS sort_order,
+                COALESCE(NULLIF(item.item_role, ''), 'included') AS member_role
+            FROM ai_resource_group_item item
+            JOIN ai_resource r
+              ON r.resource_code = item.resource_code
+             AND r.deleted_at IS NULL
+             AND (
+                  (r.tenant_id = item.tenant_id AND r.organization_id = item.organization_id)
+                  OR (r.tenant_id = 0 AND r.organization_id = 0)
+             )
+             AND NOT (
+                  r.tenant_id = 0
+                  AND r.organization_id = 0
+                  AND (item.tenant_id <> 0 OR item.organization_id <> 0)
+                  AND EXISTS (
+                      SELECT 1
+                      FROM ai_resource tenant_resource
+                      WHERE tenant_resource.tenant_id = item.tenant_id
+                        AND tenant_resource.organization_id = item.organization_id
+                        AND tenant_resource.resource_code = item.resource_code
+                        AND tenant_resource.deleted_at IS NULL
+                  )
+             )
+            WHERE item.tenant_id = $1
+              AND item.organization_id = $2
+              AND item.resource_group_id = $3
+              AND item.item_type = 'resource'
+              AND item.deleted_at IS NULL
+              AND item.status = 1
+            ORDER BY COALESCE(item.sort_order, r.sort_order, 100000) ASC, item.id ASC
+            LIMIT 2000
+            "#,
+        )
+        .bind(group.tenant_id)
+        .bind(group.organization_id)
+        .bind(group.id)
+        .fetch_all(pool)
+        .await
+    }
+    .map_err(|error| store_error("failed to list AI resource group resources", error))?;
+
+    rows.into_iter().map(group_resource_from_row).collect()
+}
+
+async fn create_ai_resource_group(
+    pool: &PgPool,
+    command: CreateAdminAiResourceGroupCommand,
+) -> DomainResult<AdminAiResourceGroupItem> {
+    let mut tx = pool
+        .begin()
+        .await
+        .map_err(|error| store_error("failed to begin AI resource group transaction", error))?;
+    let group_id = insert_ai_resource_group(&mut tx, &command).await?;
+    if is_dynamic_group(&command.group_code, &command.selection_mode) && !command.members.is_empty()
+    {
+        return Err(DomainError::conflict(
+            "dynamic API groups cannot maintain resource relationships",
+        ));
+    }
+    replace_group_members_for_create(&mut tx, group_id, &command).await?;
+    insert_audit_log(
+        &mut tx,
+        &command.audit_log_uuid,
+        &command.request_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        command.subject.operator_id,
+        command.subject.operator_type,
+        "create_ai_resource_group",
+        group_id,
+        serde_json::json!({
+            "action": "create_ai_resource_group",
+            "groupId": group_id,
+            "groupCode": &command.group_code,
+            "selectionMode": &command.selection_mode,
+            "memberCount": command.members.len()
+        }),
+    )
+    .await?;
+    record_postgres_ai_routing_config_change(
+        &mut tx,
+        ai_resource_group_routing_config_change(
+            command.subject.tenant_id,
+            command.subject.organization_id,
+            command.subject.operator_id,
+            &command.request_id,
+            &command.requested_at,
+            "create_ai_resource_group",
+            group_id,
+            serde_json::json!({
+                "groupId": group_id,
+                "groupCode": &command.group_code,
+                "selectionMode": &command.selection_mode,
+                "memberCount": command.members.len()
+            }),
+        ),
+    )
+    .await?;
+    let item = load_group_by_id(
+        &mut tx,
+        group_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+    )
+    .await?
+    .ok_or_else(|| DomainError::new("created AI resource group could not be reloaded"))?;
+    tx.commit()
+        .await
+        .map_err(|error| store_error("failed to commit AI resource group transaction", error))?;
+    Ok(item)
+}
+
+async fn update_ai_resource_group(
+    pool: &PgPool,
+    command: UpdateAdminAiResourceGroupCommand,
+) -> DomainResult<Option<AdminAiResourceGroupItem>> {
+    let mut tx = pool.begin().await.map_err(|error| {
+        store_error(
+            "failed to begin AI resource group update transaction",
+            error,
+        )
+    })?;
+    let Some(current) = load_group_by_id(
+        &mut tx,
+        command.group_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+    )
+    .await?
+    else {
+        return Ok(None);
+    };
+    let effective_group_code = command
+        .group_code
+        .as_deref()
+        .unwrap_or(current.group_code.as_str());
+    let effective_selection_mode = command
+        .selection_mode
+        .as_deref()
+        .unwrap_or(current.selection_mode.as_str());
+    let effective_dynamic = is_dynamic_group(effective_group_code, effective_selection_mode);
+    if effective_dynamic
+        && command
+            .members
+            .as_ref()
+            .is_some_and(|members| !members.is_empty())
+    {
+        return Err(DomainError::conflict(
+            "dynamic API groups cannot maintain resource relationships",
+        ));
+    }
+    if current.group_code == "api.all" && command.group_code.is_some() {
+        return Err(DomainError::conflict(
+            "api.all group code cannot be changed",
+        ));
+    }
+    update_ai_resource_group_core(&mut tx, &command).await?;
+    if command.group_code.is_some() && effective_group_code != current.group_code.as_str() {
+        rename_group_member_parent_code(
+            &mut tx,
+            command.group_id,
+            &current.group_code,
+            effective_group_code,
+            &command,
+        )
+        .await?;
+    }
+    if effective_dynamic {
+        replace_group_members_for_update(&mut tx, effective_group_code, &[], &command).await?;
+    } else if let Some(members) = command.members.as_ref() {
+        replace_group_members_for_update(&mut tx, effective_group_code, members, &command).await?;
+    }
+    insert_audit_log(
+        &mut tx,
+        &command.audit_log_uuid,
+        &command.request_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        command.subject.operator_id,
+        command.subject.operator_type,
+        "update_ai_resource_group",
+        command.group_id,
+        serde_json::json!({
+            "action": "update_ai_resource_group",
+            "groupId": command.group_id,
+            "groupCodeChanged": command.group_code.is_some(),
+            "selectionModeChanged": command.selection_mode.is_some(),
+            "membersChanged": command.members.is_some()
+        }),
+    )
+    .await?;
+    record_postgres_ai_routing_config_change(
+        &mut tx,
+        ai_resource_group_routing_config_change(
+            command.subject.tenant_id,
+            command.subject.organization_id,
+            command.subject.operator_id,
+            &command.request_id,
+            &command.requested_at,
+            "update_ai_resource_group",
+            command.group_id,
+            serde_json::json!({
+                "groupId": command.group_id,
+                "groupCodeChanged": command.group_code.is_some(),
+                "selectionModeChanged": command.selection_mode.is_some(),
+                "membersChanged": command.members.is_some()
+            }),
+        ),
+    )
+    .await?;
+    let item = load_group_by_id(
+        &mut tx,
+        command.group_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+    )
+    .await?
+    .ok_or_else(|| DomainError::new("updated AI resource group could not be reloaded"))?;
+    tx.commit().await.map_err(|error| {
+        store_error(
+            "failed to commit AI resource group update transaction",
+            error,
+        )
+    })?;
+    Ok(Some(item))
+}
+
+async fn delete_ai_resource_group(
+    pool: &PgPool,
+    command: DeleteAdminAiResourceGroupCommand,
+) -> DomainResult<bool> {
+    let mut tx = pool.begin().await.map_err(|error| {
+        store_error(
+            "failed to begin AI resource group delete transaction",
+            error,
+        )
+    })?;
+    let Some(current) = load_group_by_id(
+        &mut tx,
+        command.group_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+    )
+    .await?
+    else {
+        return Ok(false);
+    };
+    if current.group_code == "api.all" || current.selection_mode == "dynamic_all_api" {
+        return Err(DomainError::conflict(
+            "dynamic API groups cannot be deleted",
+        ));
+    }
+    sqlx::query(
+        r#"
+        UPDATE ai_resource_group_item
+        SET status = -1,
+            deleted_at = $1,
+            deleted_by = $2,
+            updated_at = $3,
+            version = COALESCE(version, 0) + 1
+        WHERE tenant_id = $4
+          AND organization_id = $5
+          AND resource_group_id = $6
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.operator_id)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.group_id)
+    .execute(&mut *tx)
+    .await
+    .map_err(|error| store_error("failed to delete AI resource group members", error))?;
+    let affected = sqlx::query(
+        r#"
+        UPDATE ai_resource_group
+        SET status = -1,
+            deleted_at = $1,
+            deleted_by = $2,
+            updated_at = $3,
+            version = COALESCE(version, 0) + 1
+        WHERE id = $4
+          AND tenant_id = $5
+          AND organization_id = $6
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.operator_id)
+    .bind(&command.requested_at)
+    .bind(command.group_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut *tx)
+    .await
+    .map_err(|error| store_error("failed to delete AI resource group", error))?
+    .rows_affected();
+    if affected == 0 {
+        return Ok(false);
+    }
+    insert_audit_log(
+        &mut tx,
+        &command.audit_log_uuid,
+        &command.request_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        command.subject.operator_id,
+        command.subject.operator_type,
+        "delete_ai_resource_group",
+        command.group_id,
+        serde_json::json!({
+            "action": "delete_ai_resource_group",
+            "groupId": command.group_id,
+            "groupCode": current.group_code
+        }),
+    )
+    .await?;
+    record_postgres_ai_routing_config_change(
+        &mut tx,
+        ai_resource_group_routing_config_change(
+            command.subject.tenant_id,
+            command.subject.organization_id,
+            command.subject.operator_id,
+            &command.request_id,
+            &command.requested_at,
+            "delete_ai_resource_group",
+            command.group_id,
+            serde_json::json!({
+                "groupId": command.group_id,
+                "groupCode": current.group_code
+            }),
+        ),
+    )
+    .await?;
+    tx.commit().await.map_err(|error| {
+        store_error(
+            "failed to commit AI resource group delete transaction",
+            error,
+        )
+    })?;
+    Ok(true)
+}
+
 async fn insert_ai_resource(
     tx: &mut Transaction<'_, Postgres>,
     command: &CreateAdminAiResourceCommand,
@@ -306,7 +868,37 @@ async fn insert_ai_resource(
     .bind(command.sort_order)
     .fetch_one(&mut **tx)
     .await
-    .map_err(|error| store_error("failed to create AI resource", error))
+        .map_err(|error| store_error("failed to create AI resource", error))
+}
+
+async fn insert_ai_resource_group(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &CreateAdminAiResourceGroupCommand,
+) -> DomainResult<i64> {
+    sqlx::query_scalar(
+        r#"
+        INSERT INTO ai_resource_group
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, group_code, group_name, group_type, selection_mode, description, sort_order)
+        VALUES
+            ($1, $2, $3, 1, $4, $5, $6, 0, '{}'::jsonb, $7, $8, $9, $10, $11, $12)
+        RETURNING id
+        "#,
+    )
+    .bind(&command.group_uuid)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(status_code(&command.status))
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(&command.group_code)
+    .bind(&command.group_name)
+    .bind(&command.group_type)
+    .bind(&command.selection_mode)
+    .bind(command.description.as_deref())
+    .bind(command.sort_order)
+    .fetch_one(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create AI resource group", error))
 }
 
 async fn update_ai_resource_core(
@@ -365,6 +957,47 @@ async fn update_ai_resource_core(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to update AI resource", error))?;
+    Ok(())
+}
+
+async fn update_ai_resource_group_core(
+    tx: &mut Transaction<'_, Postgres>,
+    command: &UpdateAdminAiResourceGroupCommand,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_resource_group
+        SET group_code = COALESCE($1, group_code),
+            group_name = COALESCE($2, group_name),
+            group_type = COALESCE($3, group_type),
+            selection_mode = COALESCE($4, selection_mode),
+            description = CASE WHEN $5 THEN $6 ELSE description END,
+            sort_order = CASE WHEN $7 THEN $8 ELSE sort_order END,
+            status = COALESCE($9, status),
+            updated_at = $10,
+            version = COALESCE(version, 0) + 1
+        WHERE id = $11
+          AND tenant_id = $12
+          AND organization_id = $13
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(command.group_code.as_deref())
+    .bind(command.group_name.as_deref())
+    .bind(command.group_type.as_deref())
+    .bind(command.selection_mode.as_deref())
+    .bind(command.description.is_some())
+    .bind(optional_optional_str(&command.description))
+    .bind(command.sort_order.is_some())
+    .bind(command.sort_order.flatten())
+    .bind(command.status.as_ref().map(|value| status_code(value)))
+    .bind(&command.requested_at)
+    .bind(command.group_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update AI resource group", error))?;
     Ok(())
 }
 
@@ -427,6 +1060,99 @@ async fn replace_members_for_update(
     .await
 }
 
+async fn replace_group_members_for_create(
+    tx: &mut Transaction<'_, Postgres>,
+    group_id: i64,
+    command: &CreateAdminAiResourceGroupCommand,
+) -> DomainResult<()> {
+    if is_dynamic_group(&command.group_code, &command.selection_mode) {
+        return Ok(());
+    }
+    insert_group_resource_members(
+        tx,
+        group_id,
+        &command.group_code,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &command.requested_at,
+        &command.member_uuids,
+        &command.members,
+    )
+    .await
+}
+
+async fn replace_group_members_for_update(
+    tx: &mut Transaction<'_, Postgres>,
+    effective_group_code: &str,
+    members: &[crate::ports::AdminAiResourceGroupMemberCommand],
+    command: &UpdateAdminAiResourceGroupCommand,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_resource_group_item
+        SET status = -1, deleted_at = $1, deleted_by = $2, updated_at = $3,
+            version = COALESCE(version, 0) + 1
+        WHERE tenant_id = $4
+          AND organization_id = $5
+          AND resource_group_id = $6
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(&command.requested_at)
+    .bind(command.subject.operator_id)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(command.group_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to clear AI resource group members", error))?;
+
+    insert_group_resource_members(
+        tx,
+        command.group_id,
+        effective_group_code,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &command.requested_at,
+        &command.member_uuids,
+        members,
+    )
+    .await
+}
+
+async fn rename_group_member_parent_code(
+    tx: &mut Transaction<'_, Postgres>,
+    group_id: i64,
+    previous_group_code: &str,
+    effective_group_code: &str,
+    command: &UpdateAdminAiResourceGroupCommand,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE ai_resource_group_item
+        SET resource_group_code = $1,
+            updated_at = $2,
+            version = COALESCE(version, 0) + 1
+        WHERE tenant_id = $3
+          AND organization_id = $4
+          AND resource_group_id = $5
+          AND resource_group_code = $6
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(effective_group_code)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(group_id)
+    .bind(previous_group_code)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to rename AI resource group members", error))?;
+    Ok(())
+}
+
 async fn rename_members_for_resource_code(
     tx: &mut Transaction<'_, Postgres>,
     _parent_resource_id: i64,
@@ -472,6 +1198,84 @@ async fn rename_members_for_resource_code(
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to rename resource group", error))?;
+    Ok(())
+}
+
+async fn insert_group_resource_members(
+    tx: &mut Transaction<'_, Postgres>,
+    group_id: i64,
+    group_code: &str,
+    tenant_id: i64,
+    organization_id: i64,
+    requested_at: &str,
+    member_uuids: &[String],
+    members: &[crate::ports::AdminAiResourceGroupMemberCommand],
+) -> DomainResult<()> {
+    for (index, member) in members.iter().enumerate() {
+        let uuid = member_uuids
+            .get(index)
+            .cloned()
+            .unwrap_or_else(|| format!("{group_code}-member-{index}"));
+        let resource_id = sqlx::query_scalar::<_, i64>(
+            r#"
+            SELECT id
+            FROM ai_resource
+            WHERE (
+                    (tenant_id = $1 AND organization_id = $2)
+                    OR (tenant_id = 0 AND organization_id = 0)
+                  )
+              AND resource_code = $3
+              AND resource_type = 'api_endpoint'
+              AND deleted_at IS NULL
+            ORDER BY CASE WHEN tenant_id = $1 AND organization_id = $2 THEN 0 ELSE 1 END,
+                     id ASC
+            LIMIT 1
+            "#,
+        )
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(&member.resource_code)
+        .fetch_optional(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to resolve AI resource group member", error))?
+        .ok_or_else(|| {
+            DomainError::not_found(format!(
+                "AI API resource was not found: {}",
+                member.resource_code
+            ))
+        })?;
+        sqlx::query(
+            r#"
+            INSERT INTO ai_resource_group_item
+                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_id, child_resource_group_code, item_role, sort_order)
+            VALUES
+                ($1, $2, $3, 1, 1, $4, $5, 0, '{}'::jsonb, $6, $7, 'resource', $8, $9, NULL, '', $10, $11)
+            ON CONFLICT(tenant_id, organization_id, resource_group_id, item_type, resource_code, child_resource_group_code) DO UPDATE SET
+                status = 1,
+                deleted_at = NULL,
+                deleted_by = NULL,
+                updated_at = excluded.updated_at,
+                resource_id = excluded.resource_id,
+                item_role = excluded.item_role,
+                sort_order = excluded.sort_order,
+                version = COALESCE(ai_resource_group_item.version, 0) + 1
+            "#,
+        )
+        .bind(uuid)
+        .bind(tenant_id)
+        .bind(organization_id)
+        .bind(requested_at)
+        .bind(requested_at)
+        .bind(group_id)
+        .bind(group_code)
+        .bind(resource_id)
+        .bind(&member.resource_code)
+        .bind(&member.item_role)
+        .bind(member.sort_order)
+        .execute(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to upsert AI resource group member", error))?;
+    }
     Ok(())
 }
 
@@ -827,6 +1631,182 @@ async fn load_resource_by_id(
     row.map(|row| item_from_row(row, &members)).transpose()
 }
 
+struct ResourceGroupHeader {
+    id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+    group_code: String,
+    selection_mode: String,
+}
+
+async fn load_group_header(
+    pool: &PgPool,
+    tenant_id: i64,
+    organization_id: i64,
+    group_id_or_code: &str,
+) -> DomainResult<Option<ResourceGroupHeader>> {
+    let trimmed = group_id_or_code.trim();
+    let row = if let Ok(group_id) = trimmed.parse::<i64>() {
+        sqlx::query(
+            r#"
+            SELECT
+                id,
+                tenant_id,
+                organization_id,
+                group_code,
+                COALESCE(NULLIF(selection_mode, ''), 'manual') AS selection_mode
+            FROM ai_resource_group
+            WHERE id = $1
+              AND (
+                    (tenant_id = $2 AND organization_id = $3)
+                    OR (tenant_id = 0 AND organization_id = 0)
+                  )
+              AND deleted_at IS NULL
+              AND COALESCE(NULLIF(group_type, ''), 'api_group') = 'api_group'
+            ORDER BY CASE WHEN tenant_id = $2 AND organization_id = $3 THEN 0 ELSE 1 END,
+                     id ASC
+            LIMIT 1
+            "#,
+        )
+        .bind(group_id)
+        .bind(tenant_id)
+        .bind(organization_id)
+        .fetch_optional(pool)
+        .await
+    } else {
+        sqlx::query(
+            r#"
+            SELECT
+                id,
+                tenant_id,
+                organization_id,
+                group_code,
+                COALESCE(NULLIF(selection_mode, ''), 'manual') AS selection_mode
+            FROM ai_resource_group
+            WHERE group_code = $1
+              AND (
+                    (tenant_id = $2 AND organization_id = $3)
+                    OR (tenant_id = 0 AND organization_id = 0)
+                  )
+              AND deleted_at IS NULL
+              AND COALESCE(NULLIF(group_type, ''), 'api_group') = 'api_group'
+            ORDER BY CASE WHEN tenant_id = $2 AND organization_id = $3 THEN 0 ELSE 1 END,
+                     id ASC
+            LIMIT 1
+            "#,
+        )
+        .bind(trimmed)
+        .bind(tenant_id)
+        .bind(organization_id)
+        .fetch_optional(pool)
+        .await
+    }
+    .map_err(|error| store_error("failed to load AI resource group", error))?;
+
+    row.map(|row| {
+        Ok(ResourceGroupHeader {
+            id: row.try_get("id").map_err(row_error)?,
+            tenant_id: row.try_get("tenant_id").map_err(row_error)?,
+            organization_id: row.try_get("organization_id").map_err(row_error)?,
+            group_code: row.try_get("group_code").map_err(row_error)?,
+            selection_mode: row.try_get("selection_mode").map_err(row_error)?,
+        })
+    })
+    .transpose()
+}
+
+async fn load_group_by_id(
+    tx: &mut Transaction<'_, Postgres>,
+    group_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<Option<AdminAiResourceGroupItem>> {
+    let row = sqlx::query(
+        r#"
+        SELECT
+            g.id,
+            g.group_code,
+            g.group_name,
+            COALESCE(NULLIF(g.group_type, ''), 'api_group') AS group_type,
+            COALESCE(NULLIF(g.selection_mode, ''), 'manual') AS selection_mode,
+            g.description,
+            g.sort_order,
+            g.status,
+            CASE
+                WHEN g.selection_mode = 'dynamic_all_api' THEN (
+                    SELECT COUNT(1)
+                    FROM ai_resource r
+                    WHERE (
+                            (r.tenant_id = g.tenant_id AND r.organization_id = g.organization_id)
+                            OR (r.tenant_id = 0 AND r.organization_id = 0)
+                          )
+                      AND r.resource_type = 'api_endpoint'
+                      AND r.deleted_at IS NULL
+                      AND NOT (
+                          r.tenant_id = 0
+                          AND r.organization_id = 0
+                          AND (g.tenant_id <> 0 OR g.organization_id <> 0)
+                          AND EXISTS (
+                              SELECT 1
+                              FROM ai_resource tenant_resource
+                              WHERE tenant_resource.tenant_id = g.tenant_id
+                                AND tenant_resource.organization_id = g.organization_id
+                                AND tenant_resource.resource_code = r.resource_code
+                                AND tenant_resource.deleted_at IS NULL
+                          )
+                      )
+                )
+                ELSE (
+                    SELECT COUNT(1)
+                    FROM ai_resource_group_item item
+                    JOIN ai_resource r
+                      ON r.resource_code = item.resource_code
+                     AND r.deleted_at IS NULL
+                     AND (
+                          (r.tenant_id = item.tenant_id AND r.organization_id = item.organization_id)
+                          OR (r.tenant_id = 0 AND r.organization_id = 0)
+                     )
+                     AND NOT (
+                          r.tenant_id = 0
+                          AND r.organization_id = 0
+                          AND (item.tenant_id <> 0 OR item.organization_id <> 0)
+                          AND EXISTS (
+                              SELECT 1
+                              FROM ai_resource tenant_resource
+                              WHERE tenant_resource.tenant_id = item.tenant_id
+                                AND tenant_resource.organization_id = item.organization_id
+                                AND tenant_resource.resource_code = item.resource_code
+                                AND tenant_resource.deleted_at IS NULL
+                          )
+                     )
+                    WHERE item.tenant_id = g.tenant_id
+                      AND item.organization_id = g.organization_id
+                      AND item.resource_group_id = g.id
+                      AND item.item_type = 'resource'
+                      AND item.deleted_at IS NULL
+                      AND item.status = 1
+                )
+            END AS resource_count,
+            (g.selection_mode = 'dynamic_all_api') AS dynamic
+        FROM ai_resource_group g
+        WHERE g.id = $1
+          AND g.tenant_id = $2
+          AND g.organization_id = $3
+          AND g.deleted_at IS NULL
+          AND COALESCE(NULLIF(g.group_type, ''), 'api_group') = 'api_group'
+        LIMIT 1
+        "#,
+    )
+    .bind(group_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load AI resource group", error))?;
+
+    row.map(group_item_from_row).transpose()
+}
+
 async fn load_members(
     pool: &PgPool,
     tenant_id: i64,
@@ -932,6 +1912,43 @@ fn item_from_row(
     })
 }
 
+fn group_item_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminAiResourceGroupItem> {
+    let status: i64 = row.try_get("status").map_err(row_error)?;
+    Ok(AdminAiResourceGroupItem {
+        id: row.try_get("id").map_err(row_error)?,
+        group_code: row.try_get("group_code").map_err(row_error)?,
+        group_name: row.try_get("group_name").map_err(row_error)?,
+        group_type: row.try_get("group_type").map_err(row_error)?,
+        selection_mode: row.try_get("selection_mode").map_err(row_error)?,
+        description: optional_string_cell(&row, "description"),
+        sort_order: row.try_get("sort_order").ok().flatten(),
+        status: status_label(status),
+        resource_count: row.try_get("resource_count").map_err(row_error)?,
+        dynamic: row.try_get("dynamic").map_err(row_error)?,
+    })
+}
+
+fn group_resource_from_row(
+    row: sqlx::postgres::PgRow,
+) -> DomainResult<AdminAiResourceGroupResourceItem> {
+    let status: i64 = row.try_get("status").map_err(row_error)?;
+    Ok(AdminAiResourceGroupResourceItem {
+        id: row.try_get("id").map_err(row_error)?,
+        resource_code: row.try_get("resource_code").map_err(row_error)?,
+        resource_type: row.try_get("resource_type").map_err(row_error)?,
+        display_name: row.try_get("display_name").map_err(row_error)?,
+        vendor_code: optional_string_cell(&row, "vendor_code"),
+        modality_code: optional_string_cell(&row, "modality_code"),
+        api_endpoint_code: optional_string_cell(&row, "api_endpoint_code"),
+        catalog_key: optional_string_cell(&row, "catalog_key"),
+        model: optional_string_cell(&row, "model"),
+        provider_native_model: optional_string_cell(&row, "provider_native_model"),
+        status: status_label(status),
+        sort_order: row.try_get("sort_order").ok().flatten(),
+        member_role: row.try_get("member_role").map_err(row_error)?,
+    })
+}
+
 fn optional_string_cell(row: &sqlx::postgres::PgRow, name: &str) -> Option<String> {
     row.try_get::<Option<String>, _>(name)
         .ok()
@@ -961,6 +1978,10 @@ fn optional_optional_str(value: &Option<Option<String>>) -> Option<&str> {
     value.as_ref().and_then(|inner| inner.as_deref())
 }
 
+fn is_dynamic_group(_group_code: &str, selection_mode: &str) -> bool {
+    selection_mode == "dynamic_all_api"
+}
+
 fn ai_resource_routing_config_change<'a>(
     tenant_id: i64,
     organization_id: i64,
@@ -979,6 +2000,29 @@ fn ai_resource_routing_config_change<'a>(
         requested_at,
         changed_object_type: "ai_resource",
         changed_object_id: resource_id,
+        action,
+        event_payload,
+    }
+}
+
+fn ai_resource_group_routing_config_change<'a>(
+    tenant_id: i64,
+    organization_id: i64,
+    operator_id: i64,
+    request_id: &'a str,
+    requested_at: &'a str,
+    action: &'a str,
+    group_id: i64,
+    event_payload: serde_json::Value,
+) -> AiRoutingConfigChange<'a> {
+    AiRoutingConfigChange {
+        tenant_id,
+        organization_id,
+        operator_id,
+        request_id,
+        requested_at,
+        changed_object_type: "ai_resource_group",
+        changed_object_id: group_id,
         action,
         event_payload,
     }

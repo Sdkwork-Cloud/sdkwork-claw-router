@@ -100,6 +100,7 @@ const client = new SdkworkAppClient({
 - `client.system` - system API
 - `client.runtime` - runtime API
 - `client.sdkReference` - sdk_reference API
+- `client.sites` - sites API
 
 ## Usage Examples
 
@@ -272,6 +273,17 @@ const body = {
   },
 };
 const result = await client.sdkReference.archives.create(body);
+```
+
+### sites
+
+```typescript
+// Retrieve public site runtime branding settings
+const params = {
+  tenant_code: 'tenant_code',
+  organization_code: 'organization_code',
+};
+const result = await client.sites.runtime.retrieve(params);
 ```
 
 ## Error Handling

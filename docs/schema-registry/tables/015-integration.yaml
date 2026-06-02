@@ -387,6 +387,125 @@ tables:
     references_table: ai_model
     references_columns:
     - id
+- table: ai_site_model
+  domain: ai
+  profile: relation_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: ai-routing-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_site
+  - ai_site_service
+  - ai_model
+  frontend_routes:
+  - /admin/model/sites
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - site_id
+  - site_service_id
+  - site_code
+  - service_type
+  - model_code
+  - model_name
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  - name: uk_ai_site_model_service_model
+    columns:
+    - tenant_id
+    - organization_id
+    - site_id
+    - site_service_id
+    - model_code
+  columns:
+    site_id: int64
+    site_service_id: int64
+    site_code: string(64)
+    site_service_code: string(64)
+    service_type:
+      type: string(64)
+      constraints: NOT NULL DEFAULT 'ai_model_relay'
+    model_id: int64
+    catalog_key: string(256)
+    model_code: string(128)
+    model_name: string(128)
+    display_name: string(128)
+    provider_model: string(128)
+    provider_native_model: string(256)
+    vendor_code: string(64)
+    modality: string(64)
+    capability: enum_int32
+    capabilities: json
+    model_aliases: json
+    default_parameters: json
+    context_tokens: int64
+    max_input_tokens: int64
+    max_output_tokens: int64
+    supports_streaming: bool
+    supports_tools: bool
+    supports_json_schema: bool
+    pricing_snapshot: json
+    health_status:
+      type: enum_int32
+      constraints: NOT NULL DEFAULT 1
+    last_latency_ms: int32
+    consecutive_error_count:
+      type: int64
+      constraints: NOT NULL DEFAULT 0
+    last_sync_at: instant
+    effective_from: instant
+    effective_to: instant
+  indexes:
+  - name: idx_ai_site_model_site_status
+    columns:
+    - tenant_id
+    - organization_id
+    - site_id
+    - status
+    - model_code
+    - id
+  - name: idx_ai_site_model_service_status
+    columns:
+    - tenant_id
+    - organization_id
+    - site_service_id
+    - status
+    - model_code
+    - id
+  - name: idx_ai_site_model_catalog_status
+    columns:
+    - tenant_id
+    - organization_id
+    - catalog_key
+    - status
+    - id
+  foreign_keys:
+  - name: fk_ai_site_model_site
+    columns:
+    - site_id
+    references_table: ai_site
+    references_columns:
+    - id
+  - name: fk_ai_site_model_service
+    columns:
+    - site_service_id
+    references_table: ai_site_service
+    references_columns:
+    - id
+  - name: fk_ai_site_model_model
+    columns:
+    - model_id
+    references_table: ai_model
+    references_columns:
+    - id
 - table: integration_proxy
   domain: integration
   profile: credential_ref

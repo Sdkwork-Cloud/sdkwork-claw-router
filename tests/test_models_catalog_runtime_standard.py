@@ -18,6 +18,18 @@ MODELS_PACKAGE = (
 CONTRACT_PATH = ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
 CLASSIFICATION_PATH = ROOT / "docs" / "schema-registry" / "frontend-route-classification.yaml"
 
+SENSITIVE_APP_MODEL_PRICE_FIELDS = (
+    ("lowestUpstreamCostUnitPrice", "lowest_upstream_cost_unit_price"),
+    ("upstreamCost", "upstream_cost"),
+    ("providerCost", "provider_cost"),
+    ("channelCost", "channel_cost"),
+    ("costPrice", "cost_price"),
+    ("customerUnitPrice", "customer_unit_price"),
+    ("grossMarginPerUnit", "gross_margin_per_unit"),
+    ("pricingPlanCode", "pricing_plan_code"),
+    ("groupCode", "group_code"),
+)
+
 
 class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
     def test_models_package_build_is_source_package_type_validation(self) -> None:
@@ -216,6 +228,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         model_service_path = MODELS_PACKAGE / "src" / "modelService.ts"
         runtime_catalog_path = MODELS_PACKAGE / "src" / "runtimeModelCatalog.ts"
         app_sdk_types_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types"
+        app_models_api_path = ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_models.rs"
 
         self.assertTrue(
             model_service_path.exists(),
@@ -227,6 +240,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         )
         model_service_source = model_service_path.read_text(encoding="utf-8")
         runtime_catalog_source = runtime_catalog_path.read_text(encoding="utf-8")
+        app_models_api_source = app_models_api_path.read_text(encoding="utf-8")
         app_model_item_source = (app_sdk_types_path / "app-model-catalog-item.ts").read_text(encoding="utf-8")
         app_price_availability_source = (
             app_sdk_types_path / "app-model-catalog-price-availability.ts"
@@ -251,7 +265,14 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertEqual("GET", operation["api_method"])
         self.assertEqual("/app/v3/api/ai/models", operation["api_path"])
         self.assertEqual(
-            ["ai_model_vendor", "ai_model", "ai_model_capability", "ai_model_pricing"],
+            [
+                "ai_model_vendor",
+                "ai_model",
+                "ai_model_capability",
+                "ai_model_pricing",
+                "ai_channel_group",
+                "ai_channel_group_member",
+            ],
             operation["read_sources"],
         )
         self.assertEqual("AppModelCatalogResponse", operation["response_schema"]["name"])
@@ -260,9 +281,14 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         item_properties = item_schema["properties"]
         price_availability_properties = item_properties["priceAvailability"]["properties"]
 
-        self.assertNotIn("lowestUpstreamCostUnitPrice", item_properties)
-        self.assertNotIn("lowestUpstreamCostUnitPrice", model_service_source)
-        self.assertNotIn("lowestUpstreamCostUnitPrice", app_model_item_source)
+        for camel_field, snake_field in SENSITIVE_APP_MODEL_PRICE_FIELDS:
+            self.assertNotIn(camel_field, item_properties)
+            self.assertNotIn(camel_field, price_availability_properties)
+            self.assertNotIn(camel_field, model_service_source)
+            self.assertNotIn(camel_field, app_model_item_source)
+            self.assertNotIn(camel_field, app_price_availability_source)
+            self.assertNotIn(snake_field, app_models_api_source)
+
         self.assertEqual(
             ["reference", "unavailable"],
             price_availability_properties["status"]["enum"],
@@ -270,14 +296,6 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         )
         self.assertIn("status: 'reference' | 'unavailable'", app_price_availability_source)
         self.assertNotIn("'available'", app_price_availability_source)
-        for sensitive_field in (
-            "groupCode",
-            "pricingPlanCode",
-            "customerUnitPrice",
-            "grossMarginPerUnit",
-        ):
-            self.assertNotIn(sensitive_field, price_availability_properties)
-        self.assertNotIn(sensitive_field, app_price_availability_source)
 
         self.assertIn("getClawRouterAppSdkClient", model_service_source)
         self.assertIn(".ai.models.list", model_service_source)
@@ -293,7 +311,8 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("return runtimeModels.length > 0 ? runtimeModels : [...ALL_MODELS]", runtime_catalog_source)
         self.assertNotIn(": [...ALL_MODELS]", runtime_catalog_source)
         self.assertIn("readRequiredApiItems", model_service_source)
-        self.assertIn("return resolveRuntimeModelCatalog(readRequiredApiItems(result, 'Failed to fetch models'))", model_service_source)
+        self.assertIn("models: resolveRuntimeModelCatalog(readRequiredApiItems(result, 'Failed to fetch models'))", model_service_source)
+        self.assertIn("groups: resolveRuntimeModelCatalogGroups(readRecordArray(data, 'groups'))", model_service_source)
         self.assertNotIn("return resolveRuntimeModelCatalog(result.data?.items)", model_service_source)
         self.assertNotIn("return mergeRuntimeModelCatalog(result.data?.items ?? [])", model_service_source)
         self.assertIn("findModelByCatalogRouteId", runtime_catalog_source)
@@ -570,13 +589,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         self.assertIn("treats malformed price payloads as unavailable instead of crashing", runtime_test_source)
         self.assertIn('officialReferenceUnitPrice: { amount: "0.2" }', runtime_test_source)
         self.assertIn("reason: 100", runtime_test_source)
-        for sensitive_field in (
-            "lowestUpstreamCostUnitPrice",
-            "customerUnitPrice",
-            "grossMarginPerUnit",
-            "pricingPlanCode",
-            "groupCode",
-        ):
+        for sensitive_field, _ in SENSITIVE_APP_MODEL_PRICE_FIELDS:
             self.assertIn(sensitive_field, runtime_test_source)
 
         self.assertIn("portal models runtime tests", verifier_source)
@@ -627,13 +640,7 @@ class ModelsCatalogRuntimeStandardTest(unittest.TestCase):
         )
         self.assertIn("Public reference price is not configured for this model.", smoke_source)
         self.assertIn("Price is unavailable for the selected billing meter.", smoke_source)
-        for sensitive_field in (
-            "lowestUpstreamCostUnitPrice",
-            "customerUnitPrice",
-            "grossMarginPerUnit",
-            "pricingPlanCode",
-            "groupCode",
-        ):
+        for sensitive_field, _ in SENSITIVE_APP_MODEL_PRICE_FIELDS:
             self.assertIn(sensitive_field, smoke_source)
 
         self.assertIn("getClawRouterAppSdkClient().ai.models.list", service_source)

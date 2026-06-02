@@ -655,6 +655,10 @@ test("runtime model catalog maps public reference prices without exposing privat
 
   const serialized = JSON.stringify(models[0]);
   assert.doesNotMatch(serialized, /lowestUpstreamCostUnitPrice/);
+  assert.doesNotMatch(serialized, /upstreamCost/);
+  assert.doesNotMatch(serialized, /providerCost/);
+  assert.doesNotMatch(serialized, /channelCost/);
+  assert.doesNotMatch(serialized, /costPrice/);
   assert.doesNotMatch(serialized, /customerUnitPrice/);
   assert.doesNotMatch(serialized, /grossMarginPerUnit/);
   assert.doesNotMatch(serialized, /pricingPlanCode/);

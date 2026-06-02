@@ -74,6 +74,8 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
         self.assertIn("api.kling.text_to_video", resource_codes)
         self.assertIn("api.jimeng.image_generation", resource_codes)
         self.assertIn("api.volcengine.video_generation", resource_codes)
+        self.assertIn("api.minimax.music_generation", resource_codes)
+        self.assertIn("api.vidu.reference_to_image", resource_codes)
         self.assertIn("api.vidu.start_end_to_video", resource_codes)
 
         for resource in resources:
@@ -145,6 +147,51 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
                     relay_group_items,
                     "relay media groups must include task query endpoints used by async media providers",
                 )
+
+    def test_admin_api_groups_include_all_codex_api_resources(self) -> None:
+        manifest = read_json(AI_ROUTING_ROOT / "install-manifest.json")
+        resources = load_section_items("resources", manifest["sections"]["resources"])
+        admin_groups = read_json(
+            AI_ROUTING_ROOT / "resource-groups" / "admin-api-groups.json"
+        )["items"]
+
+        codex_resource_codes = {
+            item["resourceCode"]
+            for item in resources
+            if item["resourceType"] == "api_endpoint"
+            and (
+                item["resourceCode"].startswith("api.openai.codex.")
+                or item["resourceCode"]
+                in {"api.openai.containers", "api.openai.skills"}
+            )
+        }
+        self.assertGreater(
+            len(codex_resource_codes),
+            0,
+            "seed catalog must include Codex API endpoint resources",
+        )
+
+        codex_group = next(
+            (
+                group
+                for group in admin_groups
+                if group["groupCode"] == "api.openai.codex"
+            ),
+            None,
+        )
+        self.assertIsNotNone(codex_group, "admin API groups must expose OpenAI Codex API")
+        self.assertEqual("OpenAI Codex API", codex_group["groupName"])
+        self.assertNotIn("Response", codex_group["groupName"])
+        self.assertNotIn("Responses", codex_group["description"])
+        self.assertEqual(
+            codex_resource_codes,
+            {
+                item["resourceCode"]
+                for item in codex_group["items"]
+                if item["itemType"] == "resource"
+            },
+            "OpenAI Codex API group must include every Codex-related API resource",
+        )
 
     def test_ai_routing_seed_has_installer_hooks_for_sqlite_and_postgres(self) -> None:
         installer = (
@@ -219,6 +266,96 @@ class AiRoutingSeedBundleStandardTest(unittest.TestCase):
             "catalog\n        .channel_endpoint_templates\n        .iter()\n        .map(|item| item.api_code.clone())",
             ai_seed,
             "seed completeness must be based on API resources, not template-only coverage",
+        )
+
+    def test_api_endpoint_resources_are_classified_for_resource_pricing(self) -> None:
+        manifest = read_json(AI_ROUTING_ROOT / "install-manifest.json")
+        resources = load_section_items("resources", manifest["sections"]["resources"])
+        api_endpoint_resources = [
+            item for item in resources if item["resourceType"] == "api_endpoint"
+        ]
+        self.assertGreater(len(api_endpoint_resources), 0)
+
+        expected_categories = {
+            "model",
+            "image",
+            "video",
+            "audio",
+            "music",
+            "sfx",
+            "api_resource",
+        }
+        modality_to_category = {
+            "llm": "model",
+            "embedding": "model",
+            "image": "image",
+            "video": "video",
+            "audio": "audio",
+            "music": "music",
+            "sfx": "sfx",
+            "network": "api_resource",
+        }
+        observed_categories = {
+            modality_to_category[item["modalityCode"]]
+            for item in api_endpoint_resources
+        }
+        self.assertTrue(
+            observed_categories <= expected_categories,
+            "API endpoint resources must map to supported pricing resource categories",
+        )
+        self.assertIn(
+            "api_resource",
+            observed_categories,
+            "network and administrative APIs must be classified as per-call API resources",
+        )
+
+        ai_seed = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "ai_routing_seed.rs"
+        ).read_text(encoding="utf-8")
+        for token in [
+            "fn resource_billing_category(item: &ResourceSeed) -> &'static str",
+            '"resourceBillingCategory": resource_billing_category(item)',
+            '"defaultBillingMeter": default_billing_meter_code(item)',
+            '"api_request"',
+        ]:
+            self.assertIn(token, ai_seed)
+
+    def test_resource_pricing_categories_have_standard_default_meters(self) -> None:
+        ai_seed = (
+            ROOT
+            / "services"
+            / "sdkwork-claw-product"
+            / "src"
+            / "infrastructure"
+            / "sql"
+            / "ai_routing_seed.rs"
+        ).read_text(encoding="utf-8")
+
+        expected_meter_branches = {
+            "image": "image_result",
+            "video": "video_result",
+            "audio": "audio_input_second",
+            "music": "music_output_second",
+            "sfx": "sfx_result",
+            "network": "api_request",
+            "embedding": "embedding_input_token",
+        }
+        for modality, meter_code in expected_meter_branches.items():
+            self.assertIn(
+                f'"{modality}" => "{meter_code}"',
+                ai_seed,
+                f"{modality} resources must default to the standard billing meter {meter_code}",
+            )
+        self.assertNotIn(
+            '"sfx" => "sfx_output_second"',
+            ai_seed,
+            "sound-effect resources must not use a non-standard billing meter",
         )
 
     def test_resource_group_seed_items_use_non_null_unique_keys(self) -> None:

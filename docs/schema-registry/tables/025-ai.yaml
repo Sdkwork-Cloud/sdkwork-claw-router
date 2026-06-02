@@ -1,4 +1,113 @@
 tables:
+- table: ai_model_mapping_rule
+  domain: ai
+  profile: rule_entity
+  compliance_level: L2
+  system_of_record: true
+  write_owner: ai-routing-service
+  common_columns: tenant_entity
+  source_tables:
+  - ai_model_vendor
+  - ai_model
+  - ai_channel
+  frontend_routes:
+  - /admin/model/mappings
+  api_surfaces:
+  - backend
+  - worker
+  not_null_columns:
+  - uuid
+  - tenant_id
+  - organization_id
+  - status
+  - scope_type
+  - source_model
+  - target_model
+  - mapping_mode
+  - match_type
+  - priority
+  - enabled
+  unique_constraints:
+  - columns:
+    - uuid
+    source: column_unique
+  columns:
+    scope_type:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'global'
+    vendor_id: int64
+    vendor_code: string(64)
+    channel_id: int64
+    channel_code: string(64)
+    source_model:
+      type: string(256)
+      constraints: NOT NULL DEFAULT ''
+    source_catalog_key: string(256)
+    source_vendor_code: string(64)
+    target_model:
+      type: string(256)
+      constraints: NOT NULL DEFAULT ''
+    target_catalog_key: string(256)
+    target_vendor_code: string(64)
+    target_provider_model: string(256)
+    target_provider_native_model: string(256)
+    mapping_mode:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'alias'
+    match_type:
+      type: string(32)
+      constraints: NOT NULL DEFAULT 'exact'
+    priority:
+      type: int32
+      constraints: NOT NULL DEFAULT 100
+    enabled:
+      type: bool
+      constraints: NOT NULL DEFAULT TRUE
+    effective_from: instant
+    effective_to: instant
+    description: string(512)
+    metadata:
+      type: json
+      constraints: NOT NULL DEFAULT '{}'::jsonb
+  indexes:
+  - name: idx_ai_model_mapping_rule_channel_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - enabled
+    - channel_id
+    - source_model
+    - priority
+    - id
+  - name: idx_ai_model_mapping_rule_vendor_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - enabled
+    - vendor_code
+    - source_model
+    - priority
+    - id
+  - name: idx_ai_model_mapping_rule_global_lookup
+    columns:
+    - tenant_id
+    - organization_id
+    - status
+    - enabled
+    - scope_type
+    - source_model
+    - priority
+    - id
+  - name: idx_ai_model_mapping_rule_target_model
+    columns:
+    - tenant_id
+    - organization_id
+    - target_catalog_key
+    - target_vendor_code
+    - status
+    - id
 - table: ai_usage_service_provider_chain
   domain: ai
   profile: commercial_usage_chain_fact

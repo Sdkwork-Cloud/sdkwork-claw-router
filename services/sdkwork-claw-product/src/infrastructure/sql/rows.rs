@@ -1,10 +1,11 @@
 use crate::domain::{
     provider_native_model_id, AiModel, AiModelPublicMetadata, BillingMeter, ChannelGroup,
     ChannelGroupMetricSnapshot, DecimalValue, DomainError, DomainResult, GatewayAccessPolicy,
-    GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money,
-    PriceSide, PricingPlan, ProviderAuthProfile, ProviderChannelGroupBinding, ProviderChannelRoute,
-    ProviderRetryPolicy, QuotaPolicy, RouteCandidate, RoutingCapability, RoutingFallbackMode,
-    RoutingPolicy, RoutingPolicyScope, RoutingRule,
+    GatewayApiKey, ModelMappingRule, ModelMappingScope, ModelPrice, ModelProviderRoute,
+    ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderAuthProfile,
+    ProviderChannelGroupBinding, ProviderChannelRoute, ProviderRetryPolicy, QuotaPolicy,
+    RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope,
+    RoutingRule,
 };
 
 pub struct ModelVendorRow {
@@ -140,6 +141,49 @@ pub struct ProviderChannelRouteRow {
     pub timeout_ms: Option<i64>,
     pub retry_policy_json: Option<String>,
     pub group_bindings_json: String,
+}
+
+pub struct ModelMappingRuleRow {
+    pub id: i64,
+    pub scope_type: String,
+    pub vendor_code: Option<String>,
+    pub channel_id: Option<i64>,
+    pub channel_code: Option<String>,
+    pub source_model: String,
+    pub target_model: String,
+    pub target_catalog_key: Option<String>,
+    pub target_vendor_code: Option<String>,
+    pub target_provider_model: Option<String>,
+    pub target_provider_native_model: Option<String>,
+    pub priority: i32,
+}
+
+impl ModelMappingRuleRow {
+    pub fn try_into_domain(self) -> DomainResult<ModelMappingRule> {
+        let mut rule = ModelMappingRule::new(
+            self.id,
+            ModelMappingScope::from_str(&self.scope_type)?,
+            &self.source_model,
+            &self.target_model,
+            self.priority,
+        );
+        rule.vendor_code = self.vendor_code.filter(|value| !value.trim().is_empty());
+        rule.channel_id = self.channel_id;
+        rule.channel_code = self.channel_code.filter(|value| !value.trim().is_empty());
+        rule.target_catalog_key = self
+            .target_catalog_key
+            .filter(|value| !value.trim().is_empty());
+        rule.target_vendor_code = self
+            .target_vendor_code
+            .filter(|value| !value.trim().is_empty());
+        rule.target_provider_model = self
+            .target_provider_model
+            .filter(|value| !value.trim().is_empty());
+        rule.target_provider_native_model = self
+            .target_provider_native_model
+            .filter(|value| !value.trim().is_empty());
+        Ok(rule)
+    }
 }
 
 impl ProviderChannelRouteRow {

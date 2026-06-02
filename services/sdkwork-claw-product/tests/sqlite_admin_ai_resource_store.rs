@@ -1,7 +1,9 @@
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminAiResourceStore;
 use sdkwork_claw_product::ports::{
-    AdminAiResourceMemberCommand, AdminAiResourceStore, AdminAiResourceSubject,
-    CreateAdminAiResourceCommand, ListAdminAiResourcesQuery, UpdateAdminAiResourceCommand,
+    AdminAiResourceGroupMemberCommand, AdminAiResourceMemberCommand, AdminAiResourceStore,
+    AdminAiResourceSubject, CreateAdminAiResourceCommand, CreateAdminAiResourceGroupCommand,
+    ListAdminAiResourceGroupResourcesQuery, ListAdminAiResourceGroupsQuery,
+    ListAdminAiResourcesQuery, UpdateAdminAiResourceCommand, UpdateAdminAiResourceGroupCommand,
 };
 use sdkwork_claw_product_test_support::schema_sqlite_pool;
 use sqlx::Row;
@@ -489,6 +491,207 @@ async fn sqlite_admin_ai_resource_store_syncs_group_members_when_composite_resou
     assert_eq!(
         2, active_member_count,
         "re-enabling a composite resource should restore existing non-deleted member rows"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_admin_ai_resource_store_treats_api_all_all_mode_as_static_members() {
+    let pool = schema_sqlite_pool().await;
+    seed_ai_resources(&pool).await;
+    for statement in [
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9401, 'test-api-all-chat', 10, 20, 'api.test.chat', 'api_endpoint', 'Test Chat API', 'openai', 'chat', 'openai.chat_completions', '{}', 1, 30)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9402, 'test-api-all-image', 10, 20, 'api.test.image', 'api_endpoint', 'Test Image API', 'openai', 'image', 'openai.images', '{}', 1, 31)",
+        "INSERT INTO ai_resource_group (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order) VALUES (9404, 'test-api-all-static-group', 10, 20, 'api.all', 'All APIs', 'api_group', 'all', 1, 1)",
+        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9401, 'test-api-all-static-member', 10, 20, 9404, 'api.all', 'resource', 9401, 'api.test.chat', '', 'included', '{}', 1, 1)",
+    ] {
+        sqlx::query(statement).execute(&pool).await.unwrap();
+    }
+    let store = SqliteAdminAiResourceStore::new(pool);
+
+    let groups = store
+        .list_ai_resource_groups(ListAdminAiResourceGroupsQuery { subject: subject() })
+        .await
+        .unwrap();
+    let api_all = groups
+        .iter()
+        .find(|group| group.group_code == "api.all")
+        .expect("api.all group should be listed");
+    assert_eq!("all", api_all.selection_mode);
+    assert!(!api_all.dynamic);
+    assert_eq!(
+        1, api_all.resource_count,
+        "api.all with selection_mode=all must count persisted group relationships"
+    );
+
+    let resources = store
+        .list_ai_resource_group_resources(ListAdminAiResourceGroupResourcesQuery {
+            subject: subject(),
+            group_id_or_code: "api.all".to_owned(),
+        })
+        .await
+        .unwrap();
+    assert_eq!(
+        vec!["api.test.chat".to_owned()],
+        resources
+            .into_iter()
+            .map(|resource| resource.resource_code)
+            .collect::<Vec<_>>(),
+        "api.all with selection_mode=all must list persisted members, not every API endpoint"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_admin_ai_resource_store_lists_system_seeded_api_groups_for_admin_subject() {
+    let pool = schema_sqlite_pool().await;
+    for statement in [
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9501, 'test-system-api-chat', 0, 0, 'api.test.system.chat', 'api_endpoint', 'System Chat API', 'openai', 'chat', 'openai.chat_completions', '{}', 1, 1)",
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9502, 'test-system-api-image', 0, 0, 'api.test.system.image', 'api_endpoint', 'System Image API', 'openai', 'image', 'openai.images', '{}', 1, 2)",
+        "INSERT INTO ai_resource_group (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order) VALUES (9504, 'test-system-api-all-group', 0, 0, 'api.all', 'All APIs', 'api_group', 'all', 1, 1)",
+        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9501, 'test-system-api-all-chat-member', 0, 0, 9504, 'api.all', 'resource', 9501, 'api.test.system.chat', '', 'included', '{}', 1, 1)",
+        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9502, 'test-system-api-all-image-member', 0, 0, 9504, 'api.all', 'resource', 9502, 'api.test.system.image', '', 'included', '{}', 1, 2)",
+    ] {
+        sqlx::query(statement).execute(&pool).await.unwrap();
+    }
+    let store = SqliteAdminAiResourceStore::new(pool);
+
+    let groups = store
+        .list_ai_resource_groups(ListAdminAiResourceGroupsQuery { subject: subject() })
+        .await
+        .unwrap();
+    let api_all = groups
+        .iter()
+        .find(|group| group.group_code == "api.all")
+        .expect("admin subject should see system-seeded API groups");
+    assert_eq!("all", api_all.selection_mode);
+    assert_eq!(2, api_all.resource_count);
+
+    let resources = store
+        .list_ai_resource_group_resources(ListAdminAiResourceGroupResourcesQuery {
+            subject: subject(),
+            group_id_or_code: "api.all".to_owned(),
+        })
+        .await
+        .unwrap();
+    assert_eq!(
+        vec![
+            "api.test.system.chat".to_owned(),
+            "api.test.system.image".to_owned()
+        ],
+        resources
+            .into_iter()
+            .map(|resource| resource.resource_code)
+            .collect::<Vec<_>>(),
+    );
+}
+
+#[tokio::test]
+async fn sqlite_admin_ai_resource_store_creates_admin_group_with_system_seeded_api_member() {
+    let pool = schema_sqlite_pool().await;
+    sqlx::query(
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9601, 'test-system-api-chat-for-custom-group', 0, 0, 'api.test.system.chat', 'api_endpoint', 'System Chat API', 'openai', 'chat', 'openai.chat_completions', '{}', 1, 1)",
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    let store = SqliteAdminAiResourceStore::new(pool);
+
+    let created = store
+        .create_ai_resource_group(CreateAdminAiResourceGroupCommand {
+            subject: subject(),
+            group_uuid: "test-custom-system-api-group".to_owned(),
+            member_uuids: vec!["test-custom-system-api-group-member".to_owned()],
+            audit_log_uuid: "audit-custom-system-api-group".to_owned(),
+            group_code: "api.custom.system.chat".to_owned(),
+            group_name: "Custom System Chat API".to_owned(),
+            group_type: "api_group".to_owned(),
+            selection_mode: "manual".to_owned(),
+            description: None,
+            sort_order: Some(50),
+            status: "active".to_owned(),
+            members: vec![AdminAiResourceGroupMemberCommand {
+                resource_code: "api.test.system.chat".to_owned(),
+                item_role: "included".to_owned(),
+                sort_order: Some(1),
+            }],
+            request_id: "req-custom-system-api-group".to_owned(),
+            requested_at: "2026-06-02 10:10:00".to_owned(),
+        })
+        .await
+        .unwrap();
+    assert_eq!("api.custom.system.chat", created.group_code);
+    assert_eq!(1, created.resource_count);
+
+    let resources = store
+        .list_ai_resource_group_resources(ListAdminAiResourceGroupResourcesQuery {
+            subject: subject(),
+            group_id_or_code: "api.custom.system.chat".to_owned(),
+        })
+        .await
+        .unwrap();
+    assert_eq!(
+        vec!["api.test.system.chat".to_owned()],
+        resources
+            .into_iter()
+            .map(|resource| resource.resource_code)
+            .collect::<Vec<_>>(),
+    );
+}
+
+#[tokio::test]
+async fn sqlite_admin_ai_resource_store_clears_members_when_group_becomes_dynamic() {
+    let pool = schema_sqlite_pool().await;
+    seed_ai_resources(&pool).await;
+    for statement in [
+        "INSERT INTO ai_resource (id, uuid, tenant_id, organization_id, resource_code, resource_type, display_name, vendor_code, modality_code, api_code, resource_schema, status, sort_order) VALUES (9301, 'test-api-resource-chat', 10, 20, 'api.test.chat', 'api_endpoint', 'Test Chat API', 'openai', 'chat', 'openai.chat_completions', '{}', 1, 30)",
+        "INSERT INTO ai_resource_group (id, uuid, tenant_id, organization_id, group_code, group_name, group_type, selection_mode, status, sort_order) VALUES (9304, 'test-api-resource-group-manual', 10, 20, 'api.manual.test', 'Manual API Group', 'api_group', 'manual', 1, 30)",
+        "INSERT INTO ai_resource_group_item (id, uuid, tenant_id, organization_id, resource_group_id, resource_group_code, item_type, resource_id, resource_code, child_resource_group_code, item_role, metadata, status, sort_order) VALUES (9301, 'test-api-resource-group-member', 10, 20, 9304, 'api.manual.test', 'resource', 9301, 'api.test.chat', '', 'included', '{}', 1, 1)",
+    ] {
+        sqlx::query(statement).execute(&pool).await.unwrap();
+    }
+    let store = SqliteAdminAiResourceStore::new(pool.clone());
+
+    let updated = store
+        .update_ai_resource_group(UpdateAdminAiResourceGroupCommand {
+            subject: subject(),
+            group_id: 9304,
+            member_uuids: Vec::new(),
+            audit_log_uuid: "audit-api-group-dynamic-update".to_owned(),
+            group_code: Some("api.all".to_owned()),
+            group_name: Some("All APIs".to_owned()),
+            group_type: Some("api_group".to_owned()),
+            selection_mode: Some("dynamic_all_api".to_owned()),
+            description: None,
+            sort_order: None,
+            status: None,
+            members: None,
+            request_id: "req-api-group-dynamic-update".to_owned(),
+            requested_at: "2026-06-02 10:00:00".to_owned(),
+        })
+        .await
+        .unwrap()
+        .expect("resource group should update");
+
+    assert_eq!("api.all", updated.group_code);
+    assert_eq!("dynamic_all_api", updated.selection_mode);
+    assert!(updated.dynamic);
+
+    let active_member_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource_group_item
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND resource_group_id = 9304
+          AND status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        0, active_member_count,
+        "dynamic API groups must not keep materialized resource relationships"
     );
 }
 

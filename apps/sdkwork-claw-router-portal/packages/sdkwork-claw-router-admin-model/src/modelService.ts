@@ -17,8 +17,17 @@ import {
 import type {
   AdminAiModelCreateRequest,
   AdminAiModelUpdateRequest,
+  AdminAiResourceGroupCreateRequest,
+  AdminAiResourceGroupUpdateRequest,
+  AdminSiteCreateRequest,
+  AdminSiteModelCreateRequest,
+  AdminSiteModelUpdateRequest,
+  AdminSiteUpdateRequest,
   AdminModelCatalogSyncRequest,
   AdminModelCatalogSyncResponse,
+  AdminModelMappingCreateRequest,
+  AdminModelMappingResolveRequest,
+  AdminModelMappingUpdateRequest,
   AdminModelVendorCreateRequest,
   ModelRankingItem,
   ModelRankingRefreshJobHistoryPage,
@@ -26,6 +35,7 @@ import type {
   ModelRankingRefreshStatus,
   ModelRankingRefreshTriggerRequest,
   ModelRankingRefreshTriggerResponse,
+  MediaResource,
 } from '@sdkwork/clawrouter-backend-sdk';
 
 export interface Vendor {
@@ -167,6 +177,255 @@ export type ModelUpdateInput = ModelCreateInput & {
 };
 
 type ModelPatchInput = Partial<ModelUpdateInput> & Pick<AdminAiModelUpdateRequest, 'status'>;
+
+export interface SiteItem {
+  id: string;
+  siteCode: string;
+  siteName: string;
+  displayName: string;
+  description: string | null;
+  baseUrl: string;
+  websiteUrl: string | null;
+  docsUrl: string | null;
+  logo: MediaResource | null;
+  domains: string[];
+  vendorCodes: string[];
+  siteType: 'relay';
+  ownerKind: string | null;
+  regionCode: string | null;
+  environment: 'production' | 'sandbox';
+  healthStatus: 'unknown' | 'healthy' | 'degraded' | 'unhealthy';
+  lastLatencyMs: number | null;
+  consecutiveErrorCount: number;
+  lastCheckedAt: string | null;
+  lastSyncAt: string | null;
+  sortOrder: number;
+  status: 'active' | 'disabled';
+}
+
+export interface SiteCreateInput {
+  siteCode: string;
+  siteName: string;
+  displayName: string;
+  description?: string | null;
+  baseUrl: string;
+  websiteUrl?: string | null;
+  docsUrl?: string | null;
+  logo?: MediaResource | null;
+  domains?: string[];
+  vendorCodes?: string[];
+  siteType?: 'relay';
+  ownerKind?: string | null;
+  regionCode?: string | null;
+  environment?: SiteItem['environment'];
+  status?: SiteItem['status'];
+  credentialRef?: string | null;
+  maskedLabel?: string | null;
+}
+
+export interface SiteUpdateInput {
+  siteCode?: string;
+  siteName?: string;
+  displayName?: string;
+  description?: string | null;
+  baseUrl?: string;
+  websiteUrl?: string | null;
+  docsUrl?: string | null;
+  logo?: MediaResource | null;
+  domains?: string[];
+  vendorCodes?: string[];
+  siteType?: 'relay';
+  ownerKind?: string | null;
+  regionCode?: string | null;
+  environment?: SiteItem['environment'];
+  status?: SiteItem['status'];
+  credentialRef?: string | null;
+  maskedLabel?: string | null;
+}
+
+export interface SiteModelItem {
+  id: string;
+  siteId: string;
+  siteCode: string;
+  siteServiceId: string;
+  siteServiceCode: string | null;
+  serviceType: 'ai_model_relay';
+  modelCode: string;
+  modelName: string;
+  displayName: string | null;
+  providerModel: string | null;
+  providerNativeModel: string | null;
+  vendorCode: string | null;
+  modality: string | null;
+  capabilities: string[];
+  contextTokens: number | null;
+  maxInputTokens: number | null;
+  maxOutputTokens: number | null;
+  supportsStreaming: boolean;
+  supportsTools: boolean;
+  supportsJsonSchema: boolean;
+  healthStatus: SiteItem['healthStatus'];
+  lastLatencyMs: number | null;
+  consecutiveErrorCount: number;
+  lastSyncAt: string | null;
+  status: SiteItem['status'];
+}
+
+export interface SiteModelCreateInput {
+  modelCode: string;
+  modelName: string;
+  displayName?: string | null;
+  providerModel?: string | null;
+  providerNativeModel?: string | null;
+  vendorCode?: string | null;
+  modality?: string | null;
+  capabilities?: string[];
+  contextTokens?: number | null;
+  maxInputTokens?: number | null;
+  maxOutputTokens?: number | null;
+  supportsStreaming?: boolean;
+  supportsTools?: boolean;
+  supportsJsonSchema?: boolean;
+  status?: SiteItem['status'];
+}
+
+export interface SiteModelUpdateInput {
+  modelCode?: string;
+  modelName?: string;
+  displayName?: string | null;
+  providerModel?: string | null;
+  providerNativeModel?: string | null;
+  vendorCode?: string | null;
+  modality?: string | null;
+  capabilities?: string[];
+  contextTokens?: number | null;
+  maxInputTokens?: number | null;
+  maxOutputTokens?: number | null;
+  supportsStreaming?: boolean;
+  supportsTools?: boolean;
+  supportsJsonSchema?: boolean;
+  status?: SiteItem['status'];
+}
+
+export interface SiteChannelItem {
+  id: string;
+  channelCode: string;
+  channelName: string;
+  providerCode: string | null;
+  siteCode: string | null;
+  siteServiceCode: string | null;
+  siteChannelRole: string | null;
+  healthStatus: SiteItem['healthStatus'];
+  status: SiteItem['status'];
+}
+
+export interface SiteConnectionCheckResult {
+  siteId: string;
+  status: 'success' | 'failed';
+  healthStatus: SiteItem['healthStatus'];
+  latencyMs: number | null;
+  checkedAt: string;
+  message: string | null;
+}
+
+export interface ModelMappingRule {
+  id: string;
+  scopeType: 'global' | 'vendor' | 'channel';
+  vendorId: string | null;
+  vendorCode: string | null;
+  channelId: string | null;
+  channelCode: string | null;
+  sourceModel: string;
+  sourceCatalogKey: string | null;
+  sourceVendorCode: string | null;
+  targetModel: string;
+  targetCatalogKey: string | null;
+  targetVendorCode: string | null;
+  targetProviderModel: string | null;
+  targetProviderNativeModel: string | null;
+  mappingMode: 'alias';
+  matchType: 'exact';
+  priority: number;
+  enabled: boolean;
+  effectiveFrom: string | null;
+  effectiveTo: string | null;
+  description: string | null;
+  createdAt: string | null;
+  updatedAt: string | null;
+}
+
+export type ModelMappingCreateInput = AdminModelMappingCreateRequest;
+export type ModelMappingUpdateInput = AdminModelMappingUpdateRequest;
+export type ModelMappingResolveInput = AdminModelMappingResolveRequest;
+
+export interface ResourceGroupItem {
+  id: string;
+  groupCode: string;
+  groupName: string;
+  groupType: 'api_group';
+  selectionMode: 'manual' | 'all' | 'any' | 'dynamic_all_api';
+  description: string | null;
+  sortOrder: number | null;
+  status: 'active' | 'disabled' | 'inactive';
+  resourceCount: number;
+  dynamic: boolean;
+}
+
+export interface ResourceGroupResourceItem {
+  id: string;
+  resourceCode: string;
+  resourceType: 'api_endpoint';
+  displayName: string;
+  vendorCode: string | null;
+  modalityCode: string | null;
+  apiEndpointCode: string | null;
+  catalogKey: string | null;
+  model: string | null;
+  providerNativeModel: string | null;
+  status: 'active' | 'disabled' | 'inactive';
+  sortOrder: number | null;
+  memberRole: 'included' | 'optional' | 'fallback';
+}
+
+export interface ResourceGroupMemberInput {
+  resourceCode: string;
+  itemRole?: ResourceGroupResourceItem['memberRole'];
+  sortOrder?: number | null;
+}
+
+export interface ResourceGroupCreateInput {
+  groupCode: string;
+  groupName: string;
+  groupType?: ResourceGroupItem['groupType'];
+  selectionMode?: ResourceGroupItem['selectionMode'];
+  description?: string | null;
+  sortOrder?: number | null;
+  status?: ResourceGroupItem['status'];
+  members?: ResourceGroupMemberInput[];
+}
+
+export interface ResourceGroupUpdateInput {
+  groupCode?: string;
+  groupName?: string;
+  groupType?: ResourceGroupItem['groupType'];
+  selectionMode?: ResourceGroupItem['selectionMode'];
+  description?: string | null;
+  sortOrder?: number | null;
+  status?: ResourceGroupItem['status'];
+  members?: ResourceGroupMemberInput[];
+}
+
+export interface ModelMappingResolveResult {
+  matched: boolean;
+  matchedScopeType: ModelMappingRule['scopeType'] | null;
+  sourceModel: string;
+  targetModel: string;
+  targetCatalogKey: string | null;
+  targetVendorCode: string | null;
+  targetProviderModel: string | null;
+  targetProviderNativeModel: string | null;
+  rule: ModelMappingRule | null;
+}
 
 export const KNOWN_VENDORS = [
   { id: 'v_openai', name: 'OpenAI', desc: 'Industry leading LLMs inclusive of GPT-4 and DALL-E.' },
@@ -329,6 +588,236 @@ export class ModelService {
     const result = await getClawRouterBackendSdkClient().ai.models.delete(requiredSafePathSegment(id, 'modelId'));
     ensureDeleteResult(result, 'Model delete confirmation is required');
     return true;
+  }
+}
+
+export class SiteService {
+  static async fetchSites(q?: string): Promise<SiteItem[]> {
+    const result = await getClawRouterBackendSdkClient().sites.siteCatalog.list(q ? { q } : undefined);
+    ensureSdkworkApiSuccess(result, 'Failed to fetch sites');
+    return readRequiredApiItems(result, 'Failed to fetch sites')
+      .map(normalizeSiteItem);
+  }
+
+  static async createSite(input: SiteCreateInput): Promise<SiteItem> {
+    const result = await getClawRouterBackendSdkClient().sites.create(toSiteCreateRequest(input));
+    ensureSdkworkApiSuccess(result, 'Failed to create site');
+    return normalizeSiteItem(readRequiredApiItem(result, 'Failed to create site'));
+  }
+
+  static async updateSite(siteId: string, input: SiteUpdateInput): Promise<SiteItem> {
+    const result = await getClawRouterBackendSdkClient().sites.update(
+      requiredSafePathSegment(siteId, 'siteId'),
+      toSiteUpdateRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update site');
+    return normalizeSiteItem(readRequiredApiItem(result, 'Failed to update site'));
+  }
+
+  static async deleteSite(siteId: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().sites.delete(requiredSafePathSegment(siteId, 'siteId'));
+    ensureSdkworkApiSuccess(result, 'Failed to delete site');
+    return readBoolean(readApiRecord(result), 'deleted', false);
+  }
+
+  static async fetchSiteModels(siteId: string): Promise<SiteModelItem[]> {
+    const result = await getClawRouterBackendSdkClient().sites.siteModels.list(requiredSafePathSegment(siteId, 'siteId'));
+    ensureSdkworkApiSuccess(result, 'Failed to fetch site models');
+    return readRequiredApiItems(result, 'Failed to fetch site models')
+      .map(normalizeSiteModelItem);
+  }
+
+  static async createSiteModel(siteId: string, input: SiteModelCreateInput): Promise<SiteModelItem> {
+    const result = await getClawRouterBackendSdkClient().sites.siteModels.create(
+      requiredSafePathSegment(siteId, 'siteId'),
+      toSiteModelCreateRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to create site model');
+    return normalizeSiteModelItem(readRequiredApiItem(result, 'Failed to create site model'));
+  }
+
+  static async replaceSiteModels(siteId: string, items: SiteModelCreateInput[]): Promise<SiteModelItem[]> {
+    const result = await getClawRouterBackendSdkClient().sites.siteModels.replace(
+      requiredSafePathSegment(siteId, 'siteId'),
+      { items: items.map(toSiteModelCreateRequest) },
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to replace site models');
+    return readRequiredApiItems(result, 'Failed to replace site models')
+      .map(normalizeSiteModelItem);
+  }
+
+  static async updateSiteModel(siteId: string, siteModelId: string, input: SiteModelUpdateInput): Promise<SiteModelItem> {
+    const result = await getClawRouterBackendSdkClient().sites.siteModels.update(
+      requiredSafePathSegment(siteId, 'siteId'),
+      requiredSafePathSegment(siteModelId, 'siteModelId'),
+      toSiteModelUpdateRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update site model');
+    return normalizeSiteModelItem(readRequiredApiItem(result, 'Failed to update site model'));
+  }
+
+  static async deleteSiteModel(siteId: string, siteModelId: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().sites.siteModels.delete(
+      requiredSafePathSegment(siteId, 'siteId'),
+      requiredSafePathSegment(siteModelId, 'siteModelId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to delete site model');
+    return readBoolean(readApiRecord(result), 'deleted', false);
+  }
+
+  static async fetchSiteChannels(siteId: string): Promise<SiteChannelItem[]> {
+    const result = await getClawRouterBackendSdkClient().sites.siteChannels.list(requiredSafePathSegment(siteId, 'siteId'));
+    ensureSdkworkApiSuccess(result, 'Failed to fetch site channels');
+    return readRequiredApiItems(result, 'Failed to fetch site channels')
+      .map(normalizeSiteChannelItem);
+  }
+
+  static async testSiteConnection(siteId: string): Promise<SiteConnectionCheckResult> {
+    const result = await getClawRouterBackendSdkClient().sites.testConnection.create(
+      requiredSafePathSegment(siteId, 'siteId'),
+      {},
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to test site connection');
+    return normalizeSiteConnectionCheckResult(readApiRecord(result));
+  }
+
+  static async healthCheckSite(siteId: string): Promise<SiteConnectionCheckResult> {
+    const result = await getClawRouterBackendSdkClient().sites.healthCheck.create(
+      requiredSafePathSegment(siteId, 'siteId'),
+      {},
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to health check site');
+    return normalizeSiteConnectionCheckResult(readApiRecord(result));
+  }
+}
+
+export class ResourceGroupService {
+  static async fetchResourceGroups(): Promise<ResourceGroupItem[]> {
+    const result = await getClawRouterBackendSdkClient().ai.aiResourceGroups.list();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch AI resource groups');
+    return readRequiredApiItems(result, 'Failed to fetch AI resource groups')
+      .map(normalizeResourceGroupItem);
+  }
+
+  static fetchGroups(): Promise<ResourceGroupItem[]> {
+    return ResourceGroupService.fetchResourceGroups();
+  }
+
+  static async fetchResourceGroupResources(groupIdOrCode: string): Promise<ResourceGroupResourceItem[]> {
+    const result = await getClawRouterBackendSdkClient().ai.aiResourceGroups.resources.list(
+      requiredSafePathSegment(groupIdOrCode, 'groupIdOrCode'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to fetch AI resource group resources');
+    return readRequiredApiItems(result, 'Failed to fetch AI resource group resources')
+      .map(normalizeResourceGroupResourceItem);
+  }
+
+  static fetchResources(groupIdOrCode: string): Promise<ResourceGroupResourceItem[]> {
+    return ResourceGroupService.fetchResourceGroupResources(groupIdOrCode);
+  }
+
+  static async createResourceGroup(input: ResourceGroupCreateInput): Promise<ResourceGroupItem> {
+    const result = await getClawRouterBackendSdkClient().ai.aiResourceGroups.create(
+      toResourceGroupCreateRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to create AI resource group');
+    return normalizeResourceGroupItem(readRequiredApiItem(result, 'Created AI resource group response is missing item'));
+  }
+
+  static createGroup(input: ResourceGroupCreateInput): Promise<ResourceGroupItem> {
+    return ResourceGroupService.createResourceGroup(input);
+  }
+
+  static async updateResourceGroup(groupId: string, input: ResourceGroupUpdateInput): Promise<ResourceGroupItem> {
+    const result = await getClawRouterBackendSdkClient().ai.aiResourceGroups.update(
+      requiredSafePathSegment(groupId, 'groupId'),
+      toResourceGroupUpdateRequest(input),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update AI resource group');
+    return normalizeResourceGroupItem(readRequiredApiItem(result, 'Updated AI resource group response is missing item'));
+  }
+
+  static updateGroup(groupId: string, input: ResourceGroupUpdateInput): Promise<ResourceGroupItem> {
+    return ResourceGroupService.updateResourceGroup(groupId, input);
+  }
+
+  static async deleteResourceGroup(groupId: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().ai.aiResourceGroups.delete(
+      requiredSafePathSegment(groupId, 'groupId'),
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to delete AI resource group');
+    return readBoolean(readApiRecord(result), 'deleted', false);
+  }
+
+  static deleteGroup(groupId: string): Promise<boolean> {
+    return ResourceGroupService.deleteResourceGroup(groupId);
+  }
+}
+
+export class ModelMappingService {
+  static async fetchModelMappings(params?: {
+    scopeType?: ModelMappingRule['scopeType'] | 'all';
+    vendorCode?: string | null;
+    channelCode?: string | null;
+    sourceModel?: string | null;
+  }): Promise<ModelMappingRule[]> {
+    const query = {
+      scopeType: params?.scopeType && params.scopeType !== 'all' ? params.scopeType : undefined,
+      vendorCode: params?.vendorCode || undefined,
+      channelCode: params?.channelCode || undefined,
+      sourceModel: params?.sourceModel || undefined,
+    };
+    const result = await getClawRouterBackendSdkClient().ai.modelMappings.list(query);
+    ensureSdkworkApiSuccess(result, 'Failed to fetch model mappings');
+    return readRequiredApiItems(result, 'Failed to fetch model mappings')
+      .map(normalizeModelMappingRule);
+  }
+
+  static fetchMappings(params?: Parameters<typeof ModelMappingService.fetchModelMappings>[0]): Promise<ModelMappingRule[]> {
+    return ModelMappingService.fetchModelMappings(params);
+  }
+
+  static async createModelMapping(input: ModelMappingCreateInput): Promise<ModelMappingRule> {
+    const result = await getClawRouterBackendSdkClient().ai.modelMappings.create(input);
+    ensureSdkworkApiSuccess(result, 'Failed to create model mapping');
+    return normalizeModelMappingRule(readRequiredApiItem(result, 'Created model mapping response is missing item'));
+  }
+
+  static createMapping(input: ModelMappingCreateInput): Promise<ModelMappingRule> {
+    return ModelMappingService.createModelMapping(input);
+  }
+
+  static async updateModelMapping(id: string, input: ModelMappingUpdateInput): Promise<ModelMappingRule> {
+    const result = await getClawRouterBackendSdkClient().ai.modelMappings.update(
+      requiredSafePathSegment(id, 'mappingId'),
+      input,
+    );
+    ensureSdkworkApiSuccess(result, 'Failed to update model mapping');
+    return normalizeModelMappingRule(readRequiredApiItem(result, 'Updated model mapping response is missing item'));
+  }
+
+  static updateMapping(id: string, input: ModelMappingUpdateInput): Promise<ModelMappingRule> {
+    return ModelMappingService.updateModelMapping(id, input);
+  }
+
+  static async deleteModelMapping(id: string): Promise<boolean> {
+    const result = await getClawRouterBackendSdkClient().ai.modelMappings.delete(requiredSafePathSegment(id, 'mappingId'));
+    ensureSdkworkApiSuccess(result, 'Failed to delete model mapping');
+    return readBoolean(readRequiredRecord(readApiRecord(result).data, 'Model mapping delete response is missing data'), 'deleted', false);
+  }
+
+  static deleteMapping(id: string): Promise<boolean> {
+    return ModelMappingService.deleteModelMapping(id);
+  }
+
+  static async resolveModelMapping(input: ModelMappingResolveInput): Promise<ModelMappingResolveResult> {
+    const result = await getClawRouterBackendSdkClient().ai.modelMappings.resolve.create(input);
+    ensureSdkworkApiSuccess(result, 'Failed to resolve model mapping');
+    return normalizeModelMappingResolveResult(readApiRecord(result).data);
+  }
+
+  static resolveMapping(input: ModelMappingResolveInput): Promise<ModelMappingResolveResult> {
+    return ModelMappingService.resolveModelMapping(input);
   }
 }
 
@@ -725,6 +1214,128 @@ function safeStyleToken(value: string): string {
   return normalized;
 }
 
+function resourceCode(value: string, fieldName: string): string {
+  const normalized = requiredText(value, fieldName).toLowerCase();
+  if (!/^[a-z0-9._-]{1,192}$/.test(normalized)) {
+    throw new Error(`${fieldName} must use letters, numbers, dot, underscore, or hyphen`);
+  }
+  return normalized;
+}
+
+function resourceGroupCode(value: string, fieldName: string): string {
+  const normalized = resourceCode(value, fieldName);
+  if (normalized.length > 128) {
+    throw new Error(`${fieldName} must be at most 128 characters`);
+  }
+  return normalized;
+}
+
+function toResourceGroupMembers(members: ResourceGroupMemberInput[] | undefined): AdminAiResourceGroupCreateRequest['members'] {
+  if (!members) {
+    return undefined;
+  }
+  return members
+    .filter((member) => member.resourceCode.trim())
+    .map((member) => removeUndefinedProperties({
+      resourceCode: resourceCode(member.resourceCode, 'resourceCode'),
+      itemRole: member.itemRole ?? 'included',
+      sortOrder: optionalNonNegativeInteger(member.sortOrder, 'sortOrder'),
+    }));
+}
+
+function toResourceGroupCreateRequest(input: ResourceGroupCreateInput): AdminAiResourceGroupCreateRequest {
+  return removeUndefinedProperties({
+    groupCode: resourceGroupCode(input.groupCode, 'groupCode'),
+    groupName: requiredText(input.groupName, 'groupName'),
+    groupType: input.groupType ?? 'api_group',
+    selectionMode: input.selectionMode ?? 'manual',
+    description: optionalNullableText(input.description, 'description', 512),
+    sortOrder: optionalNonNegativeInteger(input.sortOrder, 'sortOrder'),
+    status: input.status ?? 'active',
+    members: toResourceGroupMembers(input.members),
+  });
+}
+
+function toResourceGroupUpdateRequest(input: ResourceGroupUpdateInput): AdminAiResourceGroupUpdateRequest {
+  const request: AdminAiResourceGroupUpdateRequest = {};
+  if (input.groupCode !== undefined) {
+    request.groupCode = resourceGroupCode(input.groupCode, 'groupCode');
+  }
+  if (input.groupName !== undefined) {
+    request.groupName = requiredText(input.groupName, 'groupName');
+  }
+  if (input.groupType !== undefined) {
+    request.groupType = input.groupType;
+  }
+  if (input.selectionMode !== undefined) {
+    request.selectionMode = input.selectionMode;
+  }
+  if (input.description !== undefined) {
+    request.description = optionalNullableText(input.description, 'description', 512);
+  }
+  if (input.sortOrder !== undefined) {
+    request.sortOrder = optionalNonNegativeInteger(input.sortOrder, 'sortOrder');
+  }
+  if (input.status !== undefined) {
+    request.status = input.status;
+  }
+  if (input.members !== undefined) {
+    request.members = toResourceGroupMembers(input.members) ?? [];
+  }
+  return request;
+}
+
+function normalizeResourceGroupItem(value: unknown): ResourceGroupItem {
+  const item = readRequiredRecord(value, 'AI resource group record is required');
+  const groupType = readRequiredString(item, 'groupType', 'AI resource group type is required');
+  if (groupType !== 'api_group') {
+    throw new Error(`Unsupported AI resource group type: ${groupType}`);
+  }
+  const selectionMode = readRequiredString(item, 'selectionMode', 'AI resource group selection mode is required');
+  if (selectionMode !== 'manual' && selectionMode !== 'all' && selectionMode !== 'any' && selectionMode !== 'dynamic_all_api') {
+    throw new Error(`Unsupported AI resource group selection mode: ${selectionMode}`);
+  }
+  return {
+    id: readRequiredString(item, 'id', 'AI resource group id is required'),
+    groupCode: readRequiredString(item, 'groupCode', 'AI resource group code is required'),
+    groupName: readRequiredString(item, 'groupName', 'AI resource group name is required'),
+    groupType,
+    selectionMode,
+    description: readNullableString(item, 'description'),
+    sortOrder: readNullableNumberField(item, 'sortOrder', 'AI resource group sort order'),
+    status: readResourceStatus(item, 'AI resource group status'),
+    resourceCount: readRequiredNonNegativeInteger(item, 'resourceCount', 'AI resource group resource count'),
+    dynamic: readRequiredBoolean(item, 'dynamic', 'AI resource group dynamic flag is required'),
+  };
+}
+
+function normalizeResourceGroupResourceItem(value: unknown): ResourceGroupResourceItem {
+  const item = readRequiredRecord(value, 'AI resource group resource record is required');
+  const resourceType = readRequiredString(item, 'resourceType', 'AI resource type is required');
+  if (resourceType !== 'api_endpoint') {
+    throw new Error(`Unsupported AI resource type: ${resourceType}`);
+  }
+  const memberRole = readRequiredString(item, 'memberRole', 'AI resource group member role is required');
+  if (memberRole !== 'included' && memberRole !== 'optional' && memberRole !== 'fallback') {
+    throw new Error(`Unsupported AI resource group member role: ${memberRole}`);
+  }
+  return {
+    id: readRequiredString(item, 'id', 'AI resource id is required'),
+    resourceCode: readRequiredString(item, 'resourceCode', 'AI resource code is required'),
+    resourceType,
+    displayName: readRequiredString(item, 'displayName', 'AI resource display name is required'),
+    vendorCode: readNullableString(item, 'vendorCode'),
+    modalityCode: readNullableString(item, 'modalityCode'),
+    apiEndpointCode: readNullableString(item, 'apiEndpointCode'),
+    catalogKey: readNullableString(item, 'catalogKey'),
+    model: readNullableString(item, 'model'),
+    providerNativeModel: readNullableString(item, 'providerNativeModel'),
+    status: readResourceStatus(item, 'AI resource status'),
+    sortOrder: readNullableNumberField(item, 'sortOrder', 'AI resource sort order'),
+    memberRole,
+  };
+}
+
 function normalizeVendor(value: unknown): Vendor {
   const item = readRequiredRecord(value, 'Vendor record is required');
   return {
@@ -929,6 +1540,327 @@ function readRequiredRecord(value: unknown, message: string): ApiRecord {
     throw new Error(message);
   }
   return value;
+}
+
+function normalizeSiteItem(value: unknown): SiteItem {
+  const item = readRequiredRecord(value, 'Site item must be an object');
+  return {
+    id: readRequiredString(item, 'id', 'Site id is required'),
+    siteCode: readRequiredString(item, 'siteCode', 'Site code is required'),
+    siteName: readRequiredString(item, 'siteName', 'Site name is required'),
+    displayName: readRequiredString(item, 'displayName', 'Site display name is required'),
+    description: readNullableString(item, 'description'),
+    baseUrl: readRequiredString(item, 'baseUrl', 'Site base URL is required'),
+    websiteUrl: readNullableString(item, 'websiteUrl'),
+    docsUrl: readNullableString(item, 'docsUrl'),
+    logo: readOptionalMediaResource(item, 'logo'),
+    domains: readStringArray(item, 'domains'),
+    vendorCodes: readStringArray(item, 'vendorCodes'),
+    siteType: readSiteType(item),
+    ownerKind: readNullableString(item, 'ownerKind'),
+    regionCode: readNullableString(item, 'regionCode'),
+    environment: readSiteEnvironment(item),
+    healthStatus: readSiteHealthStatus(item),
+    lastLatencyMs: readNullableNumber(item, 'lastLatencyMs'),
+    consecutiveErrorCount: readNonNegativeInteger(item, 'consecutiveErrorCount', 0),
+    lastCheckedAt: readNullableString(item, 'lastCheckedAt'),
+    lastSyncAt: readNullableString(item, 'lastSyncAt'),
+    sortOrder: readNonNegativeInteger(item, 'sortOrder', 100),
+    status: readSiteStatus(item),
+  };
+}
+
+function readOptionalMediaResource(item: ApiRecord, key: string): MediaResource | null {
+  const value = item[key];
+  if (!isRecord(value)) {
+    return null;
+  }
+  const kind = readString(value, 'kind');
+  const source = readString(value, 'source');
+  if (!kind || !source) {
+    return null;
+  }
+  return value as unknown as MediaResource;
+}
+
+function normalizeSiteModelItem(value: unknown): SiteModelItem {
+  const item = readRequiredRecord(value, 'Site model item must be an object');
+  return {
+    id: readRequiredString(item, 'id', 'Site model id is required'),
+    siteId: readRequiredString(item, 'siteId', 'Site model site id is required'),
+    siteCode: readRequiredString(item, 'siteCode', 'Site model site code is required'),
+    siteServiceId: readRequiredString(item, 'siteServiceId', 'Site model service id is required'),
+    siteServiceCode: readNullableString(item, 'siteServiceCode'),
+    serviceType: readSiteServiceType(item),
+    modelCode: readRequiredString(item, 'modelCode', 'Site model code is required'),
+    modelName: readRequiredString(item, 'modelName', 'Site model name is required'),
+    displayName: readNullableString(item, 'displayName'),
+    providerModel: readNullableString(item, 'providerModel'),
+    providerNativeModel: readNullableString(item, 'providerNativeModel'),
+    vendorCode: readNullableString(item, 'vendorCode'),
+    modality: readNullableString(item, 'modality'),
+    capabilities: readStringArray(item, 'capabilities'),
+    contextTokens: readNullableNumber(item, 'contextTokens'),
+    maxInputTokens: readNullableNumber(item, 'maxInputTokens'),
+    maxOutputTokens: readNullableNumber(item, 'maxOutputTokens'),
+    supportsStreaming: readBoolean(item, 'supportsStreaming', false),
+    supportsTools: readBoolean(item, 'supportsTools', false),
+    supportsJsonSchema: readBoolean(item, 'supportsJsonSchema', false),
+    healthStatus: readSiteHealthStatus(item),
+    lastLatencyMs: readNullableNumber(item, 'lastLatencyMs'),
+    consecutiveErrorCount: readNonNegativeInteger(item, 'consecutiveErrorCount', 0),
+    lastSyncAt: readNullableString(item, 'lastSyncAt'),
+    status: readSiteStatus(item),
+  };
+}
+
+function normalizeSiteChannelItem(value: unknown): SiteChannelItem {
+  const item = readRequiredRecord(value, 'Site channel item must be an object');
+  return {
+    id: readRequiredString(item, 'id', 'Site channel id is required'),
+    channelCode: readRequiredString(item, 'channelCode', 'Site channel code is required'),
+    channelName: readRequiredString(item, 'channelName', 'Site channel name is required'),
+    providerCode: readNullableString(item, 'providerCode'),
+    siteCode: readNullableString(item, 'siteCode'),
+    siteServiceCode: readNullableString(item, 'siteServiceCode'),
+    siteChannelRole: readNullableString(item, 'siteChannelRole'),
+    healthStatus: readSiteHealthStatus(item),
+    status: readSiteStatus(item),
+  };
+}
+
+function normalizeSiteConnectionCheckResult(value: unknown): SiteConnectionCheckResult {
+  const item = readRequiredRecord(value, 'Site connection check result must be an object');
+  return {
+    siteId: readRequiredString(item, 'siteId', 'Site connection check site id is required'),
+    status: readConnectionCheckStatus(item),
+    healthStatus: readSiteHealthStatus(item),
+    latencyMs: readNullableNumber(item, 'latencyMs'),
+    checkedAt: readRequiredString(item, 'checkedAt', 'Site connection check timestamp is required'),
+    message: readNullableString(item, 'message'),
+  };
+}
+
+function normalizeModelMappingRule(value: unknown): ModelMappingRule {
+  const item = readRequiredRecord(value, 'Model mapping rule must be an object');
+  return {
+    id: readRequiredString(item, 'id', 'Model mapping id is required'),
+    scopeType: readModelMappingScopeType(item, 'scopeType'),
+    vendorId: readNullableString(item, 'vendorId'),
+    vendorCode: readNullableString(item, 'vendorCode'),
+    channelId: readNullableString(item, 'channelId'),
+    channelCode: readNullableString(item, 'channelCode'),
+    sourceModel: readRequiredString(item, 'sourceModel', 'Model mapping source model is required'),
+    sourceCatalogKey: readNullableString(item, 'sourceCatalogKey'),
+    sourceVendorCode: readNullableString(item, 'sourceVendorCode'),
+    targetModel: readRequiredString(item, 'targetModel', 'Model mapping target model is required'),
+    targetCatalogKey: readNullableString(item, 'targetCatalogKey'),
+    targetVendorCode: readNullableString(item, 'targetVendorCode'),
+    targetProviderModel: readNullableString(item, 'targetProviderModel'),
+    targetProviderNativeModel: readNullableString(item, 'targetProviderNativeModel'),
+    mappingMode: readModelMappingMode(item),
+    matchType: readModelMappingMatchType(item),
+    priority: readNonNegativeInteger(item, 'priority', 100),
+    enabled: readBoolean(item, 'enabled', true),
+    effectiveFrom: readNullableString(item, 'effectiveFrom'),
+    effectiveTo: readNullableString(item, 'effectiveTo'),
+    description: readNullableString(item, 'description'),
+    createdAt: readNullableString(item, 'createdAt'),
+    updatedAt: readNullableString(item, 'updatedAt'),
+  };
+}
+
+function normalizeModelMappingResolveResult(value: unknown): ModelMappingResolveResult {
+  const item = readRequiredRecord(value, 'Model mapping resolve response must be an object');
+  const matchedScopeType = readNullableString(item, 'matchedScopeType');
+  return {
+    matched: readBoolean(item, 'matched', false),
+    matchedScopeType: matchedScopeType ? readModelMappingScopeType({ matchedScopeType }, 'matchedScopeType') : null,
+    sourceModel: readRequiredString(item, 'sourceModel', 'Model mapping resolve source model is required'),
+    targetModel: readRequiredString(item, 'targetModel', 'Model mapping resolve target model is required'),
+    targetCatalogKey: readNullableString(item, 'targetCatalogKey'),
+    targetVendorCode: readNullableString(item, 'targetVendorCode'),
+    targetProviderModel: readNullableString(item, 'targetProviderModel'),
+    targetProviderNativeModel: readNullableString(item, 'targetProviderNativeModel'),
+    rule: isRecord(item.rule) ? normalizeModelMappingRule(item.rule) : null,
+  };
+}
+
+function toSiteCreateRequest(input: SiteCreateInput): AdminSiteCreateRequest {
+  return {
+    siteCode: input.siteCode,
+    siteName: input.siteName,
+    displayName: input.displayName,
+    description: input.description ?? null,
+    baseUrl: input.baseUrl,
+    websiteUrl: input.websiteUrl ?? null,
+    docsUrl: input.docsUrl ?? null,
+    logo: input.logo ?? null,
+    domains: input.domains ?? [],
+    vendorCodes: input.vendorCodes ?? [],
+    siteType: input.siteType ?? 'relay',
+    ownerKind: input.ownerKind ?? null,
+    regionCode: input.regionCode ?? null,
+    environment: input.environment ?? 'production',
+    status: input.status ?? 'active',
+    credentialRef: input.credentialRef ?? null,
+    maskedLabel: input.maskedLabel ?? null,
+  };
+}
+
+function toSiteUpdateRequest(input: SiteUpdateInput): AdminSiteUpdateRequest {
+  return {
+    ...input,
+    description: input.description ?? undefined,
+    websiteUrl: input.websiteUrl ?? undefined,
+    docsUrl: input.docsUrl ?? undefined,
+    logo: input.logo ?? undefined,
+    domains: input.domains ?? undefined,
+    vendorCodes: input.vendorCodes ?? undefined,
+    ownerKind: input.ownerKind ?? undefined,
+    regionCode: input.regionCode ?? undefined,
+    credentialRef: input.credentialRef ?? undefined,
+    maskedLabel: input.maskedLabel ?? undefined,
+  };
+}
+
+function toSiteModelCreateRequest(input: SiteModelCreateInput): AdminSiteModelCreateRequest {
+  return {
+    modelCode: input.modelCode,
+    modelName: input.modelName,
+    displayName: input.displayName ?? null,
+    providerModel: input.providerModel ?? null,
+    providerNativeModel: input.providerNativeModel ?? null,
+    vendorCode: input.vendorCode ?? null,
+    modality: input.modality ?? null,
+    capabilities: input.capabilities ?? [],
+    contextTokens: input.contextTokens ?? null,
+    maxInputTokens: input.maxInputTokens ?? null,
+    maxOutputTokens: input.maxOutputTokens ?? null,
+    supportsStreaming: input.supportsStreaming ?? true,
+    supportsTools: input.supportsTools ?? false,
+    supportsJsonSchema: input.supportsJsonSchema ?? false,
+    status: input.status ?? 'active',
+  };
+}
+
+function toSiteModelUpdateRequest(input: SiteModelUpdateInput): AdminSiteModelUpdateRequest {
+  return {
+    ...input,
+    displayName: input.displayName ?? undefined,
+    providerModel: input.providerModel ?? undefined,
+    providerNativeModel: input.providerNativeModel ?? undefined,
+    vendorCode: input.vendorCode ?? undefined,
+    modality: input.modality ?? undefined,
+    capabilities: input.capabilities ?? undefined,
+    contextTokens: input.contextTokens ?? undefined,
+    maxInputTokens: input.maxInputTokens ?? undefined,
+    maxOutputTokens: input.maxOutputTokens ?? undefined,
+  };
+}
+
+function readSiteType(item: ApiRecord): SiteItem['siteType'] {
+  const value = readRequiredString(item, 'siteType', 'Site type is required');
+  if (value === 'relay') {
+    return value;
+  }
+  throw new Error(`Unsupported site type: ${value}`);
+}
+
+function readSiteEnvironment(item: ApiRecord): SiteItem['environment'] {
+  const value = readRequiredString(item, 'environment', 'Site environment is required');
+  if (value === 'production' || value === 'sandbox') {
+    return value;
+  }
+  throw new Error(`Unsupported site environment: ${value}`);
+}
+
+function readSiteHealthStatus(item: ApiRecord): SiteItem['healthStatus'] {
+  const value = readRequiredString(item, 'healthStatus', 'Site health status is required');
+  if (value === 'unknown' || value === 'healthy' || value === 'degraded' || value === 'unhealthy') {
+    return value;
+  }
+  throw new Error(`Unsupported site health status: ${value}`);
+}
+
+function readSiteStatus(item: ApiRecord): SiteItem['status'] {
+  const value = readRequiredString(item, 'status', 'Site status is required');
+  if (value === 'active' || value === 'disabled') {
+    return value;
+  }
+  throw new Error(`Unsupported site status: ${value}`);
+}
+
+function readSiteServiceType(item: ApiRecord): SiteModelItem['serviceType'] {
+  const value = readRequiredString(item, 'serviceType', 'Site service type is required');
+  if (value === 'ai_model_relay') {
+    return value;
+  }
+  throw new Error(`Unsupported site service type: ${value}`);
+}
+
+function readConnectionCheckStatus(item: ApiRecord): SiteConnectionCheckResult['status'] {
+  const value = readRequiredString(item, 'status', 'Site connection check status is required');
+  if (value === 'success' || value === 'failed') {
+    return value;
+  }
+  throw new Error(`Unsupported site connection check status: ${value}`);
+}
+
+function readResourceStatus(item: ApiRecord, message: string): ResourceGroupItem['status'] {
+  const value = readRequiredString(item, 'status', message);
+  if (value === 'active' || value === 'disabled' || value === 'inactive') {
+    return value;
+  }
+  throw new Error(`Unsupported AI resource status: ${value}`);
+}
+
+function readModelMappingScopeType(item: ApiRecord, key: string): ModelMappingRule['scopeType'] {
+  const value = readRequiredString(item, key, 'Model mapping scope type is required');
+  if (value === 'global' || value === 'vendor' || value === 'channel') {
+    return value;
+  }
+  throw new Error(`Unsupported model mapping scope type: ${value}`);
+}
+
+function readModelMappingMode(item: ApiRecord): ModelMappingRule['mappingMode'] {
+  const value = readRequiredString(item, 'mappingMode', 'Model mapping mode is required');
+  if (value === 'alias') {
+    return value;
+  }
+  throw new Error(`Unsupported model mapping mode: ${value}`);
+}
+
+function readModelMappingMatchType(item: ApiRecord): ModelMappingRule['matchType'] {
+  const value = readRequiredString(item, 'matchType', 'Model mapping match type is required');
+  if (value === 'exact') {
+    return value;
+  }
+  throw new Error(`Unsupported model mapping match type: ${value}`);
+}
+
+function readNonNegativeInteger(item: ApiRecord, key: string, fallback: number): number {
+  const value = item[key];
+  if (value === undefined || value === null || value === '') {
+    return fallback;
+  }
+  const parsed = readNumber(item, key, Number.NaN);
+  if (!Number.isInteger(parsed) || parsed < 0) {
+    throw new Error(`${key} must be a non-negative integer`);
+  }
+  return parsed;
+}
+
+function readNullableNumberField(item: ApiRecord, key: string, label: string): number | null {
+  const value = item[key];
+  if (value === undefined || value === null || value === '') {
+    return null;
+  }
+  const numeric = readNumber(item, key, Number.NaN);
+  if (!Number.isFinite(numeric) || numeric < 0) {
+    throw new Error(`${label} must be a non-negative number`);
+  }
+  return numeric;
 }
 
 function readRequiredBoolean(item: ApiRecord, key: string, message: string): boolean {

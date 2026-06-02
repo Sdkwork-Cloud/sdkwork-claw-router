@@ -9,7 +9,8 @@ use crate::application::{
     SelectProviderRouteQuery, SelectedProviderRoute,
 };
 use crate::domain::{
-    AiModel, BillingMeter, ProviderAuthProfile, ProviderRetryPolicy, RoutingCapability,
+    AiModel, BillingMeter, ModelMappingRule, ProviderAuthProfile, ProviderRetryPolicy,
+    RoutingCapability,
 };
 use crate::ports::PricingCatalog;
 
@@ -211,10 +212,29 @@ pub(crate) fn resolve_openai_provider_route_plan<C>(
 where
     C: PricingCatalog,
 {
-    let catalog_model = find_catalog_model(catalog, model)?;
+    let global_mapping = catalog.resolve_model_mapping(model, None, None);
+    let global_effective_model = global_mapping
+        .as_ref()
+        .map(ModelMappingRule::effective_catalog_key)
+        .unwrap_or(model);
+    let global_catalog_model = find_catalog_model(catalog, global_effective_model)?;
+    let vendor_mapping =
+        catalog.resolve_model_mapping(model, Some(global_catalog_model.vendor_code.as_str()), None);
+    let effective_model = vendor_mapping
+        .as_ref()
+        .or(global_mapping.as_ref())
+        .map(ModelMappingRule::effective_catalog_key)
+        .unwrap_or(global_effective_model);
+    let catalog_model = if effective_model == global_catalog_model.catalog_key
+        || effective_model == global_catalog_model.model
+    {
+        global_catalog_model
+    } else {
+        find_catalog_model(catalog, effective_model)?
+    };
     ensure_model_capability(&catalog_model, accepted_capabilities, capability_label)?;
     let model_catalog_key = catalog_model.catalog_key;
-    let routing_catalog_key = route_scope_catalog_key(model, &model_catalog_key);
+    let routing_catalog_key = route_scope_catalog_key(effective_model, &model_catalog_key);
     let model_plan = ProviderRouteSelector::new(catalog)
         .select_plan(SelectProviderRouteQuery {
             context: context.clone(),
@@ -230,7 +250,14 @@ where
         .routes
         .into_iter()
         .map(|selection| {
-            resolve_model_route(routing_catalog_key.as_str(), selection, &channel_routes)
+            resolve_model_route(
+                catalog,
+                model,
+                catalog_model.vendor_code.as_str(),
+                routing_catalog_key.as_str(),
+                selection,
+                &channel_routes,
+            )
         })
         .collect::<Result<Vec<_>, _>>()?;
     if routes.is_empty() {
@@ -264,6 +291,9 @@ fn openai_api_code(capability_label: &str) -> &'static str {
 }
 
 fn resolve_model_route(
+    catalog: &(impl PricingCatalog + ?Sized),
+    requested_model: &str,
+    vendor_code: &str,
     catalog_key: &str,
     selection: SelectedProviderRoute,
     channel_routes: &[crate::domain::ProviderChannelRoute],
@@ -300,11 +330,46 @@ fn resolve_model_route(
         ));
     }
 
-    let provider_model = normalized_resolved_provider_model(
-        &model_route.catalog_key,
-        &model_route.model,
-        &model_route.provider_model,
+    let channel_mapping = catalog.resolve_model_mapping(
+        requested_model,
+        Some(vendor_code),
+        Some(model_route.channel_id),
     );
+    let model_route = match channel_mapping.as_ref() {
+        Some(rule) if rule.effective_catalog_key() != model_route.catalog_key => catalog
+            .list_provider_routes(rule.effective_catalog_key())
+            .into_iter()
+            .find(|candidate| candidate.channel_id == model_route.channel_id)
+            .ok_or_else(|| {
+                provider_route_selection_error(ProviderRouteSelectionError::provider_route_unavailable(
+                    format!(
+                        "provider route is not available for configured channel route: channel {} has no mapped route for model {}",
+                        model_route.channel_id,
+                        rule.effective_catalog_key()
+                    ),
+                ))
+            })?,
+        _ => model_route,
+    };
+    if channel_route.provider_code != model_route.provider_code {
+        return Err(provider_route_selection_error(
+            ProviderRouteSelectionError::provider_route_unavailable(format!(
+                "provider route is not available for configured channel route: selected channel {} provider mismatch for model {}",
+                model_route.channel_id, model_route.catalog_key
+            )),
+        ));
+    }
+
+    let provider_model = channel_mapping
+        .as_ref()
+        .and_then(|rule| rule.effective_provider_model().map(str::to_owned))
+        .unwrap_or_else(|| {
+            normalized_resolved_provider_model(
+                &model_route.catalog_key,
+                &model_route.model,
+                &model_route.provider_model,
+            )
+        });
 
     Ok(ResolvedOpenAiProviderRoute {
         catalog_key: model_route.catalog_key,

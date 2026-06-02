@@ -33,7 +33,8 @@ pub use ai_routing_cache_invalidation::{
     AiRoutingCacheInvalidatingAdminAiResourceStore,
     AiRoutingCacheInvalidatingAdminChannelEndpointStore,
     AiRoutingCacheInvalidatingAdminChannelGroupStore, AiRoutingCacheInvalidatingAdminChannelStore,
-    AiRoutingCacheInvalidatingAdminProviderSecretStore, AiRoutingCacheInvalidator,
+    AiRoutingCacheInvalidatingAdminModelStore, AiRoutingCacheInvalidatingAdminProviderSecretStore,
+    AiRoutingCacheInvalidator,
 };
 pub use alipay_payment_adapter::{
     AlipayHyperOpenApiClient, AlipayOpenApiClient, AlipayPaymentProviderAdapter,

@@ -2,13 +2,15 @@ use std::collections::BTreeMap;
 
 use crate::domain::{
     AiModel, BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, DecimalValue, DomainResult,
-    GatewayAccessPolicy, GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition,
-    Money, PriceSide, PricingPlan, ProviderChannelRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
+    GatewayAccessPolicy, GatewayApiKey, ModelMappingRule, ModelPrice, ModelProviderRoute,
+    ModelVendorDefinition, Money, PriceSide, PricingPlan, ProviderChannelRoute, QuotaPolicy,
+    RoutingPolicy, RoutingRule,
 };
+use crate::infrastructure::in_memory_pricing_catalog::resolve_model_mapping_from_rules;
 use crate::infrastructure::sql::rows::{
     AiModelRow, ChannelGroupMetricSnapshotRow, ChannelGroupRow, GatewayAccessPolicyRow,
-    GatewayApiKeyRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow, PricingPlanRow,
-    ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
+    GatewayApiKeyRow, ModelMappingRuleRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow,
+    PricingPlanRow, ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
 };
 use crate::ports::PricingCatalog;
 use std::sync::{Arc, RwLock};
@@ -21,6 +23,7 @@ pub struct PricingCatalogRows {
     pub provider_channel_routes: Vec<ProviderChannelRouteRow>,
     pub routing_policies: Vec<RoutingPolicyRow>,
     pub routing_rules: Vec<RoutingRuleRow>,
+    pub model_mappings: Vec<ModelMappingRuleRow>,
     pub pricing_plans: Vec<PricingPlanRow>,
     pub channel_groups: Vec<ChannelGroupRow>,
     pub api_keys: Vec<GatewayApiKeyRow>,
@@ -41,6 +44,7 @@ pub struct SqlPricingCatalogSnapshotSummary {
     pub provider_channel_group_bindings: usize,
     pub routing_policies: usize,
     pub routing_rules: usize,
+    pub model_mappings: usize,
     pub pricing_plans: usize,
     pub channel_groups: usize,
     pub api_keys: usize,
@@ -55,6 +59,7 @@ pub struct SqlPricingCatalogSnapshot {
     provider_channel_routes: Vec<ProviderChannelRoute>,
     routing_policies: Vec<RoutingPolicy>,
     routing_rules: Vec<RoutingRule>,
+    model_mappings: Vec<ModelMappingRule>,
     pricing_plans: Vec<PricingPlan>,
     channel_groups: Vec<ChannelGroup>,
     api_keys: Vec<GatewayApiKey>,
@@ -91,6 +96,7 @@ impl SqlPricingCatalogSnapshot {
             )?,
             routing_policies: map_rows(rows.routing_policies, RoutingPolicyRow::try_into_domain)?,
             routing_rules: map_rows(rows.routing_rules, RoutingRuleRow::try_into_domain)?,
+            model_mappings: map_rows(rows.model_mappings, ModelMappingRuleRow::try_into_domain)?,
             pricing_plans,
             channel_groups: map_rows(rows.channel_groups, ChannelGroupRow::try_into_domain)?,
             api_keys: rows
@@ -143,6 +149,7 @@ impl SqlPricingCatalogSnapshot {
                 .sum(),
             routing_policies: self.routing_policies.len(),
             routing_rules: self.routing_rules.len(),
+            model_mappings: self.model_mappings.len(),
             pricing_plans: self.pricing_plans.len(),
             channel_groups: self.channel_groups.len(),
             api_keys: self.api_keys.len(),
@@ -201,6 +208,10 @@ impl PricingCatalog for RefreshableSqlPricingCatalog {
 
     fn list_routing_rules(&self, profile_id: i64) -> Vec<RoutingRule> {
         self.current_snapshot().list_routing_rules(profile_id)
+    }
+
+    fn list_model_mappings(&self) -> Vec<ModelMappingRule> {
+        self.current_snapshot().list_model_mappings()
     }
 
     fn list_api_keys(&self) -> Vec<GatewayApiKey> {
@@ -266,6 +277,16 @@ impl PricingCatalog for RefreshableSqlPricingCatalog {
         self.current_snapshot().find_vendor(vendor_code)
     }
 
+    fn resolve_model_mapping(
+        &self,
+        source_model: &str,
+        vendor_code: Option<&str>,
+        channel_id: Option<i64>,
+    ) -> Option<ModelMappingRule> {
+        self.current_snapshot()
+            .resolve_model_mapping(source_model, vendor_code, channel_id)
+    }
+
     fn find_provider_route(&self, model: &str, provider_code: &str) -> Option<ModelProviderRoute> {
         self.current_snapshot()
             .find_provider_route(model, provider_code)
@@ -324,6 +345,10 @@ impl PricingCatalog for SqlPricingCatalogSnapshot {
             .filter(|rule| rule.profile_id == profile_id)
             .cloned()
             .collect()
+    }
+
+    fn list_model_mappings(&self) -> Vec<ModelMappingRule> {
+        self.model_mappings.clone()
     }
 
     fn list_api_keys(&self) -> Vec<GatewayApiKey> {
@@ -427,6 +452,20 @@ impl PricingCatalog for SqlPricingCatalogSnapshot {
             .iter()
             .find(|vendor| vendor.vendor_code == vendor_code)
             .cloned()
+    }
+
+    fn resolve_model_mapping(
+        &self,
+        source_model: &str,
+        vendor_code: Option<&str>,
+        channel_id: Option<i64>,
+    ) -> Option<ModelMappingRule> {
+        resolve_model_mapping_from_rules(
+            &self.model_mappings,
+            source_model,
+            vendor_code,
+            channel_id,
+        )
     }
 
     fn find_provider_route(&self, model: &str, provider_code: &str) -> Option<ModelProviderRoute> {

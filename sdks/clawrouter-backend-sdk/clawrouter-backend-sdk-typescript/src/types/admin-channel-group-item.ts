@@ -24,6 +24,10 @@ export interface AdminChannelGroupItem {
   providerCode: string;
   /** Rate multiplier field on admin channel group item. */
   rateMultiplier: number;
+  /** Individual AI resource codes directly granted to this channel group. */
+  resourceCodes: string[];
+  /** AI resource group codes directly granted to this channel group. */
+  resourceGroupCodes: string[];
   /** Status field on admin channel group item. */
   status: 'active' | 'disabled';
   /** Usage field on admin channel group item. */

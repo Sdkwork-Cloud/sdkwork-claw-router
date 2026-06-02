@@ -14,6 +14,10 @@ export interface AdminChannelGroupUpdateRequest {
   priceReferenceMode?: 'multiplier' | 'official_price';
   /** Customer rate multiplier rounded to six decimals. */
   rateMultiplier?: number;
+  /** Individual AI resource codes directly granted to this channel group. */
+  resourceCodes?: string[];
+  /** AI resource group codes directly granted to this channel group. */
+  resourceGroupCodes?: string[];
   /** Status field on admin channel group update request. */
   status?: 'active' | 'disabled';
 }

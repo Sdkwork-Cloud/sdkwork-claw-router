@@ -1639,6 +1639,155 @@ async fn sqlite_installer_repairs_missing_default_channel_endpoints_on_startup_c
 }
 
 #[tokio::test]
+async fn sqlite_installer_reimports_ai_routing_seed_when_admin_api_group_payload_changes() {
+    let pool = repair_sqlite_pool().await;
+    let installer = installer(pool.clone());
+
+    let api_all_group_id: i64 = sqlx::query_scalar(
+        r#"
+        SELECT id
+        FROM ai_resource_group
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND group_code = 'api.all'
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+
+    sqlx::query(
+        r#"
+        INSERT INTO ai_resource_group_item
+            (uuid, tenant_id, organization_id, data_scope, status, metadata,
+             resource_group_id, resource_group_code, item_type, resource_id, resource_code,
+             child_resource_group_code, item_role, sort_order)
+        SELECT
+            'stale-api-all-explicit-member',
+            0,
+            0,
+            1,
+            1,
+            '{"catalogCode":"sdkwork-ai-routing","itemType":"resource_group_item","sourceHash":"stale"}',
+            ?,
+            'api.all',
+            'resource',
+            r.id,
+            r.resource_code,
+            '',
+            'included',
+            999
+        FROM ai_resource r
+        WHERE r.tenant_id = 0
+          AND r.organization_id = 0
+          AND r.resource_code = 'api.openai.chat_completions'
+          AND r.deleted_at IS NULL
+        ON CONFLICT(tenant_id, organization_id, resource_group_id, item_type, resource_code, child_resource_group_code)
+        DO UPDATE SET
+            status = 1,
+            deleted_at = NULL,
+            resource_group_code = excluded.resource_group_code
+        "#,
+    )
+    .bind(api_all_group_id)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE ai_resource_group_item
+        SET status = -1,
+            deleted_at = '2026-06-02 10:00:00'
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND resource_group_id = ?
+          AND resource_code <> 'api.openai.chat_completions'
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(api_all_group_id)
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE ai_resource_group
+        SET selection_mode = 'dynamic_all_api'
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND group_code = 'api.all'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE system_schema_migration
+        SET checksum = 'stale-ai-routing-seed-checksum',
+            status = 'completed'
+        WHERE migration_key = ?
+        "#,
+    )
+    .bind(format!("ai-routing:{SCHEMA_VERSION}"))
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        InstallationStatus::UpgradeRequired,
+        installer.status().await.unwrap(),
+        "installer status must detect stale AI routing seed payloads"
+    );
+
+    let repaired = installer.ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, repaired.status);
+    assert!(repaired.changed);
+
+    let (selection_mode, active_item_count, api_endpoint_count): (String, i64, i64) =
+        sqlx::query_as(
+            r#"
+        SELECT
+            g.selection_mode,
+            (
+                SELECT COUNT(1)
+                FROM ai_resource_group_item item
+                WHERE item.tenant_id = g.tenant_id
+                  AND item.organization_id = g.organization_id
+                  AND item.resource_group_id = g.id
+                  AND item.status = 1
+                  AND item.deleted_at IS NULL
+            ) AS active_item_count,
+            (
+                SELECT COUNT(1)
+                FROM ai_resource r
+                WHERE r.tenant_id = g.tenant_id
+                  AND r.organization_id = g.organization_id
+                  AND r.resource_type = 'api_endpoint'
+                  AND r.status = 1
+                  AND r.deleted_at IS NULL
+                  AND json_extract(r.metadata, '$.catalogCode') = 'sdkwork-ai-routing'
+            ) AS api_endpoint_count
+        FROM ai_resource_group g
+        WHERE g.tenant_id = 0
+          AND g.organization_id = 0
+          AND g.group_code = 'api.all'
+          AND g.deleted_at IS NULL
+        "#,
+        )
+        .fetch_one(&pool)
+        .await
+        .unwrap();
+
+    assert_eq!("all", selection_mode);
+    assert_eq!(
+        api_endpoint_count, active_item_count,
+        "ai.routing seed refresh must restore explicit api.all relationships for every bundled API endpoint"
+    );
+}
+
+#[tokio::test]
 async fn sqlite_installer_repairs_missing_skills_seed_rows_on_startup_check() {
     let pool = repair_sqlite_pool().await;
     let installer = installer(pool.clone());

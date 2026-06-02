@@ -1388,6 +1388,10 @@ routes:
   - ai_pricing_tier
   - ai_billing_meter
   - ai_channel_group_member
+  - ai_channel_group_resource
+  - ai_resource_group
+  - ai_resource_group_item
+  - ai_resource
   - ai_provider
   - ai_channel
   - ai_channel_model
@@ -1773,6 +1777,7 @@ routes:
 - route: /admin/channel/resources
   required_tables:
   - ai_resource
+  - ai_resource_group
   - ai_resource_group_item
   - ops_audit_log
   required_columns:
@@ -1784,6 +1789,88 @@ routes:
     - target_type
     - target_id
     - request_id
+- route: /admin/model/resources
+  required_tables:
+  - ai_resource
+  - ai_resource_group
+  - ai_resource_group_item
+  - ops_audit_log
+  required_columns:
+    ai_resource:
+    - id
+    - resource_code
+    - resource_type
+    - display_name
+    - vendor_code
+    - modality_code
+    - api_code
+    - status
+    ai_resource_group:
+    - id
+    - group_code
+    - group_name
+    - group_type
+    - selection_mode
+    - status
+    ai_resource_group_item:
+    - resource_group_id
+    - item_type
+    - resource_code
+    - item_role
+- route: /admin/model/sites
+  required_tables:
+  - ai_site
+  - ai_site_service
+  - ai_site_model
+  - ai_channel
+  - ops_audit_log
+  required_columns:
+    ai_site:
+    - id
+    - site_code
+    - site_name
+    - display_name
+    - base_url
+    - health_status
+    - status
+    ai_site_service:
+    - id
+    - site_id
+    - service_code
+    - service_name
+    - service_type
+    - status
+    ai_site_model:
+    - id
+    - site_id
+    - site_service_id
+    - model_code
+    - model_name
+    - provider_model
+    - provider_native_model
+    - health_status
+    - status
+    ai_channel:
+    - id
+    - channel_code
+    - channel_name
+    - status
+- route: /admin/model/mappings
+  required_tables:
+  - ai_model_mapping_rule
+  - ops_audit_log
+  required_columns:
+    ai_model_mapping_rule:
+    - id
+    - scope_type
+    - vendor_id
+    - vendor_code
+    - channel_id
+    - channel_code
+    - source_model
+    - target_model
+    - priority
+    - enabled
 - route: /admin/channel/endpoints
   required_tables:
   - ai_provider

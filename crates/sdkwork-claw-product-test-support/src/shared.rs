@@ -188,6 +188,7 @@ pub(crate) async fn installed_sqlite_template_state_current(pool: &SqlitePool) -
         && row.get::<String, _>("seed_profile") == "commercial"
         && row.get::<String, _>("status") == "installed"
         && installed_sqlite_recharge_catalog_current(pool).await
+        && installed_sqlite_ai_routing_admin_groups_current(pool).await
 }
 
 async fn installed_sqlite_recharge_catalog_current(pool: &SqlitePool) -> bool {
@@ -236,6 +237,76 @@ async fn installed_sqlite_recharge_catalog_current(pool: &SqlitePool) -> bool {
     }
 
     true
+}
+
+async fn installed_sqlite_ai_routing_admin_groups_current(pool: &SqlitePool) -> bool {
+    let row = match sqlx::query(
+        r#"
+        SELECT
+            g.selection_mode,
+            (
+                SELECT COUNT(1)
+                FROM ai_resource_group_item item
+                WHERE item.tenant_id = g.tenant_id
+                  AND item.organization_id = g.organization_id
+                  AND item.resource_group_id = g.id
+                  AND item.status = 1
+                  AND item.deleted_at IS NULL
+            ) AS active_item_count
+        FROM ai_resource_group g
+        WHERE g.tenant_id = 0
+          AND g.organization_id = 0
+          AND g.group_code = 'api.all'
+          AND g.group_type = 'api_group'
+          AND g.status = 1
+          AND g.deleted_at IS NULL
+        "#,
+    )
+    .fetch_optional(pool)
+    .await
+    {
+        Ok(Some(row)) => row,
+        _ => return false,
+    };
+    let api_endpoint_count = match sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND resource_type = 'api_endpoint'
+          AND status = 1
+          AND deleted_at IS NULL
+          AND json_extract(metadata, '$.catalogCode') = 'sdkwork-ai-routing'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    {
+        Ok(count) => count,
+        Err(_) => return false,
+    };
+    let admin_api_group_count = match sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource_group
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND group_type = 'api_group'
+          AND status = 1
+          AND deleted_at IS NULL
+          AND json_extract(metadata, '$.catalogCode') = 'sdkwork-ai-routing'
+        "#,
+    )
+    .fetch_one(pool)
+    .await
+    {
+        Ok(count) => count,
+        Err(_) => return false,
+    };
+    row.get::<String, _>("selection_mode") == "all"
+        && row.get::<i64, _>("active_item_count") == api_endpoint_count
+        && admin_api_group_count == 21
 }
 
 pub(crate) async fn repair_sqlite_template_state_current(pool: &SqlitePool) -> bool {

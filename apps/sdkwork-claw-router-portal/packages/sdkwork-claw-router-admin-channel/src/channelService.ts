@@ -879,7 +879,7 @@ function normalizeChannel(value: unknown): ChannelItem {
     apiKey: readOptionalString(item, 'apiKey'),
     createdAt: readRequiredString(item, 'createdAt', 'Channel created time is required'),
     expiresAt: readOptionalString(item, 'expiresAt'),
-    models: readRequiredStringArray(item, 'models', 'Channel models are required'),
+    models: readOptionalStringArray(item, 'models'),
     capabilities: readRequiredStringArray(item, 'capabilities', 'Channel capabilities are required'),
     resourceCodes: readRequiredStringArrayField(item, 'resourceCodes', 'Channel AI resource codes are required'),
     isMultimodal: readRequiredBoolean(item, 'isMultimodal', 'Channel multimodal flag is required'),
@@ -1121,6 +1121,13 @@ function readRequiredStringArray(item: ApiRecord, key: string, message: string):
     throw new Error(message);
   }
   return values;
+}
+
+function readOptionalStringArray(item: ApiRecord, key: string): string[] {
+  if (!(key in item) || item[key] === null || item[key] === undefined) {
+    return [];
+  }
+  return readStringArray(item, key);
 }
 
 function readRequiredStringArrayField(item: ApiRecord, key: string, message: string): string[] {

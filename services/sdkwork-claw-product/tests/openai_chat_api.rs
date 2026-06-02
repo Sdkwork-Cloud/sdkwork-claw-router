@@ -10,10 +10,10 @@ use sdkwork_claw_product::api::{
 };
 use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
-    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelPrice,
-    ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderAuthProfile, ProviderChannelRoute, ProviderRetryPolicy, RouteCandidate,
-    RoutingCapability, RoutingPolicy, RoutingPolicyScope, RoutingRule,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelMappingRule,
+    ModelMappingScope, ModelPrice, ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money,
+    PriceSide, PricingPlan, ProviderAuthProfile, ProviderChannelRoute, ProviderRetryPolicy,
+    RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
@@ -823,6 +823,143 @@ async fn openai_chat_completions_uses_group_channel_route_endpoint_for_selected_
         Some(ProviderRetryPolicy::new(4, vec![408, 429, 503], 50).unwrap()),
         captured[0].provider_retry_policy
     );
+}
+
+#[tokio::test]
+async fn openai_chat_completions_applies_model_mapping_before_provider_relay() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key(key_hash);
+    catalog.add_model_mapping(
+        ModelMappingRule::new(
+            1,
+            ModelMappingScope::Global,
+            "openai-fast",
+            "openai/gpt-4o-mini",
+            100,
+        )
+        .with_target_provider_model("openrouter/gpt-4o-mini-fast"),
+    );
+    catalog.add_model_mapping(
+        ModelMappingRule::new(
+            2,
+            ModelMappingScope::Channel,
+            "openai-fast",
+            "openai/gpt-4o-mini",
+            10,
+        )
+        .with_channel_id(3001)
+        .with_target_provider_model("openrouter/gpt-4o-mini-account"),
+    );
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-live-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"openai-fast","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let captured = captured.lock().unwrap();
+    assert_eq!(1, captured.len());
+    assert_eq!("openai-fast", captured[0].model);
+    assert_eq!("openai-fast", captured[0].request_body["model"]);
+    assert_eq!("openrouter/gpt-4o-mini-account", captured[0].provider_model);
+}
+
+#[tokio::test]
+async fn openai_chat_completions_channel_model_mapping_switches_target_route_on_same_account() {
+    let hasher =
+        Arc::new(HmacSha256ApiKeySecretHasher::new("0123456789abcdef0123456789abcdef").unwrap());
+    let key_hash = hasher.hash_secret("sk-live-secret").unwrap();
+    let mut catalog = catalog_with_hashed_api_key(key_hash);
+    catalog.add_model(
+        AiModel::new("gpt-4o", "GPT-4o", "openai", vec!["chat", "tools"])
+            .with_catalog_key("openai/gpt-4o"),
+    );
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "openai/gpt-4o",
+            "gpt-4o",
+            "openrouter",
+            3001,
+            "openrouter/gpt-4o-account",
+        )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/openrouter"),
+            Some("vault://providers/openrouter/account/main"),
+        ),
+    );
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "openai/gpt-4o",
+        "gpt-4o",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::usd("2.500000").unwrap(),
+    ));
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "openai/gpt-4o",
+            "gpt-4o",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("2.000000").unwrap(),
+        )
+        .for_provider("openrouter", 3001),
+    );
+    catalog.add_model_mapping(
+        ModelMappingRule::new(
+            3,
+            ModelMappingScope::Channel,
+            "gpt-4o-mini",
+            "openai/gpt-4o",
+            10,
+        )
+        .with_channel_id(3001),
+    );
+    let captured = Arc::new(Mutex::new(Vec::new()));
+    let relay = Arc::new(RecordingRelay::new(Arc::clone(&captured)));
+    let router = sdkwork_claw_product::api::openai_chat_completions_router_with_relay(
+        Arc::new(catalog),
+        hasher,
+        relay,
+    );
+
+    let response = router
+        .oneshot(
+            Request::builder()
+                .method("POST")
+                .uri("/v1/chat/completions")
+                .header("authorization", "Bearer sk-live-secret")
+                .header("content-type", "application/json")
+                .body(Body::from(
+                    r#"{"model":"gpt-4o-mini","messages":[{"role":"user","content":"ping"}]}"#,
+                ))
+                .unwrap(),
+        )
+        .await
+        .unwrap();
+
+    assert_eq!(StatusCode::OK, response.status());
+    let captured = captured.lock().unwrap();
+    assert_eq!("gpt-4o-mini", captured[0].model);
+    assert_eq!("openrouter/gpt-4o-account", captured[0].provider_model);
 }
 
 #[tokio::test]

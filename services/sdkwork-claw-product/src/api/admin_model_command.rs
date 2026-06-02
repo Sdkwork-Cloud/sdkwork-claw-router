@@ -2,7 +2,7 @@ use std::sync::Arc;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use axum::body::Bytes;
-use axum::extract::{Path, State};
+use axum::extract::{Path, Query, State};
 use axum::http::{HeaderMap, StatusCode};
 use axum::response::{IntoResponse, Response};
 use axum::routing::{get, patch, post};
@@ -17,16 +17,23 @@ use crate::application::EntityUuidGenerator;
 use crate::domain::DomainError;
 use crate::infrastructure::sql::model_catalog_import::DEFAULT_CATALOG_REFRESH_SOURCE;
 use crate::ports::{
-    AdminAiModelItem, AdminAiModelRegionPriceCommand, AdminModelCatalogSyncItem, AdminModelStore,
-    AdminModelSubject, AdminModelVendorItem, CreateAdminAiModelCommand,
-    CreateAdminModelVendorCommand, DeleteAdminAiModelCommand, ListAdminAiModelsQuery,
-    ListAdminModelVendorsQuery, SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand,
+    AdminAiModelItem, AdminAiModelRegionPriceCommand, AdminModelCatalogSyncItem,
+    AdminModelMappingRuleDraft, AdminModelMappingRuleItem, AdminModelMappingRulePatch,
+    AdminModelStore, AdminModelSubject, AdminModelVendorItem, CreateAdminAiModelCommand,
+    CreateAdminModelMappingCommand, CreateAdminModelVendorCommand, DeleteAdminAiModelCommand,
+    DeleteAdminModelMappingCommand, ListAdminAiModelsQuery, ListAdminModelMappingsQuery,
+    ListAdminModelVendorsQuery, ResolveAdminModelMappingQuery, ResolveAdminModelMappingResult,
+    SyncAdminModelCatalogCommand, UpdateAdminAiModelCommand, UpdateAdminModelMappingCommand,
 };
 
 const MAX_VENDOR_CODE_LEN: usize = 64;
 const MAX_NAME_LEN: usize = 128;
 const MAX_COLOR_LEN: usize = 64;
 const MAX_DESCRIPTION_LEN: usize = 512;
+const MAX_MAPPING_TEXT_LEN: usize = 256;
+const MAX_MAPPING_SCOPE_LEN: usize = 32;
+const MAX_MAPPING_QUERY_LEN: usize = 128;
+const MAX_MAPPING_PRIORITY: i32 = 1_000_000;
 const MAX_PUBLIC_DESCRIPTION_LEN: usize = 2048;
 const MAX_CAPABILITY_INTRO_LEN: usize = 4096;
 const MAX_TRAINING_DATA_CUTOFF_LEN: usize = 128;
@@ -64,6 +71,9 @@ const INTEGRATION_PROVIDER_ONLY_NAME_MARKERS: &[&str] = &[
     "ollama",
     "vertex ai",
 ];
+const MAPPING_SCOPES: &[&str] = &["global", "vendor", "channel"];
+const MAPPING_MODES: &[&str] = &["alias"];
+const MAPPING_MATCH_TYPES: &[&str] = &["exact"];
 
 #[derive(Clone)]
 struct AdminModelCommandState {
@@ -169,6 +179,74 @@ struct AdminModelCatalogSyncRequest {
     force: Option<bool>,
     catalog_root: Option<String>,
     catalog_version: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminModelMappingsQuery {
+    scope_type: Option<String>,
+    vendor_code: Option<String>,
+    channel_id: Option<Value>,
+    q: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminModelMappingCreateRequest {
+    scope_type: Option<String>,
+    vendor_id: Option<Value>,
+    vendor_code: Option<String>,
+    channel_id: Option<Value>,
+    channel_code: Option<String>,
+    source_model: Option<String>,
+    source_catalog_key: Option<String>,
+    source_vendor_code: Option<String>,
+    target_model: Option<String>,
+    target_catalog_key: Option<String>,
+    target_vendor_code: Option<String>,
+    target_provider_model: Option<String>,
+    target_provider_native_model: Option<String>,
+    mapping_mode: Option<String>,
+    match_type: Option<String>,
+    priority: Option<Value>,
+    enabled: Option<bool>,
+    effective_from: Option<String>,
+    effective_to: Option<String>,
+    description: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminModelMappingUpdateRequest {
+    scope_type: Option<String>,
+    vendor_id: Option<Value>,
+    vendor_code: Option<String>,
+    channel_id: Option<Value>,
+    channel_code: Option<String>,
+    source_model: Option<String>,
+    source_catalog_key: Option<String>,
+    source_vendor_code: Option<String>,
+    target_model: Option<String>,
+    target_catalog_key: Option<String>,
+    target_vendor_code: Option<String>,
+    target_provider_model: Option<String>,
+    target_provider_native_model: Option<String>,
+    mapping_mode: Option<String>,
+    match_type: Option<String>,
+    priority: Option<Value>,
+    enabled: Option<bool>,
+    effective_from: Option<String>,
+    effective_to: Option<String>,
+    description: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminModelMappingResolveRequest {
+    source_model: Option<String>,
+    vendor_code: Option<String>,
+    channel_id: Option<Value>,
+    channel_code: Option<String>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -334,6 +412,48 @@ struct AdminAiModelItemResponse {
     replacement_model: Option<String>,
 }
 
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminModelMappingRuleResponse {
+    id: String,
+    scope_type: String,
+    vendor_id: Option<String>,
+    vendor_code: Option<String>,
+    channel_id: Option<String>,
+    channel_code: Option<String>,
+    source_model: String,
+    source_catalog_key: Option<String>,
+    source_vendor_code: Option<String>,
+    target_model: String,
+    target_catalog_key: Option<String>,
+    target_vendor_code: Option<String>,
+    target_provider_model: Option<String>,
+    target_provider_native_model: Option<String>,
+    mapping_mode: String,
+    match_type: String,
+    priority: i32,
+    enabled: bool,
+    effective_from: Option<String>,
+    effective_to: Option<String>,
+    description: Option<String>,
+    created_at: Option<String>,
+    updated_at: Option<String>,
+}
+
+#[derive(Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct AdminModelMappingResolveResponse {
+    source_model: String,
+    target_model: String,
+    target_catalog_key: Option<String>,
+    target_vendor_code: Option<String>,
+    target_provider_model: Option<String>,
+    target_provider_native_model: Option<String>,
+    matched: bool,
+    matched_scope_type: Option<String>,
+    rule: Option<AdminModelMappingRuleResponse>,
+}
+
 enum AdminModelCommandBuildError {
     BadRequest(String),
     System(DomainError),
@@ -353,6 +473,18 @@ pub fn admin_model_management_router_with_store(
             get(fetch_models).post(create_model),
         )
         .route("/backend/v3/api/ai/models/refresh", post(sync_catalog))
+        .route(
+            "/backend/v3/api/ai/model_mappings",
+            get(fetch_model_mappings).post(create_model_mapping),
+        )
+        .route(
+            "/backend/v3/api/ai/model_mappings/resolve",
+            post(resolve_model_mapping),
+        )
+        .route(
+            "/backend/v3/api/ai/model_mappings/{mapping_id}",
+            patch(update_model_mapping).delete(delete_model_mapping),
+        )
         .route(
             "/backend/v3/api/ai/models/{model_id}",
             patch(update_model).delete(delete_model),
@@ -399,6 +531,28 @@ async fn fetch_models(State(state): State<AdminModelCommandState>, headers: Head
         }))
         .into_response(),
         Err(error) => admin_model_system_response("ai model read model is unavailable", error),
+    }
+}
+
+async fn fetch_model_mappings(
+    State(state): State<AdminModelCommandState>,
+    Query(query): Query<AdminModelMappingsQuery>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let query = match build_list_model_mappings_query(subject, query) {
+        Ok(query) => query,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state.store.list_model_mappings(query).await {
+        Ok(items) => Json(PlusApiResult::success(AdminModelListResponse {
+            items: items.into_iter().map(to_mapping_response).collect(),
+        }))
+        .into_response(),
+        Err(error) => admin_model_system_response("model mapping read model is unavailable", error),
     }
 }
 
@@ -459,6 +613,36 @@ async fn create_model(
     }
 }
 
+async fn create_model_mapping(
+    State(state): State<AdminModelCommandState>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request = match parse_json_body::<AdminModelMappingCreateRequest>(&body, "model mapping") {
+        Ok(request) => request,
+        Err(message) => return bad_request(message),
+    };
+    let command =
+        match build_create_model_mapping_command(state.clone(), &headers, subject, request) {
+            Ok(command) => command,
+            Err(error) => return command_build_error_response(error),
+        };
+    match state.store.create_model_mapping(command).await {
+        Ok(item) => Json(PlusApiResult::success(AdminModelItemEnvelope {
+            item: to_mapping_response(item),
+        }))
+        .into_response(),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => {
+            admin_model_system_response("model mapping command store is unavailable", error)
+        }
+    }
+}
+
 async fn update_model(
     State(state): State<AdminModelCommandState>,
     Path(model_id): Path<String>,
@@ -489,6 +673,44 @@ async fn update_model(
     }
 }
 
+async fn update_model_mapping(
+    State(state): State<AdminModelCommandState>,
+    Path(mapping_id): Path<String>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request =
+        match parse_json_body::<AdminModelMappingUpdateRequest>(&body, "model mapping update") {
+            Ok(request) => request,
+            Err(message) => return bad_request(message),
+        };
+    let command = match build_update_model_mapping_command(
+        state.clone(),
+        &headers,
+        subject,
+        mapping_id,
+        request,
+    ) {
+        Ok(command) => command,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state.store.update_model_mapping(command).await {
+        Ok(item) => Json(PlusApiResult::success(AdminModelItemEnvelope {
+            item: to_mapping_response(item),
+        }))
+        .into_response(),
+        Err(error) if error.is_not_found() => not_found_response(error.to_string()),
+        Err(error) if error.is_conflict() => conflict_response(error),
+        Err(error) => {
+            admin_model_system_response("model mapping update store is unavailable", error)
+        }
+    }
+}
+
 async fn delete_model(
     State(state): State<AdminModelCommandState>,
     Path(model_id): Path<String>,
@@ -509,6 +731,60 @@ async fn delete_model(
         .into_response(),
         Err(error) if error.is_not_found() => not_found_response(error.to_string()),
         Err(error) => admin_model_system_response("ai model delete store is unavailable", error),
+    }
+}
+
+async fn delete_model_mapping(
+    State(state): State<AdminModelCommandState>,
+    Path(mapping_id): Path<String>,
+    headers: HeaderMap,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let command =
+        match build_delete_model_mapping_command(state.clone(), &headers, subject, mapping_id) {
+            Ok(command) => command,
+            Err(error) => return command_build_error_response(error),
+        };
+    match state.store.delete_model_mapping(command).await {
+        Ok(()) => Json(PlusApiResult::success(
+            serde_json::json!({ "deleted": true }),
+        ))
+        .into_response(),
+        Err(error) if error.is_not_found() => not_found_response(error.to_string()),
+        Err(error) => {
+            admin_model_system_response("model mapping delete store is unavailable", error)
+        }
+    }
+}
+
+async fn resolve_model_mapping(
+    State(state): State<AdminModelCommandState>,
+    headers: HeaderMap,
+    body: Bytes,
+) -> Response {
+    let subject = match resolve_subject(&headers) {
+        Ok(subject) => subject,
+        Err(response) => return response,
+    };
+    let request =
+        match parse_json_body::<AdminModelMappingResolveRequest>(&body, "model mapping resolve") {
+            Ok(request) => request,
+            Err(message) => return bad_request(message),
+        };
+    let query = match build_resolve_model_mapping_query(subject, request) {
+        Ok(query) => query,
+        Err(error) => return command_build_error_response(error),
+    };
+    match state.store.resolve_model_mapping(query).await {
+        Ok(result) => {
+            Json(PlusApiResult::success(to_mapping_resolve_response(result))).into_response()
+        }
+        Err(error) => {
+            admin_model_system_response("model mapping resolve store is unavailable", error)
+        }
     }
 }
 
@@ -734,6 +1010,62 @@ fn build_sync_catalog_command(
     })
 }
 
+fn build_list_model_mappings_query(
+    subject: AdminModelSubject,
+    query: AdminModelMappingsQuery,
+) -> Result<ListAdminModelMappingsQuery, AdminModelCommandBuildError> {
+    Ok(ListAdminModelMappingsQuery {
+        subject,
+        scope_type: query
+            .scope_type
+            .as_deref()
+            .map(normalize_mapping_scope)
+            .transpose()?,
+        vendor_code: normalize_nullable_code(
+            query.vendor_code.as_deref(),
+            "vendorCode",
+            MAX_VENDOR_CODE_LEN,
+        )?,
+        channel_id: normalize_optional_id_value(query.channel_id.as_ref(), "channelId")?,
+        q: normalize_mapping_optional_text(query.q.as_deref(), "q", MAX_MAPPING_QUERY_LEN)?,
+    })
+}
+
+fn build_create_model_mapping_command(
+    state: AdminModelCommandState,
+    _headers: &HeaderMap,
+    subject: AdminModelSubject,
+    request: AdminModelMappingCreateRequest,
+) -> Result<CreateAdminModelMappingCommand, AdminModelCommandBuildError> {
+    let draft = normalize_model_mapping_create_request(request)?;
+    Ok(CreateAdminModelMappingCommand {
+        subject,
+        mapping_uuid: generate_entity_uuid(&state)?,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        draft,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_update_model_mapping_command(
+    state: AdminModelCommandState,
+    _headers: &HeaderMap,
+    subject: AdminModelSubject,
+    mapping_id: String,
+    request: AdminModelMappingUpdateRequest,
+) -> Result<UpdateAdminModelMappingCommand, AdminModelCommandBuildError> {
+    let patch = normalize_model_mapping_update_request(request)?;
+    Ok(UpdateAdminModelMappingCommand {
+        subject,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        mapping_id: normalize_model_id(&mapping_id)?,
+        patch,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
 fn build_delete_model_command(
     state: AdminModelCommandState,
     _headers: &HeaderMap,
@@ -746,6 +1078,46 @@ fn build_delete_model_command(
         model_id: normalize_model_id(&model_id)?,
         request_id: generate_server_request_id().map_err(request_id_error)?,
         requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_delete_model_mapping_command(
+    state: AdminModelCommandState,
+    _headers: &HeaderMap,
+    subject: AdminModelSubject,
+    mapping_id: String,
+) -> Result<DeleteAdminModelMappingCommand, AdminModelCommandBuildError> {
+    Ok(DeleteAdminModelMappingCommand {
+        subject,
+        audit_log_uuid: generate_entity_uuid(&state)?,
+        mapping_id: normalize_model_id(&mapping_id)?,
+        request_id: generate_server_request_id().map_err(request_id_error)?,
+        requested_at: current_timestamp_string(),
+    })
+}
+
+fn build_resolve_model_mapping_query(
+    subject: AdminModelSubject,
+    request: AdminModelMappingResolveRequest,
+) -> Result<ResolveAdminModelMappingQuery, AdminModelCommandBuildError> {
+    Ok(ResolveAdminModelMappingQuery {
+        subject,
+        source_model: normalize_mapping_required_text(
+            request.source_model.as_deref(),
+            "sourceModel",
+            MAX_MAPPING_TEXT_LEN,
+        )?,
+        vendor_code: normalize_nullable_code(
+            request.vendor_code.as_deref(),
+            "vendorCode",
+            MAX_VENDOR_CODE_LEN,
+        )?,
+        channel_id: normalize_optional_id_value(request.channel_id.as_ref(), "channelId")?,
+        channel_code: normalize_nullable_code(
+            request.channel_code.as_deref(),
+            "channelCode",
+            MAX_VENDOR_CODE_LEN,
+        )?,
     })
 }
 
@@ -1077,6 +1449,242 @@ fn normalize_model_update_request(
     })
 }
 
+fn normalize_model_mapping_create_request(
+    request: AdminModelMappingCreateRequest,
+) -> Result<AdminModelMappingRuleDraft, AdminModelCommandBuildError> {
+    let draft = AdminModelMappingRuleDraft {
+        scope_type: normalize_mapping_scope(request.scope_type.as_deref().unwrap_or("global"))?,
+        vendor_id: normalize_optional_id_value(request.vendor_id.as_ref(), "vendorId")?,
+        vendor_code: normalize_nullable_code(
+            request.vendor_code.as_deref(),
+            "vendorCode",
+            MAX_VENDOR_CODE_LEN,
+        )?,
+        channel_id: normalize_optional_id_value(request.channel_id.as_ref(), "channelId")?,
+        channel_code: normalize_nullable_code(
+            request.channel_code.as_deref(),
+            "channelCode",
+            MAX_VENDOR_CODE_LEN,
+        )?,
+        source_model: normalize_mapping_required_text(
+            request.source_model.as_deref(),
+            "sourceModel",
+            MAX_MAPPING_TEXT_LEN,
+        )?,
+        source_catalog_key: normalize_mapping_optional_text(
+            request.source_catalog_key.as_deref(),
+            "sourceCatalogKey",
+            MAX_MAPPING_TEXT_LEN,
+        )?,
+        source_vendor_code: normalize_nullable_code(
+            request.source_vendor_code.as_deref(),
+            "sourceVendorCode",
+            MAX_VENDOR_CODE_LEN,
+        )?,
+        target_model: normalize_mapping_required_text(
+            request.target_model.as_deref(),
+            "targetModel",
+            MAX_MAPPING_TEXT_LEN,
+        )?,
+        target_catalog_key: normalize_mapping_optional_text(
+            request.target_catalog_key.as_deref(),
+            "targetCatalogKey",
+            MAX_MAPPING_TEXT_LEN,
+        )?,
+        target_vendor_code: normalize_nullable_code(
+            request.target_vendor_code.as_deref(),
+            "targetVendorCode",
+            MAX_VENDOR_CODE_LEN,
+        )?,
+        target_provider_model: normalize_mapping_optional_text(
+            request.target_provider_model.as_deref(),
+            "targetProviderModel",
+            MAX_MAPPING_TEXT_LEN,
+        )?,
+        target_provider_native_model: normalize_mapping_optional_text(
+            request.target_provider_native_model.as_deref(),
+            "targetProviderNativeModel",
+            MAX_MAPPING_TEXT_LEN,
+        )?,
+        mapping_mode: normalize_mapping_mode(request.mapping_mode.as_deref().unwrap_or("alias"))?,
+        match_type: normalize_mapping_match_type(request.match_type.as_deref().unwrap_or("exact"))?,
+        priority: normalize_mapping_priority(request.priority.as_ref())?.unwrap_or(100),
+        enabled: request.enabled.unwrap_or(true),
+        effective_from: normalize_mapping_optional_text(
+            request.effective_from.as_deref(),
+            "effectiveFrom",
+            64,
+        )?,
+        effective_to: normalize_mapping_optional_text(
+            request.effective_to.as_deref(),
+            "effectiveTo",
+            64,
+        )?,
+        description: normalize_mapping_optional_text(
+            request.description.as_deref(),
+            "description",
+            MAX_DESCRIPTION_LEN,
+        )?,
+    };
+    validate_mapping_scope_identity(
+        &draft.scope_type,
+        draft.vendor_id,
+        draft.vendor_code.as_deref(),
+        draft.channel_id,
+        draft.channel_code.as_deref(),
+    )?;
+    Ok(draft)
+}
+
+fn normalize_model_mapping_update_request(
+    request: AdminModelMappingUpdateRequest,
+) -> Result<AdminModelMappingRulePatch, AdminModelCommandBuildError> {
+    let patch = AdminModelMappingRulePatch {
+        scope_type: request
+            .scope_type
+            .as_deref()
+            .map(normalize_mapping_scope)
+            .transpose()?,
+        vendor_id: request
+            .vendor_id
+            .as_ref()
+            .map(|value| normalize_optional_id_value(Some(value), "vendorId"))
+            .transpose()?,
+        vendor_code: request
+            .vendor_code
+            .as_deref()
+            .map(|value| normalize_nullable_code(Some(value), "vendorCode", MAX_VENDOR_CODE_LEN))
+            .transpose()?,
+        channel_id: request
+            .channel_id
+            .as_ref()
+            .map(|value| normalize_optional_id_value(Some(value), "channelId"))
+            .transpose()?,
+        channel_code: request
+            .channel_code
+            .as_deref()
+            .map(|value| normalize_nullable_code(Some(value), "channelCode", MAX_VENDOR_CODE_LEN))
+            .transpose()?,
+        source_model: request
+            .source_model
+            .as_deref()
+            .map(|value| {
+                normalize_mapping_required_text(Some(value), "sourceModel", MAX_MAPPING_TEXT_LEN)
+            })
+            .transpose()?,
+        source_catalog_key: request
+            .source_catalog_key
+            .as_deref()
+            .map(|value| {
+                normalize_mapping_optional_text(
+                    Some(value),
+                    "sourceCatalogKey",
+                    MAX_MAPPING_TEXT_LEN,
+                )
+            })
+            .transpose()?,
+        source_vendor_code: request
+            .source_vendor_code
+            .as_deref()
+            .map(|value| {
+                normalize_nullable_code(Some(value), "sourceVendorCode", MAX_VENDOR_CODE_LEN)
+            })
+            .transpose()?,
+        target_model: request
+            .target_model
+            .as_deref()
+            .map(|value| {
+                normalize_mapping_required_text(Some(value), "targetModel", MAX_MAPPING_TEXT_LEN)
+            })
+            .transpose()?,
+        target_catalog_key: request
+            .target_catalog_key
+            .as_deref()
+            .map(|value| {
+                normalize_mapping_optional_text(
+                    Some(value),
+                    "targetCatalogKey",
+                    MAX_MAPPING_TEXT_LEN,
+                )
+            })
+            .transpose()?,
+        target_vendor_code: request
+            .target_vendor_code
+            .as_deref()
+            .map(|value| {
+                normalize_nullable_code(Some(value), "targetVendorCode", MAX_VENDOR_CODE_LEN)
+            })
+            .transpose()?,
+        target_provider_model: request
+            .target_provider_model
+            .as_deref()
+            .map(|value| {
+                normalize_mapping_optional_text(
+                    Some(value),
+                    "targetProviderModel",
+                    MAX_MAPPING_TEXT_LEN,
+                )
+            })
+            .transpose()?,
+        target_provider_native_model: request
+            .target_provider_native_model
+            .as_deref()
+            .map(|value| {
+                normalize_mapping_optional_text(
+                    Some(value),
+                    "targetProviderNativeModel",
+                    MAX_MAPPING_TEXT_LEN,
+                )
+            })
+            .transpose()?,
+        mapping_mode: request
+            .mapping_mode
+            .as_deref()
+            .map(normalize_mapping_mode)
+            .transpose()?,
+        match_type: request
+            .match_type
+            .as_deref()
+            .map(normalize_mapping_match_type)
+            .transpose()?,
+        priority: normalize_mapping_priority(request.priority.as_ref())?,
+        enabled: request.enabled,
+        effective_from: request
+            .effective_from
+            .as_deref()
+            .map(|value| normalize_mapping_optional_text(Some(value), "effectiveFrom", 64))
+            .transpose()?,
+        effective_to: request
+            .effective_to
+            .as_deref()
+            .map(|value| normalize_mapping_optional_text(Some(value), "effectiveTo", 64))
+            .transpose()?,
+        description: request
+            .description
+            .as_deref()
+            .map(|value| {
+                normalize_mapping_optional_text(Some(value), "description", MAX_DESCRIPTION_LEN)
+            })
+            .transpose()?,
+    };
+    if let Some(scope_type) = patch.scope_type.as_deref() {
+        validate_mapping_scope_identity(
+            scope_type,
+            patch.vendor_id.flatten(),
+            patch
+                .vendor_code
+                .as_ref()
+                .and_then(|value| value.as_deref()),
+            patch.channel_id.flatten(),
+            patch
+                .channel_code
+                .as_ref()
+                .and_then(|value| value.as_deref()),
+        )?;
+    }
+    Ok(patch)
+}
+
 fn normalize_required_text(
     value: Option<&str>,
     field_name: &str,
@@ -1391,6 +1999,178 @@ fn normalize_code(
         )));
     }
     Ok(code)
+}
+
+fn normalize_nullable_code(
+    value: Option<&str>,
+    field_name: &str,
+    max_len: usize,
+) -> Result<Option<String>, AdminModelCommandBuildError> {
+    let Some(value) = value else {
+        return Ok(None);
+    };
+    if value.trim().is_empty() {
+        return Ok(None);
+    }
+    normalize_code(value, field_name, max_len).map(Some)
+}
+
+fn normalize_mapping_scope(value: &str) -> Result<String, AdminModelCommandBuildError> {
+    let value = normalize_mapping_required_text(Some(value), "scopeType", MAX_MAPPING_SCOPE_LEN)?
+        .to_ascii_lowercase();
+    if MAPPING_SCOPES.contains(&value.as_str()) {
+        return Ok(value);
+    }
+    Err(AdminModelCommandBuildError::BadRequest(
+        "scopeType must be global, vendor, or channel".to_owned(),
+    ))
+}
+
+fn normalize_mapping_mode(value: &str) -> Result<String, AdminModelCommandBuildError> {
+    let value = normalize_mapping_required_text(Some(value), "mappingMode", MAX_MAPPING_SCOPE_LEN)?
+        .to_ascii_lowercase();
+    if MAPPING_MODES.contains(&value.as_str()) {
+        return Ok(value);
+    }
+    Err(AdminModelCommandBuildError::BadRequest(
+        "mappingMode must be alias".to_owned(),
+    ))
+}
+
+fn normalize_mapping_match_type(value: &str) -> Result<String, AdminModelCommandBuildError> {
+    let value = normalize_mapping_required_text(Some(value), "matchType", MAX_MAPPING_SCOPE_LEN)?
+        .to_ascii_lowercase();
+    if MAPPING_MATCH_TYPES.contains(&value.as_str()) {
+        return Ok(value);
+    }
+    Err(AdminModelCommandBuildError::BadRequest(
+        "matchType must be exact".to_owned(),
+    ))
+}
+
+fn normalize_mapping_required_text(
+    value: Option<&str>,
+    field_name: &str,
+    max_len: usize,
+) -> Result<String, AdminModelCommandBuildError> {
+    let value = normalize_required_text(value, field_name, max_len)?;
+    if value.chars().any(char::is_control) {
+        return Err(AdminModelCommandBuildError::BadRequest(format!(
+            "{field_name} must not contain control characters"
+        )));
+    }
+    Ok(value)
+}
+
+fn normalize_mapping_optional_text(
+    value: Option<&str>,
+    field_name: &str,
+    max_len: usize,
+) -> Result<Option<String>, AdminModelCommandBuildError> {
+    let value = normalize_optional_text(value, field_name, max_len)?;
+    if value.is_empty() {
+        return Ok(None);
+    }
+    if value.chars().any(char::is_control) {
+        return Err(AdminModelCommandBuildError::BadRequest(format!(
+            "{field_name} must not contain control characters"
+        )));
+    }
+    Ok(Some(value))
+}
+
+fn normalize_optional_id_value(
+    value: Option<&Value>,
+    field_name: &str,
+) -> Result<Option<i64>, AdminModelCommandBuildError> {
+    let Some(value) = value else {
+        return Ok(None);
+    };
+    if value.is_null() {
+        return Ok(None);
+    }
+    let raw = match value {
+        Value::String(value) => value.trim().to_owned(),
+        Value::Number(value) => value.to_string(),
+        _ => {
+            return Err(AdminModelCommandBuildError::BadRequest(format!(
+                "{field_name} must be a positive integer"
+            )))
+        }
+    };
+    if raw.is_empty() {
+        return Ok(None);
+    }
+    let parsed = raw.parse::<i64>().map_err(|_| {
+        AdminModelCommandBuildError::BadRequest(format!("{field_name} must be a positive integer"))
+    })?;
+    if parsed <= 0 {
+        return Err(AdminModelCommandBuildError::BadRequest(format!(
+            "{field_name} must be a positive integer"
+        )));
+    }
+    Ok(Some(parsed))
+}
+
+fn normalize_mapping_priority(
+    value: Option<&Value>,
+) -> Result<Option<i32>, AdminModelCommandBuildError> {
+    let Some(value) = value else {
+        return Ok(None);
+    };
+    if value.is_null() {
+        return Ok(None);
+    }
+    let raw = match value {
+        Value::String(value) => value.trim().to_owned(),
+        Value::Number(value) => value.to_string(),
+        _ => {
+            return Err(AdminModelCommandBuildError::BadRequest(
+                "priority must be an integer".to_owned(),
+            ))
+        }
+    };
+    if raw.is_empty() {
+        return Ok(None);
+    }
+    let priority = raw.parse::<i32>().map_err(|_| {
+        AdminModelCommandBuildError::BadRequest("priority must be an integer".to_owned())
+    })?;
+    if !(0..=MAX_MAPPING_PRIORITY).contains(&priority) {
+        return Err(AdminModelCommandBuildError::BadRequest(format!(
+            "priority must be between 0 and {MAX_MAPPING_PRIORITY}"
+        )));
+    }
+    Ok(Some(priority))
+}
+
+fn validate_mapping_scope_identity(
+    scope_type: &str,
+    vendor_id: Option<i64>,
+    vendor_code: Option<&str>,
+    channel_id: Option<i64>,
+    channel_code: Option<&str>,
+) -> Result<(), AdminModelCommandBuildError> {
+    match scope_type {
+        "global" => Ok(()),
+        "vendor" if vendor_id.is_some() || vendor_code.is_some_and(|value| !value.is_empty()) => {
+            Ok(())
+        }
+        "vendor" => Err(AdminModelCommandBuildError::BadRequest(
+            "vendor scope requires vendorId or vendorCode".to_owned(),
+        )),
+        "channel"
+            if channel_id.is_some() || channel_code.is_some_and(|value| !value.is_empty()) =>
+        {
+            Ok(())
+        }
+        "channel" => Err(AdminModelCommandBuildError::BadRequest(
+            "channel scope requires channelId or channelCode".to_owned(),
+        )),
+        _ => Err(AdminModelCommandBuildError::BadRequest(
+            "scopeType must be global, vendor, or channel".to_owned(),
+        )),
+    }
 }
 
 fn vendor_code_from_name(name: &str, vendor_uuid: &str) -> String {
@@ -1804,6 +2584,50 @@ fn to_model_response(item: AdminAiModelItem) -> AdminAiModelItemResponse {
         shelf_state: item.shelf_state,
         routing_state: item.routing_state,
         replacement_model: item.replacement_model,
+    }
+}
+
+fn to_mapping_response(item: AdminModelMappingRuleItem) -> AdminModelMappingRuleResponse {
+    AdminModelMappingRuleResponse {
+        id: item.id.to_string(),
+        scope_type: item.scope_type,
+        vendor_id: item.vendor_id.map(|value| value.to_string()),
+        vendor_code: item.vendor_code,
+        channel_id: item.channel_id.map(|value| value.to_string()),
+        channel_code: item.channel_code,
+        source_model: item.source_model,
+        source_catalog_key: item.source_catalog_key,
+        source_vendor_code: item.source_vendor_code,
+        target_model: item.target_model,
+        target_catalog_key: item.target_catalog_key,
+        target_vendor_code: item.target_vendor_code,
+        target_provider_model: item.target_provider_model,
+        target_provider_native_model: item.target_provider_native_model,
+        mapping_mode: item.mapping_mode,
+        match_type: item.match_type,
+        priority: item.priority,
+        enabled: item.enabled,
+        effective_from: item.effective_from,
+        effective_to: item.effective_to,
+        description: item.description,
+        created_at: item.created_at,
+        updated_at: item.updated_at,
+    }
+}
+
+fn to_mapping_resolve_response(
+    result: ResolveAdminModelMappingResult,
+) -> AdminModelMappingResolveResponse {
+    AdminModelMappingResolveResponse {
+        source_model: result.source_model,
+        target_model: result.target_model,
+        target_catalog_key: result.target_catalog_key,
+        target_vendor_code: result.target_vendor_code,
+        target_provider_model: result.target_provider_model,
+        target_provider_native_model: result.target_provider_native_model,
+        matched: result.matched,
+        matched_scope_type: result.matched_scope_type,
+        rule: result.rule.map(to_mapping_response),
     }
 }
 

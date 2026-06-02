@@ -381,6 +381,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
   const [providerAccountSaving, setProviderAccountSaving] = useState(false);
   const [providerAccountError, setProviderAccountError] = useState<string | null>(null);
   const [providerAccountSuccess, setProviderAccountSuccess] = useState<string | null>(null);
+  const [providerAccountDeleteConfirmation, setProviderAccountDeleteConfirmation] = useState<AdminResourceRecord | null>(null);
   const [providerAccountRefreshKey, setProviderAccountRefreshKey] = useState(0);
   const [paymentProviderCodeOptions, setPaymentProviderCodeOptions] = useState<
     readonly PaymentProviderOption[]
@@ -595,12 +596,16 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       await backendPaymentsProviderAccountsStatusUpdate(providerAccountId, {
         status,
         note: status === 'active'
-          ? t('admin.commerce.payments.providerAccounts.status.enableNote', 'Set as the available account from admin payment center')
-          : t('admin.commerce.payments.providerAccounts.status.disableNote', 'Disabled from admin payment center'),
+          ? t('admin.commerce.payments.providerAccounts.status.setAvailableNote', 'Set as the available account from admin payment center')
+          : status === 'inactive'
+            ? t('admin.commerce.payments.providerAccounts.status.enableNote', 'Enabled as a standby account from admin payment center')
+            : t('admin.commerce.payments.providerAccounts.status.disableNote', 'Disabled from admin payment center'),
       });
       setProviderAccountSuccess(status === 'active'
-        ? t('admin.commerce.payments.providerAccounts.status.enableSuccess', 'Provider account is now the available account for this channel scope. Other active accounts in the same scope were moved to standby.')
-        : t('admin.commerce.payments.providerAccounts.status.disableSuccess', 'Provider account disabled.'));
+        ? t('admin.commerce.payments.providerAccounts.status.setAvailableSuccess', 'Provider account is now the available account for this channel scope. Other active accounts in the same scope were moved to standby.')
+        : status === 'inactive'
+          ? t('admin.commerce.payments.providerAccounts.status.enableSuccess', 'Provider account enabled as a standby account.')
+          : t('admin.commerce.payments.providerAccounts.status.disableSuccess', 'Provider account disabled.'));
       setProviderAccountRefreshKey((current) => current + 1);
     } catch (error) {
       setProviderAccountError(error instanceof Error && error.message ? error.message : t('admin.commerce.payments.providerAccounts.saveError', 'Provider account could not be saved.'));
@@ -609,18 +614,23 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
     }
   }, [t]);
 
-  const deleteProviderAccount = useCallback(async (record: AdminResourceRecord) => {
+  const deleteProviderAccount = useCallback((record: AdminResourceRecord) => {
     const providerAccountId = readProviderAccountRecordId(record);
     if (!providerAccountId) {
       setProviderAccountError(t('admin.commerce.payments.providerAccounts.missingAccountId', 'Provider account id is missing.'));
       return;
     }
-    const accountNo = readRecordText(record, 'accountNo') || providerAccountId;
-    if (!window.confirm(t(
-      'admin.commerce.payments.providerAccounts.deleteConfirm',
-      'Delete provider account {{accountNo}}? Channels using this account must be removed first.',
-      { accountNo },
-    ))) {
+    setProviderAccountError(null);
+    setProviderAccountSuccess(null);
+    setProviderAccountDeleteConfirmation(record);
+  }, [t]);
+
+  const executeConfirmedProviderAccountDelete = useCallback(async () => {
+    const record = providerAccountDeleteConfirmation;
+    const providerAccountId = record ? readProviderAccountRecordId(record) : '';
+    if (!record || !providerAccountId) {
+      setProviderAccountError(t('admin.commerce.payments.providerAccounts.missingAccountId', 'Provider account id is missing.'));
+      setProviderAccountDeleteConfirmation(null);
       return;
     }
     setProviderAccountSaving(true);
@@ -630,12 +640,13 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
       await backendPaymentsProviderAccountsDelete(providerAccountId);
       setProviderAccountSuccess(t('admin.commerce.payments.providerAccounts.deleteSuccess', 'Provider account deleted.'));
       setProviderAccountRefreshKey((current) => current + 1);
+      setProviderAccountDeleteConfirmation(null);
     } catch (error) {
       setProviderAccountError(error instanceof Error && error.message ? error.message : t('admin.commerce.payments.providerAccounts.deleteError', 'Provider account could not be deleted.'));
     } finally {
       setProviderAccountSaving(false);
     }
-  }, [t]);
+  }, [providerAccountDeleteConfirmation, t]);
 
   const paymentSections = useMemo<AdminResourceSection<PaymentsAdminTab, PaymentsAdminGroup>[]>(() => [
     {
@@ -699,15 +710,21 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
           onClick: (record) => openProviderAccountEditForm(record),
         },
         {
-          label: t('admin.commerce.payments.providerAccounts.actions.enable', 'Set available'),
+          label: t('admin.commerce.payments.providerAccounts.actions.enable', 'Enable'),
           icon: <Power className="h-3.5 w-3.5" />,
-          isDisabled: (record) => readRecordText(record, 'status') === 'active',
+          isVisible: (record) => readRecordText(record, 'status') === 'disabled',
+          onClick: (record) => void updateProviderAccountStatus(record, 'inactive'),
+        },
+        {
+          label: t('admin.commerce.payments.providerAccounts.actions.setAvailable', 'Set available'),
+          icon: <Power className="h-3.5 w-3.5" />,
+          isVisible: (record) => readRecordText(record, 'status') === 'inactive',
           onClick: (record) => void updateProviderAccountStatus(record, 'active'),
         },
         {
           label: t('admin.commerce.payments.providerAccounts.actions.disable', 'Disable'),
           icon: <PowerOff className="h-3.5 w-3.5" />,
-          isDisabled: (record) => readRecordText(record, 'status') === 'disabled',
+          isVisible: (record) => ['active', 'inactive'].includes(readRecordText(record, 'status')),
           onClick: (record) => void updateProviderAccountStatus(record, 'disabled'),
         },
         {
@@ -860,6 +877,10 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
     },
   ], [deleteProviderAccount, openProviderAccountEditForm, openProviderAccountForm, t, updateProviderAccountStatus]);
 
+  const providerAccountDeleteConfirmationAccountNo = providerAccountDeleteConfirmation
+    ? readRecordText(providerAccountDeleteConfirmation, 'accountNo') || readProviderAccountRecordId(providerAccountDeleteConfirmation)
+    : '';
+
   const submitPaymentProviderAccount = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setProviderAccountSaving(true);
@@ -898,10 +919,21 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
         showSectionNavigation={false}
         tableViewportDataAttribute="admin-payments-table-viewport"
       />
+      {!providerAccountFormOpen && (providerAccountError || providerAccountSuccess) && (
+        <div className="mt-3" data-admin-payment-provider-account-feedback>
+          <div className={`rounded-lg border px-3 py-2 text-sm ${
+            providerAccountError
+              ? 'border-red-200 bg-red-50 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300'
+              : 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300'
+          }`}>
+            {providerAccountError ?? providerAccountSuccess}
+          </div>
+        </div>
+      )}
       {providerAccountFormOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-3 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-2 backdrop-blur-sm">
           <form
-            className="flex h-[calc(100vh-24px)] max-h-[860px] w-full max-w-[min(1600px,calc(100vw-24px))] flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]"
+            className="flex h-[calc(100vh-16px)] max-h-[980px] w-full max-w-[min(1720px,calc(100vw-16px))] flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1a1a]"
             data-admin-payment-provider-account-shell
             onSubmit={submitPaymentProviderAccount}
           >
@@ -1007,7 +1039,7 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
               </div>
             </div>
             {(providerAccountError || providerAccountSuccess) && (
-              <div className="px-5 pb-4">
+              <div className="px-5 pb-4" data-admin-payment-provider-account-feedback>
                 <div className={`rounded-lg border px-3 py-2 text-sm ${
                   providerAccountError
                     ? 'border-red-200 bg-red-50 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300'
@@ -1040,6 +1072,22 @@ export function PaymentsAdmin({ sectionId }: PaymentsAdminProps = {}) {
             </div>
           </form>
         </div>
+      )}
+      {providerAccountDeleteConfirmation && (
+        <ConfirmDialog
+          title={t('admin.commerce.payments.providerAccounts.deleteTitle', 'Delete provider account?')}
+          description={t(
+            'admin.commerce.payments.providerAccounts.deleteConfirm',
+            'Delete provider account {{accountNo}}? Channels using this account must be removed first.',
+            { accountNo: providerAccountDeleteConfirmationAccountNo },
+          )}
+          confirmLabel={t('admin.commerce.payments.providerAccounts.actions.delete', 'Delete')}
+          tone="danger"
+          icon={<Trash2 className="h-4 w-4" />}
+          isBusy={providerAccountSaving}
+          onConfirm={() => void executeConfirmedProviderAccountDelete()}
+          onCancel={() => setProviderAccountDeleteConfirmation(null)}
+        />
       )}
     </>
   );

@@ -8,6 +8,7 @@ import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-common
 import {
   KNOWN_VENDORS as ADMIN_KNOWN_VENDORS,
   ModelService,
+  ResourceGroupService,
   selectPreferredModelVendorId,
 } from "./packages/sdkwork-claw-router-admin-model/src/modelService.ts";
 import { deriveModelRankingRefreshDiagnostics } from "./packages/sdkwork-claw-router-admin-model/src/modelRankingRefreshDiagnostics.ts";
@@ -2143,4 +2144,356 @@ test("admin model catalog sync action lives in the vendor sidebar header", () =>
   const contentBeforeSidebar = source.slice(source.indexOf('return ('), sidebarStart);
   assert.doesNotMatch(contentBeforeSidebar, /onClick=\{handleSyncAll\}/);
   assert.doesNotMatch(contentBeforeSidebar, /common\.actions\.syncModelCatalog/);
+});
+
+test("admin model resource management is registered as a model management menu route", () => {
+  const appSource = readFileSync(resolve(PORTAL_ROOT, "src/App.tsx"), "utf8");
+  const registrySource = readFileSync(resolve(PORTAL_ROOT, "src/adminModuleRegistry.ts"), "utf8");
+  const packageSource = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/index.tsx"),
+    "utf8",
+  );
+  const navSource = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-i18n/src/resources/admin/core-navigation.ts"),
+    "utf8",
+  );
+
+  assert.match(appSource, /const ResourceAdmin = lazyRoute\(\(\) => import\('sdkwork-claw-router-admin-model'\), 'ResourceAdmin'\)/);
+  assert.match(appSource, /<Route path="model\/resources" element=\{<ResourceAdmin \/>\} \/>/);
+  assert.match(registrySource, /path: '\/admin\/model\/resources'/);
+  assert.match(registrySource, /labelKey: 'admin\.menu\.modelResources'/);
+  assert.match(registrySource, /icon: Boxes/);
+  assert.match(packageSource, /export \{ ResourceAdmin \} from '\.\/resourceAdmin';/);
+  assert.match(navSource, /"admin\.menu\.modelResources": "Resource Management"/);
+  assert.match(navSource, /"admin\.menu\.modelResources": "资源管理"/);
+});
+
+test("admin model resource page exposes group CRUD and static all-api safeguards", () => {
+  const source = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-admin-model/src/resourceAdmin.tsx"),
+    "utf8",
+  );
+  const i18nSource = readFileSync(
+    resolve(PORTAL_ROOT, "packages/sdkwork-claw-router-i18n/src/resources/admin/model.ts"),
+    "utf8",
+  );
+
+  for (const expected of [
+    "data-admin-model-resource-page",
+    "ResourceGroupService.fetchGroups()",
+    "ResourceGroupService.fetchResources(selectedGroup.groupCode)",
+    "ResourceGroupService.createGroup(input as ResourceGroupCreateInput)",
+    "ResourceGroupService.updateGroup(form.id, input)",
+    "ResourceGroupService.deleteGroup(deleteTarget.id)",
+    "disabled={selectedGroup.dynamic || selectedGroup.groupCode === 'api.all'}",
+    "disabled={form.groupCode === 'api.all'}",
+    "selectionMode: form.groupCode === 'api.all' ? 'all' : 'manual'",
+    "data-admin-model-resource-sidebar",
+    "data-admin-model-resource-sidebar-header",
+    "data-admin-model-resource-main",
+    "flex min-h-0 h-full w-full flex-col bg-slate-50 dark:bg-[#121212] rounded-xl overflow-hidden shadow-sm border border-slate-200 dark:border-white/5",
+    "setSelectedGroupCode(nextGroups.find(group => group.groupCode === 'api.all')?.groupCode",
+  ]) {
+    assert.ok(source.includes(expected), `missing resource management marker: ${expected}`);
+  }
+
+  assert.doesNotMatch(source, /<header className=/);
+  assert.doesNotMatch(source, /t\('admin\.model\.resources\.subtitle'\)/);
+  const sidebarHeaderStart = source.indexOf("data-admin-model-resource-sidebar-header");
+  const mainStart = source.indexOf("data-admin-model-resource-main");
+  assert.notEqual(sidebarHeaderStart, -1, "resource group sidebar header marker must exist");
+  assert.notEqual(mainStart, -1, "resource management main area marker must exist");
+  assert.ok(sidebarHeaderStart < mainStart, "resource group sidebar header must be before main area");
+  const sidebarHeader = source.slice(sidebarHeaderStart, mainStart);
+  assert.match(sidebarHeader, /t\('admin\.model\.resources\.sidebarTitle'\)/);
+  assert.match(sidebarHeader, /onClick=\{startCreate\}/);
+  assert.match(sidebarHeader, /onClick=\{\(\) => void loadGroups\(\)\}/);
+  assert.match(sidebarHeader, /<Plus className="[^"]*\bw-4\b[^"]*\bh-4\b[^"]*"/);
+  assert.match(sidebarHeader, /<RefreshCw className="[^"]*\bw-4\b[^"]*\bh-4\b[^"]*"/);
+
+  assert.match(source, /\{deleteTarget && \(\s*<ConfirmDialog/);
+  assert.match(source, /isBusy=\{saving\}/);
+  assert.doesNotMatch(source, /\bopen=\{deleteTarget !== null\}/);
+  assert.doesNotMatch(source, /\bloading=\{saving\}/);
+
+  for (const key of [
+    "admin.model.resources.sidebarTitle",
+    "admin.model.resources.actions.newGroup",
+    "admin.model.resources.actions.edit",
+    "admin.model.resources.actions.delete",
+    "admin.model.resources.form.groupCode",
+    "admin.model.resources.form.members",
+    "admin.model.resources.dynamic",
+    "admin.model.resources.deleteDialog.title",
+    "admin.model.resources.deleteDialog.description",
+  ]) {
+    assert.match(source, new RegExp(`t\\('${escapeRegExp(key)}'`));
+    const occurrences = i18nSource.match(new RegExp(`"${escapeRegExp(key)}"`, "g"))?.length ?? 0;
+    assert.equal(occurrences, 2, `expected ${key} in English and Chinese resources`);
+  }
+});
+
+test("admin model resource group service calls generated backend SDK resource group paths", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/resource_groups" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "group-all",
+              groupCode: "api.all",
+              groupName: "全部API",
+              groupType: "api_group",
+              selectionMode: "all",
+              description: "All seeded API resources",
+              sortOrder: 1,
+              status: "active",
+              resourceCount: 2,
+              dynamic: false,
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/resource_groups/api.all/resources" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "resource-chat",
+              resourceCode: "api.openai.chat_completions",
+              resourceType: "api_endpoint",
+              displayName: "OpenAI Chat API",
+              vendorCode: "openai",
+              modalityCode: "chat",
+              apiEndpointCode: "openai.chat.completions",
+              catalogKey: null,
+              model: null,
+              providerNativeModel: null,
+              status: "active",
+              sortOrder: 10,
+              memberRole: "included",
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/resource_groups" && method === "POST") {
+        assert.deepEqual(JSON.parse(String(init?.body)), {
+          groupCode: "api.custom.chat",
+          groupName: "Custom Chat",
+          groupType: "api_group",
+          selectionMode: "manual",
+          description: "Custom endpoints",
+          sortOrder: 22,
+          status: "active",
+          members: [
+            {
+              resourceCode: "api.openai.chat_completions",
+              itemRole: "included",
+              sortOrder: 1,
+            },
+          ],
+        });
+        return {
+          item: {
+            id: "group-custom-chat",
+            groupCode: "api.custom.chat",
+            groupName: "Custom Chat",
+            groupType: "api_group",
+            selectionMode: "manual",
+            description: "Custom endpoints",
+            sortOrder: 22,
+            status: "active",
+            resourceCount: 1,
+            dynamic: false,
+          },
+        };
+      }
+      if (url === "/backend/v3/api/ai/resource_groups/group-custom-chat" && method === "PATCH") {
+        assert.deepEqual(JSON.parse(String(init?.body)), {
+          groupName: "Custom Chat Updated",
+          members: [],
+        });
+        return {
+          item: {
+            id: "group-custom-chat",
+            groupCode: "api.custom.chat",
+            groupName: "Custom Chat Updated",
+            groupType: "api_group",
+            selectionMode: "manual",
+            description: "Custom endpoints",
+            sortOrder: 22,
+            status: "active",
+            resourceCount: 0,
+            dynamic: false,
+          },
+        };
+      }
+      if (url === "/backend/v3/api/ai/resource_groups/group-custom-chat" && method === "DELETE") {
+        return { deleted: true };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async (captured) => {
+      const groups = await ResourceGroupService.fetchGroups();
+      const resources = await ResourceGroupService.fetchResources("api.all");
+      const created = await ResourceGroupService.createGroup({
+        groupCode: "API.Custom.Chat",
+        groupName: " Custom Chat ",
+        groupType: "api_group",
+        selectionMode: "manual",
+        description: " Custom endpoints ",
+        sortOrder: 22,
+        status: "active",
+        members: [
+          {
+            resourceCode: "API.OpenAI.Chat_Completions",
+            itemRole: "included",
+            sortOrder: 1,
+          },
+        ],
+      });
+      const updated = await ResourceGroupService.updateGroup("group-custom-chat", {
+        groupName: "Custom Chat Updated",
+        members: [],
+      });
+      const deleted = await ResourceGroupService.deleteGroup("group-custom-chat");
+
+      assert.equal(groups.length, 1);
+      assert.equal(groups[0].groupCode, "api.all");
+      assert.equal(groups[0].selectionMode, "all");
+      assert.equal(groups[0].dynamic, false);
+      assert.equal(groups[0].resourceCount, 2);
+      assert.equal(resources[0].resourceCode, "api.openai.chat_completions");
+      assert.equal(resources[0].memberRole, "included");
+      assert.equal(created.groupCode, "api.custom.chat");
+      assert.equal(created.dynamic, false);
+      assert.equal(updated.groupName, "Custom Chat Updated");
+      assert.equal(deleted, true);
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        [
+          "GET /backend/v3/api/ai/resource_groups",
+          "GET /backend/v3/api/ai/resource_groups/api.all/resources",
+          "POST /backend/v3/api/ai/resource_groups",
+          "PATCH /backend/v3/api/ai/resource_groups/group-custom-chat",
+          "DELETE /backend/v3/api/ai/resource_groups/group-custom-chat",
+        ],
+      );
+      for (const request of captured) {
+        assert.equal(request.headers["x-request-id"], undefined);
+      }
+    },
+  );
+});
+
+test("admin model resource group service fails closed on malformed resource group payloads", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      if (url === "/backend/v3/api/ai/resource_groups" && (init?.method ?? "GET") === "GET") {
+        return {
+          items: [
+            {
+              id: "group-bad",
+              groupCode: "api.bad",
+              groupName: "Bad",
+              groupType: "provider_group",
+              selectionMode: "manual",
+              status: "active",
+              resourceCount: 0,
+              dynamic: false,
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
+    },
+    async () => {
+      await assert.rejects(
+        () => ResourceGroupService.fetchGroups(),
+        /Unsupported AI resource group type: provider_group/,
+      );
+    },
+  );
+});
+
+test("admin API resource group seed defines supported API groups with static all-api semantics", () => {
+  const seedPath = resolve(PORTAL_ROOT, "../../data/ai-routing/resource-groups/admin-api-groups.json");
+  const manifestPath = resolve(PORTAL_ROOT, "../../data/ai-routing/install-manifest.json");
+  const openaiResourcePath = resolve(PORTAL_ROOT, "../../data/ai-routing/resources/openai-resources.json");
+  const vendorNativeResourcePath = resolve(PORTAL_ROOT, "../../data/ai-routing/resources/vendor-native-resources.json");
+  const seed = JSON.parse(readFileSync(seedPath, "utf8")) as { items: Array<Record<string, unknown>> };
+  const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as {
+    sections: { resourceGroups: string[] };
+  };
+  const openaiResources = JSON.parse(readFileSync(openaiResourcePath, "utf8")) as { items: Array<Record<string, unknown>> };
+  const vendorNativeResources = JSON.parse(readFileSync(vendorNativeResourcePath, "utf8")) as {
+    items: Array<Record<string, unknown>>;
+  };
+  const expectedCodes = [
+    "api.all",
+    "api.openai_compatible.all",
+    "api.openai.codex",
+    "api.openai.chat",
+    "api.openai.image",
+    "api.openai.audio",
+    "api.openai.embeddings",
+    "api.claude.code",
+    "api.gemini.chat",
+    "api.claude.all",
+    "api.google.all",
+    "api.kling.all",
+    "api.kling.image",
+    "api.kling.video",
+    "api.minimax.music",
+    "api.volcengine.image",
+    "api.volcengine.video",
+    "api.vidu.image",
+    "api.vidu.video",
+    "api.google.image",
+    "api.google.video",
+  ];
+  const endpointResourceCodes = [...openaiResources.items, ...vendorNativeResources.items]
+    .filter((resource) => resource.resourceType === "api_endpoint")
+    .map((resource) => resource.resourceCode);
+
+  assert.ok(manifest.sections.resourceGroups.includes("admin-api-groups.json"));
+  assert.deepEqual(seed.items.map((group) => group.groupCode), expectedCodes);
+  assert.equal(new Set(seed.items.map((group) => group.groupCode)).size, expectedCodes.length);
+
+  for (const group of seed.items) {
+    assert.equal(group.groupType, "api_group", `groupType mismatch for ${group.groupCode}`);
+    assert.ok(typeof group.sortOrder === "number", `sortOrder missing for ${group.groupCode}`);
+  }
+
+  const allApi = seed.items.find((group) => group.groupCode === "api.all");
+  assert.ok(allApi, "api.all group must exist");
+  assert.equal(allApi.selectionMode, "all");
+  assert.deepEqual(
+    (allApi.items as Array<Record<string, unknown>>).map((item) => item.resourceCode),
+    endpointResourceCodes,
+  );
+
+  for (const group of seed.items) {
+    assert.equal(group.selectionMode, "all", `all selection expected for ${group.groupCode}`);
+    assert.ok(Array.isArray(group.items), `items must be an array for ${group.groupCode}`);
+    assert.ok((group.items as unknown[]).length > 0, `explicit resources required for ${group.groupCode}`);
+    for (const item of group.items as Array<Record<string, unknown>>) {
+      assert.ok(
+        endpointResourceCodes.includes(item.resourceCode),
+        `resource ${String(item.resourceCode)} referenced by ${String(group.groupCode)} must exist`,
+      );
+    }
+  }
+
+  const groupItems = new Map(
+    seed.items.map((group) => [
+      group.groupCode,
+      new Set((group.items as Array<Record<string, unknown>>).map((item) => item.resourceCode)),
+    ]),
+  );
+  assert.ok(groupItems.get("api.minimax.music")?.has("api.minimax.music_generation"));
+  assert.ok(groupItems.get("api.volcengine.image")?.has("api.jimeng.image_generation"));
+  assert.ok(groupItems.get("api.volcengine.video")?.has("api.jimeng.video_generation"));
+  assert.ok(groupItems.get("api.vidu.image")?.has("api.vidu.reference_to_image"));
+  assert.ok(groupItems.get("api.vidu.video")?.has("api.vidu.start_end_to_video"));
 });

@@ -3795,6 +3795,84 @@
       ]
     },
     {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/ai/model_mappings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createModelMapping",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_model_mapping_rule"
+      ],
+      "route": "/admin/model/mappings",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_model_mapping_rule",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/ai/resource_groups",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createResourceGroup",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_resource_group",
+        "ai_resource_group_item"
+      ],
+      "route": "/admin/model/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_resource_group",
+        "ai_resource_group_item",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/sites",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createSite",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_site",
+        "ai_site_service",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/sites/{siteId}/models",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createSiteModel",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_site_model",
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_site_model",
+        "ops_audit_log"
+      ]
+    },
+    {
       "api_method": "DELETE",
       "api_path": "/backend/v3/api/ai/models/{modelId}",
       "api_surface": "backend",
@@ -3813,6 +3891,84 @@
         "ai_model",
         "ai_model_capability",
         "ai_model_pricing",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/ai/model_mappings/{mappingId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteModelMapping",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_model_mapping_rule"
+      ],
+      "route": "/admin/model/mappings",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_model_mapping_rule",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/ai/resource_groups/{groupId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteResourceGroup",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_resource_group"
+      ],
+      "route": "/admin/model/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_resource_group",
+        "ai_resource_group_item",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/sites/{siteId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteSite",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_site",
+        "ai_site_service",
+        "ai_site_model",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/sites/{siteId}/models/{siteModelId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteSiteModel",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_site_model",
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_site_model",
         "ops_audit_log"
       ]
     },
@@ -3842,6 +3998,21 @@
         "ai_pricing_import_snapshot",
         "ops_audit_log"
       ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/model_mappings",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchModelMappings",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_model_mapping_rule"
+      ],
+      "route": "/admin/model/mappings",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": []
     },
     {
       "api_method": "GET",
@@ -3909,6 +4080,89 @@
     },
     {
       "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/resource_groups/{groupIdOrCode}/resources",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchResourceGroupResources",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_resource_group",
+        "ai_resource_group_item",
+        "ai_resource"
+      ],
+      "route": "/admin/model/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/resource_groups",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchResourceGroups",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_resource_group",
+        "ai_resource_group_item"
+      ],
+      "route": "/admin/model/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/sites/{siteId}/channels",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchSiteChannels",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_channel",
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/sites/{siteId}/models",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchSiteModels",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_site_model",
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/sites",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchSites",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
       "api_path": "/backend/v3/api/ai/model_vendors",
       "api_surface": "backend",
       "file_targets": [],
@@ -3921,6 +4175,63 @@
       "route": "/admin/model",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
       "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/sites/{siteId}/health_check",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "healthCheckSite",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_site",
+        "ai_site_service",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/sites/{siteId}/models",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "replaceSiteModels",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_site_model",
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_site_model",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/ai/model_mappings/resolve",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "resolveModelMapping",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_model_mapping_rule"
+      ],
+      "route": "/admin/model/mappings",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ops_audit_log"
+      ]
     },
     {
       "api_method": "POST",
@@ -3945,6 +4256,24 @@
         "ai_model_capability",
         "ai_model_pricing",
         "ai_pricing_import_snapshot",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/sites/{siteId}/test_connection",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "testSiteConnection",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
         "ops_audit_log"
       ]
     },
@@ -3988,6 +4317,84 @@
         "ai_model",
         "ai_model_capability",
         "ai_model_pricing",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/ai/model_mappings/{mappingId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateModelMapping",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_model_mapping_rule"
+      ],
+      "route": "/admin/model/mappings",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_model_mapping_rule",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/ai/resource_groups/{groupId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateResourceGroup",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_resource_group",
+        "ai_resource_group_item"
+      ],
+      "route": "/admin/model/resources",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_resource_group",
+        "ai_resource_group_item",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/sites/{siteId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateSite",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_site",
+        "ai_site_service",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/sites/{siteId}/models/{siteModelId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateSiteModel",
+      "operation_scope": null,
+      "read_sources": [
+        "ai_site_model",
+        "ai_site",
+        "ai_site_service"
+      ],
+      "route": "/admin/model/sites",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts",
+      "write_tables": [
+        "ai_site_model",
         "ops_audit_log"
       ]
     },
@@ -11547,8 +11954,8 @@
     }
   ],
   "summary": {
-    "operation_count": 605,
+    "operation_count": 627,
     "source_file_count": 63,
-    "write_operation_count": 303
+    "write_operation_count": 319
   }
 }

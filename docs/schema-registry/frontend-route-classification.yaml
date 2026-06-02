@@ -296,6 +296,55 @@ routes:
   evidence:
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
   - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/model/resources
+  package: sdkwork-claw-router-admin-model
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/model/resources
+  required_tables:
+  - ai_resource
+  - ai_resource_group
+  - ai_resource_group_item
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/model/sites
+  package: sdkwork-claw-router-admin-model
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/model/sites
+  required_tables:
+  - ai_site
+  - ai_site_service
+  - ai_site_model
+  - ai_channel
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
+- route: /admin/model/mappings
+  package: sdkwork-claw-router-admin-model
+  owner: admin-control-plane
+  route_scope: admin
+  delivery_kind: sdk_backed_business_runtime
+  api_surface: backend
+  operation_routes:
+  - /admin/model/mappings
+  required_tables:
+  - ai_model_mapping_rule
+  - ai_model_vendor
+  - ai_channel
+  - ops_audit_log
+  evidence:
+  - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  - docs/schema-registry/frontend-field-contracts.yaml
 - route: /admin/channel/resources
   package: sdkwork-claw-router-admin-channel
   owner: admin-control-plane
@@ -307,6 +356,7 @@ routes:
   required_tables:
   - ai_resource
   - ai_resource_group_item
+  - ops_audit_log
   evidence:
   - apps/sdkwork-claw-router-portal/src/App.tsx
   - apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/index.tsx

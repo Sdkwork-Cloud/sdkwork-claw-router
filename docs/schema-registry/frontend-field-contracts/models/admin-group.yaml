@@ -12,6 +12,8 @@ frontend_models:
   - rateMultiplier
   - officialPriceMultiplier
   - groupType
+  - resourceGroupCodes
+  - resourceCodes
   - accountCount
   - capacity
   - usage
@@ -25,12 +27,13 @@ frontend_models:
   interface: GroupCreateInput
   fields:
   - groupName
-  - groupCode
   - priceReferenceMode
   - rateMultiplier
   - officialPriceMultiplier
   - groupType
   - capacity
+  - resourceGroupCodes
+  - resourceCodes
   - status
   data_sources:
   - ai_channel_group
@@ -40,12 +43,13 @@ frontend_models:
   interface: GroupUpdateInput
   fields:
   - groupName
-  - groupCode
   - priceReferenceMode
   - rateMultiplier
   - officialPriceMultiplier
   - groupType
   - capacity
+  - resourceGroupCodes
+  - resourceCodes
   - status
   data_sources:
   - ai_channel_group
@@ -103,3 +107,34 @@ frontend_models:
   - ai_provider
   - ai_channel
   - ai_channel_model
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  interface: GroupResourceGroupOption
+  fields:
+  - id
+  - groupCode
+  - groupName
+  - groupType
+  - selectionMode
+  - description
+  - resourceCount
+  - status
+  data_sources:
+  - ai_resource_group
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  interface: GroupAiResourceOption
+  fields:
+  - id
+  - resourceCode
+  - resourceType
+  - displayName
+  - vendorCode
+  - modalityCode
+  - apiEndpointCode
+  - catalogKey
+  - model
+  - providerNativeModel
+  - status
+  data_sources:
+  - ai_resource

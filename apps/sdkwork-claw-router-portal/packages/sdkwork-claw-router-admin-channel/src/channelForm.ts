@@ -21,6 +21,7 @@ export type ChannelFormValues = {
   accessType: string;
   baseUrl: string;
   apiKey?: string;
+  credentialFields?: Record<string, string | undefined>;
   secretRef?: string;
   expiresAt?: string;
   capabilities: string[];
@@ -165,7 +166,7 @@ export function createChannelInputFromForm(values: ChannelFormValues): ChannelCr
     protocol: optionalText(values.protocol),
     accessType: optionalText(values.accessType),
     baseUrl: optionalText(values.baseUrl),
-    apiKey: optionalText(values.apiKey),
+    apiKey: credentialSecretMaterial(values),
     secretRef: optionalText(values.secretRef),
     expiresAt: optionalText(values.expiresAt),
     capabilities: normalizedCapabilities(values.capabilities),
@@ -186,7 +187,7 @@ export function createChannelUpdateInputFromForm(values: ChannelFormValues): Cha
     protocol: optionalText(values.protocol),
     accessType: optionalText(values.accessType),
     baseUrl: optionalText(values.baseUrl),
-    apiKey: optionalText(values.apiKey),
+    apiKey: credentialSecretMaterial(values),
     secretRef: optionalText(values.secretRef),
     expiresAt: values.expiresAt === undefined ? undefined : optionalText(values.expiresAt) ?? null,
     capabilities: normalizedCapabilities(values.capabilities),
@@ -406,6 +407,17 @@ function validateResourceCodes(values: string[]): void {
 function optionalText(value: string | undefined): string | undefined {
   const normalized = value?.trim();
   return normalized ? normalized : undefined;
+}
+
+function credentialSecretMaterial(values: ChannelFormValues): string | undefined {
+  return optionalText(values.apiKey) ?? serializeCredentialFields(values.credentialFields);
+}
+
+function serializeCredentialFields(fields: Record<string, string | undefined> | undefined): string | undefined {
+  const entries = Object.entries(fields ?? {})
+    .map(([key, value]) => [key, optionalText(value)] as const)
+    .filter((entry): entry is readonly [string, string] => Boolean(entry[1]));
+  return entries.length > 0 ? JSON.stringify(Object.fromEntries(entries)) : undefined;
 }
 
 function requiredText(value: string, fieldName: string): string {

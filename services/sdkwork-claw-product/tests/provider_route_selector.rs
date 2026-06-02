@@ -3,12 +3,13 @@ use sdkwork_claw_product::application::{
     SelectProviderChannelRouteQuery, SelectProviderRouteQuery,
 };
 use sdkwork_claw_product::domain::{
-    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelPrice,
-    ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderChannelRoute, RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicy,
-    RoutingPolicyScope, RoutingRule,
+    AiModel, BillingMeter, ChannelGroup, DecimalValue, GatewayApiKey, ModelMappingRule,
+    ModelMappingScope, ModelPrice, ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money,
+    PriceSide, PricingPlan, ProviderChannelRoute, RouteCandidate, RoutingCapability,
+    RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope, RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
+use sdkwork_claw_product::ports::PricingCatalog;
 
 fn base_catalog() -> InMemoryPricingCatalog {
     let mut catalog = InMemoryPricingCatalog::default();
@@ -99,6 +100,60 @@ fn add_callable_route_for_api(
             Money::usd(unit_price).unwrap(),
         )
         .for_provider(provider_code, channel_id),
+    );
+}
+
+fn add_target_catalog_model(catalog: &mut InMemoryPricingCatalog) {
+    catalog.add_vendor(ModelVendorDefinition::new(
+        "anthropic",
+        ModelVendor::Anthropic,
+        "Anthropic",
+    ));
+    catalog.add_model(
+        AiModel::new(
+            "claude-3-5-sonnet",
+            "Claude 3.5 Sonnet",
+            "anthropic",
+            vec!["chat", "tools"],
+        )
+        .with_catalog_key("anthropic/claude-3-5-sonnet"),
+    );
+    catalog.add_price(ModelPrice::new_for_catalog_key(
+        "anthropic/claude-3-5-sonnet",
+        "claude-3-5-sonnet",
+        PriceSide::OfficialReference,
+        BillingMeter::LlmInputToken,
+        Money::usd("0.300000").unwrap(),
+    ));
+    catalog.add_provider_route(
+        ModelProviderRoute::new_for_catalog_key(
+            "anthropic/claude-3-5-sonnet",
+            "claude-3-5-sonnet",
+            "anthropic-direct",
+            4001,
+            "claude-3-5-sonnet",
+        )
+        .with_api_code("openai.chat_completions")
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/anthropic"),
+            Some("vault://providers/anthropic/account/main"),
+        ),
+    );
+    catalog.add_provider_channel_route(
+        ProviderChannelRoute::new("anthropic-direct", 4001).with_provider_endpoint(
+            Some("http://provider-proxy.internal/anthropic"),
+            Some("vault://providers/anthropic/account/main"),
+        ),
+    );
+    catalog.add_price(
+        ModelPrice::new_for_catalog_key(
+            "anthropic/claude-3-5-sonnet",
+            "claude-3-5-sonnet",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.250000").unwrap(),
+        )
+        .for_provider("anthropic-direct", 4001),
     );
 }
 
@@ -2145,4 +2200,85 @@ fn selector_rejects_channel_route_candidate_without_callable_endpoint() {
         error.kind()
     );
     assert!(error.to_string().contains("callable channel route"));
+}
+
+#[test]
+fn catalog_resolves_global_model_mapping_before_route_selection() {
+    let mut catalog = base_catalog();
+    add_target_catalog_model(&mut catalog);
+    catalog.add_model_mapping(ModelMappingRule::new(
+        1,
+        ModelMappingScope::Global,
+        "sonnet-latest",
+        "anthropic/claude-3-5-sonnet",
+        100,
+    ));
+    add_group_policy_rule(
+        &mut catalog,
+        400,
+        401,
+        402,
+        r#"{"catalogKey":"anthropic/claude-3-5-sonnet"}"#,
+        "anthropic/claude-3-5-sonnet",
+        vec![RouteCandidate::new(4001, 100)],
+        Vec::new(),
+    );
+
+    let resolved = catalog
+        .resolve_model_mapping("sonnet-latest", Some("openai"), None)
+        .expect("global mapping should resolve alias");
+
+    assert_eq!("anthropic/claude-3-5-sonnet", resolved.target_model);
+    assert_eq!(ModelMappingScope::Global, resolved.scope);
+    let selection = ProviderRouteSelector::new(&catalog)
+        .select_plan(SelectProviderRouteQuery {
+            catalog_key: resolved.target_model.clone(),
+            requested_model: "sonnet-latest".to_owned(),
+            ..select_query()
+        })
+        .expect("mapped model should route through target catalog");
+    assert_eq!(
+        "anthropic/claude-3-5-sonnet",
+        selection.routes[0].route.catalog_key
+    );
+    assert_eq!("anthropic-direct", selection.routes[0].route.provider_code);
+}
+
+#[test]
+fn catalog_model_mapping_prefers_channel_scope_over_vendor_and_global() {
+    let mut catalog = base_catalog();
+    catalog.add_model_mapping(ModelMappingRule::new(
+        1,
+        ModelMappingScope::Global,
+        "gpt-4o-mini",
+        "global-target",
+        100,
+    ));
+    catalog.add_model_mapping(
+        ModelMappingRule::new(
+            2,
+            ModelMappingScope::Vendor,
+            "gpt-4o-mini",
+            "vendor-target",
+            100,
+        )
+        .with_vendor_code("openai"),
+    );
+    catalog.add_model_mapping(
+        ModelMappingRule::new(
+            3,
+            ModelMappingScope::Channel,
+            "gpt-4o-mini",
+            "channel-target",
+            100,
+        )
+        .with_channel_id(3001),
+    );
+
+    let resolved = catalog
+        .resolve_model_mapping("gpt-4o-mini", Some("openai"), Some(3001))
+        .expect("channel mapping should resolve");
+
+    assert_eq!(ModelMappingScope::Channel, resolved.scope);
+    assert_eq!("channel-target", resolved.target_model);
 }

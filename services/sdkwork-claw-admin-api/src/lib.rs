@@ -20,9 +20,10 @@ use sdkwork_claw_product::application::{
     AiRoutingCacheInvalidatingAdminAiResourceStore,
     AiRoutingCacheInvalidatingAdminChannelEndpointStore,
     AiRoutingCacheInvalidatingAdminChannelGroupStore, AiRoutingCacheInvalidatingAdminChannelStore,
-    AiRoutingCacheInvalidatingAdminProviderSecretStore, ApiKeySecretCodec, ApiKeySecretHasher,
-    ModelRankingsService, RedisCacheBackend, RuntimeCacheManager, DEFAULT_CACHE_KEY_PREFIX,
-    DEFAULT_REDIS_CONNECTION_PROFILE_NAME, DEFAULT_SERVICE_CACHE_INSTANCE_NAME,
+    AiRoutingCacheInvalidatingAdminModelStore, AiRoutingCacheInvalidatingAdminProviderSecretStore,
+    ApiKeySecretCodec, ApiKeySecretHasher, ModelRankingsService, RedisCacheBackend,
+    RuntimeCacheManager, DEFAULT_CACHE_KEY_PREFIX, DEFAULT_REDIS_CONNECTION_PROFILE_NAME,
+    DEFAULT_SERVICE_CACHE_INSTANCE_NAME,
 };
 use sdkwork_claw_product::infrastructure::crypto::{
     HmacSha256ApiKeySecretHasher, RingAeadApiKeySecretCodec,
@@ -45,7 +46,7 @@ use sdkwork_claw_product::infrastructure::sql::postgres::{
     PostgresAdminModelRateLimitStore, PostgresAdminModelStore, PostgresAdminMonitorReadStore,
     PostgresAdminOpenPlatformStore, PostgresAdminPromptStore, PostgresAdminProviderSecretStore,
     PostgresAdminRecordStore, PostgresAdminServiceNodeStore, PostgresAdminServiceProviderStore,
-    PostgresAdminSkillStore, PostgresAdminStorageStore, PostgresAdminTransactionCenterStore,
+    PostgresAdminSiteStore, PostgresAdminSkillStore, PostgresAdminStorageStore, PostgresAdminTransactionCenterStore,
     PostgresAdminUserStore, PostgresAppAgentRegistryStore, PostgresCatalogLoadError,
     PostgresModelRankingRefreshStore, PostgresModelRankingsReadStore, PostgresPricingCatalogLoader,
     PostgresRuntimeRegionSettingsStore, PostgresSiteSettingsStore,
@@ -60,7 +61,7 @@ use sdkwork_claw_product::infrastructure::sql::sqlite::{
     SqliteAdminMessagingStore, SqliteAdminModelRateLimitStore, SqliteAdminModelStore,
     SqliteAdminMonitorReadStore, SqliteAdminOpenPlatformStore, SqliteAdminPromptStore,
     SqliteAdminProviderSecretStore, SqliteAdminRecordStore, SqliteAdminServiceNodeStore,
-    SqliteAdminServiceProviderStore, SqliteAdminSkillStore, SqliteAdminStorageStore,
+    SqliteAdminServiceProviderStore, SqliteAdminSiteStore, SqliteAdminSkillStore, SqliteAdminStorageStore,
     SqliteAdminTransactionCenterStore, SqliteAdminUserStore, SqliteAppAgentRegistryStore,
     SqliteModelRankingRefreshStore, SqliteModelRankingsReadStore, SqlitePricingCatalogLoader,
     SqliteRuntimeRegionSettingsStore, SqliteSiteSettingsStore,
@@ -74,7 +75,7 @@ use sdkwork_claw_product::ports::{
     AdminMarketingStore, AdminMcpStore, AdminMessagingStore, AdminModelRateLimitStore,
     AdminModelStore, AdminMonitorReadStore, AdminOpenPlatformStore, AdminPromptStore,
     AdminProviderSecretStore, AdminRecordStore, AdminServiceNodeStore, AdminServiceProviderStore,
-    AdminSkillStore, AdminStorageStore, AdminTransactionCenterStore, AdminUserStore,
+    AdminSiteStore, AdminSkillStore, AdminStorageStore, AdminTransactionCenterStore, AdminUserStore,
     ModelRankingRefreshStore, ModelRankingsReadModelStore, PricingCatalog, ProviderHealthProbe,
     RuntimeRegionSettingsStore, SiteSettingsStore, UnconfiguredProviderHealthProbe,
 };
@@ -121,6 +122,7 @@ type AdminMcpRuntimeStore = Arc<dyn AdminMcpStore + Send + Sync>;
 type AdminOpenPlatformRuntimeStore = Arc<dyn AdminOpenPlatformStore + Send + Sync>;
 type AdminServiceNodeRuntimeStore = Arc<dyn AdminServiceNodeStore + Send + Sync>;
 type AdminServiceProviderRuntimeStore = Arc<dyn AdminServiceProviderStore + Send + Sync>;
+type AdminSiteRuntimeStore = Arc<dyn AdminSiteStore + Send + Sync>;
 type AdminStorageRuntimeStore = Arc<dyn AdminStorageStore + Send + Sync>;
 type AdminTransactionCenterRuntimeStore = Arc<dyn AdminTransactionCenterStore + Send + Sync>;
 type AdminDashboardRuntimeReadStore = Arc<dyn AdminDashboardReadStore + Send + Sync>;
@@ -186,6 +188,7 @@ struct AdminRouterRuntime<'a> {
     open_platform_store: Option<AdminOpenPlatformRuntimeStore>,
     service_node_store: Option<AdminServiceNodeRuntimeStore>,
     service_provider_store: Option<AdminServiceProviderRuntimeStore>,
+    site_store: Option<AdminSiteRuntimeStore>,
     storage_store: Option<AdminStorageRuntimeStore>,
     transaction_center_store: Option<AdminTransactionCenterRuntimeStore>,
     dashboard_read_store: Option<AdminDashboardRuntimeReadStore>,
@@ -260,6 +263,7 @@ where
         open_platform_store,
         service_node_store,
         service_provider_store,
+        site_store,
         storage_store,
         transaction_center_store,
         dashboard_read_store,
@@ -342,6 +346,7 @@ where
     if let (Some(store), Some(admin_subject_boundary_config)) =
         (model_store.clone(), admin_subject_boundary_config.clone())
     {
+        let store = ai_routing_cache_invalidating_model_store(store, routing_cache_manager.clone());
         router = router.merge(
             sdkwork_claw_product::api::admin_model_management_router_with_store(
                 store,
@@ -702,6 +707,18 @@ where
                 ),
             );
         }
+        if let Some(store) = site_store {
+            router = router.merge(
+                sdkwork_claw_product::api::admin_site_router_with_store(
+                    store,
+                    Arc::new(OsApiKeySecretGenerator),
+                )
+                .layer(from_fn_with_state(
+                    admin_subject_boundary_config.clone(),
+                    admin_request_subject_boundary,
+                )),
+            );
+        }
         if let Some(store) = storage_store {
             router = router.merge(
                 sdkwork_claw_product::api::admin_storage_router_with_store(store).layer(
@@ -805,6 +822,16 @@ where
         }
     }
     router
+}
+
+fn ai_routing_cache_invalidating_model_store(
+    store: AdminModelRuntimeStore,
+    cache_manager: Option<RuntimeCacheManager>,
+) -> AdminModelRuntimeStore {
+    match cache_manager {
+        Some(manager) => Arc::new(AiRoutingCacheInvalidatingAdminModelStore::new(store, manager)),
+        None => store,
+    }
 }
 
 fn ai_routing_cache_invalidating_ai_resource_store(
@@ -978,6 +1005,7 @@ pub fn router_with_sqlite_shared_runtime(
         ));
     let service_provider_store: AdminServiceProviderRuntimeStore =
         Arc::new(SqliteAdminServiceProviderStore::new(pool.clone()));
+    let site_store: AdminSiteRuntimeStore = Arc::new(SqliteAdminSiteStore::new(pool.clone()));
     let service_node_store: AdminServiceNodeRuntimeStore =
         Arc::new(SqliteAdminServiceNodeStore::new(pool.clone()));
     let storage_store: AdminStorageRuntimeStore =
@@ -1032,6 +1060,7 @@ pub fn router_with_sqlite_shared_runtime(
             open_platform_store: Some(open_platform_store),
             service_node_store: Some(service_node_store),
             service_provider_store: Some(service_provider_store),
+            site_store: Some(site_store),
             storage_store: Some(storage_store),
             transaction_center_store: Some(transaction_center_store),
             dashboard_read_store: Some(dashboard_read_store),
@@ -1125,6 +1154,7 @@ pub fn router_with_postgres_shared_runtime(
         ));
     let service_provider_store: AdminServiceProviderRuntimeStore =
         Arc::new(PostgresAdminServiceProviderStore::new(pool.clone()));
+    let site_store: AdminSiteRuntimeStore = Arc::new(PostgresAdminSiteStore::new(pool.clone()));
     let service_node_store: AdminServiceNodeRuntimeStore =
         Arc::new(PostgresAdminServiceNodeStore::new(pool.clone()));
     let storage_store: AdminStorageRuntimeStore =
@@ -1180,6 +1210,7 @@ pub fn router_with_postgres_shared_runtime(
             open_platform_store: Some(open_platform_store),
             service_node_store: Some(service_node_store),
             service_provider_store: Some(service_provider_store),
+            site_store: Some(site_store),
             storage_store: Some(storage_store),
             transaction_center_store: Some(transaction_center_store),
             dashboard_read_store: Some(dashboard_read_store),
@@ -1420,6 +1451,8 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 ));
             let service_provider_store: AdminServiceProviderRuntimeStore =
                 Arc::new(SqliteAdminServiceProviderStore::new(pool.clone()));
+            let site_store: AdminSiteRuntimeStore =
+                Arc::new(SqliteAdminSiteStore::new(pool.clone()));
             let service_node_store: AdminServiceNodeRuntimeStore =
                 Arc::new(SqliteAdminServiceNodeStore::new(pool.clone()));
             let storage_store: AdminStorageRuntimeStore =
@@ -1475,6 +1508,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     open_platform_store: Some(open_platform_store),
                     service_node_store: Some(service_node_store),
                     service_provider_store: Some(service_provider_store),
+                    site_store: Some(site_store),
                     storage_store: Some(storage_store),
                     transaction_center_store: Some(transaction_center_store),
                     dashboard_read_store: Some(dashboard_read_store),
@@ -1576,6 +1610,8 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                 ));
             let service_provider_store: AdminServiceProviderRuntimeStore =
                 Arc::new(PostgresAdminServiceProviderStore::new(pool.clone()));
+            let site_store: AdminSiteRuntimeStore =
+                Arc::new(PostgresAdminSiteStore::new(pool.clone()));
             let service_node_store: AdminServiceNodeRuntimeStore =
                 Arc::new(PostgresAdminServiceNodeStore::new(pool.clone()));
             let storage_store: AdminStorageRuntimeStore =
@@ -1631,6 +1667,7 @@ async fn router_with_database_api_key_trusted_subject_app_session_and_optional_p
                     open_platform_store: Some(open_platform_store),
                     service_node_store: Some(service_node_store),
                     service_provider_store: Some(service_provider_store),
+                    site_store: Some(site_store),
                     storage_store: Some(storage_store),
                     transaction_center_store: Some(transaction_center_store),
                     dashboard_read_store: Some(dashboard_read_store),

@@ -15,3 +15,4 @@ export * from './platform';
 export * from './system';
 export * from './runtime';
 export * from './sdk-reference';
+export * from './sites';

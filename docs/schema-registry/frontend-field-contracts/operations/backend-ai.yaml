@@ -36,6 +36,8 @@ frontend_operations:
           - accountCount
           - capacity
           - usage
+          - resourceGroupCodes
+          - resourceCodes
           - status
           properties: &adminChannelGroupItemProperties
             id:
@@ -114,6 +116,24 @@ frontend_operations:
                 total:
                   type: number
                   minimum: 0
+            resourceGroupCodes:
+              type: array
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+                pattern: ^[a-z0-9._-]+$
+              maxItems: 200
+              description: AI resource group codes directly granted to this channel group.
+            resourceCodes:
+              type: array
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+                pattern: ^[a-z0-9._-]+$
+              maxItems: 200
+              description: Individual AI resource codes directly granted to this channel group.
             status:
               type: string
               enum:
@@ -132,6 +152,7 @@ frontend_operations:
   - ai_pricing_plan
   write_tables:
   - ai_channel_group
+  - ai_channel_group_resource
   - ai_pricing_plan_binding
   - ops_audit_log
   request_schema:
@@ -184,6 +205,24 @@ frontend_operations:
             type: number
             minimum: 0
             maximum: 1000000000
+      resourceGroupCodes:
+        type: array
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[a-z0-9._-]+$
+        maxItems: 200
+        description: AI resource group codes directly granted to this channel group.
+      resourceCodes:
+        type: array
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[a-z0-9._-]+$
+        maxItems: 200
+        description: Individual AI resource codes directly granted to this channel group.
       status:
         type: string
         enum:
@@ -216,6 +255,7 @@ frontend_operations:
   - ai_pricing_plan
   write_tables:
   - ai_channel_group
+  - ai_channel_group_resource
   - ai_pricing_plan_binding
   - ops_audit_log
   request_schema:
@@ -263,6 +303,24 @@ frontend_operations:
             type: number
             minimum: 0
             maximum: 1000000000
+      resourceGroupCodes:
+        type: array
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[a-z0-9._-]+$
+        maxItems: 200
+        description: AI resource group codes directly granted to this channel group.
+      resourceCodes:
+        type: array
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[a-z0-9._-]+$
+        maxItems: 200
+        description: Individual AI resource codes directly granted to this channel group.
       status:
         type: string
         enum:
@@ -765,6 +823,1633 @@ frontend_operations:
     name: AdminAiResourceUpdateRequest
     properties: *adminAiResourceMutationRequestProperties
   response_schema: *adminAiResourceMutationResponse
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: fetchAssignableResources
+  operation_id: aiResources.list
+  openapi_exposed: false
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/resources
+  read_sources:
+  - ai_resource
+  - ai_resource_group_item
+  query_parameters: []
+  response_schema:
+    name: AdminAiResourcesResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminAiResourceItem
+          type: object
+          additionalProperties: false
+          required: *adminAiResourceItemRequired
+          properties: *adminAiResourceItemProperties
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchResourceGroups
+  operation_id: aiResourceGroups.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/resource_groups
+  read_sources:
+  - ai_resource_group
+  - ai_resource_group_item
+  query_parameters: []
+  response_schema:
+    name: AdminAiResourceGroupsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 2000
+        items:
+          name: AdminAiResourceGroupItem
+          type: object
+          additionalProperties: false
+          required: &adminAiResourceGroupItemRequired
+          - id
+          - groupCode
+          - groupName
+          - groupType
+          - selectionMode
+          - status
+          - resourceCount
+          - dynamic
+          properties: &adminAiResourceGroupItemProperties
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            groupCode:
+              type: string
+              minLength: 1
+              maxLength: 128
+            groupName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            groupType:
+              type: string
+              enum:
+              - api_group
+            selectionMode:
+              type: string
+              enum:
+              - manual
+              - all
+              - any
+              - dynamic_all_api
+            description:
+              type: string
+              nullable: true
+              maxLength: 512
+            sortOrder:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+              - inactive
+            resourceCount:
+              type: integer
+              format: int64
+              minimum: 0
+            dynamic:
+              type: boolean
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchResourceGroupResources
+  operation_id: aiResourceGroups.resources.list
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/resource_groups/{groupIdOrCode}/resources
+  path_params:
+  - groupIdOrCode
+  query_parameters: []
+  read_sources:
+  - ai_resource_group
+  - ai_resource_group_item
+  - ai_resource
+  response_schema:
+    name: AdminAiResourceGroupResourcesResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 2000
+        items:
+          name: AdminAiResourceGroupResourceItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - resourceCode
+          - resourceType
+          - displayName
+          - status
+          - memberRole
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            resourceCode:
+              type: string
+              minLength: 1
+              maxLength: 192
+              pattern: ^[A-Za-z0-9._-]+$
+            resourceType:
+              type: string
+              enum:
+              - api_endpoint
+            displayName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            vendorCode:
+              type: string
+              nullable: true
+              maxLength: 64
+            modalityCode:
+              type: string
+              nullable: true
+              maxLength: 64
+            apiEndpointCode:
+              type: string
+              nullable: true
+              maxLength: 128
+            catalogKey:
+              type: string
+              nullable: true
+              maxLength: 192
+            model:
+              type: string
+              nullable: true
+              maxLength: 128
+            providerNativeModel:
+              type: string
+              nullable: true
+              maxLength: 256
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+              - inactive
+            sortOrder:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+            memberRole:
+              type: string
+              enum:
+              - included
+              - optional
+              - fallback
+- route: /admin/group
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-group/src/groupService.ts
+  operation: fetchAssignableResourceGroups
+  operation_id: aiResourceGroups.list
+  openapi_exposed: false
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/resource_groups
+  read_sources:
+  - ai_resource_group
+  - ai_resource_group_item
+  query_parameters: []
+  response_schema:
+    name: AdminAiResourceGroupsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 2000
+        items:
+          name: AdminAiResourceGroupItem
+          type: object
+          additionalProperties: false
+          required: *adminAiResourceGroupItemRequired
+          properties: *adminAiResourceGroupItemProperties
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: createResourceGroup
+  operation_id: aiResourceGroups.create
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/ai/resource_groups
+  read_sources:
+  - ai_resource_group
+  - ai_resource_group_item
+  write_tables:
+  - ai_resource_group
+  - ai_resource_group_item
+  - ops_audit_log
+  request_schema:
+    name: AdminAiResourceGroupCreateRequest
+    required:
+    - groupCode
+    - groupName
+    properties: &adminAiResourceGroupMutationRequestProperties
+      groupCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+      groupName:
+        type: string
+        minLength: 1
+        maxLength: 128
+      groupType:
+        type: string
+        enum:
+        - api_group
+      selectionMode:
+        type: string
+        enum:
+        - manual
+        - all
+        - any
+        - dynamic_all_api
+      description:
+        type: string
+        nullable: true
+        maxLength: 512
+      sortOrder:
+        type: integer
+        format: int64
+        nullable: true
+        minimum: 0
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+        - inactive
+      members:
+        type: array
+        maxItems: 2000
+        items:
+          name: AdminAiResourceGroupMemberInput
+          type: object
+          additionalProperties: false
+          required:
+          - resourceCode
+          properties:
+            resourceCode:
+              type: string
+              minLength: 1
+              maxLength: 192
+            itemRole:
+              type: string
+              enum:
+              - included
+              - optional
+              - fallback
+            sortOrder:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+  response_schema: &adminAiResourceGroupMutationResponse
+    name: AdminAiResourceGroupMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminAiResourceGroupItem
+        type: object
+        additionalProperties: false
+        required: *adminAiResourceGroupItemRequired
+        properties: *adminAiResourceGroupItemProperties
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: updateResourceGroup
+  operation_id: aiResourceGroups.update
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/ai/resource_groups/{groupId}
+  path_params:
+  - groupId
+  read_sources:
+  - ai_resource_group
+  - ai_resource_group_item
+  write_tables:
+  - ai_resource_group
+  - ai_resource_group_item
+  - ops_audit_log
+  request_schema:
+    name: AdminAiResourceGroupUpdateRequest
+    properties: *adminAiResourceGroupMutationRequestProperties
+  response_schema: *adminAiResourceGroupMutationResponse
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: deleteResourceGroup
+  operation_id: aiResourceGroups.delete
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/ai/resource_groups/{groupId}
+  path_params:
+  - groupId
+  read_sources:
+  - ai_resource_group
+  write_tables:
+  - ai_resource_group
+  - ai_resource_group_item
+  - ops_audit_log
+  response_schema:
+    name: AdminAiResourceGroupDeleteResponse
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchSites
+  operation_id: siteCatalog.list
+  sdk_domain: sites
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/sites
+  read_sources:
+  - ai_site
+  - ai_site_service
+  query_parameters:
+  - name: q
+    type: string
+    required: false
+  response_schema:
+    name: AdminSitesResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminSiteItem
+          type: object
+          additionalProperties: false
+          required: &adminSiteItemRequired
+          - id
+          - siteCode
+          - siteName
+          - displayName
+          - baseUrl
+          - siteType
+          - environment
+          - healthStatus
+          - status
+          properties: &adminSiteItemProperties
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            siteCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+              pattern: ^[A-Za-z0-9._-]+$
+            siteName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            displayName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            description:
+              type: string
+              nullable: true
+              maxLength: 1024
+            baseUrl:
+              type: string
+              minLength: 1
+              maxLength: 512
+            websiteUrl:
+              type: string
+              nullable: true
+              maxLength: 512
+            docsUrl:
+              type: string
+              nullable: true
+              maxLength: 512
+            logo:
+              $ref: '#/components/schemas/MediaResource'
+              nullable: true
+            domains:
+              type: array
+              maxItems: 16
+              items:
+                type: string
+                minLength: 1
+                maxLength: 255
+            vendorCodes:
+              type: array
+              maxItems: 64
+              items:
+                type: string
+                minLength: 1
+                maxLength: 128
+                pattern: ^[A-Za-z0-9._-]+$
+            siteType:
+              type: string
+              enum:
+              - relay
+            ownerKind:
+              type: string
+              nullable: true
+              maxLength: 32
+            regionCode:
+              type: string
+              nullable: true
+              maxLength: 64
+            environment:
+              type: string
+              enum:
+              - production
+              - sandbox
+            healthStatus:
+              type: string
+              enum:
+              - unknown
+              - healthy
+              - degraded
+              - unhealthy
+            lastLatencyMs:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+            consecutiveErrorCount:
+              type: integer
+              format: int64
+              minimum: 0
+            lastCheckedAt:
+              type: string
+              nullable: true
+            lastSyncAt:
+              type: string
+              nullable: true
+            sortOrder:
+              type: integer
+              format: int64
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: createSite
+  operation_id: create
+  sdk_domain: sites
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/sites
+  read_sources:
+  - ai_site
+  - ai_site_service
+  write_tables:
+  - ai_site
+  - ai_site_service
+  - ops_audit_log
+  request_schema:
+    name: AdminSiteCreateRequest
+    required:
+    - siteCode
+    - siteName
+    - displayName
+    - baseUrl
+    properties: &adminSiteMutationRequestProperties
+      siteCode:
+        type: string
+        minLength: 1
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+      siteName:
+        type: string
+        minLength: 1
+        maxLength: 128
+      displayName:
+        type: string
+        minLength: 1
+        maxLength: 128
+      description:
+        type: string
+        nullable: true
+        maxLength: 1024
+      baseUrl:
+        type: string
+        minLength: 1
+        maxLength: 512
+      websiteUrl:
+        type: string
+        nullable: true
+        maxLength: 512
+      docsUrl:
+        type: string
+        nullable: true
+        maxLength: 512
+      logo:
+        $ref: '#/components/schemas/MediaResource'
+        nullable: true
+      domains:
+        type: array
+        maxItems: 16
+        items:
+          type: string
+          minLength: 1
+          maxLength: 255
+      vendorCodes:
+        type: array
+        maxItems: 64
+        items:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[A-Za-z0-9._-]+$
+      siteType:
+        type: string
+        enum:
+        - relay
+      ownerKind:
+        type: string
+        nullable: true
+        maxLength: 32
+      regionCode:
+        type: string
+        nullable: true
+        maxLength: 64
+      environment:
+        type: string
+        enum:
+        - production
+        - sandbox
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+      credentialRef:
+        type: string
+        nullable: true
+        maxLength: 512
+      maskedLabel:
+        type: string
+        nullable: true
+        maxLength: 128
+  response_schema: &adminSiteMutationResponse
+    name: AdminSiteMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminSiteItem
+        type: object
+        additionalProperties: false
+        required: *adminSiteItemRequired
+        properties: *adminSiteItemProperties
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: updateSite
+  operation_id: update
+  sdk_domain: sites
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/sites/{siteId}
+  path_params:
+  - siteId
+  read_sources:
+  - ai_site
+  - ai_site_service
+  write_tables:
+  - ai_site
+  - ai_site_service
+  - ops_audit_log
+  request_schema:
+    name: AdminSiteUpdateRequest
+    properties: *adminSiteMutationRequestProperties
+  response_schema: *adminSiteMutationResponse
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: deleteSite
+  operation_id: delete
+  sdk_domain: sites
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/sites/{siteId}
+  path_params:
+  - siteId
+  read_sources:
+  - ai_site
+  - ai_site_service
+  write_tables:
+  - ai_site
+  - ai_site_service
+  - ai_site_model
+  - ops_audit_log
+  response_schema: &adminSiteDeleteResponse
+    name: AdminSiteDeleteResponse
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchSiteModels
+  operation_id: siteModels.list
+  sdk_domain: sites
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/sites/{siteId}/models
+  path_params:
+  - siteId
+  read_sources:
+  - ai_site_model
+  - ai_site
+  - ai_site_service
+  query_parameters: []
+  response_schema:
+    name: AdminSiteModelsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminSiteModelItem
+          type: object
+          additionalProperties: false
+          required: &adminSiteModelItemRequired
+          - id
+          - siteId
+          - siteCode
+          - siteServiceId
+          - serviceType
+          - modelCode
+          - modelName
+          - healthStatus
+          - status
+          properties: &adminSiteModelItemProperties
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            siteId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            siteCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            siteServiceId:
+              type: string
+              minLength: 1
+              maxLength: 128
+            siteServiceCode:
+              type: string
+              nullable: true
+              maxLength: 64
+            serviceType:
+              type: string
+              enum:
+              - ai_model_relay
+            modelCode:
+              type: string
+              minLength: 1
+              maxLength: 128
+              pattern: ^[A-Za-z0-9._:/-]+$
+            modelName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            displayName:
+              type: string
+              nullable: true
+              maxLength: 128
+            providerModel:
+              type: string
+              nullable: true
+              maxLength: 128
+            providerNativeModel:
+              type: string
+              nullable: true
+              maxLength: 256
+            vendorCode:
+              type: string
+              nullable: true
+              maxLength: 64
+            modality:
+              type: string
+              nullable: true
+              maxLength: 64
+            capabilities:
+              type: array
+              maxItems: 64
+              items:
+                type: string
+                minLength: 1
+                maxLength: 64
+            contextTokens:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+            maxInputTokens:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+            maxOutputTokens:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+            supportsStreaming:
+              type: boolean
+            supportsTools:
+              type: boolean
+            supportsJsonSchema:
+              type: boolean
+            healthStatus:
+              type: string
+              enum:
+              - unknown
+              - healthy
+              - degraded
+              - unhealthy
+            lastLatencyMs:
+              type: integer
+              format: int64
+              nullable: true
+              minimum: 0
+            consecutiveErrorCount:
+              type: integer
+              format: int64
+              minimum: 0
+            lastSyncAt:
+              type: string
+              nullable: true
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: createSiteModel
+  operation_id: siteModels.create
+  sdk_domain: sites
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/sites/{siteId}/models
+  path_params:
+  - siteId
+  read_sources:
+  - ai_site_model
+  - ai_site
+  - ai_site_service
+  write_tables:
+  - ai_site_model
+  - ops_audit_log
+  request_schema:
+    name: AdminSiteModelCreateRequest
+    required:
+    - modelCode
+    - modelName
+    properties: &adminSiteModelMutationRequestProperties
+      modelCode:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: ^[A-Za-z0-9._:/-]+$
+      modelName:
+        type: string
+        minLength: 1
+        maxLength: 128
+      displayName:
+        type: string
+        nullable: true
+        maxLength: 128
+      providerModel:
+        type: string
+        nullable: true
+        maxLength: 128
+      providerNativeModel:
+        type: string
+        nullable: true
+        maxLength: 256
+      vendorCode:
+        type: string
+        nullable: true
+        maxLength: 64
+      modality:
+        type: string
+        nullable: true
+        maxLength: 64
+      capabilities:
+        type: array
+        maxItems: 64
+        items:
+          type: string
+          minLength: 1
+          maxLength: 64
+      contextTokens:
+        type: integer
+        format: int64
+        nullable: true
+        minimum: 0
+      maxInputTokens:
+        type: integer
+        format: int64
+        nullable: true
+        minimum: 0
+      maxOutputTokens:
+        type: integer
+        format: int64
+        nullable: true
+        minimum: 0
+      supportsStreaming:
+        type: boolean
+      supportsTools:
+        type: boolean
+      supportsJsonSchema:
+        type: boolean
+      status:
+        type: string
+        enum:
+        - active
+        - disabled
+  response_schema: &adminSiteModelMutationResponse
+    name: AdminSiteModelMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminSiteModelItem
+        type: object
+        additionalProperties: false
+        required: *adminSiteModelItemRequired
+        properties: *adminSiteModelItemProperties
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: replaceSiteModels
+  operation_id: siteModels.replace
+  sdk_domain: sites
+  kind: update
+  api_surface: backend
+  api_method: PUT
+  api_path: /backend/v3/api/sites/{siteId}/models
+  path_params:
+  - siteId
+  read_sources:
+  - ai_site_model
+  - ai_site
+  - ai_site_service
+  write_tables:
+  - ai_site_model
+  - ops_audit_log
+  request_schema:
+    name: AdminSiteModelsReplaceRequest
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 512
+        items:
+          name: AdminSiteModelCreateRequest
+          type: object
+          additionalProperties: false
+          required:
+          - modelCode
+          - modelName
+          properties: *adminSiteModelMutationRequestProperties
+  response_schema:
+    name: AdminSiteModelsReplaceResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminSiteModelItem
+          type: object
+          additionalProperties: false
+          required: *adminSiteModelItemRequired
+          properties: *adminSiteModelItemProperties
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: updateSiteModel
+  operation_id: siteModels.update
+  sdk_domain: sites
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/sites/{siteId}/models/{siteModelId}
+  path_params:
+  - siteId
+  - siteModelId
+  read_sources:
+  - ai_site_model
+  - ai_site
+  - ai_site_service
+  write_tables:
+  - ai_site_model
+  - ops_audit_log
+  request_schema:
+    name: AdminSiteModelUpdateRequest
+    properties: *adminSiteModelMutationRequestProperties
+  response_schema: *adminSiteModelMutationResponse
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: deleteSiteModel
+  operation_id: siteModels.delete
+  sdk_domain: sites
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/sites/{siteId}/models/{siteModelId}
+  path_params:
+  - siteId
+  - siteModelId
+  read_sources:
+  - ai_site_model
+  - ai_site
+  - ai_site_service
+  write_tables:
+  - ai_site_model
+  - ops_audit_log
+  response_schema: *adminSiteDeleteResponse
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchSiteChannels
+  operation_id: siteChannels.list
+  sdk_domain: sites
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/sites/{siteId}/channels
+  path_params:
+  - siteId
+  read_sources:
+  - ai_channel
+  - ai_site
+  - ai_site_service
+  query_parameters: []
+  response_schema:
+    name: AdminSiteChannelsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        items:
+          name: AdminSiteChannelItem
+          type: object
+          additionalProperties: false
+          required:
+          - id
+          - channelCode
+          - channelName
+          - healthStatus
+          - status
+          properties:
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            channelCode:
+              type: string
+              minLength: 1
+              maxLength: 64
+            channelName:
+              type: string
+              minLength: 1
+              maxLength: 128
+            providerCode:
+              type: string
+              nullable: true
+              maxLength: 64
+            siteCode:
+              type: string
+              nullable: true
+              maxLength: 64
+            siteServiceCode:
+              type: string
+              nullable: true
+              maxLength: 64
+            siteChannelRole:
+              type: string
+              nullable: true
+              maxLength: 32
+            healthStatus:
+              type: string
+              enum:
+              - unknown
+              - healthy
+              - degraded
+              - unhealthy
+            status:
+              type: string
+              enum:
+              - active
+              - disabled
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: testSiteConnection
+  operation_id: testConnection.create
+  sdk_domain: sites
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/sites/{siteId}/test_connection
+  path_params:
+  - siteId
+  read_sources:
+  - ai_site
+  - ai_site_service
+  write_tables:
+  - ops_audit_log
+  request_schema: &adminSiteEmptyActionRequest
+    name: AdminSiteActionRequest
+    required: []
+    properties: {}
+  response_schema: &adminSiteConnectionCheckResponse
+    name: AdminSiteConnectionCheckResponse
+    required:
+    - siteId
+    - status
+    - healthStatus
+    - checkedAt
+    properties:
+      siteId:
+        type: string
+        minLength: 1
+        maxLength: 128
+      status:
+        type: string
+        enum:
+        - success
+        - failed
+      healthStatus:
+        type: string
+        enum:
+        - unknown
+        - healthy
+        - degraded
+        - unhealthy
+      latencyMs:
+        type: integer
+        format: int64
+        nullable: true
+        minimum: 0
+      checkedAt:
+        type: string
+        minLength: 1
+      message:
+        type: string
+        nullable: true
+        maxLength: 512
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: healthCheckSite
+  operation_id: healthCheck.create
+  sdk_domain: sites
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/sites/{siteId}/health_check
+  path_params:
+  - siteId
+  read_sources:
+  - ai_site
+  - ai_site_service
+  write_tables:
+  - ai_site
+  - ai_site_service
+  - ops_audit_log
+  request_schema: *adminSiteEmptyActionRequest
+  response_schema: *adminSiteConnectionCheckResponse
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: fetchModelMappings
+  operation_id: modelMappings.list
+  sdk_domain: ai
+  kind: read
+  api_surface: backend
+  api_method: GET
+  api_path: /backend/v3/api/ai/model_mappings
+  read_sources:
+  - ai_model_mapping_rule
+  query_parameters:
+  - name: scope_type
+    type: string
+    required: false
+  - name: vendor_code
+    type: string
+    required: false
+  - name: channel_id
+    type: string
+    required: false
+  - name: q
+    type: string
+    required: false
+  response_schema:
+    name: AdminModelMappingsResponse
+    required:
+    - items
+    properties:
+      items:
+        type: array
+        maxItems: 1000
+        items:
+          name: AdminModelMappingRule
+          type: object
+          additionalProperties: false
+          required: &adminModelMappingRuleRequired
+          - id
+          - scopeType
+          - sourceModel
+          - targetModel
+          - mappingMode
+          - matchType
+          - priority
+          - enabled
+          properties: &adminModelMappingRuleProperties
+            id:
+              type: string
+              minLength: 1
+              maxLength: 128
+            scopeType:
+              type: string
+              enum:
+              - global
+              - vendor
+              - channel
+            vendorId:
+              type: string
+              nullable: true
+              maxLength: 128
+            vendorCode:
+              type: string
+              nullable: true
+              maxLength: 64
+              pattern: ^[A-Za-z0-9._-]+$
+            channelId:
+              type: string
+              nullable: true
+              maxLength: 128
+            channelCode:
+              type: string
+              nullable: true
+              maxLength: 64
+              pattern: ^[A-Za-z0-9._-]+$
+            sourceModel:
+              type: string
+              minLength: 1
+              maxLength: 256
+            sourceCatalogKey:
+              type: string
+              nullable: true
+              maxLength: 256
+            sourceVendorCode:
+              type: string
+              nullable: true
+              maxLength: 64
+              pattern: ^[A-Za-z0-9._-]+$
+            targetModel:
+              type: string
+              minLength: 1
+              maxLength: 256
+            targetCatalogKey:
+              type: string
+              nullable: true
+              maxLength: 256
+            targetVendorCode:
+              type: string
+              nullable: true
+              maxLength: 64
+              pattern: ^[A-Za-z0-9._-]+$
+            targetProviderModel:
+              type: string
+              nullable: true
+              maxLength: 256
+            targetProviderNativeModel:
+              type: string
+              nullable: true
+              maxLength: 256
+            mappingMode:
+              type: string
+              enum:
+              - alias
+            matchType:
+              type: string
+              enum:
+              - exact
+            priority:
+              type: integer
+              format: int64
+              minimum: 0
+              maximum: 1000000
+            enabled:
+              type: boolean
+            effectiveFrom:
+              type: string
+              nullable: true
+              maxLength: 64
+            effectiveTo:
+              type: string
+              nullable: true
+              maxLength: 64
+            description:
+              type: string
+              nullable: true
+              maxLength: 512
+            createdAt:
+              type: string
+              nullable: true
+              maxLength: 64
+            updatedAt:
+              type: string
+              nullable: true
+              maxLength: 64
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: createModelMapping
+  operation_id: modelMappings.create
+  sdk_domain: ai
+  kind: create
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/ai/model_mappings
+  read_sources:
+  - ai_model_mapping_rule
+  write_tables:
+  - ai_model_mapping_rule
+  - ops_audit_log
+  request_schema:
+    name: AdminModelMappingCreateRequest
+    required:
+    - scopeType
+    - sourceModel
+    - targetModel
+    properties: &adminModelMappingMutationRequestProperties
+      scopeType:
+        type: string
+        enum:
+        - global
+        - vendor
+        - channel
+      vendorId:
+        type: string
+        nullable: true
+        maxLength: 128
+      vendorCode:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+      channelId:
+        type: string
+        nullable: true
+        maxLength: 128
+      channelCode:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+      sourceModel:
+        type: string
+        minLength: 1
+        maxLength: 256
+      sourceCatalogKey:
+        type: string
+        nullable: true
+        maxLength: 256
+      sourceVendorCode:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+      targetModel:
+        type: string
+        minLength: 1
+        maxLength: 256
+      targetCatalogKey:
+        type: string
+        nullable: true
+        maxLength: 256
+      targetVendorCode:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+      targetProviderModel:
+        type: string
+        nullable: true
+        maxLength: 256
+      targetProviderNativeModel:
+        type: string
+        nullable: true
+        maxLength: 256
+      mappingMode:
+        type: string
+        enum:
+        - alias
+      matchType:
+        type: string
+        enum:
+        - exact
+      priority:
+        type: integer
+        format: int64
+        minimum: 0
+        maximum: 1000000
+      enabled:
+        type: boolean
+      effectiveFrom:
+        type: string
+        nullable: true
+        maxLength: 64
+      effectiveTo:
+        type: string
+        nullable: true
+        maxLength: 64
+      description:
+        type: string
+        nullable: true
+        maxLength: 512
+  response_schema: &adminModelMappingMutationResponse
+    name: AdminModelMappingMutationResponse
+    required:
+    - item
+    properties:
+      item:
+        name: AdminModelMappingMutationItem
+        type: object
+        additionalProperties: false
+        required:
+        - id
+        - scopeType
+        - sourceModel
+        - targetModel
+        - mappingMode
+        - matchType
+        - priority
+        - enabled
+        properties:
+          id:
+            type: string
+            minLength: 1
+            maxLength: 128
+          scopeType:
+            type: string
+            enum:
+            - global
+            - vendor
+            - channel
+          vendorCode:
+            type: string
+            nullable: true
+            maxLength: 64
+            pattern: ^[A-Za-z0-9._-]+$
+          channelCode:
+            type: string
+            nullable: true
+            maxLength: 64
+            pattern: ^[A-Za-z0-9._-]+$
+          sourceModel:
+            type: string
+            minLength: 1
+            maxLength: 256
+          sourceCatalogKey:
+            type: string
+            nullable: true
+            maxLength: 256
+          sourceVendorCode:
+            type: string
+            nullable: true
+            maxLength: 64
+            pattern: ^[A-Za-z0-9._-]+$
+          targetModel:
+            type: string
+            minLength: 1
+            maxLength: 256
+          targetCatalogKey:
+            type: string
+            nullable: true
+            maxLength: 256
+          targetVendorCode:
+            type: string
+            nullable: true
+            maxLength: 64
+            pattern: ^[A-Za-z0-9._-]+$
+          targetProviderModel:
+            type: string
+            nullable: true
+            maxLength: 256
+          targetProviderNativeModel:
+            type: string
+            nullable: true
+            maxLength: 256
+          mappingMode:
+            type: string
+            enum:
+            - alias
+          matchType:
+            type: string
+            enum:
+            - exact
+          priority:
+            type: integer
+            format: int64
+            minimum: 0
+            maximum: 1000000
+          enabled:
+            type: boolean
+          effectiveFrom:
+            type: string
+            nullable: true
+            maxLength: 64
+          effectiveTo:
+            type: string
+            nullable: true
+            maxLength: 64
+          description:
+            type: string
+            nullable: true
+            maxLength: 512
+          createdAt:
+            type: string
+            nullable: true
+            maxLength: 64
+          updatedAt:
+            type: string
+            nullable: true
+            maxLength: 64
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: updateModelMapping
+  operation_id: modelMappings.update
+  sdk_domain: ai
+  kind: update
+  api_surface: backend
+  api_method: PATCH
+  api_path: /backend/v3/api/ai/model_mappings/{mappingId}
+  path_params:
+  - mappingId
+  read_sources:
+  - ai_model_mapping_rule
+  write_tables:
+  - ai_model_mapping_rule
+  - ops_audit_log
+  request_schema:
+    name: AdminModelMappingUpdateRequest
+    required: []
+    properties: *adminModelMappingMutationRequestProperties
+  response_schema: *adminModelMappingMutationResponse
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: deleteModelMapping
+  operation_id: modelMappings.delete
+  sdk_domain: ai
+  kind: delete
+  api_surface: backend
+  api_method: DELETE
+  api_path: /backend/v3/api/ai/model_mappings/{mappingId}
+  path_params:
+  - mappingId
+  read_sources:
+  - ai_model_mapping_rule
+  write_tables:
+  - ai_model_mapping_rule
+  - ops_audit_log
+  response_schema:
+    name: AdminModelMappingDeleteResponse
+    type: object
+    additionalProperties: false
+    required:
+    - deleted
+    properties:
+      deleted:
+        type: boolean
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  operation: resolveModelMapping
+  operation_id: modelMappings.resolve.create
+  sdk_domain: ai
+  kind: action
+  api_surface: backend
+  api_method: POST
+  api_path: /backend/v3/api/ai/model_mappings/resolve
+  read_sources:
+  - ai_model_mapping_rule
+  write_tables:
+  - ops_audit_log
+  request_schema:
+    name: AdminModelMappingResolveRequest
+    required:
+    - sourceModel
+    properties:
+      sourceModel:
+        type: string
+        minLength: 1
+        maxLength: 256
+      vendorCode:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+      channelId:
+        type: string
+        nullable: true
+        maxLength: 128
+      channelCode:
+        type: string
+        nullable: true
+        maxLength: 64
+        pattern: ^[A-Za-z0-9._-]+$
+  response_schema:
+    name: AdminModelMappingResolveResponse
+    type: object
+    additionalProperties: false
+    required:
+    - sourceModel
+    - targetModel
+    - matched
+    properties:
+      sourceModel:
+        type: string
+        minLength: 1
+        maxLength: 256
+      targetModel:
+        type: string
+        minLength: 1
+        maxLength: 256
+      targetCatalogKey:
+        type: string
+        nullable: true
+        maxLength: 256
+      targetVendorCode:
+        type: string
+        nullable: true
+        maxLength: 64
+      targetProviderModel:
+        type: string
+        nullable: true
+        maxLength: 256
+      targetProviderNativeModel:
+        type: string
+        nullable: true
+        maxLength: 256
+      matched:
+        type: boolean
+      matchedScopeType:
+        type: string
+        nullable: true
+        enum:
+        - global
+        - vendor
+        - channel
+      rule:
+        name: AdminModelMappingRule
+        type: object
+        nullable: true
+        additionalProperties: false
+        required: *adminModelMappingRuleRequired
+        properties: *adminModelMappingRuleProperties
 - route: /admin/channel
   source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-channel/src/channelService.ts
   operation: fetchModels

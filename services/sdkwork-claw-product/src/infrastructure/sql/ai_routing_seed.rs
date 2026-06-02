@@ -14,6 +14,8 @@ const OPENAI_RESOURCES_JSON: &str =
     include_str!("../../../../../data/ai-routing/resources/openai-resources.json");
 const VENDOR_NATIVE_RESOURCES_JSON: &str =
     include_str!("../../../../../data/ai-routing/resources/vendor-native-resources.json");
+const ADMIN_API_GROUPS_JSON: &str =
+    include_str!("../../../../../data/ai-routing/resource-groups/admin-api-groups.json");
 const OFFICIAL_PROVIDER_GROUPS_JSON: &str =
     include_str!("../../../../../data/ai-routing/resource-groups/official-provider-groups.json");
 const RELAY_PROVIDER_GROUPS_JSON: &str =
@@ -294,6 +296,7 @@ pub(crate) async fn import_sqlite_ai_routing_seed(pool: &SqlitePool) -> Result<(
     import_sqlite_api_endpoints(&mut tx, &catalog).await?;
     import_sqlite_resources(&mut tx, &catalog).await?;
     import_sqlite_resource_groups(&mut tx, &catalog).await?;
+    disable_removed_sqlite_resource_groups(&mut tx, &catalog).await?;
     import_sqlite_resource_group_items(&mut tx, &catalog).await?;
     import_sqlite_default_admin_channels(&mut tx, &catalog).await?;
     import_sqlite_default_admin_channel_endpoints(&mut tx, &catalog).await?;
@@ -307,6 +310,7 @@ pub(crate) async fn import_postgres_ai_routing_seed(pool: &PgPool) -> Result<(),
     import_postgres_api_endpoints(&mut tx, &catalog).await?;
     import_postgres_resources(&mut tx, &catalog).await?;
     import_postgres_resource_groups(&mut tx, &catalog).await?;
+    disable_removed_postgres_resource_groups(&mut tx, &catalog).await?;
     import_postgres_resource_group_items(&mut tx, &catalog).await?;
     import_postgres_default_admin_channels(&mut tx, &catalog).await?;
     import_postgres_default_admin_channel_endpoints(&mut tx, &catalog).await?;
@@ -639,11 +643,138 @@ async fn import_postgres_resource_groups(
     Ok(())
 }
 
+async fn disable_removed_sqlite_resource_groups(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    catalog: &AiRoutingSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    let expected_group_codes = expected_group_codes(catalog);
+    let rows = sqlx::query(
+        r#"
+        SELECT id, group_code
+        FROM ai_resource_group
+        WHERE tenant_id = ?
+          AND organization_id = ?
+          AND deleted_at IS NULL
+          AND json_extract(metadata, '$.catalogCode') = ?
+        "#,
+    )
+    .bind(SYSTEM_TENANT_ID)
+    .bind(SYSTEM_ORGANIZATION_ID)
+    .bind(&catalog.manifest.catalog_code)
+    .fetch_all(&mut **tx)
+    .await?;
+
+    for row in rows {
+        let group_code = row.get::<String, _>("group_code");
+        if expected_group_codes.contains(group_code.as_str()) {
+            continue;
+        }
+        let group_id = row.get::<i64, _>("id");
+        sqlx::query(
+            r#"
+            UPDATE ai_resource_group_item
+            SET status = ?, deleted_at = CURRENT_TIMESTAMP
+            WHERE tenant_id = ?
+              AND organization_id = ?
+              AND resource_group_id = ?
+              AND deleted_at IS NULL
+            "#,
+        )
+        .bind(DISABLED_STATUS)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(group_id)
+        .execute(&mut **tx)
+        .await?;
+        sqlx::query(
+            r#"
+            UPDATE ai_resource_group
+            SET status = ?, deleted_at = CURRENT_TIMESTAMP
+            WHERE tenant_id = ?
+              AND organization_id = ?
+              AND id = ?
+              AND deleted_at IS NULL
+            "#,
+        )
+        .bind(DISABLED_STATUS)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(group_id)
+        .execute(&mut **tx)
+        .await?;
+    }
+    Ok(())
+}
+
+async fn disable_removed_postgres_resource_groups(
+    tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
+    catalog: &AiRoutingSeedCatalog,
+) -> Result<(), sqlx::Error> {
+    let expected_group_codes = expected_group_codes(catalog);
+    let rows = sqlx::query(
+        r#"
+        SELECT id, group_code
+        FROM ai_resource_group
+        WHERE tenant_id = $1
+          AND organization_id = $2
+          AND deleted_at IS NULL
+          AND metadata ->> 'catalogCode' = $3
+        "#,
+    )
+    .bind(SYSTEM_TENANT_ID)
+    .bind(SYSTEM_ORGANIZATION_ID)
+    .bind(&catalog.manifest.catalog_code)
+    .fetch_all(&mut **tx)
+    .await?;
+
+    for row in rows {
+        let group_code = row.get::<String, _>("group_code");
+        if expected_group_codes.contains(group_code.as_str()) {
+            continue;
+        }
+        let group_id = row.get::<i64, _>("id");
+        sqlx::query(
+            r#"
+            UPDATE ai_resource_group_item
+            SET status = $1, deleted_at = NOW()
+            WHERE tenant_id = $2
+              AND organization_id = $3
+              AND resource_group_id = $4
+              AND deleted_at IS NULL
+            "#,
+        )
+        .bind(DISABLED_STATUS)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(group_id)
+        .execute(&mut **tx)
+        .await?;
+        sqlx::query(
+            r#"
+            UPDATE ai_resource_group
+            SET status = $1, deleted_at = NOW()
+            WHERE tenant_id = $2
+              AND organization_id = $3
+              AND id = $4
+              AND deleted_at IS NULL
+            "#,
+        )
+        .bind(DISABLED_STATUS)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(group_id)
+        .execute(&mut **tx)
+        .await?;
+    }
+    Ok(())
+}
+
 async fn import_sqlite_resource_group_items(
     tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
     catalog: &AiRoutingSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     let group_ids = sqlite_group_ids(tx).await?;
+    clear_sqlite_seed_resource_group_items(tx, catalog, &group_ids).await?;
     for group in &catalog.resource_groups {
         let Some(group_id) = group_ids.get(group.group_code.as_str()).copied() else {
             continue;
@@ -685,6 +816,7 @@ async fn import_postgres_resource_group_items(
     catalog: &AiRoutingSeedCatalog,
 ) -> Result<(), sqlx::Error> {
     let group_ids = postgres_group_ids(tx).await?;
+    clear_postgres_seed_resource_group_items(tx, catalog, &group_ids).await?;
     for group in &catalog.resource_groups {
         let Some(group_id) = group_ids.get(group.group_code.as_str()).copied() else {
             continue;
@@ -717,6 +849,64 @@ async fn import_postgres_resource_group_items(
                 .execute(&mut **tx)
                 .await?;
         }
+    }
+    Ok(())
+}
+
+async fn clear_sqlite_seed_resource_group_items(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    catalog: &AiRoutingSeedCatalog,
+    group_ids: &BTreeMap<String, i64>,
+) -> Result<(), sqlx::Error> {
+    for group in &catalog.resource_groups {
+        let Some(group_id) = group_ids.get(group.group_code.as_str()).copied() else {
+            continue;
+        };
+        sqlx::query(
+            r#"
+            UPDATE ai_resource_group_item
+            SET status = ?, deleted_at = CURRENT_TIMESTAMP
+            WHERE tenant_id = ?
+              AND organization_id = ?
+              AND resource_group_id = ?
+              AND deleted_at IS NULL
+            "#,
+        )
+        .bind(DISABLED_STATUS)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(group_id)
+        .execute(&mut **tx)
+        .await?;
+    }
+    Ok(())
+}
+
+async fn clear_postgres_seed_resource_group_items(
+    tx: &mut sqlx::Transaction<'_, sqlx::Postgres>,
+    catalog: &AiRoutingSeedCatalog,
+    group_ids: &BTreeMap<String, i64>,
+) -> Result<(), sqlx::Error> {
+    for group in &catalog.resource_groups {
+        let Some(group_id) = group_ids.get(group.group_code.as_str()).copied() else {
+            continue;
+        };
+        sqlx::query(
+            r#"
+            UPDATE ai_resource_group_item
+            SET status = $1, deleted_at = NOW()
+            WHERE tenant_id = $2
+              AND organization_id = $3
+              AND resource_group_id = $4
+              AND deleted_at IS NULL
+            "#,
+        )
+        .bind(DISABLED_STATUS)
+        .bind(SYSTEM_TENANT_ID)
+        .bind(SYSTEM_ORGANIZATION_ID)
+        .bind(group_id)
+        .execute(&mut **tx)
+        .await?;
     }
     Ok(())
 }
@@ -1091,14 +1281,18 @@ fn resource_bundles() -> Result<Vec<ResourceBundle>, AiRoutingSeedLoadError> {
 }
 
 fn resource_group_bundles() -> Result<Vec<ResourceGroupBundle>, AiRoutingSeedLoadError> {
-    [OFFICIAL_PROVIDER_GROUPS_JSON, RELAY_PROVIDER_GROUPS_JSON]
-        .into_iter()
-        .map(|payload| {
-            let bundle = serde_json::from_str::<ResourceGroupBundle>(payload)?;
-            validate_bundle_kind(&bundle.kind, "ai-routing.resource-groups")?;
-            Ok(bundle)
-        })
-        .collect()
+    [
+        ADMIN_API_GROUPS_JSON,
+        OFFICIAL_PROVIDER_GROUPS_JSON,
+        RELAY_PROVIDER_GROUPS_JSON,
+    ]
+    .into_iter()
+    .map(|payload| {
+        let bundle = serde_json::from_str::<ResourceGroupBundle>(payload)?;
+        validate_bundle_kind(&bundle.kind, "ai-routing.resource-groups")?;
+        Ok(bundle)
+    })
+    .collect()
 }
 
 fn channel_endpoint_template_bundles(
@@ -1183,7 +1377,10 @@ fn validate_catalog(catalog: &AiRoutingSeedCatalog) -> Result<(), AiRoutingSeedL
         }
     }
     for group in &catalog.resource_groups {
-        if group.items.is_empty() {
+        if group.items.is_empty()
+            && group.group_code != "api.all"
+            && group.selection_mode != "dynamic_all_api"
+        {
             return Err(AiRoutingSeedLoadError::Validation(format!(
                 "AI routing resource group `{}` must not be empty",
                 group.group_code
@@ -1235,6 +1432,7 @@ fn validate_manifest_files(catalog: &AiRoutingSeedCatalog) -> Result<(), AiRouti
     }
     if catalog.manifest.sections.resource_groups
         != [
+            "admin-api-groups.json",
             "official-provider-groups.json",
             "relay-provider-groups.json",
         ]
@@ -1695,6 +1893,8 @@ fn resource_metadata(item: &ResourceSeed) -> Value {
     serde_json::json!({
         "capability": item.capability,
         "capabilities": item.capabilities,
+        "resourceBillingCategory": resource_billing_category(item),
+        "defaultBillingMeter": default_billing_meter_code(item),
     })
 }
 
@@ -1705,6 +1905,8 @@ fn resource_schema(item: &ResourceSeed) -> String {
             _ => "single",
         },
         "capabilities": item.capabilities,
+        "resourceBillingCategory": resource_billing_category(item),
+        "defaultBillingMeter": default_billing_meter_code(item),
     })
     .to_string()
 }
@@ -1719,6 +1921,31 @@ fn metadata_schema(item: &ResourceSeed) -> String {
 
 fn resource_description(item: &ResourceSeed) -> String {
     format!("Bundled AI routing {} resource", item.display_name)
+}
+
+fn resource_billing_category(item: &ResourceSeed) -> &'static str {
+    match item.modality_code.as_deref().unwrap_or_default() {
+        "image" => "image",
+        "video" => "video",
+        "audio" => "audio",
+        "music" => "music",
+        "sfx" => "sfx",
+        "network" => "api_resource",
+        _ => "model",
+    }
+}
+
+fn default_billing_meter_code(item: &ResourceSeed) -> &'static str {
+    match item.modality_code.as_deref().unwrap_or_default() {
+        "image" => "image_result",
+        "video" => "video_result",
+        "audio" => "audio_input_second",
+        "music" => "music_output_second",
+        "sfx" => "sfx_result",
+        "network" => "api_request",
+        "embedding" => "embedding_input_token",
+        _ => "llm_input_token",
+    }
 }
 
 fn endpoint_metadata(catalog: &AiRoutingSeedCatalog, item: &EndpointSeedDefinition<'_>) -> String {
@@ -1858,6 +2085,7 @@ fn source_hash() -> String {
         CORE_RESOURCES_JSON,
         OPENAI_RESOURCES_JSON,
         VENDOR_NATIVE_RESOURCES_JSON,
+        ADMIN_API_GROUPS_JSON,
         OFFICIAL_PROVIDER_GROUPS_JSON,
         RELAY_PROVIDER_GROUPS_JSON,
         OPENAI_COMPATIBLE_TEMPLATES_JSON,

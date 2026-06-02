@@ -1156,6 +1156,90 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_provider_uuid ON ai_provider (uuid);
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_provider_tenant_code ON ai_provider (tenant_id, organization_id, provider_code);
 CREATE INDEX IF NOT EXISTS idx_ai_provider_status_sort ON ai_provider (tenant_id, organization_id, status, sort_order, id);
 
+CREATE TABLE IF NOT EXISTS ai_site (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    site_code VARCHAR(64) NOT NULL,
+    site_name VARCHAR(128) NOT NULL,
+    display_name VARCHAR(128) NOT NULL,
+    description VARCHAR(1024),
+    base_url VARCHAR(512),
+    website_url VARCHAR(512),
+    docs_url VARCHAR(512),
+    logo_media_resource_id VARCHAR(128),
+    logo_object_blob_id BIGINT,
+    logo_resource_snapshot JSONB,
+    color_token VARCHAR(64),
+    site_type VARCHAR(32) NOT NULL DEFAULT 'relay',
+    owner_kind VARCHAR(32),
+    region_code VARCHAR(64),
+    environment INTEGER NOT NULL DEFAULT 1,
+    health_status INTEGER NOT NULL DEFAULT 1,
+    last_latency_ms INTEGER,
+    consecutive_error_count BIGINT NOT NULL DEFAULT 0,
+    last_checked_at TIMESTAMPTZ,
+    last_sync_at TIMESTAMPTZ,
+    sort_order INTEGER NOT NULL DEFAULT 100
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_site_uuid ON ai_site (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_site_tenant_code ON ai_site (tenant_id, organization_id, site_code);
+CREATE INDEX IF NOT EXISTS idx_ai_site_status_sort ON ai_site (tenant_id, organization_id, status, sort_order, id);
+CREATE INDEX IF NOT EXISTS idx_ai_site_health_status ON ai_site (tenant_id, organization_id, status, health_status, id);
+
+CREATE TABLE IF NOT EXISTS ai_site_service (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    site_id BIGINT NOT NULL,
+    site_code VARCHAR(64) NOT NULL,
+    service_code VARCHAR(64) NOT NULL,
+    service_name VARCHAR(128) NOT NULL,
+    service_type VARCHAR(64) NOT NULL DEFAULT 'ai_model_relay',
+    protocol_code VARCHAR(64),
+    base_url VARCHAR(512),
+    auth_type INTEGER NOT NULL DEFAULT 1,
+    credential_profile INTEGER NOT NULL DEFAULT 1,
+    auth_config JSONB NOT NULL DEFAULT '{}'::jsonb,
+    credential_ref VARCHAR(512),
+    credential_hash VARCHAR(128),
+    masked_label VARCHAR(128),
+    credential_version BIGINT NOT NULL DEFAULT 1,
+    region_code VARCHAR(64),
+    environment INTEGER NOT NULL DEFAULT 1,
+    health_status INTEGER NOT NULL DEFAULT 1,
+    last_latency_ms INTEGER,
+    consecutive_error_count BIGINT NOT NULL DEFAULT 0,
+    last_verified_at TIMESTAMPTZ,
+    last_sync_at TIMESTAMPTZ,
+    sort_order INTEGER NOT NULL DEFAULT 100
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_site_service_uuid ON ai_site_service (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_site_service_site_code ON ai_site_service (tenant_id, organization_id, site_id, service_code);
+CREATE INDEX IF NOT EXISTS idx_ai_site_service_site_status ON ai_site_service (tenant_id, organization_id, site_id, status, id);
+CREATE INDEX IF NOT EXISTS idx_ai_site_service_type_status ON ai_site_service (tenant_id, organization_id, service_type, status, id);
+CREATE INDEX IF NOT EXISTS idx_ai_site_service_health_status ON ai_site_service (tenant_id, organization_id, status, health_status, id);
+
 CREATE TABLE IF NOT EXISTS ai_channel (
     id BIGSERIAL PRIMARY KEY,
     uuid VARCHAR(64) NOT NULL,
@@ -1171,6 +1255,11 @@ CREATE TABLE IF NOT EXISTS ai_channel (
     metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
     provider_id BIGINT,
     provider_code VARCHAR(64),
+    site_id BIGINT,
+    site_service_id BIGINT,
+    site_code VARCHAR(64),
+    site_service_code VARCHAR(64),
+    site_channel_role VARCHAR(32),
     channel_code VARCHAR(64) NOT NULL,
     channel_name VARCHAR(128) NOT NULL,
     channel_type VARCHAR(32) NOT NULL,
@@ -1214,6 +1303,9 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_uuid ON ai_channel (uuid);
 CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_tenant_code ON ai_channel (tenant_id, organization_id, channel_code);
 CREATE INDEX IF NOT EXISTS idx_ai_channel_provider_type_status ON ai_channel (tenant_id, organization_id, provider_code, channel_type, status, id);
 CREATE INDEX IF NOT EXISTS idx_ai_channel_health_status ON ai_channel (tenant_id, organization_id, status, health_status, priority, weight, id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_site_status ON ai_channel (tenant_id, organization_id, site_id, status, health_status, id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_site_service_status ON ai_channel (tenant_id, organization_id, site_service_id, status, health_status, id);
+CREATE INDEX IF NOT EXISTS idx_ai_channel_site_code ON ai_channel (tenant_id, organization_id, site_code, site_service_code, status, id);
 
 CREATE TABLE IF NOT EXISTS messaging_provider (
     id BIGSERIAL PRIMARY KEY,
@@ -1838,6 +1930,58 @@ CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_channel_model_active ON ai_channel_model
 CREATE INDEX IF NOT EXISTS idx_ai_channel_model_model_status ON ai_channel_model (tenant_id, organization_id, catalog_key, status, effective_from, id);
 CREATE INDEX IF NOT EXISTS idx_ai_channel_model_model_id_status ON ai_channel_model (tenant_id, organization_id, model, status, effective_from, id);
 CREATE INDEX IF NOT EXISTS idx_ai_channel_model_vendor_status ON ai_channel_model (tenant_id, organization_id, vendor_code, status, effective_from, id);
+
+CREATE TABLE IF NOT EXISTS ai_site_model (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    site_id BIGINT NOT NULL,
+    site_service_id BIGINT NOT NULL,
+    site_code VARCHAR(64) NOT NULL,
+    site_service_code VARCHAR(64),
+    service_type VARCHAR(64) NOT NULL DEFAULT 'ai_model_relay',
+    model_id BIGINT,
+    catalog_key VARCHAR(256),
+    model_code VARCHAR(128) NOT NULL,
+    model_name VARCHAR(128) NOT NULL,
+    display_name VARCHAR(128),
+    provider_model VARCHAR(128),
+    provider_native_model VARCHAR(256),
+    vendor_code VARCHAR(64),
+    modality VARCHAR(64),
+    capability INTEGER,
+    capabilities JSONB,
+    model_aliases JSONB,
+    default_parameters JSONB,
+    context_tokens BIGINT,
+    max_input_tokens BIGINT,
+    max_output_tokens BIGINT,
+    supports_streaming BOOLEAN,
+    supports_tools BOOLEAN,
+    supports_json_schema BOOLEAN,
+    pricing_snapshot JSONB,
+    health_status INTEGER NOT NULL DEFAULT 1,
+    last_latency_ms INTEGER,
+    consecutive_error_count BIGINT NOT NULL DEFAULT 0,
+    last_sync_at TIMESTAMPTZ,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_site_model_uuid ON ai_site_model (uuid);
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_site_model_service_model ON ai_site_model (tenant_id, organization_id, site_id, site_service_id, model_code);
+CREATE INDEX IF NOT EXISTS idx_ai_site_model_site_status ON ai_site_model (tenant_id, organization_id, site_id, status, model_code, id);
+CREATE INDEX IF NOT EXISTS idx_ai_site_model_service_status ON ai_site_model (tenant_id, organization_id, site_service_id, status, model_code, id);
+CREATE INDEX IF NOT EXISTS idx_ai_site_model_catalog_status ON ai_site_model (tenant_id, organization_id, catalog_key, status, id);
 
 CREATE TABLE IF NOT EXISTS integration_proxy (
     id BIGSERIAL PRIMARY KEY,
@@ -6728,6 +6872,47 @@ CREATE TABLE IF NOT EXISTS upload_completion_attempt (
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS uk_upload_completion_attempt_no ON upload_completion_attempt (tenant_id, organization_id, upload_session_id, attempt_no);
+
+CREATE TABLE IF NOT EXISTS ai_model_mapping_rule (
+    id BIGSERIAL PRIMARY KEY,
+    uuid VARCHAR(64) NOT NULL,
+    tenant_id BIGINT NOT NULL DEFAULT 0,
+    organization_id BIGINT NOT NULL DEFAULT 0,
+    data_scope INTEGER NOT NULL DEFAULT 0,
+    status INTEGER NOT NULL DEFAULT 1,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    version BIGINT NOT NULL DEFAULT 0,
+    deleted_at TIMESTAMPTZ,
+    deleted_by BIGINT,
+    metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
+    scope_type VARCHAR(32) NOT NULL DEFAULT 'global',
+    vendor_id BIGINT,
+    vendor_code VARCHAR(64),
+    channel_id BIGINT,
+    channel_code VARCHAR(64),
+    source_model VARCHAR(256) NOT NULL DEFAULT '',
+    source_catalog_key VARCHAR(256),
+    source_vendor_code VARCHAR(64),
+    target_model VARCHAR(256) NOT NULL DEFAULT '',
+    target_catalog_key VARCHAR(256),
+    target_vendor_code VARCHAR(64),
+    target_provider_model VARCHAR(256),
+    target_provider_native_model VARCHAR(256),
+    mapping_mode VARCHAR(32) NOT NULL DEFAULT 'alias',
+    match_type VARCHAR(32) NOT NULL DEFAULT 'exact',
+    priority INTEGER NOT NULL DEFAULT 100,
+    enabled BOOLEAN NOT NULL DEFAULT TRUE,
+    effective_from TIMESTAMPTZ,
+    effective_to TIMESTAMPTZ,
+    description VARCHAR(512)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS uk_ai_model_mapping_rule_uuid ON ai_model_mapping_rule (uuid);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_channel_lookup ON ai_model_mapping_rule (tenant_id, organization_id, status, enabled, channel_id, source_model, priority, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_vendor_lookup ON ai_model_mapping_rule (tenant_id, organization_id, status, enabled, vendor_code, source_model, priority, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_global_lookup ON ai_model_mapping_rule (tenant_id, organization_id, status, enabled, scope_type, source_model, priority, id);
+CREATE INDEX IF NOT EXISTS idx_ai_model_mapping_rule_target_model ON ai_model_mapping_rule (tenant_id, organization_id, target_catalog_key, target_vendor_code, status, id);
 
 CREATE TABLE IF NOT EXISTS ai_usage_service_provider_chain (
     id BIGSERIAL PRIMARY KEY,

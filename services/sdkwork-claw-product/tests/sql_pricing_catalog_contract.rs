@@ -11,8 +11,8 @@ use sdkwork_claw_product::infrastructure::sql::catalog::{
 };
 use sdkwork_claw_product::infrastructure::sql::rows::{
     AiModelRow, ChannelGroupMetricSnapshotRow, ChannelGroupRow, GatewayAccessPolicyRow,
-    GatewayApiKeyRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow, PricingPlanRow,
-    ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
+    GatewayApiKeyRow, ModelMappingRuleRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow,
+    PricingPlanRow, ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
 };
 use sdkwork_claw_product::infrastructure::sql::PricingCatalogSql;
 use sdkwork_claw_product::ports::PricingCatalog;
@@ -173,7 +173,7 @@ fn provider_route_queries_use_explicit_region_context_not_catalog_key_segments()
 #[test]
 fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     let queries = PricingCatalogSql::snapshot_load_queries();
-    assert_eq!(13, queries.len());
+    assert_eq!(14, queries.len());
 
     let sql = queries.join("\n");
     for required_table in [
@@ -193,6 +193,7 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "ai_routing_policy",
         "ai_routing_profile",
         "ai_routing_rule",
+        "ai_model_mapping_rule",
     ] {
         assert!(
             sql.contains(required_table),
@@ -1232,6 +1233,7 @@ fn priced_catalog_rows() -> PricingCatalogRows {
             fallback_chain_json: "[]".to_owned(),
             constraints_json: "{}".to_owned(),
         }],
+        model_mappings: Vec::<ModelMappingRuleRow>::new(),
         pricing_plans: vec![PricingPlanRow {
             plan_code: "standard".to_owned(),
             base_price_side_code: "official_reference".to_owned(),

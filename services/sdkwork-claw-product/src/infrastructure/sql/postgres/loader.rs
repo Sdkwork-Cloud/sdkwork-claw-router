@@ -78,6 +78,11 @@ impl PostgresPricingCatalogLoader {
                 PricingCatalogSql::load_routing_rules(),
             )
             .await?,
+            model_mappings: row_mapping::load_model_mappings(
+                &self.pool,
+                PricingCatalogSql::load_model_mappings(),
+            )
+            .await?,
             pricing_plans: row_mapping::load_pricing_plans(
                 &self.pool,
                 PricingCatalogSql::load_pricing_plans(),

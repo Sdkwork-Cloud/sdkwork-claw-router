@@ -255,3 +255,382 @@ frontend_models:
   - description
   data_sources:
   - ai_model_vendor
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ResourceGroupItem
+  fields:
+  - id
+  - groupCode
+  - groupName
+  - groupType
+  - selectionMode
+  - description
+  - sortOrder
+  - status
+  - resourceCount
+  - dynamic
+  data_sources:
+  - ai_resource_group
+  - ai_resource_group_item
+  - ai_resource
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ResourceGroupResourceItem
+  fields:
+  - id
+  - resourceCode
+  - resourceType
+  - displayName
+  - vendorCode
+  - modalityCode
+  - apiEndpointCode
+  - catalogKey
+  - model
+  - providerNativeModel
+  - status
+  - sortOrder
+  - memberRole
+  data_sources:
+  - ai_resource_group
+  - ai_resource_group_item
+  - ai_resource
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ResourceGroupMemberInput
+  fields:
+  - resourceCode
+  - itemRole
+  - sortOrder
+  data_sources:
+  - ai_resource_group_item
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ResourceGroupCreateInput
+  fields:
+  - groupCode
+  - groupName
+  - groupType
+  - selectionMode
+  - description
+  - sortOrder
+  - status
+  - members
+  - members.resourceCode
+  - members.itemRole
+  - members.sortOrder
+  data_sources:
+  - ai_resource_group
+  - ai_resource_group_item
+  - ai_resource
+- route: /admin/model/resources
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ResourceGroupUpdateInput
+  fields:
+  - groupCode
+  - groupName
+  - groupType
+  - selectionMode
+  - description
+  - sortOrder
+  - status
+  - members
+  - members.resourceCode
+  - members.itemRole
+  - members.sortOrder
+  data_sources:
+  - ai_resource_group
+  - ai_resource_group_item
+  - ai_resource
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: SiteItem
+  fields:
+  - id
+  - siteCode
+  - siteName
+  - displayName
+  - description
+  - baseUrl
+  - websiteUrl
+  - docsUrl
+  - logo
+  - domains
+  - vendorCodes
+  - siteType
+  - ownerKind
+  - regionCode
+  - environment
+  - healthStatus
+  - lastLatencyMs
+  - consecutiveErrorCount
+  - lastCheckedAt
+  - lastSyncAt
+  - sortOrder
+  - status
+  data_sources:
+  - ai_site
+  - ai_site_service
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: SiteCreateInput
+  fields:
+  - siteCode
+  - siteName
+  - displayName
+  - description
+  - baseUrl
+  - websiteUrl
+  - docsUrl
+  - logo
+  - domains
+  - vendorCodes
+  - siteType
+  - ownerKind
+  - regionCode
+  - environment
+  - status
+  - credentialRef
+  - maskedLabel
+  data_sources:
+  - ai_site
+  - ai_site_service
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: SiteUpdateInput
+  fields:
+  - siteCode
+  - siteName
+  - displayName
+  - description
+  - baseUrl
+  - websiteUrl
+  - docsUrl
+  - logo
+  - domains
+  - vendorCodes
+  - siteType
+  - ownerKind
+  - regionCode
+  - environment
+  - status
+  - credentialRef
+  - maskedLabel
+  data_sources:
+  - ai_site
+  - ai_site_service
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: SiteModelItem
+  fields:
+  - id
+  - siteId
+  - siteCode
+  - siteServiceId
+  - siteServiceCode
+  - serviceType
+  - modelCode
+  - modelName
+  - displayName
+  - providerModel
+  - providerNativeModel
+  - vendorCode
+  - modality
+  - capabilities
+  - contextTokens
+  - maxInputTokens
+  - maxOutputTokens
+  - supportsStreaming
+  - supportsTools
+  - supportsJsonSchema
+  - healthStatus
+  - lastLatencyMs
+  - consecutiveErrorCount
+  - lastSyncAt
+  - status
+  data_sources:
+  - ai_site_model
+  - ai_site
+  - ai_site_service
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: SiteModelCreateInput
+  fields:
+  - modelCode
+  - modelName
+  - displayName
+  - providerModel
+  - providerNativeModel
+  - vendorCode
+  - modality
+  - capabilities
+  - contextTokens
+  - maxInputTokens
+  - maxOutputTokens
+  - supportsStreaming
+  - supportsTools
+  - supportsJsonSchema
+  - status
+  data_sources:
+  - ai_site_model
+  - ai_site
+  - ai_site_service
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: SiteModelUpdateInput
+  fields:
+  - modelCode
+  - modelName
+  - displayName
+  - providerModel
+  - providerNativeModel
+  - vendorCode
+  - modality
+  - capabilities
+  - contextTokens
+  - maxInputTokens
+  - maxOutputTokens
+  - supportsStreaming
+  - supportsTools
+  - supportsJsonSchema
+  - status
+  data_sources:
+  - ai_site_model
+  - ai_site
+  - ai_site_service
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: SiteChannelItem
+  fields:
+  - id
+  - channelCode
+  - channelName
+  - providerCode
+  - siteCode
+  - siteServiceCode
+  - siteChannelRole
+  - healthStatus
+  - status
+  data_sources:
+  - ai_channel
+  - ai_site
+  - ai_site_service
+- route: /admin/model/sites
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: SiteConnectionCheckResult
+  fields:
+  - siteId
+  - status
+  - healthStatus
+  - latencyMs
+  - checkedAt
+  - message
+  data_sources:
+  - ai_site
+  - ai_site_service
+  - ops_audit_log
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ModelMappingRule
+  fields:
+  - id
+  - scopeType
+  - vendorId
+  - vendorCode
+  - channelId
+  - channelCode
+  - sourceModel
+  - sourceCatalogKey
+  - sourceVendorCode
+  - targetModel
+  - targetCatalogKey
+  - targetVendorCode
+  - targetProviderModel
+  - targetProviderNativeModel
+  - mappingMode
+  - matchType
+  - priority
+  - enabled
+  - effectiveFrom
+  - effectiveTo
+  - description
+  - createdAt
+  - updatedAt
+  data_sources:
+  - ai_model_mapping_rule
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ModelMappingCreateInput
+  fields:
+  - scopeType
+  - vendorId
+  - vendorCode
+  - channelId
+  - channelCode
+  - sourceModel
+  - sourceCatalogKey
+  - sourceVendorCode
+  - targetModel
+  - targetCatalogKey
+  - targetVendorCode
+  - targetProviderModel
+  - targetProviderNativeModel
+  - mappingMode
+  - matchType
+  - priority
+  - enabled
+  - effectiveFrom
+  - effectiveTo
+  - description
+  data_sources:
+  - ai_model_mapping_rule
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ModelMappingUpdateInput
+  fields:
+  - scopeType
+  - vendorId
+  - vendorCode
+  - channelId
+  - channelCode
+  - sourceModel
+  - sourceCatalogKey
+  - sourceVendorCode
+  - targetModel
+  - targetCatalogKey
+  - targetVendorCode
+  - targetProviderModel
+  - targetProviderNativeModel
+  - mappingMode
+  - matchType
+  - priority
+  - enabled
+  - effectiveFrom
+  - effectiveTo
+  - description
+  data_sources:
+  - ai_model_mapping_rule
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ModelMappingResolveInput
+  fields:
+  - sourceModel
+  - vendorCode
+  - channelId
+  - channelCode
+  data_sources:
+  - ai_model_mapping_rule
+- route: /admin/model/mappings
+  source: apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-model/src/modelService.ts
+  interface: ModelMappingResolveResult
+  fields:
+  - sourceModel
+  - targetModel
+  - targetCatalogKey
+  - targetVendorCode
+  - targetProviderModel
+  - targetProviderNativeModel
+  - matched
+  - matchedScopeType
+  - rule
+  data_sources:
+  - ai_model_mapping_rule

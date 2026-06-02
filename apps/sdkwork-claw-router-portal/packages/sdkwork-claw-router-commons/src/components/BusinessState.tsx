@@ -8,7 +8,7 @@ export interface BusinessStateAction {
 }
 
 export interface BusinessStatePanelProps {
-  kind: BusinessStateKind;
+  kind?: BusinessStateKind;
   title: string;
   description?: string;
   action?: BusinessStateAction;
@@ -40,6 +40,10 @@ const stateStyle: Record<BusinessStateKind, { role: 'status' | 'alert'; tone: st
   },
 };
 
+function resolveBusinessStateKind(kind: unknown): BusinessStateKind {
+  return kind === 'loading' || kind === 'error' || kind === 'empty' ? kind : 'empty';
+}
+
 export function BusinessStatePanel({
   kind,
   title,
@@ -50,13 +54,14 @@ export function BusinessStatePanel({
   icon,
   className = '',
 }: BusinessStatePanelProps) {
-  const style = stateStyle[kind];
+  const resolvedKind = resolveBusinessStateKind(kind);
+  const style = stateStyle[resolvedKind];
   const resolvedAction = action ?? (onRetry ? { label: retryLabel, onClick: onRetry } : undefined);
 
   return (
     <div
       role={style.role}
-      aria-live={kind === 'loading' ? 'polite' : 'assertive'}
+      aria-live={resolvedKind === 'loading' ? 'polite' : 'assertive'}
       className={`flex min-h-32 flex-col items-center justify-center gap-3 px-6 py-10 text-center ${className}`}
     >
       <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 text-slate-500 dark:bg-white/5 dark:text-slate-300">

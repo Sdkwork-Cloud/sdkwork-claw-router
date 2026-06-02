@@ -256,6 +256,10 @@ const BROWSER_SMOKE_ADMIN_APP_CATEGORY = {
 
 const PRIVATE_PRICING_TOKENS = [
   "lowestUpstreamCostUnitPrice",
+  "upstreamCost",
+  "providerCost",
+  "channelCost",
+  "costPrice",
   "customerUnitPrice",
   "grossMarginPerUnit",
   "pricingPlanCode",
@@ -402,6 +406,10 @@ const BROWSER_SMOKE_MODEL_RECORDS = [
       reason: "Public reference price only. Customer-specific pricing requires an API key context.",
     },
     lowestUpstreamCostUnitPrice: "0.010000",
+    upstreamCost: "0.010000",
+    providerCost: "0.012000",
+    channelCost: "0.013000",
+    costPrice: "0.014000",
     customerUnitPrice: "0.300000",
     grossMarginPerUnit: "0.290000",
     pricingPlanCode: "internal-plan",
@@ -3779,7 +3787,7 @@ async function verifyRouteDom(cdp, baseUrl, route, issueCollector, toolApiReques
         throw new Error(`${pathName} rendered DOM includes forbidden text: ${forbiddenToken}`);
       }
     }
-    for (const forbiddenToken of ["lowestUpstreamCostUnitPrice", "customerUnitPrice", "grossMarginPerUnit"]) {
+    for (const forbiddenToken of PRIVATE_PRICING_TOKENS) {
       if (bodyText.includes(forbiddenToken)) {
         throw new Error(`${pathName} rendered DOM exposed private token: ${forbiddenToken}`);
       }

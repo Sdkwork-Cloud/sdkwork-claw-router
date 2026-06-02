@@ -130,6 +130,129 @@ pub struct AiModel {
     pub replacement_model: Option<String>,
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+pub enum ModelMappingScope {
+    Channel,
+    Vendor,
+    Global,
+}
+
+impl ModelMappingScope {
+    pub fn from_str(value: &str) -> DomainResult<Self> {
+        match value.trim().to_ascii_lowercase().as_str() {
+            "channel" => Ok(Self::Channel),
+            "vendor" => Ok(Self::Vendor),
+            "global" => Ok(Self::Global),
+            value => Err(DomainError::new(format!(
+                "ai_model_mapping_rule.scope_type contains unsupported value: {value}"
+            ))),
+        }
+    }
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ModelMappingRule {
+    pub id: i64,
+    pub scope: ModelMappingScope,
+    pub vendor_code: Option<String>,
+    pub channel_id: Option<i64>,
+    pub channel_code: Option<String>,
+    pub source_model: String,
+    pub target_model: String,
+    pub target_catalog_key: Option<String>,
+    pub target_vendor_code: Option<String>,
+    pub target_provider_model: Option<String>,
+    pub target_provider_native_model: Option<String>,
+    pub priority: i32,
+}
+
+impl ModelMappingRule {
+    pub fn new(
+        id: i64,
+        scope: ModelMappingScope,
+        source_model: &str,
+        target_model: &str,
+        priority: i32,
+    ) -> Self {
+        Self {
+            id,
+            scope,
+            vendor_code: None,
+            channel_id: None,
+            channel_code: None,
+            source_model: source_model.to_owned(),
+            target_model: target_model.to_owned(),
+            target_catalog_key: None,
+            target_vendor_code: None,
+            target_provider_model: None,
+            target_provider_native_model: None,
+            priority,
+        }
+    }
+
+    pub fn with_vendor_code(mut self, vendor_code: &str) -> Self {
+        self.vendor_code = normalized_optional_text(vendor_code);
+        self
+    }
+
+    pub fn with_channel_id(mut self, channel_id: i64) -> Self {
+        self.channel_id = Some(channel_id);
+        self
+    }
+
+    pub fn with_channel_code(mut self, channel_code: &str) -> Self {
+        self.channel_code = normalized_optional_text(channel_code);
+        self
+    }
+
+    pub fn with_target_catalog_key(mut self, target_catalog_key: &str) -> Self {
+        self.target_catalog_key = normalized_optional_text(target_catalog_key);
+        self
+    }
+
+    pub fn with_target_vendor_code(mut self, target_vendor_code: &str) -> Self {
+        self.target_vendor_code = normalized_optional_text(target_vendor_code);
+        self
+    }
+
+    pub fn with_target_provider_model(mut self, target_provider_model: &str) -> Self {
+        self.target_provider_model = normalized_optional_text(target_provider_model);
+        self
+    }
+
+    pub fn with_target_provider_native_model(mut self, target_provider_native_model: &str) -> Self {
+        self.target_provider_native_model = normalized_optional_text(target_provider_native_model);
+        self
+    }
+
+    pub fn effective_catalog_key(&self) -> &str {
+        self.target_catalog_key
+            .as_deref()
+            .filter(|value| !value.trim().is_empty())
+            .unwrap_or(self.target_model.as_str())
+    }
+
+    pub fn effective_provider_model(&self) -> Option<&str> {
+        self.target_provider_model
+            .as_deref()
+            .filter(|value| !value.trim().is_empty())
+            .or_else(|| {
+                self.target_provider_native_model
+                    .as_deref()
+                    .filter(|value| !value.trim().is_empty())
+            })
+    }
+}
+
+fn normalized_optional_text(value: &str) -> Option<String> {
+    let value = value.trim();
+    if value.is_empty() {
+        None
+    } else {
+        Some(value.to_owned())
+    }
+}
+
 impl AiModel {
     pub fn new(
         model: &str,

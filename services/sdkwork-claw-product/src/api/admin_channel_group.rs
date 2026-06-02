@@ -28,6 +28,8 @@ const MAX_PLATFORM_LEN: usize = 64;
 const MAX_CHANNEL_BINDINGS_PER_GROUP: usize = 200;
 const MAX_CHANNEL_BINDING_SCOPE_ITEMS: usize = 200;
 const MAX_CHANNEL_BINDING_SCOPE_ITEM_LEN: usize = 128;
+const MAX_CHANNEL_GROUP_RESOURCE_ACCESS_ITEMS: usize = 200;
+const MAX_CHANNEL_GROUP_RESOURCE_ACCESS_ITEM_LEN: usize = 128;
 const MIN_CHANNEL_BINDING_PRIORITY: i64 = 0;
 const MAX_CHANNEL_BINDING_PRIORITY: i64 = 1_000_000;
 const MIN_CHANNEL_BINDING_WEIGHT: i64 = 0;
@@ -52,6 +54,8 @@ struct AdminChannelGroupCreateRequest {
     official_price_multiplier: Option<f64>,
     group_type: Option<String>,
     capacity: Option<GroupCapacityRequest>,
+    resource_group_codes: Option<Vec<String>>,
+    resource_codes: Option<Vec<String>>,
     status: Option<String>,
 }
 
@@ -65,6 +69,8 @@ struct AdminChannelGroupUpdateRequest {
     official_price_multiplier: Option<f64>,
     group_type: Option<String>,
     capacity: Option<GroupCapacityRequest>,
+    resource_group_codes: Option<Vec<String>>,
+    resource_codes: Option<Vec<String>>,
     status: Option<String>,
 }
 
@@ -103,6 +109,8 @@ struct NormalizedCreateRequest {
     official_price_multiplier: f64,
     group_type: String,
     capacity_total: f64,
+    resource_group_codes: Vec<String>,
+    resource_codes: Vec<String>,
     status: String,
 }
 
@@ -116,6 +124,8 @@ struct NormalizedUpdateRequest {
     official_price_multiplier: Option<f64>,
     group_type: Option<String>,
     capacity_total: Option<f64>,
+    resource_group_codes: Option<Vec<String>>,
+    resource_codes: Option<Vec<String>>,
     status: Option<String>,
 }
 
@@ -159,6 +169,8 @@ struct AdminChannelGroupItemResponse {
     rate_multiplier: f64,
     official_price_multiplier: f64,
     group_type: String,
+    resource_group_codes: Vec<String>,
+    resource_codes: Vec<String>,
     account_count: CountPairResponse,
     capacity: AmountPairResponse,
     usage: UsagePairResponse,
@@ -505,6 +517,14 @@ fn normalize_create_request(
                 .and_then(|capacity| capacity.total)
                 .unwrap_or(100.0),
         )?,
+        resource_group_codes: normalize_resource_access_items(
+            request.resource_group_codes.unwrap_or_default(),
+            "channel group resourceGroupCodes",
+        )?,
+        resource_codes: normalize_resource_access_items(
+            request.resource_codes.unwrap_or_default(),
+            "channel group resourceCodes",
+        )?,
         status: normalize_status(request.status.as_deref())?,
     })
 }
@@ -553,6 +573,14 @@ fn normalize_update_request(
         .and_then(|capacity| capacity.total)
         .map(normalize_capacity_total)
         .transpose()?;
+    let resource_group_codes = request
+        .resource_group_codes
+        .map(|values| normalize_resource_access_items(values, "channel group resourceGroupCodes"))
+        .transpose()?;
+    let resource_codes = request
+        .resource_codes
+        .map(|values| normalize_resource_access_items(values, "channel group resourceCodes"))
+        .transpose()?;
     let status = request
         .status
         .as_deref()
@@ -566,6 +594,8 @@ fn normalize_update_request(
         && official_price_multiplier.is_none()
         && group_type.is_none()
         && capacity_total.is_none()
+        && resource_group_codes.is_none()
+        && resource_codes.is_none()
         && status.is_none()
     {
         return Err("channel group update must include at least one editable field".to_owned());
@@ -580,6 +610,8 @@ fn normalize_update_request(
         official_price_multiplier,
         group_type,
         capacity_total,
+        resource_group_codes,
+        resource_codes,
         status,
     })
 }
@@ -811,6 +843,42 @@ fn normalize_scope_items(values: Vec<String>, field_name: &str) -> Result<Vec<St
     Ok(normalized)
 }
 
+fn normalize_resource_access_items(
+    values: Vec<String>,
+    field_name: &str,
+) -> Result<Vec<String>, String> {
+    if values.len() > MAX_CHANNEL_GROUP_RESOURCE_ACCESS_ITEMS {
+        return Err(format!(
+            "{field_name} must include at most {MAX_CHANNEL_GROUP_RESOURCE_ACCESS_ITEMS} items"
+        ));
+    }
+    let mut seen = std::collections::BTreeSet::new();
+    let mut normalized = Vec::new();
+    for value in values {
+        let value = value.trim().to_ascii_lowercase();
+        if value.is_empty() {
+            continue;
+        }
+        if value.chars().count() > MAX_CHANNEL_GROUP_RESOURCE_ACCESS_ITEM_LEN {
+            return Err(format!(
+                "{field_name} items must be at most {MAX_CHANNEL_GROUP_RESOURCE_ACCESS_ITEM_LEN} characters"
+            ));
+        }
+        if !value
+            .bytes()
+            .all(|byte| byte.is_ascii_alphanumeric() || matches!(byte, b'.' | b'_' | b'-'))
+        {
+            return Err(format!(
+                "{field_name} items may only contain letters, numbers, dot, underscore, and hyphen"
+            ));
+        }
+        if seen.insert(value.clone()) {
+            normalized.push(value);
+        }
+    }
+    Ok(normalized)
+}
+
 fn parse_positive_id(value: &str, field_name: &str) -> Result<i64, String> {
     let id = value
         .trim()
@@ -842,6 +910,8 @@ fn build_create_command(
         rate_multiplier: request.rate_multiplier,
         official_price_multiplier: request.official_price_multiplier,
         group_type: request.group_type,
+        resource_group_codes: request.resource_group_codes,
+        resource_codes: request.resource_codes,
         capacity_total: request.capacity_total,
         status: request.status,
         request_id: generate_server_request_id().map_err(request_id_error)?,
@@ -869,6 +939,8 @@ fn build_update_command(
         rate_multiplier: request.rate_multiplier,
         official_price_multiplier: request.official_price_multiplier,
         group_type: request.group_type,
+        resource_group_codes: request.resource_group_codes,
+        resource_codes: request.resource_codes,
         capacity_total: request.capacity_total,
         status: request.status,
         request_id: generate_server_request_id().map_err(request_id_error)?,
@@ -943,6 +1015,8 @@ fn to_item_response(item: AdminChannelGroupItem) -> AdminChannelGroupItemRespons
         rate_multiplier: item.rate_multiplier,
         official_price_multiplier: item.official_price_multiplier,
         group_type: item.group_type,
+        resource_group_codes: item.resource_group_codes,
+        resource_codes: item.resource_codes,
         account_count: CountPairResponse {
             available: item.account_available,
             total: item.account_total,

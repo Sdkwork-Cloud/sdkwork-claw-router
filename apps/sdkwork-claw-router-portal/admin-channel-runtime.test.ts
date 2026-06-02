@@ -33,7 +33,7 @@ import {
   deriveChannelTargetVendorCodes,
   reconcileChannelVendorSelection,
 } from "./packages/sdkwork-claw-router-admin-channel/src/channelVendorSelection.ts";
-import { knownModelVendors, protocolsList } from "./packages/sdkwork-claw-router-admin-channel/src/channelOptions.ts";
+import { authTypesList, knownModelVendors, protocolsList } from "./packages/sdkwork-claw-router-admin-channel/src/channelOptions.ts";
 
 const originalFetch = globalThis.fetch;
 const originalWindowDescriptor = Object.getOwnPropertyDescriptor(globalThis, "window");
@@ -645,7 +645,24 @@ test("admin channel modal rejects invalid traffic weight instead of defaulting i
   assert.doesNotMatch(source, /weight:\s*Number\.isFinite\(weight\) && weight > 0 \? weight : 100/);
 });
 
-test("admin channel modal keeps api key input on its own row with plaintext visibility controls", () => {
+test("admin channel account drawer replaces the centered modal shell", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /data-admin-channel-account-drawer/);
+  assert.match(source, /className="fixed inset-0 z-50 flex justify-start bg-slate-900\/50 backdrop-blur-sm"/);
+  assert.match(source, /className="relative flex h-full w-\[80vw\] max-w-\[80vw\] flex-col overflow-hidden border-r/);
+  assert.match(source, /className="flex min-h-0 flex-1 overflow-hidden"/);
+  assert.match(source, /className="shrink-0 border-t border-slate-200/);
+  assert.doesNotMatch(source, /fixed inset-0 z-50 flex justify-end bg-slate-900\/50/);
+  assert.doesNotMatch(source, /h-full w-full max-w-5xl flex-col overflow-hidden border-l/);
+  assert.doesNotMatch(source, /items-center justify-center p-4 bg-slate-900\/50/);
+  assert.doesNotMatch(source, /rounded-2xl shadow-xl w-full max-w-6xl/);
+});
+
+test("admin channel drawer keeps api key input on its own row with plaintext visibility controls", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
     "utf8",
@@ -734,7 +751,7 @@ test("admin channel row actions expose copy-create without copying credentials",
     "utf8",
   );
 
-  assert.match(source, /type ModalMode = 'create' \| 'copy' \| 'edit'/);
+  assert.match(source, /type AccountDrawerMode = 'create' \| 'copy' \| 'edit'/);
   assert.match(source, /const openCopyCreateModal = \(channel: ChannelItem\) =>/);
   assert.match(source, /setChannelFormDraft\(createChannelCopyDraft\(channel\)\)/);
   assert.match(source, /mode === 'copy'\s+\? t\('admin\.channel\.modals\.copyChannelTitle'\)/);
@@ -752,7 +769,7 @@ test("admin channel row actions expose copy-create without copying credentials",
   }
 });
 
-test("admin channel modal does not expose unsupported per-channel model mapping controls", () => {
+test("admin channel drawer does not expose unsupported per-channel model mapping controls", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
     "utf8",
@@ -768,7 +785,7 @@ test("admin channel modal does not expose unsupported per-channel model mapping 
   assert.match(source, /admin\.channel\.validation\.modelRequired/);
 });
 
-test("admin channel modal does not expose protocol as a product routing control", () => {
+test("admin channel drawer does not expose protocol as a product routing control", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
     "utf8",
@@ -979,6 +996,40 @@ test("admin channel account modal supports account type and reusable AI resource
   assert.match(source, /admin\.channel\.fields\.aiResources/);
   assert.match(source, /admin\.channel\.channelType\.official/);
   assert.match(source, /admin\.channel\.channelType\.relay/);
+});
+
+test("admin channel AI resources expose product categories including per-call API resources", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const messages = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/channel.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "type AiResourceCategory",
+    "function aiResourceCategory",
+    "function displayAiResourceCategory",
+    "admin.channel.aiResourceCategory.model",
+    "admin.channel.aiResourceCategory.image",
+    "admin.channel.aiResourceCategory.video",
+    "admin.channel.aiResourceCategory.audio",
+    "admin.channel.aiResourceCategory.music",
+    "admin.channel.aiResourceCategory.sfx",
+    "admin.channel.aiResourceCategory.api_resource",
+  ]) {
+    assert.ok(source.includes(expected) || messages.includes(expected), `missing AI resource category marker: ${expected}`);
+  }
+
+  assert.match(source, /displayAiResourceCategory\(resource, t\)/);
+  assert.match(source, /displayAiResourceCategory\(resource \?\? undefined, t\)/);
+  assert.doesNotMatch(
+    source,
+    /admin\.channel\.aiResourceType\.\$\{resource\.resourceType\}/,
+    "resource cards should show product category instead of raw resourceType",
+  );
 });
 
 test("admin channel credentials are viewed from account row actions instead of a standalone table", () => {
@@ -1538,6 +1589,89 @@ test("admin channel auth type helpers preserve unknown backend auth types", () =
     () => resolveAuthTypeSubmitValue(" ", knownAuthTypes),
     /authType is required/,
   );
+});
+
+test("admin channel auth options support official, oauth, and major cloud credential methods", () => {
+  assert.deepEqual(
+    authTypesList.map((type) => type.id),
+    [
+      "api-key",
+      "openai",
+      "claude-code",
+      "google",
+      "oauth-gcp",
+      "azure",
+      "azure-ad",
+      "aws-bedrock",
+      "aliyun",
+      "volcengine",
+      "tencent-cloud",
+    ],
+  );
+
+  assert.equal(resolveAuthTypeFormValue("OpenAI", authTypesList), "openai");
+  assert.equal(resolveAuthTypeFormValue("Google", authTypesList), "google");
+  assert.equal(resolveAuthTypeFormValue("Azure Cloud Account", authTypesList), "azure");
+  assert.equal(resolveAuthTypeFormValue("Azure OpenAI", authTypesList), "azure-ad");
+  assert.equal(resolveAuthTypeFormValue("Alibaba Cloud", authTypesList), "aliyun");
+  assert.equal(resolveAuthTypeFormValue("Volcengine", authTypesList), "volcengine");
+  assert.equal(resolveAuthTypeFormValue("Tencent Cloud", authTypesList), "tencent-cloud");
+  assert.equal(resolveAuthTypeSubmitValue("aliyun", authTypesList), "Alibaba Cloud");
+  assert.equal(resolveAuthTypeSubmitValue("volcengine", authTypesList), "Volcengine");
+  assert.equal(resolveAuthTypeSubmitValue("tencent-cloud", authTypesList), "Tencent Cloud");
+});
+
+test("admin channel form serializes structured cloud credentials into existing secret material", () => {
+  const input = createChannelInputFromForm({
+    name: "AWS Bedrock",
+    vendor: "Bedrock",
+    channelType: "official",
+    protocol: "OpenAI",
+    accessType: "AWS Bedrock",
+    baseUrl: "https://bedrock-runtime.us-east-1.amazonaws.com",
+    credentialFields: {
+      awsAccessKeyId: " AKIA_TEST ",
+      awsSecretAccessKey: " secret ",
+      awsRegion: " us-east-1 ",
+      awsSessionToken: " ",
+    },
+    capabilities: ["llm"],
+    resourceCodes: [],
+    models: ["aws-bedrock:anthropic.claude-3-sonnet"],
+    weight: 100,
+    status: "active",
+  } as Parameters<typeof createChannelInputFromForm>[0]);
+
+  assert.equal(input.apiKey, JSON.stringify({
+    awsAccessKeyId: "AKIA_TEST",
+    awsSecretAccessKey: "secret",
+    awsRegion: "us-east-1",
+  }));
+});
+
+test("admin channel drawer renders structured credential fields for non-api auth types", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-channel/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const marker of [
+    "credentialFieldSets",
+    "activeCredentialFields",
+    "name={`credential:${field.name}`}",
+    "buildCredentialMaterial(activeAuthType, formData)",
+    "awsAccessKeyId",
+    "awsSecretAccessKey",
+    "azureTenantId",
+    "azureClientSecret",
+    "googleServiceAccountJson",
+    "aliyunAccessKeySecret",
+    "volcengineSecretAccessKey",
+    "tencentSecretKey",
+    "claudeCodeToken",
+  ]) {
+    assert.match(source, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  }
 });
 
 test("admin channel select helpers preserve custom vendors and protocols", () => {
@@ -2495,7 +2629,7 @@ test("admin channel list fails closed when backend returns malformed channel row
   );
 });
 
-test("admin channel list fails closed when backend omits channel models", async () => {
+test("admin channel list loads provider accounts when backend omits channel models", async () => {
   await withBackendSdkFetch(
     (url, init) => {
       if (url === "/backend/v3/api/integration/channels" && init?.method === "GET") {
@@ -2522,10 +2656,27 @@ test("admin channel list fails closed when backend omits channel models", async 
       }
       throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
     },
-    async () => {
-      await assert.rejects(
-        () => ChannelService.fetchChannels(),
-        /Channel models are required/,
+    async (captured) => {
+      const channels = await ChannelService.fetchChannels();
+
+      assert.deepEqual(channels.map((channel) => ({
+        id: channel.id,
+        channelId: channel.channelId,
+        name: channel.name,
+        vendor: channel.vendor,
+        models: channel.models,
+      })), [
+        {
+          id: "channel-1",
+          channelId: "9001",
+          name: "OpenAI Primary",
+          vendor: "OpenAI",
+          models: [],
+        },
+      ]);
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        ["GET /backend/v3/api/integration/channels"],
       );
     },
   );

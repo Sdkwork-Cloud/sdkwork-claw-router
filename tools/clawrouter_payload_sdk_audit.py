@@ -394,6 +394,9 @@ class ClawRouterPayloadSdkAudit:
             resolved = schemas.get(name)
             if isinstance(resolved, dict):
                 return resolved
+        all_of = schema.get("allOf")
+        if isinstance(all_of, list) and len(all_of) == 1 and isinstance(all_of[0], dict):
+            return self._resolve_schema(all_of[0], schemas)
         return schema
 
     def _is_closed_object_schema(self, schema: Any) -> bool:

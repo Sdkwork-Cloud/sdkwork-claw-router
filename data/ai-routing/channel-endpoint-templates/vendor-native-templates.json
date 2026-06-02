@@ -6,7 +6,11 @@
       "vendorCode": "anthropic",
       "apiCode": "anthropic.claude_code",
       "capability": "llm",
-      "capabilities": ["llm", "chat", "coding"],
+      "capabilities": [
+        "llm",
+        "chat",
+        "coding"
+      ],
       "method": "POST",
       "pathTemplate": "/v1/claude-code/sessions",
       "protocolCode": "vendor_native",
@@ -18,7 +22,10 @@
       "vendorCode": "gemini",
       "apiCode": "gemini.generate_content",
       "capability": "llm",
-      "capabilities": ["llm", "chat"],
+      "capabilities": [
+        "llm",
+        "chat"
+      ],
       "method": "POST",
       "pathTemplate": "/v1beta/models/{model}:generateContent",
       "protocolCode": "vendor_native",
@@ -30,7 +37,11 @@
       "vendorCode": "gemini",
       "apiCode": "gemini.stream_generate_content",
       "capability": "llm",
-      "capabilities": ["llm", "chat", "streaming"],
+      "capabilities": [
+        "llm",
+        "chat",
+        "streaming"
+      ],
       "method": "POST",
       "pathTemplate": "/v1beta/models/{model}:streamGenerateContent",
       "protocolCode": "vendor_native",
@@ -42,7 +53,11 @@
       "vendorCode": "gemini",
       "apiCode": "gemini.embed_content",
       "capability": "embedding",
-      "capabilities": ["embedding", "embeddings", "llm"],
+      "capabilities": [
+        "embedding",
+        "embeddings",
+        "llm"
+      ],
       "method": "POST",
       "pathTemplate": "/v1beta/models/{model}:embedContent",
       "protocolCode": "vendor_native",
@@ -54,7 +69,10 @@
       "vendorCode": "gemini",
       "apiCode": "gemini.live",
       "capability": "audio",
-      "capabilities": ["audio", "llm"],
+      "capabilities": [
+        "audio",
+        "llm"
+      ],
       "method": "POST",
       "pathTemplate": "/v1beta/live/sessions",
       "protocolCode": "vendor_native",
@@ -66,7 +84,9 @@
       "vendorCode": "gemini",
       "apiCode": "gemini.image_generation",
       "capability": "image",
-      "capabilities": ["image"],
+      "capabilities": [
+        "image"
+      ],
       "method": "POST",
       "pathTemplate": "/v1beta/models/{model}:generateImages",
       "protocolCode": "vendor_native",
@@ -78,7 +98,9 @@
       "vendorCode": "gemini",
       "apiCode": "gemini.nano_banana.image_generation",
       "capability": "image",
-      "capabilities": ["image"],
+      "capabilities": [
+        "image"
+      ],
       "method": "POST",
       "pathTemplate": "/v1beta/models/nano-banana:generateImages",
       "protocolCode": "vendor_native",
@@ -90,7 +112,9 @@
       "vendorCode": "gemini",
       "apiCode": "gemini.video_generation",
       "capability": "video",
-      "capabilities": ["video"],
+      "capabilities": [
+        "video"
+      ],
       "method": "POST",
       "pathTemplate": "/v1beta/models/{model}:generateVideos",
       "protocolCode": "vendor_native",
@@ -102,7 +126,9 @@
       "vendorCode": "kling",
       "apiCode": "kling.text_to_video",
       "capability": "video",
-      "capabilities": ["video"],
+      "capabilities": [
+        "video"
+      ],
       "method": "POST",
       "pathTemplate": "/v1/videos/text2video",
       "protocolCode": "vendor_native",
@@ -114,7 +140,10 @@
       "vendorCode": "kling",
       "apiCode": "kling.image_to_video",
       "capability": "video",
-      "capabilities": ["video", "image"],
+      "capabilities": [
+        "video",
+        "image"
+      ],
       "method": "POST",
       "pathTemplate": "/v1/videos/image2video",
       "protocolCode": "vendor_native",
@@ -126,7 +155,9 @@
       "vendorCode": "kling",
       "apiCode": "kling.image_generation",
       "capability": "image",
-      "capabilities": ["image"],
+      "capabilities": [
+        "image"
+      ],
       "method": "POST",
       "pathTemplate": "/v1/images/generations",
       "protocolCode": "vendor_native",
@@ -138,7 +169,10 @@
       "vendorCode": "kling",
       "apiCode": "kling.task_query",
       "capability": "network",
-      "capabilities": ["network", "http"],
+      "capabilities": [
+        "network",
+        "http"
+      ],
       "method": "GET",
       "pathTemplate": "/v1/tasks/{task_id}",
       "protocolCode": "vendor_native",
@@ -150,7 +184,9 @@
       "vendorCode": "jimeng",
       "apiCode": "jimeng.image_generation",
       "capability": "image",
-      "capabilities": ["image"],
+      "capabilities": [
+        "image"
+      ],
       "method": "POST",
       "pathTemplate": "/v1/images/generations",
       "protocolCode": "vendor_native",
@@ -162,7 +198,9 @@
       "vendorCode": "jimeng",
       "apiCode": "jimeng.video_generation",
       "capability": "video",
-      "capabilities": ["video"],
+      "capabilities": [
+        "video"
+      ],
       "method": "POST",
       "pathTemplate": "/v1/videos/generations",
       "protocolCode": "vendor_native",
@@ -174,7 +212,10 @@
       "vendorCode": "jimeng",
       "apiCode": "jimeng.task_query",
       "capability": "network",
-      "capabilities": ["network", "http"],
+      "capabilities": [
+        "network",
+        "http"
+      ],
       "method": "GET",
       "pathTemplate": "/v1/tasks/{task_id}",
       "protocolCode": "vendor_native",
@@ -186,7 +227,9 @@
       "vendorCode": "volcengine",
       "apiCode": "volcengine.image_generation",
       "capability": "image",
-      "capabilities": ["image"],
+      "capabilities": [
+        "image"
+      ],
       "method": "POST",
       "pathTemplate": "/v1/images/generations",
       "protocolCode": "vendor_native",
@@ -198,7 +241,9 @@
       "vendorCode": "volcengine",
       "apiCode": "volcengine.video_generation",
       "capability": "video",
-      "capabilities": ["video"],
+      "capabilities": [
+        "video"
+      ],
       "method": "POST",
       "pathTemplate": "/v1/videos/generations",
       "protocolCode": "vendor_native",
@@ -210,7 +255,10 @@
       "vendorCode": "volcengine",
       "apiCode": "volcengine.task_query",
       "capability": "network",
-      "capabilities": ["network", "http"],
+      "capabilities": [
+        "network",
+        "http"
+      ],
       "method": "GET",
       "pathTemplate": "/v1/tasks/{task_id}",
       "protocolCode": "vendor_native",
@@ -218,16 +266,47 @@
       "sortOrder": 252
     },
     {
+      "templateCode": "template.minimax.music_generation",
+      "vendorCode": "minimax",
+      "apiCode": "minimax.music_generation",
+      "capability": "music",
+      "capabilities": [
+        "audio",
+        "music"
+      ],
+      "method": "POST",
+      "pathTemplate": "/v1/music_generation",
+      "protocolCode": "vendor_native",
+      "timeoutMs": 1200000,
+      "sortOrder": 254
+    },
+    {
+      "templateCode": "template.vidu.reference_to_image",
+      "vendorCode": "vidu",
+      "apiCode": "vidu.reference_to_image",
+      "capability": "image",
+      "capabilities": [
+        "image"
+      ],
+      "method": "POST",
+      "pathTemplate": "/ent/v2/reference2image",
+      "protocolCode": "vendor_native",
+      "timeoutMs": 900000,
+      "sortOrder": 258
+    },
+    {
       "templateCode": "template.vidu.start_end_to_video",
       "vendorCode": "vidu",
       "apiCode": "vidu.start_end_to_video",
       "capability": "video",
-      "capabilities": ["video"],
+      "capabilities": [
+        "video"
+      ],
       "method": "POST",
       "pathTemplate": "/ent/v2/start-end2video",
       "protocolCode": "vendor_native",
       "timeoutMs": 1200000,
-      "sortOrder": 260
+      "sortOrder": 262
     }
   ]
 }

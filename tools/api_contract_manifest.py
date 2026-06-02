@@ -126,6 +126,7 @@ class ApiContractManifestGenerator:
         "sdkReference": "sdkReference",
         "system": "system",
         "oss": "oss",
+        "sites": "sites",
         "storage": "storage",
         "platform": "platform",
         "openPlatform": "platform",
@@ -213,6 +214,12 @@ class ApiContractManifestGenerator:
         "ecosystem": "ecosystem",
         "system": "system",
         "oss": "oss",
+        "site": "sites",
+        "sites": "sites",
+        "aiSite": "sites",
+        "aiSites": "sites",
+        "ai_site": "sites",
+        "ai_sites": "sites",
         "objectStorage": "oss",
         "objectstorage": "oss",
         "object_storage": "oss",
@@ -304,6 +311,8 @@ class ApiContractManifestGenerator:
         ("ai_mcp", "mcp"),
         ("ai_prompt_", "prompts"),
         ("ai_prompt", "prompts"),
+        ("ai_site_", "sites"),
+        ("ai_site", "sites"),
         ("ai_", "ai"),
         ("promotion_", "system"),
         ("commerce_", "commerce"),
@@ -832,6 +841,8 @@ class ApiContractManifestGenerator:
             return "openPlatform"
         if first in {"service_provider", "service_providers", "serviceprovider", "serviceproviders"}:
             return "serviceProviders"
+        if first in {"site", "sites"}:
+            return "sites"
         if first in {"app", "apps", "platform"}:
             return "platform"
         if first in {"skill", "skills", "ecosystem"}:

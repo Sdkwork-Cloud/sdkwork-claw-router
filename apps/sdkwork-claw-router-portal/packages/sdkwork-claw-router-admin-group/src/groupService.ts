@@ -33,30 +33,72 @@ export interface GroupData {
   accountCount: { available: number; total: number };
   capacity: { used: number; total: number };
   usage: { today: number; total: number };
+  resourceGroupCodes: string[];
+  resourceCodes: string[];
   status: 'active' | 'disabled';
 }
 
 export type GroupCreateInput = {
   groupName: string;
-  groupCode: string;
   priceReferenceMode: GroupPriceReferenceMode;
   rateMultiplier?: number;
   officialPriceMultiplier?: number;
   groupType: GroupData['groupType'];
   capacity: { total: number };
   status: GroupData['status'];
+  resourceGroupCodes?: string[];
+  resourceCodes?: string[];
 };
 
 export type GroupUpdateInput = {
   groupName?: string;
-  groupCode?: string;
   priceReferenceMode?: GroupPriceReferenceMode;
   rateMultiplier?: number;
   officialPriceMultiplier?: number;
   groupType?: GroupData['groupType'];
   capacity?: { total: number };
   status?: GroupData['status'];
+  resourceGroupCodes?: string[];
+  resourceCodes?: string[];
 };
+
+export interface GroupResourceGroupOption {
+  id: string;
+  groupCode: string;
+  groupName: string;
+  groupType: 'api_group';
+  selectionMode: 'manual' | 'all' | 'any' | 'dynamic_all_api';
+  description: string | null;
+  resourceCount: number;
+  status: 'active' | 'disabled' | 'inactive';
+}
+
+export interface GroupAiResourceOption {
+  id: string;
+  resourceCode: string;
+  displayName: string;
+  resourceType: string;
+  vendorCode: string | null;
+  modalityCode: string | null;
+  apiEndpointCode: string | null;
+  catalogKey: string | null;
+  model: string | null;
+  providerNativeModel: string | null;
+  status: 'active' | 'disabled' | 'inactive';
+}
+
+type ChannelGroupResourceAccessRequest = {
+  resourceGroupCodes?: string[];
+  resourceCodes?: string[];
+};
+
+type ChannelGroupCreateRequestWithResourceAccess =
+  AdminChannelGroupCreateRequest & ChannelGroupResourceAccessRequest;
+
+type ChannelGroupUpdateRequestWithResourceAccess =
+  AdminChannelGroupUpdateRequest & ChannelGroupResourceAccessRequest;
+
+let groupCodeFallbackCounter = 0;
 
 export interface GroupChannelBindingData {
   id: string;
@@ -158,9 +200,23 @@ export class GroupService {
     return readRequiredApiItems(result, 'Failed to fetch channels')
       .map(normalizeGroupChannelOption);
   }
+
+  static async fetchAssignableResourceGroups(): Promise<GroupResourceGroupOption[]> {
+    const result = await getClawRouterBackendSdkClient().ai.aiResourceGroups.list();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch resource groups');
+    return readRequiredApiItems(result, 'Failed to fetch resource groups')
+      .map(normalizeResourceGroupOption);
+  }
+
+  static async fetchAssignableResources(): Promise<GroupAiResourceOption[]> {
+    const result = await getClawRouterBackendSdkClient().ai.aiResources.list();
+    ensureSdkworkApiSuccess(result, 'Failed to fetch AI resources');
+    return readRequiredApiItems(result, 'Failed to fetch AI resources')
+      .map(normalizeAiResourceOption);
+  }
 }
 
-function toCreateGroupRequest(group: GroupCreateInput): AdminChannelGroupCreateRequest {
+function toCreateGroupRequest(group: GroupCreateInput): ChannelGroupCreateRequestWithResourceAccess {
   const request = baseChannelGroupRequest(group);
   if (group.priceReferenceMode === 'official_price') {
     request.officialPriceMultiplier = optionalPositiveNumber(
@@ -170,15 +226,15 @@ function toCreateGroupRequest(group: GroupCreateInput): AdminChannelGroupCreateR
   } else {
     request.rateMultiplier = optionalPositiveNumber(group.rateMultiplier, 'rateMultiplier');
   }
+  request.resourceGroupCodes = normalizedOptionalResourceCodes(group.resourceGroupCodes);
+  request.resourceCodes = normalizedOptionalResourceCodes(group.resourceCodes);
   return request;
 }
 
-function toUpdateGroupRequest(updates: GroupUpdateInput): AdminChannelGroupUpdateRequest {
-  const request: AdminChannelGroupUpdateRequest = pruneUndefined({
+function toUpdateGroupRequest(updates: GroupUpdateInput): ChannelGroupUpdateRequestWithResourceAccess {
+  const request: ChannelGroupUpdateRequestWithResourceAccess = pruneUndefined({
     groupName:
       updates.groupName === undefined ? undefined : requiredText(updates.groupName, 'groupName'),
-    groupCode:
-      updates.groupCode === undefined ? undefined : requiredText(updates.groupCode, 'groupCode'),
     priceReferenceMode:
       updates.priceReferenceMode === undefined
         ? undefined
@@ -188,6 +244,12 @@ function toUpdateGroupRequest(updates: GroupUpdateInput): AdminChannelGroupUpdat
     capacity:
       updates.capacity === undefined ? undefined : toCapacityRequest(updates.capacity.total),
     status: updates.status === undefined ? undefined : toBackendStatus(updates.status),
+    resourceGroupCodes: updates.resourceGroupCodes === undefined
+      ? undefined
+      : normalizedOptionalResourceCodes(updates.resourceGroupCodes),
+    resourceCodes: updates.resourceCodes === undefined
+      ? undefined
+      : normalizedOptionalResourceCodes(updates.resourceCodes),
   });
   if (updates.rateMultiplier !== undefined) {
     request.rateMultiplier = optionalPositiveNumber(updates.rateMultiplier, 'rateMultiplier');
@@ -204,17 +266,31 @@ function toUpdateGroupRequest(updates: GroupUpdateInput): AdminChannelGroupUpdat
 function baseChannelGroupRequest(
   group: Pick<
     GroupCreateInput,
-    'groupName' | 'groupCode' | 'priceReferenceMode' | 'groupType' | 'capacity' | 'status'
+    'groupName' | 'priceReferenceMode' | 'groupType' | 'capacity' | 'status'
   >,
-): AdminChannelGroupCreateRequest {
+): ChannelGroupCreateRequestWithResourceAccess {
   return {
     groupName: requiredText(group.groupName, 'groupName'),
-    groupCode: requiredText(group.groupCode, 'groupCode'),
+    groupCode: generateUniqueGroupCode(),
     priceReferenceMode: toPriceReferenceMode(group.priceReferenceMode),
     groupType: toBackendGroupType(group.groupType),
     capacity: toCapacityRequest(group.capacity.total),
     status: toBackendStatus(group.status),
   };
+}
+
+function generateUniqueGroupCode(): string {
+  if (globalThis.crypto && typeof globalThis.crypto.randomUUID === 'function') {
+    return `group-${globalThis.crypto.randomUUID()}`;
+  }
+  if (globalThis.crypto && typeof globalThis.crypto.getRandomValues === 'function') {
+    const bytes = new Uint8Array(16);
+    globalThis.crypto.getRandomValues(bytes);
+    const encoded = Array.from(bytes, value => value.toString(36).padStart(2, '0')).join('');
+    return `group-${encoded}`;
+  }
+  groupCodeFallbackCounter = (groupCodeFallbackCounter + 1) % 1_679_616;
+  return `group-${Date.now().toString(36)}-${groupCodeFallbackCounter.toString(36).padStart(4, '0')}`;
 }
 
 function toReplaceChannelBindingsRequest(
@@ -318,6 +394,23 @@ function normalizedOptionalStringArray(values: string[]): string[] {
   return Array.from(new Set(values.map((value) => value.trim()).filter(Boolean)));
 }
 
+function normalizedOptionalResourceCodes(values: string[] | undefined): string[] | undefined {
+  if (values === undefined) {
+    return undefined;
+  }
+  const normalized = normalizedOptionalStringArray(values);
+  validateResourceCodes(normalized);
+  return normalized;
+}
+
+function validateResourceCodes(values: string[]): void {
+  for (const code of values) {
+    if (!/^[A-Za-z0-9._-]+$/.test(code)) {
+      throw new Error(`Unsupported AI resource code: ${code}`);
+    }
+  }
+}
+
 function pruneUndefined<T extends Record<string, unknown>>(value: T): T {
   return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as T;
 }
@@ -363,6 +456,8 @@ function normalizeGroup(value: unknown): GroupData {
       today: readRequiredNonNegativeNumber(usage, 'today', 'Group today usage is required'),
       total: readRequiredNonNegativeNumber(usage, 'total', 'Group total usage is required'),
     },
+    resourceGroupCodes: readStringArray(item, 'resourceGroupCodes'),
+    resourceCodes: readStringArray(item, 'resourceCodes'),
     status: readGroupStatus(item),
   };
 }
@@ -410,6 +505,41 @@ function normalizeGroupChannelOption(value: unknown): GroupChannelOption {
   };
 }
 
+function normalizeResourceGroupOption(value: unknown): GroupResourceGroupOption {
+  const item = readRequiredRecord(value, 'Resource group record is required');
+  return {
+    id: readRequiredString(item, 'id', 'Resource group id is required'),
+    groupCode: readRequiredString(item, 'groupCode', 'Resource group code is required'),
+    groupName: readRequiredString(item, 'groupName', 'Resource group name is required'),
+    groupType: readResourceGroupType(item),
+    selectionMode: readResourceGroupSelectionMode(item),
+    description: readNullableString(item, 'description'),
+    resourceCount: readRequiredNonNegativeNumber(
+      item,
+      'resourceCount',
+      'Resource group resource count is required',
+    ),
+    status: readResourceAccessStatus(item),
+  };
+}
+
+function normalizeAiResourceOption(value: unknown): GroupAiResourceOption {
+  const item = readRequiredRecord(value, 'AI resource record is required');
+  return {
+    id: readRequiredString(item, 'id', 'AI resource id is required'),
+    resourceCode: readRequiredString(item, 'resourceCode', 'AI resource code is required'),
+    displayName: readRequiredString(item, 'displayName', 'AI resource display name is required'),
+    resourceType: readRequiredString(item, 'resourceType', 'AI resource type is required'),
+    vendorCode: readNullableString(item, 'vendorCode'),
+    modalityCode: readNullableString(item, 'modalityCode'),
+    apiEndpointCode: readNullableString(item, 'apiEndpointCode'),
+    catalogKey: readNullableString(item, 'catalogKey'),
+    model: readNullableString(item, 'model'),
+    providerNativeModel: readNullableString(item, 'providerNativeModel'),
+    status: readResourceAccessStatus(item),
+  };
+}
+
 function readRequiredRecord(value: unknown, message: string): ApiRecord {
   if (!isRecord(value)) {
     throw new Error(message);
@@ -424,6 +554,11 @@ function readRequiredNestedRecord(record: ApiRecord, key: string, message: strin
 function readDisplayString(record: ApiRecord, key: string, fallback: string): string {
   const value = readString(record, key)?.trim();
   return value ? value : fallback;
+}
+
+function readNullableString(record: ApiRecord, key: string): string | null {
+  const value = readString(record, key)?.trim();
+  return value ? value : null;
 }
 
 function readNullableNumber(record: ApiRecord, key: string): number | null {
@@ -502,6 +637,34 @@ function readChannelStatus(item: ApiRecord): GroupChannelOption['status'] {
     return status;
   }
   throw new Error(status ? `Unsupported channel status: ${status}` : 'Channel status is required');
+}
+
+function readResourceGroupType(item: ApiRecord): GroupResourceGroupOption['groupType'] {
+  const type = readString(item, 'groupType');
+  if (type === 'api_group') {
+    return type;
+  }
+  throw new Error(type ? `Unsupported resource group type: ${type}` : 'Resource group type is required');
+}
+
+function readResourceGroupSelectionMode(item: ApiRecord): GroupResourceGroupOption['selectionMode'] {
+  const mode = readString(item, 'selectionMode');
+  if (mode === 'manual' || mode === 'all' || mode === 'any' || mode === 'dynamic_all_api') {
+    return mode;
+  }
+  throw new Error(
+    mode
+      ? `Unsupported resource group selection mode: ${mode}`
+      : 'Resource group selection mode is required',
+  );
+}
+
+function readResourceAccessStatus(item: ApiRecord): GroupResourceGroupOption['status'] {
+  const status = readString(item, 'status');
+  if (status === 'active' || status === 'disabled' || status === 'inactive') {
+    return status;
+  }
+  throw new Error(status ? `Unsupported resource access status: ${status}` : 'Resource access status is required');
 }
 
 function readRequiredNonNegativeInteger(item: ApiRecord, key: string, message: string): number {

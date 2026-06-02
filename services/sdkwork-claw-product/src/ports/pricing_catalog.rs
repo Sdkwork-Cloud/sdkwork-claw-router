@@ -1,7 +1,7 @@
 use crate::domain::{
     AiModel, BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, GatewayAccessPolicy,
-    GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition, PriceSide, PricingPlan,
-    ProviderChannelRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
+    GatewayApiKey, ModelMappingRule, ModelPrice, ModelProviderRoute, ModelVendorDefinition,
+    PriceSide, PricingPlan, ProviderChannelRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
 };
 
 pub trait PricingCatalog {
@@ -10,6 +10,7 @@ pub trait PricingCatalog {
     fn list_provider_channel_routes(&self) -> Vec<ProviderChannelRoute>;
     fn list_routing_policies(&self) -> Vec<RoutingPolicy>;
     fn list_routing_rules(&self, profile_id: i64) -> Vec<RoutingRule>;
+    fn list_model_mappings(&self) -> Vec<ModelMappingRule>;
     fn list_api_keys(&self) -> Vec<GatewayApiKey>;
     fn list_channel_groups(&self) -> Vec<ChannelGroup>;
     fn list_model_prices(
@@ -31,6 +32,12 @@ pub trait PricingCatalog {
     fn find_pricing_plan(&self, plan_code: &str) -> Option<PricingPlan>;
     fn find_model(&self, model: &str) -> Option<AiModel>;
     fn find_vendor(&self, vendor_code: &str) -> Option<ModelVendorDefinition>;
+    fn resolve_model_mapping(
+        &self,
+        source_model: &str,
+        vendor_code: Option<&str>,
+        channel_id: Option<i64>,
+    ) -> Option<ModelMappingRule>;
     fn find_provider_route(&self, model: &str, provider_code: &str) -> Option<ModelProviderRoute>;
     fn find_model_price(
         &self,

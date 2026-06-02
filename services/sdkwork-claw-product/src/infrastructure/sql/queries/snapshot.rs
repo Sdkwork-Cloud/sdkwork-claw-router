@@ -9,6 +9,7 @@ impl PricingCatalogSql {
             Self::load_provider_channel_routes(),
             Self::load_routing_policies(),
             Self::load_routing_rules(),
+            Self::load_model_mappings(),
             Self::load_pricing_plans(),
             Self::load_channel_groups(),
             Self::load_api_keys(),
@@ -495,7 +496,8 @@ LEFT JOIN LATERAL (
           'kling.text_to_video', 'kling.image_to_video', 'kling.image_generation', 'kling.task_query',
           'jimeng.image_generation', 'jimeng.video_generation', 'jimeng.task_query',
           'volcengine.image_generation', 'volcengine.video_generation', 'volcengine.task_query',
-          'vidu.start_end_to_video'
+          'minimax.music_generation',
+          'vidu.reference_to_image', 'vidu.start_end_to_video'
       )
       AND endpoint.region_code IN (COALESCE(NULLIF(c.region_code, ''), 'global'), 'global')
       AND NULLIF(endpoint.base_url, '') IS NOT NULL
@@ -584,6 +586,37 @@ WHERE r.deleted_at IS NULL
   AND (r.effective_from IS NULL OR r.effective_from <= CURRENT_TIMESTAMP)
   AND (r.effective_to IS NULL OR r.effective_to > CURRENT_TIMESTAMP)
 ORDER BY r.profile_id ASC, r.priority ASC, r.id ASC
+"#
+    }
+
+    pub fn load_model_mappings() -> &'static str {
+        r#"
+SELECT
+    id,
+    scope_type,
+    NULLIF(vendor_code, '') AS vendor_code,
+    channel_id,
+    NULLIF(channel_code, '') AS channel_code,
+    source_model,
+    target_model,
+    NULLIF(target_catalog_key, '') AS target_catalog_key,
+    NULLIF(target_vendor_code, '') AS target_vendor_code,
+    NULLIF(target_provider_model, '') AS target_provider_model,
+    NULLIF(target_provider_native_model, '') AS target_provider_native_model,
+    priority
+FROM ai_model_mapping_rule
+WHERE deleted_at IS NULL
+  AND status = 1
+  AND enabled = true
+  AND match_type = 'exact'
+  AND mapping_mode = 'alias'
+  AND (effective_from IS NULL OR effective_from <= CURRENT_TIMESTAMP)
+  AND (effective_to IS NULL OR effective_to > CURRENT_TIMESTAMP)
+ORDER BY
+  CASE scope_type WHEN 'channel' THEN 1 WHEN 'vendor' THEN 2 ELSE 3 END,
+  priority ASC,
+  updated_at DESC,
+  id DESC
 "#
     }
 

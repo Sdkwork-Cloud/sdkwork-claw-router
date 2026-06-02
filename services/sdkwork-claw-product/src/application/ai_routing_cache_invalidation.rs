@@ -2,20 +2,29 @@ use std::sync::Arc;
 
 use crate::domain::DomainResult;
 use crate::ports::{
+    AdminAiModelItem, AdminAiResourceGroupItem, AdminAiResourceGroupResourceItem,
     AdminAiResourceItem, AdminAiResourceReadFuture, AdminAiResourceStore,
     AdminChannelCommandFuture, AdminChannelEndpointFuture, AdminChannelEndpointItem,
     AdminChannelEndpointStore, AdminChannelGroupChannelBindingItem, AdminChannelGroupCommandFuture,
     AdminChannelGroupItem, AdminChannelGroupStore, AdminChannelItem, AdminChannelStore,
-    AdminChannelTestOutcome, AdminProviderSecretCommandFuture, AdminProviderSecretItem,
-    AdminProviderSecretStore, CreateAdminAiResourceCommand, CreateAdminChannelCommand,
-    CreateAdminChannelEndpointCommand, CreateAdminChannelGroupCommand,
-    CreateAdminProviderSecretCommand, DeleteAdminChannelCommand, DeleteAdminChannelGroupCommand,
-    DeleteAdminProviderSecretCommand, ListAdminAiResourcesQuery, ListAdminChannelEndpointsQuery,
+    AdminChannelTestOutcome, AdminModelCatalogSyncItem, AdminModelCommandFuture,
+    AdminModelMappingRuleItem, AdminModelStore, AdminModelVendorItem,
+    AdminProviderSecretCommandFuture, AdminProviderSecretItem, AdminProviderSecretStore,
+    CreateAdminAiModelCommand, CreateAdminAiResourceCommand, CreateAdminAiResourceGroupCommand,
+    CreateAdminChannelCommand, CreateAdminChannelEndpointCommand, CreateAdminChannelGroupCommand,
+    CreateAdminModelMappingCommand, CreateAdminModelVendorCommand,
+    CreateAdminProviderSecretCommand, DeleteAdminAiModelCommand, DeleteAdminAiResourceGroupCommand,
+    DeleteAdminChannelCommand, DeleteAdminChannelGroupCommand, DeleteAdminModelMappingCommand,
+    DeleteAdminProviderSecretCommand, ListAdminAiModelsQuery,
+    ListAdminAiResourceGroupResourcesQuery, ListAdminAiResourceGroupsQuery,
+    ListAdminAiResourcesQuery, ListAdminChannelEndpointsQuery,
     ListAdminChannelGroupChannelBindingsQuery, ListAdminChannelGroupsQuery, ListAdminChannelsQuery,
-    ListAdminProviderSecretsQuery, ReplaceAdminChannelGroupChannelBindingsCommand,
-    TestAdminChannelCommand, UpdateAdminAiResourceCommand, UpdateAdminChannelCommand,
-    UpdateAdminChannelEndpointCommand, UpdateAdminChannelGroupCommand,
-    UpdateAdminProviderSecretCommand,
+    ListAdminModelMappingsQuery, ListAdminModelVendorsQuery, ListAdminProviderSecretsQuery,
+    ReplaceAdminChannelGroupChannelBindingsCommand, ResolveAdminModelMappingQuery,
+    ResolveAdminModelMappingResult, SyncAdminModelCatalogCommand, TestAdminChannelCommand,
+    UpdateAdminAiModelCommand, UpdateAdminAiResourceCommand, UpdateAdminAiResourceGroupCommand,
+    UpdateAdminChannelCommand, UpdateAdminChannelEndpointCommand, UpdateAdminChannelGroupCommand,
+    UpdateAdminModelMappingCommand, UpdateAdminProviderSecretCommand,
 };
 
 use super::{
@@ -170,6 +179,193 @@ impl AdminAiResourceStore for AiRoutingCacheInvalidatingAdminAiResourceStore {
             }
             Ok(item)
         })
+    }
+
+    fn list_ai_resource_groups<'a>(
+        &'a self,
+        query: ListAdminAiResourceGroupsQuery,
+    ) -> AdminAiResourceReadFuture<'a, Vec<AdminAiResourceGroupItem>> {
+        self.inner.list_ai_resource_groups(query)
+    }
+
+    fn list_ai_resource_group_resources<'a>(
+        &'a self,
+        query: ListAdminAiResourceGroupResourcesQuery,
+    ) -> AdminAiResourceReadFuture<'a, Vec<AdminAiResourceGroupResourceItem>> {
+        self.inner.list_ai_resource_group_resources(query)
+    }
+
+    fn create_ai_resource_group<'a>(
+        &'a self,
+        command: CreateAdminAiResourceGroupCommand,
+    ) -> AdminAiResourceReadFuture<'a, AdminAiResourceGroupItem> {
+        Box::pin(async move {
+            let item = self.inner.create_ai_resource_group(command).await?;
+            self.invalidator.invalidate_routing_facts().await?;
+            Ok(item)
+        })
+    }
+
+    fn update_ai_resource_group<'a>(
+        &'a self,
+        command: UpdateAdminAiResourceGroupCommand,
+    ) -> AdminAiResourceReadFuture<'a, Option<AdminAiResourceGroupItem>> {
+        Box::pin(async move {
+            let item = self.inner.update_ai_resource_group(command).await?;
+            if item.is_some() {
+                self.invalidator.invalidate_routing_facts().await?;
+            }
+            Ok(item)
+        })
+    }
+
+    fn delete_ai_resource_group<'a>(
+        &'a self,
+        command: DeleteAdminAiResourceGroupCommand,
+    ) -> AdminAiResourceReadFuture<'a, bool> {
+        Box::pin(async move {
+            let deleted = self.inner.delete_ai_resource_group(command).await?;
+            if deleted {
+                self.invalidator.invalidate_routing_facts().await?;
+            }
+            Ok(deleted)
+        })
+    }
+}
+
+#[derive(Clone)]
+pub struct AiRoutingCacheInvalidatingAdminModelStore {
+    inner: Arc<dyn AdminModelStore + Send + Sync>,
+    invalidator: AiRoutingCacheInvalidator,
+}
+
+impl AiRoutingCacheInvalidatingAdminModelStore {
+    pub fn new(
+        inner: Arc<dyn AdminModelStore + Send + Sync>,
+        manager: RuntimeCacheManager,
+    ) -> Self {
+        Self {
+            inner,
+            invalidator: AiRoutingCacheInvalidator::new(manager),
+        }
+    }
+}
+
+impl AdminModelStore for AiRoutingCacheInvalidatingAdminModelStore {
+    fn list_vendors<'a>(
+        &'a self,
+        query: ListAdminModelVendorsQuery,
+    ) -> AdminModelCommandFuture<'a, Vec<AdminModelVendorItem>> {
+        self.inner.list_vendors(query)
+    }
+
+    fn list_models<'a>(
+        &'a self,
+        query: ListAdminAiModelsQuery,
+    ) -> AdminModelCommandFuture<'a, Vec<AdminAiModelItem>> {
+        self.inner.list_models(query)
+    }
+
+    fn list_model_mappings<'a>(
+        &'a self,
+        query: ListAdminModelMappingsQuery,
+    ) -> AdminModelCommandFuture<'a, Vec<AdminModelMappingRuleItem>> {
+        self.inner.list_model_mappings(query)
+    }
+
+    fn create_vendor<'a>(
+        &'a self,
+        command: CreateAdminModelVendorCommand,
+    ) -> AdminModelCommandFuture<'a, AdminModelVendorItem> {
+        Box::pin(async move {
+            let item = self.inner.create_vendor(command).await?;
+            self.invalidator.invalidate_routing_facts().await?;
+            Ok(item)
+        })
+    }
+
+    fn create_model<'a>(
+        &'a self,
+        command: CreateAdminAiModelCommand,
+    ) -> AdminModelCommandFuture<'a, AdminAiModelItem> {
+        Box::pin(async move {
+            let item = self.inner.create_model(command).await?;
+            self.invalidator.invalidate_routing_facts().await?;
+            Ok(item)
+        })
+    }
+
+    fn create_model_mapping<'a>(
+        &'a self,
+        command: CreateAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, AdminModelMappingRuleItem> {
+        Box::pin(async move {
+            let item = self.inner.create_model_mapping(command).await?;
+            self.invalidator.invalidate_routing_facts().await?;
+            Ok(item)
+        })
+    }
+
+    fn update_model<'a>(
+        &'a self,
+        command: UpdateAdminAiModelCommand,
+    ) -> AdminModelCommandFuture<'a, AdminAiModelItem> {
+        Box::pin(async move {
+            let item = self.inner.update_model(command).await?;
+            self.invalidator.invalidate_routing_facts().await?;
+            Ok(item)
+        })
+    }
+
+    fn update_model_mapping<'a>(
+        &'a self,
+        command: UpdateAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, AdminModelMappingRuleItem> {
+        Box::pin(async move {
+            let item = self.inner.update_model_mapping(command).await?;
+            self.invalidator.invalidate_routing_facts().await?;
+            Ok(item)
+        })
+    }
+
+    fn sync_catalog<'a>(
+        &'a self,
+        command: SyncAdminModelCatalogCommand,
+    ) -> AdminModelCommandFuture<'a, AdminModelCatalogSyncItem> {
+        Box::pin(async move {
+            let item = self.inner.sync_catalog(command).await?;
+            self.invalidator.invalidate_routing_facts().await?;
+            Ok(item)
+        })
+    }
+
+    fn delete_model<'a>(
+        &'a self,
+        command: DeleteAdminAiModelCommand,
+    ) -> AdminModelCommandFuture<'a, ()> {
+        Box::pin(async move {
+            self.inner.delete_model(command).await?;
+            self.invalidator.invalidate_routing_facts().await?;
+            Ok(())
+        })
+    }
+
+    fn delete_model_mapping<'a>(
+        &'a self,
+        command: DeleteAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, ()> {
+        Box::pin(async move {
+            self.inner.delete_model_mapping(command).await?;
+            self.invalidator.invalidate_routing_facts().await?;
+            Ok(())
+        })
+    }
+
+    fn resolve_model_mapping<'a>(
+        &'a self,
+        query: ResolveAdminModelMappingQuery,
+    ) -> AdminModelCommandFuture<'a, ResolveAdminModelMappingResult> {
+        self.inner.resolve_model_mapping(query)
     }
 }
 

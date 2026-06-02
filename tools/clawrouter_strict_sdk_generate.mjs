@@ -459,7 +459,7 @@ export function prepareStrictTypeScriptGenerationSpec(spec, options = {}) {
 }
 
 function usesSdkDomainAsTypeScriptSurface(sdkDomain) {
-  return sdkDomain === 'oss';
+  return sdkDomain === 'oss' || sdkDomain === 'sites';
 }
 
 function stripSdkDomainOperationIdPrefix(operationId, sdkDomain) {
@@ -472,6 +472,9 @@ function stripSdkDomainOperationIdPrefix(operationId, sdkDomain) {
     return normalizedOperationId;
   }
   const stripped = normalizedOperationId.slice(prefix.length);
+  if (sdkDomain === 'sites') {
+    return stripped || normalizedOperationId;
+  }
   return stripped.includes('.') ? stripped : normalizedOperationId;
 }
 

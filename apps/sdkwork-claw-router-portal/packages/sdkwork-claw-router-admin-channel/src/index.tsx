@@ -78,13 +78,21 @@ import {
 import { AdminTableShell, BusinessStateTableRow, ConfirmDialog } from 'sdkwork-claw-router-commons';
 
 type ToastState = { message: string; type: 'success' | 'info' | 'error' } | null;
-type ModalMode = 'create' | 'copy' | 'edit';
+type AccountDrawerMode = 'create' | 'copy' | 'edit';
 type PendingChannelAction = 'test' | 'update' | 'delete';
 type AiResourceModalMode = 'create' | 'edit';
 type PendingAiResourceAction = 'status';
 type ChannelEndpointModalMode = 'create' | 'edit';
 type PendingChannelEndpointAction = 'status';
 type ChannelType = 'official' | 'relay';
+type AiResourceCategory = 'model' | 'image' | 'video' | 'audio' | 'music' | 'sfx' | 'api_resource';
+type CredentialFieldConfig = {
+  name: string;
+  labelKey: string;
+  placeholderKey: string;
+  secret?: boolean;
+  textarea?: boolean;
+};
 type DeleteConfirmation = {
   id: string;
   title: string;
@@ -149,8 +157,70 @@ const aiResourceStatusOptions: Array<AiResource['status']> = [
   'inactive',
 ];
 
+const credentialFieldSets: Record<string, CredentialFieldConfig[]> = {
+  'claude-code': [
+    { name: 'claudeCodeToken', labelKey: 'admin.channel.credentialFields.claudeCodeToken', placeholderKey: 'admin.channel.credentialPlaceholders.claudeCodeToken', secret: true },
+  ],
+  google: [
+    { name: 'googleApiKey', labelKey: 'admin.channel.credentialFields.googleApiKey', placeholderKey: 'admin.channel.credentialPlaceholders.googleApiKey', secret: true },
+    { name: 'googleServiceAccountJson', labelKey: 'admin.channel.credentialFields.googleServiceAccountJson', placeholderKey: 'admin.channel.credentialPlaceholders.googleServiceAccountJson', textarea: true },
+  ],
+  'oauth-gcp': [
+    { name: 'googleServiceAccountJson', labelKey: 'admin.channel.credentialFields.googleServiceAccountJson', placeholderKey: 'admin.channel.credentialPlaceholders.googleServiceAccountJson', textarea: true },
+    { name: 'googleProjectId', labelKey: 'admin.channel.credentialFields.googleProjectId', placeholderKey: 'admin.channel.credentialPlaceholders.googleProjectId' },
+    { name: 'googleLocation', labelKey: 'admin.channel.credentialFields.googleLocation', placeholderKey: 'admin.channel.credentialPlaceholders.googleLocation' },
+  ],
+  azure: [
+    { name: 'azureTenantId', labelKey: 'admin.channel.credentialFields.azureTenantId', placeholderKey: 'admin.channel.credentialPlaceholders.azureTenantId' },
+    { name: 'azureClientId', labelKey: 'admin.channel.credentialFields.azureClientId', placeholderKey: 'admin.channel.credentialPlaceholders.azureClientId' },
+    { name: 'azureClientSecret', labelKey: 'admin.channel.credentialFields.azureClientSecret', placeholderKey: 'admin.channel.credentialPlaceholders.azureClientSecret', secret: true },
+    { name: 'azureSubscriptionId', labelKey: 'admin.channel.credentialFields.azureSubscriptionId', placeholderKey: 'admin.channel.credentialPlaceholders.azureSubscriptionId' },
+  ],
+  'azure-ad': [
+    { name: 'azureOpenAiApiKey', labelKey: 'admin.channel.credentialFields.azureOpenAiApiKey', placeholderKey: 'admin.channel.credentialPlaceholders.azureOpenAiApiKey', secret: true },
+    { name: 'azureDeployment', labelKey: 'admin.channel.credentialFields.azureDeployment', placeholderKey: 'admin.channel.credentialPlaceholders.azureDeployment' },
+    { name: 'azureApiVersion', labelKey: 'admin.channel.credentialFields.azureApiVersion', placeholderKey: 'admin.channel.credentialPlaceholders.azureApiVersion' },
+  ],
+  'aws-bedrock': [
+    { name: 'awsAccessKeyId', labelKey: 'admin.channel.credentialFields.awsAccessKeyId', placeholderKey: 'admin.channel.credentialPlaceholders.awsAccessKeyId' },
+    { name: 'awsSecretAccessKey', labelKey: 'admin.channel.credentialFields.awsSecretAccessKey', placeholderKey: 'admin.channel.credentialPlaceholders.awsSecretAccessKey', secret: true },
+    { name: 'awsRegion', labelKey: 'admin.channel.credentialFields.awsRegion', placeholderKey: 'admin.channel.credentialPlaceholders.awsRegion' },
+    { name: 'awsSessionToken', labelKey: 'admin.channel.credentialFields.awsSessionToken', placeholderKey: 'admin.channel.credentialPlaceholders.awsSessionToken', secret: true },
+  ],
+  aliyun: [
+    { name: 'aliyunAccessKeyId', labelKey: 'admin.channel.credentialFields.aliyunAccessKeyId', placeholderKey: 'admin.channel.credentialPlaceholders.aliyunAccessKeyId' },
+    { name: 'aliyunAccessKeySecret', labelKey: 'admin.channel.credentialFields.aliyunAccessKeySecret', placeholderKey: 'admin.channel.credentialPlaceholders.aliyunAccessKeySecret', secret: true },
+    { name: 'aliyunRegion', labelKey: 'admin.channel.credentialFields.aliyunRegion', placeholderKey: 'admin.channel.credentialPlaceholders.aliyunRegion' },
+  ],
+  volcengine: [
+    { name: 'volcengineAccessKeyId', labelKey: 'admin.channel.credentialFields.volcengineAccessKeyId', placeholderKey: 'admin.channel.credentialPlaceholders.volcengineAccessKeyId' },
+    { name: 'volcengineSecretAccessKey', labelKey: 'admin.channel.credentialFields.volcengineSecretAccessKey', placeholderKey: 'admin.channel.credentialPlaceholders.volcengineSecretAccessKey', secret: true },
+    { name: 'volcengineRegion', labelKey: 'admin.channel.credentialFields.volcengineRegion', placeholderKey: 'admin.channel.credentialPlaceholders.volcengineRegion' },
+  ],
+  'tencent-cloud': [
+    { name: 'tencentSecretId', labelKey: 'admin.channel.credentialFields.tencentSecretId', placeholderKey: 'admin.channel.credentialPlaceholders.tencentSecretId' },
+    { name: 'tencentSecretKey', labelKey: 'admin.channel.credentialFields.tencentSecretKey', placeholderKey: 'admin.channel.credentialPlaceholders.tencentSecretKey', secret: true },
+    { name: 'tencentRegion', labelKey: 'admin.channel.credentialFields.tencentRegion', placeholderKey: 'admin.channel.credentialPlaceholders.tencentRegion' },
+  ],
+};
+
 function getLoadErrorMessage(error: unknown, fallback: string): string {
   return error instanceof Error && error.message ? error.message : fallback;
+}
+
+function aiResourceCategory(resource: AiResource | undefined): AiResourceCategory {
+  const modalityCode = resource?.modalityCode?.trim().toLowerCase();
+  if (modalityCode === 'image' || modalityCode === 'video' || modalityCode === 'audio' || modalityCode === 'music' || modalityCode === 'sfx') {
+    return modalityCode;
+  }
+  if (modalityCode === 'network') {
+    return 'api_resource';
+  }
+  return 'model';
+}
+
+function displayAiResourceCategory(resource: AiResource | undefined, t: ReturnType<typeof useTranslation>['t']): string {
+  return t(`admin.channel.aiResourceCategory.${aiResourceCategory(resource)}`);
 }
 
 function readPositiveIntegerFormValue(
@@ -319,11 +389,89 @@ function inferProtocolForVendor(vendor: string): string {
   return 'OpenAI';
 }
 
+function isApiKeyAuthType(authType: string): boolean {
+  return authType === 'api-key' || authType === 'openai';
+}
+
+function credentialSecretLabelKey(authType: string): string {
+  switch (authType) {
+    case 'claude-code':
+      return 'admin.channel.fields.claudeCodeCredential';
+    case 'google':
+    case 'oauth-gcp':
+      return 'admin.channel.fields.googleCredential';
+    case 'azure':
+    case 'azure-ad':
+      return 'admin.channel.fields.azureCredential';
+    case 'aws-bedrock':
+      return 'admin.channel.fields.awsCredential';
+    case 'aliyun':
+      return 'admin.channel.fields.aliyunCredential';
+    case 'volcengine':
+      return 'admin.channel.fields.volcengineCredential';
+    case 'tencent-cloud':
+      return 'admin.channel.fields.tencentCloudCredential';
+    default:
+      return 'admin.channel.fields.apiKey';
+  }
+}
+
+function credentialSecretPlaceholderKey(authType: string): string {
+  switch (authType) {
+    case 'claude-code':
+      return 'admin.channel.placeholders.claudeCodeCredential';
+    case 'google':
+    case 'oauth-gcp':
+      return 'admin.channel.placeholders.googleCredential';
+    case 'azure':
+    case 'azure-ad':
+      return 'admin.channel.placeholders.azureCredential';
+    case 'aws-bedrock':
+      return 'admin.channel.placeholders.awsCredential';
+    case 'aliyun':
+      return 'admin.channel.placeholders.aliyunCredential';
+    case 'volcengine':
+      return 'admin.channel.placeholders.volcengineCredential';
+    case 'tencent-cloud':
+      return 'admin.channel.placeholders.tencentCloudCredential';
+    default:
+      return 'admin.channel.placeholders.apiKey';
+  }
+}
+
+function credentialSecretRequiredMessageKey(authType: string): string {
+  return isApiKeyAuthType(authType)
+    ? 'admin.channel.validation.apiKeyRequiredForCreate'
+    : 'admin.channel.validation.credentialMaterialRequiredForCreate';
+}
+
+function credentialFieldsForAuthType(authType: string): CredentialFieldConfig[] {
+  return credentialFieldSets[authType] ?? [];
+}
+
+function buildCredentialMaterial(authType: string, formData: FormData): {
+  apiKey: string;
+  credentialFields?: Record<string, string>;
+} {
+  if (isApiKeyAuthType(authType)) {
+    return { apiKey: String(formData.get('apiKey') ?? '').trim() };
+  }
+  const credentialFields = Object.fromEntries(
+    credentialFieldsForAuthType(authType)
+      .map((field) => [field.name, String(formData.get(`credential:${field.name}`) ?? '').trim()] as const)
+      .filter((entry) => entry[1]),
+  );
+  return {
+    apiKey: '',
+    credentialFields: Object.keys(credentialFields).length > 0 ? credentialFields : undefined,
+  };
+}
+
 function areStringArraysEqual(left: readonly string[], right: readonly string[]): boolean {
   return left.length === right.length && left.every((value, index) => value === right[index]);
 }
 
-function AddAccountModal({
+function AddAccountDrawer({
   mode,
   initialValues,
   availableModels,
@@ -336,7 +484,7 @@ function AddAccountModal({
   onClose,
   onSubmit,
 }: {
-  mode: ModalMode;
+  mode: AccountDrawerMode;
   initialValues?: ChannelFormValues | null;
   availableModels: ChannelModelCatalogItem[];
   aiResources: AiResource[];
@@ -536,7 +684,7 @@ function AddAccountModal({
     const formData = new FormData(event.currentTarget);
     const name = String(formData.get('name') ?? '').trim();
     const baseUrl = String(formData.get('baseUrl') ?? '').trim();
-    const apiKey = String(formData.get('apiKey') ?? '').trim();
+    const credentialMaterial = buildCredentialMaterial(activeAuthType, formData);
     const expiresAt = String(formData.get('expiresAt') ?? '').trim();
     const models = whitelist.map((item) => item.trim()).filter(Boolean);
 
@@ -544,8 +692,8 @@ function AddAccountModal({
       setLocalError(t('admin.channel.validation.channelNameRequired'));
       return;
     }
-    if (!isEdit && !apiKey) {
-      setLocalError(t('admin.channel.validation.apiKeyRequiredForCreate'));
+    if (!isEdit && !credentialMaterial.apiKey && !credentialMaterial.credentialFields) {
+      setLocalError(t(credentialSecretRequiredMessageKey(activeAuthType)));
       return;
     }
     if (models.length === 0) {
@@ -566,7 +714,8 @@ function AddAccountModal({
         protocol: inferProtocolForVendor(modelVendor),
         accessType: resolveAuthTypeSubmitValue(activeAuthType, authTypesList),
         baseUrl,
-        apiKey,
+        apiKey: credentialMaterial.apiKey,
+        credentialFields: credentialMaterial.credentialFields,
         expiresAt,
         capabilities,
         resourceCodes: selectedResourceCodes,
@@ -581,10 +730,17 @@ function AddAccountModal({
     }
   };
 
+  const credentialSecretLabel = t(credentialSecretLabelKey(activeAuthType));
+  const credentialSecretPlaceholder = t(credentialSecretPlaceholderKey(activeAuthType));
+  const credentialSecretHelp = isApiKeyAuthType(activeAuthType)
+    ? t('admin.channel.help.apiKeyCredential')
+    : t('admin.channel.help.credentialMaterial');
+  const activeCredentialFields = credentialFieldsForAuthType(activeAuthType);
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm overflow-y-auto w-full">
+    <div className="fixed inset-0 z-50 flex justify-start bg-slate-900/50 backdrop-blur-sm" data-admin-channel-account-drawer>
       <div className="absolute inset-0" onClick={isSaving ? undefined : onClose} />
-      <div className="relative bg-white dark:bg-[#1a1a1a] border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl w-full max-w-6xl overflow-hidden flex flex-col my-4 h-[95vh] z-10">
+      <div className="relative flex h-full w-[80vw] max-w-[80vw] flex-col overflow-hidden border-r border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#1a1a1a] z-10">
         <div className="flex justify-between items-center p-5 border-b border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121212] shrink-0">
           <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide flex items-center gap-2">
             <Server className="w-5 h-5 text-emerald-500" />
@@ -605,8 +761,8 @@ function AddAccountModal({
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col flex-1 overflow-hidden h-full">
-          <div className="flex flex-col lg:flex-row flex-1 overflow-y-auto">
-            <div className="flex-1 p-5 space-y-5 lg:border-r border-slate-200 dark:border-white/10 overflow-y-auto custom-scrollbar">
+          <div className="flex min-h-0 flex-1 overflow-hidden">
+            <div className="min-w-0 flex-1 p-5 space-y-5 border-r border-slate-200 dark:border-white/10 overflow-y-auto custom-scrollbar">
               {localError && (
                 <div className="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300">
                   <AlertCircle className="h-4 w-4" />
@@ -739,26 +895,64 @@ function AddAccountModal({
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{t('admin.channel.fields.apiKey')}</label>
-                  <div className="relative">
-                    <input
-                      required={!isEdit}
-                      type={apiKeyVisible ? 'text' : 'password'}
-                      name="apiKey"
-                      autoComplete="off"
-                      placeholder={t('admin.channel.placeholders.apiKey')}
-                      className="w-full font-mono bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 pr-10 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
-                    />
+                  <label className="block text-sm text-slate-700 dark:text-slate-300 mb-2 font-medium">{credentialSecretLabel}</label>
+                  {isApiKeyAuthType(activeAuthType) ? (
+                    <div className="relative">
+                      <input
+                        type={apiKeyVisible ? 'text' : 'password'}
+                        name="apiKey"
+                        autoComplete="off"
+                        placeholder={credentialSecretPlaceholder}
+                        className="w-full font-mono bg-white dark:bg-black border border-slate-200 dark:border-white/10 focus:border-emerald-500 rounded-lg px-3 py-2 pr-10 text-sm text-slate-900 dark:text-white focus:outline-none transition-colors"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setApiKeyVisible((current) => !current)}
+                        title={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
+                        aria-label={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-slate-200"
+                      >
+                        {apiKeyVisible ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      {activeCredentialFields.map((field) => (
+                        <div key={field.name} className={field.textarea ? 'sm:col-span-2' : undefined}>
+                          <label className="mb-1 block text-xs font-medium text-slate-500 dark:text-slate-400">
+                            {t(field.labelKey)}
+                          </label>
+                          {field.textarea ? (
+                            <textarea
+                              name={`credential:${field.name}`}
+                              autoComplete="off"
+                              rows={4}
+                              placeholder={t(field.placeholderKey)}
+                              className="w-full resize-y rounded-lg border border-slate-200 bg-white px-3 py-2 font-mono text-xs text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                            />
+                          ) : (
+                            <input
+                              type={field.secret && !apiKeyVisible ? 'password' : 'text'}
+                              name={`credential:${field.name}`}
+                              autoComplete="off"
+                              placeholder={t(field.placeholderKey)}
+                              className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 transition-colors focus:border-emerald-500 focus:outline-none dark:border-white/10 dark:bg-black dark:text-white"
+                            />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{credentialSecretHelp}</p>
+                  {!isApiKeyAuthType(activeAuthType) && activeCredentialFields.some((field) => field.secret) && (
                     <button
                       type="button"
                       onClick={() => setApiKeyVisible((current) => !current)}
-                      title={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
-                      aria-label={apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-white/10 dark:hover:text-slate-200"
+                      className="mt-2 text-xs text-emerald-600 hover:underline dark:text-emerald-400"
                     >
-                      {apiKeyVisible ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      {apiKeyVisible ? t('admin.channel.actions.hideApiKey') : t('admin.channel.actions.showApiKey')}
                     </button>
-                  </div>
+                  )}
                 </div>
               </div>
 
@@ -838,7 +1032,7 @@ function AddAccountModal({
               </div>
             </div>
 
-            <div className="flex-1 space-y-4 overflow-y-auto bg-slate-50 px-6 py-4 dark:bg-transparent custom-scrollbar h-[70vh] lg:h-auto">
+            <div className="min-w-0 flex-1 space-y-4 overflow-y-auto bg-slate-50 px-6 py-4 dark:bg-transparent custom-scrollbar">
               <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-black">
                 <div className="mb-3 flex items-start justify-between gap-3">
                   <div>
@@ -1114,7 +1308,7 @@ function AddAccountModal({
                                 {resource && (
                                   <div className="mt-2 flex flex-wrap gap-1.5">
                                     <span className="rounded bg-white/80 px-1.5 py-0.5 text-[10px] font-medium text-slate-500 dark:bg-white/10 dark:text-slate-400">
-                                      {t(`admin.channel.aiResourceType.${resource.resourceType}`)}
+                                      {displayAiResourceCategory(resource ?? undefined, t)}
                                     </span>
                                     {resource.vendorCode && (
                                       <span className="rounded bg-blue-50 px-1.5 py-0.5 font-mono text-[10px] text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">
@@ -1163,7 +1357,7 @@ function AddAccountModal({
                                 </span>
                                 <span className="flex shrink-0 items-center gap-1 rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-medium text-slate-500 dark:bg-white/10 dark:text-slate-400">
                                   <Plus className="h-3 w-3" />
-                                  {t(`admin.channel.aiResourceType.${resource.resourceType}`)}
+                                  {displayAiResourceCategory(resource, t)}
                                 </span>
                               </span>
                               <span className="mt-2 flex flex-wrap gap-1.5">
@@ -1198,7 +1392,7 @@ function AddAccountModal({
             </div>
           </div>
 
-          <div className="p-4 border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121212] shrink-0 flex justify-end gap-3 rounded-b-2xl">
+          <div className="shrink-0 border-t border-slate-200 p-4 dark:border-white/10 bg-slate-50 dark:bg-[#121212] flex justify-end gap-3">
             <button
               type="button"
               onClick={onClose}
@@ -2291,7 +2485,7 @@ export function AiResourceAdmin() {
                     </td>
                     <td className="px-6 py-4 align-top">
                       <span className="rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600 dark:bg-white/10 dark:text-slate-300">
-                        {t(`admin.channel.aiResourceType.${resource.resourceType}`)}
+                        {displayAiResourceCategory(resource, t)}
                       </span>
                     </td>
                     <td className="px-6 py-4 align-top font-mono text-xs">{resource.vendorCode ?? '-'}</td>
@@ -2682,7 +2876,7 @@ export function ChannelAdmin() {
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState(1);
-  const [modalMode, setModalMode] = useState<ModalMode | null>(null);
+  const [modalMode, setModalMode] = useState<AccountDrawerMode | null>(null);
   const [editingChannel, setEditingChannel] = useState<ChannelItem | null>(null);
   const [channelFormDraft, setChannelFormDraft] = useState<ChannelFormValues | null>(null);
   const [viewingCredentialChannel, setViewingCredentialChannel] = useState<ChannelItem | null>(null);
@@ -3254,7 +3448,7 @@ export function ChannelAdmin() {
       </AdminTableShell>
 
       {modalMode && (
-        <AddAccountModal
+        <AddAccountDrawer
           mode={modalMode}
           initialValues={channelFormDraft}
           availableModels={modelCatalog}

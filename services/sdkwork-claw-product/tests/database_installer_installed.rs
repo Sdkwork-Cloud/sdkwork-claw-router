@@ -1,6 +1,11 @@
 use sdkwork_claw_product::infrastructure::sql::installer::{
     CatalogRefreshOptions, DatabaseInstallOptions, DatabaseInstaller, InstallationStatus,
 };
+use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminAiResourceStore;
+use sdkwork_claw_product::ports::{
+    AdminAiResourceStore, AdminAiResourceSubject, ListAdminAiResourceGroupResourcesQuery,
+    ListAdminAiResourceGroupsQuery,
+};
 use sdkwork_claw_product_test_support::installed_sqlite_pool;
 use sqlx::{Row, SqlitePool};
 use std::collections::{BTreeMap, BTreeSet};
@@ -216,6 +221,8 @@ async fn sqlite_installer_imports_bundled_ai_routing_seed_catalog() {
         "kling.image_to_video",
         "jimeng.video_generation",
         "volcengine.task_query",
+        "minimax.music_generation",
+        "vidu.reference_to_image",
     ] {
         assert!(
             endpoint_codes.contains(expected),
@@ -240,6 +247,166 @@ async fn sqlite_installer_imports_bundled_ai_routing_seed_catalog() {
     assert!(
         seeded_resource_count >= 50,
         "AI routing seed must install a complete vendor/modality/API resource catalog"
+    );
+
+    let admin_api_group_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource_group
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND group_type = 'api_group'
+          AND status = 1
+          AND deleted_at IS NULL
+          AND json_extract(metadata, '$.catalogCode') = 'sdkwork-ai-routing'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        21, admin_api_group_count,
+        "admin model resource management must seed exactly the 21 requested API groups"
+    );
+
+    let codex_group = sqlx::query(
+        r#"
+        SELECT id, group_name, description
+        FROM ai_resource_group
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND group_code = 'api.openai.codex'
+          AND group_type = 'api_group'
+          AND status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        "OpenAI Codex API",
+        codex_group.get::<String, _>("group_name")
+    );
+    assert_eq!(
+        "OpenAI Codex API resources.",
+        codex_group.get::<String, _>("description")
+    );
+
+    let codex_resource_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND resource_type = 'api_endpoint'
+          AND (
+              resource_code LIKE 'api.openai.codex.%'
+              OR resource_code IN ('api.openai.containers', 'api.openai.skills')
+          )
+          AND status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    let codex_group_item_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource_group_item
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND resource_group_id = ?
+          AND (
+              resource_code LIKE 'api.openai.codex.%'
+              OR resource_code IN ('api.openai.containers', 'api.openai.skills')
+          )
+          AND status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(codex_group.get::<i64, _>("id"))
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        codex_resource_count, codex_group_item_count,
+        "OpenAI Codex API group must include every bundled Codex API resource"
+    );
+
+    let all_api_group = sqlx::query(
+        r#"
+        SELECT id, selection_mode
+        FROM ai_resource_group
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND group_code = 'api.all'
+          AND group_type = 'api_group'
+          AND status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!("all", all_api_group.get::<String, _>("selection_mode"));
+
+    let bundled_api_resource_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND resource_type = 'api_endpoint'
+          AND status = 1
+          AND deleted_at IS NULL
+          AND json_extract(metadata, '$.catalogCode') = 'sdkwork-ai-routing'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+
+    let all_api_item_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource_group_item
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND resource_group_id = ?
+          AND status = 1
+          AND deleted_at IS NULL
+        "#,
+    )
+    .bind(all_api_group.get::<i64, _>("id"))
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        bundled_api_resource_count, all_api_item_count,
+        "api.all must persist a group item relationship for every bundled API endpoint resource"
+    );
+
+    let all_api_required_item_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource_group_item item
+        WHERE item.tenant_id = 0
+          AND item.organization_id = 0
+          AND item.resource_group_id = ?
+          AND item.resource_code IN ('api.minimax.music_generation', 'api.vidu.reference_to_image')
+          AND item.status = 1
+          AND item.deleted_at IS NULL
+        "#,
+    )
+    .bind(all_api_group.get::<i64, _>("id"))
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        2, all_api_required_item_count,
+        "api.all must include newly seeded Minimax music and Vidu image API resources"
     );
 
     let nullable_unique_key_count: i64 = sqlx::query_scalar(
@@ -345,6 +512,137 @@ async fn sqlite_installer_imports_bundled_ai_routing_seed_catalog() {
             "default admin channel endpoint seed must include {expected}"
         );
     }
+}
+
+#[tokio::test]
+async fn sqlite_ai_routing_seed_reimport_disables_removed_system_api_groups() {
+    let pool = installed_sqlite_pool().await;
+    sqlx::query(
+        r#"
+        INSERT INTO ai_resource_group
+            (uuid, tenant_id, organization_id, data_scope, status, metadata, group_code, group_name, group_type, selection_mode, description, sort_order)
+        VALUES
+            ('legacy-removed-api-group', 0, 0, 1, 1, '{"catalogCode":"sdkwork-ai-routing","itemType":"resource_group","itemCode":"api.legacy.removed"}', 'api.legacy.removed', 'Removed Legacy API', 'api_group', 'all', 'Removed legacy API resources.', 3)
+        ON CONFLICT(tenant_id, organization_id, group_code) DO UPDATE SET
+            status = 1,
+            deleted_at = NULL,
+            metadata = excluded.metadata,
+            group_name = excluded.group_name,
+            description = excluded.description
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+    sqlx::query(
+        r#"
+        UPDATE system_schema_migration
+        SET checksum = 'stale-ai-routing-checksum'
+        WHERE migration_key = 'ai-routing:2026.05.08.1'
+        "#,
+    )
+    .execute(&pool)
+    .await
+    .unwrap();
+
+    let report = installer(pool.clone()).ensure_installed().await.unwrap();
+    assert_eq!(InstallationStatus::Installed, report.status);
+
+    let legacy_active_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource_group
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND group_code = 'api.legacy.removed'
+          AND group_type = 'api_group'
+          AND status = 1
+          AND deleted_at IS NULL
+          AND json_extract(metadata, '$.catalogCode') = 'sdkwork-ai-routing'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(
+        0, legacy_active_count,
+        "AI routing seed reimport must disable removed system API groups"
+    );
+
+    let current_active_count: i64 = sqlx::query_scalar(
+        r#"
+        SELECT COUNT(1)
+        FROM ai_resource_group
+        WHERE tenant_id = 0
+          AND organization_id = 0
+          AND group_code = 'api.openai.codex'
+          AND group_name = 'OpenAI Codex API'
+          AND group_type = 'api_group'
+          AND status = 1
+          AND deleted_at IS NULL
+          AND json_extract(metadata, '$.catalogCode') = 'sdkwork-ai-routing'
+        "#,
+    )
+    .fetch_one(&pool)
+    .await
+    .unwrap();
+    assert_eq!(1, current_active_count);
+}
+
+#[tokio::test]
+async fn sqlite_installed_admin_ai_resource_store_exposes_seeded_api_groups_to_admin_subject() {
+    let pool = installed_sqlite_pool().await;
+    let store = SqliteAdminAiResourceStore::new(pool);
+    let subject = AdminAiResourceSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        operator_id: 30,
+        operator_type: 1,
+    };
+
+    let groups = store
+        .list_ai_resource_groups(ListAdminAiResourceGroupsQuery { subject })
+        .await
+        .unwrap();
+    assert_eq!(
+        21,
+        groups
+            .iter()
+            .filter(|group| group.group_type == "api_group")
+            .count(),
+        "resource management should see bundled system-level API groups after installation"
+    );
+    let api_all = groups
+        .iter()
+        .find(|group| group.group_code == "api.all")
+        .expect("api.all group should be visible to admin resource management");
+    assert_eq!("all", api_all.selection_mode);
+    assert!(!api_all.dynamic);
+    assert!(
+        api_all.resource_count >= 50,
+        "api.all should expose the installed API endpoint resources"
+    );
+
+    let resources = store
+        .list_ai_resource_group_resources(ListAdminAiResourceGroupResourcesQuery {
+            subject,
+            group_id_or_code: "api.all".to_owned(),
+        })
+        .await
+        .unwrap();
+    assert_eq!(api_all.resource_count as usize, resources.len());
+    assert!(
+        resources
+            .iter()
+            .any(|resource| resource.resource_code == "api.openai.chat_completions"),
+        "api.all should include OpenAI Chat API resource"
+    );
+    assert!(
+        resources
+            .iter()
+            .any(|resource| resource.resource_code == "api.minimax.music_generation"),
+        "api.all should include Minimax music API resource"
+    );
 }
 
 fn installer(pool: SqlitePool) -> DatabaseInstaller {

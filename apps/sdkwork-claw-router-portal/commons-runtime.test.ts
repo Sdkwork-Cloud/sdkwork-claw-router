@@ -597,12 +597,12 @@ test("console wallet uses recharge exchange wording and concise tabs", () => {
   assert.doesNotMatch(walletSource, /w-6 h-6 text-lobster-500/);
   assert.doesNotMatch(walletSource, /py-2 border-b border-slate-200/);
   assert.match(walletSource, /"兑换"/);
-  assert.match(walletSource, /"充值"/);
-  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.gd62li": "充值兑换"/);
+  assert.match(walletSource, /"充�?/);
+  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.gd62li": "充值兑�?/);
   assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.1iq97ql": "兑换"/);
-  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "充值"/);
+  assert.match(billingI18nSource, /"console\.billing\.billingview\.text\.1wlfhep": "充�?/);
   assert.match(rechargeI18nSource, /"console\.recharge\.tabs\.redeem": "兑换"/);
-  assert.match(rechargeI18nSource, /"console\.recharge\.tabs\.online": "充值"/);
+  assert.match(rechargeI18nSource, /"console\.recharge\.tabs\.online": "充�?/);
   assert.match(walletPackageJson, /"sdkwork-claw-router-console-recharge": "workspace:\*"/);
   assert.match(walletSource, /import \{ RechargePanel, RechargeRecordsTabs \} from 'sdkwork-claw-router-console-recharge';/);
   assert.match(walletSource, /const \[activeTab, setActiveTab\] = useState<'redeem' \| 'recharge'>\('redeem'\);/);
@@ -613,8 +613,8 @@ test("console wallet uses recharge exchange wording and concise tabs", () => {
   assert.doesNotMatch(walletSource, /historyTab === 'recharge'/);
   assert.doesNotMatch(walletSource, /<WalletHistoryTable/);
   assert.doesNotMatch(walletSource, /fetchRechargeHistory/);
-  assert.doesNotMatch(walletSource, /"钱包与充值"|"卡密兑换"/);
-  assert.doesNotMatch(rechargeSource, /"卡密兑换"|"在线充值"/);
+  assert.doesNotMatch(walletSource, /"钱包与充�?|"卡密兑换"/);
+  assert.doesNotMatch(rechargeSource, /"卡密兑换"|"在线充�?/);
   const legacyWalletMojibakePattern = new RegExp(
     [
       "\\u7490\\ufe3d\\u57db",
@@ -1301,4 +1301,14 @@ test("portal admin access check uses the generated backend SDK system status met
   assert.match(source, /system\.installation\.status\.retrieve\(\)/);
   assert.doesNotMatch(source, /system\.dashboardAdminOverviewRetrieve\(\)/);
   assert.doesNotMatch(source, /system\.dashboard\.admin\.overview\.retrieve/);
+});
+
+test("BusinessStatePanel resolves invalid or missing kind before reading style metadata", () => {
+  const source = readFileSync(new URL("./packages/sdkwork-claw-router-commons/src/components/BusinessState.tsx", import.meta.url), "utf8");
+
+  assert.match(source, /function resolveBusinessStateKind\(/);
+  assert.match(source, /const resolvedKind = resolveBusinessStateKind\(kind\)/);
+  assert.match(source, /const style = stateStyle\[resolvedKind\]/);
+  assert.doesNotMatch(source, /const style = stateStyle\[kind\]/);
+  assert.match(source, /aria-live=\{resolvedKind === 'loading' \? 'polite' : 'assertive'\}/);
 });

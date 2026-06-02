@@ -84,6 +84,7 @@ const client = new SdkworkBackendClient({
 - `client.system` - system API
 - `client.prompts` - prompts API
 - `client.serviceProviders` - service_providers API
+- `client.sites` - sites API
 - `client.oss` - oss API
 
 ## Usage Examples
@@ -230,6 +231,16 @@ const params = {
   edge_id: 'edge_id',
 };
 const result = await client.serviceProviders.adjustments.list(params);
+```
+
+### sites
+
+```typescript
+// List sites
+const params = {
+  q: 'q',
+};
+const result = await client.sites.siteCatalog.list(params);
 ```
 
 ### oss

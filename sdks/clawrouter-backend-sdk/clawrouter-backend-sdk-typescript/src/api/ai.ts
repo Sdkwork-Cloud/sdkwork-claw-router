@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelVendorCreateRequest, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult } from '../types';
+import type { AdminAiModelCreateRequest, AdminAiModelUpdateRequest, AdminAiResourceCreateRequest, AdminAiResourceGroupCreateRequest, AdminAiResourceGroupUpdateRequest, AdminAiResourceUpdateRequest, AdminChannelGroupChannelBindingsReplaceRequest, AdminChannelGroupCreateRequest, AdminChannelGroupUpdateRequest, AdminModelCatalogSyncRequest, AdminModelMappingCreateRequest, AdminModelMappingResolveRequest, AdminModelMappingUpdateRequest, AdminModelVendorCreateRequest, AiResourceGroupsCreateResult, AiResourceGroupsDeleteResult, AiResourceGroupsListResult, AiResourceGroupsResourcesListResult, AiResourceGroupsUpdateResult, AiResourcesCreateResult, AiResourcesListResult, AiResourcesUpdateResult, ChannelGroupsChannelBindingsListResult, ChannelGroupsChannelBindingsUpdateResult, ChannelGroupsCreateResult, ChannelGroupsDeleteResult, ChannelGroupsListResult, ChannelGroupsUpdateResult, ModelMappingsCreateResult, ModelMappingsDeleteResult, ModelMappingsListResult, ModelMappingsResolveCreateResult, ModelMappingsUpdateResult, ModelRankingRefreshTriggerRequest, ModelRankingsJobsListResult, ModelRankingsListResult, ModelRankingsRefreshResult, ModelRankingsStatusRetrieveResult, ModelsCreateResult, ModelsDeleteResult, ModelsListResult, ModelsRefreshResult, ModelsUpdateResult, ModelVendorsCreateResult, ModelVendorsListResult } from '../types';
 
 
 export class AiAiResourcesApi {
@@ -25,6 +25,51 @@ export class AiAiResourcesApi {
 /** Update ai resource */
   async update(resourceId: string, body: AdminAiResourceUpdateRequest): Promise<AiResourcesUpdateResult> {
     return this.client.put<AiResourcesUpdateResult>(backendApiPath(`/ai/resources/${serializePathParameter(resourceId, { name: 'resourceId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
+  }
+}
+
+export class AiAiResourceGroupsResourcesApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** List resource group resources */
+  async list(groupIdOrCode: string): Promise<AiResourceGroupsResourcesListResult> {
+    return this.client.get<AiResourceGroupsResourcesListResult>(backendApiPath(`/ai/resource_groups/${serializePathParameter(groupIdOrCode, { name: 'groupIdOrCode', style: 'simple', explode: false })}/resources`));
+  }
+}
+
+export class AiAiResourceGroupsApi {
+  private client: HttpClient;
+  public readonly resources: AiAiResourceGroupsResourcesApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.resources = new AiAiResourceGroupsResourcesApi(client);
+  }
+
+
+/** List resource groups */
+  async list(): Promise<AiResourceGroupsListResult> {
+    return this.client.get<AiResourceGroupsListResult>(backendApiPath(`/ai/resource_groups`));
+  }
+
+/** Create resource group */
+  async create(body: AdminAiResourceGroupCreateRequest): Promise<AiResourceGroupsCreateResult> {
+    return this.client.post<AiResourceGroupsCreateResult>(backendApiPath(`/ai/resource_groups`), body, undefined, undefined, 'application/json');
+  }
+
+/** Delete resource group */
+  async delete(groupId: string): Promise<AiResourceGroupsDeleteResult> {
+    return this.client.delete<AiResourceGroupsDeleteResult>(backendApiPath(`/ai/resource_groups/${serializePathParameter(groupId, { name: 'groupId', style: 'simple', explode: false })}`));
+  }
+
+/** Update resource group */
+  async update(groupId: string, body: AdminAiResourceGroupUpdateRequest): Promise<AiResourceGroupsUpdateResult> {
+    return this.client.patch<AiResourceGroupsUpdateResult>(backendApiPath(`/ai/resource_groups/${serializePathParameter(groupId, { name: 'groupId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
   }
 }
 
@@ -163,6 +208,64 @@ export class AiModelRankingsApi {
   }
 }
 
+export class AiModelMappingsResolveApi {
+  private client: HttpClient;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+  }
+
+
+/** Resolve model mapping */
+  async create(body: AdminModelMappingResolveRequest): Promise<ModelMappingsResolveCreateResult> {
+    return this.client.post<ModelMappingsResolveCreateResult>(backendApiPath(`/ai/model_mappings/resolve`), body, undefined, undefined, 'application/json');
+  }
+}
+
+export interface AiModelMappingsListParams {
+  scopeType?: string;
+  vendorCode?: string;
+  channelId?: string;
+  q?: string;
+}
+
+export class AiModelMappingsApi {
+  private client: HttpClient;
+  public readonly resolve: AiModelMappingsResolveApi;
+
+  constructor(client: HttpClient) {
+    this.client = client;
+    this.resolve = new AiModelMappingsResolveApi(client);
+  }
+
+
+/** List model mappings */
+  async list(params?: AiModelMappingsListParams): Promise<ModelMappingsListResult> {
+    const query = buildQueryString([
+      { name: 'scope_type', value: params?.scopeType, style: 'form', explode: true, allowReserved: false },
+      { name: 'vendor_code', value: params?.vendorCode, style: 'form', explode: true, allowReserved: false },
+      { name: 'channel_id', value: params?.channelId, style: 'form', explode: true, allowReserved: false },
+      { name: 'q', value: params?.q, style: 'form', explode: true, allowReserved: false },
+    ]);
+    return this.client.get<ModelMappingsListResult>(appendQueryString(backendApiPath(`/ai/model_mappings`), query));
+  }
+
+/** Create model mapping */
+  async create(body: AdminModelMappingCreateRequest): Promise<ModelMappingsCreateResult> {
+    return this.client.post<ModelMappingsCreateResult>(backendApiPath(`/ai/model_mappings`), body, undefined, undefined, 'application/json');
+  }
+
+/** Delete model mapping */
+  async delete(mappingId: string): Promise<ModelMappingsDeleteResult> {
+    return this.client.delete<ModelMappingsDeleteResult>(backendApiPath(`/ai/model_mappings/${serializePathParameter(mappingId, { name: 'mappingId', style: 'simple', explode: false })}`));
+  }
+
+/** Update model mapping */
+  async update(mappingId: string, body: AdminModelMappingUpdateRequest): Promise<ModelMappingsUpdateResult> {
+    return this.client.patch<ModelMappingsUpdateResult>(backendApiPath(`/ai/model_mappings/${serializePathParameter(mappingId, { name: 'mappingId', style: 'simple', explode: false })}`), body, undefined, undefined, 'application/json');
+  }
+}
+
 export class AiChannelGroupsChannelBindingsApi {
   private client: HttpClient;
 
@@ -216,17 +319,21 @@ export class AiChannelGroupsApi {
 export class AiApi {
   private client: HttpClient;
   public readonly channelGroups: AiChannelGroupsApi;
+  public readonly modelMappings: AiModelMappingsApi;
   public readonly modelRankings: AiModelRankingsApi;
   public readonly modelVendors: AiModelVendorsApi;
   public readonly models: AiModelsApi;
+  public readonly aiResourceGroups: AiAiResourceGroupsApi;
   public readonly aiResources: AiAiResourcesApi;
 
   constructor(client: HttpClient) {
     this.client = client;
     this.channelGroups = new AiChannelGroupsApi(client);
+    this.modelMappings = new AiModelMappingsApi(client);
     this.modelRankings = new AiModelRankingsApi(client);
     this.modelVendors = new AiModelVendorsApi(client);
     this.models = new AiModelsApi(client);
+    this.aiResourceGroups = new AiAiResourceGroupsApi(client);
     this.aiResources = new AiAiResourcesApi(client);
   }
 

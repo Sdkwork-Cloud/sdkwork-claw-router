@@ -78,7 +78,6 @@ type ExpectedChannelGroupRecord = {
 test("admin group create input does not fabricate client persistence ids", () => {
   const form = new FormData();
   form.set("groupName", " Default Enterprise ");
-  form.set("groupCode", " enterprise-default ");
   form.set("priceReferenceMode", "official_price");
   form.set("officialPriceMultiplier", "2.5");
   form.set("groupType", "dedicated");
@@ -89,7 +88,6 @@ test("admin group create input does not fabricate client persistence ids", () =>
 
   assert.deepEqual(input, {
     groupName: "Default Enterprise",
-    groupCode: "enterprise-default",
     priceReferenceMode: "official_price",
     officialPriceMultiplier: 2.5,
     groupType: "dedicated",
@@ -97,6 +95,7 @@ test("admin group create input does not fabricate client persistence ids", () =>
     status: "active",
   });
   assert.equal("id" in input, false);
+  assert.equal("groupCode" in input, false);
   assert.equal("accountCount" in input, false);
   assert.equal("usage" in input, false);
 });
@@ -104,7 +103,6 @@ test("admin group create input does not fabricate client persistence ids", () =>
 test("admin group create input rejects invalid numeric values instead of defaulting rates", () => {
   const form = new FormData();
   form.set("groupName", " Dedicated ");
-  form.set("groupCode", " dedicated ");
   form.set("priceReferenceMode", "multiplier");
   form.set("rateMultiplier", "not-a-number");
 
@@ -114,7 +112,6 @@ test("admin group create input rejects invalid numeric values instead of default
 test("admin group create form reads backend-supported capacity instead of hardcoding it", () => {
   const form = new FormData();
   form.set("groupName", " Enterprise Pool ");
-  form.set("groupCode", " enterprise-pool ");
   form.set("priceReferenceMode", "multiplier");
   form.set("rateMultiplier", "1.25");
   form.set("capacityTotal", "250");
@@ -125,6 +122,30 @@ test("admin group create form reads backend-supported capacity instead of hardco
   assert.equal(input.capacity.total, 250);
 });
 
+test("admin group create and update forms read resource access selections", () => {
+  const form = new FormData();
+  form.set("groupName", " Resource scoped group ");
+  form.set("priceReferenceMode", "multiplier");
+  form.set("rateMultiplier", "1.25");
+  form.set("capacityTotal", "250");
+  form.set("groupType", "public");
+  form.set("status", "active");
+  form.append("resourceGroupCodes", " api.openai.chat ");
+  form.append("resourceGroupCodes", "api.google.image");
+  form.append("resourceGroupCodes", "api.openai.chat");
+  form.append("resourceCodes", " api.openai.chat_completions ");
+  form.append("resourceCodes", "api.openai.responses");
+  form.append("resourceCodes", "api.openai.chat_completions");
+
+  const createInput = createGroupInputFromForm(form);
+  const updateInput = createGroupUpdateInputFromForm(form);
+
+  assert.deepEqual(createInput.resourceGroupCodes, ["api.openai.chat", "api.google.image"]);
+  assert.deepEqual(createInput.resourceCodes, ["api.openai.chat_completions", "api.openai.responses"]);
+  assert.deepEqual(updateInput.resourceGroupCodes, ["api.openai.chat", "api.google.image"]);
+  assert.deepEqual(updateInput.resourceCodes, ["api.openai.chat_completions", "api.openai.responses"]);
+});
+
 test("admin group create modal uses ai channel group billing modes and removes the platform selector", () => {
   const source = readFileSync(
     new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
@@ -133,13 +154,21 @@ test("admin group create modal uses ai channel group billing modes and removes t
 
   assert.match(source, /<option[^>]*value="multiplier">/);
   assert.match(source, /<option[^>]*value="official_price">/);
-  assert.match(source, /name="groupCode"/);
+  assert.match(source, /t\('admin\.group\.priceReferenceMode\.multiplier'\)/);
+  assert.match(source, /t\('admin\.group\.priceReferenceMode\.officialPrice'\)/);
+  assert.match(source, /t\('admin\.group\.fields\.officialPriceMultiplier'\)/);
+  assert.match(source, /t\('admin\.group\.groupType\.public'\)/);
+  assert.match(source, /t\('admin\.group\.groupType\.dedicated'\)/);
+  assert.match(source, /t\('common\.status\.active'\)/);
+  assert.match(source, /t\('common\.status\.disabled'\)/);
+  assert.doesNotMatch(source, /name="groupCode"/);
   assert.match(source, /name="groupName"/);
   assert.match(source, /name="groupType"/);
   assert.match(source, /name="priceReferenceMode"/);
   assert.doesNotMatch(source, /name="platform"/);
   assert.doesNotMatch(source, /name="billingType"/);
   assert.doesNotMatch(source, /name="isPublic"/);
+  assert.doesNotMatch(source, /Official price multiplier/);
   assert.match(source, /name="capacityTotal" type="number"[^>]*min="1"[^>]*step="1"/);
   assert.match(source, /name="rateMultiplier" type="number"[^>]*min="0\.01"/);
   assert.match(source, /name="officialPriceMultiplier" type="number"[^>]*min="0\.01"/);
@@ -149,6 +178,124 @@ test("admin group create modal uses ai channel group billing modes and removes t
   for (const unsupportedControl of ["OAuth account only", "privacy protected account only"]) {
     assert.doesNotMatch(source, new RegExp(unsupportedControl), `${unsupportedControl} is not supported by the backend command`);
   }
+});
+
+test("admin group create modal uses a two-column resource access layout with reusable selectors", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "data-admin-group-modal-layout",
+    "data-admin-group-resource-access",
+    "data-admin-group-resource-access-tabs",
+    "ResourceGroupSelectorModal",
+    "AiResourceSelectorModal",
+    "selectionMode=\"multiple\"",
+    "resourceAccessTab",
+    "resourceGroupCodes",
+    "resourceCodes",
+    "GroupService.fetchAssignableResourceGroups",
+    "GroupService.fetchAssignableResources",
+    "admin.group.resourceAccess.title",
+    "admin.group.resourceAccess.tabs.resourceGroups",
+    "admin.group.resourceAccess.tabs.resources",
+  ]) {
+    assert.ok(source.includes(expected), `missing resource access modal marker: ${expected}`);
+  }
+
+  assert.match(source, /<input\s+type="hidden"\s+name="resourceGroupCodes"/);
+  assert.match(source, /<input\s+type="hidden"\s+name="resourceCodes"/);
+});
+
+test("admin group resource selectors support configurable single or multiple selection", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.ok(source.includes("type ResourceSelectorSelectionMode = 'single' | 'multiple'"));
+  assert.match(source, /selectionMode = 'single'/);
+  assert.match(source, /selectionMode\?: ResourceSelectorSelectionMode/);
+  assert.match(source, /type=\{selectionMode === 'multiple' \? 'checkbox' : 'radio'\}/);
+  assert.match(source, /toggleSelectionCode\(selectedCodes, code, selectionMode\)/);
+  assert.match(source, /selectionMode="multiple"/);
+});
+
+test("admin group resource selectors provide searchable modal lists with selected count in the footer", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "data-admin-group-resource-group-selector-search",
+    "data-admin-group-resource-selector-search",
+    "resourceGroupSearchQuery",
+    "resourceSearchQuery",
+    "filteredResourceGroupOptions",
+    "filteredResourceOptions",
+    "admin.group.resourceAccess.search.resourceGroupsPlaceholder",
+    "admin.group.resourceAccess.search.resourcesPlaceholder",
+    "admin.group.resourceAccess.emptyResourceGroupsSearch",
+    "admin.group.resourceAccess.emptyResourcesSearch",
+  ]) {
+    assert.ok(source.includes(expected), `missing resource selector search marker: ${expected}`);
+  }
+
+  assert.match(source, /<SelectorFooter[\s\S]*count=\{selectedCodes\.length\}[\s\S]*onClose=\{onClose\}/);
+  assert.match(source, /function SelectorFooter\(\{\s*count,\s*onClose,\s*t,\s*\}/);
+  assert.match(source, /justify-between[\s\S]*admin\.group\.resourceAccess\.selectedCount[\s\S]*common\.actions\.done/);
+  const headerSource = source.slice(source.indexOf("function SelectorHeader"), source.indexOf("function SelectorState"));
+  assert.doesNotMatch(headerSource, /selectedCount/);
+});
+
+test("admin group selected resource access rows support removal and detail dialogs", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "type ResourceAccessSummaryItem",
+    "resourceAccessDetailTarget",
+    "setResourceAccessDetailTarget",
+    "removeSelectedResourceGroupCode",
+    "removeSelectedResourceCode",
+    "openResourceAccessDetail",
+    "ResourceAccessDetailModal",
+    "data-admin-group-selected-resource-row",
+    "data-admin-group-selected-resource-group-row",
+    "data-admin-group-selected-ai-resource-row",
+    "data-admin-group-resource-access-detail-modal",
+    "admin.group.resourceAccess.actions.details",
+    "admin.group.resourceAccess.actions.remove",
+    "admin.group.resourceAccess.detail.resourceGroupTitle",
+    "admin.group.resourceAccess.detail.resourceTitle",
+  ]) {
+    assert.ok(source.includes(expected), `missing selected resource access row marker: ${expected}`);
+  }
+
+  assert.match(source, /selectedResourceGroupCodes\.map\(code => toResourceGroupSummaryItem/);
+  assert.match(source, /selectedResourceCodes\.map\(code => toAiResourceSummaryItem/);
+  assert.match(source, /onRemove=\{removeSelectedResourceGroupCode\}/);
+  assert.match(source, /onRemove=\{removeSelectedResourceCode\}/);
+  assert.match(source, /onDetail=\{openResourceAccessDetail\}/);
+});
+
+test("admin group create modal does not display group code and the main list omits provider column", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(source, /t\("admin\.group\.index\.text\.1t62v98", "Group code"\)/);
+  assert.doesNotMatch(source, /editingGroup\?\.groupCode/);
+  assert.doesNotMatch(source, /<span className="text-xs font-mono text-slate-500">\{group\.groupCode\}<\/span>/);
+  assert.doesNotMatch(source, /t\("admin\.group\.index\.text\.ah7xpy", "Provider"\)/);
+  assert.doesNotMatch(source, /<Settings className="w-3\.5 h-3\.5" \/> \{group\.providerCode\}/);
+  assert.match(source, /BusinessStateTableRow colSpan=\{9\}/);
 });
 
 test("admin group edit modal select controls keep readable option colors in dark mode", () => {
@@ -166,8 +313,23 @@ test("admin group edit modal select controls keep readable option colors in dark
   }
   assert.match(source, /const groupSelectClassName = '[^']*bg-white[^']*text-slate-900[^']*dark:bg-\[#202020\][^']*dark:text-white[^']*';/);
   assert.match(source, /const groupOptionClassName = 'bg-white text-slate-900 dark:bg-\[#202020\] dark:text-white';/);
-  assert.match(source, /<option className=\{groupOptionClassName\} value="multiplier">/);
-  assert.match(source, /<option className=\{groupOptionClassName\} value="public">/);
+  assert.match(source, /<option className=\{groupOptionClassName\} value="multiplier">\{t\('admin\.group\.priceReferenceMode\.multiplier'\)\}<\/option>/);
+  assert.match(source, /<option className=\{groupOptionClassName\} value="public">\{t\('admin\.group\.groupType\.public'\)\}<\/option>/);
+});
+
+test("admin group list labels enum values through i18n helpers", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /displayGroupPriceReferenceMode\(group\.priceReferenceMode, t\)/);
+  assert.match(source, /displayGroupType\(group\.groupType, t\)/);
+  assert.match(source, /displayGroupStatus\(group\.status, t\)/);
+  assert.match(source, /function displayGroupPriceReferenceMode/);
+  assert.match(source, /admin\.group\.priceReferenceMode\.officialPrice/);
+  assert.match(source, /admin\.group\.groupType\.dedicated/);
+  assert.match(source, /common\.status\.disabled/);
 });
 
 test("admin group table actions are wired to real supported workflows", () => {
@@ -205,6 +367,40 @@ test("admin group page exposes channel account binding management", () => {
     assert.ok(source.includes(expected), `missing group channel binding UI marker: ${expected}`);
   }
   assert.doesNotMatch(source, /secretRef/i);
+});
+
+test("admin group page exposes sales price settings by abstract resource category", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/index.tsx", import.meta.url),
+    "utf8",
+  );
+  const messages = readFileSync(
+    new URL("./packages/sdkwork-claw-router-i18n/src/resources/admin/group-user.ts", import.meta.url),
+    "utf8",
+  );
+
+  for (const expected of [
+    "openPriceSettingsDrawer",
+    "data-admin-group-price-settings-drawer",
+    "admin.group.priceSettings.action",
+    "admin.group.priceSettings.title",
+    "admin.group.priceSettings.scope.category",
+    "admin.group.priceSettings.formula.officialMultiplier",
+    "admin.group.priceSettings.resourceCategory.model",
+    "admin.group.priceSettings.resourceCategory.image",
+    "admin.group.priceSettings.resourceCategory.video",
+    "admin.group.priceSettings.resourceCategory.audio",
+    "admin.group.priceSettings.resourceCategory.music",
+    "admin.group.priceSettings.resourceCategory.sfx",
+    "admin.group.priceSettings.resourceCategory.api_resource",
+  ]) {
+    assert.ok(source.includes(expected) || messages.includes(expected), `missing group price settings marker: ${expected}`);
+  }
+
+  assert.match(source, /const pricingResourceCategories = \[/);
+  assert.match(source, /defaultFormulaMode: 'official_multiplier'/);
+  assert.match(source, /defaultMultiplier: 1/);
+  assert.match(source, /<Coins className="w-4 h-4" \/> <span>\{t\('admin\.group\.priceSettings\.action'\)\}<\/span>/);
 });
 
 test("admin group channel binding drawer manages only current group accounts by default", () => {
@@ -329,7 +525,6 @@ test("admin group page keeps existing rows visible when a refresh reports a load
 test("admin group update input does not reuse returned group view model", () => {
   const form = new FormData();
   form.set("groupName", " Enterprise Tier ");
-  form.set("groupCode", " enterprise-tier ");
   form.set("priceReferenceMode", "multiplier");
   form.set("rateMultiplier", "1.75");
   form.set("capacityTotal", "100");
@@ -340,7 +535,6 @@ test("admin group update input does not reuse returned group view model", () => 
 
   assert.deepEqual(input, {
     groupName: "Enterprise Tier",
-    groupCode: "enterprise-tier",
     priceReferenceMode: "multiplier",
     rateMultiplier: 1.75,
     groupType: "public",
@@ -428,12 +622,13 @@ test("admin group service calls generated backend SDK paths and normalizes ai ch
       const groups = await GroupService.fetchGroups() as unknown as ExpectedChannelGroupRecord[];
       const created = await GroupService.addGroup({
         groupName: " Created Group ",
-        groupCode: " created-group ",
         priceReferenceMode: "multiplier",
         rateMultiplier: 1.25,
         groupType: "public",
         capacity: { total: 100 },
         status: "active",
+        resourceGroupCodes: ["api.openai.chat", "api.google.image"],
+        resourceCodes: ["api.openai.chat_completions"],
       } as never);
       const updated = await GroupService.updateGroup("group-2", {
         groupName: " Updated Group ",
@@ -442,6 +637,8 @@ test("admin group service calls generated backend SDK paths and normalizes ai ch
         groupType: "dedicated",
         capacity: { total: 150 },
         status: "disabled",
+        resourceGroupCodes: ["api.openai.codex"],
+        resourceCodes: ["api.openai.responses", "api.openai.containers"],
       } as never);
       const deleted = await GroupService.deleteGroup("group-2");
 
@@ -461,20 +658,125 @@ test("admin group service calls generated backend SDK paths and normalizes ai ch
           "DELETE /backend/v3/api/ai/channel_groups/group-2",
         ],
       );
-      assert.deepEqual(JSON.parse(captured[1].body), {
+      const createBody = JSON.parse(captured[1].body) as Record<string, unknown>;
+      assert.match(String(createBody.groupCode), /^group-[a-z0-9-]{12,64}$/);
+      assert.deepEqual(
+        Object.fromEntries(Object.entries(createBody).filter(([key]) => key !== "groupCode")),
+        {
         groupName: "Created Group",
-        groupCode: "created-group",
         priceReferenceMode: "multiplier",
         rateMultiplier: 1.25,
         groupType: "public",
         capacity: { total: 100 },
         status: "active",
+        resourceGroupCodes: ["api.openai.chat", "api.google.image"],
+        resourceCodes: ["api.openai.chat_completions"],
+        },
+      );
+      assert.deepEqual(JSON.parse(captured[2].body), {
+        groupName: "Updated Group",
+        priceReferenceMode: "official_price",
+        officialPriceMultiplier: 1.5,
+        groupType: "dedicated",
+        capacity: { total: 150 },
+        status: "disabled",
+        resourceGroupCodes: ["api.openai.codex"],
+        resourceCodes: ["api.openai.responses", "api.openai.containers"],
       });
       for (const request of captured) {
         assert.equal(request.headers["x-request-id"], undefined);
       }
     },
   );
+});
+
+test("admin group service normalizes assignable resource group and resource options", async () => {
+  await withBackendSdkFetch(
+    (url, init) => {
+      const method = init?.method ?? "GET";
+      if (url === "/backend/v3/api/ai/resource_groups" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "resource-group-1",
+              groupCode: "api.openai.codex",
+              groupName: "OpenAI Codex API",
+              groupType: "api_group",
+              selectionMode: "any",
+              description: "Codex and code agent resources",
+              resourceCount: "3",
+              status: "active",
+            },
+          ],
+        };
+      }
+      if (url === "/backend/v3/api/ai/resources" && method === "GET") {
+        return {
+          items: [
+            {
+              id: "resource-1",
+              resourceCode: "api.openai.responses",
+              resourceType: "api_endpoint",
+              displayName: "OpenAI Responses API",
+              vendorCode: "openai",
+              modalityCode: "llm",
+              apiEndpointCode: "responses",
+              catalogKey: "openai.responses",
+              model: "gpt-5",
+              providerNativeModel: "gpt-5",
+              status: "active",
+            },
+          ],
+        };
+      }
+      throw new Error(`Unexpected SDK request ${method} ${url}`);
+    },
+    async (captured) => {
+      const resourceGroups = await GroupService.fetchAssignableResourceGroups();
+      const resources = await GroupService.fetchAssignableResources();
+
+      assert.deepEqual(resourceGroups[0], {
+        id: "resource-group-1",
+        groupCode: "api.openai.codex",
+        groupName: "OpenAI Codex API",
+        groupType: "api_group",
+        selectionMode: "any",
+        description: "Codex and code agent resources",
+        resourceCount: 3,
+        status: "active",
+      });
+      assert.deepEqual(resources[0], {
+        id: "resource-1",
+        resourceCode: "api.openai.responses",
+        resourceType: "api_endpoint",
+        displayName: "OpenAI Responses API",
+        vendorCode: "openai",
+        modalityCode: "llm",
+        apiEndpointCode: "responses",
+        catalogKey: "openai.responses",
+        model: "gpt-5",
+        providerNativeModel: "gpt-5",
+        status: "active",
+      });
+      assert.deepEqual(
+        captured.map((request) => `${request.method} ${request.url}`),
+        [
+          "GET /backend/v3/api/ai/resource_groups",
+          "GET /backend/v3/api/ai/resources",
+        ],
+      );
+    },
+  );
+});
+
+test("admin group runtime does not generate business identifiers with Math.random", () => {
+  const source = readFileSync(
+    new URL("./packages/sdkwork-claw-router-admin-group/src/groupService.ts", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(source, /Math\.random/);
+  assert.match(source, /crypto\.randomUUID/);
 });
 
 test("admin group service manages channel bindings through generated backend SDK paths", async () => {
@@ -580,7 +882,6 @@ test("admin group service rejects invalid command values before calling backend 
       await assert.rejects(
         () =>
           GroupService.addGroup({
-            groupCode: "default",
             groupName: " ",
             priceReferenceMode: "multiplier",
             rateMultiplier: 1,
@@ -594,7 +895,6 @@ test("admin group service rejects invalid command values before calling backend 
         () =>
           GroupService.addGroup({
             groupName: "Invalid Capacity",
-            groupCode: "invalid-capacity",
             priceReferenceMode: "multiplier",
             rateMultiplier: 1,
             groupType: "public",
@@ -607,7 +907,6 @@ test("admin group service rejects invalid command values before calling backend 
         () =>
           GroupService.addGroup({
             groupName: "Fractional Capacity",
-            groupCode: "fractional-capacity",
             priceReferenceMode: "multiplier",
             rateMultiplier: 1,
             groupType: "public",
@@ -628,7 +927,6 @@ test("admin group service rejects invalid command values before calling backend 
         () =>
           GroupService.addGroup({
             groupName: "Invalid Billing",
-            groupCode: "invalid-billing",
             priceReferenceMode: "enterprise",
             rateMultiplier: 1,
             groupType: "public",
@@ -641,7 +939,6 @@ test("admin group service rejects invalid command values before calling backend 
         () =>
           GroupService.addGroup({
             groupName: "Invalid Type",
-            groupCode: "invalid-type",
             priceReferenceMode: "multiplier",
             rateMultiplier: 1,
             groupType: "private" as never,

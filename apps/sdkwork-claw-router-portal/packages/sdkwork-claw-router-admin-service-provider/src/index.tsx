@@ -44,6 +44,7 @@ import {
   DEFAULT_SERVICE_PROVIDER_DOWNSTREAM_FORM,
   DEFAULT_SERVICE_PROVIDER_PRICING_RULE_CREATE_FORM,
   DEFAULT_SERVICE_PROVIDER_PRICING_RULE_UPDATE_FORM,
+  SERVICE_PROVIDER_PRICE_RESOURCE_CATEGORIES,
   type ServiceProviderDownstreamFormState,
   type ServiceProviderPricingRuleCreateFormState,
   type ServiceProviderPricingRuleUpdateFormState,
@@ -333,7 +334,7 @@ export function ServiceProviderAdmin({ sectionId }: ServiceProviderAdminProps) {
             />
             <ServiceProviderAdminInput
               inputMode="decimal"
-              label={t('admin.serviceProvider.form.defaultMultiplier', 'Default multiplier')}
+              label={t('admin.serviceProvider.form.defaultMultiplier', 'Official price multiplier')}
               onChange={(defaultMultiplier) => setDownstreamForm((current) => ({ ...current, defaultMultiplier }))}
               value={downstreamForm.defaultMultiplier}
             />
@@ -488,8 +489,36 @@ function ServiceProviderPricingRuleCreateFields({
   onChange: (patch: Partial<ServiceProviderPricingRuleCreateFormState>) => void;
   t: ReturnType<typeof useTranslation>['t'];
 }) {
+  const handleResourceCategoryChange = (resourceCategory: string) => {
+    const category = SERVICE_PROVIDER_PRICE_RESOURCE_CATEGORIES.find(
+      (item) => item.id === resourceCategory,
+    );
+    if (!category) {
+      return;
+    }
+    onChange({
+      resourceCategory: category.id,
+      billingMeterCode: category.defaultBillingMeterCode,
+      tokenKind: category.defaultTokenKind,
+      unitSize: category.defaultUnitSize,
+    });
+  };
+
   return (
     <>
+      <ServiceProviderAdminSelect
+        dataAttribute="pricing-resource-category"
+        label={t('admin.serviceProvider.form.resourceCategory', 'Resource category')}
+        onChange={handleResourceCategoryChange}
+        options={SERVICE_PROVIDER_PRICE_RESOURCE_CATEGORIES.map((category) => ({
+          label: t(`admin.serviceProvider.pricing.resourceCategory.${category.id}`),
+          value: category.id,
+        }))}
+        value={form.resourceCategory}
+      />
+      <div className="md:col-span-2 rounded-lg border border-blue-100 bg-blue-50 px-3 py-2 text-xs leading-5 text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-200">
+        {t('admin.serviceProvider.pricing.methodHint.specifiedUnitPrice', 'Persist a concrete access cost for the selected resource category, meter, and optional model/API resource. Official-price multipliers are configured on the upstream account or sales price group.')}
+      </div>
       <ServiceProviderAdminInput label={t('admin.serviceProvider.form.sellerProviderId', 'Seller provider ID')} onChange={(sellerProviderId) => onChange({ sellerProviderId })} required value={form.sellerProviderId} />
       <ServiceProviderAdminInput label={t('admin.serviceProvider.form.buyerProviderId', 'Buyer provider ID')} onChange={(buyerProviderId) => onChange({ buyerProviderId })} required value={form.buyerProviderId} />
       <ServiceProviderAdminInput label={t('admin.serviceProvider.form.edgeId', 'Edge ID')} onChange={(edgeId) => onChange({ edgeId })} value={form.edgeId} />
@@ -582,14 +611,16 @@ function ServiceProviderChainFilterInput({
 }
 
 function ServiceProviderAdminSelect({
+  dataAttribute,
   label,
   onChange,
   options,
   value,
 }: {
+  dataAttribute?: string;
   label: string;
   onChange: (value: string) => void;
-  options: string[];
+  options: Array<string | { label: string; value: string }>;
   value: string;
 }) {
   return (
@@ -597,14 +628,19 @@ function ServiceProviderAdminSelect({
       <span className="font-medium text-slate-700 dark:text-slate-300">{label}</span>
       <select
         className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition-colors focus:border-blue-500 dark:border-white/10 dark:bg-[#1e1e1e] dark:text-white"
+        data-admin-service-provider-pricing-resource-category={dataAttribute === 'pricing-resource-category' ? true : undefined}
         onChange={(event) => onChange(event.target.value)}
         value={value}
       >
-        {options.map((option) => (
-          <option key={option || 'blank'} value={option}>
-            {option || '-'}
-          </option>
-        ))}
+        {options.map((option) => {
+          const optionValue = typeof option === 'string' ? option : option.value;
+          const optionLabel = typeof option === 'string' ? option : option.label;
+          return (
+            <option key={optionValue || 'blank'} value={optionValue}>
+              {optionLabel || '-'}
+            </option>
+          );
+        })}
       </select>
     </label>
   );

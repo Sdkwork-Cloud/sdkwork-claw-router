@@ -562,7 +562,6 @@ class CommerceStandardTest(unittest.TestCase):
         account_request_schema = backend_schemas.get("CommercePaymentProviderAccountMutationRequest", {})
         self.assertEqual(
             [
-                "accountNo",
                 "providerCode",
                 "merchantId",
                 "environment",
@@ -617,19 +616,20 @@ class CommerceStandardTest(unittest.TestCase):
         self.assertNotIn("metadata", service)
 
         self.assertIn("toPaymentProviderAccountRequest", view)
-        self.assertIn("const accountNo = requiredText(form.generatedAccountNo, 'accountNo')", view)
-        self.assertIn("accountNo,", view)
+        self.assertNotIn("generatedAccountNo", view)
+        self.assertNotIn("createGeneratedPaymentProviderAccountNo", view)
+        self.assertNotIn("const accountNo = requiredText(form.generatedAccountNo, 'accountNo')", view)
+        self.assertNotIn("accountNo,", view)
         self.assertIn("const providerCode = requiredPaymentProviderCode(form.providerCode)", view)
         self.assertIn("providerCode,", view)
         self.assertIn("const environment = requiredPaymentEnvironment(form.environment)", view)
         self.assertIn("environment,", view)
         self.assertIn("status: requiredPaymentStatus(form.status)", view)
         self.assertIn("const profile = resolvePaymentProviderCredentialProfile(providerCode, form.credentialMode)", view)
-        self.assertIn("resolvePaymentCredentialSecretRef(form, profile, accountNo, providerCode, environment)", view)
-        self.assertIn("resolvePaymentCertificateRef(form, profile, accountNo, providerCode, environment)", view)
-        self.assertIn("resolvePaymentWebhookSecretRef(form, profile, accountNo, providerCode, environment)", view)
+        self.assertIn("resolvePaymentCredentialSecretRef(form, profile, providerCode, environment)", view)
+        self.assertIn("resolvePaymentCertificateRef(form, profile, providerCode, environment)", view)
+        self.assertIn("resolvePaymentWebhookSecretRef(form, profile, providerCode, environment)", view)
         self.assertIn("profile.secretPurpose", view)
-        self.assertIn("createGeneratedPaymentProviderAccountNo", view)
 
         for required_column_key in [
             "providerCode",

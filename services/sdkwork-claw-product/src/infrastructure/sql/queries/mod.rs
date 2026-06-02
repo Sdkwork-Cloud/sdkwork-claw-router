@@ -20,6 +20,7 @@ impl PricingCatalogSql {
             Self::load_provider_channel_routes(),
             Self::load_routing_policies(),
             Self::load_routing_rules(),
+            Self::load_model_mappings(),
             Self::load_access_policies(),
             Self::load_quota_policies(),
             Self::load_channel_group_metric_snapshots(),

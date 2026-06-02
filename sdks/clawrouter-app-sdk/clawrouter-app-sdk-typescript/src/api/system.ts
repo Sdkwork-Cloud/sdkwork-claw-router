@@ -1,42 +1,8 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { IamRuntimeRetrieveResult, IamVerificationPolicyRetrieveResult, PromotionCodeRedemptionRequest, PromotionCommandRequest, PromotionsCodesRedemptionsCreateResult, PromotionsDiscountApplicationsCreateResult, PromotionsDiscountApplicationsReleaseResult, PromotionsDiscountApplicationsReversalsCreateResult, PromotionsDiscountApplicationsSettleResult, PromotionsUserCouponsClaimsCreateResult, PromotionsUserCouponsWalletListResult, SiteRuntimeRetrieveResult } from '../types';
+import type { IamRuntimeRetrieveResult, IamVerificationPolicyRetrieveResult, PromotionCodeRedemptionRequest, PromotionCommandRequest, PromotionsCodesRedemptionsCreateResult, PromotionsDiscountApplicationsCreateResult, PromotionsDiscountApplicationsReleaseResult, PromotionsDiscountApplicationsReversalsCreateResult, PromotionsDiscountApplicationsSettleResult, PromotionsUserCouponsClaimsCreateResult, PromotionsUserCouponsWalletListResult } from '../types';
 
-
-export interface SystemSiteRuntimeRetrieveParams {
-  tenantCode?: string;
-  organizationCode?: string;
-}
-
-export class SystemSiteRuntimeApi {
-  private client: HttpClient;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-  }
-
-
-/** Retrieve public site runtime branding settings */
-  async retrieve(params?: SystemSiteRuntimeRetrieveParams): Promise<SiteRuntimeRetrieveResult> {
-    const query = buildQueryString([
-      { name: 'tenant_code', value: params?.tenantCode, style: 'form', explode: true, allowReserved: false },
-      { name: 'organization_code', value: params?.organizationCode, style: 'form', explode: true, allowReserved: false },
-    ]);
-    return this.client.get<SiteRuntimeRetrieveResult>(appendQueryString(appApiPath(`/system/site/runtime`), query));
-  }
-}
-
-export class SystemSiteApi {
-  private client: HttpClient;
-  public readonly runtime: SystemSiteRuntimeApi;
-
-  constructor(client: HttpClient) {
-    this.client = client;
-    this.runtime = new SystemSiteRuntimeApi(client);
-  }
-
-}
 
 export class SystemIamVerificationPolicyApi {
   private client: HttpClient;
@@ -280,13 +246,11 @@ export class SystemApi {
   private client: HttpClient;
   public readonly promotions: SystemPromotionsApi;
   public readonly iam: SystemIamApi;
-  public readonly site: SystemSiteApi;
 
   constructor(client: HttpClient) {
     this.client = client;
     this.promotions = new SystemPromotionsApi(client);
     this.iam = new SystemIamApi(client);
-    this.site = new SystemSiteApi(client);
   }
 
 }

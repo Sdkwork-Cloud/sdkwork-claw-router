@@ -1,7 +1,8 @@
 use crate::domain::{
     AiModel, BillingMeter, ChannelGroup, ChannelGroupMetricSnapshot, GatewayAccessPolicy,
-    GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition, PriceSide, PricingPlan,
-    ProviderChannelRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
+    GatewayApiKey, ModelMappingRule, ModelMappingScope, ModelPrice, ModelProviderRoute,
+    ModelVendorDefinition, PriceSide, PricingPlan, ProviderChannelRoute, QuotaPolicy,
+    RoutingPolicy, RoutingRule,
 };
 use crate::ports::PricingCatalog;
 
@@ -13,6 +14,7 @@ pub struct InMemoryPricingCatalog {
     provider_channel_routes: Vec<ProviderChannelRoute>,
     routing_policies: Vec<RoutingPolicy>,
     routing_rules: Vec<RoutingRule>,
+    model_mappings: Vec<ModelMappingRule>,
     plans: Vec<PricingPlan>,
     channel_groups: Vec<ChannelGroup>,
     api_keys: Vec<GatewayApiKey>,
@@ -47,6 +49,10 @@ impl InMemoryPricingCatalog {
 
     pub fn add_routing_rule(&mut self, rule: RoutingRule) {
         self.routing_rules.push(rule);
+    }
+
+    pub fn add_model_mapping(&mut self, rule: ModelMappingRule) {
+        self.model_mappings.push(rule);
     }
 
     pub fn add_plan(&mut self, plan: PricingPlan) {
@@ -128,6 +134,10 @@ impl PricingCatalog for InMemoryPricingCatalog {
             .filter(|rule| rule.profile_id == profile_id)
             .cloned()
             .collect()
+    }
+
+    fn list_model_mappings(&self) -> Vec<ModelMappingRule> {
+        self.model_mappings.clone()
     }
 
     fn list_api_keys(&self) -> Vec<GatewayApiKey> {
@@ -233,6 +243,20 @@ impl PricingCatalog for InMemoryPricingCatalog {
             .cloned()
     }
 
+    fn resolve_model_mapping(
+        &self,
+        source_model: &str,
+        vendor_code: Option<&str>,
+        channel_id: Option<i64>,
+    ) -> Option<ModelMappingRule> {
+        resolve_model_mapping_from_rules(
+            &self.model_mappings,
+            source_model,
+            vendor_code,
+            channel_id,
+        )
+    }
+
     fn find_provider_route(&self, model: &str, provider_code: &str) -> Option<ModelProviderRoute> {
         self.provider_routes
             .iter()
@@ -261,6 +285,52 @@ impl PricingCatalog for InMemoryPricingCatalog {
                     && option_matches(price.pricing_plan_code.as_deref(), pricing_plan_code)
             })
             .cloned()
+    }
+}
+
+pub(crate) fn resolve_model_mapping_from_rules(
+    rules: &[ModelMappingRule],
+    source_model: &str,
+    vendor_code: Option<&str>,
+    channel_id: Option<i64>,
+) -> Option<ModelMappingRule> {
+    [
+        ModelMappingScope::Channel,
+        ModelMappingScope::Vendor,
+        ModelMappingScope::Global,
+    ]
+    .into_iter()
+    .find_map(|scope| {
+        rules
+            .iter()
+            .filter(|rule| {
+                model_mapping_rule_matches(rule, scope, source_model, vendor_code, channel_id)
+            })
+            .min_by_key(|rule| (rule.priority, std::cmp::Reverse(rule.id)))
+            .cloned()
+    })
+}
+
+fn model_mapping_rule_matches(
+    rule: &ModelMappingRule,
+    scope: ModelMappingScope,
+    source_model: &str,
+    vendor_code: Option<&str>,
+    channel_id: Option<i64>,
+) -> bool {
+    if rule.scope != scope || rule.source_model.trim() != source_model.trim() {
+        return false;
+    }
+    match scope {
+        ModelMappingScope::Channel => channel_id
+            .zip(rule.channel_id)
+            .map(|(actual, expected)| actual == expected)
+            .unwrap_or(false),
+        ModelMappingScope::Vendor => vendor_code
+            .zip(rule.vendor_code.as_deref())
+            .map(|(actual, expected)| actual.trim() == expected.trim())
+            .unwrap_or(false),
+        ModelMappingScope::Global => true,
     }
 }
 

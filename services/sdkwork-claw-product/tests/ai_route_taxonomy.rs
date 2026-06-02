@@ -68,6 +68,8 @@ fn builtin_route_taxonomy_classifies_standard_ai_api_routes() {
         "kling.text_to_video",
         "jimeng.image_generation",
         "volcengine.video_generation",
+        "minimax.music_generation",
+        "vidu.reference_to_image",
         "vidu.start_end_to_video",
     ] {
         assert!(
@@ -146,6 +148,29 @@ fn builtin_route_taxonomy_classifies_standard_ai_api_routes() {
     assert_eq!(BillingMeter::VideoResult, vidu.billing_meter.clone());
     assert_eq!(AiRouteModelRequirement::Optional, vidu.model_requirement);
     assert_eq!(Some("video_task"), vidu.sticky_object_type);
+
+    let vidu_image = find_builtin_ai_route("vidu.reference_to_image").unwrap();
+    assert_eq!("vidu.reference_to_image", vidu_image.api_code);
+    assert_eq!(RoutingCapability::Image, vidu_image.capability);
+    assert_eq!(BillingMeter::ImageResult, vidu_image.billing_meter.clone());
+    assert_eq!(
+        AiRouteModelRequirement::Optional,
+        vidu_image.model_requirement
+    );
+    assert_eq!(Some("image_task"), vidu_image.sticky_object_type);
+
+    let minimax_music = find_builtin_ai_route("minimax.music_generation").unwrap();
+    assert_eq!("minimax.music_generation", minimax_music.api_code);
+    assert_eq!(RoutingCapability::Music, minimax_music.capability);
+    assert_eq!(
+        BillingMeter::MusicOutputSecond,
+        minimax_music.billing_meter.clone()
+    );
+    assert_eq!(
+        AiRouteModelRequirement::Optional,
+        minimax_music.model_requirement
+    );
+    assert_eq!(Some("music_task"), minimax_music.sticky_object_type);
 }
 
 #[test]

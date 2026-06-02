@@ -4913,6 +4913,31 @@
             "format": "int64",
             "type": "string"
           },
+          "site_channel_role": {
+            "description": "Site channel role field on ai channel record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "site_code": {
+            "description": "Site code field on ai channel record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "site_id": {
+            "description": "Site id field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "site_service_code": {
+            "description": "Site service code field on ai channel record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "site_service_id": {
+            "description": "Site service id field on ai channel record.",
+            "format": "int64",
+            "type": "string"
+          },
           "status": {
             "description": "Status field on ai channel record.",
             "type": "string",
@@ -10040,6 +10065,195 @@
         "x-domain": "ai",
         "x-generated-by-this-project": true,
         "x-table": "ai_model_family"
+      },
+      "AiModelMappingRuleRecord": {
+        "additionalProperties": false,
+        "description": "Ai model mapping rule record schema exposed by Claw Router.",
+        "properties": {
+          "channel_code": {
+            "description": "Channel code field on ai model mapping rule record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "channel_id": {
+            "description": "Channel id field on ai model mapping rule record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai model mapping rule record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai model mapping rule record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai model mapping rule record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai model mapping rule record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description field on ai model mapping rule record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "effective_from": {
+            "description": "Effective from field on ai model mapping rule record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "effective_to": {
+            "description": "Effective to field on ai model mapping rule record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Enabled field on ai model mapping rule record.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Id field on ai model mapping rule record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "mapping_mode": {
+            "description": "Mapping mode field on ai model mapping rule record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "match_type": {
+            "description": "Match type field on ai model mapping rule record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai model mapping rule record."
+            },
+            "description": "Metadata field on ai model mapping rule record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai model mapping rule record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "priority": {
+            "description": "Priority field on ai model mapping rule record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "scope_type": {
+            "description": "Scope type field on ai model mapping rule record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "source_catalog_key": {
+            "description": "Source catalog key field on ai model mapping rule record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "source_model": {
+            "description": "Source model field on ai model mapping rule record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "source_vendor_code": {
+            "description": "Source vendor code field on ai model mapping rule record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai model mapping rule record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "target_catalog_key": {
+            "description": "Target catalog key field on ai model mapping rule record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "target_model": {
+            "description": "Target model field on ai model mapping rule record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "target_provider_model": {
+            "description": "Target provider model field on ai model mapping rule record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "target_provider_native_model": {
+            "description": "Target provider native model field on ai model mapping rule record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "target_vendor_code": {
+            "description": "Target vendor code field on ai model mapping rule record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai model mapping rule record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai model mapping rule record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai model mapping rule record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai model mapping rule record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_id": {
+            "description": "Vendor id field on ai model mapping rule record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai model mapping rule record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "scope_type",
+          "source_model",
+          "target_model",
+          "mapping_mode",
+          "match_type",
+          "priority",
+          "enabled"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_model_mapping_rule"
       },
       "AiModelModalityRecord": {
         "additionalProperties": false,
@@ -16117,6 +16331,664 @@
         "x-domain": "ai",
         "x-generated-by-this-project": true,
         "x-table": "ai_runtime_usage_link"
+      },
+      "AiSiteModelRecord": {
+        "additionalProperties": false,
+        "description": "Ai site model record schema exposed by Claw Router.",
+        "properties": {
+          "capabilities": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Capabilities field on ai site model record."
+            },
+            "description": "Capabilities field on ai site model record.",
+            "type": "object"
+          },
+          "capability": {
+            "description": "Capability field on ai site model record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "catalog_key": {
+            "description": "Catalog key field on ai site model record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "consecutive_error_count": {
+            "description": "Consecutive error count field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "context_tokens": {
+            "description": "Context tokens field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai site model record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai site model record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "default_parameters": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Default parameters field on ai site model record."
+            },
+            "description": "Default parameters field on ai site model record.",
+            "type": "object"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai site model record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "display_name": {
+            "description": "Display name field on ai site model record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "effective_from": {
+            "description": "Effective from field on ai site model record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "effective_to": {
+            "description": "Effective to field on ai site model record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "health_status": {
+            "description": "Health status field on ai site model record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "id": {
+            "description": "Id field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_latency_ms": {
+            "description": "Last latency ms field on ai site model record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "last_sync_at": {
+            "description": "Last sync at field on ai site model record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "max_input_tokens": {
+            "description": "Max input tokens field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "max_output_tokens": {
+            "description": "Max output tokens field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai site model record."
+            },
+            "description": "Metadata field on ai site model record.",
+            "type": "object"
+          },
+          "modality": {
+            "description": "Modality field on ai site model record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "model_aliases": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Model aliases field on ai site model record."
+            },
+            "description": "Model aliases field on ai site model record.",
+            "type": "object"
+          },
+          "model_code": {
+            "description": "Model code field on ai site model record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "model_id": {
+            "description": "Model id field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "model_name": {
+            "description": "Model name field on ai site model record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "pricing_snapshot": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Pricing snapshot field on ai site model record."
+            },
+            "description": "Pricing snapshot field on ai site model record.",
+            "type": "object"
+          },
+          "provider_model": {
+            "description": "Provider model field on ai site model record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "provider_native_model": {
+            "description": "Provider native model field on ai site model record.",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "service_type": {
+            "description": "Service type field on ai site model record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "site_code": {
+            "description": "Site code field on ai site model record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "site_id": {
+            "description": "Site id field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "site_service_code": {
+            "description": "Site service code field on ai site model record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "site_service_id": {
+            "description": "Site service id field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status field on ai site model record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "supports_json_schema": {
+            "description": "Supports json schema field on ai site model record.",
+            "type": "boolean"
+          },
+          "supports_streaming": {
+            "description": "Supports streaming field on ai site model record.",
+            "type": "boolean"
+          },
+          "supports_tools": {
+            "description": "Supports tools field on ai site model record.",
+            "type": "boolean"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai site model record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai site model record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "vendor_code": {
+            "description": "Vendor code field on ai site model record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai site model record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "site_id",
+          "site_service_id",
+          "site_code",
+          "service_type",
+          "model_code",
+          "model_name"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_site_model"
+      },
+      "AiSiteRecord": {
+        "additionalProperties": false,
+        "description": "Ai site record schema exposed by Claw Router.",
+        "properties": {
+          "base_url": {
+            "description": "Base url field on ai site record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "color_token": {
+            "description": "Color token field on ai site record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "consecutive_error_count": {
+            "description": "Consecutive error count field on ai site record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai site record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai site record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai site record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai site record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description field on ai site record.",
+            "maxLength": 1024,
+            "type": "string"
+          },
+          "display_name": {
+            "description": "Display name field on ai site record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "docs_url": {
+            "description": "Docs url field on ai site record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "environment": {
+            "description": "Environment field on ai site record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "health_status": {
+            "description": "Health status field on ai site record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "id": {
+            "description": "Id field on ai site record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_checked_at": {
+            "description": "Last checked at field on ai site record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_latency_ms": {
+            "description": "Last latency ms field on ai site record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "last_sync_at": {
+            "description": "Last sync at field on ai site record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "logo": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/MediaResource"
+              }
+            ],
+            "description": "Logo field on ai site record."
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai site record."
+            },
+            "description": "Metadata field on ai site record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai site record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "owner_kind": {
+            "description": "Owner kind field on ai site record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "region_code": {
+            "description": "Region code field on ai site record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "site_code": {
+            "description": "Site code field on ai site record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "site_name": {
+            "description": "Site name field on ai site record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "site_type": {
+            "description": "Site type field on ai site record.",
+            "maxLength": 32,
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai site record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai site record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai site record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai site record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai site record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai site record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "website_url": {
+            "description": "Website url field on ai site record.",
+            "maxLength": 512,
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "site_code",
+          "site_name",
+          "display_name"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_site"
+      },
+      "AiSiteServiceRecord": {
+        "additionalProperties": false,
+        "description": "Ai site service record schema exposed by Claw Router.",
+        "properties": {
+          "auth_config": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Auth config field on ai site service record."
+            },
+            "description": "Auth config field on ai site service record.",
+            "type": "object"
+          },
+          "auth_type": {
+            "description": "Auth type field on ai site service record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "base_url": {
+            "description": "Base url field on ai site service record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "consecutive_error_count": {
+            "description": "Consecutive error count field on ai site service record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "created_at": {
+            "description": "Created at field on ai site service record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "credential_hash": {
+            "description": "Credential hash field on ai site service record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "credential_profile": {
+            "description": "Credential profile field on ai site service record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "credential_ref": {
+            "description": "Credential ref field on ai site service record.",
+            "maxLength": 512,
+            "type": "string"
+          },
+          "credential_version": {
+            "description": "Credential version field on ai site service record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "data_scope": {
+            "description": "Data scope field on ai site service record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "deleted_at": {
+            "description": "Deleted at field on ai site service record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "deleted_by": {
+            "description": "Deleted by field on ai site service record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "environment": {
+            "description": "Environment field on ai site service record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "health_status": {
+            "description": "Health status field on ai site service record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "id": {
+            "description": "Id field on ai site service record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "last_latency_ms": {
+            "description": "Last latency ms field on ai site service record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "last_sync_at": {
+            "description": "Last sync at field on ai site service record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "last_verified_at": {
+            "description": "Last verified at field on ai site service record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "masked_label": {
+            "description": "Masked label field on ai site service record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/JsonValue"
+                }
+              ],
+              "description": "Metadata field on ai site service record."
+            },
+            "description": "Metadata field on ai site service record.",
+            "type": "object"
+          },
+          "organization_id": {
+            "description": "Organization id field on ai site service record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "protocol_code": {
+            "description": "Protocol code field on ai site service record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "region_code": {
+            "description": "Region code field on ai site service record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "service_code": {
+            "description": "Service code field on ai site service record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "service_name": {
+            "description": "Service name field on ai site service record.",
+            "maxLength": 128,
+            "type": "string"
+          },
+          "service_type": {
+            "description": "Service type field on ai site service record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "site_code": {
+            "description": "Site code field on ai site service record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "site_id": {
+            "description": "Site id field on ai site service record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "sort_order": {
+            "description": "Sort order field on ai site service record.",
+            "format": "int32",
+            "type": "integer"
+          },
+          "status": {
+            "description": "Status field on ai site service record.",
+            "type": "string",
+            "x-db-type": "enum_int32"
+          },
+          "tenant_id": {
+            "description": "Tenant id field on ai site service record.",
+            "format": "int64",
+            "type": "string"
+          },
+          "updated_at": {
+            "description": "Updated at field on ai site service record.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "uuid": {
+            "description": "Uuid field on ai site service record.",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "version": {
+            "description": "Version field on ai site service record.",
+            "format": "int64",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uuid",
+          "tenant_id",
+          "organization_id",
+          "status",
+          "site_id",
+          "site_code",
+          "service_code",
+          "service_name",
+          "service_type"
+        ],
+        "type": "object",
+        "x-domain": "ai",
+        "x-generated-by-this-project": true,
+        "x-table": "ai_site_service"
       },
       "AiUsageFactRecord": {
         "additionalProperties": false,
@@ -80828,8 +81700,8 @@
           "ops_config_snapshot"
         ],
         "x-route-scope": "public",
-        "x-sdk-domain": "system",
-        "x-sdkwork-domain": "system",
+        "x-sdk-domain": "sites",
+        "x-sdkwork-domain": "sites",
         "x-sdkwork-resource": "site.runtime",
         "x-source-file": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/siteBranding.ts",
         "x-write-tables": []

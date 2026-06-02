@@ -86,6 +86,16 @@ export interface AiChannelRecord {
   risk_level?: string;
   /** Rpm limit field on ai channel record. */
   rpm_limit?: string;
+  /** Site channel role field on ai channel record. */
+  site_channel_role?: string;
+  /** Site code field on ai channel record. */
+  site_code?: string;
+  /** Site id field on ai channel record. */
+  site_id?: string;
+  /** Site service code field on ai channel record. */
+  site_service_code?: string;
+  /** Site service id field on ai channel record. */
+  site_service_id?: string;
   /** Status field on ai channel record. */
   status: string;
   /** Tenant id field on ai channel record. */

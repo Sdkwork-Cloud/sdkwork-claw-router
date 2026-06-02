@@ -1,5 +1,6 @@
 import {
   Activity,
+  ArrowRightLeft,
   BadgePercent,
   BarChart3,
   Bot,
@@ -200,6 +201,9 @@ export const ADMIN_MODULE_MENUS: AdminModuleMenu[] = [
       ]),
       groupBlock('admin.menu.home.modelManagement', [
         itemBlock({ path: '/admin/model', labelKey: 'admin.menu.models', icon: Database }),
+        itemBlock({ path: '/admin/model/resources', labelKey: 'admin.menu.modelResources', icon: Boxes, iconColor: 'text-emerald-500' }),
+        itemBlock({ path: '/admin/model/sites', labelKey: 'admin.menu.modelSites', icon: Globe2, iconColor: 'text-sky-500' }),
+        itemBlock({ path: '/admin/model/mappings', labelKey: 'admin.menu.modelMappings', icon: ArrowRightLeft, iconColor: 'text-indigo-500' }),
       ]),
       groupBlock('admin.menu.home.accountPoolManagement', [
         itemBlock({ path: '/admin/group', labelKey: 'admin.menu.groups', icon: UserCog }),

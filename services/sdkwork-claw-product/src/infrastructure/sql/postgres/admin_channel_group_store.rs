@@ -9,15 +9,18 @@ use crate::infrastructure::sql::routing_config_change::{
 };
 use crate::ports::{
     AdminChannelGroupChannelBindingItem, AdminChannelGroupCommandFuture, AdminChannelGroupItem,
-    AdminChannelGroupStore, CreateAdminChannelGroupCommand, DeleteAdminChannelGroupCommand,
-    ListAdminChannelGroupChannelBindingsQuery, ListAdminChannelGroupsQuery,
-    ReplaceAdminChannelGroupChannelBindingsCommand, UpdateAdminChannelGroupCommand,
+    AdminChannelGroupStore, AdminChannelGroupSubject, CreateAdminChannelGroupCommand,
+    DeleteAdminChannelGroupCommand, ListAdminChannelGroupChannelBindingsQuery,
+    ListAdminChannelGroupsQuery, ReplaceAdminChannelGroupChannelBindingsCommand,
+    UpdateAdminChannelGroupCommand,
 };
 
 const ACCESS_GROUP_TARGET_TYPE: i32 = 41;
 const CHANNEL_GROUP_SUBJECT_TYPE: i32 = 3;
 const CONFIG_SCOPE_ROUTER: i32 = 10;
 const CONFIG_TYPE_ACCESS_GROUP: i32 = ACCESS_GROUP_TARGET_TYPE;
+const RESOURCE_ACCESS_SOURCE_GROUP_FORM: &str = "group_form";
+const RESOURCE_ACCESS_SOURCE_CHANNEL_BINDING: &str = "channel_binding";
 
 #[derive(Debug, Clone)]
 pub struct PostgresAdminChannelGroupStore {
@@ -69,6 +72,18 @@ impl AdminChannelGroupStore for PostgresAdminChannelGroupStore {
                 )
                 .await?;
             }
+            replace_group_resource_access(
+                &mut tx,
+                command.subject,
+                id,
+                &command.resource_group_codes,
+                &command.resource_codes,
+                status_code(&command.status),
+                &command.requested_at,
+                RESOURCE_ACCESS_SOURCE_GROUP_FORM,
+                false,
+            )
+            .await?;
             insert_config_snapshot(
                 &mut tx,
                 &command.config_snapshot_uuid,
@@ -89,6 +104,8 @@ impl AdminChannelGroupStore for PostgresAdminChannelGroupStore {
                     "officialPriceMultiplier": command.official_price_multiplier,
                     "groupType": &command.group_type,
                     "capacityTotal": command.capacity_total,
+                    "resourceGroupCodes": &command.resource_group_codes,
+                    "resourceCodes": &command.resource_codes,
                     "status": &command.status
                 }),
                 &command.requested_at,
@@ -113,6 +130,8 @@ impl AdminChannelGroupStore for PostgresAdminChannelGroupStore {
                     "priceReferenceMode": &command.price_reference_mode,
                     "rateMultiplier": command.rate_multiplier,
                     "officialPriceMultiplier": command.official_price_multiplier,
+                    "resourceGroupCodes": &command.resource_group_codes,
+                    "resourceCodes": &command.resource_codes,
                     "status": &command.status
                 }),
             )
@@ -131,6 +150,8 @@ impl AdminChannelGroupStore for PostgresAdminChannelGroupStore {
                         "accessGroupId": id,
                         "groupCode": &command.group_code,
                         "groupType": &command.group_type,
+                        "resourceGroupCodes": &command.resource_group_codes,
+                        "resourceCodes": &command.resource_codes,
                         "status": &command.status
                     }),
                 ),
@@ -178,6 +199,27 @@ impl AdminChannelGroupStore for PostgresAdminChannelGroupStore {
                 )
                 .await?;
             }
+            if command.resource_group_codes.is_some() || command.resource_codes.is_some() {
+                let group_status = load_group_status(
+                    &mut tx,
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.group_id,
+                )
+                .await?;
+                replace_group_resource_access(
+                    &mut tx,
+                    command.subject,
+                    command.group_id,
+                    command.resource_group_codes.as_deref().unwrap_or(&[]),
+                    command.resource_codes.as_deref().unwrap_or(&[]),
+                    group_status,
+                    &command.requested_at,
+                    RESOURCE_ACCESS_SOURCE_GROUP_FORM,
+                    false,
+                )
+                .await?;
+            }
             insert_config_snapshot(
                 &mut tx,
                 &command.config_snapshot_uuid,
@@ -198,6 +240,8 @@ impl AdminChannelGroupStore for PostgresAdminChannelGroupStore {
                     "officialPriceMultiplier": command.official_price_multiplier,
                     "groupType": &command.group_type,
                     "capacityTotal": command.capacity_total,
+                    "resourceGroupCodes": &command.resource_group_codes,
+                    "resourceCodes": &command.resource_codes,
                     "status": &command.status
                 }),
                 &command.requested_at,
@@ -222,6 +266,8 @@ impl AdminChannelGroupStore for PostgresAdminChannelGroupStore {
                     "priceReferenceModeChanged": command.price_reference_mode.is_some(),
                     "rateMultiplier": command.rate_multiplier,
                     "officialPriceMultiplier": command.official_price_multiplier,
+                    "resourceGroupCodes": &command.resource_group_codes,
+                    "resourceCodes": &command.resource_codes,
                     "status": command.status
                 }),
             )
@@ -242,6 +288,7 @@ impl AdminChannelGroupStore for PostgresAdminChannelGroupStore {
                         "priceReferenceModeChanged": command.price_reference_mode.is_some(),
                         "groupTypeChanged": command.group_type.is_some(),
                         "capacityChanged": command.capacity_total.is_some(),
+                        "resourceAccessChanged": command.resource_group_codes.is_some() || command.resource_codes.is_some(),
                         "rateMultiplierChanged": command.rate_multiplier.is_some(),
                         "statusChanged": command.status.is_some()
                     }),
@@ -560,7 +607,11 @@ async fn replace_channel_bindings(
             .unwrap_or_else(|| format!("group-channel-{}-{}", command.group_id, item.channel_id));
         let requested_status = status_code(&item.status);
         let persisted_status = relationship_status_for_group(group_status, requested_status);
-        let metadata = relationship_metadata_for_group(group_status, requested_status);
+        let metadata = relationship_metadata_for_group(
+            group_status,
+            requested_status,
+            RESOURCE_ACCESS_SOURCE_CHANNEL_BINDING,
+        );
         sqlx::query(
             r#"
             INSERT INTO ai_channel_group_member
@@ -696,6 +747,39 @@ async fn replace_group_resources(
     command: &ReplaceAdminChannelGroupChannelBindingsCommand,
     group_status: i32,
 ) -> DomainResult<()> {
+    let resource_codes = command
+        .items
+        .iter()
+        .flat_map(|item| item.resource_codes.iter())
+        .map(|value| value.trim())
+        .filter(|value| !value.is_empty())
+        .map(str::to_owned)
+        .collect::<Vec<_>>();
+    replace_group_resource_access(
+        tx,
+        command.subject,
+        command.group_id,
+        &[],
+        &resource_codes,
+        group_status,
+        &command.requested_at,
+        RESOURCE_ACCESS_SOURCE_CHANNEL_BINDING,
+        true,
+    )
+    .await
+}
+
+async fn replace_group_resource_access(
+    tx: &mut Transaction<'_, Postgres>,
+    subject: AdminChannelGroupSubject,
+    group_id: i64,
+    resource_group_codes: &[String],
+    resource_codes: &[String],
+    group_status: i32,
+    requested_at: &str,
+    source: &str,
+    resource_codes_may_reference_groups: bool,
+) -> DomainResult<()> {
     sqlx::query(
         r#"
         UPDATE ai_channel_group_resource
@@ -708,124 +792,253 @@ async fn replace_group_resources(
           AND organization_id = $5
           AND channel_group_id = $6
           AND deleted_at IS NULL
+          AND COALESCE(metadata ->> 'source', 'channel_binding') = $7
         "#,
     )
-    .bind(&command.requested_at)
-    .bind(command.subject.operator_id)
-    .bind(&command.requested_at)
-    .bind(command.subject.tenant_id)
-    .bind(command.subject.organization_id)
-    .bind(command.group_id)
+    .bind(requested_at)
+    .bind(subject.operator_id)
+    .bind(requested_at)
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(group_id)
+    .bind(source)
     .execute(&mut **tx)
     .await
     .map_err(|error| store_error("failed to clear channel group resources", error))?;
 
-    let resource_codes = command
-        .items
-        .iter()
-        .flat_map(|item| item.resource_codes.iter())
-        .map(|value| value.trim())
-        .filter(|value| !value.is_empty())
-        .map(str::to_owned)
-        .collect::<BTreeSet<_>>();
+    let normalized_resource_group_codes = ordered_unique_codes(resource_group_codes);
+    let normalized_resource_codes = ordered_unique_codes(resource_codes);
 
-    for (index, requested_resource_code) in resource_codes.iter().enumerate() {
-        let resource_hash = digest_hex(requested_resource_code);
-        let resolved = sqlx::query(
-            r#"
-            SELECT
-                (
-                    SELECT id
-                    FROM ai_resource_group
-                    WHERE tenant_id = $1
-                      AND organization_id = $2
-                      AND group_code = $3
-                      AND deleted_at IS NULL
-                    LIMIT 1
-                ) AS resource_group_id,
-                (
-                    SELECT id
-                    FROM ai_resource
-                    WHERE tenant_id = $1
-                      AND organization_id = $2
-                      AND resource_code = $3
-                      AND deleted_at IS NULL
-                    LIMIT 1
-                ) AS resource_id
-            "#,
+    for (index, requested_resource_group_code) in
+        normalized_resource_group_codes.iter().enumerate()
+    {
+        let resource_group_id = resolve_resource_group_id(
+            tx,
+            subject.tenant_id,
+            subject.organization_id,
+            requested_resource_group_code,
         )
-        .bind(command.subject.tenant_id)
-        .bind(command.subject.organization_id)
-        .bind(requested_resource_code)
-        .fetch_one(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to resolve channel group resource", error))?;
-        let resource_group_id = optional_integer_cell(&resolved, "resource_group_id");
-        let resource_id = optional_integer_cell(&resolved, "resource_id");
-        if resource_group_id.is_none() && resource_id.is_none() {
-            return Err(DomainError::not_found(format!(
-                "AI resource was not found: {requested_resource_code}"
-            )));
-        }
-        let direct_resource_id = if resource_group_id.is_some() {
-            None
-        } else {
-            resource_id
-        };
-        let direct_resource_code = if resource_group_id.is_some() {
-            ""
-        } else {
-            requested_resource_code.as_str()
-        };
-        let resource_group_code = if resource_group_id.is_some() {
-            requested_resource_code.as_str()
-        } else {
-            ""
-        };
-        let persisted_status = relationship_status_for_group(group_status, 1);
-        let metadata = relationship_metadata_for_group(group_status, 1);
-        sqlx::query(
-            r#"
-            INSERT INTO ai_channel_group_resource
-                (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_group_id, resource_id, resource_code, resource_group_id, resource_group_code, grant_type, priority)
-            VALUES
-                ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7::jsonb, $8,
-                    $9, $10, $11, $12, 'allow', $13)
-            ON CONFLICT(tenant_id, organization_id, channel_group_id, resource_code, resource_group_code)
-            DO UPDATE SET
-                status = excluded.status,
-                deleted_at = NULL,
-                deleted_by = NULL,
-                updated_at = excluded.updated_at,
-                resource_id = excluded.resource_id,
-                resource_group_id = excluded.resource_group_id,
-                grant_type = excluded.grant_type,
-                priority = excluded.priority,
-                metadata = excluded.metadata,
-                version = COALESCE(ai_channel_group_resource.version, 0) + 1
-            "#,
+        .await?
+        .ok_or_else(|| {
+            DomainError::not_found(format!(
+                "AI resource group was not found: {requested_resource_group_code}"
+            ))
+        })?;
+        upsert_group_resource_access(
+            tx,
+            subject,
+            group_id,
+            None,
+            "",
+            Some(resource_group_id),
+            requested_resource_group_code,
+            (index as i64) + 1,
+            group_status,
+            requested_at,
+            source,
         )
-        .bind(format!(
-            "ai-channel-group-resource-{}-{resource_hash}",
-            command.group_id
-        ))
-        .bind(command.subject.tenant_id)
-        .bind(command.subject.organization_id)
-        .bind(persisted_status)
-        .bind(&command.requested_at)
-        .bind(&command.requested_at)
-        .bind(metadata)
-        .bind(command.group_id)
-        .bind(direct_resource_id)
-        .bind(direct_resource_code)
-        .bind(resource_group_id)
-        .bind(resource_group_code)
-        .bind((index as i64) + 1)
-        .execute(&mut **tx)
-        .await
-        .map_err(|error| store_error("failed to upsert channel group resource", error))?;
+        .await?;
     }
 
+    let resource_priority_base = normalized_resource_group_codes.len() as i64;
+    for (index, requested_resource_code) in normalized_resource_codes.iter().enumerate() {
+        if resource_codes_may_reference_groups {
+            if let Some(resource_group_id) = resolve_resource_group_id(
+                tx,
+                subject.tenant_id,
+                subject.organization_id,
+                requested_resource_code,
+            )
+            .await?
+            {
+                upsert_group_resource_access(
+                    tx,
+                    subject,
+                    group_id,
+                    None,
+                    "",
+                    Some(resource_group_id),
+                    requested_resource_code,
+                    resource_priority_base + (index as i64) + 1,
+                    group_status,
+                    requested_at,
+                    source,
+                )
+                .await?;
+                continue;
+            }
+        }
+        let resource_id = resolve_resource_id(
+            tx,
+            subject.tenant_id,
+            subject.organization_id,
+            requested_resource_code,
+        )
+        .await?
+        .ok_or_else(|| {
+            DomainError::not_found(format!("AI resource was not found: {requested_resource_code}"))
+        })?;
+        upsert_group_resource_access(
+            tx,
+            subject,
+            group_id,
+            Some(resource_id),
+            requested_resource_code,
+            None,
+            "",
+            resource_priority_base + (index as i64) + 1,
+            group_status,
+            requested_at,
+            source,
+        )
+        .await?;
+    }
+
+    Ok(())
+}
+
+fn ordered_unique_codes(values: &[String]) -> Vec<String> {
+    let mut seen = BTreeSet::new();
+    let mut normalized = Vec::new();
+    for value in values {
+        let value = value.trim();
+        if value.is_empty() {
+            continue;
+        }
+        if seen.insert(value.to_owned()) {
+            normalized.push(value.to_owned());
+        }
+    }
+    normalized
+}
+
+async fn resolve_resource_group_id(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    group_code: &str,
+) -> DomainResult<Option<i64>> {
+    let row = sqlx::query(
+        r#"
+        SELECT id
+        FROM ai_resource_group
+        WHERE group_code = $1
+          AND deleted_at IS NULL
+          AND (
+              (tenant_id = $2 AND organization_id = $3)
+              OR (tenant_id = 0 AND organization_id = 0)
+          )
+        ORDER BY CASE
+            WHEN tenant_id = $2 AND organization_id = $3 THEN 0
+            WHEN tenant_id = 0 AND organization_id = 0 THEN 1
+            ELSE 2
+          END,
+          id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(group_code)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to resolve channel group resource group", error))?;
+    Ok(row.as_ref().and_then(|row| optional_integer_cell(row, "id")))
+}
+
+async fn resolve_resource_id(
+    tx: &mut Transaction<'_, Postgres>,
+    tenant_id: i64,
+    organization_id: i64,
+    resource_code: &str,
+) -> DomainResult<Option<i64>> {
+    let row = sqlx::query(
+        r#"
+        SELECT id
+        FROM ai_resource
+        WHERE resource_code = $1
+          AND deleted_at IS NULL
+          AND (
+              (tenant_id = $2 AND organization_id = $3)
+              OR (tenant_id = 0 AND organization_id = 0)
+          )
+        ORDER BY CASE
+            WHEN tenant_id = $2 AND organization_id = $3 THEN 0
+            WHEN tenant_id = 0 AND organization_id = 0 THEN 1
+            ELSE 2
+          END,
+          id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(resource_code)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to resolve channel group resource", error))?;
+    Ok(row.as_ref().and_then(|row| optional_integer_cell(row, "id")))
+}
+
+#[allow(clippy::too_many_arguments)]
+async fn upsert_group_resource_access(
+    tx: &mut Transaction<'_, Postgres>,
+    subject: AdminChannelGroupSubject,
+    group_id: i64,
+    resource_id: Option<i64>,
+    resource_code: &str,
+    resource_group_id: Option<i64>,
+    resource_group_code: &str,
+    priority: i64,
+    group_status: i32,
+    requested_at: &str,
+    source: &str,
+) -> DomainResult<()> {
+    let access_code = if resource_group_code.is_empty() {
+        resource_code
+    } else {
+        resource_group_code
+    };
+    let resource_hash = digest_hex(&format!("{source}:{access_code}"));
+    let persisted_status = relationship_status_for_group(group_status, 1);
+    let metadata = relationship_metadata_for_group(group_status, 1, source);
+    sqlx::query(
+        r#"
+        INSERT INTO ai_channel_group_resource
+            (uuid, tenant_id, organization_id, data_scope, status, created_at, updated_at, version, metadata, channel_group_id, resource_id, resource_code, resource_group_id, resource_group_code, grant_type, priority)
+        VALUES
+            ($1, $2, $3, 1, $4, $5::timestamptz, $6::timestamptz, 0, $7::jsonb, $8,
+                $9, $10, $11, $12, 'allow', $13)
+        ON CONFLICT(tenant_id, organization_id, channel_group_id, resource_code, resource_group_code)
+        DO UPDATE SET
+            status = excluded.status,
+            deleted_at = NULL,
+            deleted_by = NULL,
+            updated_at = excluded.updated_at,
+            resource_id = excluded.resource_id,
+            resource_group_id = excluded.resource_group_id,
+            grant_type = excluded.grant_type,
+            priority = excluded.priority,
+            metadata = excluded.metadata,
+            version = COALESCE(ai_channel_group_resource.version, 0) + 1
+        "#,
+    )
+    .bind(format!("ai-channel-group-resource-{group_id}-{resource_hash}"))
+    .bind(subject.tenant_id)
+    .bind(subject.organization_id)
+    .bind(persisted_status)
+    .bind(requested_at)
+    .bind(requested_at)
+    .bind(metadata)
+    .bind(group_id)
+    .bind(resource_id)
+    .bind(resource_code)
+    .bind(resource_group_id)
+    .bind(resource_group_code)
+    .bind(priority)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to upsert channel group resource", error))?;
     Ok(())
 }
 
@@ -1125,12 +1338,23 @@ fn relationship_status_for_group(group_status: i32, requested_status: i32) -> i3
     }
 }
 
-fn relationship_metadata_for_group(group_status: i32, requested_status: i32) -> &'static str {
+fn relationship_metadata_for_group(
+    group_status: i32,
+    requested_status: i32,
+    source: &str,
+) -> String {
+    let mut metadata = serde_json::Map::new();
+    metadata.insert(
+        "source".to_owned(),
+        serde_json::Value::String(source.to_owned()),
+    );
     if group_status == 0 && requested_status == 1 {
-        r#"{"disabledByParent":true}"#
-    } else {
-        "{}"
+        metadata.insert(
+            "disabledByParent".to_owned(),
+            serde_json::Value::Bool(true),
+        );
     }
+    serde_json::Value::Object(metadata).to_string()
 }
 
 fn channel_group_routing_config_change<'a>(
@@ -1462,6 +1686,38 @@ fn channel_group_select_sql(predicate: &str) -> String {
             COALESCE(m.capacity_limit, g.capacity_limit, 0)::text AS capacity_total,
             COALESCE(m.usage_amount_today, 0)::text AS usage_today,
             COALESCE(m.usage_amount_total, 0)::text AS usage_total,
+            COALESCE(
+                (
+                    SELECT jsonb_agg(selected.code ORDER BY selected.priority, selected.id)::text
+                    FROM (
+                        SELECT gr.resource_group_code AS code, gr.priority, gr.id
+                        FROM ai_channel_group_resource gr
+                        WHERE gr.tenant_id = g.tenant_id
+                          AND gr.organization_id = g.organization_id
+                          AND gr.channel_group_id = g.id
+                          AND gr.deleted_at IS NULL
+                          AND NULLIF(gr.resource_group_code, '') IS NOT NULL
+                          AND COALESCE(gr.metadata ->> 'source', 'channel_binding') = 'group_form'
+                    ) selected
+                ),
+                '[]'
+            ) AS resource_group_codes_json,
+            COALESCE(
+                (
+                    SELECT jsonb_agg(selected.code ORDER BY selected.priority, selected.id)::text
+                    FROM (
+                        SELECT gr.resource_code AS code, gr.priority, gr.id
+                        FROM ai_channel_group_resource gr
+                        WHERE gr.tenant_id = g.tenant_id
+                          AND gr.organization_id = g.organization_id
+                          AND gr.channel_group_id = g.id
+                          AND gr.deleted_at IS NULL
+                          AND NULLIF(gr.resource_code, '') IS NOT NULL
+                          AND COALESCE(gr.metadata ->> 'source', 'channel_binding') = 'group_form'
+                    ) selected
+                ),
+                '[]'
+            ) AS resource_codes_json,
             g.status,
             g.deleted_at::text AS deleted_at
         FROM ai_channel_group g
@@ -1706,6 +1962,8 @@ fn item_from_row(row: sqlx::postgres::PgRow) -> DomainResult<AdminChannelGroupIt
         capacity_total: decimal_cell(&row, "capacity_total"),
         usage_today: decimal_cell(&row, "usage_today"),
         usage_total: decimal_cell(&row, "usage_total"),
+        resource_group_codes: json_string_array_cell(&row, "resource_group_codes_json")?,
+        resource_codes: json_string_array_cell(&row, "resource_codes_json")?,
         status: status_label(required_integer_cell(&row, "status", "status")?)?,
         deleted_at: row.try_get("deleted_at").ok().flatten(),
     })

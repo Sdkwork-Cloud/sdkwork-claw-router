@@ -17,6 +17,7 @@ import { PlatformApi, createPlatformApi } from './api/platform';
 import { SystemApi, createSystemApi } from './api/system';
 import { RuntimeApi, createRuntimeApi } from './api/runtime';
 import { SdkReferenceApi, createSdkReferenceApi } from './api/sdk-reference';
+import { SitesApi, createSitesApi } from './api/sites';
 
 export class SdkworkAppClient {
   private httpClient: HttpClient;
@@ -36,6 +37,7 @@ export class SdkworkAppClient {
   public readonly system: SystemApi;
   public readonly runtime: RuntimeApi;
   public readonly sdkReference: SdkReferenceApi;
+  public readonly sites: SitesApi;
 
   constructor(config: SdkworkAppConfig) {
     this.httpClient = createHttpClient(config);
@@ -68,6 +70,8 @@ export class SdkworkAppClient {
     this.runtime = createRuntimeApi(this.httpClient);
 
     this.sdkReference = createSdkReferenceApi(this.httpClient);
+
+    this.sites = createSitesApi(this.httpClient);
   }
 
   setApiKey(apiKey: string): this {

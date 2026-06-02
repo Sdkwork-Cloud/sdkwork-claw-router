@@ -14,7 +14,9 @@ test("admin service provider center is a commercial provider management surface"
   const appSource = readPortalFile("./src/App.tsx");
   const adminRegistrySource = readPortalFile("./src/adminModuleRegistry.ts");
   const i18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/core-navigation.ts");
+  const serviceProviderI18nSource = readPortalFile("./packages/sdkwork-claw-router-i18n/src/resources/admin/service-provider.ts");
   const serviceProviderSource = readPortalFile("./packages/sdkwork-claw-router-admin-service-provider/src/index.tsx");
+  const serviceProviderFormsSource = readPortalFile("./packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderForms.ts");
   const serviceProviderServiceSource = readPortalFile("./packages/sdkwork-claw-router-admin-service-provider/src/serviceProviderService.ts");
 
   assert.match(
@@ -79,6 +81,17 @@ test("admin service provider center is a commercial provider management surface"
   assert.match(serviceProviderSource, /action:\s*\{\s*label:\s*t\('admin\.serviceProvider\.pricing\.maintainAction'/);
   assert.match(serviceProviderSource, /data-admin-service-provider-form="downstream"/);
   assert.match(serviceProviderSource, /data-admin-service-provider-form="pricing-rule"/);
+  assert.match(serviceProviderSource, /SERVICE_PROVIDER_PRICE_RESOURCE_CATEGORIES/);
+  assert.doesNotMatch(serviceProviderSource, /SERVICE_PROVIDER_PRICING_METHODS/);
+  assert.match(serviceProviderSource, /data-admin-service-provider-pricing-resource-category/);
+  assert.doesNotMatch(serviceProviderSource, /data-admin-service-provider-pricing-method/);
+  assert.match(serviceProviderSource, /admin\.serviceProvider\.form\.defaultMultiplier', 'Official price multiplier'/);
+  assert.match(serviceProviderI18nSource, /admin\.serviceProvider\.form\.defaultMultiplier/);
+  assert.match(serviceProviderI18nSource, /admin\.serviceProvider\.pricing\.resourceCategory\.api_resource/);
+  assert.match(serviceProviderI18nSource, /admin\.serviceProvider\.pricing\.methodHint\.specifiedUnitPrice/);
+  assert.doesNotMatch(serviceProviderI18nSource, /admin\.serviceProvider\.pricing\.method\.official_multiplier/);
+  assert.match(serviceProviderFormsSource, /api_request/);
+  assert.match(serviceProviderFormsSource, /sfx_result/);
   assert.doesNotMatch(serviceProviderSource, /ServiceProviderAccountService/);
   assert.doesNotMatch(serviceProviderSource, /provider\.account/);
 

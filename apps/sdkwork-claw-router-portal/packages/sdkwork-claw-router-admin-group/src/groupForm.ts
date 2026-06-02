@@ -1,6 +1,5 @@
 import type {
   GroupCreateInput,
-  GroupData,
   GroupPriceReferenceMode,
   GroupUpdateInput,
 } from './groupService';
@@ -8,24 +7,22 @@ import type {
 export function createGroupInputFromForm(formData: FormData): GroupCreateInput {
   return {
     groupName: readRequiredFormText(formData, 'groupName'),
-    groupCode: readRequiredFormText(formData, 'groupCode'),
-    priceReferenceMode: readPriceReferenceMode(formData.get('priceReferenceMode')),
     ...readPricingFields(formData),
     groupType: readGroupType(formData.get('groupType')),
     capacity: { total: readPositiveInteger(formData.get('capacityTotal'), 'capacityTotal') },
     status: readGroupStatus(formData.get('status')),
+    ...readResourceAccessFields(formData),
   };
 }
 
 export function createGroupUpdateInputFromForm(formData: FormData): GroupUpdateInput {
   return {
     groupName: readRequiredFormText(formData, 'groupName'),
-    groupCode: readRequiredFormText(formData, 'groupCode'),
-    priceReferenceMode: readPriceReferenceMode(formData.get('priceReferenceMode')),
     ...readPricingFields(formData),
     groupType: readGroupType(formData.get('groupType')),
     capacity: { total: readPositiveInteger(formData.get('capacityTotal'), 'capacityTotal') },
     status: readGroupStatus(formData.get('status')),
+    ...readResourceAccessFields(formData),
   };
 }
 
@@ -68,6 +65,29 @@ function readRequiredFormText(formData: FormData, key: string): string {
     throw new Error(`${key} is required`);
   }
   return value;
+}
+
+function readStringListFormValues(formData: FormData, key: string): string[] {
+  return Array.from(new Set(
+    formData
+      .getAll(key)
+      .filter((value): value is string => typeof value === 'string')
+      .map(value => value.trim())
+      .filter(Boolean),
+  ));
+}
+
+function readResourceAccessFields(
+  formData: FormData,
+): Pick<GroupCreateInput, 'resourceGroupCodes' | 'resourceCodes'> {
+  return {
+    ...(formData.has('resourceGroupCodes')
+      ? { resourceGroupCodes: readStringListFormValues(formData, 'resourceGroupCodes') }
+      : {}),
+    ...(formData.has('resourceCodes')
+      ? { resourceCodes: readStringListFormValues(formData, 'resourceCodes') }
+      : {}),
+  };
 }
 
 function readPositiveNumber(value: FormDataEntryValue | null, fieldName: string): number {

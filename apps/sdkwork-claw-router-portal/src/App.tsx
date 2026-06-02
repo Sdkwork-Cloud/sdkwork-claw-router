@@ -99,6 +99,9 @@ const CacheAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-cache'), 'C
 const UserAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-user'), 'UserAdmin');
 const GroupAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-group'), 'GroupAdmin');
 const ModelAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-model'), 'ModelAdmin');
+const SiteAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-model'), 'SiteAdmin');
+const ModelMappingAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-model'), 'ModelMappingAdmin');
+const ResourceAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-model'), 'ResourceAdmin');
 const AgentsAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-agents'), 'AdminAgentsView');
 const SkillAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-skill'), 'SkillAdmin');
 const PromptsAdmin = lazyRoute(() => import('sdkwork-claw-router-admin-prompts'), 'PromptsAdmin');
@@ -284,6 +287,9 @@ export default function App() {
               <Route path="user" element={<UserAdmin />} />
               <Route path="group" element={<GroupAdmin />} />
               <Route path="model" element={<ModelAdmin />} />
+              <Route path="model/resources" element={<ResourceAdmin />} />
+              <Route path="model/sites" element={<SiteAdmin />} />
+              <Route path="model/mappings" element={<ModelMappingAdmin />} />
               <Route path="agents" element={<AgentsAdmin />} />
               <Route path="app" element={<AppAdmin />} />
               <Route path="skill" element={<SkillAdmin />} />

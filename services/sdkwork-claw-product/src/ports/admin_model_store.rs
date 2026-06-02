@@ -95,6 +95,85 @@ pub struct AdminModelCatalogSyncItem {
     pub models: Vec<AdminAiModelItem>,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminModelMappingRuleItem {
+    pub id: i64,
+    pub uuid: String,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub scope_type: String,
+    pub vendor_id: Option<i64>,
+    pub vendor_code: Option<String>,
+    pub channel_id: Option<i64>,
+    pub channel_code: Option<String>,
+    pub source_model: String,
+    pub source_catalog_key: Option<String>,
+    pub source_vendor_code: Option<String>,
+    pub target_model: String,
+    pub target_catalog_key: Option<String>,
+    pub target_vendor_code: Option<String>,
+    pub target_provider_model: Option<String>,
+    pub target_provider_native_model: Option<String>,
+    pub mapping_mode: String,
+    pub match_type: String,
+    pub priority: i32,
+    pub enabled: bool,
+    pub effective_from: Option<String>,
+    pub effective_to: Option<String>,
+    pub description: Option<String>,
+    pub created_at: Option<String>,
+    pub updated_at: Option<String>,
+    pub deleted_at: Option<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct AdminModelMappingRuleDraft {
+    pub scope_type: String,
+    pub vendor_id: Option<i64>,
+    pub vendor_code: Option<String>,
+    pub channel_id: Option<i64>,
+    pub channel_code: Option<String>,
+    pub source_model: String,
+    pub source_catalog_key: Option<String>,
+    pub source_vendor_code: Option<String>,
+    pub target_model: String,
+    pub target_catalog_key: Option<String>,
+    pub target_vendor_code: Option<String>,
+    pub target_provider_model: Option<String>,
+    pub target_provider_native_model: Option<String>,
+    pub mapping_mode: String,
+    pub match_type: String,
+    pub priority: i32,
+    pub enabled: bool,
+    pub effective_from: Option<String>,
+    pub effective_to: Option<String>,
+    pub description: Option<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Default)]
+pub struct AdminModelMappingRulePatch {
+    pub scope_type: Option<String>,
+    pub vendor_id: Option<Option<i64>>,
+    pub vendor_code: Option<Option<String>>,
+    pub channel_id: Option<Option<i64>>,
+    pub channel_code: Option<Option<String>>,
+    pub source_model: Option<String>,
+    pub source_catalog_key: Option<Option<String>>,
+    pub source_vendor_code: Option<Option<String>>,
+    pub target_model: Option<String>,
+    pub target_catalog_key: Option<Option<String>>,
+    pub target_vendor_code: Option<Option<String>>,
+    pub target_provider_model: Option<Option<String>>,
+    pub target_provider_native_model: Option<Option<String>>,
+    pub mapping_mode: Option<String>,
+    pub match_type: Option<String>,
+    pub priority: Option<i32>,
+    pub enabled: Option<bool>,
+    pub effective_from: Option<Option<String>>,
+    pub effective_to: Option<Option<String>>,
+    pub description: Option<Option<String>>,
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct ListAdminModelVendorsQuery {
     pub subject: AdminModelSubject,
@@ -103,6 +182,15 @@ pub struct ListAdminModelVendorsQuery {
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct ListAdminAiModelsQuery {
     pub subject: AdminModelSubject,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ListAdminModelMappingsQuery {
+    pub subject: AdminModelSubject,
+    pub scope_type: Option<String>,
+    pub vendor_code: Option<String>,
+    pub channel_id: Option<i64>,
+    pub q: Option<String>,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -239,6 +327,57 @@ pub struct DeleteAdminAiModelCommand {
     pub requested_at: String,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct CreateAdminModelMappingCommand {
+    pub subject: AdminModelSubject,
+    pub mapping_uuid: String,
+    pub audit_log_uuid: String,
+    pub draft: AdminModelMappingRuleDraft,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct UpdateAdminModelMappingCommand {
+    pub subject: AdminModelSubject,
+    pub audit_log_uuid: String,
+    pub mapping_id: String,
+    pub patch: AdminModelMappingRulePatch,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct DeleteAdminModelMappingCommand {
+    pub subject: AdminModelSubject,
+    pub audit_log_uuid: String,
+    pub mapping_id: String,
+    pub request_id: String,
+    pub requested_at: String,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ResolveAdminModelMappingQuery {
+    pub subject: AdminModelSubject,
+    pub source_model: String,
+    pub vendor_code: Option<String>,
+    pub channel_id: Option<i64>,
+    pub channel_code: Option<String>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ResolveAdminModelMappingResult {
+    pub source_model: String,
+    pub target_model: String,
+    pub target_catalog_key: Option<String>,
+    pub target_vendor_code: Option<String>,
+    pub target_provider_model: Option<String>,
+    pub target_provider_native_model: Option<String>,
+    pub matched: bool,
+    pub matched_scope_type: Option<String>,
+    pub rule: Option<AdminModelMappingRuleItem>,
+}
+
 pub trait AdminModelStore {
     fn list_vendors<'a>(
         &'a self,
@@ -250,6 +389,11 @@ pub trait AdminModelStore {
         query: ListAdminAiModelsQuery,
     ) -> AdminModelCommandFuture<'a, Vec<AdminAiModelItem>>;
 
+    fn list_model_mappings<'a>(
+        &'a self,
+        query: ListAdminModelMappingsQuery,
+    ) -> AdminModelCommandFuture<'a, Vec<AdminModelMappingRuleItem>>;
+
     fn create_vendor<'a>(
         &'a self,
         command: CreateAdminModelVendorCommand,
@@ -260,10 +404,20 @@ pub trait AdminModelStore {
         command: CreateAdminAiModelCommand,
     ) -> AdminModelCommandFuture<'a, AdminAiModelItem>;
 
+    fn create_model_mapping<'a>(
+        &'a self,
+        command: CreateAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, AdminModelMappingRuleItem>;
+
     fn update_model<'a>(
         &'a self,
         command: UpdateAdminAiModelCommand,
     ) -> AdminModelCommandFuture<'a, AdminAiModelItem>;
+
+    fn update_model_mapping<'a>(
+        &'a self,
+        command: UpdateAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, AdminModelMappingRuleItem>;
 
     fn sync_catalog<'a>(
         &'a self,
@@ -274,4 +428,14 @@ pub trait AdminModelStore {
         &'a self,
         command: DeleteAdminAiModelCommand,
     ) -> AdminModelCommandFuture<'a, ()>;
+
+    fn delete_model_mapping<'a>(
+        &'a self,
+        command: DeleteAdminModelMappingCommand,
+    ) -> AdminModelCommandFuture<'a, ()>;
+
+    fn resolve_model_mapping<'a>(
+        &'a self,
+        query: ResolveAdminModelMappingQuery,
+    ) -> AdminModelCommandFuture<'a, ResolveAdminModelMappingResult>;
 }

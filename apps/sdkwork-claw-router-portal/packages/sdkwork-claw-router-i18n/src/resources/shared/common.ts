@@ -40,6 +40,7 @@ export const sharedCommonMessages = {
     "common.actions.disableSkill": "Disable Skill",
     "common.actions.download": "Download",
     "common.actions.downloadUnavailable": "Download unavailable",
+    "common.actions.done": "Done",
     "common.actions.edit": "Edit",
     "common.actions.enable": "Enable",
     "common.actions.exportLogs": "Export logs",
@@ -148,6 +149,8 @@ export const sharedCommonMessages = {
     "common.modality.sfx": "SFX",
     "common.modality.text": "Text",
     "common.modality.video": "Video",
+    "common.status.active": "Active",
+    "common.status.disabled": "Disabled",
     "common.status.pending": "Pending",
   },
   zh: {
@@ -189,6 +192,7 @@ export const sharedCommonMessages = {
     "common.actions.disableSkill": "禁用技能",
     "common.actions.download": "下载",
     "common.actions.downloadUnavailable": "暂不可下载",
+    "common.actions.done": "完成",
     "common.actions.edit": "编辑",
     "common.actions.enable": "启用",
     "common.actions.exportLogs": "导出日志",
@@ -297,6 +301,8 @@ export const sharedCommonMessages = {
     "common.modality.sfx": "音效",
     "common.modality.text": "文本",
     "common.modality.video": "视频",
+    "common.status.active": "启用",
+    "common.status.disabled": "停用",
     "common.status.pending": "待处理",
   },
 } satisfies I18nMessageBundle;

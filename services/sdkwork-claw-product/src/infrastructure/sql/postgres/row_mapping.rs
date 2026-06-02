@@ -3,8 +3,8 @@ use sqlx::{PgPool, Row};
 
 use crate::infrastructure::sql::rows::{
     AiModelRow, ChannelGroupMetricSnapshotRow, ChannelGroupRow, GatewayAccessPolicyRow,
-    GatewayApiKeyRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow, PricingPlanRow,
-    ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
+    GatewayApiKeyRow, ModelMappingRuleRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow,
+    PricingPlanRow, ProviderChannelRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
 };
 
 pub async fn load_vendors(
@@ -152,6 +152,30 @@ pub async fn load_routing_rules(
             candidate_channels_json: row.try_get("candidate_channels_json")?,
             fallback_chain_json: row.try_get("fallback_chain_json")?,
             constraints_json: row.try_get("constraints_json")?,
+        })
+    })
+    .fetch(pool)
+    .await
+}
+
+pub async fn load_model_mappings(
+    pool: &PgPool,
+    sql: &'static str,
+) -> Result<Vec<ModelMappingRuleRow>, sqlx::Error> {
+    map_query(sql, |row| {
+        Ok(ModelMappingRuleRow {
+            id: row.try_get("id")?,
+            scope_type: row.try_get("scope_type")?,
+            vendor_code: row.try_get("vendor_code")?,
+            channel_id: row.try_get("channel_id")?,
+            channel_code: row.try_get("channel_code")?,
+            source_model: row.try_get("source_model")?,
+            target_model: row.try_get("target_model")?,
+            target_catalog_key: row.try_get("target_catalog_key")?,
+            target_vendor_code: row.try_get("target_vendor_code")?,
+            target_provider_model: row.try_get("target_provider_model")?,
+            target_provider_native_model: row.try_get("target_provider_native_model")?,
+            priority: row.try_get("priority")?,
         })
     })
     .fetch(pool)

@@ -1,8 +1,8 @@
 use sdkwork_claw_product::infrastructure::sql::sqlite::SqliteAdminChannelGroupStore;
 use sdkwork_claw_product::ports::{
     AdminChannelGroupChannelBindingInput, AdminChannelGroupStore, AdminChannelGroupSubject,
-    ListAdminChannelGroupChannelBindingsQuery, ReplaceAdminChannelGroupChannelBindingsCommand,
-    UpdateAdminChannelGroupCommand,
+    CreateAdminChannelGroupCommand, ListAdminChannelGroupChannelBindingsQuery,
+    ReplaceAdminChannelGroupChannelBindingsCommand, UpdateAdminChannelGroupCommand,
 };
 use sdkwork_claw_product_test_support::schema_sqlite_pool;
 
@@ -256,6 +256,131 @@ async fn sqlite_admin_channel_group_store_keeps_resource_authorization_normalize
     assert_eq!(
         0, active_relation_count,
         "soft-deleting a group must also soft-delete member and resource relationship rows"
+    );
+}
+
+#[tokio::test]
+async fn sqlite_admin_channel_group_store_creates_and_updates_direct_resource_access() {
+    let pool = schema_sqlite_pool().await;
+    seed_system_resource_access_fixture(&pool).await;
+    let store = SqliteAdminChannelGroupStore::new(pool.clone());
+    let subject = AdminChannelGroupSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        operator_id: 30,
+        operator_type: 1,
+    };
+
+    let created = store
+        .create_channel_group(CreateAdminChannelGroupCommand {
+            subject,
+            group_uuid: "resource-access-group".to_owned(),
+            audit_log_uuid: "audit-resource-access-create".to_owned(),
+            config_snapshot_uuid: "snapshot-resource-access-create".to_owned(),
+            binding_uuid: "pricing-binding-resource-access-create".to_owned(),
+            group_code: "resource-access-group".to_owned(),
+            group_name: "Resource Access Group".to_owned(),
+            provider_code: "openai".to_owned(),
+            price_reference_mode: "multiplier".to_owned(),
+            rate_multiplier: 1.0,
+            official_price_multiplier: 1.0,
+            group_type: "public".to_owned(),
+            resource_group_codes: vec!["api.openai.chat".to_owned()],
+            resource_codes: vec!["api.openai.chat_completions".to_owned()],
+            capacity_total: 100.0,
+            status: "active".to_owned(),
+            request_id: "req-resource-access-create".to_owned(),
+            requested_at: "2026-06-02 10:00:00".to_owned(),
+        })
+        .await
+        .unwrap();
+
+    assert_eq!(vec!["api.openai.chat"], created.resource_group_codes);
+    assert_eq!(vec!["api.openai.chat_completions"], created.resource_codes);
+
+    let rows: Vec<(Option<i64>, Option<String>, Option<i64>, Option<String>)> = sqlx::query_as(
+        r#"
+        SELECT resource_group_id, NULLIF(resource_group_code, ''), resource_id, NULLIF(resource_code, '')
+        FROM ai_channel_group_resource
+        WHERE tenant_id = 10
+          AND organization_id = 20
+          AND channel_group_id = ?
+          AND status = 1
+          AND deleted_at IS NULL
+        ORDER BY priority ASC
+        "#,
+    )
+    .bind(created.id)
+    .fetch_all(&pool)
+    .await
+    .unwrap();
+
+    assert_eq!(
+        vec![
+            (
+                Some(995001),
+                Some("api.openai.chat".to_owned()),
+                None,
+                None
+            ),
+            (
+                None,
+                None,
+                Some(995101),
+                Some("api.openai.chat_completions".to_owned())
+            )
+        ],
+        rows
+    );
+
+    let updated = store
+        .update_channel_group(UpdateAdminChannelGroupCommand {
+            subject,
+            group_id: created.id,
+            audit_log_uuid: "audit-resource-access-update".to_owned(),
+            config_snapshot_uuid: "snapshot-resource-access-update".to_owned(),
+            binding_uuid: "pricing-binding-resource-access-update".to_owned(),
+            group_code: None,
+            group_name: Some("Resource Access Group Updated".to_owned()),
+            provider_code: None,
+            price_reference_mode: None,
+            rate_multiplier: None,
+            official_price_multiplier: None,
+            group_type: None,
+            resource_group_codes: Some(vec!["api.openai.codex".to_owned()]),
+            resource_codes: Some(vec![
+                "api.openai.responses".to_owned(),
+                "api.openai.containers".to_owned(),
+            ]),
+            capacity_total: None,
+            status: None,
+            request_id: "req-resource-access-update".to_owned(),
+            requested_at: "2026-06-02 10:01:00".to_owned(),
+        })
+        .await
+        .unwrap()
+        .unwrap();
+
+    assert_eq!(vec!["api.openai.codex"], updated.resource_group_codes);
+    assert_eq!(
+        vec!["api.openai.responses", "api.openai.containers"],
+        updated.resource_codes
+    );
+
+    let listed = store
+        .list_channel_groups(sdkwork_claw_product::ports::ListAdminChannelGroupsQuery {
+            subject,
+        })
+        .await
+        .unwrap();
+    let listed_group = listed
+        .iter()
+        .find(|item| item.id == created.id)
+        .expect("updated resource access group should be listed");
+    assert_eq!(vec!["api.openai.codex"], listed_group.resource_group_codes);
+    assert_eq!(
+        vec!["api.openai.responses", "api.openai.containers"],
+        listed_group.resource_codes
     );
 }
 
@@ -591,6 +716,8 @@ fn update_channel_group_status_command(
         rate_multiplier: None,
         official_price_multiplier: None,
         group_type: None,
+        resource_group_codes: None,
+        resource_codes: None,
         capacity_total: None,
         status: Some(status.to_owned()),
         request_id: format!("req-update-group-status-{suffix}"),
@@ -732,4 +859,26 @@ async fn seed_bundle_resource_group(pool: &sqlx::SqlitePool, resource_code: &str
     .execute(pool)
     .await
     .unwrap();
+}
+
+async fn seed_system_resource_access_fixture(pool: &sqlx::SqlitePool) {
+    for statement in [
+        r#"
+        INSERT INTO ai_resource_group
+            (id, uuid, tenant_id, organization_id, status, group_code, group_name, group_type, selection_mode, sort_order)
+        VALUES
+            (995001, 'system-resource-group-openai-chat', 0, 0, 1, 'api.openai.chat', 'OpenAI Chat API', 'api_group', 'manual', 1),
+            (995002, 'system-resource-group-openai-codex', 0, 0, 1, 'api.openai.codex', 'OpenAI Codex API', 'api_group', 'manual', 2)
+        "#,
+        r#"
+        INSERT INTO ai_resource
+            (id, uuid, tenant_id, organization_id, status, resource_code, resource_type, display_name, api_code)
+        VALUES
+            (995101, 'system-resource-openai-chat-completions', 0, 0, 1, 'api.openai.chat_completions', 'api_endpoint', 'OpenAI Chat Completions', 'openai.chat_completions'),
+            (995102, 'system-resource-openai-responses', 0, 0, 1, 'api.openai.responses', 'api_endpoint', 'OpenAI Responses', 'openai.responses'),
+            (995103, 'system-resource-openai-containers', 0, 0, 1, 'api.openai.containers', 'api_endpoint', 'OpenAI Containers', 'openai.containers')
+        "#,
+    ] {
+        sqlx::query(statement).execute(pool).await.unwrap();
+    }
 }

@@ -9,7 +9,11 @@
       "modalityCode": "llm",
       "apiCode": "anthropic.claude_code",
       "capability": "llm",
-      "capabilities": ["llm", "chat", "coding"],
+      "capabilities": [
+        "llm",
+        "chat",
+        "coding"
+      ],
       "sortOrder": 400
     },
     {
@@ -20,7 +24,10 @@
       "modalityCode": "llm",
       "apiCode": "gemini.generate_content",
       "capability": "llm",
-      "capabilities": ["llm", "chat"],
+      "capabilities": [
+        "llm",
+        "chat"
+      ],
       "sortOrder": 410
     },
     {
@@ -31,7 +38,11 @@
       "modalityCode": "llm",
       "apiCode": "gemini.stream_generate_content",
       "capability": "llm",
-      "capabilities": ["llm", "chat", "streaming"],
+      "capabilities": [
+        "llm",
+        "chat",
+        "streaming"
+      ],
       "sortOrder": 415
     },
     {
@@ -42,7 +53,11 @@
       "modalityCode": "embedding",
       "apiCode": "gemini.embed_content",
       "capability": "embedding",
-      "capabilities": ["embedding", "embeddings", "llm"],
+      "capabilities": [
+        "embedding",
+        "embeddings",
+        "llm"
+      ],
       "sortOrder": 420
     },
     {
@@ -53,7 +68,10 @@
       "modalityCode": "audio",
       "apiCode": "gemini.live",
       "capability": "audio",
-      "capabilities": ["audio", "llm"],
+      "capabilities": [
+        "audio",
+        "llm"
+      ],
       "sortOrder": 430
     },
     {
@@ -64,7 +82,9 @@
       "modalityCode": "image",
       "apiCode": "gemini.image_generation",
       "capability": "image",
-      "capabilities": ["image"],
+      "capabilities": [
+        "image"
+      ],
       "sortOrder": 440
     },
     {
@@ -75,7 +95,9 @@
       "modalityCode": "image",
       "apiCode": "gemini.nano_banana.image_generation",
       "capability": "image",
-      "capabilities": ["image"],
+      "capabilities": [
+        "image"
+      ],
       "sortOrder": 450
     },
     {
@@ -86,7 +108,9 @@
       "modalityCode": "video",
       "apiCode": "gemini.video_generation",
       "capability": "video",
-      "capabilities": ["video"],
+      "capabilities": [
+        "video"
+      ],
       "sortOrder": 460
     },
     {
@@ -97,7 +121,9 @@
       "modalityCode": "video",
       "apiCode": "kling.text_to_video",
       "capability": "video",
-      "capabilities": ["video"],
+      "capabilities": [
+        "video"
+      ],
       "sortOrder": 470
     },
     {
@@ -108,7 +134,10 @@
       "modalityCode": "video",
       "apiCode": "kling.image_to_video",
       "capability": "video",
-      "capabilities": ["video", "image"],
+      "capabilities": [
+        "video",
+        "image"
+      ],
       "sortOrder": 480
     },
     {
@@ -119,7 +148,9 @@
       "modalityCode": "image",
       "apiCode": "kling.image_generation",
       "capability": "image",
-      "capabilities": ["image"],
+      "capabilities": [
+        "image"
+      ],
       "sortOrder": 490
     },
     {
@@ -130,7 +161,10 @@
       "modalityCode": "network",
       "apiCode": "kling.task_query",
       "capability": "network",
-      "capabilities": ["network", "http"],
+      "capabilities": [
+        "network",
+        "http"
+      ],
       "sortOrder": 500
     },
     {
@@ -141,7 +175,9 @@
       "modalityCode": "image",
       "apiCode": "jimeng.image_generation",
       "capability": "image",
-      "capabilities": ["image"],
+      "capabilities": [
+        "image"
+      ],
       "sortOrder": 510
     },
     {
@@ -152,7 +188,9 @@
       "modalityCode": "video",
       "apiCode": "jimeng.video_generation",
       "capability": "video",
-      "capabilities": ["video"],
+      "capabilities": [
+        "video"
+      ],
       "sortOrder": 520
     },
     {
@@ -163,7 +201,10 @@
       "modalityCode": "network",
       "apiCode": "jimeng.task_query",
       "capability": "network",
-      "capabilities": ["network", "http"],
+      "capabilities": [
+        "network",
+        "http"
+      ],
       "sortOrder": 530
     },
     {
@@ -174,7 +215,9 @@
       "modalityCode": "image",
       "apiCode": "volcengine.image_generation",
       "capability": "image",
-      "capabilities": ["image"],
+      "capabilities": [
+        "image"
+      ],
       "sortOrder": 540
     },
     {
@@ -185,7 +228,9 @@
       "modalityCode": "video",
       "apiCode": "volcengine.video_generation",
       "capability": "video",
-      "capabilities": ["video"],
+      "capabilities": [
+        "video"
+      ],
       "sortOrder": 550
     },
     {
@@ -196,8 +241,38 @@
       "modalityCode": "network",
       "apiCode": "volcengine.task_query",
       "capability": "network",
-      "capabilities": ["network", "http"],
+      "capabilities": [
+        "network",
+        "http"
+      ],
       "sortOrder": 560
+    },
+    {
+      "resourceCode": "api.minimax.music_generation",
+      "resourceType": "api_endpoint",
+      "displayName": "MiniMax Music Generation",
+      "vendorCode": "minimax",
+      "modalityCode": "music",
+      "apiCode": "minimax.music_generation",
+      "capability": "music",
+      "capabilities": [
+        "audio",
+        "music"
+      ],
+      "sortOrder": 570
+    },
+    {
+      "resourceCode": "api.vidu.reference_to_image",
+      "resourceType": "api_endpoint",
+      "displayName": "Vidu Reference To Image",
+      "vendorCode": "vidu",
+      "modalityCode": "image",
+      "apiCode": "vidu.reference_to_image",
+      "capability": "image",
+      "capabilities": [
+        "image"
+      ],
+      "sortOrder": 580
     },
     {
       "resourceCode": "api.vidu.start_end_to_video",
@@ -207,8 +282,10 @@
       "modalityCode": "video",
       "apiCode": "vidu.start_end_to_video",
       "capability": "video",
-      "capabilities": ["video"],
-      "sortOrder": 570
+      "capabilities": [
+        "video"
+      ],
+      "sortOrder": 590
     }
   ]
 }

@@ -12,7 +12,7 @@
   "mode": "apply",
   "hasChanges": false,
   "hasDestructiveChanges": false,
-  "changeFingerprint": "85a8eb0fb69d46d9eabd651e33861f19250a3081f487545d0ddae8b88d2812c4",
+  "changeFingerprint": "c7fda20e3bd9586717888e7cce6b23e2a55eb18e9728e57b6db70402ace3c7ec",
   "changeImpact": {
     "schemaVersion": 1,
     "areas": [],
@@ -55,10 +55,10 @@
     "localVersions": []
   },
   "stats": {
-    "totalFiles": 773,
-    "models": 735,
-    "apis": 15,
-    "types": 737
+    "totalFiles": 778,
+    "models": 739,
+    "apis": 16,
+    "types": 741
   },
   "warnings": [
     {
@@ -215,6 +215,10 @@
     },
     {
       "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
+      "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/sites.ts"
+    },
+    {
+      "code": "CLAWROUTER_STRICT_TYPESCRIPT_CONTRACT",
       "message": "Applied ClawRouter strict TypeScript contract normalization to src/api/index.ts"
     },
     {
@@ -242,10 +246,10 @@
     "dryRun": false,
     "writtenFiles": 0,
     "skippedScaffoldFiles": 2,
-    "skippedUnchangedGeneratedFiles": 770,
+    "skippedUnchangedGeneratedFiles": 775,
     "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "85a8eb0fb69d46d9eabd651e33861f19250a3081f487545d0ddae8b88d2812c4",
+    "changeFingerprint": "c7fda20e3bd9586717888e7cce6b23e2a55eb18e9728e57b6db70402ace3c7ec",
     "changes": {
       "createdGeneratedFiles": [],
       "updatedGeneratedFiles": [],
@@ -277,6 +281,7 @@
         "src/api/platform.ts",
         "src/api/runtime.ts",
         "src/api/sdk-reference.ts",
+        "src/api/sites.ts",
         "src/api/system.ts",
         "src/auth/index.ts",
         "src/http/client.ts",
@@ -370,6 +375,7 @@
         "src/types/ai-model-catalog-source-record.ts",
         "src/types/ai-model-catalog-sync-run-record.ts",
         "src/types/ai-model-family-record.ts",
+        "src/types/ai-model-mapping-rule-record.ts",
         "src/types/ai-model-modality-record.ts",
         "src/types/ai-model-pricing-record.ts",
         "src/types/ai-model-rank-snapshot-record.ts",
@@ -402,6 +408,9 @@
         "src/types/ai-runtime-invocation-event-record.ts",
         "src/types/ai-runtime-invocation-record.ts",
         "src/types/ai-runtime-usage-link-record.ts",
+        "src/types/ai-site-model-record.ts",
+        "src/types/ai-site-record.ts",
+        "src/types/ai-site-service-record.ts",
         "src/types/ai-usage-fact-record.ts",
         "src/types/ai-usage-service-provider-chain-record.ts",
         "src/types/ai-usage-service-provider-edge-record.ts",
